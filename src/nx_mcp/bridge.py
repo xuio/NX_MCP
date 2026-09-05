@@ -400,6 +400,7 @@ class ObjectRegistry:
     """Maps opaque, session-scoped IDs to live NXOpen objects."""
 
     def __init__(self) -> None:
+        self.session_id: str | None = None
         self._objects: dict[str, _ObjectEntry] = {}
         self._stale_ids: set[str] = set()
         self._identities: dict[tuple[str, ObjectKind, str], str] = {}
@@ -433,7 +434,7 @@ class ObjectRegistry:
         entry = self._objects.get(object_id)
         if entry is None:
             foreign_session = bool(
-                getattr(self, "session_id", None)
+                self.session_id is not None
                 and not object_id.startswith("obj_" + self.session_id + "_")
             )
             code = (

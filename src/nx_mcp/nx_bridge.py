@@ -259,7 +259,11 @@ class NXOpenExecutor:
         self._save_part()
         builder = self.session.DexManager.CreateStepCreator()
         try:
-            builder.SettingsFile = str(Path(os.environ.get("UGII_BASE_DIR", r"C:\Program Files\Siemens\Designcenter2606")) / "STEP214UG" / "ugstep214.def")
+            builder.SettingsFile = str(
+                Path(os.environ.get("UGII_BASE_DIR", r"C:\Program Files\Siemens\Designcenter2606"))
+                / "STEP214UG"
+                / "ugstep214.def"
+            )
             builder.LayerMask = "1-256"
             builder.InputFile = part.FullPath
             builder.ExportFrom = self.nxopen.StepCreator.ExportFromOption.ExistingPart
@@ -272,13 +276,20 @@ class NXOpenExecutor:
         finally:
             builder.Destroy()
         if not destination.is_file() or destination.stat().st_size == 0:
-            log = destination.with_suffix('.log')
-            detail = log.read_text(errors='replace')[-1200:] if log.is_file() else 'No translator log'
-            raise NXToolError('NX_EXPORT_FAILED', 'STEP output was not created: '+detail)
+            log = destination.with_suffix(".log")
+            detail = (
+                log.read_text(errors="replace")[-1200:] if log.is_file() else "No translator log"
+            )
+            raise NXToolError("NX_EXPORT_FAILED", "STEP output was not created: " + detail)
         payload = destination.read_text(errors="replace")
-        if not any(token in payload for token in ("MANIFOLD_SOLID_BREP", "BREP_WITH_VOIDS", "FACETED_BREP")):
+        if not any(
+            token in payload for token in ("MANIFOLD_SOLID_BREP", "BREP_WITH_VOIDS", "FACETED_BREP")
+        ):
             raise NXToolError("NX_EXPORT_NO_SOLIDS", "STEP file contains no solid BREP entities")
-        return {"path": str(destination), "message": f"Exported and verified STEP file: {destination.name}"}
+        return {
+            "path": str(destination),
+            "message": f"Exported and verified STEP file: {destination.name}",
+        }
 
     def _create_sketch(self, plane: str = "XY", name: str | None = None) -> dict[str, Any]:
         normals = {"XY": (0.0, 0.0, 1.0), "XZ": (0.0, 1.0, 0.0), "YZ": (1.0, 0.0, 0.0)}
@@ -671,39 +682,59 @@ class NXOpenExecutor:
 
     def _get_bounding_box(self, body=None):
         import NXOpen.UF
+
         part = self._work_part()
         bodies = [self._resolve_body(body, part)] if body else list(part.Bodies)
         uf = NXOpen.UF.UFSession.GetUFSession()
         rows = []
         for item in bodies:
             box = list(uf.ModlGeneral.AskBoundingBox(item.Tag))
-            rows.append({"body": self._reference(item, "body", part, "Body"),
-                         "solid": bool(item.IsSolidBody), "box": box})
+            rows.append(
+                {
+                    "body": self._reference(item, "body", part, "Body"),
+                    "solid": bool(item.IsSolidBody),
+                    "box": box,
+                }
+            )
         if not rows:
             raise NXToolError("NX_NO_TARGET_BODY", "No bodies in work part")
         low = [min(row["box"][i] for row in rows) for i in range(3)]
-        high = [max(row["box"][i+3] for row in rows) for i in range(3)]
-        return {"min": low, "max": high, "dimensions": [b-a for a,b in zip(low,high)],
-                "units": str(part.PartUnits), "bodies": rows,
-                "message": "UF bounding boxes; may be conservative for curved geometry"}
+        high = [max(row["box"][i + 3] for row in rows) for i in range(3)]
+        return {
+            "min": low,
+            "max": high,
+            "dimensions": [b - a for a, b in zip(low, high, strict=False)],
+            "units": str(part.PartUnits),
+            "bodies": rows,
+            "message": "UF bounding boxes; may be conservative for curved geometry",
+        }
 
     def _measure_volume(self, body=None):
-        import NXOpen.UF
         part = self._work_part()
         bodies = [self._resolve_body(body, part)] if body else list(part.Bodies)
-        units = [part.UnitCollection.FindObject(n) for n in ["SquareMilliMeter", "CubicMilliMeter", "Kilogram", "MilliMeter", "Newton"]]
+        units = [
+            part.UnitCollection.FindObject(n)
+            for n in ["SquareMilliMeter", "CubicMilliMeter", "Kilogram", "MilliMeter", "Newton"]
+        ]
         rows = []
         for item in bodies:
             if not item.IsSolidBody:
                 raise NXToolError("NX_NOT_SOLID", "Volume measurement requires solid bodies")
             props = part.MeasureManager.NewMassProperties(units, 0.999, [item])
             try:
-                rows.append({"body": self._reference(item, "body", part, "Body"),
-                             "volume_mm3": float(props.Volume)})
+                rows.append(
+                    {
+                        "body": self._reference(item, "body", part, "Body"),
+                        "volume_mm3": float(props.Volume),
+                    }
+                )
             finally:
                 props.Dispose()
-        return {"bodies": rows, "volume_mm3": sum(r["volume_mm3"] for r in rows),
-                "message": "Sum of solid body volumes; overlapping bodies are counted separately"}
+        return {
+            "bodies": rows,
+            "volume_mm3": sum(r["volume_mm3"] for r in rows),
+            "message": "Sum of solid body volumes; overlapping bodies are counted separately",
+        }
 
     def _add_component(self, part_path, name=None):
         part = self._work_part()
@@ -711,11 +742,20 @@ class NXOpenExecutor:
         matrix = self.nxopen.Matrix3x3()
         matrix.Xx = matrix.Yy = matrix.Zz = 1.0
         component, status = part.ComponentAssembly.AddComponent(
-            str(path), "Entire Part", name or Path(path).stem,
-            self.nxopen.Point3d(0.0,0.0,0.0), matrix, -1)
+            str(path),
+            "Entire Part",
+            name or Path(path).stem,
+            self.nxopen.Point3d(0.0, 0.0, 0.0),
+            matrix,
+            -1,
+        )
         try:
-            return {"component": component.Name, "tag": int(component.Tag),
-                    "path": str(path), "message": "Component added at origin"}
+            return {
+                "component": component.Name,
+                "tag": int(component.Tag),
+                "path": str(path),
+                "message": "Component added at origin",
+            }
         finally:
             if status is not None:
                 status.Dispose()
@@ -724,56 +764,114 @@ class NXOpenExecutor:
         part = self._work_part()
         root = part.ComponentAssembly.RootComponent
         rows = []
+
         def walk(parent, depth):
             for comp in parent.GetChildren():
                 point, matrix = comp.GetPosition()
-                rows.append({"name": comp.Name, "tag": int(comp.Tag), "depth": depth,
-                             "translation": [point.X,point.Y,point.Z],
-                             "rotation": [matrix.Xx,matrix.Xy,matrix.Xz,matrix.Yx,matrix.Yy,matrix.Yz,matrix.Zx,matrix.Zy,matrix.Zz],
-                             "part_path": comp.Prototype.FullPath})
-                walk(comp, depth+1)
+                rows.append(
+                    {
+                        "name": comp.Name,
+                        "tag": int(comp.Tag),
+                        "depth": depth,
+                        "translation": [point.X, point.Y, point.Z],
+                        "rotation": [
+                            matrix.Xx,
+                            matrix.Xy,
+                            matrix.Xz,
+                            matrix.Yx,
+                            matrix.Yy,
+                            matrix.Yz,
+                            matrix.Zx,
+                            matrix.Zy,
+                            matrix.Zz,
+                        ],
+                        "part_path": comp.Prototype.FullPath,
+                    }
+                )
+                walk(comp, depth + 1)
+
         if root is not None:
             walk(root, 0)
         return {"components": rows, "count": len(rows)}
 
     def _reposition_component(self, component, dx=0, dy=0, dz=0, rx=0, ry=0, rz=0):
         import math
+
         part = self._work_part()
         root = part.ComponentAssembly.RootComponent
         matches = [c for c in root.GetChildren() if c.Name == component]
         if len(matches) != 1:
-            raise NXToolError("NX_NOT_FOUND", "Component name must match exactly one immediate child")
-        a,b,c = [math.radians(v) for v in (rx,ry,rz)]
-        sx,cx,sy,cy,sz,cz = math.sin(a),math.cos(a),math.sin(b),math.cos(b),math.sin(c),math.cos(c)
+            raise NXToolError(
+                "NX_NOT_FOUND", "Component name must match exactly one immediate child"
+            )
+        a, b, c = [math.radians(v) for v in (rx, ry, rz)]
+        sx, cx, sy, cy, sz, cz = (
+            math.sin(a),
+            math.cos(a),
+            math.sin(b),
+            math.cos(b),
+            math.sin(c),
+            math.cos(c),
+        )
         matrix = self.nxopen.Matrix3x3()
-        values = [cz*cy,sz*cy,-sy,cz*sy*sx-sz*cx,sz*sy*sx+cz*cx,cy*sx,cz*sy*cx+sz*sx,sz*sy*cx-cz*sx,cy*cx]
-        for key,value in zip(("Xx","Xy","Xz","Yx","Yy","Yz","Zx","Zy","Zz"), values):
-            setattr(matrix,key,value)
-        part.ComponentAssembly.MoveComponent(matches[0], self.nxopen.Vector3d(dx,dy,dz), matrix)
+        values = [
+            cz * cy,
+            sz * cy,
+            -sy,
+            cz * sy * sx - sz * cx,
+            sz * sy * sx + cz * cx,
+            cy * sx,
+            cz * sy * cx + sz * sx,
+            sz * sy * cx - cz * sx,
+            cy * cx,
+        ]
+        for key, value in zip(
+            ("Xx", "Xy", "Xz", "Yx", "Yy", "Yz", "Zx", "Zy", "Zz"), values, strict=False
+        ):
+            setattr(matrix, key, value)
+        part.ComponentAssembly.MoveComponent(matches[0], self.nxopen.Vector3d(dx, dy, dz), matrix)
         return {"component": component, "message": "Applied relative translation and rotation"}
 
     def _set_view(self, orientation):
-        options = {"isometric": "Isometric", "trimetric": "Trimetric", "front": "Front",
-                   "back": "Back", "top": "Top", "bottom": "Bottom", "left": "Left", "right": "Right"}
+        options = {
+            "isometric": "Isometric",
+            "trimetric": "Trimetric",
+            "front": "Front",
+            "back": "Back",
+            "top": "Top",
+            "bottom": "Bottom",
+            "left": "Left",
+            "right": "Right",
+        }
         key = orientation.strip().lower()
         if key not in options:
             raise NXToolError("NX_INVALID_ARGUMENT", "Unknown view orientation")
         self._work_part().ModelingViews.WorkView.Orient(
-            getattr(self.nxopen.View.Canned, options[key]), self.nxopen.View.ScaleAdjustment.Fit)
+            getattr(self.nxopen.View.Canned, options[key]), self.nxopen.View.ScaleAdjustment.Fit
+        )
         return {"message": "View orientation set; batch bridge has no visible viewport"}
 
     def _get_feature_info(self, name):
         part = self._work_part()
         try:
-            feature = self.objects.resolve(name, expected_kind="feature", part_id=self._part_id(part))
+            feature = self.objects.resolve(
+                name, expected_kind="feature", part_id=self._part_id(part)
+            )
         except NXToolError:
             matches = [f for f in part.Features if f.Name == name or f.JournalIdentifier == name]
             if len(matches) != 1:
-                raise NXToolError("NX_NOT_FOUND", "Feature reference is not unique or does not exist")
+                raise NXToolError(
+                    "NX_NOT_FOUND", "Feature reference is not unique or does not exist"
+                ) from None
             feature = matches[0]
-        return {"name": feature.Name, "type": feature.FeatureType,
-                "identifier": feature.JournalIdentifier,
-                "expressions": [{"name": e.Name, "formula": e.RightHandSide} for e in feature.GetExpressions()]}
+        return {
+            "name": feature.Name,
+            "type": feature.FeatureType,
+            "identifier": feature.JournalIdentifier,
+            "expressions": [
+                {"name": e.Name, "formula": e.RightHandSide} for e in feature.GetExpressions()
+            ],
+        }
 
     def _list_open_parts(self):
         return {"parts": [{"name": p.Name, "path": p.FullPath} for p in self.session.Parts]}

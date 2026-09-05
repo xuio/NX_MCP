@@ -283,7 +283,11 @@ class InteractiveHost:
             if self.owns_lock:
                 before = str(self.ui.AskLockStatus())
                 self.ui.UnlockAccess()
-                self.last_unlock = {"before": before, "after": str(self.ui.AskLockStatus()), "can_open_part": self.ui.CanOpenPart()}
+                self.last_unlock = {
+                    "before": before,
+                    "after": str(self.ui.AskLockStatus()),
+                    "can_open_part": self.ui.CanOpenPart(),
+                }
                 self.owns_lock = False
             if self.window_disabled:
                 self.user.EnableWindow(self.main_hwnd, True)

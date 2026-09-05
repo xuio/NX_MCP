@@ -6,7 +6,7 @@ import importlib
 import inspect
 import json
 import sys
-from collections.abc import Awaitable, Callable
+from collections.abc import Awaitable, Callable, Coroutine
 from functools import wraps
 from typing import TYPE_CHECKING, Any
 
@@ -40,8 +40,8 @@ _PATH_PARAMS = {
 }
 
 
-def load_legacy_handlers() -> dict[str, Callable[..., Awaitable[Any]]]:
-    handlers: dict[str, Callable[..., Awaitable[Any]]] = {}
+def load_legacy_handlers() -> dict[str, Callable[..., Coroutine[Any, Any, Any]]]:
+    handlers: dict[str, Callable[..., Coroutine[Any, Any, Any]]] = {}
     registry_snapshot = dict(ToolRegistry._tools)
     newly_loaded: list[str] = []
     try:

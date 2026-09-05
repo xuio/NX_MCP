@@ -59,3 +59,11 @@ The runner writes JSON results and native PNGs. It is the previously exercised r
 4. **Inspection and visual tools:** propose assembly interference/clearance, highlighting, sections, appearance and solver diagnostics on the agreed foundations.
 
 The imported commits preserve deployment history but are not all independently PR-ready: some later commits depend on broad earlier hardening. Extract smaller patches with their own tests when preparing submissions. Discuss the architecture with the maintainer before asking them to review the complete integration. No pull request has been opened as part of this fork import.
+
+## Follow-up quality release: 0.2.0.dev3
+
+All seven import-time test failures and the 24 lint findings were addressed. The full local suite now passes 183 tests (one platform skip), lint and sidecar mypy pass. The smoke workflow checks undo before export's save boundary and reacquires the sketch reference after undo. Added lookup tests check journal identifiers, case normalization, ambiguity and deduplication. Fake NX collections now expose the iterable interface verified in NX, and the STEP fake models the installed enum and a solid-bearing result. These remain fake seam tests, not native feature certification.
+
+Whole-project branch coverage is approximately 51%, below the inherited 78% gate. The gate is deliberately retained: GUI/NX modules have substantial uncovered Python paths despite their separate live-NX acceptance checks. A green functional suite does not resolve that coverage gap. Consult the current GitHub workflow result for the exact total and platform matrix.
+
+Versioned offline build, dependency locks, install and rollback procedures are documented in [releases](releases.md).

@@ -4,14 +4,16 @@ NXOpen is accessed only by the existing main-thread dispatcher.
 """
 
 from __future__ import annotations
+
 import inspect
 import math
 import uuid
 from pathlib import Path
-from nx_mcp.nx_bridge import NXOpenExecutor
-from nx_mcp.runtime import NXToolError
-from nx_mcp.recovery import OperationStore, timestamp
+
 from nx_mcp.inspection import InspectionMixin
+from nx_mcp.nx_bridge import NXOpenExecutor
+from nx_mcp.recovery import OperationStore, timestamp
+from nx_mcp.runtime import NXToolError
 from nx_mcp.visual_tools import VisualToolsMixin
 
 READ_ONLY = {
@@ -67,7 +69,7 @@ def vector(value, name="vector"):
 
 
 def dot(a, b):
-    return sum(x * y for x, y in zip(a, b))
+    return sum(x * y for x, y in zip(a, b, strict=False))
 
 
 def cross(a, b):
@@ -91,11 +93,11 @@ def matmul(a, b):
 
 
 def transpose(m):
-    return [list(v) for v in zip(*m)]
+    return [list(v) for v in zip(*m, strict=False)]
 
 
 def add(a, b):
-    return [x + y for x, y in zip(a, b)]
+    return [x + y for x, y in zip(a, b, strict=False)]
 
 
 IDENTITY = [[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0]]
@@ -125,7 +127,6 @@ class HardenedExecutor(VisualToolsMixin, InspectionMixin, NXOpenExecutor):
                 "nx_section_view": self._section_view,
                 "nx_section_control": self._section_control,
                 "nx_sketch_diagnostics": self._sketch_diagnostics,
-
                 "nx_check_interference": self._check_interference,
                 "nx_check_clearance": self._check_clearance,
                 "nx_activate_part": self._activate_part,
@@ -192,9 +193,9 @@ class HardenedExecutor(VisualToolsMixin, InspectionMixin, NXOpenExecutor):
             if legacy is None:
                 raise NXToolError("NX_TOOL_NOT_FOUND", method)
             inspect.signature(legacy).bind(**params)
-            handler = lambda **p: execute_legacy(
-                method, p, self.workspace, enable_journal=self.enable_journal
-            )
+
+            def handler(**p):
+                return execute_legacy(method, p, self.workspace, enable_journal=self.enable_journal)
         else:
             try:
                 inspect.signature(handler).bind(**params)
@@ -292,7 +293,20 @@ class HardenedExecutor(VisualToolsMixin, InspectionMixin, NXOpenExecutor):
                     "modified": result.get("modified"),
                     "modified_tracking": "explicit only; null means not fully tracked",
                 }
-                self._invalidate_deleted(before, after, invalidate_topology=method not in {"nx_set_display", "nx_set_visibility", "nx_restore_display", "nx_section_view", "nx_section_control", "nx_set_view", "nx_fit_view"})
+                self._invalidate_deleted(
+                    before,
+                    after,
+                    invalidate_topology=method
+                    not in {
+                        "nx_set_display",
+                        "nx_set_visibility",
+                        "nx_restore_display",
+                        "nx_section_view",
+                        "nx_section_control",
+                        "nx_set_view",
+                        "nx_fit_view",
+                    },
+                )
                 self._history.append(
                     {"mark": mark, "part_id": part_id, "operation_id": op_id, "method": method}
                 )
@@ -373,9 +387,8 @@ class HardenedExecutor(VisualToolsMixin, InspectionMixin, NXOpenExecutor):
                 if ref.casefold() in {
                     self._name(v, "").casefold(),
                     str(getattr(v, "JournalIdentifier", "")).casefold(),
-                }:
-                    if all(int(c.Tag) != int(v.Tag) for c in candidates):
-                        candidates.append(v)
+                } and all(int(c.Tag) != int(v.Tag) for c in candidates):
+                    candidates.append(v)
         if len(candidates) != 1:
             raise NXToolError(
                 "NX_AMBIGUOUS_REFERENCE" if candidates else "NX_NOT_FOUND",
@@ -543,7 +556,7 @@ class HardenedExecutor(VisualToolsMixin, InspectionMixin, NXOpenExecutor):
         if any(
             abs(a - b) > 1e-7
             for k, v in [("origin", o), ("x_axis", x), ("y_axis", y), ("normal", n)]
-            for a, b in zip(actual[k], v)
+            for a, b in zip(actual[k], v, strict=False)
         ):
             raise NXToolError(
                 "NX_FRAME_MISMATCH",
@@ -944,7 +957,7 @@ class HardenedExecutor(VisualToolsMixin, InspectionMixin, NXOpenExecutor):
         return {
             "min": low,
             "max": high,
-            "dimensions": [b - a for a, b in zip(low, high)],
+            "dimensions": [b - a for a, b in zip(low, high, strict=False)],
             "units": self._units(),
             "coordinate_frame": "work_part",
             "bounds_type": precision,
@@ -989,7 +1002,7 @@ class HardenedExecutor(VisualToolsMixin, InspectionMixin, NXOpenExecutor):
                 "NX_UNSUPPORTED_ARGUMENT", "Only native linear feature patterns are implemented"
             )
         if (
-            type(count) != int
+            type(count) is not int
             or count < 2
             or count > 1000
             or not math.isfinite(spacing)
@@ -1198,12 +1211,12 @@ class HardenedExecutor(VisualToolsMixin, InspectionMixin, NXOpenExecutor):
         p, m = c.GetPosition()
         delta = matmul(r, transpose(rows(m)))
         # NX MoveComponent rotates orientation about the component origin and adds translation.
-        shift = [a - b for a, b in zip(t, xyz(p))]
+        shift = [a - b for a, b in zip(t, xyz(p), strict=False)]
         part.ComponentAssembly.MoveComponent(
             c, self.nxopen.Vector3d(*shift), self._nx_matrix(delta)
         )
         actual_p, actual_m = c.GetPosition()
-        if any(abs(a - b) > 1e-7 for a, b in zip(xyz(actual_p), t)) or any(
+        if any(abs(a - b) > 1e-7 for a, b in zip(xyz(actual_p), t, strict=False)) or any(
             abs(rows(actual_m)[i][j] - r[i][j]) > 1e-7 for i in range(3) for j in range(3)
         ):
             raise NXToolError(
@@ -1292,7 +1305,9 @@ class HardenedExecutor(VisualToolsMixin, InspectionMixin, NXOpenExecutor):
             ),
             interactive=not self.session.IsBatch,
             api_detection={
-                "native_display_modification": hasattr(self.session.DisplayManager, "NewDisplayModification"),
+                "native_display_modification": hasattr(
+                    self.session.DisplayManager, "NewDisplayModification"
+                ),
                 "dynamic_sections": bool(part and hasattr(part, "DynamicSections")),
                 "sketch_solver_status": hasattr(self.nxopen.Sketch, "CalculateStatus"),
                 "step_import": hasattr(self.session.DexManager, "CreateStep214Importer"),

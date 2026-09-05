@@ -54,7 +54,10 @@ def create_certified_server(
     enable_experimental: bool = False,
     enable_journal: bool = False,
 ) -> FastMCP:
-    mcp = FastMCP("nx-mcp", instructions="Siemens NX integration. Runtime support varies by NX version; no general certification is claimed.")
+    mcp = FastMCP(
+        "nx-mcp",
+        instructions="Siemens NX integration. Runtime support varies by NX version; no general certification is claimed.",
+    )
 
     async def call(method: str, params: dict[str, Any]) -> dict[str, Any]:
         try:
@@ -201,6 +204,7 @@ def create_certified_server(
 
     if enable_experimental:
         from nx_mcp.integration_server import configure
+
         configure(mcp, bridge, workspace)
 
     return mcp

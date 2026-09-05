@@ -43,13 +43,22 @@ def resolve_object_by_name(
     Returns a unique match, or None. Ambiguous names are rejected.
     """
     from nx_mcp.runtime import NXToolError
+
     target = name.casefold()
     matches = []
     for collection in collections:
         for obj in collection:
-            if target in {str(getattr(obj, 'Name', '')).casefold(), str(getattr(obj, 'JournalIdentifier', '')).casefold()}:
-                if obj not in matches:
-                    matches.append(obj)
+            if (
+                target
+                in {
+                    str(getattr(obj, "Name", "")).casefold(),
+                    str(getattr(obj, "JournalIdentifier", "")).casefold(),
+                }
+                and obj not in matches
+            ):
+                matches.append(obj)
     if len(matches) > 1:
-        raise NXToolError('NX_AMBIGUOUS_REFERENCE', 'Name matches multiple objects; use an opaque reference')
+        raise NXToolError(
+            "NX_AMBIGUOUS_REFERENCE", "Name matches multiple objects; use an opaque reference"
+        )
     return matches[0] if matches else None

@@ -4,7 +4,9 @@ import base64
 import hashlib
 import time
 from types import SimpleNamespace
+
 import pytest
+
 from nx_mcp.bridge import BridgeClient, BridgeServer
 from nx_mcp.hardened import HardenedExecutor
 from nx_mcp.integration_server import artifact_call
@@ -184,10 +186,17 @@ async def test_uniform_structured_success_failure_and_schema(tmp_path):
     assert not next(t for t in tools if t.name == "nx_sketch_rectangle").annotations.readOnlyHint
 
 
-def test_reference_namespace_rejects_previous_session(executor,tmp_path):
-    obj=SimpleNamespace(Tag=123,Name='Body')
-    first=executor.objects.register(obj,kind='body',name='Body',part_id='part_test')
-    assert first.id.startswith('obj_'+executor.session_id+'_')
-    another=HardenedExecutor(FakeSession(),SimpleNamespace(Session=SimpleNamespace(MarkVisibility=SimpleNamespace(Visible=1))),'test',Workspace(tmp_path/'other'),enable_experimental=True)
-    with pytest.raises(NXToolError) as error:another.objects.resolve(first.id)
-    assert error.value.code=='NX_OBJECT_STALE'
+def test_reference_namespace_rejects_previous_session(executor, tmp_path):
+    obj = SimpleNamespace(Tag=123, Name="Body")
+    first = executor.objects.register(obj, kind="body", name="Body", part_id="part_test")
+    assert first.id.startswith("obj_" + executor.session_id + "_")
+    another = HardenedExecutor(
+        FakeSession(),
+        SimpleNamespace(Session=SimpleNamespace(MarkVisibility=SimpleNamespace(Visible=1))),
+        "test",
+        Workspace(tmp_path / "other"),
+        enable_experimental=True,
+    )
+    with pytest.raises(NXToolError) as error:
+        another.objects.resolve(first.id)
+    assert error.value.code == "NX_OBJECT_STALE"

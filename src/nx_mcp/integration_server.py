@@ -1,6 +1,7 @@
 """Uniform MCP envelopes and workspace-scoped artifacts for the NX 2606 bridge."""
 
 from __future__ import annotations
+
 import base64
 import hashlib
 import inspect
@@ -8,19 +9,27 @@ import json
 import os
 import uuid
 from typing import Any, Literal
-from mcp.types import CallToolResult, TextContent, ToolAnnotations, ImageContent
+
+from mcp.types import CallToolResult, ImageContent, TextContent, ToolAnnotations
+
+from nx_mcp.recovery import OperationStore
 from nx_mcp.runtime import NXToolError
 from nx_mcp.workspace import WorkspaceViolation
-from nx_mcp.recovery import OperationStore
-
 
 
 def nx_display_info(objects: list[str]):
     pass
 
 
-def nx_set_display(objects: list[str], color_index: int | None = None, transparency: int | None = None,
-                   color: Literal["red", "green", "blue", "yellow", "cyan", "magenta", "orange", "white", "black", "gray"] | None = None):
+def nx_set_display(
+    objects: list[str],
+    color_index: int | None = None,
+    transparency: int | None = None,
+    color: Literal[
+        "red", "green", "blue", "yellow", "cyan", "magenta", "orange", "white", "black", "gray"
+    ]
+    | None = None,
+):
     pass
 
 
@@ -44,8 +53,13 @@ def nx_list_sections():
     pass
 
 
-def nx_section_view(origin: list[float], normal: list[float], section: str | None = None,
-                    name: str = "MCP section", cap: bool = True):
+def nx_section_view(
+    origin: list[float],
+    normal: list[float],
+    section: str | None = None,
+    name: str = "MCP section",
+    cap: bool = True,
+):
     pass
 
 
@@ -239,17 +253,16 @@ def nx_upload_file(path: str, data_base64: str, sha256: str, total_size: int, of
 
 
 DESCRIPTIONS = {
-    'nx_display_info': 'Inspect color-table indices, blank state and face transparency for body, component, feature, face or curve references. Components expand to loaded occurrence geometry.',
-    'nx_set_display': 'Set an NX color index (1–216) or named color, and/or transparency (0 opaque, 100 transparent). Component/feature targets expand to bodies. Occurrence overrides do not recolor prototypes. Returns restore_id; restore in reverse order. Changes can persist on save.',
-    'nx_set_visibility': 'Show, hide or isolate body/component geometry. Isolation preserves a restorable snapshot and includes ancestor components. Reference curves and datum geometry are not isolated. Explicit show/hide also accepts curves. Returns restore_id.',
-    'nx_restore_display': 'Restore explicit appearance/visibility attributes using a same-session restore_id, in reverse order. All references are preflighted; manual handoff, rollback or close can make snapshots stale. Does not reset a part modified flag or remove inherited occurrence overrides.',
-    'nx_highlight_collisions': 'Measure native solid interference and highlight the involved body occurrences using NX selection highlighting. Replaces previous MCP highlights. Contacts are optional; clear pairs are never highlighted. Returns measured pairs and entity references. No persistent recoloring.',
-    'nx_clear_highlights': 'Remove only highlights created by MCP. Geometry, persistent colors and visibility are unchanged.',
-    'nx_list_sections': 'Inspect native dynamic sections and the active view clipping toggle in the display/work part.',
-    'nx_section_view': 'Create or edit a native single-plane section in visible NX. origin is in display-part units; normal is normalized in display-part coordinates. Solids are unchanged. Specify section ID to edit an existing active section. NX v2606 retains dot(point-origin, normal) <= 0; reversing normal reverses the retained side. Returns actual plane geometry.',
-    'nx_section_control': 'Enable, disable or delete the specified native section. Disabling turns off clipping when that section is active. Deletion removes the section object, not model solids.',
-    'nx_sketch_diagnostics': 'Evaluate native solver status and remaining DOF for the entire sketch; enumerate persistent constraints and their curve links. Temporarily activates an inactive sketch and restores the prior state. Rejects another active sketch. Temporarily evaluates the entire sketch and restores the work-region state. Does not infer a minimal conflict set or automatically constrain geometry.',
-
+    "nx_display_info": "Inspect color-table indices, blank state and face transparency for body, component, feature, face or curve references. Components expand to loaded occurrence geometry.",
+    "nx_set_display": "Set an NX color index (1–216) or named color, and/or transparency (0 opaque, 100 transparent). Component/feature targets expand to bodies. Occurrence overrides do not recolor prototypes. Returns restore_id; restore in reverse order. Changes can persist on save.",
+    "nx_set_visibility": "Show, hide or isolate body/component geometry. Isolation preserves a restorable snapshot and includes ancestor components. Reference curves and datum geometry are not isolated. Explicit show/hide also accepts curves. Returns restore_id.",
+    "nx_restore_display": "Restore explicit appearance/visibility attributes using a same-session restore_id, in reverse order. All references are preflighted; manual handoff, rollback or close can make snapshots stale. Does not reset a part modified flag or remove inherited occurrence overrides.",
+    "nx_highlight_collisions": "Measure native solid interference and highlight the involved body occurrences using NX selection highlighting. Replaces previous MCP highlights. Contacts are optional; clear pairs are never highlighted. Returns measured pairs and entity references. No persistent recoloring.",
+    "nx_clear_highlights": "Remove only highlights created by MCP. Geometry, persistent colors and visibility are unchanged.",
+    "nx_list_sections": "Inspect native dynamic sections and the active view clipping toggle in the display/work part.",
+    "nx_section_view": "Create or edit a native single-plane section in visible NX. origin is in display-part units; normal is normalized in display-part coordinates. Solids are unchanged. Specify section ID to edit an existing active section. NX v2606 retains dot(point-origin, normal) <= 0; reversing normal reverses the retained side. Returns actual plane geometry.",
+    "nx_section_control": "Enable, disable or delete the specified native section. Disabling turns off clipping when that section is active. Deletion removes the section object, not model solids.",
+    "nx_sketch_diagnostics": "Evaluate native solver status and remaining DOF for the entire sketch; enumerate persistent constraints and their curve links. Temporarily activates an inactive sketch and restores the prior state. Rejects another active sketch. Temporarily evaluates the entire sketch and restores the work-region state. Does not infer a minimal conflict set or automatically constrain geometry.",
     "nx_ui_control": "Inspect the interactive NX host or switch between agent control and manual editing. Finish NX dialogs before resuming.",
     "nx_view_info": "Return the displayed model view, camera matrix, scale, rendering style, and interactive state.",
     "nx_screenshot": "Export the actual interactive NX viewport as PNG and return an inline MCP image. Advisory 128–4096 pixel dimensions (NX can use the actual device size; response reports both), background, shaded/wireframe style and fit. No desktop capture. Paths are workspace-relative; omit for a unique capture path.",
@@ -391,9 +404,8 @@ def configure(mcp, bridge, workspace):
                     elif method in SIDE:
                         result = artifact_call(method, params, workspace)
                     else:
-                        if path_key := PATHS.get(method):
-                            if params.get(path_key) is not None:
-                                params[path_key] = str(workspace.resolve(params[path_key]))
+                        if (path_key := PATHS.get(method)) and params.get(path_key) is not None:
+                            params[path_key] = str(workspace.resolve(params[path_key]))
                         if method == "nx_import_geometry" and params.get("output_path"):
                             params["output_path"] = str(workspace.resolve(params["output_path"]))
                         if method == "nx_batch":
@@ -433,7 +445,12 @@ def configure(mcp, bridge, workspace):
                     error = (
                         e
                         if isinstance(e, NXToolError)
-                        else NXToolError("NX_INVALID_ARGUMENT", str(e))
+                        else NXToolError(
+                            "NX_PATH_OUTSIDE_WORKSPACE"
+                            if isinstance(e, WorkspaceViolation)
+                            else "NX_INVALID_ARGUMENT",
+                            str(e),
+                        )
                     )
                     if "params" in locals() and params.get("operation_id"):
                         error.details.setdefault("operation_id", params["operation_id"])

@@ -33,4 +33,3 @@ Use returned opaque IDs where possible. Capture any result with `nx_screenshot`;
 ## Verification
 
 The release includes native-probe, public-MCP and local-test evidence separately. Native tests cover active/inactive and fully fixed sketches, appearance/visibility restoration, and section lifecycle. Public tests cover nested collision highlights, instance appearance, isolation restoration, native renders, saved-state preservation, and manual handoff. The original controller session is preserved separately from disposable fixtures.
-
