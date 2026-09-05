@@ -140,3 +140,5 @@ release gates.
 </picture>
 
 Authoring and review tools add geometric selection, expression binding, model health, sketch editing, assembly maintenance, saved presentations, inspection reports, compact summaries, and reversible previews. See [supported operations and limits](docs/authoring-review.md).
+
+Advanced NX 2606 tools: [exact selection, associative component patterns and sketch dimensions](docs/advanced-authoring.md). Proposed upstream review slices are documented in the [review package](docs/upstream-review.md); no PR is opened by the release workflow.

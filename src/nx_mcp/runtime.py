@@ -17,6 +17,7 @@ ObjectKind = Literal[
     "section",
     "constraint",
     "expression",
+    "component_pattern",
 ]
 
 

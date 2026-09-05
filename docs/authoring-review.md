@@ -1,10 +1,10 @@
 # Authoring and review tools (NX v2606)
 
-This release adds 17 tools to the existing 77-tool profile. All native calls run serially on the NX UI thread. Existing operation IDs, deduplication and model rollback envelopes apply. Names remain separate from opaque session/owner-scoped references.
+The dev5 release added 17 tools to the existing 77-tool profile. Dev6 adds ten more; see [advanced authoring](advanced-authoring.md). All native calls run serially on the NX UI thread. Existing operation IDs, deduplication and model rollback envelopes apply. Names remain separate from opaque session/owner-scoped references.
 
 ## Select geometry and parameters
 
-`nx_find_geometry` enumerates faces or edges within a body, feature, component or full assembly. Filter planar faces by oriented normal, cylinders and circular edges by radius, and order by nearest/highest/lowest bounding-box center. Coordinates and radii use work-part units. Bounds and rankings are conservative: they are not exact nearest-surface measurements. Use `nx_measure_distance` for BREP minimum distance. Candidate results are paginated; use `nx_highlight_objects` to inspect choices, then `nx_clear_highlights`.
+`nx_find_geometry` enumerates faces or edges within a body, feature, component or full assembly. Filter planar faces by oriented normal, cylinders and circular edges by radius, and order by exact BREP nearest distance (dev6) or highest/lowest conservative bounding-box center. Coordinates and radii use work-part units. Nearest results include the closest point and native accuracy. Candidate results are paginated; use `nx_highlight_objects` to inspect choices, then `nx_clear_highlights`.
 
 `nx_list_expressions` returns formulas, numeric values, units, editability and stored immediate dependencies. Conditional formulas can have incomplete stored dependencies. `nx_set_expression` creates named Number expressions with mm/inch/degree/radian/unitless units or edits existing local, unlocked Number expressions. Edits preserve units. NX formula errors and failed updates roll back. `nx_bind_parameter` connects an existing expression to EXTRUDE start/end or PATTERN_FEATURE count/spacing. Units and dimensional compatibility are enforced by NX. This is not a general interface to every feature builder.
 

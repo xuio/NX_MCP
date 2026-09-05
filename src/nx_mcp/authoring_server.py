@@ -4,7 +4,17 @@ from __future__ import annotations
 
 from typing import Any, Literal
 
-READ_ONLY = {"nx_find_geometry", "nx_list_expressions", "nx_model_health", "nx_model_summary"}
+READ_ONLY = {
+    "nx_find_geometry",
+    "nx_list_expressions",
+    "nx_model_health",
+    "nx_model_summary",
+    "nx_resolve_geometry",
+    "nx_recognize_holes",
+    "nx_list_component_patterns",
+    "nx_sketch_conflicts",
+    "nx_feature_parameters",
+}
 NON_MODEL = {
     "nx_highlight_objects",
     "nx_save_presentation",
@@ -26,7 +36,7 @@ def nx_find_geometry(
     offset: int = 0,
     limit: int = 50,
 ):
-    """Find geometry within a body/feature/component or full assembly. Coordinates and radii use work-part units/frame. Rank conservative bounds centers, not exact surface distances. nearest requires near=[x,y,z]. Normal filter requires planar faces; tolerance is 1-dot for normals and absolute length for radii. Returns paginated candidates; never silently selects one."""
+    """Find geometry within a body/feature/component or full assembly. Coordinates and radii use work-part units/frame. Nearest uses native BREP point-to-face/edge minimum distance and closest points; highest/lowest use conservative bounds centers. Returns a reusable geometric selector; resolve it explicitly after edits with nx_resolve_geometry. nearest requires near=[x,y,z]. Normal filter requires planar faces; tolerance is 1-dot for normals and absolute length for radii. Returns paginated candidates; never silently selects one."""
 
 
 def nx_highlight_objects(objects: list[str]):
@@ -146,3 +156,59 @@ for _action, _fields in _SKETCH_FIELDS.items():
             "additionalProperties": False,
         }
     )
+
+
+def nx_resolve_geometry(selector: dict[str, Any], tie_tolerance: float = 0.001):
+    """Re-evaluate a selector returned by nx_find_geometry in its original owner part. Returns a fresh face/edge ID only if the best match is unique within tie_tolerance in part units. No match, ambiguous rank or stale owner is an explicit error. Survives edits/reopen by geometric rule, not a promise of persistent topological identity. Whole-part rules may select new geometry that now satisfies the rule."""
+
+
+def nx_recognize_holes(owner: str | None = None, offset: int = 0, limit: int = 50):
+    """Recognize inward cylindrical BREP faces and return bore radius, axis, angular coverage and coaxial groups in work-part coordinates/units. Partial cylindrical faces are identified explicitly. Does not infer threads, manufacturing features, blind/through termination or fit classes."""
+
+
+def nx_native_component_pattern(component: str, direction: list[float], spacing: float, count: int):
+    """Create a native associative linear component pattern with 2–100 total occurrences including one immediate unsuppressed seed. Direction is normalized in work-part coordinates; spacing is positive part units. Native builder and pattern members are read back. Rollback on update/count failure. Existing nx_pattern_components retains independent-instance behavior."""
+
+
+def nx_edit_component_pattern(pattern: str, spacing: float | None = None, count: int | None = None):
+    """Edit pitch and/or total count (including seed, 2–100) of a native associative linear component pattern by ID. Read back native parameters and member poses. Unsupported native pattern types are rejected before editing."""
+
+
+def nx_list_component_patterns():
+    """Enumerate native work-assembly component patterns, IDs, native type, association, count/pitch expressions for linear patterns and member occurrence poses. Independent instances are not patterns."""
+
+
+def nx_sketch_dimension(
+    sketch_id: str,
+    curve: str,
+    dimension_type: Literal["length", "horizontal", "vertical", "radius", "diameter"],
+    value: float,
+    origin: list[float],
+    reference: bool = False,
+):
+    """Create a native sketch dimension: line endpoint length/horizontal/vertical distance or arc radius/diameter. Value is positive part units; annotation origin is local [x,y]. Driving dimensions use value, reference dimensions measure existing geometry and require value matching it within 0.001 part units. Returns the associated expression for later formula editing. Atomic and restores activation; conflicting solver state rolls back."""
+
+
+def nx_sketch_relation(
+    sketch_id: str,
+    curve1: str,
+    curve2: str,
+    relation: Literal[
+        "parallel", "perpendicular", "equal_length", "equal_radius", "concentric", "coincident"
+    ],
+    point1: Literal["start", "end", "center"] | None = None,
+    point2: Literal["start", "end", "center"] | None = None,
+):
+    """Create a persistent two-curve sketch relation using the installed solver; modern sketches keep curve1 stationary and move curve2 as needed. Geometric residual is checked before success. Parallel/perpendicular/equal_length require lines; equal_radius/concentric require arcs; coincident requires explicit start/end (line) or center (arc) for each curve. Other relations reject point arguments. Ownership and types checked before mutation. Conflicting solver results roll back; no constraints are automatically removed."""
+
+
+def nx_sketch_conflicts(sketch_id: str, max_checks: int = 20):
+    """Diagnose an over/inconsistently constrained sketch by temporary single-constraint removal and native solver reevaluation, restoring each trial. max_checks 1–50 bounds serial NX work. Returns constraints whose removal relieves the conflict, statuses, checked/total and completeness. Also checks contradictory horizontal/vertical persistent relations on a nonzero line because NX solver status can omit them. This is not a minimal conflicting set; multiple independent conflicts may produce no single-removal relief. No geometry or constraints retained from trials."""
+
+
+def nx_feature_parameters(feature: str):
+    """List native expressions owned by a feature, with IDs, formulas, units, editability and dependencies. Parameter names are NX expression names, not inferred semantic labels. Applicable to feature types exposing GetExpressions."""
+
+
+def nx_set_feature_parameters(feature: str, values: dict[str, str]):
+    """Atomically set 1–25 owned, editable local Number expressions on a feature. Keys are expression IDs or exact names from nx_feature_parameters; values are NX formulas in existing expression units. Preflight ownership/editability; native update failures roll back all changes. Can bind to another expression by its name. Does not alter unexposed builder options or locked/interpart expressions."""

@@ -63,7 +63,9 @@ def author(rig):
         ),
     )
     rig.uf.Modeling = NS(
-        AskBodyConsistency=Mock(return_value=(0, [], [])), AskFaceData=lambda tag: geom(tag)
+        AskBodyConsistency=Mock(return_value=(0, [], [])),
+        AskFaceData=lambda tag: geom(tag),
+        AskMinimumDist3=Mock(return_value=(2.0, [0, 0, 10], [0, 0, 12], 0.0)),
     )
 
     def geom(tag):

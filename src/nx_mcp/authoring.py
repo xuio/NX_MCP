@@ -237,7 +237,7 @@ class AuthoringMixin:
         direction = unit_normal(normal) if normal is not None else None
         wanted_radius = finite(radius, "radius", True) if radius is not None else None
         uf = NXOpen.UF.UFSession.GetUFSession()
-        self._require_api(uf.Modeling, "AskFaceData")
+        self._require_api(uf.Modeling, "AskFaceData", "AskMinimumDist3")
         values = self._geometry(owner)
         entities = {}
         for body in values:
@@ -265,7 +265,13 @@ class AuthoringMixin:
                 if code == 22:
                     row["normal"] = list(direct)
                 if code == 16:
-                    row.update(radius=rad, axis=list(direct), axis_point=list(point))
+                    row.update(
+                        radius=rad,
+                        axis=list(direct),
+                        axis_point=list(point),
+                        surface_orientation=sign,
+                        cylindrical_role="bore" if sign < 0 else "boss",
+                    )
             else:
                 type_name = enum_name(obj.SolidEdgeType, self.nxopen.Edge.EdgeType)
                 row.update(
@@ -285,18 +291,35 @@ class AuthoringMixin:
             row.update(bounds=list(box), bounds_type="conservative", bounds_center=center)
             if target is not None:
                 row["distance_to_bounds_center"] = math.dist(target, center)
-            row["rank_value"] = (
-                row["distance_to_bounds_center"]
-                if order == "nearest"
-                else center["XYZ".index(axis)]
-            )
+                distance, on_geometry, on_point, accuracy = uf.Modeling.AskMinimumDist3(
+                    2, obj.Tag, 0, 0, [0.0, 0.0, 0.0], 1, list(target)
+                )
+                row.update(distance=distance, closest_point=list(on_geometry), accuracy=accuracy)
+            row["rank_value"] = row["distance"] if order == "nearest" else center["XYZ".index(axis)]
             result.append(row)
         result.sort(key=lambda r: (r["rank_value"], r["object"]["id"]), reverse=order == "highest")
         return {
             **page(result, offset, limit),
             "coordinate_frame": "work_part",
             "units": self._units(),
-            "ranking": "conservative bounding-box center; use nx_measure_distance for exact BREP distance",
+            "ranking": "native BREP minimum distance"
+            if order == "nearest"
+            else "conservative bounds center along axis",
+            "selector": {
+                "version": 1,
+                "owner_part": self._work_part().FullPath,
+                "owner": self._geometry_owner_locator(owner) if owner else None,
+                "query": {
+                    "kind": kind,
+                    "geometry_type": geometry_type,
+                    "normal": normal,
+                    "radius": radius,
+                    "near": near,
+                    "order": order,
+                    "axis": axis,
+                    "tolerance": tolerance,
+                },
+            },
             "normal_tolerance": "dot(requested,outward_normal) >= 1-tolerance",
         }
 

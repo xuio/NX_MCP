@@ -201,7 +201,12 @@ def test_solver_status_and_constraint_links_preserve_edit_state(rig, status, dof
     sk.geometry = [curve]
     constraint = Object()
     constraint.ConstraintType = 1
-    constraint.AssociatedExpression = NS(Name="p1", RightHandSide="10", Value=10)
+    from tests.test_authoring_review import Expression
+
+    rig.nx.Expression = NS(UnitsOption=NS(Expression="expression"))
+    constraint.AssociatedExpression = Expression("p1")
+    constraint.AssociatedExpression.Value = 254.0
+    constraint.AssociatedExpression.expression_value = 10.0
     sk.constraints = [constraint]
     rig.part.Sketches.append(sk)
     region = NS(Commit=Mock(), Destroy=Mock())

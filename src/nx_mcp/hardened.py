@@ -10,6 +10,7 @@ import math
 import uuid
 from pathlib import Path
 
+from nx_mcp.advanced_authoring import AdvancedAuthoringMixin
 from nx_mcp.authoring import AuthoringMixin
 from nx_mcp.authoring_server import NON_MODEL as AUTHORING_NON_MODEL
 from nx_mcp.authoring_server import READ_ONLY as AUTHORING_READ_ONLY
@@ -112,7 +113,12 @@ NON_MODEL.update(AUTHORING_NON_MODEL)
 
 
 class HardenedExecutor(
-    AuthoringMixin, ReviewToolsMixin, VisualToolsMixin, InspectionMixin, NXOpenExecutor
+    AdvancedAuthoringMixin,
+    AuthoringMixin,
+    ReviewToolsMixin,
+    VisualToolsMixin,
+    InspectionMixin,
+    NXOpenExecutor,
 ):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -126,6 +132,16 @@ class HardenedExecutor(
         self._current_operation = None
         self._handlers.update(
             {
+                "nx_resolve_geometry": self._resolve_geometry,
+                "nx_recognize_holes": self._recognize_holes,
+                "nx_native_component_pattern": self._native_component_pattern,
+                "nx_edit_component_pattern": self._edit_component_pattern,
+                "nx_list_component_patterns": self._list_component_patterns,
+                "nx_sketch_dimension": self._sketch_dimension,
+                "nx_sketch_relation": self._sketch_relation,
+                "nx_sketch_conflicts": self._sketch_conflicts,
+                "nx_feature_parameters": self._feature_parameters,
+                "nx_set_feature_parameters": self._set_feature_parameters,
                 "nx_view_info": self._view_info,
                 "nx_find_geometry": self._find_geometry,
                 "nx_highlight_objects": self._highlight_objects,
@@ -1352,6 +1368,10 @@ class HardenedExecutor(
                     part and hasattr(part.Features, "CreatePatternFeatureBuilder")
                 ),
                 "minimum_distance": hasattr(self.session.Measurement, "GetMinimumDistance"),
+                "native_component_pattern": bool(
+                    part and hasattr(part.ComponentAssembly, "CreateComponentPatternBuilder")
+                ),
+                "sketch_dimensions": hasattr(self.nxopen.Sketch, "CreateDimension"),
             },
             coordinate_conventions={
                 "lengths": "work-part units unless explicitly named mm3",
@@ -1380,6 +1400,10 @@ class HardenedExecutor(
 
     def _snapshot(self, part):
         groups = [
+            (
+                "component_pattern",
+                self._component_patterns(part),
+            ),
             ("expression", getattr(part, "Expressions", [])),
             ("body", part.Bodies),
             ("feature", part.Features),

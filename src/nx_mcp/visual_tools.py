@@ -457,11 +457,7 @@ class VisualToolsMixin:
                 }
                 if hasattr(constraint, "AssociatedExpression") and constraint.AssociatedExpression:
                     exp = constraint.AssociatedExpression
-                    row["expression"] = {
-                        "name": exp.Name,
-                        "formula": exp.RightHandSide,
-                        "value": exp.Value,
-                    }
+                    row["expression"] = self._expression_record(exp)
                 constraint_records.append(row)
             geometry = []
             for curve in sketch.GetAllGeometry():

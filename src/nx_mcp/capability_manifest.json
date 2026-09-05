@@ -1,5 +1,5 @@
 {
-  "revision": "2606-authoring-review-r1",
+  "revision": "2606-advanced-authoring-r1",
   "nx_version": "v2606",
   "bridge_protocol": 1,
   "tools": {
@@ -390,8 +390,8 @@
     },
     "nx_find_geometry": {
       "status": "tested",
-      "scope": "Scoped v2606 native authoring/review acceptance and local failure-path regressions; see docs/authoring-review.md for supported operations and limits.",
-      "evidence_type": "real_NX_v2606_and_local_stateful_seams"
+      "evidence_type": "real_NX_v2606_scoped_and_local_boundary_tests",
+      "scope": "Native trimmed BREP point-to-face/edge distance; selector queries, principal plane filter and radius filter. Highest/lowest retain conservative center ordering."
     },
     "nx_highlight_objects": {
       "status": "tested",
@@ -472,6 +472,56 @@
       "status": "tested",
       "scope": "Scoped v2606 native authoring/review acceptance and local failure-path regressions; see docs/authoring-review.md for supported operations and limits.",
       "evidence_type": "real_NX_v2606_and_local_stateful_seams"
+    },
+    "nx_resolve_geometry": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped_and_local_boundary_tests",
+      "scope": "Exact point-to-face query re-evaluated after extrusion edit and save/close/reopen; ties rejected. Geometric rule, not immutable topology identity."
+    },
+    "nx_recognize_holes": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped_and_local_boundary_tests",
+      "scope": "Annular solid: inner cylinder identified as bore, outer cylinder excluded; axis/radius/full circumference read-back. Coaxial grouping and partial-face reporting covered locally; no manufacturing feature inference."
+    },
+    "nx_native_component_pattern": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped_and_local_boundary_tests",
+      "scope": "NX 2606 native associative linear pattern: 16 total occurrences of 14 mm seed at 16.5 mm pitch span 261.5 mm."
+    },
+    "nx_edit_component_pattern": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped_and_local_boundary_tests",
+      "scope": "Native linear pitch/count edited to 4 total at 20 mm; poses read back; association persists after save/reopen."
+    },
+    "nx_list_component_patterns": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped_and_local_boundary_tests",
+      "scope": "Native GetAllComponentPatterns enumeration, expression and member read-back; non-assembly guard."
+    },
+    "nx_sketch_dimension": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped_and_local_boundary_tests",
+      "scope": "Line length (XZ), horizontal/vertical distances and arc radius/diameter creation; associated expression edit. Reference mismatch guard covered locally."
+    },
+    "nx_sketch_relation": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped_and_local_boundary_tests",
+      "scope": "Modern solver parallel/perpendicular/equal_length/equal_radius/concentric/coincident operations with actual geometric residual checks; line endpoints and arc centers. Legacy branch boundary-tested only."
+    },
+    "nx_sketch_conflicts": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped_and_local_boundary_tests",
+      "scope": "Native no-conflict query and explicit horizontal+vertical contradiction, bounded single-removal relief, restored constraint count/status. Not a minimal conflict set or general legacy relation verifier."
+    },
+    "nx_feature_parameters": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped_and_local_boundary_tests",
+      "scope": "Native extrusion-owned expression enumeration; other feature kinds depend on exposed GetExpressions results."
+    },
+    "nx_set_feature_parameters": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped_and_local_boundary_tests",
+      "scope": "Native extrusion-owned Number formula edit and resulting bounds; preflight/rollback boundary tests. No blanket verification of other feature kinds."
     }
   },
   "limitations": [
