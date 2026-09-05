@@ -458,7 +458,11 @@ class HardenedExecutor(
     def _open_part(self, path, work=True, display=True):
         source = self.workspace.ensure_inside(path)
         loaded = next(
-            (p for p in self.session.Parts if str(p.FullPath).casefold() == str(source).casefold()),
+            (
+                p
+                for p in self.session.Parts
+                if str(Path(p.FullPath).resolve()).casefold() == str(source).casefold()
+            ),
             None,
         )
         already_loaded = loaded is not None
@@ -522,6 +526,7 @@ class HardenedExecutor(
         dest = self.workspace.ensure_inside(path)
         if dest.exists():
             raise NXToolError("NX_FILE_EXISTS", "Save-as does not overwrite existing files")
+        dest.parent.mkdir(parents=True, exist_ok=True)
         status = part.SaveAs(str(dest))
         if status and hasattr(status, "Dispose"):
             status.Dispose()

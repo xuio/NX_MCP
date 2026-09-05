@@ -306,7 +306,7 @@ async def main():
     ):
         await client.initialize()
         tools = {t.name: t for t in (await client.list_tools()).tools}
-        assert len(tools) == 104
+        assert len(tools) == 106
         assert tools["nx_resolve_geometry"].annotations.readOnlyHint
 
         async def call(method, **params):

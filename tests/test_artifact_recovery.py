@@ -182,3 +182,33 @@ async def test_inline_capture_delivery_checks_committed_artifact(tmp_path, kind)
             response.isError
             and response.structuredContent["details"]["mutation_outcome"] == "committed"
         )
+
+
+def test_folder_discovery_creation_and_safe_retry(tmp_path):
+    w = Workspace(tmp_path)
+    assert artifact_call("nx_workspace_info", {}, w)["root"] == str(tmp_path)
+    destination = tmp_path / "projects" / "controller" / "parts"
+    first = artifact_call("nx_create_directory", {"path": str(destination)}, w)
+    assert first["created"] and destination.is_dir()
+    repeated = artifact_call("nx_create_directory", {"path": "projects/controller/parts"}, w)
+    assert not repeated["created"] and repeated["path"] == first["path"]
+    (destination / "base.prt").write_bytes(b"fixture")
+    with pytest.raises(NXToolError) as error:
+        artifact_call("nx_create_directory", {"path": str(destination / "base.prt")}, w)
+    assert error.value.code == "NX_DIRECTORY_ERROR"
+    assert (destination / "base.prt").read_bytes() == b"fixture"
+
+
+@pytest.mark.asyncio
+async def test_folder_tools_are_exposed_and_absolute_part_paths_are_forwarded(tmp_path):
+    bridge = AsyncMock()
+    bridge.call.return_value = {"path": str(tmp_path / "projects" / "base.prt")}
+    server = create_server(bridge=bridge, workspace=Workspace(tmp_path), enable_experimental=True)
+    info = await server.call_tool("nx_workspace_info", {})
+    assert info.structuredContent["root"] == str(tmp_path)
+    created = await server.call_tool("nx_create_directory", {"path": "projects/parts"})
+    assert created.structuredContent["created"]
+    destination = str(tmp_path / "projects" / "base.prt")
+    opened = await server.call_tool("nx_open_part", {"path": destination})
+    assert not opened.isError
+    assert bridge.call.call_args.args[1]["path"] == destination

@@ -62,7 +62,7 @@ async def run(client):
 
     async def schema():
         names = {x.name for x in (await client.list_tools()).tools}
-        assert len(names) == 104, len(names)
+        assert len(names) == 106, len(names)
         return await call("nx_status")
 
     await test("schemas_and_visible_ui", schema)

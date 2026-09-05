@@ -196,3 +196,12 @@ def test_guard_failures_never_create_undo_marks(rig):
     with pytest.raises(NXToolError):
         rig.e.execute("nx_no_such_tool", {})
     assert not rig.session.marks
+
+
+def test_open_reuses_loaded_part_with_equivalent_path_spelling(rig, tmp_path):
+    path = tmp_path / "project" / "base.prt"
+    path.parent.mkdir()
+    rig.part.FullPath = str(path.parent / "sub" / ".." / path.name)
+    opened = rig.e._open_part(str(path))
+    assert opened["already_loaded"]
+    assert len(rig.session.Parts) == 1

@@ -241,6 +241,14 @@ def nx_revolve(
     pass
 
 
+def nx_workspace_info():
+    pass
+
+
+def nx_create_directory(path: str):
+    pass
+
+
 def nx_workspace_list(path: str = "."):
     pass
 
@@ -254,6 +262,10 @@ def nx_upload_file(path: str, data_base64: str, sha256: str, total_size: int, of
 
 
 DESCRIPTIONS = {
+    "nx_workspace_info": "Discover the NX host workspace root and path rules. Paths refer to the NX machine, not the MCP client's filesystem. No session-wide current directory is changed.",
+    "nx_create_directory": "Create a directory and missing parents inside the NX workspace. Accepts workspace-relative or in-workspace absolute host paths. Idempotent: an existing directory succeeds; an existing file fails. Returns actual path and created status.",
+    "nx_create_part": "Create a new NX part at an explicit workspace-relative or absolute in-workspace NX-host path, e.g. projects/controller/parts/base.prt. Missing parent folders are created. Units: mm or inch. Use unique part basenames for simultaneously loaded NX parts.",
+    "nx_save_as": "Save the active work part to a new .prt path inside the NX workspace, creating missing parent folders. Accepts relative or absolute NX-host paths. Existing files are never overwritten. Save As changes the work part's filename; it does not move an entire assembly dependency tree.",
     "nx_display_info": "Inspect color-table indices, blank state and face transparency for body, component, feature, face or curve references. Components expand to loaded occurrence geometry.",
     "nx_set_display": "Set an NX color index (1–216) or named color, and/or transparency (0 opaque, 100 transparent). Component/feature targets expand to bodies. Occurrence overrides do not recolor prototypes. Returns restore_id; restore in reverse order. Changes can persist on save.",
     "nx_set_visibility": "Show, hide or isolate body/component geometry. Isolation preserves a restorable snapshot and includes ancestor components. Reference curves and datum geometry are not isolated. Explicit show/hide also accepts curves. Returns restore_id.",
@@ -277,7 +289,7 @@ DESCRIPTIONS = {
     "nx_import_geometry": "Import STEP through installed NX Step214Importer into the work part for solids, or target=new_part with a new output_path for assemblies; flatten=false preserves structure. Reports new directly-owned bodies and resulting components. Translator files are not undone.",
     "nx_get_bounding_box": "Native UF bounds; precision selects conservative or exact (exact requires axis-aligned WCS). auto includes recursive assembly geometry when present; part includes directly owned bodies; assembly includes both. Coordinates and units are work-part absolute.",
     "nx_activate_part": "Activate an already loaded part by ID or unique path/name without closing other parts. Display activation also changes work part under NX rules.",
-    "nx_open_part": "Open or reuse a loaded workspace .prt and activate it; work/display flags are explicit. Does not recreate loaded parts.",
+    "nx_open_part": "Accept a workspace-relative or absolute in-workspace NX-host path. Open or reuse a loaded workspace .prt and activate it; work/display flags are explicit. Does not recreate loaded parts.",
     "nx_close_part": "Close only the specified loaded part (ID), or current work part; preserves its component tree and unrelated parts. save defaults true.",
     "nx_checkpoint": "Create an in-session model undo checkpoint. NX v2606 saves expire native marks; create a new checkpoint after save. Restart/close also invalidates checkpoints.",
     "nx_checkpoint_state": "Inspect available checkpoint IDs and retained model-operation history. Read-only calls retain marks. Native NX save can expire them; availability is checked against NX.",
@@ -322,6 +334,7 @@ READ_ONLY = {
     "nx_checkpoint_state",
     "nx_capabilities",
     "nx_operation_status",
+    "nx_workspace_info",
     "nx_workspace_list",
     "nx_download_file",
 }
@@ -335,6 +348,8 @@ DESCRIPTIONS.update(
 )
 
 SIDE = {
+    "nx_create_directory",
+    "nx_workspace_info",
     "nx_workspace_list",
     "nx_download_file",
     "nx_upload_file",
@@ -498,7 +513,8 @@ def configure(mcp, bridge, workspace):
             structured_output=False,
             annotations=ToolAnnotations(
                 readOnlyHint=name in READ_ONLY and name != "nx_ui_control",
-                idempotentHint=name in READ_ONLY or name == "nx_set_component_transform",
+                idempotentHint=name in READ_ONLY
+                or name in {"nx_set_component_transform", "nx_create_directory"},
             ),
         )
         tool = mcp._tool_manager.get_tool(name)
@@ -524,7 +540,7 @@ def configure(mcp, bridge, workspace):
 
     mcp.call_tool = uniform_call
     mcp._mcp_server.call_tool(validate_input=False)(uniform_call)
-    mcp._mcp_server.instructions = "Siemens NX v2606 integration. Use nx_capabilities for tested scope. Use client-supplied operation_id for mutation retry; query receipts after transport failure. No general certification is claimed."
+    mcp._mcp_server.instructions = "Siemens NX v2606 integration. Use nx_capabilities for tested scope. Discover the host root with nx_workspace_info. File paths are workspace-relative or absolute inside that root; use explicit project subfolders on every file call. Use client-supplied operation_id for mutation retry; query receipts after transport failure. No general certification is claimed."
 
 
 def artifact_call(method, p, workspace):
@@ -541,7 +557,30 @@ def artifact_call(method, p, workspace):
             "operation_id": p["operation_id"],
             "cancellation_requested": True,
         }
+    if method == "nx_workspace_info":
+        return {
+            "status": "success",
+            "root": str(workspace.root),
+            "path_host": "NX server",
+            "relative_to": str(workspace.root),
+            "absolute_paths": "accepted inside workspace only",
+            "parent_creation": ["nx_create_part", "nx_save_as", "nx_upload_file"],
+            "current_directory": "No mutable current directory; use explicit paths on every call",
+        }
     path = workspace.resolve(p["path"])
+    if method == "nx_create_directory":
+        existed = path.is_dir()
+        try:
+            path.mkdir(parents=True, exist_ok=True)
+        except OSError as error:
+            raise NXToolError("NX_DIRECTORY_ERROR", str(error)) from error
+        return {
+            "status": "success",
+            "path": str(path),
+            "relative_path": str(path.relative_to(workspace.root)),
+            "created": not existed,
+            "mutation_outcome": "committed",
+        }
     if ".nx-mcp" in path.relative_to(workspace.root).parts:
         raise NXToolError("NX_PATH_RESERVED", "Internal service state is not an artifact")
 
@@ -559,7 +598,7 @@ def artifact_call(method, p, workspace):
     if method == "nx_workspace_list":
         items = []
         for f in sorted(path.iterdir()):
-            if f.name == ".nx-mcp":
+            if f.name.casefold() == ".nx-mcp":
                 continue
             workspace.ensure_inside(f)
             items.append(
@@ -567,7 +606,7 @@ def artifact_call(method, p, workspace):
                 if f.is_file()
                 else {"path": str(f.relative_to(workspace.root)), "kind": "directory"}
             )
-        return {"status": "success", "entries": items, "count": len(items)}
+        return {"status": "success", "path": str(path), "entries": items, "count": len(items)}
     if method == "nx_download_file":
         if p["offset"] < 0 or not 1 <= p["length"] <= 262144:
             raise NXToolError("NX_INVALID_ARGUMENT", "Invalid chunk offset/length")

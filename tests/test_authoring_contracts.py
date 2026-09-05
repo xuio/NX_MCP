@@ -290,3 +290,22 @@ def test_step_import_validates_conflicts_and_reports_no_output(rig, tmp_path):
     ]:
         with pytest.raises(NXToolError):
             rig.e._import_geometry(path, **kwargs)
+
+
+def test_save_as_creates_parents_and_rejects_existing_destination(rig, tmp_path):
+    destination = tmp_path / "project" / "revisions" / "base_r02.prt"
+
+    def save(path):
+        assert Path(path).parent.is_dir()
+        Path(path).write_bytes(b"saved fixture")
+        rig.part.FullPath = path
+        return NS(Dispose=Mock())
+
+    rig.part.SaveAs = Mock(side_effect=save)
+    result = rig.e._save_as(str(destination))
+    assert result["path"] == str(destination)
+    with pytest.raises(NXToolError) as error:
+        rig.e._save_as(str(destination))
+    assert error.value.code == "NX_FILE_EXISTS"
+    assert rig.part.SaveAs.call_count == 1
+    assert destination.read_bytes() == b"saved fixture"

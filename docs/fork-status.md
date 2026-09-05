@@ -1,6 +1,6 @@
 # NX v2606 integration fork
 
-This fork of [DreamEnding/NX_MCP](https://github.com/DreamEnding/NX_MCP) preserves the upstream history and MIT license. The initial import was deployed against Siemens NX v2606 as `0.2.0.dev2`; subsequent releases extend it through `0.2.0.dev6`. The fork follows upstream base `179086b6de28a53d340132aca7678fa6ed03b422` and retains the deployment history. Machine provisioning, private CAD, credentials and deployment session logs are outside this repository.
+This fork of [DreamEnding/NX_MCP](https://github.com/DreamEnding/NX_MCP) preserves the upstream history and MIT license. The initial import was deployed against Siemens NX v2606 as `0.2.0.dev2`; subsequent releases extend it through `0.2.0.dev7`. The fork follows upstream base `179086b6de28a53d340132aca7678fa6ed03b422` and retains the deployment history. Machine provisioning, private CAD, credentials and deployment session logs are outside this repository.
 
 ## Included changes
 
@@ -12,7 +12,7 @@ This fork of [DreamEnding/NX_MCP](https://github.com/DreamEnding/NX_MCP) preserv
 - Collision highlighting, single-plane capped sections, body/component visibility, colors and transparency with restoration.
 - Native sketch solver status, remaining degrees of freedom and persistent constraint-to-geometry links.
 
-The dev6 opt-in integration profile exposes 104 tools. Tool status describes scoped validation on NX v2606, not universal certification. Journal execution remains disabled. The default sidecar retains upstream's smaller tool surface unless experimental mode is enabled.
+The dev7 opt-in integration profile exposes 106 tools. Tool status describes scoped validation on NX v2606, not universal certification. Journal execution remains disabled. The default sidecar retains upstream's smaller tool surface unless experimental mode is enabled.
 
 ## Start the graphical bridge and sidecar
 
@@ -43,3 +43,5 @@ See [interactive behavior and viewport capture](../INTERACTIVE-NX.md), [visual t
 The source matches the deployed runtime. The fork includes local tests and a configurable public MCP visualization regression runner. Historical live-NX results and current upstream-suite gaps are documented in [fork validation](fork-validation.md). Importing the source into this repository does not constitute a new native NX test run.
 
 A series of focused pull requests is preferable to the full integration diff. The [upstream review package](upstream-review.md) maps six proposed slices, supplies a draft first description, and lists compatibility decisions. Current runtime CI and native evidence are recorded in [dev6 acceptance](dev6-validation.json). No pull request has been opened.
+
+Explicit nested and absolute in-workspace file paths, directory creation, and Save As parent creation are described in [project folders](project-folders.md).
