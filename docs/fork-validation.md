@@ -81,3 +81,5 @@ Fault injection reproduced three runtime defects before repair:
 - The executor overwrote an inspection handler's explicit partial-cleanup outcome with `not_started` when no outer undo mark existed. It now preserves that outcome, while a real outer rollback still determines its own result.
 
 The deployment follows the existing offline release and saved-session procedure. Historical dev3 results and receipts above remain unchanged as historical evidence.
+
+Final dev4 deployment evidence is summarized in [the validation receipt](dev4-validation.json). All hosted CI jobs, eleven deployed graphical NX groups, and Windows stdio/HTTP checks pass. The original 38 saved parts and all 116 component placements were restored unchanged. Local and hosted Windows packages contain byte-identical source; generated metadata line endings and archive ordering differ across build platforms.

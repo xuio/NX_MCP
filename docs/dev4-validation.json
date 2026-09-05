@@ -1,0 +1,72 @@
+{
+  "version": "0.2.0.dev4",
+  "source_commit": "5e4d66eacbee8c45257c5c0088c90bf32c447efc",
+  "fork": "https://github.com/xuio/NX_MCP",
+  "nx_version": "v2606",
+  "tool_count": 77,
+  "local_tests": {
+    "passed": 303,
+    "skipped": 1,
+    "deselected": 1
+  },
+  "lint": "passed",
+  "type_check": "passed",
+  "pre_commit": "passed",
+  "hosted_ci": {
+    "status": "passed",
+    "test_matrix_passed": 9,
+    "test_matrix_total": 9,
+    "url": "https://github.com/xuio/NX_MCP/actions/runs/33974202492"
+  },
+  "coverage": {
+    "percent": 79.59,
+    "required": 78,
+    "status": "passed",
+    "threshold_unchanged": true,
+    "scope_unchanged": true
+  },
+  "runtime_fixes": [
+    "Restore rendering style even when screenshot builder destruction fails",
+    "Rollback temporary sketch work region even when deactivation fails",
+    "Preserve explicit partial outcome when native inspection cleanup fails"
+  ],
+  "public_native_groups": {
+    "passed": 11,
+    "total": 11,
+    "names": [
+      "schemas_and_visible_ui",
+      "underconstrained_diagnostics_preserve_state",
+      "color_transparency_and_face_restore",
+      "visibility_restore_and_order_preflight",
+      "native_section_lifecycle_and_saved_state",
+      "nested_collision_highlighting",
+      "nested_isolation_and_previous_visibility",
+      "occurrence_appearance_does_not_recolor_prototype",
+      "assembly_section_preserves_geometry",
+      "fully_constrained_fixture_diagnostics",
+      "manual_handoff_clears_highlights"
+    ]
+  },
+  "windows_stdio": "passed",
+  "windows_http": "passed",
+  "archive_sha256": "b8271895eb77b7e4a257e9a9de9cb7f7ef37cb59c50b7bec19add8f3e5c2fa1e",
+  "release_workflow": {
+    "status": "passed",
+    "url": "https://github.com/xuio/NX_MCP/actions/runs/33974451357",
+    "archive_sha256": "808048064db0e3114b7f7e4dd5d889bec4e32967bc0d24e8dace7072275b98b0",
+    "source_byte_identical_to_local": true,
+    "archive_byte_identical_to_local": false,
+    "difference": "Windows-generated metadata uses CRLF, changing wheel RECORD and manifest hashes; archive entry ordering also differs."
+  },
+  "session_preservation": {
+    "restored_parts": 38,
+    "modified_parts": 0,
+    "verified_component_placements": 116,
+    "design_geometry_changed": false
+  },
+  "limitations": [
+    "Fault-injected cleanup failures are covered by local stateful NX test doubles, not forced in the Siemens kernel.",
+    "Native acceptance covers the 11 listed groups on NX v2606; it does not certify all exposed tools."
+  ],
+  "same_platform_rebuild_byte_identical": true
+}
