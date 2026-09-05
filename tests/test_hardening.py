@@ -1,8 +1,9 @@
 """Safety and MCP contract regressions; these do not substitute for real NX tests."""
 
+import asyncio
 import base64
 import hashlib
-import time
+from threading import Event
 from types import SimpleNamespace
 
 import pytest
@@ -98,25 +99,37 @@ def test_restarted_pending_receipt_becomes_unknown(executor):
 @pytest.mark.asyncio
 async def test_transport_timeout_does_not_duplicate_mutation(executor):
     handler = executor._handlers["nx_test_mutate"]
+    entered, release = Event(), Event()
 
     def delayed(**params):
-        time.sleep(0.1)
+        entered.set()
+        assert release.wait(15), "Test did not release the received mutation"
         return handler(**params)
 
     executor._handlers["nx_test_mutate"] = delayed
     server = BridgeServer(executor.execute, token="test-token")
     server.start()
+    p = {"value": 9, "operation_id": "lost-response-123"}
+    first = asyncio.create_task(
+        BridgeClient("127.0.0.1", server.port, token="test-token", timeout=10).call(
+            "nx_test_mutate", p
+        )
+    )
     try:
-        p = {"value": 9, "operation_id": "lost-response-123"}
-        with pytest.raises(NXToolError):
-            await BridgeClient("127.0.0.1", server.port, token="test-token", timeout=0.02).call(
-                "nx_test_mutate", p
-            )
-        result = await BridgeClient("127.0.0.1", server.port, token="test-token", timeout=2).call(
+        # Start the response deadline only after the request reached the server.
+        # A 20ms connect deadline can expire before receipt on Windows CI.
+        assert await asyncio.to_thread(entered.wait, 5), "Server did not receive first request"
+        with pytest.raises(asyncio.TimeoutError):
+            await asyncio.wait_for(first, timeout=0.02)
+        release.set()
+        result = await BridgeClient("127.0.0.1", server.port, token="test-token", timeout=10).call(
             "nx_test_mutate", p
         )
         assert result["replayed"] and executor.session.values == [9]
     finally:
+        release.set()
+        first.cancel()
+        await asyncio.gather(first, return_exceptions=True)
         server.stop()
 
 
