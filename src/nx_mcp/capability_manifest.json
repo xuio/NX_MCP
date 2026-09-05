@@ -1,5 +1,5 @@
 {
-  "revision": "2606-engineering-r1",
+  "revision": "2606-explosions-r1",
   "nx_version": "v2606",
   "bridge_protocol": 1,
   "tools": {
@@ -612,6 +612,35 @@
       "status": "tested",
       "evidence_type": "real_NX_v2606_scoped",
       "scope": "Native typed constraint references, geometry/occurrence references, expressions, suppression and solver statuses."
+    },
+    "nx_create_explosion": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native nested assembly explosion: absolute rotated parent/child poses, reset, repeat assignment, model/drawing association, persistence; ordinary assembled placements unchanged."
+    },
+    "nx_list_explosions": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native nested assembly explosion: absolute rotated parent/child poses, reset, repeat assignment, model/drawing association, persistence; ordinary assembled placements unchanged."
+    },
+    "nx_edit_explosion": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native nested assembly explosion: absolute rotated parent/child poses, reset, repeat assignment, model/drawing association, persistence; ordinary assembled placements unchanged."
+    },
+    "nx_show_explosion": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native nested assembly explosion: absolute rotated parent/child poses, reset, repeat assignment, model/drawing association, persistence; ordinary assembled placements unchanged."
+    },
+    "nx_explosion_info": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native exploded and assembled occurrence poses and typed associated view references, including nested assembly."
+    },
+    "nx_delete_explosion": {
+      "status": "experimental",
+      "scope": "Local unit tests cover in-use guard, native delete dispatch and stale reference invalidation; deployed native acceptance pending."
     }
   },
   "limitations": [

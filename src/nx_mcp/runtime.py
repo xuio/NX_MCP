@@ -22,6 +22,8 @@ ObjectKind = Literal[
     "drawing_sheet",
     "drawing_view",
     "dimension",
+    "explosion",
+    "modeling_view",
 ]
 
 

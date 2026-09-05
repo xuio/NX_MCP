@@ -516,7 +516,13 @@ def configure(mcp, bridge, workspace):
             annotations=ToolAnnotations(
                 readOnlyHint=name in READ_ONLY and name != "nx_ui_control",
                 idempotentHint=name in READ_ONLY
-                or name in {"nx_set_component_transform", "nx_create_directory"},
+                or name
+                in {
+                    "nx_set_component_transform",
+                    "nx_create_directory",
+                    "nx_edit_explosion",
+                    "nx_show_explosion",
+                },
             ),
         )
         tool = mcp._tool_manager.get_tool(name)
@@ -527,6 +533,10 @@ def configure(mcp, bridge, workspace):
             tool.parameters["properties"]["operations"].update(
                 minItems=1, maxItems=100, items={"oneOf": authoring_server.SKETCH_OPERATION_SCHEMAS}
             )
+        if name == "nx_edit_explosion":
+            for schema in tool.parameters["properties"]["placements"]["anyOf"]:
+                if schema.get("type") == "array":
+                    schema.update(maxItems=1000, items=authoring_server.EXPLOSION_PLACEMENT_SCHEMA)
     original_call = mcp.call_tool
 
     async def uniform_call(name, arguments):

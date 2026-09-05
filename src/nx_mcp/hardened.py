@@ -15,6 +15,7 @@ from nx_mcp.authoring import AuthoringMixin
 from nx_mcp.authoring_server import NON_MODEL as AUTHORING_NON_MODEL
 from nx_mcp.authoring_server import READ_ONLY as AUTHORING_READ_ONLY
 from nx_mcp.engineering import EngineeringMixin
+from nx_mcp.exploded_views import ExplodedViewsMixin
 from nx_mcp.inspection import InspectionMixin
 from nx_mcp.nx_bridge import NXOpenExecutor
 from nx_mcp.recovery import OperationStore, timestamp
@@ -116,6 +117,7 @@ NON_MODEL.update(AUTHORING_NON_MODEL)
 
 
 class HardenedExecutor(
+    ExplodedViewsMixin,
     EngineeringMixin,
     AdvancedAuthoringMixin,
     AuthoringMixin,
@@ -137,6 +139,12 @@ class HardenedExecutor(
         self._handlers.update(
             {
                 "nx_resolve_geometry": self._resolve_geometry,
+                "nx_create_explosion": self._create_explosion,
+                "nx_list_explosions": self._list_explosions,
+                "nx_explosion_info": self._explosion_info,
+                "nx_edit_explosion": self._edit_explosion,
+                "nx_show_explosion": self._show_explosion,
+                "nx_delete_explosion": self._delete_explosion,
                 "nx_shell": self._shell,
                 "nx_set_material": self._set_material,
                 "nx_render_view": self._render_view,
@@ -373,6 +381,10 @@ class HardenedExecutor(
                     after,
                     invalidate_topology=method
                     not in {
+                        "nx_create_explosion",
+                        "nx_edit_explosion",
+                        "nx_show_explosion",
+                        "nx_delete_explosion",
                         "nx_set_camera",
                         "nx_restore_presentation",
                         "nx_set_display",
@@ -537,10 +549,12 @@ class HardenedExecutor(
 
     def _save_part(self):
         part = self._work_part()
-        status = part.Save(
-            self.nxopen.BasePart.SaveComponents.TrueValue,
-            self.nxopen.BasePart.CloseAfterSave.FalseValue,
-        )
+        self._save_component_drawing_previews(part)
+        with self._drawing_save_context(part):
+            status = part.Save(
+                self.nxopen.BasePart.SaveComponents.TrueValue,
+                self.nxopen.BasePart.CloseAfterSave.FalseValue,
+            )
         if status and hasattr(status, "Dispose"):
             status.Dispose()
         state = self._checkpoint_state()
@@ -559,7 +573,8 @@ class HardenedExecutor(
         if dest.exists():
             raise NXToolError("NX_FILE_EXISTS", "Save-as does not overwrite existing files")
         dest.parent.mkdir(parents=True, exist_ok=True)
-        status = part.SaveAs(str(dest))
+        with self._drawing_save_context(part):
+            status = part.SaveAs(str(dest))
         if status and hasattr(status, "Dispose"):
             status.Dispose()
         return {
@@ -573,10 +588,11 @@ class HardenedExecutor(
         pid = self._part_id(target)
         tag = int(target.Tag)
         if save:
-            status = target.Save(
-                self.nxopen.BasePart.SaveComponents.FalseValue,
-                self.nxopen.BasePart.CloseAfterSave.FalseValue,
-            )
+            with self._drawing_save_context(target):
+                status = target.Save(
+                    self.nxopen.BasePart.SaveComponents.FalseValue,
+                    self.nxopen.BasePart.CloseAfterSave.FalseValue,
+                )
             if status and hasattr(status, "Dispose"):
                 status.Dispose()
         target.Close(
@@ -1437,6 +1453,8 @@ class HardenedExecutor(
 
     def _snapshot(self, part):
         groups = [
+            ("explosion", self._explosions(part)),
+            ("modeling_view", self._modeling_views(part)),
             ("assembly_constraint", self._assembly_constraints(part)),
             ("drawing_sheet", getattr(part, "DrawingSheets", [])),
             ("drawing_view", getattr(part, "DraftingViews", [])),

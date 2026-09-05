@@ -5,6 +5,8 @@ from __future__ import annotations
 from typing import Any, Literal
 
 READ_ONLY = {
+    "nx_list_explosions",
+    "nx_explosion_info",
     "nx_find_geometry",
     "nx_list_expressions",
     "nx_model_health",
@@ -425,11 +427,13 @@ def nx_create_drawing(
 
 def nx_add_base_view(
     drawing: str,
-    body: str,
-    view: Literal["top", "front", "back", "right", "left", "bottom", "isometric"],
+    body: str | None = None,
+    view: Literal["top", "front", "back", "right", "left", "bottom", "isometric"] = "isometric",
     position: list[float] | None = None,
+    scope: Literal["body", "assembly"] = "body",
+    explosion: str | None = None,
 ):
-    """Add a native base view to a drawing sheet. Requires a single-body part so the specified body is the exact view scope. position=[x,y] uses sheet mm, default [100,100]. Return typed view reference; open the target sheet."""
+    """Add a native base view to a drawing sheet. scope=body requires body and a single-body part. scope=assembly requires no body, uses current component reference sets/suppression, and optionally associates a typed explosion from the same work part. Omitted explosion explicitly uses assembled positions. position=[x,y] uses sheet mm, default [100,100]. Return typed view reference; open the target sheet."""
 
 
 def nx_export_drawing_pdf(path: str):
@@ -450,3 +454,53 @@ def nx_add_dimension(
     origin: list[float] | None = None,
 ):
     """Create a native associative linear drawing dimension from owned edge IDs. One edge measures start-to-end; two edges measure their start vertices. Types are aligned/horizontal/vertical in the drawing view. origin=[x,y] uses sheet mm, default [100,80]. Returns actual computed size in model units and a typed dimension ID."""
+
+
+def nx_create_explosion(name: str):
+    """Create a named native explosion in the work/display assembly, initially at assembled positions. Names are unique case-insensitively, nonempty and <=132 characters. Return a typed explosion ID. Requires assemblies license. Does not reposition actual components or show the explosion automatically."""
+
+
+def nx_list_explosions():
+    """List native explosions owned by the work part, typed IDs, names and referencing model/drawing views. No model or view changes."""
+
+
+def nx_explosion_info(explosion: str, offset: int = 0, limit: int = 50):
+    """Inspect an explosion by typed ID. Paginate occurrences (limit 1–200), actual exploded and assembled positions, rotations, paths and suppression. Positions are absolute work-assembly coordinates in part units; matrices are right-handed row-major. Ordinary body/clearance/mass tools still measure assembled geometry."""
+
+
+def nx_edit_explosion(
+    explosion: str,
+    placements: list[dict[str, Any]] | None = None,
+    reset_components: list[str] | None = None,
+):
+    """Atomically replace absolute exploded poses or reset selected components to inherited parent-explosion positions. Provide 1–1000 unique occurrences across placements and reset_components. Each placement has component ID, translation=[x,y,z] in assembly coordinates/part units, and optional right-handed orthonormal row-major rotation_matrix; omitted rotation retains the current exploded world orientation at request start. Parents apply before children; descendants inherit parent changes. Resolves and validates every item before mutation, verifies final native poses and unchanged actual placements, and updates associated drawing views. Safe repeated absolute placement; use operation_id for transport retries."""
+
+
+def nx_show_explosion(
+    explosion: str | None = None, drawing_view: str | None = None, model_view: str | None = None
+):
+    """Display a native explosion, or assembled positions when explosion is null. Without drawing_view, return to 3D modeling and fit the work view. With an owned drawing-view ID, set that view's explosion association and update it. model_view alternatively targets an existing saved model-view ID without switching the visible view. The two targets are mutually exclusive. Work and display parts must match; finish active sketches first. Changes view presentation, never actual component placement."""
+
+
+def nx_delete_explosion(explosion: str):
+    """Delete a native explosion only when no model/drawing views reference it. Detach dependent views with nx_show_explosion(explosion=null) first. Native deletion is transactional; returned reference becomes stale. Actual assembly components are retained."""
+
+
+EXPLOSION_PLACEMENT_SCHEMA = {
+    "type": "object",
+    "additionalProperties": False,
+    "required": ["component", "translation"],
+    "properties": {
+        "component": {
+            "type": "string",
+            "description": "Typed occurrence reference in this explosion.",
+        },
+        "translation": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "number"}},
+        "rotation_matrix": {
+            "type": "array",
+            "minItems": 3,
+            "maxItems": 3,
+            "items": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "number"}},
+        },
+    },
+}
