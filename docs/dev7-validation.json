@@ -1,0 +1,77 @@
+{
+  "version": "0.2.0.dev7",
+  "runtime_commit": "740a034a92b99d0b1b137d06ad2c43401a29397b",
+  "archive_sha256": "a0fb304234f9cdbd2da6ee3fc3b1d11ca2aefbd10ba02f776194fae88bbe32aa",
+  "validated_at": "2026-09-05T18:11:28.561519+00:00",
+  "nx_version": "v2606",
+  "tool_count": 106,
+  "hosted_ci": {
+    "url": "https://github.com/xuio/NX_MCP/actions/runs/33982851326",
+    "status": "passed",
+    "jobs": 13
+  },
+  "hosted_release": "https://github.com/xuio/NX_MCP/actions/runs/33982850744",
+  "local_validation": {
+    "suite_before_final_path_normalization_test": {
+      "passed": 462,
+      "branch_coverage_percent": 82.9
+    },
+    "path_normalization_and_recovery_suite": {
+      "passed": 12
+    },
+    "mypy": "passed",
+    "pre_commit": "passed"
+  },
+  "native_checks": [
+    {
+      "name": "workspace_discovery",
+      "passed": true
+    },
+    {
+      "name": "directory_creation_absolute_relative_retry",
+      "passed": true
+    },
+    {
+      "name": "nested_part_creation_save_1000mm3",
+      "passed": true
+    },
+    {
+      "name": "absolute_save_as_creates_missing_parents_preserves_volume",
+      "passed": true
+    },
+    {
+      "name": "save_as_no_overwrite",
+      "passed": true
+    },
+    {
+      "name": "absolute_reopen_relative_reuse_and_activation",
+      "passed": true
+    },
+    {
+      "name": "nested_absolute_step_export_download_upload_integrity",
+      "passed": true
+    },
+    {
+      "name": "outside_and_reserved_paths_rejected",
+      "passed": true
+    }
+  ],
+  "native_passed": 8,
+  "deployment": {
+    "installed_runtime_hashes": "match release",
+    "stdio": "passed",
+    "http": "passed",
+    "inline_viewport_png_checksum": "passed",
+    "session_restored": true,
+    "original_parts": 38,
+    "assembly_occurrences": 116,
+    "backup_created": true
+  },
+  "scope": "Absolute paths inside the configured NX-host workspace and explicit project subfolders. No outside-root access or project relocation.",
+  "runner_corrections": [
+    "Initial harness used volume instead of documented volume_mm3; corrected.",
+    "Harness expected export directory to contain only STEP; native export also writes translator logs. Corrected to identify STEP by filename."
+  ],
+  "runtime_failures_in_acceptance": 0,
+  "pull_request_opened": false
+}

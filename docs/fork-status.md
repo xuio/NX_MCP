@@ -42,6 +42,6 @@ See [interactive behavior and viewport capture](../INTERACTIVE-NX.md), [visual t
 
 The source matches the deployed runtime. The fork includes local tests and a configurable public MCP visualization regression runner. Historical live-NX results and current upstream-suite gaps are documented in [fork validation](fork-validation.md). Importing the source into this repository does not constitute a new native NX test run.
 
-A series of focused pull requests is preferable to the full integration diff. The [upstream review package](upstream-review.md) maps six proposed slices, supplies a draft first description, and lists compatibility decisions. Current runtime CI and native evidence are recorded in [dev6 acceptance](dev6-validation.json). No pull request has been opened.
+A series of focused pull requests is preferable to the full integration diff. The [upstream review package](upstream-review.md) maps six proposed slices, supplies a draft first description, and lists compatibility decisions. Current folder-support runtime CI and native evidence are recorded in [dev7 acceptance](dev7-validation.json); [dev6 acceptance](dev6-validation.json) retains the preceding authoring results. No pull request has been opened.
 
 Explicit nested and absolute in-workspace file paths, directory creation, and Save As parent creation are described in [project folders](project-folders.md).

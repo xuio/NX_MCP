@@ -28,3 +28,7 @@ Use subfolders such as `parts/`, `assemblies/`, `revisions/`, `vendor/`, and `ex
 Absolute paths outside the workspace, traversal escapes, symlink escapes, and internal `.nx-mcp` state are rejected. To use another root, configure `NX_MCP_WORKSPACE` consistently for both bridge and sidecar and restart them after preserving the session. Local Mac files require `nx_upload_file` or an existing shared folder; a Mac path is not a Windows path.
 
 This changes path support only; it does not reorganize existing CAD files.
+
+## Live acceptance
+
+With a saved work part open in NX, set `NX_MCP_URL` to the integration endpoint and run `python examples/validate_project_folders.py`. Set `NX_VALIDATION_OUTPUT` for the local receipt directory. The runner creates disposable parts in a unique workspace subfolder, verifies a 1,000 mm³ solid across Save As and reopen, checks loaded-part reuse and activation, tests STEP artifact checksums and uploads, and rejects outside-root and reserved-state paths. It closes its fixtures and restores the original work part. Validation artifacts remain in the unique test subfolder.
