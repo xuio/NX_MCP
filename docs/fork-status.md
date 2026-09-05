@@ -1,0 +1,45 @@
+# NX v2606 integration fork
+
+This fork of [DreamEnding/NX_MCP](https://github.com/DreamEnding/NX_MCP) preserves the upstream history and MIT license. It imports the implementation deployed against Siemens NX v2606 as version `0.2.0.dev2`. The five implementation commits follow upstream `179086b6de28a53d340132aca7678fa6ed03b422` in deployment order. Machine provisioning, private CAD, credentials and deployment session logs are outside this repository.
+
+## Included changes
+
+- NX v2606 API repairs, sketch bases, object references and multi-body results.
+- Durable operation receipts, retry deduplication, explicit checkpoints and rollback.
+- Assembly-aware inspection, workspace artifact transfer and capability reporting.
+- Serialized execution in graphical NX with Pause, Resume and Stop controls.
+- Native interference and clearance queries, inline viewport PNGs and view metadata.
+- Collision highlighting, single-plane capped sections, body/component visibility, colors and transparency with restoration.
+- Native sketch solver status, remaining degrees of freedom and persistent constraint-to-geometry links.
+
+The opt-in integration profile exposes 77 tools. Tool status describes scoped validation on NX v2606, not universal certification. Journal execution remains disabled. The default sidecar retains upstream's smaller tool surface unless experimental mode is enabled.
+
+## Start the graphical bridge and sidecar
+
+Use Windows with native Siemens NX v2606 and Python 3.10 or newer. The tested sidecar used Python 3.12, MCP 1.29.1 and Pydantic 2.13.5. Install from this checkout:
+
+```powershell
+python -m pip install -e ".[dev]"
+```
+
+Before launching NX, set `NX_MCP_WORKSPACE` to a dedicated CAD workspace and optionally set `NX_MCP_UI_DESCRIPTOR` to the desired descriptor file. In graphical NX, play `examples/start_nx_interactive.py`. The journal returns while its retained Win32 callback dispatches commands on the NX UI thread. Stop any batch bridge using the same workspace before attaching it.
+
+In a separate PowerShell window, configure the sidecar to use the same workspace and descriptor:
+
+```powershell
+$env:NX_MCP_WORKSPACE = 'D:\NX_MCP_WORKSPACE'
+$env:NX_MCP_BRIDGE_DESCRIPTOR = Join-Path $env:LOCALAPPDATA 'nx-mcp\interactive-bridge.json'
+$env:NX_MCP_ENABLE_EXPERIMENTAL = '1'
+$env:NX_MCP_ENABLE_JOURNAL = '0'
+python -m nx_mcp.server
+```
+
+Use these same environment values in the MCP client's stdio server configuration. If `NX_MCP_UI_DESCRIPTOR` was customized on the NX side, set `NX_MCP_BRIDGE_DESCRIPTOR` to that exact path. A cross-machine HTTP deployment needs separate transport/authentication and network configuration; no private machine service is bundled here.
+
+See [interactive behavior and viewport capture](../INTERACTIVE-NX.md), [visual tool usage](visual-tools.md), and the runtime `nx_capabilities` result. Long native calls can temporarily block NX. Pause releases model input for manual editing and invalidates agent references/checkpoints; reacquire references on resume. NXOpen mutations are never issued concurrently.
+
+## Verification and upstream proposals
+
+The source matches the deployed runtime. The fork includes local tests and a configurable public MCP visualization regression runner. Historical live-NX results and current upstream-suite gaps are documented in [fork validation](fork-validation.md). Importing the source into this repository does not constitute a new native NX test run.
+
+A series of focused pull requests is preferable to a single approximately 4,800-line integration diff. Reconcile the upstream quality gates before requesting a merge, and agree on the interactive scheduler and supported NX-version policy before proposing the larger architecture changes.
