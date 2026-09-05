@@ -9,6 +9,7 @@ ObjectKind = Literal[
     "part",
     "sketch",
     "curve",
+    "point",
     "feature",
     "body",
     "component",
@@ -22,6 +23,7 @@ ObjectKind = Literal[
     "drawing_sheet",
     "drawing_view",
     "dimension",
+    "annotation",
     "explosion",
     "modeling_view",
 ]

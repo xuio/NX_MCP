@@ -296,7 +296,7 @@ async def main():
     ):
         await client.initialize()
         tools = {t.name: t for t in (await client.list_tools()).tools}
-        assert len(tools) == 130
+        assert len(tools) == 140
         assert tools["nx_model_health"].annotations.readOnlyHint
         assert not tools["nx_preview_change"].annotations.readOnlyHint
 

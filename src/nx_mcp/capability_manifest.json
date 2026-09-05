@@ -1,5 +1,5 @@
 {
-  "revision": "2606-explosions-r1",
+  "revision": "2606-sheet-metal-r1",
   "nx_version": "v2606",
   "bridge_protocol": 1,
   "tools": {
@@ -641,6 +641,56 @@
     "nx_delete_explosion": {
       "status": "experimental",
       "scope": "Local unit tests cover in-use guard, native delete dispatch and stale reference invalidation; deployed native acceptance pending."
+    },
+    "nx_sheet_metal_schema": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Strict schemas for 34 native operation families; per-operation examples and validation scopes."
+    },
+    "nx_sheet_metal_context": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Modern graphical UG_APP_SBSM context; no legacy application switch or model undo mark."
+    },
+    "nx_sheet_metal_feature": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "34 native creation fixtures on NX v2606; flange builder edit verified. Individual options and other edit combinations remain experimental."
+    },
+    "nx_sheet_metal_info": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native body recognition, thickness, inner bend faces, angle/radius/neutral factor read-back."
+    },
+    "nx_sheet_metal_defaults": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Numeric defaults and bend-definition read-back; unsafe native material catalog enumeration intentionally not called."
+    },
+    "nx_set_sheet_metal_defaults": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Value-mode thickness/radius/neutral factor and numeric read-back. Material/tool tables and custom bend tables remain experimental."
+    },
+    "nx_export_flat_pattern": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native DXF and Trumpf GEO export; staged file publication, checksums. DXF entity geometry inspected."
+    },
+    "nx_add_flat_pattern_view": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native Flat Pattern named view on metric drawing; PDF exported and visually reviewed."
+    },
+    "nx_sheet_metal_annotation": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native body/bend PMI with measured snapshot text and explicit refresh; no automatic numeric text update claim."
+    },
+    "nx_create_path_sketch": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native edge-path sketch with arc-length percentage, orienting face and frame read-back; successful secondary contour flange."
     }
   },
   "limitations": [

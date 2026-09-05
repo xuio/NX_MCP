@@ -10,6 +10,7 @@ import math
 import uuid
 from pathlib import Path
 
+from nx_mcp import sheet_metal_server
 from nx_mcp.advanced_authoring import AdvancedAuthoringMixin
 from nx_mcp.authoring import AuthoringMixin
 from nx_mcp.authoring_server import NON_MODEL as AUTHORING_NON_MODEL
@@ -21,6 +22,7 @@ from nx_mcp.nx_bridge import NXOpenExecutor
 from nx_mcp.recovery import OperationStore, timestamp
 from nx_mcp.review_tools import ReviewToolsMixin
 from nx_mcp.runtime import NXToolError
+from nx_mcp.sheet_metal import SheetMetalMixin
 from nx_mcp.visual_tools import VisualToolsMixin
 
 READ_ONLY = {
@@ -112,11 +114,12 @@ def add(a, b):
 IDENTITY = [[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0]]
 
 
-READ_ONLY.update(AUTHORING_READ_ONLY)
-NON_MODEL.update(AUTHORING_NON_MODEL)
+READ_ONLY.update(AUTHORING_READ_ONLY | sheet_metal_server.READ_ONLY)
+NON_MODEL.update(AUTHORING_NON_MODEL | sheet_metal_server.NON_MODEL)
 
 
 class HardenedExecutor(
+    SheetMetalMixin,
     ExplodedViewsMixin,
     EngineeringMixin,
     AdvancedAuthoringMixin,
@@ -139,6 +142,16 @@ class HardenedExecutor(
         self._handlers.update(
             {
                 "nx_resolve_geometry": self._resolve_geometry,
+                "nx_sheet_metal_schema": self._sheet_metal_schema,
+                "nx_create_path_sketch": self._create_path_sketch,
+                "nx_add_flat_pattern_view": self._add_flat_pattern_view,
+                "nx_sheet_metal_annotation": self._sheet_metal_annotation,
+                "nx_sheet_metal_context": self._sheet_metal_context,
+                "nx_sheet_metal_feature": self._sheet_metal_feature,
+                "nx_sheet_metal_info": self._sheet_metal_info,
+                "nx_sheet_metal_defaults": self._sheet_metal_defaults,
+                "nx_set_sheet_metal_defaults": self._set_sheet_metal_defaults,
+                "nx_export_flat_pattern": self._export_flat_pattern,
                 "nx_create_explosion": self._create_explosion,
                 "nx_list_explosions": self._list_explosions,
                 "nx_explosion_info": self._explosion_info,
@@ -289,7 +302,12 @@ class HardenedExecutor(
         part = self._work_part(required=False)
         part_id = self._part_id(part) if part else None
         if mutable:
-            fingerprint = self.store.fingerprint(method, params)
+            try:
+                fingerprint = self.store.fingerprint(method, params)
+            except (ValueError, TypeError) as error:
+                raise NXToolError(
+                    "NX_INVALID_ARGUMENT", "Arguments must be finite JSON values"
+                ) from error
             existing = self.store.get(op_id)
             if "fingerprint" in existing:
                 if existing["fingerprint"] != fingerprint:
@@ -1459,6 +1477,7 @@ class HardenedExecutor(
             ("drawing_sheet", getattr(part, "DrawingSheets", [])),
             ("drawing_view", getattr(part, "DraftingViews", [])),
             ("dimension", getattr(part, "Dimensions", [])),
+            ("annotation", [*getattr(part, "Notes", []), *getattr(part, "Labels", [])]),
             (
                 "component_pattern",
                 self._component_patterns(part),
@@ -1467,6 +1486,7 @@ class HardenedExecutor(
             ("body", part.Bodies),
             ("feature", part.Features),
             ("curve", part.Curves),
+            ("point", getattr(part, "Points", [])),
             ("sketch", part.Sketches),
             ("section", getattr(part, "DynamicSections", [])),
             ("component", [c for c, _ in self._walk_components(part)]),

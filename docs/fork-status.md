@@ -1,6 +1,6 @@
 # NX v2606 integration fork
 
-This fork of [DreamEnding/NX_MCP](https://github.com/DreamEnding/NX_MCP) preserves the upstream history and MIT license. The initial import was deployed against Siemens NX v2606 as `0.2.0.dev2`; subsequent releases extend it through `0.2.0.dev9`. The fork follows upstream base `179086b6de28a53d340132aca7678fa6ed03b422` and retains the deployment history. Machine provisioning, private CAD, credentials and deployment session logs are outside this repository.
+This fork of [DreamEnding/NX_MCP](https://github.com/DreamEnding/NX_MCP) preserves the upstream history and MIT license. The initial import was deployed against Siemens NX v2606 as `0.2.0.dev2`; subsequent releases extend it through `0.2.0.dev10`. The fork follows upstream base `179086b6de28a53d340132aca7678fa6ed03b422` and retains the deployment history. Machine provisioning, private CAD, credentials and deployment session logs are outside this repository.
 
 See [engineering tools and scoped validation](engineering-tools.md) for the latest solid modeling, sketches, assemblies, materials, project copying, rendering and drafting additions.
 
@@ -14,7 +14,7 @@ See [engineering tools and scoped validation](engineering-tools.md) for the late
 - Collision highlighting, single-plane capped sections, body/component visibility, colors and transparency with restoration.
 - Native sketch solver status, remaining degrees of freedom and persistent constraint-to-geometry links.
 
-The dev9 opt-in integration profile exposes 130 tools. Tool status describes scoped validation on NX v2606, not universal certification. Journal execution remains disabled. The default sidecar retains upstream's smaller tool surface unless experimental mode is enabled.
+The dev10 opt-in integration profile exposes 140 tools. Tool status describes scoped validation on NX v2606, not universal certification. Journal execution remains disabled. The default sidecar retains upstream's smaller tool surface unless experimental mode is enabled.
 
 ## Start the graphical bridge and sidecar
 
@@ -49,3 +49,5 @@ A series of focused pull requests is preferable to the full integration diff. Th
 Explicit nested and absolute in-workspace file paths, directory creation, and Save As parent creation are described in [project folders](project-folders.md).
 
 See [native exploded views](exploded-views.md) for dev9 presentation and drawing contracts, and the [advanced roadmap](advanced-roadmap.md) for proposed freeform and manufacturing work.
+
+See [native sheet metal](sheet-metal.md) for the dev10 operation catalog, verified scope, flat-pattern exports and measured PMI semantics.

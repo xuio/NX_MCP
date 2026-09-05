@@ -186,7 +186,15 @@ class Session:
         mark = next(self.mark_ids)
         states = []
         for p in self.Parts:
-            groups = [p.Bodies, p.Features, p.Curves, p.Sketches, p.DynamicSections]
+            groups = [
+                p.Bodies,
+                p.Features,
+                p.Curves,
+                p.Sketches,
+                p.DynamicSections,
+                p.Notes,
+                p.Labels,
+            ]
             objs = list(itertools.chain.from_iterable(groups))
             attrs = [(o, o.IsBlanked, o.Color, o.transparency) for o in objs]
             states.append((p, [list(g) for g in groups], attrs, p.IsModified))
@@ -197,7 +205,9 @@ class Session:
         states, active = self.marks[mark]
         for p, groups, attrs, modified in states:
             for dest, values in zip(
-                [p.Bodies, p.Features, p.Curves, p.Sketches, p.DynamicSections], groups, strict=True
+                [p.Bodies, p.Features, p.Curves, p.Sketches, p.DynamicSections, p.Notes, p.Labels],
+                groups,
+                strict=True,
             ):
                 dest[:] = values
             for obj, blank, color, transparency in attrs:
@@ -223,6 +233,8 @@ class Part(Object):
         self.Curves = Collection()
         self.Sketches = Collection()
         self.DynamicSections = Collection()
+        self.Notes = Collection()
+        self.Labels = Collection()
         self.ComponentAssembly = NS(RootComponent=None)
         self.WCS = NS(CoordinateSystem=NS(Orientation=NS(Element=matrix())))
         self.ModelingViews = NS(

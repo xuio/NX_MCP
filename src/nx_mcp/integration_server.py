@@ -12,7 +12,7 @@ from typing import Any, Literal
 
 from mcp.types import CallToolResult, ImageContent, TextContent, ToolAnnotations
 
-from nx_mcp import authoring_server
+from nx_mcp import authoring_server, sheet_metal_server
 from nx_mcp.recovery import OperationStore
 from nx_mcp.runtime import NXToolError
 from nx_mcp.workspace import WorkspaceViolation
@@ -338,11 +338,11 @@ READ_ONLY = {
     "nx_workspace_list",
     "nx_download_file",
 }
-READ_ONLY.update(authoring_server.READ_ONLY)
+READ_ONLY.update(authoring_server.READ_ONLY | sheet_metal_server.READ_ONLY)
 DESCRIPTIONS.update(
     {
         name: obj.__doc__ or name
-        for name, obj in vars(authoring_server).items()
+        for name, obj in {**vars(authoring_server), **vars(sheet_metal_server)}.items()
         if name.startswith("nx_") and inspect.isfunction(obj)
     }
 )
@@ -357,6 +357,8 @@ SIDE = {
     "nx_cancel_operation",
 }
 PATHS = {
+    "nx_export_flat_pattern": "path",
+    "nx_set_sheet_metal_defaults": "bend_table",
     "nx_render_view": "path",
     "nx_copy_project": "path",
     "nx_component_action": "part_path",
@@ -395,7 +397,7 @@ def configure(mcp, bridge, workspace):
     definitions.update(
         {
             name: obj
-            for name, obj in vars(authoring_server).items()
+            for name, obj in {**vars(authoring_server), **vars(sheet_metal_server)}.items()
             if name.startswith("nx_") and inspect.isfunction(obj)
         }
     )
