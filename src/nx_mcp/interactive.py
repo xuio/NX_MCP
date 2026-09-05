@@ -272,6 +272,8 @@ class InteractiveHost:
             raise RuntimeError("UI control called off NX thread")
         if mode == "manual":
             if self.mode == "agent":
+                if hasattr(self.executor, "_clear_highlights"):
+                    self.executor._clear_highlights()
                 # Manual edits have no bridge receipt. Do not let a later agent
                 # rollback undo them, or resolve references across that boundary.
                 for part in self.session.Parts:

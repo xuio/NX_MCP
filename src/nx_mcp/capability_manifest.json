@@ -1,5 +1,5 @@
 {
-  "revision": "2606-interactive-r3",
+  "revision": "2606-visual-tools-r1",
   "nx_version": "v2606",
   "bridge_protocol": 1,
   "tools": {
@@ -337,6 +337,56 @@
       "status": "tested",
       "evidence_type": "real_NX_v2606_interactive",
       "scope": "Native 2 mm gap flagged below 3 mm requirement; bounded pair selection and conservative broad phase"
+    },
+    "nx_display_info": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_public_MCP",
+      "scope": "Body/face and nested occurrence color, transparency and explicit blank state"
+    },
+    "nx_set_display": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_public_MCP",
+      "scope": "Named color and transparency; face attribute restoration; nested occurrence override leaves shared prototypes unchanged"
+    },
+    "nx_set_visibility": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_public_MCP",
+      "scope": "Show/hide, nested isolation and restoration of previously hidden components"
+    },
+    "nx_restore_display": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_public_MCP",
+      "scope": "Reverse-order restore; invalid order rejected before mutation; face IDs retained across appearance and camera changes"
+    },
+    "nx_highlight_collisions": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_public_MCP",
+      "scope": "Native highlights on two intersecting nested body occurrences; clear pair not highlighted; inline viewport verified"
+    },
+    "nx_clear_highlights": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_public_MCP",
+      "scope": "Clears MCP-owned native highlights without persistent appearance changes"
+    },
+    "nx_list_sections": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_public_MCP",
+      "scope": "Native plane enumeration; active view state and saved flags preserved"
+    },
+    "nx_section_view": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_public_MCP",
+      "scope": "Principal and arbitrary single-plane clips on solids and assemblies; native cap images; geometry bounds and volume unchanged"
+    },
+    "nx_section_control": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_public_MCP",
+      "scope": "Enable, disable and delete native dynamic sections without modifying solids"
+    },
+    "nx_sketch_diagnostics": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_public_MCP",
+      "scope": "Active/inactive whole-sketch native evaluation; underconstrained and fully fixed fixtures; remaining DOF, constraints and curve links; saved state preserved"
     }
   },
   "limitations": [
@@ -354,11 +404,11 @@
   "unavailable": [
     "general_solid_validity_audit",
     "batch_model_viewport_image",
-    "full_sketch_editing_and_constraint_DOF",
+    "full_sketch_curve_and_constraint_editing",
     "loft_shell_draft_threads_engraving",
     "general_body_transforms",
     "assembly_constraint_editing",
-    "color_material_transparency_visibility_controls",
-    "union_of_all_pairwise_interference_volumes"
+    "union_of_all_pairwise_interference_volumes",
+    "material_assignment"
   ]
 }

@@ -12,8 +12,12 @@ from nx_mcp.nx_bridge import NXOpenExecutor
 from nx_mcp.runtime import NXToolError
 from nx_mcp.recovery import OperationStore, timestamp
 from nx_mcp.inspection import InspectionMixin
+from nx_mcp.visual_tools import VisualToolsMixin
 
 READ_ONLY = {
+    "nx_display_info",
+    "nx_list_sections",
+    "nx_sketch_diagnostics",
     "nx_view_info",
     "nx_check_interference",
     "nx_check_clearance",
@@ -36,6 +40,8 @@ READ_ONLY = {
 }
 # Files, session lifecycle, and undo itself cannot be reversed by a model undo mark.
 NON_MODEL = {
+    "nx_highlight_collisions",
+    "nx_clear_highlights",
     "nx_create_part",
     "nx_open_part",
     "nx_activate_part",
@@ -95,7 +101,7 @@ def add(a, b):
 IDENTITY = [[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0]]
 
 
-class HardenedExecutor(InspectionMixin, NXOpenExecutor):
+class HardenedExecutor(VisualToolsMixin, InspectionMixin, NXOpenExecutor):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.session_id = uuid.uuid4().hex
@@ -109,6 +115,17 @@ class HardenedExecutor(InspectionMixin, NXOpenExecutor):
         self._handlers.update(
             {
                 "nx_view_info": self._view_info,
+                "nx_display_info": self._display_info,
+                "nx_set_display": self._set_display,
+                "nx_set_visibility": self._set_visibility,
+                "nx_restore_display": self._restore_display,
+                "nx_highlight_collisions": self._highlight_collisions,
+                "nx_clear_highlights": self._clear_highlights,
+                "nx_list_sections": self._list_sections,
+                "nx_section_view": self._section_view,
+                "nx_section_control": self._section_control,
+                "nx_sketch_diagnostics": self._sketch_diagnostics,
+
                 "nx_check_interference": self._check_interference,
                 "nx_check_clearance": self._check_clearance,
                 "nx_activate_part": self._activate_part,
@@ -231,6 +248,8 @@ class HardenedExecutor(InspectionMixin, NXOpenExecutor):
         previous = self._current_operation
         self._current_operation = op_id
         try:
+            if method == "nx_restore_display":
+                self._validate_display_restore(params["restore_id"])
             if (
                 mutable
                 and method not in NON_MODEL
@@ -273,7 +292,7 @@ class HardenedExecutor(InspectionMixin, NXOpenExecutor):
                     "modified": result.get("modified"),
                     "modified_tracking": "explicit only; null means not fully tracked",
                 }
-                self._invalidate_deleted(before, after)
+                self._invalidate_deleted(before, after, invalidate_topology=method not in {"nx_set_display", "nx_set_visibility", "nx_restore_display", "nx_section_view", "nx_section_control", "nx_set_view", "nx_fit_view"})
                 self._history.append(
                     {"mark": mark, "part_id": part_id, "operation_id": op_id, "method": method}
                 )
@@ -344,6 +363,7 @@ class HardenedExecutor(InspectionMixin, NXOpenExecutor):
             "body": list(part.Bodies),
             "sketch": list(part.Sketches),
             "component": [c for c, _ in self._walk_components(part)],
+            "section": list(part.DynamicSections),
         }
         candidates = []
         for kind, values in pools.items():
@@ -1272,6 +1292,9 @@ class HardenedExecutor(InspectionMixin, NXOpenExecutor):
             ),
             interactive=not self.session.IsBatch,
             api_detection={
+                "native_display_modification": hasattr(self.session.DisplayManager, "NewDisplayModification"),
+                "dynamic_sections": bool(part and hasattr(part, "DynamicSections")),
+                "sketch_solver_status": hasattr(self.nxopen.Sketch, "CalculateStatus"),
                 "step_import": hasattr(self.session.DexManager, "CreateStep214Importer"),
                 "native_pattern": bool(
                     part and hasattr(part.Features, "CreatePatternFeatureBuilder")
@@ -1309,6 +1332,7 @@ class HardenedExecutor(InspectionMixin, NXOpenExecutor):
             ("feature", part.Features),
             ("curve", part.Curves),
             ("sketch", part.Sketches),
+            ("section", getattr(part, "DynamicSections", [])),
             ("component", [c for c, _ in self._walk_components(part)]),
         ]
         return {
@@ -1317,10 +1341,10 @@ class HardenedExecutor(InspectionMixin, NXOpenExecutor):
             for v in values
         }
 
-    def _invalidate_deleted(self, before, after):
+    def _invalidate_deleted(self, before, after, invalidate_topology=True):
         removed = {v["id"] for k, v in before.items() if k not in after}
         for key, entry in list(self.objects._objects.items()):
-            if key in removed or entry.reference.kind in {"face", "edge"}:
+            if key in removed or (invalidate_topology and entry.reference.kind in {"face", "edge"}):
                 self.objects._objects.pop(key, None)
                 self.objects._stale_ids.add(key)
         self.objects._identities = {

@@ -14,6 +14,49 @@ from nx_mcp.workspace import WorkspaceViolation
 from nx_mcp.recovery import OperationStore
 
 
+
+def nx_display_info(objects: list[str]):
+    pass
+
+
+def nx_set_display(objects: list[str], color_index: int | None = None, transparency: int | None = None,
+                   color: Literal["red", "green", "blue", "yellow", "cyan", "magenta", "orange", "white", "black", "gray"] | None = None):
+    pass
+
+
+def nx_set_visibility(objects: list[str], mode: Literal["show", "hide", "isolate"] = "show"):
+    pass
+
+
+def nx_restore_display(restore_id: str):
+    pass
+
+
+def nx_highlight_collisions(obj1: str, obj2: str, include_contact: bool = False):
+    pass
+
+
+def nx_clear_highlights():
+    pass
+
+
+def nx_list_sections():
+    pass
+
+
+def nx_section_view(origin: list[float], normal: list[float], section: str | None = None,
+                    name: str = "MCP section", cap: bool = True):
+    pass
+
+
+def nx_section_control(section: str, action: Literal["enable", "disable", "delete"]):
+    pass
+
+
+def nx_sketch_diagnostics(sketch_id: str):
+    pass
+
+
 def nx_ui_control(mode: Literal["status", "manual", "agent"] = "status"):
     pass
 
@@ -196,6 +239,17 @@ def nx_upload_file(path: str, data_base64: str, sha256: str, total_size: int, of
 
 
 DESCRIPTIONS = {
+    'nx_display_info': 'Inspect color-table indices, blank state and face transparency for body, component, feature, face or curve references. Components expand to loaded occurrence geometry.',
+    'nx_set_display': 'Set an NX color index (1–216) or named color, and/or transparency (0 opaque, 100 transparent). Component/feature targets expand to bodies. Occurrence overrides do not recolor prototypes. Returns restore_id; restore in reverse order. Changes can persist on save.',
+    'nx_set_visibility': 'Show, hide or isolate body/component geometry. Isolation preserves a restorable snapshot and includes ancestor components. Reference curves and datum geometry are not isolated. Explicit show/hide also accepts curves. Returns restore_id.',
+    'nx_restore_display': 'Restore explicit appearance/visibility attributes using a same-session restore_id, in reverse order. All references are preflighted; manual handoff, rollback or close can make snapshots stale. Does not reset a part modified flag or remove inherited occurrence overrides.',
+    'nx_highlight_collisions': 'Measure native solid interference and highlight the involved body occurrences using NX selection highlighting. Replaces previous MCP highlights. Contacts are optional; clear pairs are never highlighted. Returns measured pairs and entity references. No persistent recoloring.',
+    'nx_clear_highlights': 'Remove only highlights created by MCP. Geometry, persistent colors and visibility are unchanged.',
+    'nx_list_sections': 'Inspect native dynamic sections and the active view clipping toggle in the display/work part.',
+    'nx_section_view': 'Create or edit a native single-plane section in visible NX. origin is in display-part units; normal is normalized in display-part coordinates. Solids are unchanged. Specify section ID to edit an existing active section. NX v2606 retains dot(point-origin, normal) <= 0; reversing normal reverses the retained side. Returns actual plane geometry.',
+    'nx_section_control': 'Enable, disable or delete the specified native section. Disabling turns off clipping when that section is active. Deletion removes the section object, not model solids.',
+    'nx_sketch_diagnostics': 'Evaluate native solver status and remaining DOF for the entire sketch; enumerate persistent constraints and their curve links. Temporarily activates an inactive sketch and restores the prior state. Rejects another active sketch. Temporarily evaluates the entire sketch and restores the work-region state. Does not infer a minimal conflict set or automatically constrain geometry.',
+
     "nx_ui_control": "Inspect the interactive NX host or switch between agent control and manual editing. Finish NX dialogs before resuming.",
     "nx_view_info": "Return the displayed model view, camera matrix, scale, rendering style, and interactive state.",
     "nx_screenshot": "Export the actual interactive NX viewport as PNG and return an inline MCP image. Advisory 128–4096 pixel dimensions (NX can use the actual device size; response reports both), background, shaded/wireframe style and fit. No desktop capture. Paths are workspace-relative; omit for a unique capture path.",
@@ -228,10 +282,12 @@ DESCRIPTIONS = {
     "nx_upload_file": "Upload .prt/.step/.stp/.png/.json/.zip/.txt/.pdf chunks (max 256 KiB) into a new workspace file. Requires final SHA-256 and total size, sequential offsets. Repeated identical chunks are safe; existing differing files are never overwritten.",
     "nx_package_assembly": "Package the saved active assembly and all loaded prototype dependencies into a new workspace ZIP with a SHA-256 manifest. Refuses unsaved referenced parts and files outside the workspace.",
     "nx_capabilities": "NX-version-specific integration manifest. API presence, real-test evidence and unavailable capabilities are separate. Batch NX has no model viewport.",
-    "nx_screenshot": "Capture the interactive Windows desktop to PNG. This is NOT a screenshot of the batch NX model. Retrieve bytes through nx_download_file; batch-model camera rendering is unavailable.",
 }
 
 READ_ONLY = {
+    "nx_display_info",
+    "nx_list_sections",
+    "nx_sketch_diagnostics",
     "nx_view_info",
     "nx_check_interference",
     "nx_check_clearance",
