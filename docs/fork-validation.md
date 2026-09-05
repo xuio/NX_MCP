@@ -67,3 +67,5 @@ All seven import-time test failures and the 24 lint findings were addressed. The
 Whole-project branch coverage is approximately 51%, below the inherited 78% gate. The gate is deliberately retained: GUI/NX modules have substantial uncovered Python paths despite their separate live-NX acceptance checks. A green functional suite does not resolve that coverage gap. Consult the current GitHub workflow result for the exact total and platform matrix.
 
 Versioned offline build, dependency locks, install and rollback procedures are documented in [releases](releases.md).
+
+Final dev3 deployment evidence is summarized in [the validation receipt](dev3-validation.json). All nine hosted test combinations, eleven deployed native MCP groups, Windows stdio/HTTP checks, isolated rollback testing and the Windows release build passed. The retained full-project coverage gate reports 50.63% against 78%.
