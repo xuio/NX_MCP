@@ -2,8 +2,10 @@
 
 from __future__ import annotations
 
+import base64
 import os
 import secrets
+import subprocess
 from collections.abc import Callable
 from dataclasses import dataclass
 from pathlib import Path
@@ -30,6 +32,10 @@ class NXOpenExecutor:
         "nx_sketch_rectangle",
         "nx_finish_sketch",
         "nx_extrude",
+        "nx_revolve",
+        "nx_sketch_arc",
+        "nx_hole",
+        "nx_boolean",
     }
 
     def __init__(
@@ -67,6 +73,11 @@ class NXOpenExecutor:
             "nx_extrude": self._extrude,
             "nx_undo": self._undo,
             "nx_fit_view": self._fit_view,
+            "nx_revolve": self._revolve,
+            "nx_sketch_arc": self._sketch_arc_legacy,
+            "nx_hole": self._hole,
+            "nx_boolean": self._boolean,
+            "nx_screenshot": self._screenshot,
         }
 
     def execute(self, method: str, params: dict[str, Any]) -> dict[str, Any]:
@@ -421,6 +432,256 @@ class NXOpenExecutor:
         part = self._work_part()
         part.ModelingViews.WorkView.Fit()
         return {"message": "View fitted"}
+
+    def _find_sketch(self, name: str) -> Any:
+        part = self._work_part()
+        for sketch in part.Sketches:
+            sketch_name = self._name(sketch, "Sketch")
+            if sketch_name == name or sketch_name.endswith(name):
+                return sketch
+        raise NXToolError("NX_NOT_FOUND", f"Sketch not found: {name}")
+
+    def _revolve(
+        self,
+        angle: float = 360.0,
+        axis: str = "Z",
+        sketch_name: str | None = None,
+        boolean: str = "none",
+    ) -> dict[str, Any]:
+        if angle <= 0 or angle > 360:
+            raise NXToolError("NX_INVALID_ARGUMENT", "angle must be greater than 0 and at most 360")
+        if not sketch_name:
+            raise NXToolError("NX_INVALID_ARGUMENT", "sketch_name is required")
+        vectors = {
+            "X": (1.0, 0.0, 0.0),
+            "Y": (0.0, 1.0, 0.0),
+            "Z": (0.0, 0.0, 1.0),
+            "-X": (-1.0, 0.0, 0.0),
+            "-Y": (0.0, -1.0, 0.0),
+            "-Z": (0.0, 0.0, -1.0),
+        }
+        axis_key = axis.strip().upper()
+        if axis_key not in vectors:
+            raise NXToolError("NX_INVALID_ARGUMENT", "axis must be X, Y, Z, -X, -Y, or -Z")
+        boolean_types = {
+            "none": self.nxopen.GeometricUtilities.BooleanOperation.BooleanType.Create,
+            "unite": self.nxopen.GeometricUtilities.BooleanOperation.BooleanType.Unite,
+            "subtract": self.nxopen.GeometricUtilities.BooleanOperation.BooleanType.Subtract,
+            "intersect": self.nxopen.GeometricUtilities.BooleanOperation.BooleanType.Intersect,
+        }
+        boolean_key = boolean.strip().lower()
+        if boolean_key not in boolean_types:
+            raise NXToolError(
+                "NX_INVALID_ARGUMENT", "boolean must be none, unite, subtract, or intersect"
+            )
+        part = self._work_part()
+        sketch = self._find_sketch(sketch_name)
+        section = part.Sections.CreateSection()
+        rule = part.ScRuleFactory.CreateRuleCurveFeature(
+            [sketch.Feature],
+            self.nxopen.DisplayableObject.Null,
+            part.ScRuleFactory.CreateRuleOptions(),
+        )
+        section.AddToSection(
+            [rule],
+            self.nxopen.NXObject.Null,
+            self.nxopen.NXObject.Null,
+            self.nxopen.NXObject.Null,
+            self.nxopen.Point3d(0.0, 0.0, 0.0),
+            self.nxopen.Section.Mode.Create,
+            False,
+        )
+        vector = self.nxopen.Vector3d(*vectors[axis_key])
+        origin = part.Points.CreatePoint(self.nxopen.Point3d(0.0, 0.0, 0.0))
+        direction = part.Directions.CreateDirection(origin, vector)
+        revolve_axis = part.Axes.CreateAxis(
+            origin,
+            direction,
+            self.nxopen.SmartObject.UpdateOption.WithinModeling,
+        )
+        builder = part.Features.CreateRevolveBuilder(self.nxopen.Features.Feature.Null)
+        try:
+            builder.Section = section
+            builder.Axis = revolve_axis
+            builder.Limits.StartExtend.Value.RightHandSide = "0"
+            builder.Limits.EndExtend.Value.RightHandSide = str(angle)
+            builder.BooleanOperation.Type = boolean_types[boolean_key]
+            if boolean_key != "none":
+                bodies = list(part.Bodies)
+                if not bodies:
+                    raise NXToolError("NX_NO_TARGET_BODY", "No target body is available")
+                builder.BooleanOperation.SetTargetBodies(bodies)
+            feature = builder.CommitFeature()
+        finally:
+            builder.Destroy()
+        return {
+            "feature": self._reference(feature, "feature", part, "Revolve"),
+            "angle": angle,
+            "axis": axis_key,
+            "message": f"Revolved {self._name(sketch, sketch_name)} by {angle} degrees",
+        }
+
+    def _sketch_arc_legacy(
+        self,
+        cx: float,
+        cy: float,
+        radius: float,
+        start_angle: float,
+        end_angle: float,
+    ) -> dict[str, Any]:
+        import math
+
+        if radius <= 0:
+            raise NXToolError("NX_INVALID_ARGUMENT", "radius must be greater than zero")
+        if start_angle == end_angle:
+            raise NXToolError("NX_INVALID_ARGUMENT", "start_angle and end_angle must differ")
+        part = self._work_part()
+        arc = part.Curves.CreateArc(
+            self.nxopen.Point3d(cx, cy, 0.0),
+            self.nxopen.Vector3d(1.0, 0.0, 0.0),
+            self.nxopen.Vector3d(0.0, 1.0, 0.0),
+            radius,
+            math.radians(start_angle),
+            math.radians(end_angle),
+        )
+        reference = self._reference(arc, "curve", part, "Arc")
+        return {
+            "object": reference,
+            "center": [cx, cy],
+            "radius": radius,
+            "start_angle": start_angle,
+            "end_angle": end_angle,
+            "message": "Created arc",
+        }
+
+    def _hole(
+        self,
+        diameter: float,
+        depth: float,
+        x: float,
+        y: float,
+        z: float,
+    ) -> dict[str, Any]:
+        if diameter <= 0 or depth <= 0:
+            raise NXToolError("NX_INVALID_ARGUMENT", "diameter and depth must be greater than zero")
+        part = self._work_part()
+        bodies = list(part.Bodies)
+        if not bodies:
+            raise NXToolError("NX_NO_TARGET_BODY", "Create a solid body before creating a hole")
+        builder = part.Features.CreateCylinderBuilder(self.nxopen.Features.Feature.Null)
+        try:
+            builder.Origin = self.nxopen.Point3d(x, y, z)
+            builder.Direction = self.nxopen.Vector3d(0.0, 0.0, 1.0)
+            builder.Diameter.RightHandSide = str(diameter)
+            builder.Height.RightHandSide = str(depth)
+            builder.BooleanOption.Type = (
+                self.nxopen.GeometricUtilities.BooleanOperation.BooleanType.Subtract
+            )
+            builder.BooleanOption.SetTargetBodies([bodies[0]])
+            feature = builder.CommitFeature()
+        finally:
+            builder.Destroy()
+        return {
+            "feature": self._reference(feature, "feature", part, "Hole"),
+            "diameter": diameter,
+            "depth": depth,
+            "location": [x, y, z],
+            "message": "Created cylindrical hole along +Z",
+        }
+
+    def _resolve_body(self, value: str, part: Any) -> Any:
+        try:
+            return self.objects.resolve(
+                value,
+                expected_kind="body",
+                part_id=self._part_id(part),
+            )
+        except NXToolError:
+            pass
+        bodies = list(part.Bodies)
+        for index, body in enumerate(bodies, start=1):
+            names = {
+                self._name(body, f"body_{index}"),
+                f"body_{index}",
+                str(getattr(body, "JournalIdentifier", "")),
+            }
+            if value in names:
+                return body
+        raise NXToolError("NX_NOT_FOUND", f"Body not found: {value}")
+
+    def _boolean(self, boolean_type: str, targets: list[str]) -> dict[str, Any]:
+        type_map = {
+            "unite": self.nxopen.Features.FeatureBooleanType.Unite,
+            "subtract": self.nxopen.Features.FeatureBooleanType.Subtract,
+            "intersect": self.nxopen.Features.FeatureBooleanType.Intersect,
+        }
+        key = boolean_type.strip().lower()
+        if key not in type_map:
+            raise NXToolError(
+                "NX_INVALID_ARGUMENT", "boolean_type must be unite, subtract, or intersect"
+            )
+        if len(targets) < 2:
+            raise NXToolError(
+                "NX_INVALID_ARGUMENT",
+                "targets must contain the target body followed by at least one tool body",
+            )
+        part = self._work_part()
+        bodies = [self._resolve_body(value, part) for value in targets]
+        builder = part.Features.CreateBooleanBuilder(self.nxopen.Features.BooleanFeature.Null)
+        try:
+            builder.Operation = type_map[key]
+            builder.Target = bodies[0]
+            builder.Tools.Add(bodies[1:])
+            feature = builder.CommitFeature()
+        finally:
+            builder.Destroy()
+        return {
+            "feature": self._reference(feature, "feature", part, "Boolean"),
+            "boolean_type": key,
+            "targets": targets,
+            "message": f"Boolean {key} completed",
+        }
+
+    def _screenshot(self, path: str) -> dict[str, Any]:
+        destination = self.workspace.ensure_inside(path)
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        script = r"""
+$ErrorActionPreference = 'Stop'
+Add-Type -AssemblyName System.Windows.Forms
+Add-Type -AssemblyName System.Drawing
+$bounds = [System.Windows.Forms.SystemInformation]::VirtualScreen
+$bitmap = [System.Drawing.Bitmap]::new($bounds.Width, $bounds.Height)
+$graphics = [System.Drawing.Graphics]::FromImage($bitmap)
+try {
+  $graphics.CopyFromScreen($bounds.Left, $bounds.Top, 0, 0, $bounds.Size)
+  $bitmap.Save($env:NX_MCP_SCREENSHOT_PATH, [System.Drawing.Imaging.ImageFormat]::Png)
+} finally {
+  $graphics.Dispose()
+  $bitmap.Dispose()
+}
+"""
+        encoded = base64.b64encode(script.encode("utf-16le")).decode("ascii")
+        environment = dict(os.environ)
+        environment["NX_MCP_SCREENSHOT_PATH"] = str(destination)
+        completed = subprocess.run(
+            [
+                "powershell.exe",
+                "-NoProfile",
+                "-NonInteractive",
+                "-EncodedCommand",
+                encoded,
+            ],
+            capture_output=True,
+            check=False,
+            creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0),
+            env=environment,
+            text=True,
+            timeout=30,
+        )
+        if completed.returncode != 0 or not destination.is_file():
+            message = (completed.stderr or completed.stdout or "screen capture failed").strip()
+            raise NXToolError("NX_SCREENSHOT_FAILED", message)
+        return {"path": str(destination), "message": f"Screenshot saved to {destination.name}"}
 
 
 @dataclass
