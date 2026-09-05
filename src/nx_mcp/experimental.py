@@ -2,17 +2,16 @@
 
 from __future__ import annotations
 
-import asyncio
 import importlib
 import inspect
 import json
 import sys
 from collections.abc import Awaitable, Callable
 from functools import wraps
-from typing import Any
+from typing import TYPE_CHECKING, Any
 
-from mcp.server.fastmcp import FastMCP
-from mcp.server.fastmcp.exceptions import ToolError as MCPToolError
+if TYPE_CHECKING:
+    from mcp.server.fastmcp import FastMCP
 
 from nx_mcp.response import ToolError, ToolResult
 from nx_mcp.runtime import NXToolError
@@ -61,12 +60,6 @@ def load_legacy_handlers() -> dict[str, Callable[..., Awaitable[Any]]]:
     return handlers
 
 
-async def _run_legacy_handler(
-    handler: Callable[..., Awaitable[Any]], params: dict[str, Any]
-) -> Any:
-    return await handler(**params)
-
-
 def _secure_params(
     method: str,
     params: dict[str, Any],
@@ -110,6 +103,8 @@ def add_experimental_tools(
     *,
     enable_journal: bool,
 ) -> None:
+    from mcp.server.fastmcp.exceptions import ToolError as MCPToolError
+
     for name, handler in load_legacy_handlers().items():
         if name in certified_names or (name in JOURNAL_TOOL_NAMES and not enable_journal):
             continue
@@ -158,7 +153,17 @@ def execute_legacy(
     if handler is None:
         raise NXToolError("NX_TOOL_NOT_FOUND", f"Unsupported bridge command: {method}")
     secured = _secure_params(method, params, workspace, already_resolved=True)
-    result: Any = asyncio.run(_run_legacy_handler(handler, secured))
+    coroutine = handler(**secured)
+    try:
+        coroutine.send(None)
+    except StopIteration as completed:
+        result: Any = completed.value
+    else:
+        coroutine.close()
+        raise NXToolError(
+            "NX_EXPERIMENTAL_ASYNC_UNSUPPORTED",
+            "Experimental NX handlers must complete without suspending.",
+        )
     if isinstance(result, ToolError):
         raise NXToolError(
             result.error_code,
