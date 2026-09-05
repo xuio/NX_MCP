@@ -1,3 +1,3 @@
 """NX MCP Server - MCP tools for Siemens NX CAD operations."""
 
-__version__ = "0.2.0.dev4"
+__version__ = "0.2.0.dev5"

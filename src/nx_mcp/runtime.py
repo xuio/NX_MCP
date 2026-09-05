@@ -16,6 +16,7 @@ ObjectKind = Literal[
     "edge",
     "section",
     "constraint",
+    "expression",
 ]
 
 

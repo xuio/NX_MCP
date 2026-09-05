@@ -10,9 +10,13 @@ import math
 import uuid
 from pathlib import Path
 
+from nx_mcp.authoring import AuthoringMixin
+from nx_mcp.authoring_server import NON_MODEL as AUTHORING_NON_MODEL
+from nx_mcp.authoring_server import READ_ONLY as AUTHORING_READ_ONLY
 from nx_mcp.inspection import InspectionMixin
 from nx_mcp.nx_bridge import NXOpenExecutor
 from nx_mcp.recovery import OperationStore, timestamp
+from nx_mcp.review_tools import ReviewToolsMixin
 from nx_mcp.runtime import NXToolError
 from nx_mcp.visual_tools import VisualToolsMixin
 
@@ -103,7 +107,13 @@ def add(a, b):
 IDENTITY = [[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0]]
 
 
-class HardenedExecutor(VisualToolsMixin, InspectionMixin, NXOpenExecutor):
+READ_ONLY.update(AUTHORING_READ_ONLY)
+NON_MODEL.update(AUTHORING_NON_MODEL)
+
+
+class HardenedExecutor(
+    AuthoringMixin, ReviewToolsMixin, VisualToolsMixin, InspectionMixin, NXOpenExecutor
+):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.session_id = uuid.uuid4().hex
@@ -117,6 +127,23 @@ class HardenedExecutor(VisualToolsMixin, InspectionMixin, NXOpenExecutor):
         self._handlers.update(
             {
                 "nx_view_info": self._view_info,
+                "nx_find_geometry": self._find_geometry,
+                "nx_highlight_objects": self._highlight_objects,
+                "nx_list_expressions": self._list_expressions,
+                "nx_set_expression": self._set_expression,
+                "nx_bind_parameter": self._bind_parameter,
+                "nx_model_health": self._model_health,
+                "nx_rebuild_model": self._rebuild_model,
+                "nx_edit_sketch": self._edit_sketch,
+                "nx_component_action": self._component_action,
+                "nx_pattern_components": self._pattern_components,
+                "nx_set_camera": self._set_camera,
+                "nx_save_presentation": self._save_presentation,
+                "nx_restore_presentation": self._restore_presentation,
+                "nx_inspection_report": self._inspection_report,
+                "nx_model_summary": self._model_summary,
+                "nx_preview_change": self._preview_change,
+                "nx_finish_preview": self._finish_preview,
                 "nx_display_info": self._display_info,
                 "nx_set_display": self._set_display,
                 "nx_set_visibility": self._set_visibility,
@@ -298,6 +325,8 @@ class HardenedExecutor(VisualToolsMixin, InspectionMixin, NXOpenExecutor):
                     after,
                     invalidate_topology=method
                     not in {
+                        "nx_set_camera",
+                        "nx_restore_presentation",
                         "nx_set_display",
                         "nx_set_visibility",
                         "nx_restore_display",
@@ -311,6 +340,8 @@ class HardenedExecutor(VisualToolsMixin, InspectionMixin, NXOpenExecutor):
                     {"mark": mark, "part_id": part_id, "operation_id": op_id, "method": method}
                 )
         except Exception as error:
+            if mutable:
+                self._review_epoch = getattr(self, "_review_epoch", 0) + 1
             outcome = "not_started" if mark is None else "partial"
             if mark is not None:
                 try:
@@ -349,6 +380,8 @@ class HardenedExecutor(VisualToolsMixin, InspectionMixin, NXOpenExecutor):
             raise err from error
         finally:
             self._current_operation = previous
+        if mutable and method != "nx_preview_change":
+            self._review_epoch = getattr(self, "_review_epoch", 0) + 1
         if record:
             record.update(
                 state="committed",
@@ -608,7 +641,7 @@ class HardenedExecutor(VisualToolsMixin, InspectionMixin, NXOpenExecutor):
             self._point_on_sketch(sketch, {"x": cx, "y": cy}),
             self.nxopen.Vector3d(*f["x_axis"]),
             self.nxopen.Vector3d(*f["y_axis"]),
-            radius,
+            float(radius),
             math.radians(start_angle),
             math.radians(end_angle),
         )
@@ -1347,6 +1380,7 @@ class HardenedExecutor(VisualToolsMixin, InspectionMixin, NXOpenExecutor):
 
     def _snapshot(self, part):
         groups = [
+            ("expression", getattr(part, "Expressions", [])),
             ("body", part.Bodies),
             ("feature", part.Features),
             ("curve", part.Curves),

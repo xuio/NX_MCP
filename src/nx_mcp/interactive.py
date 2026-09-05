@@ -280,6 +280,7 @@ class InteractiveHost:
                     self.executor.objects.invalidate_part(self.executor._part_id(part))
                 self.executor._history.clear()
                 self.executor._checkpoints.clear()
+                self.executor._review_epoch = getattr(self.executor, "_review_epoch", 0) + 1
             if self.owns_lock:
                 before = str(self.ui.AskLockStatus())
                 self.ui.UnlockAccess()

@@ -12,6 +12,7 @@ from typing import Any, Literal
 
 from mcp.types import CallToolResult, ImageContent, TextContent, ToolAnnotations
 
+from nx_mcp import authoring_server
 from nx_mcp.recovery import OperationStore
 from nx_mcp.runtime import NXToolError
 from nx_mcp.workspace import WorkspaceViolation
@@ -324,6 +325,15 @@ READ_ONLY = {
     "nx_workspace_list",
     "nx_download_file",
 }
+READ_ONLY.update(authoring_server.READ_ONLY)
+DESCRIPTIONS.update(
+    {
+        name: obj.__doc__ or name
+        for name, obj in vars(authoring_server).items()
+        if name.startswith("nx_") and inspect.isfunction(obj)
+    }
+)
+
 SIDE = {
     "nx_workspace_list",
     "nx_download_file",
@@ -332,6 +342,10 @@ SIDE = {
     "nx_cancel_operation",
 }
 PATHS = {
+    "nx_component_action": "part_path",
+    "nx_save_presentation": "path",
+    "nx_restore_presentation": "path",
+    "nx_inspection_report": "path",
     "nx_create_part": "path",
     "nx_open_part": "path",
     "nx_export_step": "path",
@@ -361,6 +375,13 @@ def configure(mcp, bridge, workspace):
         for name, obj in globals().items()
         if name.startswith("nx_") and inspect.isfunction(obj)
     }
+    definitions.update(
+        {
+            name: obj
+            for name, obj in vars(authoring_server).items()
+            if name.startswith("nx_") and inspect.isfunction(obj)
+        }
+    )
     names = set(existing) | set(definitions)
     for name in names:
         old = existing.get(name)
@@ -484,6 +505,10 @@ def configure(mcp, bridge, workspace):
         tool.fn_metadata.arg_model.model_config["extra"] = "forbid"
         tool.fn_metadata.arg_model.model_rebuild(force=True)
         tool.parameters = tool.fn_metadata.arg_model.model_json_schema()
+        if name == "nx_edit_sketch":
+            tool.parameters["properties"]["operations"].update(
+                minItems=1, maxItems=100, items={"oneOf": authoring_server.SKETCH_OPERATION_SCHEMAS}
+            )
     original_call = mcp.call_tool
 
     async def uniform_call(name, arguments):

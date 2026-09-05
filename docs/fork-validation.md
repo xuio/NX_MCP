@@ -83,3 +83,9 @@ Fault injection reproduced three runtime defects before repair:
 The deployment follows the existing offline release and saved-session procedure. Historical dev3 results and receipts above remain unchanged as historical evidence.
 
 Final dev4 deployment evidence is summarized in [the validation receipt](dev4-validation.json). All hosted CI jobs, eleven deployed graphical NX groups, and Windows stdio/HTTP checks pass. The original 38 saved parts and all 116 component placements were restored unchanged. Local and hosted Windows packages contain byte-identical source; generated metadata line endings and archive ordering differ across build platforms.
+
+## Authoring and review release: 0.2.0.dev5
+
+The opt-in profile adds 17 tools, for 94 total. The local suite passes 393 tests with 81.49% whole-project branch coverage against the unchanged 78% gate. Eight native acceptance groups pass for expressions/binding and health, geometry selection, sketch edits, component maintenance/instances, saved presentations, inspection artifacts, reversible previews and summaries. See [contracts and limits](authoring-review.md). Native probes caught differences in expression value units, face normal conventions, face lookup and sketch constraint enums before deployment. Circular-edge queries use the verified direct UF curve API.
+
+The public runner and preceding eleven visualization groups are rerun after deployment; their final receipts distinguish staged handler tests from public transport validation.

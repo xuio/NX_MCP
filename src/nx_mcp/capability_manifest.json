@@ -1,5 +1,5 @@
 {
-  "revision": "2606-visual-tools-r1",
+  "revision": "2606-authoring-review-r1",
   "nx_version": "v2606",
   "bridge_protocol": 1,
   "tools": {
@@ -387,6 +387,91 @@
       "status": "tested",
       "evidence_type": "real_NX_v2606_public_MCP",
       "scope": "Active/inactive whole-sketch native evaluation; underconstrained and fully fixed fixtures; remaining DOF, constraints and curve links; saved state preserved"
+    },
+    "nx_find_geometry": {
+      "status": "tested",
+      "scope": "Scoped v2606 native authoring/review acceptance and local failure-path regressions; see docs/authoring-review.md for supported operations and limits.",
+      "evidence_type": "real_NX_v2606_and_local_stateful_seams"
+    },
+    "nx_highlight_objects": {
+      "status": "tested",
+      "scope": "Scoped v2606 native authoring/review acceptance and local failure-path regressions; see docs/authoring-review.md for supported operations and limits.",
+      "evidence_type": "real_NX_v2606_and_local_stateful_seams"
+    },
+    "nx_list_expressions": {
+      "status": "tested",
+      "scope": "Scoped v2606 native authoring/review acceptance and local failure-path regressions; see docs/authoring-review.md for supported operations and limits.",
+      "evidence_type": "real_NX_v2606_and_local_stateful_seams"
+    },
+    "nx_set_expression": {
+      "status": "tested",
+      "scope": "Scoped v2606 native authoring/review acceptance and local failure-path regressions; see docs/authoring-review.md for supported operations and limits.",
+      "evidence_type": "real_NX_v2606_and_local_stateful_seams"
+    },
+    "nx_bind_parameter": {
+      "status": "tested",
+      "scope": "Native EXTRUDE end expression binding and dependent update; EXTRUDE start and PATTERN count/spacing share builder paths but are not separately native-tested.",
+      "evidence_type": "real_NX_v2606_and_local_stateful_seams"
+    },
+    "nx_model_health": {
+      "status": "tested",
+      "scope": "Scoped v2606 native authoring/review acceptance and local failure-path regressions; see docs/authoring-review.md for supported operations and limits.",
+      "evidence_type": "real_NX_v2606_and_local_stateful_seams"
+    },
+    "nx_rebuild_model": {
+      "status": "tested",
+      "scope": "Native DoUpdate success and health read-back; failed-update rollback covered by local fault injection.",
+      "evidence_type": "real_NX_v2606_and_local_stateful_seams"
+    },
+    "nx_edit_sketch": {
+      "status": "tested",
+      "scope": "Scoped v2606 native authoring/review acceptance and local failure-path regressions; see docs/authoring-review.md for supported operations and limits.",
+      "evidence_type": "real_NX_v2606_and_local_stateful_seams"
+    },
+    "nx_component_action": {
+      "status": "tested",
+      "scope": "Scoped v2606 native authoring/review acceptance and local failure-path regressions; see docs/authoring-review.md for supported operations and limits.",
+      "evidence_type": "real_NX_v2606_and_local_stateful_seams"
+    },
+    "nx_pattern_components": {
+      "status": "tested",
+      "scope": "Scoped v2606 native authoring/review acceptance and local failure-path regressions; see docs/authoring-review.md for supported operations and limits.",
+      "evidence_type": "real_NX_v2606_and_local_stateful_seams"
+    },
+    "nx_set_camera": {
+      "status": "tested",
+      "scope": "Scoped v2606 native authoring/review acceptance and local failure-path regressions; see docs/authoring-review.md for supported operations and limits.",
+      "evidence_type": "real_NX_v2606_and_local_stateful_seams"
+    },
+    "nx_save_presentation": {
+      "status": "tested",
+      "scope": "Scoped v2606 native authoring/review acceptance and local failure-path regressions; see docs/authoring-review.md for supported operations and limits.",
+      "evidence_type": "real_NX_v2606_and_local_stateful_seams"
+    },
+    "nx_restore_presentation": {
+      "status": "tested",
+      "scope": "Scoped v2606 native authoring/review acceptance and local failure-path regressions; see docs/authoring-review.md for supported operations and limits.",
+      "evidence_type": "real_NX_v2606_and_local_stateful_seams"
+    },
+    "nx_inspection_report": {
+      "status": "tested",
+      "scope": "Scoped v2606 native authoring/review acceptance and local failure-path regressions; see docs/authoring-review.md for supported operations and limits.",
+      "evidence_type": "real_NX_v2606_and_local_stateful_seams"
+    },
+    "nx_model_summary": {
+      "status": "tested",
+      "scope": "Scoped v2606 native authoring/review acceptance and local failure-path regressions; see docs/authoring-review.md for supported operations and limits.",
+      "evidence_type": "real_NX_v2606_and_local_stateful_seams"
+    },
+    "nx_preview_change": {
+      "status": "tested",
+      "scope": "Scoped v2606 native authoring/review acceptance and local failure-path regressions; see docs/authoring-review.md for supported operations and limits.",
+      "evidence_type": "real_NX_v2606_and_local_stateful_seams"
+    },
+    "nx_finish_preview": {
+      "status": "tested",
+      "scope": "Scoped v2606 native authoring/review acceptance and local failure-path regressions; see docs/authoring-review.md for supported operations and limits.",
+      "evidence_type": "real_NX_v2606_and_local_stateful_seams"
     }
   },
   "limitations": [

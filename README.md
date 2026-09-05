@@ -1,6 +1,6 @@
 # NX MCP Server
 
-> **Fork status:** This fork contains the deployed NX v2606 integration (`0.2.0.dev4`), including visible UI control, recovery and artifact tools, native interference checks, viewport images, visual controls and sketch diagnostics. The opt-in profile exposes 77 tools. Start with [fork setup and scope](docs/fork-status.md). The original upstream README follows; its 16-tool default and NX2506 validation describe the upstream baseline. The full local suite passes with 303 tests and 79.59% whole-project branch coverage, above the unchanged 78% gate. See [validation and PR readiness](docs/fork-validation.md).
+> **Fork status:** This fork contains the deployed NX v2606 integration (`0.2.0.dev5`), including visible UI control, recovery and artifact tools, native interference checks, viewport images, visual controls and sketch diagnostics. The opt-in profile exposes 94 tools. Start with [fork setup and scope](docs/fork-status.md). The original upstream README follows; its 16-tool default and NX2506 validation describe the upstream baseline. The full local suite passes with 393 tests and 81.49% whole-project branch coverage, above the unchanged 78% gate. See [validation and PR readiness](docs/fork-validation.md).
 
 NX MCP is a local Model Context Protocol server for Siemens NX automation. The
 `0.2.0.dev0` line replaces the unverified direct-attach design with two explicit
@@ -138,3 +138,5 @@ release gates.
     src="https://raw.githubusercontent.com/DreamEnding/NX_MCP/star-history/assets/star-history.svg"
   />
 </picture>
+
+Authoring and review tools add geometric selection, expression binding, model health, sketch editing, assembly maintenance, saved presentations, inspection reports, compact summaries, and reversible previews. See [supported operations and limits](docs/authoring-review.md).
