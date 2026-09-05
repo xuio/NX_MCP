@@ -83,3 +83,6 @@ exclude = [
 # NXOpen is injected at runtime inside NX; treat it as untyped rather than erroring.
 module = "NXOpen.*"
 ignore_missing_imports = true
+
+[tool.setuptools.package-data]
+nx_mcp = ["capability_manifest.json"]

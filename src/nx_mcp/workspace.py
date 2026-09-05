@@ -24,4 +24,6 @@ class Workspace:
         resolved = Path(path).resolve()
         if not resolved.is_relative_to(self.root):
             raise WorkspaceViolation("Path must stay inside the configured workspace")
+        if ".nx-mcp" in resolved.relative_to(self.root).parts:
+            raise WorkspaceViolation("Internal NX MCP state is not a user artifact")
         return resolved

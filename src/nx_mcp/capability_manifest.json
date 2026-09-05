@@ -1,0 +1,344 @@
+{
+  "revision": "2606-hardening-r1",
+  "nx_version": "v2606",
+  "bridge_protocol": 1,
+  "tools": {
+    "nx_rollback": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606",
+      "scope": "Explicit checkpoint rollback; stale references rejected afterward"
+    },
+    "nx_export_drawing_pdf": {
+      "status": "experimental",
+      "evidence_type": "not_tested_in_this_release",
+      "scope": "No correctness or failure claim; preserve as experimental."
+    },
+    "nx_finish_sketch": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606",
+      "scope": "Principal/custom sketch completion and subsequent extrusion"
+    },
+    "nx_chamfer": {
+      "status": "experimental",
+      "evidence_type": "not_tested_in_this_release",
+      "scope": "No correctness or failure claim; preserve as experimental."
+    },
+    "nx_mirror_body": {
+      "status": "experimental",
+      "evidence_type": "not_tested_in_this_release",
+      "scope": "No correctness or failure claim; preserve as experimental."
+    },
+    "nx_create_part": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606",
+      "scope": "Fresh millimeter parts in isolated NX test workspace"
+    },
+    "nx_activate_part": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606",
+      "scope": "Used by loaded-part opening; work/display activation; modified flags preserved"
+    },
+    "nx_add_projection_view": {
+      "status": "experimental",
+      "evidence_type": "not_tested_in_this_release",
+      "scope": "No correctness or failure claim; preserve as experimental."
+    },
+    "nx_upload_file": {
+      "status": "tested",
+      "evidence_type": "local_contract_test",
+      "scope": "Chunk replay, final checksum, atomic publication, no overwrite and workspace boundary tests"
+    },
+    "nx_edit_feature": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606",
+      "scope": "Extrusion distance 46.25 and native linear-pattern count/pitch; unsupported edit unchanged"
+    },
+    "nx_sketch_info": {
+      "status": "experimental",
+      "evidence_type": "not_tested_in_this_release",
+      "scope": "No correctness or failure claim; preserve as experimental."
+    },
+    "nx_hole": {
+      "status": "experimental",
+      "evidence_type": "not_tested_in_this_release",
+      "scope": "No correctness or failure claim; preserve as experimental."
+    },
+    "nx_close_part": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606",
+      "scope": "Explicit saved source parts closed without whole-tree closure"
+    },
+    "nx_measure_volume": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606",
+      "scope": "Part and nested assembly sum, returned in mm^3; no union/mass claim"
+    },
+    "nx_batch": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606",
+      "scope": "Two-step partial failure fully rolled back; serial execution on journal thread"
+    },
+    "nx_undo": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606",
+      "scope": "Undo after read-only inspection; save boundary explicitly inspected"
+    },
+    "nx_status": {
+      "status": "experimental",
+      "evidence_type": "not_tested_in_this_release",
+      "scope": "No correctness or failure claim; preserve as experimental."
+    },
+    "nx_sketch_line": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606",
+      "scope": "Principal-plane profile coordinates checked against resultant solids"
+    },
+    "nx_export_step": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606",
+      "scope": "Solid/assembly exports verified by import counts, volumes, exact bounds and transforms"
+    },
+    "nx_import_geometry": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606",
+      "scope": "STEP solids and nested assembly through WorkPart importer, normal new-part creation; source prototypes closed explicitly; names preflighted"
+    },
+    "nx_workspace_list": {
+      "status": "experimental",
+      "evidence_type": "not_tested_in_this_release",
+      "scope": "No correctness or failure claim; preserve as experimental."
+    },
+    "nx_revolve": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606",
+      "scope": "XY rectangular profile around global Y, boolean none, case-insensitive name lookup"
+    },
+    "nx_list_open_parts": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606",
+      "scope": "Loaded names, paths, IDs, work/display status and modified flags"
+    },
+    "nx_rename_object": {
+      "status": "experimental",
+      "evidence_type": "not_tested_in_this_release",
+      "scope": "No correctness or failure claim; preserve as experimental."
+    },
+    "nx_add_dimension": {
+      "status": "experimental",
+      "evidence_type": "not_tested_in_this_release",
+      "scope": "No correctness or failure claim; preserve as experimental."
+    },
+    "nx_measure_distance": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606",
+      "scope": "Body/body, face/face, nested component/body occurrences; closest points and units"
+    },
+    "nx_mate_component": {
+      "status": "experimental",
+      "evidence_type": "not_tested_in_this_release",
+      "scope": "No correctness or failure claim; preserve as experimental."
+    },
+    "nx_set_component_transform": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606",
+      "scope": "Absolute immediate-child placement; repeated identical pose"
+    },
+    "nx_operation_status": {
+      "status": "tested",
+      "evidence_type": "local_contract_test",
+      "scope": "Durable committed/failed/unknown receipt tests; no crash reconstruction claimed"
+    },
+    "nx_add_component": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606",
+      "scope": "Initial placement, typed references and nested source assembly"
+    },
+    "nx_sketch_arc": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606",
+      "scope": "Full circles on XY, XZ and YZ; resulting solid dimensions and volumes checked"
+    },
+    "nx_open_part": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606",
+      "scope": "Already-loaded paths reused without close/recreation"
+    },
+    "nx_measure_angle": {
+      "status": "experimental",
+      "evidence_type": "not_tested_in_this_release",
+      "scope": "No correctness or failure claim; preserve as experimental."
+    },
+    "nx_delete_feature": {
+      "status": "experimental",
+      "evidence_type": "not_tested_in_this_release",
+      "scope": "No correctness or failure claim; preserve as experimental."
+    },
+    "nx_reposition_component": {
+      "status": "experimental",
+      "evidence_type": "not_tested_in_this_release",
+      "scope": "No correctness or failure claim; preserve as experimental."
+    },
+    "nx_add_base_view": {
+      "status": "experimental",
+      "evidence_type": "not_tested_in_this_release",
+      "scope": "No correctness or failure claim; preserve as experimental."
+    },
+    "nx_checkpoint": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606",
+      "scope": "In-session model checkpoint and available-state inspection"
+    },
+    "nx_screenshot": {
+      "status": "experimental",
+      "evidence_type": "not_tested_in_this_release",
+      "scope": "Existing desktop capture retained and explicitly labeled; batch-model screenshot unavailable"
+    },
+    "nx_list_bodies": {
+      "status": "experimental",
+      "evidence_type": "not_tested_in_this_release",
+      "scope": "No correctness or failure claim; preserve as experimental."
+    },
+    "nx_save_part": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606",
+      "scope": "Save with documented native mark expiration"
+    },
+    "nx_set_view": {
+      "status": "experimental",
+      "evidence_type": "not_tested_in_this_release",
+      "scope": "No correctness or failure claim; preserve as experimental."
+    },
+    "nx_boolean": {
+      "status": "experimental",
+      "evidence_type": "not_tested_in_this_release",
+      "scope": "No correctness or failure claim; preserve as experimental."
+    },
+    "nx_list_topology": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606",
+      "scope": "Face and edge enumeration; face references used in actual distance query"
+    },
+    "nx_download_file": {
+      "status": "tested",
+      "evidence_type": "local_contract_test",
+      "scope": "Chunk bytes, full checksum and boundary/overwrite tests"
+    },
+    "nx_extrude": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606",
+      "scope": "Principal/custom normals; disconnected two-body extrusion; positive depth"
+    },
+    "nx_list_sketches": {
+      "status": "experimental",
+      "evidence_type": "not_tested_in_this_release",
+      "scope": "No correctness or failure claim; preserve as experimental."
+    },
+    "nx_list_features": {
+      "status": "experimental",
+      "evidence_type": "not_tested_in_this_release",
+      "scope": "No correctness or failure claim; preserve as experimental."
+    },
+    "nx_pattern": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606",
+      "scope": "Native Pattern Feature; 16 total at 16.5 pitch, width 261.5; edit to 3 at 20 pitch"
+    },
+    "nx_get_feature_info": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606",
+      "scope": "Extrude and Pattern Feature expressions and dependencies"
+    },
+    "nx_package_assembly": {
+      "status": "experimental",
+      "evidence_type": "not_tested_in_this_release",
+      "scope": "No correctness or failure claim; preserve as experimental."
+    },
+    "nx_sweep": {
+      "status": "experimental",
+      "evidence_type": "not_tested_in_this_release",
+      "scope": "No correctness or failure claim; preserve as experimental."
+    },
+    "nx_fit_view": {
+      "status": "experimental",
+      "evidence_type": "not_tested_in_this_release",
+      "scope": "No correctness or failure claim; preserve as experimental."
+    },
+    "nx_capabilities": {
+      "status": "experimental",
+      "evidence_type": "not_tested_in_this_release",
+      "scope": "No correctness or failure claim; preserve as experimental."
+    },
+    "nx_blend": {
+      "status": "experimental",
+      "evidence_type": "not_tested_in_this_release",
+      "scope": "No correctness or failure claim; preserve as experimental."
+    },
+    "nx_cancel_operation": {
+      "status": "experimental",
+      "evidence_type": "not_tested_in_this_release",
+      "scope": "No correctness or failure claim; preserve as experimental."
+    },
+    "nx_create_sketch": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606",
+      "scope": "XY, XZ, YZ and an offset arbitrary orthonormal basis; actual frames and curve coordinates checked"
+    },
+    "nx_checkpoint_state": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606",
+      "scope": "Checks actual NX mark availability, including save expiration"
+    },
+    "nx_sketch_rectangle": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606",
+      "scope": "Principal/custom bases, multiple loops, retry deduplication and batch rollback"
+    },
+    "nx_get_bounding_box": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606",
+      "scope": "Part and two-level assembly; conservative and exact with axis-aligned WCS"
+    },
+    "nx_save_as": {
+      "status": "experimental",
+      "evidence_type": "not_tested_in_this_release",
+      "scope": "No correctness or failure claim; preserve as experimental."
+    },
+    "nx_list_components": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606",
+      "scope": "Two-level transforms and STEP round-trip pose equality"
+    },
+    "nx_create_drawing": {
+      "status": "experimental",
+      "evidence_type": "not_tested_in_this_release",
+      "scope": "No correctness or failure claim; preserve as experimental."
+    },
+    "nx_sketch_constraint": {
+      "status": "experimental",
+      "evidence_type": "not_tested_in_this_release",
+      "scope": "No correctness or failure claim; preserve as experimental."
+    }
+  },
+  "limitations": [
+    "No general certification",
+    "Native save expires undo marks",
+    "Checkpoint recovery does not survive NX process restart",
+    "Exact bounds require axis-aligned WCS",
+    "Assembly import can conflict with loaded STEP prototype names",
+    "Modified-object tracking is explicit-only; null means not comprehensive",
+    "Batch structural preflight is not a geometric dry run",
+    "Cooperative cancellation happens between operations only",
+    "Absolute placement currently supports immediate children",
+    "MCP desktop clients must refresh tool schemas after deployment"
+  ],
+  "unavailable": [
+    "exact_interference_volume",
+    "general_solid_validity_audit",
+    "batch_model_viewport_image",
+    "full_sketch_editing_and_constraint_DOF",
+    "loft_shell_draft_threads_engraving",
+    "general_body_transforms",
+    "assembly_constraint_editing",
+    "color_material_transparency_visibility_controls"
+  ]
+}

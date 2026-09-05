@@ -10,7 +10,7 @@ import os
 import secrets
 import socketserver
 from collections.abc import Callable
-from dataclasses import asdict, dataclass, field
+from dataclasses import asdict, dataclass, field, replace
 from pathlib import Path
 from queue import Empty, Queue
 from threading import Event, Lock, Thread
@@ -394,9 +394,12 @@ class ObjectRegistry:
         identity = str(native_identity if native_identity is not None else id(value))
         identity_key = (part_id, kind, identity)
         if object_id := self._identities.get(identity_key):
-            return self._objects[object_id].reference
+            entry = self._objects[object_id]
+            if entry.reference.name != name:
+                entry.reference = replace(entry.reference, name=name)
+            return entry.reference
         reference = ObjectRef(
-            id=f"obj_{uuid4().hex}",
+            id=f"obj_{getattr(self, 'session_id', '') + '_' if getattr(self, 'session_id', None) else ''}{uuid4().hex}",
             kind=kind,
             name=name,
             part_id=part_id,
@@ -414,7 +417,15 @@ class ObjectRegistry:
     ) -> Any:
         entry = self._objects.get(object_id)
         if entry is None:
-            code = "NX_OBJECT_STALE" if object_id in self._stale_ids else "NX_OBJECT_NOT_FOUND"
+            foreign_session = bool(
+                getattr(self, "session_id", None)
+                and not object_id.startswith("obj_" + self.session_id + "_")
+            )
+            code = (
+                "NX_OBJECT_STALE"
+                if object_id in self._stale_ids or foreign_session
+                else "NX_OBJECT_NOT_FOUND"
+            )
             raise NXToolError(code, f"Object reference is not valid: {object_id}")
         if expected_kind is not None and entry.reference.kind != expected_kind:
             raise NXToolError(
