@@ -699,6 +699,7 @@ def test_inspection_report_packages_evidence_and_restores_view(author):
         {"path": path, "section_planes": [{"origin": [0, 0, 5], "normal": [0, 0, 1]}]},
     )
     assert result["capture_count"] == 3 and not r.body.IsBlanked
+    assert result["artifact_path"] == "report.zip"
     with zipfile.ZipFile(path) as z:
         assert {
             "index.html",

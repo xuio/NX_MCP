@@ -165,6 +165,7 @@ class ReviewToolsMixin:
             json.dump(data, stream, indent=2)
         return {
             "path": str(file),
+            "artifact_path": str(file.relative_to(self.workspace.root)),
             "sha256": hashlib.sha256(file.read_bytes()).hexdigest(),
             "size": file.stat().st_size,
             "objects_saved": len(saved),
@@ -394,6 +395,7 @@ class ReviewToolsMixin:
                 raise
         return {
             "path": str(file),
+            "artifact_path": str(file.relative_to(self.workspace.root)),
             "size": file.stat().st_size,
             "sha256": hashlib.sha256(file.read_bytes()).hexdigest(),
             "capture_count": len(report["captures"]),

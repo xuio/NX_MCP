@@ -324,7 +324,9 @@ async def main():
         for artifact in artifacts:
             content = bytearray()
             while True:
-                chunk = await call("nx_download_file", path=artifact["path"], offset=len(content))
+                chunk = await call(
+                    "nx_download_file", path=artifact["artifact_path"], offset=len(content)
+                )
                 content.extend(base64.b64decode(chunk["data_base64"]))
                 if chunk["eof"]:
                     break
