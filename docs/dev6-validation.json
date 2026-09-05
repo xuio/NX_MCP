@@ -1,0 +1,92 @@
+{
+  "version": "0.2.0.dev6",
+  "source_commit": "d9b5a1c5dd46c4e75ece66425a9cf1844aad0034",
+  "fork": "https://github.com/xuio/NX_MCP",
+  "nx_version": "v2606",
+  "tool_count": 104,
+  "new_tool_count": 10,
+  "features": [
+    "native BREP nearest geometry and reusable selection rules",
+    "bore axes and coaxial grouping",
+    "native associative component patterns with count/pitch editing",
+    "owned feature expression editing",
+    "native sketch dimensions and modern solver relations with geometric residual verification",
+    "bounded conflict diagnostics and explicit persistent-relation contradictions",
+    "prepared upstream review slices and draft first description; no PR opened"
+  ],
+  "local_tests": {
+    "passed": 453,
+    "skipped": 1,
+    "deselected": 1
+  },
+  "coverage": {
+    "percent": 82.68,
+    "required": 78,
+    "threshold_unchanged": true,
+    "scope_unchanged": true
+  },
+  "lint": "passed",
+  "type_check": "passed (25 source files)",
+  "pre_commit": "passed",
+  "hosted_ci": {
+    "status": "passed",
+    "jobs_passed": 13,
+    "url": "https://github.com/xuio/NX_MCP/actions/runs/33981485352"
+  },
+  "hosted_release": {
+    "status": "passed",
+    "url": "https://github.com/xuio/NX_MCP/actions/runs/33981514750"
+  },
+  "native_advanced_staging": {
+    "passed": 9,
+    "total": 9,
+    "groups": [
+      "exact_selection_edit_reopen_ambiguity",
+      "bore_axis_recognition",
+      "native_pattern_261_5_span_edit_reopen",
+      "native_dimensions_and_expression_edit",
+      "native_relations_and_diagnostics",
+      "owned_feature_parameters",
+      "horizontal_vertical_diameter_dimensions",
+      "two_curve_relation_types",
+      "conflict_sensitivity_and_restoration"
+    ]
+  },
+  "deployed_public_mcp": {
+    "advanced": {
+      "passed": 8,
+      "total": 8
+    },
+    "prior_authoring": {
+      "passed": 8,
+      "total": 8
+    },
+    "prior_visualization": {
+      "passed": 11,
+      "total": 11,
+      "rerun": "Initial invocation omitted the fixed-fixture environment setting; the one affected check was rerun successfully. Original receipt retained."
+    },
+    "supplemental_relation_persistence": "passed: equal radius follows driving-expression edits and survives save/reopen",
+    "total_successful_workflow_checks": 28
+  },
+  "windows_stdio": "passed: 104 tools",
+  "windows_http": "passed: 104 tools and native inline PNG checksum",
+  "installed_source_hashes": "match hosted release",
+  "session_preservation": {
+    "restored_parts": 38,
+    "modified_parts": 0,
+    "verified_component_placements": 116,
+    "design_geometry_changed": false
+  },
+  "archive_sha256": "c4ee680145204109a1d2f86636c6379a9e597f29194845b1fc41a0c3e918fc2c",
+  "deployment_transport": "QGA completion response was unavailable; reconciled installed version, runtime backup, restarted bridge and all installed source hashes before proceeding. Installation was not retried.",
+  "limitations": [
+    "Selectors re-evaluate geometric rules; they do not promise permanent topological identity across arbitrary edits.",
+    "Highest/lowest ordering still uses conservative bounds centers.",
+    "Bore recognition reports inward cylindrical faces; no threads, blind/through classification or manufacturing-feature inference.",
+    "Constraint sensitivity is bounded and is not a minimal conflicting set. Explicit legacy contradiction detection covers horizontal/vertical on a nonzero line only.",
+    "Modern sketch relation branches were validated natively. Legacy branch and reference-dimension guards have local boundary coverage only. Coincident selections support line endpoints and arc centers.",
+    "General feature expression APIs were validated natively on extrusion expressions; untested feature constructors remain scoped experimental.",
+    "Runtime source commit is fixed above; later documentation-only commits do not change the deployed runtime."
+  ]
+}
