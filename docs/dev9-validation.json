@@ -1,0 +1,40 @@
+{
+  "version": "0.2.0.dev9",
+  "runtime_commit": "bc54d38ecde44bd3a36ca89e1830959a83d47961",
+  "nx_version": "v2606",
+  "bridge_protocol": 1,
+  "tool_count": 130,
+  "runtime_ci": "https://github.com/xuio/NX_MCP/actions/runs/33992483926",
+  "release_build": "https://github.com/xuio/NX_MCP/actions/runs/33992483710",
+  "release_sha256": "8f57ef6156688581154c0051f3b92b1a528e2c8863c435493fdd88005f12fcf4",
+  "native_passed_groups": [
+    "absolute_nested_poses_reset_retry",
+    "views_pdf_save_as_reopen",
+    "preflight_rollback_view_guard_delete_stale"
+  ],
+  "original_loaded_parts_restored": 38,
+  "original_occurrences_verified": 116,
+  "local_validation": {
+    "pytest_passed": 610,
+    "pytest_skipped": 1,
+    "combined_statement_branch_coverage_percent": 80.51,
+    "unchanged_coverage_gate_percent": 78,
+    "mypy": "passed",
+    "pre_commit": "passed",
+    "ci": "all jobs passed"
+  },
+  "visual_review": {
+    "native_png": "Native 2946x1575 viewport PNG delivered and checksum verified; three separated solid occurrences visible. NX returned a larger size than requested and reports a warning.",
+    "drawing_pdf": "A3 one-page PDF with assembled/exploded/projected views; downloaded, checksum verified, parsed and visually inspected. Fixture datum axes remain visible."
+  },
+  "known_scopes": [
+    "Native absolute parent/child placement, inherited reset, identical operation-ID retry and new-ID absolute replay.",
+    "Base/projected drawing association and update propagation; CGM-preserving save, Save As and save-on-close; reopen persistence.",
+    "Native checkpoint rollback, preflight rejection without pose changes, referenced-view deletion guard, view detach, deletion and stale-reference rejection.",
+    "Local tests inject mid-batch native failure; real transport interruption during a native explosion edit was not injected.",
+    "The runtime manifest conservatively labels deletion experimental because its deployed acceptance followed packaging; the native pass is recorded here.",
+    "Ordinary collision, clearance and mass tools measure assembled geometry. No trace lines, automatic layouts, animation, BOMs or balloons.",
+    "Freeform surfaces and other roadmap items are proposed, not implemented."
+  ],
+  "pull_request_opened": false
+}
