@@ -3,7 +3,7 @@
   "nx_version": "v2606",
   "bridge_protocol": 1,
   "tool_count": 124,
-  "native_evidence_scope": "Serialized NX backend calls in disposable fixture parts; public endpoint deployment acceptance recorded separately after deployment.",
+  "native_evidence_scope": "Serialized NX 2606 backend fixtures plus deployed public MCP acceptance; native geometry evidence is separate from mocked contract coverage.",
   "native_passed_scenarios": [
     "assembly_constraint_fixed",
     "assembly_distance_edit",
@@ -44,7 +44,7 @@
   },
   "visual_review": {
     "native_png": "800x600 PNG inspected",
-    "drawing_pdf": "A3 PDF, base and projected views, computed10mm dimension inspected"
+    "drawing_pdf": "A3 PDF, base and projected views, computed 10 mm dimension inspected after public MCP download"
   },
   "known_scopes": [
     "Line-pair sketch symmetry; line/circle tangent native fixture.",
@@ -53,5 +53,69 @@
     "Single-body drawing base views; linear dimensions only.",
     "Native preset2/custom background tested; no blanket rendering certification."
   ],
-  "deployment": "pending"
+  "deployment": {
+    "status": "deployed_and_verified",
+    "runtime_commit": "d381426d31a25398daaea5910519a2bce24b4d38",
+    "release_archive_sha256": "dbd2db057900a87d63403987b00c4523d621ef6968c07f6ae6e095fe8312edd9",
+    "release_build": "https://github.com/xuio/NX_MCP/actions/runs/33988896807",
+    "runtime_ci": "https://github.com/xuio/NX_MCP/actions/runs/33988873985",
+    "runtime_ci_status": "success",
+    "interactive_cold_start": "passed",
+    "main_thread_dispatch": "verified",
+    "stdio_tools": 124,
+    "http_tools": 124,
+    "runtime_source_files_checksum_verified": 38,
+    "original_saved_parts_restored": 38,
+    "original_component_paths_and_transforms_verified": 116,
+    "inline_native_png_checksum": "passed",
+    "native_pdf_download_checksum": "passed",
+    "offline_bundle_refreshed": true,
+    "runtime_backup_retained": true,
+    "journal_execution_enabled": false
+  },
+  "public_endpoint_validation": {
+    "passed": 13,
+    "total": 13,
+    "groups": [
+      "assembly_constraint_geometry",
+      "associative_motion_persistence_retry",
+      "component_arrays_and_edits",
+      "extrusion_limits",
+      "failed_mutation_and_checkpoint_rollback",
+      "native_drafting_pdf",
+      "native_render_inline_artifact",
+      "physical_material_mass_inertia",
+      "project_copy_dependencies",
+      "repaired_native_modeling",
+      "shell_loft_draft",
+      "sketch_primitives",
+      "sketch_relations_and_local_edits"
+    ],
+    "runs": [
+      {
+        "run": "public",
+        "passed": 8,
+        "total": 10,
+        "restored_parts": 38
+      },
+      {
+        "run": "public-followup",
+        "passed": 4,
+        "total": 5,
+        "restored_parts": 38
+      },
+      {
+        "run": "public-recovery",
+        "passed": 1,
+        "total": 1,
+        "restored_parts": 38
+      }
+    ],
+    "fixture_corrections": [
+      "Reacquire face IDs after sketch mutations.",
+      "Use a self-intersecting extrusion for native failure testing; NX accepts the oversized shell fixture.",
+      "Reacquire surviving body IDs after native rollback."
+    ],
+    "runtime_changes_after_release": "none"
+  }
 }

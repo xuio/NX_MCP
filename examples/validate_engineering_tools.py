@@ -1,7 +1,7 @@
 """Live NX 2606 engineering acceptance; isolated parts and session restoration.
 
 NX_MCP_URL selects the deployed server. NX_VALIDATION_OUTPUT holds receipts and
-artifacts. NX_VALIDATION_GROUP optionally restricts a rerun to one named group.
+artifacts. NX_VALIDATION_GROUP optionally selects comma-separated named groups.
 """
 
 import asyncio
@@ -45,7 +45,8 @@ async def main():
             assert math.isclose(actual, expected, rel_tol=1e-7, abs_tol=1e-10), (actual, expected)
 
         async def group(name, fn):
-            if os.environ.get("NX_VALIDATION_GROUP") not in {None, name}:
+            selected = os.environ.get("NX_VALIDATION_GROUP")
+            if selected and name not in selected.split(","):
                 return
             try:
                 value = await fn()
@@ -135,8 +136,8 @@ async def main():
                 )
                 close(await volume(), 960)
                 f = await box("until")
-                target = await face(f["body"]["id"], [0, 0, 1])
                 s = await profile(2, 2)
+                target = await face(f["body"]["id"], [0, 0, 1])
                 r = await call("nx_extrude", sketch_id=s, end_type="up_to_face", target_face=target)
                 close(await volume(r["body"]["id"]), 40)
                 return {"offset_volume": 700, "through_volume": 960, "until_volume": 40}
@@ -344,23 +345,37 @@ async def main():
             await group("sketch_primitives", primitives)
 
             async def recovery():
-                f = await box("recovery")
+                await box("recovery")
+                sketch = (await call("nx_create_sketch"))["object"]["id"]
+                points = [[0, 0], [10, 10], [0, 10], [10, 0], [0, 0]]
+                for start, end in zip(points, points[1:], strict=False):
+                    await call(
+                        "nx_sketch_line",
+                        sketch_id=sketch,
+                        start=dict(zip(["x", "y"], start, strict=True)),
+                        end=dict(zip(["x", "y"], end, strict=True)),
+                    )
+                await call("nx_finish_sketch", sketch_id=sketch)
                 checkpoint = await call("nx_checkpoint", label="engineering recovery")
-                top = await face(f["body"]["id"], [0, 0, 1])
                 failed = await client.call_tool(
-                    "nx_shell",
+                    "nx_extrude",
                     {
-                        "body": f["body"]["id"],
-                        "thickness": 100,
-                        "remove_faces": [top],
-                        "operation_id": "bad-shell-" + uuid.uuid4().hex,
+                        "sketch_id": sketch,
+                        "distance": 5,
+                        "operation_id": "bad-section-" + uuid.uuid4().hex,
                     },
                 )
-                assert failed.isError, "Impossible shell unexpectedly succeeded"
+                assert failed.isError, (
+                    "Self-intersecting section unexpectedly succeeded",
+                    failed.structuredContent,
+                )
+                assert failed.structuredContent["details"]["mutation_outcome"] == "rolled_back"
                 close(await volume(), 1000)
+                # Rollback invalidates object IDs; reacquire the surviving body.
+                body = (await call("nx_list_bodies"))["objects"][0]["id"]
                 await call(
                     "nx_transform_bodies",
-                    bodies=[f["body"]["id"]],
+                    bodies=[body],
                     translation=[20, 0, 0],
                     rotation_matrix=[[1, 0, 0], [0, 1, 0], [0, 0, 1]],
                     copy=True,
@@ -385,6 +400,157 @@ async def main():
                 )
 
             await group("native_render_inline_artifact", rendering)
+
+            async def line(sketch, start, end):
+                return (
+                    await call(
+                        "nx_sketch_line",
+                        sketch_id=sketch,
+                        start=dict(zip(["x", "y"], start, strict=True)),
+                        end=dict(zip(["x", "y"], end, strict=True)),
+                    )
+                )["object"]["id"]
+
+            async def sketch_edits():
+                results = {}
+                await new("angle")
+                s = (await call("nx_create_sketch"))["object"]["id"]
+                a = await line(s, [0, 0], [10, 0])
+                b = await line(s, [0, 0], [5, 5])
+                results["angle"] = await call(
+                    "nx_sketch_angle", sketch_id=s, line1=a, line2=b, value=60, origin=[4, 2]
+                )
+                await call("nx_finish_sketch", sketch_id=s)
+                await new("tangent")
+                s = (await call("nx_create_sketch"))["object"]["id"]
+                a = await line(s, [-10, 0], [10, 0])
+                b = (
+                    await call(
+                        "nx_sketch_primitive",
+                        sketch_id=s,
+                        primitive="circle",
+                        center=[0, 3],
+                        radius=2,
+                    )
+                )["curves"][0]["id"]
+                results["tangent"] = await call(
+                    "nx_sketch_tangent", sketch_id=s, curve1=a, curve2=b
+                )
+                close(results["tangent"]["residual"], 0)
+                assert results["tangent"]["constraints"]
+                await call("nx_finish_sketch", sketch_id=s)
+                await new("symmetry")
+                s = (await call("nx_create_sketch"))["object"]["id"]
+                a = await line(s, [-5, 0], [-5, 10])
+                b = await line(s, [4, 1], [4, 9])
+                axis = await line(s, [0, -5], [0, 15])
+                results["symmetry"] = await call(
+                    "nx_sketch_symmetry", sketch_id=s, curve1=a, curve2=b, centerline=axis
+                )
+                close(results["symmetry"]["residual"], 0)
+                assert results["symmetry"]["constraints"]
+                await call("nx_finish_sketch", sketch_id=s)
+                for action, end, pick in [("trim", [5, 0], [-3, 0]), ("extend", [-2, 0], [-2, 0])]:
+                    await new(action)
+                    s = (await call("nx_create_sketch"))["object"]["id"]
+                    a = await line(s, [-5, 0], end)
+                    b = await line(s, [0, -5], [0, 5])
+                    results[action] = await call(
+                        "nx_sketch_trim_extend",
+                        sketch_id=s,
+                        curve=a,
+                        boundaries=[b],
+                        pick=pick,
+                        action=action,
+                    )
+                    await call("nx_finish_sketch", sketch_id=s)
+                return results
+
+            await group("sketch_relations_and_local_edits", sketch_edits)
+
+            async def legacy_modeling():
+                results = {}
+                for method, param, expected in [
+                    ("nx_blend", "radius", 1000 - 10 * (1 - math.pi / 4)),
+                    ("nx_chamfer", "offset", 995),
+                ]:
+                    f = await box(method)
+                    edges = await call(
+                        "nx_find_geometry",
+                        owner=f["body"]["id"],
+                        kind="edge",
+                        geometry_type="line",
+                        order="highest",
+                    )
+                    await call(method, edges=[edges["items"][0]["object"]["id"]], **{param: 1})
+                    close(await volume(), expected)
+                    results[method] = await volume()
+                await box("hole")
+                await call("nx_hole", diameter=2, depth=5, x=5, y=5, z=0)
+                close(await volume(), 1000 - 5 * math.pi)
+                results["hole"] = await volume()
+                f = await box("mirror")
+                mirrored = await call("nx_mirror_body", body=f["body"]["id"], plane="YZ")
+                close(await volume(), 2000)
+                bounds = await call("nx_get_bounding_box", body=mirrored["body"]["id"])
+                close(bounds["min"][0], -10)
+                close(bounds["max"][0], 0)
+                await new("sweep")
+                section = await profile(2, 2)
+                guide = (await call("nx_create_sketch", plane="XZ"))["object"]["id"]
+                await line(guide, [0, 0], [0, 10])
+                await call("nx_finish_sketch", sketch_id=guide)
+                await call("nx_sweep", section=section, guide=guide)
+                close(await volume(), 40)
+                results["sweep"] = await volume()
+                return results
+
+            await group("repaired_native_modeling", legacy_modeling)
+
+            async def drawing_pdf():
+                f = await box("drawing")
+                sheet = await call("nx_create_drawing", name="Sheet1", size="A3", scale=1)
+                view = await call(
+                    "nx_add_base_view",
+                    drawing=sheet["object"]["id"],
+                    body=f["body"]["id"],
+                    view="top",
+                )
+                edges = await call(
+                    "nx_find_geometry",
+                    owner=f["body"]["id"],
+                    kind="edge",
+                    geometry_type="line",
+                    order="highest",
+                )
+                edge = next(e for e in edges["items"] if e["bounds"][3] - e["bounds"][0] > 9)
+                dimension = await call(
+                    "nx_add_dimension",
+                    view=view["object"]["id"],
+                    object1=edge["object"]["id"],
+                    dim_type="horizontal",
+                    origin=[100, 80],
+                )
+                close(dimension["measured_value"], 10)
+                projected = await call(
+                    "nx_add_projection_view", base_view=view["object"]["id"], direction="right"
+                )
+                pdf = await call("nx_export_drawing_pdf", path=prefix + "/drawing.pdf")
+                artifact = await call("nx_download_file", path=pdf["path"])
+                data = base64.b64decode(artifact["data_base64"])
+                assert artifact["eof"] and data.startswith(b"%PDF-")
+                assert hashlib.sha256(data).hexdigest() == pdf["sha256"]
+                (output / "drawing.pdf").write_bytes(data)
+                return {
+                    "sheet": sheet,
+                    "view": view,
+                    "dimension": dimension,
+                    "projected": projected,
+                    "pdf": pdf,
+                }
+
+            await group("native_drafting_pdf", drawing_pdf)
+
         finally:
             for p in (await call("nx_list_open_parts"))["parts"]:
                 if prefix in p["path"]:
