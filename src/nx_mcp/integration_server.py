@@ -357,6 +357,8 @@ SIDE = {
     "nx_cancel_operation",
 }
 PATHS = {
+    "nx_render_view": "path",
+    "nx_copy_project": "path",
     "nx_component_action": "part_path",
     "nx_save_presentation": "path",
     "nx_restore_presentation": "path",
@@ -454,7 +456,7 @@ def configure(mcp, bridge, workspace):
                                     )
                         result = await bridge.call(method, params)
                     response = envelope(result, error=result.get("status") == "error")
-                    if method == "nx_screenshot" and not response.isError:
+                    if method in {"nx_screenshot", "nx_render_view"} and not response.isError:
                         file = workspace.ensure_inside(result["path"])
                         if file.stat().st_size <= 8 * 1024 * 1024:
                             data = file.read_bytes()

@@ -1,0 +1,57 @@
+{
+  "version": "0.2.0.dev8",
+  "nx_version": "v2606",
+  "bridge_protocol": 1,
+  "tool_count": 124,
+  "native_evidence_scope": "Serialized NX backend calls in disposable fixture parts; public endpoint deployment acceptance recorded separately after deployment.",
+  "native_passed_scenarios": [
+    "assembly_constraint_fixed",
+    "assembly_distance_edit",
+    "associative_body_copy_absolute_edit",
+    "component_arrays",
+    "component_pattern_edits",
+    "extrusion_offsets_symmetric_arbitrary",
+    "extrusion_through_all_up_to_face",
+    "legacy_blend",
+    "legacy_chamfer",
+    "legacy_hole",
+    "legacy_sweep",
+    "native_boolean_volumes",
+    "native_drawing_pdf",
+    "native_edge_hole_sweep_volumes",
+    "native_mate_geometry",
+    "native_mirror_verified",
+    "native_nested_mass",
+    "physical_material_and_mass",
+    "project_copy",
+    "render_lighting",
+    "shell_open_box",
+    "sketch_angle",
+    "sketch_extend",
+    "sketch_primitives_solid_profiles",
+    "sketch_symmetry",
+    "sketch_tangent",
+    "sketch_trim",
+    "solid_loft"
+  ],
+  "original_loaded_parts_restored": 38,
+  "local_validation": {
+    "pytest_passed": 551,
+    "pytest_skipped": 1,
+    "branch_coverage_percent": 79.78,
+    "unchanged_coverage_gate_percent": 78,
+    "mypy": "passed"
+  },
+  "visual_review": {
+    "native_png": "800x600 PNG inspected",
+    "drawing_pdf": "A3 PDF, base and projected views, computed10mm dimension inspected"
+  },
+  "known_scopes": [
+    "Line-pair sketch symmetry; line/circle tangent native fixture.",
+    "Solid loft native fixture; sheet configuration contract-tested.",
+    "Simple cylindrical holes, no drill-tip or thread authoring.",
+    "Single-body drawing base views; linear dimensions only.",
+    "Native preset2/custom background tested; no blanket rendering certification."
+  ],
+  "deployment": "pending"
+}

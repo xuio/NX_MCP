@@ -192,7 +192,9 @@ def patterned(author):
         ComponentPatternSet=NS(Add=Mock()),
         PatternService=NS(
             PatternType="linear",
+            PatternEnum=NS(Linear="linear", Circular="circular"),
             RectangularDefinition=NS(
+                UseYDirectionToggle=False,
                 XSpacing=NS(NCopies=count, PitchDistance=pitch),
                 YSpacing=NS(NCopies=Expression("y")),
             ),
@@ -227,7 +229,7 @@ def test_pattern_failure_count_and_unsupported_edits(patterned):
     with pytest.raises(NXToolError, match="Supply"):
         r.e._edit_component_pattern(r.ref(r.pattern, "component_pattern"))
     r.pattern_builder.Associative = False
-    with pytest.raises(NXToolError, match="Only associative"):
+    with pytest.raises(NXToolError, match="associative"):
         r.e._edit_component_pattern(r.ref(r.pattern, "component_pattern"), spacing=20)
     r.seed.IsSuppressed = True
     with pytest.raises(NXToolError, match="unsuppressed"):

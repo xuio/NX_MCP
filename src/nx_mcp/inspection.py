@@ -37,6 +37,10 @@ class InspectionMixin:
                     name
                     for name, member in [
                         ("shaded", self.nxopen.View.RenderingStyleType.Shaded),
+                        (
+                            "studio",
+                            getattr(self.nxopen.View.RenderingStyleType, "Studio", object()),
+                        ),
                         ("shaded_with_edges", self.nxopen.View.RenderingStyleType.ShadedWithEdges),
                         ("wireframe", self.nxopen.View.RenderingStyleType.StaticWireframe),
                     ]

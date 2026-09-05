@@ -1,6 +1,8 @@
 # NX v2606 integration fork
 
-This fork of [DreamEnding/NX_MCP](https://github.com/DreamEnding/NX_MCP) preserves the upstream history and MIT license. The initial import was deployed against Siemens NX v2606 as `0.2.0.dev2`; subsequent releases extend it through `0.2.0.dev7`. The fork follows upstream base `179086b6de28a53d340132aca7678fa6ed03b422` and retains the deployment history. Machine provisioning, private CAD, credentials and deployment session logs are outside this repository.
+This fork of [DreamEnding/NX_MCP](https://github.com/DreamEnding/NX_MCP) preserves the upstream history and MIT license. The initial import was deployed against Siemens NX v2606 as `0.2.0.dev2`; subsequent releases extend it through `0.2.0.dev8`. The fork follows upstream base `179086b6de28a53d340132aca7678fa6ed03b422` and retains the deployment history. Machine provisioning, private CAD, credentials and deployment session logs are outside this repository.
+
+See [engineering tools and scoped validation](engineering-tools.md) for the latest solid modeling, sketches, assemblies, materials, project copying, rendering and drafting additions.
 
 ## Included changes
 
@@ -12,7 +14,7 @@ This fork of [DreamEnding/NX_MCP](https://github.com/DreamEnding/NX_MCP) preserv
 - Collision highlighting, single-plane capped sections, body/component visibility, colors and transparency with restoration.
 - Native sketch solver status, remaining degrees of freedom and persistent constraint-to-geometry links.
 
-The dev7 opt-in integration profile exposes 106 tools. Tool status describes scoped validation on NX v2606, not universal certification. Journal execution remains disabled. The default sidecar retains upstream's smaller tool surface unless experimental mode is enabled.
+The dev8 opt-in integration profile exposes 124 tools. Tool status describes scoped validation on NX v2606, not universal certification. Journal execution remains disabled. The default sidecar retains upstream's smaller tool surface unless experimental mode is enabled.
 
 ## Start the graphical bridge and sidecar
 

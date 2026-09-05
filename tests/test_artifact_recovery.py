@@ -159,7 +159,8 @@ async def test_mcp_paths_are_validated_before_bridge_dispatch(tmp_path):
 
 @pytest.mark.asyncio
 @pytest.mark.parametrize("kind", ["valid", "changed", "large"])
-async def test_inline_capture_delivery_checks_committed_artifact(tmp_path, kind):
+@pytest.mark.parametrize("method", ["nx_screenshot", "nx_render_view"])
+async def test_inline_capture_delivery_checks_committed_artifact(tmp_path, kind, method):
     p = tmp_path / "capture.png"
     data = b"png" if kind != "large" else b"x" * (8 * 1024 * 1024 + 1)
     p.write_bytes(data)
@@ -171,7 +172,7 @@ async def test_inline_capture_delivery_checks_committed_artifact(tmp_path, kind)
     bridge = AsyncMock()
     bridge.call.return_value = result
     server = create_server(bridge, Workspace(tmp_path), enable_experimental=True)
-    response = await server.call_tool("nx_screenshot", {"path": "capture.png"})
+    response = await server.call_tool(method, {"path": "capture.png"})
     images = [v for v in response.content if v.type == "image"]
     if kind == "valid":
         assert base64.b64decode(images[0].data) == data

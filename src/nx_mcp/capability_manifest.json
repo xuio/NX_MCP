@@ -1,5 +1,5 @@
 {
-  "revision": "2606-advanced-authoring-r1",
+  "revision": "2606-engineering-r1",
   "nx_version": "v2606",
   "bridge_protocol": 1,
   "tools": {
@@ -9,9 +9,9 @@
       "scope": "Explicit checkpoint rollback; stale references rejected afterward"
     },
     "nx_export_drawing_pdf": {
-      "status": "experimental",
-      "evidence_type": "not_tested_in_this_release",
-      "scope": "No correctness or failure claim; preserve as experimental."
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native PDF plot export with A3 page size, two views and 10mm dimension; file parsed and visually reviewed."
     },
     "nx_finish_sketch": {
       "status": "tested",
@@ -19,14 +19,14 @@
       "scope": "Principal/custom sketch completion and subsequent extrusion"
     },
     "nx_chamfer": {
-      "status": "experimental",
-      "evidence_type": "not_tested_in_this_release",
-      "scope": "No correctness or failure claim; preserve as experimental."
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native single-edge symmetric-offset chamfer on a cube; explicit edge collector and tolerance."
     },
     "nx_mirror_body": {
-      "status": "experimental",
-      "evidence_type": "not_tested_in_this_release",
-      "scope": "No correctness or failure claim; preserve as experimental."
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native body mirror about YZ origin plane; doubled total volume and reflected bounding box."
     },
     "nx_create_part": {
       "status": "tested",
@@ -39,9 +39,9 @@
       "scope": "Used by loaded-part opening; work/display activation; modified flags preserved"
     },
     "nx_add_projection_view": {
-      "status": "experimental",
-      "evidence_type": "not_tested_in_this_release",
-      "scope": "No correctness or failure claim; preserve as experimental."
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native right projected view and associative parent; exported PDF visually reviewed."
     },
     "nx_upload_file": {
       "status": "tested",
@@ -59,9 +59,9 @@
       "scope": "No correctness or failure claim; preserve as experimental."
     },
     "nx_hole": {
-      "status": "experimental",
-      "evidence_type": "not_tested_in_this_release",
-      "scope": "No correctness or failure claim; preserve as experimental."
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native cylindrical subtraction with numeric coordinates, target body and direction; not a threaded/drill-tip HolePackage feature."
     },
     "nx_close_part": {
       "status": "tested",
@@ -124,9 +124,9 @@
       "scope": "No correctness or failure claim; preserve as experimental."
     },
     "nx_add_dimension": {
-      "status": "experimental",
-      "evidence_type": "not_tested_in_this_release",
-      "scope": "No correctness or failure claim; preserve as experimental."
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native horizontal edge dimension with computed size10mm; exported PDF visually reviewed. Aligned/vertical variations are not separately kernel-tested."
     },
     "nx_measure_distance": {
       "status": "tested",
@@ -134,9 +134,9 @@
       "scope": "Body/body, face/face, nested component/body occurrences; closest points and units"
     },
     "nx_mate_component": {
-      "status": "experimental",
-      "evidence_type": "not_tested_in_this_release",
-      "scope": "No correctness or failure claim; preserve as experimental."
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native touch mate at zero clearance and offset mate at7mm verified by measured separation. Other mate types have narrower validation."
     },
     "nx_set_component_transform": {
       "status": "tested",
@@ -179,9 +179,9 @@
       "scope": "No correctness or failure claim; preserve as experimental."
     },
     "nx_add_base_view": {
-      "status": "experimental",
-      "evidence_type": "not_tested_in_this_release",
-      "scope": "No correctness or failure claim; preserve as experimental."
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native top base view of a single-body part; sheet placement verified in exported PDF."
     },
     "nx_checkpoint": {
       "status": "tested",
@@ -209,9 +209,9 @@
       "scope": "No correctness or failure claim; preserve as experimental."
     },
     "nx_boolean": {
-      "status": "experimental",
-      "evidence_type": "not_tested_in_this_release",
-      "scope": "No correctness or failure claim; preserve as experimental."
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Overlapping1000mm3 cubes: unite1500, subtract500, intersect500mm3 verified analytically."
     },
     "nx_list_topology": {
       "status": "tested",
@@ -225,8 +225,8 @@
     },
     "nx_extrude": {
       "status": "tested",
-      "evidence_type": "real_NX_v2606",
-      "scope": "Principal/custom normals; disconnected two-body extrusion; positive depth"
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native offset/symmetric/arbitrary-direction extrusion, through-all subtraction and up-to-face solids; analytic volume and bounds checked."
     },
     "nx_list_sketches": {
       "status": "experimental",
@@ -254,9 +254,9 @@
       "scope": "No correctness or failure claim; preserve as experimental."
     },
     "nx_sweep": {
-      "status": "experimental",
-      "evidence_type": "not_tested_in_this_release",
-      "scope": "No correctness or failure claim; preserve as experimental."
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native square sketch swept along a straight guide sketch; boolean variants use existing boolean operation."
     },
     "nx_fit_view": {
       "status": "experimental",
@@ -269,9 +269,9 @@
       "scope": "No correctness or failure claim; preserve as experimental."
     },
     "nx_blend": {
-      "status": "experimental",
-      "evidence_type": "not_tested_in_this_release",
-      "scope": "No correctness or failure claim; preserve as experimental."
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native single-edge radius1 blend on a cube; installed AddChainset API and cleanup verified."
     },
     "nx_cancel_operation": {
       "status": "experimental",
@@ -309,9 +309,9 @@
       "scope": "Two-level transforms and STEP round-trip pose equality"
     },
     "nx_create_drawing": {
-      "status": "experimental",
-      "evidence_type": "not_tested_in_this_release",
-      "scope": "No correctness or failure claim; preserve as experimental."
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native metric A3 sheet at 1:1 first-angle projection; sheet opening and typed reference."
     },
     "nx_sketch_constraint": {
       "status": "experimental",
@@ -490,13 +490,13 @@
     },
     "nx_edit_component_pattern": {
       "status": "tested",
-      "evidence_type": "real_NX_v2606_scoped_and_local_boundary_tests",
-      "scope": "Native linear pitch/count edited to 4 total at 20 mm; poses read back; association persists after save/reopen."
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native rectangular 4x3 and circular 5-instance edits; expression and instance readback."
     },
     "nx_list_component_patterns": {
       "status": "tested",
-      "evidence_type": "real_NX_v2606_scoped_and_local_boundary_tests",
-      "scope": "Native GetAllComponentPatterns enumeration, expression and member read-back; non-assembly guard."
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native linear, two-direction rectangular and circular pattern metadata and actual occurrence transforms."
     },
     "nx_sketch_dimension": {
       "status": "tested",
@@ -522,6 +522,96 @@
       "status": "tested",
       "evidence_type": "real_NX_v2606_scoped_and_local_boundary_tests",
       "scope": "Native extrusion-owned Number formula edit and resulting bounds; preflight/rollback boundary tests. No blanket verification of other feature kinds."
+    },
+    "nx_shell": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native open-box shell: inward 1 mm thickness on 10 mm cube gives 424 mm3. Outward configuration separately checked locally."
+    },
+    "nx_loft": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native solid loft between square sections with analytic volume; sheet configuration has local contract coverage."
+    },
+    "nx_draft": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native 5 degree face draft with analytic volume and explicit angle/distance tolerances."
+    },
+    "nx_transform_bodies": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Associative body extraction plus native MoveObject; copy preserves source; absolute transform replacement verified by bounds."
+    },
+    "nx_sketch_primitive": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Circle, horizontal slot and rounded rectangle: native curves and extruded analytic volumes."
+    },
+    "nx_sketch_angle": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native driving angular dimension creation and expression; broader angle configurations remain unverified."
+    },
+    "nx_sketch_tangent": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Modern line/circle tangent relation with persistent constraint enumeration and zero geometric residual."
+    },
+    "nx_sketch_symmetry": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Modern line-pair symmetry about a line; persistent Mirror relation and zero geometric residual."
+    },
+    "nx_sketch_trim_extend": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native line trim and line extension against an explicit crossing line; reacquire geometry after edits."
+    },
+    "nx_component_array": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native associative rectangular 3x2 and circular 4-instance patterns, including seed."
+    },
+    "nx_set_material": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Local density-only physical material assignment, verified by UF native body density."
+    },
+    "nx_material_info": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native physical material name and kg/m3 density readback; assembly occurrence prototypes supported."
+    },
+    "nx_mass_properties": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native solid mass, volume, center of gravity and centroidal inertia; 2700kg/m3 test cube matches analytic results. Nested rotated/translated two-body assembly: mass0.0054kg and CoG[0.005,0.035,0.035]m verified."
+    },
+    "nx_copy_project": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native clone of saved assembly and prototype, rewritten dependencies, source hashes and manifest; partial-file cleanup covered locally."
+    },
+    "nx_render_view": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native Studio image capture, exact 800x600 and 640x480 PNGs; preset2/custom RGB tested; native viewport image visually reviewed."
+    },
+    "nx_assembly_constraint": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native fix and face-distance constraints; actual separation measured. Other exposed relation types retain narrower validation."
+    },
+    "nx_edit_assembly_constraint": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native suppression toggle and distance 5->12 edit; actual component separation verified after rebuilding solve network."
+    },
+    "nx_list_assembly_constraints": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native typed constraint references, geometry/occurrence references, expressions, suppression and solver statuses."
     }
   },
   "limitations": [

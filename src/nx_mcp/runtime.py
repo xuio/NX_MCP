@@ -18,6 +18,10 @@ ObjectKind = Literal[
     "constraint",
     "expression",
     "component_pattern",
+    "assembly_constraint",
+    "drawing_sheet",
+    "drawing_view",
+    "dimension",
 ]
 
 

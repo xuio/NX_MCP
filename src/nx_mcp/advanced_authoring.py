@@ -143,7 +143,9 @@ class AdvancedAuthoringMixin:
             result = {
                 "object": self._reference(pattern, "component_pattern", part, "Component pattern"),
                 "native_type": "NXOpen.Assemblies.ComponentPattern",
-                "pattern_type": "linear" if linear else str(service.PatternType),
+                "pattern_type": "linear"
+                if linear
+                else enum_name(service.PatternType, service.PatternEnum),
                 "associative": bool(builder.Associative),
             }
             if linear:
@@ -153,6 +155,19 @@ class AdvancedAuthoringMixin:
                     spacing_expression=self._expression_record(spacing.PitchDistance),
                     count_includes_seed=True,
                 )
+            if linear:
+                d = service.RectangularDefinition
+                result["second_direction_enabled"] = d.UseYDirectionToggle
+                if d.UseYDirectionToggle:
+                    result["count_y_expression"] = self._expression_record(d.YSpacing.NCopies)
+                    result["spacing_y_expression"] = self._expression_record(
+                        d.YSpacing.PitchDistance
+                    )
+            elif service.PatternType == service.PatternEnum.Circular:
+                d = service.CircularDefinition
+                result["count_expression"] = self._expression_record(d.AngularSpacing.NCopies)
+                result["angle_expression"] = self._expression_record(d.AngularSpacing.PitchAngle)
+                result["count_includes_seed"] = True
             components = {int(c.Tag): c for c in pattern.GetComponentsToPattern()}
             for member in pattern.GetAllPatternMembers():
                 for c in member.GetAllComponents():
@@ -241,34 +256,85 @@ class AdvancedAuthoringMixin:
             )
         return result
 
-    def _edit_component_pattern(self, pattern, spacing=None, count=None):
-        import NXOpen.GeometricUtilities
-
-        if spacing is None and count is None:
-            raise NXToolError("NX_INVALID_ARGUMENT", "Supply spacing and/or count")
+    def _edit_component_pattern(
+        self, pattern, spacing=None, count=None, count_y=None, spacing_y=None, angle=None
+    ):
+        if all(v is None for v in [spacing, count, count_y, spacing_y, angle]):
+            raise NXToolError("NX_INVALID_ARGUMENT", "Supply at least one parameter")
         self._pattern_inputs(spacing, count)
+        if count_y is not None and (type(count_y) is not int or not 1 <= count_y <= 100):
+            raise NXToolError("NX_INVALID_ARGUMENT", "count_y must be 1–100")
+        if spacing_y is not None:
+            spacing_y = finite(spacing_y, "spacing_y", True)
+        if angle is not None:
+            angle = finite(angle, "angle", True)
         obj = self._resolve(pattern, {"component_pattern"})
         b = self._work_part().ComponentAssembly.CreateComponentPatternBuilder(obj)
         try:
-            if (
-                not b.Associative
-                or b.PatternService.PatternType
-                != NXOpen.GeometricUtilities.PatternDefinition.PatternEnum.Linear
-            ):
+            service = b.PatternService
+            if not b.Associative or len(obj.GetComponentsToPattern()) != 1:
                 raise NXToolError(
-                    "NX_UNSUPPORTED_EDIT", "Only associative linear component patterns are editable"
+                    "NX_UNSUPPORTED_EDIT", "Select an associative single-seed pattern"
                 )
-            d = b.PatternService.RectangularDefinition
-            if count is not None:
-                d.XSpacing.NCopies.RightHandSide = str(count)
-            if spacing is not None:
-                d.XSpacing.PitchDistance.RightHandSide = str(float(spacing))
+            if service.PatternType == service.PatternEnum.Linear:
+                if angle is not None:
+                    raise NXToolError("NX_INVALID_ARGUMENT", "angle requires a circular pattern")
+                d = service.RectangularDefinition
+                nx = count if count is not None else int(d.XSpacing.NCopies.Value)
+                ny = (
+                    count_y
+                    if count_y is not None
+                    else int(d.YSpacing.NCopies.Value)
+                    if d.UseYDirectionToggle
+                    else 1
+                )
+                if ny > 1 and not d.UseYDirectionToggle:
+                    raise NXToolError(
+                        "NX_UNSUPPORTED_EDIT",
+                        "Create a two-direction array before increasing its second-direction count",
+                    )
+                if spacing_y is not None and ny == 1:
+                    raise NXToolError(
+                        "NX_INVALID_ARGUMENT", "spacing_y requires a second direction"
+                    )
+                expected = nx * ny
+                if expected > 100:
+                    raise NXToolError("NX_INVALID_ARGUMENT", "At most 100 total instances")
+                if count is not None:
+                    d.XSpacing.NCopies.RightHandSide = str(count)
+                if spacing is not None:
+                    d.XSpacing.PitchDistance.RightHandSide = str(float(spacing))
+                if count_y is not None:
+                    d.YSpacing.NCopies.RightHandSide = str(count_y)
+                    d.UseYDirectionToggle = count_y > 1
+                if spacing_y is not None:
+                    d.YSpacing.PitchDistance.RightHandSide = str(spacing_y)
+            elif service.PatternType == service.PatternEnum.Circular:
+                if any(v is not None for v in [spacing, count_y, spacing_y]):
+                    raise NXToolError(
+                        "NX_INVALID_ARGUMENT", "Circular edits accept count and angle only"
+                    )
+                d = service.CircularDefinition
+                expected = count if count is not None else int(d.AngularSpacing.NCopies.Value)
+                pitch = angle if angle is not None else d.AngularSpacing.PitchAngle.Value
+                if (expected - 1) * pitch >= 360:
+                    raise NXToolError(
+                        "NX_INVALID_ARGUMENT", "Angular positions must not duplicate the seed"
+                    )
+                if count is not None:
+                    d.AngularSpacing.NCopies.RightHandSide = str(count)
+                if angle is not None:
+                    d.AngularSpacing.PitchAngle.RightHandSide = str(angle)
+            else:
+                raise NXToolError(
+                    "NX_UNSUPPORTED_EDIT", "Only rectangular and circular patterns are supported"
+                )
             b.Commit()
         finally:
             b.Destroy()
         self._update_model()
         result = self._component_pattern_record(obj)
-        if count is not None and result["total_instances"] != count:
+        if result["total_instances"] != expected:
             raise NXToolError(
                 "NX_PATTERN_VERIFICATION_FAILED", "Native member count differs; rolling back"
             )

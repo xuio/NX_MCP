@@ -14,6 +14,7 @@ from nx_mcp.advanced_authoring import AdvancedAuthoringMixin
 from nx_mcp.authoring import AuthoringMixin
 from nx_mcp.authoring_server import NON_MODEL as AUTHORING_NON_MODEL
 from nx_mcp.authoring_server import READ_ONLY as AUTHORING_READ_ONLY
+from nx_mcp.engineering import EngineeringMixin
 from nx_mcp.inspection import InspectionMixin
 from nx_mcp.nx_bridge import NXOpenExecutor
 from nx_mcp.recovery import OperationStore, timestamp
@@ -47,6 +48,7 @@ READ_ONLY = {
 }
 # Files, session lifecycle, and undo itself cannot be reversed by a model undo mark.
 NON_MODEL = {
+    "nx_copy_project",
     "nx_highlight_collisions",
     "nx_clear_highlights",
     "nx_create_part",
@@ -57,6 +59,7 @@ NON_MODEL = {
     "nx_save_as",
     "nx_export_step",
     "nx_screenshot",
+    "nx_render_view",
     "nx_export_drawing_pdf",
     "nx_undo",
     "nx_checkpoint",
@@ -113,6 +116,7 @@ NON_MODEL.update(AUTHORING_NON_MODEL)
 
 
 class HardenedExecutor(
+    EngineeringMixin,
     AdvancedAuthoringMixin,
     AuthoringMixin,
     ReviewToolsMixin,
@@ -133,6 +137,34 @@ class HardenedExecutor(
         self._handlers.update(
             {
                 "nx_resolve_geometry": self._resolve_geometry,
+                "nx_shell": self._shell,
+                "nx_set_material": self._set_material,
+                "nx_render_view": self._render_view,
+                "nx_mirror_body": self._mirror_body,
+                "nx_create_drawing": self._create_drawing,
+                "nx_add_base_view": self._add_base_view,
+                "nx_add_projection_view": self._add_projection_view,
+                "nx_add_dimension": self._add_dimension,
+                "nx_export_drawing_pdf": self._export_drawing_pdf,
+                "nx_blend": self._blend,
+                "nx_chamfer": self._chamfer,
+                "nx_sweep": self._sweep,
+                "nx_mate_component": self._mate_component,
+                "nx_list_assembly_constraints": self._list_assembly_constraints,
+                "nx_assembly_constraint": self._assembly_constraint,
+                "nx_edit_assembly_constraint": self._edit_assembly_constraint,
+                "nx_material_info": self._material_info,
+                "nx_sketch_angle": self._sketch_angle,
+                "nx_sketch_tangent": self._sketch_tangent,
+                "nx_sketch_symmetry": self._sketch_symmetry,
+                "nx_sketch_trim_extend": self._sketch_trim_extend,
+                "nx_component_array": self._component_array,
+                "nx_draft": self._draft,
+                "nx_transform_bodies": self._transform_bodies,
+                "nx_mass_properties": self._mass_properties,
+                "nx_copy_project": self._copy_project,
+                "nx_loft": self._loft,
+                "nx_sketch_primitive": self._sketch_primitive,
                 "nx_recognize_holes": self._recognize_holes,
                 "nx_native_component_pattern": self._native_component_pattern,
                 "nx_edit_component_pattern": self._edit_component_pattern,
@@ -691,10 +723,10 @@ class HardenedExecutor(
             "curve_count": len(geometry),
         }
 
-    def _extrude(self, sketch_id, distance, reverse=False):
+    def _simple_extrude(self, sketch_id, distance, reverse=False):
         if not math.isfinite(distance):
             raise NXToolError("NX_INVALID_ARGUMENT", "distance must be finite")
-        result = super()._extrude(sketch_id, distance, reverse)
+        result = NXOpenExecutor._extrude(self, sketch_id, distance, reverse)
         feature = self.objects.resolve(result["feature"]["id"])
         bodies = list(feature.GetBodies())
         result.update(
@@ -1388,7 +1420,7 @@ class HardenedExecutor(
             },
         )
         if self.session.IsBatch:
-            for name in ("nx_screenshot", "nx_ui_control"):
+            for name in ("nx_screenshot", "nx_render_view", "nx_ui_control"):
                 manifest["tools"][name].update(
                     status="unavailable", scope="Requires the interactive NX host"
                 )
@@ -1405,6 +1437,10 @@ class HardenedExecutor(
 
     def _snapshot(self, part):
         groups = [
+            ("assembly_constraint", self._assembly_constraints(part)),
+            ("drawing_sheet", getattr(part, "DrawingSheets", [])),
+            ("drawing_view", getattr(part, "DraftingViews", [])),
+            ("dimension", getattr(part, "Dimensions", [])),
             (
                 "component_pattern",
                 self._component_patterns(part),
