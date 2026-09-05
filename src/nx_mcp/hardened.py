@@ -333,6 +333,10 @@ class HardenedExecutor(VisualToolsMixin, InspectionMixin, NXOpenExecutor):
                     "NX_API_ERROR", str(error), nx_code=getattr(error, "ErrorCode", None)
                 )
             )
+            if mark is None:
+                # Inspections may create temporary native geometry. Preserve a
+                # handler's explicit cleanup outcome when no outer rollback ran.
+                outcome = err.details.get("mutation_outcome", outcome)
             err.details.update(operation_id=op_id, mutation_outcome=outcome)
             if record:
                 record.update(

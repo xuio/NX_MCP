@@ -69,3 +69,15 @@ Whole-project branch coverage is approximately 51%, below the inherited 78% gate
 Versioned offline build, dependency locks, install and rollback procedures are documented in [releases](releases.md).
 
 Final dev3 deployment evidence is summarized in [the validation receipt](dev3-validation.json). All nine hosted test combinations, eleven deployed native MCP groups, Windows stdio/HTTP checks, isolated rollback testing and the Windows release build passed. The retained full-project coverage gate reports 50.63% against 78%.
+
+## Recovery coverage release: 0.2.0.dev4
+
+The expanded local suite passes **303 tests**, with one platform skip and one real-NX deselection. Whole-project line/branch coverage reaches **79.59%**, above the unchanged **78%** gate. No coverage exclusions or threshold reductions were introduced. Stateful fake NX seams cover rollback, stale references, save boundaries, interrupted uploads, display snapshots, native inspection cleanup, coordinate/transform contracts and UI handoff failures. These tests verify Python control flow and arguments, not the Siemens geometry kernel.
+
+Fault injection reproduced three runtime defects before repair:
+
+- A failed screenshot-builder `Destroy()` skipped restoration of the original rendering style. Restoration now runs in a nested `finally`.
+- A failed sketch `Deactivate()` skipped rollback of the temporary work region. Rollback now runs independently of deactivation; rollback failure is explicitly reported as partial.
+- The executor overwrote an inspection handler's explicit partial-cleanup outcome with `not_started` when no outer undo mark existed. It now preserves that outcome, while a real outer rollback still determines its own result.
+
+The deployment follows the existing offline release and saved-session procedure. Historical dev3 results and receipts above remain unchanged as historical evidence.

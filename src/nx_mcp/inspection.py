@@ -121,9 +121,11 @@ class InspectionMixin:
             builder.EnhanceEdges = True
             builder.Commit()
         finally:
-            if builder:
-                builder.Destroy()
-            view.RenderingStyle = old_style
+            try:
+                if builder:
+                    builder.Destroy()
+            finally:
+                view.RenderingStyle = old_style
         data = file.read_bytes()
         if len(data) < 24 or data[:8] != b"\x89PNG\r\n\x1a\n":
             raise NXToolError("NX_CAPTURE_FAILED", "NX did not produce a valid PNG")

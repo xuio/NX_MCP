@@ -497,9 +497,19 @@ class VisualToolsMixin:
                 ],
             }
         finally:
-            if activated and self.session.ActiveSketch == sketch:
-                sketch.Deactivate(
-                    self.nxopen.Sketch.ViewReorient.FalseValue, self.nxopen.Sketch.UpdateLevel.Model
-                )
-            self.session.UndoToMark(mark, None)
-            self.session.DeleteUndoMark(mark, None)
+            try:
+                if activated and self.session.ActiveSketch == sketch:
+                    sketch.Deactivate(
+                        self.nxopen.Sketch.ViewReorient.FalseValue,
+                        self.nxopen.Sketch.UpdateLevel.Model,
+                    )
+            finally:
+                try:
+                    self.session.UndoToMark(mark, None)
+                    self.session.DeleteUndoMark(mark, None)
+                except Exception as error:
+                    raise NXToolError(
+                        "NX_ROLLBACK_FAILED",
+                        "Sketch diagnostic cleanup failed: " + str(error),
+                        details={"mutation_outcome": "partial"},
+                    ) from error
