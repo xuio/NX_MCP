@@ -1,5 +1,5 @@
 {
-  "revision": "2606-hardening-r1",
+  "revision": "2606-interactive-r3",
   "nx_version": "v2606",
   "bridge_protocol": 1,
   "tools": {
@@ -189,9 +189,9 @@
       "scope": "In-session model checkpoint and available-state inspection"
     },
     "nx_screenshot": {
-      "status": "experimental",
-      "evidence_type": "not_tested_in_this_release",
-      "scope": "Existing desktop capture retained and explicitly labeled; batch-model screenshot unavailable"
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_interactive",
+      "scope": "Native viewport PNG, white/transparent backgrounds, shaded/shaded-with-edges; requested dimensions advisory; actual device resolution returned"
     },
     "nx_list_bodies": {
       "status": "experimental",
@@ -317,6 +317,26 @@
       "status": "experimental",
       "evidence_type": "not_tested_in_this_release",
       "scope": "No correctness or failure claim; preserve as experimental."
+    },
+    "nx_ui_control": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_interactive",
+      "scope": "UI-thread identity, visible model mutations, manual pause rejection and resume; native panel"
+    },
+    "nx_view_info": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_interactive",
+      "scope": "Interactive display-part camera axes, origin and scale"
+    },
+    "nx_check_interference": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_interactive",
+      "scope": "10 mm cubes: 500 mm^3 overlap, touching and 2 mm gap; rotated nested occurrence overlap; cleanup preserves saved flags and checkpoint"
+    },
+    "nx_check_clearance": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_interactive",
+      "scope": "Native 2 mm gap flagged below 3 mm requirement; bounded pair selection and conservative broad phase"
     }
   },
   "limitations": [
@@ -332,13 +352,13 @@
     "MCP desktop clients must refresh tool schemas after deployment"
   ],
   "unavailable": [
-    "exact_interference_volume",
     "general_solid_validity_audit",
     "batch_model_viewport_image",
     "full_sketch_editing_and_constraint_DOF",
     "loft_shell_draft_threads_engraving",
     "general_body_transforms",
     "assembly_constraint_editing",
-    "color_material_transparency_visibility_controls"
+    "color_material_transparency_visibility_controls",
+    "union_of_all_pairwise_interference_volumes"
   ]
 }

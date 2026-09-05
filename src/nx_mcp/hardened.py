@@ -11,8 +11,12 @@ from pathlib import Path
 from nx_mcp.nx_bridge import NXOpenExecutor
 from nx_mcp.runtime import NXToolError
 from nx_mcp.recovery import OperationStore, timestamp
+from nx_mcp.inspection import InspectionMixin
 
 READ_ONLY = {
+    "nx_view_info",
+    "nx_check_interference",
+    "nx_check_clearance",
     "nx_status",
     "nx_list_sketches",
     "nx_list_features",
@@ -91,7 +95,7 @@ def add(a, b):
 IDENTITY = [[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0]]
 
 
-class HardenedExecutor(NXOpenExecutor):
+class HardenedExecutor(InspectionMixin, NXOpenExecutor):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.session_id = uuid.uuid4().hex
@@ -104,6 +108,9 @@ class HardenedExecutor(NXOpenExecutor):
         self._current_operation = None
         self._handlers.update(
             {
+                "nx_view_info": self._view_info,
+                "nx_check_interference": self._check_interference,
+                "nx_check_clearance": self._check_clearance,
                 "nx_activate_part": self._activate_part,
                 "nx_sketch_info": self._sketch_info,
                 "nx_edit_feature": self._edit_feature,
@@ -940,7 +947,8 @@ class HardenedExecutor(NXOpenExecutor):
                     best = {
                         "distance": dist,
                         "closest_points": [xyz(p1), xyz(p2)],
-                        "accuracy": accuracy,
+                        "accuracy": None,
+                        "accuracy_note": "No validated numerical error bound is exposed by this NX binding",
                         "resolved_tags": [int(x.Tag), int(y.Tag)],
                     }
         return {
@@ -1257,7 +1265,12 @@ class HardenedExecutor(NXOpenExecutor):
         manifest.update(
             session_id=self.session_id,
             actual_nx_version=self.nx_version,
-            execution="serialized NX journal thread; batch model graphics unavailable",
+            execution=(
+                "serialized NX batch journal thread"
+                if self.session.IsBatch
+                else "serialized NX UI thread; visible model viewport"
+            ),
+            interactive=not self.session.IsBatch,
             api_detection={
                 "step_import": hasattr(self.session.DexManager, "CreateStep214Importer"),
                 "native_pattern": bool(
@@ -1274,6 +1287,11 @@ class HardenedExecutor(NXOpenExecutor):
                 "sketch_XZ_normal": [0, -1, 0],
             },
         )
+        if self.session.IsBatch:
+            for name in ("nx_screenshot", "nx_ui_control"):
+                manifest["tools"][name].update(
+                    status="unavailable", scope="Requires the interactive NX host"
+                )
         if self.nx_version != "v2606":
             for tool in manifest["tools"].values():
                 tool.update(status="experimental", scope="This NX version has not been tested")
@@ -1372,23 +1390,13 @@ class HardenedExecutor(NXOpenExecutor):
         )
         return result
 
-    def _screenshot(self, path):
-        import struct
-
-        result = super()._screenshot(path)
-        file = self.workspace.ensure_inside(path)
-        with file.open("rb") as stream:
-            header = stream.read(24)
-        width, height = struct.unpack(">II", header[16:24])
-        result.update(
-            path=str(file),
-            capture_kind="interactive_windows_desktop",
-            model_preview=False,
-            resolution=[width, height],
-            camera=None,
-            size=file.stat().st_size,
-            warnings=[
-                "This image does not show the batch NX model. Use CAD export for model preview."
-            ],
-        )
-        return result
+    def _screenshot(
+        self,
+        path=None,
+        width=1600,
+        height=1000,
+        background="white",
+        style="shaded_with_edges",
+        fit=False,
+    ):
+        return self._capture_view(path, width, height, background, style, fit)

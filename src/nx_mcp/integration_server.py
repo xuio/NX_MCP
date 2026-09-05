@@ -8,10 +8,42 @@ import json
 import os
 import uuid
 from typing import Any, Literal
-from mcp.types import CallToolResult, TextContent, ToolAnnotations
+from mcp.types import CallToolResult, TextContent, ToolAnnotations, ImageContent
 from nx_mcp.runtime import NXToolError
 from nx_mcp.workspace import WorkspaceViolation
 from nx_mcp.recovery import OperationStore
+
+
+def nx_ui_control(mode: Literal["status", "manual", "agent"] = "status"):
+    pass
+
+
+def nx_view_info():
+    pass
+
+
+def nx_screenshot(
+    path: str | None = None,
+    width: int = 1600,
+    height: int = 1000,
+    background: Literal["white", "original", "transparent"] = "white",
+    style: Literal["current", "shaded", "shaded_with_edges", "wireframe"] = "shaded_with_edges",
+    fit: bool = False,
+):
+    pass
+
+
+def nx_check_interference(obj1: str, obj2: str):
+    pass
+
+
+def nx_check_clearance(
+    objects: list[str] | None = None,
+    minimum_clearance: float = 0.0,
+    max_pairs: int = 1000,
+    include_clear: bool = False,
+):
+    pass
 
 
 # Signature-only definitions are used to publish the actual bridge arguments.
@@ -164,6 +196,11 @@ def nx_upload_file(path: str, data_base64: str, sha256: str, total_size: int, of
 
 
 DESCRIPTIONS = {
+    "nx_ui_control": "Inspect the interactive NX host or switch between agent control and manual editing. Finish NX dialogs before resuming.",
+    "nx_view_info": "Return the displayed model view, camera matrix, scale, rendering style, and interactive state.",
+    "nx_screenshot": "Export the actual interactive NX viewport as PNG and return an inline MCP image. Advisory 128–4096 pixel dimensions (NX can use the actual device size; response reports both), background, shaded/wireframe style and fit. No desktop capture. Paths are workspace-relative; omit for a unique capture path.",
+    "nx_check_interference": "Check native solid interference between two body/component references, including nested occurrence geometry. Return penetration/contact/clear, closest points and pairwise interference volumes in mm^3. Temporary solids are rolled back.",
+    "nx_check_clearance": "Check distinct solid body occurrences in selected groups or the full assembly. minimum_clearance uses part units. Conservative bounds prune clear pairs; reported distances and interference use native geometry. Pair limits are preflighted. Volumes are pairwise, not union volume.",
     "nx_create_sketch": "Create an active sketch with explicit part-space origin and orthonormal basis. XY: X,Y,+Z; XZ: X,Z,-Y; YZ: Y,Z,+X. Curve coordinates use the returned local basis. Lengths in work-part units.",
     "nx_sketch_info": "Read the actual sketch origin, basis, normal and owned curve coordinates in part space. IDs preferred.",
     "nx_sketch_arc": "Add an arc to the active owning sketch using local coordinates; radius in work-part units and angles in degrees. Full circle: start=0,end=360. Pass sketch_id explicitly.",
@@ -195,6 +232,10 @@ DESCRIPTIONS = {
 }
 
 READ_ONLY = {
+    "nx_view_info",
+    "nx_check_interference",
+    "nx_check_clearance",
+    "nx_ui_control",
     "nx_status",
     "nx_list_sketches",
     "nx_list_features",
@@ -279,7 +320,9 @@ def configure(mcp, bridge, workspace):
                 try:
                     bound = signature.bind(**kwargs)
                     bound.apply_defaults()
-                    params = dict(bound.arguments)
+                    from pydantic_core import to_jsonable_python
+
+                    params = to_jsonable_python(dict(bound.arguments))
                     if "operation_id" in params and method not in {
                         "nx_operation_status",
                         "nx_cancel_operation",
@@ -306,7 +349,30 @@ def configure(mcp, bridge, workspace):
                                         workspace.resolve(op["params"]["part_path"])
                                     )
                         result = await bridge.call(method, params)
-                    return envelope(result, error=result.get("status") == "error")
+                    response = envelope(result, error=result.get("status") == "error")
+                    if method == "nx_screenshot" and not response.isError:
+                        file = workspace.ensure_inside(result["path"])
+                        if file.stat().st_size <= 8 * 1024 * 1024:
+                            data = file.read_bytes()
+                            if hashlib.sha256(data).hexdigest() != result["sha256"]:
+                                raise NXToolError(
+                                    "NX_ARTIFACT_CHANGED",
+                                    "Capture file changed after its operation committed",
+                                    details={"mutation_outcome": "committed"},
+                                )
+                            response.content.append(
+                                ImageContent(
+                                    type="image",
+                                    mimeType="image/png",
+                                    data=base64.b64encode(data).decode(),
+                                )
+                            )
+                        else:
+                            result.setdefault("warnings", []).append(
+                                "Image exceeds inline limit; use nx_download_file"
+                            )
+                            response = envelope(result)
+                    return response
                 except (NXToolError, WorkspaceViolation, ValueError, TypeError) as e:
                     error = (
                         e
@@ -337,7 +403,7 @@ def configure(mcp, bridge, workspace):
             description=description,
             structured_output=False,
             annotations=ToolAnnotations(
-                readOnlyHint=name in READ_ONLY,
+                readOnlyHint=name in READ_ONLY and name != "nx_ui_control",
                 idempotentHint=name in READ_ONLY or name == "nx_set_component_transform",
             ),
         )

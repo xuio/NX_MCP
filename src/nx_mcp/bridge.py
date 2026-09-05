@@ -69,6 +69,8 @@ class BridgeDescriptor:
 
 
 def default_descriptor_path() -> Path:
+    if configured := os.environ.get("NX_MCP_BRIDGE_DESCRIPTOR"):
+        return Path(configured)
     local_app_data = os.environ.get("LOCALAPPDATA")
     if local_app_data:
         return Path(local_app_data) / "nx-mcp" / "bridge.json"
@@ -177,6 +179,8 @@ class _PendingBridgeCall:
     complete: Event = field(default_factory=Event)
     result: dict[str, Any] | None = None
     error: Exception | None = None
+    started: bool = False
+    cancelled: bool = False
 
 
 class MainThreadDispatcher:
@@ -206,10 +210,15 @@ class MainThreadDispatcher:
             self._calls.put(pending)
 
         if not pending.complete.wait(self._timeout):
+            with self._lock:
+                if not pending.started:
+                    pending.cancelled = True
+                outcome = "unknown" if pending.started else "not_started"
             raise NXToolError(
                 "NX_MAIN_THREAD_UNAVAILABLE",
-                "NX did not process the bridge request before the timeout.",
-                retryable=True,
+                "NX did not complete the bridge request before the timeout. Query the operation receipt before retrying a started mutation.",
+                retryable=not pending.started,
+                details={"mutation_outcome": outcome},
             )
         if pending.error is not None:
             raise pending.error
@@ -254,18 +263,24 @@ class MainThreadDispatcher:
 
     def _execute(self, pending: _PendingBridgeCall) -> None:
         with self._lock:
-            if self._stopped:
+            if self._stopped or pending.cancelled:
                 pending.error = NXToolError(
                     "NX_BRIDGE_UNAVAILABLE",
-                    "NX bridge is stopping.",
+                    "Bridge stopped or queued request expired before execution.",
                     retryable=True,
+                    details={"mutation_outcome": "not_started"},
                 )
-            else:
-                try:
-                    pending.result = self._executor(pending.method, pending.params)
-                except Exception as error:
-                    pending.error = error
-        pending.complete.set()
+                pending.complete.set()
+                return
+            pending.started = True
+        # The queue consumer is serialized; release the queue lock so a waiting
+        # caller can distinguish queued expiry from a running, unknown outcome.
+        try:
+            pending.result = self._executor(pending.method, pending.params)
+        except Exception as error:
+            pending.error = error
+        finally:
+            pending.complete.set()
 
 
 class BridgeClient:
