@@ -61,3 +61,23 @@ Retain typed references under their actual response fields (`part.id`, for
 example), distinguish selected feature bends from duplicate historical information,
 and reacquire geometry after rollback. Save/export the disposable fixture, restore
 the prior work/display part, close the fixture and compare the original inventory.
+
+## Principal-axis revolve recipe
+
+The final dev15 runtime independently verified this millimeter fixture:
+
+1. Create an XY sketch and a rectangle with local corners `[1,0]` and `[3,5]`.
+2. Finish the sketch and retain its typed ID.
+3. Call `nx_revolve` with `sketch_name` equal to that ID, `axis="Y"`, `angle=360`,
+   and `boolean="none"`. The axis passes through the part origin; there is no
+   arbitrary-origin argument. `sketch_name` is required in the published schema.
+4. Measure the resulting annular cylinder. Expected volume is
+   `π × (3² − 1²) × 5 = 125.66370614359172 mm³`; native measurement was
+   `125.66370614359175 mm³`. Exact bounds were `[-3,0,-3]` to `[3,5,3]`.
+5. Save, close and reopen the disposable part, then measure again. The volume
+   persisted. A new load reports `already_loaded=false` and `Opened part`;
+   another open of the same loaded file reports `already_loaded=true` and
+   `Reused loaded part`. Inspect returned work/display flags for activation state.
+
+The test restored the original saved session and captured a native PNG. It covers
+this finished XY profile and principal Y axis, not arbitrary custom-axis geometry.
