@@ -15,6 +15,7 @@ from mcp.types import CallToolResult, ImageContent, TextContent, ToolAnnotations
 from nx_mcp import (
     assembly_documentation_server,
     authoring_server,
+    documentation_editing_server,
     freeform_server,
     manufacturing_server,
     sheet_metal_server,
@@ -350,6 +351,7 @@ READ_ONLY.update(
     | freeform_server.READ_ONLY
     | manufacturing_server.READ_ONLY
     | assembly_documentation_server.READ_ONLY
+    | documentation_editing_server.READ_ONLY
 )
 DESCRIPTIONS.update(
     {
@@ -360,6 +362,7 @@ DESCRIPTIONS.update(
             **vars(freeform_server),
             **vars(manufacturing_server),
             **vars(assembly_documentation_server),
+            **vars(documentation_editing_server),
         }.items()
         if name.startswith("nx_") and inspect.isfunction(obj)
     }
@@ -422,6 +425,7 @@ def configure(mcp, bridge, workspace):
                 **vars(freeform_server),
                 **vars(manufacturing_server),
                 **vars(assembly_documentation_server),
+                **vars(documentation_editing_server),
             }.items()
             if name.startswith("nx_") and inspect.isfunction(obj)
         }

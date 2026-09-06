@@ -1,5 +1,5 @@
 {
-  "revision": "2606-freeform-manufacturing-r1",
+  "revision": "2606-documentation-manufacturing-r1",
   "nx_version": "v2606",
   "bridge_protocol": 1,
   "tools": {
@@ -791,6 +791,56 @@
       "status": "tested",
       "evidence_type": "real_NX_v2606_scoped",
       "scope": "Three native frames with fixed camera, pose interpolation and restored state; fully framed visual review. Failure cleanup unit-tested."
+    },
+    "nx_list_drawings": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native A3 sheet/view enumeration, dimensions, scale and active state."
+    },
+    "nx_activate_drawing": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native drawing/modeling switching on saved fixture parts; unrelated parts preserved."
+    },
+    "nx_list_annotations": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native BOM, balloon and managed sheet-metal PMI enumeration and text."
+    },
+    "nx_edit_annotation": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native associative balloon movement; rename/delete have local contract coverage pending native acceptance."
+    },
+    "nx_parts_list_column": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native BOM header/width edits, general column append/remove and evaluated values."
+    },
+    "nx_bend_table": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native flat-pattern bend table create/edit, column ordering, evaluated row readback and angle update from 75 to 80 degrees; PDF visually reviewed."
+    },
+    "nx_refresh_annotations": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native bend PMI changed from 90 to 75 degrees using persistent source handles; transaction-hook acceptance pending."
+    },
+    "nx_thread_catalog": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Reads installed NX catalog in place; exact Metric Coarse M6 x 1.0 row selection without file transfer."
+    },
+    "nx_standard_thread": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native Metric Coarse M6 x 1.0 internal/external symbolic/detailed threads; pitch and material-removal verification."
+    },
+    "nx_edit_explosion_trace": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native managed edge-anchored trace endpoint percentages and offsets edited in a two-component service assembly; rendered and included in drafting view."
     }
   },
   "limitations": [

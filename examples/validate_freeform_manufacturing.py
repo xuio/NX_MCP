@@ -137,7 +137,7 @@ async def main():
         original = next(p for p in before if p["work"])
         original_display = next(p for p in before if p["display"])
         try:
-            assert len((await client.list_tools()).tools) == 160
+            assert len((await client.list_tools()).tools) == 170
             await new("spline")
             token = "spline-" + uuid.uuid4().hex
             params = {

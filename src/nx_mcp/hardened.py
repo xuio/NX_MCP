@@ -12,15 +12,18 @@ from pathlib import Path
 
 from nx_mcp import (
     assembly_documentation_server,
+    documentation_editing_server,
     freeform_server,
     manufacturing_server,
     sheet_metal_server,
 )
 from nx_mcp.advanced_authoring import AdvancedAuthoringMixin
+from nx_mcp.annotation_updates import AnnotationUpdatesMixin
 from nx_mcp.assembly_documentation import AssemblyDocumentationMixin
 from nx_mcp.authoring import AuthoringMixin
 from nx_mcp.authoring_server import NON_MODEL as AUTHORING_NON_MODEL
 from nx_mcp.authoring_server import READ_ONLY as AUTHORING_READ_ONLY
+from nx_mcp.documentation_editing import DocumentationEditingMixin
 from nx_mcp.engineering import EngineeringMixin
 from nx_mcp.exploded_views import ExplodedViewsMixin
 from nx_mcp.freeform import FreeformMixin
@@ -31,6 +34,7 @@ from nx_mcp.recovery import OperationStore, timestamp
 from nx_mcp.review_tools import ReviewToolsMixin
 from nx_mcp.runtime import NXToolError
 from nx_mcp.sheet_metal import SheetMetalMixin
+from nx_mcp.thread_standards import ThreadStandardsMixin
 from nx_mcp.visual_tools import VisualToolsMixin
 
 READ_ONLY = {
@@ -128,6 +132,7 @@ READ_ONLY.update(
     | freeform_server.READ_ONLY
     | manufacturing_server.READ_ONLY
     | assembly_documentation_server.READ_ONLY
+    | documentation_editing_server.READ_ONLY
 )
 NON_MODEL.update(
     AUTHORING_NON_MODEL
@@ -135,10 +140,14 @@ NON_MODEL.update(
     | freeform_server.NON_MODEL
     | manufacturing_server.NON_MODEL
     | assembly_documentation_server.NON_MODEL
+    | documentation_editing_server.NON_MODEL
 )
 
 
 class HardenedExecutor(
+    DocumentationEditingMixin,
+    AnnotationUpdatesMixin,
+    ThreadStandardsMixin,
     FreeformMixin,
     ManufacturingMixin,
     AssemblyDocumentationMixin,
@@ -166,6 +175,9 @@ class HardenedExecutor(
             for name in vars(module):
                 if name.startswith("nx_"):
                     self._handlers[name] = getattr(self, "_" + name[3:])
+        for name, fn in vars(documentation_editing_server).items():
+            if name.startswith("nx_") and inspect.isfunction(fn):
+                self._handlers[name] = getattr(self, "_" + name[3:])
         self._handlers.update(
             {
                 "nx_resolve_geometry": self._resolve_geometry,
@@ -396,6 +408,14 @@ class HardenedExecutor(
                 )
             self._active_mark = mark
             result = handler(**params)
+            if (
+                mark is not None
+                and part is not None
+                and method not in {"nx_refresh_annotations", "nx_sheet_metal_annotation"}
+            ):
+                refreshed = self._refresh_annotations()
+                if refreshed["updated_count"]:
+                    result["refreshed_annotations"] = refreshed["updated"]
             if result.get("status") == "error":
                 raise NXToolError(
                     result.get("code", result.get("error_code", "NX_OPERATION_FAILED")),

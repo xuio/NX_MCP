@@ -114,7 +114,21 @@ class ManufacturingMixin:
         finally:
             b.Destroy()
 
-    def _pmi_fcf(self, faces, characteristic, tolerance, position, datums=None, annotation=None):
+    def _pmi_fcf(
+        self,
+        faces,
+        characteristic,
+        tolerance,
+        position,
+        datums=None,
+        annotation=None,
+        material="none",
+        zone_shape="none",
+        datum_material=None,
+        projected_height=None,
+        tangent_plane=False,
+        free_state=False,
+    ):
         import NXOpen.Annotations as A
 
         from nx_mcp.freeform import points3
@@ -155,6 +169,35 @@ class ManufacturingMixin:
                 letters.append(reader.Letter)
             finally:
                 reader.Destroy()
+        modifiers = {
+            "none": "NotSet",
+            "MMC": "MaximumMaterialCondition",
+            "LMC": "LeastMaterialCondition",
+            "RFS": "RegardlessOfFeatureSize",
+        }
+        zones = {
+            "none": "NotSet",
+            "diameter": "Diameter",
+            "spherical_diameter": "SphericalDiameter",
+            "square": "Square",
+        }
+        if material not in modifiers or zone_shape not in zones:
+            raise NXToolError("NX_INVALID_ARGUMENT", "Unknown tolerance modifier or zone shape")
+        if datum_material is None:
+            datum_material = ["none"] * len(refs)
+        if len(datum_material) != len(refs) or any(x not in modifiers for x in datum_material):
+            raise NXToolError(
+                "NX_INVALID_ARGUMENT", "Specify one supported material modifier per datum"
+            )
+        if projected_height is not None:
+            projected_height = finite(projected_height, "projected_height", True)
+        if characteristic in {"Straightness", "Flatness", "Circularity", "Cylindricity"} and (
+            material != "none" or projected_height is not None
+        ):
+            raise NXToolError(
+                "NX_INVALID_ARGUMENT",
+                "These form-tolerance modifier combinations are not supported",
+            )
         existing = self._engineering_owned(annotation, "annotation") if annotation else None
         b = self._work_part().Annotations.CreatePmiFeatureControlFrameBuilder(existing)
         try:
@@ -164,16 +207,41 @@ class ManufacturingMixin:
             b.FrameStyle = A.FeatureControlFrameBuilder.FcfFrameStyle.SingleFrame
             frame = b.FeatureControlFrameDataList.FindItem(0)
             frame.ToleranceValue = str(tolerance)
+            frame.MaterialModifier = getattr(
+                A.FeatureControlFrameDataBuilder.ToleranceMaterialModifier, modifiers[material]
+            )
+            frame.ZoneShape = getattr(
+                A.FeatureControlFrameDataBuilder.ToleranceZoneShape, zones[zone_shape]
+            )
+            frame.Projected = projected_height is not None
+            frame.ProjectedValue = str(projected_height or 0)
+            frame.TangentPlane = tangent_plane
+            frame.FreeState = free_state
             datum_fields = [
                 "PrimaryDatumReference",
                 "SecondaryDatumReference",
                 "TertiaryDatumReference",
             ]
             for index, name in enumerate(datum_fields):
-                getattr(frame, name).Letter = letters[index] if index < len(letters) else ""
+                datum = getattr(frame, name)
+                datum.Letter = letters[index] if index < len(letters) else ""
+                datum.MaterialCondition = getattr(
+                    A.DatumReferenceBuilder.DatumReferenceMaterialCondition,
+                    modifiers[datum_material[index] if index < len(datum_material) else "none"],
+                )
             result = self._commit_pmi(b, targets, point, existing)
             result.update(
-                {"characteristic": characteristic, "tolerance": tolerance, "datum_letters": letters}
+                {
+                    "characteristic": characteristic,
+                    "tolerance": tolerance,
+                    "datum_letters": letters,
+                    "material": material,
+                    "zone_shape": zone_shape,
+                    "datum_material": datum_material,
+                    "projected_height": projected_height,
+                    "tangent_plane": tangent_plane,
+                    "free_state": free_state,
+                }
             )
             return result
         finally:

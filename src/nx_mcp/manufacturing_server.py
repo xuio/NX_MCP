@@ -53,8 +53,14 @@ def nx_pmi_fcf(
     position: list[float],
     datums: list[str] | None = None,
     annotation: str | None = None,
+    material: Literal["none", "MMC", "LMC", "RFS"] = "none",
+    zone_shape: Literal["none", "diameter", "spherical_diameter", "square"] = "none",
+    datum_material: list[Literal["none", "MMC", "LMC", "RFS"]] | None = None,
+    projected_height: float | None = None,
+    tangent_plane: bool = False,
+    free_state: bool = False,
 ):
-    """Create/edit a native single-frame geometry-associated GD&T PMI feature-control frame. Select work-part faces, a positive tolerance in part units, [x,y,z] annotation position and up to three ordered existing datum annotation IDs. Form tolerances reject datum references. Uses native default tolerance-zone/material modifiers; does not claim a complete standards compliance check. annotation edits an existing FCF ID."""
+    """Create/edit a native single-frame geometry-associated GD&T PMI feature-control frame. Select work-part faces, a positive tolerance in part units, [x,y,z] annotation position and up to three ordered existing datum annotation IDs. Form tolerances reject datum references. Supports explicit tolerance/datum material modifiers, zone shape, projected height, tangent-plane and free-state flags. Omitted modifiers reset to none on editing. Does not claim a complete standards compliance check. annotation edits an existing FCF ID."""
 
 
 def nx_face_analysis(
@@ -73,3 +79,27 @@ def nx_wall_thickness(
     tolerance: float = 0.001,
 ):
     """Measure a solid's sampled wall thickness using native inward-normal ray intersections. Select an owned work-part solid and optionally its faces. Sample a trimmed UV grid (1..20 per axis, max 10000); start each ray tolerance part-units inside the solid. Returns source/opposite faces and points, sampled min/max, unresolved counts and units. This is first-exit normal thickness, not global minimum or rolling-ball thickness. Thin regions smaller than tolerance require a smaller tolerance."""
+
+
+def nx_thread_catalog(
+    standard: str | None = None, size: str | None = None, offset: int = 0, limit: int = 50
+):
+    """Query installed NX thread-table choices in place. Without standard returns names; select standard for sizes and exact size for dimensional metadata, method and radial engagement. Paged, 1..200 rows. No catalog file transfer; no invented fit classes. Exact catalog strings are required by nx_standard_thread."""
+
+
+def nx_standard_thread(
+    face: str,
+    start_face: str,
+    standard: str,
+    size: str,
+    length: float,
+    method: str | None = None,
+    radial_engage: str | None = None,
+    detailed: bool = False,
+    left_hand: bool = False,
+    reverse: bool = False,
+):
+    """Create a native ThreadTable thread from one installed standard/size row. Use nx_thread_catalog to disambiguate method and radial_engage. Select a cylindrical face and same-body start face; length uses part units. Symbolic or detailed, handedness and direction are explicit. Returns native dimensions and actual catalog selection; no manual approximation of a standard thread."""
+
+
+READ_ONLY.add("nx_thread_catalog")

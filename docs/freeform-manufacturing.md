@@ -2,6 +2,8 @@
 
 The dev11 integration adds 20 tools (160 total) for NX v2606. These are intent-oriented wrappers around native NX geometry, annotations and rendering. Model mutations run serially on the graphical NX thread with the existing operation-ID deduplication and rollback framework. Coordinates are in the work part unless the tool explicitly uses assembly or drawing-sheet coordinates.
 
+See [dev12 editable documentation and manufacturing](documentation-manufacturing.md) for the subsequent ten tools and deeper acceptance fixtures.
+
 ## Curves and surfaces
 
 - `nx_spline`: create/edit associative 3D Studio Splines from interpolation points or control poles, including degree and periodicity.

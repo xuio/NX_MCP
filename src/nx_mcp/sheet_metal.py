@@ -1024,7 +1024,9 @@ class SheetMetalMixin:
             "units": "mm",
         }
 
-    def _sheet_metal_annotation(self, kind, body, position, faces=None, annotation=None):
+    def _sheet_metal_annotation(
+        self, kind, body, position, faces=None, annotation=None, automatic=False
+    ):
         import NXOpen.Annotations as A
 
         if kind not in {"body", "bend"}:
@@ -1053,12 +1055,16 @@ class SheetMetalMixin:
         if kind == "body":
             measured = {"thickness": float(self._sm_manager().GetBodyThickness(target))}
             lines = [
-                "Sheet metal (measured snapshot)",
+                "Sheet metal (managed measurement)"
+                if automatic
+                else "Sheet metal (measured snapshot)",
                 f"Thickness: {measured['thickness']:.3f} {units}",
             ]
         else:
             measured = {"bends": []}
-            lines = ["Bend data (measured snapshot)"]
+            lines = [
+                "Bend data (managed measurement)" if automatic else "Bend data (measured snapshot)"
+            ]
             for index, face in enumerate(selected, 1):
                 data = self._sm_manager().GetBendParameters(face)
                 values = {
@@ -1096,6 +1102,12 @@ class SheetMetalMixin:
                     "NX_VERIFICATION_FAILED", "NX returned no sheet-metal annotations"
                 )
             self._update_model()
+            if automatic:
+                for value in values:
+                    self._remember_managed_annotation(value, kind, target, selected, measured)
+            elif existing:
+                for value in values:
+                    value.SetAttribute("NX_MCP_MEASURED_PMI_V1", "disabled")
             refs = [
                 self._reference(value, "annotation", self._work_part(), "Sheet-metal PMI")
                 for value in values
@@ -1111,7 +1123,10 @@ class SheetMetalMixin:
                 "body": self._reference(target, "body", self._work_part(), "Body"),
                 "kind": kind,
                 "measured_parameters": measured,
-                "text_semantics": "Measured snapshot; call this tool with the annotation ID to refresh after model edits",
+                "text_semantics": "Automatically refreshed after MCP model mutations; explicitly refresh after manual NX changes"
+                if automatic
+                else "Measured snapshot; call this tool with the annotation ID to refresh after model edits",
+                "automatic": automatic,
                 "requested_position": point,
                 "units": self._units(),
                 "coordinate_frame": "work_part",

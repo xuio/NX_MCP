@@ -12,7 +12,14 @@ class AssemblyDocumentationMixin:
         values = [*getattr(part, "Notes", []), *getattr(part, "Labels", [])]
         annotations = getattr(part, "Annotations", None)
         if annotations is not None:
-            for name in ["Datums", "Fcfs", "IdSymbols", "PartsLists"]:
+            for name in [
+                "Datums",
+                "Fcfs",
+                "IdSymbols",
+                "PartsLists",
+                "BendTables",
+                "TableSections",
+            ]:
                 values.extend(getattr(annotations, name, []))
         return list({int(obj.Tag): obj for obj in values}.values())
 
@@ -39,10 +46,30 @@ class AssemblyDocumentationMixin:
                     for col in columns
                 ]
             )
+        column_info = []
+        for col in columns:
+            cp = uf.Plist.AskColPrefs(col)
+            header = (
+                uf.Tabnot.AskNthHeaderRow(obj.Tag, 0)
+                if uf.Tabnot.AskNmHeaderRows(obj.Tag)
+                else None
+            )
+            column_info.append(
+                {
+                    "width": uf.Tabnot.AskColumnWidth(col),
+                    "field": cp.DefaultString,
+                    "key": cp.IsKeyField,
+                    "protected": cp.IsProtected,
+                    "title": uf.Tabnot.AskCellText(uf.Tabnot.AskCellAtRowCol(header, col))
+                    if header
+                    else None,
+                }
+            )
         prefs = uf.Plist.AskPrefs(obj.Tag)
         return {
             "parts_list": self._reference(obj, "annotation", self._work_part(), "Parts list"),
             "rows": rows,
+            "columns": column_info,
             "row_count": len(rows),
             "column_count": len(columns),
             "automatic_update": prefs.AutoUpdate,

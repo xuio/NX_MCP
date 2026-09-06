@@ -137,5 +137,6 @@ def nx_sheet_metal_annotation(
     position: list[float],
     faces: list[str] | None = None,
     annotation: str | None = None,
+    automatic: bool = False,
 ):
     """Create or refresh native Sheet Metal PMI attached to an owned body or bend faces. Text contains a measured snapshot of actual thickness or bend radius/angle/neutral factor; it does not automatically refresh after geometry edits. Call again with the annotation ID to refresh. kind=bend requires faces from that body; kind=body forbids faces. Position is [x,y,z] in work-part coordinates and units. Returns annotation references, measured data and native text."""

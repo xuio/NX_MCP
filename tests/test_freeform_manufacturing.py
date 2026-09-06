@@ -48,7 +48,7 @@ def ff(rig, monkeypatch):
         DeleteFaceBuilder=NS(SelectTypes=NS(Face=1)),
         TrimSheetBuilder=NS(KeepDiscardOption=NS(Keep=1, Discard=2)),
         ThreadBuilder=NS(
-            Input=NS(Manual=1),
+            Input=NS(Manual=1, ThreadTable=2),
             Type=NS(Detailed=2, Symbolic=1),
             LimitOption=NS(Value=1),
             Handedness=NS(LeftHand=1, RightHand=2),
@@ -335,8 +335,26 @@ def test_pmi_association_and_existing_edit(ff, monkeypatch):
     ff.part.Annotations.CreatePmiFeatureControlFrameBuilder.return_value = fb
     a = NS(
         FeatureControlFrameBuilder=NS(
-            FcfCharacteristic=NS(Parallelism=1, Flatness=2), FcfFrameStyle=NS(SingleFrame=1)
-        )
+            FcfCharacteristic=NS(Parallelism=1, Flatness=2, Position=3),
+            FcfFrameStyle=NS(SingleFrame=1),
+        ),
+        FeatureControlFrameDataBuilder=NS(
+            ToleranceMaterialModifier=NS(
+                NotSet=0,
+                MaximumMaterialCondition=1,
+                LeastMaterialCondition=2,
+                RegardlessOfFeatureSize=3,
+            ),
+            ToleranceZoneShape=NS(NotSet=0, Diameter=1, SphericalDiameter=2, Square=3),
+        ),
+        DatumReferenceBuilder=NS(
+            DatumReferenceMaterialCondition=NS(
+                NotSet=0,
+                MaximumMaterialCondition=1,
+                LeastMaterialCondition=2,
+                RegardlessOfFeatureSize=3,
+            )
+        ),
     )
     monkeypatch.setitem(sys.modules, "NXOpen.Annotations", a)
     ff.nx.Annotations = a
