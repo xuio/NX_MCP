@@ -2,7 +2,7 @@
 
 See the generated [capability evidence matrix](docs/capability-matrix.md) for manifest-scoped native testing, contract-only testing, experimental tools, and unavailable capabilities.
 
-> **Fork status:** This fork targets Siemens NX v2606 with the `0.2.0.dev13` integration and 179 opt-in tools. It includes visible UI control, recovery, artifact transfer, native interference, rendering, engineering authoring, native sheet-metal features and drawing/PDF support. Start with [fork setup and scope](docs/fork-status.md) and [engineering tool contracts](docs/engineering-tools.md). The original upstream README follows; its smaller default surface and NX2506 validation describe the upstream baseline.
+> **Fork status:** This fork targets Siemens NX v2606 with the `0.2.0.dev16` integration and 185 opt-in tools. It includes visible UI control, recovery, artifact transfer, native interference, rendering, engineering authoring, native sheet-metal features and drawing/PDF support. Start with [fork setup and scope](docs/fork-status.md) and [engineering tool contracts](docs/engineering-tools.md). The original upstream README follows; its smaller default surface and NX2506 validation describe the upstream baseline.
 
 NX MCP is a local Model Context Protocol server for Siemens NX automation. The
 `0.2.0.dev0` line replaces the unverified direct-attach design with two explicit

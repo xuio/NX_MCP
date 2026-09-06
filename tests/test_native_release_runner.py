@@ -53,3 +53,20 @@ async def test_agent_ux_client_forwards_tool_name_arguments(tmp_path):
     session.call_tool.assert_awaited_once_with(
         "nx_create_reference_set", {"name": "SOLIDS", "objects": ["body"]}
     )
+
+
+def test_native_examples_accept_runner_profile_count():
+    """An added tool must not strand unrelated native suites on an old literal."""
+    examples = Path(__file__).resolve().parents[1] / "examples"
+    for name in [
+        "advanced_tools",
+        "authoring_tools",
+        "engineering_tools",
+        "freeform_manufacturing",
+        "project_folders",
+        "sheet_metal",
+        "visual_tools",
+    ]:
+        source = (examples / f"validate_{name}.py").read_text()
+        assert 'os.environ.get("NX_EXPECTED_TOOL_COUNT", "185")' in source
+        assert "== 179" not in source

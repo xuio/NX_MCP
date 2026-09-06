@@ -90,7 +90,9 @@ async def main():
         original = next(p for p in before if p["work"])
         original_display = next(p for p in before if p["display"])
         try:
-            assert len((await client.list_tools()).tools) == 179
+            assert len((await client.list_tools()).tools) == int(
+                os.environ.get("NX_EXPECTED_TOOL_COUNT", "185")
+            )
             catalog = await call("nx_sheet_metal_schema")
             assert len(catalog["operations"]) == 34
             await call("nx_create_part", path=prefix + "/bracket.prt", units="mm")

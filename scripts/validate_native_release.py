@@ -148,7 +148,11 @@ def main():
             with log.open("w") as stream:
                 result = subprocess.run(
                     [sys.executable, str(source / "examples" / script)],
-                    env={**os.environ, "NX_VALIDATION_OUTPUT": str(output.absolute())},
+                    env={
+                        **os.environ,
+                        "NX_VALIDATION_OUTPUT": str(output.absolute()),
+                        "NX_EXPECTED_TOOL_COUNT": str(args.expected_tool_count),
+                    },
                     stdout=stream,
                     stderr=subprocess.STDOUT,
                     check=False,

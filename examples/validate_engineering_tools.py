@@ -108,7 +108,9 @@ async def main():
         work = next((p for p in before["parts"] if p["work"]), None)
         display = next((p for p in before["parts"] if p["display"]), None)
         try:
-            assert len((await client.list_tools()).tools) == 179
+            assert len((await client.list_tools()).tools) == int(
+                os.environ.get("NX_EXPECTED_TOOL_COUNT", "185")
+            )
 
             async def limits():
                 await new("offset")
