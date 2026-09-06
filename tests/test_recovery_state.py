@@ -228,3 +228,18 @@ def test_operation_status_preserves_target_receipt_metadata(rig):
     missing = rig.e.execute("nx_operation_status", {"operation_id": "receipt-not-recorded"})
     assert missing["operation_id"] == "receipt-not-recorded"
     assert missing["mutation_outcome"] == "unknown" and missing["session_id"] is None
+
+
+def test_capability_filters_and_unit_conventions(rig):
+    from types import SimpleNamespace
+
+    rig.session.DexManager = SimpleNamespace()
+    rig.session.Measurement = SimpleNamespace()
+    one = rig.e._capabilities(tool="nx_close_part")
+    assert list(one["tools"]) == ["nx_close_part"] and one["units"] is None
+    group = rig.e._capabilities(prefix="nx_sheet")
+    assert all(name.startswith("nx_sheet") for name in group["tools"])
+    assert group["tool_count"] < group["total_tool_count"]
+    for params in [{"tool": "nx_missing"}, {"tool": "nx_close_part", "prefix": "nx_"}]:
+        with pytest.raises(NXToolError):
+            rig.e._capabilities(**params)

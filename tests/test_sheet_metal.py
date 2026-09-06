@@ -64,7 +64,7 @@ def test_public_signatures_match_executor_and_schema(sm):
         schema = result["parameters_schema"]
         assert set(schema["required"]) <= set(schema["properties"])
         assert not schema["additionalProperties"]
-        assert result["status"] == spec["native_status"]
+        assert result["validation_status"] == spec["native_status"]
     with pytest.raises(NXToolError, match="Unknown"):
         sm.e._sheet_metal_schema("__dict__")
 

@@ -94,18 +94,29 @@ def field_schema(field):
             "minItems": 1,
             "maxItems": 1000,
             "uniqueItems": True,
-            "items": {"type": "string"},
+            "items": {
+                "type": "string",
+                "description": "Typed work-part " + field.get("objects", "geometry") + " ID",
+            },
         }
     return {
         "type": "string",
-        "description": "Typed work-part object ID; section takes a finished sketch ID.",
+        "description": "Finished work-part sketch ID"
+        if kind == "section"
+        else "Typed work-part " + kind + " ID",
     }
 
 
 def fields_schema(fields, required=()):
     return {
         "type": "object",
-        "properties": {k: field_schema(v) for k, v in fields.items()},
+        "properties": {
+            k: {
+                **field_schema(v),
+                **({"description": v["description"]} if "description" in v else {}),
+            }
+            for k, v in fields.items()
+        },
         "required": list(required),
         "additionalProperties": False,
     }
@@ -248,7 +259,7 @@ class SheetMetalMixin:
                     }
                     for op, spec in CATALOG.items()
                 ],
-                "units": self._units() if self._work_part(required=False) else None,
+                "units": None,
                 "unit_conventions": "Lengths use work-part units; expression angles are degrees; neutral factor is unitless",
                 "unavailable": [
                     {
@@ -267,15 +278,21 @@ class SheetMetalMixin:
             "parameters_schema": fields_schema(spec["fields"], spec["required"]),
             "edit_parameters_schema": fields_schema(spec["fields"]),
             "native_builder": spec["builder"],
-            "status": spec["native_status"],
+            "validation_status": spec["native_status"],
             "tested_on": spec.get("tested_on"),
             "validation_scope": spec.get("validation_scope"),
             "edit_status": spec.get("edit_status", "experimental"),
             "example_parameters": spec.get("example_parameters"),
             "example_note": "$input_N values are placeholders; select matching geometry from your own fixture",
             "defaults": "Unspecified properties retain native part/builder defaults; read feature parameters after creation.",
-            "units": self._units() if self._work_part(required=False) else None,
+            "units": None,
             "coordinate_frame": "work_part",
+            "unit_conventions": "Lengths use work-part units; expression angles are degrees; neutral factor is unitless",
+            "prerequisites": [
+                "Activate the owning work/display part and call nx_sheet_metal_context before authoring.",
+                "Select work-part geometry IDs with nx_find_geometry or nx_list_topology; assembly occurrences are rejected.",
+                "Finish section sketches before passing their IDs. Operation-specific geometry must match the native builder and tested example.",
+            ],
         }
 
     def _sm_reference(self, reference, kind):

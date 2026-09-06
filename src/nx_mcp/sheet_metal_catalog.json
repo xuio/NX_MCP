@@ -5381,7 +5381,8 @@
         "getter": false,
         "kind": "collector",
         "assign": true,
-        "objects": "face"
+        "objects": "face",
+        "description": "Bend face IDs to unbend; inspect nx_sheet_metal_info.bends for the owning sheet-metal body."
       },
       "hide_original_curves": {
         "path": "HideOriginalCurves",
@@ -5392,7 +5393,8 @@
         "path": "ReferenceEntity",
         "getter": false,
         "kind": "face_or_edge",
-        "assign": true
+        "assign": true,
+        "description": "Work-part face or edge used by NX as the stationary reference for unbending; select it on the same sheet-metal body."
       }
     },
     "required": [

@@ -213,3 +213,44 @@ async def test_folder_tools_are_exposed_and_absolute_part_paths_are_forwarded(tm
     opened = await server.call_tool("nx_open_part", {"path": destination})
     assert not opened.isError
     assert bridge.call.call_args.args[1]["path"] == destination
+
+
+@pytest.mark.asyncio
+async def test_inline_image_metadata_paging_and_output_contract(tmp_path):
+    import struct
+
+    from mcp.types import ImageContent
+
+    png = b"\x89PNG\r\n\x1a\n" + struct.pack(">I", 13) + b"IHDR" + struct.pack(">II", 1, 1)
+    (tmp_path / "view.png").write_bytes(png)
+    for name in ["a.txt", "b.txt", "c.txt"]:
+        (tmp_path / name).write_text("artifact")
+    bridge = AsyncMock()
+    server = create_server(bridge, Workspace(tmp_path), enable_experimental=True)
+    tools = {t.name: t for t in await server.list_tools()}
+    schema = tools["nx_download_file"].inputSchema["properties"]
+    assert schema["length"]["maximum"] == 262144 and schema["offset"]["minimum"] == 0
+    assert tools["nx_download_file"].outputSchema["required"] == ["status", "warnings", "units"]
+    preview = await server.call_tool("nx_download_file", {"path": "view.png", "delivery": "image"})
+    assert not preview.isError and preview.structuredContent["resolution"] == [1, 1]
+    assert "data_base64" not in preview.structuredContent
+    images = [v for v in preview.content if isinstance(v, ImageContent)]
+    assert len(images) == 1 and base64.b64decode(images[0].data) == png
+    assert png.hex() not in preview.content[0].text
+    meta = await server.call_tool("nx_download_file", {"path": "view.png", "delivery": "metadata"})
+    assert meta.structuredContent["size"] == len(png) and len(meta.content) == 1
+    page = await server.call_tool("nx_workspace_list", {"limit": 2})
+    assert page.structuredContent["count"] == 2 and page.structuredContent["next_offset"] == 2
+    second = await server.call_tool("nx_workspace_list", {"offset": 2, "limit": 2})
+    assert second.structuredContent["next_offset"] is None
+    filtered = await server.call_tool("nx_workspace_list", {"prefix": "v"})
+    assert filtered.structuredContent["total_count"] == 1
+    error = await server.call_tool("nx_workspace_list", {"path": "view.png"})
+    assert error.isError and error.structuredContent["code"] == "NX_NOT_DIRECTORY"
+    for args in [
+        {"length": 262145},
+        {"delivery": "image", "offset": 1},
+        {"delivery": "image", "path": "a.txt"},
+    ]:
+        assert (await server.call_tool("nx_download_file", {"path": "view.png", **args})).isError
+    bridge.call.assert_not_awaited()

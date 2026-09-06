@@ -1495,7 +1495,7 @@ class HardenedExecutor(
             "message": "Batch committed on NX journal thread",
         }
 
-    def _capabilities(self):
+    def _capabilities(self, tool=None, prefix=None):
         import json
 
         manifest = json.loads(Path(__file__).with_name("capability_manifest.json").read_text())
@@ -1540,8 +1540,18 @@ class HardenedExecutor(
                     status="unavailable", scope="Requires the interactive NX host"
                 )
         if self.nx_version != "v2606":
-            for tool in manifest["tools"].values():
-                tool.update(status="experimental", scope="This NX version has not been tested")
+            for entry in manifest["tools"].values():
+                entry.update(status="experimental", scope="This NX version has not been tested")
+        if tool is not None and prefix is not None:
+            raise NXToolError("NX_INVALID_ARGUMENT", "Use tool or prefix, not both")
+        total = len(manifest["tools"])
+        if tool is not None:
+            if tool not in manifest["tools"]:
+                raise NXToolError("NX_NOT_FOUND", "Tool is not in the capability manifest")
+            manifest["tools"] = {tool: manifest["tools"][tool]}
+        elif prefix is not None:
+            manifest["tools"] = {k: v for k, v in manifest["tools"].items() if k.startswith(prefix)}
+        manifest.update(tool_count=len(manifest["tools"]), total_tool_count=total, units=None)
         return manifest
 
     def _finish_sketch(self, sketch_id):

@@ -13,7 +13,7 @@ from nx_mcp import interactive
 from nx_mcp.bridge import BridgeDescriptor
 from nx_mcp.interactive import ControlPanel, InteractiveHost
 from nx_mcp.runtime import NXToolError
-from tests.fakes import Body
+from tests.fakes import Body, Collection
 
 pytestmark = pytest.mark.fake_nx
 
@@ -106,7 +106,14 @@ def test_operation_failure_relocks_ui_and_refresh_failure_is_warning(host, rig):
     assert host.ui.AskLockStatus() == 1
     rig.part.ModelingViews.WorkView.UpdateDisplay.side_effect = RuntimeError("refresh")
     result = host.execute("nx_list_bodies", {})
-    assert any("View refresh" in w for w in result["warnings"])
+    assert not any("View refresh" in w for w in result["warnings"])
+    rig.e._handlers["nx_test_edit"] = lambda: {}
+    edited = host.execute("nx_test_edit", {})
+    assert any("View refresh" in w for w in edited["warnings"])
+    rig.part.DrawingSheets = Collection()
+    rig.part.DrawingSheets.CurrentDrawingSheet = object()
+    drawing = host.execute("nx_test_edit", {})
+    assert not any("View refresh" in w for w in drawing["warnings"])
     host.ui.LockAccess = Mock(side_effect=RuntimeError("lock failure"))
     host.execute("nx_list_bodies", {})
     assert host.mode == "manual" and "Cannot restore" in host.last_error

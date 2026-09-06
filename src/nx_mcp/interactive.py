@@ -334,7 +334,10 @@ class InteractiveHost:
             result = self.executor.execute(method, params)
             self.completed += 1
             part = self.session.Parts.Display
-            if part:
+            from nx_mcp.hardened import READ_ONLY
+
+            sheet = getattr(getattr(part, "DrawingSheets", None), "CurrentDrawingSheet", None)
+            if part and method not in READ_ONLY and sheet is None:
                 try:
                     part.ModelingViews.WorkView.UpdateDisplay()
                 except Exception as exc:

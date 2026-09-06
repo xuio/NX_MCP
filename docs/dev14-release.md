@@ -28,3 +28,5 @@ Tokens remain local and are never written to test receipts. Keep the receipt to
 verify it after a real bridge restart; an old receipt never restores old IDs.
 
 Native validation results must be recorded against the exact deployed package.
+
+The subsequent [agent UX review](agent-ux.md) adds focused capability queries, paged artifact listing, inline existing-PNG retrieval and a common structured output schema. Read-only calls no longer refresh model views; sheet-metal evidence status and unit conventions are explicit.

@@ -1,5 +1,5 @@
 {
-  "revision": "2606-release-engineering-r1",
+  "revision": "2606-agent-ux-r1",
   "nx_version": "v2606",
   "bridge_protocol": 1,
   "tools": {
@@ -66,7 +66,7 @@
     "nx_close_part": {
       "status": "tested",
       "evidence_type": "real_NX_v2606",
-      "scope": "Explicit saved source parts closed without whole-tree closure"
+      "scope": "Saved part closure; NX may unload unused prototypes. Closed-part reporting invalidates all unloaded part references."
     },
     "nx_measure_volume": {
       "status": "tested",
@@ -886,6 +886,16 @@
       "status": "tested",
       "evidence_type": "real_NX_v2606_scoped",
       "scope": "Native computed size and retention diagnostics; occurrence-edge dimension follows extrusion resize and explicitly rebinds after replacement."
+    },
+    "nx_workspace_info": {
+      "status": "tested",
+      "evidence_type": "live_sidecar_and_contract_tests",
+      "scope": "NX host workspace root and path conventions; no NX geometry calls."
+    },
+    "nx_create_directory": {
+      "status": "tested",
+      "evidence_type": "local_contract_tests",
+      "scope": "Workspace-scoped directory creation and idempotent existing-directory reporting."
     }
   },
   "limitations": [
@@ -901,13 +911,7 @@
     "MCP desktop clients must refresh tool schemas after deployment"
   ],
   "unavailable": [
-    "general_solid_validity_audit",
     "batch_model_viewport_image",
-    "full_sketch_curve_and_constraint_editing",
-    "loft_shell_draft_threads_engraving",
-    "general_body_transforms",
-    "assembly_constraint_editing",
-    "union_of_all_pairwise_interference_volumes",
-    "material_assignment"
+    "union_of_all_pairwise_interference_volumes"
   ]
 }

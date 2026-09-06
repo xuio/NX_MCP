@@ -7,10 +7,12 @@ import hashlib
 import inspect
 import json
 import os
+import struct
 import uuid
-from typing import Any, Literal
+from typing import Annotated, Any, Literal
 
 from mcp.types import CallToolResult, ImageContent, TextContent, ToolAnnotations
+from pydantic import BaseModel, ConfigDict, Field
 
 from nx_mcp import (
     assembly_documentation_server,
@@ -231,7 +233,7 @@ def nx_batch(operations: list[dict[str, Any]]):
     pass
 
 
-def nx_capabilities():
+def nx_capabilities(tool: str | None = None, prefix: str | None = None):
     pass
 
 
@@ -256,11 +258,21 @@ def nx_create_directory(path: str):
     pass
 
 
-def nx_workspace_list(path: str = "."):
+def nx_workspace_list(
+    path: str = ".",
+    offset: Annotated[int, Field(ge=0)] = 0,
+    limit: Annotated[int, Field(ge=1, le=1000)] = 100,
+    prefix: str = "",
+):
     pass
 
 
-def nx_download_file(path: str, offset: int = 0, length: int = 262144):
+def nx_download_file(
+    path: str,
+    offset: Annotated[int, Field(ge=0)] = 0,
+    length: Annotated[int, Field(ge=1, le=262144)] = 262144,
+    delivery: Literal["base64", "image", "metadata"] = "base64",
+):
     pass
 
 
@@ -269,6 +281,9 @@ def nx_upload_file(path: str, data_base64: str, sha256: str, total_size: int, of
 
 
 DESCRIPTIONS = {
+    "nx_boolean": "Boolean supported solid bodies: unite, subtract or intersect. Native cube subtraction and volume checks are scoped in nx_capabilities(tool='nx_boolean'); not general certification.",
+    "nx_revolve": "Revolve a finished sketch about the specified axis and origin. Angles are degrees, lengths in work-part units; boolean is none/unite/subtract/intersect. Inspect nx_capabilities(tool='nx_revolve') for tested scope.",
+    "nx_workspace_list": "List a workspace directory with prefix filtering and pagination (offset>=0, limit=1..1000, default 100). Returns entries/count for this page, total_count and next_offset. File entries include size/SHA-256. Use nx_download_file(delivery='metadata') to inspect one file.",
     "nx_workspace_info": "Discover the NX host workspace root and path rules. Paths refer to the NX machine, not the MCP client's filesystem. No session-wide current directory is changed.",
     "nx_create_directory": "Create a directory and missing parents inside the NX workspace. Accepts workspace-relative or in-workspace absolute host paths. Idempotent: an existing directory succeeds; an existing file fails. Returns actual path and created status.",
     "nx_create_part": "Create a new NX part at an explicit workspace-relative or absolute in-workspace NX-host path, e.g. projects/controller/parts/base.prt. Missing parent folders are created. Units: mm or inch. Use unique part basenames for simultaneously loaded NX parts.",
@@ -297,7 +312,7 @@ DESCRIPTIONS = {
     "nx_get_bounding_box": "Native UF bounds; precision selects conservative or exact (exact requires axis-aligned WCS). auto includes recursive assembly geometry when present; part includes directly owned bodies; assembly includes both. Coordinates and units are work-part absolute.",
     "nx_activate_part": "Activate an already loaded part by ID or unique path/name without closing other parts. Display activation also changes work part under NX rules.",
     "nx_open_part": "Accept a workspace-relative or absolute in-workspace NX-host path. Open or reuse a loaded workspace .prt and activate it; work/display flags are explicit. Does not recreate loaded parts.",
-    "nx_close_part": "Close only the specified loaded part (ID), or current work part; preserves its component tree and unrelated parts. save defaults true.",
+    "nx_close_part": "Close the specified loaded part (ID), or current work part; save defaults true. NX may unload unused assembly prototypes. Returns all closed part references/counts; re-list open parts between closes.",
     "nx_checkpoint": "Create an in-session model undo checkpoint. NX v2606 saves expire native marks; create a new checkpoint after save. Restart/close also invalidates checkpoints.",
     "nx_checkpoint_state": "Inspect available checkpoint IDs and retained model-operation history. Read-only calls retain marks. Native NX save can expire them; availability is checked against NX.",
     "nx_rollback": "Rollback to an in-session checkpoint. Rejects rollback across mutations to unrelated parts. Reacquire object IDs afterward; save explicitly to persist.",
@@ -310,11 +325,10 @@ DESCRIPTIONS = {
     "nx_measure_distance": "Measure minimum BREP distance for body, face, edge, feature-body or component pairs, including nested occurrences. Returns closest points, accuracy and work-part units. Zero does not prove interference.",
     "nx_list_topology": "Enumerate faces and edges of a body as session-scoped opaque references. References become stale after rollback/close; topology edits can invalidate them.",
     "nx_rename_object": "Rename a referenced object and return its actual NX-normalized display name. Reacquire references afterward.",
-    "nx_workspace_list": "List files/directories within the configured workspace; sizes and SHA-256 checksums for files. Internal operation storage is excluded.",
-    "nx_download_file": "Retrieve a workspace artifact as base64 chunks up to 256 KiB, with full-file SHA-256, size and offset. Does not read outside workspace.",
+    "nx_download_file": "Read a workspace file. delivery=image returns an existing PNG inline as MCP image content (max 8 MiB), without base64 in text. delivery=metadata returns size/SHA-256 only. Default base64 returns chunks: offset>=0, length=1..262144, bytes_returned/next_offset/eof. Image/metadata modes require default chunk arguments. Paths are on the NX host.",
     "nx_upload_file": "Upload .prt/.step/.stp/.png/.json/.zip/.txt/.pdf chunks (max 256 KiB) into a new workspace file. Requires final SHA-256 and total size, sequential offsets. Repeated identical chunks are safe; existing differing files are never overwritten.",
     "nx_package_assembly": "Package the saved active assembly and all loaded prototype dependencies into a new workspace ZIP with a SHA-256 manifest. Refuses unsaved referenced parts and files outside the workspace.",
-    "nx_capabilities": "NX-version-specific integration manifest. API presence, real-test evidence and unavailable capabilities are separate. Batch NX has no model viewport.",
+    "nx_capabilities": "Inspect NX-version-specific tested scope. Use tool=exact_name or prefix=nx_sheet to limit response size; omit both for all tools. API detection is separate from native test evidence. Batch NX has no model viewport.",
 }
 
 READ_ONLY = {
@@ -398,7 +412,20 @@ PATHS = {
 }
 
 
+class IntegrationEnvelope(BaseModel):
+    """Common output contract; each tool's result fields remain extensible."""
+
+    model_config = ConfigDict(extra="allow")
+    status: Literal["success", "error"]
+    warnings: list[str]
+    units: str | None
+    operation_id: str | None = None
+    mutation_outcome: str | None = None
+
+
 def envelope(payload, error=False):
+    if payload.get("status") not in {None, "success", "error"}:
+        payload = {**payload, "validation_status": payload["status"], "status": "success"}
     payload = {"status": "error" if error else "success", "warnings": [], "units": None, **payload}
     return CallToolResult(
         content=[TextContent(type="text", text=json.dumps(payload, ensure_ascii=False))],
@@ -438,7 +465,7 @@ def configure(mcp, bridge, workspace):
         # Resolve postponed annotations in the original callable's module.
         from typing import get_type_hints
 
-        hints = get_type_hints(fn)
+        hints = get_type_hints(fn, include_extras=True)
         parameters = [
             p.replace(annotation=hints.get(p.name, p.annotation)) for p in sig.parameters.values()
         ]
@@ -487,8 +514,11 @@ def configure(mcp, bridge, workspace):
                                     )
                         result = await bridge.call(method, params)
                     response = envelope(result, error=result.get("status") == "error")
-                    if method in {"nx_screenshot", "nx_render_view"} and not response.isError:
-                        file = workspace.ensure_inside(result["path"])
+                    if (
+                        method in {"nx_screenshot", "nx_render_view"}
+                        or (method == "nx_download_file" and params["delivery"] == "image")
+                    ) and not response.isError:
+                        file = workspace.resolve(result["path"])
                         if file.stat().st_size <= 8 * 1024 * 1024:
                             data = file.read_bytes()
                             if hashlib.sha256(data).hexdigest() != result["sha256"]:
@@ -557,6 +587,8 @@ def configure(mcp, bridge, workspace):
             ),
         )
         tool = mcp._tool_manager.get_tool(name)
+        tool.fn_metadata.output_model = IntegrationEnvelope
+        tool.fn_metadata.output_schema = IntegrationEnvelope.model_json_schema()
         tool.fn_metadata.arg_model.model_config["extra"] = "forbid"
         tool.fn_metadata.arg_model.model_rebuild(force=True)
         tool.parameters = tool.fn_metadata.arg_model.model_json_schema()
@@ -639,30 +671,86 @@ def artifact_call(method, p, workspace):
         }
 
     if method == "nx_workspace_list":
+        if not path.is_dir():
+            raise NXToolError(
+                "NX_NOT_DIRECTORY",
+                "path must name a workspace directory; use nx_download_file(delivery='metadata') for a file",
+            )
+        offset, limit, prefix = p.get("offset", 0), p.get("limit", 100), p.get("prefix", "")
+        if offset < 0 or not 1 <= limit <= 1000:
+            raise NXToolError("NX_INVALID_ARGUMENT", "offset must be >= 0; limit must be 1..1000")
+        files = [
+            f
+            for f in sorted(path.iterdir())
+            if f.name.casefold() != ".nx-mcp" and f.name.startswith(prefix)
+        ]
         items = []
-        for f in sorted(path.iterdir()):
-            if f.name.casefold() == ".nx-mcp":
-                continue
+        for f in files[offset : offset + limit]:
             workspace.ensure_inside(f)
             items.append(
                 metadata(f) | {"kind": "file"}
                 if f.is_file()
                 else {"path": str(f.relative_to(workspace.root)), "kind": "directory"}
             )
-        return {"status": "success", "path": str(path), "entries": items, "count": len(items)}
+        next_offset = offset + len(items)
+        return {
+            "status": "success",
+            "path": str(path),
+            "entries": items,
+            "count": len(items),
+            "total_count": len(files),
+            "offset": offset,
+            "next_offset": next_offset if next_offset < len(files) else None,
+        }
     if method == "nx_download_file":
         if p["offset"] < 0 or not 1 <= p["length"] <= 262144:
-            raise NXToolError("NX_INVALID_ARGUMENT", "Invalid chunk offset/length")
+            raise NXToolError(
+                "NX_INVALID_ARGUMENT", "offset must be >= 0; length must be 1..262144 bytes"
+            )
+        if not path.is_file():
+            raise NXToolError("NX_FILE_NOT_FOUND", "path must name an existing workspace file")
+        delivery = p.get("delivery", "base64")
+        if delivery not in {"base64", "image", "metadata"}:
+            raise NXToolError("NX_INVALID_ARGUMENT", "delivery must be base64, image or metadata")
+        if delivery != "base64" and (p["offset"] != 0 or p["length"] != 262144):
+            raise NXToolError(
+                "NX_INVALID_ARGUMENT",
+                "image/metadata delivery requires default offset=0 and length=262144; chunk ranges apply only to base64",
+            )
         meta = metadata(path)
+        if delivery == "metadata":
+            return {"status": "success", **meta, "delivery": delivery}
+        if delivery == "image":
+            if meta["size"] > 8 * 1024 * 1024:
+                raise NXToolError(
+                    "NX_IMAGE_TOO_LARGE", "Inline PNG limit is 8 MiB; use base64 chunks"
+                )
+            with path.open("rb") as stream:
+                header = stream.read(24)
+            if len(header) != 24 or header[:8] != b"\x89PNG\r\n\x1a\n" or header[12:16] != b"IHDR":
+                raise NXToolError(
+                    "NX_UNSUPPORTED_IMAGE",
+                    "Inline delivery supports PNG files with an IHDR header; use base64 for other formats",
+                )
+            return {
+                "status": "success",
+                **meta,
+                "delivery": delivery,
+                "mime_type": "image/png",
+                "resolution": list(struct.unpack(">II", header[16:24])),
+            }
         with path.open("rb") as stream:
             stream.seek(p["offset"])
             data = stream.read(p["length"])
+        next_offset = p["offset"] + len(data)
         return {
             "status": "success",
             **meta,
             "offset": p["offset"],
+            "bytes_returned": len(data),
+            "next_offset": next_offset if next_offset < meta["size"] else None,
             "data_base64": base64.b64encode(data).decode(),
-            "eof": p["offset"] + len(data) >= meta["size"],
+            "eof": next_offset >= meta["size"],
         }
     if path.suffix.lower() not in {
         ".prt",
