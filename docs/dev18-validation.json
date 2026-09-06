@@ -1,0 +1,96 @@
+{
+  "release": {
+    "version": "0.2.0.dev18",
+    "commit": "9254c028eac8ffdfeed54201377ba62a052b0a1c",
+    "sha256": "7462e053c4261e0e726611e9b7835b3efb11ee833f436658312a11c48af58021",
+    "build_run": 34053906206
+  },
+  "ci_run": 34053906444,
+  "automated_validation": {
+    "passed": 868,
+    "skipped": 1,
+    "skip_reason": "Dedicated real-NX test requires its runner; separate live checks completed",
+    "branch_coverage_percent": 79.08,
+    "mypy_modules": 49
+  },
+  "deployment": {
+    "complete_package": true,
+    "offline_verified_files": 247,
+    "windows_stdio_http_source_validation": "passed",
+    "native_inline_png_validation": "passed",
+    "agent_tool_count": 13,
+    "full_tool_count": 185
+  },
+  "implemented": [
+    "Prerequisites, supported object kinds, examples and native evidence in discovery",
+    "Task-specific compact receipt follow-up hints",
+    "Filtered snapshot inspection and pagination",
+    "Conservative mutation and side-effect guidance",
+    "Snapshot age/storage retention and explicit cleanup",
+    "Fresh serial agent trials with analytic geometry verification"
+  ],
+  "guidance_scope": {
+    "curated_workflows": 17,
+    "unreviewed_effects": null,
+    "native_status_source": "Existing version-specific capability manifest; not all tools newly native-tested"
+  },
+  "fresh_agent_comparison": {
+    "sample_size_per_profile": 1,
+    "baseline": "dev17 full profile",
+    "candidate_commit": "f91cb2b628068188baa50a9e6e31353e8ddbbd8e",
+    "tasks": [
+      "80 x 50 x 4 mm plate with two radius-3 through holes",
+      "Three-instance assembly at X=0,100,200 mm",
+      "STEP export/import geometry equivalence"
+    ],
+    "profiles": {
+      "full": {
+        "explicit_mcp_calls": 59,
+        "discovery_and_catalog_calls": 24,
+        "reported_tool_errors": 0,
+        "reported_retries": 1,
+        "response_and_discovery_text_tokens_o200k_base": 66957,
+        "analytic_geometry_audit": "passed: two plate volumes, two plate bounds, assembly bounds"
+      },
+      "agent": {
+        "explicit_mcp_calls": 59,
+        "discovery_and_catalog_calls": 20,
+        "reported_tool_errors": 0,
+        "reported_retries": 1,
+        "response_and_discovery_text_tokens_o200k_base": 46589,
+        "analytic_geometry_audit": "passed: two plate volumes, two plate bounds, assembly bounds"
+      }
+    },
+    "both_profiles_all_tasks_passed": true,
+    "provider_token_usage": null,
+    "limitations": [
+      "One trial per profile; no statistical efficiency conclusion",
+      "Response tokenizer counts are not provider usage or total agent-context cost",
+      "Full-profile discovery uses local catalog filtering in the benchmark client",
+      "Initial connection retries occurred before NX mutation"
+    ]
+  },
+  "post_trial_fixes": {
+    "commit": "9254c028eac8ffdfeed54201377ba62a052b0a1c",
+    "agent_read_only_followup": "passed",
+    "checks": [
+      "38 requested part rows retained with coherent pagination",
+      "Spaced discovery query ranks nx_create_part first",
+      "Output schema omitted on request",
+      "Inspection terminal page coherence",
+      "Cleanup dry run preserves recovery receipts"
+    ],
+    "multi_page_inspection": "Exercised separately in initial dev18 native inspection; final follow-up checked terminal page only"
+  },
+  "preservation": {
+    "saved_original_parts": 38,
+    "unchanged_original_occurrences": 116,
+    "active_original_assembly_restored": true,
+    "serial_ui_main_thread_verified": true
+  },
+  "remaining_observations": [
+    "Broad discovery queries can return secondary matches",
+    "Benchmark client connection failures still emit verbose tracebacks",
+    "Exact provider model identifier and usage unavailable"
+  ]
+}
