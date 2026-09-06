@@ -254,3 +254,23 @@ async def test_inline_image_metadata_paging_and_output_contract(tmp_path):
     ]:
         assert (await server.call_tool("nx_download_file", {"path": "view.png", **args})).isError
     bridge.call.assert_not_awaited()
+
+
+@pytest.mark.asyncio
+async def test_missing_directory_and_boolean_operand_contract(tmp_path):
+    bridge = AsyncMock()
+    bridge.call.return_value = {"status": "success"}
+    server = create_server(bridge, Workspace(tmp_path), enable_experimental=True)
+    missing = await server.call_tool("nx_workspace_list", {"path": "missing"})
+    assert missing.isError and missing.structuredContent["code"] == "NX_DIRECTORY_NOT_FOUND"
+    tools = {t.name: t for t in await server.list_tools()}
+    schema = tools["nx_boolean"].inputSchema["properties"]
+    assert schema["boolean_type"]["enum"] == ["unite", "subtract", "intersect"]
+    assert schema["targets"]["minItems"] == 2
+    invalid = await server.call_tool("nx_boolean", {"boolean_type": "subtract", "targets": ["a"]})
+    assert invalid.isError
+    bridge.call.assert_not_awaited()
+    await server.call_tool(
+        "nx_boolean", {"boolean_type": "subtract", "targets": ["target", "tool"]}
+    )
+    assert bridge.call.call_args.args[1]["targets"] == ["target", "tool"]

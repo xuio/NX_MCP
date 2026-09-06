@@ -27,6 +27,13 @@ from nx_mcp.runtime import NXToolError
 from nx_mcp.workspace import WorkspaceViolation
 
 
+def nx_boolean(
+    boolean_type: Literal["unite", "subtract", "intersect"],
+    targets: Annotated[list[str], Field(min_length=2)],
+):
+    pass
+
+
 def nx_display_info(objects: list[str]):
     pass
 
@@ -281,8 +288,8 @@ def nx_upload_file(path: str, data_base64: str, sha256: str, total_size: int, of
 
 
 DESCRIPTIONS = {
-    "nx_boolean": "Boolean supported solid bodies: unite, subtract or intersect. Native cube subtraction and volume checks are scoped in nx_capabilities(tool='nx_boolean'); not general certification.",
-    "nx_revolve": "Revolve a finished sketch about the specified axis and origin. Angles are degrees, lengths in work-part units; boolean is none/unite/subtract/intersect. Inspect nx_capabilities(tool='nx_revolve') for tested scope.",
+    "nx_boolean": "Boolean solid bodies: unite, subtract or intersect. targets[0] is the target body; targets[1:] are tool bodies. Native cube subtraction and volume checks are scoped in nx_capabilities(tool='nx_boolean'); not general certification.",
+    "nx_revolve": "Requires sketch_name (finished sketch ID/name). Revolve about a principal axis through the part origin; custom axis origins are not exposed. Angles are degrees, lengths in work-part units; boolean is none/unite/subtract/intersect. Inspect nx_capabilities(tool='nx_revolve') for tested scope.",
     "nx_workspace_list": "List a workspace directory with prefix filtering and pagination (offset>=0, limit=1..1000, default 100). Returns entries/count for this page, total_count and next_offset. File entries include size/SHA-256. Use nx_download_file(delivery='metadata') to inspect one file.",
     "nx_workspace_info": "Discover the NX host workspace root and path rules. Paths refer to the NX machine, not the MCP client's filesystem. No session-wide current directory is changed.",
     "nx_create_directory": "Create a directory and missing parents inside the NX workspace. Accepts workspace-relative or in-workspace absolute host paths. Idempotent: an existing directory succeeds; an existing file fails. Returns actual path and created status.",
@@ -671,6 +678,11 @@ def artifact_call(method, p, workspace):
         }
 
     if method == "nx_workspace_list":
+        if not path.exists():
+            raise NXToolError(
+                "NX_DIRECTORY_NOT_FOUND",
+                "Workspace directory does not exist; inspect the parent directory or correct path",
+            )
         if not path.is_dir():
             raise NXToolError(
                 "NX_NOT_DIRECTORY",
