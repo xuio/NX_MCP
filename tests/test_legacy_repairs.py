@@ -93,3 +93,18 @@ def test_delete_feature_updates_native_delete_list_and_reports_reference():
     h._update_model = lambda: h.calls.append("update")
     assert h._delete_feature("a") == {"deleted": [{"id": "sketch"}]}
     assert h.calls == [h.a, "update"]
+
+
+@pytest.mark.parametrize("batch", [True, False])
+def test_canned_view_reports_actual_host_mode(batch):
+    from nx_mcp.nx_bridge import NXOpenExecutor
+
+    calls = []
+    executor = S(
+        session=S(IsBatch=batch),
+        nxopen=S(View=S(Canned=S(Top=1), ScaleAdjustment=S(Fit=2))),
+        _work_part=lambda: S(ModelingViews=S(WorkView=S(Orient=lambda *a: calls.append(a)))),
+    )
+    result = NXOpenExecutor._set_view(executor, "Top")
+    assert calls == [(1, 2)]
+    assert result["orientation"] == "top" and result["viewport_available"] is not batch

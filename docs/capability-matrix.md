@@ -3,16 +3,16 @@
 Generated from `src/nx_mcp/capability_manifest.json`; do not edit this table by hand.
 Run `python scripts/generate_capability_matrix.py` to regenerate, or add `--check` to detect drift.
 
-Manifest revision: **2606-agent-ux-r2**. NX: **v2606**. Bridge protocol: **1**.
-Canonical manifest SHA-256: `adf9794221153a9d312ac1b48afa3eba03d8f1f8f1699f1c6de66913750cf864`.
+Manifest revision: **2606-legacy-closeout-r3**. NX: **v2606**. Bridge protocol: **1**.
+Canonical manifest SHA-256: `368307955169ea07d37a28e39425c3e91fa5a0e3454af31b1de093118daee714`.
 
 These labels report manifest evidence, not certification or independent verification of its claims. Native-tested means status `tested` with an evidence type beginning `real_NX_`; only the stated scope and NX version are covered. Contract/sidecar-tested does not establish native CAD correctness. Experimental includes untested entries and tested entries without a recognized evidence type. Unavailable capabilities are explicitly recorded by the manifest; absence from this matrix is not proof of availability or unavailability.
 
 | Tool classification | Count |
 | --- | ---: |
-| Native-tested | 162 |
-| Contract/sidecar-tested | 5 |
-| Experimental | 18 |
+| Native-tested | 178 |
+| Contract/sidecar-tested | 7 |
+| Experimental | 0 |
 | Unavailable | 0 |
 
 ## Tools
@@ -35,8 +35,8 @@ These labels report manifest evidence, not certification or independent verifica
 | nx_blend | Native-tested | tested | real_NX_v2606_scoped | Native single-edge radius1 blend on a cube; installed AddChainset API and cleanup verified. |
 | nx_boolean | Native-tested | tested | real_NX_v2606_scoped | Overlapping1000mm3 cubes: unite1500, subtract500, intersect500mm3 verified analytically. |
 | nx_bridge_surface | Native-tested | tested | real_NX_v2606_scoped | Native full-edge planar G0/G1/G2 bridge creation; requested constraints are not independent geometric certification. |
-| nx_cancel_operation | Experimental | experimental | not_tested_in_this_release | No correctness or failure claim; preserve as experimental. |
-| nx_capabilities | Experimental | experimental | not_tested_in_this_release | No correctness or failure claim; preserve as experimental. |
+| nx_cancel_operation | Contract/sidecar-tested | tested | local_contract_tests | Sidecar contract accepts cancellation only for running batches and creates the cancellation marker; batch boundary seam verifies rollback. Live non-running request rejected. No mid-NXOpen interruption claim. |
+| nx_capabilities | Native-tested | tested | real_NX_v2606_scoped | Live exact-tool manifest filtering, NX version and API-detection response. API presence is not a geometry correctness certificate. |
 | nx_chamfer | Native-tested | tested | real_NX_v2606_scoped | Native single-edge symmetric-offset chamfer on a cube; explicit edge collector and tolerance. |
 | nx_check_clearance | Native-tested | tested | real_NX_v2606_interactive | Native 2 mm gap flagged below 3 mm requirement; bounded pair selection and conservative broad phase |
 | nx_check_interference | Native-tested | tested | real_NX_v2606_interactive | 10 mm cubes: 500 mm^3 overlap, touching and 2 mm gap; rotated nested occurrence overlap; cleanup preserves saved flags and checkpoint |
@@ -56,8 +56,8 @@ These labels report manifest evidence, not certification or independent verifica
 | nx_create_reference_set | Native-tested | tested | real_NX_v2606_scoped | Native SOLIDS reference set containing one block body; saved and consumed by three assembly occurrences. |
 | nx_create_sketch | Native-tested | tested | real_NX_v2606 | XY, XZ, YZ and an offset arbitrary orthonormal basis; actual frames and curve coordinates checked |
 | nx_curve_analysis | Native-tested | tested | real_NX_v2606_scoped | Native derivative evaluation on owned line/spline curves; singular handling unit-tested; sampling is not a global extrema certificate. |
-| nx_delete_explosion | Experimental | experimental | not recorded | Local unit tests cover in-use guard, native delete dispatch and stale reference invalidation; deployed native acceptance pending. |
-| nx_delete_feature | Experimental | experimental | not_tested_in_this_release | No correctness or failure claim; preserve as experimental. |
+| nx_delete_explosion | Native-tested | tested | real_NX_v2606_scoped | Native unassociated explosion deletion followed by empty explosion inventory; in-use rejection and stale invalidation covered locally. |
+| nx_delete_feature | Native-tested | tested | real_NX_v2606_scoped | Native extrusion deletion after Save As with a reacquired feature ID; resulting body count zero. Dependency cascades beyond this fixture are not independently tested. |
 | nx_display_info | Native-tested | tested | real_NX_v2606_public_MCP | Body/face and nested occurrence color, transparency and explicit blank state |
 | nx_download_file | Contract/sidecar-tested | tested | local_contract_test | Chunk bytes, full checksum and boundary/overwrite tests |
 | nx_draft | Native-tested | tested | real_NX_v2606_scoped | Native 5 degree face draft with analytic volume and explicit angle/distance tolerances. |
@@ -84,7 +84,7 @@ These labels report manifest evidence, not certification or independent verifica
 | nx_find_geometry | Native-tested | tested | real_NX_v2606_scoped_and_local_boundary_tests | Native trimmed BREP point-to-face/edge distance; selector queries, principal plane filter and radius filter. Highest/lowest retain conservative center ordering. |
 | nx_finish_preview | Native-tested | tested | real_NX_v2606_and_local_stateful_seams | Scoped v2606 native authoring/review acceptance and local failure-path regressions; see docs/tools.md for supported operations and limits. |
 | nx_finish_sketch | Native-tested | tested | real_NX_v2606 | Principal/custom sketch completion and subsequent extrusion |
-| nx_fit_view | Experimental | experimental | not_tested_in_this_release | No correctness or failure claim; preserve as experimental. |
+| nx_fit_view | Native-tested | tested | real_NX_v2606_scoped | Native fit on a displayed solid fixture in graphical NX; framing quality remains view-dependent. |
 | nx_flat_pattern_orientation_edges | Native-tested | tested | real_NX_v2606_scoped | Native planar formed-web straight boundary discovery; returned edge created a Flat Pattern on first attempt. Geometric candidates only; not a kernel acceptance guarantee. |
 | nx_geometry_anchor | Native-tested | tested | real_NX_v2606_scoped | Owned face persistent handle, owner-part identity and exact native resolution after save/reopen; no nearest-geometry fallback. |
 | nx_get_bounding_box | Native-tested | tested | real_NX_v2606 | Part and two-level assembly; conservative and exact with axis-aligned WCS |
@@ -96,7 +96,7 @@ These labels report manifest evidence, not certification or independent verifica
 | nx_inspection_report | Native-tested | tested | real_NX_v2606_and_local_stateful_seams | Scoped v2606 native authoring/review acceptance and local failure-path regressions; see docs/tools.md for supported operations and limits. |
 | nx_list_annotations | Native-tested | tested | real_NX_v2606_scoped | Native BOM, balloon and managed sheet-metal PMI enumeration and text. |
 | nx_list_assembly_constraints | Native-tested | tested | real_NX_v2606_scoped | Native typed constraint references, geometry/occurrence references, expressions, suppression and solver statuses. |
-| nx_list_bodies | Experimental | experimental | not_tested_in_this_release | No correctness or failure claim; preserve as experimental. |
+| nx_list_bodies | Native-tested | tested | real_NX_v2606_scoped | Native work-part inventory reports one extruded body and zero after feature deletion. |
 | nx_list_component_patterns | Native-tested | tested | real_NX_v2606_scoped | Native linear, two-direction rectangular and circular pattern metadata and actual occurrence transforms. |
 | nx_list_components | Native-tested | tested | real_NX_v2606 | Two-level transforms and STEP round-trip pose equality Compact inventory, no-pose projection and pagination checked against 116 occurrences. |
 | nx_list_datums | Native-tested | tested | real_NX_v2606_scoped | Native owned datum planes/axes and coordinate-system enumeration on template part. |
@@ -104,17 +104,17 @@ These labels report manifest evidence, not certification or independent verifica
 | nx_list_drawings | Native-tested | tested | real_NX_v2606_scoped | Native A3 sheet/view enumeration, dimensions, scale and active state. |
 | nx_list_explosions | Native-tested | tested | real_NX_v2606_scoped | Native nested assembly explosion: absolute rotated parent/child poses, reset, repeat assignment, model/drawing association, persistence; ordinary assembled placements unchanged. |
 | nx_list_expressions | Native-tested | tested | real_NX_v2606_and_local_stateful_seams | Scoped v2606 native authoring/review acceptance and local failure-path regressions; see docs/tools.md for supported operations and limits. |
-| nx_list_features | Experimental | experimental | not_tested_in_this_release | No correctness or failure claim; preserve as experimental. |
+| nx_list_features | Native-tested | tested | real_NX_v2606_scoped | Native sketch/extrusion inventory and reacquisition of a renamed feature following Save As. |
 | nx_list_open_parts | Native-tested | tested | real_NX_v2606 | Loaded names, paths, IDs, work/display status and modified flags |
 | nx_list_reference_sets | Native-tested | tested | real_NX_v2606_scoped | Native body-only custom set enumeration and exact member count. |
 | nx_list_sections | Native-tested | tested | real_NX_v2606_public_MCP | Native plane enumeration; active view state and saved flags preserved |
-| nx_list_sketches | Experimental | experimental | not_tested_in_this_release | No correctness or failure claim; preserve as experimental. |
+| nx_list_sketches | Native-tested | tested | real_NX_v2606_scoped | Native two-sketch work-part inventory with typed references. |
 | nx_list_topology | Native-tested | tested | real_NX_v2606 | Face and edge enumeration; face references used in actual distance query Native face-restricted boundary enumeration and bidirectional adjacency used for flat-pattern orientation. |
 | nx_loft | Native-tested | tested | real_NX_v2606_scoped | Native solid loft between square sections with analytic volume; sheet configuration has local contract coverage. |
 | nx_mass_properties | Native-tested | tested | real_NX_v2606_scoped | Native solid mass, volume, center of gravity and centroidal inertia; 2700kg/m3 test cube matches analytic results. Nested rotated/translated two-body assembly: mass0.0054kg and CoG[0.005,0.035,0.035]m verified. |
 | nx_mate_component | Native-tested | tested | real_NX_v2606_scoped | Native touch mate at zero clearance and offset mate at7mm verified by measured separation. Other mate types have narrower validation. |
 | nx_material_info | Native-tested | tested | real_NX_v2606_scoped | Native physical material name and kg/m3 density readback; assembly occurrence prototypes supported. |
-| nx_measure_angle | Experimental | experimental | not_tested_in_this_release | No correctness or failure claim; preserve as experimental. |
+| nx_measure_angle | Native-tested | tested | real_NX_v2606_scoped | Native perpendicular sketch lines measure 90 degrees using typed references. Straight-edge and planar-face paths use native geometry; broader pair variants are not separately kernel-tested. |
 | nx_measure_distance | Native-tested | tested | real_NX_v2606 | Body/body, face/face, nested component/body occurrences; closest points and units |
 | nx_measure_volume | Native-tested | tested | real_NX_v2606 | Part and nested assembly sum, returned in mm^3; no union/mass claim Inch-part 0.5 cubic inch volume independently checked as 8193.532 mm3 using explicit native AnalysisUnit. |
 | nx_mirror_body | Native-tested | tested | real_NX_v2606_scoped | Native body mirror about YZ origin plane; doubled total volume and reflected bounding box. |
@@ -123,7 +123,7 @@ These labels report manifest evidence, not certification or independent verifica
 | nx_native_component_pattern | Native-tested | tested | real_NX_v2606_scoped_and_local_boundary_tests | NX 2606 native associative linear pattern: 16 total occurrences of 14 mm seed at 16.5 mm pitch span 261.5 mm. |
 | nx_open_part | Native-tested | tested | real_NX_v2606 | Already-loaded paths reused without close/recreation |
 | nx_operation_status | Contract/sidecar-tested | tested | local_contract_test | Durable committed/failed/unknown receipt tests; no crash reconstruction claimed |
-| nx_package_assembly | Experimental | experimental | not_tested_in_this_release | No correctness or failure claim; preserve as experimental. |
+| nx_package_assembly | Native-tested | tested | real_NX_v2606_scoped | Saved two-part assembly ZIP downloaded with verified checksum, two .prt members and valid archive CRCs; deeper dependency trees are outside this fixture. |
 | nx_parts_list_balloons | Native-tested | tested | real_NX_v2606_scoped | Native associated grouped balloon created for an assembly drawing view. |
 | nx_parts_list_column | Native-tested | tested | real_NX_v2606_scoped | Native BOM header/width edits, general column append/remove and evaluated values. |
 | nx_parts_list_info | Native-tested | tested | real_NX_v2606_scoped | Native evaluated BOM rows and preference readback. |
@@ -135,16 +135,16 @@ These labels report manifest evidence, not certification or independent verifica
 | nx_rebuild_model | Native-tested | tested | real_NX_v2606_and_local_stateful_seams | Native DoUpdate success and health read-back; failed-update rollback covered by local fault injection. |
 | nx_recognize_holes | Native-tested | tested | real_NX_v2606_scoped_and_local_boundary_tests | Annular solid: inner cylinder identified as bore, outer cylinder excluded; axis/radius/full circumference read-back. Coaxial grouping and partial-face reporting covered locally; no manufacturing feature inference. |
 | nx_refresh_annotations | Native-tested | tested | real_NX_v2606_scoped | Native persistent bend PMI, transaction hook and save/reopen exercised through public MCP; automatic bend-table builders also rebuilt because the native flag alone left stale rows. |
-| nx_rename_object | Experimental | experimental | not_tested_in_this_release | No correctness or failure claim; preserve as experimental. |
+| nx_rename_object | Native-tested | tested | real_NX_v2606_scoped | Native extrusion rename resolved again by returned name after Save As. Other object kinds are not independently covered by this fixture. |
 | nx_render_view | Native-tested | tested | real_NX_v2606_scoped | Native Studio image capture, exact 800x600 and 640x480 PNGs; preset2/custom RGB tested; native viewport image visually reviewed. |
-| nx_reposition_component | Experimental | experimental | not_tested_in_this_release | No correctness or failure claim; preserve as experimental. |
+| nx_reposition_component | Native-tested | tested | real_NX_v2606_scoped | Native immediate-child 20-unit X translation and 90-degree Z rotation; identical operation-ID replay does not apply translation twice. |
 | nx_resolve_geometry | Native-tested | tested | real_NX_v2606_scoped_and_local_boundary_tests | Exact point-to-face query re-evaluated after extrusion edit and save/close/reopen; ties rejected. Geometric rule, not immutable topology identity. |
 | nx_resolve_geometry_anchor | Native-tested | tested | real_NX_v2606_scoped | Owned face survives save/reopen and rollback in a public USB connector STEP fixture; stale and wrong-owner rejection tested locally. |
 | nx_restore_display | Native-tested | tested | real_NX_v2606_public_MCP | Reverse-order restore; invalid order rejected before mutation; face IDs retained across appearance and camera changes |
 | nx_restore_presentation | Native-tested | tested | real_NX_v2606_and_local_stateful_seams | Scoped v2606 native authoring/review acceptance and local failure-path regressions; see docs/tools.md for supported operations and limits. |
 | nx_revolve | Native-tested | tested | real_NX_v2606 | XY rectangular profile around global Y, boolean none, case-insensitive name lookup |
 | nx_rollback | Native-tested | tested | real_NX_v2606 | Explicit checkpoint rollback; stale references rejected afterward |
-| nx_save_as | Experimental | experimental | not_tested_in_this_release | No correctness or failure claim; preserve as experimental. |
+| nx_save_as | Native-tested | tested | real_NX_v2606_scoped | Native metric solid saved into a nested folder; work-part filename changes and references are reacquired before deletion. Original saved prototype loads into the test assembly. |
 | nx_save_part | Native-tested | tested | real_NX_v2606 | Save with documented native mark expiration |
 | nx_save_presentation | Native-tested | tested | real_NX_v2606_and_local_stateful_seams | Scoped v2606 native authoring/review acceptance and local failure-path regressions; see docs/tools.md for supported operations and limits. |
 | nx_screenshot | Native-tested | tested | real_NX_v2606_interactive | Native viewport PNG, white/transparent backgrounds, shaded/shaded-with-edges; requested dimensions advisory; actual device resolution returned |
@@ -159,7 +159,7 @@ These labels report manifest evidence, not certification or independent verifica
 | nx_set_feature_parameters | Native-tested | tested | real_NX_v2606_scoped_and_local_boundary_tests | Native extrusion-owned Number formula edit and resulting bounds; preflight/rollback boundary tests. No blanket verification of other feature kinds. |
 | nx_set_material | Native-tested | tested | real_NX_v2606_scoped | Local density-only physical material assignment, verified by UF native body density. |
 | nx_set_sheet_metal_defaults | Native-tested | tested | real_NX_v2606_scoped | Value-mode thickness/radius/neutral factor and numeric read-back. Material/tool tables and custom bend tables remain experimental. |
-| nx_set_view | Experimental | experimental | not_tested_in_this_release | No correctness or failure claim; preserve as experimental. |
+| nx_set_view | Native-tested | tested | real_NX_v2606_scoped | Native Top, Back and Isometric selection on a solid fixture. Other canned views follow the same API but are not individually verified. |
 | nx_set_visibility | Native-tested | tested | real_NX_v2606_public_MCP | Show/hide, nested isolation and restoration of previously hidden components |
 | nx_sew | Native-tested | tested | real_NX_v2606_scoped | Native adjacent planar-sheet sewing; incomplete-sew and solid-fallback rejection covered by unit tests. |
 | nx_sheet_metal_annotation | Native-tested | tested | real_NX_v2606_scoped | Native body/bend PMI with measured snapshot text and explicit refresh; no automatic numeric text update claim. |
@@ -173,10 +173,10 @@ These labels report manifest evidence, not certification or independent verifica
 | nx_sketch_angle | Native-tested | tested | real_NX_v2606_scoped | Native driving angular dimension creation and expression; broader angle configurations remain unverified. |
 | nx_sketch_arc | Native-tested | tested | real_NX_v2606 | Full circles on XY, XZ and YZ; resulting solid dimensions and volumes checked |
 | nx_sketch_conflicts | Native-tested | tested | real_NX_v2606_scoped_and_local_boundary_tests | Native no-conflict query and explicit horizontal+vertical contradiction, bounded single-removal relief, restored constraint count/status. Not a minimal conflict set or general legacy relation verifier. |
-| nx_sketch_constraint | Experimental | experimental | not_tested_in_this_release | No correctness or failure claim; preserve as experimental. |
+| nx_sketch_constraint | Native-tested | tested | real_NX_v2606_scoped | Native horizontal constraint on an owned sketch line through the supported sketch editor. Other routed relations/dimensions retain their dedicated-tool scopes; midpoint is explicitly unsupported. |
 | nx_sketch_diagnostics | Native-tested | tested | real_NX_v2606_public_MCP | Active/inactive whole-sketch native evaluation; underconstrained and fully fixed fixtures; remaining DOF, constraints and curve links; saved state preserved |
 | nx_sketch_dimension | Native-tested | tested | real_NX_v2606_scoped_and_local_boundary_tests | Line length (XZ), horizontal/vertical distances and arc radius/diameter creation; associated expression edit. Reference mismatch guard covered locally. |
-| nx_sketch_info | Experimental | experimental | not_tested_in_this_release | No correctness or failure claim; preserve as experimental. |
+| nx_sketch_info | Native-tested | tested | real_NX_v2606_scoped | Native XY sketch with two perpendicular lines; frame and owned curve readback. Principal/custom-frame geometry also covered by the sketch creation fixtures. |
 | nx_sketch_line | Native-tested | tested | real_NX_v2606 | Principal-plane profile coordinates checked against resultant solids |
 | nx_sketch_primitive | Native-tested | tested | real_NX_v2606_scoped | Circle, horizontal slot and rounded rectangle: native curves and extruded analytic volumes. |
 | nx_sketch_rectangle | Native-tested | tested | real_NX_v2606 | Principal/custom bases, multiple loops, retry deduplication and batch rollback |
@@ -186,7 +186,7 @@ These labels report manifest evidence, not certification or independent verifica
 | nx_sketch_trim_extend | Native-tested | tested | real_NX_v2606_scoped | Native line trim and line extension against an explicit crossing line; reacquire geometry after edits. |
 | nx_spline | Native-tested | tested | real_NX_v2606_scoped | Native associative 3D interpolation spline creation/edit and degree-2 control-pole curves; periodic variants unverified. |
 | nx_standard_thread | Native-tested | tested | real_NX_v2606_scoped | Native Metric Coarse M6 x 1.0 internal/external symbolic/detailed threads; pitch and material-removal verification. Detailed Metric Fine M6x0.75 and Inch UNC 1/4-20, right and left handed. |
-| nx_status | Experimental | experimental | not_tested_in_this_release | No correctness or failure claim; preserve as experimental. |
+| nx_status | Native-tested | tested | real_NX_v2606_scoped | Live graphical NX 2606 connection, version and UI/main-thread status; restored saved session. |
 | nx_surface_continuity | Native-tested | tested | real_NX_v2606_scoped | Bidirectional sampled UF geometry: matching planes pass G0/G1/G2, separated planes fail, tangent plane/quadratic join fails G2. Not a global certificate. |
 | nx_surface_mesh | Native-tested | tested | real_NX_v2606_scoped | Native planar and quadratic Through Curve Mesh fixtures from two primary and two cross sections. |
 | nx_sweep | Native-tested | tested | real_NX_v2606_scoped | Native square sketch swept along a straight guide sketch; boolean variants use existing boolean operation. |
@@ -203,7 +203,7 @@ These labels report manifest evidence, not certification or independent verifica
 | nx_view_info | Native-tested | tested | real_NX_v2606_interactive | Interactive display-part camera axes, origin and scale |
 | nx_wall_thickness | Native-tested | tested | real_NX_v2606_scoped | Native inward-normal ray thickness: nine 5 mm plate samples. Not rolling-ball or global-minimum thickness. |
 | nx_workspace_info | Contract/sidecar-tested | tested | live_sidecar_and_contract_tests | NX host workspace root and path conventions; no NX geometry calls. |
-| nx_workspace_list | Experimental | experimental | not_tested_in_this_release | No correctness or failure claim; preserve as experimental. |
+| nx_workspace_list | Contract/sidecar-tested | tested | live_sidecar_and_contract_tests | Live sidecar nested fixture directory with one-entry pagination; workspace boundary and pagination contracts tested locally. |
 
 ## Explicitly unavailable capabilities
 

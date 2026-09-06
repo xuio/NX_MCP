@@ -50,8 +50,13 @@ async def main():
         original = next(x for x in before if x["work"])
         created = []
         try:
-            await call("nx_status")
-            await call("nx_capabilities", tool="nx_status")
+            status = await call("nx_status")
+            assert (
+                status["connected"]
+                and status["ui"]["main_thread_id"] == status["ui"]["callback_thread_id"]
+            )
+            capabilities = await call("nx_capabilities", tool="nx_status")
+            assert set(capabilities["tools"]) == {"nx_status"}
             d = await call("nx_create_part", path=prefix + "/probe.prt", units="mm")
             created.append(d["part"]["id"])
             s = (await call("nx_create_sketch"))["object"]["id"]
@@ -61,7 +66,8 @@ async def main():
             b = await call(
                 "nx_sketch_line", sketch_id=s, start={"x": 0, "y": 0}, end={"x": 0, "y": 10}
             )
-            await call("nx_sketch_info", sketch_id=s)
+            info = await call("nx_sketch_info", sketch_id=s)
+            assert info["frame"]["normal"] == [0, 0, 1] and len(info["curves"]) == 2
             angle = await call("nx_measure_angle", obj1=a["object"]["id"], obj2=b["object"]["id"])
             assert math.isclose(angle["angle_deg"], 90, abs_tol=1e-8) and angle["units"] == "deg"
             constraint = await call(
@@ -87,11 +93,18 @@ async def main():
             feature = e["feature"]["id"]
             await call("nx_rename_object", object_id=feature, name="ProbeExtrusion")
             for v in ["Top", "Back", "Isometric"]:
-                await call("nx_set_view", orientation=v)
+                view = await call("nx_set_view", orientation=v)
+                assert view["orientation"] == v.lower() and view["viewport_available"]
             await call("nx_fit_view")
             await call("nx_save_part")
             await call("nx_save_as", path=prefix + "/nested/copy.prt")
-            await call("nx_workspace_list", path=prefix, limit=1)
+            page = await call("nx_workspace_list", path=prefix, limit=1)
+            assert page["count"] == 1 and page["next_offset"] == 1 and page["total_count"] == 2
+            feature = next(
+                f["id"]
+                for f in (await call("nx_list_features"))["objects"]
+                if f["name"] == "ProbeExtrusion"
+            )
             deleted = await call("nx_delete_feature", name=feature)
             assert deleted["deleted"]
             assert not (await call("nx_list_bodies"))["objects"]
@@ -110,9 +123,15 @@ async def main():
             assert retry["replayed"]
             pose = (await call("nx_list_components"))["components"][0]
             assert pose["translation"] == [20, 0, 0]
+            expected_rotation = [[0, -1, 0], [1, 0, 0], [0, 0, 1]]
+            assert all(
+                math.isclose(a, b, abs_tol=1e-8)
+                for actual, expected in zip(pose["rotation_matrix"], expected_rotation, strict=True)
+                for a, b in zip(actual, expected, strict=True)
+            )
             ex = (await call("nx_create_explosion", name="Disposable"))["object"]["id"]
             await call("nx_delete_explosion", explosion=ex)
-            assert not (await call("nx_list_explosions"))["items"]
+            assert not (await call("nx_list_explosions"))["explosions"]
             await call("nx_save_part")
             await call("nx_package_assembly", path=prefix + "/assembly.zip")
             chunk = await call("nx_download_file", path=prefix + "/assembly.zip")
@@ -135,7 +154,7 @@ async def main():
             after = (await call("nx_list_open_parts", limit=100))["parts"]
             assert len(after) == len(before) and not any(x["modified"] for x in after)
         print(
-            "Completed; original session restored; failures:",
+            "Completed; original session restored; expected rejection:",
             [x["tool"] for x in log if x["error"]],
         )
 

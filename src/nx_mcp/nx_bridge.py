@@ -850,7 +850,11 @@ class NXOpenExecutor:
         self._work_part().ModelingViews.WorkView.Orient(
             getattr(self.nxopen.View.Canned, options[key]), self.nxopen.View.ScaleAdjustment.Fit
         )
-        return {"message": "View orientation set; batch bridge has no visible viewport"}
+        return {
+            "message": "View orientation set",
+            "orientation": key,
+            "viewport_available": not self.session.IsBatch,
+        }
 
     def _get_feature_info(self, name):
         part = self._work_part()

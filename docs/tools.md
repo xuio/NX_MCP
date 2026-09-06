@@ -467,3 +467,20 @@ Replacing a prototype may invalidate its edge anchors. Explicitly remove obsolet
 
 `nx_edit_faces` returns native health with its repair result. Failed native edits include the action, selected face references and NX error code when available. The enclosing transaction rolls back unhealthy results.
 
+
+## Legacy-compatible inspection and edits
+
+`nx_measure_angle` accepts typed work-part line, straight-edge and planar-face
+references and returns degrees in [0,180]. Directions use line start/end, edge
+vertex order or outward face normals. This is not an oriented dihedral angle;
+curved entities and component occurrences are rejected.
+
+`nx_delete_feature` resolves a feature ID or unambiguous name, adds it to the
+native update manager deletion list and reports deleted references. Dependent
+geometry can be removed; inspect change records and reacquire topology afterward.
+
+`nx_sketch_constraint` routes owned curve IDs to supported sketch editors and
+relation/dimension tools. Horizontal/vertical/fix use one curve; pair relations
+use two curves in the same sketch. Only dimensional types accept a value.
+Coincident uses start-to-start; use `nx_sketch_relation` for explicit endpoints.
+Midpoint is explicitly unsupported. The input schema publishes the supported enum.

@@ -1,5 +1,5 @@
 {
-  "revision": "2606-agent-ux-r2",
+  "revision": "2606-legacy-closeout-r3",
   "nx_version": "v2606",
   "bridge_protocol": 1,
   "tools": {
@@ -54,9 +54,9 @@
       "scope": "Extrusion distance 46.25 and native linear-pattern count/pitch; unsupported edit unchanged"
     },
     "nx_sketch_info": {
-      "status": "experimental",
-      "evidence_type": "not_tested_in_this_release",
-      "scope": "No correctness or failure claim; preserve as experimental."
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native XY sketch with two perpendicular lines; frame and owned curve readback. Principal/custom-frame geometry also covered by the sketch creation fixtures."
     },
     "nx_hole": {
       "status": "tested",
@@ -84,9 +84,9 @@
       "scope": "Undo after read-only inspection; save boundary explicitly inspected"
     },
     "nx_status": {
-      "status": "experimental",
-      "evidence_type": "not_tested_in_this_release",
-      "scope": "No correctness or failure claim; preserve as experimental."
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Live graphical NX 2606 connection, version and UI/main-thread status; restored saved session."
     },
     "nx_sketch_line": {
       "status": "tested",
@@ -104,9 +104,9 @@
       "scope": "STEP solids and nested assembly through WorkPart importer, normal new-part creation; source prototypes closed explicitly; names preflighted"
     },
     "nx_workspace_list": {
-      "status": "experimental",
-      "evidence_type": "not_tested_in_this_release",
-      "scope": "No correctness or failure claim; preserve as experimental."
+      "status": "tested",
+      "evidence_type": "live_sidecar_and_contract_tests",
+      "scope": "Live sidecar nested fixture directory with one-entry pagination; workspace boundary and pagination contracts tested locally."
     },
     "nx_revolve": {
       "status": "tested",
@@ -119,9 +119,9 @@
       "scope": "Loaded names, paths, IDs, work/display status and modified flags"
     },
     "nx_rename_object": {
-      "status": "experimental",
-      "evidence_type": "not_tested_in_this_release",
-      "scope": "No correctness or failure claim; preserve as experimental."
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native extrusion rename resolved again by returned name after Save As. Other object kinds are not independently covered by this fixture."
     },
     "nx_add_dimension": {
       "status": "tested",
@@ -164,19 +164,19 @@
       "scope": "Already-loaded paths reused without close/recreation"
     },
     "nx_measure_angle": {
-      "status": "experimental",
-      "evidence_type": "not_tested_in_this_release",
-      "scope": "No correctness or failure claim; preserve as experimental."
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native perpendicular sketch lines measure 90 degrees using typed references. Straight-edge and planar-face paths use native geometry; broader pair variants are not separately kernel-tested."
     },
     "nx_delete_feature": {
-      "status": "experimental",
-      "evidence_type": "not_tested_in_this_release",
-      "scope": "No correctness or failure claim; preserve as experimental."
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native extrusion deletion after Save As with a reacquired feature ID; resulting body count zero. Dependency cascades beyond this fixture are not independently tested."
     },
     "nx_reposition_component": {
-      "status": "experimental",
-      "evidence_type": "not_tested_in_this_release",
-      "scope": "No correctness or failure claim; preserve as experimental."
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native immediate-child 20-unit X translation and 90-degree Z rotation; identical operation-ID replay does not apply translation twice."
     },
     "nx_add_base_view": {
       "status": "tested",
@@ -194,9 +194,9 @@
       "scope": "Native viewport PNG, white/transparent backgrounds, shaded/shaded-with-edges; requested dimensions advisory; actual device resolution returned"
     },
     "nx_list_bodies": {
-      "status": "experimental",
-      "evidence_type": "not_tested_in_this_release",
-      "scope": "No correctness or failure claim; preserve as experimental."
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native work-part inventory reports one extruded body and zero after feature deletion."
     },
     "nx_save_part": {
       "status": "tested",
@@ -204,9 +204,9 @@
       "scope": "Save with documented native mark expiration"
     },
     "nx_set_view": {
-      "status": "experimental",
-      "evidence_type": "not_tested_in_this_release",
-      "scope": "No correctness or failure claim; preserve as experimental."
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native Top, Back and Isometric selection on a solid fixture. Other canned views follow the same API but are not individually verified."
     },
     "nx_boolean": {
       "status": "tested",
@@ -229,14 +229,14 @@
       "scope": "Native offset/symmetric/arbitrary-direction extrusion, through-all subtraction and up-to-face solids; analytic volume and bounds checked."
     },
     "nx_list_sketches": {
-      "status": "experimental",
-      "evidence_type": "not_tested_in_this_release",
-      "scope": "No correctness or failure claim; preserve as experimental."
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native two-sketch work-part inventory with typed references."
     },
     "nx_list_features": {
-      "status": "experimental",
-      "evidence_type": "not_tested_in_this_release",
-      "scope": "No correctness or failure claim; preserve as experimental."
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native sketch/extrusion inventory and reacquisition of a renamed feature following Save As."
     },
     "nx_pattern": {
       "status": "tested",
@@ -249,9 +249,9 @@
       "scope": "Extrude and Pattern Feature expressions and dependencies"
     },
     "nx_package_assembly": {
-      "status": "experimental",
-      "evidence_type": "not_tested_in_this_release",
-      "scope": "No correctness or failure claim; preserve as experimental."
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Saved two-part assembly ZIP downloaded with verified checksum, two .prt members and valid archive CRCs; deeper dependency trees are outside this fixture."
     },
     "nx_sweep": {
       "status": "tested",
@@ -259,14 +259,14 @@
       "scope": "Native square sketch swept along a straight guide sketch; boolean variants use existing boolean operation."
     },
     "nx_fit_view": {
-      "status": "experimental",
-      "evidence_type": "not_tested_in_this_release",
-      "scope": "No correctness or failure claim; preserve as experimental."
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native fit on a displayed solid fixture in graphical NX; framing quality remains view-dependent."
     },
     "nx_capabilities": {
-      "status": "experimental",
-      "evidence_type": "not_tested_in_this_release",
-      "scope": "No correctness or failure claim; preserve as experimental."
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Live exact-tool manifest filtering, NX version and API-detection response. API presence is not a geometry correctness certificate."
     },
     "nx_blend": {
       "status": "tested",
@@ -274,9 +274,9 @@
       "scope": "Native single-edge radius1 blend on a cube; installed AddChainset API and cleanup verified."
     },
     "nx_cancel_operation": {
-      "status": "experimental",
-      "evidence_type": "not_tested_in_this_release",
-      "scope": "No correctness or failure claim; preserve as experimental."
+      "status": "tested",
+      "evidence_type": "local_contract_tests",
+      "scope": "Sidecar contract accepts cancellation only for running batches and creates the cancellation marker; batch boundary seam verifies rollback. Live non-running request rejected. No mid-NXOpen interruption claim."
     },
     "nx_create_sketch": {
       "status": "tested",
@@ -299,9 +299,9 @@
       "scope": "Part and two-level assembly; conservative and exact with axis-aligned WCS"
     },
     "nx_save_as": {
-      "status": "experimental",
-      "evidence_type": "not_tested_in_this_release",
-      "scope": "No correctness or failure claim; preserve as experimental."
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native metric solid saved into a nested folder; work-part filename changes and references are reacquired before deletion. Original saved prototype loads into the test assembly."
     },
     "nx_list_components": {
       "status": "tested",
@@ -314,9 +314,9 @@
       "scope": "Native metric A3 sheet at 1:1 first-angle projection; sheet opening and typed reference."
     },
     "nx_sketch_constraint": {
-      "status": "experimental",
-      "evidence_type": "not_tested_in_this_release",
-      "scope": "No correctness or failure claim; preserve as experimental."
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native horizontal constraint on an owned sketch line through the supported sketch editor. Other routed relations/dimensions retain their dedicated-tool scopes; midpoint is explicitly unsupported."
     },
     "nx_ui_control": {
       "status": "tested",
@@ -639,8 +639,9 @@
       "scope": "Native exploded and assembled occurrence poses and typed associated view references, including nested assembly."
     },
     "nx_delete_explosion": {
-      "status": "experimental",
-      "scope": "Local unit tests cover in-use guard, native delete dispatch and stale reference invalidation; deployed native acceptance pending."
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native unassociated explosion deletion followed by empty explosion inventory; in-use rejection and stale invalidation covered locally."
     },
     "nx_sheet_metal_schema": {
       "status": "tested",

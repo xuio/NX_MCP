@@ -112,3 +112,22 @@ with locked Windows dependencies. Installation/rollback scripts preserve backups
 verify archive and installed-source hashes. Record exact runtime commit, NX build,
 fixture checks and artifact hashes with each native run. Re-run changed behavior
 on the release candidate instead of relabeling earlier evidence.
+
+## Remaining legacy entry points
+
+The dev19 closeout reproduced three failures in dev18: typed-reference angle
+lookup, the missing sketch constraint enum, and feature deletion through
+`FeatureCollection.ToArray`. The replacement handlers use live references and
+supported native editing/update paths. `examples/validate_remaining_tools.py`
+checks perpendicular-line angles, horizontal constraints, inventories, rename,
+nested Save As, extrusion deletion, view selection, relative-placement replay,
+explosion deletion and downloaded assembly ZIP contents. Save As references are
+reacquired before subsequent edits. Non-running cancellation is an expected error;
+cooperative cancellation is classified from sidecar/batch-boundary tests, not
+from an unperformed mid-builder interruption test.
+
+The initial isolated run exposed the stale-reference assumption in the test;
+it restored the original session and was retained as a failed attempt. The
+corrected run passed on candidate `b2584eeef629791b04cf6ad68fe40a428bfe5aec`.
+Per-option limits remain in the capability matrix even when the overall entry
+point is marked tested. This does not make every exposed variant native-tested.
