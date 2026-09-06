@@ -126,6 +126,7 @@ async def run_suite(call, reject, artifact, upload, output):
             for c in (await call("nx_list_components"))["components"]
             if c["name"] in ["SUB", "SUB2"]
         ]
+        roots.sort(key=lambda component: component["name"])
         pair = {"obj1": roots[0]["object"]["id"], "obj2": roots[1]["object"]["id"]}
         receipt["nested"] = {
             "bounds": bounds,
@@ -140,6 +141,10 @@ async def run_suite(call, reject, artifact, upload, output):
             rotation_matrix=[[0, -1, 0], [1, 0, 0], [0, 0, 1]],
         )
         receipt["nested"]["overlap"] = await call("nx_check_interference", **pair)
+        assert receipt["nested"]["separate"]["counts"]["clear"] == 1
+        overlap = receipt["nested"]["overlap"]["pairs"][0]
+        assert overlap["classification"] == "penetration"
+        assert math.isclose(overlap["interference_volume_mm3"], 25.4 * 12.7, rel_tol=1e-7)
         await checked("two_level_rotated_mixed_unit_bounds_volume_clearance_interference")
         await new("three-wall")
         await call("nx_sheet_metal_context")
