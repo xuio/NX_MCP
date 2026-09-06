@@ -42,3 +42,18 @@ The runner executes the release-engineering, documentation, annotation-recovery,
 A public connector fixture is available from [KiCad's USB4085 model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/8fb0194639525261cd642ec40d62ee26e1f601de/Connector_USB.3dshapes/USB_C_Receptacle_GCT_USB4085.step), SHA256 `82235f7275d07f720e3c050f781397f4bef47fdc7e15dd507d68ccba861f1a35`. Fetch it separately under its upstream license; vendor CAD is not bundled in this repository. Proprietary NX catalogs are read in place and never copied into release artifacts.
 
 Native acceptance is separate from mock/transport CI. A CI pass alone does not certify a release against NX. Keep the native receipt, package hash and exact source commit together, and run acceptance after every deployment before recording that release as verified.
+
+## Verified dev13 deployment
+
+[Native acceptance](dev13-validation.json) records all five installed suites passing:
+11 release-engineering groups, eight protected documentation groups, annotation
+recovery, ten freeform groups and four sheet-metal groups. The original 38 saved
+parts and 116 component paths/transforms were preserved. All 29 downloaded
+artifacts matched their native hashes; PDF layouts were visually reviewed.
+
+The runtime package is pinned to `7942284e0402f54d3ca54a6d6481b58a92a27c9c`.
+A separate validation overlay records the final evidence, corrected capability
+scope and two test-runner fixes: shared-drive output uses `absolute()` without
+unsupported final-path resolution, and STEP uploads obey the 256 KiB chunk limit.
+The NX modeling implementation remains the packaged runtime. The overlay's
+`validation-release.json` records its commit and individual file checksums.

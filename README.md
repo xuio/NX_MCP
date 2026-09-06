@@ -148,3 +148,5 @@ See [freeform, assembly documentation and manufacturing](docs/freeform-manufactu
 See [editable documentation and manufacturing](docs/documentation-manufacturing.md) for dev12 contracts and acceptance fixtures.
 
 See [release engineering and native acceptance](docs/release-engineering.md) for dev13 drawing authoring, assembly refresh, retained-dimension repair, imported geometry references, mixed units and serial release validation.
+
+The [dev13 native acceptance receipt](docs/dev13-validation.json) records installed runtime tests, preserved session state and artifact hashes.

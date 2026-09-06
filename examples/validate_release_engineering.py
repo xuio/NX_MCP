@@ -698,11 +698,11 @@ async def main():
 
         async def upload(source, path):
             data = source.read_bytes()
-            for offset in range(0, len(data), 512 * 1024):
+            for offset in range(0, len(data), 256 * 1024):
                 await call(
                     "nx_upload_file",
                     path=path,
-                    data_base64=base64.b64encode(data[offset : offset + 512 * 1024]).decode(),
+                    data_base64=base64.b64encode(data[offset : offset + 256 * 1024]).decode(),
                     offset=offset,
                     total_size=len(data),
                     sha256=hashlib.sha256(data).hexdigest(),
