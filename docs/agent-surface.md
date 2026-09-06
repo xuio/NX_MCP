@@ -1,8 +1,8 @@
 # Agent surface
 
 The full profile remains compatible: 185 tools with existing defaults. The opt-in
-agent profile lists 11 tools: eight core tools plus `nx_discover_tools`, `nx_invoke`
-and `nx_result`. All 185 underlying tools remain available, subject to their
+agent profile lists 13 tools: eight core tools plus `nx_discover_tools`, `nx_invoke`
+`nx_result`, `nx_inspect` and `nx_result_cleanup`. All 185 underlying tools remain available, subject to their
 existing capability status and native prerequisites.
 
 For stdio, set `NX_MCP_SURFACE=agent`, `NX_MCP_ENABLE_EXPERIMENTAL=1` and
@@ -32,7 +32,7 @@ to issue concurrent mutations. The host must restrict network access as before.
 `nx_result` instead. After uncertain transport delivery, query
 `nx_operation_status` with the original operation ID before retrying. Snapshot
 IDs are not mutation receipt IDs. Snapshots persist under `.nx-mcp/agent-results`
-until explicitly removed during workspace maintenance; they do not keep NX
+subject to the configured retention policy; they do not keep NX
 references alive. Storage failures fall back to the original full response and
 never relabel committed geometry as a failed operation.
 
@@ -76,3 +76,47 @@ imported-part edit tasks with fresh sessions on each profile. Record every
 model's provider input/cached/output usage, discovery calls, expansions, retries,
 artifact handling, and native task assertions. Sum all workers and repairs.
 Do not claim total token savings from response projection alone.
+
+## Reviewed discovery and task receipts (dev18)
+
+Exact-schema discovery also returns prerequisites, supported object kinds and a
+minimal example for reviewed common workflows, plus version-specific native
+capability evidence. Unreviewed tools explicitly return null examples/object
+kinds rather than guessed recipes. The original description and schema remain
+authoritative. Effects identify geometry/assembly mutation, visibility, saving,
+file writes and reference invalidation; null means not reviewed, and true may
+be conditional on arguments. Read-only tools explicitly have false mutation
+effects. Names alone do not establish safety.
+
+Compact receipts suggest read-only next actions using references actually
+returned by NX: topology inspection for new bodies, constraint diagnostics for
+sketches and artifact metadata retrieval. They preserve geometry values and
+recovery fields; next actions are never executed implicitly.
+
+`nx_inspect` provides consistent name/text and kind filtering before paging for
+features, sketches, faces, edges and annotations. Return counts and units are
+explicit. Coordinate frames are passed through from the native result; absent
+frame metadata is `not_reported`. Reuse `result_id` for stable pages without
+another NX call, or omit it to capture current geometry. Annotations may require
+multiple serial native reads; snapshot capture is not an atomic NX transaction.
+
+Snapshot retention defaults to seven days and 256 MiB. Set positive integer
+`NX_MCP_RESULT_MAX_AGE_SECONDS` and `NX_MCP_RESULT_MAX_BYTES` environment values
+to configure it. Pruning runs on writes and protects the newly returned snapshot.
+`nx_result_cleanup` defaults to a dry-run count/byte preview; `dry_run=false`
+applies cleanup using optional overrides without changing persistent policy.
+Only matching snapshot files are eligible. Symlinks, other files and the separate
+mutation recovery directory are excluded. Missing/expired snapshot IDs return
+`NX_RESULT_EXPIRED`; query mutation outcomes through `nx_operation_status`.
+
+## Fresh-agent trials
+
+`scripts/agent_benchmark_client.py` provides a transparent CLI for recording
+actual agent tool requests and responses. Full-profile discovery filters the
+full catalog locally before presenting matching schemas; agent-profile discovery
+uses the server tool. This is a code-capable client comparison, not a measurement
+assuming every full-profile schema is injected into model context. Each trial
+uses a fresh agent, identical analytic tasks, isolated CAD paths and exclusive
+serial ownership of NX. Record provider usage when exposed; otherwise mark it
+unavailable. A single pair is diagnostic evidence, not a statistical efficiency
+claim. Projection benchmarks remain separately labeled.

@@ -13,6 +13,9 @@ from urllib.parse import quote, unquote
 from mcp.server.fastmcp.exceptions import ToolError
 from mcp.types import CallToolResult, ResourceLink, TextContent, ToolAnnotations
 
+from nx_mcp.agent_guidance import guidance, next_actions
+from nx_mcp.result_retention import LOCK, maintain, settings
+
 CORE = {
     "nx_status",
     "nx_workspace_info",
@@ -83,7 +86,7 @@ def compact(value, path="", omitted=None):
     return value
 
 
-def compact_payload(full, result_id):
+def compact_payload(full, result_id, method=None):
     if full.get("status") == "error":
         return full
     omitted: dict[str, Any] = {}
@@ -98,6 +101,8 @@ def compact_payload(full, result_id):
             for k, v in changes.items()
             if k in {"created", "modified", "deleted"}
         }
+    if actions := next_actions(method, full):
+        payload["next_actions"] = actions
     return payload
 
 
@@ -106,8 +111,15 @@ class ResultStore:
 
     def __init__(self, root):
         self.root = Path(root) / ".nx-mcp" / "agent-results"
+        settings()  # Validate configuration before any mutation can be dispatched.
 
     def put(self, payload):
+        with LOCK:
+            return self._put(payload)
+
+    def _put(self, payload):
+        if len(json.dumps(payload).encode("utf-8")) > settings()["max_bytes"]:
+            raise OSError("Response exceeds snapshot storage limit")
         self.root.mkdir(parents=True, exist_ok=True)
         result_id = "result_" + uuid.uuid4().hex
         path = self.root / (result_id + ".json")
@@ -117,6 +129,7 @@ class ResultStore:
             stream.flush()
             os.fsync(stream.fileno())
         os.replace(temporary, path)
+        maintain(self.root, apply=True, protect=result_id)
         return result_id
 
     def get(self, result_id):
@@ -143,7 +156,7 @@ def configure(mcp, workspace):
             raise ValueError("Resource exceeds 8 MiB; use programmatic nx_download_file chunks")
         return file.read_bytes()
 
-    def present(response, mode):
+    def present(response, mode, method=None):
         if not isinstance(response, CallToolResult) or mode == "full" or response.isError:
             return response
         full = response.structuredContent
@@ -151,7 +164,7 @@ def configure(mcp, workspace):
             return response
         # Never turn an already-committed operation into an error if caching fails.
         try:
-            payload = compact_payload(full, store.put(full))
+            payload = compact_payload(full, store.put(full), method)
         except OSError:
             return response
         result = envelope(payload)
@@ -200,7 +213,11 @@ def configure(mcp, workspace):
                 "defaults": DEFAULTS.get(tool.name, {}),
             }
             if include_schema:
-                row.update(inputSchema=tool.parameters, outputSchema=tool.fn_metadata.output_schema)
+                row.update(
+                    inputSchema=tool.parameters,
+                    outputSchema=tool.fn_metadata.output_schema,
+                    guidance=guidance(tool),
+                )
             selected.append(row)
         return envelope(
             {
@@ -220,7 +237,7 @@ def configure(mcp, workspace):
         if tool not in registry:
             raise ValueError("Unknown tool; use nx_discover_tools")
         params = {**DEFAULTS.get(tool, {}), **arguments} if detail == "compact" else arguments
-        return present(await original_call(tool, params), detail)
+        return present(await original_call(tool, params), detail, tool)
 
     @mcp.tool(annotations=ToolAnnotations(readOnlyHint=True))
     async def nx_result(
@@ -262,7 +279,124 @@ def configure(mcp, workspace):
             }
         )
 
-    helper_names = {"nx_discover_tools", "nx_invoke", "nx_result"}
+    @mcp.tool(annotations=ToolAnnotations(readOnlyHint=False, destructiveHint=True))
+    async def nx_result_cleanup(
+        dry_run: bool = True,
+        max_age_seconds: int | None = None,
+        max_bytes: int | None = None,
+    ) -> CallToolResult:
+        """Inspect or delete disposable response snapshots. Default dry_run=true previews eligible counts/bytes. Limits are positive integers; default retention is seven days/256 MiB, configurable with NX_MCP_RESULT_MAX_AGE_SECONDS and NX_MCP_RESULT_MAX_BYTES. Automatic pruning runs on snapshot writes. Mutation recovery receipts and CAD files are never included. Call with dry_run=false to apply; old result_ids may then expire."""
+        return envelope(
+            maintain(
+                store.root, apply=not dry_run, max_age_seconds=max_age_seconds, max_bytes=max_bytes
+            )
+        )
+
+    @mcp.tool(annotations=ToolAnnotations(readOnlyHint=True))
+    async def nx_inspect(
+        tool: Literal[
+            "nx_list_features", "nx_list_sketches", "nx_list_topology", "nx_list_annotations"
+        ],
+        arguments: dict[str, Any] | None = None,
+        collection: Literal["objects", "faces", "edges", "items"] | None = None,
+        name_contains: str = "",
+        kind: str | None = None,
+        offset: int = 0,
+        limit: int = 20,
+        result_id: str | None = None,
+    ) -> CallToolResult:
+        """Filter and page features, sketches, topology or annotations. Filter by case-insensitive name/text and exact object kind before pagination. Topology requires arguments.body and collection=faces or edges. Returns total_count, count, next_offset, units and reported coordinate frame. Reuse result_id to page the same snapshot without another NX call; omit it to refresh after edits. Snapshot references can expire. Only the four named read-only tools are accepted."""
+        if offset < 0 or not 1 <= limit <= 100:
+            raise ValueError("offset >= 0; limit 1..100")
+        allowed = {
+            "nx_list_features": {"objects"},
+            "nx_list_sketches": {"objects"},
+            "nx_list_topology": {"faces", "edges"},
+            "nx_list_annotations": {"items"},
+        }
+        collection = collection or (
+            "faces"
+            if tool == "nx_list_topology"
+            else ("items" if tool == "nx_list_annotations" else "objects")
+        )
+        if collection not in allowed[tool]:
+            raise ValueError("Unsupported collection for this tool")
+        if result_id:
+            if arguments:
+                raise ValueError(
+                    "arguments cannot be combined with result_id; omit result_id to refresh"
+                )
+            snapshot = store.get(result_id)
+            if snapshot.get("inspection_tool") != tool:
+                raise ValueError("Snapshot belongs to a different inspection tool")
+            full = snapshot["result"]
+        else:
+            arguments = arguments or {}
+            if tool == "nx_list_annotations" and ({"offset", "limit"} & arguments.keys()):
+                raise ValueError(
+                    "Use nx_inspect offset/limit, not underlying annotation pagination"
+                )
+            response = await original_call(tool, arguments)
+            if response.isError:
+                return response
+            full = response.structuredContent
+            if tool == "nx_list_annotations":
+                while full.get("next_offset") is not None:
+                    response = await original_call(
+                        tool, {"offset": full["next_offset"], "limit": 100}
+                    )
+                    if response.isError:
+                        return response
+                    more = response.structuredContent
+                    if more.get("total") != full.get("total") or more.get(
+                        "next_offset"
+                    ) == full.get("next_offset"):
+                        raise ValueError(
+                            "Annotation inventory changed during capture; refresh inspection"
+                        )
+                    full["items"].extend(more["items"])
+                    full["next_offset"] = more.get("next_offset")
+            result_id = store.put({"inspection_tool": tool, "result": full})
+        rows = full[collection]
+
+        def matches(row):
+            ref = row.get("object", row)
+            text = str(ref.get("name", "")) + " " + str(row.get("text", ""))
+            return name_contains.casefold() in text.casefold() and (
+                kind is None or ref.get("kind") == kind
+            )
+
+        selected = [row for row in rows if matches(row)]
+        items = selected[offset : offset + limit]
+        omitted: dict[str, Any] = {}
+        rendered = [compact(row, f"/items/{i}", omitted) for i, row in enumerate(items)]
+        return envelope(
+            {
+                "result_id": result_id,
+                "tool": tool,
+                "collection": collection,
+                "items": rendered,
+                "omitted": omitted,
+                "count": len(items),
+                "total_count": len(selected),
+                "unfiltered_count": len(rows),
+                "offset": offset,
+                "next_offset": offset + len(items) if offset + len(items) < len(selected) else None,
+                "units": full.get("units"),
+                "coordinate_frame": full.get(
+                    "coordinate_frame", full.get("position_frame", "not_reported")
+                ),
+                "warnings": full.get("warnings", []),
+            }
+        )
+
+    helper_names = {
+        "nx_discover_tools",
+        "nx_invoke",
+        "nx_result",
+        "nx_inspect",
+        "nx_result_cleanup",
+    }
     for name in helper_names:
         tool = mcp._tool_manager.get_tool(name)
         tool.fn_metadata.arg_model.model_config["extra"] = "forbid"
@@ -278,13 +412,19 @@ def configure(mcp, workspace):
             return present(
                 await original_call(name, {**DEFAULTS.get(name, {}), **(arguments or {})}),
                 "compact",
+                name,
             )
         except (ValueError, KeyError, IndexError, OSError, TypeError, ToolError) as error:
             from nx_mcp.runtime import NXToolError
 
             return envelope(
                 NXToolError(
-                    "NX_INVALID_ARGUMENT", str(error), details={"mutation_outcome": "not_started"}
+                    "NX_RESULT_EXPIRED"
+                    if isinstance(error, FileNotFoundError)
+                    or isinstance(error.__cause__, FileNotFoundError)
+                    else "NX_INVALID_ARGUMENT",
+                    str(error),
+                    details={"mutation_outcome": "not_started"},
                 ).as_dict(),
                 True,
             )
@@ -308,4 +448,4 @@ def configure(mcp, workspace):
     mcp.list_tools = listing
     mcp._mcp_server.call_tool(validate_input=False)(call)
     mcp._mcp_server.list_tools()(listing)
-    mcp._mcp_server.instructions = "NX agent profile. Discover exact schemas with nx_discover_tools, then call nx_invoke. Inventories default to 20 rows; follow next_offset. Compact responses retain result_id for nx_result expansion. Supply durable operation_id for mutations and query nx_operation_status before retrying uncertain operations. File downloads default to metadata; retrieve bytes programmatically, never paste base64 into model context. Full compatibility surface remains available with NX_MCP_SURFACE=full."
+    mcp._mcp_server.instructions = "NX agent profile. Use nx_inspect for filtered stable inventory pages and nx_result_cleanup for snapshot maintenance. Discover exact schemas with nx_discover_tools, then call nx_invoke. Inventories default to 20 rows; follow next_offset. Compact responses retain result_id for nx_result expansion. Supply durable operation_id for mutations and query nx_operation_status before retrying uncertain operations. File downloads default to metadata; retrieve bytes programmatically, never paste base64 into model context. Full compatibility surface remains available with NX_MCP_SURFACE=full."

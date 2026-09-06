@@ -49,7 +49,7 @@ async def test_discovery_defaults_dispatch_and_expansion(tmp_path):
     server = create_server(bridge, Workspace(tmp_path), enable_experimental=True, surface="agent")
     async with create_connected_server_and_client_session(server) as client:
         tools = (await client.list_tools()).tools
-        assert len(tools) == 11
+        assert len(tools) == 13
         assert "nx_extrude" not in {t.name for t in tools}
         result = await client.call_tool(
             "nx_discover_tools", {"query": "nx_extrude", "include_schema": True}
@@ -211,7 +211,7 @@ def test_dual_http_profiles(tmp_path, monkeypatch):
     monkeypatch.setenv("NX_MCP_ENABLE_EXPERIMENTAL", "1")
     app = create_app(AsyncMock(), Workspace(tmp_path))
     with TestClient(app, base_url="http://127.0.0.1:8765") as client:
-        for path, count in [("/mcp", 185), ("/agent/mcp", 11)]:
+        for path, count in [("/mcp", 185), ("/agent/mcp", 13)]:
             response = client.post(
                 path,
                 headers={"Accept": "application/json, text/event-stream"},
