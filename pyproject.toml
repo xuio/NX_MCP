@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "nx-mcp"
-version = "0.2.0.dev16"
+version = "0.2.0.dev17"
 description = "MCP server for Siemens NX (UG) CAD operations"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -15,6 +15,7 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
+benchmark = ["tiktoken>=0.12,<1"]
 dev = [
     "pytest>=7.0",
     "pytest-asyncio>=0.21",

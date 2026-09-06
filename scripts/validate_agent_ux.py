@@ -9,6 +9,7 @@ import math
 import time
 import uuid
 from pathlib import Path
+from types import SimpleNamespace
 
 from jsonschema import Draft202012Validator
 from mcp import ClientSession
@@ -21,13 +22,21 @@ class Client:
         self.out = output
         self.out.mkdir(parents=True, exist_ok=False)
         self.schemas = {}
+        self.tools = {}
+        self.agent = False
 
     async def call(self, tool_name, **params):
         if "operation_id" in self.schemas[tool_name].get("properties", {}):
             params.setdefault("operation_id", "ux_" + uuid.uuid4().hex)
         with (self.out / "operations.jsonl").open("a") as f:
             f.write(json.dumps({"state": "submitted", "tool": tool_name, "params": params}) + "\n")
-        result = await self.c.call_tool(tool_name, params)
+        result = (
+            await self.c.call_tool(
+                "nx_invoke", {"tool": tool_name, "arguments": params, "detail": "full"}
+            )
+            if self.agent
+            else await self.c.call_tool(tool_name, params)
+        )
         with (self.out / "operations.jsonl").open("a") as f:
             f.write(
                 json.dumps(
@@ -59,12 +68,28 @@ async def run(url, output):
     async with streamablehttp_client(url) as (r, w, _), ClientSession(r, w) as session:
         await session.initialize()
         client = Client(session, output)
-        client.schemas = {t.name: t.inputSchema for t in (await session.list_tools()).tools}
+        catalog = (await session.list_tools()).tools
+        client.agent = any(t.name == "nx_invoke" for t in catalog)
+        if client.agent:
+            catalog = []
+            offset = 0
+            while True:
+                result = await session.call_tool(
+                    "nx_discover_tools", {"include_schema": True, "offset": offset, "limit": 20}
+                )
+                if result.isError:
+                    raise RuntimeError(result.structuredContent)
+                catalog.extend(SimpleNamespace(**t) for t in result.structuredContent["tools"])
+                offset = result.structuredContent["next_offset"]
+                if offset is None:
+                    break
+        client.tools = {t.name: t for t in catalog}
+        client.schemas = {t.name: t.inputSchema for t in catalog}
         await main(client)
 
 
 async def main(c):
-    tools = {t.name: t for t in (await c.c.list_tools()).tools}
+    tools = c.tools
     original_call = c.call
     records = []
     phase = "inventory"
