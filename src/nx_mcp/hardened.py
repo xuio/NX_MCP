@@ -10,14 +10,22 @@ import math
 import uuid
 from pathlib import Path
 
-from nx_mcp import sheet_metal_server
+from nx_mcp import (
+    assembly_documentation_server,
+    freeform_server,
+    manufacturing_server,
+    sheet_metal_server,
+)
 from nx_mcp.advanced_authoring import AdvancedAuthoringMixin
+from nx_mcp.assembly_documentation import AssemblyDocumentationMixin
 from nx_mcp.authoring import AuthoringMixin
 from nx_mcp.authoring_server import NON_MODEL as AUTHORING_NON_MODEL
 from nx_mcp.authoring_server import READ_ONLY as AUTHORING_READ_ONLY
 from nx_mcp.engineering import EngineeringMixin
 from nx_mcp.exploded_views import ExplodedViewsMixin
+from nx_mcp.freeform import FreeformMixin
 from nx_mcp.inspection import InspectionMixin
+from nx_mcp.manufacturing import ManufacturingMixin
 from nx_mcp.nx_bridge import NXOpenExecutor
 from nx_mcp.recovery import OperationStore, timestamp
 from nx_mcp.review_tools import ReviewToolsMixin
@@ -114,11 +122,26 @@ def add(a, b):
 IDENTITY = [[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0]]
 
 
-READ_ONLY.update(AUTHORING_READ_ONLY | sheet_metal_server.READ_ONLY)
-NON_MODEL.update(AUTHORING_NON_MODEL | sheet_metal_server.NON_MODEL)
+READ_ONLY.update(
+    AUTHORING_READ_ONLY
+    | sheet_metal_server.READ_ONLY
+    | freeform_server.READ_ONLY
+    | manufacturing_server.READ_ONLY
+    | assembly_documentation_server.READ_ONLY
+)
+NON_MODEL.update(
+    AUTHORING_NON_MODEL
+    | sheet_metal_server.NON_MODEL
+    | freeform_server.NON_MODEL
+    | manufacturing_server.NON_MODEL
+    | assembly_documentation_server.NON_MODEL
+)
 
 
 class HardenedExecutor(
+    FreeformMixin,
+    ManufacturingMixin,
+    AssemblyDocumentationMixin,
     SheetMetalMixin,
     ExplodedViewsMixin,
     EngineeringMixin,
@@ -139,6 +162,10 @@ class HardenedExecutor(
         self.store = OperationStore(self.workspace.root)
         self.store.recover(self.session_id)
         self._current_operation = None
+        for module in [freeform_server, manufacturing_server, assembly_documentation_server]:
+            for name in vars(module):
+                if name.startswith("nx_"):
+                    self._handlers[name] = getattr(self, "_" + name[3:])
         self._handlers.update(
             {
                 "nx_resolve_geometry": self._resolve_geometry,
@@ -1477,7 +1504,8 @@ class HardenedExecutor(
             ("drawing_sheet", getattr(part, "DrawingSheets", [])),
             ("drawing_view", getattr(part, "DraftingViews", [])),
             ("dimension", getattr(part, "Dimensions", [])),
-            ("annotation", [*getattr(part, "Notes", []), *getattr(part, "Labels", [])]),
+            ("annotation", self._documentation_annotations(part)),
+            ("traceline", getattr(part, "Tracelines", [])),
             (
                 "component_pattern",
                 self._component_patterns(part),

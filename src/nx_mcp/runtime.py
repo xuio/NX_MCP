@@ -24,6 +24,7 @@ ObjectKind = Literal[
     "drawing_view",
     "dimension",
     "annotation",
+    "traceline",
     "explosion",
     "modeling_view",
 ]

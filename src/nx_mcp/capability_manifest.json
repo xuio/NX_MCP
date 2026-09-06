@@ -1,5 +1,5 @@
 {
-  "revision": "2606-sheet-metal-r1",
+  "revision": "2606-freeform-manufacturing-r1",
   "nx_version": "v2606",
   "bridge_protocol": 1,
   "tools": {
@@ -691,6 +691,106 @@
       "status": "tested",
       "evidence_type": "real_NX_v2606_scoped",
       "scope": "Native edge-path sketch with arc-length percentage, orienting face and frame read-back; successful secondary contour flange."
+    },
+    "nx_spline": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native associative 3D interpolation spline creation/edit and degree-2 control-pole curves; periodic variants unverified."
+    },
+    "nx_surface_mesh": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native planar and quadratic Through Curve Mesh fixtures from two primary and two cross sections."
+    },
+    "nx_bridge_surface": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native full-edge planar G0/G1/G2 bridge creation; requested constraints are not independent geometric certification."
+    },
+    "nx_sew": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native adjacent planar-sheet sewing; incomplete-sew and solid-fallback rejection covered by unit tests."
+    },
+    "nx_thicken": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native 2 mm sheet thickening with independently checked 400 mm^3 solid volume."
+    },
+    "nx_edit_faces": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native directed move, signed offset, replace and delete/heal on controlled solids; analytic volume checks. Arbitrary vendor imports unverified."
+    },
+    "nx_trim_sheet": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native line-boundary half-sheet trim using section and region point."
+    },
+    "nx_curve_analysis": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native derivative evaluation on owned line/spline curves; singular handling unit-tested; sampling is not a global extrema certificate."
+    },
+    "nx_surface_continuity": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Bidirectional sampled UF geometry: matching planes pass G0/G1/G2, separated planes fail, tangent plane/quadratic join fails G2. Not a global certificate."
+    },
+    "nx_thread": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native manual symbolic and detailed internal/external thread creation with explicit start face and cylinder diameter. Standards-table fit classes not exposed."
+    },
+    "nx_pmi_datum": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native geometry-associated datum A on a planar face."
+    },
+    "nx_pmi_fcf": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native single-frame flatness/parallelism annotations and datum A reference; all GD&T modifiers are not exposed."
+    },
+    "nx_face_analysis": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native sampled plane normal/curvature and signed draft; trimmed-domain filtering. Not global draft certification."
+    },
+    "nx_wall_thickness": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native inward-normal ray thickness: nine 5 mm plate samples. Not rolling-ball or global-minimum thickness."
+    },
+    "nx_create_parts_list": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native assembly drawing BOM: three repeated instances aggregate to quantity 3 using installed column defaults."
+    },
+    "nx_parts_list_info": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native evaluated BOM rows and preference readback."
+    },
+    "nx_update_parts_list": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native BOM refresh after adding a fourth instance gives quantity 4."
+    },
+    "nx_parts_list_balloons": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native associated grouped balloon created for an assembly drawing view."
+    },
+    "nx_explosion_trace": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native traceline with persistent component/edge handles; exact endpoints preserved after save/reopen and updated by MCP placement changes. Manual edits require MCP refresh."
+    },
+    "nx_export_explosion_animation": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Three native frames with fixed camera, pose interpolation and restored state; fully framed visual review. Failure cleanup unit-tested."
     }
   },
   "limitations": [

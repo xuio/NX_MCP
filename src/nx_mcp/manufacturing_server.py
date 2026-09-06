@@ -1,0 +1,75 @@
+"""Native manufacturing detail and bounded, explicitly sampled analysis contracts."""
+
+from __future__ import annotations
+
+from typing import Literal
+
+READ_ONLY = {"nx_face_analysis", "nx_wall_thickness"}
+NON_MODEL: set[str] = set()
+
+
+def nx_thread(
+    face: str,
+    start_face: str,
+    pitch: float,
+    major_diameter: float,
+    minor_diameter: float,
+    length: float,
+    angle: float = 60.0,
+    detailed: bool = False,
+    left_hand: bool = False,
+    starts: int = 1,
+    reverse: bool = False,
+):
+    """Create an associative native manual thread on a cylindrical face with an explicit start face on the same body. All lengths use part units; angle is the included profile angle in degrees. Symbolic threads preserve simplified geometry; detailed=True models the thread. Actual cylinder diameter is used for tap-drill/shaft diameter. Specify valid minor/major diameters, pitch, length, handedness and 1..16 starts. No standard or fit class is inferred from these manual dimensions. Returns native internal/external classification and parameter readback."""
+
+
+def nx_pmi_datum(
+    faces: list[str], letter: str, position: list[float], annotation: str | None = None
+):
+    """Create or edit a native geometry-associated PMI datum feature symbol on work-part faces. letter is 1..3 uppercase letters, position is [x,y,z] in part units. annotation edits an existing datum ID. Uses the current annotation plane. Datum schemes are supplied by the caller, not inferred from manufacturing intent."""
+
+
+def nx_pmi_fcf(
+    faces: list[str],
+    characteristic: Literal[
+        "Straightness",
+        "Flatness",
+        "Circularity",
+        "Cylindricity",
+        "ProfileOfALine",
+        "ProfileOfASurface",
+        "Angularity",
+        "Perpendicularity",
+        "Parallelism",
+        "Position",
+        "Concentricity",
+        "Symmetry",
+        "CircularRunout",
+        "TotalRunout",
+        "AxisIntersection",
+    ],
+    tolerance: float,
+    position: list[float],
+    datums: list[str] | None = None,
+    annotation: str | None = None,
+):
+    """Create/edit a native single-frame geometry-associated GD&T PMI feature-control frame. Select work-part faces, a positive tolerance in part units, [x,y,z] annotation position and up to three ordered existing datum annotation IDs. Form tolerances reject datum references. Uses native default tolerance-zone/material modifiers; does not claim a complete standards compliance check. annotation edits an existing FCF ID."""
+
+
+def nx_face_analysis(
+    faces: list[str],
+    samples_per_axis: int = 3,
+    pull_direction: list[float] | None = None,
+    minimum_draft: float = 1.0,
+):
+    """Sample native face normals and principal curvatures on a trimmed UV grid. Optional work-part pull_direction enables signed draft angles: asin(normal dot pull), with positive/negative/below-minimum classifications. minimum_draft is degrees. 1..20 samples per UV axis, at most 10000 total; skips points outside trimmed boundaries. Reports sampled values, not global curvature extrema, mold-release feasibility, or an undercut certification."""
+
+
+def nx_wall_thickness(
+    body: str,
+    faces: list[str] | None = None,
+    samples_per_axis: int = 3,
+    tolerance: float = 0.001,
+):
+    """Measure a solid's sampled wall thickness using native inward-normal ray intersections. Select an owned work-part solid and optionally its faces. Sample a trimmed UV grid (1..20 per axis, max 10000); start each ray tolerance part-units inside the solid. Returns source/opposite faces and points, sampled min/max, unresolved counts and units. This is first-exit normal thickness, not global minimum or rolling-ball thickness. Thin regions smaller than tolerance require a smaller tolerance."""

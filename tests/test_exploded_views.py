@@ -28,6 +28,7 @@ def inverse(pose):
 @pytest.fixture
 def explosions(rig):
     r = rig
+    r.uf.Disp = NS(RegenerateDisplay=Mock())
     root = Component("root")
     parent = Component("parent", parent=root)
     leaf = Component("leaf", parent=parent)

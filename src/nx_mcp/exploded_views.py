@@ -316,6 +316,8 @@ class ExplodedViewsMixin:
                 "NX_EXPLOSION_ASSEMBLY_CHANGED",
                 "Explosion unexpectedly changed assembled placements",
             )
+        self._refresh_explosion_traces(ex)
+        self._regenerate_explosion_display()
         views = [
             v
             for v in self._work_part().DraftingViews
@@ -339,6 +341,14 @@ class ExplodedViewsMixin:
             "modified": [self._reference(ex, "explosion", self._work_part(), "Explosion")],
         }
 
+    def _regenerate_explosion_display(self):
+        if not self.session.IsBatch:
+            import NXOpen.UF as U
+
+            display = U.UFSession.GetUFSession().Disp
+            self._require_api(display, "RegenerateDisplay")
+            display.RegenerateDisplay()
+
     def _show_explosion(self, explosion=None, drawing_view=None, model_view=None):
         if drawing_view and model_view:
             raise NXToolError("NX_INVALID_ARGUMENT", "Select drawing_view or model_view, not both")
@@ -360,7 +370,10 @@ class ExplodedViewsMixin:
             if list(part.DrawingSheets):
                 part.Drafting.ExitDraftingApplication()
             view = part.ModelingViews.WorkView
+        if ex is not None:
+            self._refresh_explosion_traces(ex)
         uf.SetViewExplosion(view.Tag, ex.Tag if ex else 0)
+        self._regenerate_explosion_display()
         if drawing_view:
             part.DraftingViews.UpdateViews([view])
         elif model_view is None:
