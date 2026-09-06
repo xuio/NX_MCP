@@ -98,7 +98,7 @@ async def main():
             defaults = await call(
                 "nx_set_sheet_metal_defaults", thickness=2, bend_radius=3, neutral_factor=0.33
             )
-            assert defaults["thickness"] == 2
+            assert defaults["parameters"]["thickness"]["value"] == 2
             sketch = (await call("nx_create_sketch"))["object"]["id"]
             await call(
                 "nx_sketch_rectangle",
@@ -131,7 +131,7 @@ async def main():
             info = (await call("nx_sheet_metal_info", body=body))["items"][0]
             assert info["thickness"] == 2 and info["bend_count"] == 1
             bend = info["bends"][0]
-            assert math.isclose(bend["angle_degrees"], 90) and bend["inner_radius"] == 3
+            assert math.isclose(bend["angle_degrees"], 90) and math.isclose(bend["inner_radius"], 3)
             note = await call(
                 "nx_sheet_metal_annotation",
                 kind="bend",
@@ -144,7 +144,7 @@ async def main():
             receipt["checks"].append("tab_analytic_volume_flange_bend_info_retry_pmi")
             save()
 
-            await call("nx_set_view", view="isometric")
+            await call("nx_set_view", orientation="isometric")
             await call("nx_fit_view")
             render = await call(
                 "nx_render_view", path=prefix + "/bracket.png", style="shaded_with_edges"
@@ -240,6 +240,57 @@ async def main():
             await call("nx_rollback", checkpoint_id=checkpoint["checkpoint_id"])
             assert not (await call("nx_sheet_metal_info"))["items"]
             receipt["checks"].append("unsupported_edit_unchanged_checkpoint_rollback")
+            await call("nx_create_part", path=prefix + "/attached.prt", units="mm")
+            await call("nx_sheet_metal_context")
+            sketch = (await call("nx_create_sketch"))["object"]["id"]
+            await call(
+                "nx_sketch_rectangle",
+                sketch_id=sketch,
+                corner1={"x": 0, "y": 0},
+                corner2={"x": 10, "y": 10},
+            )
+            await call("nx_finish_sketch", sketch_id=sketch)
+            tab = await call(
+                "nx_sheet_metal_feature",
+                operation="tab",
+                parameters={"section": sketch, "thickness": 2},
+            )
+            body = tab["body"]["id"]
+            edge = await nearest(body, "edge", [5, 0, 0])
+            face = await nearest(body, "face", [5, 5, 0])
+            path_sketch = await call(
+                "nx_create_path_sketch",
+                edges=[edge],
+                help_point=[5, 0, 0],
+                percent=0,
+                orienting_face=face,
+            )
+            frame = path_sketch["frame"]
+            assert math.isclose(abs(frame["normal"][0]), 1)
+            delta = [0, -5, 0]
+            end = {
+                k: sum(a * b for a, b in zip(delta, frame[axis], strict=True))
+                for k, axis in [("x", "x_axis"), ("y", "y_axis")]
+            }
+            sketch = path_sketch["object"]["id"]
+            await call("nx_sketch_line", sketch_id=sketch, start={"x": 0, "y": 0}, end=end)
+            await call("nx_finish_sketch", sketch_id=sketch)
+            # Re-resolve topology after sketch mutations.
+            edge = await nearest(body, "edge", [5, 0, 0])
+            attached = await call(
+                "nx_sheet_metal_feature",
+                operation="contour_flange",
+                parameters={
+                    "section": sketch,
+                    "edge_chain": {"edges": [edge], "help_point": [5, 0, 0]},
+                    "is_secondary": True,
+                    "thickness": 2,
+                    "sweep_distance": 10,
+                },
+            )
+            assert math.isclose(await volume(attached["body"]["id"]), 300, rel_tol=1e-7)
+            assert (await call("nx_model_health"))["healthy"]
+            receipt["checks"].append("path_sketch_secondary_contour_analytic_volume")
             receipt["passed"] = True
         except Exception:
             receipt["passed"] = False

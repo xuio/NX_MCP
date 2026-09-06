@@ -1,0 +1,62 @@
+{
+  "version": "0.2.0.dev10",
+  "runtime_commit": "80eed43bc8339494717ab0b0daa37191bc17c1f4",
+  "nx_version": "v2606",
+  "bridge_protocol": 1,
+  "tool_count": 140,
+  "runtime_ci": "https://github.com/xuio/NX_MCP/actions/runs/33999666551",
+  "release_build": "https://github.com/xuio/NX_MCP/actions/runs/33999684234",
+  "release_sha256": "78555841cad6821908a614dd5dca962d60a66123894e8c45cb09cf914d7261a6",
+  "native_creation_families_passed": 34,
+  "public_workflow_checks": [
+    "tab_analytic_volume_flange_bend_info_retry_pmi",
+    "flat_pattern_dxf_geo_drawing_pdf_reopen_stale",
+    "unsupported_edit_unchanged_checkpoint_rollback",
+    "path_sketch_secondary_contour_analytic_volume"
+  ],
+  "public_workflow_passed": true,
+  "original_session_restored": true,
+  "original_saved_parts": 38,
+  "original_occurrences_verified": 116,
+  "local_validation": {
+    "pytest_passed": 666,
+    "pytest_skipped": 1,
+    "combined_statement_branch_coverage_percent": 79.9,
+    "unchanged_coverage_gate_percent": 78,
+    "mypy": "passed",
+    "pre_commit": "passed",
+    "ci": "passed"
+  },
+  "windows_validators": {
+    "stdio_tools": 140,
+    "http_tools": 140,
+    "native_inline_capture_checksum": "passed",
+    "serialized_ui_thread": "verified"
+  },
+  "developed_dimensions_mm": {
+    "bracket.dxf": [
+      97.749115,
+      100.0
+    ],
+    "bracket-edited.dxf": [
+      100.0,
+      102.749115
+    ]
+  },
+  "visual_review": {
+    "render": "Native 1600x1000 PNG: folded bracket and readable measured-snapshot PMI, unclipped.",
+    "drawing": "Native one-page A4 PDF: centered developed perimeter and bend/tangent lines, unclipped; no manufacturing-drawing completeness claim.",
+    "vm": "Controller restored in the visible graphical NX session; no blocking dialog."
+  },
+  "scopes": [
+    "The 34-family native fixture evidence is in sheet-metal-native-validation.json. It does not verify every option or edit combination.",
+    "Part defaults inherited correctly: native 3 mm radius read back as 2.9999999999999996. Acceptance uses numerical tolerance.",
+    "Native path sketch and secondary contour flange also passed through public MCP with independent 300 mm^3 volume.",
+    "The acceptance script was corrected after deployment to read expression-valued defaults, use geometry tolerance and pass the existing orientation argument. Runtime geometry code was unchanged.",
+    "Measured PMI snapshots require explicit refresh; automatic numeric text updates and drawing bend tables are not implemented.",
+    "Metaform and manufacturing nesting are not exposed; Remove Bends was unavailable on the tested installation.",
+    "Material/tool-table and custom bend-table workflows remain experimental.",
+    "Edge rip passed for an interior planar-face sketch slit; selected-edge ripping remains unverified."
+  ],
+  "pull_request_opened": false
+}
