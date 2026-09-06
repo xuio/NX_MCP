@@ -22,18 +22,18 @@ class Client:
         self.out.mkdir(parents=True, exist_ok=False)
         self.schemas = {}
 
-    async def call(self, name, **params):
-        if "operation_id" in self.schemas[name].get("properties", {}):
+    async def call(self, tool_name, **params):
+        if "operation_id" in self.schemas[tool_name].get("properties", {}):
             params.setdefault("operation_id", "ux_" + uuid.uuid4().hex)
         with (self.out / "operations.jsonl").open("a") as f:
-            f.write(json.dumps({"state": "submitted", "tool": name, "params": params}) + "\n")
-        result = await self.c.call_tool(name, params)
+            f.write(json.dumps({"state": "submitted", "tool": tool_name, "params": params}) + "\n")
+        result = await self.c.call_tool(tool_name, params)
         with (self.out / "operations.jsonl").open("a") as f:
             f.write(
                 json.dumps(
                     {
                         "state": "response",
-                        "tool": name,
+                        "tool": tool_name,
                         "result": result.structuredContent,
                         "error": result.isError,
                     }
@@ -41,7 +41,7 @@ class Client:
                 + "\n"
             )
         if result.isError:
-            raise RuntimeError((name, result.structuredContent))
+            raise RuntimeError((tool_name, result.structuredContent))
         return result.structuredContent
 
     async def artifact(self, meta, name):
