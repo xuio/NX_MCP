@@ -54,6 +54,35 @@ length, angle and bend overrides. Supplying a list replaces that builder list.
 Use returned expression IDs with `nx_set_expression` to edit dimensions without
 reselecting the feature's original support geometry.
 
+### Choosing flange and unbend inputs
+
+The operation schema includes `prerequisites` and, where recorded, `example_evidence`
+with a repository source and the tested fixture scope. Example coordinates and
+dimensions describe that fixture's units; they are not converted for an inch part.
+Replace every `$input_N` with a freshly selected typed reference.
+
+- `flange`: the public fixture creates a 100 × 80 × 2 mm XY tab, selects its
+  boundary edge nearest `[50, 0, 0]`, then uses
+  `{"flanges":[{"edges":["$input_1"],"length":20,"length_reference":"Inside","angle":90}]}`.
+  Each entry requires length and angle even with `length_option=Keypoint`; that
+  mode also needs its keypoint, and is not validated by this numeric-length
+  example. The separate channel fixture verifies `width_option=AtCenter` with
+  width 60 on a 100 mm edge. It does not verify every other width-position mode.
+- `advanced_flange`: the recorded fixture uses the same tab boundary edge with
+  `{"edges":["$input_1"],"length":20,"angle":90}`. It leaves the mode and optional
+  references at native defaults. `ToReference`, inferred length, face collectors
+  and plane combinations need additional native validation; the exposed fields
+  alone do not establish their conditional requirements.
+- `unbend` / `rebend`: the recorded fixture adds a 20 mm, 90-degree flange to
+  the tab. `$input_1` is its bend face from
+  `nx_sheet_metal_info.items[].bends[].face.id`, and `$input_2` is the original
+  largest planar web face from the same body. Use
+  `{"face_collector":["$input_1"],"reference_entity":"$input_2"}`.
+  After unbend, reacquire the current bend and web references before rebend.
+  Keep the original web stationary; selecting the flattened bend strip as the
+  stationary reference is not equivalent. Edge stationary references are exposed
+  but were not exercised by this fixture.
+
 Secondary contour flanges require an **along-path sketch**, created with
 `nx_create_path_sketch`. Use its returned origin/basis/normal to place the profile.
 An ordinary planar sketch in the same position is not equivalent. Secondary tabs

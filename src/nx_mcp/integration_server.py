@@ -22,6 +22,7 @@ from nx_mcp import (
     manufacturing_server,
     sheet_metal_server,
 )
+from nx_mcp.output_schemas import output_schema
 from nx_mcp.recovery import OperationStore
 from nx_mcp.runtime import NXToolError
 from nx_mcp.workspace import WorkspaceViolation
@@ -249,9 +250,9 @@ def nx_rename_object(object_id: str, name: str):
 
 
 def nx_revolve(
+    sketch_name: Annotated[str, Field(min_length=1)],
     angle: float = 360,
     axis: Literal["X", "Y", "Z", "-X", "-Y", "-Z"] = "Z",
-    sketch_name: str | None = None,
     boolean: Literal["none", "unite", "subtract", "intersect"] = "none",
 ):
     pass
@@ -595,7 +596,9 @@ def configure(mcp, bridge, workspace):
         )
         tool = mcp._tool_manager.get_tool(name)
         tool.fn_metadata.output_model = IntegrationEnvelope
-        tool.fn_metadata.output_schema = IntegrationEnvelope.model_json_schema()
+        tool.fn_metadata.output_schema = output_schema(
+            name, IntegrationEnvelope.model_json_schema()
+        )
         tool.fn_metadata.arg_model.model_config["extra"] = "forbid"
         tool.fn_metadata.arg_model.model_rebuild(force=True)
         tool.parameters = tool.fn_metadata.arg_model.model_json_schema()

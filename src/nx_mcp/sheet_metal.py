@@ -283,6 +283,7 @@ class SheetMetalMixin:
             "validation_scope": spec.get("validation_scope"),
             "edit_status": spec.get("edit_status", "experimental"),
             "example_parameters": spec.get("example_parameters"),
+            "example_evidence": spec.get("example_evidence"),
             "example_note": "$input_N values are placeholders; select matching geometry from your own fixture",
             "defaults": "Unspecified properties retain native part/builder defaults; read feature parameters after creation.",
             "units": None,
@@ -292,7 +293,8 @@ class SheetMetalMixin:
                 "Activate the owning work/display part and call nx_sheet_metal_context before authoring.",
                 "Select work-part geometry IDs with nx_find_geometry or nx_list_topology; assembly occurrences are rejected.",
                 "Finish section sketches before passing their IDs. Operation-specific geometry must match the native builder and tested example.",
-            ],
+            ]
+            + spec.get("prerequisites", []),
         }
 
     def _sm_reference(self, reference, kind):

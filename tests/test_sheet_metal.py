@@ -1,6 +1,7 @@
 """Sheet-metal contracts and failure recovery; these are not NX kernel tests."""
 
 import inspect
+import json
 import sys
 from pathlib import Path
 from types import SimpleNamespace as NS
@@ -729,3 +730,41 @@ def test_secondary_tab_rejects_inconsistent_thickness_before_builder(sm):
         )
     b.CommitFeature.assert_not_called()
     sm.part.Features.SheetmetalManager.CreateTabFeatureBuilder.assert_not_called()
+
+
+@pytest.mark.parametrize("operation", ["flange", "advanced_flange", "unbend", "rebend"])
+def test_guided_examples_match_creation_contract_and_native_evidence(sm, operation):
+    from jsonschema import Draft202012Validator
+
+    result = sm.e._sheet_metal_schema(operation)
+    Draft202012Validator(result["parameters_schema"]).validate(result["example_parameters"])
+    source = result["example_evidence"]["source"]
+    path, _, pointer = source.partition("#")
+    evidence_path = Path(__file__).parents[1] / path
+    assert evidence_path.is_file()
+    if pointer:
+        evidence = json.loads(evidence_path.read_text())
+        for key in pointer.strip("/").split("/"):
+            evidence = evidence[key]
+        assert evidence["source_fixture"]
+        if "parameters" in evidence:
+            assert result["example_parameters"] == evidence["parameters"]
+    assert len(result["prerequisites"]) > 3
+
+
+def test_unbend_guidance_distinguishes_stationary_web_from_bend_strip(sm):
+    result = sm.e._sheet_metal_schema("unbend")
+    for key in ["parameters_schema", "edit_parameters_schema"]:
+        fields = result[key]["properties"]
+        assert "items[].bends[].face.id" in fields["face_collector"]["description"]
+        assert "not the flattened bend strip" in fields["reference_entity"]["description"]
+    assert (
+        "Edge-based stationary references were not exercised" in result["example_evidence"]["scope"]
+    )
+
+
+def test_advanced_flange_does_not_claim_reference_modes_are_verified(sm):
+    result = sm.e._sheet_metal_schema("advanced_flange")
+    assert "unverified" in result["parameters_schema"]["properties"]["type"]["description"]
+    assert result["parameters_schema"]["required"] == ["edges"]
+    assert "type" not in result["example_parameters"]

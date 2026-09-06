@@ -274,7 +274,8 @@
             "path": "Keypoint",
             "getter": false,
             "kind": "point",
-            "assign": true
+            "assign": true,
+            "description": "Work-part coordinate point for length_option=Keypoint; that mode is not verified by the numeric-length fixture."
           },
           "length": {
             "path": "Length",
@@ -289,7 +290,8 @@
             "values": [
               "Value",
               "Keypoint"
-            ]
+            ],
+            "description": "Value uses length; Keypoint uses the supplied keypoint. This contract still requires length and angle in every flange entry. The recorded example verifies numeric length only."
           },
           "length_reference": {
             "path": "LengthReference",
@@ -350,7 +352,8 @@
               "AtEnd",
               "FromEnd",
               "FromBothEnds"
-            ]
+            ],
+            "description": "Full uses the selected edge width. The native AtCenter fixture supplies width=60 on a 100 mm edge. AtEnd/FromEnd/FromBothEnds positioning combinations are not verified by that fixture."
           },
           "bend_options": {
             "kind": "object",
@@ -454,7 +457,8 @@
                 "getter": false,
                 "kind": "boolean"
               }
-            }
+            },
+            "description": "For explicit relief/radius/neutral-factor overrides, set the corresponding use_global_* flag false; otherwise the native global setting may remain active."
           }
         }
       }
@@ -465,7 +469,30 @@
     "native_status": "tested",
     "tested_on": "v2606",
     "validation_scope": "90-degree flange, radius and neutral factor read-back; length edited from 20 to 25 mm",
-    "edit_status": "tested_scoped"
+    "edit_status": "tested_scoped",
+    "example_parameters": {
+      "flanges": [
+        {
+          "edges": [
+            "$input_1"
+          ],
+          "length": 20,
+          "length_reference": "Inside",
+          "angle": 90
+        }
+      ]
+    },
+    "example_evidence": {
+      "source": "examples/validate_sheet_metal.py",
+      "validation": "native_fixture",
+      "scope": "100 x 80 x 2 mm XY tab; edge nearest [50,0,0]; 20 mm Inside-length flange at 90 degrees. Numeric values are fixture millimeters."
+    },
+    "prerequisites": [
+      "Select a boundary edge of an existing sheet-metal tab, not an arbitrary solid edge. The recorded fixture uses the 100 mm edge at y=0, z=0 on a 100 x 80 x 2 mm tab.",
+      "Each flanges entry requires edges, length and angle, including when replacing the list during an edit. Supplying flanges replaces the complete native flange list.",
+      "For width_option=AtCenter, supply width; the native channel fixture used width=60 on a 100 mm edge. Other width modes require their native positioning inputs and are not covered by this example.",
+      "For length_option=Keypoint, supply keypoint in work-part coordinates as well as the contract-required length and angle. Keypoint mode is exposed but this example only verifies numeric length."
+    ]
   },
   "contour_flange": {
     "builder": "ContourFlangeBuilder",
@@ -4591,7 +4618,8 @@
         "getter": false,
         "kind": "collector",
         "assign": false,
-        "objects": "face"
+        "objects": "face",
+        "description": "Native face collector. Selection role and combination with ToReference are not established by the recorded numeric-length fixture."
       },
       "flat_pattern_compensation_at_end": {
         "path": "FlatPatternCompensationAtEnd",
@@ -4606,7 +4634,8 @@
       "infer_length": {
         "path": "InferLength",
         "getter": false,
-        "kind": "boolean"
+        "kind": "boolean",
+        "description": "Native inferred-length toggle; the numeric-length example does not exercise true or establish its required references."
       },
       "inset": {
         "path": "Inset",
@@ -4641,13 +4670,15 @@
         "path": "Plane1",
         "getter": false,
         "kind": "plane",
-        "assign": true
+        "assign": true,
+        "description": "Native Plane1 input in work-part coordinates; valid combinations with type/infer_length are not established by the recorded fixture."
       },
       "plane2": {
         "path": "Plane2",
         "getter": false,
         "kind": "plane",
-        "assign": true
+        "assign": true,
+        "description": "Native Plane2 input in work-part coordinates; do not infer that both planes are required for every mode."
       },
       "reverse_direction": {
         "path": "ReverseDirection",
@@ -4672,7 +4703,8 @@
         "values": [
           "ByValue",
           "ToReference"
-        ]
+        ],
+        "description": "ByValue and ToReference are native builder modes. Only the example with native default mode and numeric length is verified; ToReference geometry combinations remain unverified."
       }
     },
     "required": [
@@ -4688,7 +4720,17 @@
       "length": 20,
       "angle": 90
     },
-    "edit_status": "experimental"
+    "edit_status": "experimental",
+    "example_evidence": {
+      "source": "docs/sheet-metal-native-validation.json#/operations/advanced_flange",
+      "validation": "native_fixture",
+      "scope": "suite2 AdvancedFlange creation with length=20, angle=90 on a boundary edge of a 100 x 80 x 2 mm XY tab; optional reference-driven modes were not exercised."
+    },
+    "prerequisites": [
+      "The recorded creation fixture selects the tab boundary edge at y=0, z=0 and supplies length=20, angle=90 in a millimeter part; use this simple geometry to establish a working feature first.",
+      "The example leaves type, infer_length, faces, plane1 and plane2 at native defaults. It does not verify ToReference or infer_length=true.",
+      "If choosing ToReference or inferred length, establish the native reference geometry requirements first; the schema exposes the builder fields but does not establish which face/plane combinations form a valid flange. Do not assume plane1 and plane2 are universally required."
+    ]
   },
   "variational_flange": {
     "builder": "VariationalFlangeBuilder",
@@ -5382,7 +5424,7 @@
         "kind": "collector",
         "assign": true,
         "objects": "face",
-        "description": "Bend face IDs to unbend; inspect nx_sheet_metal_info.bends for the owning sheet-metal body."
+        "description": "Bend face IDs from nx_sheet_metal_info.items[].bends[].face.id on the owning body; reacquire after unbend or another topology change."
       },
       "hide_original_curves": {
         "path": "HideOriginalCurves",
@@ -5394,7 +5436,7 @@
         "getter": false,
         "kind": "face_or_edge",
         "assign": true,
-        "description": "Work-part face or edge used by NX as the stationary reference for unbending; select it on the same sheet-metal body."
+        "description": "Stationary face or edge on the same work-part sheet-metal body. Native fixture uses the original largest planar web face, not the flattened bend strip; edge-based stationary references are unverified."
       }
     },
     "required": [
@@ -5404,7 +5446,23 @@
     "native_status": "tested",
     "tested_on": "v2606",
     "validation_scope": "Native face collector initialized; actual bend flattened; body consistency and subsequent rebend verified",
-    "edit_status": "experimental"
+    "edit_status": "experimental",
+    "example_parameters": {
+      "face_collector": [
+        "$input_1"
+      ],
+      "reference_entity": "$input_2"
+    },
+    "example_evidence": {
+      "source": "docs/sheet-metal-native-validation.json#/operations/unbend",
+      "validation": "native_fixture",
+      "scope": "suite4/unbend_rebend: one bend on a 100 x 80 x 2 mm tab with a 20 mm, 90-degree flange; original planar web is stationary. Edge-based stationary references were not exercised."
+    },
+    "prerequisites": [
+      "Start from a native sheet-metal body with a bend; the fixture uses a 100 x 80 x 2 mm tab and a 20 mm, 90-degree flange.",
+      "$input_1 is the bend face from nx_sheet_metal_info.items[].bends[].face.id; $input_2 is the original planar web face selected from that same body.",
+      "Reacquire bend and stationary references after topology changes. For rebend, select the current bend face after unbend and keep the original web stationary; do not use the newly flattened strip as the stationary face."
+    ]
   },
   "rebend": {
     "builder": "RebendBuilder",
@@ -5415,13 +5473,15 @@
         "getter": false,
         "kind": "collector",
         "assign": true,
-        "objects": "face"
+        "objects": "face",
+        "description": "Bend face IDs from nx_sheet_metal_info.items[].bends[].face.id on the owning body; reacquire after unbend or another topology change."
       },
       "reference_entity": {
         "path": "ReferenceEntity",
         "getter": false,
         "kind": "face_or_edge",
-        "assign": true
+        "assign": true,
+        "description": "Stationary face or edge on the same work-part sheet-metal body. Native fixture uses the original largest planar web face, not the flattened bend strip; edge-based stationary references are unverified."
       }
     },
     "required": [
@@ -5431,6 +5491,22 @@
     "native_status": "tested",
     "tested_on": "v2606",
     "validation_scope": "Flattened bend reformed about the largest stationary web face; native geometry healthy",
-    "edit_status": "experimental"
+    "edit_status": "experimental",
+    "example_parameters": {
+      "face_collector": [
+        "$input_1"
+      ],
+      "reference_entity": "$input_2"
+    },
+    "example_evidence": {
+      "source": "docs/sheet-metal-native-validation.json#/operations/rebend",
+      "validation": "native_fixture",
+      "scope": "suite4/unbend_rebend: one bend on a 100 x 80 x 2 mm tab with a 20 mm, 90-degree flange; original planar web is stationary. Edge-based stationary references were not exercised."
+    },
+    "prerequisites": [
+      "Start from a native sheet-metal body with a bend; the fixture uses a 100 x 80 x 2 mm tab and a 20 mm, 90-degree flange.",
+      "$input_1 is the bend face from nx_sheet_metal_info.items[].bends[].face.id; $input_2 is the original planar web face selected from that same body.",
+      "Reacquire bend and stationary references after topology changes. For rebend, select the current bend face after unbend and keep the original web stationary; do not use the newly flattened strip as the stationary face."
+    ]
   }
 }
