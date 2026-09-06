@@ -262,7 +262,9 @@ def test_batch_preflight_cancellation_and_progress(rig):
 
 def test_step_import_validates_conflicts_and_reports_no_output(rig, tmp_path):
     source = tmp_path / "vendor.step"
-    source.write_text("PRODUCT('test','test'); NEXT_ASSEMBLY_USAGE_OCCURRENCE")
+    source.write_text(
+        "ISO-10303-21; PRODUCT('test','test'); NEXT_ASSEMBLY_USAGE_OCCURRENCE END-ISO-10303-21;"
+    )
     with pytest.raises(NXToolError) as error:
         rig.e._import_geometry(str(source))
     assert error.value.code == "NX_IMPORT_NAME_CONFLICT"
@@ -309,3 +311,18 @@ def test_save_as_creates_parents_and_rejects_existing_destination(rig, tmp_path)
     assert error.value.code == "NX_FILE_EXISTS"
     assert rig.part.SaveAs.call_count == 1
     assert destination.read_bytes() == b"saved fixture"
+
+
+@pytest.mark.parametrize(
+    "contents",
+    ["ISO-10303-21; DATA; #1=BODY();", "garbage", "/* END-ISO-10303-21; */ ISO-10303-21;"],
+)
+def test_truncated_step_rejected_before_translator(rig, tmp_path, contents):
+    source = tmp_path / "broken.step"
+    source.write_text(contents)
+    translator = Mock()
+    rig.session.DexManager = NS(CreateStep214Importer=translator)
+    with pytest.raises(NXToolError) as error:
+        rig.e._import_geometry(str(source), flatten=True)
+    assert error.value.code == "NX_INVALID_STEP"
+    translator.assert_not_called()

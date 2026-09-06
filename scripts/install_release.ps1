@@ -19,7 +19,7 @@ $python = Join-Path $InstallRoot 'venv\Scripts\python.exe'
 if ($LASTEXITCODE -ne 0) { throw 'This package requires Windows Python 3.12.' }
 $backup = Join-Path $InstallRoot ('backups\release-' + (Get-Date -Format 'yyyyMMdd-HHmmss-fff'))
 New-Item -ItemType Directory -Path $backup | Out-Null
-foreach ($item in @('source', 'venv', 'release.json', 'install.json')) {
+foreach ($item in @('source', 'venv', 'release.json', 'install.json', 'validation-release.json')) {
     $path = Join-Path $InstallRoot $item
     if (Test-Path -LiteralPath $path) { Copy-Item -LiteralPath $path -Destination (Join-Path $backup $item) -Recurse }
 }
@@ -38,6 +38,14 @@ try {
     & $python -m pip check
     if ($LASTEXITCODE -ne 0) { throw 'Installed dependency validation failed.' }
     Copy-Item (Join-Path $ReleaseRoot 'release.json') (Join-Path $InstallRoot 'release.json') -Force
+    # A consolidated package supersedes any earlier validation overlay.
+    Remove-Item (Join-Path $InstallRoot 'validation-release.json') -Force -ErrorAction SilentlyContinue
+    $installMetadata = Join-Path $InstallRoot 'install.json'
+    if (Test-Path $installMetadata) {
+        $metadata = Get-Content $installMetadata -Raw | ConvertFrom-Json
+        $metadata.PSObject.Properties.Remove('ValidationCommit')
+        $metadata | ConvertTo-Json -Depth 10 | Set-Content $installMetadata -Encoding UTF8
+    }
     @{version=$release.version;commit=$release.commit;backup=$backup;installed_at=[DateTime]::UtcNow.ToString('o')} | ConvertTo-Json
 } catch {
     & (Join-Path $backup 'restore_release.ps1') -InstallRoot $InstallRoot -BackupRoot $backup -BridgeDescriptor $BridgeDescriptor

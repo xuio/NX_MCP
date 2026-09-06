@@ -19,6 +19,7 @@ from mcp import ClientSession
 from mcp.client.streamable_http import streamablehttp_client
 
 SUITES = [
+    ("hard_geometry", "validate_hard_geometry.py", "hard-geometry-validation.json"),
     (
         "release_engineering",
         "validate_release_engineering.py",

@@ -205,3 +205,26 @@ def test_open_reuses_loaded_part_with_equivalent_path_spelling(rig, tmp_path):
     opened = rig.e._open_part(str(path))
     assert opened["already_loaded"]
     assert len(rig.session.Parts) == 1
+
+
+def test_close_invalidates_automatically_unloaded_prototypes(rig, tmp_path):
+    child = Part(rig.session, tmp_path / "child.prt")
+    child_ref = rig.e._reference(child, "part", child, "Child")["id"]
+    target = rig.e._reference(rig.part, "part", rig.part, "Parent")["id"]
+    rig.part.Close = Mock(side_effect=lambda *args: rig.session.Parts.clear())
+    result = rig.e._close_part(save=False, part=target)
+    assert result["closed_count"] == 2 and result["remaining_count"] == 0
+    with pytest.raises(NXToolError) as error:
+        rig.e.objects.resolve(child_ref)
+    assert error.value.code == "NX_OBJECT_STALE"
+
+
+def test_operation_status_preserves_target_receipt_metadata(rig):
+    committed = mutation(rig)(operation_id="receipt-query-target")
+    status = rig.e.execute("nx_operation_status", {"operation_id": "receipt-query-target"})
+    for key in ["operation_id", "session_id", "mutation_outcome"]:
+        assert status[key] == committed[key]
+    assert status["query_operation_id"] != status["operation_id"]
+    missing = rig.e.execute("nx_operation_status", {"operation_id": "receipt-not-recorded"})
+    assert missing["operation_id"] == "receipt-not-recorded"
+    assert missing["mutation_outcome"] == "unknown" and missing["session_id"] is None

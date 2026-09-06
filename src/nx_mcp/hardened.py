@@ -424,6 +424,11 @@ class HardenedExecutor(
                     result.get("code", result.get("error_code", "NX_OPERATION_FAILED")),
                     result.get("message", "Operation failed"),
                 )
+            receipt_metadata = (
+                {key: result.get(key) for key in ("operation_id", "session_id", "mutation_outcome")}
+                if method == "nx_operation_status"
+                else None
+            )
             result = {
                 "status": "success",
                 **result,
@@ -432,6 +437,9 @@ class HardenedExecutor(
                 "mutation_outcome": "committed" if mutable else "not_applicable",
                 "warnings": result.get("warnings", []),
             }
+            if receipt_metadata is not None:
+                result.update(receipt_metadata)
+                result.update(query_operation_id=op_id, query_session_id=self.session_id)
             if part:
                 result.setdefault(
                     "units", self._units() if self._work_part(required=False) else None
@@ -653,8 +661,9 @@ class HardenedExecutor(
 
     def _close_part(self, save=True, part=None):
         target = self.objects.resolve(part, expected_kind="part") if part else self._work_part()
-        pid = self._part_id(target)
-        tag = int(target.Tag)
+        # NX may unload unused prototypes even with CloseWholeTree.FalseValue.
+        # Capture references before Close; querying an unloaded NX proxy can fail.
+        loaded = {int(p.Tag): self._reference(p, "part", p, "Part") for p in self.session.Parts}
         if save:
             with self._drawing_save_context(target):
                 status = target.Save(
@@ -668,11 +677,24 @@ class HardenedExecutor(
             self.nxopen.BasePart.CloseModified.CloseModified,
             None,
         )
-        self.objects.invalidate_part(pid)
-        self._part_generations.pop(tag, None)
-        self._history = [h for h in self._history if h["part_id"] != pid]
-        self._checkpoints = {k: v for k, v in self._checkpoints.items() if v["part_id"] != pid}
-        return {"message": "Closed specified part; component tree and other parts preserved"}
+        remaining = {int(p.Tag) for p in self.session.Parts}
+        closed = [ref for tag, ref in loaded.items() if tag not in remaining]
+        closed_ids = {ref["part_id"] for ref in closed}
+        for tag, ref in loaded.items():
+            if tag not in remaining:
+                self.objects.invalidate_part(ref["part_id"])
+                self._part_generations.pop(tag, None)
+        self._history = [h for h in self._history if h["part_id"] not in closed_ids]
+        self._checkpoints = {
+            k: v for k, v in self._checkpoints.items() if v["part_id"] not in closed_ids
+        }
+        return {
+            "message": "Closed part; NX may also unload unused assembly prototypes",
+            "closed_parts": closed,
+            "closed_count": len(closed),
+            "remaining_count": len(remaining),
+            "warnings": ["Re-list open parts before closing another assembly dependency."],
+        }
 
     def _list_open_parts(self):
         return {
@@ -1249,6 +1271,15 @@ class HardenedExecutor(
         if output and output.exists():
             raise NXToolError("NX_FILE_EXISTS", "Import destination already exists")
         text = source.read_text(errors="replace")
+        framing = re.sub(r"/\*.*?\*/", "", text, flags=re.DOTALL).strip("\ufeff \t\r\n")
+        if not re.match(r"ISO-10303-21\s*;", framing, re.IGNORECASE) or not re.search(
+            r"END-ISO-10303-21\s*;\s*$", framing, re.IGNORECASE
+        ):
+            raise NXToolError(
+                "NX_INVALID_STEP",
+                "STEP exchange-file opening or closing marker is missing; file may be truncated",
+                suggestion="Obtain a complete STEP file. No translator was started.",
+            )
         product_names = set()
         for pair in re.findall(
             r"PRODUCT\s*\(\s*'((?:[^']|'')*)'\s*,\s*'((?:[^']|'')*)'", text, re.IGNORECASE
