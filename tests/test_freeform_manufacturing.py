@@ -76,6 +76,7 @@ def ff(rig, monkeypatch):
     r.e._freeform_builder = Mock(return_value=r.b)
     r.e._engineering_direction = Mock(return_value=Object())
     r.e._update_model = Mock()
+    r.e._model_health = Mock(return_value={"healthy": True, "issues": []})
     r.ref = lambda o, kind: r.e._reference(o, kind, r.part, kind)["id"]
     return r
 

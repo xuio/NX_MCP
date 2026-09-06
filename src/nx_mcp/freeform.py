@@ -245,7 +245,31 @@ class FreeformMixin:
                 b.FaceCollector.ReplaceRules([rule], False)
                 b.Heal = True
                 b.AllowPartialDelete = False
-            return self._freeform_commit(b)
+            result = self._freeform_commit(b)
+            health = self._model_health()
+            if not health["healthy"]:
+                raise NXToolError(
+                    "NX_INVALID_GEOMETRY",
+                    "Face edit left native geometry errors",
+                    details={"health": health},
+                )
+            result["repair_diagnostics"] = {
+                "action": action,
+                "source_faces": faces,
+                "health": health,
+            }
+            return result
+        except Exception as error:
+            if isinstance(error, NXToolError):
+                error.details.update(action=action, source_faces=faces)
+                raise
+            raise NXToolError(
+                "NX_FACE_EDIT_FAILED",
+                str(error),
+                nx_code=getattr(error, "ErrorCode", None),
+                details={"action": action, "source_faces": faces},
+                suggestion="Inspect native diagnostics and explicitly refine the face selection; reacquire IDs after rollback.",
+            ) from error
         finally:
             b.Destroy()
 

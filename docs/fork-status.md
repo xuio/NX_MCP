@@ -1,6 +1,6 @@
 # NX v2606 integration fork
 
-This fork of [DreamEnding/NX_MCP](https://github.com/DreamEnding/NX_MCP) preserves the upstream history and MIT license. The initial import was deployed against Siemens NX v2606 as `0.2.0.dev2`; subsequent releases extend it through `0.2.0.dev12`. The fork follows upstream base `179086b6de28a53d340132aca7678fa6ed03b422` and retains the deployment history. Machine provisioning, private CAD, credentials and deployment session logs are outside this repository.
+This fork of [DreamEnding/NX_MCP](https://github.com/DreamEnding/NX_MCP) preserves the upstream history and MIT license. The initial import was deployed against Siemens NX v2606 as `0.2.0.dev2`; subsequent releases extend it through `0.2.0.dev13`. The fork follows upstream base `179086b6de28a53d340132aca7678fa6ed03b422` and retains the deployment history. Machine provisioning, private CAD, credentials and deployment session logs are outside this repository.
 
 See [engineering tools and scoped validation](engineering-tools.md) for the latest solid modeling, sketches, assemblies, materials, project copying, rendering and drafting additions.
 
@@ -14,7 +14,7 @@ See [engineering tools and scoped validation](engineering-tools.md) for the late
 - Collision highlighting, single-plane capped sections, body/component visibility, colors and transparency with restoration.
 - Native sketch solver status, remaining degrees of freedom and persistent constraint-to-geometry links.
 
-The dev12 opt-in integration profile exposes 170 tools. Tool status describes scoped validation on NX v2606, not universal certification. Journal execution remains disabled. The default sidecar retains upstream's smaller tool surface unless experimental mode is enabled.
+The dev13 opt-in integration profile exposes 179 tools. Tool status describes scoped validation on NX v2606, not universal certification. Journal execution remains disabled. The default sidecar retains upstream's smaller tool surface unless experimental mode is enabled.
 
 ## Start the graphical bridge and sidecar
 
@@ -55,3 +55,5 @@ See [native sheet metal](sheet-metal.md) for the dev10 operation catalog, verifi
 See [freeform, assembly documentation and manufacturing](freeform-manufacturing.md) for the dev11 additions and scoped native verification.
 
 See [editable documentation and manufacturing](documentation-manufacturing.md) for dev12 contracts and acceptance fixtures.
+
+See [release engineering and native acceptance](release-engineering.md) for dev13 drawing authoring, assembly refresh, retained-dimension repair, imported geometry references, mixed units and serial release validation.

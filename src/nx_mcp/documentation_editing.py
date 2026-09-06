@@ -16,6 +16,7 @@ class DocumentationEditingMixin:
                     "active": s == current,
                     "width": s.Length,
                     "height": s.Height,
+                    "units": self._sheet_units(s),
                     "scale": list(s.GetScale()),
                     "views": [
                         {"object": self._reference(v, "drawing_view", part, "View"), "name": v.Name}
@@ -24,7 +25,7 @@ class DocumentationEditingMixin:
                 }
                 for s in part.DrawingSheets
             ],
-            "units": self._units(),
+            "units": "per_sheet",
             "coordinate_frame": "drawing_sheet",
             "modeling_active": current is None,
         }
@@ -57,10 +58,16 @@ class DocumentationEditingMixin:
                 item["managed_refresh"] = (
                     value.GetStringAttribute("NX_MCP_MEASURED_PMI_V1") != "disabled"
                 )
+            if hasattr(value, "IsRetained"):
+                item["retained"] = bool(value.IsRetained)
             if hasattr(value, "AnnotationOrigin"):
                 item["position"] = xyz(value.AnnotationOrigin)
             if hasattr(value, "GetText"):
                 item["text"] = list(value.GetText())
+            if hasattr(value, "HasUserAttribute") and value.HasUserAttribute(
+                "NX_MCP_DRAWING_TABLE_V1", self.nxopen.NXObject.AttributeType.String, -1
+            ):
+                item["table_kind"] = value.GetStringAttribute("NX_MCP_DRAWING_TABLE_V1")
             if type(value).__name__ == "BendTable":
                 item["rows"] = self._table_cells(value)
             if kind == "traceline":

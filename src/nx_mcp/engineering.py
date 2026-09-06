@@ -1439,7 +1439,9 @@ class EngineeringMixin:
             )
         return matches[0]
 
-    def _create_drawing(self, name="Sheet1", size="A3", scale=1.0):
+    def _create_drawing(self, name="Sheet1", size="A3", scale=1.0, units="mm"):
+        if units not in {"mm", "in"}:
+            raise NXToolError("NX_INVALID_ARGUMENT", "Drawing units must be mm or in")
         dimensions = {
             "A0": (1189, 841),
             "A1": (841, 594),
@@ -1459,8 +1461,10 @@ class EngineeringMixin:
         b = self._work_part().DraftingDrawingSheets.CreateDraftingDrawingSheetBuilder(None)
         try:
             b.Option = b.SheetOption.CustomSize
-            b.Units = b.SheetUnits.Metric
-            b.Length, b.Height = map(float, dimensions[size])
+            b.Units = b.SheetUnits.Metric if units == "mm" else b.SheetUnits.English
+            b.Length, b.Height = [
+                float(v) / (25.4 if units == "in" else 1) for v in dimensions[size]
+            ]
             b.Name = name
             b.ScaleNumerator = scale
             b.ScaleDenominator = 1.0
@@ -1474,9 +1478,10 @@ class EngineeringMixin:
             "sheet_name": sheet.Name,
             "size": size,
             "dimensions_mm": list(dimensions[size]),
+            "dimensions": [sheet.Length, sheet.Height],
             "scale": scale,
             "projection": "first_angle",
-            "units": "mm",
+            "units": units,
         }
 
     def _add_base_view(self, drawing, body, view, position=None):
@@ -1501,22 +1506,25 @@ class EngineeringMixin:
         sheet = self._drawing_object(drawing, "drawing_sheet")
         point = [100.0, 100.0] if position is None else [finite(v, "position") for v in position]
         if len(point) != 2:
-            raise NXToolError("NX_INVALID_ARGUMENT", "position must be two sheet coordinates in mm")
+            raise NXToolError(
+                "NX_INVALID_ARGUMENT", "position must be two sheet coordinates in sheet units"
+            )
         sheet.Open()
         b = part.DraftingViews.CreateBaseViewBuilder(None)
         try:
             b.SelectModelView.SelectedView = part.ModelingViews.FindObject(names[view])
-            b.Placement.Placement.SetValue(None, None, self.nxopen.Point3d(*point, 0.0))
+            b.Placement.Placement.SetValue(None, None, self._sheet_point3d(sheet, point))
             result = b.Commit()
         finally:
             b.Destroy()
+        self._place_drawing_view(result, sheet, point)
         return {
             "object": self._reference(result, "drawing_view", part, "Base view"),
             "view_name": result.Name,
             "drawing": self._reference(sheet, "drawing_sheet", part, "Drawing sheet"),
             "body": self._reference(target, "body", part, "Body"),
             "orientation": view,
-            "position_mm": point,
+            **self._drawing_coordinates(sheet, point),
         }
 
     def _export_drawing_pdf(self, path):
@@ -1570,7 +1578,9 @@ class EngineeringMixin:
         view = self._drawing_object(base_view, "drawing_view")
         center = view.GetDrawingReferencePoint()
         dx, dy = offsets[direction]
-        point = self.nxopen.Point3d(center.X + dx * spacing, center.Y + dy * spacing, 0.0)
+        sheet = self._view_sheet(view)
+        target = [center.X + dx * spacing, center.Y + dy * spacing]
+        point = self._sheet_point3d(sheet, target)
         b = self._work_part().DraftingViews.CreateProjectedViewBuilder(None)
         try:
             b.Parent.View.Value = view
@@ -1584,29 +1594,40 @@ class EngineeringMixin:
             result = b.Commit()
         finally:
             b.Destroy()
+        self._place_drawing_view(result, sheet, target, axes=(0,) if dx else (1,))
         return {
             "object": self._reference(result, "drawing_view", self._work_part(), "Projected view"),
             "view_name": result.Name,
             "base_view": base_view,
+            **self._drawing_coordinates(
+                sheet, [result.GetDrawingReferencePoint().X, result.GetDrawingReferencePoint().Y]
+            ),
+            "alignment": "native associative alignment; the constrained reference coordinate can differ from the parent",
             "direction": direction,
-            "spacing_mm": spacing,
+            "spacing": spacing,
+            "spacing_mm": spacing
+            * (25.4 if self._sheet_units(self._view_sheet(view)) == "in" else 1),
+            "sheet_units": self._sheet_units(self._view_sheet(view)),
         }
 
-    def _add_dimension(self, view, object1, object2=None, dim_type="aligned", origin=None):
+    def _add_dimension(
+        self, view, object1, object2=None, dim_type="aligned", origin=None, dimension=None
+    ):
         methods = {"aligned": "PointToPoint", "horizontal": "Horizontal", "vertical": "Vertical"}
         if dim_type not in methods:
             raise NXToolError(
                 "NX_UNSUPPORTED_ARGUMENT", "Use aligned, horizontal or vertical linear dimensions"
             )
         drawing_view = self._drawing_object(view, "drawing_view")
-        a = self._engineering_owned(object1, "edge")
-        b = self._engineering_owned(object2, "edge") if object2 else a
+        a = self._drawing_dimension_edge(object1)
+        b = self._drawing_dimension_edge(object2) if object2 else a
         pa = a.GetVertices()[0]
         pb = b.GetVertices()[1] if object2 is None else b.GetVertices()[0]
         point = [100.0, 80.0] if origin is None else [finite(v, "origin") for v in origin]
         if len(point) != 2:
-            raise NXToolError("NX_INVALID_ARGUMENT", "origin must be [x,y] in sheet mm")
-        builder = self._work_part().Dimensions.CreateLinearDimensionBuilder(None)
+            raise NXToolError("NX_INVALID_ARGUMENT", "origin must be [x,y] in sheet units")
+        existing = self._engineering_owned(dimension, "dimension") if dimension else None
+        builder = self._work_part().Dimensions.CreateLinearDimensionBuilder(existing)
         try:
             snap = self.nxopen.InferSnapType.SnapType
             empty = self.nxopen.Point3d(0.0, 0.0, 0.0)
@@ -1617,7 +1638,7 @@ class EngineeringMixin:
             builder.Measurement.Method = getattr(
                 builder.Measurement.MeasurementMethod, methods[dim_type]
             )
-            builder.Origin.OriginPoint = self.nxopen.Point3d(*point, 0.0)
+            builder.Origin.OriginPoint = self._sheet_point3d(self._view_sheet(drawing_view), point)
             result = builder.Commit()
         finally:
             builder.Destroy()
@@ -1627,7 +1648,8 @@ class EngineeringMixin:
             "view": view,
             "dim_type": dim_type,
             "measured_value": result.ComputedSize,
-            "origin_mm": point,
+            **self._drawing_coordinates(self._view_sheet(drawing_view), point, "origin"),
             "units": self._units(),
             "association": "edge start/end" if object2 is None else "edge start points",
+            "edited": dimension is not None,
         }

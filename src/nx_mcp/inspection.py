@@ -189,6 +189,9 @@ class InspectionMixin:
                         continue
                     props = part.MeasureManager.NewMassProperties(units, 0.999, [body])
                     try:
+                        props.InformationUnit = (
+                            self.nxopen.MeasureBodies.AnalysisUnit.KilogramMillimeter
+                        )
                         volume += float(props.Volume)
                     finally:
                         props.Dispose()

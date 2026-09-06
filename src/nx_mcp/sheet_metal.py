@@ -999,7 +999,7 @@ class SheetMetalMixin:
         point = [100.0, 100.0] if position is None else position
         if not isinstance(point, list) or len(point) != 2:
             raise NXToolError(
-                "NX_INVALID_ARGUMENT", "position requires two sheet coordinates in mm"
+                "NX_INVALID_ARGUMENT", "position requires two sheet coordinates in sheet units"
             )
         point = [finite(v, "position") for v in point]
         definition = self._sm_manager().CreateFlatPatternBuilder(feature)
@@ -1011,17 +1011,18 @@ class SheetMetalMixin:
         builder = part.DraftingViews.CreateBaseViewBuilder(None)
         try:
             builder.SelectModelView.SelectedView = model_view
-            builder.Placement.Placement.SetValue(None, None, self.nxopen.Point3d(*point, 0.0))
+            builder.Placement.Placement.SetValue(None, None, self._sheet_point3d(sheet, point))
             view = builder.Commit()
         finally:
             builder.Destroy()
+        self._place_drawing_view(view, sheet, point)
         return {
             "view": self._reference(view, "drawing_view", part, "Flat pattern view"),
             "drawing": self._reference(sheet, "drawing_sheet", part, "Drawing sheet"),
             "flat_pattern": self._reference(feature, "feature", part, "FlatPattern"),
             "model_view_name": model_view.Name,
-            "position_mm": point,
-            "units": "mm",
+            **self._drawing_coordinates(sheet, point),
+            "units": self._sheet_units(sheet),
         }
 
     def _sheet_metal_annotation(

@@ -31,6 +31,7 @@ from nx_mcp.inspection import InspectionMixin
 from nx_mcp.manufacturing import ManufacturingMixin
 from nx_mcp.nx_bridge import NXOpenExecutor
 from nx_mcp.recovery import OperationStore, timestamp
+from nx_mcp.release_engineering import ReleaseEngineeringMixin
 from nx_mcp.review_tools import ReviewToolsMixin
 from nx_mcp.runtime import NXToolError
 from nx_mcp.sheet_metal import SheetMetalMixin
@@ -145,6 +146,7 @@ NON_MODEL.update(
 
 
 class HardenedExecutor(
+    ReleaseEngineeringMixin,
     DocumentationEditingMixin,
     AnnotationUpdatesMixin,
     ThreadStandardsMixin,
@@ -1576,6 +1578,7 @@ class HardenedExecutor(
                 raise NXToolError("NX_NOT_SOLID", "Volume requires solid bodies")
             props = part.MeasureManager.NewMassProperties(units, 0.999, [b])
             try:
+                props.InformationUnit = self.nxopen.MeasureBodies.AnalysisUnit.KilogramMillimeter
                 result.append(
                     {
                         "body": self._reference(b, "body", part, "Body"),

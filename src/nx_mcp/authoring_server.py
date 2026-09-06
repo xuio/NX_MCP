@@ -420,9 +420,12 @@ def nx_mirror_body(body: str, plane: Literal["XY", "XZ", "YZ"]):
 
 
 def nx_create_drawing(
-    name: str = "Sheet1", size: Literal["A0", "A1", "A2", "A3", "A4"] = "A3", scale: float = 1.0
+    name: str = "Sheet1",
+    size: Literal["A0", "A1", "A2", "A3", "A4"] = "A3",
+    scale: float = 1.0,
+    units: Literal["mm", "in"] = "mm",
 ):
-    """Create and open a native landscape metric drawing sheet with first-angle projection, positive model-to-sheet scale, and unique name. Returns typed sheet ID and exact dimensions in mm."""
+    """Create and open a native landscape A0–A4 sheet with independent mm/in sheet units, first-angle projection and positive scale. Sheet sizes retain their physical dimensions; coordinates use the selected sheet units, independent of model units."""
 
 
 def nx_add_base_view(
@@ -433,7 +436,7 @@ def nx_add_base_view(
     scope: Literal["body", "assembly"] = "body",
     explosion: str | None = None,
 ):
-    """Add a native base view to a drawing sheet. scope=body requires body and a single-body part. scope=assembly requires no body, uses current component reference sets/suppression, and optionally associates a typed explosion from the same work part. Omitted explosion explicitly uses assembled positions. position=[x,y] uses sheet mm, default [100,100]. Return typed view reference; open the target sheet."""
+    """Add a native base view to a drawing sheet. scope=body requires body and a single-body part. scope=assembly requires no body, uses current component reference sets/suppression, and optionally associates a typed explosion from the same work part. Omitted explosion explicitly uses assembled positions. position=[x,y] uses sheet units, default [100,100]. Return typed view reference; open the target sheet."""
 
 
 def nx_export_drawing_pdf(path: str):
@@ -443,7 +446,7 @@ def nx_export_drawing_pdf(path: str):
 def nx_add_projection_view(
     base_view: str, direction: Literal["right", "left", "top", "bottom"], spacing: float = 60.0
 ):
-    """Create a native associative projected view on the currently open sheet. Direction describes sheet placement relative to the parent; projection follows the sheet convention. Positive spacing uses sheet mm. Returns a typed drawing-view reference."""
+    """Create a native associative projected view on the currently open sheet. Direction describes sheet placement relative to the parent; projection follows the sheet convention. Positive spacing uses sheet units. Returns a typed drawing-view reference."""
 
 
 def nx_add_dimension(
@@ -452,8 +455,9 @@ def nx_add_dimension(
     object2: str | None = None,
     dim_type: Literal["aligned", "horizontal", "vertical"] = "aligned",
     origin: list[float] | None = None,
+    dimension: str | None = None,
 ):
-    """Create a native associative linear drawing dimension from owned edge IDs. One edge measures start-to-end; two edges measure their start vertices. Types are aligned/horizontal/vertical in the drawing view. origin=[x,y] uses sheet mm, default [100,80]. Returns actual computed size in model units and a typed dimension ID."""
+    """Create a native associative linear drawing dimension from owned or work-assembly occurrence edge IDs. One edge measures start-to-end; two edges measure their start vertices. Types are aligned/horizontal/vertical in the drawing view. origin=[x,y] uses sheet units, default [100,80]. Pass dimension to rebind an existing linear dimension explicitly, retaining its identity; origin/default and dim_type apply to edits too. Returns actual computed size in model units and a typed dimension ID."""
 
 
 def nx_create_explosion(name: str):

@@ -290,6 +290,7 @@ def rig(tmp_path, monkeypatch):
     nx.Matrix3x3 = matrix
     nx.Features = NS(Feature=Feature)
     nx.Session = NS(MarkVisibility=NS(Visible=1, Invisible=0))
+    nx.MeasureBodies = NS(AnalysisUnit=NS(KilogramMillimeter=6))
     nx.BasePart = NS(
         Units=NS(Millimeters="mm"),
         SaveComponents=NS(TrueValue=True, FalseValue=False),

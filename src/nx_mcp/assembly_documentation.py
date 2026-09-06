@@ -19,8 +19,10 @@ class AssemblyDocumentationMixin:
                 "PartsLists",
                 "BendTables",
                 "TableSections",
+                "Tables",
             ]:
                 values.extend(getattr(annotations, name, []))
+        values.extend(getattr(getattr(part, "DraftingManager", None), "TitleBlocks", []))
         return list({int(obj.Tag): obj for obj in values}.values())
 
     def _parts_list_object(self, reference):

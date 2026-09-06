@@ -135,6 +135,10 @@ class ThreadStandardsMixin:
                 major_diameter=b.MajorDiameter,
                 minor_diameter=b.MinorDiameter,
                 internal=b.IsInternalThread,
+                handedness="left"
+                if b.ThreadHandedness == F.ThreadBuilder.Handedness.LeftHand
+                else "right",
+                parameter_units=self._units(),
                 representation="detailed" if detailed else "symbolic",
                 catalog_callout=row.get("Callout"),
                 catalog_units=row.get("Unit"),

@@ -28,6 +28,9 @@ def inverse(pose):
 @pytest.fixture
 def explosions(rig):
     r = rig
+    r.e._sheet_units = lambda _: "mm"
+    r.e._view_sheet = lambda _: None
+    r.e._place_drawing_view = Mock()
     r.uf.Disp = NS(RegenerateDisplay=Mock())
     root = Component("root")
     parent = Component("parent", parent=root)

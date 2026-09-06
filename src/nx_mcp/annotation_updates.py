@@ -82,6 +82,7 @@ class AnnotationUpdatesMixin:
         from nx_mcp.hardened import xyz
 
         part = self._work_part()
+        self._refresh_detail_boundaries()
         updated = []
         for obj in self._documentation_annotations(part):
             if not hasattr(obj, "HasUserAttribute") or not obj.HasUserAttribute(

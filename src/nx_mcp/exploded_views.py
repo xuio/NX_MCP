@@ -430,7 +430,7 @@ class ExplodedViewsMixin:
         point = [100.0, 100.0] if position is None else [finite(v, "position") for v in position]
         if len(point) != 2:
             raise NXToolError(
-                "NX_INVALID_ARGUMENT", "position must contain two sheet coordinates in mm"
+                "NX_INVALID_ARGUMENT", "position must contain two sheet coordinates in sheet units"
             )
         sheet = self._drawing_object(drawing, "drawing_sheet")
         if sheet.OwningPart != part:
@@ -441,10 +441,11 @@ class ExplodedViewsMixin:
         builder = part.DraftingViews.CreateBaseViewBuilder(None)
         try:
             builder.SelectModelView.SelectedView = part.ModelingViews.FindObject(names[view])
-            builder.Placement.Placement.SetValue(None, None, self.nxopen.Point3d(*point, 0.0))
+            builder.Placement.Placement.SetValue(None, None, self._sheet_point3d(sheet, point))
             result = builder.Commit()
         finally:
             builder.Destroy()
+        self._place_drawing_view(result, sheet, point)
         uf.SetViewExplosion(result.Tag, ex.Tag if ex else 0)
         part.DraftingViews.UpdateViews([result])
         if int(uf.AskViewExplosion(result.Tag) or 0) != (int(ex.Tag) if ex else 0):
@@ -456,7 +457,7 @@ class ExplodedViewsMixin:
             "drawing": self._reference(sheet, "drawing_sheet", part, "Drawing sheet"),
             "scope": "assembly",
             "orientation": view,
-            "position_mm": point,
+            **self._drawing_coordinates(sheet, point),
             "explosion": self._reference(ex, "explosion", part, "Explosion") if ex else None,
         }
 

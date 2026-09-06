@@ -722,6 +722,7 @@ class NXOpenExecutor:
                 raise NXToolError("NX_NOT_SOLID", "Volume measurement requires solid bodies")
             props = part.MeasureManager.NewMassProperties(units, 0.999, [item])
             try:
+                props.InformationUnit = self.nxopen.MeasureBodies.AnalysisUnit.KilogramMillimeter
                 rows.append(
                     {
                         "body": self._reference(item, "body", part, "Body"),
