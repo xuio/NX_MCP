@@ -99,3 +99,25 @@ async def test_fresh_mcp_client_accepts_artifacts_and_structured_errors(tmp_path
         assert "checkpoints can expire" in tools["nx_export_step"].description
         bad = await client.call_tool("nx_revolve", {})
         assert bad.isError and bad.structuredContent["code"] == "NX_INVALID_ARGUMENT"
+
+
+@pytest.mark.asyncio
+async def test_new_inspection_tools_publish_actionable_docstrings(tmp_path):
+    server = create_server(AsyncMock(), Workspace(tmp_path), enable_experimental=True)
+    tools = {t.name: t for t in await server.list_tools()}
+    expected = {
+        "nx_flat_pattern_orientation_edges": "x_axis_edge",
+        "nx_create_reference_set": "solid body IDs",
+        "nx_set_component_reference_set": "direct children",
+        "nx_list_reference_sets": "direct members",
+        "nx_list_datums": "coordinate systems",
+        "nx_set_datum_visibility": "restore_id",
+        "nx_list_open_parts": "total_count",
+        "nx_list_components": "include_transforms=False",
+    }
+    for name, guidance in expected.items():
+        assert guidance in tools[name].description
+        assert (
+            "semantics and installed API support have not been validated"
+            not in tools[name].description
+        )

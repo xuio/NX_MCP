@@ -216,7 +216,7 @@
     "nx_list_topology": {
       "status": "tested",
       "evidence_type": "real_NX_v2606",
-      "scope": "Face and edge enumeration; face references used in actual distance query"
+      "scope": "Face and edge enumeration; face references used in actual distance query Native face-restricted boundary enumeration and bidirectional adjacency used for flat-pattern orientation."
     },
     "nx_download_file": {
       "status": "tested",
@@ -306,7 +306,7 @@
     "nx_list_components": {
       "status": "tested",
       "evidence_type": "real_NX_v2606",
-      "scope": "Two-level transforms and STEP round-trip pose equality"
+      "scope": "Two-level transforms and STEP round-trip pose equality Compact inventory, no-pose projection and pagination checked against 116 occurrences."
     },
     "nx_create_drawing": {
       "status": "tested",
@@ -898,28 +898,34 @@
       "scope": "Workspace-scoped directory creation and idempotent existing-directory reporting."
     },
     "nx_flat_pattern_orientation_edges": {
-      "status": "experimental",
-      "scope": "NX v2606 installed API signatures inspected; native fixture validation pending."
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native planar formed-web straight boundary discovery; returned edge created a Flat Pattern on first attempt. Geometric candidates only; not a kernel acceptance guarantee."
     },
     "nx_list_reference_sets": {
-      "status": "experimental",
-      "scope": "NX v2606 installed API signatures inspected; native fixture validation pending."
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native body-only custom set enumeration and exact member count."
     },
     "nx_create_reference_set": {
-      "status": "experimental",
-      "scope": "NX v2606 installed API signatures inspected; native fixture validation pending."
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native SOLIDS reference set containing one block body; saved and consumed by three assembly occurrences."
     },
     "nx_set_component_reference_set": {
-      "status": "experimental",
-      "scope": "NX v2606 installed API signatures inspected; native fixture validation pending."
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native direct-child assignment to three occurrences, unchanged translations, persisted drawing excludes prototype datums. Nested children require activating owner."
     },
     "nx_list_datums": {
-      "status": "experimental",
-      "scope": "NX v2606 installed API signatures inspected; native fixture validation pending."
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native owned datum planes/axes and coordinate-system enumeration on template part."
     },
     "nx_set_datum_visibility": {
-      "status": "experimental",
-      "scope": "NX v2606 installed API signatures inspected; native fixture validation pending."
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native blank/unblank snapshot restoration, and assembly-owned datum suppression confirmed by exported drawing PDF visual review."
     }
   },
   "limitations": [

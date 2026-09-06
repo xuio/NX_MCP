@@ -242,7 +242,20 @@ PAGE = {
     "offset": COUNT,
     "next_offset": {"anyOf": [COUNT, NULL]},
 }
-EXPRESSION = obj({"object": REF}, [])
+EXPRESSION = obj(
+    {
+        "object": REF,
+        "name": S,
+        "formula": S,
+        "type": S,
+        "value": {"anyOf": [N, NULL]},
+        "units": S,
+        "editable": B,
+        "parents": arr(REF),
+        "dependents": arr(REF),
+        "dependency_scope": S,
+    }
+)
 PAYLOADS.update(
     {
         "nx_create_part": obj({"part": REF, "message": S}),
@@ -406,6 +419,107 @@ component_fields["required"] = [
     if x not in {"translation", "rotation_matrix", "coordinate_frame"}
 ]
 PAYLOADS["nx_list_components"]["properties"].update(PAGE)
+
+
+REFERENCE_SET = obj(
+    {
+        "object": REF,
+        "name": S,
+        "member_count": COUNT,
+        "members": arr(REF),
+        "add_components_automatically": B,
+    }
+)
+DISPLAY_ROW = obj({"object": REF, "blanked": B})
+PAYLOADS.update(
+    {
+        "nx_create_reference_set": REFERENCE_SET,
+        "nx_list_reference_sets": obj(
+            {"reference_sets": arr(REFERENCE_SET), "count": COUNT, "built_in": arr(S)}
+        ),
+        "nx_set_component_reference_set": obj(
+            {
+                "components": arr(
+                    obj({"object": REF, "previous_reference_set": S, "reference_set": S})
+                ),
+                "count": COUNT,
+                "prototype_parts_modified": {"const": False},
+            }
+        ),
+        "nx_list_datums": obj(
+            {
+                "datums": arr(obj({"object": REF, "native_type": S, "blanked": B})),
+                "count": COUNT,
+                "scope": {"const": "work_part"},
+            }
+        ),
+        "nx_set_datum_visibility": obj(
+            {
+                "restore_id": S,
+                "objects": arr(DISPLAY_ROW),
+                "count": COUNT,
+                "visible": B,
+                "scope": {"const": "work_part"},
+            }
+        ),
+        "nx_flat_pattern_orientation_edges": obj(
+            {
+                "upward_face": REF,
+                "edges": arr(
+                    obj({"edge": REF, "start": VEC, "end": VEC, "adjacent_faces": arr(S)})
+                ),
+                "count": COUNT,
+                "coordinate_frame": S,
+                "eligibility": S,
+            }
+        ),
+        "nx_create_drawing": obj(
+            {
+                "object": REF,
+                "sheet_name": S,
+                "size": S,
+                "dimensions_mm": arr(N, 2),
+                "dimensions": arr(N, 2),
+                "scale": N,
+                "projection": S,
+            }
+        ),
+        "nx_list_dimensions": obj(
+            {
+                "dimensions": arr(
+                    obj(
+                        {
+                            "object": REF,
+                            "native_type": S,
+                            "computed_value": N,
+                            "retained": B,
+                            "measurement_valid": B,
+                            "origin": VEC,
+                        }
+                    )
+                ),
+                "coordinate_frame": S,
+            }
+        ),
+        "nx_sheet_metal_defaults": obj(
+            {
+                "parameters": {
+                    "type": "object",
+                    "additionalProperties": {"anyOf": [EXPRESSION, NULL]},
+                },
+                "parameter_entry": S,
+                "bend_definition": S,
+                "bend_table": S,
+                "bend_allowance_formula": S,
+                "bend_deduction_formula": S,
+                "material": S,
+                "tool": S,
+                "material_catalog_status": S,
+            }
+        ),
+    }
+)
+PAYLOADS["nx_set_sheet_metal_defaults"] = deepcopy(PAYLOADS["nx_sheet_metal_defaults"])
 
 
 def output_schema(name: str, common: dict) -> dict:

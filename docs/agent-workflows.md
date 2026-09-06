@@ -81,3 +81,41 @@ The final dev15 runtime independently verified this millimeter fixture:
 
 The test restored the original saved session and captured a native PNG. It covers
 this finished XY profile and principal Y axis, not arbitrary custom-axis geometry.
+
+## Drawing reference geometry and compact inspection (dev16)
+
+For a clean assembly drawing, create a custom reference set in each prototype with
+`nx_create_reference_set(name="SOLIDS", objects=[body_id, ...])`, save the prototype,
+and assign it to direct occurrences with `nx_set_component_reference_set` in their
+owning assembly. The assignment leaves component poses unchanged. Nested children
+require activating their owning assembly. Hide the assembly's own datum geometry
+with `nx_set_datum_visibility(visible=false)` before creating the drawing view.
+Prototype reference sets alone do not hide assembly-owned coordinate systems.
+`nx_list_datums` inspects the affected owned objects; `nx_restore_display` restores
+the returned snapshot in reverse order. Existing drafting views may require an
+explicit view update; `nx_edit_drawing_view` with its current position updates it.
+
+Use `nx_list_topology(body=..., face=..., include_adjacency=true)` for current face
+boundaries and bidirectional edge adjacency. For flat patterns,
+`nx_flat_pattern_orientation_edges(upward_face=...)` returns straight boundary
+candidates with endpoints. Choose the desired axis from those endpoints and pass
+its opaque ID as `x_axis_edge`; reacquire after geometry edits or rollback. This is
+geometric eligibility, not a promise that every candidate will pass the native
+Flat Pattern commit on every formed body.
+
+For inventory use `nx_list_open_parts(compact=true)` and
+`nx_list_components(compact=true, include_transforms=false)`. Full responses remain
+the default. Compact references retain identity and occurrence paths. Filters
+precede pagination; `count` counts returned rows and `total_count` counts matching
+rows. `path_prefix` uses absolute Windows host paths, with either slash style.
+Request transforms when checking placement, rather than inferring them from an
+inventory without pose fields.
+
+Advanced-flange end planes were exercised on a 100×80×2 mm tab, 20 mm flange and
+90° angle. A +X plane at x=10 trims one end; another at x=90 trims the other. Their
+volumes were 19242.97335529231 and 18829.309649148734 mm³, versus
+19656.637061435922 mm³ without trimming. `infer_length=true` in ByValue mode
+produced the same geometry as the numeric-length baseline and does not establish
+inference behavior. ToReference requires reference faces on the same body;
+tested web/formed-wall combinations still failed native geometric construction.
+No successful ToReference recipe is claimed. Failures restored baseline volume.

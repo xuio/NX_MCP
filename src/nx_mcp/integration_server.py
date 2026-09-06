@@ -36,7 +36,7 @@ def nx_list_open_parts(
     offset: int = 0,
     limit: int | None = None,
 ):
-    """List loaded parts. Defaults preserve full inventory. compact retains opaque identity; path_prefix is case-insensitive with either slash style. active_only selects work/display parts. Filters precede paging; count is returned rows, total_count is matching rows. Read-only; never saves parts."""
+    """List loaded parts. Defaults preserve full inventory. compact retains opaque identity; path_prefix matches an absolute NX-host path (for example D:/CAD/NX_MCP_WORKSPACE/validation/), case-insensitively with either slash style; workspace-relative prefixes do not match. active_only selects work/display parts. Filters precede paging; count is returned rows, total_count is matching rows. Read-only; never saves parts."""
 
 
 def nx_list_components(
@@ -622,7 +622,11 @@ def configure(mcp, bridge, workspace):
 
         if old:
             mcp.remove_tool(name)
-        description = DESCRIPTIONS.get(name, (old.description if old else name))
+        description = DESCRIPTIONS.get(
+            name,
+            (inspect.getdoc(definitions[name]) if name in definitions else None)
+            or (old.description if old else name),
+        )
         description = description.replace("EXPERIMENTAL: ", "")
         if description.strip() == name:
             description = (
