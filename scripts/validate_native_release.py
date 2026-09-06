@@ -38,7 +38,7 @@ SUITES = [
 def manifest_files(root):
     return [
         {
-            "path": str(p.relative_to(root)),
+            "path": p.relative_to(root).as_posix(),
             "size": p.stat().st_size,
             "sha256": hashlib.sha256(p.read_bytes()).hexdigest(),
         }
@@ -155,7 +155,7 @@ def main():
             item = {
                 "script": script,
                 "exit_code": result.returncode,
-                "receipt": str((output / receipt_name).relative_to(args.output)),
+                "receipt": (output / receipt_name).relative_to(args.output).as_posix(),
             }
             report["suites"].append(item)
             if result.returncode:
