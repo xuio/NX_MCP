@@ -1,0 +1,58 @@
+{
+  "version": "0.2.0.dev14",
+  "runtime_commit": "0023441de6f486adc68935eabbd73e8af5481b09",
+  "release_sha256": "3c52035c91efae376abdba9de91dbe3f4b29e59312d4447c9145793f3fb65fa4",
+  "nx_version": "v2606",
+  "bridge_protocol": 1,
+  "tool_count": 179,
+  "ci": "https://github.com/xuio/NX_MCP/actions/runs/34037571927",
+  "build": "https://github.com/xuio/NX_MCP/actions/runs/34037571466",
+  "automated_tests": 753,
+  "coverage_percent": 78.89,
+  "coverage_gate_percent": 78,
+  "native_suite_commit": "052a9d3c5ce50f0e600d30ce352f92b90a453b66",
+  "native_modules_unchanged_in_final_package": true,
+  "native_suites": [
+    "hard_geometry",
+    "release_engineering",
+    "documentation_manufacturing",
+    "annotation_recovery",
+    "freeform_manufacturing",
+    "sheet_metal"
+  ],
+  "recovery_checks": [
+    "transport_disconnect_committed_receipt",
+    "same_id_relative_move_not_repeated",
+    "checkpoint_rollback",
+    "manual_handoff_stale_references",
+    "committed_receipt_survives_real_bridge_restart"
+  ],
+  "ux_evaluations": 3,
+  "ux_improvements": [
+    "focused_capabilities",
+    "consistent_capability_claims",
+    "no_readonly_view_refresh",
+    "inline_existing_png",
+    "targeted_file_metadata",
+    "paged_filtered_listing",
+    "chunk_bounds_and_continuation",
+    "common_structured_output_schema",
+    "explicit_boolean_operands_and_enums",
+    "explicit_revolve_origin",
+    "distinct_missing_directory_error"
+  ],
+  "limits": [
+    "Tool-specific output fields remain extensible.",
+    "Advanced native geometry prerequisites are not fully expressible in JSON schemas.",
+    "STEP marker check detects incomplete framing, not arbitrary STEP syntax/geometry faults.",
+    "No general modeling or manufacturing certification."
+  ],
+  "final_transport_recovery_passed": true,
+  "final_restart_recovery_passed": true,
+  "windows_stdio_http_passed": true,
+  "native_suites_passed": true,
+  "final_native_smoke_passed": true,
+  "install_rollback_passed": true,
+  "original_saved_parts": 38,
+  "original_occurrences_preserved": 116
+}
