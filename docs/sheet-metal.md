@@ -83,6 +83,13 @@ Replace every `$input_N` with a freshly selected typed reference.
   stationary reference is not equivalent. Edge stationary references are exposed
   but were not exercised by this fixture.
 
+For flat patterns, `x_axis_edge` must be a valid orientation edge on the selected
+upward web face. Forming a flange changes that face boundary: reacquire a current
+straight boundary/tangent edge instead of searching the original tab outer-edge
+location. The four-wall agent fixture recovered from an invalid selection by
+using the current web boundary. Invalid orientation was rolled back; this does
+not establish that every edge on a curved or complex web is valid.
+
 Secondary contour flanges require an **along-path sketch**, created with
 `nx_create_path_sketch`. Use its returned origin/basis/normal to place the profile.
 An ordinary planar sketch in the same position is not equivalent. Secondary tabs

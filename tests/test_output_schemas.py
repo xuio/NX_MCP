@@ -95,5 +95,7 @@ async def test_fresh_mcp_client_accepts_artifacts_and_structured_errors(tmp_path
         validate("nx_download_file", error.structuredContent)
         tools = {t.name: t for t in (await client.list_tools()).tools}
         assert "sketch_name" in tools["nx_revolve"].inputSchema["required"]
+        assert "Saves the part" in tools["nx_export_step"].description
+        assert "checkpoints can expire" in tools["nx_export_step"].description
         bad = await client.call_tool("nx_revolve", {})
         assert bad.isError and bad.structuredContent["code"] == "NX_INVALID_ARGUMENT"

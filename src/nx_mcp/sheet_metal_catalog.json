@@ -4475,7 +4475,8 @@
         "path": "XAxisEdge",
         "getter": false,
         "kind": "select_edge",
-        "assign": false
+        "assign": false,
+        "description": "Select a valid orientation edge on the selected upward web face. After forming, reacquire its current boundary/tangent edge rather than reusing the original tab outer-edge location."
       }
     },
     "required": [

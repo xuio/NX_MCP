@@ -134,6 +134,7 @@ def test_session_lifecycle_and_generation_reject_closed_references(rig, tmp_path
     p = rig.e._reference(part, "part", part, "Part")["id"]
     opened = rig.e._open_part(part.FullPath)
     assert opened["already_loaded"]
+    assert opened["message"] == "Reused loaded part"
     assert rig.e._activate_part(part.Name, False, False)["part"]["id"] == p
     cp = rig.e._checkpoint()
     rig.e._close_part(save=True, part=p)
@@ -145,7 +146,9 @@ def test_session_lifecycle_and_generation_reject_closed_references(rig, tmp_path
     assert rig.ref(body) != old
     path = tmp_path / "imported.prt"
     path.write_text("fixture")
-    assert not rig.e._open_part(str(path), work=False, display=False)["already_loaded"]
+    new_part = rig.e._open_part(str(path), work=False, display=False)
+    assert not new_part["already_loaded"]
+    assert new_part["message"] == "Opened part"
     assert len(rig.e._list_open_parts()["parts"]) == 2
     with pytest.raises(NXToolError):
         rig.e._open_part(str(tmp_path / "missing.prt"))

@@ -289,6 +289,7 @@ def nx_upload_file(path: str, data_base64: str, sha256: str, total_size: int, of
 
 
 DESCRIPTIONS = {
+    "nx_export_step": "Export the active work part as STEP inside the workspace. Saves the part before translation; native undo marks and checkpoints can expire. Use a disposable copy for review-only exports when source saves are unwanted. Returns path, size, SHA-256, units, component count, translator options and validation scope.",
     "nx_boolean": "Boolean solid bodies: unite, subtract or intersect. targets[0] is the target body; targets[1:] are tool bodies. Native cube subtraction and volume checks are scoped in nx_capabilities(tool='nx_boolean'); not general certification.",
     "nx_revolve": "Requires sketch_name (finished sketch ID/name). Revolve about a principal axis through the part origin; custom axis origins are not exposed. Angles are degrees, lengths in work-part units; boolean is none/unite/subtract/intersect. Inspect nx_capabilities(tool='nx_revolve') for tested scope.",
     "nx_workspace_list": "List a workspace directory with prefix filtering and pagination (offset>=0, limit=1..1000, default 100). Returns entries/count for this page, total_count and next_offset. File entries include size/SHA-256. Use nx_download_file(delivery='metadata') to inspect one file.",

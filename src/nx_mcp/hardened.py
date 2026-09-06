@@ -595,7 +595,11 @@ class HardenedExecutor(
         result = self._activate_part(
             self._reference(loaded, "part", loaded, "Part")["id"], work, display
         )
-        result.update(already_loaded=already_loaded, path=str(source))
+        result.update(
+            already_loaded=already_loaded,
+            path=str(source),
+            message="Reused loaded part" if already_loaded else "Opened part",
+        )
         return result
 
     def _activate_part(self, part, work=True, display=True):
@@ -620,7 +624,7 @@ class HardenedExecutor(
             "part": self._reference(target, "part", target, "Part"),
             "work": self.session.Parts.Work == target,
             "display": self.session.Parts.Display == target,
-            "message": "Activated loaded part",
+            "message": "Activated loaded part" if work or display else "Resolved loaded part",
         }
 
     def _save_part(self):
