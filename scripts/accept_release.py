@@ -30,6 +30,17 @@ def digest(data):
     return hashlib.sha256(data).hexdigest()
 
 
+def absolute_path(path):
+    """Normalize host paths without querying unsupported shared-drive reparse APIs.
+
+    These are operator-selected paths, not a containment/security boundary. File
+    existence and trusted-package byte checks happen separately. In particular,
+    Path.resolve() can fail with WinError 1005 on VirtIO shares, even for a valid
+    path or a new output directory whose parents exist.
+    """
+    return Path(os.path.abspath(os.fspath(path)))
+
+
 def write_receipt(path, report):
     temporary = path.with_suffix(".tmp")
     temporary.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
@@ -232,10 +243,10 @@ def main():
         parser.error(
             "Run on the NX Windows host with its installed Python 3.12 virtual environment"
         )
-    args.output = args.output.resolve()
-    args.install_root = args.install_root.resolve()
-    args.release_zip = args.release_zip.resolve()
-    fixture = Path(os.environ.get("NX_VENDOR_STEP", "")).resolve()
+    args.output = absolute_path(args.output)
+    args.install_root = absolute_path(args.install_root)
+    args.release_zip = absolute_path(args.release_zip)
+    fixture = absolute_path(os.environ.get("NX_VENDOR_STEP", ""))
     if not fixture.is_file():
         parser.error("NX_VENDOR_STEP must identify an authorized local STEP fixture")
     identity = {
@@ -279,7 +290,7 @@ def main():
 def execute(args, receipt, report):
     def package():
         spec = importlib.util.find_spec("nx_mcp")
-        runtime = Path(spec.origin).parent.resolve()
+        runtime = absolute_path(Path(spec.origin).parent)
         # A source checkout in PYTHONPATH is not the installed wheel environment.
         if not runtime.is_relative_to(args.install_root / "venv"):
             raise RuntimeError("nx_mcp must import from the selected installation's venv")

@@ -178,3 +178,54 @@ def test_native_failure_still_checks_original_session(tmp_path, monkeypatch):
     assert verified == [(snapshot, snapshot)]
     assert report["state"] == "failed"
     assert report["phases"]["session_preservation"]["state"] == "passed"
+
+
+def test_cli_accepts_new_shared_drive_output_when_canonical_resolution_fails(tmp_path, monkeypatch):
+    """Reproduce WinError 1005 without requiring a Windows VirtIO mount."""
+    main = RUNNER["main"]
+    namespace = main.__globals__
+    install = tmp_path / "install"
+    install.mkdir()
+    fixture = tmp_path / "authorized.step"
+    fixture.write_text("fixture")
+    archive = tmp_path / "release.zip"
+    archive.write_text("fixture")
+    output = tmp_path / "new-parent/acceptance"
+    error = OSError("The volume does not contain a recognized file system")
+    error.winerror = 1005
+
+    def unsupported_resolve(*args, **kwargs):
+        raise error
+
+    monkeypatch.setattr(Path, "resolve", unsupported_resolve)
+    monkeypatch.setattr(namespace["sys"], "platform", "win32")
+    monkeypatch.setattr(namespace["sys"], "version_info", (3, 12, 0))
+    monkeypatch.setattr(
+        namespace["sys"],
+        "argv",
+        [
+            "accept_release.py",
+            "--release-zip",
+            str(archive),
+            "--sha256",
+            "a" * 64,
+            "--expected-commit",
+            "b" * 40,
+            "--install-root",
+            str(install),
+            "--output",
+            str(output),
+            "--verify-only",
+        ],
+    )
+    monkeypatch.setenv("NX_MCP_URL", "http://127.0.0.1:8765/mcp")
+    monkeypatch.setenv("NX_VENDOR_STEP", str(fixture))
+    calls = []
+    monkeypatch.setitem(namespace, "execute", lambda args, receipt, report: calls.append(report))
+    main()
+    assert len(calls) == 1
+    assert (output / "acceptance.json").is_file()
+    assert calls[0]["identity"]["vendor_step"] == str(fixture)
+    assert calls[0]["identity"]["install_root"] == str(install)
+    assert calls[0]["identity"]["release_zip"] == str(archive)
+    assert not (install / "acceptance.lock").exists()
