@@ -56,7 +56,7 @@ The command records atomic phase receipts in `acceptance.json`:
    wheel. Reject a source overlay or extra executable/configuration files.
 2. Check Python 3.12, all pinned dependency versions and `pip check`.
 3. Inspect the live NX version/tool count and original saved session. Defaults are
-   NX `v2606` and 179 tools; explicit expected-value options support later releases.
+   NX `v2606` and 185 tools; explicit expected-value options support later releases.
 4. Run the existing six native release suites serially, retain their logs and
    receipts, and stop at the first failure. The native runner checks its own
    preservation evidence.

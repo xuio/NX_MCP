@@ -9,9 +9,9 @@ empty geometry. Success and error requirements are separate conditional branches
 Tool-specific success contracts cover bounds, distance, volume, topology,
 components, extrusion/revolve/pattern results, pairwise interference and clearance,
 operation receipts, checkpoints/rollback, workspace listings, downloads and the
-main image/CAD/document exports. Inspect the live `tools/list` output for the
+main image/CAD/document exports. Dev16 expands this to 47 tool-specific payloads, adding part lifecycle, sketch diagnostics, sheet-metal authoring/inspection, drawing inspection and reference-geometry controls. Inspect the live `tools/list` output for the
 exact fields. Other tools retain extensible success payloads; this is not a claim
-that all 179 payloads are fully typed.
+that all 185 payloads are fully typed.
 
 Geometry references keep opaque IDs separate from names and identify owner parts.
 Vectors have three coordinates; matrices contain three rows. Measurement fields

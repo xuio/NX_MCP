@@ -1,6 +1,6 @@
 # NX v2606 integration fork
 
-This fork of [DreamEnding/NX_MCP](https://github.com/DreamEnding/NX_MCP) preserves the upstream history and MIT license. The initial import was deployed against Siemens NX v2606 as `0.2.0.dev2`; subsequent releases extend it through `0.2.0.dev14`. The fork follows upstream base `179086b6de28a53d340132aca7678fa6ed03b422` and retains the deployment history. Machine provisioning, private CAD, credentials and deployment session logs are outside this repository.
+This fork of [DreamEnding/NX_MCP](https://github.com/DreamEnding/NX_MCP) preserves the upstream history and MIT license. The initial import was deployed against Siemens NX v2606 as `0.2.0.dev2`; subsequent releases extend it through `0.2.0.dev16`. The fork follows upstream base `179086b6de28a53d340132aca7678fa6ed03b422` and retains the deployment history. Machine provisioning, private CAD, credentials and deployment session logs are outside this repository.
 
 See [engineering tools and scoped validation](engineering-tools.md) for the latest solid modeling, sketches, assemblies, materials, project copying, rendering and drafting additions.
 
@@ -16,7 +16,7 @@ See [agent UX](agent-ux.md) for focused discovery, inline artifact retrieval and
 - Collision highlighting, single-plane capped sections, body/component visibility, colors and transparency with restoration.
 - Native sketch solver status, remaining degrees of freedom and persistent constraint-to-geometry links.
 
-The dev14 opt-in integration profile exposes 179 tools. Tool status describes scoped validation on NX v2606, not universal certification. Journal execution remains disabled. The default sidecar retains upstream's smaller tool surface unless experimental mode is enabled.
+The dev16 opt-in integration profile exposes 185 tools, including reference-set/datum controls and compact inventories. Tool status describes scoped validation on NX v2606, not universal certification. Journal execution remains disabled. The default sidecar retains upstream's smaller tool surface unless experimental mode is enabled.
 
 ## Start the graphical bridge and sidecar
 
@@ -46,7 +46,7 @@ See [interactive behavior and viewport capture](../INTERACTIVE-NX.md), [visual t
 
 The source matches the deployed runtime. The fork includes local tests and a configurable public MCP visualization regression runner. Historical live-NX results and current upstream-suite gaps are documented in [fork validation](fork-validation.md). Importing the source into this repository does not constitute a new native NX test run.
 
-A series of focused pull requests is preferable to the full integration diff. The [upstream review package](upstream-review.md) maps six proposed slices, supplies a draft first description, and lists compatibility decisions. Current runtime CI and native evidence are recorded in [dev13 acceptance](dev13-validation.json); [dev12 acceptance](dev12-validation.json) retains the preceding documentation results; [dev11 acceptance](dev11-validation.json) retains the earlier freeform/documentation results; [dev10 acceptance](dev10-validation.json) retains sheet-metal results; [dev9 acceptance](dev9-validation.json) retains the exploded-view results; [dev8 acceptance](dev8-validation.json) retains the engineering results; [dev7 acceptance](dev7-validation.json) retains the preceding folder-support results; [dev6 acceptance](dev6-validation.json) retains the preceding authoring results. No pull request has been opened.
+A series of focused pull requests is preferable to the full integration diff. The [upstream review package](upstream-review.md) maps six proposed slices, supplies a draft first description, and lists compatibility decisions. Current runtime CI and native evidence are recorded in [dev16 acceptance](dev16-validation.json); [dev13 acceptance](dev13-validation.json) retains preceding release-engineering evidence; [dev12 acceptance](dev12-validation.json) retains the preceding documentation results; [dev11 acceptance](dev11-validation.json) retains the earlier freeform/documentation results; [dev10 acceptance](dev10-validation.json) retains sheet-metal results; [dev9 acceptance](dev9-validation.json) retains the exploded-view results; [dev8 acceptance](dev8-validation.json) retains the engineering results; [dev7 acceptance](dev7-validation.json) retains the preceding folder-support results; [dev6 acceptance](dev6-validation.json) retains the preceding authoring results. No pull request has been opened.
 
 Explicit nested and absolute in-workspace file paths, directory creation, and Save As parent creation are described in [project folders](project-folders.md).
 
