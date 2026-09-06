@@ -4723,7 +4723,7 @@
     },
     "edit_status": "experimental",
     "example_evidence": {
-      "source": "docs/sheet-metal-native-validation.json#/operations/advanced_flange",
+      "source": "tests/fixtures/sheet-metal-examples.json#/operations/advanced_flange",
       "validation": "native_fixture",
       "scope": "suite2 AdvancedFlange creation with length=20, angle=90 on a boundary edge of a 100 x 80 x 2 mm XY tab; optional reference-driven modes were not exercised."
     },
@@ -5455,7 +5455,7 @@
       "reference_entity": "$input_2"
     },
     "example_evidence": {
-      "source": "docs/sheet-metal-native-validation.json#/operations/unbend",
+      "source": "tests/fixtures/sheet-metal-examples.json#/operations/unbend",
       "validation": "native_fixture",
       "scope": "suite4/unbend_rebend: one bend on a 100 x 80 x 2 mm tab with a 20 mm, 90-degree flange; original planar web is stationary. Edge-based stationary references were not exercised."
     },
@@ -5500,7 +5500,7 @@
       "reference_entity": "$input_2"
     },
     "example_evidence": {
-      "source": "docs/sheet-metal-native-validation.json#/operations/rebend",
+      "source": "tests/fixtures/sheet-metal-examples.json#/operations/rebend",
       "validation": "native_fixture",
       "scope": "suite4/unbend_rebend: one bend on a 100 x 80 x 2 mm tab with a 20 mm, 90-degree flange; original planar web is stationary. Edge-based stationary references were not exercised."
     },

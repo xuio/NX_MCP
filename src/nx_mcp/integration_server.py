@@ -190,6 +190,31 @@ def nx_close_part(save: bool = True, part: str | None = None):
     pass
 
 
+def nx_sketch_constraint(
+    constraint_type: Literal[
+        "horizontal",
+        "vertical",
+        "fix",
+        "fixed",
+        "parallel",
+        "perpendicular",
+        "equal_length",
+        "equal_radius",
+        "concentric",
+        "tangent",
+        "coincident",
+        "distance",
+        "length",
+        "radius",
+        "diameter",
+        "angle",
+    ],
+    targets: list[str],
+    value: float | None = None,
+):
+    """Apply a supported native constraint to curves owned by one sketch."""
+
+
 def nx_sketch_info(sketch_id: str):
     pass
 
@@ -344,6 +369,9 @@ DESCRIPTIONS = {
     "nx_workspace_info": "Discover the NX host workspace root and path rules. Paths refer to the NX machine, not the MCP client's filesystem. No session-wide current directory is changed.",
     "nx_create_directory": "Create a directory and missing parents inside the NX workspace. Accepts workspace-relative or in-workspace absolute host paths. Idempotent: an existing directory succeeds; an existing file fails. Returns actual path and created status.",
     "nx_create_part": "Create a new NX part at an explicit workspace-relative or absolute in-workspace NX-host path, e.g. projects/controller/parts/base.prt. Missing parent folders are created. Units: mm or inch. Use unique part basenames for simultaneously loaded NX parts.",
+    "nx_delete_feature": "Delete a work-part feature by typed ID or unambiguous name using native update/undo. Dependent geometry may be deleted; inspect changes.deleted and reacquire topology afterward.",
+    "nx_measure_angle": "Measure 0..180 degrees between typed work-part line, straight-edge or planar-face references. Uses line start/end, edge vertex order or outward face normals. Curved entities and component occurrences are unsupported; directions are not an oriented dihedral angle.",
+    "nx_sketch_constraint": "Apply a constraint to owned curve IDs in one sketch. Types: horizontal, vertical, fix/fixed, parallel, perpendicular, equal_length, equal_radius, concentric, tangent, coincident, distance/length, radius, diameter, angle. Only dimensions require value in part units or degrees. Coincident means start-to-start; use nx_sketch_relation for explicit endpoints. Midpoint is not supported.",
     "nx_save_as": "Save the active work part to a new .prt path inside the NX workspace, creating missing parent folders. Accepts relative or absolute NX-host paths. Existing files are never overwritten. Save As changes the work part's filename; it does not move an entire assembly dependency tree.",
     "nx_display_info": "Inspect color-table indices, blank state and face transparency for body, component, feature, face or curve references. Components expand to loaded occurrence geometry.",
     "nx_set_display": "Set an NX color index (1–216) or named color, and/or transparency (0 opaque, 100 transparent). Component/feature targets expand to bodies. Occurrence overrides do not recolor prototypes. Returns restore_id; restore in reverse order. Changes can persist on save.",

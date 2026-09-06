@@ -29,6 +29,7 @@ from nx_mcp.exploded_views import ExplodedViewsMixin
 from nx_mcp.freeform import FreeformMixin
 from nx_mcp.inspection import InspectionMixin
 from nx_mcp.inventory import compact_reference, page
+from nx_mcp.legacy_repairs import LegacyRepairsMixin
 from nx_mcp.manufacturing import ManufacturingMixin
 from nx_mcp.nx_bridge import NXOpenExecutor
 from nx_mcp.recovery import OperationStore, timestamp
@@ -151,6 +152,7 @@ NON_MODEL.update(
 
 
 class HardenedExecutor(
+    LegacyRepairsMixin,
     ReleaseEngineeringMixin,
     ReferenceGeometryMixin,
     DocumentationEditingMixin,
@@ -294,6 +296,9 @@ class HardenedExecutor(
                 "nx_capabilities": self._capabilities,
                 "nx_save_as": self._save_as,
                 "nx_rename_object": self._rename_object,
+                "nx_delete_feature": self._delete_feature,
+                "nx_measure_angle": self._measure_angle,
+                "nx_sketch_constraint": self._sketch_constraint,
             }
         )
 

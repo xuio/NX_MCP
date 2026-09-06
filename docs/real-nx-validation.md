@@ -1,6 +1,6 @@
 # Real NX validation gate
 
-## Latest validated run
+## Historical upstream batch run
 
 - Date: 2026-08-21
 - NX: v2506 (`ugraf.exe` 2506.4021; `run_journal.exe` 2506.4000)
@@ -21,7 +21,7 @@ not validate non-blocking interactive NX GUI responsiveness.
 - Whether NX is native or Teamcenter-managed mode
 - Test machine identifier and Windows version
 
-Version 0.2 initially supports only this recorded NX build and native parts.
+The upstream baseline was scoped to that build. The fork adds separately recorded NX 2606 graphical fixtures.
 
 ## Preconditions
 
@@ -79,3 +79,36 @@ starts the Python bridge, then runs `pytest -m real_nx`. It requests the bridge
 to stop even when acceptance fails. Once the runner is reliable, make this
 workflow a required release/branch gate in the repository settings; the normal
 hosted CI deliberately excludes `real_nx` because it cannot provide Siemens NX.
+
+## NX 2606 integration evidence
+
+Dev18 runtime `9254c028eac8ffdfeed54201377ba62a052b0a1c` passed 868 ordinary tests
+at 79.08% branch coverage, sidecar type checks and hosted CI. One dedicated NX
+runner test was skipped in that suite. Separate graphical checks verified UI-thread
+dispatch, stdio/HTTP, installed-source identity and native PNG delivery. Session
+preservation checked 38 saved original parts and 116 occurrence paths, poses,
+suppression states and reference sets.
+
+Two fresh agents completed analytic plate, three-instance assembly and STEP
+round-trip fixtures. The comparison used dev17 full versus initial dev18 agent;
+final pagination/discovery fixes received a separate follow-up. Provider usage
+was unavailable; response tokenizer counts are not total model costs.
+
+Historical release receipts are retained in git history and local evidence, rather
+than one documentation file per deployment. The [capability matrix](capability-matrix.md)
+is generated from the runtime manifest. Do not promote a label based on builder
+presence, a mock test or an unrelated native fixture.
+
+## Running integration suites
+
+Use isolated fixtures and a configured public MCP endpoint. Native scripts live
+under `examples/validate_*.py`; each documents its endpoint/output variables.
+`scripts/validate_native_release.py` coordinates the release suites. Run mutations
+serially and preserve the original loaded parts, modified flags and work/display
+selection. After failures, record outcomes and restore the session before retrying.
+
+`scripts/build_release.py --output <directory>` packages a clean committed checkout
+with locked Windows dependencies. Installation/rollback scripts preserve backups;
+verify archive and installed-source hashes. Record exact runtime commit, NX build,
+fixture checks and artifact hashes with each native run. Re-run changed behavior
+on the release candidate instead of relabeling earlier evidence.
