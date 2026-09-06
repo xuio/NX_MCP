@@ -1529,23 +1529,27 @@ class EngineeringMixin:
         if not sheets:
             raise NXToolError("NX_NO_DRAWING", "Create a drawing sheet before PDF export")
         file.parent.mkdir(parents=True, exist_ok=True)
-        b = self._work_part().PlotManager.CreatePrintPdfbuilder()
-        try:
-            b.Filename = str(file)
-            b.Action = b.ActionOption.Native
-            b.Size = b.SizeOption.FullScale
-            b.Units = b.UnitsOption.Metric
-            b.OutputText = b.OutputTextOption.Text
-            b.SourceBuilder.SetSheets(sheets)
-            b.Commit()
-            data = file.read_bytes()
-            if not data.startswith(b"%PDF-"):
-                raise NXToolError("NX_EXPORT_FAILED", "Native exporter did not produce a PDF")
-        except Exception:
-            file.unlink(missing_ok=True)
-            raise
-        finally:
-            b.Destroy()
+        with self._drawing_save_context(self._work_part(), force_display=True):
+            # Opening each sheet refreshes its display/CGM presentation before plotting.
+            for sheet in sheets:
+                sheet.Open()
+            b = self._work_part().PlotManager.CreatePrintPdfbuilder()
+            try:
+                b.Filename = str(file)
+                b.Action = b.ActionOption.Native
+                b.Size = b.SizeOption.FullScale
+                b.Units = b.UnitsOption.Metric
+                b.OutputText = b.OutputTextOption.Text
+                b.SourceBuilder.SetSheets(sheets)
+                b.Commit()
+                data = file.read_bytes()
+                if not data.startswith(b"%PDF-"):
+                    raise NXToolError("NX_EXPORT_FAILED", "Native exporter did not produce a PDF")
+            except Exception:
+                file.unlink(missing_ok=True)
+                raise
+            finally:
+                b.Destroy()
         return {
             "path": str(file),
             "artifact_path": str(file.relative_to(self.workspace.root)),

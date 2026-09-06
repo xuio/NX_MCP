@@ -437,7 +437,7 @@ def nx_add_base_view(
 
 
 def nx_export_drawing_pdf(path: str):
-    """Export all work-part drawing sheets to a new workspace PDF using native NX plotting. Full sheet scale, metric dimensions and searchable text. Returns actual path, sheet names/count, size and checksum. Reject missing drawings and existing files."""
+    """Export all work-part drawing sheets to a new workspace PDF using native NX plotting. Temporarily display sheets to refresh their presentation, then restore the prior work/display part and drawing/modeling view. Full sheet scale, metric dimensions and searchable text. Returns actual path, sheet names/count, size and checksum. Reject missing drawings and existing files."""
 
 
 def nx_add_projection_view(

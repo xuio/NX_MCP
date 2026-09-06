@@ -534,7 +534,11 @@ def test_mass_tensor_uses_centroidal_values_and_product_signs(material):
 
 def test_pdf_export_reports_actual_artifact_and_refuses_overwrite(eng):
     r = eng
+    from contextlib import nullcontext
+
+    r.e._drawing_save_context = lambda *_, **__: nullcontext()
     sheet = Object("Sheet1")
+    sheet.Open = Mock()
     r.part.DrawingSheets = [sheet]
     b = NS(
         ActionOption=NS(Native=1),
@@ -561,7 +565,12 @@ def test_pdf_export_reports_actual_artifact_and_refuses_overwrite(eng):
 
 def test_invalid_pdf_output_is_removed(eng):
     r = eng
-    r.part.DrawingSheets = [Object("sheet")]
+    from contextlib import nullcontext
+
+    r.e._drawing_save_context = lambda *_, **__: nullcontext()
+    sheet = Object("sheet")
+    sheet.Open = Mock()
+    r.part.DrawingSheets = [sheet]
     b = NS(
         ActionOption=NS(Native=1),
         SizeOption=NS(FullScale=1),

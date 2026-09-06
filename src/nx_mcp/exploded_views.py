@@ -11,10 +11,10 @@ from nx_mcp.runtime import NXToolError
 
 class ExplodedViewsMixin:
     @contextmanager
-    def _drawing_save_context(self, part):
+    def _drawing_save_context(self, part, force_display=False):
         """Display native sheets for CGM-preserving saves, then restore the view."""
         sheets = list(getattr(part, "DrawingSheets", []))
-        if not sheets or not part.SaveOptions.DrawingCgmData:
+        if not sheets or (not part.SaveOptions.DrawingCgmData and not force_display):
             yield
             return
         work, display = self.session.Parts.Work, self.session.Parts.Display
@@ -33,6 +33,8 @@ class ExplodedViewsMixin:
             try:
                 if original_sheet is None:
                     part.Drafting.ExitDraftingApplication()
+                elif part.DrawingSheets.CurrentDrawingSheet != original_sheet:
+                    original_sheet.Open()
                 if changed_part:
                     if display:
                         self._activate_part(

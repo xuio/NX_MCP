@@ -35,22 +35,22 @@ async def main():
     ):
         await client.initialize()
 
-        async def call(name, **params):
-            response = await client.call_tool(name, params)
+        async def call(tool_name, **params):
+            response = await client.call_tool(tool_name, params)
             receipt["operations"].append(
                 {
-                    "tool": name,
+                    "tool": tool_name,
                     "error": response.isError,
                     "operation_id": response.structuredContent.get("operation_id"),
                 }
             )
             save()
-            assert not response.isError, (name, response.structuredContent)
+            assert not response.isError, (tool_name, response.structuredContent)
             return response.structuredContent
 
-        async def reject(name, **params):
-            response = await client.call_tool(name, params)
-            assert response.isError, (name, response.structuredContent)
+        async def reject(tool_name, **params):
+            response = await client.call_tool(tool_name, params)
+            assert response.isError, (tool_name, response.structuredContent)
             return response.structuredContent
 
         async def artifact(meta, name):
@@ -256,7 +256,7 @@ async def main():
             datum = await call("nx_pmi_datum", faces=[face], letter="A", position=[25, 10, 5])
             fcf = await call(
                 "nx_pmi_fcf",
-                faces=[face],
+                faces=[await nearest(body, "face", [10, 5, 5])],
                 characteristic="Parallelism",
                 tolerance=0.05,
                 position=[25, 20, 5],
@@ -265,7 +265,7 @@ async def main():
             assert fcf["geometry_associated"]
             await call(
                 "nx_pmi_fcf",
-                faces=[face],
+                faces=[await nearest(body, "face", [10, 5, 5])],
                 characteristic="Flatness",
                 tolerance=0.1,
                 position=[25, 20, 5],
@@ -306,7 +306,9 @@ async def main():
                     name="Cube" + str(i),
                     translation=[25 * i, 0, 0],
                 )
-            assembled = (await call("nx_list_components"))["components"]
+            assembled = sorted(
+                (await call("nx_list_components"))["components"], key=lambda c: c["translation"][0]
+            )
             explosion = (await call("nx_create_explosion", name="Service"))["object"]["id"]
             await call(
                 "nx_edit_explosion",
@@ -343,11 +345,14 @@ async def main():
             sheet = (await call("nx_create_drawing", name="Service", size="A3"))["object"]["id"]
             bom = await call("nx_create_parts_list", drawing=sheet, position=[25, 250])
             assert bom["rows"] == [["1", "PROTOTYPE", "3"]]
+            assert (await call("nx_parts_list_info", parts_list=bom["parts_list"]["id"]))[
+                "rows"
+            ] == bom["rows"]
             await call(
                 "nx_add_component",
                 part_path=prefix + "/prototype.prt",
                 name="Cube3",
-                translation=[75, 0, 0],
+                translation=[120, 0, 0],
             )
             assert (await call("nx_update_parts_list", parts_list=bom["parts_list"]["id"]))[
                 "rows"

@@ -566,3 +566,23 @@ def test_strict_pose_types(explosions, extra):
     with pytest.raises(NXToolError, match="numeric"):
         r.e._edit_explosion(ex, [{"component": component, "translation": [1, 2, 3], **extra}])
     assert not r.ex.deltas
+
+
+def test_forced_drawing_display_restores_sheet_on_failure(drawing_save):
+    r = drawing_save
+    r.part.SaveOptions.DrawingCgmData = False
+    original = r.sheet
+    r.part.DrawingSheets.CurrentDrawingSheet = original
+    with pytest.raises(RuntimeError, match="plot failed"):
+        with r.e._drawing_save_context(r.part, force_display=True):
+            r.part.DrawingSheets.CurrentDrawingSheet = Object("Other sheet")
+            raise RuntimeError("plot failed")
+    assert r.part.DrawingSheets.CurrentDrawingSheet is original
+
+
+def test_forced_drawing_display_restores_modeling_view(drawing_save):
+    r = drawing_save
+    r.part.SaveOptions.DrawingCgmData = False
+    with r.e._drawing_save_context(r.part, force_display=True):
+        assert r.part.DrawingSheets.CurrentDrawingSheet is r.sheet
+    assert r.part.DrawingSheets.CurrentDrawingSheet is None
