@@ -131,3 +131,12 @@ it restored the original session and was retained as a failed attempt. The
 corrected run passed on candidate `b2584eeef629791b04cf6ad68fe40a428bfe5aec`.
 Per-option limits remain in the capability matrix even when the overall entry
 point is marked tested. This does not make every exposed variant native-tested.
+
+Final dev19 runtime `d7d5dc36b915a631bdb6fe23987b9cb93a6787ae` passed the same
+native suite with additional status/frame/page/pose assertions and graphical view
+metadata checks. Windows source hashes, stdio/HTTP and inline PNG validation passed.
+881 ordinary tests passed at 78.96% branch coverage; sidecar type checking covered
+50 modules. [Hosted CI](https://github.com/xuio/NX_MCP/actions/runs/34057628840)
+passed on that commit. Final preservation checks retained the original 38 saved
+parts and 116 occurrences. The manifest reports 178 native-scoped and seven
+sidecar/contract-scoped tools; individual option limits still apply.
