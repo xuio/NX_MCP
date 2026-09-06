@@ -79,7 +79,9 @@ async def main():
             edit = await call(
                 "nx_set_expression", expression=angles[0]["object"]["id"], formula="82"
             )
-            assert not edit.get("refreshed_annotations")
+            assert all(
+                x["id"] != pmi["object"]["id"] for x in edit.get("refreshed_annotations", [])
+            ), "Disabled PMI was refreshed"
             notes = (await call("nx_list_annotations"))["items"]
             assert any(
                 "85.000 deg" in " ".join(x.get("text", [])) and x.get("managed_refresh") is False

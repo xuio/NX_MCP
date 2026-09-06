@@ -1,0 +1,173 @@
+{
+  "version": "0.2.0.dev12",
+  "runtime_commit": "c3bdb52814f18d67b9df3ed7dd42e7a795fb9ba5",
+  "nx_version": "v2606",
+  "bridge_protocol": 1,
+  "tool_count": 170,
+  "runtime_ci": "https://github.com/xuio/NX_MCP/actions/runs/34023328645",
+  "release_build": "https://github.com/xuio/NX_MCP/actions/runs/34023334813",
+  "release_sha256": "cf46f43065906c8eeceeb9be41a7ea161019e1db8859ceb2becf1b489e954b21",
+  "local_validation": {
+    "pytest_passed": 715,
+    "pytest_skipped": 1,
+    "combined_statement_branch_coverage_percent": 78.51,
+    "unchanged_coverage_gate_percent": 78,
+    "mypy": "passed",
+    "pre_commit": "passed",
+    "ci": "passed"
+  },
+  "added_tools": [
+    "nx_list_drawings",
+    "nx_activate_drawing",
+    "nx_list_annotations",
+    "nx_edit_annotation",
+    "nx_parts_list_column",
+    "nx_edit_explosion_trace",
+    "nx_thread_catalog",
+    "nx_standard_thread",
+    "nx_bend_table",
+    "nx_refresh_annotations"
+  ],
+  "public_workflow_checks": [
+    "rounded_enclosure_analytic_shell_step_roundtrip_local_edit_rollback_reopen",
+    "curved_parabolic_G2_join_and_deliberate_tangent_discontinuity",
+    "thin_wall_measurement_and_outside_ray_origin_rejection",
+    "known_five_degree_draft_signed_transition_and_threshold",
+    "native_bend_table_managed_PMI_transactional_update_and_persistent_reopen",
+    "standard_table_thread_False_and_GDT_modifiers",
+    "standard_table_thread_True_and_GDT_modifiers",
+    "sheet_metal_assembly_explosion_trace_edit_BOM_columns_balloon_placement_drawings"
+  ],
+  "public_workflow_passed": true,
+  "annotation_recovery": {
+    "automatic_without_table_edit": true,
+    "operation_retry_deduplicated": true,
+    "table_rows": [
+      [
+        "1",
+        "85,00",
+        "3,00"
+      ]
+    ],
+    "disable_preserves_measured_snapshot": true,
+    "rollback_restored_annotation_and_source": true,
+    "passed": true,
+    "session_restored": true
+  },
+  "native_thread_cases": [
+    {
+      "internal": false,
+      "detailed": false,
+      "pitch_mm": 1.0,
+      "volume_before_mm3": 263.66158778851576,
+      "volume_after_mm3": 263.66158778851576
+    },
+    {
+      "internal": false,
+      "detailed": true,
+      "pitch_mm": 1.0,
+      "volume_before_mm3": 263.66158778851576,
+      "volume_after_mm3": 235.58194147836767
+    },
+    {
+      "internal": true,
+      "detailed": false,
+      "pitch_mm": 1.0,
+      "volume_before_mm3": 3803.650459150639,
+      "volume_after_mm3": 3803.650459150639
+    },
+    {
+      "internal": true,
+      "detailed": true,
+      "pitch_mm": 1.0,
+      "volume_before_mm3": 3803.650459150639,
+      "volume_after_mm3": 3769.746530347013
+    }
+  ],
+  "numeric_evidence": {
+    "enclosure_shell_volume_mm3": 40369.1325000739,
+    "curved_join_checks": {
+      "G0": true,
+      "G1": true,
+      "G2": true
+    },
+    "sampled_thin_wall_mm": 0.2,
+    "bend_table_before": [
+      [
+        "1",
+        "75,00",
+        "3,00"
+      ]
+    ],
+    "bend_table_after": [
+      [
+        "1",
+        "80,00",
+        "3,00"
+      ]
+    ]
+  },
+  "protected_freeform_checks": [
+    "associative_3d_spline_edit_and_idempotent_retry",
+    "native_mesh_sew_thicken_and_matching_surface_continuity",
+    "native_sheet_trim",
+    "native_bridge_and_deliberate_gap_detection",
+    "tangent_but_curvature_discontinuous_surface_pair",
+    "move_offset_replace_analytic_volumes",
+    "delete_heal_wall_thickness_draft_and_native_pmi",
+    "native_symbolic_thread",
+    "native_detailed_thread",
+    "native_bom_quantity_update_balloons_trace_animation_and_pdf"
+  ],
+  "protected_sheet_metal_checks": [
+    "tab_analytic_volume_flange_bend_info_retry_pmi",
+    "flat_pattern_dxf_geo_drawing_pdf_reopen_stale",
+    "unsupported_edit_unchanged_checkpoint_rollback",
+    "path_sketch_secondary_contour_analytic_volume"
+  ],
+  "deployment": {
+    "stdio_tools": 170,
+    "http_tools": 170,
+    "native_inline_screenshot_checksum": "passed",
+    "saved_parts": 38,
+    "unchanged_component_occurrences": 116,
+    "main_thread_dispatch": true
+  },
+  "original_session_restored": true,
+  "visual_review": {
+    "service_pdf": "Complete exploded enclosure/bracket view, native trace, evaluated BOM and associative balloons within A3 sheet. Test fixture, not a complete manufacturing drawing.",
+    "bracket_pdf": "Native flat-pattern view and bend-table row at 80 degrees; no clipping.",
+    "assembly_png": "Full native exploded enclosure and bent bracket with managed trace."
+  },
+  "scopes": [
+    "Native tests use millimeter parts; imperial and mixed-unit drafting have not been native-tested.",
+    "Curvature, draft and wall thickness remain sampled diagnostics, not global manufacturing certification.",
+    "ThreadTable tests select installed Metric Coarse M6 x 1.0 metadata in place; no catalog file is copied and no unexposed fit class is inferred.",
+    "Native FCF creation accepts published modifiers; this is not full GD&T standards validation.",
+    "Managed PMI and automatic bend tables refresh transactionally after MCP model mutations; call nx_refresh_annotations after manual NX changes.",
+    "NX v2606 automatic bend-table flag alone left stale rows after reopen; native builder rebuild in the transaction fixes the reproduced case.",
+    "Invalid managed-source rollback has local regression coverage; no blanket guarantee for every damaged vendor B-rep."
+  ],
+  "artifacts": [
+    {
+      "file": "enclosure.png",
+      "sha256": "67bf37b47feb480bb9a58054d74ba9f173037a768815b9e3d258eb5f202dd9f5",
+      "size": 20815
+    },
+    {
+      "file": "bracket.pdf",
+      "sha256": "5a46ac0ffb9835f6ae0bd0f05e59aa0e8294d6f37e92ec7e5a2575bfc37fc20a",
+      "size": 21298
+    },
+    {
+      "file": "assembly.png",
+      "sha256": "f795309e78685a289cec680e0624a8c4113f16e3653e7bb546c5da196ad634f9",
+      "size": 25132
+    },
+    {
+      "file": "service.pdf",
+      "sha256": "f7a2069f4cf4f5fb365196cd4f794cf5940e81811f7beb839ac63e512fddfd0d",
+      "size": 26618
+    }
+  ]
+}

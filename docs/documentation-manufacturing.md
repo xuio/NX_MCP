@@ -31,3 +31,9 @@ Run `examples/validate_documentation_manufacturing.py` with `NX_MCP_URL` and opt
 The acceptance script is executable test intent; a successful run and its receipt are required evidence. Local mocked tests check contracts and failure handling, not NX geometry. Sampled curvature, draft and wall-thickness results retain their explicitly sampled scope; no global manufacturing certification is claimed.
 
 Then run `examples/validate_annotation_recovery.py` with the same environment and output directory. It verifies automatic table row changes before any explicit table edit, idempotent expression retries, disabling managed PMI, and checkpoint rollback of both geometry and annotations. The prior fixture parts must be closed and user parts saved.
+
+## Recorded dev12 acceptance
+
+[The final acceptance receipt](dev12-validation.json) records the deployed runtime commit, Windows package checksum, numeric fixtures, recovery checks and protected workflows. The drawing/annotation fixtures use millimeter workparts; imperial and mixed-unit drafting remain outside this native test scope.
+
+The receipt distinguishes the reproduced stale bend-table issue from the corrected transaction path. A native rebuild is required after model changes even when the table already has automatic updating enabled. The service PDF was visually checked after moving its view inside the sheet.
