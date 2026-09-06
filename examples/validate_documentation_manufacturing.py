@@ -514,7 +514,7 @@ async def main():
                     drawing=sheet,
                     scope="assembly",
                     explosion=explosion,
-                    position=[190, 130],
+                    position=[190, 160],
                 )
             )["object"]["id"]
             balloons = await call(
