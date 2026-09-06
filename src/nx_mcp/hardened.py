@@ -28,9 +28,11 @@ from nx_mcp.engineering import EngineeringMixin
 from nx_mcp.exploded_views import ExplodedViewsMixin
 from nx_mcp.freeform import FreeformMixin
 from nx_mcp.inspection import InspectionMixin
+from nx_mcp.inventory import compact_reference, page
 from nx_mcp.manufacturing import ManufacturingMixin
 from nx_mcp.nx_bridge import NXOpenExecutor
 from nx_mcp.recovery import OperationStore, timestamp
+from nx_mcp.reference_geometry import ReferenceGeometryMixin
 from nx_mcp.release_engineering import ReleaseEngineeringMixin
 from nx_mcp.review_tools import ReviewToolsMixin
 from nx_mcp.runtime import NXToolError
@@ -39,6 +41,9 @@ from nx_mcp.thread_standards import ThreadStandardsMixin
 from nx_mcp.visual_tools import VisualToolsMixin
 
 READ_ONLY = {
+    "nx_flat_pattern_orientation_edges",
+    "nx_list_reference_sets",
+    "nx_list_datums",
     "nx_display_info",
     "nx_list_sections",
     "nx_sketch_diagnostics",
@@ -147,6 +152,7 @@ NON_MODEL.update(
 
 class HardenedExecutor(
     ReleaseEngineeringMixin,
+    ReferenceGeometryMixin,
     DocumentationEditingMixin,
     AnnotationUpdatesMixin,
     ThreadStandardsMixin,
@@ -182,6 +188,12 @@ class HardenedExecutor(
                 self._handlers[name] = getattr(self, "_" + name[3:])
         self._handlers.update(
             {
+                "nx_flat_pattern_orientation_edges": self._flat_pattern_orientation_edges,
+                "nx_list_reference_sets": self._list_reference_sets,
+                "nx_create_reference_set": self._create_reference_set,
+                "nx_set_component_reference_set": self._set_component_reference_set,
+                "nx_list_datums": self._list_datums,
+                "nx_set_datum_visibility": self._set_datum_visibility,
                 "nx_resolve_geometry": self._resolve_geometry,
                 "nx_sheet_metal_schema": self._sheet_metal_schema,
                 "nx_create_path_sketch": self._create_path_sketch,
@@ -465,6 +477,9 @@ class HardenedExecutor(
                         "nx_restore_presentation",
                         "nx_set_display",
                         "nx_set_visibility",
+                        "nx_set_datum_visibility",
+                        "nx_create_reference_set",
+                        "nx_set_component_reference_set",
                         "nx_restore_display",
                         "nx_section_view",
                         "nx_section_control",
@@ -700,20 +715,40 @@ class HardenedExecutor(
             "warnings": ["Re-list open parts before closing another assembly dependency."],
         }
 
-    def _list_open_parts(self):
-        return {
-            "parts": [
+    def _list_open_parts(
+        self,
+        compact=False,
+        path_prefix=None,
+        modified=None,
+        active_only=False,
+        offset=0,
+        limit=None,
+    ):
+        page([], offset, limit)
+        rows = []
+        for p in self.session.Parts:
+            active = p == self.session.Parts.Work or p == self.session.Parts.Display
+            if path_prefix is not None and not p.FullPath.casefold().replace("\\", "/").startswith(
+                path_prefix.casefold().replace("\\", "/")
+            ):
+                continue
+            if modified is not None and bool(p.IsModified) != modified:
+                continue
+            if active_only and not active:
+                continue
+            ref = self._reference(p, "part", p, "Part")
+            rows.append(
                 {
-                    "part": self._reference(p, "part", p, "Part"),
+                    "part": compact_reference(ref) if compact else ref,
                     "name": p.Name,
                     "path": p.FullPath,
                     "work": p == self.session.Parts.Work,
                     "display": p == self.session.Parts.Display,
                     "modified": bool(p.IsModified),
                 }
-                for p in self.session.Parts
-            ]
-        }
+            )
+        selected, metadata = page(rows, offset, limit)
+        return {"parts": selected, **metadata}
 
     def _sketch_frame(self, sketch):
         m = sketch.Orientation.Element
@@ -1012,42 +1047,91 @@ class HardenedExecutor(
 
         return list(walk(root, [])) if root else []
 
-    def _list_components(self):
+    def _list_components(
+        self,
+        compact=False,
+        include_transforms=True,
+        name_contains=None,
+        suppressed=None,
+        offset=0,
+        limit=None,
+    ):
+        page([], offset, limit)
         part = self._work_part()
+        candidates = [
+            (c, path)
+            for c, path in self._walk_components(part)
+            if (name_contains is None or name_contains.casefold() in c.Name.casefold())
+            and (suppressed is None or bool(c.IsSuppressed) == suppressed)
+        ]
+        selected, metadata = page(candidates, offset, limit)
         result = []
-        for c, path in self._walk_components(part):
-            p, m = c.GetPosition()
+        for c, path in selected:
             ref = self._reference(c, "component", part, "Component")
             ref["occurrence_path"] = path
-            result.append(
-                {
-                    "object": ref,
-                    "name": c.Name,
-                    "part_path": c.Prototype.FullPath,
-                    "depth": len(path) - 1,
-                    "translation": xyz(p),
-                    "rotation_matrix": rows(m),
-                    "coordinate_frame": "assembly",
-                    "rotation": [m.Xx, m.Xy, m.Xz, m.Yx, m.Yy, m.Yz, m.Zx, m.Zy, m.Zz],
-                    "suppressed": bool(c.IsSuppressed),
-                    "reference_set": c.ReferenceSet,
-                }
-            )
+            row = {
+                "object": compact_reference(ref) if compact else ref,
+                "name": c.Name,
+                "part_path": c.Prototype.FullPath,
+                "depth": len(path) - 1,
+                "suppressed": bool(c.IsSuppressed),
+                "reference_set": c.ReferenceSet,
+            }
+            if include_transforms:
+                p, m = c.GetPosition()
+                row.update(translation=xyz(p), rotation_matrix=rows(m), coordinate_frame="assembly")
+                if not compact:
+                    row["rotation"] = [m.Xx, m.Xy, m.Xz, m.Yx, m.Yy, m.Yz, m.Zx, m.Zy, m.Zz]
+            result.append(row)
         return {
             "components": result,
-            "count": len(result),
+            **metadata,
             "matrix_convention": "rotation_matrix is row-major; p_assembly = R p_local + translation. Legacy rotation lists axis vectors.",
         }
 
-    def _list_topology(self, body):
+    def _list_topology(self, body, face=None, include_adjacency=False, compact=False):
         b = self._resolve(body, {"body"})
         part = self._work_part()
-        return {
-            "body": self._reference(b, "body", part, "Body"),
-            "faces": [self._reference(f, "face", part, "Face") for f in b.GetFaces()],
-            "edges": [self._reference(e, "edge", part, "Edge") for e in b.GetEdges()],
+        faces = list(b.GetFaces())
+        if face is not None:
+            selected = self._resolve(face, {"face"})
+            if selected not in faces:
+                raise NXToolError("NX_OBJECT_OWNER_MISMATCH", "face must belong to body")
+            faces = [selected]
+        edges = (
+            list({int(e.Tag): e for f in faces for e in f.GetEdges()}.values())
+            if face
+            else list(b.GetEdges())
+        )
+
+        def ref(value, kind):
+            r = self._reference(value, kind, part, kind.title())
+            return compact_reference(r) if compact else r
+
+        result = {
+            "body": ref(b, "body"),
+            "faces": [ref(f, "face") for f in faces],
+            "edges": [ref(e, "edge") for e in edges],
             "solid": b.IsSolidBody,
+            "face_count": len(faces),
+            "edge_count": len(edges),
         }
+        if include_adjacency:
+            result["face_edges"] = [
+                {
+                    "face": ref(f, "face")["id"],
+                    "edges": [ref(e, "edge")["id"] for e in f.GetEdges()],
+                }
+                for f in faces
+            ]
+            result["edge_faces"] = [
+                {
+                    "edge": ref(e, "edge")["id"],
+                    "faces": [ref(f, "face")["id"] for f in e.GetFaces()],
+                }
+                for e in edges
+            ]
+        return result
 
     def _rename_object(self, object_id, name):
         if not name or len(name) > 132:

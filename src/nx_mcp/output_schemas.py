@@ -234,6 +234,180 @@ for name in (
     PAYLOADS[name] = obj({**META, "mime_type": S, "resolution": arr(COUNT, 2)}, ["path", "sha256"])
 
 
+# Lifecycle and authoring results use their actual native field names.
+INTEGER = {"type": "integer"}
+PAGE = {
+    "count": COUNT,
+    "total_count": COUNT,
+    "offset": COUNT,
+    "next_offset": {"anyOf": [COUNT, NULL]},
+}
+EXPRESSION = obj({"object": REF}, [])
+PAYLOADS.update(
+    {
+        "nx_create_part": obj({"part": REF, "message": S}),
+        "nx_open_part": obj(
+            {"part": REF, "work": B, "display": B, "already_loaded": B, "path": S, "message": S}
+        ),
+        "nx_activate_part": obj({"part": REF, "work": B, "display": B, "message": S}),
+        "nx_save_as": obj({"part": REF, "path": S, "message": S}),
+        "nx_save_part": obj({"path": S, "message": S, "recovery": PAYLOADS["nx_checkpoint_state"]}),
+        "nx_close_part": obj(
+            {
+                "closed_parts": arr(REF),
+                "closed_count": COUNT,
+                "remaining_count": COUNT,
+                "message": S,
+            }
+        ),
+        "nx_list_open_parts": obj(
+            {
+                "parts": arr(
+                    obj({"part": REF, "name": S, "path": S, "work": B, "display": B, "modified": B})
+                ),
+                **PAGE,
+            }
+        ),
+        "nx_sketch_info": obj(
+            {
+                "object": REF,
+                "frame": obj(
+                    {
+                        "origin": VEC,
+                        "x_axis": VEC,
+                        "y_axis": VEC,
+                        "normal": VEC,
+                        "coordinate_frame": S,
+                    }
+                ),
+                "curves": arr(obj({"object": REF, "type": S})),
+                "curve_count": COUNT,
+            }
+        ),
+        "nx_sketch_diagnostics": obj(
+            {
+                "sketch": REF,
+                "solver_status": S,
+                "remaining_degrees_of_freedom": {"anyOf": [INTEGER, NULL]},
+                "native_dof_value": INTEGER,
+                "constraints": arr(
+                    obj({"object": REF, "type": S, "expression": EXPRESSION}, ["object", "type"])
+                ),
+                "constraint_count": COUNT,
+                "geometry": arr(obj({"object": REF, "constraints": arr(S)})),
+                "geometry_count": COUNT,
+                "evaluation": S,
+                "conflicting_constraints": NULL,
+                "work_region_handling": S,
+            }
+        ),
+        "nx_sheet_metal_feature": obj(
+            {
+                "feature": REF,
+                "bodies": arr(REF),
+                "body_count": COUNT,
+                "body": {"anyOf": [REF, NULL]},
+                "coordinate_frame": S,
+                "created": arr(REF),
+                "modified": arr(REF),
+                "operation": S,
+                "native_feature_type": S,
+                "requested_parameters": {"type": "object"},
+                "expressions": arr(EXPRESSION),
+                "model_view_name": S,
+            },
+            [
+                "feature",
+                "bodies",
+                "body_count",
+                "body",
+                "coordinate_frame",
+                "created",
+                "modified",
+                "operation",
+                "native_feature_type",
+                "requested_parameters",
+                "expressions",
+            ],
+        ),
+        "nx_sheet_metal_info": obj(
+            {
+                "items": arr(
+                    obj(
+                        {
+                            "body": REF,
+                            "sheet_metal": B,
+                            "thickness": N,
+                            "bends": arr(
+                                obj(
+                                    {
+                                        "face": REF,
+                                        "state": S,
+                                        "inner_radius": N,
+                                        "angle_degrees": N,
+                                        "neutral_factor": N,
+                                    }
+                                )
+                            ),
+                            "bend_count": COUNT,
+                        },
+                        ["body", "sheet_metal"],
+                    )
+                ),
+                "total": COUNT,
+                "offset": COUNT,
+                "next_offset": {"anyOf": [COUNT, NULL]},
+                "coordinate_frame": S,
+            }
+        ),
+        "nx_list_drawings": obj(
+            {
+                "sheets": arr(
+                    obj(
+                        {
+                            "object": REF,
+                            "name": S,
+                            "active": B,
+                            "width": N,
+                            "height": N,
+                            "units": S,
+                            "scale": arr(N, 2),
+                            "views": arr(obj({"object": REF, "name": S})),
+                        }
+                    )
+                ),
+                "units": {"const": "per_sheet"},
+                "coordinate_frame": {"const": "drawing_sheet"},
+                "modeling_active": B,
+            }
+        ),
+        "nx_drawing_view_info": obj(
+            {
+                "object": REF,
+                "drawing": REF,
+                "native_type": S,
+                "position": arr(N, 2),
+                "scale": N,
+                "bounds": arr(N, 4),
+                "inside_sheet": B,
+                "units": S,
+                "coordinate_frame": S,
+                "bounds_semantics": S,
+            }
+        ),
+    }
+)
+PAYLOADS["nx_activate_drawing"] = deepcopy(PAYLOADS["nx_list_drawings"])
+PAYLOADS["nx_edit_drawing_view"] = deepcopy(PAYLOADS["nx_drawing_view_info"])
+component_fields = PAYLOADS["nx_list_components"]["properties"]["components"]["items"]
+component_fields["required"] = [
+    x
+    for x in component_fields["required"]
+    if x not in {"translation", "rotation_matrix", "coordinate_frame"}
+]
+PAYLOADS["nx_list_components"]["properties"].update(PAGE)
+
+
 def output_schema(name: str, common: dict) -> dict:
     """Keep an object root for MCP; discriminate errors before success payloads."""
     schema = deepcopy(common)

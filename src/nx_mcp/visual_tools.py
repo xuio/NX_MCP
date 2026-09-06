@@ -40,7 +40,7 @@ class VisualToolsMixin:
         values = []
         for ref in objects:
             obj = self._resolve(
-                ref, {"body", "face", "edge", "curve", "sketch", "component", "feature"}
+                ref, {"body", "face", "edge", "curve", "sketch", "component", "feature", "datum"}
             )
             if isinstance(obj, self.nxopen.Features.Feature) or (
                 expand and hasattr(obj, "FindOccurrence")
@@ -57,7 +57,16 @@ class VisualToolsMixin:
 
     def _display_ref(self, obj):
         kind = (
-            "component"
+            "datum"
+            if isinstance(
+                obj,
+                tuple(
+                    getattr(self.nxopen, n)
+                    for n in ("DatumPlane", "DatumAxis", "CoordinateSystem")
+                    if hasattr(self.nxopen, n)
+                ),
+            )
+            else "component"
             if hasattr(obj, "FindOccurrence")
             else "body"
             if isinstance(obj, self.nxopen.Body)

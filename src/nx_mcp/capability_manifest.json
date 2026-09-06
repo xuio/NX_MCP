@@ -1,5 +1,5 @@
 {
-  "revision": "2606-agent-ux-r1",
+  "revision": "2606-agent-ux-r2",
   "nx_version": "v2606",
   "bridge_protocol": 1,
   "tools": {
@@ -896,6 +896,30 @@
       "status": "tested",
       "evidence_type": "local_contract_tests",
       "scope": "Workspace-scoped directory creation and idempotent existing-directory reporting."
+    },
+    "nx_flat_pattern_orientation_edges": {
+      "status": "experimental",
+      "scope": "NX v2606 installed API signatures inspected; native fixture validation pending."
+    },
+    "nx_list_reference_sets": {
+      "status": "experimental",
+      "scope": "NX v2606 installed API signatures inspected; native fixture validation pending."
+    },
+    "nx_create_reference_set": {
+      "status": "experimental",
+      "scope": "NX v2606 installed API signatures inspected; native fixture validation pending."
+    },
+    "nx_set_component_reference_set": {
+      "status": "experimental",
+      "scope": "NX v2606 installed API signatures inspected; native fixture validation pending."
+    },
+    "nx_list_datums": {
+      "status": "experimental",
+      "scope": "NX v2606 installed API signatures inspected; native fixture validation pending."
+    },
+    "nx_set_datum_visibility": {
+      "status": "experimental",
+      "scope": "NX v2606 installed API signatures inspected; native fixture validation pending."
     }
   },
   "limitations": [

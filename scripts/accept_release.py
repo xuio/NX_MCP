@@ -224,7 +224,7 @@ def main():
     parser.add_argument("--expected-commit", required=True)
     parser.add_argument("--install-root", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
-    parser.add_argument("--expected-tool-count", type=int, default=179)
+    parser.add_argument("--expected-tool-count", type=int, default=185)
     parser.add_argument("--expected-nx-version", default="v2606")
     parser.add_argument("--verify-only", action="store_true")
     parser.add_argument("--resume", action="store_true")

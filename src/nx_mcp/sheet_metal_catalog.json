@@ -4620,7 +4620,7 @@
         "kind": "collector",
         "assign": false,
         "objects": "face",
-        "description": "Native face collector. Selection role and combination with ToReference are not established by the recorded numeric-length fixture."
+        "description": "Reference-face collector for ToReference. NX requires faces belonging to the same body as the selected edges. Tested web and formed-wall face combinations were rejected; do not infer an arbitrary face is geometrically valid."
       },
       "flat_pattern_compensation_at_end": {
         "path": "FlatPatternCompensationAtEnd",
@@ -4636,7 +4636,7 @@
         "path": "InferLength",
         "getter": false,
         "kind": "boolean",
-        "description": "Native inferred-length toggle; the numeric-length example does not exercise true or establish its required references."
+        "description": "Native inference toggle. ByValue=true committed on the numeric-length fixture but produced identical geometry; this is not proof of inferred-length behavior. Reference-driven inference remains unverified."
       },
       "inset": {
         "path": "Inset",
@@ -4672,14 +4672,14 @@
         "getter": false,
         "kind": "plane",
         "assign": true,
-        "description": "Native Plane1 input in work-part coordinates; valid combinations with type/infer_length are not established by the recorded fixture."
+        "description": "First end-limit plane in work-part coordinates. Native 100x80x2 tab fixture: origin [10,0,0], normal [1,0,0] trims 10 mm from the flange end."
       },
       "plane2": {
         "path": "Plane2",
         "getter": false,
         "kind": "plane",
         "assign": true,
-        "description": "Native Plane2 input in work-part coordinates; do not infer that both planes are required for every mode."
+        "description": "Second end-limit plane. Native paired fixture uses plane1 at x=10 and plane2 at x=90, both normal +X, to trim both ends. Plane2-only mode is not established."
       },
       "reverse_direction": {
         "path": "ReverseDirection",
@@ -4728,9 +4728,9 @@
       "scope": "suite2 AdvancedFlange creation with length=20, angle=90 on a boundary edge of a 100 x 80 x 2 mm XY tab; optional reference-driven modes were not exercised."
     },
     "prerequisites": [
-      "The recorded creation fixture selects the tab boundary edge at y=0, z=0 and supplies length=20, angle=90 in a millimeter part; use this simple geometry to establish a working feature first.",
-      "The example leaves type, infer_length, faces, plane1 and plane2 at native defaults. It does not verify ToReference or infer_length=true.",
-      "If choosing ToReference or inferred length, establish the native reference geometry requirements first; the schema exposes the builder fields but does not establish which face/plane combinations form a valid flange. Do not assume plane1 and plane2 are universally required."
+      "Numeric-length ByValue mode and one/two end-limit planes were exercised natively on NX v2606.",
+      "ToReference without faces fails preflight. Same-body web and formed-wall face selections were rejected by NX with rollback; a successful reference-driven recipe is not established.",
+      "infer_length=true in ByValue mode did not change the numeric-length fixture."
     ]
   },
   "variational_flange": {

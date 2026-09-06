@@ -638,6 +638,16 @@ class SheetMetalMixin:
                 raise NXToolError(
                     "NX_INVALID_ARGUMENT", "Secondary tab thickness must match its target sheet"
                 )
+        if (
+            operation == "advanced_flange"
+            and original is None
+            and values.get("type") == "ToReference"
+            and not values.get("faces")
+        ):
+            raise NXToolError(
+                "NX_INVALID_ARGUMENT",
+                "ToReference requires reference faces on the same sheet-metal body as the selected edges; a valid geometric combination is still required",
+            )
         if not values:
             raise NXToolError("NX_INVALID_ARGUMENT", "Supply sheet-metal parameters")
         manager = self._sm_manager()

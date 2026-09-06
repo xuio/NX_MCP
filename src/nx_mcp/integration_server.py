@@ -28,6 +28,52 @@ from nx_mcp.runtime import NXToolError
 from nx_mcp.workspace import WorkspaceViolation
 
 
+def nx_list_open_parts(
+    compact: bool = False,
+    path_prefix: str | None = None,
+    modified: bool | None = None,
+    active_only: bool = False,
+    offset: int = 0,
+    limit: int | None = None,
+):
+    """List loaded parts. Defaults preserve full inventory. compact retains opaque identity; path_prefix is case-insensitive with either slash style. active_only selects work/display parts. Filters precede paging; count is returned rows, total_count is matching rows. Read-only; never saves parts."""
+
+
+def nx_list_components(
+    compact: bool = False,
+    include_transforms: bool = True,
+    name_contains: str | None = None,
+    suppressed: bool | None = None,
+    offset: int = 0,
+    limit: int | None = None,
+):
+    """List recursive loaded component occurrences. compact retains occurrence paths and omits repeated identity metadata and legacy rotation. include_transforms=False omits pose fields. Name filtering is case-insensitive. Filters precede paging; total_count is matching rows. Defaults preserve existing full results."""
+
+
+def nx_flat_pattern_orientation_edges(upward_face: str):
+    """List current straight boundary edges of an owned planar sheet-metal web face, with endpoints and adjacent face IDs. Pass a returned edge ID as flat_pattern.x_axis_edge. Geometric eligibility only; NX validates the final feature. Does not mutate or invalidate references."""
+
+
+def nx_list_reference_sets():
+    """List work-part custom reference sets, exact direct members and automatic-add setting. Built-in Entire Part and Empty are listed separately."""
+
+
+def nx_create_reference_set(name: str, objects: list[str]):
+    """Create a custom reference set with explicit owned body/curve/datum/direct-component IDs. Use only solid body IDs to exclude prototype datums from assembly drawings. No automatic component membership; duplicate names are rejected. Changes the work part; save it to persist."""
+
+
+def nx_set_component_reference_set(components: list[str], name: str):
+    """Assign an exact existing prototype reference-set name to direct children of the work assembly. Activate a nested owning assembly before editing its children. Preflights every target; does not change prototype membership or component poses. Returns previous/current assignments. Save the assembly to persist."""
+
+
+def nx_list_datums():
+    """List work-part datum planes, axes and coordinate systems with IDs and blanked state. Does not recurse into component prototypes."""
+
+
+def nx_set_datum_visibility(visible: bool = False):
+    """Show/hide all owned datums and coordinate systems in the work/display part. Returns restore_id for nx_restore_display. To exclude component prototype datums from drawings, assign a body-only reference set instead. Changes can persist when saved."""
+
+
 def nx_boolean(
     boolean_type: Literal["unite", "subtract", "intersect"],
     targets: Annotated[list[str], Field(min_length=2)],
@@ -210,7 +256,9 @@ def nx_cancel_operation(operation_id: str):
     pass
 
 
-def nx_list_topology(body: str):
+def nx_list_topology(
+    body: str, face: str | None = None, include_adjacency: bool = False, compact: bool = False
+):
     pass
 
 
@@ -332,7 +380,7 @@ DESCRIPTIONS = {
     "nx_set_component_transform": "Assign absolute translation and row-major rotation to an immediate child. Read-back verified; repeating the same placement is idempotent. Activate owning subassembly for nested placement.",
     "nx_reposition_component": "Relative translation and rotation of immediate child in work-part coordinates. Degrees, Rz*Ry*Rx. Use a stable operation_id for retry; use nx_set_component_transform for absolute placement.",
     "nx_measure_distance": "Measure minimum BREP distance for body, face, edge, feature-body or component pairs, including nested occurrences. Returns closest points, accuracy and work-part units. Zero does not prove interference.",
-    "nx_list_topology": "Enumerate faces and edges of a body as session-scoped opaque references. References become stale after rollback/close; topology edits can invalidate them.",
+    "nx_list_topology": "Enumerate body topology. Optional face restricts results to that face and its boundary edges; include_adjacency returns face_edges and edge_faces ID mappings. compact retains minimal typed IDs. Use current upward-face boundary edges for flat-pattern orientation rather than guessing a former outer edge. Reacquire after edits/rollback/close.",
     "nx_rename_object": "Rename a referenced object and return its actual NX-normalized display name. Reacquire references afterward.",
     "nx_download_file": "Read a workspace file. delivery=image returns an existing PNG inline as MCP image content (max 8 MiB), without base64 in text. delivery=metadata returns size/SHA-256 only. Default base64 returns chunks: offset>=0, length=1..262144, bytes_returned/next_offset/eof. Image/metadata modes require default chunk arguments. Paths are on the NX host.",
     "nx_upload_file": "Upload .prt/.step/.stp/.png/.json/.zip/.txt/.pdf chunks (max 256 KiB) into a new workspace file. Requires final SHA-256 and total size, sequential offsets. Repeated identical chunks are safe; existing differing files are never overwritten.",
@@ -341,6 +389,9 @@ DESCRIPTIONS = {
 }
 
 READ_ONLY = {
+    "nx_flat_pattern_orientation_edges",
+    "nx_list_reference_sets",
+    "nx_list_datums",
     "nx_display_info",
     "nx_list_sections",
     "nx_sketch_diagnostics",

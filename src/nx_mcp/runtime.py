@@ -6,6 +6,8 @@ from dataclasses import asdict, dataclass
 from typing import Any, Literal
 
 ObjectKind = Literal[
+    "reference_set",
+    "datum",
     "part",
     "sketch",
     "curve",
