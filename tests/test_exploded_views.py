@@ -573,10 +573,12 @@ def test_forced_drawing_display_restores_sheet_on_failure(drawing_save):
     r.part.SaveOptions.DrawingCgmData = False
     original = r.sheet
     r.part.DrawingSheets.CurrentDrawingSheet = original
-    with pytest.raises(RuntimeError, match="plot failed"):
-        with r.e._drawing_save_context(r.part, force_display=True):
-            r.part.DrawingSheets.CurrentDrawingSheet = Object("Other sheet")
-            raise RuntimeError("plot failed")
+    with (
+        pytest.raises(RuntimeError, match="plot failed"),
+        r.e._drawing_save_context(r.part, force_display=True),
+    ):
+        r.part.DrawingSheets.CurrentDrawingSheet = Object("Other sheet")
+        raise RuntimeError("plot failed")
     assert r.part.DrawingSheets.CurrentDrawingSheet is original
 
 
