@@ -22,10 +22,12 @@ The dev12 integration adds ten tools, bringing the integration profile to 170. A
 
 `nx_sheet_metal_annotation(automatic=true)` stores persistent source handles and measured values on the native annotation. Subsequent MCP model mutations refresh changed measurements **inside the same undo transaction**. If a source becomes invalid, the operation fails and rolls back rather than silently retaining obsolete values. Deleting the annotation first removes that dependency. Editing with `automatic=false` disables managed refresh and produces an explicit measured snapshot.
 
-Manual NX edits do not run the MCP transaction hook. Call `nx_refresh_annotations` afterward. Native bend-table updates use NX's own mechanism. Saved source handles are resolved within the owning part, and missing sources are rejected explicitly.
+Manual NX edits do not run the MCP transaction hook. Call `nx_refresh_annotations` afterward. MCP also commits native automatic bend-table builders in the same transaction: NX v2606's automatic flag alone left stale rows after reopening. Explicit refresh performs this rebuild after manual edits. Saved source handles are resolved within the owning part, and missing sources are rejected explicitly.
 
 ## Validation scope
 
 Run `examples/validate_documentation_manufacturing.py` with `NX_MCP_URL` and optionally `NX_VALIDATION_OUTPUT`. It preserves the existing saved session and creates isolated fixtures: a rounded enclosure and STEP copy, curved surface joins, a thin plate, a drafted block, a sheet-metal bracket and a service assembly. It checks analytic dimensions/volumes, local editing and recovery, stale references after reopen, documentation updates and downloaded native artifacts.
 
 The acceptance script is executable test intent; a successful run and its receipt are required evidence. Local mocked tests check contracts and failure handling, not NX geometry. Sampled curvature, draft and wall-thickness results retain their explicitly sampled scope; no global manufacturing certification is claimed.
+
+Then run `examples/validate_annotation_recovery.py` with the same environment and output directory. It verifies automatic table row changes before any explicit table edit, idempotent expression retries, disabling managed PMI, and checkpoint rollback of both geometry and annotations. The prior fixture parts must be closed and user parts saved.

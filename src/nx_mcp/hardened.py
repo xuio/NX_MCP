@@ -411,7 +411,8 @@ class HardenedExecutor(
             if (
                 mark is not None
                 and part is not None
-                and method not in {"nx_refresh_annotations", "nx_sheet_metal_annotation"}
+                and method
+                not in {"nx_refresh_annotations", "nx_sheet_metal_annotation", "nx_bend_table"}
             ):
                 refreshed = self._refresh_annotations()
                 if refreshed["updated_count"]:

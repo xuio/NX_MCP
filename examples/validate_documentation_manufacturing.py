@@ -361,6 +361,14 @@ async def main():
             await call("nx_activate_drawing")
             await call("nx_set_expression", expression=angle, formula="80")
             await call("nx_activate_drawing", drawing=sheet)
+            automatic_tables = [
+                x
+                for x in (await call("nx_list_annotations"))["items"]
+                if x["native_type"] == "BendTable"
+            ]
+            assert automatic_tables[0]["rows"] != table["rows"], (
+                "Automatic table remained stale before any table edit"
+            )
             table2 = await call(
                 "nx_bend_table",
                 view=view["view"]["id"],

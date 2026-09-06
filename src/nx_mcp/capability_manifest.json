@@ -825,7 +825,7 @@
     "nx_refresh_annotations": {
       "status": "tested",
       "evidence_type": "real_NX_v2606_scoped",
-      "scope": "Native bend PMI changed from 90 to 75 degrees using persistent source handles; transaction-hook acceptance pending."
+      "scope": "Native persistent bend PMI, transaction hook and save/reopen exercised through public MCP; automatic bend-table builders also rebuilt because the native flag alone left stale rows."
     },
     "nx_thread_catalog": {
       "status": "tested",

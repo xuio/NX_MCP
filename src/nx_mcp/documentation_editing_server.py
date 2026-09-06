@@ -62,4 +62,4 @@ def nx_bend_table(
 
 
 def nx_refresh_annotations():
-    """Refresh persistent managed sheet-metal PMI from current native measurements. These annotations also refresh transactionally after MCP model mutations. Call explicitly after manual NX edits. Missing sources reject the operation rather than retaining silently incorrect values. Native automatic bend tables use NX's own update mechanism."""
+    """Refresh persistent managed sheet-metal PMI from current native measurements. These annotations also refresh transactionally after MCP model mutations. Call explicitly after manual NX edits. Missing sources reject the operation rather than retaining silently incorrect values. Rebuilds native bend tables with automatic updating enabled; their flag alone may leave stale rows after reopening."""
