@@ -120,3 +120,16 @@ uses a fresh agent, identical analytic tasks, isolated CAD paths and exclusive
 serial ownership of NX. Record provider usage when exposed; otherwise mark it
 unavailable. A single pair is diagnostic evidence, not a statistical efficiency
 claim. Projection benchmarks remain separately labeled.
+
+### Findings addressed after the fresh-agent trial
+
+Spaced discovery queries now match all words, ranking tool-name matches first.
+For example, `create part` finds `nx_create_part`. Set
+`include_output_schema=false` with `include_schema=true` when only the input
+contract and guidance are needed; the compatibility default still includes both.
+
+Compact projection preserves complete backend pages and their count/cursor.
+An explicitly requested 100-row page is not truncated again to twenty. Default
+part/component pages remain twenty. Other summarized arrays retain explicit
+omission metadata and snapshot expansion. Inspection hints do not point back
+to the same topology, diagnostic or artifact-metadata call.

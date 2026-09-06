@@ -151,3 +151,39 @@ async def test_cleanup_tool_defaults_to_preview(tmp_path):
     assert response.structuredContent["applied"]
     with pytest.raises(FileNotFoundError):
         store.get(key)
+
+
+def test_backend_page_cardinality_is_not_silently_truncated():
+    refs = [{"id": str(i), "kind": "part"} for i in range(38)]
+    payload = compact_payload(
+        {"parts": refs, "count": 38, "total_count": 38, "next_offset": None}, "result_id"
+    )
+    assert len(payload["parts"]) == payload["count"] == 38
+    assert payload["next_offset"] is None
+    assert "/parts" not in payload.get("omitted", {})
+    assert len(compact_payload({"objects": refs}, "result_id")["objects"]) == 20
+
+
+def test_next_action_does_not_repeat_the_current_inspection():
+    from nx_mcp.agent_guidance import next_actions
+
+    assert not next_actions("nx_list_topology", {"body": {"id": "body", "kind": "body"}})
+    assert not next_actions("nx_download_file", {"path": "a.png", "sha256": "x"})
+
+
+@pytest.mark.asyncio
+async def test_spaced_discovery_and_optional_output_schema(tmp_path):
+    server = create_server(
+        AsyncMock(), Workspace(tmp_path), enable_experimental=True, surface="agent"
+    )
+    result = await server.call_tool(
+        "nx_discover_tools",
+        {"query": "create part", "include_schema": True, "include_output_schema": False},
+    )
+    rows = result.structuredContent["tools"]
+    assert rows[0]["name"] == "nx_create_part"
+    assert "inputSchema" in rows[0] and "outputSchema" not in rows[0]
+    result = await server.call_tool(
+        "nx_discover_tools", {"query": "nx_create_part", "include_schema": True}
+    )
+    assert "outputSchema" in result.structuredContent["tools"][0]

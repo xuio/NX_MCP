@@ -150,6 +150,8 @@ def guidance(tool):
 
 def next_actions(method, payload):
     """Only suggest actions with already returned IDs, never new mutations."""
+    if method in {"nx_list_topology", "nx_download_file", "nx_sketch_diagnostics"}:
+        return []
     actions = []
 
     def identity(value):

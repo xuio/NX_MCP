@@ -59,7 +59,7 @@ def category(name):
     )
 
 
-def compact(value, path="", omitted=None):
+def compact(value, path="", omitted=None, paged_keys=()):
     """Preserve scalars, coordinate vectors, identities and all warnings; bound other arrays."""
     omitted = {} if omitted is None else omitted
     if isinstance(value, dict):
@@ -77,7 +77,11 @@ def compact(value, path="", omitted=None):
             elif key in {"warnings", "retry_guidance", "recovery"}:
                 result[key] = item
             else:
-                result[key] = compact(item, location, omitted)
+                result[key] = (
+                    [compact(row, f"{location}/{i}", omitted) for i, row in enumerate(item)]
+                    if key in paged_keys and isinstance(item, list)
+                    else compact(item, location, omitted)
+                )
         return result
     if isinstance(value, list):
         if len(value) > 20:
@@ -90,7 +94,10 @@ def compact_payload(full, result_id, method=None):
     if full.get("status") == "error":
         return full
     omitted: dict[str, Any] = {}
-    payload = compact(full, omitted=omitted)
+    # A backend page is already bounded by its requested limit. Never truncate its
+    # rows while retaining the backend count/cursor: that silently skips entries.
+    paged_keys = ("parts", "components", "entries", "items") if "next_offset" in full else ()
+    payload = compact(full, omitted=omitted, paged_keys=paged_keys)
     payload.update(result_id=result_id, detail="compact")
     if omitted:
         payload["omitted"] = omitted
@@ -187,20 +194,30 @@ def configure(mcp, workspace):
         query: str = "",
         domain: str | None = None,
         include_schema: bool = False,
+        include_output_schema: bool = True,
         offset: int = 0,
         limit: int = 10,
     ) -> CallToolResult:
-        """Discover task tools by name/description or domain. Domains: modeling, sketch, assembly, drawing, manufacturing, inspection, display, files. Request exact-name schema before nx_invoke; results are paged. Discovery does not mutate NX or the session's catalog."""
+        """Discover task tools by name/description or domain. Domains: modeling, sketch, assembly, drawing, manufacturing, inspection, display, files. Spaced queries match all words, with tool-name matches ranked first. Request exact-name schema before nx_invoke; include_output_schema=false omits the repeated full output contract; results are paged. Discovery does not mutate NX or the session's catalog."""
         if offset < 0 or not 1 <= limit <= 20:
             raise ValueError("offset >= 0; limit 1..20")
         if domain is not None and domain not in {*DOMAINS, "modeling"}:
             raise ValueError("Unknown domain")
+        words = re.findall(r"[a-z0-9]+", query.casefold())
+
+        def score(tool):
+            name_words = re.findall(r"[a-z0-9]+", tool.name.casefold())
+            haystack = " ".join(name_words) + " " + tool.description.casefold()
+            if not all(word in haystack for word in words):
+                return -1
+            return sum(4 if word in name_words else 1 for word in words)
+
         rows = [
             t
-            for n, t in sorted(registry.items())
-            if (domain is None or category(n) == domain)
-            and (query.casefold() in (n + " " + t.description).casefold())
+            for n, t in registry.items()
+            if (domain is None or category(n) == domain) and score(t) >= 0
         ]
+        rows.sort(key=lambda t: (-score(t), t.name))
         # Exact name wins over incidental description matches.
         if query in registry and (domain is None or category(query) == domain):
             rows = [registry[query]]
@@ -215,9 +232,10 @@ def configure(mcp, workspace):
             if include_schema:
                 row.update(
                     inputSchema=tool.parameters,
-                    outputSchema=tool.fn_metadata.output_schema,
                     guidance=guidance(tool),
                 )
+                if include_output_schema:
+                    row["outputSchema"] = tool.fn_metadata.output_schema
             selected.append(row)
         return envelope(
             {
