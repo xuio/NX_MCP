@@ -38,11 +38,19 @@ class ReleaseEngineeringMixin:
         sheet = self._view_sheet(obj)
         uf = U.UFSession.GetUFSession().Draw
         bounds = list(uf.AskViewBorders(obj.Tag))
+        style = self._view_style(view)
+        warnings = []
+        if not style["hidden_lines"] or not style["self_hidden"]:
+            warnings.append(
+                "Hidden-line processing is disabled: occluded edges may be drawn as visible. "
+                "To hide them use hidden_lines=true, self_hidden=true, hidden_font=0."
+            )
         return {
             "object": self._reference(obj, "drawing_view", self._work_part(), "View"),
             "drawing": self._reference(sheet, "drawing_sheet", self._work_part(), "Sheet"),
             "native_type": type(obj).__name__,
-            "style": self._view_style(view),
+            "style": style,
+            "warnings": warnings,
             "position": xyz(obj.GetDrawingReferencePoint())[:2],
             "scale": uf.AskViewScale(obj.Tag)[1],
             "bounds": bounds,

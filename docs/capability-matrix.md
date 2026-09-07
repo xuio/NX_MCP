@@ -4,7 +4,7 @@ Generated from `src/nx_mcp/capability_manifest.json`; do not edit this table by 
 Run `python scripts/generate_capability_matrix.py` to regenerate, or add `--check` to detect drift.
 
 Manifest revision: **2606-manufacturing-r1**. NX: **v2606**. Bridge protocol: **1**.
-Canonical manifest SHA-256: `32cf859b81ee1dfb0bcf147ced5f63f60075c05b9fb38b071359988b3cdbf246`.
+Canonical manifest SHA-256: `508138fabac46f909bad567d313ac31c714e59c99268d5ecb95f5a579b72097f`.
 
 These labels report manifest evidence, not certification or independent verification of its claims. Native-tested means status `tested` with an evidence type beginning `real_NX_`; only the stated scope and NX version are covered. Contract/sidecar-tested does not establish native CAD correctness. Experimental includes untested entries and tested entries without a recognized evidence type. Unavailable capabilities are explicitly recorded by the manifest; absence from this matrix is not proof of availability or unavailability.
 
@@ -43,7 +43,7 @@ These labels report manifest evidence, not certification or independent verifica
 | nx_checkpoint | Native-tested | tested | real_NX_v2606 | In-session model checkpoint and available-state inspection |
 | nx_checkpoint_state | Native-tested | tested | real_NX_v2606 | Checks actual NX mark availability, including save expiration |
 | nx_clear_highlights | Native-tested | tested | real_NX_v2606_public_MCP | Clears MCP-owned native highlights without persistent appearance changes |
-| nx_close_part | Native-tested | tested | real_NX_v2606 | Saved part closure; NX may unload unused prototypes. Closed-part reporting invalidates all unloaded part references. |
+| nx_close_part | Native-tested | tested | real_NX_v2606 | Blocks closing prototypes referenced by other loaded assemblies before saving. Native edited-child guard passed; close parents first. Reports all parts actually closed and invalidates their references. |
 | nx_component_action | Native-tested | tested | real_NX_v2606_and_local_stateful_seams | Scoped v2606 native authoring/review acceptance and local failure-path regressions; see docs/tools.md for supported operations and limits. |
 | nx_component_array | Native-tested | tested | real_NX_v2606_scoped | Native associative rectangular 3x2 and circular 4-instance patterns, including seed. |
 | nx_copy_project | Native-tested | tested | real_NX_v2606_scoped | Native clone of saved assembly and prototype, rewritten dependencies, source hashes and manifest; partial-file cleanup covered locally. |
@@ -68,7 +68,7 @@ These labels report manifest evidence, not certification or independent verifica
 | nx_edit_assembly_constraint | Native-tested | tested | real_NX_v2606_scoped | Native suppression toggle and distance 5-&gt;12 edit; actual component separation verified after rebuilding solve network. |
 | nx_edit_component_pattern | Native-tested | tested | real_NX_v2606_scoped | Native rectangular 4x3 and circular 5-instance edits; expression and instance readback. |
 | nx_edit_dimension_format | Native-tested | tested | real_NX_v2606_scoped | Native 80 mm dimension formatted to two decimals and +0.05/-0.02 mm without changing its value or two associations; exported PDF visually verified. |
-| nx_edit_drawing_view | Native-tested | tested | real_NX_v2606_scoped | Absolute base-view placement and scale with native readback; circular detail boundary refresh. Native hidden/visible font, width and rendering readback; per-view construction erasure preserves model visibility. PDF distinguishes dashed blind pocket from solid through-hole. Centerlines are read-only because native setters did not persist. |
+| nx_edit_drawing_view | Native-tested | tested | real_NX_v2606_scoped | Base and section style edits, placement, scale and save/reopen tested. Construction filtering excludes sheet-owned section curves. Fonts include 0 invisible. hidden_lines/self_hidden are native processing toggles: false can expose occluded edges. Centerline preference remains read-only. |
 | nx_edit_explosion | Native-tested | tested | real_NX_v2606_scoped | Native nested assembly explosion: absolute rotated parent/child poses, reset, repeat assignment, model/drawing association, persistence; ordinary assembled placements unchanged. |
 | nx_edit_explosion_trace | Native-tested | tested | real_NX_v2606_scoped | Native managed edge-anchored trace endpoint percentages and offsets edited in a two-component service assembly; rendered and included in drafting view. |
 | nx_edit_faces | Native-tested | tested | real_NX_v2606_scoped | Native directed move, signed offset, replace and delete/heal on controlled solids; analytic volume checks. Arbitrary vendor imports unverified. |
@@ -76,7 +76,7 @@ These labels report manifest evidence, not certification or independent verifica
 | nx_edit_sketch | Native-tested | tested | real_NX_v2606_and_local_stateful_seams | Scoped v2606 native authoring/review acceptance and local failure-path regressions; see docs/tools.md for supported operations and limits. |
 | nx_explosion_info | Native-tested | tested | real_NX_v2606_scoped | Native exploded and assembled occurrence poses and typed associated view references, including nested assembly. |
 | nx_explosion_trace | Native-tested | tested | real_NX_v2606_scoped | Native traceline with persistent component/edge handles; exact endpoints preserved after save/reopen and updated by MCP placement changes. Manual edits require MCP refresh. |
-| nx_export_drawing_pdf | Native-tested | tested | real_NX_v2606_scoped | Native PDF plot export with A3 page size, two views and 10mm dimension; file parsed and visually reviewed. |
+| nx_export_drawing_pdf | Native-tested | tested | real_NX_v2606_scoped | Native full-sheet PDF with explicit high-resolution shaded images and updated view lists. Saved/reopened shaded solid and section verified visually; unloaded unsuppressed prototypes fail preflight. Hidden-edge invisibility verified with processing on and font 0. |
 | nx_export_explosion_animation | Native-tested | tested | real_NX_v2606_scoped | Three native frames with fixed camera, pose interpolation and restored state; fully framed visual review. Failure cleanup unit-tested. |
 | nx_export_flat_pattern | Native-tested | tested | real_NX_v2606_scoped | Native DXF and Trumpf GEO export; staged file publication, checksums. DXF entity geometry inspected. |
 | nx_export_planar_dxf | Native-tested | tested | real_NX_v2606_scoped | Analytic lines, circles and arcs from planar sketches and faces; principal/custom frames, layers and inch-to-mm conversion tested in NX. XY sketch/face output independently parsed with ezdxf; splines are rejected. |
@@ -101,7 +101,7 @@ These labels report manifest evidence, not certification or independent verifica
 | nx_list_assembly_constraints | Native-tested | tested | real_NX_v2606_scoped | Native typed constraint references, geometry/occurrence references, expressions, suppression and solver statuses. |
 | nx_list_bodies | Native-tested | tested | real_NX_v2606_scoped | Native work-part inventory reports one extruded body and zero after feature deletion. |
 | nx_list_component_patterns | Native-tested | tested | real_NX_v2606_scoped | Native linear, two-direction rectangular and circular pattern metadata and actual occurrence transforms. |
-| nx_list_components | Native-tested | tested | real_NX_v2606 | Two-level transforms and STEP round-trip pose equality Compact inventory, no-pose projection and pagination checked against 116 occurrences. |
+| nx_list_components | Native-tested | tested | real_NX_v2606 | Native loaded and unloaded prototype inventory retains occurrence references, paths and transforms with explicit load_state. Unknown source paths are nullable; unloaded subassemblies can hide descendants. No implicit loading. |
 | nx_list_datums | Native-tested | tested | real_NX_v2606_scoped | Native owned datum planes/axes and coordinate-system enumeration on template part. |
 | nx_list_dimensions | Native-tested | tested | real_NX_v2606_scoped | Native computed size and retention diagnostics; occurrence-edge dimension follows extrusion resize and explicitly rebinds after replacement. |
 | nx_list_drawings | Native-tested | tested | real_NX_v2606_scoped | Native A3 sheet/view enumeration, dimensions, scale and active state. |
@@ -124,7 +124,7 @@ These labels report manifest evidence, not certification or independent verifica
 | nx_model_health | Native-tested | tested | real_NX_v2606_and_local_stateful_seams | Scoped v2606 native authoring/review acceptance and local failure-path regressions; see docs/tools.md for supported operations and limits. |
 | nx_model_summary | Native-tested | tested | real_NX_v2606_and_local_stateful_seams | Scoped v2606 native authoring/review acceptance and local failure-path regressions; see docs/tools.md for supported operations and limits. |
 | nx_native_component_pattern | Native-tested | tested | real_NX_v2606_scoped_and_local_boundary_tests | NX 2606 native associative linear pattern: 16 total occurrences of 14 mm seed at 16.5 mm pitch span 261.5 mm. |
-| nx_open_part | Native-tested | tested | real_NX_v2606 | Already-loaded paths reused without close/recreation |
+| nx_open_part | Native-tested | tested | real_NX_v2606 | Open or activate saved workspace paths. Explicit load_components=true recovers unloaded prototypes on an already loaded parent without closing it; native occurrence pose and 1000 mm3 solid retained. |
 | nx_operation_status | Contract/sidecar-tested | tested | local_contract_test | Durable committed/failed/unknown receipt tests; no crash reconstruction claimed |
 | nx_package_assembly | Native-tested | tested | real_NX_v2606_scoped | Saved two-part assembly ZIP downloaded with verified checksum, two .prt members and valid archive CRCs; deeper dependency trees are outside this fixture. |
 | nx_parts_list_balloons | Native-tested | tested | real_NX_v2606_scoped | Native associated grouped balloon created for an assembly drawing view. |

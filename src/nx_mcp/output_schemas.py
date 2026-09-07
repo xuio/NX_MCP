@@ -430,6 +430,9 @@ PAYLOADS.update(
 PAYLOADS["nx_activate_drawing"] = deepcopy(PAYLOADS["nx_list_drawings"])
 PAYLOADS["nx_edit_drawing_view"] = deepcopy(PAYLOADS["nx_drawing_view_info"])
 component_fields = PAYLOADS["nx_list_components"]["properties"]["components"]["items"]
+component_fields["properties"].update(
+    part_path={"anyOf": [S, NULL]}, load_state=S, prototype_type={"anyOf": [S, NULL]}
+)
 component_fields["required"] = [
     x
     for x in component_fields["required"]

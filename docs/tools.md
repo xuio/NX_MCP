@@ -510,3 +510,26 @@ errors are returned; unexpected writes or flag changes produce a partial-failure
 receipt and must be reconciled before retrying. Unreadable preflight files prevent
 the save. External linked files and concurrent external writers are outside the
 verification guarantee.
+
+### Assembly load state and drawing output
+
+`nx_list_components` reports `load_state` and a nullable `part_path`; an unloaded
+prototype does not abort the inventory. Descendants of an unloaded subassembly
+may not be available. `nx_open_part(path, load_components=true)` explicitly loads
+unsuppressed prototypes even when the parent is already loaded, restoring the
+session's partial-loading preference afterward. Component reference sets are
+retained. `nx_close_part` rejects a prototype still referenced by a loaded parent
+before saving it; close parent assemblies first. PDF export rejects unloaded
+unsuppressed prototypes instead of silently omitting them.
+
+Drawing `hidden_lines` and `self_hidden` are native processing toggles, not simple
+visibility switches. Disabling them can draw occluded edges as visible. To hide
+obscured edges use `style={hidden_lines:true,self_hidden:true,hidden_font:0}`.
+Font 0 is invisible, 1 solid, 2 dashed. Construction filtering preserves
+sheet-owned section lines. PDF export updates all drawing views, includes shaded
+raster images at native high resolution, and reports its effective output settings.
+
+Component replacement/removal/suppression is already exposed by
+`nx_component_action`; use its exact schema. Native relationship retention is
+requested on replacement; operation-specific limitations remain in the capability
+matrix. Radial/angular/ordinate drawing dimensions are not added by these fixes.

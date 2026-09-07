@@ -32,6 +32,7 @@ def explosions(rig):
     r.e._view_sheet = lambda _: None
     r.e._place_drawing_view = Mock()
     r.uf.Disp = NS(RegenerateDisplay=Mock())
+    r.uf.View = NS(AskViewDependentStatus=lambda _: (0, ""))
     root = Component("root")
     parent = Component("parent", parent=root)
     leaf = Component("leaf", parent=parent)

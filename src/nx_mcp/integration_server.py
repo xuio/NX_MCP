@@ -47,7 +47,7 @@ def nx_list_components(
     offset: int = 0,
     limit: int | None = None,
 ):
-    """List recursive loaded component occurrences. compact retains occurrence paths and omits repeated identity metadata and legacy rotation. include_transforms=False omits pose fields. Name filtering is case-insensitive. Filters precede paging; total_count is matching rows. Defaults preserve existing full results."""
+    """List recursive component occurrences without loading prototypes. load_state reports fully_loaded, partially_loaded or unloaded; part_path can be null if NX cannot resolve it. Unloaded subassemblies may hide descendants. Use nx_open_part(load_components=true) for explicit recovery. compact retains occurrence paths and omits repeated identity metadata and legacy rotation. include_transforms=False omits pose fields. Name filtering is case-insensitive. Filters precede paging; total_count is matching rows. Defaults preserve existing full results."""
 
 
 def nx_flat_pattern_orientation_edges(upward_face: str):
@@ -178,7 +178,7 @@ def nx_create_sketch(
     pass
 
 
-def nx_open_part(path: str, work: bool = True, display: bool = True):
+def nx_open_part(path: str, work: bool = True, display: bool = True, load_components: bool = False):
     pass
 
 
@@ -505,8 +505,8 @@ DESCRIPTIONS = {
     "nx_import_geometry": "Import STEP through installed NX Step214Importer into the work part for solids, or target=new_part with a new output_path for assemblies; flatten=false preserves structure. Reports new directly-owned bodies and resulting components. Translator files are not undone.",
     "nx_get_bounding_box": "Native UF bounds; precision selects conservative or exact (exact requires axis-aligned WCS). auto includes recursive assembly geometry when present; part includes directly owned bodies; assembly includes both. Coordinates and units are work-part absolute.",
     "nx_activate_part": "Activate an already loaded part by ID or unique path/name without closing other parts. Display activation also changes work part under NX rules.",
-    "nx_open_part": "Accept a workspace-relative or absolute in-workspace NX-host path. Open or reuse a loaded workspace .prt and activate it; work/display flags are explicit. Does not recreate loaded parts.",
-    "nx_close_part": "Close the specified loaded part (ID), or current work part; save defaults true. NX may unload unused assembly prototypes. Returns all closed part references/counts; re-list open parts between closes.",
+    "nx_open_part": "Optional load_components=true fully loads unsuppressed occurrence prototypes, including an already loaded parent; restores load preferences and preserves current reference sets. Accept a workspace-relative or absolute in-workspace NX-host path. Open or reuse a loaded workspace .prt and activate it; work/display flags are explicit. Does not recreate loaded parts.",
+    "nx_close_part": "Closing a prototype referenced by a loaded assembly is rejected before saving; close parent assemblies first. Close the specified loaded part (ID), or current work part; save defaults true. NX may unload unused assembly prototypes. Returns all closed part references/counts; re-list open parts between closes.",
     "nx_checkpoint": "Create an in-session model undo checkpoint. NX v2606 saves expire native marks; create a new checkpoint after save. Restart/close also invalidates checkpoints.",
     "nx_checkpoint_state": "Inspect available checkpoint IDs and retained model-operation history. Read-only calls retain marks. Native NX save can expire them; availability is checked against NX.",
     "nx_rollback": "Rollback to an in-session checkpoint. Rejects rollback across mutations to unrelated parts. Reacquire object IDs afterward; save explicitly to persist.",

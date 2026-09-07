@@ -599,7 +599,7 @@ class HardenedExecutor(
     def _find_sketch(self, name):
         return self._resolve(name, {"sketch"})
 
-    def _open_part(self, path, work=True, display=True):
+    def _open_part(self, path, work=True, display=True, load_components=False):
         source = self.workspace.ensure_inside(path)
         loaded = next(
             (
@@ -619,6 +619,10 @@ class HardenedExecutor(
         result = self._activate_part(
             self._reference(loaded, "part", loaded, "Part")["id"], work, display
         )
+        if load_components:
+            from nx_mcp.assembly_loading import load_components as load
+
+            result["component_loading"] = load(self, loaded)
         result.update(
             already_loaded=already_loaded,
             path=str(source),
@@ -742,7 +746,16 @@ class HardenedExecutor(
         }
 
     def _close_part(self, save=True, part=None):
+        from nx_mcp.assembly_loading import dependent_assemblies
+
         target = self.objects.resolve(part, expected_kind="part") if part else self._work_part()
+        parents = dependent_assemblies(self, target)
+        if parents:
+            raise NXToolError(
+                "NX_PART_IN_USE",
+                "Close the loaded parent assemblies before closing this prototype",
+                details={"parent_assemblies": parents, "mutation_outcome": "not_started"},
+            )
         # NX may unload unused prototypes even with CloseWholeTree.FalseValue.
         # Capture references before Close; querying an unloaded NX proxy can fail.
         loaded = {int(p.Tag): self._reference(p, "part", p, "Part") for p in self.session.Parts}
@@ -1119,6 +1132,8 @@ class HardenedExecutor(
         offset=0,
         limit=None,
     ):
+        from nx_mcp.assembly_loading import component_info
+
         page([], offset, limit)
         part = self._work_part()
         candidates = [
@@ -1135,7 +1150,7 @@ class HardenedExecutor(
             row = {
                 "object": compact_reference(ref) if compact else ref,
                 "name": c.Name,
-                "part_path": c.Prototype.FullPath,
+                **component_info(c),
                 "depth": len(path) - 1,
                 "suppressed": bool(c.IsSuppressed),
                 "reference_set": c.ReferenceSet,

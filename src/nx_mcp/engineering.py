@@ -1561,12 +1561,19 @@ class EngineeringMixin:
                 "Choose a new .pdf path; existing files are never overwritten",
                 details={"mutation_outcome": "not_started"},
             )
+        from nx_mcp.assembly_loading import require_loaded
+
+        require_loaded(self, self._work_part())
         sheets = list(self._work_part().DrawingSheets)
         if not sheets:
             raise NXToolError("NX_NO_DRAWING", "Create a drawing sheet before PDF export")
         file.parent.mkdir(parents=True, exist_ok=True)
         with self._drawing_save_context(self._work_part(), force_display=True):
             # Opening each sheet refreshes its display/CGM presentation before plotting.
+            self._update_model()
+            views = [view for sheet in sheets for view in sheet.GetDraftingViews()]
+            if views:
+                self._work_part().DraftingViews.UpdateViews(views)
             for sheet in sheets:
                 sheet.Open()
             b = self._work_part().PlotManager.CreatePrintPdfbuilder()
@@ -1576,6 +1583,10 @@ class EngineeringMixin:
                 b.Size = b.SizeOption.FullScale
                 b.Units = b.UnitsOption.Metric
                 b.OutputText = b.OutputTextOption.Text
+                b.RasterImages = True
+                b.ShadedGeometry = False
+                b.ImageResolution = b.ImageResolutionOption.High
+                b.Colors = b.Color.AsDisplayed
                 b.SourceBuilder.SetSheets(sheets)
                 b.Commit()
                 data = file.read_bytes()
@@ -1595,6 +1606,13 @@ class EngineeringMixin:
             "sha256": hashlib.sha256(data).hexdigest(),
             "units": "mm",
             "scale": "full_sheet_scale",
+            "output_settings": {
+                "raster_images": True,
+                "shaded_as_wireframe": False,
+                "image_resolution": "high",
+                "colors": "as_displayed",
+                "views_updated": True,
+            },
             "warnings": [],
         }
 

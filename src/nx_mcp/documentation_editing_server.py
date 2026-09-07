@@ -81,19 +81,19 @@ class ViewStyle(BaseModel):
     construction_geometry: bool | None = None
     model_config = ConfigDict(extra="forbid")
     hidden_lines: bool | None = None
-    hidden_font: Annotated[int, Field(ge=1, le=7)] | None = None
+    hidden_font: Annotated[int, Field(ge=0, le=7)] | None = None
     hidden_width: (
         Literal["original", "thin", "normal", "thick", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
         | None
     ) = None
     self_hidden: bool | None = None
-    visible_font: Annotated[int, Field(ge=1, le=7)] | None = None
+    visible_font: Annotated[int, Field(ge=0, le=7)] | None = None
     visible_width: (
         Literal["original", "thin", "normal", "thick", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
         | None
     ) = None
     smooth_edges: bool | None = None
-    smooth_font: Annotated[int, Field(ge=1, le=7)] | None = None
+    smooth_font: Annotated[int, Field(ge=0, le=7)] | None = None
     rendering: Literal["wireframe", "fully_shaded", "partially_shaded"] | None = None
 
 
@@ -103,7 +103,7 @@ def nx_edit_drawing_view(
     scale: float | None = None,
     style: ViewStyle | None = None,
 ):
-    """Assign absolute drawing-view position [x,y] in sheet units and/or positive model-to-sheet scale. Native aligned views may constrain movement; verifies readback and rolls back mismatches. Updates the view, retaining its native associations. style sets native hidden/visible/smooth (tangent) edges and rendering with readback. Fonts: 1 solid, 2 dashed; widths are named thin/normal/thick or native width names 1..9. Default new base views use dashed hidden edges and exclude model curves/datums through per-view erasures. construction_geometry restores or erases those objects in this view without changing model visibility. Centerline visibility is read-only: the NX v2606 builder did not persist its setter in native tests."""
+    """Assign absolute drawing-view position [x,y] in sheet units and/or positive model-to-sheet scale. Native aligned views may constrain movement; verifies readback and rolls back mismatches. Updates the view, retaining its native associations. style sets native hidden/visible/smooth (tangent) edges and rendering with readback. hidden_lines and self_hidden are native hidden-line processing toggles, not visibility switches: false can draw occluded edges as visible. To hide obscured edges use hidden_lines=true, self_hidden=true, hidden_font=0. Fonts: 0 invisible, 1 solid, 2 dashed; widths are named thin/normal/thick or native width names 1..9. Default new base views use dashed hidden edges and exclude model curves/datums through per-view erasures. construction_geometry excludes sheet-owned section/detail curves and restores or erases model objects in this view without changing model visibility. Centerline visibility is read-only: the NX v2606 builder did not persist its setter in native tests."""
 
 
 def nx_add_section_drawing_view(

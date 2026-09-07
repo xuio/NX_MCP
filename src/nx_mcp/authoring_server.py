@@ -82,7 +82,7 @@ def nx_component_action(
     name: str | None = None,
     part_path: str | None = None,
 ):
-    """Edit an immediate child occurrence of the work assembly. rename requires name; replace requires existing workspace .prt part_path and replaces only this occurrence while retaining relationships. Other actions reject those fields. Suppression affects all arrangements. Checks unchanged placement; native errors roll back. Prototype files are not deleted by remove."""
+    """Rename, replace, remove, suppress or unsuppress an immediate child occurrence of the work assembly. rename requires name; replace requires existing workspace .prt part_path and replaces only this occurrence while retaining relationships. Other actions reject those fields. Suppression affects all arrangements. Checks unchanged placement; native errors roll back. Prototype files are not deleted by remove."""
 
 
 def nx_pattern_components(component: str, direction: list[float], spacing: float, count: int):

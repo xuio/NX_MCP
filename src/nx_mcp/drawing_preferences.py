@@ -169,8 +169,14 @@ class DrawingPreferencesMixin:
         return result
 
     def _drawing_construction_visibility(self, view, visible):
+        import NXOpen.UF as U
+
         part = self._work_part()
-        values = list(part.Curves) + self._datum_objects()
+        uf_view = U.UFSession.GetUFSession().View
+        # Part.Curves also includes section lines and other sheet-owned curves.
+        # They are annotations, not model construction geometry.
+        values = [c for c in part.Curves if not uf_view.AskViewDependentStatus(c.Tag)[0]]
+        values += self._datum_objects()
         for component, _ in self._walk_components(part):
             if component.IsSuppressed or component.Prototype is None:
                 continue
@@ -180,6 +186,8 @@ class DrawingPreferencesMixin:
             for value in (
                 list(prototype.Curves) + list(prototype.Datums) + list(prototype.CoordinateSystems)
             ):
+                if uf_view.AskViewDependentStatus(value.Tag)[0]:
+                    continue
                 occurrence = component.FindOccurrence(value)
                 if occurrence is not None:
                     values.append(occurrence)
@@ -220,8 +228,10 @@ class DrawingPreferencesMixin:
                         )
                     group, prop = STYLE_PROPERTIES[key]
                     if key.endswith("font"):
-                        if type(value) is not int or not 1 <= value <= 7:
-                            raise NXToolError("NX_INVALID_ARGUMENT", "Line font must be 1..7")
+                        if type(value) is not int or not 0 <= value <= 7:
+                            raise NXToolError(
+                                "NX_INVALID_ARGUMENT", "Line font must be 0..7 (0 invisible)"
+                            )
                         value = P.Font.ValueOf(value)
                     elif key.endswith("width"):
                         if value not in WIDTHS:

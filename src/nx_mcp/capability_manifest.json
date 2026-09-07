@@ -11,7 +11,7 @@
     "nx_export_drawing_pdf": {
       "status": "tested",
       "evidence_type": "real_NX_v2606_scoped",
-      "scope": "Native PDF plot export with A3 page size, two views and 10mm dimension; file parsed and visually reviewed."
+      "scope": "Native full-sheet PDF with explicit high-resolution shaded images and updated view lists. Saved/reopened shaded solid and section verified visually; unloaded unsuppressed prototypes fail preflight. Hidden-edge invisibility verified with processing on and font 0."
     },
     "nx_finish_sketch": {
       "status": "tested",
@@ -66,7 +66,7 @@
     "nx_close_part": {
       "status": "tested",
       "evidence_type": "real_NX_v2606",
-      "scope": "Saved part closure; NX may unload unused prototypes. Closed-part reporting invalidates all unloaded part references."
+      "scope": "Blocks closing prototypes referenced by other loaded assemblies before saving. Native edited-child guard passed; close parents first. Reports all parts actually closed and invalidates their references."
     },
     "nx_measure_volume": {
       "status": "tested",
@@ -161,7 +161,7 @@
     "nx_open_part": {
       "status": "tested",
       "evidence_type": "real_NX_v2606",
-      "scope": "Already-loaded paths reused without close/recreation"
+      "scope": "Open or activate saved workspace paths. Explicit load_components=true recovers unloaded prototypes on an already loaded parent without closing it; native occurrence pose and 1000 mm3 solid retained."
     },
     "nx_measure_angle": {
       "status": "tested",
@@ -306,7 +306,7 @@
     "nx_list_components": {
       "status": "tested",
       "evidence_type": "real_NX_v2606",
-      "scope": "Two-level transforms and STEP round-trip pose equality Compact inventory, no-pose projection and pagination checked against 116 occurrences."
+      "scope": "Native loaded and unloaded prototype inventory retains occurrence references, paths and transforms with explicit load_state. Unknown source paths are nullable; unloaded subassemblies can hide descendants. No implicit loading."
     },
     "nx_create_drawing": {
       "status": "tested",
@@ -851,7 +851,7 @@
     "nx_edit_drawing_view": {
       "status": "tested",
       "evidence_type": "real_NX_v2606_scoped",
-      "scope": "Absolute base-view placement and scale with native readback; circular detail boundary refresh. Native hidden/visible font, width and rendering readback; per-view construction erasure preserves model visibility. PDF distinguishes dashed blind pocket from solid through-hole. Centerlines are read-only because native setters did not persist."
+      "scope": "Base and section style edits, placement, scale and save/reopen tested. Construction filtering excludes sheet-owned section curves. Fonts include 0 invisible. hidden_lines/self_hidden are native processing toggles: false can expose occluded edges. Centerline preference remains read-only."
     },
     "nx_add_section_drawing_view": {
       "status": "tested",

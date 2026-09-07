@@ -539,21 +539,28 @@ def test_pdf_export_reports_actual_artifact_and_refuses_overwrite(eng):
     r.e._drawing_save_context = lambda *_, **__: nullcontext()
     sheet = Object("Sheet1")
     sheet.Open = Mock()
+    sheet.GetDraftingViews = Mock(return_value=[Object("View")])
     r.part.DrawingSheets = [sheet]
     b = NS(
         ActionOption=NS(Native=1),
         SizeOption=NS(FullScale=1),
         UnitsOption=NS(Metric=1),
         OutputTextOption=NS(Text=1),
+        ImageResolutionOption=NS(High=3),
+        Color=NS(AsDisplayed=0),
         SourceBuilder=NS(SetSheets=Mock()),
         Destroy=Mock(),
     )
     b.Commit = lambda: Path(b.Filename).write_bytes(b"%PDF-1.7\nfixture")
     r.part.PlotManager = NS(CreatePrintPdfbuilder=lambda: b)
+    r.part.DraftingViews = NS(UpdateViews=Mock())
     file = r.e.workspace.root / "drawings" / "test.pdf"
     result = r.e._export_drawing_pdf(str(file))
     assert result["sheet_count"] == 1 and result["size"] == file.stat().st_size
     b.SourceBuilder.SetSheets.assert_called_once_with([sheet])
+    assert b.RasterImages and not b.ShadedGeometry
+    assert b.ImageResolution == b.ImageResolutionOption.High
+    r.part.DraftingViews.UpdateViews.assert_called_once_with(sheet.GetDraftingViews())
     b.Destroy.assert_called_once()
     with pytest.raises(NXToolError):
         r.e._export_drawing_pdf(str(file))
@@ -570,17 +577,21 @@ def test_invalid_pdf_output_is_removed(eng):
     r.e._drawing_save_context = lambda *_, **__: nullcontext()
     sheet = Object("sheet")
     sheet.Open = Mock()
+    sheet.GetDraftingViews = Mock(return_value=[Object("View")])
     r.part.DrawingSheets = [sheet]
     b = NS(
         ActionOption=NS(Native=1),
         SizeOption=NS(FullScale=1),
         UnitsOption=NS(Metric=1),
         OutputTextOption=NS(Text=1),
+        ImageResolutionOption=NS(High=3),
+        Color=NS(AsDisplayed=0),
         SourceBuilder=NS(SetSheets=Mock()),
         Destroy=Mock(),
     )
     b.Commit = lambda: Path(b.Filename).write_bytes(b"not PDF")
     r.part.PlotManager = NS(CreatePrintPdfbuilder=lambda: b)
+    r.part.DraftingViews = NS(UpdateViews=Mock())
     file = r.e.workspace.root / "bad.pdf"
     with pytest.raises(NXToolError, match="did not produce"):
         r.e._export_drawing_pdf(str(file))

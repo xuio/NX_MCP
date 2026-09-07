@@ -215,3 +215,26 @@ agent gateway. Both returned committed audit receipts with the parent as the onl
 saved file and the child unchanged and still modified. The temporary fixture was
 closed without saving the child, and all 71 original parts were retained.
 The local suite passed 912 tests; sidecar type checks covered 55 modules.
+
+## A02 drafting and unloaded-prototype regressions (dev22)
+
+The section style failure was reproduced as native 630035 in per-view erasure:
+`Part.Curves` included three sheet-owned section lines. UF view-dependency checks
+exclude those lines while retaining model construction geometry. Section style
+editing and adding another base view then succeeded; save/reopen retained style,
+scale, arrows and section hatching.
+
+PDF export previously left `RasterImages` false. Enabling shaded raster output
+produced a 400 dpi image in the native high-resolution fixture. Independent PDF
+rendering also exposed a contract ambiguity: `hidden_lines=false` disables native
+processing and can show obscured edges as visible. With processing enabled and
+font 0 (Invisible), the reopened shaded PDF omitted occluded edges. Native
+readback and rendered output were both checked; this is fixture-scoped evidence.
+
+A disposable parent/child test reproduced an unloaded `NXObject` prototype.
+Inventory retained its source path and [10,20,30] placement. Explicit component
+loading on the already loaded parent restored a 1000 mm3 solid. Closing an edited
+referenced child was rejected before saving; no production component was closed.
+The local suite passed 918 tests. CLIFF/Adam Tech source limitations and the
+nonpersistent centerline preference are unchanged; no vendor conversion was
+repeated or claimed repaired.
