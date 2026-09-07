@@ -208,3 +208,10 @@ CLIFF reconstruction blocked native cleanup and required an authorized restart.
 The saved 71-part session and all 538 occurrence paths/transforms were restored.
 A separate centerline annotation probe did not return a completed result; its
 visibility behavior remains unverified. No production CAD repair was applied.
+
+Deployed dev21 runtime `e9bb14f0b0e56b31d13e4b57dd1779013ee84501`
+passed the same parent/edited-child save check through both full HTTP and the
+agent gateway. Both returned committed audit receipts with the parent as the only
+saved file and the child unchanged and still modified. The temporary fixture was
+closed without saving the child, and all 71 original parts were retained.
+The local suite passed 912 tests; sidecar type checks covered 55 modules.
