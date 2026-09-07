@@ -231,6 +231,7 @@ class InteractiveHost:
         self.server = BridgeServer(
             self.dispatch,
             token=token,
+            concurrent_requests=True,
             result_directory=Path(self.root) / ".nx-mcp" / "bridge-results",
         )
         self.descriptor_path = Path(descriptor_path)

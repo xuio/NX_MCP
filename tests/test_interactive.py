@@ -159,3 +159,33 @@ def test_agent_ui_lock_is_not_nested_and_manual_handoff_releases_input():
     host.control("manual")
     assert host.ui.count == 0 and not enabled
     assert not host.executor._history and not host.executor._checkpoints
+
+
+@pytest.mark.asyncio
+async def test_interactive_transport_services_health_during_blocked_request():
+    import asyncio
+
+    from nx_mcp.bridge import BridgeClient, BridgeServer
+
+    entered, release = threading.Event(), threading.Event()
+
+    def dispatch(method, params):
+        if method == "work":
+            entered.set()
+            release.wait(5)
+            return {"done": True}
+        return {"activity": "running", "snapshot_only": True}
+
+    server = BridgeServer(dispatch, token="test", concurrent_requests=True)
+    server.start()
+    try:
+        client = BridgeClient("127.0.0.1", server.port, token="test", timeout=2)
+        running = asyncio.create_task(client.call("work", {}))
+        assert await asyncio.to_thread(entered.wait, 1)
+        status = await asyncio.wait_for(client.call("nx_ui_control", {}), 1)
+        assert status["snapshot_only"] and not running.done()
+        release.set()
+        assert (await running)["done"]
+    finally:
+        release.set()
+        server.stop()

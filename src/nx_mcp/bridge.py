@@ -150,11 +150,26 @@ class _BridgeRequestHandler(socketserver.StreamRequestHandler):
         self.wfile.write(json.dumps(response, ensure_ascii=False).encode("utf-8") + b"\n")
 
 
+class _ThreadedBridgeTCPServer(socketserver.ThreadingMixIn, _BridgeTCPServer):
+    daemon_threads = True
+
+
 class BridgeServer:
     """A serialized loopback JSON-RPC server for an NX-side executor."""
 
-    def __init__(self, executor: Any, *, token: str, result_directory: Path | None = None) -> None:
-        self._server = _BridgeTCPServer(executor, token, result_directory)
+    def __init__(
+        self,
+        executor: Any,
+        *,
+        token: str,
+        result_directory: Path | None = None,
+        concurrent_requests: bool = False,
+    ) -> None:
+        # Interactive callers serialize NXOpen through MainThreadDispatcher.
+        # Concurrent socket handling permits cached health reads during work;
+        # the batch/default executor retains its original serialized transport.
+        server_type = _ThreadedBridgeTCPServer if concurrent_requests else _BridgeTCPServer
+        self._server = server_type(executor, token, result_directory)
         self._thread: Thread | None = None
 
     @property
