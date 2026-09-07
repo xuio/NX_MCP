@@ -247,3 +247,18 @@ view updates without assuming a modeling undo mark; the first deployed-context
 check caught that distinction, and the regression now covers it. Installed source
 hashes and Windows stdio/HTTP checks passed. The 28-part session and 340 recorded
 occurrence paths/transforms were restored.
+
+### Dev23 interactive UI follow-up
+
+The deployed v2606 host keeps its control panel above the NX owner window. Whole-VM
+capture verified that the active-operation text and Pause control remain visible.
+During a controlled 12-second sleep on the NX UI thread, three public MCP
+`nx_ui_control(mode="status")` calls returned in 141, 47 and 47 ms while the
+request remained active. This tests queue/transport independence, not recovery
+from a hung native kernel or a call holding the Python GIL. Manual handoff
+restored window input; resuming reserved it again. All 28 saved parts and 340
+occurrence placements were restored after deployment.
+
+The regression suite passed 922 tests; the 17 focused UI tests also passed after
+the final owner-window change. Source hash checks, Windows stdio/HTTP discovery
+(189 tools), agent discovery (13 tools), and inline viewport PNG delivery passed.
