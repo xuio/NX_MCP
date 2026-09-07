@@ -169,3 +169,13 @@ saving. It now saves only the active work part and does not run component-previe
 saves. A native parent/child fixture confirmed that the child stayed modified and
 its disk bytes were unchanged after saving the parent. The updated local suite
 passed 907 tests at 78.74% branch coverage.
+
+Deployed runtime `337b81f64e8fe16c703641836e0272f6674a306e` passed STEP import
+into a completely empty session (two bodies). The full and 13-entry agent MCP
+profiles delivered a 2,032-object appearance result as a bounded committed
+receipt with a 2.89 MB immutable snapshot; 20-item pages, operation-status
+readback, idempotent replay and appearance restoration passed. All 71 loaded
+parts were restored, with 538 recorded occurrence paths/transforms unchanged.
+Reopening the corrected drawing through the deployed MCP retained all four 2:1
+views and physical tolerances; a newly downloaded PDF was parsed and visually
+checked again. These checks used isolated fixtures, not production CAD edits.
