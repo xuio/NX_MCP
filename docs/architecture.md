@@ -42,7 +42,23 @@ The batch runner calls `pump_bridge()` on the journal main thread. The graphical
 runner retains a Win32 timer callback and returns from the journal. The callback
 executes one queued operation at a time on the NX UI thread. Pause releases input
 for manual editing and invalidates references/checkpoints; resume requires fresh
-inspection. A long native call can block the UI. Cooperative batch cancellation
+inspection. Agent mode intentionally disables the NX main window even while idle; use
+`nx_ui_control(mode="manual")` or **Pause / manual** to navigate or edit. This
+handoff invalidates object references and checkpoints. The panel distinguishes
+reserved idle, active operation and manual mode, paints before native execution,
+and reports the last operation duration. It does not continuously repaint an
+unchanged label.
+
+`nx_ui_control(mode="status")` reads a timestamped snapshot without joining the
+NX execution queue. `snapshot_age_seconds` is the age of the last main-thread
+sample; `operation_elapsed_seconds` grows while an operation is running. These
+are observations, not a hang detector or proof of kernel responsiveness. No
+worker thread calls NXOpen. A native call holding the Python GIL can still delay
+this endpoint. `.nx-mcp/ui-state.json` records the last sample before/after work
+and approximately once a second while idle for external diagnosis.
+
+A long native call can block the UI and the panel. Pause and Stop take effect
+after it returns; they cannot abort a native builder. Cooperative batch cancellation
 is checked between child operations, not during a native builder call.
 
 ## Integration references and recovery

@@ -43,6 +43,9 @@ def host(rig, tmp_path, monkeypatch):
         native_thread=123,
         ticks=0,
         completed=0,
+        running_method=None,
+        operation_started=None,
+        last_duration_seconds=None,
         last_method=None,
         last_error=None,
         started=time.time(),
@@ -164,6 +167,7 @@ def test_panel_commands_and_cleanup(host):
     panel.user = NS(
         DefWindowProcW=Mock(return_value=9),
         SetWindowTextW=Mock(),
+        UpdateWindow=Mock(),
         DestroyWindow=Mock(),
         UnregisterClassW=Mock(),
     )
@@ -229,3 +233,51 @@ def test_start_reuses_live_host_and_cleans_partial_initialization(monkeypatch, h
     resources.server.stop.assert_called_once()
     resources.panel.close.assert_called_once()
     assert len(interactive._retired) == 2
+
+
+def test_running_snapshot_is_readable_without_ui_queue_or_nx_calls(host, rig):
+    host.control("agent")
+    observed = []
+
+    def operation():
+        def reader():
+            observed.append(host.dispatch("nx_ui_control", {"mode": "status"}))
+
+        thread = threading.Thread(target=reader)
+        thread.start()
+        thread.join(1)
+        assert not thread.is_alive()
+        state = __import__("json").loads((host.state_dir / "ui-state.json").read_text())
+        assert state["running_method"] == "nx_test_busy"
+        assert "Running nx_test_busy" in host.panel.update.call_args.args[0]
+        return {}
+
+    rig.e._handlers["nx_test_busy"] = operation
+    host.execute("nx_test_busy", {})
+    assert observed[0]["activity"] == "running"
+    assert observed[0]["snapshot_only"] is True
+    assert observed[0]["operation_elapsed_seconds"] >= 0
+    host.dispatcher.drain.assert_not_called()
+    assert host.status()["activity"] == "reserved_idle"
+    assert host.status()["last_duration_seconds"] >= 0
+    assert "intentionally reserved" in host.panel_text()
+    assert not host.status()["nx_window_input_enabled"]
+
+
+def test_diagnostic_write_failure_does_not_fail_committed_operation(host, rig):
+    host.control("agent")
+    host.publish = Mock(side_effect=OSError("disk full"))
+    result = host.execute("nx_list_bodies", {})
+    assert result["status"] == "success"
+    assert host.running_method is None and host.operation_started is None
+    assert host.owns_lock
+
+
+def test_panel_unchanged_text_does_not_repaint(host):
+    panel = ControlPanel.__new__(ControlPanel)
+    panel.user = NS(SetWindowTextW=Mock(), UpdateWindow=Mock())
+    panel.label, panel.hwnd = 2, 3
+    panel.update("Idle")
+    panel.update("Idle")
+    panel.user.SetWindowTextW.assert_called_once()
+    assert panel.user.UpdateWindow.call_count == 2

@@ -144,6 +144,7 @@ def test_agent_ui_lock_is_not_nested_and_manual_handoff_releases_input():
     host.session = SimpleNamespace(Parts=Parts())
     host.completed = 0
     host.status = lambda: {}
+    host.publish = lambda: None
 
     def execute(method, params):
         if method == "nx_create_part":

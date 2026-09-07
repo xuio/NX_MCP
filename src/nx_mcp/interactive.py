@@ -88,6 +88,7 @@ class ControlPanel:
         ]
         self.user.CreateWindowExW.restype = w.HWND
         self.user.SetWindowTextW.argtypes = [w.HWND, w.LPCWSTR]
+        self.user.UpdateWindow.argtypes = [w.HWND]
         self.user.DestroyWindow.argtypes = [w.HWND]
         self.user.UnregisterClassW.argtypes = [w.LPCWSTR, w.HINSTANCE]
         self.user.RegisterClassW.argtypes = [ctypes.POINTER(WNDCLASS)]
@@ -106,8 +107,8 @@ class ControlPanel:
             0x10C80000,
             40,
             60,
-            440,
-            145,
+            560,
+            195,
             None,
             None,
             None,
@@ -122,8 +123,8 @@ class ControlPanel:
             0x50000000,
             12,
             10,
-            410,
-            36,
+            530,
+            85,
             self.hwnd,
             None,
             None,
@@ -135,7 +136,7 @@ class ControlPanel:
             ("Stop bridge", 292, 103),
         ]:
             self.user.CreateWindowExW(
-                0, "BUTTON", caption, 0x50010000, x, 55, 130, 30, self.hwnd, ident, None, None
+                0, "BUTTON", caption, 0x50010000, x, 110, 130, 30, self.hwnd, ident, None, None
             )
 
     def _message(self, hwnd, msg, wp, lp):
@@ -157,7 +158,14 @@ class ControlPanel:
         return self.user.DefWindowProcW(hwnd, msg, wp, lp)
 
     def update(self, text):
+        if text == getattr(self, "_text", None):
+            return
+        self._text = text
         self.user.SetWindowTextW(self.label, text)
+        # Paint only this panel before native work. Never pump arbitrary NX
+        # messages here: that would permit reentrant modeling calls.
+        self.user.UpdateWindow(self.label)
+        self.user.UpdateWindow(self.hwnd)
 
     def close(self):
         self.user.DestroyWindow(self.hwnd)
@@ -196,6 +204,10 @@ class InteractiveHost:
         self.stopped = False
         self.ticks = 0
         self.completed = 0
+        self.running_method = None
+        self.operation_started = None
+        self.last_duration_seconds = None
+        self._snapshot = None
         self.last_method = None
         self.last_error = None
         self.started = time.time()
@@ -217,7 +229,7 @@ class InteractiveHost:
         token = secrets.token_hex(32)
         self.dispatcher = MainThreadDispatcher(self.execute)
         self.server = BridgeServer(
-            self.dispatcher.call,
+            self.dispatch,
             token=token,
             result_directory=Path(self.root) / ".nx-mcp" / "bridge-results",
         )
@@ -250,11 +262,71 @@ class InteractiveHost:
         self.descriptor.write(self.descriptor_path)
         self.auto_start = True
 
+    def dispatch(self, method, params):
+        # Bridge-worker health reads use an immutable UI-thread snapshot only.
+        # They must not wait behind the native operation they are diagnosing.
+        snapshot = getattr(self, "_snapshot", None)
+        if method == "nx_ui_control" and params.get("mode", "status") == "status" and snapshot:
+            result = dict(snapshot)
+            result["snapshot_age_seconds"] = max(
+                0, time.monotonic() - result.pop("_sample_monotonic")
+            )
+            result["snapshot_only"] = True
+            started = result.pop("_operation_monotonic", None)
+            result["operation_elapsed_seconds"] = (
+                max(0, time.monotonic() - started) if started is not None else None
+            )
+            return result
+        return self.dispatcher.call(method, params)
+
+    def publish(self):
+        state = self.status()
+        self._snapshot = {
+            **state,
+            "_sample_monotonic": time.monotonic(),
+            "_operation_monotonic": self.operation_started,
+        }
+        self.panel.update(self.panel_text())
+        temp = self.state_dir / "ui-state.tmp"
+        temp.write_text(json.dumps(state))
+        temp.replace(self.state_dir / "ui-state.json")
+
+    def panel_text(self):
+        if self.running_method:
+            return (
+                f"Running {self.running_method} — NX input reserved\n"
+                "Native work may block repainting. Pause / Stop applies after it returns."
+            )
+        if self.mode == "manual":
+            return "Manual editing enabled — agent requests paused\nFinish NX dialogs, then Resume agent."
+        detail = self.last_error or (
+            f"Last: {self.last_method} ({self.last_duration_seconds:.2f}s)"
+            if self.last_duration_seconds is not None
+            else "Waiting for MCP requests"
+        )
+        return (
+            "Agent idle — NX input intentionally reserved\nUse Pause / manual to edit or navigate NX.\n"
+            + detail
+        )
+
     def status(self):
         return {
             "interactive": True,
             "pid": os.getpid(),
             "mode": self.mode,
+            "activity": "running"
+            if self.running_method
+            else ("reserved_idle" if self.mode == "agent" else "manual"),
+            "running_method": self.running_method,
+            "operation_elapsed_seconds": (
+                time.monotonic() - self.operation_started
+                if self.operation_started is not None
+                else None
+            ),
+            "last_duration_seconds": self.last_duration_seconds,
+            "sampled_at": time.time(),
+            "snapshot_only": False,
+            "pause_semantics": "between operations; does not interrupt a native call",
             "ui_locked_by_bridge": self.owns_lock,
             "actual_ui_lock": self.ui.AskLockStatus() == self.nx.UI.Status.Lock,
             "native_lock_value": str(self.ui.AskLockStatus()),
@@ -334,7 +406,14 @@ class InteractiveHost:
         # native operations execute on this same UI thread.
         self.ui.UnlockAccess()
         self.last_method = method
+        self.running_method = method
+        self.operation_started = time.monotonic()
+        self.last_error = None
         try:
+            try:
+                self.publish()
+            except Exception as exc:
+                self.last_error = "UI status publication failed: " + str(exc)
             result = self.executor.execute(method, params)
             self.completed += 1
             part = self.session.Parts.Display
@@ -347,7 +426,13 @@ class InteractiveHost:
                 except Exception as exc:
                     result.setdefault("warnings", []).append("View refresh: " + str(exc))
             return result
+        except BaseException as exc:
+            self.last_error = str(exc)
+            raise
         finally:
+            self.last_duration_seconds = time.monotonic() - self.operation_started
+            self.running_method = None
+            self.operation_started = None
             # Restore the between-operation native lock after all NX work.
             try:
                 if self.ui.AskLockStatus() != self.nx.UI.Status.Lock:
@@ -355,6 +440,12 @@ class InteractiveHost:
             except Exception as exc:
                 self.last_error = "Cannot restore agent UI reservation: " + str(exc)
                 self.control("manual")
+            try:
+                self.publish()
+            except Exception as exc:
+                # A failed diagnostic write must not turn a committed operation
+                # into a failure response that invites an unsafe retry.
+                self.last_error = "UI status publication failed: " + str(exc)
 
     def tick(self, *args):
         if self.busy or self.stopped:
@@ -378,19 +469,9 @@ class InteractiveHost:
                 except NXToolError:
                     pass
             self.dispatcher.drain(timeout=0, limit=1)
-            self.panel.update(
-                (
-                    "Agent control — model edits serialized"
-                    if self.mode == "agent"
-                    else "Paused — manual NX editing enabled"
-                )
-                + "\n"
-                + (self.last_error or self.last_method or "Waiting for MCP requests")
-            )
+            self.panel.update(self.panel_text())
             if self.ticks % 10 == 0:
-                temp = self.state_dir / "ui-state.tmp"
-                temp.write_text(json.dumps(self.status()))
-                temp.replace(self.state_dir / "ui-state.json")
+                self.publish()
         except BaseException as exc:
             self.last_error = str(exc)
             try:  # noqa: SIM105 - Last-resort native callback cleanup must not escape.
