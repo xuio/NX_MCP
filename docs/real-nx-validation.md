@@ -238,3 +238,12 @@ referenced child was rejected before saving; no production component was closed.
 The local suite passed 918 tests. CLIFF/Adam Tech source limitations and the
 nonpersistent centerline preference are unchanged; no vendor conversion was
 repeated or claimed repaired.
+
+Final runtime `6125b7dac2c85bc0df2c974bc032690bab4e3de0` passed the
+public-MCP section/style, save/reopen, PDF download/checksum, explicit component
+loading and referenced-prototype close guard checks. The agent gateway returned
+font-0 readback and discovered `nx_component_action`. PDF export uses drafting
+view updates without assuming a modeling undo mark; the first deployed-context
+check caught that distinction, and the regression now covers it. Installed source
+hashes and Windows stdio/HTTP checks passed. The 28-part session and 340 recorded
+occurrence paths/transforms were restored.
