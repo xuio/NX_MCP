@@ -440,11 +440,13 @@ class ExplodedViewsMixin:
         sheet.Open()
         builder = part.DraftingViews.CreateBaseViewBuilder(None)
         try:
+            self._configure_base_view(builder, sheet)
             builder.SelectModelView.SelectedView = part.ModelingViews.FindObject(names[view])
             builder.Placement.Placement.SetValue(None, None, self._sheet_point3d(sheet, point))
             result = builder.Commit()
         finally:
             builder.Destroy()
+        self._drawing_construction_visibility(result, False)
         self._place_drawing_view(result, sheet, point)
         uf.SetViewExplosion(result.Tag, ex.Tag if ex else 0)
         part.DraftingViews.UpdateViews([result])

@@ -1,8 +1,8 @@
 # Agent surface
 
-The full profile remains compatible: 185 tools with existing defaults. The opt-in
+The full profile remains compatible: 189 tools with existing defaults. The opt-in
 agent profile lists 13 tools: eight core tools plus `nx_discover_tools`, `nx_invoke`
-`nx_result`, `nx_inspect` and `nx_result_cleanup`. All 185 underlying tools remain available, subject to their
+`nx_result`, `nx_inspect` and `nx_result_cleanup`. All 189 underlying tools remain available, subject to their
 existing capability status and native prerequisites.
 
 For stdio, set `NX_MCP_SURFACE=agent`, `NX_MCP_ENABLE_EXPERIMENTAL=1` and
@@ -41,6 +41,12 @@ are omitted unless `include_transforms=true`. Existing filters and explicit
 arguments override profile defaults. Every inventory page remains explicit about
 its returned and total counts. Geometry vectors/scalars are preserved; use full
 snapshot detail for omitted nested arrays and metadata.
+
+### Oversized native results
+
+The bridge keeps a bounded receipt when a native result exceeds 512 KiB. It retains the operation outcome and restore ID and adds `full_result` with a snapshot ID, checksum and size. Read it with `nx_invoke(tool="nx_read_result", arguments={"result_id":"result_...","field":"/objects","offset":0,"limit":20})`, or call `nx_read_result` directly on the full surface. Arrays, strings and objects are paged; nested omissions provide paths for further reads. Do not repeat the mutation to obtain omitted data.
+
+Bridge snapshots live in `.nx-mcp/bridge-results` under the configured retention age/size limits. These are separate snapshot stores: `nx_result` reads agent snapshots; `nx_read_result` reads bridge snapshots. Expiration does not delete durable operation records. Delivery/storage errors preserve known outcomes; interrupted calls with unknown outcomes still require `nx_operation_status`.
 
 ## Artifacts
 

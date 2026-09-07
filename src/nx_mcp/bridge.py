@@ -90,7 +90,8 @@ class _BridgeTCPServer(socketserver.TCPServer):
     executor: Any
     token: str
 
-    def __init__(self, executor: Any, token: str) -> None:
+    def __init__(self, executor: Any, token: str, result_directory: Path | None = None) -> None:
+        self.result_directory = result_directory
         self.executor = executor
         self.token = token
         super().__init__(("127.0.0.1", 0), _BridgeRequestHandler)
@@ -120,6 +121,9 @@ class _BridgeRequestHandler(socketserver.StreamRequestHandler):
             if not isinstance(method, str) or not isinstance(params, dict):
                 raise NXToolError("NX_INVALID_REQUEST", "Bridge method and params are invalid")
             result = self.server.executor(method, params)
+            from nx_mcp.result_transport import bound_result
+
+            result = bound_result(result, self.server.result_directory)
             response = {
                 "jsonrpc": "2.0",
                 "protocol_version": BRIDGE_PROTOCOL_VERSION,
@@ -149,8 +153,8 @@ class _BridgeRequestHandler(socketserver.StreamRequestHandler):
 class BridgeServer:
     """A serialized loopback JSON-RPC server for an NX-side executor."""
 
-    def __init__(self, executor: Any, *, token: str) -> None:
-        self._server = _BridgeTCPServer(executor, token)
+    def __init__(self, executor: Any, *, token: str, result_directory: Path | None = None) -> None:
+        self._server = _BridgeTCPServer(executor, token, result_directory)
         self._thread: Thread | None = None
 
     @property
@@ -316,6 +320,12 @@ class BridgeClient:
             writer.write(json.dumps(request, ensure_ascii=False).encode("utf-8") + b"\n")
             await writer.drain()
             raw = await asyncio.wait_for(reader.readline(), timeout=self.timeout)
+        except ValueError as error:
+            raise NXToolError(
+                "NX_RESPONSE_TOO_LARGE",
+                "Bridge response exceeded framing limit; inspect operation status before retry",
+                details={"operation_id": params.get("operation_id"), "mutation_outcome": "unknown"},
+            ) from error
         except (OSError, asyncio.TimeoutError) as error:
             raise NXToolError(
                 "NX_BRIDGE_UNAVAILABLE",

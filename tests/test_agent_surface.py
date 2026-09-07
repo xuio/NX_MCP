@@ -211,7 +211,7 @@ def test_dual_http_profiles(tmp_path, monkeypatch):
     monkeypatch.setenv("NX_MCP_ENABLE_EXPERIMENTAL", "1")
     app = create_app(AsyncMock(), Workspace(tmp_path))
     with TestClient(app, base_url="http://127.0.0.1:8765") as client:
-        for path, count in [("/mcp", 185), ("/agent/mcp", 13)]:
+        for path, count in [("/mcp", 189), ("/agent/mcp", 13)]:
             response = client.post(
                 path,
                 headers={"Accept": "application/json, text/event-stream"},

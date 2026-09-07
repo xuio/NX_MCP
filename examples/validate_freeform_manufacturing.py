@@ -138,7 +138,7 @@ async def main():
         original_display = next(p for p in before if p["display"])
         try:
             assert len((await client.list_tools()).tools) == int(
-                os.environ.get("NX_EXPECTED_TOOL_COUNT", "185")
+                os.environ.get("NX_EXPECTED_TOOL_COUNT", "189")
             )
             await new("spline")
             token = "spline-" + uuid.uuid4().hex

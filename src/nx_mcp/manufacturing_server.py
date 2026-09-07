@@ -2,7 +2,9 @@
 
 from __future__ import annotations
 
-from typing import Literal
+from typing import Annotated, Literal
+
+from nx_mcp.schema_types import Field
 
 READ_ONLY = {"nx_face_analysis", "nx_wall_thickness"}
 NON_MODEL: set[str] = set()
@@ -103,3 +105,19 @@ def nx_standard_thread(
 
 
 READ_ONLY.add("nx_thread_catalog")
+
+
+NON_MODEL.add("nx_export_planar_dxf")
+Point3 = Annotated[list[float], Field(min_length=3, max_length=3)]
+
+
+def nx_export_planar_dxf(
+    source: str,
+    path: str,
+    origin: Point3 | None = None,
+    x_axis: Point3 | None = None,
+    y_axis: Point3 | None = None,
+    layer: str = "OUTLINE",
+    layers: dict[str, str] | None = None,
+):
+    """Export an owned sketch or planar face (all boundary loops, including holes) as analytic LINE/ARC/CIRCLE DXF at 1:1 mm. No model changes or save. Rejects splines and non-planar geometry, never approximates them. Default frame is the sketch basis or a deterministic face basis; response reports the exact frame. Supply both orthonormal axes and an origin in the source plane to choose PCB coordinates, in work-part units. layers maps current source curve/edge IDs to ASCII layer names; unlisted entities use layer. Existing files are rejected. This is separate from native sheet-metal flat-pattern export."""

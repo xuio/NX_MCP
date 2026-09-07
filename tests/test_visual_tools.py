@@ -59,7 +59,7 @@ async def test_visual_tools_publish_enums_and_native_capture_description(tmp_pat
 
     server = create_server(SimpleNamespace(), Workspace(tmp_path), enable_experimental=True)
     tools = {t.name: t for t in await server.list_tools()}
-    assert len(tools) == 185
+    assert len(tools) == 189
     assert tools["nx_set_visibility"].inputSchema["properties"]["mode"]["enum"] == [
         "show",
         "hide",

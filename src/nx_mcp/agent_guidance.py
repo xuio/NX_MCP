@@ -96,7 +96,7 @@ VISIBILITY = {
     "nx_highlight_collisions",
     "nx_clear_highlights",
 }
-SAVES = {"nx_save_part", "nx_save_as", "nx_export_step", "nx_close_part"}
+SAVES = {"nx_save_part", "nx_save_as", "nx_export_step", "nx_close_part", "nx_export_drawing_pdf"}
 FILES = SAVES | {
     "nx_screenshot",
     "nx_render_view",
@@ -143,6 +143,10 @@ def guidance(tool):
             "saves_part": effect(SAVES),
             "writes_files": effect(FILES),
             "invalidates_references": effect(INVALIDATES),
+            "expires_undo_checkpoints": effect(
+                SAVES | {"nx_import_geometry", "nx_open_part", "nx_create_part"}
+            ),
+            "recovery": "Saves and part lifecycle changes can expire native undo marks. Inspect nx_checkpoint_state and create a new checkpoint after these operations; durable operation receipts remain available.",
             "unknown_semantics": "null means not reviewed; true can be conditional on arguments. Read the exact tool description.",
         },
     }

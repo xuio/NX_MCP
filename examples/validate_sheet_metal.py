@@ -91,7 +91,7 @@ async def main():
         original_display = next(p for p in before if p["display"])
         try:
             assert len((await client.list_tools()).tools) == int(
-                os.environ.get("NX_EXPECTED_TOOL_COUNT", "185")
+                os.environ.get("NX_EXPECTED_TOOL_COUNT", "189")
             )
             catalog = await call("nx_sheet_metal_schema")
             assert len(catalog["operations"]) == 34

@@ -98,13 +98,25 @@ async def run_suite(call, reject, artifact, upload, output):
         await call("nx_save_part")
         face = await near("face", [10, 10, 5], geometry_type="plane")
         anchor = (await call("nx_geometry_anchor", object=face))["anchor"]
-        sheet = (await call("nx_create_drawing", name="Service"))["object"]["id"]
+        sheet = (await call("nx_create_drawing", name="Service", scale=2))["object"]["id"]
         view = (
             await call(
                 "nx_add_base_view", drawing=sheet, body=body, view="top", position=[100, 180]
             )
         )["object"]["id"]
-        edited = await call("nx_edit_drawing_view", view=view, scale=1.5, position=[105, 180])
+        assert (await call("nx_drawing_view_info", view=view))["scale"] == 2
+        edited = await call(
+            "nx_edit_drawing_view",
+            view=view,
+            scale=1.5,
+            position=[105, 180],
+            style={
+                "hidden_lines": True,
+                "hidden_font": 2,
+                "visible_font": 1,
+                "construction_geometry": False,
+            },
+        )
         assert edited["scale"] == 1.5 and edited["position"] == [105, 180]
         revision_args = {
             "drawing": sheet,
@@ -163,6 +175,23 @@ async def run_suite(call, reject, artifact, upload, output):
             "nx_add_dimension", view=view, object1=edge, dim_type="horizontal", origin=[105, 220]
         )
         assert math.isclose(dim["measured_value"], 50, abs_tol=1e-6)
+        formatted = await call(
+            "nx_edit_dimension_format",
+            dimension=dim["object"]["id"],
+            decimal_places=2,
+            trailing_zeros=True,
+            units="mm",
+            tolerance_type="bilateral",
+            upper_tolerance=0.05,
+            lower_tolerance=-0.02,
+            tolerance_decimal_places=2,
+        )
+        assert math.isclose(formatted["computed_value"], 50, abs_tol=1e-6)
+        assert math.isclose(formatted["upper_tolerance"], 0.05, abs_tol=1e-9)
+        assert math.isclose(formatted["lower_tolerance"], -0.02, abs_tol=1e-9)
+        await download(
+            await call("nx_export_planar_dxf", source=face, path=prefix + "/face.dxf"), "face.dxf"
+        )
         await download(
             await call("nx_export_drawing_pdf", path=prefix + "/service.pdf"), "service.pdf"
         )
@@ -331,7 +360,7 @@ async def run_suite(call, reject, artifact, upload, output):
         )
         for c in components:
             await call("nx_assembly_constraint", constraint_type="fix", component=c["object"]["id"])
-        ex = (await call("nx_create_explosion", name="Service"))["object"]["id"]
+        ex = (await call("nx_create_explosion", name="Service", scale=2))["object"]["id"]
         await call(
             "nx_edit_explosion",
             explosion=ex,

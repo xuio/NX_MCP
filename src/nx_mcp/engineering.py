@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import math
+
 from nx_mcp.authoring import finite
 from nx_mcp.runtime import NXToolError
 from nx_mcp.visual_tools import unit_normal
@@ -1473,16 +1475,36 @@ class EngineeringMixin:
         finally:
             b.Destroy()
         sheet.Open()
+        sheet.SetParameters(
+            sheet.Height, sheet.Length, scale, 1.0, sheet.Units, sheet.ProjectionAngle
+        )
+        actual_scale = list(sheet.GetScale())
+        if not math.isclose(actual_scale[0] / actual_scale[1], scale, abs_tol=1e-10):
+            raise NXToolError("NX_VERIFICATION_FAILED", "Native sheet scale did not persist")
         return {
             "object": self._reference(sheet, "drawing_sheet", self._work_part(), "Drawing sheet"),
             "sheet_name": sheet.Name,
             "size": size,
             "dimensions_mm": list(dimensions[size]),
             "dimensions": [sheet.Length, sheet.Height],
-            "scale": scale,
+            "scale": actual_scale[0] / actual_scale[1],
+            "scale_ratio": actual_scale,
             "projection": "first_angle",
             "units": units,
         }
+
+    def _configure_base_view(self, builder, sheet):
+        import NXOpen.Preferences as P
+
+        numerator, denominator = sheet.GetScale()
+        builder.Scale.ScaleType = builder.Scale.Type.Ratio
+        builder.Scale.Numerator = numerator
+        builder.Scale.Denominator = denominator
+        hidden = builder.Style.ViewStyleHiddenLines
+        hidden.HiddenLine = True
+        hidden.Font = P.Font.Dashed
+        hidden.SelfHidden = True
+        builder.Style.ViewStyleVisibleLines.VisibleFont = P.Font.Solid
 
     def _add_base_view(self, drawing, body, view, position=None):
         names = {
@@ -1512,11 +1534,13 @@ class EngineeringMixin:
         sheet.Open()
         b = part.DraftingViews.CreateBaseViewBuilder(None)
         try:
+            self._configure_base_view(b, sheet)
             b.SelectModelView.SelectedView = part.ModelingViews.FindObject(names[view])
             b.Placement.Placement.SetValue(None, None, self._sheet_point3d(sheet, point))
             result = b.Commit()
         finally:
             b.Destroy()
+        self._drawing_construction_visibility(result, False)
         self._place_drawing_view(result, sheet, point)
         return {
             "object": self._reference(result, "drawing_view", part, "Base view"),
@@ -1532,7 +1556,11 @@ class EngineeringMixin:
 
         file = self.workspace.ensure_inside(path)
         if file.suffix.lower() != ".pdf" or file.exists():
-            raise NXToolError("NX_INVALID_ARGUMENT", "Choose a new .pdf path")
+            raise NXToolError(
+                "NX_INVALID_ARGUMENT",
+                "Choose a new .pdf path; existing files are never overwritten",
+                details={"mutation_outcome": "not_started"},
+            )
         sheets = list(self._work_part().DrawingSheets)
         if not sheets:
             raise NXToolError("NX_NO_DRAWING", "Create a drawing sheet before PDF export")

@@ -522,6 +522,55 @@ PAYLOADS.update(
 PAYLOADS["nx_set_sheet_metal_defaults"] = deepcopy(PAYLOADS["nx_sheet_metal_defaults"])
 
 
+PAYLOADS.update(
+    {
+        "nx_read_result": obj(
+            {
+                "result_id": S,
+                "field": S,
+                "value": {},
+                "total_count": {"anyOf": [COUNT, NULL]},
+                "offset": COUNT,
+                "next_offset": {"anyOf": [COUNT, NULL]},
+                "omitted": {"type": "object"},
+            }
+        ),
+        "nx_dimension_format": obj(
+            {
+                "object": REF,
+                "computed_value": N,
+                "measurement_units": S,
+                "measurement_valid": B,
+                "decimal_places": COUNT,
+                "tolerance_decimal_places": COUNT,
+                "upper_tolerance": N,
+                "lower_tolerance": N,
+                "tolerance_type": S,
+                "trailing_zeros": B,
+                "display_units": S,
+                "decimal_separator": S,
+                "association_count": COUNT,
+            }
+        ),
+        "nx_export_planar_dxf": obj(
+            {
+                "path": S,
+                "size": COUNT,
+                "sha256": S,
+                "units": {"const": "mm"},
+                "scale": {"const": 1.0},
+                "coordinate_frame": {"type": "object"},
+                "entity_count": COUNT,
+                "entity_counts": {"type": "object"},
+                "entities": arr({"type": "object"}),
+                "all_boundary_loops_included": B,
+            }
+        ),
+    }
+)
+PAYLOADS["nx_edit_dimension_format"] = deepcopy(PAYLOADS["nx_dimension_format"])
+
+
 def output_schema(name: str, common: dict) -> dict:
     """Keep an object root for MCP; discriminate errors before success payloads."""
     schema = deepcopy(common)
@@ -533,6 +582,16 @@ def output_schema(name: str, common: dict) -> dict:
     )
     schema["properties"].update(
         {
+            "full_result": obj(
+                {
+                    "id": S,
+                    "sha256": S,
+                    "size": COUNT,
+                    "tool": {"const": "nx_read_result"},
+                    "immutable": {"const": True},
+                }
+            ),
+            "omitted": {"type": "object"},
             "code": S,
             "message": S,
             "retryable": B,
@@ -551,7 +610,10 @@ def output_schema(name: str, common: dict) -> dict:
     if name in PAYLOADS:
         schema["allOf"].append(
             {
-                "if": {"properties": {"status": {"const": "success"}}},
+                "if": {
+                    "properties": {"status": {"const": "success"}},
+                    "not": {"required": ["full_result"]},
+                },
                 "then": deepcopy(PAYLOADS[name]),
             }
         )

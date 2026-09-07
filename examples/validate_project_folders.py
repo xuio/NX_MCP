@@ -42,7 +42,7 @@ async def main():
         prefix = "folder-validation-" + uuid.uuid4().hex[:10]
         try:
             assert len((await c.list_tools()).tools) == int(
-                os.environ.get("NX_EXPECTED_TOOL_COUNT", "185")
+                os.environ.get("NX_EXPECTED_TOOL_COUNT", "189")
             )
             info = await call("nx_workspace_info")
             root = PureWindowsPath(info["root"])

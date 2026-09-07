@@ -1,5 +1,5 @@
 {
-  "revision": "2606-legacy-closeout-r3",
+  "revision": "2606-manufacturing-r1",
   "nx_version": "v2606",
   "bridge_protocol": 1,
   "tools": {
@@ -851,7 +851,7 @@
     "nx_edit_drawing_view": {
       "status": "tested",
       "evidence_type": "real_NX_v2606_scoped",
-      "scope": "Absolute base-view placement and scale with native readback; circular detail boundary refresh."
+      "scope": "Absolute base-view placement and scale with native readback; circular detail boundary refresh. Native hidden/visible font, width and rendering readback; per-view construction erasure preserves model visibility. PDF distinguishes dashed blind pocket from solid through-hole. Centerlines are read-only because native setters did not persist."
     },
     "nx_add_section_drawing_view": {
       "status": "tested",
@@ -927,6 +927,26 @@
       "status": "tested",
       "evidence_type": "real_NX_v2606_scoped",
       "scope": "Native blank/unblank snapshot restoration, and assembly-owned datum suppression confirmed by exported drawing PDF visual review."
+    },
+    "nx_dimension_format": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native associative dimension readback, computed value, decimal precision, units and physical asymmetric tolerances."
+    },
+    "nx_edit_dimension_format": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Native 80 mm dimension formatted to two decimals and +0.05/-0.02 mm without changing its value or two associations; exported PDF visually verified."
+    },
+    "nx_export_planar_dxf": {
+      "status": "tested",
+      "evidence_type": "real_NX_v2606_scoped",
+      "scope": "Analytic lines, circles and arcs from planar sketches and faces; principal/custom frames, layers and inch-to-mm conversion tested in NX. XY sketch/face output independently parsed with ezdxf; splines are rejected."
+    },
+    "nx_read_result": {
+      "status": "tested",
+      "evidence_type": "local_contract_tests",
+      "scope": "Immutable bounded bridge snapshots, JSON-pointer pagination, result cardinality and committed-outcome preservation on storage failure; 2032-object response fixture."
     }
   },
   "limitations": [
@@ -939,7 +959,10 @@
     "Batch structural preflight is not a geometric dry run",
     "Cooperative cancellation happens between operations only",
     "Absolute placement currently supports immediate children",
-    "MCP desktop clients must refresh tool schemas after deployment"
+    "MCP desktop clients must refresh tool schemas after deployment",
+    "CLIFF vendor STEP conversion still returns no bodies with NX v2606 translators; logs and rolled-back new-part outcome are returned. No vendor-geometry repair is claimed.",
+    "Adam Tech vendor geometry has two self-intersecting faces (875315); health diagnostics resolve faces and error text. Native healing failed on a disposable copy and was rolled back.",
+    "Drawing centerline visibility is inspectable but not writable: the tested native setter did not persist."
   ],
   "unavailable": [
     "batch_model_viewport_image",

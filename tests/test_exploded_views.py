@@ -480,15 +480,21 @@ def assembly_drawing(explosions):
     r = explosions
     sheet = Object("Sheet")
     sheet.OwningPart = r.part
+    sheet.GetScale = lambda: (2.0, 1.0)
     sheet.Open = Mock()
     r.part.DrawingSheets.append(sheet)
     r.sheetref = r.ref(sheet, "drawing_sheet")
     r.builder = NS(
-        SelectModelView=NS(), Placement=NS(Placement=NS(SetValue=Mock())), Destroy=Mock()
+        SelectModelView=NS(),
+        Placement=NS(Placement=NS(SetValue=Mock())),
+        Destroy=Mock(),
+        Scale=NS(Type=NS(Ratio=1)),
+        Style=NS(ViewStyleHiddenLines=NS(), ViewStyleVisibleLines=NS()),
     )
 
     def commit():
         view = Object("Base")
+        view.SetAttribute = Mock()
         view.OwningPart = r.part
         r.part.DraftingViews.append(view)
         return view

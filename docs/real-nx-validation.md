@@ -140,3 +140,26 @@ metadata checks. Windows source hashes, stdio/HTTP and inline PNG validation pas
 passed on that commit. Final preservation checks retained the original 38 saved
 parts and 116 occurrences. The manifest reports 178 native-scoped and seven
 sidecar/contract-scoped tools; individual option limits still apply.
+
+## Manufacturing regression checks (dev20)
+
+Isolated NX v2606 fixtures preserved the existing 71-part session. Four A3 drawing
+views used an explicit 2:1 scale; an 80 mm coupon measured 160 mm in the exported
+PDF. An associative dimension retained its value and two associations while its
+PDF showed `80.00 +0.05/-0.02`. A blind pocket was dashed and a through-hole solid
+after construction curves were erased per view. Model visibility was preserved.
+Managed revision-table editing also passed after saving and reopening a part.
+
+Planar DXF checks covered XY, XZ, YZ, custom bases, analytic arcs, layer assignment
+and inch-to-mm conversion. Independent parsing of the XY sketch and face exports
+found four lines and one circle, 80 by 30 mm bounds, millimeter units and no DXF
+audit errors. Arbitrary-origin/axis revolves were exercised separately.
+
+A normal STEP imported into a new part with two bodies. Failed vendor imports
+returned translator settings, output paths and logs, removed their empty new part
+and preserved the session. One vendor STEP still failed in NX's kernel conversion
+with multiple translator settings. Another vendor part had two self-intersecting
+faces; diagnostics identified both faces and error 875315. Healing on a disposable
+copy failed and was rolled back. These are unresolved vendor/native limitations,
+not successful repairs. Drawing centerline setters also did not persist, so the
+API exposes their readback and rejects edits explicitly.

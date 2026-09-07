@@ -131,6 +131,12 @@ def drawing(ff, monkeypatch):
     ff.uf.Draw.AskViewBorders.return_value = [60, 70, 140, 110]
     ff.uf.Draw.AskViewScale.return_value = (0, 1.0)
     ff.uf.View.MapModelToDrawing.side_effect = lambda _, p: [p[0] + 100, p[1] + 90]
+    ff.part.SettingsManager = MagicMock()
+    style = ff.part.SettingsManager.CreateDrawingEditViewSettingsBuilder.return_value.ViewStyle
+    from nx_mcp.drawing_preferences import STYLE_PROPERTIES
+
+    for key, (group, prop) in STYLE_PROPERTIES.items():
+        setattr(getattr(style, group), prop, 1 if key.endswith(("font", "width")) else True)
     ff.sheet, ff.view = sheet, view
     return ff
 
@@ -220,6 +226,11 @@ def test_table_edits_preserve_native_identity_and_evaluated_cells(drawing):
     section.SetAttribute = lambda k, v: attrs.__setitem__(k, v)
     section.HasUserAttribute = lambda k, *_: k in attrs
     section.GetStringAttribute = lambda k: attrs[k]
+    sheet_attrs = {}
+    sheet = f.e._drawing_object("s", "drawing_sheet")
+    sheet.SetAttribute = lambda k, v: sheet_attrs.__setitem__(k, v)
+    sheet.HasUserAttribute = lambda k, *_: k in sheet_attrs
+    sheet.GetStringAttribute = lambda k: sheet_attrs[k]
     section.AnnotationOrigin = None
     b = f.part.Annotations.TableSections.CreateTableSectionBuilder.return_value
     b.Commit.return_value = section

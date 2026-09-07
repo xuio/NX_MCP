@@ -216,7 +216,11 @@ class InteractiveHost:
         self.executor._handlers["nx_ui_control"] = self.control
         token = secrets.token_hex(32)
         self.dispatcher = MainThreadDispatcher(self.execute)
-        self.server = BridgeServer(self.dispatcher.call, token=token)
+        self.server = BridgeServer(
+            self.dispatcher.call,
+            token=token,
+            result_directory=Path(self.root) / ".nx-mcp" / "bridge-results",
+        )
         self.descriptor_path = Path(descriptor_path)
         self.server.start()
         self.descriptor = BridgeDescriptor.create(

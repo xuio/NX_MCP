@@ -9,7 +9,7 @@ import json
 import os
 import struct
 import uuid
-from typing import Annotated, Any, Literal
+from typing import Annotated, Literal
 
 from mcp.types import CallToolResult, ImageContent, TextContent, ToolAnnotations
 from pydantic import BaseModel, ConfigDict, Field
@@ -81,7 +81,7 @@ def nx_boolean(
     pass
 
 
-def nx_display_info(objects: list[str]):
+def nx_display_info(objects: list[str], count_only: bool = False):
     pass
 
 
@@ -310,7 +310,114 @@ def nx_set_component_transform(
     pass
 
 
-def nx_batch(operations: list[dict[str, Any]]):
+def nx_read_result(
+    result_id: str,
+    field: str = "",
+    offset: Annotated[int, Field(ge=0)] = 0,
+    limit: Annotated[int, Field(ge=1, le=100)] = 20,
+):
+    """Read a stored oversized bridge result without repeating its operation. field is a JSON pointer; arrays/strings are paged. Nested omissions remain explicit. Snapshot expiry does not delete operation receipts."""
+
+
+class BatchParameters(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+
+class SketchPoint(BatchParameters):
+    x: float
+    y: float
+
+
+class SegmentParameters(BatchParameters):
+    sketch_id: str
+    start: SketchPoint
+    end: SketchPoint
+
+
+class RectangleParameters(BatchParameters):
+    sketch_id: str
+    corner1: SketchPoint
+    corner2: SketchPoint
+
+
+class ArcParameters(BatchParameters):
+    cx: float
+    cy: float
+    radius: Annotated[float, Field(gt=0)]
+    start_angle: float
+    end_angle: float
+    sketch_id: str | None = None
+
+
+Vector3 = Annotated[list[float], Field(min_length=3, max_length=3)]
+Matrix3 = Annotated[list[Vector3], Field(min_length=3, max_length=3)]
+
+
+class ComponentParameters(BatchParameters):
+    part_path: str
+    name: str | None = None
+    translation: Vector3 | None = None
+    rotation_matrix: Matrix3 | None = None
+
+
+class TransformParameters(BatchParameters):
+    component: str
+    translation: Vector3
+    rotation_matrix: Matrix3
+
+
+class RepositionParameters(BatchParameters):
+    component: str
+    dx: float = 0
+    dy: float = 0
+    dz: float = 0
+    rx: float = 0
+    ry: float = 0
+    rz: float = 0
+
+
+class SegmentOperation(BatchParameters):
+    method: Literal["nx_sketch_line"]
+    params: SegmentParameters
+
+
+class RectangleOperation(BatchParameters):
+    method: Literal["nx_sketch_rectangle"]
+    params: RectangleParameters
+
+
+class ArcOperation(BatchParameters):
+    method: Literal["nx_sketch_arc"]
+    params: ArcParameters
+
+
+class ComponentOperation(BatchParameters):
+    method: Literal["nx_add_component"]
+    params: ComponentParameters
+
+
+class TransformOperation(BatchParameters):
+    method: Literal["nx_set_component_transform"]
+    params: TransformParameters
+
+
+class RepositionOperation(BatchParameters):
+    method: Literal["nx_reposition_component"]
+    params: RepositionParameters
+
+
+BatchOperation = Annotated[
+    SegmentOperation
+    | RectangleOperation
+    | ArcOperation
+    | ComponentOperation
+    | TransformOperation
+    | RepositionOperation,
+    Field(discriminator="method"),
+]
+
+
+def nx_batch(operations: Annotated[list[BatchOperation], Field(min_length=1, max_length=100)]):
     pass
 
 
@@ -327,6 +434,8 @@ def nx_revolve(
     angle: float = 360,
     axis: Literal["X", "Y", "Z", "-X", "-Y", "-Z"] = "Z",
     boolean: Literal["none", "unite", "subtract", "intersect"] = "none",
+    axis_origin: Vector3 | None = None,
+    axis_direction: Vector3 | None = None,
 ):
     pass
 
@@ -364,7 +473,7 @@ def nx_upload_file(path: str, data_base64: str, sha256: str, total_size: int, of
 DESCRIPTIONS = {
     "nx_export_step": "Export the active work part as STEP inside the workspace. Saves the part before translation; native undo marks and checkpoints can expire. Use a disposable copy for review-only exports when source saves are unwanted. Returns path, size, SHA-256, units, component count, translator options and validation scope.",
     "nx_boolean": "Boolean solid bodies: unite, subtract or intersect. targets[0] is the target body; targets[1:] are tool bodies. Native cube subtraction and volume checks are scoped in nx_capabilities(tool='nx_boolean'); not general certification.",
-    "nx_revolve": "Requires sketch_name (finished sketch ID/name). Revolve about a principal axis through the part origin; custom axis origins are not exposed. Angles are degrees, lengths in work-part units; boolean is none/unite/subtract/intersect. Inspect nx_capabilities(tool='nx_revolve') for tested scope.",
+    "nx_revolve": "Requires sketch_name (finished sketch ID/name). Revolve about a principal axis through the part origin, or supply both axis_origin=[x,y,z] and nonzero axis_direction in work-part coordinates. Custom axes require leaving axis at its default Z. Angles are degrees, lengths in work-part units; boolean is none/unite/subtract/intersect. Inspect nx_capabilities(tool='nx_revolve') for tested scope.",
     "nx_workspace_list": "List a workspace directory with prefix filtering and pagination (offset>=0, limit=1..1000, default 100). Returns entries/count for this page, total_count and next_offset. File entries include size/SHA-256. Use nx_download_file(delivery='metadata') to inspect one file.",
     "nx_workspace_info": "Discover the NX host workspace root and path rules. Paths refer to the NX machine, not the MCP client's filesystem. No session-wide current directory is changed.",
     "nx_create_directory": "Create a directory and missing parents inside the NX workspace. Accepts workspace-relative or in-workspace absolute host paths. Idempotent: an existing directory succeeds; an existing file fails. Returns actual path and created status.",
@@ -374,7 +483,7 @@ DESCRIPTIONS = {
     "nx_sketch_constraint": "Apply a constraint to owned curve IDs in one sketch. Types: horizontal, vertical, fix/fixed, parallel, perpendicular, equal_length, equal_radius, concentric, tangent, coincident, distance/length, radius, diameter, angle. Only dimensions require value in part units or degrees. Coincident means start-to-start; use nx_sketch_relation for explicit endpoints. Midpoint is not supported.",
     "nx_save_as": "Save the active work part to a new .prt path inside the NX workspace, creating missing parent folders. Accepts relative or absolute NX-host paths. Existing files are never overwritten. Save As changes the work part's filename; it does not move an entire assembly dependency tree.",
     "nx_display_info": "Inspect color-table indices, blank state and face transparency for body, component, feature, face or curve references. Components expand to loaded occurrence geometry.",
-    "nx_set_display": "Set an NX color index (1–216) or named color, and/or transparency (0 opaque, 100 transparent). Component/feature targets expand to bodies. Occurrence overrides do not recolor prototypes. Returns restore_id; restore in reverse order. Changes can persist on save.",
+    "nx_set_display": "Set an NX color index (1–216) or named color, and/or transparency (0 opaque, 100 transparent). Component/feature targets expand to bodies and faces, with a cap of 10000 unique objects. Preflight with nx_display_info(count_only=true); split larger selections after checking counts. Occurrence overrides do not recolor prototypes. Returns restore_id; restore in reverse order. Changes can persist on save.",
     "nx_set_visibility": "Show, hide or isolate body/component geometry. Isolation preserves a restorable snapshot and includes ancestor components. Reference curves and datum geometry are not isolated. Explicit show/hide also accepts curves. Returns restore_id.",
     "nx_restore_display": "Restore explicit appearance/visibility attributes using a same-session restore_id, in reverse order. All references are preflighted; manual handoff, rollback or close can make snapshots stale. Does not reset a part modified flag or remove inherited occurrence overrides.",
     "nx_highlight_collisions": "Measure native solid interference and highlight the involved body occurrences using NX selection highlighting. Replaces previous MCP highlights. Contacts are optional; clear pairs are never highlighted. Returns measured pairs and entity references. No persistent recoloring.",
@@ -445,6 +554,7 @@ READ_ONLY = {
     "nx_operation_status",
     "nx_workspace_info",
     "nx_workspace_list",
+    "nx_read_result",
     "nx_download_file",
 }
 READ_ONLY.update(
@@ -474,12 +584,14 @@ SIDE = {
     "nx_create_directory",
     "nx_workspace_info",
     "nx_workspace_list",
+    "nx_read_result",
     "nx_download_file",
     "nx_upload_file",
     "nx_operation_status",
     "nx_cancel_operation",
 }
 PATHS = {
+    "nx_export_planar_dxf": "path",
     "nx_export_explosion_animation": "path",
     "nx_export_flat_pattern": "path",
     "nx_set_sheet_metal_defaults": "bend_table",
@@ -714,6 +826,10 @@ def configure(mcp, bridge, workspace):
 
 def artifact_call(method, p, workspace):
     store = OperationStore(workspace.root)
+    if method == "nx_read_result":
+        from nx_mcp.result_transport import read_result
+
+        return read_result(workspace.root / ".nx-mcp" / "bridge-results", **p)
     if method == "nx_operation_status":
         return store.get(p["operation_id"])
     if method == "nx_cancel_operation":

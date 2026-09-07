@@ -3,15 +3,15 @@
 Generated from `src/nx_mcp/capability_manifest.json`; do not edit this table by hand.
 Run `python scripts/generate_capability_matrix.py` to regenerate, or add `--check` to detect drift.
 
-Manifest revision: **2606-legacy-closeout-r3**. NX: **v2606**. Bridge protocol: **1**.
-Canonical manifest SHA-256: `368307955169ea07d37a28e39425c3e91fa5a0e3454af31b1de093118daee714`.
+Manifest revision: **2606-manufacturing-r1**. NX: **v2606**. Bridge protocol: **1**.
+Canonical manifest SHA-256: `0bc6f76bf3845c3f10b0b60faba9fa2c666cc20f1a8a7448ef19d252dc41e286`.
 
 These labels report manifest evidence, not certification or independent verification of its claims. Native-tested means status `tested` with an evidence type beginning `real_NX_`; only the stated scope and NX version are covered. Contract/sidecar-tested does not establish native CAD correctness. Experimental includes untested entries and tested entries without a recognized evidence type. Unavailable capabilities are explicitly recorded by the manifest; absence from this matrix is not proof of availability or unavailability.
 
 | Tool classification | Count |
 | --- | ---: |
-| Native-tested | 178 |
-| Contract/sidecar-tested | 7 |
+| Native-tested | 181 |
+| Contract/sidecar-tested | 8 |
 | Experimental | 0 |
 | Unavailable | 0 |
 
@@ -58,6 +58,7 @@ These labels report manifest evidence, not certification or independent verifica
 | nx_curve_analysis | Native-tested | tested | real_NX_v2606_scoped | Native derivative evaluation on owned line/spline curves; singular handling unit-tested; sampling is not a global extrema certificate. |
 | nx_delete_explosion | Native-tested | tested | real_NX_v2606_scoped | Native unassociated explosion deletion followed by empty explosion inventory; in-use rejection and stale invalidation covered locally. |
 | nx_delete_feature | Native-tested | tested | real_NX_v2606_scoped | Native extrusion deletion after Save As with a reacquired feature ID; resulting body count zero. Dependency cascades beyond this fixture are not independently tested. |
+| nx_dimension_format | Native-tested | tested | real_NX_v2606_scoped | Native associative dimension readback, computed value, decimal precision, units and physical asymmetric tolerances. |
 | nx_display_info | Native-tested | tested | real_NX_v2606_public_MCP | Body/face and nested occurrence color, transparency and explicit blank state |
 | nx_download_file | Contract/sidecar-tested | tested | local_contract_test | Chunk bytes, full checksum and boundary/overwrite tests |
 | nx_draft | Native-tested | tested | real_NX_v2606_scoped | Native 5 degree face draft with analytic volume and explicit angle/distance tolerances. |
@@ -66,7 +67,8 @@ These labels report manifest evidence, not certification or independent verifica
 | nx_edit_annotation | Native-tested | tested | real_NX_v2606_scoped | Native associative balloon movement; rename/delete have local contract coverage pending native acceptance. |
 | nx_edit_assembly_constraint | Native-tested | tested | real_NX_v2606_scoped | Native suppression toggle and distance 5-&gt;12 edit; actual component separation verified after rebuilding solve network. |
 | nx_edit_component_pattern | Native-tested | tested | real_NX_v2606_scoped | Native rectangular 4x3 and circular 5-instance edits; expression and instance readback. |
-| nx_edit_drawing_view | Native-tested | tested | real_NX_v2606_scoped | Absolute base-view placement and scale with native readback; circular detail boundary refresh. |
+| nx_edit_dimension_format | Native-tested | tested | real_NX_v2606_scoped | Native 80 mm dimension formatted to two decimals and +0.05/-0.02 mm without changing its value or two associations; exported PDF visually verified. |
+| nx_edit_drawing_view | Native-tested | tested | real_NX_v2606_scoped | Absolute base-view placement and scale with native readback; circular detail boundary refresh. Native hidden/visible font, width and rendering readback; per-view construction erasure preserves model visibility. PDF distinguishes dashed blind pocket from solid through-hole. Centerlines are read-only because native setters did not persist. |
 | nx_edit_explosion | Native-tested | tested | real_NX_v2606_scoped | Native nested assembly explosion: absolute rotated parent/child poses, reset, repeat assignment, model/drawing association, persistence; ordinary assembled placements unchanged. |
 | nx_edit_explosion_trace | Native-tested | tested | real_NX_v2606_scoped | Native managed edge-anchored trace endpoint percentages and offsets edited in a two-component service assembly; rendered and included in drafting view. |
 | nx_edit_faces | Native-tested | tested | real_NX_v2606_scoped | Native directed move, signed offset, replace and delete/heal on controlled solids; analytic volume checks. Arbitrary vendor imports unverified. |
@@ -77,6 +79,7 @@ These labels report manifest evidence, not certification or independent verifica
 | nx_export_drawing_pdf | Native-tested | tested | real_NX_v2606_scoped | Native PDF plot export with A3 page size, two views and 10mm dimension; file parsed and visually reviewed. |
 | nx_export_explosion_animation | Native-tested | tested | real_NX_v2606_scoped | Three native frames with fixed camera, pose interpolation and restored state; fully framed visual review. Failure cleanup unit-tested. |
 | nx_export_flat_pattern | Native-tested | tested | real_NX_v2606_scoped | Native DXF and Trumpf GEO export; staged file publication, checksums. DXF entity geometry inspected. |
+| nx_export_planar_dxf | Native-tested | tested | real_NX_v2606_scoped | Analytic lines, circles and arcs from planar sketches and faces; principal/custom frames, layers and inch-to-mm conversion tested in NX. XY sketch/face output independently parsed with ezdxf; splines are rejected. |
 | nx_export_step | Native-tested | tested | real_NX_v2606 | Solid/assembly exports verified by import counts, volumes, exact bounds and transforms |
 | nx_extrude | Native-tested | tested | real_NX_v2606_scoped | Native offset/symmetric/arbitrary-direction extrusion, through-all subtraction and up-to-face solids; analytic volume and bounds checked. |
 | nx_face_analysis | Native-tested | tested | real_NX_v2606_scoped | Native sampled plane normal/curvature and signed draft; trimmed-domain filtering. Not global draft certification. |
@@ -132,6 +135,7 @@ These labels report manifest evidence, not certification or independent verifica
 | nx_pmi_datum | Native-tested | tested | real_NX_v2606_scoped | Native geometry-associated datum A on a planar face. |
 | nx_pmi_fcf | Native-tested | tested | real_NX_v2606_scoped | Native single-frame flatness/parallelism annotations and datum A reference; all GD&amp;T modifiers are not exposed. |
 | nx_preview_change | Native-tested | tested | real_NX_v2606_and_local_stateful_seams | Scoped v2606 native authoring/review acceptance and local failure-path regressions; see docs/tools.md for supported operations and limits. |
+| nx_read_result | Contract/sidecar-tested | tested | local_contract_tests | Immutable bounded bridge snapshots, JSON-pointer pagination, result cardinality and committed-outcome preservation on storage failure; 2032-object response fixture. |
 | nx_rebuild_model | Native-tested | tested | real_NX_v2606_and_local_stateful_seams | Native DoUpdate success and health read-back; failed-update rollback covered by local fault injection. |
 | nx_recognize_holes | Native-tested | tested | real_NX_v2606_scoped_and_local_boundary_tests | Annular solid: inner cylinder identified as bore, outer cylinder excluded; axis/radius/full circumference read-back. Coaxial grouping and partial-face reporting covered locally; no manufacturing feature inference. |
 | nx_refresh_annotations | Native-tested | tested | real_NX_v2606_scoped | Native persistent bend PMI, transaction hook and save/reopen exercised through public MCP; automatic bend-table builders also rebuilt because the native flag alone left stale rows. |
@@ -224,3 +228,6 @@ These are capability names, separate from the tool counts above.
 - Cooperative cancellation happens between operations only
 - Absolute placement currently supports immediate children
 - MCP desktop clients must refresh tool schemas after deployment
+- CLIFF vendor STEP conversion still returns no bodies with NX v2606 translators; logs and rolled-back new-part outcome are returned. No vendor-geometry repair is claimed.
+- Adam Tech vendor geometry has two self-intersecting faces (875315); health diagnostics resolve faces and error text. Native healing failed on a disposable copy and was rolled back.
+- Drawing centerline visibility is inspectable but not writable: the tested native setter did not persist.

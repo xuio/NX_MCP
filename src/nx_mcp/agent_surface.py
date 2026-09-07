@@ -7,11 +7,12 @@ import os
 import re
 import uuid
 from pathlib import Path
-from typing import Any, Literal
+from typing import Annotated, Any, Literal
 from urllib.parse import quote, unquote
 
 from mcp.server.fastmcp.exceptions import ToolError
 from mcp.types import CallToolResult, ResourceLink, TextContent, ToolAnnotations
+from pydantic import Field
 
 from nx_mcp.agent_guidance import guidance, next_actions
 from nx_mcp.result_retention import LOCK, maintain, settings
@@ -195,8 +196,8 @@ def configure(mcp, workspace):
         domain: str | None = None,
         include_schema: bool = False,
         include_output_schema: bool = True,
-        offset: int = 0,
-        limit: int = 10,
+        offset: Annotated[int, Field(ge=0)] = 0,
+        limit: Annotated[int, Field(ge=1, le=20)] = 10,
     ) -> CallToolResult:
         """Discover task tools by name/description or domain. Domains: modeling, sketch, assembly, drawing, manufacturing, inspection, display, files. Spaced queries match all words, with tool-name matches ranked first. Request exact-name schema before nx_invoke; include_output_schema=false omits the repeated full output contract; results are paged. Discovery does not mutate NX or the session's catalog."""
         if offset < 0 or not 1 <= limit <= 20:

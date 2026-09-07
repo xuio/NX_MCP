@@ -1,6 +1,7 @@
 """Native drawing authoring and persistent imported-geometry references."""
 
 import math
+import uuid
 
 from nx_mcp.authoring import finite
 from nx_mcp.runtime import NXToolError
@@ -41,6 +42,7 @@ class ReleaseEngineeringMixin:
             "object": self._reference(obj, "drawing_view", self._work_part(), "View"),
             "drawing": self._reference(sheet, "drawing_sheet", self._work_part(), "Sheet"),
             "native_type": type(obj).__name__,
+            "style": self._view_style(view),
             "position": xyz(obj.GetDrawingReferencePoint())[:2],
             "scale": uf.AskViewScale(obj.Tag)[1],
             "bounds": bounds,
@@ -53,11 +55,12 @@ class ReleaseEngineeringMixin:
             "bounds_semantics": "native drafting view border, excluding separately placed annotations",
         }
 
-    def _edit_drawing_view(self, view, position=None, scale=None):
+    def _edit_drawing_view(self, view, position=None, scale=None, style=None):
         import NXOpen.UF as U
 
-        if position is None and scale is None:
-            raise NXToolError("NX_INVALID_ARGUMENT", "Supply position or scale")
+        style = {k: v for k, v in (style or {}).items() if v is not None}
+        if position is None and scale is None and not style:
+            raise NXToolError("NX_INVALID_ARGUMENT", "Supply position, scale or style")
         point = sheet_point(position) if position is not None else None
         scale = finite(scale, "scale", True) if scale is not None else None
         obj = self._drawing_object(view, "drawing_view")
@@ -68,6 +71,8 @@ class ReleaseEngineeringMixin:
             uf.SetViewScale(obj.Tag, scale)
         if point is not None:
             uf.MoveView(obj.Tag, point)
+        if style:
+            self._view_style(view, {k: v for k, v in style.items() if v is not None})
         self._work_part().DraftingViews.UpdateViews([obj])
         self._refresh_detail_boundaries()
         result = self._drawing_view_info(view)
@@ -98,7 +103,10 @@ class ReleaseEngineeringMixin:
 
         point = sheet_point(position)
         scale = finite(scale, "scale", True)
-        step, arrow = unit_normal(step_direction), unit_normal(arrow_direction)
+        step, arrow = (
+            unit_normal(step_direction, "step_direction"),
+            unit_normal(arrow_direction, "arrow_direction"),
+        )
         if abs(step[2]) > 1e-8 or abs(arrow[2]) > 1e-8 or abs(dot(step, arrow)) > 1e-8:
             raise NXToolError(
                 "NX_INVALID_ARGUMENT",
@@ -287,15 +295,52 @@ class ReleaseEngineeringMixin:
         part = self._work_part()
         section = self._engineering_owned(table, "annotation") if table else None
         attr = "NX_MCP_DRAWING_TABLE_V1"
-        if section is not None and (
-            not section.HasUserAttribute(attr, self.nxopen.NXObject.AttributeType.String, -1)
-            or section.GetStringAttribute(attr) != kind
-            or section.GetStringAttribute("NX_MCP_TABLE_SHEET_V1")
-            != U.UFSession.GetUFSession().Tag.AskHandleFromTag(sheet.Tag)
-        ):
-            raise NXToolError(
-                "NX_OBJECT_OWNER_MISMATCH", "Edit a managed table of the same kind on this sheet"
+        guid_attr = "NX_MCP_TABLE_SHEET_GUID_V2"
+        string_type = self.nxopen.NXObject.AttributeType.String
+        sheet_guid = (
+            sheet.GetStringAttribute(guid_attr)
+            if sheet.HasUserAttribute(guid_attr, string_type, -1)
+            else None
+        )
+        if sheet_guid:
+            matches = [
+                s
+                for s in part.DrawingSheets
+                if s.HasUserAttribute(guid_attr, string_type, -1)
+                and s.GetStringAttribute(guid_attr) == sheet_guid
+            ]
+            if len(matches) != 1:
+                raise NXToolError(
+                    "NX_OBJECT_OWNER_AMBIGUOUS",
+                    "Drawing sheets share the same managed identity; resolve duplicated sheet metadata before editing tables",
+                )
+        if section is not None:
+            kind_ok = (
+                section.HasUserAttribute(attr, string_type, -1)
+                and section.GetStringAttribute(attr) == kind
             )
+            if section.HasUserAttribute(guid_attr, string_type, -1):
+                owner_ok = (
+                    sheet_guid is not None and section.GetStringAttribute(guid_attr) == sheet_guid
+                )
+            else:
+                try:
+                    owner_ok = (
+                        U.UFSession.GetUFSession().Tag.AskTagOfHandle(
+                            section.GetStringAttribute("NX_MCP_TABLE_SHEET_V1")
+                        )
+                        == sheet.Tag
+                    )
+                except Exception:
+                    owner_ok = False
+            if not kind_ok or not owner_ok:
+                raise NXToolError(
+                    "NX_OBJECT_OWNER_MISMATCH",
+                    "Edit a managed table of the same kind on this sheet",
+                )
+        if sheet_guid is None:
+            sheet_guid = uuid.uuid4().hex
+            sheet.SetAttribute(guid_attr, sheet_guid)
         sheet.Open()
         if section is None:
             b = part.Annotations.TableSections.CreateTableSectionBuilder(None)
@@ -312,6 +357,7 @@ class ReleaseEngineeringMixin:
             section.SetAttribute(
                 "NX_MCP_TABLE_SHEET_V1", U.UFSession.GetUFSession().Tag.AskHandleFromTag(sheet.Tag)
             )
+        section.SetAttribute(guid_attr, sheet_guid)
         tab = U.UFSession.GetUFSession().Tabnot
         tag = (
             U.UFSession.GetUFSession().Tag.AskTagOfHandle(
@@ -358,6 +404,7 @@ class ReleaseEngineeringMixin:
             section.SetAttribute(
                 "NX_MCP_NATIVE_TABLE_V1", U.UFSession.GetUFSession().Tag.AskHandleFromTag(tag)
             )
+        section.SetAttribute(guid_attr, sheet_guid)
         self._update_model()
         ref = self._reference(section, "annotation", part, "Drawing table")
         actual = [
@@ -373,9 +420,7 @@ class ReleaseEngineeringMixin:
             "table": ref,
             "kind": kind,
             "position": point,
-            "position_anchor": "native title-block annotation origin"
-            if kind == "title_block"
-            else "native table-section annotation origin",
+            "position_anchor": "lower_right" if kind == "title_block" else "upper_left",
             "rows": actual,
             "row_count": len(actual),
             "column_count": len(widths),

@@ -1,6 +1,11 @@
 """Drawing inspection and precise native documentation edits."""
 
-from typing import Literal
+from typing import Annotated, Literal
+
+from nx_mcp.schema_types import BaseModel, ConfigDict, Field
+
+Point3 = Annotated[list[float], Field(min_length=3, max_length=3)]
+Point2 = Annotated[list[float], Field(min_length=2, max_length=2)]
 
 READ_ONLY = {"nx_list_drawings", "nx_list_annotations"}
 NON_MODEL = {"nx_activate_drawing"}
@@ -20,11 +25,11 @@ def nx_list_annotations(offset: int = 0, limit: int = 100):
 
 def nx_edit_annotation(
     annotation: str,
-    position: list[float] | None = None,
+    position: Point3 | None = None,
     name: str | None = None,
     delete: bool = False,
 ):
-    """Move or rename a native annotation (including associative balloons), or delete it explicitly. Position uses the annotation's existing sheet/work-part frame. Preserves callout text and native associations; does not convert balloons to plain text. Delete cannot be combined with other changes."""
+    """Move or rename a native annotation (including associative balloons), or delete it explicitly. Position is [x,y,z] in the existing sheet/work-part frame; use z=0 for drawing-sheet annotations. Preserves callout text and native associations; does not convert balloons to plain text. Delete cannot be combined with other changes."""
 
 
 def nx_parts_list_column(
@@ -72,22 +77,45 @@ def nx_drawing_view_info(view: str):
     """Inspect actual native view scale, absolute sheet position, view border and sheet containment. Returns each sheet's actual mm/in units. Borders exclude separately placed annotations. Read-only."""
 
 
+class ViewStyle(BaseModel):
+    construction_geometry: bool | None = None
+    model_config = ConfigDict(extra="forbid")
+    hidden_lines: bool | None = None
+    hidden_font: Annotated[int, Field(ge=1, le=7)] | None = None
+    hidden_width: (
+        Literal["original", "thin", "normal", "thick", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+        | None
+    ) = None
+    self_hidden: bool | None = None
+    visible_font: Annotated[int, Field(ge=1, le=7)] | None = None
+    visible_width: (
+        Literal["original", "thin", "normal", "thick", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+        | None
+    ) = None
+    smooth_edges: bool | None = None
+    smooth_font: Annotated[int, Field(ge=1, le=7)] | None = None
+    rendering: Literal["wireframe", "fully_shaded", "partially_shaded"] | None = None
+
+
 def nx_edit_drawing_view(
-    view: str, position: list[float] | None = None, scale: float | None = None
+    view: str,
+    position: Point2 | None = None,
+    scale: float | None = None,
+    style: ViewStyle | None = None,
 ):
-    """Assign absolute drawing-view position [x,y] in sheet units and/or positive model-to-sheet scale. Native aligned views may constrain movement; verifies readback and rolls back mismatches. Updates the view, retaining its native associations."""
+    """Assign absolute drawing-view position [x,y] in sheet units and/or positive model-to-sheet scale. Native aligned views may constrain movement; verifies readback and rolls back mismatches. Updates the view, retaining its native associations. style sets native hidden/visible/smooth (tangent) edges and rendering with readback. Fonts: 1 solid, 2 dashed; widths are named thin/normal/thick or native width names 1..9. Default new base views use dashed hidden edges and exclude model curves/datums through per-view erasures. construction_geometry restores or erases those objects in this view without changing model visibility. Centerline visibility is read-only: the NX v2606 builder did not persist its setter in native tests."""
 
 
 def nx_add_section_drawing_view(
     parent_view: str,
     cut_object: str,
     position: list[float],
-    step_direction: list[float],
-    arrow_direction: list[float],
+    step_direction: Point3,
+    arrow_direction: Point3,
     scale: float = 1.0,
     cut_association: Literal["start", "end", "arc_center"] = "start",
 ):
-    """Create a native simple section drawing view anchored to an owned model edge endpoint (start/end) or arc_center for circular edges. Step and arrow vectors must be perpendicular in the sheet XY plane. position is [x,y] in sheet units. Positive scale is model-to-sheet. Creates a native section line and cut view; requires drafting license."""
+    """Create a native simple section drawing view anchored to an owned model edge endpoint (start/end) or arc_center for circular edges. Step and arrow are three-component [x,y,0] vectors perpendicular in the sheet XY plane. position is [x,y] in sheet units. Positive scale is model-to-sheet. Creates a native section line and cut view; requires drafting license."""
 
 
 def nx_add_detail_drawing_view(
@@ -105,7 +133,7 @@ def nx_drawing_table(
     table: str | None = None,
     row_height: float = 7.0,
 ):
-    """Create/edit an owned native drawing table with explicit rectangular rows and per-column widths in sheet units. title_block also creates a native NX title-block definition; revision creates an editable tabular history. Editing requires the returned table ID and retains column count; row count may change. Maximum 100 rows/20 columns/1024 characters per cell. No dates, approval, or revision content is inferred."""
+    """Create/edit an owned native drawing table with explicit rectangular rows and per-column widths in sheet units. title_block uses the lower-right anchor and creates a native NX title-block definition; revision uses the upper-left anchor of an editable tabular history. Editing requires the returned table ID and retains column count; row count may change. Maximum 100 rows/20 columns/1024 characters per cell. No dates, approval, or revision content is inferred."""
 
 
 def nx_geometry_anchor(object: str):
@@ -125,3 +153,25 @@ READ_ONLY.add("nx_list_dimensions")
 
 def nx_list_dimensions():
     """List actual computed native dimension values, native retention and measurement_valid flags, typed IDs and annotation origins in the work part. Includes drafting and PMI dimensions, identified by native subtype. Values/origins use native work-part units; inspect view association separately. Read-only, no regeneration."""
+
+
+READ_ONLY.add("nx_dimension_format")
+
+
+def nx_dimension_format(dimension: str):
+    """Read native associative dimension precision, display units, decimal separator and tolerances. Computed value uses work-part units; formatting does not override measured text."""
+
+
+def nx_edit_dimension_format(
+    dimension: str,
+    decimal_places: Annotated[int, Field(ge=0, le=8)] | None = None,
+    trailing_zeros: bool | None = None,
+    units: Literal["mm", "in", "m", "um"] | None = None,
+    decimal_separator: Literal["period", "comma"] | None = None,
+    tolerance_type: Literal["none", "bilateral", "symmetric", "limits", "basic", "reference"]
+    | None = None,
+    upper_tolerance: float | None = None,
+    lower_tolerance: float | None = None,
+    tolerance_decimal_places: Annotated[int, Field(ge=0, le=8)] | None = None,
+):
+    """Edit native dimension preferences while preserving measured value and associations. Tolerance values use native work-part units. No text override. Omitted properties remain unchanged. Returns actual native formatting; save to persist."""

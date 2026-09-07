@@ -68,5 +68,5 @@ def test_native_examples_accept_runner_profile_count():
         "visual_tools",
     ]:
         source = (examples / f"validate_{name}.py").read_text()
-        assert 'os.environ.get("NX_EXPECTED_TOOL_COUNT", "185")' in source
+        assert 'os.environ.get("NX_EXPECTED_TOOL_COUNT", "189")' in source
         assert "== 179" not in source

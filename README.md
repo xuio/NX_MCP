@@ -18,7 +18,7 @@ limits. “Tested” applies to the recorded fixtures, not every option of a bui
 | Profile | Exposure | Configuration |
 | --- | --- | --- |
 | Default | 16 original core tools | No experimental opt-in |
-| Integration | 185 tools | `NX_MCP_ENABLE_EXPERIMENTAL=1` |
+| Integration | 189 tools | `NX_MCP_ENABLE_EXPERIMENTAL=1` |
 | Agent | 13 entry points; discover/invoke integration tools on demand | Integration opt-in plus `NX_MCP_SURFACE=agent` |
 
 The legacy environment flag enables the integration profile; it is **not** a
@@ -103,8 +103,8 @@ correctness. Native runners under `examples/validate_*.py` use disposable fixtur
 and document their environment variables. See [native validation](docs/real-nx-validation.md)
 and [release acceptance](docs/real-nx-validation.md).
 
-The [validation guide](docs/real-nx-validation.md) records 881 automated passes
-and scoped dev19 live checks. Historical receipts identify their runtime commits and are
+The [validation guide](docs/real-nx-validation.md) records 906 automated passes
+and scoped dev20 live checks. Historical receipts identify their runtime commits and are
 not current-version blanket certification. Current experimental gaps are tracked
 in [capability closeout](docs/capability-matrix.md).
 

@@ -116,7 +116,7 @@ async def snapshot():
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, required=True)
-    parser.add_argument("--expected-tool-count", type=int, default=185)
+    parser.add_argument("--expected-tool-count", type=int, default=189)
     args = parser.parse_args()
     if args.output.exists():
         raise RuntimeError(

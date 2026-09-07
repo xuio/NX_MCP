@@ -15,13 +15,13 @@ def enum_name(value, enum):
     return "unknown_" + str(value)
 
 
-def unit_normal(value):
+def unit_normal(value, argument="normal"):
     if not isinstance(value, (list, tuple)) or len(value) != 3:
-        raise NXToolError("NX_INVALID_ARGUMENT", "normal requires three finite numbers")
+        raise NXToolError("NX_INVALID_ARGUMENT", f"{argument} requires three finite numbers")
     v = [float(x) for x in value]
     length = math.sqrt(sum(x * x for x in v))
     if not math.isfinite(length) or length < 1e-12:
-        raise NXToolError("NX_INVALID_ARGUMENT", "normal must be finite and nonzero")
+        raise NXToolError("NX_INVALID_ARGUMENT", f"{argument} must be finite and nonzero")
     return [x / length for x in v]
 
 
@@ -115,8 +115,26 @@ class VisualToolsMixin:
         }
         return token
 
-    def _display_info(self, objects):
+    def _display_info(self, objects, count_only=False):
         self._visual_part()
+        if count_only:
+            values = self._display_targets(objects, expand=True)
+            count = len(
+                {
+                    int(x.Tag)
+                    for obj in values
+                    for x in (
+                        [obj] + list(obj.GetFaces()) if isinstance(obj, self.nxopen.Body) else [obj]
+                    )
+                }
+            )
+            return {
+                "count": count,
+                "object_limit": 10000,
+                "within_limit": count <= 10000,
+                "expansion": "unique bodies and faces",
+                "objects": [],
+            }
         records = self._display_records(self._display_targets(objects, expand=True), True)
         return {
             "objects": records,

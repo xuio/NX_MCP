@@ -231,6 +231,8 @@ class Part(Object):
         self.Bodies = Collection()
         self.Features = Collection()
         self.Curves = Collection()
+        self.Datums = Collection()
+        self.CoordinateSystems = Collection()
         self.Sketches = Collection()
         self.DynamicSections = Collection()
         self.Notes = Collection()
@@ -338,6 +340,25 @@ def rig(tmp_path, monkeypatch):
         ),
     )
     modules = {
+        "Preferences": NS(
+            Font=NS(Solid=1, Dashed=2, ValueOf=lambda value: value),
+            Width=NS(
+                Original=0,
+                Thin=1,
+                Normal=2,
+                Thick=3,
+                One=5,
+                Two=6,
+                Three=7,
+                Four=8,
+                Five=9,
+                Six=10,
+                Seven=11,
+                Eight=12,
+                Nine=13,
+            ),
+            ShadingRenderingStyleOption=NS(FullyShaded=0, PartiallyShaded=1, Wireframe=2),
+        ),
         "UF": NS(UFSession=NS(GetUFSession=lambda: uf)),
         "Display": NS(
             DynamicSectionTypes=NS(

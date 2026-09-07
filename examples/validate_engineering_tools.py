@@ -109,7 +109,7 @@ async def main():
         display = next((p for p in before["parts"] if p["display"]), None)
         try:
             assert len((await client.list_tools()).tools) == int(
-                os.environ.get("NX_EXPECTED_TOOL_COUNT", "185")
+                os.environ.get("NX_EXPECTED_TOOL_COUNT", "189")
             )
 
             async def limits():

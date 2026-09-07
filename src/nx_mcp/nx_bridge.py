@@ -481,6 +481,8 @@ class NXOpenExecutor:
         axis: str = "Z",
         sketch_name: str | None = None,
         boolean: str = "none",
+        axis_origin: list[float] | None = None,
+        axis_direction: list[float] | None = None,
     ) -> dict[str, Any]:
         if angle <= 0 or angle > 360:
             raise NXToolError("NX_INVALID_ARGUMENT", "angle must be greater than 0 and at most 360")
@@ -497,6 +499,24 @@ class NXOpenExecutor:
         axis_key = axis.strip().upper()
         if axis_key not in vectors:
             raise NXToolError("NX_INVALID_ARGUMENT", "axis must be X, Y, Z, -X, -Y, or -Z")
+        from nx_mcp.hardened import vector as point_vector
+        from nx_mcp.visual_tools import unit_normal
+
+        if (axis_origin is None) != (axis_direction is None):
+            raise NXToolError("NX_INVALID_ARGUMENT", "Supply both axis_origin and axis_direction")
+        if axis_direction is not None and axis != "Z":
+            raise NXToolError(
+                "NX_INVALID_ARGUMENT",
+                "Custom axis cannot be combined with a nondefault principal axis",
+            )
+        axis_point = (
+            point_vector(axis_origin, "axis_origin") if axis_origin is not None else [0.0, 0.0, 0.0]
+        )
+        axis_vector = (
+            unit_normal(axis_direction, "axis_direction")
+            if axis_direction is not None
+            else vectors[axis_key]
+        )
         boolean_types = {
             "none": self.nxopen.GeometricUtilities.BooleanOperation.BooleanType.Create,
             "unite": self.nxopen.GeometricUtilities.BooleanOperation.BooleanType.Unite,
@@ -525,8 +545,8 @@ class NXOpenExecutor:
             self.nxopen.Section.Mode.Create,
             False,
         )
-        vector = self.nxopen.Vector3d(*vectors[axis_key])
-        origin = part.Points.CreatePoint(self.nxopen.Point3d(0.0, 0.0, 0.0))
+        vector = self.nxopen.Vector3d(*axis_vector)
+        origin = part.Points.CreatePoint(self.nxopen.Point3d(*axis_point))
         direction = part.Directions.CreateDirection(origin, vector)
         revolve_axis = part.Axes.CreateAxis(
             origin,
@@ -551,7 +571,9 @@ class NXOpenExecutor:
         return {
             "feature": self._reference(feature, "feature", part, "Revolve"),
             "angle": angle,
-            "axis": axis_key,
+            "axis": axis_key if axis_direction is None else "custom",
+            "axis_origin": list(axis_point),
+            "axis_direction": list(axis_vector),
             "message": f"Revolved {self._name(sketch, sketch_name)} by {angle} degrees",
         }
 
@@ -992,7 +1014,11 @@ def start_bridge(
     )
     token = secrets.token_hex(32)
     dispatcher = MainThreadDispatcher(executor.execute)
-    server = BridgeServer(dispatcher.call, token=token)
+    server = BridgeServer(
+        dispatcher.call,
+        token=token,
+        result_directory=Path(workspace_root) / ".nx-mcp" / "bridge-results",
+    )
     server.start()
     descriptor = BridgeDescriptor.create(
         server.port,

@@ -24,6 +24,7 @@ from nx_mcp.authoring import AuthoringMixin
 from nx_mcp.authoring_server import NON_MODEL as AUTHORING_NON_MODEL
 from nx_mcp.authoring_server import READ_ONLY as AUTHORING_READ_ONLY
 from nx_mcp.documentation_editing import DocumentationEditingMixin
+from nx_mcp.drawing_preferences import DrawingPreferencesMixin
 from nx_mcp.engineering import EngineeringMixin
 from nx_mcp.exploded_views import ExplodedViewsMixin
 from nx_mcp.freeform import FreeformMixin
@@ -32,6 +33,7 @@ from nx_mcp.inventory import compact_reference, page
 from nx_mcp.legacy_repairs import LegacyRepairsMixin
 from nx_mcp.manufacturing import ManufacturingMixin
 from nx_mcp.nx_bridge import NXOpenExecutor
+from nx_mcp.planar_dxf import PlanarDxfMixin
 from nx_mcp.recovery import OperationStore, timestamp
 from nx_mcp.reference_geometry import ReferenceGeometryMixin
 from nx_mcp.release_engineering import ReleaseEngineeringMixin
@@ -153,6 +155,8 @@ NON_MODEL.update(
 
 class HardenedExecutor(
     LegacyRepairsMixin,
+    PlanarDxfMixin,
+    DrawingPreferencesMixin,
     ReleaseEngineeringMixin,
     ReferenceGeometryMixin,
     DocumentationEditingMixin,
@@ -1346,6 +1350,76 @@ class HardenedExecutor(
         }
 
     def _import_geometry(self, path, flatten=False, target="work_part", output_path=None):
+        # A new-part import owns every part it creates and restores the prior selection on failure.
+        before = {int(p.Tag) for p in self.session.Parts}
+        work, display = self.session.Parts.Work, self.session.Parts.Display
+        try:
+            return self._import_geometry_inner(path, flatten, target, output_path)
+        except Exception as error:
+            if target == "new_part":
+                created = [p for p in self.session.Parts if int(p.Tag) not in before]
+                cleanup_errors = []
+                for part in reversed(created):
+                    try:
+                        ref = self._reference(part, "part", part, "Import part")
+                        self._close_part(part=ref["id"], save=False)
+                    except Exception as cleanup:
+                        cleanup_errors.append(str(cleanup))
+                try:
+                    if display is not None:
+                        self._activate_part(
+                            self._reference(display, "part", display, "Part")["id"],
+                            work=False,
+                            display=True,
+                        )
+                    if work is not None:
+                        self._activate_part(
+                            self._reference(work, "part", work, "Part")["id"],
+                            work=True,
+                            display=False,
+                        )
+                except Exception as cleanup:
+                    cleanup_errors.append(str(cleanup))
+                err = (
+                    error
+                    if isinstance(error, NXToolError)
+                    else NXToolError(
+                        "NX_API_ERROR", str(error), nx_code=getattr(error, "ErrorCode", None)
+                    )
+                )
+                err.details.update(
+                    mutation_outcome="partial"
+                    if cleanup_errors
+                    else "rolled_back"
+                    if created
+                    else "not_started",
+                    cleanup_errors=cleanup_errors,
+                )
+                if err is error:
+                    raise
+                raise err from error
+            raise
+
+    def _import_diagnostics(self, import_dir, settings_file, part):
+        return {
+            "translator": "Step214Importer",
+            "settings_file": str(settings_file),
+            "staging_directory": str(import_dir),
+            "output_search_paths": [str(import_dir), str(part.FullPath)],
+            "translator_files": [
+                {
+                    "path": str(f),
+                    "size": f.stat().st_size,
+                    "text": f.read_text(errors="replace")[-16000:]
+                    if f.suffix.lower() in {".log", ".err", ".txt"}
+                    else None,
+                }
+                for f in sorted(import_dir.iterdir())
+                if f.is_file() and f.name != "input.step"
+            ],
+        }
+
+    def _import_geometry_inner(self, path, flatten=False, target="work_part", output_path=None):
         import re
         import shutil
 
@@ -1392,7 +1466,7 @@ class HardenedExecutor(
         # Use the verified WorkPart importer for both modes. NX 2606's NewPart
         # translator mode returned no output in testing; normal part creation is explicit.
         if output:
-            self._create_part(str(output), units=self._units())
+            self._create_part(str(output), units="mm")
         part = self._work_part()
         before = {int(b.Tag) for b in part.Bodies}
         component_before = {int(c.Tag) for c, _ in self._walk_components(part)}
@@ -1402,15 +1476,16 @@ class HardenedExecutor(
         shutil.copyfile(source, staged)
         builder = self.session.DexManager.CreateStep214Importer()
         try:
-            builder.SettingsFile = str(
+            settings_file = str(
                 Path(
                     __import__("os").environ.get(
                         "UGII_BASE_DIR", r"C:\Program Files\Siemens\Designcenter2606"
                     )
                 )
                 / "STEP214UG"
-                / "ugstep214.def"
+                / "step214ug.def"
             )
+            builder.SettingsFile = settings_file
             builder.InputFile = str(staged)
             builder.ImportTo = self.nxopen.Step214Importer.ImportToOption.WorkPart
             builder.FileOpenFlag = False
@@ -1420,7 +1495,15 @@ class HardenedExecutor(
             builder.ObjectTypes.Surfaces = True
             builder.ObjectTypes.Curves = True
             builder.ProcessHoldFlag = True
-            builder.Commit()
+            try:
+                builder.Commit()
+            except Exception as error:
+                raise NXToolError(
+                    "NX_IMPORT_FAILED",
+                    str(error),
+                    nx_code=getattr(error, "ErrorCode", None),
+                    details=self._import_diagnostics(import_dir, settings_file, part),
+                ) from error
         finally:
             builder.Destroy()
         bodies = [
@@ -1434,11 +1517,14 @@ class HardenedExecutor(
         ]
         if not bodies and not added_components:
             raise NXToolError(
-                "NX_IMPORT_NO_OUTPUT", "Translator returned without imported bodies or occurrences"
+                "NX_IMPORT_NO_OUTPUT",
+                "Translator returned without imported bodies or occurrences",
+                details=self._import_diagnostics(import_dir, settings_file, part),
             )
         return {
             "path": str(source),
             "staging_directory": str(import_dir),
+            "diagnostics": self._import_diagnostics(import_dir, settings_file, part),
             "bodies": bodies,
             "body_count": len(bodies),
             "components": components,

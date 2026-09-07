@@ -336,6 +336,28 @@ class AuthoringMixin:
             raise
         return {"highlighted": [self._display_ref(v) for v in values], "count": len(values)}
 
+    def _consistency_fault(self, owner, code, tag):
+        result = {"code": int(code), "native_tag": int(tag), "object": None}
+        try:
+            result["message"] = self.nxopen.NXException(int(code)).GetMessage()
+        except Exception:
+            result["message"] = "Native diagnostic message unavailable"
+        try:
+            obj = self.nxopen.TaggedObjectManager.GetTaggedObject(tag)
+            kind = next(
+                k
+                for k, cls in [
+                    ("face", self.nxopen.Face),
+                    ("edge", self.nxopen.Edge),
+                    ("body", self.nxopen.Body),
+                ]
+                if isinstance(obj, cls)
+            )
+            result["object"] = self._reference(obj, kind, owner, "Faulty entity")
+        except Exception as error:
+            result["reference_warning"] = str(error)
+        return result
+
     def _model_health(self, scope="part", offset=0, limit=50):
         import NXOpen.UF
 
@@ -397,6 +419,12 @@ class AuthoringMixin:
                             "kind": "body_consistency",
                             "part": owner.FullPath,
                             "body": body.JournalIdentifier,
+                            "object": self._reference(body, "body", owner, "Faulty body"),
+                            "faults": [
+                                self._consistency_fault(owner, code, tag)
+                                for code, tag in zip(codes, tags, strict=False)
+                            ],
+                            "repair_guidance": "Inspect the identified native entities. Self-intersection requires repairing or replacing the source face; nx_edit_faces heal is an explicit local edit, not a guaranteed body repair. Re-run nx_model_health after any repair and compare bounds/volume before acceptance.",
                             "fault_codes": list(codes),
                             "native_fault_tags": [int(t) for t in tags],
                         }
