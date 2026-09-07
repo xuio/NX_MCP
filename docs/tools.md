@@ -502,3 +502,11 @@ Drawing creation assigns and verifies the sheet scale. New body and assembly bas
 `nx_save_part` saves only the work-part file. Component edits require explicit
 activation and saving of each component; saving an assembly does not imply
 authorization to save its prototypes. This also applies to drawing-preview data.
+
+Save receipts identify `saved_files`, observed disk changes, target before/after
+SHA-256 fingerprints, and unrelated modified parts whose file/state was preserved.
+Verification covers all loaded part files and flags. Native per-part/object save
+errors are returned; unexpected writes or flag changes produce a partial-failure
+receipt and must be reconciled before retrying. Unreadable preflight files prevent
+the save. External linked files and concurrent external writers are outside the
+verification guarantee.

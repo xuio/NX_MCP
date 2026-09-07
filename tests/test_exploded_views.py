@@ -393,8 +393,9 @@ def test_save_preserves_cgm_and_restores_modeling_without_dirtying(drawing_save)
 def test_save_restores_presentation_on_save_error(drawing_save):
     r = drawing_save
     r.part.Save = Mock(side_effect=RuntimeError("disk error"))
-    with pytest.raises(RuntimeError, match="disk error"):
+    with pytest.raises(NXToolError) as error:
         r.e._save_part()
+    assert error.value.details["native_save_errors"] == [{"message": "disk error"}]
     assert r.part.DrawingSheets.CurrentDrawingSheet is None
 
 

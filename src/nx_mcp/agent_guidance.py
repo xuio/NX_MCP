@@ -46,7 +46,9 @@ GUIDANCE = {
         None,
     ),
     "nx_save_part": (
-        ["Active work part with writable path; saves only this part, never component files"],
+        [
+            "Active work part with writable path; saves only this part, never component files. Returns saved paths and verifies loaded-file hashes and unrelated modified flags"
+        ],
         ["part"],
         {},
     ),

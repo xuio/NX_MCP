@@ -264,7 +264,24 @@ PAYLOADS.update(
         ),
         "nx_activate_part": obj({"part": REF, "work": B, "display": B, "message": S}),
         "nx_save_as": obj({"part": REF, "path": S, "message": S}),
-        "nx_save_part": obj({"path": S, "message": S, "recovery": PAYLOADS["nx_checkpoint_state"]}),
+        "nx_save_part": obj(
+            {
+                "path": S,
+                "message": S,
+                "recovery": PAYLOADS["nx_checkpoint_state"],
+                "requested_file": S,
+                "saved_files": arr(S),
+                "observed_changed_files": arr(S),
+                "save_scope": S,
+                "verification_scope": S,
+                "verified_part_count": COUNT,
+                "target_file": {"type": "object"},
+                "unrelated_modified_parts": arr({"type": "object"}),
+                "unexpected_changes": arr({"type": "object"}),
+                "unexpected_new_parts": arr({"type": "object"}),
+                "native_save_errors": arr({"type": "object"}),
+            }
+        ),
         "nx_close_part": obj(
             {
                 "closed_parts": arr(REF),

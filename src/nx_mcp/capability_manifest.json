@@ -201,7 +201,7 @@
     "nx_save_part": {
       "status": "tested",
       "evidence_type": "real_NX_v2606",
-      "scope": "Saves only the work part, preserving drawing-preview context. Native parent/child fixture verified the modified child remained unsaved and its disk bytes unchanged. Activate and save each component explicitly."
+      "scope": "Saves only the work part, preserving drawing-preview context. A native 73-loaded-part fixture verified the saved path and file hash, unchanged unrelated files/flags, and an edited child remaining unsaved. Native save errors and unexpected changes return a partial-outcome receipt. Activate and save each component explicitly."
     },
     "nx_set_view": {
       "status": "tested",

@@ -262,13 +262,17 @@ class Part(Object):
         session.Parts.Work = session.Parts.Display = self
 
     def Save(self, *_):
+        from pathlib import Path
+
+        Path(self.FullPath).parent.mkdir(parents=True, exist_ok=True)
+        Path(self.FullPath).write_bytes(b"native part fixture")
         self.IsModified = False
         self.session.marks.clear()
-        return NS(Dispose=Mock())
+        return NS(Dispose=Mock(), NumberUnsavedParts=0, NumberUnsavedObjects=0)
 
     def SaveAs(self, path):
         self.FullPath = path
-        return NS(Dispose=Mock())
+        return NS(Dispose=Mock(), NumberUnsavedParts=0, NumberUnsavedObjects=0)
 
     def Close(self, *_):
         self.session.Parts.remove(self)

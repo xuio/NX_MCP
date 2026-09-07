@@ -179,3 +179,32 @@ parts were restored, with 538 recorded occurrence paths/transforms unchanged.
 Reopening the corrected drawing through the deployed MCP retained all four 2:1
 views and physical tolerances; a newly downloaded PDF was parsed and visually
 checked again. These checks used isolated fixtures, not production CAD edits.
+
+## Follow-up investigations and save verification
+
+The CLIFF model's outer shell and two void shells each imported when serialized
+separately, but native recombination did not yield a solid that could pass volume
+verification. This is diagnostic evidence, not an accepted conversion route.
+Optimize Face with body cleanup and a 0.00001 mm tolerance completed on the Adam
+Tech copy but left native health faults and volume unchanged; it was rolled back.
+Independent OCP checks also found an invalid solid in the original Adam Tech STEP,
+with eight unorientable faces. Reader findings are recorded separately; they do
+not prove identical fault classification across kernels.
+
+The native centerline toggle still read back as enabled after setting it to false
+with either default or view-style inheritance. Existing centerline annotation
+objects are present, but their separate visibility requires further verification.
+No unsupported preference setter is advertised as repaired.
+
+The dev21 candidate save audit passed in native NX with 73 loaded parts: the
+parent save reported only its path, the edited child remained modified with
+unchanged disk bytes, and all other loaded files/flags were unchanged. The
+fixture was removed and the 71-part session preserved. Verification uses SHA-256,
+size and modification time for loaded part files and native PartSaveStatus
+errors. It does not cover external linked files or concurrent external writers.
+Unexpected changes produce a partial-outcome error, not a disk-rollback claim.
+
+CLIFF reconstruction blocked native cleanup and required an authorized restart.
+The saved 71-part session and all 538 occurrence paths/transforms were restored.
+A separate centerline annotation probe did not return a completed result; its
+visibility behavior remains unverified. No production CAD repair was applied.

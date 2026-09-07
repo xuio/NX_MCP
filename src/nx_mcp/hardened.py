@@ -652,21 +652,76 @@ class HardenedExecutor(
         }
 
     def _save_part(self):
+        from nx_mcp.save_audit import snapshot, verify
+
         part = self._work_part()
-        with self._drawing_save_context(part):
-            status = part.Save(
-                self.nxopen.BasePart.SaveComponents.FalseValue,
-                self.nxopen.BasePart.CloseAfterSave.FalseValue,
-            )
-        if status and hasattr(status, "Dispose"):
-            status.Dispose()
+        try:
+            before = snapshot(self.session)
+        except Exception as error:
+            raise NXToolError(
+                "NX_SAVE_PREFLIGHT_FAILED", str(error), details={"mutation_outcome": "not_started"}
+            ) from error
+        native_errors = []
+        save_error = None
+        save_called = False
+        native_returned = False
+        try:
+            with self._drawing_save_context(part):
+                save_called = True
+                status = part.Save(
+                    self.nxopen.BasePart.SaveComponents.FalseValue,
+                    self.nxopen.BasePart.CloseAfterSave.FalseValue,
+                )
+                native_returned = True
+                try:
+                    if status:
+                        for i in range(status.NumberUnsavedParts):
+                            native_errors.append(
+                                {"path": status.GetPart(i).FullPath, "nx_code": status.GetStatus(i)}
+                            )
+                        for i in range(status.NumberUnsavedObjects):
+                            native_errors.append(
+                                {"object_index": i, "nx_code": status.GetObjectStatus(i)}
+                            )
+                finally:
+                    if status:
+                        status.Dispose()
+        except Exception as error:
+            if not save_called:
+                if isinstance(error, NXToolError):
+                    error.details["mutation_outcome"] = "not_started"
+                raise
+            save_error = error
+            if not native_returned:
+                native_errors.append({"message": str(error)})
+        try:
+            audit = verify(before, snapshot(self.session), int(part.Tag), native_errors)
+        except NXToolError as error:
+            if save_error:
+                error.details["cause_code"] = getattr(save_error, "code", None)
+            raise
+        except Exception as error:
+            raise NXToolError(
+                "NX_SAVE_VERIFICATION_FAILED",
+                str(error),
+                details={"mutation_outcome": "partial", "path": part.FullPath},
+            ) from error
+        if save_error:
+            if isinstance(save_error, NXToolError):
+                save_error.details.update(audit, mutation_outcome="partial")
+                raise save_error
+            raise NXToolError(
+                "NX_SAVE_FAILED", str(save_error), details={**audit, "mutation_outcome": "partial"}
+            ) from save_error
         state = self._checkpoint_state()
         return {
-            "message": "Saved part; native NX save may invalidate undo marks",
+            "message": "Saved and verified work-part file; native NX save may invalidate undo marks",
             "path": part.FullPath,
             "recovery": state,
+            **audit,
             "warnings": [
-                "NX v2606 save invalidates native undo/checkpoints. Establish a new checkpoint before further edits."
+                "NX v2606 save invalidates native undo/checkpoints. Establish a new checkpoint before further edits.",
+                "Verification covers loaded part files and flags, not external linked files or concurrent external writers.",
             ],
         }
 
