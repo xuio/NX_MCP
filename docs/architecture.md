@@ -46,7 +46,8 @@ inspection. Agent mode intentionally disables the NX main window even while idle
 `nx_ui_control(mode="manual")` or **Pause / manual** to navigate or edit. This
 handoff invalidates object references and checkpoints. The panel distinguishes
 reserved idle, active operation and manual mode, paints before native execution,
-and reports the last operation duration. It does not continuously repaint an
+and reports the last operation duration. Its window is owned by NX so the Pause
+control stays above NX without being globally topmost. It does not continuously repaint an
 unchanged label.
 
 `nx_ui_control(mode="status")` reads a timestamped snapshot without joining the

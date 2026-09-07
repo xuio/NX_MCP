@@ -109,7 +109,7 @@ class ControlPanel:
             60,
             560,
             195,
-            None,
+            self.host.main_hwnd,
             None,
             None,
             None,
