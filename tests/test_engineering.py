@@ -552,6 +552,8 @@ def test_pdf_export_reports_actual_artifact_and_refuses_overwrite(eng):
         Destroy=Mock(),
     )
     b.Commit = lambda: Path(b.Filename).write_bytes(b"%PDF-1.7\nfixture")
+    r.e._active_mark = None
+    r.e._update_model = Mock(side_effect=AssertionError("Export has no modeling mark"))
     r.part.PlotManager = NS(CreatePrintPdfbuilder=lambda: b)
     r.part.DraftingViews = NS(UpdateViews=Mock())
     file = r.e.workspace.root / "drawings" / "test.pdf"
@@ -590,6 +592,8 @@ def test_invalid_pdf_output_is_removed(eng):
         Destroy=Mock(),
     )
     b.Commit = lambda: Path(b.Filename).write_bytes(b"not PDF")
+    r.e._active_mark = None
+    r.e._update_model = Mock(side_effect=AssertionError("Export has no modeling mark"))
     r.part.PlotManager = NS(CreatePrintPdfbuilder=lambda: b)
     r.part.DraftingViews = NS(UpdateViews=Mock())
     file = r.e.workspace.root / "bad.pdf"

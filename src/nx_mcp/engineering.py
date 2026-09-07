@@ -1570,7 +1570,7 @@ class EngineeringMixin:
         file.parent.mkdir(parents=True, exist_ok=True)
         with self._drawing_save_context(self._work_part(), force_display=True):
             # Opening each sheet refreshes its display/CGM presentation before plotting.
-            self._update_model()
+            # PDF export is a non-model operation and has no active modeling undo mark.
             views = [view for sheet in sheets for view in sheet.GetDraftingViews()]
             if views:
                 self._work_part().DraftingViews.UpdateViews(views)
