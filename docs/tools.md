@@ -498,3 +498,7 @@ Drawing creation assigns and verifies the sheet scale. New body and assembly bas
 `nx_display_info(objects=[...], count_only=true)` preflights appearance expansion without modifying display state. Changes are limited to 10,000 unique expanded bodies/faces; split larger selections after checking their counts. Oversized committed responses carry a paginated `full_result` handle; see the agent-surface recovery contract.
 
 `nx_batch` publishes a discriminated `{method,params}` schema for each supported child method. Lines and rectangles require an owning sketch ID and structured points; arcs use center/radius/angles and an optional sketch ID. Execution remains serial under one rollback mark. Custom revolve axes use both `axis_origin` and nonzero `axis_direction` in work-part coordinates; leave the principal-axis selector at its default.
+
+`nx_save_part` saves only the work-part file. Component edits require explicit
+activation and saving of each component; saving an assembly does not imply
+authorization to save its prototypes. This also applies to drawing-preview data.

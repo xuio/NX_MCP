@@ -284,7 +284,7 @@ class FakeSession:
 FAKE_NXOPEN = SimpleNamespace(
     StepCreator=SimpleNamespace(ExportFromOption=SimpleNamespace(ExistingPart="existing-part")),
     BasePart=SimpleNamespace(
-        SaveComponents=SimpleNamespace(TrueValue=True),
+        SaveComponents=SimpleNamespace(TrueValue=True, FalseValue=False),
         CloseAfterSave=SimpleNamespace(FalseValue=False),
         CloseWholeTree=SimpleNamespace(TrueValue="whole-tree"),
         CloseModified=SimpleNamespace(CloseModified="close"),

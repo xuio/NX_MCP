@@ -231,7 +231,7 @@ class NXOpenExecutor:
     def _save_part(self) -> dict[str, Any]:
         part = self._work_part()
         part.Save(
-            self.nxopen.BasePart.SaveComponents.TrueValue,
+            self.nxopen.BasePart.SaveComponents.FalseValue,
             self.nxopen.BasePart.CloseAfterSave.FalseValue,
         )
         self._undo_marks.clear()

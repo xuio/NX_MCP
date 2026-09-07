@@ -201,7 +201,7 @@
     "nx_save_part": {
       "status": "tested",
       "evidence_type": "real_NX_v2606",
-      "scope": "Save with documented native mark expiration"
+      "scope": "Saves only the work part, preserving drawing-preview context. Native parent/child fixture verified the modified child remained unsaved and its disk bytes unchanged. Activate and save each component explicitly."
     },
     "nx_set_view": {
       "status": "tested",

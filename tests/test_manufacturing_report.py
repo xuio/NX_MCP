@@ -325,3 +325,23 @@ def test_planar_export_preflights_before_writing(planar_fixture, tmp_path, param
     with pytest.raises(NXToolError):
         e._export_planar_dxf("sketch", str(tmp_path / "rejected.dxf"), **params)
     assert not (tmp_path / "rejected.dxf").exists()
+
+
+def test_save_work_part_does_not_save_modified_components(rig):
+    from unittest.mock import Mock
+
+    original = rig.part.Save
+    child = type("Child", (), {"IsModified": True})()
+
+    def save(components, close):
+        if components:
+            child.IsModified = False
+        return original(components, close)
+
+    rig.part.Save = save
+    rig.e._save_component_drawing_previews = Mock(
+        side_effect=AssertionError("Implicit component save")
+    )
+    rig.e._save_part()
+    assert child.IsModified
+    rig.e._save_component_drawing_previews.assert_not_called()

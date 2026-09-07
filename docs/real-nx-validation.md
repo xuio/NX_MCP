@@ -163,3 +163,9 @@ faces; diagnostics identified both faces and error 875315. Healing on a disposab
 copy failed and was rolled back. These are unresolved vendor/native limitations,
 not successful repairs. Drawing centerline setters also did not persist, so the
 API exposes their readback and rejects edits explicitly.
+
+Save-scope regression: the previous save implementation enabled native component
+saving. It now saves only the active work part and does not run component-preview
+saves. A native parent/child fixture confirmed that the child stayed modified and
+its disk bytes were unchanged after saving the parent. The updated local suite
+passed 907 tests at 78.74% branch coverage.

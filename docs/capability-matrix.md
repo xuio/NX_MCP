@@ -4,7 +4,7 @@ Generated from `src/nx_mcp/capability_manifest.json`; do not edit this table by 
 Run `python scripts/generate_capability_matrix.py` to regenerate, or add `--check` to detect drift.
 
 Manifest revision: **2606-manufacturing-r1**. NX: **v2606**. Bridge protocol: **1**.
-Canonical manifest SHA-256: `0bc6f76bf3845c3f10b0b60faba9fa2c666cc20f1a8a7448ef19d252dc41e286`.
+Canonical manifest SHA-256: `8b6a59455a55d3093947de8de6dbfdddba3e9f1d40136d2240448b4bf54dc775`.
 
 These labels report manifest evidence, not certification or independent verification of its claims. Native-tested means status `tested` with an evidence type beginning `real_NX_`; only the stated scope and NX version are covered. Contract/sidecar-tested does not establish native CAD correctness. Experimental includes untested entries and tested entries without a recognized evidence type. Unavailable capabilities are explicitly recorded by the manifest; absence from this matrix is not proof of availability or unavailability.
 
@@ -149,7 +149,7 @@ These labels report manifest evidence, not certification or independent verifica
 | nx_revolve | Native-tested | tested | real_NX_v2606 | XY rectangular profile around global Y, boolean none, case-insensitive name lookup |
 | nx_rollback | Native-tested | tested | real_NX_v2606 | Explicit checkpoint rollback; stale references rejected afterward |
 | nx_save_as | Native-tested | tested | real_NX_v2606_scoped | Native metric solid saved into a nested folder; work-part filename changes and references are reacquired before deletion. Original saved prototype loads into the test assembly. |
-| nx_save_part | Native-tested | tested | real_NX_v2606 | Save with documented native mark expiration |
+| nx_save_part | Native-tested | tested | real_NX_v2606 | Saves only the work part, preserving drawing-preview context. Native parent/child fixture verified the modified child remained unsaved and its disk bytes unchanged. Activate and save each component explicitly. |
 | nx_save_presentation | Native-tested | tested | real_NX_v2606_and_local_stateful_seams | Scoped v2606 native authoring/review acceptance and local failure-path regressions; see docs/tools.md for supported operations and limits. |
 | nx_screenshot | Native-tested | tested | real_NX_v2606_interactive | Native viewport PNG, white/transparent backgrounds, shaded/shaded-with-edges; requested dimensions advisory; actual device resolution returned |
 | nx_section_control | Native-tested | tested | real_NX_v2606_public_MCP | Enable, disable and delete native dynamic sections without modifying solids |

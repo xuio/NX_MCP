@@ -653,10 +653,9 @@ class HardenedExecutor(
 
     def _save_part(self):
         part = self._work_part()
-        self._save_component_drawing_previews(part)
         with self._drawing_save_context(part):
             status = part.Save(
-                self.nxopen.BasePart.SaveComponents.TrueValue,
+                self.nxopen.BasePart.SaveComponents.FalseValue,
                 self.nxopen.BasePart.CloseAfterSave.FalseValue,
             )
         if status and hasattr(status, "Dispose"):

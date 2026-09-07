@@ -45,7 +45,11 @@ GUIDANCE = {
         ["component"],
         None,
     ),
-    "nx_save_part": (["Active work part with writable path"], ["part"], {}),
+    "nx_save_part": (
+        ["Active work part with writable path; saves only this part, never component files"],
+        ["part"],
+        {},
+    ),
     "nx_close_part": (
         ["Current part reference; explicitly choose whether to save"],
         ["part"],

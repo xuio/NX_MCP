@@ -103,7 +103,7 @@ correctness. Native runners under `examples/validate_*.py` use disposable fixtur
 and document their environment variables. See [native validation](docs/real-nx-validation.md)
 and [release acceptance](docs/real-nx-validation.md).
 
-The [validation guide](docs/real-nx-validation.md) records 906 automated passes
+The [validation guide](docs/real-nx-validation.md) records 907 automated passes
 and scoped dev20 live checks. Historical receipts identify their runtime commits and are
 not current-version blanket certification. Current experimental gaps are tracked
 in [capability closeout](docs/capability-matrix.md).
