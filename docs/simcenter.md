@@ -7,16 +7,23 @@ NXOpen imports remain inside the NX process.
 
 ## Delivery phases (current goal)
 
-Phase 1 consolidation is in progress. Verified CAD evaluator repairs, field and
-membership readback, freshness versioning, pre-launch cancellation and deployment
-compatibility must be retained. Head-loss exported settings and saved-state reopen
-now pass the targeted native checks. Native step-level load assignment and running-solver cancellation have bounded
-reproducers and remain unresolved. Atmospheric-density/global ambient export findings
-retain their uncertainty; no new material or mesh sweep is planned.
+Phase 1 has a supported-scope checkpoint: implementation `90b2cc8` and retained
+native evidence `c3e1e1d`, pushed to `simcenter/thermal-flow`. CAD evaluators,
+field/membership inspection, head-loss export/persistence, scoped freshness,
+pre-launch cancellation and deployed handler compatibility have the evidence
+listed below. Native step-level load assignment, running-solver cancellation and
+ambient-export/density behavior remain explicitly unresolved; no blanket numerical
+or whole-model freshness claim is made.
 
-Before transitioning: reconcile this inventory, complete applicable Phase 1 checks,
-and create a reviewed Git checkpoint excluding licensed docs and inappropriate
-binaries. A green offline suite alone is not the transition criterion.
+Phase 2 is active. The installed Open CAE reference identifies the exact
+`Contact Thermal Coupling` descriptor. A bounded native check now accepts it with
+two target sets and verifies cleanup without committing geometry or launching a
+solver (`evidence/documented-contact-descriptor.json`). This supersedes the old
+wrong-name descriptor probes. Contact authoring, units, assignments, export and
+numerical acceptance remain to implement/test. Next: explicit primary/secondary
+selection and a total-resistance field with verified K/W units; do not interpret
+the unset `-777777` field sentinel as a physical resistance. Historical runtime
+capability wording still needs reconciliation with this new evidence.
 
 ### Reconciled Phase 2 backlog
 
@@ -25,7 +32,7 @@ from installed modules. A missing implementation/test is not an external blocker
 
 | Requirement | Current state | Reuse / next acceptance work |
 |---|---|---|
-| Thermal contacts/interface resistance | Missing supported authoring; earlier descriptor probes inconclusive | Revisit installed Open CAE descriptors; explicit pair/unit/readback benchmark |
+| Thermal contacts/interface resistance | Partial: documented descriptor accepted natively with two target sets; authoring missing | Explicit pair/unit/readback benchmark using `Contact Thermal Coupling` |
 | Convection and dependencies | Partial, public constant assumed convection | `boundaries.py`, `external_conditions.py`; verify dependency/time-field cases |
 | Radiation/emissivity/enclosures | Missing public authoring | Discover native applicable descriptors and test assignments/export |
 | Temperature-dependent materials | Missing | Extend constant/orthotropic material path with supported fields, units and persistence |

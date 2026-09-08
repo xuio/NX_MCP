@@ -1,0 +1,211 @@
+{
+  "status": "success",
+  "descriptor": "Contact Thermal Coupling",
+  "properties": [
+    {
+      "name": "description",
+      "native_type": "0",
+      "units": null,
+      "representation": "text_lines",
+      "value": []
+    },
+    {
+      "name": "Override Secondary Region",
+      "native_type": "2",
+      "units": null,
+      "value": false
+    },
+    {
+      "name": "Secondary Non-Geometric Element",
+      "native_type": "0",
+      "units": null,
+      "representation": "named_property_table",
+      "value": null
+    },
+    {
+      "name": "Swap Regions",
+      "native_type": "1",
+      "units": null,
+      "value": "Swap Regions"
+    },
+    {
+      "name": "Specify Region Side to Apply to",
+      "native_type": "2",
+      "units": null,
+      "value": false
+    },
+    {
+      "name": "Primary Region Side",
+      "native_type": "3",
+      "units": null,
+      "value": 0
+    },
+    {
+      "name": "Secondary Region Side",
+      "native_type": "3",
+      "units": null,
+      "value": 0
+    },
+    {
+      "name": "Type",
+      "native_type": "3",
+      "units": null,
+      "value": 0
+    },
+    {
+      "name": "Total Conductance",
+      "native_type": "6",
+      "units": "dimensionless",
+      "expression": "-777777",
+      "unit_symbol": null,
+      "representation": "expression"
+    },
+    {
+      "name": "Total Resistance",
+      "native_type": "6",
+      "units": "dimensionless",
+      "expression": "-777777",
+      "unit_symbol": null,
+      "representation": "expression"
+    },
+    {
+      "name": "Heat Transfer Coefficient",
+      "native_type": "6",
+      "units": "dimensionless",
+      "expression": "-777777",
+      "unit_symbol": null,
+      "representation": "expression"
+    },
+    {
+      "name": "Conductance per Length",
+      "native_type": "6",
+      "units": "dimensionless",
+      "expression": "-777777",
+      "unit_symbol": null,
+      "representation": "expression"
+    },
+    {
+      "name": "Conductive Proportional to Distance",
+      "native_type": "6",
+      "units": "dimensionless",
+      "expression": "-777777",
+      "unit_symbol": null,
+      "representation": "expression"
+    },
+    {
+      "name": "Type Override",
+      "native_type": "3",
+      "units": null,
+      "value": 0
+    },
+    {
+      "name": "Total Conductance Override",
+      "native_type": "6",
+      "units": "dimensionless",
+      "expression": "-777777",
+      "unit_symbol": null,
+      "representation": "expression"
+    },
+    {
+      "name": "Total Resistance Override",
+      "native_type": "6",
+      "units": "dimensionless",
+      "expression": "-777777",
+      "unit_symbol": null,
+      "representation": "expression"
+    },
+    {
+      "name": "Heat Transfer Coefficient Override",
+      "native_type": "6",
+      "units": "dimensionless",
+      "expression": "-777777",
+      "unit_symbol": null,
+      "representation": "expression"
+    },
+    {
+      "name": "Conductance per Length Override",
+      "native_type": "6",
+      "units": "dimensionless",
+      "expression": "-777777",
+      "unit_symbol": null,
+      "representation": "expression"
+    },
+    {
+      "name": "Method",
+      "native_type": "3",
+      "units": null,
+      "value": 0
+    },
+    {
+      "name": "Coupling Resolution",
+      "native_type": "3",
+      "units": null,
+      "value": 2
+    },
+    {
+      "name": "Override Coupling Resolution",
+      "native_type": "3",
+      "units": null,
+      "value": 0
+    },
+    {
+      "name": "Only Connect Overlapping Elements",
+      "native_type": "2",
+      "units": null,
+      "value": true
+    },
+    {
+      "name": "Overlap Projection Direction",
+      "native_type": "3",
+      "units": null,
+      "value": 1
+    },
+    {
+      "name": "Projective Intersection Overlap Projection Direction",
+      "native_type": "3",
+      "units": null,
+      "value": 1
+    },
+    {
+      "name": "Projective Intersection Overlap Projection Vector",
+      "native_type": "0",
+      "units": null,
+      "representation": "vector",
+      "value": null
+    },
+    {
+      "name": "Temperature Dependence Uses",
+      "native_type": "3",
+      "units": null,
+      "value": 0
+    },
+    {
+      "name": "Per Element",
+      "native_type": "2",
+      "units": null,
+      "value": false
+    },
+    {
+      "name": "Per Element Override",
+      "native_type": "2",
+      "units": null,
+      "value": false
+    },
+    {
+      "name": "distributionType",
+      "native_type": "3",
+      "units": null,
+      "value": 32
+    }
+  ],
+  "target_set_count": 2,
+  "committed": false,
+  "source": "Open CAE NX MULTIPHYSICS - Thermal / Contact Thermal Coupling",
+  "solver_launched": false,
+  "unrelated_modified_flags_preserved": true,
+  "operation_id": "op_ec17799486a54883b29170d068d631df",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}
