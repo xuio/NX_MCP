@@ -591,6 +591,12 @@ SIDE = {
     "nx_cancel_operation",
 }
 PATHS = {
+    "nx_sim_variant_plan": "folder",
+    "nx_sim_variant_create": "folder",
+    "nx_sim_variant_receipt": "folder",
+    "nx_sim_open": "path",
+    "nx_sim_scenario_apply": "path",
+    "nx_sim_scenario_preview": "path",
     "nx_export_planar_dxf": "path",
     "nx_export_explosion_animation": "path",
     "nx_export_flat_pattern": "path",
@@ -657,6 +663,19 @@ def configure(mcp, bridge, workspace):
             if name.startswith("nx_") and inspect.isfunction(obj)
         }
     )
+    import os
+
+    if os.environ.get("NX_MCP_ENABLE_SIMCENTER") == "1":
+        from nx_mcp.simcenter import server as simcenter_server
+
+        definitions.update(
+            {
+                name: getattr(simcenter_server, name)
+                for name in simcenter_server.READ_ONLY | simcenter_server.NON_MODEL
+            }
+        )
+        READ_ONLY.update(simcenter_server.READ_ONLY)
+        PATHS["nx_sim_create_benchmark"] = "folder"
     names = set(existing) | set(definitions)
     for name in names:
         old = existing.get(name)

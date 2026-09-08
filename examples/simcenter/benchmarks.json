@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "status": "specification_not_acceptance_results",
+  "benchmarks": [
+    {
+      "id": "A_conduction",
+      "geometry_mm": [100, 10, 10],
+      "conductivity_W_m_K": 200,
+      "power_W": 1,
+      "fixed_temperature_K": 293.15,
+      "other_faces": "adiabatic",
+      "expected_delta_T_K": 5,
+      "expected_rejected_heat_W": 1,
+      "temperature_relative_tolerance": 0.01,
+      "energy_relative_tolerance": 0.005,
+      "tolerance_basis": "Uniform conductivity and end-face flux give an exactly linear field; 1% permits numerical/export precision, not geometric modeling error."
+    },
+    {
+      "id": "B_contact",
+      "geometry": "two A-conduction half-length blocks in series",
+      "power_W": 1,
+      "contact_resistance_K_W": 2,
+      "expected_interface_delta_T_K": 2,
+      "temperature_relative_tolerance": 0.01,
+      "energy_relative_tolerance": 0.005,
+      "tolerance_basis": "Uniform cross-section and prescribed total interface resistance admit an exact 1D series-resistance solution."
+    },
+    {
+      "id": "C_transient",
+      "geometry_mm": [10, 10, 10],
+      "conductivity_W_m_K": 200,
+      "density_kg_m3": 2700,
+      "specific_heat_J_kg_K": 900,
+      "convection_W_m2_K": 10,
+      "power_W": 0.1,
+      "initial_and_ambient_K": 293.15,
+      "radiation": "disabled",
+      "expected_lumped_time_constant_s": 405,
+      "expected_lumped_steady_delta_T_K": 16.666666666666668,
+      "temperature_relative_tolerance": 0.02,
+      "tolerance_basis": "Bi = h(V/A)/k = 0.0000833 supports a lumped reference. Compare rise normalized by steady rise and separately refine time step and mesh."
+    },
+    {"id": "D_fan_duct", "status": "awaiting_native_flow_capability_validation"},
+    {"id": "E_coupled_cooling", "status": "awaiting_native_flow_capability_validation"},
+    {"id": "F_lifecycle_failures", "status": "partial_native_coverage_no_acceptance_pass"}
+  ]
+}

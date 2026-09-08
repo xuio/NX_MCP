@@ -40,6 +40,8 @@ from nx_mcp.release_engineering import ReleaseEngineeringMixin
 from nx_mcp.review_tools import ReviewToolsMixin
 from nx_mcp.runtime import NXToolError
 from nx_mcp.sheet_metal import SheetMetalMixin
+from nx_mcp.simcenter import server as simcenter_server
+from nx_mcp.simcenter.native import SimcenterMixin
 from nx_mcp.thread_standards import ThreadStandardsMixin
 from nx_mcp.visual_tools import VisualToolsMixin
 
@@ -138,6 +140,7 @@ IDENTITY = [[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0]]
 READ_ONLY.update(
     AUTHORING_READ_ONLY
     | sheet_metal_server.READ_ONLY
+    | simcenter_server.READ_ONLY
     | freeform_server.READ_ONLY
     | manufacturing_server.READ_ONLY
     | assembly_documentation_server.READ_ONLY
@@ -146,6 +149,7 @@ READ_ONLY.update(
 NON_MODEL.update(
     AUTHORING_NON_MODEL
     | sheet_metal_server.NON_MODEL
+    | simcenter_server.NON_MODEL
     | freeform_server.NON_MODEL
     | manufacturing_server.NON_MODEL
     | assembly_documentation_server.NON_MODEL
@@ -154,6 +158,7 @@ NON_MODEL.update(
 
 
 class HardenedExecutor(
+    SimcenterMixin,
     LegacyRepairsMixin,
     PlanarDxfMixin,
     DrawingPreferencesMixin,
@@ -185,6 +190,11 @@ class HardenedExecutor(
         self.store = OperationStore(self.workspace.root)
         self.store.recover(self.session_id)
         self._current_operation = None
+        import os
+
+        if os.environ.get("NX_MCP_ENABLE_SIMCENTER") == "1":
+            for name in simcenter_server.READ_ONLY | simcenter_server.NON_MODEL:
+                self._handlers[name] = getattr(self, "_" + name[3:])
         for module in [freeform_server, manufacturing_server, assembly_documentation_server]:
             for name in vars(module):
                 if name.startswith("nx_"):
@@ -330,11 +340,10 @@ class HardenedExecutor(
         )
 
     def _units(self):
-        return (
-            "mm"
-            if self._work_part().PartUnits == self.nxopen.BasePart.Units.Millimeters
-            else "inch"
-        )
+        part = self._work_part(required=False)
+        if part is None:
+            return None
+        return "mm" if part.PartUnits == self.nxopen.BasePart.Units.Millimeters else "inch"
 
     def execute(self, method, params):
         params = dict(params)

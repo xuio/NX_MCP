@@ -28,6 +28,7 @@ CORE = {
     "nx_download_file",
 }
 DOMAINS = {
+    "simulation": ("nx_sim_",),
     "sketch": ("sketch", "constraint"),
     "assembly": ("component", "assembly", "explosion", "reference_set", "mate"),
     "drawing": ("drawing", "balloon", "bom", "pmi", "annotation"),
@@ -199,7 +200,7 @@ def configure(mcp, workspace):
         offset: Annotated[int, Field(ge=0)] = 0,
         limit: Annotated[int, Field(ge=1, le=20)] = 10,
     ) -> CallToolResult:
-        """Discover task tools by name/description or domain. Domains: modeling, sketch, assembly, drawing, manufacturing, inspection, display, files. Spaced queries match all words, with tool-name matches ranked first. Request exact-name schema before nx_invoke; include_output_schema=false omits the repeated full output contract; results are paged. Discovery does not mutate NX or the session's catalog."""
+        """Discover task tools by name/description or domain. Domains: modeling, simulation, sketch, assembly, drawing, manufacturing, inspection, display, files. Spaced queries match all words, with tool-name matches ranked first. Request exact-name schema before nx_invoke; include_output_schema=false omits the repeated full output contract; results are paged. Discovery does not mutate NX or the session's catalog."""
         if offset < 0 or not 1 <= limit <= 20:
             raise ValueError("offset >= 0; limit 1..20")
         if domain is not None and domain not in {*DOMAINS, "modeling"}:

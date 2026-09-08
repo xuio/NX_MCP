@@ -264,8 +264,10 @@ def planar_fixture(tmp_path, monkeypatch):
     def point(curve, t):
         return evaluate(curve, t)[0]
 
+    freed = []
     evaluator = NS(
         Initialize2=lambda tag: curves[tag - 1],
+        Free=lambda c: freed.append(c.Tag),
         AskLimits=lambda c: c.limits,
         EvaluateUnitVectors=lambda c, t: point(c, t),
         IsLine=lambda c: c.kind == "line",
@@ -295,6 +297,27 @@ def planar_fixture(tmp_path, monkeypatch):
         "normal": [0, 0, 1],
     }
     e._reference = lambda c, *_: {"id": str(c.Tag)}
+    from unittest.mock import Mock
+
+    def inspect_curve(curve, count):
+        return {
+            "kind": "line"
+            if curve.kind == "line"
+            else ("arc" if curve.kind in {"arc", "circle"} else "other"),
+            "limits": curve.limits,
+            "points": [point(curve, t)[0] for t in curve.limits],
+            "center": arc.Center,
+            "radius": arc.Radius,
+            "x_axis": arc.XAxis,
+            "y_axis": arc.YAxis,
+        }
+
+    bridge = NS(inspect=Mock(side_effect=inspect_curve))
+    monkeypatch.setattr("nx_mcp.evaluator_bridge.EvaluatorBridge", lambda session: bridge)
+    e.session = NS()
+    e.test_inspector = bridge
+    e.test_evaluator = evaluator
+    e.test_freed = freed
     return e, sketch, curves
 
 
@@ -345,3 +368,21 @@ def test_save_work_part_does_not_save_modified_components(rig):
     rig.e._save_part()
     assert child.IsModified
     rig.e._save_component_drawing_previews.assert_not_called()
+
+
+def test_planar_batches_one_owned_helper_call_per_curve(planar_fixture, tmp_path):
+    executor, _, _ = planar_fixture
+    executor._export_planar_dxf("sketch", str(tmp_path / "helper.dxf"))
+    assert executor.test_inspector.inspect.call_count == 3
+    assert all(c.args[1] == 2 for c in executor.test_inspector.inspect.call_args_list)
+
+
+def test_planar_helper_failure_does_not_write_output(planar_fixture, tmp_path):
+    executor, _, _ = planar_fixture
+    executor.test_inspector.inspect.side_effect = NXToolError(
+        "NX_EVALUATOR_CLEANUP_FAILED", "cleanup failed"
+    )
+    with pytest.raises(NXToolError) as error:
+        executor._export_planar_dxf("sketch", str(tmp_path / "failed.dxf"))
+    assert error.value.code == "NX_EVALUATOR_CLEANUP_FAILED"
+    assert not (tmp_path / "failed.dxf").exists()

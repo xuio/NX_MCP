@@ -369,18 +369,18 @@ class FreeformMixin:
             for v in [position_tolerance, angle_tolerance, curvature_tolerance]
         ]
         uf = U.UFSession.GetUFSession()
+        from nx_mcp.evaluator_bridge import EvaluatorBridge
+
+        inspector = EvaluatorBridge(self.session)
         self._require_api(U.UFConstants, "UF_MODL_EVAL_DERIV2")
         reports = []
         for side in range(2):
             source, target = edges[side], edges[1 - side]
             face_a, face_b = adjacent[side][0], adjacent[1 - side][0]
-            evaluator = uf.Eval.Initialize2(source.Tag)
-            limits = uf.Eval.AskLimits(evaluator)
+            curve_data = inspector.inspect(source, samples)
             for i in range(samples):
                 t = i / (samples - 1)
-                point = uf.Eval.EvaluateUnitVectors(
-                    evaluator, limits[0] + t * (limits[1] - limits[0])
-                )[0]
+                point = curve_data["points"][i]
                 distance, _, closest, _ = uf.Modeling.AskMinimumDist3(
                     2, 0, target.Tag, 1, point, 0, [0.0] * 3
                 )

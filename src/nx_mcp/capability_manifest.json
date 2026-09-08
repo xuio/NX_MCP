@@ -736,7 +736,7 @@
     "nx_surface_continuity": {
       "status": "tested",
       "evidence_type": "real_NX_v2606_scoped",
-      "scope": "Bidirectional sampled UF geometry: matching planes pass G0/G1/G2, separated planes fail, tangent plane/quadratic join fails G2. Not a global certificate."
+      "scope": "Bidirectional sampled UF geometry. Private .NET-owned evaluator restored in NX 2606: curved cylindrical sheet boundaries pass 42 G0/G1/G2 samples, success/failure cleanup and public MCP verified. Requires locally built authenticated helper. Prior plane tests retained; not a global certificate."
     },
     "nx_thread": {
       "status": "tested",
@@ -941,7 +941,7 @@
     "nx_export_planar_dxf": {
       "status": "tested",
       "evidence_type": "real_NX_v2606_scoped",
-      "scope": "Analytic lines, circles and arcs from planar sketches and faces; principal/custom frames, layers and inch-to-mm conversion tested in NX. XY sketch/face output independently parsed with ezdxf; splines are rejected."
+      "scope": "Private .NET-owned evaluator restored in NX 2606: analytic line/arc/circle, reversed normals, mm/inch conversion and ellipse rejection verified natively; planar-face export verified through public MCP. Requires locally built authenticated helper. Prior frame/layer and independent DXF parsing evidence retained."
     },
     "nx_read_result": {
       "status": "tested",

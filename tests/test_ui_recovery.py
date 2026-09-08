@@ -56,7 +56,7 @@ def host(rig, tmp_path, monkeypatch):
         requested_mode=None,
         stop_file=tmp_path / "stop",
         state_dir=tmp_path,
-        panel=NS(update=Mock(), close=Mock()),
+        panel=NS(update=Mock(), close=Mock(), user=NS(SetWindowTextW=Mock()), hwnd=2),
         dispatcher=NS(drain=Mock(), stop=Mock()),
         server=NS(stop=Mock()),
         timer=7,
@@ -281,3 +281,86 @@ def test_panel_unchanged_text_does_not_repaint(host):
     panel.update("Idle")
     panel.user.SetWindowTextW.assert_called_once()
     assert panel.user.UpdateWindow.call_count == 2
+
+
+def test_cae_view_refresh_uses_base_display_and_preserves_committed_response(host, monkeypatch):
+    host.control("agent")
+
+    class Parts:
+        BaseDisplay = NS(ModelingViews=NS(WorkView=NS(UpdateDisplay=Mock())))
+
+        @property
+        def Display(self):
+            raise RuntimeError("The part file is not a .prt part")
+
+    host.session = NS(Parts=Parts())
+    host.executor = NS(execute=lambda method, params: {"mutation_outcome": "committed"})
+    result = host.execute("nx_sim_mesh", {})
+    assert result["mutation_outcome"] == "committed"
+    host.session.Parts.BaseDisplay.ModelingViews.WorkView.UpdateDisplay.assert_called_once()
+    host.session.Parts.BaseDisplay.ModelingViews.WorkView.UpdateDisplay.side_effect = RuntimeError(
+        "redraw"
+    )
+    result = host.execute("nx_sim_mesh", {})
+    assert result["mutation_outcome"] == "committed" and result["warnings"] == [
+        "View refresh: redraw"
+    ]
+
+
+def test_ready_panel_distinguishes_observer_from_native_work(host, rig, tmp_path):
+    host.control("agent")
+    active = Mock()
+    active.is_alive.return_value = True
+    ended = Mock()
+    ended.is_alive.return_value = False
+    rig.e._sim_observer_workers = {
+        "one": {"thread": active, "path": tmp_path / "job-one" / "observer.log"},
+        "two": {"thread": ended, "path": tmp_path / "job-two" / "observer.log"},
+    }
+    text = host.panel_text()
+    assert text.startswith("NX ready") and "Watching simulation: job-one" in text
+    assert "job-two" not in text and "Agent idle" not in text
+    state = host.status()
+    assert state["activity"] == "reserved_idle"
+    assert state["simulation_observers"]["active_count"] == 1
+    assert state["simulation_observers"]["solver_state"] == "not_checked"
+    active.is_alive.return_value = False
+    assert "No NX call running" in host.panel_text()
+    assert host.simulation_observers()["no_active_observer_does_not_imply_solver_idle"]
+
+
+def test_native_call_and_manual_mode_keep_priority_over_observer(host, rig, tmp_path):
+    worker = Mock()
+    worker.is_alive.return_value = True
+    rig.e._sim_observer_workers = {
+        "job": {"thread": worker, "path": tmp_path / "job" / "observer.log"}
+    }
+    assert "Manual editing enabled" in host.panel_text()
+    host.control("agent")
+    host.running_method = "nx_sim_mesh"
+    assert host.panel_text().startswith("Running nx_sim_mesh")
+
+
+def test_panel_retains_terminal_observation_without_claiming_validation(host, rig, tmp_path):
+    host.control("agent")
+    thread = Mock()
+    thread.is_alive.return_value = False
+    presentation = {
+        "snapshot": {
+            "worker": "finished",
+            "job_state": "solver_exited",
+            "observed_at": "2026-09-08T16:00:00+00:00",
+        }
+    }
+    rig.e._sim_observer_workers = {
+        "job": {
+            "thread": thread,
+            "path": tmp_path / "job" / "observer.log",
+            "presentation": presentation,
+        }
+    }
+    assert "job: solver exited; results need audit/display" in host.panel_text()
+    assert "Observed: 2026-09-08T16:00:00+00:00" in host.panel_text()
+    presentation["snapshot"] = {**presentation["snapshot"], "worker": "observation_timeout"}
+    assert "solver status unknown" in host.panel_text()
+    assert "solver exited" not in host.panel_text()

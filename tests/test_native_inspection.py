@@ -250,3 +250,21 @@ def test_read_only_cleanup_failure_keeps_partial_outcome_in_receipt(rig):
         rig.e.execute("nx_check_interference", dict(zip(["obj1", "obj2"], refs, strict=True)))
     assert error.value.code == "NX_ROLLBACK_FAILED"
     assert error.value.details["mutation_outcome"] == "partial"
+
+
+def test_sim_display_capture_does_not_use_cad_only_accessor(rig):
+    class CaeParts:
+        BaseDisplay = rig.part
+
+        @property
+        def Display(self):
+            raise AssertionError("CAD-only accessor used for a SIM")
+
+        def __iter__(self):
+            return iter([self.BaseDisplay])
+
+    image_builder(rig)
+    rig.session.Parts = CaeParts()
+    result = rig.e._capture_view(style="current")
+    assert result["capture_kind"] == "nx_model_viewport"
+    assert result["camera"]["coordinate_frame"] == "display_part"

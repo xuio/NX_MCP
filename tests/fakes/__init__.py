@@ -172,9 +172,19 @@ class Collection(list):
     pass
 
 
+class PartCollection(Collection):
+    @property
+    def BaseWork(self):
+        return self.Work
+
+    @property
+    def BaseDisplay(self):
+        return self.Display
+
+
 class Session:
     def __init__(self):
-        self.Parts = Collection()
+        self.Parts = PartCollection()
         self.Parts.Work = self.Parts.Display = None
         self.ActiveSketch = None
         self.IsBatch = False

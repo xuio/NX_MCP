@@ -2,3 +2,7 @@
 *.png binary
 *.jpg binary
 *.whl binary
+
+# Retained native receipts/solver fixtures: preserve bytes and source hashes.
+tests/simcenter/evidence/** -text -whitespace
+tests/simcenter/fixtures/** -text -whitespace

@@ -102,6 +102,9 @@ class PlanarDxfMixin:
                 "NX_OBJECT_OWNER_MISMATCH", "Select an owned sketch or face in the work part"
             )
         uf = U.UFSession.GetUFSession()
+        from nx_mcp.evaluator_bridge import EvaluatorBridge
+
+        inspector = EvaluatorBridge(self.session)
         if isinstance(obj, self.nxopen.Sketch):
             frame = self._sketch_frame(obj)
             curves = list(obj.GetAllGeometry())
@@ -146,17 +149,16 @@ class PlanarDxfMixin:
         for curve in curves:
             ref = self._reference(curve, kind, self._work_part(), "DXF curve")
             used.add(ref["id"])
-            evaluator = uf.Eval.Initialize2(curve.Tag)
-            limits = uf.Eval.AskLimits(evaluator)
-            start = point2(uf.Eval.EvaluateUnitVectors(evaluator, limits[0])[0])
-            end = point2(uf.Eval.EvaluateUnitVectors(evaluator, limits[1])[0])
+            data = inspector.inspect(curve, 2)
+            limits = data["limits"]
+            start = point2(data["points"][0])
+            end = point2(data["points"][-1])
             e = {"source": ref, "layer": layers.get(ref["id"], layer)}
-            if uf.Eval.IsLine(evaluator):
+            if data["kind"] == "line":
                 e.update(type="LINE", start=start, end=end)
-            elif uf.Eval.IsArc(evaluator):
-                arc = uf.Eval.AskArc(evaluator)
-                center = point2(arc.Center)
-                direction = dot(cross(list(arc.XAxis), list(arc.YAxis)), normal)
+            elif data["kind"] == "arc":
+                center = point2(data["center"])
+                direction = dot(cross(list(data["x_axis"]), list(data["y_axis"])), normal)
                 if abs(abs(direction) - 1) > 1e-8:
                     raise NXToolError("NX_NON_PLANAR", "Circular curve is not in the output plane")
                 e.update(
@@ -164,7 +166,7 @@ class PlanarDxfMixin:
                     if abs(abs(limits[1] - limits[0]) - 2 * math.pi) < 1e-8
                     else "ARC",
                     center=center,
-                    radius=arc.Radius * factor,
+                    radius=data["radius"] * factor,
                 )
                 if e["type"] == "ARC":
                     if direction < 0:

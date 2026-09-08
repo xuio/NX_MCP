@@ -467,3 +467,33 @@ def test_managed_trace_refresh_handles_collapsed_and_expanded_states(ff):
     ff.e._refresh_explosion_traces("ex")
     line.Unblank.assert_called_once()
     assert line.EndPoint.SetCoordinates.call_args.args[0].X == 10
+
+
+@pytest.mark.parametrize("failure", [None, "helper", "AskMinimumDist3"])
+def test_surface_continuity_uses_batched_owned_samples(ff, failure, monkeypatch):
+    ff.nx.UF.UFConstants = NS(UF_MODL_EVAL_DERIV2=2)
+    faces = [NS(Tag=11), NS(Tag=12)]
+    edges = [NS(Tag=1, GetFaces=lambda: [faces[0]]), NS(Tag=2, GetFaces=lambda: [faces[1]])]
+    ff.e._engineering_owned = lambda ref, kind: edges[int(ref)]
+    helper = NS(inspect=Mock(return_value={"points": [[0.0, 0.0, 0.0]] * 2}))
+    monkeypatch.setattr("nx_mcp.evaluator_bridge.EvaluatorBridge", lambda session: helper)
+    ff.uf.Modeling.AskMinimumDist3.return_value = (0.0, None, [0.0, 0.0, 0.0], None)
+    ff.uf.Modeling.AskFaceParm.return_value = ([0.0, 0.0], None)
+    ff.uf.Modeling.EvaluateFace.return_value = NS(
+        SrfDu=[1, 0, 0],
+        SrfDv=[0, 1, 0],
+        SrfD2u=[0, 0, 0],
+        SrfDudv=[0, 0, 0],
+        SrfD2v=[0, 0, 0],
+    )
+    if failure:
+        failing = ff.uf.Modeling.AskMinimumDist3 if failure == "AskMinimumDist3" else helper.inspect
+        failing.side_effect = RuntimeError("native failure")
+        with pytest.raises(RuntimeError, match="native failure"):
+            ff.e._surface_continuity("0", "1", samples=2)
+        assert helper.inspect.call_count == 1
+    else:
+        result = ff.e._surface_continuity("0", "1", samples=2)
+        assert result["checks"] == {"G0": True, "G1": True, "G2": True}
+        assert helper.inspect.call_count == 2
+    ff.uf.Eval.Initialize2.assert_not_called()

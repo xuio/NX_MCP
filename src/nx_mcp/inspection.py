@@ -19,7 +19,7 @@ class InspectionMixin:
     def _view_info(self):
         from nx_mcp.hardened import rows, xyz
 
-        part = self.session.Parts.Display
+        part = self.session.Parts.BaseDisplay
         if part is None:
             raise NXToolError("NX_NO_DISPLAY_PART", "Open a display part first")
         view = part.ModelingViews.WorkView
@@ -90,7 +90,7 @@ class InspectionMixin:
         if file.exists():
             raise NXToolError("NX_FILE_EXISTS", "Choose a new capture path")
         file.parent.mkdir(parents=True, exist_ok=True)
-        part = self.session.Parts.Display
+        part = self.session.Parts.BaseDisplay
         if not part:
             raise NXToolError("NX_NO_DISPLAY_PART", "Open a display part first")
         view = part.ModelingViews.WorkView

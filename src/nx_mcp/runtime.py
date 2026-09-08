@@ -6,6 +6,13 @@ from dataclasses import asdict, dataclass
 from typing import Any, Literal
 
 ObjectKind = Literal[
+    "simulation_object",
+    "simulation_field",
+    "simulation_step",
+    "simulation_solution",
+    "simulation_load",
+    "material",
+    "mesh_collector",
     "reference_set",
     "datum",
     "part",

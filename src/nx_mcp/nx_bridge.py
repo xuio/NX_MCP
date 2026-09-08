@@ -138,7 +138,21 @@ class NXOpenExecutor:
             ) from rollback_error
 
     def _work_part(self, *, required: bool = True) -> Any | None:
-        part = getattr(self.session.Parts, "Work", None)
+        # PartCollection.Work raises in a FEM/SIM session; BaseWork is valid
+        # for all NX document types. CAD-only handlers must reject CAE parts.
+        part = getattr(self.session.Parts, "BaseWork", None)
+        if part is None:
+            part = getattr(self.session.Parts, "Work", None)
+        if (
+            part is not None
+            and required
+            and type(part).__name__ in {"FemPart", "SimPart", "AssyFemPart"}
+        ):
+            raise NXToolError(
+                "NX_DOCUMENT_TYPE",
+                "The active document is a simulation document; this operation requires CAD.",
+                suggestion="Use nx_sim tools or activate a CAD part with nx_activate_part.",
+            )
         if part is None and required:
             raise NXToolError(
                 "NX_NO_WORK_PART",

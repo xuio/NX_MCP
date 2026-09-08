@@ -281,6 +281,9 @@ class InteractiveHost:
         return self.dispatcher.call(method, params)
 
     def publish(self):
+        from nx_mcp.ui_document import update_document_caption
+
+        update_document_caption(self)
         state = self.status()
         self._snapshot = {
             **state,
@@ -291,6 +294,28 @@ class InteractiveHost:
         temp = self.state_dir / "ui-state.tmp"
         temp.write_text(json.dumps(state))
         temp.replace(self.state_dir / "ui-state.json")
+
+    def simulation_observers(self):
+        """Cheap worker liveness only: no filesystem, process scans or NX calls."""
+        registry = getattr(self.executor, "_sim_observer_workers", {})
+        active = []
+        observations = []
+        for worker in registry.values():
+            snapshot = worker.get("presentation", {}).get("snapshot")
+            if snapshot:
+                observations.append({"job_id": worker["path"].parent.name, **snapshot})
+            if worker["thread"].is_alive():
+                active.append(worker["path"].parent.name)
+        return {
+            "observations": sorted(
+                observations, key=lambda row: row.get("observed_at", ""), reverse=True
+            )[:5],
+            "active_count": len(active),
+            "job_ids": sorted(active),
+            "scope": "observer_thread_liveness_in_this_nx_process",
+            "solver_state": "not_checked",
+            "no_active_observer_does_not_imply_solver_idle": True,
+        }
 
     def panel_text(self):
         if self.running_method:
@@ -305,14 +330,30 @@ class InteractiveHost:
             if self.last_duration_seconds is not None
             else "Waiting for MCP requests"
         )
-        return (
-            "Agent idle — NX input intentionally reserved\nUse Pause / manual to edit or navigate NX.\n"
-            + detail
-        )
+        observers = self.simulation_observers()
+        if observers["active_count"]:
+            jobs = ", ".join(observers["job_ids"][:2])
+            if observers["active_count"] > 2:
+                jobs += f" (+{observers['active_count'] - 2} more)"
+            activity = f"Watching simulation: {jobs} (solver state separate)"
+        else:
+            activity = "No NX call running; external jobs are reported separately."
+        if observers["observations"]:
+            latest = max(observers["observations"], key=lambda item: item.get("observed_at", ""))
+            state = latest.get("job_state", latest.get("state", "unknown"))
+            if latest.get("worker") in ("failed", "observation_timeout"):
+                state = "observation stopped; solver status unknown"
+            elif state == "solver_exited":
+                state = "solver exited; results need audit/display"
+            prefix = "Watching" if latest["job_id"] in observers["job_ids"] else "Last observed job"
+            activity = f"{prefix}: {latest['job_id']}: {state}\nObserved: {latest['observed_at']}"
+        return "NX ready — input intentionally reserved\n" + activity + "\n" + detail
 
     def status(self):
         return {
             "interactive": True,
+            "visible_document": getattr(self, "_visible_document", None),
+            "work_document": getattr(self, "_work_document", None),
             "pid": os.getpid(),
             "mode": self.mode,
             "activity": "running"
@@ -340,6 +381,7 @@ class InteractiveHost:
             "completed_operations": self.completed,
             "last_method": self.last_method,
             "last_error": self.last_error,
+            "simulation_observers": self.simulation_observers(),
             "uptime_seconds": time.time() - self.started,
             "scheduler": "Win32 UI-thread timer; one queued call per tick",
         }
@@ -417,15 +459,18 @@ class InteractiveHost:
                 self.last_error = "UI status publication failed: " + str(exc)
             result = self.executor.execute(method, params)
             self.completed += 1
-            part = self.session.Parts.Display
             from nx_mcp.hardened import READ_ONLY
 
-            sheet = getattr(getattr(part, "DrawingSheets", None), "CurrentDrawingSheet", None)
-            if part and method not in READ_ONLY and sheet is None:
-                try:
+            try:
+                part = getattr(self.session.Parts, "BaseDisplay", None)
+                if part is None:
+                    part = getattr(self.session.Parts, "Display", None)
+                sheet = getattr(getattr(part, "DrawingSheets", None), "CurrentDrawingSheet", None)
+                if part and method not in READ_ONLY and sheet is None:
                     part.ModelingViews.WorkView.UpdateDisplay()
-                except Exception as exc:
-                    result.setdefault("warnings", []).append("View refresh: " + str(exc))
+            except Exception as exc:
+                # A view refresh must never fail an already committed mutation.
+                result.setdefault("warnings", []).append("View refresh: " + str(exc))
             return result
         except BaseException as exc:
             self.last_error = str(exc)

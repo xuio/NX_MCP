@@ -22,3 +22,12 @@ venv/
 .coverage
 coverage.xml
 htmlcov/
+
+# Locally installed Siemens documentation; never publish vendor contents.
+/.local-docs/
+
+# Locally compiled private NX helper binaries.
+/src/nx_mcp/native/*.dll
+/src/nx_mcp/native/*.pdb
+
+/src/nx_mcp/native/evaluator-helper.json
