@@ -1,0 +1,18 @@
+{
+  "mode": "conductance",
+  "native_value": 2000000.0,
+  "si_value": 2.0,
+  "si_units": "W/K",
+  "force_factor": 1000.0,
+  "length_factor": 1000.0,
+  "temperature_factor": 1.0,
+  "region_face_counts": [
+    14,
+    14
+  ],
+  "selection_semantics": "Contact Selection step=1/2 labels the primary/secondary sets; not solution-step membership",
+  "export_settings_verified": true,
+  "numerical_acceptance": "not_established",
+  "path": "outputs/simcenter/contact-conductance.xml",
+  "sha256": "6733b1ed93fc1443b3020d000e6e3be3e68a7923b1ca742595755d4ec02e6999"
+}

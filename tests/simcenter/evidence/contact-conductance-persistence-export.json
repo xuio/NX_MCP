@@ -1,0 +1,74 @@
+{
+  "status": "success",
+  "passed": true,
+  "before": {
+    "name": "Total Conductance",
+    "native_type": "6",
+    "units": "ThermalConductance_Metric4",
+    "expression": "2.0",
+    "unit_symbol": "W/dK",
+    "representation": "expression"
+  },
+  "after": {
+    "name": "Total Conductance",
+    "native_type": "6",
+    "units": "ThermalConductance_Metric4",
+    "expression": "2.0",
+    "unit_symbol": "W/dK",
+    "representation": "expression"
+  },
+  "target_prototypes": [
+    "CAE_Face(7)",
+    "CAE_Face(6)"
+  ],
+  "export": {
+    "input_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\B-contact-conductance-export-20260909-r1\\contact_conductance_r1-Conduction.xml",
+    "input_identity": {
+      "sha256": "6733b1ed93fc1443b3020d000e6e3be3e68a7923b1ca742595755d4ec02e6999",
+      "xml_content_sha256": "baa1bebd399d6dfd8fddf2ae1682628045acd3644044b00e4e6dd272df885606",
+      "bytes": 51357,
+      "canonicalization": "xml_c14n2_no_comments"
+    },
+    "validation": {
+      "state": "well_formed",
+      "step_definitions": 1,
+      "mesh_counts": {
+        "elements": 200,
+        "nodes": 90,
+        "element_sets": 2,
+        "scope": "observed_multiphysics_xml_layout"
+      },
+      "solve_readiness": "not_established"
+    },
+    "coupled_ambient_validation": null,
+    "coupled_pressure_validation": null,
+    "artifacts": [
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\B-contact-conductance-export-20260909-r1\\contact_conductance_r1-Conduction.map",
+        "bytes": 18560
+      },
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\B-contact-conductance-export-20260909-r1\\contact_conductance_r1-Conduction.xml",
+        "bytes": 51357
+      }
+    ],
+    "translator_reports": [],
+    "solver": "NX MULTIPHYSICS",
+    "analysis_type": "Thermal",
+    "solution": "Conduction",
+    "source_sim": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\B-contact-conductance-export-20260909-r1\\contact_conductance_r1.sim",
+    "source_modified": false,
+    "solver_launched": false,
+    "solve_readiness": "not_established",
+    "scope": "Native thermal/flow input export, not a solve or convergence check"
+  },
+  "open_warnings": [],
+  "unrelated_modified_flags_preserved": true,
+  "solver_launched": false,
+  "scope": "Native equivalent conductance variant, save/reopen and export; not public contact editing",
+  "operation_id": "op_197b9baca62647d287e82eed91ead826",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

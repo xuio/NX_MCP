@@ -1,0 +1,18 @@
+{
+  "mode": "resistance",
+  "native_value": 5e-07,
+  "si_value": 0.5,
+  "si_units": "K/W",
+  "force_factor": 1000.0,
+  "length_factor": 1000.0,
+  "temperature_factor": 1.0,
+  "region_face_counts": [
+    14,
+    14
+  ],
+  "selection_semantics": "Contact Selection step=1/2 labels the primary/secondary sets; not solution-step membership",
+  "export_settings_verified": true,
+  "numerical_acceptance": "not_established",
+  "path": "outputs/simcenter/contact-resistance.xml",
+  "sha256": "a9517e7a906fd1bf3fbfb86c1cc8754025f4150a0c0f90bc080bb02a85ce40af"
+}

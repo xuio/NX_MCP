@@ -1,0 +1,938 @@
+{
+  "status": "success",
+  "nodes": [
+    {
+      "index": 1,
+      "label": 1,
+      "xyz": [
+        10.0,
+        0.0,
+        0.0
+      ],
+      "temperature_deg_c": 20.49995994567871,
+      "interface_region": "sink"
+    },
+    {
+      "index": 2,
+      "label": 2,
+      "xyz": [
+        10.0,
+        0.0,
+        10.0
+      ],
+      "temperature_deg_c": 20.500160217285156,
+      "interface_region": "sink"
+    },
+    {
+      "index": 3,
+      "label": 3,
+      "xyz": [
+        10.0,
+        10.0,
+        0.0
+      ],
+      "temperature_deg_c": 20.50002670288086,
+      "interface_region": "sink"
+    },
+    {
+      "index": 4,
+      "label": 4,
+      "xyz": [
+        10.0,
+        10.0,
+        10.0
+      ],
+      "temperature_deg_c": 20.50029754638672,
+      "interface_region": "sink"
+    },
+    {
+      "index": 5,
+      "label": 5,
+      "xyz": [
+        20.0,
+        0.0,
+        0.0
+      ],
+      "temperature_deg_c": 20.0
+    },
+    {
+      "index": 6,
+      "label": 6,
+      "xyz": [
+        20.0,
+        0.0,
+        10.0
+      ],
+      "temperature_deg_c": 20.0
+    },
+    {
+      "index": 7,
+      "label": 7,
+      "xyz": [
+        20.0,
+        10.0,
+        0.0
+      ],
+      "temperature_deg_c": 20.0
+    },
+    {
+      "index": 8,
+      "label": 8,
+      "xyz": [
+        20.0,
+        10.0,
+        10.0
+      ],
+      "temperature_deg_c": 20.0
+    },
+    {
+      "index": 9,
+      "label": 9,
+      "xyz": [
+        10.0,
+        0.0,
+        5.0
+      ],
+      "temperature_deg_c": 20.500011444091797,
+      "interface_region": "sink"
+    },
+    {
+      "index": 10,
+      "label": 10,
+      "xyz": [
+        10.0,
+        5.0,
+        0.0
+      ],
+      "temperature_deg_c": 20.499961853027344,
+      "interface_region": "sink"
+    },
+    {
+      "index": 11,
+      "label": 11,
+      "xyz": [
+        10.0,
+        5.0,
+        10.0
+      ],
+      "temperature_deg_c": 20.500160217285156,
+      "interface_region": "sink"
+    },
+    {
+      "index": 12,
+      "label": 12,
+      "xyz": [
+        10.0,
+        10.0,
+        5.0
+      ],
+      "temperature_deg_c": 20.50029754638672,
+      "interface_region": "sink"
+    },
+    {
+      "index": 13,
+      "label": 13,
+      "xyz": [
+        15.0,
+        0.0,
+        0.0
+      ],
+      "temperature_deg_c": 20.250179290771484
+    },
+    {
+      "index": 14,
+      "label": 14,
+      "xyz": [
+        15.0,
+        0.0,
+        10.0
+      ],
+      "temperature_deg_c": 20.249975204467773
+    },
+    {
+      "index": 15,
+      "label": 15,
+      "xyz": [
+        15.0,
+        10.0,
+        0.0
+      ],
+      "temperature_deg_c": 20.250009536743164
+    },
+    {
+      "index": 16,
+      "label": 16,
+      "xyz": [
+        15.0,
+        10.0,
+        10.0
+      ],
+      "temperature_deg_c": 20.25011444091797
+    },
+    {
+      "index": 17,
+      "label": 17,
+      "xyz": [
+        20.0,
+        0.0,
+        5.0
+      ],
+      "temperature_deg_c": 20.0
+    },
+    {
+      "index": 18,
+      "label": 18,
+      "xyz": [
+        20.0,
+        5.0,
+        0.0
+      ],
+      "temperature_deg_c": 20.0
+    },
+    {
+      "index": 19,
+      "label": 19,
+      "xyz": [
+        20.0,
+        5.0,
+        10.0
+      ],
+      "temperature_deg_c": 20.0
+    },
+    {
+      "index": 20,
+      "label": 20,
+      "xyz": [
+        20.0,
+        10.0,
+        5.0
+      ],
+      "temperature_deg_c": 20.0
+    },
+    {
+      "index": 21,
+      "label": 21,
+      "xyz": [
+        10.0,
+        3.066704511642456,
+        3.066765785217285
+      ],
+      "temperature_deg_c": 20.49995231628418,
+      "interface_region": "sink"
+    },
+    {
+      "index": 22,
+      "label": 22,
+      "xyz": [
+        10.0,
+        3.6213622093200684,
+        6.389122009277344
+      ],
+      "temperature_deg_c": 20.499780654907227,
+      "interface_region": "sink"
+    },
+    {
+      "index": 23,
+      "label": 23,
+      "xyz": [
+        10.0,
+        6.387437343597412,
+        3.620990753173828
+      ],
+      "temperature_deg_c": 20.49976921081543,
+      "interface_region": "sink"
+    },
+    {
+      "index": 24,
+      "label": 24,
+      "xyz": [
+        10.0,
+        6.946476459503174,
+        6.946802616119385
+      ],
+      "temperature_deg_c": 20.499860763549805,
+      "interface_region": "sink"
+    },
+    {
+      "index": 25,
+      "label": 25,
+      "xyz": [
+        16.93329620361328,
+        0.0,
+        3.066765785217285
+      ],
+      "temperature_deg_c": 20.153356552124023
+    },
+    {
+      "index": 26,
+      "label": 26,
+      "xyz": [
+        16.378637313842773,
+        0.0,
+        6.389122009277344
+      ],
+      "temperature_deg_c": 20.18107032775879
+    },
+    {
+      "index": 27,
+      "label": 27,
+      "xyz": [
+        13.61256217956543,
+        0.0,
+        3.620990753173828
+      ],
+      "temperature_deg_c": 20.31938934326172
+    },
+    {
+      "index": 28,
+      "label": 28,
+      "xyz": [
+        13.053523063659668,
+        0.0,
+        6.946802616119385
+      ],
+      "temperature_deg_c": 20.347328186035156
+    },
+    {
+      "index": 29,
+      "label": 29,
+      "xyz": [
+        16.93329620361328,
+        6.933234214782715,
+        0.0
+      ],
+      "temperature_deg_c": 20.153329849243164
+    },
+    {
+      "index": 30,
+      "label": 30,
+      "xyz": [
+        16.378637313842773,
+        3.6108782291412354,
+        0.0
+      ],
+      "temperature_deg_c": 20.181079864501953
+    },
+    {
+      "index": 31,
+      "label": 31,
+      "xyz": [
+        13.61256217956543,
+        6.379009246826172,
+        0.0
+      ],
+      "temperature_deg_c": 20.31934928894043
+    },
+    {
+      "index": 32,
+      "label": 32,
+      "xyz": [
+        13.053523063659668,
+        3.0531973838806152,
+        0.0
+      ],
+      "temperature_deg_c": 20.34731674194336
+    },
+    {
+      "index": 33,
+      "label": 33,
+      "xyz": [
+        13.066764831542969,
+        3.066704511642456,
+        10.0
+      ],
+      "temperature_deg_c": 20.346635818481445
+    },
+    {
+      "index": 34,
+      "label": 34,
+      "xyz": [
+        16.389122009277344,
+        3.6213622093200684,
+        10.0
+      ],
+      "temperature_deg_c": 20.180545806884766
+    },
+    {
+      "index": 35,
+      "label": 35,
+      "xyz": [
+        13.620989799499512,
+        6.387437343597412,
+        10.0
+      ],
+      "temperature_deg_c": 20.318923950195312
+    },
+    {
+      "index": 36,
+      "label": 36,
+      "xyz": [
+        16.946802139282227,
+        6.946476459503174,
+        10.0
+      ],
+      "temperature_deg_c": 20.152660369873047
+    },
+    {
+      "index": 37,
+      "label": 37,
+      "xyz": [
+        13.066703796386719,
+        10.0,
+        3.066765785217285
+      ],
+      "temperature_deg_c": 20.34663200378418
+    },
+    {
+      "index": 38,
+      "label": 38,
+      "xyz": [
+        13.62136173248291,
+        10.0,
+        6.389122009277344
+      ],
+      "temperature_deg_c": 20.318912506103516
+    },
+    {
+      "index": 39,
+      "label": 39,
+      "xyz": [
+        16.38743782043457,
+        10.0,
+        3.620990753173828
+      ],
+      "temperature_deg_c": 20.180618286132812
+    },
+    {
+      "index": 40,
+      "label": 40,
+      "xyz": [
+        16.946474075317383,
+        10.0,
+        6.946802616119385
+      ],
+      "temperature_deg_c": 20.15268325805664
+    },
+    {
+      "index": 41,
+      "label": 41,
+      "xyz": [
+        20.0,
+        3.066765785217285,
+        3.066704511642456
+      ],
+      "temperature_deg_c": 20.0
+    },
+    {
+      "index": 42,
+      "label": 42,
+      "xyz": [
+        20.0,
+        6.389122009277344,
+        3.6213622093200684
+      ],
+      "temperature_deg_c": 20.0
+    },
+    {
+      "index": 43,
+      "label": 43,
+      "xyz": [
+        20.0,
+        3.620990753173828,
+        6.387437343597412
+      ],
+      "temperature_deg_c": 20.0
+    },
+    {
+      "index": 44,
+      "label": 44,
+      "xyz": [
+        20.0,
+        6.946802616119385,
+        6.946476459503174
+      ],
+      "temperature_deg_c": 20.0
+    },
+    {
+      "index": 45,
+      "label": 45,
+      "xyz": [
+        15.250536918640137,
+        4.947422504425049,
+        4.891732692718506
+      ],
+      "temperature_deg_c": 20.23746109008789
+    },
+    {
+      "index": 46,
+      "label": 46,
+      "xyz": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "temperature_deg_c": 21.232370376586914
+    },
+    {
+      "index": 47,
+      "label": 47,
+      "xyz": [
+        0.0,
+        0.0,
+        10.0
+      ],
+      "temperature_deg_c": 21.24570083618164
+    },
+    {
+      "index": 48,
+      "label": 48,
+      "xyz": [
+        0.0,
+        10.0,
+        0.0
+      ],
+      "temperature_deg_c": 21.243467330932617
+    },
+    {
+      "index": 49,
+      "label": 49,
+      "xyz": [
+        0.0,
+        10.0,
+        10.0
+      ],
+      "temperature_deg_c": 21.232362747192383
+    },
+    {
+      "index": 50,
+      "label": 50,
+      "xyz": [
+        10.0,
+        0.0,
+        0.0
+      ],
+      "temperature_deg_c": 21.001262664794922,
+      "interface_region": "heated"
+    },
+    {
+      "index": 51,
+      "label": 51,
+      "xyz": [
+        10.0,
+        0.0,
+        10.0
+      ],
+      "temperature_deg_c": 21.000146865844727,
+      "interface_region": "heated"
+    },
+    {
+      "index": 52,
+      "label": 52,
+      "xyz": [
+        10.0,
+        10.0,
+        0.0
+      ],
+      "temperature_deg_c": 20.99985694885254,
+      "interface_region": "heated"
+    },
+    {
+      "index": 53,
+      "label": 53,
+      "xyz": [
+        10.0,
+        10.0,
+        10.0
+      ],
+      "temperature_deg_c": 21.000530242919922,
+      "interface_region": "heated"
+    },
+    {
+      "index": 54,
+      "label": 54,
+      "xyz": [
+        0.0,
+        0.0,
+        5.0
+      ],
+      "temperature_deg_c": 21.251392364501953
+    },
+    {
+      "index": 55,
+      "label": 55,
+      "xyz": [
+        0.0,
+        5.0,
+        0.0
+      ],
+      "temperature_deg_c": 21.25132942199707
+    },
+    {
+      "index": 56,
+      "label": 56,
+      "xyz": [
+        0.0,
+        5.0,
+        10.0
+      ],
+      "temperature_deg_c": 21.251428604125977
+    },
+    {
+      "index": 57,
+      "label": 57,
+      "xyz": [
+        0.0,
+        10.0,
+        5.0
+      ],
+      "temperature_deg_c": 21.25148582458496
+    },
+    {
+      "index": 58,
+      "label": 58,
+      "xyz": [
+        5.0,
+        0.0,
+        0.0
+      ],
+      "temperature_deg_c": 21.167442321777344
+    },
+    {
+      "index": 59,
+      "label": 59,
+      "xyz": [
+        5.0,
+        0.0,
+        10.0
+      ],
+      "temperature_deg_c": 21.166637420654297
+    },
+    {
+      "index": 60,
+      "label": 60,
+      "xyz": [
+        5.0,
+        10.0,
+        0.0
+      ],
+      "temperature_deg_c": 21.166831970214844
+    },
+    {
+      "index": 61,
+      "label": 61,
+      "xyz": [
+        5.0,
+        10.0,
+        10.0
+      ],
+      "temperature_deg_c": 21.16728973388672
+    },
+    {
+      "index": 62,
+      "label": 62,
+      "xyz": [
+        10.0,
+        0.0,
+        5.0
+      ],
+      "temperature_deg_c": 20.99840545654297,
+      "interface_region": "heated"
+    },
+    {
+      "index": 63,
+      "label": 63,
+      "xyz": [
+        10.0,
+        5.0,
+        0.0
+      ],
+      "temperature_deg_c": 20.998201370239258,
+      "interface_region": "heated"
+    },
+    {
+      "index": 64,
+      "label": 64,
+      "xyz": [
+        10.0,
+        5.0,
+        10.0
+      ],
+      "temperature_deg_c": 20.99782371520996,
+      "interface_region": "heated"
+    },
+    {
+      "index": 65,
+      "label": 65,
+      "xyz": [
+        10.0,
+        10.0,
+        5.0
+      ],
+      "temperature_deg_c": 20.99823570251465,
+      "interface_region": "heated"
+    },
+    {
+      "index": 66,
+      "label": 66,
+      "xyz": [
+        0.0,
+        3.066704511642456,
+        3.066765785217285
+      ],
+      "temperature_deg_c": 21.250431060791016
+    },
+    {
+      "index": 67,
+      "label": 67,
+      "xyz": [
+        0.0,
+        3.6213622093200684,
+        6.389122009277344
+      ],
+      "temperature_deg_c": 21.24993896484375
+    },
+    {
+      "index": 68,
+      "label": 68,
+      "xyz": [
+        0.0,
+        6.387437343597412,
+        3.620990753173828
+      ],
+      "temperature_deg_c": 21.250110626220703
+    },
+    {
+      "index": 69,
+      "label": 69,
+      "xyz": [
+        0.0,
+        6.946476459503174,
+        6.946802616119385
+      ],
+      "temperature_deg_c": 21.25043296813965
+    },
+    {
+      "index": 70,
+      "label": 70,
+      "xyz": [
+        6.933295726776123,
+        0.0,
+        3.066765785217285
+      ],
+      "temperature_deg_c": 21.12820053100586
+    },
+    {
+      "index": 71,
+      "label": 71,
+      "xyz": [
+        6.378637790679932,
+        0.0,
+        6.389122009277344
+      ],
+      "temperature_deg_c": 21.144657135009766
+    },
+    {
+      "index": 72,
+      "label": 72,
+      "xyz": [
+        3.612562656402588,
+        0.0,
+        3.620990753173828
+      ],
+      "temperature_deg_c": 21.213830947875977
+    },
+    {
+      "index": 73,
+      "label": 73,
+      "xyz": [
+        3.053523302078247,
+        0.0,
+        6.946802616119385
+      ],
+      "temperature_deg_c": 21.225065231323242
+    },
+    {
+      "index": 74,
+      "label": 74,
+      "xyz": [
+        6.933295726776123,
+        6.933234214782715,
+        0.0
+      ],
+      "temperature_deg_c": 21.12806510925293
+    },
+    {
+      "index": 75,
+      "label": 75,
+      "xyz": [
+        6.378637790679932,
+        3.6108782291412354,
+        0.0
+      ],
+      "temperature_deg_c": 21.144838333129883
+    },
+    {
+      "index": 76,
+      "label": 76,
+      "xyz": [
+        3.612562656402588,
+        6.379009246826172,
+        0.0
+      ],
+      "temperature_deg_c": 21.2138614654541
+    },
+    {
+      "index": 77,
+      "label": 77,
+      "xyz": [
+        3.053523302078247,
+        3.0531973838806152,
+        0.0
+      ],
+      "temperature_deg_c": 21.225120544433594
+    },
+    {
+      "index": 78,
+      "label": 78,
+      "xyz": [
+        3.066765785217285,
+        3.066704511642456,
+        10.0
+      ],
+      "temperature_deg_c": 21.22437858581543
+    },
+    {
+      "index": 79,
+      "label": 79,
+      "xyz": [
+        6.389122009277344,
+        3.6213622093200684,
+        10.0
+      ],
+      "temperature_deg_c": 21.144811630249023
+    },
+    {
+      "index": 80,
+      "label": 80,
+      "xyz": [
+        3.620990753173828,
+        6.387437343597412,
+        10.0
+      ],
+      "temperature_deg_c": 21.213987350463867
+    },
+    {
+      "index": 81,
+      "label": 81,
+      "xyz": [
+        6.946802616119385,
+        6.946476459503174,
+        10.0
+      ],
+      "temperature_deg_c": 21.127283096313477
+    },
+    {
+      "index": 82,
+      "label": 82,
+      "xyz": [
+        3.066704511642456,
+        10.0,
+        3.066765785217285
+      ],
+      "temperature_deg_c": 21.224952697753906
+    },
+    {
+      "index": 83,
+      "label": 83,
+      "xyz": [
+        3.6213622093200684,
+        10.0,
+        6.389122009277344
+      ],
+      "temperature_deg_c": 21.21352195739746
+    },
+    {
+      "index": 84,
+      "label": 84,
+      "xyz": [
+        6.387437343597412,
+        10.0,
+        3.620990753173828
+      ],
+      "temperature_deg_c": 21.144493103027344
+    },
+    {
+      "index": 85,
+      "label": 85,
+      "xyz": [
+        6.946476459503174,
+        10.0,
+        6.946802616119385
+      ],
+      "temperature_deg_c": 21.127689361572266
+    },
+    {
+      "index": 86,
+      "label": 86,
+      "xyz": [
+        10.0,
+        3.066765785217285,
+        3.066704511642456
+      ],
+      "temperature_deg_c": 20.999528884887695,
+      "interface_region": "heated"
+    },
+    {
+      "index": 87,
+      "label": 87,
+      "xyz": [
+        10.0,
+        6.389122009277344,
+        3.6213622093200684
+      ],
+      "temperature_deg_c": 20.998201370239258,
+      "interface_region": "heated"
+    },
+    {
+      "index": 88,
+      "label": 88,
+      "xyz": [
+        10.0,
+        3.620990753173828,
+        6.387437343597412
+      ],
+      "temperature_deg_c": 20.99808120727539,
+      "interface_region": "heated"
+    },
+    {
+      "index": 89,
+      "label": 89,
+      "xyz": [
+        10.0,
+        6.946802616119385,
+        6.946476459503174
+      ],
+      "temperature_deg_c": 20.998851776123047,
+      "interface_region": "heated"
+    },
+    {
+      "index": 90,
+      "label": 90,
+      "xyz": [
+        5.249919891357422,
+        4.947078704833984,
+        4.892237186431885
+      ],
+      "temperature_deg_c": 21.174375534057617
+    }
+  ],
+  "result_coordinate_frame": "native result absolute coordinates; bounds checked against 20 x 10 x 10 mm fixture",
+  "temperature_units": "degC",
+  "log_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\B-contact-numerical-20260909-r1\\contact_numerical_r1-Conduction.log",
+  "solver_launched": false,
+  "operation_id": "op_7367f4d64b4649799d445f0b374ba5a9",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

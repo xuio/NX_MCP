@@ -180,7 +180,7 @@ def public_evidence(version):
         "remaining_work": {
             "generic_async_solve_and_cancel": "native launch, automatic terminal observation and successful-output release exposed; cancellation, running/failure binding and NX restart acceptance incomplete",
             "coupled_cooling_acceptance": "not_complete",
-            "thermal_contact": "Native/public authoring verified for total R/G; export, conductance persistence and numerical acceptance remain",
+            "thermal_contact": "Native/public total R/G authoring, persistence/export and 200-element resistance physical checks verified; automatic convergence criterion and whole-model freshness not established",
             "detailed_rotating_fans_and_acoustics": "not_validated; module availability must be established separately",
             "full_model_result_freshness": "not_established; live SIM may be modified after solving",
             "exact_screenshot_resolution": "native postview export ignores requested device dimensions in observed test",

@@ -1,0 +1,30 @@
+{
+  "job_id": "contact-resistance-r1",
+  "state": "accepted",
+  "request_sha256": "e07011e25fd747d8f9200d9557dc79ccdde37920fa074154685b8c26250b60b9",
+  "replayed": false,
+  "preparation_revalidated": true,
+  "solver_launched_by_call": false,
+  "input_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\B-contact-numerical-20260909-r1\\contact_numerical_r1-Conduction.xml",
+  "input_sha256": "56bb79d55dbb75119c74d40b720a8ea84d4bfaba3bbf67be488045fdf0f9e127",
+  "output_claim": {
+    "schema": 1,
+    "job_id": "contact-resistance-r1",
+    "job_directory": "d:\\cad\\simcenter_mcp_workspace\\simcenter-jobs\\contact-resistance-r1",
+    "request_sha256": "e07011e25fd747d8f9200d9557dc79ccdde37920fa074154685b8c26250b60b9",
+    "output_directory": "d:\\cad\\simcenter_mcp_workspace\\ui-benchmarks\\b-contact-numerical-20260909-r1",
+    "replayed": false,
+    "retention": "permanent; no automatic release"
+  },
+  "mesh_counts": {
+    "element_sets": 2,
+    "elements": 200,
+    "nodes": 90,
+    "scope": "observed_multiphysics_xml_layout"
+  },
+  "dependency_completeness": "not_established",
+  "solve_readiness": "not_established",
+  "next_step": "Inspect the immutable manifest with nx_sim_job_status(include_manifest=True), then use nx_sim_launch; cancellation is not yet implemented",
+  "benchmark_document": "obj_20bc234ffa5249ceb4fb4d82b993c626_acfa9ed9c94d476e9ce61334380dd740",
+  "benchmark_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\B-contact-numerical-20260909-r1\\contact_numerical_r1.sim"
+}

@@ -1,0 +1,69 @@
+{
+  "status": "success",
+  "launch": {
+    "job_id": "contact-resistance-r1",
+    "state": "launch_returned",
+    "revision": 2,
+    "request_sha256": "e07011e25fd747d8f9200d9557dc79ccdde37920fa074154685b8c26250b60b9",
+    "replayed": false,
+    "solver_state": "not_observed_by_launch",
+    "numerical_convergence": "not_established",
+    "results_validated": false,
+    "cancellation": "not_implemented",
+    "next_step": "Inspect nx_sim_job_status and nx_sim_job_logs; API return is not solver completion",
+    "observer": {
+      "state": "started",
+      "reused": false,
+      "log_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs\\contact-resistance-r1\\observer-a3f965fcd9444ba780bb4b3c39ba2334.log",
+      "maximum_seconds": 3600,
+      "nx_api_calls": false,
+      "lifetime": "NX process; durable job survives observer exit",
+      "timeout_semantics": "observation ends; solver is not cancelled or relaunched"
+    }
+  },
+  "export_audit": {
+    "mode": "resistance",
+    "native_value": 5e-07,
+    "si_value": 0.5,
+    "si_units": "K/W",
+    "force_factor": 1000.0,
+    "length_factor": 1000.0,
+    "temperature_factor": 1.0,
+    "region_face_counts": [
+      14,
+      14
+    ],
+    "selection_semantics": "Contact Selection step=1/2 labels the primary/secondary sets; not solution-step membership",
+    "export_settings_verified": true,
+    "numerical_acceptance": "not_established"
+  },
+  "acceptance": {
+    "job_id": "contact-resistance-r1",
+    "input_sha256_before_launch": "56bb79d55dbb75119c74d40b720a8ea84d4bfaba3bbf67be488045fdf0f9e127",
+    "expected": {
+      "maximum_temperature_k": 294.4,
+      "interface_drop_k": 0.5,
+      "heat_rejection_w": 1.0
+    },
+    "absolute_tolerances": {
+      "maximum_temperature_k": 0.03,
+      "interface_drop_k": 0.01,
+      "heat_rejection_w": 0.001
+    },
+    "tolerance_basis": "200 linear tetrahedra on two 10 mm blocks; 0.03 K allows spatial discretization of parabolic heated-block temperature, 0.01 K contact drop and 0.1 percent energy balance",
+    "physical_inputs": {
+      "power_w": 1.0,
+      "contact_resistance_k_w": 0.5,
+      "conductivity_w_m_k": 200.0,
+      "sink_k": 293.15,
+      "block_length_mm": 10.0,
+      "area_mm2": 100.0
+    },
+    "mesh_refinement_acceptance": "not_claimed"
+  },
+  "operation_id": "op_7015636c75b247caa880eca51dff2d7e",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

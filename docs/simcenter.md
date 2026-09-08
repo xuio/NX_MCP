@@ -22,7 +22,9 @@ selectors, units, both target sets, solution membership and rollback. Public MCP
 verifies discovery, overlap rejection, creation, replay, inventory and save/reopen;
 resistance properties/provenance and actual per-side geometry persist. Native
 opening marks the isolated SIM modified; the warning is retained. Conductance
-persistence, exported settings and numerical contact acceptance remain outstanding.
+persistence and both unit-converted exports now pass. A 200-element steady
+resistance benchmark passes physical artifact checks; its effective automatic
+convergence criterion remains unverified.
 The current fixture is `ui-benchmarks/B-contact-authoring-20260909-r1/`.
 Evidence: `contact-authoring-native.json`, `contact-public.json`,
 `contact-persistence-public.json`, `contact-reopened-targets.json` under
@@ -31,6 +33,46 @@ rolled-back direct-expression readback guard error, now corrected and covered by
 a regression test. Earlier descriptor failures used incorrect names, not an
 unavailable contact module. No new licensing or solve-availability claim is made.
 
+### Contact numerical acceptance (scoped)
+
+The two 10 × 10 × 10 mm blocks use k=200 W/(m K), 1 W uniform generation
+in the left block, R=0.5 K/W at the interface and a 293.15 K right end.
+Other exterior faces have no applied flux. The mesh has 200 linear tetrahedra
+and 90 nodes; setup/meshing/material/boundary/export calls took about 6.3 seconds
+in total (per-stage timings are retained).
+
+| Check | Actual | Expected / tolerance |
+|---|---|---|
+| Maximum temperature | 294.401486 K | 294.4 K ±0.03 K |
+| Interface temperature drop | 0.499074 K | 0.5 K ±0.01 K |
+| Heat rejection | 1 W from rounded native summary | 1 W ±0.001 W |
+| Final temperature change | 1.671e-8 K, two iterations | Automatic mode; 0.001 K export field is inactive |
+
+The interface values are arithmetic means of 12 native nodes per side, identified
+by adjacent-element connectivity; they are not area-weighted averages. Exported
+0.5 K/W appears as 5e-7 and 2 W/K as 2e6 in native mN-mm-second units. Contact XML
+`Selection step=1/2` denotes the primary/secondary target sets here, not solution
+step membership. The original native files are never rewritten.
+
+Reproduce without NX or another solve:
+`python examples/simcenter/audit_contact_acceptance.py`.
+Evidence lives under `tests/simcenter/evidence/contact-*`; the exact solved XML,
+log, nodal data, predeclared tolerances and input/result hashes are retained.
+`contact-resistance-r1` is the permanent job identity; never rerun it. New-client
+MCP observation, temperature extraction and native contour display passed.
+
+Physical artifact checks pass, but full benchmark acceptance remains open because
+the effective automatic convergence criterion is unverified. The installed Open CAE
+`Thermal Solution Parameters` reference maps selector 0 to Automatic and 1 to
+Specify; the 0.001 K property is conditional on Specify. Earlier comparison to that
+inactive field was incorrect and has been removed from the audit. Next: verify
+explicitly specified native convergence settings in a new isolated job, preserving
+this run. Whole-live-model acceptance also remains unproven: native
+solving marked the SIM modified. Saved dependency hashes, canonical input,
+observed result association and the supported thermal-state comparison match;
+current-session whole-model freshness remains `not_verified`. No mesh convergence,
+transient contact, acoustic or product-engineering claim follows from this test.
+
 ### Reconciled Phase 2 backlog
 
 Statuses below refer to the requested general capability, not availability inferred
@@ -38,7 +80,7 @@ from installed modules. A missing implementation/test is not an external blocker
 
 | Requirement | Current state | Reuse / next acceptance work |
 |---|---|---|
-| Thermal contacts/interface resistance | Partial: native/public total R/G authoring and resistance persistence verified | Conductance persistence, exported settings and two-solid heat-flow benchmark |
+| Thermal contacts/interface resistance | Partial: native/public total R/G authoring and resistance persistence verified | 200-element physical checks pass; verify explicit convergence controls, then general contact options and current-session freshness |
 | Convection and dependencies | Partial, public constant assumed convection | `boundaries.py`, `external_conditions.py`; verify dependency/time-field cases |
 | Radiation/emissivity/enclosures | Missing public authoring | Discover native applicable descriptors and test assignments/export |
 | Temperature-dependent materials | Missing | Extend constant/orthotropic material path with supported fields, units and persistence |
