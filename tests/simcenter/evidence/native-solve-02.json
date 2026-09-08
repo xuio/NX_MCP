@@ -1,0 +1,29 @@
+{
+  "job_id": "conduction-solve-02",
+  "nx_version": "v2606",
+  "custom_material": "MCP_MATERIAL_V2",
+  "reference_delta_temperature_K": 5.0,
+  "input_xml_validation": "well_formed",
+  "result_bundle": "analysis-Conduction.bun",
+  "result_bundle_bytes": 54628,
+  "native_log_bytes": 14664,
+  "native_log_observation": "Performing result postprocessing ... done; elapsed 26 sec",
+  "state": "results_available_for_inspection",
+  "numerical_acceptance": "partial; native result extraction and save/reopen consistency pending",
+  "temperature_extraction": "native log summary verified; full result API pending",
+  "energy_balance": "native log summary verified",
+  "original_missing_step_failure": "not_observed_in_this_run",
+  "solver_log_values": {
+    "temperature_min_C": 20.0,
+    "temperature_max_C": 25.0,
+    "temperature_average_C": 22.502,
+    "temperature_print_resolution_K": 0.001,
+    "temperature_rise_error_at_printed_precision_K": 0.0,
+    "heat_input_W": 1.0,
+    "heat_to_sinks_W": 1.0,
+    "heat_balance_deviation_W": 1.942e-05,
+    "heat_balance_deviation_percent": 0.001942,
+    "iterations": 2
+  },
+  "log_sha256": "4b2b870b9a53fc3362b47b862cbbde51c530328b077a184b450d902f303aee89"
+}

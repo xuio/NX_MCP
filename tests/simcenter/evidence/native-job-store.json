@@ -1,0 +1,108 @@
+{
+  "scope": "Actual Windows job storage and separate bridge-client reconnect tests; not full benchmark F",
+  "first": {
+    "status": "success",
+    "reservation_replayed": false,
+    "job": {
+      "job_id": "reconnect",
+      "manifest": {
+        "fixture": "job-persistence-only",
+        "schema": 1,
+        "solver_launch_permitted": false
+      },
+      "request_sha256": "2d38a7f62f3786b53c4c342345298f6b6dfca26ea58609462f00ce93e65d5b42",
+      "state": "launch_requested",
+      "revision": 1,
+      "record": {
+        "evidence": {
+          "intent": "disposable launch-intent test; no solver invocation"
+        },
+        "job_id": "reconnect",
+        "observed_at": "2026-09-08T03:19:33.955180+00:00",
+        "previous_sha256": "19fcc412b674acd448672abefea4615a3d4b6b29f4cfd67e5198a8f613398121",
+        "request_sha256": "2d38a7f62f3786b53c4c342345298f6b6dfca26ea58609462f00ce93e65d5b42",
+        "revision": 1,
+        "state": "launch_requested"
+      },
+      "launch_retry_allowed": false,
+      "numerical_convergence": "not_established",
+      "results_validated": false
+    },
+    "conflict": "NX_SIM_JOB_CONFLICT",
+    "solver_launched": false,
+    "scope": "native host filesystem and reconnect persistence only; no solve/cancellation acceptance",
+    "operation_id": "op_23e23da37f6c457a949bc011b919b8ff",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed",
+    "warnings": [],
+    "units": "mm"
+  },
+  "reconnect": {
+    "status": "success",
+    "reservation_replayed": true,
+    "job": {
+      "job_id": "reconnect",
+      "manifest": {
+        "fixture": "job-persistence-only",
+        "schema": 1,
+        "solver_launch_permitted": false
+      },
+      "request_sha256": "2d38a7f62f3786b53c4c342345298f6b6dfca26ea58609462f00ce93e65d5b42",
+      "state": "launch_requested",
+      "revision": 1,
+      "record": {
+        "evidence": {
+          "intent": "disposable launch-intent test; no solver invocation"
+        },
+        "job_id": "reconnect",
+        "observed_at": "2026-09-08T03:19:33.955180+00:00",
+        "previous_sha256": "19fcc412b674acd448672abefea4615a3d4b6b29f4cfd67e5198a8f613398121",
+        "request_sha256": "2d38a7f62f3786b53c4c342345298f6b6dfca26ea58609462f00ce93e65d5b42",
+        "revision": 1,
+        "state": "launch_requested"
+      },
+      "launch_retry_allowed": false,
+      "numerical_convergence": "not_established",
+      "results_validated": false
+    },
+    "conflict": "NX_SIM_JOB_CONFLICT",
+    "solver_launched": false,
+    "scope": "native host filesystem and reconnect persistence only; no solve/cancellation acceptance",
+    "operation_id": "op_5389260f46794807a44aa5247b99ac6c",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed",
+    "warnings": [],
+    "units": "mm"
+  },
+  "interrupted_write": {
+    "status": "success",
+    "inspection": {
+      "job_id": "interrupted-write",
+      "state": "unknown",
+      "revision": null,
+      "launch_retry_allowed": false,
+      "next_action": "Inspect retained job records and native solver state; do not relaunch or overwrite this identity",
+      "numerical_convergence": "not_established",
+      "results_validated": false
+    },
+    "replay": {
+      "job_id": "interrupted-write",
+      "state": "unknown",
+      "revision": null,
+      "launch_retry_allowed": false,
+      "next_action": "Inspect retained job records and native solver state; do not relaunch or overwrite this identity",
+      "numerical_convergence": "not_established",
+      "results_validated": false,
+      "replayed": true
+    },
+    "rejection": "NX_SIM_JOB_REVISION_CONFLICT",
+    "partial_record_preserved": true,
+    "solver_launched": false,
+    "scope": "Windows filesystem interruption fixture; no actual solver transport interruption",
+    "operation_id": "op_eda2b7fdb23f4d99b02957a44390303c",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed",
+    "warnings": [],
+    "units": "mm"
+  }
+}

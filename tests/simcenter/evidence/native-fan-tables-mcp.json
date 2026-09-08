@@ -1,0 +1,284 @@
+{
+  "created": {
+    "status": "success",
+    "warnings": [],
+    "units": "mm",
+    "manifest": {
+      "name": "Public MCP synthetic fan r1",
+      "points": [
+        {
+          "flow_m3_s": 0.0,
+          "pressure_Pa": 1.0
+        },
+        {
+          "flow_m3_s": 0.0002,
+          "pressure_Pa": 0.5
+        },
+        {
+          "flow_m3_s": 0.0004,
+          "pressure_Pa": 0.0
+        }
+      ],
+      "pressure_convention": "static",
+      "rpm": 1000.0,
+      "reference_density_kg_m3": 1.2,
+      "stall_region": "Not modelled; synthetic",
+      "provenance": {
+        "kind": "assumed",
+        "source": "Public MCP fixture only"
+      },
+      "schema_version": 1,
+      "interpolation": "linear",
+      "extrapolation": "reject",
+      "reverse_flow": "unsupported"
+    },
+    "readback": {
+      "flow_m3_s": [
+        0.0,
+        0.0002,
+        0.0004
+      ],
+      "pressure_Pa": [
+        1.0,
+        0.5,
+        0.0
+      ],
+      "native_flow": [
+        0.0,
+        200000.0,
+        400000.0
+      ],
+      "native_pressure": [
+        1.0,
+        0.5,
+        0.0
+      ],
+      "native_flow_units": "CubicMilliMeterPerSecond",
+      "native_pressure_units": "PressurePascals",
+      "interpolation": "linear",
+      "outside_table": "undefined"
+    },
+    "boundary_attached": false,
+    "solver_semantics": "not_verified",
+    "manifest_persisted": true,
+    "manifest_storage": "native table attributes; SIM not saved",
+    "saved": false,
+    "field": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_bccb59b88e564ebeadddeab6478e3911",
+      "kind": "simulation_field",
+      "name": "Public MCP synthetic fan r1",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_04eb5206ef5043cc829b6893016925db",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "04eb5206ef5043cc829b6893016925db",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-fan-reopen-20260908-r1\\benchmark_9c5a613280cc_analysis.sim",
+      "journal_id": "Public MCP synthetic fan r1",
+      "display_name": "Public MCP synthetic fan r1"
+    },
+    "operation_id": "fan-table-public-20260908-r1",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed"
+  },
+  "inventory": {
+    "status": "success",
+    "warnings": [],
+    "units": "mm",
+    "tables": [
+      {
+        "manifest": {
+          "extrapolation": "reject",
+          "interpolation": "linear",
+          "name": "Public MCP synthetic fan r1",
+          "points": [
+            {
+              "flow_m3_s": 0.0,
+              "pressure_Pa": 1.0
+            },
+            {
+              "flow_m3_s": 0.0002,
+              "pressure_Pa": 0.5
+            },
+            {
+              "flow_m3_s": 0.0004,
+              "pressure_Pa": 0.0
+            }
+          ],
+          "pressure_convention": "static",
+          "provenance": {
+            "kind": "assumed",
+            "source": "Public MCP fixture only"
+          },
+          "reference_density_kg_m3": 1.2,
+          "reverse_flow": "unsupported",
+          "rpm": 1000.0,
+          "schema_version": 1,
+          "stall_region": "Not modelled; synthetic"
+        },
+        "readback": {
+          "flow_m3_s": [
+            0.0,
+            0.0002,
+            0.0004
+          ],
+          "pressure_Pa": [
+            1.0,
+            0.5,
+            0.0
+          ]
+        },
+        "boundary_association": "not_inspected",
+        "solver_semantics": "not_verified",
+        "field": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_bccb59b88e564ebeadddeab6478e3911",
+          "kind": "simulation_field",
+          "name": "Public MCP synthetic fan r1",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_04eb5206ef5043cc829b6893016925db",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "04eb5206ef5043cc829b6893016925db",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-fan-reopen-20260908-r1\\benchmark_9c5a613280cc_analysis.sim",
+          "journal_id": "Public MCP synthetic fan r1",
+          "display_name": "Public MCP synthetic fan r1"
+        },
+        "sample_count": 3
+      },
+      {
+        "manifest": {
+          "extrapolation": "reject",
+          "interpolation": "linear",
+          "name": "Retained synthetic fan",
+          "points": [
+            {
+              "flow_m3_s": 0,
+              "pressure_Pa": 1
+            },
+            {
+              "flow_m3_s": 0.0002,
+              "pressure_Pa": 0.5
+            },
+            {
+              "flow_m3_s": 0.0004,
+              "pressure_Pa": 0
+            }
+          ],
+          "pressure_convention": "static",
+          "provenance": {
+            "kind": "assumed",
+            "source": "Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture "
+          },
+          "reference_density_kg_m3": 1.2,
+          "reverse_flow": "unsupported",
+          "rpm": 1000,
+          "scaling_rpm_range": [
+            800,
+            1200
+          ],
+          "scaling_validity": "Synthetic only",
+          "schema_version": 1,
+          "stall_region": "Synthetic benchmark only"
+        },
+        "readback": {
+          "flow_m3_s": [
+            0.0,
+            0.0002,
+            0.0004
+          ],
+          "pressure_Pa": [
+            1.0,
+            0.5,
+            0.0
+          ]
+        },
+        "boundary_association": "not_inspected",
+        "solver_semantics": "not_verified",
+        "field": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_2b130d2fc7fd43ea97d21cb22a840c49",
+          "kind": "simulation_field",
+          "name": "Retained synthetic fan",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_04eb5206ef5043cc829b6893016925db",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "04eb5206ef5043cc829b6893016925db",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-fan-reopen-20260908-r1\\benchmark_9c5a613280cc_analysis.sim",
+          "journal_id": "Retained synthetic fan",
+          "display_name": "Retained synthetic fan"
+        },
+        "sample_count": 3
+      }
+    ],
+    "total": 2,
+    "next_offset": null,
+    "result_freshness": "not_verified",
+    "operation_id": "op_9656c4b06b7c4ecc83d2552993c3427c",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "not_applicable"
+  },
+  "compact": {
+    "status": "success",
+    "warnings": [],
+    "units": "mm",
+    "tables": [
+      {
+        "manifest": {
+          "extrapolation": "reject",
+          "interpolation": "linear",
+          "name": "Public MCP synthetic fan r1",
+          "pressure_convention": "static",
+          "provenance": {
+            "kind": "assumed",
+            "source": "Public MCP fixture only"
+          },
+          "reference_density_kg_m3": 1.2,
+          "reverse_flow": "unsupported",
+          "rpm": 1000.0,
+          "schema_version": 1,
+          "stall_region": "Not modelled; synthetic"
+        },
+        "boundary_association": "not_inspected",
+        "solver_semantics": "not_verified",
+        "field": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_bccb59b88e564ebeadddeab6478e3911",
+          "kind": "simulation_field",
+          "name": "Public MCP synthetic fan r1",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_04eb5206ef5043cc829b6893016925db",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "04eb5206ef5043cc829b6893016925db",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-fan-reopen-20260908-r1\\benchmark_9c5a613280cc_analysis.sim",
+          "journal_id": "Public MCP synthetic fan r1",
+          "display_name": "Public MCP synthetic fan r1"
+        },
+        "sample_count": 3
+      }
+    ],
+    "total": 2,
+    "next_offset": 1,
+    "result_freshness": "not_verified",
+    "operation_id": "op_c560cbbb382f449982c2d99d6e96405b",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "not_applicable"
+  },
+  "replay_deduplicated": true,
+  "duplicate": {
+    "meta": null,
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"status\": \"error\", \"warnings\": [], \"units\": null, \"code\": \"NX_SIM_NAME_EXISTS\", \"message\": \"A field with this name already exists\", \"retryable\": false, \"details\": {\"operation_id\": \"op_9b0e380bc1f9459bbf2cb173e0383bc3\", \"mutation_outcome\": \"unknown\"}}",
+        "annotations": null,
+        "meta": null
+      }
+    ],
+    "structuredContent": {
+      "status": "error",
+      "warnings": [],
+      "units": null,
+      "code": "NX_SIM_NAME_EXISTS",
+      "message": "A field with this name already exists",
+      "retryable": false,
+      "details": {
+        "operation_id": "op_9b0e380bc1f9459bbf2cb173e0383bc3",
+        "mutation_outcome": "unknown"
+      }
+    },
+    "isError": true
+  },
+  "other_document_flags_preserved": true,
+  "active_document_restored": true
+}

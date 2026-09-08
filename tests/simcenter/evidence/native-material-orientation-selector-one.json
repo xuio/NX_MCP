@@ -1,0 +1,75 @@
+{
+  "status": "success",
+  "selector_readback": 1,
+  "saved": {
+    "saved": true,
+    "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-rotated-20260908-r1\\RotatedOrthoR1_mesh.fem",
+    "file": {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-rotated-20260908-r1\\RotatedOrthoR1_mesh.fem",
+      "bytes": 3013570,
+      "sha256": "dbf073d38b642b6c97114be2a58181fe5b3d20a2e569e52837800b60e3be8ef0"
+    },
+    "previous_file": {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-rotated-20260908-r1\\RotatedOrthoR1_mesh.fem",
+      "bytes": 3013438,
+      "sha256": "6161bd007ee70966635f0bd212733f05b0650351ffc33958794d4bc5391a72c2"
+    },
+    "backup_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-rotated-20260908-r1\\.nx-mcp-save-backups\\19b6503045aa4de4b1d93f7b4b7f8362\\RotatedOrthoR1_mesh.fem",
+    "saved_components": false,
+    "closed": false,
+    "other_modified_flags_unchanged": true,
+    "result_freshness": "not_verified"
+  },
+  "export": {
+    "input_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-selector-one-20260908-r1\\selector_one_r1-Conduction.xml",
+    "input_identity": {
+      "sha256": "a22f914ae235468db19fea22105af0b9b5c7db4a37d8c80f5102b38f49a20605",
+      "xml_content_sha256": "634f864b1be3b7279abe3627dd01f05220011612076d263c431887631b29b7b2",
+      "bytes": 282451,
+      "canonicalization": "xml_c14n2_no_comments"
+    },
+    "validation": {
+      "state": "well_formed",
+      "step_definitions": 1,
+      "mesh_counts": {
+        "elements": 2658,
+        "nodes": 756,
+        "element_sets": 1,
+        "scope": "observed_multiphysics_xml_layout"
+      },
+      "solve_readiness": "not_established"
+    },
+    "artifacts": [
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-selector-one-20260908-r1\\selector_one_r1-Conduction.map",
+        "bytes": 18534
+      },
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-selector-one-20260908-r1\\selector_one_r1-Conduction.xml",
+        "bytes": 282451
+      }
+    ],
+    "translator_reports": [],
+    "solver": "NX MULTIPHYSICS",
+    "analysis_type": "Thermal",
+    "solution": "Conduction",
+    "source_sim": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-selector-one-20260908-r1\\selector_one_r1.sim",
+    "source_modified": false,
+    "solver_launched": false,
+    "solve_readiness": "not_established",
+    "scope": "Native thermal/flow input export, not a solve or convergence check"
+  },
+  "sections": {
+    "PhysicalPropertyTableList": "<PhysicalPropertyTableList>\n    <PhysicalPropertyTable uid=\"1\" uname=\"Solid1::RotatedOrthoR1_mesh::[1]\" type=\"Solid\">\n      <Property name=\"Material\">\n        <Value>2</Value>\n      </Property>\n      <Property name=\"Material Orientation Type\">\n        <Value>1</Value>\n      </Property>\n      <Property name=\"Material Orientation\" type=\"Cartesian\">\n        <Value>  0.0000000E+00     1.0000000E+00     0.0000000E+00    -1.0000000E+00     0.0000000E+00     0.0000000E+00</Value>\n      </Property>\n      <Property name=\"Material Orientation Origin\">\n        <Value>  0.0000000E+00     0.0000000E+00     0.0000000E+00</Value>\n      </Property>\n      <Property name=\"Radiation\">\n        <Value>1</Value>\n      </Property>\n      <Property name=\"Optical Properties\">\n        <Value>-1</Value>\n      </Property>\n    </PhysicalPropertyTable>\n  </PhysicalPropertyTableList>\n  ",
+    "Alignments": "<Alignments>\n  </Alignments>\n  ",
+    "ElementAssociatedDataList": "<ElementAssociatedDataList>\n  </ElementAssociatedDataList>\n  "
+  },
+  "source_flags_preserved": true,
+  "selector_meaning": "awaiting_export_interpretation",
+  "solver_launched": false,
+  "operation_id": "op_4da291203bbc4dffa96084b717aae6c6",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

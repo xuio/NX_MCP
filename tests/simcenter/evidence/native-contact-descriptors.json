@@ -1,0 +1,62 @@
+{
+  "scope": "NX v2606 NX MULTIPHYSICS Thermal, descriptor construction only; no contact solve or licence availability claim",
+  "builder": {
+    "status": "success",
+    "descriptors": [
+      {
+        "requested_descriptor": "Interface Resistance",
+        "accepted": false,
+        "error": "Invalid LBC neutral name",
+        "nx_code": 1543292
+      },
+      {
+        "requested_descriptor": "Face Contact",
+        "accepted": false,
+        "error": "Invalid LBC neutral name",
+        "nx_code": 1543292
+      },
+      {
+        "requested_descriptor": "Thermal Coupling",
+        "accepted": false,
+        "error": "Invalid LBC neutral name",
+        "nx_code": 1543292
+      }
+    ],
+    "simulation_objects_after": [],
+    "operation_id": "op_ac95704b248a4d79b7d426760b7a2aa2",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed",
+    "warnings": [],
+    "units": "mm"
+  },
+  "legacy_creation": {
+    "status": "success",
+    "api": "SimulationObjects.CreateSimulationObject (deprecated NX2306)",
+    "descriptors": [
+      {
+        "requested_descriptor": "Interface Resistance",
+        "accepted": false,
+        "error": "First parameter is invalid",
+        "nx_code": 3520001
+      },
+      {
+        "requested_descriptor": "Face Contact",
+        "accepted": false,
+        "error": "First parameter is invalid",
+        "nx_code": 3520001
+      },
+      {
+        "requested_descriptor": "Thermal Coupling",
+        "accepted": false,
+        "error": "First parameter is invalid",
+        "nx_code": 3520001
+      }
+    ],
+    "rollback_verified": true,
+    "operation_id": "op_9cd8a9da10f2491ca76395ba7d951c0d",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed",
+    "warnings": [],
+    "units": "mm"
+  }
+}

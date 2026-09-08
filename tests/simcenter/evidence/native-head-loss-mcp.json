@@ -1,0 +1,1018 @@
+{
+  "scope": "Native public Opening head-loss creation/update/replay/conflict/no-op; rollback failure injection is local-only",
+  "create": {
+    "created": {
+      "status": "success",
+      "warnings": [],
+      "units": "dimensionless",
+      "boundary_name": "Duct Opening",
+      "properties": [
+        {
+          "name": "description",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "Type",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Proportional to",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Head Loss Coefficient",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": 0.0,
+          "unit_symbol": null
+        },
+        {
+          "name": "Pressure Drop to Velocity Ratio",
+          "native_type": "4",
+          "units": "NewtonSecondPerCubicMeter",
+          "value": 0.0,
+          "unit_symbol": "N-sec/m^3"
+        },
+        {
+          "name": "Orifice Geometry",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Edge Radius",
+          "native_type": "4",
+          "units": "MilliMeter",
+          "value": -777777.0,
+          "unit_symbol": "mm"
+        },
+        {
+          "name": "Plate Thickness",
+          "native_type": "4",
+          "units": "MilliMeter",
+          "value": -777777.0,
+          "unit_symbol": "mm"
+        },
+        {
+          "name": "Orifice Hydraulic Diameter",
+          "native_type": "4",
+          "units": "MilliMeter",
+          "value": -777777.0,
+          "unit_symbol": "mm"
+        },
+        {
+          "name": "Free Area Ratio",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": -777777.0,
+          "unit_symbol": null
+        },
+        {
+          "name": "Compute Head Loss Coefficient",
+          "native_type": "1",
+          "units": null,
+          "value": "Compute"
+        },
+        {
+          "name": "Computed Head Loss Coefficient",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": -777777.0,
+          "unit_symbol": null
+        }
+      ],
+      "coefficient": 0.0,
+      "convention": "not_independently_verified",
+      "saved": false,
+      "results_require_revalidation": true,
+      "table_name": "Public opening loss",
+      "previous_coefficient": null,
+      "changed": true,
+      "action": "created",
+      "opening": {
+        "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_2ae682b7f69246d2b2d3e96ad99d38ca",
+        "kind": "simulation_object",
+        "name": "Duct Opening",
+        "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_f13610682f3c4e27b7dbad98dc2c41f0",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "generation_id": "f13610682f3c4e27b7dbad98dc2c41f0",
+        "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-head-loss-mcp-20260908-r1\\head_loss_test_r1.sim",
+        "journal_id": "SimulationObject[Duct Opening]",
+        "display_name": "Duct Opening"
+      },
+      "operation_id": "head-loss-create-r2",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "mutation_outcome": "committed"
+    },
+    "conflict": {
+      "status": "error",
+      "warnings": [],
+      "units": null,
+      "code": "NX_SIM_VALUE_CONFLICT",
+      "message": "Head loss differs from the expected value; inspect and retry deliberately",
+      "retryable": false,
+      "details": {
+        "actual_coefficient": 0.0,
+        "mutation_outcome": "not_started",
+        "operation_id": "head-loss-conflict-r2"
+      }
+    },
+    "changed": {
+      "status": "success",
+      "warnings": [],
+      "units": "dimensionless",
+      "table_name": "Public opening loss",
+      "boundary_name": "Duct Opening",
+      "coefficient": 2.0,
+      "previous_coefficient": 0.0,
+      "convention": "native Head Loss coefficient; general pressure-loss convention not independently verified",
+      "changed": true,
+      "action": "updated",
+      "properties": [
+        {
+          "name": "description",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "Type",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Proportional to",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Head Loss Coefficient",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": 2.0,
+          "unit_symbol": null
+        },
+        {
+          "name": "Pressure Drop to Velocity Ratio",
+          "native_type": "4",
+          "units": "NewtonSecondPerCubicMeter",
+          "value": 0.0,
+          "unit_symbol": "N-sec/m^3"
+        },
+        {
+          "name": "Orifice Geometry",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Edge Radius",
+          "native_type": "4",
+          "units": "MilliMeter",
+          "value": -777777.0,
+          "unit_symbol": "mm"
+        },
+        {
+          "name": "Plate Thickness",
+          "native_type": "4",
+          "units": "MilliMeter",
+          "value": -777777.0,
+          "unit_symbol": "mm"
+        },
+        {
+          "name": "Orifice Hydraulic Diameter",
+          "native_type": "4",
+          "units": "MilliMeter",
+          "value": -777777.0,
+          "unit_symbol": "mm"
+        },
+        {
+          "name": "Free Area Ratio",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": -777777.0,
+          "unit_symbol": null
+        },
+        {
+          "name": "Compute Head Loss Coefficient",
+          "native_type": "1",
+          "units": null,
+          "value": "Compute"
+        },
+        {
+          "name": "Computed Head Loss Coefficient",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": -777777.0,
+          "unit_symbol": null
+        }
+      ],
+      "saved": false,
+      "results_require_revalidation": true,
+      "opening": {
+        "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_2ae682b7f69246d2b2d3e96ad99d38ca",
+        "kind": "simulation_object",
+        "name": "Duct Opening",
+        "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_f13610682f3c4e27b7dbad98dc2c41f0",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "generation_id": "f13610682f3c4e27b7dbad98dc2c41f0",
+        "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-head-loss-mcp-20260908-r1\\head_loss_test_r1.sim",
+        "journal_id": "SimulationObject[Duct Opening]",
+        "display_name": "Duct Opening"
+      },
+      "operation_id": "head-loss-set-r2",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "mutation_outcome": "committed"
+    },
+    "replay": {
+      "status": "success",
+      "warnings": [],
+      "units": "dimensionless",
+      "table_name": "Public opening loss",
+      "boundary_name": "Duct Opening",
+      "coefficient": 2.0,
+      "previous_coefficient": 0.0,
+      "convention": "native Head Loss coefficient; general pressure-loss convention not independently verified",
+      "changed": true,
+      "action": "updated",
+      "properties": [
+        {
+          "name": "description",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "Type",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Proportional to",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Head Loss Coefficient",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": 2.0,
+          "unit_symbol": null
+        },
+        {
+          "name": "Pressure Drop to Velocity Ratio",
+          "native_type": "4",
+          "units": "NewtonSecondPerCubicMeter",
+          "value": 0.0,
+          "unit_symbol": "N-sec/m^3"
+        },
+        {
+          "name": "Orifice Geometry",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Edge Radius",
+          "native_type": "4",
+          "units": "MilliMeter",
+          "value": -777777.0,
+          "unit_symbol": "mm"
+        },
+        {
+          "name": "Plate Thickness",
+          "native_type": "4",
+          "units": "MilliMeter",
+          "value": -777777.0,
+          "unit_symbol": "mm"
+        },
+        {
+          "name": "Orifice Hydraulic Diameter",
+          "native_type": "4",
+          "units": "MilliMeter",
+          "value": -777777.0,
+          "unit_symbol": "mm"
+        },
+        {
+          "name": "Free Area Ratio",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": -777777.0,
+          "unit_symbol": null
+        },
+        {
+          "name": "Compute Head Loss Coefficient",
+          "native_type": "1",
+          "units": null,
+          "value": "Compute"
+        },
+        {
+          "name": "Computed Head Loss Coefficient",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": -777777.0,
+          "unit_symbol": null
+        }
+      ],
+      "saved": false,
+      "results_require_revalidation": true,
+      "opening": {
+        "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_2ae682b7f69246d2b2d3e96ad99d38ca",
+        "kind": "simulation_object",
+        "name": "Duct Opening",
+        "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_f13610682f3c4e27b7dbad98dc2c41f0",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "generation_id": "f13610682f3c4e27b7dbad98dc2c41f0",
+        "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-head-loss-mcp-20260908-r1\\head_loss_test_r1.sim",
+        "journal_id": "SimulationObject[Duct Opening]",
+        "display_name": "Duct Opening"
+      },
+      "operation_id": "head-loss-set-r2",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "mutation_outcome": "committed",
+      "replayed": true
+    },
+    "unchanged": {
+      "status": "success",
+      "warnings": [],
+      "units": "dimensionless",
+      "table_name": "Public opening loss",
+      "boundary_name": "Duct Opening",
+      "coefficient": 2.0,
+      "previous_coefficient": 2.0,
+      "convention": "native Head Loss coefficient; general pressure-loss convention not independently verified",
+      "changed": false,
+      "action": "unchanged",
+      "properties": [
+        {
+          "name": "description",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "Type",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Proportional to",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Head Loss Coefficient",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": 2.0,
+          "unit_symbol": null
+        },
+        {
+          "name": "Pressure Drop to Velocity Ratio",
+          "native_type": "4",
+          "units": "NewtonSecondPerCubicMeter",
+          "value": 0.0,
+          "unit_symbol": "N-sec/m^3"
+        },
+        {
+          "name": "Orifice Geometry",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Edge Radius",
+          "native_type": "4",
+          "units": "MilliMeter",
+          "value": -777777.0,
+          "unit_symbol": "mm"
+        },
+        {
+          "name": "Plate Thickness",
+          "native_type": "4",
+          "units": "MilliMeter",
+          "value": -777777.0,
+          "unit_symbol": "mm"
+        },
+        {
+          "name": "Orifice Hydraulic Diameter",
+          "native_type": "4",
+          "units": "MilliMeter",
+          "value": -777777.0,
+          "unit_symbol": "mm"
+        },
+        {
+          "name": "Free Area Ratio",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": -777777.0,
+          "unit_symbol": null
+        },
+        {
+          "name": "Compute Head Loss Coefficient",
+          "native_type": "1",
+          "units": null,
+          "value": "Compute"
+        },
+        {
+          "name": "Computed Head Loss Coefficient",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": -777777.0,
+          "unit_symbol": null
+        }
+      ],
+      "saved": false,
+      "results_require_revalidation": false,
+      "opening": {
+        "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_2ae682b7f69246d2b2d3e96ad99d38ca",
+        "kind": "simulation_object",
+        "name": "Duct Opening",
+        "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_f13610682f3c4e27b7dbad98dc2c41f0",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "generation_id": "f13610682f3c4e27b7dbad98dc2c41f0",
+        "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-head-loss-mcp-20260908-r1\\head_loss_test_r1.sim",
+        "journal_id": "SimulationObject[Duct Opening]",
+        "display_name": "Duct Opening"
+      },
+      "operation_id": "head-loss-noop-r2",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "mutation_outcome": "committed"
+    },
+    "restored": {
+      "status": "success",
+      "warnings": [],
+      "units": "dimensionless",
+      "table_name": "Public opening loss",
+      "boundary_name": "Duct Opening",
+      "coefficient": 0.0,
+      "previous_coefficient": 2.0,
+      "convention": "native Head Loss coefficient; general pressure-loss convention not independently verified",
+      "changed": true,
+      "action": "updated",
+      "properties": [
+        {
+          "name": "description",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "Type",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Proportional to",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Head Loss Coefficient",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": 0.0,
+          "unit_symbol": null
+        },
+        {
+          "name": "Pressure Drop to Velocity Ratio",
+          "native_type": "4",
+          "units": "NewtonSecondPerCubicMeter",
+          "value": 0.0,
+          "unit_symbol": "N-sec/m^3"
+        },
+        {
+          "name": "Orifice Geometry",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Edge Radius",
+          "native_type": "4",
+          "units": "MilliMeter",
+          "value": -777777.0,
+          "unit_symbol": "mm"
+        },
+        {
+          "name": "Plate Thickness",
+          "native_type": "4",
+          "units": "MilliMeter",
+          "value": -777777.0,
+          "unit_symbol": "mm"
+        },
+        {
+          "name": "Orifice Hydraulic Diameter",
+          "native_type": "4",
+          "units": "MilliMeter",
+          "value": -777777.0,
+          "unit_symbol": "mm"
+        },
+        {
+          "name": "Free Area Ratio",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": -777777.0,
+          "unit_symbol": null
+        },
+        {
+          "name": "Compute Head Loss Coefficient",
+          "native_type": "1",
+          "units": null,
+          "value": "Compute"
+        },
+        {
+          "name": "Computed Head Loss Coefficient",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": -777777.0,
+          "unit_symbol": null
+        }
+      ],
+      "saved": false,
+      "results_require_revalidation": true,
+      "opening": {
+        "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_2ae682b7f69246d2b2d3e96ad99d38ca",
+        "kind": "simulation_object",
+        "name": "Duct Opening",
+        "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_f13610682f3c4e27b7dbad98dc2c41f0",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "generation_id": "f13610682f3c4e27b7dbad98dc2c41f0",
+        "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-head-loss-mcp-20260908-r1\\head_loss_test_r1.sim",
+        "journal_id": "SimulationObject[Duct Opening]",
+        "display_name": "Duct Opening"
+      },
+      "operation_id": "head-loss-restore-r2",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "mutation_outcome": "committed"
+    },
+    "other_document_flags_preserved": true
+  },
+  "update": {
+    "conflict": {
+      "status": "error",
+      "warnings": [],
+      "units": null,
+      "code": "NX_SIM_VALUE_CONFLICT",
+      "message": "Head loss differs from the expected value; inspect and retry deliberately",
+      "retryable": false,
+      "details": {
+        "actual_coefficient": 0.0,
+        "mutation_outcome": "not_started",
+        "operation_id": "head-loss-conflict-r1"
+      }
+    },
+    "changed": {
+      "status": "success",
+      "warnings": [],
+      "units": "dimensionless",
+      "table_name": "Synthetic outlet restriction K2",
+      "boundary_name": "Duct Opening",
+      "coefficient": 2.0,
+      "previous_coefficient": 0.0,
+      "convention": "native Head Loss coefficient; general pressure-loss convention not independently verified",
+      "changed": true,
+      "action": "updated",
+      "properties": [
+        {
+          "name": "description",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "Type",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Proportional to",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Head Loss Coefficient",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": 2.0,
+          "unit_symbol": null
+        },
+        {
+          "name": "Pressure Drop to Velocity Ratio",
+          "native_type": "4",
+          "units": "NewtonSecondPerCubicMeter",
+          "value": 0.0,
+          "unit_symbol": "N-sec/m^3"
+        },
+        {
+          "name": "Orifice Geometry",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Edge Radius",
+          "native_type": "4",
+          "units": "MilliMeter",
+          "value": -777777.0,
+          "unit_symbol": "mm"
+        },
+        {
+          "name": "Plate Thickness",
+          "native_type": "4",
+          "units": "MilliMeter",
+          "value": -777777.0,
+          "unit_symbol": "mm"
+        },
+        {
+          "name": "Orifice Hydraulic Diameter",
+          "native_type": "4",
+          "units": "MilliMeter",
+          "value": -777777.0,
+          "unit_symbol": "mm"
+        },
+        {
+          "name": "Free Area Ratio",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": -777777.0,
+          "unit_symbol": null
+        },
+        {
+          "name": "Compute Head Loss Coefficient",
+          "native_type": "1",
+          "units": null,
+          "value": "Compute"
+        },
+        {
+          "name": "Computed Head Loss Coefficient",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": -777777.0,
+          "unit_symbol": null
+        }
+      ],
+      "saved": false,
+      "results_require_revalidation": true,
+      "opening": {
+        "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_2ae682b7f69246d2b2d3e96ad99d38ca",
+        "kind": "simulation_object",
+        "name": "Duct Opening",
+        "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_f13610682f3c4e27b7dbad98dc2c41f0",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "generation_id": "f13610682f3c4e27b7dbad98dc2c41f0",
+        "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-head-loss-mcp-20260908-r1\\head_loss_test_r1.sim",
+        "journal_id": "SimulationObject[Duct Opening]",
+        "display_name": "Duct Opening"
+      },
+      "operation_id": "head-loss-set-r1",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "mutation_outcome": "committed"
+    },
+    "replay": {
+      "status": "success",
+      "warnings": [],
+      "units": "dimensionless",
+      "table_name": "Synthetic outlet restriction K2",
+      "boundary_name": "Duct Opening",
+      "coefficient": 2.0,
+      "previous_coefficient": 0.0,
+      "convention": "native Head Loss coefficient; general pressure-loss convention not independently verified",
+      "changed": true,
+      "action": "updated",
+      "properties": [
+        {
+          "name": "description",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "Type",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Proportional to",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Head Loss Coefficient",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": 2.0,
+          "unit_symbol": null
+        },
+        {
+          "name": "Pressure Drop to Velocity Ratio",
+          "native_type": "4",
+          "units": "NewtonSecondPerCubicMeter",
+          "value": 0.0,
+          "unit_symbol": "N-sec/m^3"
+        },
+        {
+          "name": "Orifice Geometry",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Edge Radius",
+          "native_type": "4",
+          "units": "MilliMeter",
+          "value": -777777.0,
+          "unit_symbol": "mm"
+        },
+        {
+          "name": "Plate Thickness",
+          "native_type": "4",
+          "units": "MilliMeter",
+          "value": -777777.0,
+          "unit_symbol": "mm"
+        },
+        {
+          "name": "Orifice Hydraulic Diameter",
+          "native_type": "4",
+          "units": "MilliMeter",
+          "value": -777777.0,
+          "unit_symbol": "mm"
+        },
+        {
+          "name": "Free Area Ratio",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": -777777.0,
+          "unit_symbol": null
+        },
+        {
+          "name": "Compute Head Loss Coefficient",
+          "native_type": "1",
+          "units": null,
+          "value": "Compute"
+        },
+        {
+          "name": "Computed Head Loss Coefficient",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": -777777.0,
+          "unit_symbol": null
+        }
+      ],
+      "saved": false,
+      "results_require_revalidation": true,
+      "opening": {
+        "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_2ae682b7f69246d2b2d3e96ad99d38ca",
+        "kind": "simulation_object",
+        "name": "Duct Opening",
+        "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_f13610682f3c4e27b7dbad98dc2c41f0",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "generation_id": "f13610682f3c4e27b7dbad98dc2c41f0",
+        "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-head-loss-mcp-20260908-r1\\head_loss_test_r1.sim",
+        "journal_id": "SimulationObject[Duct Opening]",
+        "display_name": "Duct Opening"
+      },
+      "operation_id": "head-loss-set-r1",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "mutation_outcome": "committed",
+      "replayed": true
+    },
+    "unchanged": {
+      "status": "success",
+      "warnings": [],
+      "units": "dimensionless",
+      "table_name": "Synthetic outlet restriction K2",
+      "boundary_name": "Duct Opening",
+      "coefficient": 2.0,
+      "previous_coefficient": 2.0,
+      "convention": "native Head Loss coefficient; general pressure-loss convention not independently verified",
+      "changed": false,
+      "action": "unchanged",
+      "properties": [
+        {
+          "name": "description",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "Type",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Proportional to",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Head Loss Coefficient",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": 2.0,
+          "unit_symbol": null
+        },
+        {
+          "name": "Pressure Drop to Velocity Ratio",
+          "native_type": "4",
+          "units": "NewtonSecondPerCubicMeter",
+          "value": 0.0,
+          "unit_symbol": "N-sec/m^3"
+        },
+        {
+          "name": "Orifice Geometry",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Edge Radius",
+          "native_type": "4",
+          "units": "MilliMeter",
+          "value": -777777.0,
+          "unit_symbol": "mm"
+        },
+        {
+          "name": "Plate Thickness",
+          "native_type": "4",
+          "units": "MilliMeter",
+          "value": -777777.0,
+          "unit_symbol": "mm"
+        },
+        {
+          "name": "Orifice Hydraulic Diameter",
+          "native_type": "4",
+          "units": "MilliMeter",
+          "value": -777777.0,
+          "unit_symbol": "mm"
+        },
+        {
+          "name": "Free Area Ratio",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": -777777.0,
+          "unit_symbol": null
+        },
+        {
+          "name": "Compute Head Loss Coefficient",
+          "native_type": "1",
+          "units": null,
+          "value": "Compute"
+        },
+        {
+          "name": "Computed Head Loss Coefficient",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": -777777.0,
+          "unit_symbol": null
+        }
+      ],
+      "saved": false,
+      "results_require_revalidation": false,
+      "opening": {
+        "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_2ae682b7f69246d2b2d3e96ad99d38ca",
+        "kind": "simulation_object",
+        "name": "Duct Opening",
+        "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_f13610682f3c4e27b7dbad98dc2c41f0",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "generation_id": "f13610682f3c4e27b7dbad98dc2c41f0",
+        "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-head-loss-mcp-20260908-r1\\head_loss_test_r1.sim",
+        "journal_id": "SimulationObject[Duct Opening]",
+        "display_name": "Duct Opening"
+      },
+      "operation_id": "head-loss-noop-r1",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "mutation_outcome": "committed"
+    },
+    "restored": {
+      "status": "success",
+      "warnings": [],
+      "units": "dimensionless",
+      "table_name": "Synthetic outlet restriction K2",
+      "boundary_name": "Duct Opening",
+      "coefficient": 0.0,
+      "previous_coefficient": 2.0,
+      "convention": "native Head Loss coefficient; general pressure-loss convention not independently verified",
+      "changed": true,
+      "action": "updated",
+      "properties": [
+        {
+          "name": "description",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "Type",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Proportional to",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Head Loss Coefficient",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": 0.0,
+          "unit_symbol": null
+        },
+        {
+          "name": "Pressure Drop to Velocity Ratio",
+          "native_type": "4",
+          "units": "NewtonSecondPerCubicMeter",
+          "value": 0.0,
+          "unit_symbol": "N-sec/m^3"
+        },
+        {
+          "name": "Orifice Geometry",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Edge Radius",
+          "native_type": "4",
+          "units": "MilliMeter",
+          "value": -777777.0,
+          "unit_symbol": "mm"
+        },
+        {
+          "name": "Plate Thickness",
+          "native_type": "4",
+          "units": "MilliMeter",
+          "value": -777777.0,
+          "unit_symbol": "mm"
+        },
+        {
+          "name": "Orifice Hydraulic Diameter",
+          "native_type": "4",
+          "units": "MilliMeter",
+          "value": -777777.0,
+          "unit_symbol": "mm"
+        },
+        {
+          "name": "Free Area Ratio",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": -777777.0,
+          "unit_symbol": null
+        },
+        {
+          "name": "Compute Head Loss Coefficient",
+          "native_type": "1",
+          "units": null,
+          "value": "Compute"
+        },
+        {
+          "name": "Computed Head Loss Coefficient",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": -777777.0,
+          "unit_symbol": null
+        }
+      ],
+      "saved": false,
+      "results_require_revalidation": true,
+      "opening": {
+        "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_2ae682b7f69246d2b2d3e96ad99d38ca",
+        "kind": "simulation_object",
+        "name": "Duct Opening",
+        "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_f13610682f3c4e27b7dbad98dc2c41f0",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "generation_id": "f13610682f3c4e27b7dbad98dc2c41f0",
+        "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-head-loss-mcp-20260908-r1\\head_loss_test_r1.sim",
+        "journal_id": "SimulationObject[Duct Opening]",
+        "display_name": "Duct Opening"
+      },
+      "operation_id": "head-loss-restore-r1",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "mutation_outcome": "committed"
+    },
+    "other_document_flags_preserved": true
+  }
+}

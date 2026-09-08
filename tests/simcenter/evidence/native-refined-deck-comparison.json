@@ -1,0 +1,37 @@
+{
+  "status": "success",
+  "inputs": {
+    "reference": {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-independent-clone-export-20260908-r1\\independent_export-Flow_benchmark.xml",
+      "sha256": "7b9c85e572904329d37ad886f3d617a9eafb90d0c4d767cdb559ce8fc7e98b18",
+      "counts": {
+        "elements": 186765,
+        "nodes": 71748
+      }
+    },
+    "refined": {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-independent-refined-solve-20260908-r1\\refined_flow_r1-Flow_benchmark.xml",
+      "sha256": "5e1c75d57589f853616e4e3668473751077a838d1bb4ba75f9b128bcdeee51d8",
+      "counts": {
+        "elements": 261589,
+        "nodes": 98632
+      }
+    }
+  },
+  "different_property_names": [],
+  "different_sections": [
+    "ElementList",
+    "ModelInformation",
+    "NodeList",
+    "SimulationObjects"
+  ],
+  "fan_curve_identical": true,
+  "solver_launched": false,
+  "files_modified": false,
+  "scope": "Exported property and section comparison; changing mesh sets require geometry-aware selection checks",
+  "operation_id": "op_08a066c146114b3e9481bd049697673f",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

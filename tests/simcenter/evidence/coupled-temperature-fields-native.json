@@ -1,0 +1,114 @@
+{
+  "status": "success",
+  "document": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-diagnostic-20260908-r1\\coupled_external_diagnostic_r1.sim",
+  "results": {
+    "inventory": {
+      "items": [
+        {
+          "loadcase_index": 0,
+          "iteration_index": 0,
+          "values": [
+            {
+              "kind": "other",
+              "native_type": "-1",
+              "value": -777777.0,
+              "native_unit": null
+            }
+          ],
+          "fields": [
+            "Velocity - Element-Nodal",
+            "Temperature - Nodal",
+            "Temperature - Elemental",
+            "Temperature - Element-Nodal",
+            "Total Heat Load - Elemental",
+            "Total Heat Flux - Elemental",
+            "Total Pressure - Element-Nodal",
+            "Pressure - Element-Nodal"
+          ]
+        }
+      ],
+      "total": 1,
+      "next_offset": null,
+      "result_freshness": "not_verified",
+      "reference_lifetime": "indices apply only to this result revision"
+    },
+    "temperature": {
+      "field": "Temperature - Nodal",
+      "field_location": "nodal",
+      "loadcase_index": 0,
+      "iteration_index": 0,
+      "units": "degC",
+      "minimum": 43.193336486816406,
+      "maximum": 43.201297760009766,
+      "native_location": "0",
+      "minimum_native_id": 24,
+      "maximum_native_id": 12,
+      "minimum_native_sub_id": 0,
+      "maximum_native_sub_id": 0,
+      "node_count": 68,
+      "result_freshness": "not_verified",
+      "reference_lifetime": "indices apply only to this result revision"
+    },
+    "pressure": {
+      "field": "Pressure - Element-Nodal",
+      "units": "Pa",
+      "minimum": 0.7858220934867859,
+      "maximum": 0.8344374895095825,
+      "native_location": "2",
+      "minimum_native_id": 144,
+      "maximum_native_id": 132,
+      "minimum_native_sub_id": 57,
+      "maximum_native_sub_id": 38,
+      "node_count": 68,
+      "loadcase_index": 0,
+      "iteration_index": 0,
+      "result_freshness": "not_verified",
+      "pressure_reference": "native_solution_reference",
+      "reference_lifetime": "indices apply only to this result revision"
+    },
+    "elemental": {
+      "field": "Temperature - Elemental",
+      "field_location": "elemental",
+      "loadcase_index": 0,
+      "iteration_index": 0,
+      "units": "degC",
+      "minimum": 43.19285583496094,
+      "maximum": 43.20115661621094,
+      "native_location": "1",
+      "minimum_native_id": 73,
+      "maximum_native_id": 31,
+      "minimum_native_sub_id": 0,
+      "maximum_native_sub_id": 0,
+      "node_count": 68,
+      "result_freshness": "not_verified",
+      "reference_lifetime": "indices apply only to this result revision"
+    },
+    "element_nodal": {
+      "field": "Temperature - Element-Nodal",
+      "field_location": "element_nodal",
+      "loadcase_index": 0,
+      "iteration_index": 0,
+      "units": "degC",
+      "minimum": 20.02562713623047,
+      "maximum": 22.133399963378906,
+      "native_location": "2",
+      "minimum_native_id": 137,
+      "maximum_native_id": 144,
+      "minimum_native_sub_id": 44,
+      "maximum_native_sub_id": 61,
+      "node_count": 68,
+      "result_freshness": "not_verified",
+      "reference_lifetime": "indices apply only to this result revision"
+    }
+  },
+  "modified_before": true,
+  "modified_after": true,
+  "elapsed_seconds": 0.0779999999795109,
+  "solver_launched": false,
+  "numerical_acceptance": false,
+  "operation_id": "op_ef80c560a60f45669eb76f2603328b64",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

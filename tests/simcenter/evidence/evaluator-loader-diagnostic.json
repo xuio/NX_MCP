@@ -1,0 +1,31 @@
+{
+  "status": "success",
+  "syslog_path": "C:\\Users\\cadadmin\\AppData\\Local\\Temp\\cadadmin19b826a1.syslog",
+  "relevant_tail": [
+    "Trying to load Z:\\nx-mcp-integration\\simcenter-discovery\\NxMcpEvaluator_r1.dll",
+    "GetAssemblyDotNetVersion delegate created",
+    "NXOpen.Utilities.MissingResourceException: Assembly has not been compiled with an NX resource bundle",
+    "   at NXOpen.Utilities.ResourceUtilities..ctor(Byte[] assemblyData)",
+    "   at NXOpen.Utilities.ResourceUtilities.verifyFile(String filename, ResourceUtilities& resourceManager, Boolean& error_occurred, Boolean& needsRecompile, String& SignedBy, String& SignRelease, SignatureType& signedAs, Boolean& isExpiredSignature)",
+    "   at NXOpen.Utilities.ResourceUtilities.querySignatureDetails(String filename, String& SignedBy, String& SignRelease, Boolean& isSigned)",
+    "Trying to load Z:\\nx-mcp-integration\\simcenter-discovery\\NxMcpEvaluator_r1.dll",
+    "GetAssemblyDotNetVersion delegate created",
+    "Trying to load Z:\\nx-mcp-integration\\simcenter-discovery\\NxMcpEvaluator_r1.dll",
+    "ManagedLoader.Load: Z:\\nx-mcp-integration\\simcenter-discovery\\NxMcpEvaluator_r1.dll Name:NxMcpEvaluator_r1.dll",
+    "Loaded assembly: NxMcpEvaluator_r1, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null from Z:\\nx-mcp-integration\\simcenter-discovery\\NxMcpEvaluator_r1.dll",
+    "Loaded assembly: NXOpen.Utilities, Version=2606.0.0.0, Culture=neutral, PublicKeyToken=null from C:\\Program Files\\Siemens\\Designcenter2606\\nxbin\\managed\\NXOpen.Utilities.dll",
+    "NXOpen.Utilities.MissingResourceException: Assembly has not been compiled with an NX resource bundle",
+    "   at NXOpen.Utilities.ResourceUtilities..ctor(Byte[] assemblyData)",
+    "   at NXOpen.Utilities.ResourceUtilities.verifyFile(String filename, ResourceUtilities& resourceManager, Boolean& error_occurred, Boolean& needsRecompile, String& SignedBy, String& SignRelease, SignatureType& signedAs, Boolean& isExpiredSignature)",
+    "   at NXOpen.Utilities.ResourceUtilities.querySignatureDetails(String filename, String& SignedBy, String& SignRelease, Boolean& isSigned)",
+    "DotNet author license is present.  Authentication passed for Z:\\nx-mcp-integration\\simcenter-discovery\\NxMcpEvaluator_r1.dll",
+    "Cannot find class named NxMcp.Native.EvaluatorHelper in assembly NxMcpEvaluator_r1, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+    "   Exception while invoking method in managed code",
+    "   File name: Z:\\nx-mcp-integration\\simcenter-discovery\\NxMcpEvaluator_r1.dll"
+  ],
+  "operation_id": "op_80ce9a6ec427492db43ac47a96589fea",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

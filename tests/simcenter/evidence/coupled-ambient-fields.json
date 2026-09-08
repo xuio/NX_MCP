@@ -1,0 +1,58 @@
+{
+  "status": "success",
+  "rows": [
+    {
+      "key": "Absolute Pressure",
+      "scalar_field": {
+        "type": "FieldExpression",
+        "tag": 5174924,
+        "expression": "101325",
+        "units": "PressurePascals"
+      },
+      "wrapper": {
+        "type": "ScalarFieldWrapper",
+        "tag": 5176032,
+        "expression": null,
+        "units": null
+      }
+    },
+    {
+      "key": "Fluid Temperature",
+      "scalar_field": {
+        "type": "FieldExpression",
+        "tag": 5174953,
+        "expression": "20",
+        "units": "Celsius"
+      },
+      "wrapper": {
+        "type": "ScalarFieldWrapper",
+        "tag": 5176027,
+        "expression": null,
+        "units": null
+      }
+    },
+    {
+      "key": "Radiative Environment Temperature",
+      "scalar_field": {
+        "type": "FieldExpression",
+        "tag": 5174728,
+        "expression": "20",
+        "units": "Celsius"
+      },
+      "wrapper": {
+        "type": "ScalarFieldWrapper",
+        "tag": 5177965,
+        "expression": null,
+        "units": null
+      }
+    }
+  ],
+  "document_flags_preserved": true,
+  "changed_flags": [],
+  "elapsed_seconds": 0.01600000000325963,
+  "operation_id": "op_feb23dc5dc27424e94be576be13929e8",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

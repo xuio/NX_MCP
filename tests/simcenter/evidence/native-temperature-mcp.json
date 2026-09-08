@@ -1,0 +1,748 @@
+{
+  "mcp": {
+    "transport": "real MCP to Simcenter UI",
+    "schema": {
+      "name": "nx_sim_temperature",
+      "title": null,
+      "description": "Create a prescribed absolute-temperature constraint on distinct SIM face IDs from nx_sim_faces. temperature_k is finite and nonnegative Kelvin, not Celsius. Requires the active NX MULTIPHYSICS Thermal solution. Returns typed constraint/face references, committed temperature and native property readback; provenance is stored on the constraint. Nonempty name/provenance required; duplicate names rejected. Uses verified creation rollback; does not save or solve. Time-varying temperatures and automatic overconstraint analysis are not supported here. Supply operation_id for safe retry.",
+      "inputSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "document": {
+            "title": "Document",
+            "type": "string"
+          },
+          "faces": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Faces",
+            "type": "array"
+          },
+          "temperature_k": {
+            "title": "Temperature K",
+            "type": "number"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "provenance": {
+            "title": "Provenance",
+            "type": "string"
+          },
+          "operation_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Operation Id"
+          }
+        },
+        "required": [
+          "document",
+          "faces",
+          "temperature_k",
+          "name",
+          "provenance"
+        ],
+        "title": "nx_sim_temperatureArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "additionalProperties": true,
+        "description": "Structured success/error envelope with additive metadata. Tool-specific payload remains extensible.",
+        "properties": {
+          "status": {
+            "enum": [
+              "success",
+              "error"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Warnings",
+            "type": "array"
+          },
+          "units": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Units"
+          },
+          "operation_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Operation Id"
+          },
+          "mutation_outcome": {
+            "anyOf": [
+              {
+                "enum": [
+                  "not_started",
+                  "running",
+                  "committed",
+                  "rolled_back",
+                  "partial",
+                  "unknown",
+                  "not_applicable"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "full_result": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "sha256": {
+                "type": "string"
+              },
+              "size": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "tool": {
+                "const": "nx_read_result"
+              },
+              "immutable": {
+                "const": true
+              }
+            },
+            "required": [
+              "id",
+              "sha256",
+              "size",
+              "tool",
+              "immutable"
+            ],
+            "additionalProperties": true
+          },
+          "omitted": {
+            "type": "object"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "retryable": {
+            "type": "boolean"
+          },
+          "suggestion": {
+            "type": "string"
+          },
+          "nx_code": {
+            "type": [
+              "integer",
+              "string"
+            ]
+          },
+          "details": {
+            "type": "object",
+            "properties": {
+              "operation_id": {
+                "type": "string"
+              },
+              "mutation_outcome": {
+                "enum": [
+                  "not_started",
+                  "running",
+                  "committed",
+                  "rolled_back",
+                  "partial",
+                  "unknown",
+                  "not_applicable"
+                ]
+              }
+            },
+            "required": [],
+            "additionalProperties": true
+          }
+        },
+        "required": [
+          "status",
+          "warnings",
+          "units"
+        ],
+        "title": "nx_sim_temperature result",
+        "type": "object",
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "status": {
+                  "const": "error"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "code",
+                "message",
+                "retryable"
+              ]
+            }
+          }
+        ]
+      },
+      "icons": null,
+      "annotations": {
+        "title": null,
+        "readOnlyHint": false,
+        "destructiveHint": null,
+        "idempotentHint": false,
+        "openWorldHint": null
+      },
+      "meta": null,
+      "execution": null
+    },
+    "responses": {
+      "created": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"paths\": {\"cad\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\A-temperature-mcp-20260908-r1\\\\benchmark_eecaf3edf587_geometry.prt\", \"fem\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\A-temperature-mcp-20260908-r1\\\\benchmark_eecaf3edf587_mesh.fem\", \"sim\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\A-temperature-mcp-20260908-r1\\\\benchmark_eecaf3edf587_analysis.sim\"}, \"solution\": {\"solver\": \"NX MULTIPHYSICS\", \"analysis\": \"Thermal\", \"solution\": \"Thermal\", \"parameter_tables\": [{\"property\": \"Thermal Parameters\", \"descriptor\": \"Thermal Parameters\", \"name\": \"Thermal Parameters\"}, {\"property\": \"Thermal Output Requests\", \"descriptor\": \"Multiphysics Thermal Output Requests\", \"name\": \"Thermal Output Requests\"}], \"step\": {\"name\": \"Conduction\", \"descriptor\": \"Step - Thermal\", \"active\": true, \"properties\": [{\"name\": \"Description\", \"native_type\": \"0\", \"units\": null, \"inspection_status\": \"unsupported_property_type\"}, {\"name\": \"Solution Type\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"End Time\", \"native_type\": \"4\", \"units\": \"Second\", \"value\": -777777.0, \"unit_symbol\": \"sec\"}, {\"name\": \"Thermal Time Step Method\", \"native_type\": \"3\", \"units\": null, \"value\": 3}, {\"name\": \"Thermal Number of Steps\", \"native_type\": \"3\", \"units\": null, \"value\": 10}, {\"name\": \"Thermal Time Step\", \"native_type\": \"4\", \"units\": \"Second\", \"value\": 1.0, \"unit_symbol\": \"sec\"}, {\"name\": \"Maximum Temperature Change\", \"native_type\": \"4\", \"units\": \"CelsiusDifference\", \"value\": 5.0, \"unit_symbol\": \"dC\"}, {\"name\": \"Minimum Time Step\", \"native_type\": \"4\", \"units\": \"Second\", \"value\": 1.0, \"unit_symbol\": \"sec\"}, {\"name\": \"Maximum Time Step Option\", \"native_type\": \"3\", \"units\": null, \"value\": 1}, {\"name\": \"Maximum Time Step\", \"native_type\": \"4\", \"units\": \"Second\", \"value\": 1.0, \"unit_symbol\": \"sec\"}, {\"name\": \"Maximum Time Step Increment\", \"native_type\": \"3\", \"units\": null, \"value\": 4}, {\"name\": \"Output Flag\", \"native_type\": \"3\", \"units\": null, \"value\": 1}, {\"name\": \"Thermal Output Requests\", \"native_type\": \"0\", \"units\": null, \"inspection_status\": \"unsupported_property_type\"}]}}, \"documents\": [{\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\A-temperature-mcp-20260908-r1\\\\benchmark_eecaf3edf587_geometry.prt\", \"name\": \"benchmark_eecaf3edf587_geometry\", \"document_type\": \"Part\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\"}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\A-temperature-mcp-20260908-r1\\\\benchmark_eecaf3edf587_mesh.fem\", \"name\": \"benchmark_eecaf3edf587_mesh\", \"document_type\": \"FemPart\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\"}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\A-temperature-mcp-20260908-r1\\\\benchmark_eecaf3edf587_analysis.sim\", \"name\": \"benchmark_eecaf3edf587_analysis\", \"document_type\": \"SimPart\", \"modified\": false, \"work\": true, \"display\": true, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\"}], \"coordinate_frame\": \"part_absolute\", \"mesh_created\": false, \"solve_launched\": false, \"operation_id\": \"temperature-create-01\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": {
+          "status": "success",
+          "warnings": [],
+          "units": "mm",
+          "paths": {
+            "cad": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-temperature-mcp-20260908-r1\\benchmark_eecaf3edf587_geometry.prt",
+            "fem": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-temperature-mcp-20260908-r1\\benchmark_eecaf3edf587_mesh.fem",
+            "sim": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-temperature-mcp-20260908-r1\\benchmark_eecaf3edf587_analysis.sim"
+          },
+          "solution": {
+            "solver": "NX MULTIPHYSICS",
+            "analysis": "Thermal",
+            "solution": "Thermal",
+            "parameter_tables": [
+              {
+                "property": "Thermal Parameters",
+                "descriptor": "Thermal Parameters",
+                "name": "Thermal Parameters"
+              },
+              {
+                "property": "Thermal Output Requests",
+                "descriptor": "Multiphysics Thermal Output Requests",
+                "name": "Thermal Output Requests"
+              }
+            ],
+            "step": {
+              "name": "Conduction",
+              "descriptor": "Step - Thermal",
+              "active": true,
+              "properties": [
+                {
+                  "name": "Description",
+                  "native_type": "0",
+                  "units": null,
+                  "inspection_status": "unsupported_property_type"
+                },
+                {
+                  "name": "Solution Type",
+                  "native_type": "3",
+                  "units": null,
+                  "value": 0
+                },
+                {
+                  "name": "End Time",
+                  "native_type": "4",
+                  "units": "Second",
+                  "value": -777777.0,
+                  "unit_symbol": "sec"
+                },
+                {
+                  "name": "Thermal Time Step Method",
+                  "native_type": "3",
+                  "units": null,
+                  "value": 3
+                },
+                {
+                  "name": "Thermal Number of Steps",
+                  "native_type": "3",
+                  "units": null,
+                  "value": 10
+                },
+                {
+                  "name": "Thermal Time Step",
+                  "native_type": "4",
+                  "units": "Second",
+                  "value": 1.0,
+                  "unit_symbol": "sec"
+                },
+                {
+                  "name": "Maximum Temperature Change",
+                  "native_type": "4",
+                  "units": "CelsiusDifference",
+                  "value": 5.0,
+                  "unit_symbol": "dC"
+                },
+                {
+                  "name": "Minimum Time Step",
+                  "native_type": "4",
+                  "units": "Second",
+                  "value": 1.0,
+                  "unit_symbol": "sec"
+                },
+                {
+                  "name": "Maximum Time Step Option",
+                  "native_type": "3",
+                  "units": null,
+                  "value": 1
+                },
+                {
+                  "name": "Maximum Time Step",
+                  "native_type": "4",
+                  "units": "Second",
+                  "value": 1.0,
+                  "unit_symbol": "sec"
+                },
+                {
+                  "name": "Maximum Time Step Increment",
+                  "native_type": "3",
+                  "units": null,
+                  "value": 4
+                },
+                {
+                  "name": "Output Flag",
+                  "native_type": "3",
+                  "units": null,
+                  "value": 1
+                },
+                {
+                  "name": "Thermal Output Requests",
+                  "native_type": "0",
+                  "units": null,
+                  "inspection_status": "unsupported_property_type"
+                }
+              ]
+            }
+          },
+          "documents": [
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-temperature-mcp-20260908-r1\\benchmark_eecaf3edf587_geometry.prt",
+              "name": "benchmark_eecaf3edf587_geometry",
+              "document_type": "Part",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute"
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-temperature-mcp-20260908-r1\\benchmark_eecaf3edf587_mesh.fem",
+              "name": "benchmark_eecaf3edf587_mesh",
+              "document_type": "FemPart",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute"
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-temperature-mcp-20260908-r1\\benchmark_eecaf3edf587_analysis.sim",
+              "name": "benchmark_eecaf3edf587_analysis",
+              "document_type": "SimPart",
+              "modified": false,
+              "work": true,
+              "display": true,
+              "units": "mm",
+              "coordinate_frame": "part_absolute"
+            }
+          ],
+          "coordinate_frame": "part_absolute",
+          "mesh_created": false,
+          "solve_launched": false,
+          "operation_id": "temperature-create-01",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "mutation_outcome": "committed"
+        },
+        "isError": false
+      },
+      "invalid": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"status\": \"error\", \"warnings\": [], \"units\": null, \"code\": \"NX_INVALID_ARGUMENT\", \"message\": \"Temperature must be finite and nonnegative K\", \"retryable\": false, \"details\": {\"operation_id\": \"temperature-invalid-01\", \"mutation_outcome\": \"unknown\"}}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": {
+          "status": "error",
+          "warnings": [],
+          "units": null,
+          "code": "NX_INVALID_ARGUMENT",
+          "message": "Temperature must be finite and nonnegative K",
+          "retryable": false,
+          "details": {
+            "operation_id": "temperature-invalid-01",
+            "mutation_outcome": "unknown"
+          }
+        },
+        "isError": true
+      },
+      "boundary": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"constraint\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_cce44a2366c04e4f9b08515c15528419\", \"kind\": \"constraint\", \"name\": \"MCP_FIXED_TEMPERATURE\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_132f092315224b3c922e487fec154185\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"132f092315224b3c922e487fec154185\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\A-temperature-mcp-20260908-r1\\\\benchmark_eecaf3edf587_analysis.sim\", \"journal_id\": \"Constraint[MCP_FIXED_TEMPERATURE]\", \"display_name\": \"MCP_FIXED_TEMPERATURE\"}, \"faces\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_0d6f0364113c4f49b4ce916b8942089d\", \"kind\": \"face\", \"name\": \"HANDLE R-37374\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_132f092315224b3c922e487fec154185\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"132f092315224b3c922e487fec154185\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\A-temperature-mcp-20260908-r1\\\\benchmark_eecaf3edf587_analysis.sim\", \"journal_id\": \"HANDLE R-37374\", \"display_name\": \"\"}], \"solver_launched\": false, \"properties\": [{\"name\": \"description\", \"native_type\": \"0\", \"units\": null, \"inspection_status\": \"unsupported_property_type\"}, {\"name\": \"Selection Method\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Option\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Temperature\", \"native_type\": \"6\", \"units\": \"Kelvin\", \"expression\": \"293.15\", \"unit_symbol\": \"K\", \"representation\": \"expression\"}, {\"name\": \"Temperature File\", \"native_type\": \"16\", \"units\": null, \"inspection_status\": \"unsupported_property_type\"}, {\"name\": \"Results Directory\", \"native_type\": \"1\", \"units\": null, \"value\": \"\"}, {\"name\": \"Specify Layer to Apply to\", \"native_type\": \"2\", \"units\": null, \"value\": false}, {\"name\": \"Apply to\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Layer Number\", \"native_type\": \"3\", \"units\": null, \"value\": 1}, {\"name\": \"Custom Settings Option\", \"native_type\": \"2\", \"units\": null, \"value\": false}, {\"name\": \"Custom Settings\", \"native_type\": \"1\", \"units\": null, \"value\": \"BCONX\"}, {\"name\": \"distributionType\", \"native_type\": \"3\", \"units\": null, \"value\": 32}], \"provenance\": \"Prescribed 293.15 K cold end for isolated conduction authoring benchmark\", \"temperature_basis\": \"prescribed\", \"temperature_units\": \"K\", \"temperature_k\": 293.15, \"provenance_storage\": \"NX_MCP_PROVENANCE user attribute on native constraint\", \"requested_face_count\": 1, \"committed_face_count\": 1, \"saved\": false, \"operation_id\": \"temperature-author-01\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": {
+          "status": "success",
+          "warnings": [],
+          "units": "mm",
+          "constraint": {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_cce44a2366c04e4f9b08515c15528419",
+            "kind": "constraint",
+            "name": "MCP_FIXED_TEMPERATURE",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_132f092315224b3c922e487fec154185",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "132f092315224b3c922e487fec154185",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-temperature-mcp-20260908-r1\\benchmark_eecaf3edf587_analysis.sim",
+            "journal_id": "Constraint[MCP_FIXED_TEMPERATURE]",
+            "display_name": "MCP_FIXED_TEMPERATURE"
+          },
+          "faces": [
+            {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_0d6f0364113c4f49b4ce916b8942089d",
+              "kind": "face",
+              "name": "HANDLE R-37374",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_132f092315224b3c922e487fec154185",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "132f092315224b3c922e487fec154185",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-temperature-mcp-20260908-r1\\benchmark_eecaf3edf587_analysis.sim",
+              "journal_id": "HANDLE R-37374",
+              "display_name": ""
+            }
+          ],
+          "solver_launched": false,
+          "properties": [
+            {
+              "name": "description",
+              "native_type": "0",
+              "units": null,
+              "inspection_status": "unsupported_property_type"
+            },
+            {
+              "name": "Selection Method",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Option",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Temperature",
+              "native_type": "6",
+              "units": "Kelvin",
+              "expression": "293.15",
+              "unit_symbol": "K",
+              "representation": "expression"
+            },
+            {
+              "name": "Temperature File",
+              "native_type": "16",
+              "units": null,
+              "inspection_status": "unsupported_property_type"
+            },
+            {
+              "name": "Results Directory",
+              "native_type": "1",
+              "units": null,
+              "value": ""
+            },
+            {
+              "name": "Specify Layer to Apply to",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Apply to",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Layer Number",
+              "native_type": "3",
+              "units": null,
+              "value": 1
+            },
+            {
+              "name": "Custom Settings Option",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Custom Settings",
+              "native_type": "1",
+              "units": null,
+              "value": "BCONX"
+            },
+            {
+              "name": "distributionType",
+              "native_type": "3",
+              "units": null,
+              "value": 32
+            }
+          ],
+          "provenance": "Prescribed 293.15 K cold end for isolated conduction authoring benchmark",
+          "temperature_basis": "prescribed",
+          "temperature_units": "K",
+          "temperature_k": 293.15,
+          "provenance_storage": "NX_MCP_PROVENANCE user attribute on native constraint",
+          "requested_face_count": 1,
+          "committed_face_count": 1,
+          "saved": false,
+          "operation_id": "temperature-author-01",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "mutation_outcome": "committed"
+        },
+        "isError": false
+      },
+      "replay": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"constraint\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_cce44a2366c04e4f9b08515c15528419\", \"kind\": \"constraint\", \"name\": \"MCP_FIXED_TEMPERATURE\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_132f092315224b3c922e487fec154185\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"132f092315224b3c922e487fec154185\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\A-temperature-mcp-20260908-r1\\\\benchmark_eecaf3edf587_analysis.sim\", \"journal_id\": \"Constraint[MCP_FIXED_TEMPERATURE]\", \"display_name\": \"MCP_FIXED_TEMPERATURE\"}, \"faces\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_0d6f0364113c4f49b4ce916b8942089d\", \"kind\": \"face\", \"name\": \"HANDLE R-37374\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_132f092315224b3c922e487fec154185\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"132f092315224b3c922e487fec154185\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\A-temperature-mcp-20260908-r1\\\\benchmark_eecaf3edf587_analysis.sim\", \"journal_id\": \"HANDLE R-37374\", \"display_name\": \"\"}], \"solver_launched\": false, \"properties\": [{\"name\": \"description\", \"native_type\": \"0\", \"units\": null, \"inspection_status\": \"unsupported_property_type\"}, {\"name\": \"Selection Method\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Option\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Temperature\", \"native_type\": \"6\", \"units\": \"Kelvin\", \"expression\": \"293.15\", \"unit_symbol\": \"K\", \"representation\": \"expression\"}, {\"name\": \"Temperature File\", \"native_type\": \"16\", \"units\": null, \"inspection_status\": \"unsupported_property_type\"}, {\"name\": \"Results Directory\", \"native_type\": \"1\", \"units\": null, \"value\": \"\"}, {\"name\": \"Specify Layer to Apply to\", \"native_type\": \"2\", \"units\": null, \"value\": false}, {\"name\": \"Apply to\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Layer Number\", \"native_type\": \"3\", \"units\": null, \"value\": 1}, {\"name\": \"Custom Settings Option\", \"native_type\": \"2\", \"units\": null, \"value\": false}, {\"name\": \"Custom Settings\", \"native_type\": \"1\", \"units\": null, \"value\": \"BCONX\"}, {\"name\": \"distributionType\", \"native_type\": \"3\", \"units\": null, \"value\": 32}], \"provenance\": \"Prescribed 293.15 K cold end for isolated conduction authoring benchmark\", \"temperature_basis\": \"prescribed\", \"temperature_units\": \"K\", \"temperature_k\": 293.15, \"provenance_storage\": \"NX_MCP_PROVENANCE user attribute on native constraint\", \"requested_face_count\": 1, \"committed_face_count\": 1, \"saved\": false, \"operation_id\": \"temperature-author-01\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\", \"replayed\": true}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": {
+          "status": "success",
+          "warnings": [],
+          "units": "mm",
+          "constraint": {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_cce44a2366c04e4f9b08515c15528419",
+            "kind": "constraint",
+            "name": "MCP_FIXED_TEMPERATURE",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_132f092315224b3c922e487fec154185",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "132f092315224b3c922e487fec154185",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-temperature-mcp-20260908-r1\\benchmark_eecaf3edf587_analysis.sim",
+            "journal_id": "Constraint[MCP_FIXED_TEMPERATURE]",
+            "display_name": "MCP_FIXED_TEMPERATURE"
+          },
+          "faces": [
+            {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_0d6f0364113c4f49b4ce916b8942089d",
+              "kind": "face",
+              "name": "HANDLE R-37374",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_132f092315224b3c922e487fec154185",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "132f092315224b3c922e487fec154185",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-temperature-mcp-20260908-r1\\benchmark_eecaf3edf587_analysis.sim",
+              "journal_id": "HANDLE R-37374",
+              "display_name": ""
+            }
+          ],
+          "solver_launched": false,
+          "properties": [
+            {
+              "name": "description",
+              "native_type": "0",
+              "units": null,
+              "inspection_status": "unsupported_property_type"
+            },
+            {
+              "name": "Selection Method",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Option",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Temperature",
+              "native_type": "6",
+              "units": "Kelvin",
+              "expression": "293.15",
+              "unit_symbol": "K",
+              "representation": "expression"
+            },
+            {
+              "name": "Temperature File",
+              "native_type": "16",
+              "units": null,
+              "inspection_status": "unsupported_property_type"
+            },
+            {
+              "name": "Results Directory",
+              "native_type": "1",
+              "units": null,
+              "value": ""
+            },
+            {
+              "name": "Specify Layer to Apply to",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Apply to",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Layer Number",
+              "native_type": "3",
+              "units": null,
+              "value": 1
+            },
+            {
+              "name": "Custom Settings Option",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Custom Settings",
+              "native_type": "1",
+              "units": null,
+              "value": "BCONX"
+            },
+            {
+              "name": "distributionType",
+              "native_type": "3",
+              "units": null,
+              "value": 32
+            }
+          ],
+          "provenance": "Prescribed 293.15 K cold end for isolated conduction authoring benchmark",
+          "temperature_basis": "prescribed",
+          "temperature_units": "K",
+          "temperature_k": 293.15,
+          "provenance_storage": "NX_MCP_PROVENANCE user attribute on native constraint",
+          "requested_face_count": 1,
+          "committed_face_count": 1,
+          "saved": false,
+          "operation_id": "temperature-author-01",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "mutation_outcome": "committed",
+          "replayed": true
+        },
+        "isError": false
+      },
+      "saved": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_3c933616d8fd4174ace30522635295c8\", \"kind\": \"part\", \"name\": \"saved_temperature\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_132f092315224b3c922e487fec154185\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"132f092315224b3c922e487fec154185\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\A-temperature-mcp-20260908-r1\\\\saved_temperature.sim\", \"journal_id\": \"saved_temperature\", \"display_name\": \"saved_temperature\"}, \"source\": {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\A-temperature-mcp-20260908-r1\\\\benchmark_eecaf3edf587_analysis.sim\", \"bytes\": 7640787, \"sha256\": \"bb3b6d8df3127fa91f431f21eac69aef45f9b1fd3ee065458fcb1d908685ba25\"}, \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\A-temperature-mcp-20260908-r1\\\\saved_temperature.sim\", \"source_file_unchanged\": true, \"work_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\A-temperature-mcp-20260908-r1\\\\saved_temperature.sim\", \"display_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\A-temperature-mcp-20260908-r1\\\\saved_temperature.sim\", \"shared_fem_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\A-temperature-mcp-20260908-r1\\\\benchmark_eecaf3edf587_mesh.fem\", \"independent_geometry_variant\": false, \"saved\": true, \"result_freshness\": \"not_verified\", \"next_step\": \"Reacquire document IDs. Duplicate and reassociate FEM/CAD before changing shared geometry or mesh.\", \"operation_id\": \"temperature-save-01\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": {
+          "status": "success",
+          "warnings": [],
+          "units": "mm",
+          "document": {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_3c933616d8fd4174ace30522635295c8",
+            "kind": "part",
+            "name": "saved_temperature",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_132f092315224b3c922e487fec154185",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "132f092315224b3c922e487fec154185",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-temperature-mcp-20260908-r1\\saved_temperature.sim",
+            "journal_id": "saved_temperature",
+            "display_name": "saved_temperature"
+          },
+          "source": {
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-temperature-mcp-20260908-r1\\benchmark_eecaf3edf587_analysis.sim",
+            "bytes": 7640787,
+            "sha256": "bb3b6d8df3127fa91f431f21eac69aef45f9b1fd3ee065458fcb1d908685ba25"
+          },
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-temperature-mcp-20260908-r1\\saved_temperature.sim",
+          "source_file_unchanged": true,
+          "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-temperature-mcp-20260908-r1\\saved_temperature.sim",
+          "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-temperature-mcp-20260908-r1\\saved_temperature.sim",
+          "shared_fem_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-temperature-mcp-20260908-r1\\benchmark_eecaf3edf587_mesh.fem",
+          "independent_geometry_variant": false,
+          "saved": true,
+          "result_freshness": "not_verified",
+          "next_step": "Reacquire document IDs. Duplicate and reassociate FEM/CAD before changing shared geometry or mesh.",
+          "operation_id": "temperature-save-01",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "mutation_outcome": "committed"
+        },
+        "isError": false
+      }
+    }
+  },
+  "reopen": {
+    "status": "success",
+    "document_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-temperature-mcp-20260908-r1\\saved_temperature.sim",
+    "coefficient": {
+      "name": "Temperature",
+      "native_type": "6",
+      "units": "Kelvin",
+      "expression": "293.15",
+      "unit_symbol": "K",
+      "representation": "expression"
+    },
+    "provenance": "Prescribed 293.15 K cold end for isolated conduction authoring benchmark",
+    "temperature_basis": "prescribed",
+    "target_face_count": 1,
+    "other_documents_unchanged": true,
+    "reopened_modified": true,
+    "solver_launched": false,
+    "scope": "Saved temperature persistence only; no mesh or solve acceptance",
+    "operation_id": "op_ca19038da5b544d8a7cf07617e1238a6",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed",
+    "warnings": [],
+    "units": "mm"
+  }
+}

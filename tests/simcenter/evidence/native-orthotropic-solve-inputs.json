@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "sink_plane_x_mm": 0.0,
+  "coverage": {
+    "state": "rectangular_patch_verified",
+    "face_count": 22,
+    "node_count": 18,
+    "area_mm2": 100.00000000000001,
+    "expected_area_mm2": 100,
+    "perimeter_mm": 40.0,
+    "plane_x_mm": 0.0,
+    "minimum_yz_mm": [
+      0,
+      0
+    ],
+    "maximum_yz_mm": [
+      10,
+      10
+    ],
+    "coordinate_tolerance_mm": 1e-07,
+    "area_perimeter_relative_tolerance": 1e-06,
+    "connected_components": 1,
+    "interior_free_edges": 0,
+    "scope": "Linear rectangular surface patch; not volume validity"
+  },
+  "dependencies_loaded": true,
+  "solver_launched": false,
+  "operation_id": "op_18b7a214952e4a499820db80ee10e75a",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

@@ -1,0 +1,205 @@
+{
+  "scope": "Native public preparation, export and immutable accepted-job replay; no solver launch or numerical acceptance",
+  "transport": "real MCP stdio -> Simcenter UI bridge",
+  "copied": {
+    "status": "success",
+    "warnings": [],
+    "units": "mm",
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_32d0a69c646b4e7b85dea11fdc2395f6",
+      "kind": "part",
+      "name": "prepared_flow_r1",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_abf19f0b5631403fb507517856de3740",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "abf19f0b5631403fb507517856de3740",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-prepare-20260908-r1\\prepared_flow_r1.sim",
+      "journal_id": "prepared_flow_r1",
+      "display_name": "prepared_flow_r1"
+    },
+    "source": {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-input-export-20260908-r2\\flow_input_r2.sim",
+      "bytes": 7762226,
+      "sha256": "64fc3c7e43fb6cb5d7f35fffdf079e343b6c258f9b4ec2c7618ec8c57474f136"
+    },
+    "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-prepare-20260908-r1\\prepared_flow_r1.sim",
+    "source_file_unchanged": true,
+    "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-prepare-20260908-r1\\prepared_flow_r1.sim",
+    "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-prepare-20260908-r1\\prepared_flow_r1.sim",
+    "shared_fem_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_mesh.fem",
+    "independent_geometry_variant": false,
+    "saved": true,
+    "result_freshness": "not_verified",
+    "next_step": "Reacquire document IDs. Duplicate and reassociate FEM/CAD before changing shared geometry or mesh.",
+    "operation_id": "prepare-flow-copy-r1",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed"
+  },
+  "prepared": {
+    "status": "success",
+    "warnings": [],
+    "units": "mm",
+    "job_id": "public-prepared-flow-01",
+    "state": "accepted",
+    "request_sha256": "29f33da70f9fbaa78160266c417bb662501e40757446aa3c3ddbf9a041b69238",
+    "replayed": false,
+    "preparation_revalidated": true,
+    "solver_launched_by_call": false,
+    "input_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-prepare-20260908-r1\\prepared_flow_r1-Flow_benchmark.xml",
+    "input_sha256": "9d80a35ad2ceef69bc4d6324efcef492fcb5b509c8cf9232b7d7bce1a4d12539",
+    "output_claim": {
+      "schema": 1,
+      "job_id": "public-prepared-flow-01",
+      "job_directory": "d:\\cad\\simcenter_mcp_workspace\\simcenter-jobs\\public-prepared-flow-01",
+      "request_sha256": "29f33da70f9fbaa78160266c417bb662501e40757446aa3c3ddbf9a041b69238",
+      "output_directory": "d:\\cad\\simcenter_mcp_workspace\\ui-benchmarks\\f-prepare-20260908-r1",
+      "replayed": false,
+      "retention": "permanent; no automatic release"
+    },
+    "mesh_counts": {
+      "element_sets": 2,
+      "elements": 186765,
+      "nodes": 71748,
+      "scope": "observed_multiphysics_xml_layout"
+    },
+    "dependency_completeness": "not_established",
+    "solve_readiness": "not_established",
+    "next_step": "Inspect the immutable manifest with nx_sim_job_status(include_manifest=True); generic launch is not yet exposed",
+    "operation_id": "prepare-flow-r1",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed"
+  },
+  "replay": {
+    "status": "success",
+    "warnings": [],
+    "units": "mm",
+    "job_id": "public-prepared-flow-01",
+    "state": "accepted",
+    "request_sha256": "29f33da70f9fbaa78160266c417bb662501e40757446aa3c3ddbf9a041b69238",
+    "replayed": true,
+    "preparation_revalidated": true,
+    "solver_launched_by_call": false,
+    "input_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-prepare-20260908-r1\\prepared_flow_r1-Flow_benchmark.xml",
+    "input_sha256": "9d80a35ad2ceef69bc4d6324efcef492fcb5b509c8cf9232b7d7bce1a4d12539",
+    "output_claim": {
+      "schema": 1,
+      "job_id": "public-prepared-flow-01",
+      "job_directory": "d:\\cad\\simcenter_mcp_workspace\\simcenter-jobs\\public-prepared-flow-01",
+      "request_sha256": "29f33da70f9fbaa78160266c417bb662501e40757446aa3c3ddbf9a041b69238",
+      "output_directory": "d:\\cad\\simcenter_mcp_workspace\\ui-benchmarks\\f-prepare-20260908-r1",
+      "replayed": true,
+      "retention": "permanent; no automatic release"
+    },
+    "mesh_counts": {
+      "element_sets": 2,
+      "elements": 186765,
+      "nodes": 71748,
+      "scope": "observed_multiphysics_xml_layout"
+    },
+    "dependency_completeness": "not_established",
+    "solve_readiness": "not_established",
+    "next_step": "Inspect the immutable manifest with nx_sim_job_status(include_manifest=True); generic launch is not yet exposed",
+    "operation_id": "prepare-flow-r1-readback",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed"
+  },
+  "job": {
+    "status": "success",
+    "warnings": [],
+    "units": null,
+    "job_id": "public-prepared-flow-01",
+    "request_sha256": "29f33da70f9fbaa78160266c417bb662501e40757446aa3c3ddbf9a041b69238",
+    "state": "accepted",
+    "revision": 0,
+    "process_binding_revision": null,
+    "launch_retry_allowed": true,
+    "numerical_convergence": "not_established",
+    "results_validated": false,
+    "observed_at": "2026-09-08T07:49:11.150727+00:00",
+    "observation_kind": "persisted_record",
+    "live_process_state": "not_checked",
+    "job_folder": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs",
+    "manifest": {
+      "analysis_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-prepare-20260908-r1\\prepared_flow_r1.sim",
+      "analysis_type": "Flow",
+      "dependency_scope": "direct_sim_fem_cad_associations",
+      "excluded_dependencies": "recursive components, external fields/material files, solver artifacts and result dependencies",
+      "isolated_output_directory": "d:\\cad\\simcenter_mcp_workspace\\ui-benchmarks\\f-prepare-20260908-r1",
+      "native_export": {
+        "analysis_type": "Flow",
+        "artifacts": [
+          {
+            "bytes": 21847,
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-prepare-20260908-r1\\prepared_flow_r1-Flow_benchmark.map"
+          },
+          {
+            "bytes": 18628170,
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-prepare-20260908-r1\\prepared_flow_r1-Flow_benchmark.xml"
+          }
+        ],
+        "input_identity": {
+          "bytes": 18628170,
+          "canonicalization": "xml_c14n2_no_comments",
+          "sha256": "9d80a35ad2ceef69bc4d6324efcef492fcb5b509c8cf9232b7d7bce1a4d12539",
+          "xml_content_sha256": "c338e27f9f235ecbf249da29757a9ce0a98c71bd6d263c214a5ca8cee165b84f"
+        },
+        "input_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-prepare-20260908-r1\\prepared_flow_r1-Flow_benchmark.xml",
+        "scope": "Native thermal/flow input export, not a solve or convergence check",
+        "solution": "Flow benchmark",
+        "solve_readiness": "not_established",
+        "solver": "NX MULTIPHYSICS",
+        "solver_launched": false,
+        "source_modified": false,
+        "source_sim": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-prepare-20260908-r1\\prepared_flow_r1.sim",
+        "translator_reports": [],
+        "validation": {
+          "mesh_counts": {
+            "element_sets": 2,
+            "elements": 186765,
+            "nodes": 71748,
+            "scope": "observed_multiphysics_xml_layout"
+          },
+          "solve_readiness": "not_established",
+          "state": "well_formed",
+          "step_definitions": 1
+        }
+      },
+      "preparation_adapter": 1,
+      "prepared_input": {
+        "dependencies": [
+          {
+            "bytes": 7787501,
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-prepare-20260908-r1\\prepared_flow_r1.sim",
+            "sha256": "8b596518fa1d2238bd10728eed0b68b353e51ab49b0ff6466795effe7dba4f20"
+          },
+          {
+            "bytes": 11752256,
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_mesh.fem",
+            "sha256": "16c652bed6aa66c55d601818f5f50162834ab3426803e585f1156c117806c205"
+          },
+          {
+            "bytes": 87738,
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_geometry.prt",
+            "sha256": "270bc149c45752454069abf1999fe8bf1da5f0a24b6459daffe89189b5157776"
+          }
+        ],
+        "dependency_completeness": "not_established",
+        "input": {
+          "bytes": 18628170,
+          "canonicalization": "xml_c14n2_no_comments",
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-prepare-20260908-r1\\prepared_flow_r1-Flow_benchmark.xml",
+          "sha256": "9d80a35ad2ceef69bc4d6324efcef492fcb5b509c8cf9232b7d7bce1a4d12539",
+          "xml_content_sha256": "c338e27f9f235ecbf249da29757a9ce0a98c71bd6d263c214a5ca8cee165b84f"
+        },
+        "schema": 1,
+        "scope": "explicit saved dependencies and input bytes only",
+        "solve_readiness": "not_established"
+      },
+      "solution": "Flow benchmark",
+      "solver": "NX MULTIPHYSICS"
+    },
+    "operation_id": "op_49a4bfb514d84756861866c14d14f8f0",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "not_applicable"
+  },
+  "unrelated_flags_preserved": true
+}

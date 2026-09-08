@@ -1,0 +1,155 @@
+{
+  "scope": "Native restriction response and reusable head-loss adapter; full benchmark D pending",
+  "adapter": {
+    "status": "success",
+    "boundary_name": "Duct Inlet",
+    "properties": [
+      {
+        "name": "description",
+        "native_type": "0",
+        "units": null,
+        "inspection_status": "unsupported_property_type"
+      },
+      {
+        "name": "Type",
+        "native_type": "3",
+        "units": null,
+        "value": 0
+      },
+      {
+        "name": "Proportional to",
+        "native_type": "3",
+        "units": null,
+        "value": 0
+      },
+      {
+        "name": "Head Loss Coefficient",
+        "native_type": "4",
+        "units": "dimensionless",
+        "value": 2.0
+      },
+      {
+        "name": "Pressure Drop to Velocity Ratio",
+        "native_type": "4",
+        "units": "NewtonSecondPerCubicMeter",
+        "value": 0.0
+      },
+      {
+        "name": "Orifice Geometry",
+        "native_type": "3",
+        "units": null,
+        "value": 0
+      },
+      {
+        "name": "Edge Radius",
+        "native_type": "4",
+        "units": "MilliMeter",
+        "value": -777777.0
+      },
+      {
+        "name": "Plate Thickness",
+        "native_type": "4",
+        "units": "MilliMeter",
+        "value": -777777.0
+      },
+      {
+        "name": "Orifice Hydraulic Diameter",
+        "native_type": "4",
+        "units": "MilliMeter",
+        "value": -777777.0
+      },
+      {
+        "name": "Free Area Ratio",
+        "native_type": "4",
+        "units": "dimensionless",
+        "value": -777777.0
+      },
+      {
+        "name": "Compute Head Loss Coefficient",
+        "native_type": "1",
+        "units": null,
+        "value": "Compute"
+      },
+      {
+        "name": "Computed Head Loss Coefficient",
+        "native_type": "4",
+        "units": "dimensionless",
+        "value": -777777.0
+      }
+    ],
+    "coefficient": 2.0,
+    "units": "dimensionless",
+    "convention": "not_independently_verified",
+    "saved": false,
+    "results_require_revalidation": true,
+    "duplicate_rejected": true,
+    "operation_id": "op_6f8a488f94074f78b16783489fc4a93a",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed",
+    "warnings": []
+  },
+  "job": {
+    "job_id": "cavity-fan-solve-03",
+    "state": "completed",
+    "deck_sha256": "793ef7fe3a3ca45e8abe6600297aecc7565700d764e084bc757537edeb51c285",
+    "created_at": "2026-09-08T02:04:15.564957+00:00",
+    "iteration_limit": 1000,
+    "solver_launched": true,
+    "numerical_validation": "restriction_response_curve_consistent_mesh_and_convention_pending",
+    "scope": "synthetic fan mode-5 verification; no thermal load; not acceptance D",
+    "log_sha256": "B69CA8AEADBF582FDE1ECED0F7C575B8C1142EFCBE680596B5BFA12D1BDD7F49",
+    "result_sha256": "B44FBBFE66452E8EDB3CCA7BA144899DB4B692C37BF958D359C1B710143233F6"
+  },
+  "comparison": {
+    "unchanged": "geometry, mesh, fluid, curve, pressure reference and boundary pressure",
+    "change": "Attach native Head Loss table with coefficient 2 to Duct Opening; Type and Proportional to remain defaults 0",
+    "unrestricted_flow_m3_s": 0.0003497,
+    "restricted_flow_m3_s": 0.0002217,
+    "flow_reduction_percent": 36.60280240205891,
+    "fan_pressure_Pa": 0.4458,
+    "curve_expected_pressure_Pa": 0.4457500000000001,
+    "mass_imbalance_percent": 0.03567,
+    "momentum_imbalance_percent": 0.02177,
+    "elapsed_seconds": 24
+  },
+  "limitations": [
+    "Pressure convention not independently verified",
+    "Coefficient physical convention not independently verified",
+    "Mesh sensitivity pending",
+    "No coupled heating"
+  ],
+  "files": {
+    "benchmark_4ba7072a1d7a_analysis-Flow_benchmark.xml": {
+      "size": 266234,
+      "sha256": "e1c4929b646ee397482b7bfcfa9d90dad1858f579466809ce1a2c7d2823f479a"
+    },
+    "benchmark_4ba7072a1d7a_analysis-Flow_benchmark.bun": {
+      "size": 704492,
+      "sha256": "b44fbbfe66452e8edb3cca7ba144899db4b692c37bf958d359c1b710143233f6"
+    },
+    "fan-reference-pressure-01.json": {
+      "size": 248,
+      "sha256": "6f0c8d9fbf605c99ba4654c25faa8814d7e1f201f53137af1af98519dcb1d5cb"
+    },
+    "fan-configuration-01.json": {
+      "size": 1093,
+      "sha256": "6c38e1c575b8884b2b89a932847a046c6f09dc67102ed06402b003c29017e8ac"
+    },
+    "cavity-fan-solve-03.json": {
+      "size": 644,
+      "sha256": "0ab61868888068d44035bd3ea46cadba1dca01e4bdc38e2793409ae4cacbc26c"
+    },
+    "benchmark_4ba7072a1d7a_analysis-Flow_benchmark.log": {
+      "size": 31836,
+      "sha256": "b69ca8aeadbf582fde1eced0f7c575b8c1142efcbe680596b5bfa12d1bdd7f49"
+    },
+    "head-loss-config-02.json": {
+      "size": 2025,
+      "sha256": "6c7be0299f72a286f0f5168773c2beb13a2473836b32de31adcec08faee3e118"
+    },
+    "benchmark_4ba7072a1d7a_analysis-Flow_benchmark.map": {
+      "size": 21886,
+      "sha256": "2c16db3fbd8640d43e967c0ced3f3d000dcf4d0ee57d4aae9b51cd01be4a8b49"
+    }
+  }
+}

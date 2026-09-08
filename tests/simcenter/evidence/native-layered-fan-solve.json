@@ -1,0 +1,303 @@
+{
+  "scope": "Layered native fan solve and wall sampling; convergence still unproven",
+  "job": {
+    "element_sets": {
+      "TET4 Fluid": 36222,
+      "WEDGE6 Fluid": 61696
+    },
+    "mesh_counts": {
+      "elements": 97918,
+      "nodes": 39306
+    },
+    "mesh_size_mm": 2.0,
+    "job_id": "cavity-fan-solve-06",
+    "state": "completed",
+    "deck_sha256": "07b527ed16830d9d09ae92584a59c2bd27cf6f2186843f96da220de5ccb9266e",
+    "created_at": "2026-09-08T02:45:23.840061+00:00",
+    "iteration_limit": 1000,
+    "solver_launched": true,
+    "numerical_validation": "layered_mesh_sensitivity_5_8_percent_not_converged",
+    "scope": "synthetic fan mode-5 verification; no thermal load; not acceptance D",
+    "log_sha256": "0EFC5F147CD66DA32AED45B1A6344052AF0386E9565A4F63479D710E3339BABC",
+    "result_sha256": "877A4A63E7B661B2BA65036087623CABA79024D9CBF29C55B45CED6F0FC1590C"
+  },
+  "summary": {
+    "fans": [
+      {
+        "name": "Duct Inlet",
+        "loss_coefficient": 0.0,
+        "pressure_rise_Pa": 0.5253,
+        "mass_flow_kg_s": 0.0002278,
+        "pressure_convention": "unverified",
+        "volume_flow_m3_s": 0.0001899
+      }
+    ],
+    "boundaries": [
+      {
+        "name": "Duct Inlet",
+        "volume_flow_m3_s": 0.0001899,
+        "mass_flow_kg_s": 0.0002278,
+        "positive_direction": "into_domain"
+      },
+      {
+        "name": "Duct Opening",
+        "volume_flow_m3_s": -0.0001899,
+        "mass_flow_kg_s": -0.0002279,
+        "positive_direction": "into_domain"
+      }
+    ],
+    "native_pressure_unit": "mN/mm^2",
+    "precision": "rounded_native_log",
+    "identity": "display_names_only",
+    "engineering_accepted": false
+  },
+  "flow_change_from_uniform_2mm_percent": -5.803571428571419,
+  "mass_imbalance_percent": 0.1712,
+  "momentum_imbalance_percent": 0.003234,
+  "elapsed_seconds": 49,
+  "sampled_wall_normal_levels_mm": [
+    0.0,
+    0.099311,
+    0.1,
+    0.218483,
+    0.22,
+    0.361491,
+    0.364,
+    0.5331,
+    0.5368,
+    0.73903,
+    0.74416,
+    0.986147,
+    0.992992,
+    1.282687,
+    1.29159,
+    1.603012,
+    1.638535,
+    1.649908
+  ],
+  "nominal_levels_mm": [
+    0.0,
+    0.09999999999999998,
+    0.21999999999999997,
+    0.3639999999999999,
+    0.5367999999999999,
+    0.7441599999999996,
+    0.9929919999999998,
+    1.2915903999999996,
+    1.6499084799999992
+  ],
+  "layer_geometry_scope": "wedge nodes in x=(70,90), z=(8,14), y<4 mm; local variation retained",
+  "native_samples": {
+    "status": "success",
+    "samples": [
+      {
+        "name": "inlet_center",
+        "requested_mm": [
+          1,
+          11,
+          11
+        ],
+        "actual_mm": [
+          1.0,
+          10.998003959655762,
+          10.99680233001709
+        ],
+        "node_index": 3909,
+        "element_index": 6636,
+        "incident_element_count": 12,
+        "values": {
+          "Pressure - Element-Nodal": {
+            "value": 0.49685633182525635,
+            "unit": "PressurePascals"
+          },
+          "Total Pressure - Element-Nodal": {
+            "value": 0.6490910649299622,
+            "unit": "PressurePascals"
+          },
+          "Velocity - Element-Nodal": {
+            "value": 0.5037108063697815,
+            "unit": "MeterPerSecond"
+          }
+        }
+      },
+      {
+        "name": "outlet_center",
+        "requested_mm": [
+          161,
+          11,
+          11
+        ],
+        "actual_mm": [
+          161.0,
+          11.001995086669922,
+          10.99680233001709
+        ],
+        "node_index": 4300,
+        "element_index": 7720,
+        "incident_element_count": 12,
+        "values": {
+          "Pressure - Element-Nodal": {
+            "value": 0.31872907280921936,
+            "unit": "PressurePascals"
+          },
+          "Total Pressure - Element-Nodal": {
+            "value": 0.4792313277721405,
+            "unit": "PressurePascals"
+          },
+          "Velocity - Element-Nodal": {
+            "value": 0.5172076225280762,
+            "unit": "MeterPerSecond"
+          }
+        }
+      },
+      {
+        "name": "mid_center",
+        "requested_mm": [
+          81,
+          11,
+          11
+        ],
+        "actual_mm": [
+          81.68608093261719,
+          10.99866008758545,
+          9.807682037353516
+        ],
+        "node_index": 35491,
+        "element_index": 155,
+        "incident_element_count": 22,
+        "values": {
+          "Pressure - Element-Nodal": {
+            "value": 0.3664466142654419,
+            "unit": "PressurePascals"
+          },
+          "Total Pressure - Element-Nodal": {
+            "value": 0.5817216634750366,
+            "unit": "PressurePascals"
+          },
+          "Velocity - Element-Nodal": {
+            "value": 0.5989922881126404,
+            "unit": "MeterPerSecond"
+          }
+        }
+      },
+      {
+        "name": "mid_wall",
+        "requested_mm": [
+          81,
+          1,
+          11
+        ],
+        "actual_mm": [
+          81.0,
+          1.0,
+          11.0
+        ],
+        "node_index": 1303,
+        "element_index": 51903,
+        "incident_element_count": 6,
+        "values": {
+          "Pressure - Element-Nodal": {
+            "value": 0.3675583004951477,
+            "unit": "PressurePascals"
+          },
+          "Total Pressure - Element-Nodal": {
+            "value": 0.36755838990211487,
+            "unit": "PressurePascals"
+          },
+          "Velocity - Element-Nodal": {
+            "value": 0.0003794595249928534,
+            "unit": "MeterPerSecond"
+          }
+        }
+      },
+      {
+        "name": "mid_near_wall",
+        "requested_mm": [
+          81,
+          2,
+          11
+        ],
+        "actual_mm": [
+          81.0,
+          1.9929920434951782,
+          11.0
+        ],
+        "node_index": 13196,
+        "element_index": 51908,
+        "incident_element_count": 12,
+        "values": {
+          "Pressure - Element-Nodal": {
+            "value": 0.3674757480621338,
+            "unit": "PressurePascals"
+          },
+          "Total Pressure - Element-Nodal": {
+            "value": 0.4393709599971771,
+            "unit": "PressurePascals"
+          },
+          "Velocity - Element-Nodal": {
+            "value": 0.3461579382419586,
+            "unit": "MeterPerSecond"
+          }
+        }
+      }
+    ],
+    "bounds_mm": {
+      "min": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "max": [
+        161.0,
+        21.0,
+        21.0
+      ]
+    },
+    "sampling": "nearest mesh node, first incident element; no averaging",
+    "freshness": "not_verified",
+    "operation_id": "op_7a3f1dd50765499daa0ec60fbe098bb7",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed",
+    "warnings": [],
+    "units": "mm"
+  },
+  "mesh_convergence_established": false,
+  "files": {
+    "benchmark_4ba7072a1d7a_analysis-Flow_benchmark.xml": {
+      "size": 9908023,
+      "sha256": "aa28f3c9d1cd78f6ccb7d9da7d1acffd09dde6d8d0654dd7d625fb0d7fe8ecff"
+    },
+    "benchmark_4ba7072a1d7a_analysis-Flow_benchmark.bun": {
+      "size": 24616148,
+      "sha256": "877a4a63e7b661b2ba65036087623caba79024d9cbf29c55b45ced6f0fc1590c"
+    },
+    "fan-reference-pressure-01.json": {
+      "size": 248,
+      "sha256": "6f0c8d9fbf605c99ba4654c25faa8814d7e1f201f53137af1af98519dcb1d5cb"
+    },
+    "cavity-fan-solve-06.json": {
+      "size": 935,
+      "sha256": "6546ee69d5a630826b9988f37890775b06506fcebb8a5dba6c764ac1277ddf27"
+    },
+    "fan-configuration-01.json": {
+      "size": 1093,
+      "sha256": "6c38e1c575b8884b2b89a932847a046c6f09dc67102ed06402b003c29017e8ac"
+    },
+    "benchmark_4ba7072a1d7a_analysis-Flow_benchmark.log": {
+      "size": 31995,
+      "sha256": "0efc5f147cd66da32aed45b1a6344052af0386e9565a4f63479d710e3339babc"
+    },
+    "fluid-layered-01.json": {
+      "size": 17538,
+      "sha256": "8a87dffbd429449df3e1e4a00276c213035bab555f490f8c17ac8948858b8d54"
+    },
+    "head-loss-config-02.json": {
+      "size": 2025,
+      "sha256": "6c7be0299f72a286f0f5168773c2beb13a2473836b32de31adcec08faee3e118"
+    },
+    "benchmark_4ba7072a1d7a_analysis-Flow_benchmark.map": {
+      "size": 21886,
+      "sha256": "4dbf23968b1bac950eaec5f6f6ba0a97091aadd7d4d0ce5aa3c3321934fff234"
+    }
+  }
+}

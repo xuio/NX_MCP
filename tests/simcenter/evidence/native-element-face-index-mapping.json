@@ -1,0 +1,385 @@
+{
+  "status": "success",
+  "rows": [
+    {
+      "boundary": "Duct Inlet",
+      "element": 60,
+      "export_face_index": 1,
+      "native_face_index": 0,
+      "element_set": {
+        "uname": "3d_mesh(1)",
+        "elementType": "TET4 Fluid",
+        "physicalProperty": "1"
+      },
+      "nodes": [
+        {
+          "type": "FENode",
+          "label": 9450,
+          "xyz": [
+            1.0,
+            7.881980499004877,
+            4.692242042405738
+          ]
+        },
+        {
+          "type": "FENode",
+          "label": 9451,
+          "xyz": [
+            1.0,
+            8.948861279203042,
+            4.147721909966268
+          ]
+        },
+        {
+          "type": "FENode",
+          "label": 9464,
+          "xyz": [
+            1.0,
+            8.012211534519562,
+            3.716254657599284
+          ]
+        }
+      ]
+    },
+    {
+      "boundary": "Duct Inlet",
+      "element": 130446,
+      "export_face_index": 4,
+      "native_face_index": 3,
+      "element_set": {
+        "uname": "3d_BL_HexWedges(1)",
+        "elementType": "WEDGE6 Fluid",
+        "physicalProperty": "1"
+      },
+      "nodes": [
+        {
+          "type": "FENode",
+          "label": 284,
+          "xyz": [
+            1.0,
+            21.0,
+            9.75
+          ]
+        },
+        {
+          "type": "FENode",
+          "label": 283,
+          "xyz": [
+            1.0,
+            21.0,
+            8.5
+          ]
+        },
+        {
+          "type": "FENode",
+          "label": 9573,
+          "xyz": [
+            1.0,
+            20.9,
+            8.5
+          ]
+        },
+        {
+          "type": "FENode",
+          "label": 9580,
+          "xyz": [
+            1.0,
+            20.9,
+            9.75
+          ]
+        }
+      ]
+    },
+    {
+      "boundary": "Duct Inlet",
+      "element": 130478,
+      "export_face_index": 3,
+      "native_face_index": 2,
+      "element_set": {
+        "uname": "3d_BL_HexWedges(1)",
+        "elementType": "WEDGE6 Fluid",
+        "physicalProperty": "1"
+      },
+      "nodes": [
+        {
+          "type": "FENode",
+          "label": 282,
+          "xyz": [
+            1.0,
+            21.0,
+            7.25
+          ]
+        },
+        {
+          "type": "FENode",
+          "label": 281,
+          "xyz": [
+            1.0,
+            21.0,
+            6.0
+          ]
+        },
+        {
+          "type": "FENode",
+          "label": 9587,
+          "xyz": [
+            1.0,
+            20.9,
+            6.0
+          ]
+        },
+        {
+          "type": "FENode",
+          "label": 9594,
+          "xyz": [
+            1.0,
+            20.9,
+            7.250000000000001
+          ]
+        }
+      ]
+    },
+    {
+      "boundary": "Duct Inlet",
+      "element": 130502,
+      "export_face_index": 5,
+      "native_face_index": 4,
+      "element_set": {
+        "uname": "3d_BL_HexWedges(1)",
+        "elementType": "WEDGE6 Fluid",
+        "physicalProperty": "1"
+      },
+      "nodes": [
+        {
+          "type": "FENode",
+          "label": 283,
+          "xyz": [
+            1.0,
+            21.0,
+            8.5
+          ]
+        },
+        {
+          "type": "FENode",
+          "label": 282,
+          "xyz": [
+            1.0,
+            21.0,
+            7.25
+          ]
+        },
+        {
+          "type": "FENode",
+          "label": 9594,
+          "xyz": [
+            1.0,
+            20.9,
+            7.250000000000001
+          ]
+        },
+        {
+          "type": "FENode",
+          "label": 9573,
+          "xyz": [
+            1.0,
+            20.9,
+            8.5
+          ]
+        }
+      ]
+    },
+    {
+      "boundary": "Duct Opening",
+      "element": 8284,
+      "export_face_index": 1,
+      "native_face_index": 0,
+      "element_set": {
+        "uname": "3d_mesh(1)",
+        "elementType": "TET4 Fluid",
+        "physicalProperty": "1"
+      },
+      "nodes": [
+        {
+          "type": "FENode",
+          "label": 10101,
+          "xyz": [
+            161.0,
+            16.590227684163537,
+            5.945398904903785
+          ]
+        },
+        {
+          "type": "FENode",
+          "label": 10104,
+          "xyz": [
+            161.0,
+            17.725643040500678,
+            5.392468639050327
+          ]
+        },
+        {
+          "type": "FENode",
+          "label": 10102,
+          "xyz": [
+            161.0,
+            17.683080455540306,
+            6.619221768195065
+          ]
+        }
+      ]
+    },
+    {
+      "boundary": "Duct Opening",
+      "element": 149174,
+      "export_face_index": 4,
+      "native_face_index": 3,
+      "element_set": {
+        "uname": "3d_BL_HexWedges(1)",
+        "elementType": "WEDGE6 Fluid",
+        "physicalProperty": "1"
+      },
+      "nodes": [
+        {
+          "type": "FENode",
+          "label": 142,
+          "xyz": [
+            161.0,
+            21.0,
+            12.25
+          ]
+        },
+        {
+          "type": "FENode",
+          "label": 141,
+          "xyz": [
+            161.0,
+            21.0,
+            13.5
+          ]
+        },
+        {
+          "type": "FENode",
+          "label": 10280,
+          "xyz": [
+            161.0,
+            20.9,
+            13.5
+          ]
+        },
+        {
+          "type": "FENode",
+          "label": 10273,
+          "xyz": [
+            161.0,
+            20.9,
+            12.25
+          ]
+        }
+      ]
+    },
+    {
+      "boundary": "Duct Opening",
+      "element": 149206,
+      "export_face_index": 3,
+      "native_face_index": 2,
+      "element_set": {
+        "uname": "3d_BL_HexWedges(1)",
+        "elementType": "WEDGE6 Fluid",
+        "physicalProperty": "1"
+      },
+      "nodes": [
+        {
+          "type": "FENode",
+          "label": 140,
+          "xyz": [
+            161.0,
+            21.0,
+            14.75
+          ]
+        },
+        {
+          "type": "FENode",
+          "label": 139,
+          "xyz": [
+            161.0,
+            21.0,
+            16.0
+          ]
+        },
+        {
+          "type": "FENode",
+          "label": 10294,
+          "xyz": [
+            161.0,
+            20.9,
+            16.0
+          ]
+        },
+        {
+          "type": "FENode",
+          "label": 10287,
+          "xyz": [
+            161.0,
+            20.9,
+            14.75
+          ]
+        }
+      ]
+    },
+    {
+      "boundary": "Duct Opening",
+      "element": 149230,
+      "export_face_index": 5,
+      "native_face_index": 4,
+      "element_set": {
+        "uname": "3d_BL_HexWedges(1)",
+        "elementType": "WEDGE6 Fluid",
+        "physicalProperty": "1"
+      },
+      "nodes": [
+        {
+          "type": "FENode",
+          "label": 141,
+          "xyz": [
+            161.0,
+            21.0,
+            13.5
+          ]
+        },
+        {
+          "type": "FENode",
+          "label": 140,
+          "xyz": [
+            161.0,
+            21.0,
+            14.75
+          ]
+        },
+        {
+          "type": "FENode",
+          "label": 10287,
+          "xyz": [
+            161.0,
+            20.9,
+            14.75
+          ]
+        },
+        {
+          "type": "FENode",
+          "label": 10280,
+          "xyz": [
+            161.0,
+            20.9,
+            13.5
+          ]
+        }
+      ]
+    }
+  ],
+  "files_modified": false,
+  "operation_id": "op_2ef31bffa8134dc89f08b71dd3417ae0",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

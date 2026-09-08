@@ -1,0 +1,130 @@
+{
+  "scope": "Native Windows process observation; no solver cancellation or actual OS PID reuse",
+  "initial_diagnostic": {
+    "status": "success",
+    "verification_passed": false,
+    "nx_process": {
+      "pid": 6584,
+      "observed_at": "2026-09-08T03:39:17.686301+00:00",
+      "state": "running",
+      "identity": {
+        "pid": 6584,
+        "creation_filetime_100ns": "134332822327256144",
+        "executable_path": "C:\\Program Files\\Siemens\\Designcenter2606\\NXBIN\\simcenter3d.exe"
+      }
+    },
+    "child_first": {
+      "pid": 13148,
+      "observed_at": "2026-09-08T03:39:17.689802+00:00",
+      "state": "running",
+      "identity": {
+        "pid": 13148,
+        "creation_filetime_100ns": "134333123576877881",
+        "executable_path": "C:\\ProgramData\\BasementHypervisor\\nx-mcp\\venv\\Scripts\\python.exe"
+      }
+    },
+    "child_second": {
+      "pid": 13148,
+      "observed_at": "2026-09-08T03:39:17.690302+00:00",
+      "state": "running",
+      "identity": {
+        "pid": 13148,
+        "creation_filetime_100ns": "134333123576877881",
+        "executable_path": "C:\\ProgramData\\BasementHypervisor\\nx-mcp\\venv\\Scripts\\python.exe"
+      }
+    },
+    "child_after_exit": {
+      "pid": 13148,
+      "observed_at": "2026-09-08T03:39:17.749437+00:00",
+      "state": "unavailable",
+      "win32_error": 31
+    },
+    "exit_correlation": {
+      "state": "unknown",
+      "reason": "identity_unavailable",
+      "solver_success": "not_established"
+    },
+    "reason": "Inspect native post-exit API behavior",
+    "operation_id": "op_9074d462902747058f7041ef5e823631",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed",
+    "warnings": [],
+    "units": "mm"
+  },
+  "verified": {
+    "status": "success",
+    "nx_process": {
+      "pid": 6584,
+      "observed_at": "2026-09-08T03:41:14.480955+00:00",
+      "state": "running",
+      "identity": {
+        "pid": 6584,
+        "creation_filetime_100ns": "134332822327256144",
+        "executable_path": "C:\\Program Files\\Siemens\\Designcenter2606\\NXBIN\\simcenter3d.exe"
+      }
+    },
+    "child_first": {
+      "pid": 4388,
+      "observed_at": "2026-09-08T03:41:14.484469+00:00",
+      "state": "running",
+      "identity": {
+        "pid": 4388,
+        "creation_filetime_100ns": "134333124744825343",
+        "executable_path": "C:\\ProgramData\\BasementHypervisor\\nx-mcp\\venv\\Scripts\\python.exe"
+      }
+    },
+    "child_second": {
+      "pid": 4388,
+      "observed_at": "2026-09-08T03:41:14.484968+00:00",
+      "state": "running",
+      "identity": {
+        "pid": 4388,
+        "creation_filetime_100ns": "134333124744825343",
+        "executable_path": "C:\\ProgramData\\BasementHypervisor\\nx-mcp\\venv\\Scripts\\python.exe"
+      }
+    },
+    "match": {
+      "state": "same_process_running",
+      "identity": {
+        "pid": 4388,
+        "creation_filetime_100ns": "134333124744825343",
+        "executable_path": "C:\\ProgramData\\BasementHypervisor\\nx-mcp\\venv\\Scripts\\python.exe"
+      },
+      "solver_success": "not_established"
+    },
+    "synthetic_stale_identity": {
+      "state": "identity_mismatch",
+      "reason": "pid_reused_or_different_process",
+      "solver_success": "not_established"
+    },
+    "child_after_exit": {
+      "pid": 4388,
+      "observed_at": "2026-09-08T03:41:14.541090+00:00",
+      "state": "exited",
+      "identity": {
+        "pid": 4388,
+        "creation_filetime_100ns": "134333124744825343",
+        "executable_path": null
+      },
+      "exit_code": 0,
+      "image_path_state": "unavailable_after_exit",
+      "image_path_error": 31
+    },
+    "exit_correlation": {
+      "state": "same_process_exited",
+      "identity": {
+        "pid": 4388,
+        "creation_filetime_100ns": "134333124744825343",
+        "executable_path": null
+      },
+      "identity_basis": "recorded_pid_and_creation_time; image_path_unavailable_after_exit",
+      "solver_success": "not_established"
+    },
+    "scope": "Windows observation of NX and disposable child; no solver cancellation or actual OS PID-reuse test",
+    "operation_id": "op_9b2f3165d11c42789a884a7443dac6d5",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed",
+    "warnings": [],
+    "units": "mm"
+  }
+}

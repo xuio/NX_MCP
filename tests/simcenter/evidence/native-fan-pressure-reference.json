@@ -1,0 +1,95 @@
+{
+  "scope": "Pressure-reference correction and curve consistency; benchmark D incomplete",
+  "job": {
+    "job_id": "cavity-fan-solve-02",
+    "state": "completed",
+    "deck_sha256": "c67c1c245e9c0c6fa22b20c4b3358baa91e8de101b53687a364c37bfaf9d2341",
+    "created_at": "2026-09-08T01:57:04.694971+00:00",
+    "iteration_limit": 1000,
+    "solver_launched": true,
+    "numerical_validation": "curve_consistent_restriction_mesh_and_pressure_convention_validation_pending",
+    "scope": "synthetic fan mode-5 verification; no thermal load; not acceptance D",
+    "log_sha256": "4D2FDFFC27F5E25ADFFF9C4AF378A97301474D5E0CD872B1A6C66F2CC08C6D8E",
+    "result_sha256": "16E8C6035112D55FC5EF164454415320C63C289566366BEA2700BE1F3B1F92B9"
+  },
+  "changed_setting": {
+    "name": "Absolute Pressure",
+    "before_Pa": 101351,
+    "after_Pa": 101325
+  },
+  "conditional_static_pressure_audit": {
+    "accepted": true,
+    "flow_m3_s": 0.0003497,
+    "pressure_rise_Pa": 0.1258,
+    "pressure_convention": "static",
+    "curve_rpm": 1000.0,
+    "curve_reference_density_kg_m3": 1.2,
+    "curve_valid_flow_range_m3_s": [
+      0.0,
+      0.0004
+    ],
+    "absolute_tolerance_Pa": 0.001,
+    "relative_tolerance": 0.01,
+    "scope": "curve_consistency_only",
+    "expected_pressure_rise_Pa": 0.12575000000000008,
+    "absolute_error_Pa": 4.9999999999911227e-05,
+    "allowed_error_Pa": 0.002257500000000001,
+    "reason": "within_tolerance"
+  },
+  "release_audit": {
+    "accepted": false,
+    "flow_m3_s": 0.0003497,
+    "pressure_rise_Pa": 0.1258,
+    "pressure_convention": "unverified",
+    "curve_rpm": 1000.0,
+    "curve_reference_density_kg_m3": 1.2,
+    "curve_valid_flow_range_m3_s": [
+      0.0,
+      0.0004
+    ],
+    "absolute_tolerance_Pa": 0.001,
+    "relative_tolerance": 0.01,
+    "scope": "curve_consistency_only",
+    "reason": "pressure_convention_unverified"
+  },
+  "mass_imbalance_percent": 0.08802,
+  "momentum_imbalance_percent": 0.02175,
+  "elapsed_seconds": 24,
+  "limitations": [
+    "Reported log point has limited precision",
+    "Pressure convention not independently established",
+    "Restriction comparison pending",
+    "Mesh sensitivity pending",
+    "No thermal load or coupled heat transfer"
+  ],
+  "files": {
+    "benchmark_4ba7072a1d7a_analysis-Flow_benchmark.xml": {
+      "size": 265110,
+      "sha256": "097d2510a2a8c1010ede38b14501514db4400d941b2a4588515aef85616adaf0"
+    },
+    "benchmark_4ba7072a1d7a_analysis-Flow_benchmark.bun": {
+      "size": 704492,
+      "sha256": "16e8c6035112d55fc5ef164454415320c63c289566366bea2700be1f3b1f92b9"
+    },
+    "fan-reference-pressure-01.json": {
+      "size": 248,
+      "sha256": "6f0c8d9fbf605c99ba4654c25faa8814d7e1f201f53137af1af98519dcb1d5cb"
+    },
+    "fan-configuration-01.json": {
+      "size": 1093,
+      "sha256": "6c38e1c575b8884b2b89a932847a046c6f09dc67102ed06402b003c29017e8ac"
+    },
+    "benchmark_4ba7072a1d7a_analysis-Flow_benchmark.log": {
+      "size": 33714,
+      "sha256": "4d2fdffc27f5e25adfff9c4af378a97301474d5e0cd872b1a6c66f2cc08c6d8e"
+    },
+    "cavity-fan-solve-02.json": {
+      "size": 655,
+      "sha256": "a63bf9b52f6fbee775e7a5795b5094f3284c117c613adf7977dccfc25a900cdf"
+    },
+    "benchmark_4ba7072a1d7a_analysis-Flow_benchmark.map": {
+      "size": 20778,
+      "sha256": "44cd7579e771ce6a2e3d8353f0c7077d44e27d598a5acfedf033c93384800360"
+    }
+  }
+}

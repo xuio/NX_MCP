@@ -1,0 +1,123 @@
+{
+  "status": "success",
+  "cases": [
+    {
+      "case": "reference",
+      "input_sha256": "7b9c85e572904329d37ad886f3d617a9eafb90d0c4d767cdb559ce8fc7e98b18",
+      "fem_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_mesh.fem",
+      "fem_file_preserved": true,
+      "patches": [
+        {
+          "boundary": "Duct Inlet",
+          "state": "rectangular_patch_verified",
+          "face_count": 718,
+          "node_count": 594,
+          "area_mm2": 400.00000000000034,
+          "expected_area_mm2": 400,
+          "perimeter_mm": 80.0,
+          "plane_x_mm": 1,
+          "minimum_yz_mm": [
+            1,
+            1
+          ],
+          "maximum_yz_mm": [
+            21,
+            21
+          ],
+          "coordinate_tolerance_mm": 1e-07,
+          "area_perimeter_relative_tolerance": 1e-06,
+          "connected_components": 1,
+          "interior_free_edges": 0,
+          "scope": "Linear rectangular surface patch; not volume validity"
+        },
+        {
+          "boundary": "Duct Opening",
+          "state": "rectangular_patch_verified",
+          "face_count": 718,
+          "node_count": 594,
+          "area_mm2": 399.99999999999955,
+          "expected_area_mm2": 400,
+          "perimeter_mm": 80.0,
+          "plane_x_mm": 161,
+          "minimum_yz_mm": [
+            1,
+            1
+          ],
+          "maximum_yz_mm": [
+            21,
+            21
+          ],
+          "coordinate_tolerance_mm": 1e-07,
+          "area_perimeter_relative_tolerance": 1e-06,
+          "connected_components": 1,
+          "interior_free_edges": 0,
+          "scope": "Linear rectangular surface patch; not volume validity"
+        }
+      ]
+    },
+    {
+      "case": "refined",
+      "input_sha256": "5e1c75d57589f853616e4e3668473751077a838d1bb4ba75f9b128bcdeee51d8",
+      "fem_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-independent-clone-native-20260908-r1\\independent_mesh.fem",
+      "fem_file_preserved": true,
+      "patches": [
+        {
+          "boundary": "Duct Inlet",
+          "state": "rectangular_patch_verified",
+          "face_count": 950,
+          "node_count": 764,
+          "area_mm2": 400.00000000000034,
+          "expected_area_mm2": 400,
+          "perimeter_mm": 80.0,
+          "plane_x_mm": 1,
+          "minimum_yz_mm": [
+            1,
+            1
+          ],
+          "maximum_yz_mm": [
+            21,
+            21
+          ],
+          "coordinate_tolerance_mm": 1e-07,
+          "area_perimeter_relative_tolerance": 1e-06,
+          "connected_components": 1,
+          "interior_free_edges": 0,
+          "scope": "Linear rectangular surface patch; not volume validity"
+        },
+        {
+          "boundary": "Duct Opening",
+          "state": "rectangular_patch_verified",
+          "face_count": 950,
+          "node_count": 764,
+          "area_mm2": 399.9999999999999,
+          "expected_area_mm2": 400,
+          "perimeter_mm": 80.0,
+          "plane_x_mm": 161,
+          "minimum_yz_mm": [
+            1,
+            1
+          ],
+          "maximum_yz_mm": [
+            21,
+            21
+          ],
+          "coordinate_tolerance_mm": 1e-07,
+          "area_perimeter_relative_tolerance": 1e-06,
+          "connected_components": 1,
+          "interior_free_edges": 0,
+          "scope": "Linear rectangular surface patch; not volume validity"
+        }
+      ]
+    }
+  ],
+  "all_selected_face_connectivity_and_coordinates_matched": true,
+  "existing_flags_preserved": true,
+  "solver_launched": false,
+  "frame": "standalone FEM part-absolute",
+  "units": "mm",
+  "index_mapping": "Observed NX2606 TET4/WEDGE6 export face index minus one for native GetCornerNodesOnFace",
+  "operation_id": "op_bf5b8e1fb8b8419bb6a21da2a0212779",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": []
+}

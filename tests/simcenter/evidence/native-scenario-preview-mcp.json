@@ -1,0 +1,150 @@
+{
+  "transport": "real MCP stdio -> Simcenter UI bridge",
+  "success": {
+    "meta": null,
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"valid\": true, \"unmatched_regions\": [], \"totals_W\": {\"internal_heat\": 8.0, \"exported_electrical\": 10.0, \"battery_storage\": 0}, \"scenario_sha256\": \"fe7269794cab276a23e564cc7ee224747bae85688dded7d24652ed81a2ce84f8\", \"applied_to_nx\": false, \"name\": \"preview-benchmark\", \"workload_revision\": \"assumed-r1\", \"ambient_K\": 298.15, \"ambient_applied\": false, \"target_resolution\": \"live_FEM_bodies_verified\", \"assignments\": [{\"source\": \"CPU\", \"accounting_id\": \"cpu\", \"region\": \"SOC\", \"target\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_56935ad87f8a4af091316c78551b3222\", \"power_W\": 8.0, \"provenance\": {\"kind\": \"assumed\", \"source\": \"benchmark\"}, \"resolved_body\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_56935ad87f8a4af091316c78551b3222\", \"kind\": \"body\", \"name\": \"CAE_Body(1)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_9e20ff11d0074c0680298214e0aa671f\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"9e20ff11d0074c0680298214e0aa671f\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\A-temperature-mcp-20260908-r1\\\\benchmark_eecaf3edf587_mesh.fem\", \"journal_id\": \"CAE_Body(1)\", \"display_name\": \"\"}}], \"excluded_sources\": [\"USB\"], \"source_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\scenario-preview-20260908-r1.csv\", \"source_sha256\": \"6cc868800bb30fc7b474c74c219907e5e1aab70fef839d4508f1b8454b32a2e0\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_827e10e5acd540699a308c399089ccc6\", \"kind\": \"part\", \"name\": \"contact_context_r2\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6a4b8c1adf6d49d6b11b612545d0cb1b\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6a4b8c1adf6d49d6b11b612545d0cb1b\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\B-contact-context-20260908-r2\\\\contact_context_r2.sim\", \"journal_id\": \"contact_context_r2\", \"display_name\": \"contact_context_r2\"}, \"existing_load_conflicts\": \"not_checked\", \"ready_to_apply\": false, \"next_step\": \"Inspect existing loads and boundaries before applying the scenario\", \"operation_id\": \"op_ce3080d810d649d3acafd0fd1fd4e0ce\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+        "annotations": null,
+        "meta": null
+      }
+    ],
+    "structuredContent": {
+      "status": "success",
+      "warnings": [],
+      "units": "mm",
+      "valid": true,
+      "unmatched_regions": [],
+      "totals_W": {
+        "internal_heat": 8.0,
+        "exported_electrical": 10.0,
+        "battery_storage": 0
+      },
+      "scenario_sha256": "fe7269794cab276a23e564cc7ee224747bae85688dded7d24652ed81a2ce84f8",
+      "applied_to_nx": false,
+      "name": "preview-benchmark",
+      "workload_revision": "assumed-r1",
+      "ambient_K": 298.15,
+      "ambient_applied": false,
+      "target_resolution": "live_FEM_bodies_verified",
+      "assignments": [
+        {
+          "source": "CPU",
+          "accounting_id": "cpu",
+          "region": "SOC",
+          "target": "obj_20bc234ffa5249ceb4fb4d82b993c626_56935ad87f8a4af091316c78551b3222",
+          "power_W": 8.0,
+          "provenance": {
+            "kind": "assumed",
+            "source": "benchmark"
+          },
+          "resolved_body": {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_56935ad87f8a4af091316c78551b3222",
+            "kind": "body",
+            "name": "CAE_Body(1)",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_9e20ff11d0074c0680298214e0aa671f",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "9e20ff11d0074c0680298214e0aa671f",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-temperature-mcp-20260908-r1\\benchmark_eecaf3edf587_mesh.fem",
+            "journal_id": "CAE_Body(1)",
+            "display_name": ""
+          }
+        }
+      ],
+      "excluded_sources": [
+        "USB"
+      ],
+      "source_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-preview-20260908-r1.csv",
+      "source_sha256": "6cc868800bb30fc7b474c74c219907e5e1aab70fef839d4508f1b8454b32a2e0",
+      "document": {
+        "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_827e10e5acd540699a308c399089ccc6",
+        "kind": "part",
+        "name": "contact_context_r2",
+        "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6a4b8c1adf6d49d6b11b612545d0cb1b",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "generation_id": "6a4b8c1adf6d49d6b11b612545d0cb1b",
+        "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\B-contact-context-20260908-r2\\contact_context_r2.sim",
+        "journal_id": "contact_context_r2",
+        "display_name": "contact_context_r2"
+      },
+      "existing_load_conflicts": "not_checked",
+      "ready_to_apply": false,
+      "next_step": "Inspect existing loads and boundaries before applying the scenario",
+      "operation_id": "op_ce3080d810d649d3acafd0fd1fd4e0ce",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "mutation_outcome": "not_applicable"
+    },
+    "isError": false
+  },
+  "missing_mapping": {
+    "meta": null,
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"status\": \"error\", \"warnings\": [], \"units\": null, \"code\": \"NX_SIM_SCENARIO_INVALID\", \"message\": \"Region assignment mismatch: missing=['SOC'], unused=[]\", \"retryable\": false, \"details\": {\"mutation_outcome\": \"not_started\", \"next_step\": \"Correct the scenario or exact region mapping, then preview again\", \"operation_id\": \"op_2309d39df27c4e96b09b0ed454d6ebd1\"}}",
+        "annotations": null,
+        "meta": null
+      }
+    ],
+    "structuredContent": {
+      "status": "error",
+      "warnings": [],
+      "units": null,
+      "code": "NX_SIM_SCENARIO_INVALID",
+      "message": "Region assignment mismatch: missing=['SOC'], unused=[]",
+      "retryable": false,
+      "details": {
+        "mutation_outcome": "not_started",
+        "next_step": "Correct the scenario or exact region mapping, then preview again",
+        "operation_id": "op_2309d39df27c4e96b09b0ed454d6ebd1"
+      }
+    },
+    "isError": true
+  },
+  "stale_target": {
+    "meta": null,
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"status\": \"error\", \"warnings\": [], \"units\": null, \"code\": \"NX_OBJECT_STALE\", \"message\": \"Object reference is not valid: obj_stale\", \"retryable\": false, \"details\": {\"operation_id\": \"op_b3e41e1863984cd79855d182793062c7\", \"mutation_outcome\": \"not_started\"}}",
+        "annotations": null,
+        "meta": null
+      }
+    ],
+    "structuredContent": {
+      "status": "error",
+      "warnings": [],
+      "units": null,
+      "code": "NX_OBJECT_STALE",
+      "message": "Object reference is not valid: obj_stale",
+      "retryable": false,
+      "details": {
+        "operation_id": "op_b3e41e1863984cd79855d182793062c7",
+        "mutation_outcome": "not_started"
+      }
+    },
+    "isError": true
+  },
+  "outside_workspace": {
+    "meta": null,
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"status\": \"error\", \"warnings\": [], \"units\": null, \"code\": \"NX_PATH_OUTSIDE_WORKSPACE\", \"message\": \"Path must stay inside the configured workspace\", \"retryable\": false}",
+        "annotations": null,
+        "meta": null
+      }
+    ],
+    "structuredContent": {
+      "status": "error",
+      "warnings": [],
+      "units": null,
+      "code": "NX_PATH_OUTSIDE_WORKSPACE",
+      "message": "Path must stay inside the configured workspace",
+      "retryable": false
+    },
+    "isError": true
+  },
+  "document_state_preserved": true
+}

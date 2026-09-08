@@ -1,0 +1,132 @@
+{
+  "wrong_owner": {
+    "status": "error",
+    "warnings": [],
+    "units": null,
+    "code": "NX_SIM_RESULT_JOB_MISMATCH",
+    "message": "Select the exact analysis and solution recorded by this job; copies are different analyses",
+    "retryable": false,
+    "details": {
+      "mutation_outcome": "not_started",
+      "operation_id": "op_c380a369b0da46e482771cbf7d68f878"
+    }
+  },
+  "opened": {
+    "status": "success",
+    "warnings": [
+      "Document has unsaved native state; inspect and explicitly save approved analysis changes before preparing a solve"
+    ],
+    "units": "mm",
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_a43b02ac41ac4b6ea27216f67991f77f",
+      "kind": "part",
+      "name": "fine_k0_solve_r1",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_f75327b983e84feb92c138db31bd3bba",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "f75327b983e84feb92c138db31bd3bba",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-fine-k0-solve-20260908-r1\\fine_k0_solve_r1.sim",
+      "journal_id": "fine_k0_solve_r1",
+      "display_name": "fine_k0_solve_r1"
+    },
+    "coordinate_frame": "part_absolute",
+    "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-fine-k0-solve-20260908-r1\\fine_k0_solve_r1.sim",
+    "already_loaded": true,
+    "modified_after_native_open": null,
+    "modified_before_activation": true,
+    "modified": true,
+    "fully_loaded": true,
+    "load_issues": [],
+    "changed_existing_part_flags": [],
+    "application": "UG_APP_SFEM",
+    "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-fine-k0-solve-20260908-r1\\fine_k0_solve_r1.sim",
+    "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-fine-k0-solve-20260908-r1\\fine_k0_solve_r1.sim",
+    "saved": false,
+    "result_freshness": "not_verified",
+    "operation_id": "result-binding-open-r1",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed"
+  },
+  "bound_result": {
+    "status": "success",
+    "warnings": [],
+    "units": "mm",
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_a43b02ac41ac4b6ea27216f67991f77f",
+      "kind": "part",
+      "name": "fine_k0_solve_r1",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_f75327b983e84feb92c138db31bd3bba",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "f75327b983e84feb92c138db31bd3bba",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-fine-k0-solve-20260908-r1\\fine_k0_solve_r1.sim",
+      "journal_id": "fine_k0_solve_r1",
+      "display_name": "fine_k0_solve_r1"
+    },
+    "files": [
+      {
+        "index": 0,
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-fine-k0-solve-20260908-r1\\fine_k0_solve_r1-Flow_benchmark.bun",
+        "bytes": 46367644,
+        "sha256": "a10e9a246a6ff1bf71532b680f419e572768a974bc10b3f79f7ce1c42bcc8763"
+      }
+    ],
+    "native_verification": {
+      "state": "results_changed",
+      "native_value": "2"
+    },
+    "result_freshness": "not_verified",
+    "engineering_accepted": false,
+    "scope": "Associated file identity and native verification only; model/job revision binding required",
+    "job_binding": {
+      "job_id": "fine-k0-flow-01",
+      "request_sha256": "1238064dbcf81a9a8ca0d0299bd93e081a8e14773a64a91a471d212f0e254573",
+      "state": "not_verified",
+      "associated_result_matches_observed_artifact": true,
+      "revision": {
+        "state": "revision_mismatch",
+        "revision_matches": false,
+        "files": [
+          {
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-fine-k0-solve-20260908-r1\\fine_k0_solve_r1.sim",
+            "bytes": 7763956,
+            "sha256": "65218a65db0a316bfcbfb2b71a78eb2369276bc01232b4a7ec68c14567bf5fea",
+            "expected_sha256": "65218a65db0a316bfcbfb2b71a78eb2369276bc01232b4a7ec68c14567bf5fea",
+            "matches": true
+          },
+          {
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_mesh.fem",
+            "bytes": 11752256,
+            "sha256": "16c652bed6aa66c55d601818f5f50162834ab3426803e585f1156c117806c205",
+            "expected_sha256": "16c652bed6aa66c55d601818f5f50162834ab3426803e585f1156c117806c205",
+            "matches": true
+          },
+          {
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_geometry.prt",
+            "bytes": 87738,
+            "sha256": "270bc149c45752454069abf1999fe8bf1da5f0a24b6459daffe89189b5157776",
+            "expected_sha256": "270bc149c45752454069abf1999fe8bf1da5f0a24b6459daffe89189b5157776",
+            "matches": true
+          }
+        ],
+        "issues": [
+          {
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-fine-k0-solve-20260908-r1\\fine_k0_solve_r1.sim",
+            "reason": "unsaved_edits"
+          }
+        ],
+        "scope": "supplied dependency set only",
+        "engineering_accepted": false
+      },
+      "reasons": [
+        "current_saved_revision_not_verified_against_prepared_revision"
+      ],
+      "model_result_freshness": "not_verified",
+      "engineering_accepted": false,
+      "scope": "Exact analysis/solution ownership, observed result artifact and supplied pre-solve file revisions; numerical validation and dependency completeness remain separate",
+      "revision_note": "Native solve/save may change SIM metadata; a file mismatch does not by itself identify a physics change"
+    },
+    "operation_id": "op_ce93e30b58804f12ad6ac3dfd92efa0a",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "not_applicable"
+  },
+  "document_flags_preserved": true
+}

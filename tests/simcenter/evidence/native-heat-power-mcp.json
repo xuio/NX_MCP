@@ -1,0 +1,674 @@
+{
+  "mcp": {
+    "transport": "real MCP to Simcenter UI",
+    "schema": {
+      "name": "nx_sim_heat_power",
+      "title": null,
+      "description": "Assign total internal heat in finite nonnegative watts to one prototype FEM body ID from nx_sim_faces. Requires an active NX MULTIPHYSICS Thermal SIM with one direct FEM occurrence. Returns a typed simulation_load reference and committed SIM body/power readback. Rejects an existing heat load on that body and duplicate names. Nonempty provenance is stored on the native load. Only internal heat belongs here: do not add exported electrical energy or battery storage, or sum converter input and output as heat. Visible undo/rollback; does not save or solve. Coupled-flow, time-dependent and multi-body power assignment are not exposed here. Supply operation_id for safe retry.",
+      "inputSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "document": {
+            "title": "Document",
+            "type": "string"
+          },
+          "body": {
+            "title": "Body",
+            "type": "string"
+          },
+          "power_w": {
+            "title": "Power W",
+            "type": "number"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "provenance": {
+            "title": "Provenance",
+            "type": "string"
+          },
+          "operation_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Operation Id"
+          }
+        },
+        "required": [
+          "document",
+          "body",
+          "power_w",
+          "name",
+          "provenance"
+        ],
+        "title": "nx_sim_heat_powerArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "additionalProperties": true,
+        "description": "Structured success/error envelope with additive metadata. Tool-specific payload remains extensible.",
+        "properties": {
+          "status": {
+            "enum": [
+              "success",
+              "error"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Warnings",
+            "type": "array"
+          },
+          "units": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Units"
+          },
+          "operation_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Operation Id"
+          },
+          "mutation_outcome": {
+            "anyOf": [
+              {
+                "enum": [
+                  "not_started",
+                  "running",
+                  "committed",
+                  "rolled_back",
+                  "partial",
+                  "unknown",
+                  "not_applicable"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "full_result": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "sha256": {
+                "type": "string"
+              },
+              "size": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "tool": {
+                "const": "nx_read_result"
+              },
+              "immutable": {
+                "const": true
+              }
+            },
+            "required": [
+              "id",
+              "sha256",
+              "size",
+              "tool",
+              "immutable"
+            ],
+            "additionalProperties": true
+          },
+          "omitted": {
+            "type": "object"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "retryable": {
+            "type": "boolean"
+          },
+          "suggestion": {
+            "type": "string"
+          },
+          "nx_code": {
+            "type": [
+              "integer",
+              "string"
+            ]
+          },
+          "details": {
+            "type": "object",
+            "properties": {
+              "operation_id": {
+                "type": "string"
+              },
+              "mutation_outcome": {
+                "enum": [
+                  "not_started",
+                  "running",
+                  "committed",
+                  "rolled_back",
+                  "partial",
+                  "unknown",
+                  "not_applicable"
+                ]
+              }
+            },
+            "required": [],
+            "additionalProperties": true
+          }
+        },
+        "required": [
+          "status",
+          "warnings",
+          "units"
+        ],
+        "title": "nx_sim_heat_power result",
+        "type": "object",
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "status": {
+                  "const": "error"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "code",
+                "message",
+                "retryable"
+              ]
+            }
+          }
+        ]
+      },
+      "icons": null,
+      "annotations": {
+        "title": null,
+        "readOnlyHint": false,
+        "destructiveHint": null,
+        "idempotentHint": false,
+        "openWorldHint": null
+      },
+      "meta": null,
+      "execution": null
+    },
+    "responses": {
+      "invalid": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"status\": \"error\", \"warnings\": [], \"units\": null, \"code\": \"NX_INVALID_ARGUMENT\", \"message\": \"Internal heat must be finite and nonnegative watts\", \"retryable\": false, \"details\": {\"operation_id\": \"heat-power-invalid-01\", \"mutation_outcome\": \"unknown\"}}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": {
+          "status": "error",
+          "warnings": [],
+          "units": null,
+          "code": "NX_INVALID_ARGUMENT",
+          "message": "Internal heat must be finite and nonnegative watts",
+          "retryable": false,
+          "details": {
+            "operation_id": "heat-power-invalid-01",
+            "mutation_outcome": "unknown"
+          }
+        },
+        "isError": true
+      },
+      "created": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"load\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_c4ead68aa3774798896a4d90aa124af4\", \"kind\": \"simulation_load\", \"name\": \"MCP_INTERNAL_POWER\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_5878c6b6a27d499595e26bc4e21c7c66\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"5878c6b6a27d499595e26bc4e21c7c66\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F-convection-mcp-20260908-r1\\\\saved_convection.sim\", \"journal_id\": \"Load[MCP_INTERNAL_POWER]\", \"display_name\": \"MCP_INTERNAL_POWER\"}, \"target_body\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_a9ee0cc8d0dd42cd8a2b2e2739e19eb8\", \"kind\": \"body\", \"name\": \"HANDLE R-37481\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_5878c6b6a27d499595e26bc4e21c7c66\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"5878c6b6a27d499595e26bc4e21c7c66\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F-convection-mcp-20260908-r1\\\\saved_convection.sim\", \"journal_id\": \"HANDLE R-37481\", \"display_name\": \"\"}, \"power_w\": 0.1, \"power_units\": \"W\", \"properties\": [{\"name\": \"description\", \"native_type\": \"0\", \"units\": null, \"inspection_status\": \"unsupported_property_type\"}, {\"name\": \"Selection Method\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Override Region\", \"native_type\": \"2\", \"units\": null, \"value\": false}, {\"name\": \"Non-Geometric Element\", \"native_type\": \"0\", \"units\": null, \"inspection_status\": \"unsupported_property_type\"}, {\"name\": \"Heat Load\", \"native_type\": \"6\", \"units\": \"HeatFlow_Metric2\", \"expression\": \"0.1\", \"representation\": \"expression\"}, {\"name\": \"Heat Load Override\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"-777777\", \"representation\": \"expression\"}, {\"name\": \"Specify Reference Temperature Set\", \"native_type\": \"2\", \"units\": null, \"value\": false}, {\"name\": \"Reference Temperature Set\", \"native_type\": \"0\", \"units\": null, \"inspection_status\": \"unsupported_property_type\"}, {\"name\": \"Control Heater\", \"native_type\": \"2\", \"units\": null, \"value\": false}, {\"name\": \"Thermostat\", \"native_type\": \"0\", \"units\": null, \"inspection_status\": \"unsupported_property_type\"}, {\"name\": \"Specify Layer to Apply to\", \"native_type\": \"2\", \"units\": null, \"value\": false}, {\"name\": \"Apply to\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Layer Number\", \"native_type\": \"3\", \"units\": null, \"value\": 1}, {\"name\": \"Per Element\", \"native_type\": \"2\", \"units\": null, \"value\": false}, {\"name\": \"Per Node\", \"native_type\": \"2\", \"units\": null, \"value\": false}, {\"name\": \"distributionType\", \"native_type\": \"3\", \"units\": null, \"value\": 32}, {\"name\": \"Custom Settings Option\", \"native_type\": \"2\", \"units\": null, \"value\": false}, {\"name\": \"Custom Settings\", \"native_type\": \"1\", \"units\": null, \"value\": \"BCONX\"}], \"provenance\": \"Assumed 0.1 W internal heat for isolated thermal authoring verification\", \"energy_accounting\": \"internal_heat\", \"target_count\": 1, \"saved\": false, \"solver_launched\": false, \"operation_id\": \"heat-power-author-01\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": {
+          "status": "success",
+          "warnings": [],
+          "units": "mm",
+          "load": {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_c4ead68aa3774798896a4d90aa124af4",
+            "kind": "simulation_load",
+            "name": "MCP_INTERNAL_POWER",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_5878c6b6a27d499595e26bc4e21c7c66",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "5878c6b6a27d499595e26bc4e21c7c66",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-mcp-20260908-r1\\saved_convection.sim",
+            "journal_id": "Load[MCP_INTERNAL_POWER]",
+            "display_name": "MCP_INTERNAL_POWER"
+          },
+          "target_body": {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_a9ee0cc8d0dd42cd8a2b2e2739e19eb8",
+            "kind": "body",
+            "name": "HANDLE R-37481",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_5878c6b6a27d499595e26bc4e21c7c66",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "5878c6b6a27d499595e26bc4e21c7c66",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-mcp-20260908-r1\\saved_convection.sim",
+            "journal_id": "HANDLE R-37481",
+            "display_name": ""
+          },
+          "power_w": 0.1,
+          "power_units": "W",
+          "properties": [
+            {
+              "name": "description",
+              "native_type": "0",
+              "units": null,
+              "inspection_status": "unsupported_property_type"
+            },
+            {
+              "name": "Selection Method",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Override Region",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Non-Geometric Element",
+              "native_type": "0",
+              "units": null,
+              "inspection_status": "unsupported_property_type"
+            },
+            {
+              "name": "Heat Load",
+              "native_type": "6",
+              "units": "HeatFlow_Metric2",
+              "expression": "0.1",
+              "representation": "expression"
+            },
+            {
+              "name": "Heat Load Override",
+              "native_type": "6",
+              "units": "dimensionless",
+              "expression": "-777777",
+              "representation": "expression"
+            },
+            {
+              "name": "Specify Reference Temperature Set",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Reference Temperature Set",
+              "native_type": "0",
+              "units": null,
+              "inspection_status": "unsupported_property_type"
+            },
+            {
+              "name": "Control Heater",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Thermostat",
+              "native_type": "0",
+              "units": null,
+              "inspection_status": "unsupported_property_type"
+            },
+            {
+              "name": "Specify Layer to Apply to",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Apply to",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Layer Number",
+              "native_type": "3",
+              "units": null,
+              "value": 1
+            },
+            {
+              "name": "Per Element",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Per Node",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "distributionType",
+              "native_type": "3",
+              "units": null,
+              "value": 32
+            },
+            {
+              "name": "Custom Settings Option",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Custom Settings",
+              "native_type": "1",
+              "units": null,
+              "value": "BCONX"
+            }
+          ],
+          "provenance": "Assumed 0.1 W internal heat for isolated thermal authoring verification",
+          "energy_accounting": "internal_heat",
+          "target_count": 1,
+          "saved": false,
+          "solver_launched": false,
+          "operation_id": "heat-power-author-01",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "mutation_outcome": "committed"
+        },
+        "isError": false
+      },
+      "replay": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"load\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_c4ead68aa3774798896a4d90aa124af4\", \"kind\": \"simulation_load\", \"name\": \"MCP_INTERNAL_POWER\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_5878c6b6a27d499595e26bc4e21c7c66\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"5878c6b6a27d499595e26bc4e21c7c66\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F-convection-mcp-20260908-r1\\\\saved_convection.sim\", \"journal_id\": \"Load[MCP_INTERNAL_POWER]\", \"display_name\": \"MCP_INTERNAL_POWER\"}, \"target_body\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_a9ee0cc8d0dd42cd8a2b2e2739e19eb8\", \"kind\": \"body\", \"name\": \"HANDLE R-37481\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_5878c6b6a27d499595e26bc4e21c7c66\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"5878c6b6a27d499595e26bc4e21c7c66\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F-convection-mcp-20260908-r1\\\\saved_convection.sim\", \"journal_id\": \"HANDLE R-37481\", \"display_name\": \"\"}, \"power_w\": 0.1, \"power_units\": \"W\", \"properties\": [{\"name\": \"description\", \"native_type\": \"0\", \"units\": null, \"inspection_status\": \"unsupported_property_type\"}, {\"name\": \"Selection Method\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Override Region\", \"native_type\": \"2\", \"units\": null, \"value\": false}, {\"name\": \"Non-Geometric Element\", \"native_type\": \"0\", \"units\": null, \"inspection_status\": \"unsupported_property_type\"}, {\"name\": \"Heat Load\", \"native_type\": \"6\", \"units\": \"HeatFlow_Metric2\", \"expression\": \"0.1\", \"representation\": \"expression\"}, {\"name\": \"Heat Load Override\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"-777777\", \"representation\": \"expression\"}, {\"name\": \"Specify Reference Temperature Set\", \"native_type\": \"2\", \"units\": null, \"value\": false}, {\"name\": \"Reference Temperature Set\", \"native_type\": \"0\", \"units\": null, \"inspection_status\": \"unsupported_property_type\"}, {\"name\": \"Control Heater\", \"native_type\": \"2\", \"units\": null, \"value\": false}, {\"name\": \"Thermostat\", \"native_type\": \"0\", \"units\": null, \"inspection_status\": \"unsupported_property_type\"}, {\"name\": \"Specify Layer to Apply to\", \"native_type\": \"2\", \"units\": null, \"value\": false}, {\"name\": \"Apply to\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Layer Number\", \"native_type\": \"3\", \"units\": null, \"value\": 1}, {\"name\": \"Per Element\", \"native_type\": \"2\", \"units\": null, \"value\": false}, {\"name\": \"Per Node\", \"native_type\": \"2\", \"units\": null, \"value\": false}, {\"name\": \"distributionType\", \"native_type\": \"3\", \"units\": null, \"value\": 32}, {\"name\": \"Custom Settings Option\", \"native_type\": \"2\", \"units\": null, \"value\": false}, {\"name\": \"Custom Settings\", \"native_type\": \"1\", \"units\": null, \"value\": \"BCONX\"}], \"provenance\": \"Assumed 0.1 W internal heat for isolated thermal authoring verification\", \"energy_accounting\": \"internal_heat\", \"target_count\": 1, \"saved\": false, \"solver_launched\": false, \"operation_id\": \"heat-power-author-01\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\", \"replayed\": true}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": {
+          "status": "success",
+          "warnings": [],
+          "units": "mm",
+          "load": {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_c4ead68aa3774798896a4d90aa124af4",
+            "kind": "simulation_load",
+            "name": "MCP_INTERNAL_POWER",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_5878c6b6a27d499595e26bc4e21c7c66",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "5878c6b6a27d499595e26bc4e21c7c66",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-mcp-20260908-r1\\saved_convection.sim",
+            "journal_id": "Load[MCP_INTERNAL_POWER]",
+            "display_name": "MCP_INTERNAL_POWER"
+          },
+          "target_body": {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_a9ee0cc8d0dd42cd8a2b2e2739e19eb8",
+            "kind": "body",
+            "name": "HANDLE R-37481",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_5878c6b6a27d499595e26bc4e21c7c66",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "5878c6b6a27d499595e26bc4e21c7c66",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-mcp-20260908-r1\\saved_convection.sim",
+            "journal_id": "HANDLE R-37481",
+            "display_name": ""
+          },
+          "power_w": 0.1,
+          "power_units": "W",
+          "properties": [
+            {
+              "name": "description",
+              "native_type": "0",
+              "units": null,
+              "inspection_status": "unsupported_property_type"
+            },
+            {
+              "name": "Selection Method",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Override Region",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Non-Geometric Element",
+              "native_type": "0",
+              "units": null,
+              "inspection_status": "unsupported_property_type"
+            },
+            {
+              "name": "Heat Load",
+              "native_type": "6",
+              "units": "HeatFlow_Metric2",
+              "expression": "0.1",
+              "representation": "expression"
+            },
+            {
+              "name": "Heat Load Override",
+              "native_type": "6",
+              "units": "dimensionless",
+              "expression": "-777777",
+              "representation": "expression"
+            },
+            {
+              "name": "Specify Reference Temperature Set",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Reference Temperature Set",
+              "native_type": "0",
+              "units": null,
+              "inspection_status": "unsupported_property_type"
+            },
+            {
+              "name": "Control Heater",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Thermostat",
+              "native_type": "0",
+              "units": null,
+              "inspection_status": "unsupported_property_type"
+            },
+            {
+              "name": "Specify Layer to Apply to",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Apply to",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Layer Number",
+              "native_type": "3",
+              "units": null,
+              "value": 1
+            },
+            {
+              "name": "Per Element",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Per Node",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "distributionType",
+              "native_type": "3",
+              "units": null,
+              "value": 32
+            },
+            {
+              "name": "Custom Settings Option",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Custom Settings",
+              "native_type": "1",
+              "units": null,
+              "value": "BCONX"
+            }
+          ],
+          "provenance": "Assumed 0.1 W internal heat for isolated thermal authoring verification",
+          "energy_accounting": "internal_heat",
+          "target_count": 1,
+          "saved": false,
+          "solver_launched": false,
+          "operation_id": "heat-power-author-01",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "mutation_outcome": "committed",
+          "replayed": true
+        },
+        "isError": false
+      },
+      "duplicate": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"status\": \"error\", \"warnings\": [], \"units\": null, \"code\": \"NX_SIM_DUPLICATE_HEAT_SOURCE\", \"message\": \"This body already has a heat load; inspect it before assigning another source\", \"retryable\": false, \"details\": {\"operation_id\": \"heat-power-duplicate-01\", \"mutation_outcome\": \"unknown\"}}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": {
+          "status": "error",
+          "warnings": [],
+          "units": null,
+          "code": "NX_SIM_DUPLICATE_HEAT_SOURCE",
+          "message": "This body already has a heat load; inspect it before assigning another source",
+          "retryable": false,
+          "details": {
+            "operation_id": "heat-power-duplicate-01",
+            "mutation_outcome": "unknown"
+          }
+        },
+        "isError": true
+      },
+      "saved": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_137fae55a83346b8a96deb161aa42bb0\", \"kind\": \"part\", \"name\": \"saved_power\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_5878c6b6a27d499595e26bc4e21c7c66\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"5878c6b6a27d499595e26bc4e21c7c66\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F-convection-mcp-20260908-r1\\\\saved_power.sim\", \"journal_id\": \"saved_power\", \"display_name\": \"saved_power\"}, \"source\": {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F-convection-mcp-20260908-r1\\\\saved_convection.sim\", \"bytes\": 7644274, \"sha256\": \"fbf2562a91310df45c8cc0d8c6f1b132d792c3633709d912b2363816129481fd\"}, \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F-convection-mcp-20260908-r1\\\\saved_power.sim\", \"source_file_unchanged\": true, \"work_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F-convection-mcp-20260908-r1\\\\saved_power.sim\", \"display_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F-convection-mcp-20260908-r1\\\\saved_power.sim\", \"shared_fem_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F-convection-mcp-20260908-r1\\\\benchmark_cac991745074_mesh.fem\", \"independent_geometry_variant\": false, \"saved\": true, \"result_freshness\": \"not_verified\", \"next_step\": \"Reacquire document IDs. Duplicate and reassociate FEM/CAD before changing shared geometry or mesh.\", \"operation_id\": \"heat-power-save-01\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": {
+          "status": "success",
+          "warnings": [],
+          "units": "mm",
+          "document": {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_137fae55a83346b8a96deb161aa42bb0",
+            "kind": "part",
+            "name": "saved_power",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_5878c6b6a27d499595e26bc4e21c7c66",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "5878c6b6a27d499595e26bc4e21c7c66",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-mcp-20260908-r1\\saved_power.sim",
+            "journal_id": "saved_power",
+            "display_name": "saved_power"
+          },
+          "source": {
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-mcp-20260908-r1\\saved_convection.sim",
+            "bytes": 7644274,
+            "sha256": "fbf2562a91310df45c8cc0d8c6f1b132d792c3633709d912b2363816129481fd"
+          },
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-mcp-20260908-r1\\saved_power.sim",
+          "source_file_unchanged": true,
+          "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-mcp-20260908-r1\\saved_power.sim",
+          "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-mcp-20260908-r1\\saved_power.sim",
+          "shared_fem_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-mcp-20260908-r1\\benchmark_cac991745074_mesh.fem",
+          "independent_geometry_variant": false,
+          "saved": true,
+          "result_freshness": "not_verified",
+          "next_step": "Reacquire document IDs. Duplicate and reassociate FEM/CAD before changing shared geometry or mesh.",
+          "operation_id": "heat-power-save-01",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "mutation_outcome": "committed"
+        },
+        "isError": false
+      }
+    }
+  },
+  "reopen": {
+    "status": "success",
+    "document_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-mcp-20260908-r1\\saved_power.sim",
+    "coefficient": {
+      "name": "Heat Load",
+      "native_type": "6",
+      "units": "HeatFlow_Metric2",
+      "expression": "0.1",
+      "representation": "expression"
+    },
+    "provenance": "Assumed 0.1 W internal heat for isolated thermal authoring verification",
+    "energy_accounting": "internal_heat",
+    "target_body_count": 1,
+    "other_documents_unchanged": true,
+    "reopened_modified": false,
+    "solver_launched": false,
+    "scope": "Saved heat-load persistence only; no mesh or solve acceptance",
+    "operation_id": "op_5c6f5d5855ab4ad3b4ce3bddcd0ce688",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed",
+    "warnings": [],
+    "units": "mm"
+  },
+  "initial_fixture_guard_rejection": {
+    "status": "error",
+    "message": "Expected the saved, unmodified heat-load test SIM",
+    "details": {
+      "operation_id": "op_d395e781386f47b386e1547eec7defc9",
+      "mutation_outcome": "unknown"
+    },
+    "nx_code": null
+  }
+}

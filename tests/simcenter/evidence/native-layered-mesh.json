@@ -1,0 +1,256 @@
+{
+  "scope": "Native layered mesh generation, quality diagnostic, material readback and save/reopen/export; no solve yet",
+  "probe": {
+    "status": "success",
+    "face_count": 4,
+    "body_target_count": 1,
+    "first_layer_mm": 0.1,
+    "layers": 8,
+    "growth_rate": 1.2,
+    "native_dimension": 0,
+    "saved": false,
+    "mesh_generated": true,
+    "mesh_regeneration_required": false,
+    "mesh_counts": {
+      "elements": 97918,
+      "nodes": 39306
+    },
+    "generated_mesh_count": 2,
+    "meshes": [
+      {
+        "name": "3d_mesh(1)",
+        "type": "Mesh3d"
+      },
+      {
+        "name": "3d_BL_HexWedges(1)",
+        "type": "Mesh3d"
+      }
+    ],
+    "quality": {
+      "element_count": 97918,
+      "tests": [
+        {
+          "type": "2",
+          "count": 97918,
+          "errors": 0,
+          "warnings": 0,
+          "worst_value": 1.0
+        },
+        {
+          "type": "0",
+          "count": 97918,
+          "errors": 0,
+          "warnings": 0,
+          "worst_value": 0.08054458214311036
+        },
+        {
+          "type": "3",
+          "count": 97918,
+          "errors": 0,
+          "warnings": 0,
+          "worst_value": 0.09152754419242397
+        },
+        {
+          "type": "4",
+          "count": 97918,
+          "errors": 0,
+          "warnings": 0,
+          "worst_value": null
+        },
+        {
+          "type": "5",
+          "count": 97918,
+          "errors": 0,
+          "warnings": 0,
+          "worst_value": null
+        },
+        {
+          "type": "6",
+          "count": 97918,
+          "errors": 0,
+          "warnings": 0,
+          "worst_value": 24.457911391118966
+        },
+        {
+          "type": "7",
+          "count": 97918,
+          "errors": 0,
+          "warnings": 0,
+          "worst_value": null
+        },
+        {
+          "type": "9",
+          "count": 97918,
+          "errors": 0,
+          "warnings": 0,
+          "worst_value": null
+        },
+        {
+          "type": "8",
+          "count": 97918,
+          "errors": 0,
+          "warnings": 0,
+          "worst_value": null
+        },
+        {
+          "type": "10",
+          "count": 97918,
+          "errors": 0,
+          "warnings": 0,
+          "worst_value": null
+        },
+        {
+          "type": "11",
+          "count": 97918,
+          "errors": 0,
+          "warnings": 0,
+          "worst_value": null
+        },
+        {
+          "type": "12",
+          "count": 97918,
+          "errors": 0,
+          "warnings": 0,
+          "worst_value": 0.9798181193073797
+        },
+        {
+          "type": "14",
+          "count": 97918,
+          "errors": 0,
+          "warnings": 0,
+          "worst_value": null
+        },
+        {
+          "type": "13",
+          "count": 97918,
+          "errors": 0,
+          "warnings": 0,
+          "worst_value": null
+        },
+        {
+          "type": "15",
+          "count": 97918,
+          "errors": 0,
+          "warnings": 0,
+          "worst_value": null
+        }
+      ]
+    },
+    "material_assignments": [
+      {
+        "collector": "Fluid(1)",
+        "material": "Benchmark constant air",
+        "inherited": false,
+        "properties": [
+          {
+            "name": "MassDensity",
+            "native_type": "6",
+            "units": "KilogramPerCubicMeter",
+            "expression": "1.2",
+            "representation": "expression"
+          },
+          {
+            "name": "ThermalConductivity",
+            "native_type": "6",
+            "units": "ThermalConductivity_Metric3",
+            "expression": "0.0257",
+            "representation": "expression"
+          },
+          {
+            "name": "SpecificHeat",
+            "native_type": "6",
+            "units": "SpecificHeat_Metric2",
+            "expression": "1005.0",
+            "representation": "expression"
+          },
+          {
+            "name": "DynamicVisc",
+            "native_type": "6",
+            "units": "DynamicViscosity_PascalSecond",
+            "expression": "1.81e-05",
+            "representation": "expression"
+          }
+        ]
+      }
+    ],
+    "element_node_cardinalities": {
+      "4": 36222,
+      "6": 61696
+    },
+    "disposable_probe": true,
+    "operation_id": "op_2f95ab814123462b9e32dc9f80b0cc3d",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed",
+    "warnings": [],
+    "units": "mm"
+  },
+  "saved": {
+    "status": "success",
+    "state": "verified",
+    "saved": true,
+    "results_stale": true,
+    "layer_control": {
+      "face_count": 4,
+      "body_target_count": 1,
+      "first_layer_mm": 0.1,
+      "layers": 8,
+      "growth_rate": 1.2,
+      "native_dimension": 0,
+      "saved": false,
+      "mesh_generated": false,
+      "mesh_regeneration_required": true
+    },
+    "counts": {
+      "elements": 97918,
+      "nodes": 39306
+    },
+    "mesh_count": 2,
+    "material_assignments": [
+      {
+        "collector": "Fluid(1)",
+        "material": "Benchmark constant air"
+      }
+    ],
+    "export_counts": {
+      "elements": 97918,
+      "nodes": 39306
+    },
+    "export_element_sets": [
+      {
+        "attributes": {
+          "uname": "3d_mesh(1)",
+          "elementType": "TET4 Fluid",
+          "physicalProperty": "1"
+        },
+        "count": 36222
+      },
+      {
+        "attributes": {
+          "uname": "3d_BL_HexWedges(1)",
+          "elementType": "WEDGE6 Fluid",
+          "physicalProperty": "1"
+        },
+        "count": 61696
+      }
+    ],
+    "size_mm": 2.0,
+    "deck_sha256": "07b527ed16830d9d09ae92584a59c2bd27cf6f2186843f96da220de5ccb9266e",
+    "solver_launched": false,
+    "operation_id": "op_89e3b4172d6f4548840d9e3dbb04f66c",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed",
+    "warnings": [],
+    "units": "mm"
+  },
+  "boundary_snapshots_equal": true,
+  "limitations": [
+    "Quality results use current native checks/thresholds; not a universal mesh-quality guarantee",
+    "Layer_control nested values in original save receipt are the earlier control-creation snapshot",
+    "Layer shape/thickness distribution still needs quantitative inspection",
+    "No solver or convergence acceptance for layered mesh"
+  ],
+  "sources": {
+    "layered-mesh-materials.json": "90e73389c8bf0895398924f2cdec0786c32efa0ac353e9181258f3f7294d508e",
+    "fluid-layered-01.json": "9d25b8ac992e478dbd8e00ac3a74d48d10ab6b207bfb4c1cc89c9757c1712580"
+  }
+}

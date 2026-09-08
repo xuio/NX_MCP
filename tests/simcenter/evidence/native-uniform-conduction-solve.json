@@ -1,0 +1,185 @@
+{
+  "status": "success",
+  "temperatures": {
+    "field": "Temperature - Nodal",
+    "loadcase_index": 0,
+    "iteration_index": 0,
+    "units": "degC",
+    "minimum": 20.0,
+    "maximum": 22.500463485717773,
+    "native_location": "0",
+    "minimum_native_id": 158,
+    "maximum_native_id": 145,
+    "minimum_native_sub_id": 0,
+    "maximum_native_sub_id": 0,
+    "node_count": 756,
+    "result_freshness": "not_verified",
+    "reference_lifetime": "indices apply only to this result revision"
+  },
+  "rise_k": 2.5004634857177734,
+  "expected_rise_k": 2.5,
+  "rise_error_percent": 0.0185394287109375,
+  "temperature_tolerance_percent": 1.0,
+  "temperature_check_passed": true,
+  "tolerance_basis": "Initial linear tetrahedron discretization check; refinement still required",
+  "log_report": {
+    "state": "unknown",
+    "stage": "unknown",
+    "translator_fatal_codes": [],
+    "fatal_abort_reported": false,
+    "numerical_convergence": "not_established",
+    "results_validated": false,
+    "next_action": "Inspect job process status, residuals and result validation before classifying."
+  },
+  "input": {
+    "sha256": "61ff38e324842f58fac636f4e694e7f91d9d7444a4030ab52753b0fc3b7640f9",
+    "xml_content_sha256": "6dab0212fa6a7854875db5e5d6ae708bdbf621cefc483b53e713f51f9a1ae339",
+    "bytes": 280339,
+    "canonicalization": "xml_c14n2_no_comments"
+  },
+  "result": {
+    "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-thermal-export-20260908-r1\\thermal_input_r1-Conduction.bun",
+    "bytes": 245340,
+    "sha256": "3ed35a1750f1ed440ff879365d1bd8dd3817e00cce029453ca217db77fbe075f"
+  },
+  "saved_revision_audit": {
+    "state": "revision_mismatch",
+    "revision_matches": false,
+    "files": [
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-thermal-export-20260908-r1\\thermal_input_r1.sim",
+        "bytes": 7778222,
+        "sha256": "0eb700a97dfec7af8e5fa66e1e829c62ea06ca9611c9dd6a0ecac0eceab048ba",
+        "expected_sha256": "0eb700a97dfec7af8e5fa66e1e829c62ea06ca9611c9dd6a0ecac0eceab048ba",
+        "matches": true
+      },
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-temperature-mcp-20260908-r1\\benchmark_eecaf3edf587_mesh.fem",
+        "bytes": 2980872,
+        "sha256": "a408a4e460fff4f8410bbb268e3ffcff2f3a510a2ab091fdbbedfc7262a0d7a9",
+        "expected_sha256": "a408a4e460fff4f8410bbb268e3ffcff2f3a510a2ab091fdbbedfc7262a0d7a9",
+        "matches": true
+      },
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-temperature-mcp-20260908-r1\\benchmark_eecaf3edf587_geometry.prt",
+        "bytes": 76426,
+        "sha256": "c68d23b79a3f0cda82f0cd1714fd1a7f44e50744c46cc5b2f730b3bbc14c67cd",
+        "expected_sha256": "c68d23b79a3f0cda82f0cd1714fd1a7f44e50744c46cc5b2f730b3bbc14c67cd",
+        "matches": true
+      }
+    ],
+    "issues": [
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-thermal-export-20260908-r1\\thermal_input_r1.sim",
+        "reason": "unsaved_edits"
+      }
+    ],
+    "scope": "supplied dependency set only",
+    "engineering_accepted": false
+  },
+  "job_id": "isolated-thermal-01",
+  "recorded_job_state": "launch_returned",
+  "process_binding": "not_observed_during_this_short_solve",
+  "scope": "Numerical fixture audit, not full lifecycle or convergence acceptance",
+  "operation_id": "op_0d26bd3005664df496d37edc140312b3",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm",
+  "launch_receipt": {
+    "status": "success",
+    "job": {
+      "job_id": "isolated-thermal-01",
+      "manifest": {
+        "analysis_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-thermal-export-20260908-r1\\thermal_input_r1.sim",
+        "dependency_scope": "direct_sim_fem_cad_associations",
+        "excluded_dependencies": "recursive components, external fields/material files, solver artifacts and result dependencies",
+        "expected_maximum_rise_k": 2.5,
+        "fixed_temperature_k": 293.15,
+        "input_xml_content_sha256": "6dab0212fa6a7854875db5e5d6ae708bdbf621cefc483b53e713f51f9a1ae339",
+        "isolated_output_directory": "d:\\cad\\simcenter_mcp_workspace\\ui-benchmarks\\a-thermal-export-20260908-r1",
+        "job_id": "isolated-thermal-01",
+        "power_w": 1,
+        "prepared_input": {
+          "dependencies": [
+            {
+              "bytes": 7778222,
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-thermal-export-20260908-r1\\thermal_input_r1.sim",
+              "sha256": "0eb700a97dfec7af8e5fa66e1e829c62ea06ca9611c9dd6a0ecac0eceab048ba"
+            },
+            {
+              "bytes": 2980872,
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-temperature-mcp-20260908-r1\\benchmark_eecaf3edf587_mesh.fem",
+              "sha256": "a408a4e460fff4f8410bbb268e3ffcff2f3a510a2ab091fdbbedfc7262a0d7a9"
+            },
+            {
+              "bytes": 76426,
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-temperature-mcp-20260908-r1\\benchmark_eecaf3edf587_geometry.prt",
+              "sha256": "c68d23b79a3f0cda82f0cd1714fd1a7f44e50744c46cc5b2f730b3bbc14c67cd"
+            }
+          ],
+          "dependency_completeness": "not_established",
+          "input": {
+            "bytes": 280339,
+            "canonicalization": "xml_c14n2_no_comments",
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-thermal-export-20260908-r1\\thermal_input_r1-Conduction.xml",
+            "sha256": "7d0a49b3d7336e79f5dfc45808880f81fd3bf800bef8152c8e5d6bf9bd593708",
+            "xml_content_sha256": "6dab0212fa6a7854875db5e5d6ae708bdbf621cefc483b53e713f51f9a1ae339"
+          },
+          "schema": 1,
+          "scope": "explicit saved dependencies and input bytes only",
+          "solve_readiness": "not_established"
+        },
+        "scope": "Uniform volumetric heating conduction fixture; numerical audit pending"
+      },
+      "request_sha256": "bd21cc93f00ad1422c6443743d66c4df4ad5b15dc48019fbb989c1ebbacf4e6f",
+      "state": "launch_returned",
+      "revision": 2,
+      "record": {
+        "evidence": {
+          "api_returned": true,
+          "process_state": "not_yet_observed",
+          "readback": {
+            "background_launch_requested": true,
+            "foreground_setting_restored": true
+          }
+        },
+        "job_id": "isolated-thermal-01",
+        "observed_at": "2026-09-08T05:38:13.751549+00:00",
+        "previous_sha256": "0c6885fafde500edef315c5c68f8203e658f334e2fa363d6e34963cfdfa1d3bf",
+        "request_sha256": "bd21cc93f00ad1422c6443743d66c4df4ad5b15dc48019fbb989c1ebbacf4e6f",
+        "revision": 2,
+        "state": "launch_returned"
+      },
+      "launch_retry_allowed": false,
+      "numerical_convergence": "not_established",
+      "results_validated": false,
+      "replayed": false,
+      "output_claim": {
+        "schema": 1,
+        "job_id": "isolated-thermal-01",
+        "job_directory": "d:\\cad\\simcenter_mcp_workspace\\ui-benchmarks\\a-thermal-export-20260908-r1\\jobs\\isolated-thermal-01",
+        "request_sha256": "bd21cc93f00ad1422c6443743d66c4df4ad5b15dc48019fbb989c1ebbacf4e6f",
+        "output_directory": "d:\\cad\\simcenter_mcp_workspace\\ui-benchmarks\\a-thermal-export-20260908-r1",
+        "replayed": false,
+        "retention": "permanent; no automatic release"
+      }
+    },
+    "scope": "actual native asynchronous launch with durable intent; process/result audit remains separate",
+    "operation_id": "op_fffa60945b96435c8b65c7e9dcfcb9a2",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed",
+    "warnings": [],
+    "units": "mm"
+  },
+  "energy_log": {
+    "sha256": "8e63b1cf562f2b12756cb203c5330decbe5133fa7e5d1f3bf42366d5aa5462db",
+    "native_power_units": "mN-mm/s",
+    "heat_flow_into_sinks": 1000000.0,
+    "heat_load_into_elements": 1000000.0,
+    "reported_deviation_from_heat_balance": 0.0499,
+    "named_sink_flow_plus_load": 998100,
+    "named_sink_difference_percent": 0.19,
+    "acceptance": "not_established; aggregate and named sink summaries differ; inspect solver report before assigning an energy tolerance"
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "status": "success",
+  "deployed_sha256": {
+    "coupled_input": "159f97e6f6ddd142676f3cfa00b3fca22fab279977a9b2c054331e2d74816ecc",
+    "input_export": "b4b41e00cc241b4f97a78db720dd98045007607e987bff6a1c116ee94e238bc4",
+    "preparation": "a19b8661c4b3c0f21045df0f738a2a1dc86f431bf6c45b5bcc3ee9514b986b9c"
+  },
+  "old_diagnostic_job_state": "failed",
+  "solver_launched": false,
+  "specified": {
+    "export_succeeded": false,
+    "expected_error": "NX_SIM_EXPORT_FAILED",
+    "details": {
+      "mutation_outcome": "partial",
+      "reason": "Coupled specified pressure differs between native readback and exported input",
+      "retained_directory": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-pressure-guard-20260908-r1",
+      "automatic_cleanup": false,
+      "coupled_ambient_validation": {
+        "property": "Fluid Temperature",
+        "native_value": 0.0,
+        "exported_value": 0.0,
+        "units": "degC",
+        "matches": true,
+        "absolute_tolerance_degC": 1e-06,
+        "scope": "constant ambient temperature only; not complete solve readiness"
+      },
+      "coupled_pressure_validation": {
+        "mode": "specified",
+        "stored_absolute_pressure_active": true,
+        "native_value": 101325.0,
+        "exported_value": 0.0,
+        "units": "Pa",
+        "absolute_tolerance_Pa": 0.001,
+        "matches": false,
+        "scope": "constant specified pressure only; not complete solve readiness"
+      }
+    },
+    "guard_rejection_verified": true
+  },
+  "altitude": {
+    "input_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-altitude-guard-20260908-r1\\altitude_guard_r1-Finned_coupled_benchmark.xml",
+    "input_identity": {
+      "sha256": "abf0b80c8286c20ce4e834af6f355f18ace3479156964471d67958863a419971",
+      "xml_content_sha256": "abf90f4e406dcc15d3e8082620521ecc51afd4640a317bab97fb2a6670bd4d6c",
+      "bytes": 3634590,
+      "canonicalization": "xml_c14n2_no_comments"
+    },
+    "validation": {
+      "state": "well_formed",
+      "step_definitions": 1,
+      "mesh_counts": {
+        "elements": 33275,
+        "nodes": 15116,
+        "element_sets": 5,
+        "scope": "observed_multiphysics_xml_layout"
+      },
+      "solve_readiness": "not_established"
+    },
+    "coupled_ambient_validation": {
+      "property": "Fluid Temperature",
+      "native_value": 0.0,
+      "exported_value": 0.0,
+      "units": "degC",
+      "matches": true,
+      "absolute_tolerance_degC": 1e-06,
+      "scope": "constant ambient temperature only; not complete solve readiness"
+    },
+    "coupled_pressure_validation": {
+      "mode": "altitude_standard_conditions",
+      "stored_absolute_pressure_active": false,
+      "matches": true,
+      "scope": "selector only; altitude-derived pressure and density not verified"
+    },
+    "artifacts": [
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-altitude-guard-20260908-r1\\altitude_guard_r1-Finned_coupled_benchmark.map",
+        "bytes": 36029
+      },
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-altitude-guard-20260908-r1\\altitude_guard_r1-Finned_coupled_benchmark.xml",
+        "bytes": 3634590
+      }
+    ],
+    "translator_reports": [],
+    "solver": "NX MULTIPHYSICS",
+    "analysis_type": "Coupled Thermal-Flow",
+    "solution": "Finned coupled benchmark",
+    "source_sim": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-altitude-guard-20260908-r1\\altitude_guard_r1.sim",
+    "source_modified": false,
+    "solver_launched": false,
+    "solve_readiness": "not_established",
+    "scope": "Native thermal/flow input export, not a solve or convergence check"
+  },
+  "operation_id": "op_87bde5ce9d2c4639b255a1e2b5283f7e",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

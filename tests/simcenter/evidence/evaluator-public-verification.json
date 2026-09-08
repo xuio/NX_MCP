@@ -1,0 +1,876 @@
+{
+  "responses": {
+    "continuity": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"checks\": {\"G0\": true, \"G1\": true, \"G2\": true}, \"maximum_gap\": 0.0, \"maximum_normal_angle_degrees\": 1.2074182697257333e-06, \"maximum_curvature_difference\": 9.813077866773595e-18, \"samples\": [{\"source_edge\": 0, \"parameter\": 0.0, \"point\": [10.0, 0.0, 10.0], \"closest_point\": [10.0, 0.0, 10.0], \"gap\": 0.0, \"normal_angle_degrees\": 0.0, \"curvature_difference\": 0.0, \"status\": \"measured\"}, {\"source_edge\": 0, \"parameter\": 0.05, \"point\": [9.510565162951535, -3.090169943749474, 10.0], \"closest_point\": [9.510565162951536, -3.090169943749475, 10.0], \"gap\": 0.0, \"normal_angle_degrees\": 1.2074182697257333e-06, \"curvature_difference\": 0.0, \"status\": \"measured\"}, {\"source_edge\": 0, \"parameter\": 0.1, \"point\": [8.090169943749475, -5.877852522924732, 10.0], \"closest_point\": [8.090169943749475, -5.877852522924732, 10.0], \"gap\": 0.0, \"normal_angle_degrees\": 0.0, \"curvature_difference\": 0.0, \"status\": \"measured\"}, {\"source_edge\": 0, \"parameter\": 0.15, \"point\": [5.877852522924732, -8.090169943749475, 10.0], \"closest_point\": [5.877852522924732, -8.090169943749475, 10.0], \"gap\": 0.0, \"normal_angle_degrees\": 0.0, \"curvature_difference\": 0.0, \"status\": \"measured\"}, {\"source_edge\": 0, \"parameter\": 0.2, \"point\": [3.0901699437494745, -9.510565162951535, 10.0], \"closest_point\": [3.0901699437494745, -9.510565162951535, 10.0], \"gap\": 0.0, \"normal_angle_degrees\": 0.0, \"curvature_difference\": 0.0, \"status\": \"measured\"}, {\"source_edge\": 0, \"parameter\": 0.25, \"point\": [6.123233995736766e-16, -10.0, 10.0], \"closest_point\": [6.123233995736766e-16, -10.0, 10.0], \"gap\": 0.0, \"normal_angle_degrees\": 0.0, \"curvature_difference\": 0.0, \"status\": \"measured\"}, {\"source_edge\": 0, \"parameter\": 0.3, \"point\": [-3.0901699437494736, -9.510565162951536, 10.0], \"closest_point\": [-3.0901699437494736, -9.510565162951536, 10.0], \"gap\": 0.0, \"normal_angle_degrees\": 1.2074182697257333e-06, \"curvature_difference\": 0.0, \"status\": \"measured\"}, {\"source_edge\": 0, \"parameter\": 0.35, \"point\": [-5.87785252292473, -8.090169943749475, 10.0], \"closest_point\": [-5.877852522924732, -8.090169943749476, 10.0], \"gap\": 0.0, \"normal_angle_degrees\": 1.2074182697257333e-06, \"curvature_difference\": 0.0, \"status\": \"measured\"}, {\"source_edge\": 0, \"parameter\": 0.4, \"point\": [-8.090169943749473, -5.877852522924733, 10.0], \"closest_point\": [-8.090169943749473, -5.877852522924733, 10.0], \"gap\": 0.0, \"normal_angle_degrees\": 8.537736462515939e-07, \"curvature_difference\": 0.0, \"status\": \"measured\"}, {\"source_edge\": 0, \"parameter\": 0.45, \"point\": [-9.510565162951535, -3.090169943749475, 10.0], \"closest_point\": [-9.510565162951535, -3.090169943749475, 10.0], \"gap\": 0.0, \"normal_angle_degrees\": 0.0, \"curvature_difference\": 0.0, \"status\": \"measured\"}, {\"source_edge\": 0, \"parameter\": 0.5, \"point\": [-10.0, -1.2246467991473533e-15, 10.0], \"closest_point\": [-10.0, -1.2246467991473533e-15, 10.0], \"gap\": 0.0, \"normal_angle_degrees\": 0.0, \"curvature_difference\": 0.0, \"status\": \"measured\"}, {\"source_edge\": 0, \"parameter\": 0.55, \"point\": [-9.510565162951538, 3.090169943749469, 10.0], \"closest_point\": [-9.510565162951538, 3.0901699437494696, 10.0], \"gap\": 0.0, \"normal_angle_degrees\": 8.537736462515939e-07, \"curvature_difference\": 0.0, \"status\": \"measured\"}, {\"source_edge\": 0, \"parameter\": 0.6, \"point\": [-8.090169943749475, 5.87785252292473, 10.0], \"closest_point\": [-8.090169943749476, 5.877852522924732, 10.0], \"gap\": 0.0, \"normal_angle_degrees\": 1.2074182697257333e-06, \"curvature_difference\": 0.0, \"status\": \"measured\"}, {\"source_edge\": 0, \"parameter\": 0.65, \"point\": [-5.877852522924733, 8.090169943749473, 10.0], \"closest_point\": [-5.877852522924733, 8.090169943749473, 10.0], \"gap\": 0.0, \"normal_angle_degrees\": 0.0, \"curvature_difference\": 0.0, \"status\": \"measured\"}, {\"source_edge\": 0, \"parameter\": 0.7, \"point\": [-3.0901699437494754, 9.510565162951535, 10.0], \"closest_point\": [-3.0901699437494754, 9.510565162951535, 10.0], \"gap\": 0.0, \"normal_angle_degrees\": 1.2074182697257333e-06, \"curvature_difference\": 0.0, \"status\": \"measured\"}, {\"source_edge\": 0, \"parameter\": 0.75, \"point\": [-1.8369701987210296e-15, 10.0, 10.0], \"closest_point\": [-1.8369701987210296e-15, 10.0, 10.0], \"gap\": 0.0, \"normal_angle_degrees\": 0.0, \"curvature_difference\": 0.0, \"status\": \"measured\"}, {\"source_edge\": 0, \"parameter\": 0.8, \"point\": [3.0901699437494723, 9.510565162951536, 10.0], \"closest_point\": [3.0901699437494723, 9.510565162951536, 10.0], \"gap\": 0.0, \"normal_angle_degrees\": 0.0, \"curvature_difference\": 0.0, \"status\": \"measured\"}, {\"source_edge\": 0, \"parameter\": 0.85, \"point\": [5.877852522924729, 8.090169943749476, 10.0], \"closest_point\": [5.877852522924729, 8.090169943749476, 10.0], \"gap\": 0.0, \"normal_angle_degrees\": 0.0, \"curvature_difference\": 0.0, \"status\": \"measured\"}, {\"source_edge\": 0, \"parameter\": 0.9, \"point\": [8.090169943749473, 5.877852522924734, 10.0], \"closest_point\": [8.090169943749473, 5.8778525229247345, 10.0], \"gap\": 0.0, \"normal_angle_degrees\": 0.0, \"curvature_difference\": 9.813077866773595e-18, \"status\": \"measured\"}, {\"source_edge\": 0, \"parameter\": 0.95, \"point\": [9.510565162951535, 3.0901699437494767, 10.0], \"closest_point\": [9.510565162951535, 3.0901699437494767, 10.0], \"gap\": 0.0, \"normal_angle_degrees\": 1.2074182697257333e-06, \"curvature_difference\": 0.0, \"status\": \"measured\"}, {\"source_edge\": 0, \"parameter\": 1.0, \"point\": [10.0, 2.4492935982947065e-15, 10.0], \"closest_point\": [10.0, 2.4492935982947065e-15, 10.0], \"gap\": 0.0, \"normal_angle_degrees\": 0.0, \"curvature_difference\": 0.0, \"status\": \"measured\"}, {\"source_edge\": 1, \"parameter\": 0.0, \"point\": [10.0, 0.0, 10.0], \"closest_point\": [10.0, 0.0, 10.0], \"gap\": 0.0, \"normal_angle_degrees\": 0.0, \"curvature_difference\": 0.0, \"status\": \"measured\"}, {\"source_edge\": 1, \"parameter\": 0.05, \"point\": [9.510565162951535, 3.090169943749474, 10.0], \"closest_point\": [9.510565162951536, 3.090169943749475, 10.0], \"gap\": 0.0, \"normal_angle_degrees\": 0.0, \"curvature_difference\": 0.0, \"status\": \"measured\"}, {\"source_edge\": 1, \"parameter\": 0.1, \"point\": [8.090169943749475, 5.877852522924732, 10.0], \"closest_point\": [8.090169943749475, 5.877852522924732, 10.0], \"gap\": 0.0, \"normal_angle_degrees\": 1.2074182697257333e-06, \"curvature_difference\": 0.0, \"status\": \"measured\"}, {\"source_edge\": 1, \"parameter\": 0.15, \"point\": [5.877852522924732, 8.090169943749475, 10.0], \"closest_point\": [5.877852522924732, 8.090169943749475, 10.0], \"gap\": 0.0, \"normal_angle_degrees\": 0.0, \"curvature_difference\": 0.0, \"status\": \"measured\"}, {\"source_edge\": 1, \"parameter\": 0.2, \"point\": [3.0901699437494745, 9.510565162951535, 10.0], \"closest_point\": [3.0901699437494745, 9.510565162951535, 10.0], \"gap\": 0.0, \"normal_angle_degrees\": 0.0, \"curvature_difference\": 0.0, \"status\": \"measured\"}, {\"source_edge\": 1, \"parameter\": 0.25, \"point\": [6.123233995736766e-16, 10.0, 10.0], \"closest_point\": [6.123233995736766e-16, 10.0, 10.0], \"gap\": 0.0, \"normal_angle_degrees\": 0.0, \"curvature_difference\": 0.0, \"status\": \"measured\"}, {\"source_edge\": 1, \"parameter\": 0.3, \"point\": [-3.0901699437494736, 9.510565162951536, 10.0], \"closest_point\": [-3.0901699437494736, 9.510565162951536, 10.0], \"gap\": 0.0, \"normal_angle_degrees\": 0.0, \"curvature_difference\": 0.0, \"status\": \"measured\"}, {\"source_edge\": 1, \"parameter\": 0.35, \"point\": [-5.87785252292473, 8.090169943749475, 10.0], \"closest_point\": [-5.877852522924732, 8.090169943749476, 10.0], \"gap\": 0.0, \"normal_angle_degrees\": 8.537736462515939e-07, \"curvature_difference\": 0.0, \"status\": \"measured\"}, {\"source_edge\": 1, \"parameter\": 0.4, \"point\": [-8.090169943749473, 5.877852522924733, 10.0], \"closest_point\": [-8.090169943749473, 5.877852522924733, 10.0], \"gap\": 0.0, \"normal_angle_degrees\": 1.2074182697257333e-06, \"curvature_difference\": 0.0, \"status\": \"measured\"}, {\"source_edge\": 1, \"parameter\": 0.45, \"point\": [-9.510565162951535, 3.090169943749475, 10.0], \"closest_point\": [-9.510565162951535, 3.090169943749475, 10.0], \"gap\": 0.0, \"normal_angle_degrees\": 1.2074182697257333e-06, \"curvature_difference\": 0.0, \"status\": \"measured\"}, {\"source_edge\": 1, \"parameter\": 0.5, \"point\": [-10.0, 1.2246467991473533e-15, 10.0], \"closest_point\": [-10.0, 1.2246467991473533e-15, 10.0], \"gap\": 0.0, \"normal_angle_degrees\": 0.0, \"curvature_difference\": 0.0, \"status\": \"measured\"}, {\"source_edge\": 1, \"parameter\": 0.55, \"point\": [-9.510565162951538, -3.090169943749469, 10.0], \"closest_point\": [-9.510565162951538, -3.0901699437494696, 10.0], \"gap\": 0.0, \"normal_angle_degrees\": 0.0, \"curvature_difference\": 0.0, \"status\": \"measured\"}, {\"source_edge\": 1, \"parameter\": 0.6, \"point\": [-8.090169943749475, -5.87785252292473, 10.0], \"closest_point\": [-8.090169943749476, -5.877852522924732, 10.0], \"gap\": 0.0, \"normal_angle_degrees\": 8.537736462515939e-07, \"curvature_difference\": 0.0, \"status\": \"measured\"}, {\"source_edge\": 1, \"parameter\": 0.65, \"point\": [-5.877852522924733, -8.090169943749473, 10.0], \"closest_point\": [-5.877852522924733, -8.090169943749473, 10.0], \"gap\": 0.0, \"normal_angle_degrees\": 1.2074182697257333e-06, \"curvature_difference\": 0.0, \"status\": \"measured\"}, {\"source_edge\": 1, \"parameter\": 0.7, \"point\": [-3.0901699437494754, -9.510565162951535, 10.0], \"closest_point\": [-3.0901699437494754, -9.510565162951535, 10.0], \"gap\": 0.0, \"normal_angle_degrees\": 1.2074182697257333e-06, \"curvature_difference\": 0.0, \"status\": \"measured\"}, {\"source_edge\": 1, \"parameter\": 0.75, \"point\": [-1.8369701987210296e-15, -10.0, 10.0], \"closest_point\": [-1.8369701987210296e-15, -10.0, 10.0], \"gap\": 0.0, \"normal_angle_degrees\": 0.0, \"curvature_difference\": 0.0, \"status\": \"measured\"}, {\"source_edge\": 1, \"parameter\": 0.8, \"point\": [3.0901699437494723, -9.510565162951536, 10.0], \"closest_point\": [3.0901699437494723, -9.510565162951536, 10.0], \"gap\": 0.0, \"normal_angle_degrees\": 0.0, \"curvature_difference\": 0.0, \"status\": \"measured\"}, {\"source_edge\": 1, \"parameter\": 0.85, \"point\": [5.877852522924729, -8.090169943749476, 10.0], \"closest_point\": [5.877852522924729, -8.090169943749476, 10.0], \"gap\": 0.0, \"normal_angle_degrees\": 0.0, \"curvature_difference\": 0.0, \"status\": \"measured\"}, {\"source_edge\": 1, \"parameter\": 0.9, \"point\": [8.090169943749473, -5.877852522924734, 10.0], \"closest_point\": [8.090169943749473, -5.8778525229247345, 10.0], \"gap\": 0.0, \"normal_angle_degrees\": 0.0, \"curvature_difference\": 0.0, \"status\": \"measured\"}, {\"source_edge\": 1, \"parameter\": 0.95, \"point\": [9.510565162951535, -3.0901699437494767, 10.0], \"closest_point\": [9.510565162951535, -3.0901699437494767, 10.0], \"gap\": 0.0, \"normal_angle_degrees\": 1.2074182697257333e-06, \"curvature_difference\": 0.0, \"status\": \"measured\"}, {\"source_edge\": 1, \"parameter\": 1.0, \"point\": [10.0, -2.4492935982947065e-15, 10.0], \"closest_point\": [10.0, -2.4492935982947065e-15, 10.0], \"gap\": 0.0, \"normal_angle_degrees\": 0.0, \"curvature_difference\": 0.0, \"status\": \"measured\"}], \"sample_count\": 42, \"unresolved_count\": 0, \"tolerances\": {\"position\": 0.001, \"angle_degrees\": 0.1, \"curvature\": 0.01}, \"curvature_units\": \"1/mm\", \"method\": \"Bidirectional normalized-parameter edge samples; native closest points and surface derivative tensors. G2 compares orientation-aligned 3D shape operators (Frobenius norm). Sampled checks, not a global continuity certificate.\", \"operation_id\": \"op_d4728e40f06b49a3ba11f5907f1cbabb\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "checks": {
+          "G0": true,
+          "G1": true,
+          "G2": true
+        },
+        "maximum_gap": 0.0,
+        "maximum_normal_angle_degrees": 1.2074182697257333e-06,
+        "maximum_curvature_difference": 9.813077866773595e-18,
+        "samples": [
+          {
+            "source_edge": 0,
+            "parameter": 0.0,
+            "point": [
+              10.0,
+              0.0,
+              10.0
+            ],
+            "closest_point": [
+              10.0,
+              0.0,
+              10.0
+            ],
+            "gap": 0.0,
+            "normal_angle_degrees": 0.0,
+            "curvature_difference": 0.0,
+            "status": "measured"
+          },
+          {
+            "source_edge": 0,
+            "parameter": 0.05,
+            "point": [
+              9.510565162951535,
+              -3.090169943749474,
+              10.0
+            ],
+            "closest_point": [
+              9.510565162951536,
+              -3.090169943749475,
+              10.0
+            ],
+            "gap": 0.0,
+            "normal_angle_degrees": 1.2074182697257333e-06,
+            "curvature_difference": 0.0,
+            "status": "measured"
+          },
+          {
+            "source_edge": 0,
+            "parameter": 0.1,
+            "point": [
+              8.090169943749475,
+              -5.877852522924732,
+              10.0
+            ],
+            "closest_point": [
+              8.090169943749475,
+              -5.877852522924732,
+              10.0
+            ],
+            "gap": 0.0,
+            "normal_angle_degrees": 0.0,
+            "curvature_difference": 0.0,
+            "status": "measured"
+          },
+          {
+            "source_edge": 0,
+            "parameter": 0.15,
+            "point": [
+              5.877852522924732,
+              -8.090169943749475,
+              10.0
+            ],
+            "closest_point": [
+              5.877852522924732,
+              -8.090169943749475,
+              10.0
+            ],
+            "gap": 0.0,
+            "normal_angle_degrees": 0.0,
+            "curvature_difference": 0.0,
+            "status": "measured"
+          },
+          {
+            "source_edge": 0,
+            "parameter": 0.2,
+            "point": [
+              3.0901699437494745,
+              -9.510565162951535,
+              10.0
+            ],
+            "closest_point": [
+              3.0901699437494745,
+              -9.510565162951535,
+              10.0
+            ],
+            "gap": 0.0,
+            "normal_angle_degrees": 0.0,
+            "curvature_difference": 0.0,
+            "status": "measured"
+          },
+          {
+            "source_edge": 0,
+            "parameter": 0.25,
+            "point": [
+              6.123233995736766e-16,
+              -10.0,
+              10.0
+            ],
+            "closest_point": [
+              6.123233995736766e-16,
+              -10.0,
+              10.0
+            ],
+            "gap": 0.0,
+            "normal_angle_degrees": 0.0,
+            "curvature_difference": 0.0,
+            "status": "measured"
+          },
+          {
+            "source_edge": 0,
+            "parameter": 0.3,
+            "point": [
+              -3.0901699437494736,
+              -9.510565162951536,
+              10.0
+            ],
+            "closest_point": [
+              -3.0901699437494736,
+              -9.510565162951536,
+              10.0
+            ],
+            "gap": 0.0,
+            "normal_angle_degrees": 1.2074182697257333e-06,
+            "curvature_difference": 0.0,
+            "status": "measured"
+          },
+          {
+            "source_edge": 0,
+            "parameter": 0.35,
+            "point": [
+              -5.87785252292473,
+              -8.090169943749475,
+              10.0
+            ],
+            "closest_point": [
+              -5.877852522924732,
+              -8.090169943749476,
+              10.0
+            ],
+            "gap": 0.0,
+            "normal_angle_degrees": 1.2074182697257333e-06,
+            "curvature_difference": 0.0,
+            "status": "measured"
+          },
+          {
+            "source_edge": 0,
+            "parameter": 0.4,
+            "point": [
+              -8.090169943749473,
+              -5.877852522924733,
+              10.0
+            ],
+            "closest_point": [
+              -8.090169943749473,
+              -5.877852522924733,
+              10.0
+            ],
+            "gap": 0.0,
+            "normal_angle_degrees": 8.537736462515939e-07,
+            "curvature_difference": 0.0,
+            "status": "measured"
+          },
+          {
+            "source_edge": 0,
+            "parameter": 0.45,
+            "point": [
+              -9.510565162951535,
+              -3.090169943749475,
+              10.0
+            ],
+            "closest_point": [
+              -9.510565162951535,
+              -3.090169943749475,
+              10.0
+            ],
+            "gap": 0.0,
+            "normal_angle_degrees": 0.0,
+            "curvature_difference": 0.0,
+            "status": "measured"
+          },
+          {
+            "source_edge": 0,
+            "parameter": 0.5,
+            "point": [
+              -10.0,
+              -1.2246467991473533e-15,
+              10.0
+            ],
+            "closest_point": [
+              -10.0,
+              -1.2246467991473533e-15,
+              10.0
+            ],
+            "gap": 0.0,
+            "normal_angle_degrees": 0.0,
+            "curvature_difference": 0.0,
+            "status": "measured"
+          },
+          {
+            "source_edge": 0,
+            "parameter": 0.55,
+            "point": [
+              -9.510565162951538,
+              3.090169943749469,
+              10.0
+            ],
+            "closest_point": [
+              -9.510565162951538,
+              3.0901699437494696,
+              10.0
+            ],
+            "gap": 0.0,
+            "normal_angle_degrees": 8.537736462515939e-07,
+            "curvature_difference": 0.0,
+            "status": "measured"
+          },
+          {
+            "source_edge": 0,
+            "parameter": 0.6,
+            "point": [
+              -8.090169943749475,
+              5.87785252292473,
+              10.0
+            ],
+            "closest_point": [
+              -8.090169943749476,
+              5.877852522924732,
+              10.0
+            ],
+            "gap": 0.0,
+            "normal_angle_degrees": 1.2074182697257333e-06,
+            "curvature_difference": 0.0,
+            "status": "measured"
+          },
+          {
+            "source_edge": 0,
+            "parameter": 0.65,
+            "point": [
+              -5.877852522924733,
+              8.090169943749473,
+              10.0
+            ],
+            "closest_point": [
+              -5.877852522924733,
+              8.090169943749473,
+              10.0
+            ],
+            "gap": 0.0,
+            "normal_angle_degrees": 0.0,
+            "curvature_difference": 0.0,
+            "status": "measured"
+          },
+          {
+            "source_edge": 0,
+            "parameter": 0.7,
+            "point": [
+              -3.0901699437494754,
+              9.510565162951535,
+              10.0
+            ],
+            "closest_point": [
+              -3.0901699437494754,
+              9.510565162951535,
+              10.0
+            ],
+            "gap": 0.0,
+            "normal_angle_degrees": 1.2074182697257333e-06,
+            "curvature_difference": 0.0,
+            "status": "measured"
+          },
+          {
+            "source_edge": 0,
+            "parameter": 0.75,
+            "point": [
+              -1.8369701987210296e-15,
+              10.0,
+              10.0
+            ],
+            "closest_point": [
+              -1.8369701987210296e-15,
+              10.0,
+              10.0
+            ],
+            "gap": 0.0,
+            "normal_angle_degrees": 0.0,
+            "curvature_difference": 0.0,
+            "status": "measured"
+          },
+          {
+            "source_edge": 0,
+            "parameter": 0.8,
+            "point": [
+              3.0901699437494723,
+              9.510565162951536,
+              10.0
+            ],
+            "closest_point": [
+              3.0901699437494723,
+              9.510565162951536,
+              10.0
+            ],
+            "gap": 0.0,
+            "normal_angle_degrees": 0.0,
+            "curvature_difference": 0.0,
+            "status": "measured"
+          },
+          {
+            "source_edge": 0,
+            "parameter": 0.85,
+            "point": [
+              5.877852522924729,
+              8.090169943749476,
+              10.0
+            ],
+            "closest_point": [
+              5.877852522924729,
+              8.090169943749476,
+              10.0
+            ],
+            "gap": 0.0,
+            "normal_angle_degrees": 0.0,
+            "curvature_difference": 0.0,
+            "status": "measured"
+          },
+          {
+            "source_edge": 0,
+            "parameter": 0.9,
+            "point": [
+              8.090169943749473,
+              5.877852522924734,
+              10.0
+            ],
+            "closest_point": [
+              8.090169943749473,
+              5.8778525229247345,
+              10.0
+            ],
+            "gap": 0.0,
+            "normal_angle_degrees": 0.0,
+            "curvature_difference": 9.813077866773595e-18,
+            "status": "measured"
+          },
+          {
+            "source_edge": 0,
+            "parameter": 0.95,
+            "point": [
+              9.510565162951535,
+              3.0901699437494767,
+              10.0
+            ],
+            "closest_point": [
+              9.510565162951535,
+              3.0901699437494767,
+              10.0
+            ],
+            "gap": 0.0,
+            "normal_angle_degrees": 1.2074182697257333e-06,
+            "curvature_difference": 0.0,
+            "status": "measured"
+          },
+          {
+            "source_edge": 0,
+            "parameter": 1.0,
+            "point": [
+              10.0,
+              2.4492935982947065e-15,
+              10.0
+            ],
+            "closest_point": [
+              10.0,
+              2.4492935982947065e-15,
+              10.0
+            ],
+            "gap": 0.0,
+            "normal_angle_degrees": 0.0,
+            "curvature_difference": 0.0,
+            "status": "measured"
+          },
+          {
+            "source_edge": 1,
+            "parameter": 0.0,
+            "point": [
+              10.0,
+              0.0,
+              10.0
+            ],
+            "closest_point": [
+              10.0,
+              0.0,
+              10.0
+            ],
+            "gap": 0.0,
+            "normal_angle_degrees": 0.0,
+            "curvature_difference": 0.0,
+            "status": "measured"
+          },
+          {
+            "source_edge": 1,
+            "parameter": 0.05,
+            "point": [
+              9.510565162951535,
+              3.090169943749474,
+              10.0
+            ],
+            "closest_point": [
+              9.510565162951536,
+              3.090169943749475,
+              10.0
+            ],
+            "gap": 0.0,
+            "normal_angle_degrees": 0.0,
+            "curvature_difference": 0.0,
+            "status": "measured"
+          },
+          {
+            "source_edge": 1,
+            "parameter": 0.1,
+            "point": [
+              8.090169943749475,
+              5.877852522924732,
+              10.0
+            ],
+            "closest_point": [
+              8.090169943749475,
+              5.877852522924732,
+              10.0
+            ],
+            "gap": 0.0,
+            "normal_angle_degrees": 1.2074182697257333e-06,
+            "curvature_difference": 0.0,
+            "status": "measured"
+          },
+          {
+            "source_edge": 1,
+            "parameter": 0.15,
+            "point": [
+              5.877852522924732,
+              8.090169943749475,
+              10.0
+            ],
+            "closest_point": [
+              5.877852522924732,
+              8.090169943749475,
+              10.0
+            ],
+            "gap": 0.0,
+            "normal_angle_degrees": 0.0,
+            "curvature_difference": 0.0,
+            "status": "measured"
+          },
+          {
+            "source_edge": 1,
+            "parameter": 0.2,
+            "point": [
+              3.0901699437494745,
+              9.510565162951535,
+              10.0
+            ],
+            "closest_point": [
+              3.0901699437494745,
+              9.510565162951535,
+              10.0
+            ],
+            "gap": 0.0,
+            "normal_angle_degrees": 0.0,
+            "curvature_difference": 0.0,
+            "status": "measured"
+          },
+          {
+            "source_edge": 1,
+            "parameter": 0.25,
+            "point": [
+              6.123233995736766e-16,
+              10.0,
+              10.0
+            ],
+            "closest_point": [
+              6.123233995736766e-16,
+              10.0,
+              10.0
+            ],
+            "gap": 0.0,
+            "normal_angle_degrees": 0.0,
+            "curvature_difference": 0.0,
+            "status": "measured"
+          },
+          {
+            "source_edge": 1,
+            "parameter": 0.3,
+            "point": [
+              -3.0901699437494736,
+              9.510565162951536,
+              10.0
+            ],
+            "closest_point": [
+              -3.0901699437494736,
+              9.510565162951536,
+              10.0
+            ],
+            "gap": 0.0,
+            "normal_angle_degrees": 0.0,
+            "curvature_difference": 0.0,
+            "status": "measured"
+          },
+          {
+            "source_edge": 1,
+            "parameter": 0.35,
+            "point": [
+              -5.87785252292473,
+              8.090169943749475,
+              10.0
+            ],
+            "closest_point": [
+              -5.877852522924732,
+              8.090169943749476,
+              10.0
+            ],
+            "gap": 0.0,
+            "normal_angle_degrees": 8.537736462515939e-07,
+            "curvature_difference": 0.0,
+            "status": "measured"
+          },
+          {
+            "source_edge": 1,
+            "parameter": 0.4,
+            "point": [
+              -8.090169943749473,
+              5.877852522924733,
+              10.0
+            ],
+            "closest_point": [
+              -8.090169943749473,
+              5.877852522924733,
+              10.0
+            ],
+            "gap": 0.0,
+            "normal_angle_degrees": 1.2074182697257333e-06,
+            "curvature_difference": 0.0,
+            "status": "measured"
+          },
+          {
+            "source_edge": 1,
+            "parameter": 0.45,
+            "point": [
+              -9.510565162951535,
+              3.090169943749475,
+              10.0
+            ],
+            "closest_point": [
+              -9.510565162951535,
+              3.090169943749475,
+              10.0
+            ],
+            "gap": 0.0,
+            "normal_angle_degrees": 1.2074182697257333e-06,
+            "curvature_difference": 0.0,
+            "status": "measured"
+          },
+          {
+            "source_edge": 1,
+            "parameter": 0.5,
+            "point": [
+              -10.0,
+              1.2246467991473533e-15,
+              10.0
+            ],
+            "closest_point": [
+              -10.0,
+              1.2246467991473533e-15,
+              10.0
+            ],
+            "gap": 0.0,
+            "normal_angle_degrees": 0.0,
+            "curvature_difference": 0.0,
+            "status": "measured"
+          },
+          {
+            "source_edge": 1,
+            "parameter": 0.55,
+            "point": [
+              -9.510565162951538,
+              -3.090169943749469,
+              10.0
+            ],
+            "closest_point": [
+              -9.510565162951538,
+              -3.0901699437494696,
+              10.0
+            ],
+            "gap": 0.0,
+            "normal_angle_degrees": 0.0,
+            "curvature_difference": 0.0,
+            "status": "measured"
+          },
+          {
+            "source_edge": 1,
+            "parameter": 0.6,
+            "point": [
+              -8.090169943749475,
+              -5.87785252292473,
+              10.0
+            ],
+            "closest_point": [
+              -8.090169943749476,
+              -5.877852522924732,
+              10.0
+            ],
+            "gap": 0.0,
+            "normal_angle_degrees": 8.537736462515939e-07,
+            "curvature_difference": 0.0,
+            "status": "measured"
+          },
+          {
+            "source_edge": 1,
+            "parameter": 0.65,
+            "point": [
+              -5.877852522924733,
+              -8.090169943749473,
+              10.0
+            ],
+            "closest_point": [
+              -5.877852522924733,
+              -8.090169943749473,
+              10.0
+            ],
+            "gap": 0.0,
+            "normal_angle_degrees": 1.2074182697257333e-06,
+            "curvature_difference": 0.0,
+            "status": "measured"
+          },
+          {
+            "source_edge": 1,
+            "parameter": 0.7,
+            "point": [
+              -3.0901699437494754,
+              -9.510565162951535,
+              10.0
+            ],
+            "closest_point": [
+              -3.0901699437494754,
+              -9.510565162951535,
+              10.0
+            ],
+            "gap": 0.0,
+            "normal_angle_degrees": 1.2074182697257333e-06,
+            "curvature_difference": 0.0,
+            "status": "measured"
+          },
+          {
+            "source_edge": 1,
+            "parameter": 0.75,
+            "point": [
+              -1.8369701987210296e-15,
+              -10.0,
+              10.0
+            ],
+            "closest_point": [
+              -1.8369701987210296e-15,
+              -10.0,
+              10.0
+            ],
+            "gap": 0.0,
+            "normal_angle_degrees": 0.0,
+            "curvature_difference": 0.0,
+            "status": "measured"
+          },
+          {
+            "source_edge": 1,
+            "parameter": 0.8,
+            "point": [
+              3.0901699437494723,
+              -9.510565162951536,
+              10.0
+            ],
+            "closest_point": [
+              3.0901699437494723,
+              -9.510565162951536,
+              10.0
+            ],
+            "gap": 0.0,
+            "normal_angle_degrees": 0.0,
+            "curvature_difference": 0.0,
+            "status": "measured"
+          },
+          {
+            "source_edge": 1,
+            "parameter": 0.85,
+            "point": [
+              5.877852522924729,
+              -8.090169943749476,
+              10.0
+            ],
+            "closest_point": [
+              5.877852522924729,
+              -8.090169943749476,
+              10.0
+            ],
+            "gap": 0.0,
+            "normal_angle_degrees": 0.0,
+            "curvature_difference": 0.0,
+            "status": "measured"
+          },
+          {
+            "source_edge": 1,
+            "parameter": 0.9,
+            "point": [
+              8.090169943749473,
+              -5.877852522924734,
+              10.0
+            ],
+            "closest_point": [
+              8.090169943749473,
+              -5.8778525229247345,
+              10.0
+            ],
+            "gap": 0.0,
+            "normal_angle_degrees": 0.0,
+            "curvature_difference": 0.0,
+            "status": "measured"
+          },
+          {
+            "source_edge": 1,
+            "parameter": 0.95,
+            "point": [
+              9.510565162951535,
+              -3.0901699437494767,
+              10.0
+            ],
+            "closest_point": [
+              9.510565162951535,
+              -3.0901699437494767,
+              10.0
+            ],
+            "gap": 0.0,
+            "normal_angle_degrees": 1.2074182697257333e-06,
+            "curvature_difference": 0.0,
+            "status": "measured"
+          },
+          {
+            "source_edge": 1,
+            "parameter": 1.0,
+            "point": [
+              10.0,
+              -2.4492935982947065e-15,
+              10.0
+            ],
+            "closest_point": [
+              10.0,
+              -2.4492935982947065e-15,
+              10.0
+            ],
+            "gap": 0.0,
+            "normal_angle_degrees": 0.0,
+            "curvature_difference": 0.0,
+            "status": "measured"
+          }
+        ],
+        "sample_count": 42,
+        "unresolved_count": 0,
+        "tolerances": {
+          "position": 0.001,
+          "angle_degrees": 0.1,
+          "curvature": 0.01
+        },
+        "curvature_units": "1/mm",
+        "method": "Bidirectional normalized-parameter edge samples; native closest points and surface derivative tensors. G2 compares orientation-aligned 3D shape operators (Frobenius norm). Sampled checks, not a global continuity certificate.",
+        "operation_id": "op_d4728e40f06b49a3ba11f5907f1cbabb",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "not_applicable"
+      },
+      "isError": false
+    },
+    "dxf": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [\"Exports the selected analytic geometry; does not certify loop validity or fabrication readiness.\"], \"units\": \"mm\", \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F4-continuity-20260908-r1\\\\public_face.dxf\", \"size\": 410, \"sha256\": \"7c6aaa6eba7f8acb7f98dcda383d94610076e2ba5cf38895eaf5b2566d3b8c6b\", \"scale\": 1.0, \"coordinate_frame\": {\"origin\": [0.0, 0.0, 0.0], \"x_axis\": [1.0, 0.0, 0.0], \"y_axis\": [0.0, -1.0, 0.0], \"normal\": [0.0, 0.0, -1.0], \"source_units\": \"mm\"}, \"entity_count\": 1, \"entity_counts\": {\"CIRCLE\": 1}, \"entities\": [{\"source\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_4d654c90062f417a85fff7b03c65d5ee\", \"kind\": \"edge\", \"name\": \"EDGE * 2 * 3 {(-5,8.6602540378444,0)(10,0,0)(-5,-8.6602540378444,0) CYLINDER(1)}\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_3caab63111b84dd88c89c6e7c0d68c4f\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"3caab63111b84dd88c89c6e7c0d68c4f\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F4-continuity-20260908-r1\\\\f4_continuity_r1.prt\", \"journal_id\": \"EDGE * 2 * 3 {(-5,8.6602540378444,0)(10,0,0)(-5,-8.6602540378444,0) CYLINDER(1)}\", \"display_name\": \"\"}, \"layer\": \"OUTLINE\", \"type\": \"CIRCLE\", \"center\": [0.0, 0.0], \"radius\": 10.0}], \"all_boundary_loops_included\": true, \"operation_id\": \"op_3f2431090cbc433e9ac5a574092c6243\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [
+          "Exports the selected analytic geometry; does not certify loop validity or fabrication readiness."
+        ],
+        "units": "mm",
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F4-continuity-20260908-r1\\public_face.dxf",
+        "size": 410,
+        "sha256": "7c6aaa6eba7f8acb7f98dcda383d94610076e2ba5cf38895eaf5b2566d3b8c6b",
+        "scale": 1.0,
+        "coordinate_frame": {
+          "origin": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "x_axis": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "y_axis": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "source_units": "mm"
+        },
+        "entity_count": 1,
+        "entity_counts": {
+          "CIRCLE": 1
+        },
+        "entities": [
+          {
+            "source": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_4d654c90062f417a85fff7b03c65d5ee",
+              "kind": "edge",
+              "name": "EDGE * 2 * 3 {(-5,8.6602540378444,0)(10,0,0)(-5,-8.6602540378444,0) CYLINDER(1)}",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_3caab63111b84dd88c89c6e7c0d68c4f",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "3caab63111b84dd88c89c6e7c0d68c4f",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F4-continuity-20260908-r1\\f4_continuity_r1.prt",
+              "journal_id": "EDGE * 2 * 3 {(-5,8.6602540378444,0)(10,0,0)(-5,-8.6602540378444,0) CYLINDER(1)}",
+              "display_name": ""
+            },
+            "layer": "OUTLINE",
+            "type": "CIRCLE",
+            "center": [
+              0.0,
+              0.0
+            ],
+            "radius": 10.0
+          }
+        ],
+        "all_boundary_loops_included": true,
+        "operation_id": "op_3f2431090cbc433e9ac5a574092c6243",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed"
+      },
+      "isError": false
+    }
+  },
+  "passed": true
+}

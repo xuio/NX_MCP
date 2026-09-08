@@ -1,0 +1,127 @@
+{
+  "status": "success",
+  "copy": {
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_7b37575931704981bb551037f1b81fe5",
+      "kind": "part",
+      "name": "coupled_external_conditions_r1",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_ef39cecd5f8a45e0a69ada7277d0b5de",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "ef39cecd5f8a45e0a69ada7277d0b5de",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-conditions-20260908-r1\\coupled_external_conditions_r1.sim",
+      "journal_id": "coupled_external_conditions_r1",
+      "display_name": "coupled_external_conditions_r1"
+    },
+    "source": {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-documented-controls-20260908-r1\\coupled_documented_controls_r1.sim",
+      "bytes": 7744051,
+      "sha256": "03ec8635b7894fe82d414c5b5eed885f8511da50d3f4e730fbc9e940201ee5d3"
+    },
+    "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-conditions-20260908-r1\\coupled_external_conditions_r1.sim",
+    "source_file_unchanged": true,
+    "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-conditions-20260908-r1\\coupled_external_conditions_r1.sim",
+    "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-conditions-20260908-r1\\coupled_external_conditions_r1.sim",
+    "shared_fem_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-development-20260908-r1\\benchmark_99f1fecb220c_mesh.fem",
+    "independent_geometry_variant": false,
+    "saved": true,
+    "result_freshness": "not_verified",
+    "next_step": "Reacquire document IDs. Duplicate and reassociate FEM/CAD before changing shared geometry or mesh."
+  },
+  "external_conditions": [
+    {
+      "name": "description",
+      "native_type": "0",
+      "units": null,
+      "inspection_status": "unsupported_property_type"
+    },
+    {
+      "name": "Temperature Option",
+      "native_type": "3",
+      "units": null,
+      "value": 0
+    },
+    {
+      "name": "Temperature Value",
+      "native_type": "6",
+      "units": "Celsius",
+      "expression": "20",
+      "unit_symbol": "C",
+      "representation": "expression"
+    },
+    {
+      "name": "Humidity",
+      "native_type": "3",
+      "units": null,
+      "value": 0
+    },
+    {
+      "name": "Relative Humidity Value",
+      "native_type": "6",
+      "units": "dimensionless",
+      "expression": "0",
+      "unit_symbol": null,
+      "representation": "expression"
+    },
+    {
+      "name": "Water Vapor to Dry Air Mass Ratio Value",
+      "native_type": "6",
+      "units": "dimensionless",
+      "expression": "0",
+      "unit_symbol": null,
+      "representation": "expression"
+    }
+  ],
+  "assigned_boundaries": [
+    "Coupled Inlet",
+    "Coupled Opening"
+  ],
+  "manager_counts": [
+    1,
+    0,
+    0
+  ],
+  "prerequisites": [
+    [],
+    []
+  ],
+  "setup_report": "          Solution Model Setup Check Error Summary \n \n------------------------------------------------------------\n \n Solver is Simcenter 3D Multiphysics\n\n Environment: Simcenter 3D Multiphysics - Coupled Thermal-Flow\n\n Solution is Thermal-Flow\n \n------------------------------------------------------------\n \nMesh Error Summary\n==================\n\nNo Mesh Errors\n\nMaterial Error Summary\n======================\n\nNo Material Errors\n\nPhysical Property Error Summary\n===============================\n\nNo Physical Property Errors\n\nModeling Object Error Summary\n=============================\n\nNo Modeling Object Errors\n\nLoad and Constraint Error Summary\n=================================\n\nNo Load and Constraint Errors\n\nSolution Error Summary\n======================\n\nNo Solution Errors\n\nExpression Errors Summary\n==============================\n\nNo Expression Errors\n\n",
+  "native_error": null,
+  "files": [
+    {
+      "name": "coupled_external_conditions_r1-Coupled_benchmark.map",
+      "bytes": 36046
+    },
+    {
+      "name": "coupled_external_conditions_r1-Coupled_benchmark.xml",
+      "bytes": 65102,
+      "input": {
+        "state": "well_formed",
+        "step_definitions": 1,
+        "mesh_counts": {
+          "elements": 126,
+          "nodes": 68,
+          "element_sets": 2,
+          "scope": "observed_multiphysics_xml_layout"
+        },
+        "solve_readiness": "not_established"
+      }
+    },
+    {
+      "name": "coupled_external_conditions_r1.sim",
+      "bytes": 7745381
+    },
+    {
+      "name": "setup-report.txt",
+      "bytes": 144561
+    }
+  ],
+  "elapsed_seconds": 2.0,
+  "solver_launched": false,
+  "numerical_acceptance": false,
+  "boundary_conditions_complete": false,
+  "operation_id": "op_18b177ffdfa04d1bb14d0afae96f690e",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

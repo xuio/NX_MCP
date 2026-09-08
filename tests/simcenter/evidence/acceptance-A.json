@@ -1,0 +1,31 @@
+{
+  "benchmark": "A_conduction",
+  "state": "passed",
+  "scope": "Isolated uniform-solid native benchmark; not product validation or completion of the MCP workflow",
+  "nx_version": "v2606",
+  "job_id": "conduction-solve-02",
+  "temperature_min_C": 20.0,
+  "temperature_max_C": 24.999950408935547,
+  "temperature_rise_K": 4.999950408935547,
+  "analytical_rise_K": 5,
+  "relative_temperature_error": 9.918212890625e-06,
+  "temperature_relative_tolerance": 0.01,
+  "heat_input_W": 1,
+  "heat_to_sinks_W": 1,
+  "relative_heat_balance_deviation": 1.942e-05,
+  "energy_relative_tolerance": 0.005,
+  "heat_balance_source": "native solver log, printed precision",
+  "save_close_reopen_consistent": true,
+  "reopened_documents": [
+    "geometry.prt",
+    "mesh.fem",
+    "analysis.sim"
+  ],
+  "result_sha256": "a5483ae2b0f9d7d739133ad61ee96746cb0caa81304ae9c2e185e2c060eb275b",
+  "result_nodes": 196,
+  "native_extrema_lifetime": "indices specific to this result revision",
+  "limitations": [
+    "Generic stale-result detection remains incomplete",
+    "Contact, transient, fan/duct, coupled and failure benchmarks remain incomplete"
+  ]
+}

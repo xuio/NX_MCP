@@ -1,0 +1,3790 @@
+{
+  "status": "success",
+  "geometry": {
+    "previous_failure": null,
+    "solver_launched": false,
+    "acceptance": false,
+    "mesh_size_mm": 1.0,
+    "intent": {
+      "folder": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-refined-20260908-r1",
+      "geometry": "20x10x2 mm base, two 20x1x4 mm fins, air to z=10 mm"
+    },
+    "geometry": [
+      {
+        "role": "solid",
+        "volume_mm3": 559.9999999999999,
+        "bounds_mm": [
+          0.0,
+          0.0,
+          0.0,
+          20.0,
+          10.0,
+          6.0
+        ]
+      },
+      {
+        "role": "air",
+        "volume_mm3": 1440.0000000000005,
+        "bounds_mm": [
+          0.0,
+          0.0,
+          2.0,
+          20.0,
+          10.0,
+          10.0
+        ]
+      }
+    ],
+    "geometry_seconds": 2.39000000001397,
+    "solid_meshes": [
+      "3d_mesh(1)"
+    ],
+    "air_meshes": [
+      "3d_mesh(2)"
+    ],
+    "mesh_seconds": 1.3599999999860302,
+    "solid_material": {
+      "material": {
+        "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_c073862c65bd4b79bb79fda6aacea130",
+        "kind": "material",
+        "name": "Generic aluminium",
+        "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_1d7ba6d380b7478e99eca85e8feb85fd",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "generation_id": "1d7ba6d380b7478e99eca85e8feb85fd",
+        "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-refined-20260908-r1\\finned_refined_r1_mesh.fem",
+        "journal_id": "PhysicalMaterial[Generic aluminium]",
+        "display_name": "Generic aluminium"
+      },
+      "properties": [
+        {
+          "name": "MassDensityConstant",
+          "native_type": "6",
+          "units": "KilogramPerCubicMeter",
+          "expression": "2700.0",
+          "unit_symbol": "kg/m^3",
+          "representation": "expression"
+        },
+        {
+          "name": "ThermalConductivity",
+          "native_type": "6",
+          "units": "ThermalConductivity_Metric3",
+          "expression": "200.0",
+          "unit_symbol": "W/m-dK",
+          "representation": "expression"
+        },
+        {
+          "name": "SpecificHeat",
+          "native_type": "6",
+          "units": "SpecificHeat_Metric2",
+          "expression": "900.0",
+          "unit_symbol": "J/kg-dK",
+          "representation": "expression"
+        }
+      ],
+      "assignments": [
+        {
+          "collector": {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_355566a12b484741b8a062dd8dde02d4",
+            "kind": "mesh_collector",
+            "name": "Solid(1)",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_1d7ba6d380b7478e99eca85e8feb85fd",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "1d7ba6d380b7478e99eca85e8feb85fd",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-refined-20260908-r1\\finned_refined_r1_mesh.fem",
+            "journal_id": "MeshCollector[Solid(1)]",
+            "display_name": "Solid(1)"
+          },
+          "material_name": "Generic aluminium",
+          "inherited": false
+        }
+      ],
+      "provenance": "Assumed constant generic infrastructure benchmark",
+      "saved": false,
+      "solve_launched": false
+    },
+    "air_material": {
+      "material": "Generic air",
+      "properties": [
+        {
+          "name": "MaterialType",
+          "native_type": "3",
+          "units": null,
+          "value": 4
+        },
+        {
+          "name": "AltName",
+          "native_type": "1",
+          "units": null,
+          "value": ""
+        },
+        {
+          "name": "Category",
+          "native_type": "1",
+          "units": null,
+          "value": ""
+        },
+        {
+          "name": "SubCategory",
+          "native_type": "1",
+          "units": null,
+          "value": ""
+        },
+        {
+          "name": "Version",
+          "native_type": "1",
+          "units": null,
+          "value": ""
+        },
+        {
+          "name": "Description",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "DensityControl",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "MassDensity",
+          "native_type": "6",
+          "units": "KilogramPerCubicMeter",
+          "expression": "1.2",
+          "representation": "expression"
+        },
+        {
+          "name": "MassDensityComplex",
+          "native_type": "14",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "MassDensityTempPress",
+          "native_type": "6",
+          "units": null,
+          "value": null
+        },
+        {
+          "name": "ElasticDependencyControl",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "AnisotropicElasticDependencyControl",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "StructuralDamping",
+          "native_type": "6",
+          "units": "dimensionless",
+          "expression": "-777777",
+          "representation": "expression"
+        },
+        {
+          "name": "BulkModulus",
+          "native_type": "6",
+          "units": "StressNewtonPerSquareMilliMeter",
+          "expression": "-777777",
+          "representation": "expression"
+        },
+        {
+          "name": "BulkModulusRatio",
+          "native_type": "6",
+          "units": "dimensionless",
+          "expression": "-777777",
+          "representation": "expression"
+        },
+        {
+          "name": "SpeedofSoundControl",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "SoundSpeed",
+          "native_type": "4",
+          "units": "MilliMeterPerSecond",
+          "value": -777777.0
+        },
+        {
+          "name": "SoundSpeedComplex",
+          "native_type": "14",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "ThermalExpansionCoefficientType",
+          "native_type": "3",
+          "units": null,
+          "value": 1
+        },
+        {
+          "name": "ThermalExpansion",
+          "native_type": "6",
+          "units": "ThermalExpansion_Metric1",
+          "expression": "-777777",
+          "representation": "expression"
+        },
+        {
+          "name": "ThermalExpansionCoefficientControl2",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "ThermalConductivityControl",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "TempConductivityBehaviorType",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "ThermalConductivity",
+          "native_type": "6",
+          "units": "ThermalConductivity_Metric3",
+          "expression": "0.0257",
+          "representation": "expression"
+        },
+        {
+          "name": "DummyThermalConductivity1",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "DummyThermalConductivity2",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "DummyThermalConductivity3",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "DummyThermalConductivity4",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "ThermalConductivityTempPress",
+          "native_type": "6",
+          "units": null,
+          "value": null
+        },
+        {
+          "name": "CuringMatConductivityBehaviorType",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "ThermalConductivityTempDocTg",
+          "native_type": "6",
+          "units": "ThermalConductivity_Metric2",
+          "expression": "-777777",
+          "representation": "expression"
+        },
+        {
+          "name": "ThermalConductivityTempDocTg2",
+          "native_type": "6",
+          "units": "ThermalConductivity_Metric2",
+          "expression": "-777777",
+          "representation": "expression"
+        },
+        {
+          "name": "ThermalConductivityTempDocTg3",
+          "native_type": "6",
+          "units": "ThermalConductivity_Metric2",
+          "expression": "-777777",
+          "representation": "expression"
+        },
+        {
+          "name": "SpecificHeatControl",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "SpecificHeat",
+          "native_type": "6",
+          "units": "SpecificHeat_Metric2",
+          "expression": "1005.0",
+          "representation": "expression"
+        },
+        {
+          "name": "SpecificHeatTempPress",
+          "native_type": "6",
+          "units": null,
+          "value": null
+        },
+        {
+          "name": "SpecificHeatTempDocTg",
+          "native_type": "6",
+          "units": "SpecificHeat_Metric2",
+          "expression": "-777777",
+          "representation": "expression"
+        },
+        {
+          "name": "MolarMass",
+          "native_type": "4",
+          "units": "Kilogram",
+          "value": -777777.0
+        },
+        {
+          "name": "GasConstant",
+          "native_type": "4",
+          "units": "SpecificHeat_Metric2",
+          "value": -777777.0
+        },
+        {
+          "name": "DynamicViscosityControl",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "PressureCutoff",
+          "native_type": "4",
+          "units": "PressureNewtonPerSquareMilliMeter",
+          "value": 0.0
+        },
+        {
+          "name": "DynamicVisc",
+          "native_type": "6",
+          "units": "DynamicViscosity_PascalSecond",
+          "expression": "1.81e-05",
+          "representation": "expression"
+        },
+        {
+          "name": "DynamicViscTempPress",
+          "native_type": "6",
+          "units": null,
+          "value": null
+        },
+        {
+          "name": "CoatingsVisualizationColor",
+          "native_type": "8",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "CoatingsStudioMaterialName",
+          "native_type": "1",
+          "units": null,
+          "value": ""
+        },
+        {
+          "name": "CrosshatchPattern",
+          "native_type": "1",
+          "units": null,
+          "value": ""
+        },
+        {
+          "name": "ConfigurableProperties",
+          "native_type": "1",
+          "units": null,
+          "value": ""
+        },
+        {
+          "name": "SCNastranAppliedViews",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "SCSamcefAppliedViews",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "SCThermalFlowAppliedViews",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "SCSpaceSystemsThermalAppliedViews",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "SCElectronicSystemCoolingAppliedViews",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "SCAcousticsBEMAppliedViews",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "SCAcousticsTransientBEMAppliedViews",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "SCRayAcousticsAppliedViews",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "SCNoiseVibrationAppliedViews",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "SCMagnetAppliedViews",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "AbaqusAppliedViews",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "AnsysAppliedViews",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "LSDynaAppliedViews",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "MotionAppliedViews",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "HFEMIDSAppliedViews",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "ModelingAppliedViews",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "SVSensingAppliedViews",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        }
+      ],
+      "provenance": "Assumed constant benchmark air",
+      "collector_count": 1,
+      "inherited": false,
+      "solver_control_semantics": "not_verified",
+      "saved": false
+    },
+    "step": {
+      "name": "Finned steady",
+      "descriptor": "Step - Thermal Flow",
+      "active": true,
+      "properties": [
+        {
+          "name": "Description",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "Solution Type",
+          "native_type": "3",
+          "units": null,
+          "value": 1
+        },
+        {
+          "name": "End Time",
+          "native_type": "4",
+          "units": "Second",
+          "value": -777777.0,
+          "unit_symbol": "sec"
+        },
+        {
+          "name": "Thermal Time Step Option",
+          "native_type": "3",
+          "units": null,
+          "value": 2
+        },
+        {
+          "name": "Number of Thermal Increments",
+          "native_type": "3",
+          "units": null,
+          "value": 10
+        },
+        {
+          "name": "Thermal Step Size",
+          "native_type": "4",
+          "units": "Second",
+          "value": 1.0,
+          "unit_symbol": "sec"
+        },
+        {
+          "name": "Maximum Temperature Change",
+          "native_type": "4",
+          "units": "CelsiusDifference",
+          "value": 5.0,
+          "unit_symbol": "dC"
+        },
+        {
+          "name": "Minimum Time Step",
+          "native_type": "4",
+          "units": "Second",
+          "value": 1.0,
+          "unit_symbol": "sec"
+        },
+        {
+          "name": "Maximum Time Step Option",
+          "native_type": "3",
+          "units": null,
+          "value": 1
+        },
+        {
+          "name": "Maximum Time Step",
+          "native_type": "4",
+          "units": "Second",
+          "value": 1.0,
+          "unit_symbol": "sec"
+        },
+        {
+          "name": "Maximum Time Step Increment",
+          "native_type": "3",
+          "units": null,
+          "value": 4
+        },
+        {
+          "name": "Flow Time Integration Method",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Flow Time Step Option",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Number of Flow Increments",
+          "native_type": "3",
+          "units": null,
+          "value": 10
+        },
+        {
+          "name": "Flow Step Size",
+          "native_type": "4",
+          "units": "Second",
+          "value": 1.0,
+          "unit_symbol": "sec"
+        },
+        {
+          "name": "Flow Time Step Option Automatic",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Number of Flow Increments Automatic",
+          "native_type": "3",
+          "units": null,
+          "value": 10
+        },
+        {
+          "name": "Flow Step Size Automatic",
+          "native_type": "4",
+          "units": "Second",
+          "value": 1.0,
+          "unit_symbol": "sec"
+        },
+        {
+          "name": "Output Flag",
+          "native_type": "3",
+          "units": null,
+          "value": 1
+        },
+        {
+          "name": "Thermal-Flow Output Requests",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        }
+      ],
+      "saved": false,
+      "solve_ready": false,
+      "defaults_basis": "installed native defaults; solver interpretation not yet verified"
+    },
+    "tables": {
+      "tables": [
+        {
+          "property": "Thermal Parameters",
+          "name": "Finned Thermal Parameters",
+          "descriptor": "Thermal Parameters",
+          "properties": [
+            {
+              "name": "description",
+              "native_type": "0",
+              "units": null,
+              "inspection_status": "unsupported_property_type"
+            },
+            {
+              "name": "Steady State - Convergence Criteria",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Steady State - Maximum Temperature Change",
+              "native_type": "4",
+              "units": "CelsiusDifference",
+              "value": 0.001,
+              "unit_symbol": "dC"
+            },
+            {
+              "name": "Steady State - Heat Imbalance",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Heat Imbalance Option",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Global Fraction",
+              "native_type": "4",
+              "units": "dimensionless",
+              "value": 0.01,
+              "unit_symbol": null
+            },
+            {
+              "name": "Absolute",
+              "native_type": "4",
+              "units": "HeatFlow_Metric2",
+              "value": 1e-06,
+              "unit_symbol": "W"
+            },
+            {
+              "name": "Thermal Steady State - Iteration Limit",
+              "native_type": "3",
+              "units": null,
+              "value": 10000
+            },
+            {
+              "name": "Transient - Maximum Temperature Change",
+              "native_type": "4",
+              "units": "CelsiusDifference",
+              "value": 0.1,
+              "unit_symbol": "dC"
+            },
+            {
+              "name": "Thermal Transient - Iteration Limit",
+              "native_type": "3",
+              "units": null,
+              "value": 10000
+            },
+            {
+              "name": "Integration Method",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Relaxation Factor",
+              "native_type": "4",
+              "units": "dimensionless",
+              "value": 1.0,
+              "unit_symbol": null
+            },
+            {
+              "name": "Convergence Trace",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Duct Flow Pressure Convergence Criteria",
+              "native_type": "4",
+              "units": "dimensionless",
+              "value": 0.01,
+              "unit_symbol": null
+            },
+            {
+              "name": "Duct Flow Iteration Limit",
+              "native_type": "3",
+              "units": null,
+              "value": 100
+            },
+            {
+              "name": "Duct Flow Relaxation Factor",
+              "native_type": "4",
+              "units": "dimensionless",
+              "value": 1.0,
+              "unit_symbol": null
+            },
+            {
+              "name": "Duct Flow Convergence Trace",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Duct Flow Include Head Loss Correlations for Bends and Branches",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Element Discretization",
+              "native_type": "3",
+              "units": null,
+              "value": 1
+            },
+            {
+              "name": "Shell Accuracy",
+              "native_type": "3",
+              "units": null,
+              "value": 1
+            },
+            {
+              "name": "Solid Element Capacitance Distribution",
+              "native_type": "3",
+              "units": null,
+              "value": 1
+            },
+            {
+              "name": "Element Convention for Temperature Constraint",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Duct Thermal Discretization",
+              "native_type": "3",
+              "units": null,
+              "value": 1
+            },
+            {
+              "name": "Convergence Norm",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Convergence Criterion MAX",
+              "native_type": "4",
+              "units": "dimensionless",
+              "value": 1e-05,
+              "unit_symbol": null
+            },
+            {
+              "name": "Convergence Criterion",
+              "native_type": "4",
+              "units": "dimensionless",
+              "value": 1e-08,
+              "unit_symbol": null
+            },
+            {
+              "name": "Finite Element Convergence Norm",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Finite Element Convergence Criterion MAX",
+              "native_type": "4",
+              "units": "dimensionless",
+              "value": 1e-05,
+              "unit_symbol": null
+            },
+            {
+              "name": "Finite Element Convergence Criterion",
+              "native_type": "4",
+              "units": "dimensionless",
+              "value": 1e-07,
+              "unit_symbol": null
+            },
+            {
+              "name": "Conjugate Gradient Solver Iteration Limit",
+              "native_type": "3",
+              "units": null,
+              "value": 100
+            },
+            {
+              "name": "Convergence Matrix Fill Value",
+              "native_type": "3",
+              "units": null,
+              "value": 10
+            },
+            {
+              "name": "Finite Element Convergence Matrix Fill Value",
+              "native_type": "3",
+              "units": null,
+              "value": 20
+            },
+            {
+              "name": "Elements Part of a Thermal Coupling Do Not Convect to Environment",
+              "native_type": "2",
+              "units": null,
+              "value": true
+            },
+            {
+              "name": "View Factor Adjustment",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Small View Factors",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "View Factors less than",
+              "native_type": "4",
+              "units": "dimensionless",
+              "value": 1e-12,
+              "unit_symbol": null
+            },
+            {
+              "name": "Sum of Disposed View Factors less than",
+              "native_type": "4",
+              "units": "dimensionless",
+              "value": 0.05,
+              "unit_symbol": null
+            },
+            {
+              "name": "Close End of Beams",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Allow all elements to shadow for orbital and solar heating requests",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Number of Axisymmetric Segments",
+              "native_type": "3",
+              "units": null,
+              "value": 16
+            },
+            {
+              "name": "Ignore specular and transparent effects for radiation request calculations",
+              "native_type": "2",
+              "units": null,
+              "value": true
+            },
+            {
+              "name": "Element Subdivision",
+              "native_type": "3",
+              "units": null,
+              "value": 3
+            },
+            {
+              "name": "Use Radiation Patches",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Bands",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Minimum Black Body Temperature",
+              "native_type": "4",
+              "units": "Celsius",
+              "value": -777777.0,
+              "unit_symbol": "C"
+            },
+            {
+              "name": "Maximum Black Body Temperature",
+              "native_type": "4",
+              "units": "Celsius",
+              "value": -777777.0,
+              "unit_symbol": "C"
+            },
+            {
+              "name": "Black Body Temperature Table",
+              "native_type": "8",
+              "units": null,
+              "inspection_status": "unsupported_property_type"
+            },
+            {
+              "name": "Black Body Temperature",
+              "native_type": "4",
+              "units": "Celsius",
+              "value": -777777.0,
+              "unit_symbol": "C"
+            },
+            {
+              "name": "Total Number of Bands",
+              "native_type": "3",
+              "units": null,
+              "value": 2
+            },
+            {
+              "name": "Minimum Wavelength",
+              "native_type": "4",
+              "units": "MilliMeter",
+              "value": -777777.0,
+              "unit_symbol": "mm"
+            },
+            {
+              "name": "Maximum Wavelength",
+              "native_type": "4",
+              "units": "MilliMeter",
+              "value": -777777.0,
+              "unit_symbol": "mm"
+            },
+            {
+              "name": "Number of Bands in Range",
+              "native_type": "3",
+              "units": null,
+              "value": 1
+            },
+            {
+              "name": "Wavelength Breakpoint Table",
+              "native_type": "8",
+              "units": null,
+              "inspection_status": "unsupported_property_type"
+            },
+            {
+              "name": "Spectral Model",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Solar to IR Transition Wavelength",
+              "native_type": "4",
+              "units": "MilliMeter",
+              "value": 0.003,
+              "unit_symbol": "mm"
+            },
+            {
+              "name": "Solar Intensity versus Wavelength",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Solar Intensity Table",
+              "native_type": "6",
+              "units": null,
+              "value": null
+            }
+          ]
+        },
+        {
+          "property": "Flow Solution Parameters",
+          "name": "Finned Flow Solution Parameters",
+          "descriptor": "Flow Solution Parameters",
+          "properties": [
+            {
+              "name": "description",
+              "native_type": "0",
+              "units": null,
+              "inspection_status": "unsupported_property_type"
+            },
+            {
+              "name": "Steady State - Relaxation Time Step",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Time Step",
+              "native_type": "6",
+              "units": "Second",
+              "expression": "0.5",
+              "unit_symbol": "sec",
+              "representation": "expression"
+            },
+            {
+              "name": "Time Step Factor",
+              "native_type": "4",
+              "units": "dimensionless",
+              "value": 20.0,
+              "unit_symbol": null
+            },
+            {
+              "name": "Convergence Criteria",
+              "native_type": "3",
+              "units": null,
+              "value": 1
+            },
+            {
+              "name": "Maximum Residuals",
+              "native_type": "4",
+              "units": "dimensionless",
+              "value": 0.0002,
+              "unit_symbol": null
+            },
+            {
+              "name": "Global Flow Imbalance Fraction Option",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Global Flow Imbalance Fraction",
+              "native_type": "4",
+              "units": "dimensionless",
+              "value": 0.02,
+              "unit_symbol": null
+            },
+            {
+              "name": "Global Heat Imbalance Fraction Option",
+              "native_type": "2",
+              "units": null,
+              "value": true
+            },
+            {
+              "name": "Global Heat Imbalance Fraction",
+              "native_type": "4",
+              "units": "dimensionless",
+              "value": 0.02,
+              "unit_symbol": null
+            },
+            {
+              "name": "3D Flow Steady State - Iteration Limit",
+              "native_type": "3",
+              "units": null,
+              "value": 1000
+            },
+            {
+              "name": "3D Flow Transient - Iteration Limit",
+              "native_type": "3",
+              "units": null,
+              "value": 100
+            },
+            {
+              "name": "Freeze Flow Field at Convergence for Steady State",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Restart Flow Field for Steady State",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Restart Temperature Change for Steady State",
+              "native_type": "4",
+              "units": "CelsiusDifference",
+              "value": 2.0,
+              "unit_symbol": "dC"
+            },
+            {
+              "name": "Freeze Flow Field for Transient",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Maximum Normalized Velocity Change",
+              "native_type": "4",
+              "units": "dimensionless",
+              "value": 1.0,
+              "unit_symbol": null
+            },
+            {
+              "name": "Maximum Normalized Pressure Change",
+              "native_type": "4",
+              "units": "dimensionless",
+              "value": 1e-08,
+              "unit_symbol": null
+            },
+            {
+              "name": "Freeze Flow Field at Specified Times",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Freeze Flow Field Specified Times",
+              "native_type": "8",
+              "units": null,
+              "inspection_status": "unsupported_property_type"
+            },
+            {
+              "name": "Reactivate Flow Calculation at Specified Times",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Reactivate Flow Calculation Specified Times",
+              "native_type": "8",
+              "units": null,
+              "inspection_status": "unsupported_property_type"
+            },
+            {
+              "name": "Restart Flow Field for Transient",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Restart Temperature Change for Transient",
+              "native_type": "4",
+              "units": "CelsiusDifference",
+              "value": 2.0,
+              "unit_symbol": "dC"
+            },
+            {
+              "name": "Global Relaxation Factor",
+              "native_type": "4",
+              "units": "dimensionless",
+              "value": 0.75,
+              "unit_symbol": null
+            },
+            {
+              "name": "Mass Relaxation Factor",
+              "native_type": "4",
+              "units": "dimensionless",
+              "value": 0.75,
+              "unit_symbol": null
+            },
+            {
+              "name": "Fluids Relaxation Factor",
+              "native_type": "4",
+              "units": "dimensionless",
+              "value": 0.9,
+              "unit_symbol": null
+            },
+            {
+              "name": "Turbulence Relaxation Factor",
+              "native_type": "4",
+              "units": "dimensionless",
+              "value": 1.0,
+              "unit_symbol": null
+            },
+            {
+              "name": "Screen Resistance Relaxation Factor",
+              "native_type": "4",
+              "units": "dimensionless",
+              "value": 0.25,
+              "unit_symbol": null
+            },
+            {
+              "name": "Fan Curves (I/O/Internal Fans) Relaxation Factor",
+              "native_type": "4",
+              "units": "dimensionless",
+              "value": 1.0,
+              "unit_symbol": null
+            },
+            {
+              "name": "Fan Curves (Recirculation Fans) Relaxation Factor",
+              "native_type": "4",
+              "units": "dimensionless",
+              "value": 1.0,
+              "unit_symbol": null
+            },
+            {
+              "name": "Momentum Advection Scheme",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Momentum Limiter Option",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Momentum Limiter Stabilization",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Momentum Limiter",
+              "native_type": "4",
+              "units": "dimensionless",
+              "value": 1.0,
+              "unit_symbol": null
+            },
+            {
+              "name": "Momentum Limiter Option MUSCL",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Energy Advection Scheme",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Energy Limiter Option",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Energy Limiter Stabilization",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Energy Limiter",
+              "native_type": "4",
+              "units": "dimensionless",
+              "value": 1.0,
+              "unit_symbol": null
+            },
+            {
+              "name": "Energy Limiter Option MUSCL",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "K-Epsilon Advection Scheme",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "K-Epsilon Limiter Option",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "K-Epsilon Limiter Stabilization",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "K-Epsilon Limiter",
+              "native_type": "4",
+              "units": "dimensionless",
+              "value": 1.0,
+              "unit_symbol": null
+            },
+            {
+              "name": "K-Epsilon Limiter Option MUSCL",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Humidity Tracer Fluids Homogeneous Mixtures Advection Scheme",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Humidity Tracer Fluids Homogeneous Mixtures Limiter Option",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Humidity Tracer Fluids Homogeneous Mixtures Limiter Stabilization",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Humidity Tracer Fluids Homogeneous Mixtures Limiter",
+              "native_type": "4",
+              "units": "dimensionless",
+              "value": 1.0,
+              "unit_symbol": null
+            },
+            {
+              "name": "Humidity Tracer Fluids Homogeneous Mixtures Limiter Option MUSCL",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Buoyancy Model",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Injection Duration",
+              "native_type": "4",
+              "units": "Second",
+              "value": 100.0,
+              "unit_symbol": "sec"
+            },
+            {
+              "name": "Steady State Simulation Time",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Total Time",
+              "native_type": "4",
+              "units": "Second",
+              "value": 100.0,
+              "unit_symbol": "sec"
+            },
+            {
+              "name": "Output Option",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Number of Outputs",
+              "native_type": "3",
+              "units": null,
+              "value": 10
+            },
+            {
+              "name": "Output Interval",
+              "native_type": "4",
+              "units": "Second",
+              "value": 10.0,
+              "unit_symbol": "sec"
+            },
+            {
+              "name": "Neglect Stochastic Drag Terms",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Use Cunningham Correction Factor",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Sutherland Constant",
+              "native_type": "4",
+              "units": "Celsius",
+              "value": -777777.0,
+              "unit_symbol": "C"
+            },
+            {
+              "name": "Slip Correction Reference Temperature",
+              "native_type": "4",
+              "units": "Celsius",
+              "value": -777777.0,
+              "unit_symbol": "C"
+            },
+            {
+              "name": "Slip Correction Reference Pressure",
+              "native_type": "4",
+              "units": "PressureNewtonPerSquareMilliMeter",
+              "value": -777777.0,
+              "unit_symbol": "N/mm^2(MPa)"
+            },
+            {
+              "name": "Slip Correction Reference Dynamic Viscosity",
+              "native_type": "4",
+              "units": "DynamicViscosity_Metric2",
+              "value": -777777.0,
+              "unit_symbol": "kg/mm-sec"
+            }
+          ]
+        },
+        {
+          "property": "Flow Surface Parameters",
+          "name": "Finned Flow Surface Parameters",
+          "descriptor": "Flow Surface Parameters",
+          "properties": [
+            {
+              "name": "description",
+              "native_type": "0",
+              "units": null,
+              "inspection_status": "unsupported_property_type"
+            },
+            {
+              "name": "Non-fluid 2D and 3D Elements Block Flow",
+              "native_type": "2",
+              "units": null,
+              "value": true
+            },
+            {
+              "name": "Wall Treatment",
+              "native_type": "3",
+              "units": null,
+              "value": 2
+            },
+            {
+              "name": "Default Wall Friction",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Height",
+              "native_type": "4",
+              "units": "MilliMeter",
+              "value": 0.0,
+              "unit_symbol": "mm"
+            },
+            {
+              "name": "Default Convection Properties",
+              "native_type": "0",
+              "units": null,
+              "inspection_status": "unsupported_property_type"
+            },
+            {
+              "name": "Reference Temperature for Bulk Heat Transfer Coefficient",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Reference Temperature",
+              "native_type": "4",
+              "units": "Celsius",
+              "value": -777777.0,
+              "unit_symbol": "C"
+            },
+            {
+              "name": "Default Particle Impact Type",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Default Coefficient of Restitution",
+              "native_type": "4",
+              "units": "dimensionless",
+              "value": 0.5,
+              "unit_symbol": null
+            }
+          ]
+        },
+        {
+          "property": "Thermal-Flow Output Requests",
+          "name": "Finned Thermal-Flow Output Requests",
+          "descriptor": "Thermal-Flow Output Requests",
+          "properties": [
+            {
+              "name": "description",
+              "native_type": "0",
+              "units": null,
+              "inspection_status": "unsupported_property_type"
+            },
+            {
+              "name": "All On/Off",
+              "native_type": "1",
+              "units": null,
+              "value": "All On/Off"
+            },
+            {
+              "name": "Create Groups for Boundary Conditions",
+              "native_type": "2",
+              "units": null,
+              "value": true
+            },
+            {
+              "name": "Thermal Entity",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Thermal Select Entity",
+              "native_type": "0",
+              "units": null,
+              "inspection_status": "unsupported_property_type"
+            },
+            {
+              "name": "Temperatures",
+              "native_type": "2",
+              "units": null,
+              "value": true
+            },
+            {
+              "name": "Temperature Results Location",
+              "native_type": "3",
+              "units": null,
+              "value": 2
+            },
+            {
+              "name": "Min/Max Temperatures and Occurrence Times",
+              "native_type": "2",
+              "units": null,
+              "value": true
+            },
+            {
+              "name": "Total Temperatures",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Total Temperature Results Location",
+              "native_type": "3",
+              "units": null,
+              "value": 2
+            },
+            {
+              "name": "Conductive Fluxes",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Conductive Fluxes Results Location",
+              "native_type": "3",
+              "units": null,
+              "value": 2
+            },
+            {
+              "name": "Convective Heat Fluxes",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Convective Heat Flux Results Location",
+              "native_type": "3",
+              "units": null,
+              "value": 2
+            },
+            {
+              "name": "Temperature Gradients",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Temperature Gradients Results Location",
+              "native_type": "3",
+              "units": null,
+              "value": 2
+            },
+            {
+              "name": "Transverse Temperature Gradients",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Total Loads and Fluxes",
+              "native_type": "2",
+              "units": null,
+              "value": true
+            },
+            {
+              "name": "Residuals",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Free and Forced Convection Coefficients",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Free and Forced Convection Coefficient Results Location",
+              "native_type": "3",
+              "units": null,
+              "value": 2
+            },
+            {
+              "name": "Corrected Free and Forced Convection Coefficients",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Corrected Free and Forced Convection Coefficient Results Location",
+              "native_type": "3",
+              "units": null,
+              "value": 2
+            },
+            {
+              "name": "Wall Velocities",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Wall Velocity Results Location",
+              "native_type": "3",
+              "units": null,
+              "value": 2
+            },
+            {
+              "name": "Joule Data",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Phase Change Quality",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "RC Products",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Displacements",
+              "native_type": "2",
+              "units": null,
+              "value": true
+            },
+            {
+              "name": "Thermal Connections",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Coupled Area Ratio",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Coupling Area",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Flow Entity",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Flow Select Entity",
+              "native_type": "0",
+              "units": null,
+              "inspection_status": "unsupported_property_type"
+            },
+            {
+              "name": "Flow Temperatures",
+              "native_type": "2",
+              "units": null,
+              "value": true
+            },
+            {
+              "name": "Velocities",
+              "native_type": "2",
+              "units": null,
+              "value": true
+            },
+            {
+              "name": "Velocities Adjusted",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Vorticity",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Pressures",
+              "native_type": "2",
+              "units": null,
+              "value": true
+            },
+            {
+              "name": "Local and Bulk Convection Coefficients",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "K-Epsilon Turbulence",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Non-Newtonian Model Quantities",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Fluid Densities",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Shear Stresses",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Roughness",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Y+",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Surface Pressure",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Mass Fluxes",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Convective Fluxes",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Humidity and Mixtures",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "PMV",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "PPD",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Mach Numbers",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Acoustic Power Density",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Pressure and Shear Resultants",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Results Condensation Evaporation",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Flow Residuals",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Radiation Entity",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Radiation Select Entity",
+              "native_type": "0",
+              "units": null,
+              "inspection_status": "unsupported_property_type"
+            },
+            {
+              "name": "View factors Sums",
+              "native_type": "2",
+              "units": null,
+              "value": true
+            },
+            {
+              "name": "Environmental View Factors",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Apparent Temperatures",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Radiances",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Fluences",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Net Radiative Fluxes",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Radiosity Fluxes",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Irradiance Fluxes",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Radiative Source Fluxes Entity",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Radiative Source Fluxes Select Entity",
+              "native_type": "0",
+              "units": null,
+              "inspection_status": "unsupported_property_type"
+            },
+            {
+              "name": "Radiative Absorbed Fluxes",
+              "native_type": "2",
+              "units": null,
+              "value": true
+            },
+            {
+              "name": "Radiative Incident Fluxes",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Radiative Transmitted Fluxes",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Radiative Reflected Fluxes",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Duct Entity",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Duct Select Entity",
+              "native_type": "0",
+              "units": null,
+              "inspection_status": "unsupported_property_type"
+            },
+            {
+              "name": "Temperatures Duct",
+              "native_type": "2",
+              "units": null,
+              "value": true
+            },
+            {
+              "name": "Temperature Results Location Duct",
+              "native_type": "3",
+              "units": null,
+              "value": 2
+            },
+            {
+              "name": "Total Temperatures Duct",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Total Temperature Results Location Duct",
+              "native_type": "3",
+              "units": null,
+              "value": 2
+            },
+            {
+              "name": "Velocities Duct",
+              "native_type": "2",
+              "units": null,
+              "value": true
+            },
+            {
+              "name": "Velocity Results Location Duct",
+              "native_type": "3",
+              "units": null,
+              "value": 2
+            },
+            {
+              "name": "Swirl Velocities Duct",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Swirl Velocity Results Location Duct",
+              "native_type": "3",
+              "units": null,
+              "value": 2
+            },
+            {
+              "name": "Swirl Ratio Duct",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Swirl Ratio Results Location Duct",
+              "native_type": "3",
+              "units": null,
+              "value": 2
+            },
+            {
+              "name": "Pressures Duct",
+              "native_type": "2",
+              "units": null,
+              "value": true
+            },
+            {
+              "name": "Pressure Results Location Duct",
+              "native_type": "3",
+              "units": null,
+              "value": 2
+            },
+            {
+              "name": "Densities Duct",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Density Results Location Duct",
+              "native_type": "3",
+              "units": null,
+              "value": 2
+            },
+            {
+              "name": "Mass Flows Duct",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Mass Flow Results Location Duct",
+              "native_type": "3",
+              "units": null,
+              "value": 2
+            },
+            {
+              "name": "Reynold Numbers",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Reynolds Number Results Location Duct",
+              "native_type": "3",
+              "units": null,
+              "value": 2
+            },
+            {
+              "name": "Tecplot",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "CGNS",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Transient Results",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "ParaView",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            }
+          ]
+        },
+        {
+          "property": "Coupled Solution Parameters",
+          "name": "Finned Coupled Solution Parameters",
+          "descriptor": "Thermal-Flow Coupled Solution Parameters",
+          "properties": [
+            {
+              "name": "description",
+              "native_type": "0",
+              "units": null,
+              "inspection_status": "unsupported_property_type"
+            },
+            {
+              "name": "Communication Frequency",
+              "native_type": "3",
+              "units": null,
+              "value": 1
+            },
+            {
+              "name": "Coupled Solver Maximum Temperature Change",
+              "native_type": "4",
+              "units": "CelsiusDifference",
+              "value": 0.1,
+              "unit_symbol": "dC"
+            },
+            {
+              "name": "Coupled Solver Global Heat Imbalance Fraction",
+              "native_type": "4",
+              "units": "dimensionless",
+              "value": 0.01,
+              "unit_symbol": null
+            }
+          ]
+        }
+      ],
+      "saved": false,
+      "solve_ready": false,
+      "defaults_basis": "installed native table defaults, not numerical acceptance",
+      "unresolved_controls": []
+    },
+    "total_seconds": 6.702999999979511,
+    "completed_setup": true,
+    "remaining": [
+      "boundary authoring and membership",
+      "interface/property audit",
+      "bounded solve",
+      "refinement and acceptance"
+    ]
+  },
+  "boundaries": {
+    "rows": [
+      {
+        "stage": "intent"
+      },
+      {
+        "stage": "mesh_quality",
+        "result": {
+          "document": {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_a7d7ec91bb9749bd8fac311fc44c3474",
+            "kind": "part",
+            "name": "finned_refined_r1_mesh",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_1d7ba6d380b7478e99eca85e8feb85fd",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "1d7ba6d380b7478e99eca85e8feb85fd",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-refined-20260908-r1\\finned_refined_r1_mesh.fem",
+            "journal_id": "finned_refined_r1_mesh",
+            "display_name": "finned_refined_r1_mesh"
+          },
+          "mesh_count": 2,
+          "error_occurrences": 0,
+          "warning_occurrences": 0,
+          "count_semantics": "Sum across tests; an element can contribute to multiple tests",
+          "solve_readiness": "not_established",
+          "settings": {
+            "solver": "NX MULTIPHYSICS",
+            "analysis": "Coupled Thermal-Flow",
+            "limit_option": "1",
+            "element_specific": false,
+            "tests": [
+              {
+                "test_type": "LengthMinimum",
+                "enabled": false,
+                "validator": "3",
+                "has_criteria": true,
+                "criteria": {
+                  "Warning": [
+                    {
+                      "unit": "MilliMeter"
+                    },
+                    1.0
+                  ],
+                  "Error": [
+                    {
+                      "unit": "MilliMeter"
+                    },
+                    0.1
+                  ]
+                },
+                "specific_count": 0
+              },
+              {
+                "test_type": "LengthMaximum",
+                "enabled": false,
+                "validator": "1",
+                "has_criteria": true,
+                "criteria": {
+                  "Warning": [
+                    {
+                      "unit": "MilliMeter"
+                    },
+                    50.0
+                  ],
+                  "Error": [
+                    {
+                      "unit": "MilliMeter"
+                    },
+                    100.0
+                  ]
+                },
+                "specific_count": 0
+              },
+              {
+                "test_type": "Area",
+                "enabled": false,
+                "validator": "4",
+                "has_criteria": true,
+                "criteria": {
+                  "Warning": [
+                    {
+                      "unit": "SquareMilliMeter"
+                    },
+                    0.01
+                  ],
+                  "Error": [
+                    {
+                      "unit": "SquareMilliMeter"
+                    },
+                    0.0
+                  ]
+                },
+                "specific_count": 0
+              },
+              {
+                "test_type": "JacobianSign",
+                "enabled": true,
+                "validator": "0",
+                "has_criteria": false,
+                "specific_count": 4
+              },
+              {
+                "test_type": "JacobianZero",
+                "enabled": true,
+                "validator": "4",
+                "has_criteria": true,
+                "criteria": {
+                  "Warning": [
+                    null,
+                    0.01
+                  ],
+                  "Error": [
+                    null,
+                    0.0
+                  ]
+                },
+                "specific_count": 8
+              },
+              {
+                "test_type": "Volume",
+                "enabled": true,
+                "validator": "4",
+                "has_criteria": true,
+                "criteria": {
+                  "Warning": [
+                    {
+                      "unit": "CubicMilliMeter"
+                    },
+                    0.01
+                  ],
+                  "Error": [
+                    {
+                      "unit": "CubicMilliMeter"
+                    },
+                    0.0
+                  ]
+                },
+                "specific_count": 2
+              },
+              {
+                "test_type": "AxisymmetricY",
+                "enabled": true,
+                "validator": "1",
+                "has_criteria": true,
+                "criteria": {
+                  "Warning": [
+                    null,
+                    1e-06
+                  ],
+                  "Error": [
+                    null,
+                    2e-06
+                  ]
+                },
+                "specific_count": 2
+              },
+              {
+                "test_type": "AxisymmetricX",
+                "enabled": true,
+                "validator": "3",
+                "has_criteria": true,
+                "criteria": {
+                  "Warning": [
+                    null,
+                    0.001
+                  ],
+                  "Error": [
+                    null,
+                    0.0
+                  ]
+                },
+                "specific_count": 2
+              },
+              {
+                "test_type": "AspectRatio",
+                "enabled": true,
+                "validator": "1",
+                "has_criteria": true,
+                "criteria": {
+                  "Warning": [
+                    null,
+                    10.0
+                  ],
+                  "Error": [
+                    null,
+                    100.0
+                  ]
+                },
+                "specific_count": 8
+              },
+              {
+                "test_type": "SkewAngle",
+                "enabled": true,
+                "validator": "3",
+                "has_criteria": true,
+                "criteria": {
+                  "Warning": [
+                    {
+                      "unit": "Degrees"
+                    },
+                    45.0
+                  ],
+                  "Error": [
+                    {
+                      "unit": "Degrees"
+                    },
+                    30.0
+                  ]
+                },
+                "specific_count": 3
+              },
+              {
+                "test_type": "InteriorAngleMaximum",
+                "enabled": true,
+                "validator": "1",
+                "has_criteria": true,
+                "criteria": {
+                  "Warning": [
+                    {
+                      "unit": "Degrees"
+                    },
+                    135.0
+                  ],
+                  "Error": [
+                    {
+                      "unit": "Degrees"
+                    },
+                    150.0
+                  ]
+                },
+                "specific_count": 4
+              },
+              {
+                "test_type": "InteriorAngleMinimum",
+                "enabled": true,
+                "validator": "3",
+                "has_criteria": true,
+                "criteria": {
+                  "Warning": [
+                    {
+                      "unit": "Degrees"
+                    },
+                    45.0
+                  ],
+                  "Error": [
+                    {
+                      "unit": "Degrees"
+                    },
+                    30.0
+                  ]
+                },
+                "specific_count": 4
+              },
+              {
+                "test_type": "Taper",
+                "enabled": true,
+                "validator": "1",
+                "has_criteria": true,
+                "criteria": {
+                  "Warning": [
+                    null,
+                    0.1
+                  ],
+                  "Error": [
+                    null,
+                    0.5
+                  ]
+                },
+                "specific_count": 2
+              },
+              {
+                "test_type": "WarpFactor",
+                "enabled": true,
+                "validator": "1",
+                "has_criteria": true,
+                "criteria": {
+                  "Warning": [
+                    null,
+                    0.01
+                  ],
+                  "Error": [
+                    null,
+                    0.05
+                  ]
+                },
+                "specific_count": 1
+              },
+              {
+                "test_type": "FaceWarpCoefficient",
+                "enabled": true,
+                "validator": "3",
+                "has_criteria": true,
+                "criteria": {
+                  "Warning": [
+                    null,
+                    0.866
+                  ],
+                  "Error": [
+                    null,
+                    0.707
+                  ]
+                },
+                "specific_count": 3
+              },
+              {
+                "test_type": "EdgePointIncludedAngle",
+                "enabled": true,
+                "validator": "1",
+                "has_criteria": true,
+                "criteria": {
+                  "Warning": [
+                    {
+                      "unit": "Degrees"
+                    },
+                    20.0
+                  ],
+                  "Error": [
+                    {
+                      "unit": "Degrees"
+                    },
+                    30.0
+                  ]
+                },
+                "specific_count": 4
+              },
+              {
+                "test_type": "EdgePointLengthRatio",
+                "enabled": true,
+                "validator": "3",
+                "has_criteria": true,
+                "criteria": {
+                  "Warning": [
+                    null,
+                    0.6
+                  ],
+                  "Error": [
+                    null,
+                    0.5
+                  ]
+                },
+                "specific_count": 8
+              },
+              {
+                "test_type": "LengthRatioOffset",
+                "enabled": true,
+                "validator": "1",
+                "has_criteria": true,
+                "criteria": {
+                  "Warning": [
+                    null,
+                    0.1
+                  ],
+                  "Error": [
+                    null,
+                    0.15
+                  ]
+                },
+                "specific_count": 2
+              },
+              {
+                "test_type": "LaminateTaperRatio",
+                "enabled": false,
+                "validator": "1",
+                "has_criteria": true,
+                "criteria": {
+                  "Warning": [
+                    null,
+                    1.1
+                  ],
+                  "Error": [
+                    null,
+                    1.2
+                  ]
+                },
+                "specific_count": 2
+              },
+              {
+                "test_type": "LaminateThicknessRatio",
+                "enabled": false,
+                "validator": "1",
+                "has_criteria": true,
+                "criteria": {
+                  "Warning": [
+                    null,
+                    0.01
+                  ],
+                  "Error": [
+                    null,
+                    0.05
+                  ]
+                },
+                "specific_count": 2
+              }
+            ]
+          },
+          "element_count": 12468,
+          "tests": [
+            {
+              "type": "JacobianSign",
+              "count": 12468,
+              "errors": 0,
+              "warnings": 0,
+              "worst_value": 1.0
+            },
+            {
+              "type": "JacobianZero",
+              "count": 12468,
+              "errors": 0,
+              "warnings": 0,
+              "worst_value": 0.25707391601959806
+            },
+            {
+              "type": "Volume",
+              "count": 12468,
+              "errors": 0,
+              "warnings": 0,
+              "worst_value": 0.04284565266993301
+            },
+            {
+              "type": "AxisymmetricY",
+              "count": 12468,
+              "errors": 0,
+              "warnings": 0,
+              "worst_value": null
+            },
+            {
+              "type": "AxisymmetricX",
+              "count": 12468,
+              "errors": 0,
+              "warnings": 0,
+              "worst_value": null
+            },
+            {
+              "type": "AspectRatio",
+              "count": 12468,
+              "errors": 0,
+              "warnings": 0,
+              "worst_value": 3.9469070310893537
+            },
+            {
+              "type": "SkewAngle",
+              "count": 12468,
+              "errors": 0,
+              "warnings": 0,
+              "worst_value": null
+            },
+            {
+              "type": "InteriorAngleMaximum",
+              "count": 12468,
+              "errors": 0,
+              "warnings": 0,
+              "worst_value": null
+            },
+            {
+              "type": "InteriorAngleMinimum",
+              "count": 12468,
+              "errors": 0,
+              "warnings": 0,
+              "worst_value": null
+            },
+            {
+              "type": "Taper",
+              "count": 12468,
+              "errors": 0,
+              "warnings": 0,
+              "worst_value": null
+            },
+            {
+              "type": "WarpFactor",
+              "count": 12468,
+              "errors": 0,
+              "warnings": 0,
+              "worst_value": null
+            },
+            {
+              "type": "FaceWarpCoefficient",
+              "count": 12468,
+              "errors": 0,
+              "warnings": 0,
+              "worst_value": null
+            },
+            {
+              "type": "EdgePointIncludedAngle",
+              "count": 12468,
+              "errors": 0,
+              "warnings": 0,
+              "worst_value": null
+            },
+            {
+              "type": "EdgePointLengthRatio",
+              "count": 12468,
+              "errors": 0,
+              "warnings": 0,
+              "worst_value": null
+            },
+            {
+              "type": "LengthRatioOffset",
+              "count": 12468,
+              "errors": 0,
+              "warnings": 0,
+              "worst_value": null
+            }
+          ],
+          "repair_attempted": false,
+          "scope": "1",
+          "limitations": [
+            "Native check may highlight failed elements",
+            "Does not establish CFD convergence",
+            "Element-specific overrides are not enumerated; inspect element_specific flag"
+          ]
+        }
+      },
+      {
+        "stage": "Inlet",
+        "targets": {
+          "committed_face_count": 1,
+          "committed_face_tags": [
+            5454176
+          ]
+        },
+        "properties": [
+          {
+            "name": "description",
+            "native_type": "0",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "Mode Option",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Velocity",
+            "native_type": "6",
+            "units": "MeterPerSecond",
+            "expression": "1.0",
+            "unit_symbol": "m/sec",
+            "representation": "expression"
+          },
+          {
+            "name": "Velocity Vector",
+            "native_type": "0",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "Mass Flow",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "Volume Flow",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "Pressure Rise",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "Fan Curve",
+            "native_type": "6",
+            "units": null,
+            "value": null
+          },
+          {
+            "name": "Inlet Conditions",
+            "native_type": "0",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "Pressure",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Pressure Value",
+            "native_type": "4",
+            "units": "PressureNewtonPerSquareMilliMeter",
+            "value": -777777.0,
+            "unit_symbol": "N/mm^2(MPa)"
+          },
+          {
+            "name": "Turbulence Characteristics Modeling Object",
+            "native_type": "0",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "Head Loss",
+            "native_type": "0",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "Heat Generated by Fan",
+            "native_type": "4",
+            "units": "HeatFlow_Metric2",
+            "value": 0.0,
+            "unit_symbol": "W"
+          },
+          {
+            "name": "Tracer Fluid",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Tracer Fluid List",
+            "native_type": "0",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "Tracer Fluid Mass Fractions",
+            "native_type": "8",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "Mixture",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Mixture Mass Fractions",
+            "native_type": "8",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "Alignment",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Swirl",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Rotation Axis Option",
+            "native_type": "3",
+            "units": null,
+            "value": 5
+          },
+          {
+            "name": "Rotation Axis",
+            "native_type": "0",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "Normal to Tangential Velocity Angle",
+            "native_type": "4",
+            "units": "Degrees",
+            "value": -777777.0,
+            "unit_symbol": "degrees"
+          },
+          {
+            "name": "Rotation Velocity",
+            "native_type": "4",
+            "units": "DegreesPerSecond",
+            "value": -777777.0,
+            "unit_symbol": "degrees/sec"
+          },
+          {
+            "name": "Alignment Vector",
+            "native_type": "0",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "Controller Type",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Thermostat",
+            "native_type": "0",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "Fan Speed Controller",
+            "native_type": "0",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "Nominal Fan Speed",
+            "native_type": "4",
+            "units": "DegreesPerSecond",
+            "value": -777777.0,
+            "unit_symbol": "degrees/sec"
+          },
+          {
+            "name": "distributionType",
+            "native_type": "3",
+            "units": null,
+            "value": 32
+          }
+        ]
+      },
+      {
+        "stage": "Opening",
+        "targets": {
+          "committed_face_count": 1,
+          "committed_face_tags": [
+            5454189
+          ]
+        },
+        "properties": [
+          {
+            "name": "description",
+            "native_type": "0",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "Inlet Conditions",
+            "native_type": "0",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "Turbulence Characteristics Modeling Object",
+            "native_type": "0",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "External Pressure Type",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Pressure",
+            "native_type": "3",
+            "units": null,
+            "value": 1
+          },
+          {
+            "name": "Pressure Value",
+            "native_type": "6",
+            "units": "PressurePascals",
+            "expression": "101325.0",
+            "unit_symbol": "Pa(N/m^2)",
+            "representation": "expression"
+          },
+          {
+            "name": "External Relative Pressure",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "Head Loss",
+            "native_type": "0",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "Tracer Fluid",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Tracer Fluid List",
+            "native_type": "0",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "Tracer Fluid Mass Fractions",
+            "native_type": "8",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "Mixture",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Mixture Mass Fractions",
+            "native_type": "8",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "Alignment",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Flow Direction Vector",
+            "native_type": "0",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "distributionType",
+            "native_type": "3",
+            "units": null,
+            "value": 32
+          }
+        ]
+      },
+      {
+        "stage": "heat",
+        "result": {
+          "power_w": 0.1,
+          "power_units": "W",
+          "properties": [
+            {
+              "name": "description",
+              "native_type": "0",
+              "units": null,
+              "inspection_status": "unsupported_property_type"
+            },
+            {
+              "name": "Selection Method",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Override Region",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Non-Geometric Element",
+              "native_type": "0",
+              "units": null,
+              "inspection_status": "unsupported_property_type"
+            },
+            {
+              "name": "Heat Load",
+              "native_type": "6",
+              "units": "HeatFlow_Metric2",
+              "expression": "0.1",
+              "unit_symbol": "W",
+              "representation": "expression"
+            },
+            {
+              "name": "Heat Load Override",
+              "native_type": "6",
+              "units": "dimensionless",
+              "expression": "-777777",
+              "unit_symbol": null,
+              "representation": "expression"
+            },
+            {
+              "name": "Specify Reference Temperature Set",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Reference Temperature Set",
+              "native_type": "0",
+              "units": null,
+              "inspection_status": "unsupported_property_type"
+            },
+            {
+              "name": "Control Heater",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Thermostat",
+              "native_type": "0",
+              "units": null,
+              "inspection_status": "unsupported_property_type"
+            },
+            {
+              "name": "Specify Layer to Apply to",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Apply to",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Layer Number",
+              "native_type": "3",
+              "units": null,
+              "value": 1
+            },
+            {
+              "name": "Per Element",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Per Node",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "distributionType",
+              "native_type": "3",
+              "units": null,
+              "value": 32
+            },
+            {
+              "name": "Custom Settings Option",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Custom Settings",
+              "native_type": "1",
+              "units": null,
+              "value": "BCONX"
+            }
+          ],
+          "provenance": "Assumed constant benchmark heat",
+          "energy_accounting": "internal_heat",
+          "target_count": 1,
+          "saved": false,
+          "solver_launched": false,
+          "overlap_policy": "reject",
+          "overlaps": []
+        }
+      },
+      {
+        "stage": "external",
+        "result": {
+          "table": "Finned external air 20 C",
+          "temperature_c": 20.0,
+          "temperature_mode": "specified",
+          "boundary_count": 2,
+          "saved": false,
+          "results_stale": true,
+          "global_ambient_changed": false,
+          "solver_launched": false
+        }
+      },
+      {
+        "stage": "effective_membership",
+        "solution": [
+          "Coupled Inlet",
+          "Coupled Opening",
+          "Generic solid 0.1 W"
+        ],
+        "step": []
+      },
+      {
+        "stage": "solution_properties",
+        "properties": [
+          {
+            "name": "Description",
+            "native_type": "0",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "Solve Thermal",
+            "native_type": "2",
+            "units": null,
+            "value": true
+          },
+          {
+            "name": "Solve Flow",
+            "native_type": "2",
+            "units": null,
+            "value": true
+          },
+          {
+            "name": "Solver Type",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Foreground",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Values Outside Time-dependent Tables",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Include File",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Select File",
+            "native_type": "16",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "Fields File Directory",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Fields Directory",
+            "native_type": "1",
+            "units": null,
+            "value": ""
+          },
+          {
+            "name": "User Defined API File",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Select API File",
+            "native_type": "16",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "Time",
+            "native_type": "4",
+            "units": "Second",
+            "value": -777777.0,
+            "unit_symbol": "sec"
+          },
+          {
+            "name": "Frequency",
+            "native_type": "4",
+            "units": "hertz",
+            "value": 0.0,
+            "unit_symbol": "Hz"
+          },
+          {
+            "name": "Default Temperature",
+            "native_type": "4",
+            "units": "Celsius",
+            "value": 20.0,
+            "unit_symbol": "C"
+          },
+          {
+            "name": "Compress Output Files",
+            "native_type": "2",
+            "units": null,
+            "value": true
+          },
+          {
+            "name": "Thermal Parameters",
+            "native_type": "0",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "Thermostat",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Ablation-Charring Material",
+            "native_type": "0",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "Apply Heater Control to all Thermal Loads",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Heater Controller or Thermostat",
+            "native_type": "0",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "Flow Solution Parameters",
+            "native_type": "0",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "Turbulence Model",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Length Scales",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Characteristic Length Scale",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": 0.0,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "Mean Flow Velocity Scale",
+            "native_type": "4",
+            "units": "MilliMeterPerSecond",
+            "value": 0.0,
+            "unit_symbol": "mm/sec"
+          },
+          {
+            "name": "Wall Distance Calculation Method",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Flow Surface Parameters",
+            "native_type": "0",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "Buoyancy",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Condensation Evaporation",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "High Resolution of Flow Features",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "High Speed Flow",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Non-Newtonian Fluid",
+            "native_type": "0",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "Coupled Solution Parameters",
+            "native_type": "0",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "Solve-Time Units",
+            "native_type": "3",
+            "units": null,
+            "value": 9
+          },
+          {
+            "name": "Temperature SI",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Temperature IN",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Mass",
+            "native_type": "1",
+            "units": null,
+            "value": ""
+          },
+          {
+            "name": "Length",
+            "native_type": "1",
+            "units": null,
+            "value": ""
+          },
+          {
+            "name": "Time Solution Units",
+            "native_type": "1",
+            "units": null,
+            "value": ""
+          },
+          {
+            "name": "Power",
+            "native_type": "1",
+            "units": null,
+            "value": ""
+          },
+          {
+            "name": "Heat Flux",
+            "native_type": "1",
+            "units": null,
+            "value": ""
+          },
+          {
+            "name": "Energy",
+            "native_type": "1",
+            "units": null,
+            "value": ""
+          },
+          {
+            "name": "Velocity",
+            "native_type": "1",
+            "units": null,
+            "value": ""
+          },
+          {
+            "name": "Pressure",
+            "native_type": "1",
+            "units": null,
+            "value": ""
+          },
+          {
+            "name": "Viscosity",
+            "native_type": "1",
+            "units": null,
+            "value": ""
+          },
+          {
+            "name": "Density",
+            "native_type": "1",
+            "units": null,
+            "value": ""
+          },
+          {
+            "name": "Specific Heat",
+            "native_type": "1",
+            "units": null,
+            "value": ""
+          },
+          {
+            "name": "Force",
+            "native_type": "1",
+            "units": null,
+            "value": ""
+          },
+          {
+            "name": "Altitude Value",
+            "native_type": "6",
+            "units": "MilliMeter",
+            "expression": "0",
+            "unit_symbol": "mm",
+            "representation": "expression"
+          },
+          {
+            "name": "Ambient Pressure",
+            "native_type": "3",
+            "units": null,
+            "value": 1
+          },
+          {
+            "name": "Absolute Pressure",
+            "native_type": "6",
+            "units": "PressureNewtonPerSquareMilliMeter",
+            "expression": "0.101351",
+            "unit_symbol": "N/mm^2(MPa)",
+            "representation": "expression"
+          },
+          {
+            "name": "Fluid Temperature",
+            "native_type": "6",
+            "units": "Celsius",
+            "expression": "0",
+            "unit_symbol": "C",
+            "representation": "expression"
+          },
+          {
+            "name": "Radiative Environment Temperature",
+            "native_type": "6",
+            "units": "Celsius",
+            "expression": "20",
+            "unit_symbol": "C",
+            "representation": "expression"
+          },
+          {
+            "name": "Ambient Humidity",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Ambient Relative Humidity Value",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "0",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "Ambient Water Vapor to Dry Air Mass Ratio Value",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "0",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "Ambient Tracer Fluid",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Ambient Tracer Fluid List",
+            "native_type": "0",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "Ambient Tracer Fluid Mass Fractions",
+            "native_type": "8",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "Ambient Mixture",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Ambient Mixture Mass Fractions",
+            "native_type": "8",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "Initial Conditions",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Initial Temperature Value",
+            "native_type": "4",
+            "units": "Celsius",
+            "value": 20.0,
+            "unit_symbol": "C"
+          },
+          {
+            "name": "X Velocity",
+            "native_type": "4",
+            "units": "MilliMeterPerSecond",
+            "value": 0.0,
+            "unit_symbol": "mm/sec"
+          },
+          {
+            "name": "Y Velocity",
+            "native_type": "4",
+            "units": "MilliMeterPerSecond",
+            "value": 0.0,
+            "unit_symbol": "mm/sec"
+          },
+          {
+            "name": "Z Velocity",
+            "native_type": "4",
+            "units": "MilliMeterPerSecond",
+            "value": 0.0,
+            "unit_symbol": "mm/sec"
+          },
+          {
+            "name": "Initial Conditions Pressure",
+            "native_type": "4",
+            "units": "PressureNewtonPerSquareMilliMeter",
+            "value": 0.101351,
+            "unit_symbol": "N/mm^2(MPa)"
+          },
+          {
+            "name": "Initial Conditions Fluid Temperature",
+            "native_type": "4",
+            "units": "Celsius",
+            "value": 20.0,
+            "unit_symbol": "C"
+          },
+          {
+            "name": "Turbulence Characteristics Modeling Object",
+            "native_type": "0",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "Initial Humidity",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Initial Relative Humidity",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 0.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "Initial Water Vapor to Dry Air Mass Ratio",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 0.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "Initial Tracer Fluid",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Initial Tracer Fluid List",
+            "native_type": "0",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "Initial Tracer Fluid Mass Fractions",
+            "native_type": "8",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "Initial Mixture",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Initial Mixture Mass Fractions",
+            "native_type": "8",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "Water Content Top",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Film Thickness Top",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": -777777.0,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "Total Mass Top",
+            "native_type": "4",
+            "units": "Kilogram",
+            "value": -777777.0,
+            "unit_symbol": "kg"
+          },
+          {
+            "name": "Surface Density Top",
+            "native_type": "4",
+            "units": "KilogramPerMilliMeterSquared",
+            "value": -777777.0,
+            "unit_symbol": "kg/mm^2"
+          },
+          {
+            "name": "Water Content Bottom",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Film Thickness Bottom",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": -777777.0,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "Total Mass Bottom",
+            "native_type": "4",
+            "units": "Kilogram",
+            "value": -777777.0,
+            "unit_symbol": "kg"
+          },
+          {
+            "name": "Surface Density Bottom",
+            "native_type": "4",
+            "units": "KilogramPerMilliMeterSquared",
+            "value": -777777.0,
+            "unit_symbol": "kg/mm^2"
+          },
+          {
+            "name": "Results Directory",
+            "native_type": "1",
+            "units": null,
+            "value": ""
+          },
+          {
+            "name": "Thermal Temperature File",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "TEMPF File",
+            "native_type": "16",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "Results to Use for Initial Conditions",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Initial Conditions Use Results at Time",
+            "native_type": "4",
+            "units": "Second",
+            "value": 0.0,
+            "unit_symbol": "sec"
+          },
+          {
+            "name": "Articulation Time Step Option",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Articulation Start Time",
+            "native_type": "4",
+            "units": "Second",
+            "value": -777777.0,
+            "unit_symbol": "sec"
+          },
+          {
+            "name": "Articulation End Time",
+            "native_type": "4",
+            "units": "Second",
+            "value": -777777.0,
+            "unit_symbol": "sec"
+          },
+          {
+            "name": "Articulation Calculation Interval",
+            "native_type": "4",
+            "units": "Second",
+            "value": -777777.0,
+            "unit_symbol": "sec"
+          },
+          {
+            "name": "Articulation Number of Time Steps",
+            "native_type": "3",
+            "units": null,
+            "value": 10
+          },
+          {
+            "name": "Articulation Times",
+            "native_type": "8",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "Articulation Interval vs Time Table",
+            "native_type": "6",
+            "units": null,
+            "value": null
+          },
+          {
+            "name": "Thermal-Flow Output Requests",
+            "native_type": "0",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "Refresh Results",
+            "native_type": "1",
+            "units": null,
+            "value": "Refresh Results"
+          },
+          {
+            "name": "Refresh Reports",
+            "native_type": "1",
+            "units": null,
+            "value": "Refresh Reports"
+          },
+          {
+            "name": "Output Files for Refresh Results Refresh Reports",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          }
+        ],
+        "elapsed_seconds": 1.125
+      }
+    ],
+    "saved": true,
+    "solver_launched": false,
+    "interfaces_validated": false
+  },
+  "solver_launched": false,
+  "operation_id": "op_282bfcc597914b9a9fdcc8a9e1af0ffc",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

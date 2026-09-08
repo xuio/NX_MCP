@@ -1,0 +1,75 @@
+{
+  "scope": "Native public thermal export and fixture input inspection; no solver launch",
+  "export": {
+    "status": "success",
+    "warnings": [],
+    "units": "mm",
+    "input_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-thermal-export-20260908-r1\\thermal_input_r1-Conduction.xml",
+    "input_identity": {
+      "sha256": "7d0a49b3d7336e79f5dfc45808880f81fd3bf800bef8152c8e5d6bf9bd593708",
+      "xml_content_sha256": "6dab0212fa6a7854875db5e5d6ae708bdbf621cefc483b53e713f51f9a1ae339",
+      "bytes": 280339,
+      "canonicalization": "xml_c14n2_no_comments"
+    },
+    "validation": {
+      "state": "well_formed",
+      "step_definitions": 1,
+      "mesh_counts": {
+        "elements": 2658,
+        "nodes": 756,
+        "element_sets": 1,
+        "scope": "observed_multiphysics_xml_layout"
+      },
+      "solve_readiness": "not_established"
+    },
+    "artifacts": [
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-thermal-export-20260908-r1\\thermal_input_r1-Conduction.map",
+        "bytes": 18534
+      },
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-thermal-export-20260908-r1\\thermal_input_r1-Conduction.xml",
+        "bytes": 280339
+      }
+    ],
+    "translator_reports": [],
+    "solver": "NX MULTIPHYSICS",
+    "analysis_type": "Thermal",
+    "solution": "Conduction",
+    "source_sim": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-thermal-export-20260908-r1\\thermal_input_r1.sim",
+    "source_modified": false,
+    "solver_launched": false,
+    "solve_readiness": "not_established",
+    "scope": "Native thermal/flow input export, not a solve or convergence check",
+    "operation_id": "verify-thermal-export-20260908-01",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed"
+  },
+  "replay_identity_matches": true,
+  "overwrite_rejection": {
+    "status": "error",
+    "warnings": [],
+    "units": null,
+    "code": "NX_SIM_OUTPUT_CONFLICT",
+    "message": "Export requires a directory containing only this SIM; copy the SIM to a fresh folder first",
+    "retryable": false,
+    "details": {
+      "mutation_outcome": "not_started",
+      "operation_id": "verify-thermal-export-duplicate-20260908-01"
+    }
+  },
+  "fixture_audit": {
+    "input_sha256": "7d0a49b3d7336e79f5dfc45808880f81fd3bf800bef8152c8e5d6bf9bd593708",
+    "material_values_in_export_units": {
+      "Mass Density Constant": 2.7e-06,
+      "Specific Heat": 900000000.0,
+      "Thermal Conductivity": 200000.0
+    },
+    "total_power_in_export_units": 1000000.0,
+    "temperature_in_export_units": 20,
+    "heat_selected_elements": 2658,
+    "temperature_selected_element_faces": 22,
+    "scope": "Known fixture values and cardinality; no solve or geometric face-mapping acceptance"
+  },
+  "local_tests_passed": 179
+}

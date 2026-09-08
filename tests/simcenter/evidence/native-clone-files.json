@@ -1,0 +1,54 @@
+{
+  "status": "success",
+  "dry_run": false,
+  "clone_performed": true,
+  "mapping": {
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-fine-k0-solve-20260908-r1\\fine_k0_solve_r1.sim": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-independent-clone-native-20260908-r1\\independent_flow.sim",
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_mesh.fem": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-independent-clone-native-20260908-r1\\independent_mesh.fem",
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_geometry.prt": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-independent-clone-native-20260908-r1\\independent_geometry.prt"
+  },
+  "naming_diagnostics": {
+    "InputNames": "[]",
+    "NFailures": "0",
+    "OutputNames": "[]",
+    "Statuses": "[]"
+  },
+  "state": "clone_returned",
+  "load_method_restored": true,
+  "source_hashes": {
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-fine-k0-solve-20260908-r1\\fine_k0_solve_r1.sim": "65218a65db0a316bfcbfb2b71a78eb2369276bc01232b4a7ec68c14567bf5fea",
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_mesh.fem": "16c652bed6aa66c55d601818f5f50162834ab3426803e585f1156c117806c205",
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_geometry.prt": "270bc149c45752454069abf1999fe8bf1da5f0a24b6459daffe89189b5157776"
+  },
+  "source_files_preserved": true,
+  "document_flags_preserved": true,
+  "native_parts_created": [
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-independent-clone-native-20260908-r1\\independent_flow.sim",
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-independent-clone-native-20260908-r1\\independent_mesh.fem",
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-independent-clone-native-20260908-r1\\independent_geometry.prt"
+  ],
+  "log": "Assembly Cloning Log File\n&LOG Operation_Type: CLONING_OPERATION\n&LOG Default_Cloning_Action: CLONE\n&LOG Default_Naming_Technique: USER_NAME\n&LOG Default_Container: \"\"\n&LOG Default_Directory: \"\"\n&LOG Default_Part_Type: \"\"\n&LOG Default_Part_Name: \"\"\n&LOG Default_Part_Description: \"\"\n&LOG \n&LOG Part: \"D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_mesh.fem\" Cloning_Action: DEFAULT_DISP Naming_Technique: DEFAULT_NAMING Clone_Name: \"D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-independent-clone-native-20260908-r1\\independent_mesh.fem\" \n&LOG Part: \"D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_geometry.prt\" Cloning_Action: DEFAULT_DISP Naming_Technique: DEFAULT_NAMING Clone_Name: \"D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-independent-clone-native-20260908-r1\\independent_geometry.prt\" \n&LOG Part: \"D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-fine-k0-solve-20260908-r1\\fine_k0_solve_r1.sim\"\n&LOG Cloning_Action: DEFAULT_DISP Naming_Technique: DEFAULT_NAMING Clone_Name: \"D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-independent-clone-native-20260908-r1\\independent_flow.sim\" \n",
+  "outputs": [
+    {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-independent-clone-native-20260908-r1\\independent_flow.sim",
+      "bytes": 7763802,
+      "sha256": "502048ab4e7aac9f3f5d874032ffd1d4432dc382d964b8ab2a0476901d889a94"
+    },
+    {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-independent-clone-native-20260908-r1\\independent_mesh.fem",
+      "bytes": 11752042,
+      "sha256": "78c4390c27763f3d0ed2f255c74426d4b1b16fc17bbece77bf9b810627f96ec1"
+    },
+    {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-independent-clone-native-20260908-r1\\independent_geometry.prt",
+      "bytes": 87647,
+      "sha256": "1dd1d9f19d918542eda147e783583e10bea6ea6740ae8d9478b702548dbd080d"
+    }
+  ],
+  "dependency_rebinding": "not_verified_until_reopen",
+  "operation_id": "op_7cb74de73d9549acbaccb8f3bdf69b3d",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

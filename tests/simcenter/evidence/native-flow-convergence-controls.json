@@ -1,0 +1,85 @@
+{
+  "scope": "Native property assignment, readback, repeat and rollback; export verified, solve acceptance pending",
+  "native_verification": {
+    "status": "success",
+    "assignment": {
+      "before": {
+        "residual": 0.0002,
+        "flow_imbalance_fraction": 0.02,
+        "flow_imbalance_enabled": false,
+        "iteration_limit": 1000
+      },
+      "actual": {
+        "residual": 1e-06,
+        "flow_imbalance_fraction": 0.001,
+        "flow_imbalance_enabled": true,
+        "iteration_limit": 1000
+      },
+      "changed": true,
+      "saved": false,
+      "prior_results_require_revalidation": true
+    },
+    "repeat": {
+      "before": {
+        "residual": 1e-06,
+        "flow_imbalance_fraction": 0.001,
+        "flow_imbalance_enabled": true,
+        "iteration_limit": 1000
+      },
+      "actual": {
+        "residual": 1e-06,
+        "flow_imbalance_fraction": 0.001,
+        "flow_imbalance_enabled": true,
+        "iteration_limit": 1000
+      },
+      "changed": false,
+      "saved": false,
+      "prior_results_require_revalidation": false
+    },
+    "rollback_verified": true,
+    "saved": false,
+    "solver_launched": false,
+    "operation_id": "op_0d0d7f70f30d404fa802ae22f3dc6c3f",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed",
+    "warnings": [],
+    "units": "mm"
+  },
+  "saved_export": {
+    "status": "success",
+    "state": "export_verified",
+    "saved": true,
+    "solver_launched": false,
+    "backup": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\before-flow-convergence-01",
+    "configuration": {
+      "before": {
+        "residual": 0.0002,
+        "flow_imbalance_fraction": 0.02,
+        "flow_imbalance_enabled": false,
+        "iteration_limit": 1000
+      },
+      "actual": {
+        "residual": 1e-06,
+        "flow_imbalance_fraction": 0.001,
+        "flow_imbalance_enabled": true,
+        "iteration_limit": 1000
+      },
+      "changed": true,
+      "saved": false,
+      "prior_results_require_revalidation": true
+    },
+    "exported": {
+      "Maximum Residuals": 1e-06,
+      "Global Flow Imbalance Fraction": 0.001,
+      "Global Flow Imbalance Fraction Option": 1.0,
+      "3D Flow Steady State - Iteration Limit": 1000.0
+    },
+    "deck_sha256": "0bf01fd70cce6296017b3f74c91674090e59b05584299c901a2f83632de29412",
+    "prior_results_require_revalidation": true,
+    "operation_id": "op_3babcc01f66e41af94417bf764b1410b",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed",
+    "warnings": [],
+    "units": "mm"
+  }
+}

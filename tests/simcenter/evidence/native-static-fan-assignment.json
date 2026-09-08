@@ -1,0 +1,54 @@
+{
+  "status": "success",
+  "binding": {
+    "mode": 5,
+    "field_tag": 1845755,
+    "scale_factor": 1.0
+  },
+  "previous_binding": {
+    "mode": 5,
+    "field_tag": 1093476,
+    "scale_factor": 1.0
+  },
+  "manifest": {
+    "extrapolation": "reject",
+    "interpolation": "linear",
+    "name": "MCP reversible static fan assignment",
+    "points": [
+      {
+        "flow_m3_s": 0,
+        "pressure_Pa": 1
+      },
+      {
+        "flow_m3_s": 0.0004,
+        "pressure_Pa": 0
+      }
+    ],
+    "pressure_convention": "static",
+    "provenance": {
+      "kind": "assumed",
+      "source": "Native assignment fixture"
+    },
+    "reference_density_kg_m3": 1.2,
+    "reverse_flow": "unsupported",
+    "rpm": 1000,
+    "schema_version": 1,
+    "stall_region": "Synthetic only"
+  },
+  "results_stale": true,
+  "saved": false,
+  "orientation": "existing inlet definition; unchanged",
+  "pressure_reference": "existing inlet and solution values; unchanged",
+  "motor_heat": "not_assigned",
+  "operating_point": "requires solve",
+  "injected_failure_rollback_verified": true,
+  "outer_rollback_verified": true,
+  "original_flags_preserved": true,
+  "boundary_descriptor": "Inlet",
+  "solver_launched": false,
+  "operation_id": "op_9a59105f3d0c40cfba658dfa8f897492",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

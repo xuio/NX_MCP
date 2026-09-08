@@ -1,0 +1,31 @@
+{
+  "status": "success",
+  "hydrated": [
+    {
+      "job_id": "monitor-probe-r2",
+      "state": "solver_exited"
+    }
+  ],
+  "restart": false,
+  "model_mutations": false,
+  "observations": {
+    "observations": [
+      {
+        "job_id": "monitor-probe-r2",
+        "state": "solver_exited",
+        "worker": "recovered_snapshot",
+        "observed_at": "2026-09-08T16:05:55.830984+00:00"
+      }
+    ],
+    "active_count": 0,
+    "job_ids": [],
+    "scope": "observer_thread_liveness_in_this_nx_process",
+    "solver_state": "not_checked",
+    "no_active_observer_does_not_imply_solver_idle": true
+  },
+  "operation_id": "op_f660f4297e13424084f0a7a3312f0353",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

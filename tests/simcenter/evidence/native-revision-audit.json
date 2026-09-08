@@ -1,0 +1,66 @@
+{
+  "status": "success",
+  "job_id": "fine-solve-01",
+  "native_dependencies": [
+    {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\C-transient-fine-20260908\\benchmark_29b2bd9b1155_analysis.sim",
+      "modified": true,
+      "fully_loaded": true
+    },
+    {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\C-transient-fine-20260908\\benchmark_29b2bd9b1155_mesh.fem",
+      "modified": false,
+      "fully_loaded": true
+    },
+    {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\C-transient-fine-20260908\\benchmark_29b2bd9b1155_geometry.prt",
+      "modified": false,
+      "fully_loaded": true
+    }
+  ],
+  "associations": {
+    "AssociatedCadPart": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\C-transient-fine-20260908\\benchmark_29b2bd9b1155_geometry.prt",
+    "IdealizedPart": null,
+    "MasterCadPart": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\C-transient-fine-20260908\\benchmark_29b2bd9b1155_geometry.prt"
+  },
+  "audit": {
+    "state": "revision_mismatch",
+    "revision_matches": false,
+    "files": [
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\C-transient-fine-20260908\\benchmark_29b2bd9b1155_analysis.sim",
+        "bytes": 7734515,
+        "sha256": "a2c358d6d73686642abc1b8bc1dfd908a9ab048ef5c52271f4fdc9b8ceb7264d",
+        "expected_sha256": "a2c358d6d73686642abc1b8bc1dfd908a9ab048ef5c52271f4fdc9b8ceb7264d",
+        "matches": true
+      },
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\C-transient-fine-20260908\\benchmark_29b2bd9b1155_geometry.prt",
+        "bytes": 76570,
+        "sha256": "60b7c889ff1a3180df5697f50f329ee66dc2598e5b7f297bef6541f03e89b97f",
+        "expected_sha256": "60b7c889ff1a3180df5697f50f329ee66dc2598e5b7f297bef6541f03e89b97f",
+        "matches": true
+      },
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\C-transient-fine-20260908\\benchmark_29b2bd9b1155_mesh.fem",
+        "bytes": 3089374,
+        "sha256": "cba1c05a7005a5f77606e23dcc4e5457cd8559de207443ebabb9cf3058a7ebbb",
+        "expected_sha256": "cba1c05a7005a5f77606e23dcc4e5457cd8559de207443ebabb9cf3058a7ebbb",
+        "matches": true
+      }
+    ],
+    "issues": [
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\C-transient-fine-20260908\\benchmark_29b2bd9b1155_analysis.sim",
+        "reason": "unsaved_edits"
+      }
+    ],
+    "scope": "supplied dependency set only",
+    "engineering_accepted": false
+  },
+  "operation_id": "op_672664a1bb0c47339630d46a2a937db4",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

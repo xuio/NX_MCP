@@ -1,0 +1,407 @@
+{
+  "transport": "real MCP stdio -> Simcenter UI bridge",
+  "schema": {
+    "name": "nx_sim_dependencies",
+    "title": null,
+    "description": "Inspect direct SIM/FEM/CAD document associations for a standalone FEM analysis. document is a live SIM ID; offset >=0, limit 1..100. Returns paged document references, ownership roles, paths, units, work/display roles, load and unsaved flags, and file availability. Does not activate, load, save or copy anything. Unloaded CAD associations and unenumerated assembly children are explicit. This is not a complete analysis package manifest: recursive components, external property/field files and solver/result dependencies remain excluded. Assembly FEM inspection is currently unsupported.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "document": {
+          "title": "Document",
+          "type": "string"
+        },
+        "offset": {
+          "default": 0,
+          "title": "Offset",
+          "type": "integer"
+        },
+        "limit": {
+          "default": 50,
+          "title": "Limit",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "document"
+      ],
+      "title": "nx_sim_dependenciesArguments",
+      "type": "object"
+    },
+    "outputSchema": {
+      "additionalProperties": true,
+      "description": "Structured success/error envelope with additive metadata. Tool-specific payload remains extensible.",
+      "properties": {
+        "status": {
+          "enum": [
+            "success",
+            "error"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "warnings": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Warnings",
+          "type": "array"
+        },
+        "units": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Units"
+        },
+        "operation_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Operation Id"
+        },
+        "mutation_outcome": {
+          "anyOf": [
+            {
+              "enum": [
+                "not_started",
+                "running",
+                "committed",
+                "rolled_back",
+                "partial",
+                "unknown",
+                "not_applicable"
+              ]
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "full_result": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "sha256": {
+              "type": "string"
+            },
+            "size": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "tool": {
+              "const": "nx_read_result"
+            },
+            "immutable": {
+              "const": true
+            }
+          },
+          "required": [
+            "id",
+            "sha256",
+            "size",
+            "tool",
+            "immutable"
+          ],
+          "additionalProperties": true
+        },
+        "omitted": {
+          "type": "object"
+        },
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "retryable": {
+          "type": "boolean"
+        },
+        "suggestion": {
+          "type": "string"
+        },
+        "nx_code": {
+          "type": [
+            "integer",
+            "string"
+          ]
+        },
+        "details": {
+          "type": "object",
+          "properties": {
+            "operation_id": {
+              "type": "string"
+            },
+            "mutation_outcome": {
+              "enum": [
+                "not_started",
+                "running",
+                "committed",
+                "rolled_back",
+                "partial",
+                "unknown",
+                "not_applicable"
+              ]
+            }
+          },
+          "required": [],
+          "additionalProperties": true
+        }
+      },
+      "required": [
+        "status",
+        "warnings",
+        "units"
+      ],
+      "title": "nx_sim_dependencies result",
+      "type": "object",
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "error"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "code",
+              "message",
+              "retryable"
+            ]
+          }
+        }
+      ]
+    },
+    "icons": null,
+    "annotations": {
+      "title": null,
+      "readOnlyHint": true,
+      "destructiveHint": null,
+      "idempotentHint": true,
+      "openWorldHint": null
+    },
+    "meta": null,
+    "execution": null
+  },
+  "pages": [
+    {
+      "status": "success",
+      "warnings": [],
+      "units": "mm",
+      "documents": [
+        {
+          "document": {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_aab0f877a8734b36871601e9bc19fc40",
+            "kind": "part",
+            "name": "mcp_saved_copy",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_abf19f0b5631403fb507517856de3740",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "abf19f0b5631403fb507517856de3740",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-sim-copy-20260908-r1\\mcp_saved_copy.sim",
+            "journal_id": "mcp_saved_copy",
+            "display_name": "mcp_saved_copy"
+          },
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-sim-copy-20260908-r1\\mcp_saved_copy.sim",
+          "roles": [
+            "simulation"
+          ],
+          "document_type": "SimPart",
+          "modified": false,
+          "fully_loaded": true,
+          "file_state": "exists",
+          "work": true,
+          "display": true,
+          "units": "mm"
+        }
+      ],
+      "total": 3,
+      "next_offset": 1,
+      "associations": [
+        {
+          "association": "AssociatedCadPart",
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_geometry.prt"
+        },
+        {
+          "association": "IdealizedPart",
+          "path": null
+        },
+        {
+          "association": "MasterCadPart",
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_geometry.prt"
+        }
+      ],
+      "unresolved": [],
+      "scope": "direct_sim_fem_cad_associations",
+      "complete_analysis_package": false,
+      "excluded": "recursive components, external fields/material files, solver artifacts and result dependencies",
+      "operation_id": "op_2e65df86c99b4f7aab707b8bcbd9d75d",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "mutation_outcome": "not_applicable"
+    },
+    {
+      "status": "success",
+      "warnings": [],
+      "units": "mm",
+      "documents": [
+        {
+          "document": {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_60c56286339d4ce2905f52612ced393c",
+            "kind": "part",
+            "name": "benchmark_4ba7072a1d7a_mesh",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_081ab92949c349be8475951c9a5634b7",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "081ab92949c349be8475951c9a5634b7",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_mesh.fem",
+            "journal_id": "benchmark_4ba7072a1d7a_mesh",
+            "display_name": "benchmark_4ba7072a1d7a_mesh"
+          },
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_mesh.fem",
+          "roles": [
+            "mesh"
+          ],
+          "document_type": "FemPart",
+          "modified": false,
+          "fully_loaded": true,
+          "file_state": "exists",
+          "work": false,
+          "display": false,
+          "units": "mm"
+        }
+      ],
+      "total": 3,
+      "next_offset": 2,
+      "associations": [
+        {
+          "association": "AssociatedCadPart",
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_geometry.prt"
+        },
+        {
+          "association": "IdealizedPart",
+          "path": null
+        },
+        {
+          "association": "MasterCadPart",
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_geometry.prt"
+        }
+      ],
+      "unresolved": [],
+      "scope": "direct_sim_fem_cad_associations",
+      "complete_analysis_package": false,
+      "excluded": "recursive components, external fields/material files, solver artifacts and result dependencies",
+      "operation_id": "op_c4c021f67acd4b338d20bdcd0b81f0c5",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "mutation_outcome": "not_applicable"
+    },
+    {
+      "status": "success",
+      "warnings": [],
+      "units": "mm",
+      "documents": [
+        {
+          "document": {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_8f968e35da7a427aad95590ffad3f32e",
+            "kind": "part",
+            "name": "benchmark_4ba7072a1d7a_geometry",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_ca55e84b536045a3911935d13a3e51b0",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "ca55e84b536045a3911935d13a3e51b0",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_geometry.prt",
+            "journal_id": "benchmark_4ba7072a1d7a_geometry",
+            "display_name": "benchmark_4ba7072a1d7a_geometry"
+          },
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_geometry.prt",
+          "roles": [
+            "AssociatedCadPart",
+            "MasterCadPart"
+          ],
+          "document_type": "Part",
+          "modified": false,
+          "fully_loaded": true,
+          "file_state": "exists",
+          "work": false,
+          "display": false,
+          "units": "mm"
+        }
+      ],
+      "total": 3,
+      "next_offset": null,
+      "associations": [
+        {
+          "association": "AssociatedCadPart",
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_geometry.prt"
+        },
+        {
+          "association": "IdealizedPart",
+          "path": null
+        },
+        {
+          "association": "MasterCadPart",
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_geometry.prt"
+        }
+      ],
+      "unresolved": [],
+      "scope": "direct_sim_fem_cad_associations",
+      "complete_analysis_package": false,
+      "excluded": "recursive components, external fields/material files, solver artifacts and result dependencies",
+      "operation_id": "op_786e504dd10643d3b888926206847706",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "mutation_outcome": "not_applicable"
+    },
+    {
+      "status": "success",
+      "warnings": [],
+      "units": "mm",
+      "documents": [],
+      "total": 3,
+      "next_offset": null,
+      "associations": [
+        {
+          "association": "AssociatedCadPart",
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_geometry.prt"
+        },
+        {
+          "association": "IdealizedPart",
+          "path": null
+        },
+        {
+          "association": "MasterCadPart",
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_geometry.prt"
+        }
+      ],
+      "unresolved": [],
+      "scope": "direct_sim_fem_cad_associations",
+      "complete_analysis_package": false,
+      "excluded": "recursive components, external fields/material files, solver artifacts and result dependencies",
+      "operation_id": "op_326ff8b259874e5d9d772bfb5ddd1b1f",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "mutation_outcome": "not_applicable"
+    }
+  ],
+  "invalid": {
+    "status": "error",
+    "warnings": [],
+    "units": null,
+    "code": "NX_INVALID_ARGUMENT",
+    "message": "offset >= 0; limit must be 1..100",
+    "retryable": false,
+    "details": {
+      "operation_id": "op_a8bc17179876445fba5bfc282ed7df9d",
+      "mutation_outcome": "not_started"
+    }
+  },
+  "session_flags_unchanged": true
+}

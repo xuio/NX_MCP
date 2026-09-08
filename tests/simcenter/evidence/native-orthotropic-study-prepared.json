@@ -1,0 +1,123 @@
+{
+  "status": "success",
+  "clone": {
+    "state": "native_files_cloned",
+    "folder": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-conduction-20260908-r1",
+    "plan_sha256": "ba9c4e2ed5ca2f73e0e0ae190b781b56ecffb1fe6c35b2f85d17d0144cf63b4a",
+    "outputs": [
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-conduction-20260908-r1\\OrthotropicR1_analysis.sim",
+        "bytes": 7772759,
+        "sha256": "2a99ee43f6abc842adf5158537f9fd0a638c5ebadeee029c6f35100f735b2987"
+      },
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-conduction-20260908-r1\\OrthotropicR1_mesh.fem",
+        "bytes": 2982708,
+        "sha256": "28bb9b506fc4b9ebdf7c3fad53040962b26d9c619b74831cc206cd5ad6dda9d3"
+      },
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-conduction-20260908-r1\\OrthotropicR1_cad_01.prt",
+        "bytes": 76332,
+        "sha256": "dcb12ef2715c75929234f2708765273bceecc0e292b047f47432d50375a1e0a2"
+      }
+    ],
+    "source_files_preserved": true,
+    "document_flags_preserved": true,
+    "associated_files_copied": false,
+    "saved_snapshot": true,
+    "unsaved_sources_excluded": [],
+    "dependency_rebinding": "not_verified_until_open",
+    "complete_analysis_package": false,
+    "result_freshness": "not_verified",
+    "solver_launched": false,
+    "replayed": false
+  },
+  "opened": {
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_cdfc72b9fc784bd48a0c0580b5854fdd",
+      "kind": "part",
+      "name": "OrthotropicR1_analysis",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_5041becaf68e4b278fe76538e8ebf107",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "5041becaf68e4b278fe76538e8ebf107",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-conduction-20260908-r1\\OrthotropicR1_analysis.sim",
+      "journal_id": "OrthotropicR1_analysis",
+      "display_name": "OrthotropicR1_analysis"
+    },
+    "units": "mm",
+    "coordinate_frame": "part_absolute",
+    "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-conduction-20260908-r1\\OrthotropicR1_analysis.sim",
+    "already_loaded": false,
+    "modified_after_native_open": false,
+    "modified_before_activation": false,
+    "modified": false,
+    "fully_loaded": true,
+    "load_issues": [],
+    "changed_existing_part_flags": [],
+    "application": "UG_APP_SFEM",
+    "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-conduction-20260908-r1\\OrthotropicR1_analysis.sim",
+    "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-conduction-20260908-r1\\OrthotropicR1_analysis.sim",
+    "saved": false,
+    "result_freshness": "not_verified",
+    "warnings": []
+  },
+  "collectors": [
+    {
+      "name": "Solid(1)",
+      "type": "Solid",
+      "collector_properties": [
+        {
+          "name": "Solid Property",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        }
+      ],
+      "solid_properties": [
+        {
+          "name": "material",
+          "native_type": "10",
+          "units": null,
+          "inherited": false,
+          "value": {
+            "name": "BENCHMARK_K200",
+            "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-conduction-20260908-r1\\OrthotropicR1_mesh.fem"
+          },
+          "assignment_status": "assigned"
+        },
+        {
+          "name": "material orientation type",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "material orientation",
+          "native_type": "7",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "radiation",
+          "native_type": "2",
+          "units": null,
+          "value": true
+        },
+        {
+          "name": "optical properties",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        }
+      ],
+      "solid_table_type": "PropertyTable"
+    }
+  ],
+  "original_flags_preserved": true,
+  "solver_launched": false,
+  "operation_id": "op_e217fb6cf1aa4bfdbf3c250016f48a9b",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

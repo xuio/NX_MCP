@@ -1,0 +1,28 @@
+{
+  "status": "success",
+  "rows": [
+    {
+      "descriptor": "Flow Boundary Condition",
+      "accepted": false,
+      "nx_code": 1543292,
+      "message": "Invalid LBC neutral name",
+      "rollback_verified": true,
+      "elapsed_seconds": 0.046999999962281436
+    },
+    {
+      "descriptor": "Flow Surface",
+      "accepted": false,
+      "nx_code": 1543292,
+      "message": "Invalid LBC neutral name",
+      "rollback_verified": true,
+      "elapsed_seconds": 0.06300000002374873
+    }
+  ],
+  "inlet_condition_property_type": "-10",
+  "solver_launched": false,
+  "operation_id": "op_91b325b211134186a5198e47f82c0269",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

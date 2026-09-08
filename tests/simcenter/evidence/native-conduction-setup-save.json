@@ -1,0 +1,98 @@
+{
+  "scope": "Public MCP authoring and single-document save in visible Simcenter; no solve acceptance",
+  "native_application": "Simcenter 3D Pre/Post",
+  "mesh": {
+    "elements": 2658,
+    "nodes": 756
+  },
+  "material_properties": [
+    {
+      "name": "MassDensityConstant",
+      "native_type": "6",
+      "units": "KilogramPerCubicMeter",
+      "expression": "2700.0",
+      "unit_symbol": "kg/m^3",
+      "representation": "expression"
+    },
+    {
+      "name": "ThermalConductivity",
+      "native_type": "6",
+      "units": "ThermalConductivity_Metric3",
+      "expression": "200.0",
+      "unit_symbol": "W/m-dK",
+      "representation": "expression"
+    },
+    {
+      "name": "SpecificHeat",
+      "native_type": "6",
+      "units": "SpecificHeat_Metric2",
+      "expression": "900.0",
+      "unit_symbol": "J/kg-dK",
+      "representation": "expression"
+    }
+  ],
+  "internal_power_w": 1.0,
+  "prescribed_temperature_k": 293.15,
+  "analytical_expected_maximum_rise_k": 2.5,
+  "solver_launched": false,
+  "saved_documents": {
+    "fem": {
+      "status": "success",
+      "warnings": [],
+      "units": "mm",
+      "saved": true,
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-temperature-mcp-20260908-r1\\benchmark_eecaf3edf587_mesh.fem",
+      "file": {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-temperature-mcp-20260908-r1\\benchmark_eecaf3edf587_mesh.fem",
+        "bytes": 2980872,
+        "sha256": "a408a4e460fff4f8410bbb268e3ffcff2f3a510a2ab091fdbbedfc7262a0d7a9"
+      },
+      "previous_file": {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-temperature-mcp-20260908-r1\\benchmark_eecaf3edf587_mesh.fem",
+        "bytes": 2798097,
+        "sha256": "7e0ccf33ab50a0e3edddad55c7742c456382a7dfa8351c6689f4ad0f4ebdf99d"
+      },
+      "backup_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-temperature-mcp-20260908-r1\\.nx-mcp-save-backups\\5e1e1690ab044cf096b5b528259b18ac\\benchmark_eecaf3edf587_mesh.fem",
+      "saved_components": false,
+      "closed": false,
+      "other_modified_flags_unchanged": true,
+      "result_freshness": "not_verified",
+      "operation_id": "conduction-save-fem-01",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "mutation_outcome": "committed"
+    },
+    "sim": {
+      "status": "success",
+      "warnings": [],
+      "units": "mm",
+      "saved": true,
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-temperature-mcp-20260908-r1\\saved_temperature.sim",
+      "file": {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-temperature-mcp-20260908-r1\\saved_temperature.sim",
+        "bytes": 7777568,
+        "sha256": "9b0ba37dba4e69058e997fa438962b9a7a059c4d18f7d55c115850810c005486"
+      },
+      "previous_file": {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-temperature-mcp-20260908-r1\\saved_temperature.sim",
+        "bytes": 7644981,
+        "sha256": "a9817a576baf36be7fef9f3b4398542b3ea483f8739e5b7ffd284d8c39a1ac22"
+      },
+      "backup_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-temperature-mcp-20260908-r1\\.nx-mcp-save-backups\\6aabfee6eff646e08265c9d496177067\\saved_temperature.sim",
+      "saved_components": false,
+      "closed": false,
+      "other_modified_flags_unchanged": true,
+      "result_freshness": "not_verified",
+      "operation_id": "conduction-save-sim-01",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "mutation_outcome": "committed"
+    }
+  },
+  "replay_backup_paths_unchanged": true,
+  "tests": {
+    "local_simcenter_passed": 176
+  },
+  "fixtures": [
+    "examples/simcenter/verify_conduction_setup_mcp.py",
+    "examples/simcenter/verify_sim_save_mcp.py"
+  ]
+}

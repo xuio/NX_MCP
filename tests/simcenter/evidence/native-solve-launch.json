@@ -1,0 +1,30 @@
+{
+  "nx_version": "v2606",
+  "job_id": "conduction-solve-01",
+  "session_application": "UG_APP_SFEM",
+  "api": "SimSolution.Solve / Solve / CompleteCheckAndOutputErrors",
+  "foreground": false,
+  "launch_api_returned": true,
+  "native_translator_ran": true,
+  "translator": "NX2TMG",
+  "translator_fatal_code": 1747,
+  "message": "There are no steps in this Simcenter 3D Multiphysics solution.",
+  "exported_step_count": 1,
+  "exported_step_solution_type": 0,
+  "state": "translation_failed",
+  "numerical_acceptance": "not_tested",
+  "licence_failure_established": false,
+  "diagnosis": "Native translator rejects step setup despite exported SolutionStep entry; cause unresolved.",
+  "deployed_log_audit": {
+    "state": "failed",
+    "stage": "translation",
+    "translator_fatal_codes": [
+      1747
+    ],
+    "fatal_abort_reported": true,
+    "numerical_convergence": "not_established",
+    "results_validated": false,
+    "log_sha256": "05afed822752ccd3785de6de9c4eeccbce88f49797b91b77e823229ae503642f",
+    "log_bytes": 8429
+  }
+}

@@ -1,0 +1,365 @@
+{
+  "status": "success",
+  "rows": [
+    {
+      "boundary": "Generic solid 0.1 W",
+      "property": "description",
+      "before_modified": false,
+      "after_modified": false,
+      "values": [
+        {
+          "name": "description",
+          "native_type": "0",
+          "units": null,
+          "representation": "text_lines",
+          "value": []
+        }
+      ]
+    },
+    {
+      "boundary": "Generic solid 0.1 W",
+      "property": "Selection Method",
+      "before_modified": false,
+      "after_modified": false,
+      "values": [
+        {
+          "name": "Selection Method",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        }
+      ]
+    },
+    {
+      "boundary": "Generic solid 0.1 W",
+      "property": "Override Region",
+      "before_modified": false,
+      "after_modified": false,
+      "values": [
+        {
+          "name": "Override Region",
+          "native_type": "2",
+          "units": null,
+          "value": false
+        }
+      ]
+    },
+    {
+      "boundary": "Generic solid 0.1 W",
+      "property": "Non-Geometric Element",
+      "before_modified": false,
+      "after_modified": false,
+      "values": [
+        {
+          "name": "Non-Geometric Element",
+          "native_type": "0",
+          "units": null,
+          "representation": "named_property_table",
+          "value": null
+        }
+      ]
+    },
+    {
+      "boundary": "Generic solid 0.1 W",
+      "property": "Heat Load",
+      "before_modified": false,
+      "after_modified": false,
+      "values": [
+        {
+          "name": "Heat Load",
+          "native_type": "6",
+          "units": "Watt",
+          "field_scale": 2.0,
+          "field_reference": {
+            "journal_id": "sys_field(1)",
+            "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-getter-audit-20260908-r1\\getter_audit.sim",
+            "tag": 6707397,
+            "lifetime": "current loaded document; not a cross-session reference"
+          },
+          "expression": "0.1",
+          "unit_symbol": "W",
+          "representation": "field_expression",
+          "field_definition": {
+            "kind": "numeric_constant",
+            "value": 0.1
+          },
+          "evaluated_value": 0.2
+        }
+      ]
+    },
+    {
+      "boundary": "Generic solid 0.1 W",
+      "property": "Heat Load Override",
+      "before_modified": false,
+      "after_modified": false,
+      "values": [
+        {
+          "name": "Heat Load Override",
+          "native_type": "6",
+          "units": "dimensionless",
+          "expression": "-777777",
+          "unit_symbol": null,
+          "representation": "expression"
+        }
+      ]
+    },
+    {
+      "boundary": "Generic solid 0.1 W",
+      "property": "Specify Reference Temperature Set",
+      "before_modified": false,
+      "after_modified": false,
+      "values": [
+        {
+          "name": "Specify Reference Temperature Set",
+          "native_type": "2",
+          "units": null,
+          "value": false
+        }
+      ]
+    },
+    {
+      "boundary": "Generic solid 0.1 W",
+      "property": "Reference Temperature Set",
+      "before_modified": false,
+      "after_modified": false,
+      "values": [
+        {
+          "name": "Reference Temperature Set",
+          "native_type": "0",
+          "units": null,
+          "representation": "named_property_table",
+          "value": null
+        }
+      ]
+    },
+    {
+      "boundary": "Generic solid 0.1 W",
+      "property": "Control Heater",
+      "before_modified": false,
+      "after_modified": false,
+      "values": [
+        {
+          "name": "Control Heater",
+          "native_type": "2",
+          "units": null,
+          "value": false
+        }
+      ]
+    },
+    {
+      "boundary": "Generic solid 0.1 W",
+      "property": "Thermostat",
+      "before_modified": false,
+      "after_modified": false,
+      "values": [
+        {
+          "name": "Thermostat",
+          "native_type": "0",
+          "units": null,
+          "representation": "named_property_table",
+          "value": null
+        }
+      ]
+    },
+    {
+      "boundary": "Generic solid 0.1 W",
+      "property": "Specify Layer to Apply to",
+      "before_modified": false,
+      "after_modified": false,
+      "values": [
+        {
+          "name": "Specify Layer to Apply to",
+          "native_type": "2",
+          "units": null,
+          "value": false
+        }
+      ]
+    },
+    {
+      "boundary": "Generic solid 0.1 W",
+      "property": "Apply to",
+      "before_modified": false,
+      "after_modified": false,
+      "values": [
+        {
+          "name": "Apply to",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        }
+      ]
+    },
+    {
+      "boundary": "Generic solid 0.1 W",
+      "property": "Layer Number",
+      "before_modified": false,
+      "after_modified": false,
+      "values": [
+        {
+          "name": "Layer Number",
+          "native_type": "3",
+          "units": null,
+          "value": 1
+        }
+      ]
+    },
+    {
+      "boundary": "Generic solid 0.1 W",
+      "property": "Per Element",
+      "before_modified": false,
+      "after_modified": false,
+      "values": [
+        {
+          "name": "Per Element",
+          "native_type": "2",
+          "units": null,
+          "value": false
+        }
+      ]
+    },
+    {
+      "boundary": "Generic solid 0.1 W",
+      "property": "Per Node",
+      "before_modified": false,
+      "after_modified": false,
+      "values": [
+        {
+          "name": "Per Node",
+          "native_type": "2",
+          "units": null,
+          "value": false
+        }
+      ]
+    },
+    {
+      "boundary": "Generic solid 0.1 W",
+      "property": "distributionType",
+      "before_modified": false,
+      "after_modified": false,
+      "values": [
+        {
+          "name": "distributionType",
+          "native_type": "3",
+          "units": null,
+          "value": 32
+        }
+      ]
+    },
+    {
+      "boundary": "Generic solid 0.1 W",
+      "property": "Custom Settings Option",
+      "before_modified": false,
+      "after_modified": false,
+      "values": [
+        {
+          "name": "Custom Settings Option",
+          "native_type": "2",
+          "units": null,
+          "value": false
+        }
+      ]
+    },
+    {
+      "boundary": "Generic solid 0.1 W",
+      "property": "Custom Settings",
+      "before_modified": false,
+      "after_modified": false,
+      "values": [
+        {
+          "name": "Custom Settings",
+          "native_type": "1",
+          "units": null,
+          "value": "BCONX"
+        }
+      ]
+    },
+    {
+      "boundary": "Coupled Inlet",
+      "property": "description",
+      "before_modified": false,
+      "after_modified": false,
+      "values": [
+        {
+          "name": "description",
+          "native_type": "0",
+          "units": null,
+          "representation": "text_lines",
+          "value": []
+        }
+      ]
+    },
+    {
+      "boundary": "Coupled Inlet",
+      "property": "Mode Option",
+      "before_modified": false,
+      "after_modified": false,
+      "values": [
+        {
+          "name": "Mode Option",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        }
+      ]
+    },
+    {
+      "boundary": "Coupled Inlet",
+      "property": "Velocity",
+      "before_modified": false,
+      "after_modified": false,
+      "values": [
+        {
+          "name": "Velocity",
+          "native_type": "6",
+          "units": "MeterPerSecond",
+          "expression": "1.0",
+          "unit_symbol": "m/sec",
+          "representation": "expression"
+        }
+      ]
+    },
+    {
+      "boundary": "Coupled Inlet",
+      "property": "Velocity Vector",
+      "before_modified": false,
+      "after_modified": true,
+      "values": [
+        {
+          "name": "Velocity Vector",
+          "native_type": "0",
+          "units": null,
+          "representation": "vector_expressions",
+          "components": [
+            {
+              "expression": "-777777",
+              "evaluated_value": -777777.0,
+              "units": "MilliMeterPerSecond",
+              "unit_symbol": "mm/sec"
+            },
+            {
+              "expression": "-777777",
+              "evaluated_value": -777777.0,
+              "units": "MilliMeterPerSecond",
+              "unit_symbol": "mm/sec"
+            },
+            {
+              "expression": "-777777",
+              "evaluated_value": -777777.0,
+              "units": "MilliMeterPerSecond",
+              "unit_symbol": "mm/sec"
+            }
+          ],
+          "coordinate_frame": "owning_property_convention; not inferred"
+        }
+      ],
+      "after_undo_modified": false
+    }
+  ],
+  "first_flag_changing_property": "Velocity Vector",
+  "solver_launched": false,
+  "operation_id": "op_bc4bd7a2869243999128834ae89a2430",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

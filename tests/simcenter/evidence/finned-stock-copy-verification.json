@@ -1,0 +1,88 @@
+{
+  "material": "Generic_air[2]",
+  "properties": {
+    "DENSITY": {
+      "intended": 1.2,
+      "translated": 1.2943761618099998,
+      "units": "kg/m3",
+      "relative_error": 0.07864680150833323,
+      "matches_relative_1e_6": false
+    },
+    "SPECIFIC_HEAT_P": {
+      "intended": 1005.0,
+      "translated": 1005.0,
+      "units": "J/(kg K)",
+      "relative_error": 0.0,
+      "matches_relative_1e_6": true
+    },
+    "DYNAMIC_VISCOSITY": {
+      "intended": 1.81e-05,
+      "translated": 1.80999997212e-05,
+      "units": "Pa s",
+      "relative_error": 1.540331492386523e-08,
+      "matches_relative_1e_6": true
+    },
+    "CONDUCTIVITY": {
+      "intended": 0.0257,
+      "translated": 0.0257000007629,
+      "units": "W/(m K)",
+      "relative_error": 2.9684824907294644e-08,
+      "matches_relative_1e_6": true
+    }
+  },
+  "all_properties_match": false,
+  "scope": "one constant liquid in the generic finned benchmark; not solve or physical acceptance",
+  "package_sha256": "b0d8c560f7252fbdae0656479d88d434bd2348b53c5d6036417a41c597c62c7a",
+  "job_id": "coupled-finned-stock-copy-r1",
+  "native_density": {
+    "status": "success",
+    "field_names": [
+      "Velocity - Element-Nodal",
+      "Temperature - Nodal",
+      "Temperature - Elemental",
+      "Temperature - Element-Nodal",
+      "Total Heat Load - Elemental",
+      "Total Heat Flux - Elemental",
+      "Total Pressure - Element-Nodal",
+      "Fluid Density - Element-Nodal",
+      "Mass Flux - Nodal",
+      "Pressure - Element-Nodal"
+    ],
+    "density_field": "Fluid Density - Element-Nodal",
+    "units": "kg/m3",
+    "minimum": 1.2943761348724365,
+    "maximum": 1.2943761348724365,
+    "minimum_native_id": 2472,
+    "maximum_native_id": 2472,
+    "minimum_native_sub_id": 710,
+    "maximum_native_sub_id": 710,
+    "location": "2",
+    "expected_constant_density": 1.2,
+    "constant_density_matches": false,
+    "reference_lifetime": "indices apply only to this result revision",
+    "result_freshness": "not_verified",
+    "operation_id": "op_ffbb43f890a442589f20c05abb7d497d",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed",
+    "warnings": []
+  },
+  "hypothesis": "Preserving native stock-fluid metadata via an editable library copy restores requested constant density.",
+  "outcome": "rejected: generated solver properties and native results still differ from requested density",
+  "numerical_acceptance": false,
+  "template": "Water; benchmark density, viscosity, conductivity, heat capacity, expansion and molar mass explicitly replaced",
+  "initial_failure": {
+    "case": "E-finned-stock_material-20260908-r1",
+    "nx_code": 3940027,
+    "cause": "CopyMaterialFromLibrary requires explicit XML filename; empty library path rejected",
+    "solver_launched": false
+  },
+  "expansion": {
+    "native_requested_per_K": 0.0,
+    "translated_per_K": 0.00300000002608,
+    "applicability": "No gravity and BUOYANCY_MODEL=0 in this diagnostic; inactive expansion is not accepted as a general working assignment."
+  },
+  "source_hashes": {
+    "flow.prp": "dddba47b2a5a7f55fb1bf5ef23a806077bb08effb9d9c3a27acb1741feb371c5",
+    "flow.prm": "343e71cd5eb2da9194034fea745fd9f8044b4d43d9184edb3de9b1843f3f6fee"
+  }
+}

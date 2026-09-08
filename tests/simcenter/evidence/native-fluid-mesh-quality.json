@@ -1,0 +1,129 @@
+{
+  "status": "success",
+  "native_check": {
+    "element_count": 3308,
+    "scope": "1",
+    "tests": [
+      {
+        "type": "2",
+        "count": 3308,
+        "errors": 0,
+        "warnings": 0,
+        "worst_value": 1.0
+      },
+      {
+        "type": "0",
+        "count": 3308,
+        "errors": 0,
+        "warnings": 0,
+        "worst_value": 42.496534842206366
+      },
+      {
+        "type": "3",
+        "count": 3308,
+        "errors": 0,
+        "warnings": 0,
+        "worst_value": 7.0827558070343954
+      },
+      {
+        "type": "4",
+        "count": 3308,
+        "errors": 0,
+        "warnings": 0,
+        "worst_value": null
+      },
+      {
+        "type": "5",
+        "count": 3308,
+        "errors": 0,
+        "warnings": 0,
+        "worst_value": null
+      },
+      {
+        "type": "6",
+        "count": 3308,
+        "errors": 0,
+        "warnings": 0,
+        "worst_value": 4.0829705687292055
+      },
+      {
+        "type": "7",
+        "count": 3308,
+        "errors": 0,
+        "warnings": 0,
+        "worst_value": null
+      },
+      {
+        "type": "9",
+        "count": 3308,
+        "errors": 0,
+        "warnings": 0,
+        "worst_value": null
+      },
+      {
+        "type": "8",
+        "count": 3308,
+        "errors": 0,
+        "warnings": 0,
+        "worst_value": null
+      },
+      {
+        "type": "10",
+        "count": 3308,
+        "errors": 0,
+        "warnings": 0,
+        "worst_value": null
+      },
+      {
+        "type": "11",
+        "count": 3308,
+        "errors": 0,
+        "warnings": 0,
+        "worst_value": null
+      },
+      {
+        "type": "12",
+        "count": 3308,
+        "errors": 0,
+        "warnings": 0,
+        "worst_value": null
+      },
+      {
+        "type": "14",
+        "count": 3308,
+        "errors": 0,
+        "warnings": 0,
+        "worst_value": null
+      },
+      {
+        "type": "13",
+        "count": 3308,
+        "errors": 0,
+        "warnings": 0,
+        "worst_value": null
+      },
+      {
+        "type": "15",
+        "count": 3308,
+        "errors": 0,
+        "warnings": 0,
+        "worst_value": null
+      }
+    ]
+  },
+  "result_methods": [
+    "Dispose",
+    "ElementTestCount",
+    "GetElementTestResultByIndex",
+    "GetTestSummary",
+    "TestSummary"
+  ],
+  "connectivity_path": "Z:\\nx-mcp-integration\\simcenter-discovery\\fluid-mesh-connectivity.json",
+  "connectivity_elements": 3308,
+  "repair_attempted": false,
+  "operation_id": "op_feba67c327654e4aa67ff0897a57d284",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

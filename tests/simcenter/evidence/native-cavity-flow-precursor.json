@@ -1,0 +1,53 @@
+{
+  "scope": "Native constant-density duct precursor; not acceptance D/E",
+  "solver_version": "2606.1",
+  "elapsed_seconds": 24,
+  "flow_model": "Mixing length",
+  "iteration_limit": 1000,
+  "volume_flow_m3_s": {
+    "inlet": 0.0004,
+    "opening": -0.0004
+  },
+  "mass_flow_kg_s": {
+    "inlet": 0.00048,
+    "opening": -0.00048
+  },
+  "solver_imbalance_percent": {
+    "momentum": 0.02323,
+    "mass": 0.009438,
+    "energy": 0.0
+  },
+  "warnings": [
+    "Maximum near-wall y+ 12.143695 is below wall-function recommended minimum 30",
+    "Average near-wall y+ 8.636821 is below suggested minimum 10"
+  ],
+  "acceptance": "not_passed",
+  "next_action": "Validate laminar-model selector and repeat; nominal Re=1.2*1*0.02/1.81e-5=1326",
+  "files": [
+    {
+      "name": "benchmark_4ba7072a1d7a_analysis-Flow_benchmark.xml",
+      "bytes": 264876,
+      "sha256": "8cbe39723a205317a1bac038d81f47103844d88846201fa5be29611c65207459"
+    },
+    {
+      "name": "benchmark_4ba7072a1d7a_analysis-Flow_benchmark.bun",
+      "bytes": 704492,
+      "sha256": "0f6380f365ae490a922506fd374fa18a3d70dab659b5aa5d7eabf91e14805f1b"
+    },
+    {
+      "name": "cavity-flow-solve-01.json",
+      "bytes": 400,
+      "sha256": "750692ea9bfd4425f5add3e3c8f40e68168a6d051a9696a0d65bab87993555da"
+    },
+    {
+      "name": "benchmark_4ba7072a1d7a_analysis-Flow_benchmark.log",
+      "bytes": 34453,
+      "sha256": "a6088f3eb2b9027fe01145ae0b414cd2ecab75622a519bca20a9e926a87ab1d6"
+    },
+    {
+      "name": "benchmark_4ba7072a1d7a_analysis-Flow_benchmark.map",
+      "bytes": 20778,
+      "sha256": "97cd76a182c6f1ec557ff165cfb1151223e3abc3d61b4fd8f2f1475acdd65441"
+    }
+  ]
+}

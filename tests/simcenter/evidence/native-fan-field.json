@@ -1,0 +1,71 @@
+{
+  "status": "success",
+  "manifest": {
+    "name": "Synthetic fan table native verification",
+    "pressure_convention": "static",
+    "rpm": 1000,
+    "reference_density_kg_m3": 1.2,
+    "points": [
+      {
+        "flow_m3_s": 0,
+        "pressure_Pa": 1
+      },
+      {
+        "flow_m3_s": 0.0002,
+        "pressure_Pa": 0.5
+      },
+      {
+        "flow_m3_s": 0.0004,
+        "pressure_Pa": 0
+      }
+    ],
+    "stall_region": "Not modeled; synthetic benchmark only",
+    "provenance": {
+      "kind": "assumed",
+      "source": "Synthetic unit-conversion benchmark"
+    },
+    "schema_version": 1,
+    "interpolation": "linear",
+    "extrapolation": "reject",
+    "reverse_flow": "unsupported"
+  },
+  "readback": {
+    "flow_m3_s": [
+      0.0,
+      0.0002,
+      0.0004
+    ],
+    "pressure_Pa": [
+      1.0,
+      0.5,
+      0.0
+    ],
+    "native_flow": [
+      0.0,
+      200000.0,
+      400000.0
+    ],
+    "native_pressure": [
+      1.0,
+      0.5,
+      0.0
+    ],
+    "native_flow_units": "CubicMilliMeterPerSecond",
+    "native_pressure_units": "PressurePascals",
+    "interpolation": "linear",
+    "outside_table": "undefined"
+  },
+  "boundary_attached": false,
+  "solver_semantics": "not_verified",
+  "manifest_persisted": false,
+  "saved": false,
+  "native_type": "FieldTable",
+  "disposable_probe": true,
+  "operation_id": "op_43d782110bc04bc1add1b39423b0060b",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm",
+  "evidence_scope": "NX 2606 native table creation and sample/interpolation readback; disposable outer undo completed. No boundary attachment or solve.",
+  "source_sha256": "1e20807f5789c1fc04e12c997c5abde7cb38031de8ca1bfe169bf2881cfa1cdb"
+}

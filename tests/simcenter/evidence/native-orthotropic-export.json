@@ -1,0 +1,139 @@
+{
+  "status": "success",
+  "state": "exported",
+  "readback": {
+    "properties": {
+      "ThermalConductivity": {
+        "value": 12.0,
+        "unit": "ThermalConductivity_Metric3",
+        "symbol": "W/m-dK"
+      },
+      "ThermalConductivity2": {
+        "value": 7.0,
+        "unit": "ThermalConductivity_Metric3",
+        "symbol": "W/m-dK"
+      },
+      "ThermalConductivity3": {
+        "value": 0.4,
+        "unit": "ThermalConductivity_Metric3",
+        "symbol": "W/m-dK"
+      },
+      "MassDensity": {
+        "value": 1900.0,
+        "unit": "KilogramPerCubicMeter",
+        "symbol": "kg/m^3"
+      },
+      "SpecificHeat": {
+        "value": 900.0,
+        "unit": "SpecificHeat_Metric2",
+        "symbol": "J/kg-dK"
+      }
+    },
+    "provenance": "Synthetic directional-conduction benchmark; not product material data",
+    "coordinate_frame": "material_axes",
+    "orientation_assigned": false,
+    "collector_assignment": false,
+    "saved": false,
+    "solver_verified": false
+  },
+  "orientation": {
+    "type": 0,
+    "csys_present": false,
+    "global_frame_interpretation": "not_verified"
+  },
+  "fem_saved": {
+    "saved": true,
+    "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-conduction-20260908-r1\\OrthotropicR1_mesh.fem",
+    "file": {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-conduction-20260908-r1\\OrthotropicR1_mesh.fem",
+      "bytes": 3012738,
+      "sha256": "e1591be0e202ab1275657184811d9b0a224857c35904150f3b2e0d42cc476c41"
+    },
+    "previous_file": {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-conduction-20260908-r1\\OrthotropicR1_mesh.fem",
+      "bytes": 2982708,
+      "sha256": "28bb9b506fc4b9ebdf7c3fad53040962b26d9c619b74831cc206cd5ad6dda9d3"
+    },
+    "backup_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-conduction-20260908-r1\\.nx-mcp-save-backups\\290b4a6921d448078f62699f8e3ed2a6\\OrthotropicR1_mesh.fem",
+    "saved_components": false,
+    "closed": false,
+    "other_modified_flags_unchanged": true,
+    "result_freshness": "not_verified"
+  },
+  "copied": {
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_078ab647d6ab4b10a69c0457d5c89cbc",
+      "kind": "part",
+      "name": "orthotropic_export_r1",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_5041becaf68e4b278fe76538e8ebf107",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "5041becaf68e4b278fe76538e8ebf107",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-export-20260908-r1\\orthotropic_export_r1.sim",
+      "journal_id": "orthotropic_export_r1",
+      "display_name": "orthotropic_export_r1"
+    },
+    "source": {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-conduction-20260908-r1\\OrthotropicR1_analysis.sim",
+      "bytes": 7772759,
+      "sha256": "2a99ee43f6abc842adf5158537f9fd0a638c5ebadeee029c6f35100f735b2987"
+    },
+    "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-export-20260908-r1\\orthotropic_export_r1.sim",
+    "source_file_unchanged": true,
+    "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-export-20260908-r1\\orthotropic_export_r1.sim",
+    "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-export-20260908-r1\\orthotropic_export_r1.sim",
+    "shared_fem_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-conduction-20260908-r1\\OrthotropicR1_mesh.fem",
+    "independent_geometry_variant": false,
+    "saved": true,
+    "result_freshness": "not_verified",
+    "next_step": "Reacquire document IDs. Duplicate and reassociate FEM/CAD before changing shared geometry or mesh."
+  },
+  "export": {
+    "input_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-export-20260908-r1\\orthotropic_export_r1-Conduction.xml",
+    "input_identity": {
+      "sha256": "a0569af2219e7f9e1cafc95a031923afc27eda5df2102600084a6dc55b1f490a",
+      "xml_content_sha256": "4a7c05f16f712be2815f2a14c83b862ed5c8e3c172e4219d98124894bdca5744",
+      "bytes": 282102,
+      "canonicalization": "xml_c14n2_no_comments"
+    },
+    "validation": {
+      "state": "well_formed",
+      "step_definitions": 1,
+      "mesh_counts": {
+        "elements": 2658,
+        "nodes": 756,
+        "element_sets": 1,
+        "scope": "observed_multiphysics_xml_layout"
+      },
+      "solve_readiness": "not_established"
+    },
+    "artifacts": [
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-export-20260908-r1\\orthotropic_export_r1-Conduction.map",
+        "bytes": 18542
+      },
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-export-20260908-r1\\orthotropic_export_r1-Conduction.xml",
+        "bytes": 282102
+      }
+    ],
+    "translator_reports": [],
+    "solver": "NX MULTIPHYSICS",
+    "analysis_type": "Thermal",
+    "solution": "Conduction",
+    "source_sim": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-export-20260908-r1\\orthotropic_export_r1.sim",
+    "source_modified": false,
+    "solver_launched": false,
+    "solve_readiness": "not_established",
+    "scope": "Native thermal/flow input export, not a solve or convergence check"
+  },
+  "material_sections": {
+    "MaterialList": "<MaterialList>\n    <Material uid=\"1\" uname=\"BENCHMARK_K200::OrthotropicR1_mesh::[1]\" type=\"ISO\">\n      <Property name=\"Dependency Control\">\n        <Value>0</Value>\n      </Property>\n      <Property name=\"Mass Density Constant\" type=\"Constant\">\n        <Value>  2.7000000E-06</Value>\n      </Property>\n      <Property name=\"Mass Density Temperature\" type=\"Constant\">\n        <Value>  0.0000000E+00</Value>\n      </Property>\n      <Property name=\"Specific Heat\" type=\"Constant\">\n        <Value>  9.0000000E+08</Value>\n      </Property>\n      <Property name=\"Thermal Conductivity\" type=\"Constant\">\n        <Value>  2.0000000E+05</Value>\n      </Property>\n      <Property name=\"Latent Heat\" type=\"Constant\">\n        <Value>  0.0000000E+00</Value>\n      </Property>\n      <Property name=\"Phase Temperature\" type=\"Constant\">\n        <Value>  0.0000000E+00</Value>\n      </Property>\n      <Property name=\"Phase Temperature Range\" type=\"Constant\">\n        <Value>  0.0000000E+00</Value>\n      </Property>\n      <Property name=\"Phase Specific Heat\" type=\"Constant\">\n        <Value>  0.0000000E+00</Value>\n      </Property>\n      <Property name=\"IR Scattering\" type=\"Constant\">\n        <Value>  0.0000000E+00</Value>\n      </Property>\n      <Property name=\"IR Extinction\" type=\"Constant\">\n        <Value>  0.0000000E+00</Value>\n      </Property>\n      <Property name=\"Solar Scattering\" type=\"Constant\">\n        <Value>  0.0000000E+00</Value>\n      </Property>\n      <Property name=\"Solar Extinction\" type=\"Constant\">\n        <Value>  0.0000000E+00</Value>\n      </Property>\n      <Property name=\"Electrical Resistivity\" type=\"Constant\">\n        <Value>  0.0000000E+00</Value>\n      </Property>\n    </Material>\n    <Material uid=\"2\" uname=\"ORTHOTROPIC_STUDY_12_7_04::OrthotropicR1_mesh::[2]\" type=\"ORTHO\">\n      <Property name=\"Mass Density\" type=\"Constant\">\n        <Value>  1.9000000E-06</Value>\n      </Property>\n      <Property name=\"Specific Heat\" type=\"Constant\">\n        <Value>  9.0000000E+08</Value>\n      </Property>\n      <Property name=\"Thermal Conductivity X\" type=\"Constant\">\n        <Value>  1.2000000E+04</Value>\n      </Property>\n      <Property name=\"Thermal Conductivity Y\" type=\"Constant\">\n        <Value>  7.0000000E+03</Value>\n      </Property>\n      <Property name=\"Thermal Conductivity Z\" type=\"Constant\">\n        <Value>  4.0000000E+02</Value>\n      </Property>\n      <Property name=\"Latent Heat\" type=\"Constant\">\n        <Value>  0.0000000E+00</Value>\n      </Property>\n      <Property name=\"Phase Temperature\" type=\"Constant\">\n        <Value>  0.0000000E+00</Value>\n      </Property>\n      <Property name=\"Phase Temperature Range\" type=\"Constant\">\n        <Value>  0.0000000E+00</Value>\n      </Property>\n      <Property name=\"Phase Specific Heat\" type=\"Constant\">\n        <Value>  0.0000000E+00</Value>\n      </Property>\n      <Property name=\"IR Scattering\" type=\"Constant\">\n        <Value>  0.0000000E+00</Value>\n      </Property>\n      <Property name=\"IR Extinction\" type=\"Constant\">\n        <Value>  0.0000000E+00</Value>\n      </Property>\n      <Property name=\"Solar Scattering\" type=\"Constant\">\n        <Value>  0.0000000E+00</Value>\n      </Property>\n      <Property name=\"Solar Extinction\" type=\"Constant\">\n        <Value>  0.0000000E+00</Value>\n      </Property>\n      <Property name=\"Electrical Resistivity\" type=\"Constant\">\n        <Value>  0.0000000E+00</Value>\n      </Property>\n    </Material>\n  </MaterialList>\n  ",
+    "PhysicalPropertyTableList": "<PhysicalPropertyTableList>\n    <PhysicalPropertyTable uid=\"1\" uname=\"Solid1::OrthotropicR1_mesh::[1]\" type=\"Solid\">\n      <Property name=\"Material\">\n        <Value>2</Value>\n      </Property>\n      <Property name=\"Material Orientation Type\">\n        <Value>0</Value>\n      </Property>\n      <Property name=\"Radiation\">\n        <Value>1</Value>\n      </Property>\n      <Property name=\"Optical Properties\">\n        <Value>-1</Value>\n      </Property>\n    </PhysicalPropertyTable>\n  </PhysicalPropertyTableList>\n  "
+  },
+  "solver_launched": false,
+  "operation_id": "op_075795e00db049f08b28a663677cc28d",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

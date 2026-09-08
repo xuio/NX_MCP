@@ -1,0 +1,251 @@
+{
+  "transport": "new MCP stdio client after launch client disconnected",
+  "responses": {
+    "status_observations": [
+      {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"status\": \"success\", \"warnings\": [], \"units\": null, \"job_id\": \"coupled-external-diagnostic-r1\", \"request_sha256\": \"6eba674afe6bec893c2af1582dce2e8e89f7d5d66f25e326d2f0ff11d5e187e4\", \"state\": \"solver_exited\", \"revision\": 3, \"process_binding_revision\": null, \"launch_retry_allowed\": false, \"numerical_convergence\": \"not_established\", \"results_validated\": false, \"observed_at\": \"2026-09-08T17:51:34.480018+00:00\", \"observation_kind\": \"persisted_record\", \"live_process_state\": \"not_checked\", \"job_folder\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\simcenter-jobs\", \"observer\": {\"tracked_in_this_nx_process\": true, \"thread_alive\": false, \"log_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\simcenter-jobs\\\\coupled-external-diagnostic-r1\\\\observer-4e2a7f7b46fc4ccfb5dee82a06eacae3.log\"}, \"evidence\": {\"gate_released\": false, \"input_comparison\": {\"after\": {\"bytes\": 65102, \"canonicalization\": \"xml_c14n2_no_comments\", \"sha256\": \"309c43743ce4e36981da0c9bd1756162baf7a56823767ab09cdd5c95bc3865cc\", \"xml_content_sha256\": \"8ae3c9b41e71dad0951ca3ef97635153d98403f5304f154240a1e79170de74d0\"}, \"before\": {\"bytes\": 65102, \"canonicalization\": \"xml_c14n2_no_comments\", \"sha256\": \"e404dd3c41c24f6ec1ea756aeede6c2f9fb8aa0b7558d7a0757e540b52f988d1\", \"xml_content_sha256\": \"8ae3c9b41e71dad0951ca3ef97635153d98403f5304f154240a1e79170de74d0\"}, \"byte_identical\": false, \"scope\": \"input XML only; result association and solver outcome require separate verification\", \"xml_content_identical\": true}, \"log\": {\"bytes\": 54040, \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\E-external-diagnostic-20260908-r1\\\\coupled_external_diagnostic_r1-Coupled_benchmark.log\", \"sha256\": \"1baffdd2053319b1ecc7f77246163374fff90c07379a4197a109712289dde3a5\"}, \"model_result_freshness\": \"not_established\", \"numerical_convergence\": \"not_established\", \"observer_adapter\": 1, \"process_exit_code\": null, \"process_job_binding\": \"not_established\", \"result\": {\"bytes\": 31968, \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\E-external-diagnostic-20260908-r1\\\\coupled_external_diagnostic_r1-Coupled_benchmark.bun\", \"sha256\": \"6c912573a01abaa973e1b2565f034ddc6972ba73fe1742f05adc5fcae55845ea\"}, \"solver_process_observation\": {\"exclusion\": \"point-in-time process snapshot; not an atomic lock\", \"scope\": \"host-wide known solver/translator names\", \"solver_processes\": 0}, \"terminal_basis\": \"fresh owned completion log and native result, matching canonical input, known solver processes absent\"}, \"process_binding_evidence\": null, \"operation_id\": \"op_b655fa1d1fa84d2fbcfe374807bc4373\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": {
+          "status": "success",
+          "warnings": [],
+          "units": null,
+          "job_id": "coupled-external-diagnostic-r1",
+          "request_sha256": "6eba674afe6bec893c2af1582dce2e8e89f7d5d66f25e326d2f0ff11d5e187e4",
+          "state": "solver_exited",
+          "revision": 3,
+          "process_binding_revision": null,
+          "launch_retry_allowed": false,
+          "numerical_convergence": "not_established",
+          "results_validated": false,
+          "observed_at": "2026-09-08T17:51:34.480018+00:00",
+          "observation_kind": "persisted_record",
+          "live_process_state": "not_checked",
+          "job_folder": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs",
+          "observer": {
+            "tracked_in_this_nx_process": true,
+            "thread_alive": false,
+            "log_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs\\coupled-external-diagnostic-r1\\observer-4e2a7f7b46fc4ccfb5dee82a06eacae3.log"
+          },
+          "evidence": {
+            "gate_released": false,
+            "input_comparison": {
+              "after": {
+                "bytes": 65102,
+                "canonicalization": "xml_c14n2_no_comments",
+                "sha256": "309c43743ce4e36981da0c9bd1756162baf7a56823767ab09cdd5c95bc3865cc",
+                "xml_content_sha256": "8ae3c9b41e71dad0951ca3ef97635153d98403f5304f154240a1e79170de74d0"
+              },
+              "before": {
+                "bytes": 65102,
+                "canonicalization": "xml_c14n2_no_comments",
+                "sha256": "e404dd3c41c24f6ec1ea756aeede6c2f9fb8aa0b7558d7a0757e540b52f988d1",
+                "xml_content_sha256": "8ae3c9b41e71dad0951ca3ef97635153d98403f5304f154240a1e79170de74d0"
+              },
+              "byte_identical": false,
+              "scope": "input XML only; result association and solver outcome require separate verification",
+              "xml_content_identical": true
+            },
+            "log": {
+              "bytes": 54040,
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-diagnostic-20260908-r1\\coupled_external_diagnostic_r1-Coupled_benchmark.log",
+              "sha256": "1baffdd2053319b1ecc7f77246163374fff90c07379a4197a109712289dde3a5"
+            },
+            "model_result_freshness": "not_established",
+            "numerical_convergence": "not_established",
+            "observer_adapter": 1,
+            "process_exit_code": null,
+            "process_job_binding": "not_established",
+            "result": {
+              "bytes": 31968,
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-diagnostic-20260908-r1\\coupled_external_diagnostic_r1-Coupled_benchmark.bun",
+              "sha256": "6c912573a01abaa973e1b2565f034ddc6972ba73fe1742f05adc5fcae55845ea"
+            },
+            "solver_process_observation": {
+              "exclusion": "point-in-time process snapshot; not an atomic lock",
+              "scope": "host-wide known solver/translator names",
+              "solver_processes": 0
+            },
+            "terminal_basis": "fresh owned completion log and native result, matching canonical input, known solver processes absent"
+          },
+          "process_binding_evidence": null,
+          "operation_id": "op_b655fa1d1fa84d2fbcfe374807bc4373",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "mutation_outcome": "not_applicable"
+        },
+        "isError": false
+      }
+    ],
+    "release": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"job_id\": \"coupled-external-diagnostic-r1\", \"released\": true, \"replayed\": false, \"receipt\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\simcenter-jobs\\\\coupled-external-diagnostic-r1\\\\launch-gate-release.json\", \"result_files_preserved\": true, \"job_state_changed\": false, \"old_job_relaunch_allowed\": false, \"operation_id\": \"coupled-external-diagnostic-release-r1\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "job_id": "coupled-external-diagnostic-r1",
+        "released": true,
+        "replayed": false,
+        "receipt": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs\\coupled-external-diagnostic-r1\\launch-gate-release.json",
+        "result_files_preserved": true,
+        "job_state_changed": false,
+        "old_job_relaunch_allowed": false,
+        "operation_id": "coupled-external-diagnostic-release-r1",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed"
+      },
+      "isError": false
+    },
+    "audit": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"job_id\": \"coupled-external-diagnostic-r1\", \"request_sha256\": \"6eba674afe6bec893c2af1582dce2e8e89f7d5d66f25e326d2f0ff11d5e187e4\", \"persisted_job_state\": \"solver_exited\", \"log_name\": \"coupled_external_diagnostic_r1-Coupled_benchmark.log\", \"log_sha256\": \"1baffdd2053319b1ecc7f77246163374fff90c07379a4197a109712289dde3a5\", \"observed_bytes\": 54040, \"snapshot_semantics\": \"bytes read; file may still be growing\", \"format\": \"observed_simcenter_2606_steady_coupled\", \"completion_marker_present\": true, \"failure_evidence\": {\"state\": \"unknown\", \"stage\": \"unknown\", \"translator_fatal_codes\": [], \"fatal_abort_reported\": false, \"numerical_convergence\": \"not_established\", \"results_validated\": false, \"next_action\": \"Inspect job process status, residuals and result validation before classifying.\"}, \"residual_threshold\": 0.0002, \"last_iteration\": 8, \"final_equations_complete\": true, \"final_residual_criteria_met\": null, \"reported_imbalances\": {\"momentum\": {\"value\": 0.00231, \"units\": \"%\", \"definition\": \"native reported imbalance; denominator not independently established\"}, \"mass\": {\"value\": 0.4066, \"units\": \"%\", \"definition\": \"native reported imbalance; denominator not independently established\"}, \"energy\": {\"value\": 0.005482, \"units\": \"%\", \"definition\": \"native reported imbalance; denominator not independently established\"}}, \"boundary_flows\": [{\"name\": \"Coupled Inlet\", \"volume_flow_m3_s\": 5e-05, \"mass_flow_kg_s\": 6.472e-05, \"positive_direction\": \"into_domain\"}, {\"name\": \"Coupled Opening\", \"volume_flow_m3_s\": -5e-05, \"mass_flow_kg_s\": -6.472e-05, \"positive_direction\": \"into_domain\"}], \"fan_operating_points\": {\"state\": \"not_present\", \"fans\": []}, \"coupled_summary\": {\"ambient_temperature_degC\": 0.0, \"temperature_summaries\": [{\"maximum\": 22.13, \"minimum\": 20.03, \"average\": 20.9, \"quantity\": \"Fluid Temperature\", \"units\": \"degC\", \"association\": \"native summary row; region identity not established\"}, {\"maximum\": 43.2, \"minimum\": 43.19, \"average\": 43.2, \"quantity\": \"Solid Temperature\", \"units\": \"degC\", \"association\": \"native summary row; region identity not established\"}, {\"maximum\": 43.2, \"minimum\": 43.19, \"average\": 43.2, \"quantity\": \"Solid Temperature\", \"units\": \"degC\", \"association\": \"native summary row; region identity not established\"}], \"applied_solid_power_W\": 0.09999999999999999, \"heat_to_fluid_W\": 0.09999999999999999, \"maximum_coupled_temperature_change_degC\": 7.248e-05, \"normalized_coupled_heat_imbalance\": 3.111e-06, \"iteration_limit_reached_without_convergence\": false, \"numerical_convergence\": \"not_established\", \"warnings\": {\"coincident_thermal_nodes\": true, \"no_interior_pressure_anchor\": true}, \"scope\": \"Rounded native log summaries; not independent field extraction, complete criteria validation or mesh acceptance\"}, \"rounded_boundary_mass_sum_kg_s\": 0.0, \"rounding_warning\": \"Boundary values are rounded in the log; a zero sum does not establish zero imbalance\", \"numerical_convergence\": \"not_established\", \"results_validated\": false, \"scope\": \"Log observations only; input/job association, all configured criteria and mesh sensitivity require separate audits\", \"residual_history\": [{\"iteration\": 1, \"region\": \"Flow Enclosure\", \"equation\": \"U - Mom\", \"linear_iterations\": 1, \"linear_residual\": 1.339e-05, \"rate\": 0.0, \"rate_overflow\": false, \"residual\": 41.75, \"native_message\": \"--\"}], \"history_total\": 40, \"next_offset\": 1, \"job_state_changed\": false, \"operation_id\": \"op_875afbe52ba84c54be27c028027caaf2\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "job_id": "coupled-external-diagnostic-r1",
+        "request_sha256": "6eba674afe6bec893c2af1582dce2e8e89f7d5d66f25e326d2f0ff11d5e187e4",
+        "persisted_job_state": "solver_exited",
+        "log_name": "coupled_external_diagnostic_r1-Coupled_benchmark.log",
+        "log_sha256": "1baffdd2053319b1ecc7f77246163374fff90c07379a4197a109712289dde3a5",
+        "observed_bytes": 54040,
+        "snapshot_semantics": "bytes read; file may still be growing",
+        "format": "observed_simcenter_2606_steady_coupled",
+        "completion_marker_present": true,
+        "failure_evidence": {
+          "state": "unknown",
+          "stage": "unknown",
+          "translator_fatal_codes": [],
+          "fatal_abort_reported": false,
+          "numerical_convergence": "not_established",
+          "results_validated": false,
+          "next_action": "Inspect job process status, residuals and result validation before classifying."
+        },
+        "residual_threshold": 0.0002,
+        "last_iteration": 8,
+        "final_equations_complete": true,
+        "final_residual_criteria_met": null,
+        "reported_imbalances": {
+          "momentum": {
+            "value": 0.00231,
+            "units": "%",
+            "definition": "native reported imbalance; denominator not independently established"
+          },
+          "mass": {
+            "value": 0.4066,
+            "units": "%",
+            "definition": "native reported imbalance; denominator not independently established"
+          },
+          "energy": {
+            "value": 0.005482,
+            "units": "%",
+            "definition": "native reported imbalance; denominator not independently established"
+          }
+        },
+        "boundary_flows": [
+          {
+            "name": "Coupled Inlet",
+            "volume_flow_m3_s": 5e-05,
+            "mass_flow_kg_s": 6.472e-05,
+            "positive_direction": "into_domain"
+          },
+          {
+            "name": "Coupled Opening",
+            "volume_flow_m3_s": -5e-05,
+            "mass_flow_kg_s": -6.472e-05,
+            "positive_direction": "into_domain"
+          }
+        ],
+        "fan_operating_points": {
+          "state": "not_present",
+          "fans": []
+        },
+        "coupled_summary": {
+          "ambient_temperature_degC": 0.0,
+          "temperature_summaries": [
+            {
+              "maximum": 22.13,
+              "minimum": 20.03,
+              "average": 20.9,
+              "quantity": "Fluid Temperature",
+              "units": "degC",
+              "association": "native summary row; region identity not established"
+            },
+            {
+              "maximum": 43.2,
+              "minimum": 43.19,
+              "average": 43.2,
+              "quantity": "Solid Temperature",
+              "units": "degC",
+              "association": "native summary row; region identity not established"
+            },
+            {
+              "maximum": 43.2,
+              "minimum": 43.19,
+              "average": 43.2,
+              "quantity": "Solid Temperature",
+              "units": "degC",
+              "association": "native summary row; region identity not established"
+            }
+          ],
+          "applied_solid_power_W": 0.09999999999999999,
+          "heat_to_fluid_W": 0.09999999999999999,
+          "maximum_coupled_temperature_change_degC": 7.248e-05,
+          "normalized_coupled_heat_imbalance": 3.111e-06,
+          "iteration_limit_reached_without_convergence": false,
+          "numerical_convergence": "not_established",
+          "warnings": {
+            "coincident_thermal_nodes": true,
+            "no_interior_pressure_anchor": true
+          },
+          "scope": "Rounded native log summaries; not independent field extraction, complete criteria validation or mesh acceptance"
+        },
+        "rounded_boundary_mass_sum_kg_s": 0.0,
+        "rounding_warning": "Boundary values are rounded in the log; a zero sum does not establish zero imbalance",
+        "numerical_convergence": "not_established",
+        "results_validated": false,
+        "scope": "Log observations only; input/job association, all configured criteria and mesh sensitivity require separate audits",
+        "residual_history": [
+          {
+            "iteration": 1,
+            "region": "Flow Enclosure",
+            "equation": "U - Mom",
+            "linear_iterations": 1,
+            "linear_residual": 1.339e-05,
+            "rate": 0.0,
+            "rate_overflow": false,
+            "residual": 41.75,
+            "native_message": "--"
+          }
+        ],
+        "history_total": 40,
+        "next_offset": 1,
+        "job_state_changed": false,
+        "operation_id": "op_875afbe52ba84c54be27c028027caaf2",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "not_applicable"
+      },
+      "isError": false
+    }
+  }
+}

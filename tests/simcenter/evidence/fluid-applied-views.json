@@ -1,0 +1,117 @@
+{
+  "status": "success",
+  "stock": [
+    {
+      "name": "Air",
+      "values": {
+        "Category": [
+          "OTHER",
+          "Category"
+        ],
+        "SubCategory": [
+          "Gas",
+          "Sub-Category"
+        ],
+        "SCThermalFlowAppliedViews": [
+          "ThermalFlowFluid",
+          "Simcenter3D Thermal Flow Applied Views"
+        ]
+      }
+    },
+    {
+      "name": "Water",
+      "values": {
+        "Category": [
+          "OTHER",
+          "Category"
+        ],
+        "SubCategory": [
+          "Liquid",
+          "Sub-Category"
+        ],
+        "SCThermalFlowAppliedViews": [
+          "ThermalFlowFluid",
+          "Simcenter3D Thermal Flow Applied Views"
+        ]
+      }
+    },
+    {
+      "name": "Helium_Gas",
+      "values": {
+        "Category": [
+          "OTHER",
+          "Category"
+        ],
+        "SubCategory": [
+          "Gas",
+          "Sub-Category"
+        ],
+        "SCThermalFlowAppliedViews": [
+          "ThermalFlowFluid",
+          "Simcenter3D Thermal Flow Applied Views"
+        ]
+      }
+    }
+  ],
+  "custom": [
+    {
+      "name": "MaterialType",
+      "native_type": "3",
+      "units": null,
+      "value": 4
+    },
+    {
+      "name": "Category",
+      "native_type": "1",
+      "units": null,
+      "value": ""
+    },
+    {
+      "name": "SubCategory",
+      "native_type": "1",
+      "units": null,
+      "value": ""
+    },
+    {
+      "name": "DensityControl",
+      "native_type": "3",
+      "units": null,
+      "value": 0
+    },
+    {
+      "name": "MassDensity",
+      "native_type": "6",
+      "units": "KilogramPerCubicMeter",
+      "expression": "1.2",
+      "unit_symbol": "kg/m^3",
+      "representation": "expression"
+    },
+    {
+      "name": "MolarMass",
+      "native_type": "4",
+      "units": "Kilogram",
+      "value": -777777.0,
+      "unit_symbol": "kg"
+    },
+    {
+      "name": "GasConstant",
+      "native_type": "4",
+      "units": "SpecificHeat_Metric2",
+      "value": -777777.0,
+      "unit_symbol": "J/kg-dK"
+    },
+    {
+      "name": "SCThermalFlowAppliedViews",
+      "native_type": "0",
+      "units": null,
+      "inspection_status": "unsupported_property_type"
+    }
+  ],
+  "parts_unchanged": true,
+  "solver_launched": false,
+  "operation_id": "op_a809337d9a9743979834c10106825d4d",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

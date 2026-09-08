@@ -1,0 +1,103 @@
+{
+  "scope": "NX 2606 constant-property isolated 100x10x10 mm bars, k=200 W/(m K), one end fixed at 20 C; no product validation",
+  "cases": [
+    {
+      "kind": "flux",
+      "job_id": "surface-flux-numerical-r1",
+      "minimum_degC": 20.0,
+      "maximum_degC": 24.999980926513672,
+      "expected_rise_K": 5.0,
+      "actual_rise_K": 4.999980926513672,
+      "relative_rise_error": 3.814697265625e-06,
+      "rise_tolerance": 0.01,
+      "fixed_boundary_tolerance_K": 0.001,
+      "temperature_check_passed": true,
+      "tolerance_basis": "1% comparison on linear TET benchmark; separate from mesh refinement convergence",
+      "log_sha256": "370759a58f7e23fbf0cab0a477234efbb4ba686ffe3cb2bef9b523d957167971",
+      "receipt_sha256": "a0e10bb235cadaefb7095a039765bc9b7d5f40483026f3c1b9e22dc26d6717f3",
+      "exported_units": {
+        "system": "Millimeters",
+        "length_conversion_factor": 1000,
+        "force_conversion_factor": 1000
+      },
+      "power_conversion": "1 W = 1000000 mN-mm/s, from exported length/force factors",
+      "expected_applied_power_W": 1.0,
+      "thermal_summaries": {
+        "summaries": [
+          {
+            "ordinal": 0,
+            "values": {
+              "heat_flow_into_sinks": 1000000.0,
+              "heat_flow_from_nonfluid_sinks": 1e-10,
+              "heat_load_into_elements": 1000000.0,
+              "heat_load_into_sinks": 0.0,
+              "heat_flow_from_fluid_sinks": 0.0,
+              "reported_deviation": 8.516
+            },
+            "issues": [],
+            "missing_fields": [],
+            "state": "complete"
+          }
+        ],
+        "power_unit": "mN-mm/s",
+        "unit_source": "caller_verified",
+        "time_association": "not_established",
+        "conservation_accepted": false,
+        "deviation_semantics": "native reported value; global versus local meaning not established",
+        "scope": "Observed TMG aggregate summaries; named sink and field integrals require separate inspection"
+      },
+      "heat_balance_interpretation": "Rounded summary values; reported deviation is retained, not treated as exact global conservation",
+      "mesh_convergence": "not_established",
+      "complete_result_freshness": "not_established"
+    },
+    {
+      "kind": "volume",
+      "job_id": "volume-generation-numerical-r1",
+      "minimum_degC": 20.0,
+      "maximum_degC": 22.500459671020508,
+      "expected_rise_K": 2.5,
+      "actual_rise_K": 2.500459671020508,
+      "relative_rise_error": 0.000183868408203125,
+      "rise_tolerance": 0.01,
+      "fixed_boundary_tolerance_K": 0.001,
+      "temperature_check_passed": true,
+      "tolerance_basis": "1% comparison on linear TET benchmark; separate from mesh refinement convergence",
+      "log_sha256": "f3a41f56db63c41e8cf1fa7bb88c2b7305c2ed854dbc47086a3525b8f0236b12",
+      "receipt_sha256": "04433bfd0e13659dd6603eefeff53872709e735838b7e594986beca2e877cdaf",
+      "exported_units": {
+        "system": "Millimeters",
+        "length_conversion_factor": 1000,
+        "force_conversion_factor": 1000
+      },
+      "power_conversion": "1 W = 1000000 mN-mm/s, from exported length/force factors",
+      "expected_applied_power_W": 1.0,
+      "thermal_summaries": {
+        "summaries": [
+          {
+            "ordinal": 0,
+            "values": {
+              "heat_flow_into_sinks": 1000000.0,
+              "heat_flow_from_nonfluid_sinks": 1e-10,
+              "heat_load_into_elements": 1000000.0,
+              "heat_load_into_sinks": 0.0,
+              "heat_flow_from_fluid_sinks": 0.0,
+              "reported_deviation": 0.04962
+            },
+            "issues": [],
+            "missing_fields": [],
+            "state": "complete"
+          }
+        ],
+        "power_unit": "mN-mm/s",
+        "unit_source": "caller_verified",
+        "time_association": "not_established",
+        "conservation_accepted": false,
+        "deviation_semantics": "native reported value; global versus local meaning not established",
+        "scope": "Observed TMG aggregate summaries; named sink and field integrals require separate inspection"
+      },
+      "heat_balance_interpretation": "Rounded summary values; reported deviation is retained, not treated as exact global conservation",
+      "mesh_convergence": "not_established",
+      "complete_result_freshness": "not_established"
+    }
+  ]
+}

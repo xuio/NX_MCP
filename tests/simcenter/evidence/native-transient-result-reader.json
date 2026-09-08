@@ -1,0 +1,74 @@
+{
+  "benchmark": "C",
+  "state": "not_accepted",
+  "native_result_readback": [
+    {
+      "values": [
+        {
+          "kind": "time",
+          "native_type": "0",
+          "value": 0.0,
+          "native_unit": "Second"
+        }
+      ],
+      "temperature": {
+        "field": "Temperature - Nodal",
+        "loadcase_index": 0,
+        "iteration_index": 0,
+        "units": "degC",
+        "minimum": 20.0,
+        "maximum": 20.0,
+        "native_location": "0",
+        "minimum_native_id": 246,
+        "maximum_native_id": 246,
+        "minimum_native_sub_id": 0,
+        "maximum_native_sub_id": 0,
+        "node_count": 246,
+        "result_freshness": "not_verified",
+        "reference_lifetime": "indices apply only to this result revision"
+      }
+    },
+    {
+      "values": [
+        {
+          "kind": "time",
+          "native_type": "0",
+          "value": 2025.0,
+          "native_unit": "Second"
+        }
+      ],
+      "temperature": {
+        "field": "Temperature - Nodal",
+        "loadcase_index": 1,
+        "iteration_index": 0,
+        "units": "degC",
+        "minimum": 36.01469421386719,
+        "maximum": 36.01931381225586,
+        "native_location": "0",
+        "minimum_native_id": 2,
+        "maximum_native_id": 201,
+        "minimum_native_sub_id": 0,
+        "maximum_native_sub_id": 0,
+        "node_count": 246,
+        "result_freshness": "not_verified",
+        "reference_lifetime": "indices apply only to this result revision"
+      }
+    }
+  ],
+  "analytical_final_C": 36.55436755001524,
+  "maximum_temperature_error_normalized_by_steady_rise": 0.03210322426556303,
+  "tolerance": 0.02,
+  "result_sha256": "bebf62b97469701b60d5529ea87359c8b3eb6a45cccd36a04a1c8f1549608dc0",
+  "output_coverage": "initial and final only; full history unavailable in this run",
+  "remaining": [
+    "time-control refinement",
+    "time-history output",
+    "mesh refinement",
+    "energy balance"
+  ],
+  "reader_validation": {
+    "explicit_loadcase_selection": "native_verified",
+    "iteration_times_and_summary_distinction": "native_verified",
+    "generic_freshness_protection": "not_implemented"
+  }
+}

@@ -1,0 +1,466 @@
+{
+  "compact": {
+    "status": "success",
+    "warnings": [],
+    "units": "mm",
+    "simulation_objects": [
+      {
+        "object": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_d89d0e6da95543278ae42dd1b420da27",
+          "kind": "simulation_object",
+          "name": "Duct Inlet",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_abf19f0b5631403fb507517856de3740",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "abf19f0b5631403fb507517856de3740",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-input-export-20260908-r2\\flow_input_r2.sim",
+          "journal_id": "SimulationObject[Duct Inlet]",
+          "display_name": "Duct Inlet"
+        },
+        "native_type": "SimSimulationObject",
+        "target_set_count": 1,
+        "descriptor": "Inlet",
+        "fan_binding": {
+          "mode": 5,
+          "field": {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_17b0591f80f84a989f413f2c8efb55ad",
+            "kind": "simulation_field",
+            "name": "Synthetic mode probe",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_abf19f0b5631403fb507517856de3740",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "abf19f0b5631403fb507517856de3740",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-input-export-20260908-r2\\flow_input_r2.sim",
+            "journal_id": "Synthetic mode probe",
+            "display_name": "Synthetic mode probe"
+          },
+          "scale_factor": 1.0,
+          "interpretation": "mode 5 static fan inlet verified for NX 2606 Flow only"
+        },
+        "provenance": null,
+        "coefficient_basis": null,
+        "energy_accounting": null
+      }
+    ],
+    "total": 2,
+    "next_offset": 1,
+    "scope": "SIM simulation_objects collection only; other boundary collections are separate",
+    "operation_id": "op_7e4cd2b2e2c34c279b03c9006fffdc11",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "not_applicable"
+  },
+  "rows": [
+    {
+      "object": {
+        "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_d89d0e6da95543278ae42dd1b420da27",
+        "kind": "simulation_object",
+        "name": "Duct Inlet",
+        "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_abf19f0b5631403fb507517856de3740",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "generation_id": "abf19f0b5631403fb507517856de3740",
+        "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-input-export-20260908-r2\\flow_input_r2.sim",
+        "journal_id": "SimulationObject[Duct Inlet]",
+        "display_name": "Duct Inlet"
+      },
+      "native_type": "SimSimulationObject",
+      "target_set_count": 1,
+      "descriptor": "Inlet",
+      "fan_binding": {
+        "mode": 5,
+        "field": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_17b0591f80f84a989f413f2c8efb55ad",
+          "kind": "simulation_field",
+          "name": "Synthetic mode probe",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_abf19f0b5631403fb507517856de3740",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "abf19f0b5631403fb507517856de3740",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-input-export-20260908-r2\\flow_input_r2.sim",
+          "journal_id": "Synthetic mode probe",
+          "display_name": "Synthetic mode probe"
+        },
+        "scale_factor": 1.0,
+        "interpretation": "mode 5 static fan inlet verified for NX 2606 Flow only"
+      },
+      "provenance": null,
+      "coefficient_basis": null,
+      "energy_accounting": null,
+      "properties": [
+        {
+          "name": "description",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "Mode Option",
+          "native_type": "3",
+          "units": null,
+          "value": 5
+        },
+        {
+          "name": "Velocity",
+          "native_type": "6",
+          "units": "MeterPerSecond",
+          "expression": "1.0",
+          "unit_symbol": "m/sec",
+          "representation": "expression"
+        },
+        {
+          "name": "Velocity Vector",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "Mass Flow",
+          "native_type": "6",
+          "units": "dimensionless",
+          "expression": "-777777",
+          "unit_symbol": null,
+          "representation": "expression"
+        },
+        {
+          "name": "Volume Flow",
+          "native_type": "6",
+          "units": "dimensionless",
+          "expression": "-777777",
+          "unit_symbol": null,
+          "representation": "expression"
+        },
+        {
+          "name": "Pressure Rise",
+          "native_type": "6",
+          "units": "dimensionless",
+          "expression": "-777777",
+          "unit_symbol": null,
+          "representation": "expression"
+        },
+        {
+          "name": "Fan Curve",
+          "native_type": "6",
+          "units": null,
+          "representation": "FieldTable",
+          "inspection_status": "unsupported_field_type"
+        },
+        {
+          "name": "Inlet Conditions",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "Pressure",
+          "native_type": "3",
+          "units": null,
+          "value": 1
+        },
+        {
+          "name": "Pressure Value",
+          "native_type": "4",
+          "units": "PressurePascals",
+          "value": 101325.0,
+          "unit_symbol": "Pa(N/m^2)"
+        },
+        {
+          "name": "Turbulence Characteristics Modeling Object",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "Head Loss",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "Heat Generated by Fan",
+          "native_type": "4",
+          "units": "HeatFlow_Metric2",
+          "value": 0.0,
+          "unit_symbol": "W"
+        },
+        {
+          "name": "Tracer Fluid",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Tracer Fluid List",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "Tracer Fluid Mass Fractions",
+          "native_type": "8",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "Mixture",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Mixture Mass Fractions",
+          "native_type": "8",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "Alignment",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Swirl",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Rotation Axis Option",
+          "native_type": "3",
+          "units": null,
+          "value": 5
+        },
+        {
+          "name": "Rotation Axis",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "Normal to Tangential Velocity Angle",
+          "native_type": "4",
+          "units": "Degrees",
+          "value": -777777.0,
+          "unit_symbol": "degrees"
+        },
+        {
+          "name": "Rotation Velocity",
+          "native_type": "4",
+          "units": "DegreesPerSecond",
+          "value": -777777.0,
+          "unit_symbol": "degrees/sec"
+        },
+        {
+          "name": "Alignment Vector",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "Controller Type",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Thermostat",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "Fan Speed Controller",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "Nominal Fan Speed",
+          "native_type": "4",
+          "units": "DegreesPerSecond",
+          "value": -777777.0,
+          "unit_symbol": "degrees/sec"
+        },
+        {
+          "name": "distributionType",
+          "native_type": "3",
+          "units": null,
+          "value": 32
+        }
+      ],
+      "target_sets": [
+        {
+          "index": 0,
+          "count": 1,
+          "native_slot_count": 1,
+          "empty_slot_count": 0,
+          "members": [
+            {
+              "native_type": "CAEFace",
+              "subtype": "0",
+              "sub_id": 0,
+              "face": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_6f59e5474a8948469ca5a4320fbca3e0",
+                "kind": "face",
+                "name": "HANDLE R-38138",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_abf19f0b5631403fb507517856de3740",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "abf19f0b5631403fb507517856de3740",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-input-export-20260908-r2\\flow_input_r2.sim",
+                "journal_id": "HANDLE R-38138",
+                "display_name": ""
+              }
+            }
+          ],
+          "truncated": false
+        }
+      ]
+    },
+    {
+      "object": {
+        "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_86d16e1914034b278afa521c67c425e6",
+        "kind": "simulation_object",
+        "name": "Duct Opening",
+        "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_abf19f0b5631403fb507517856de3740",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "generation_id": "abf19f0b5631403fb507517856de3740",
+        "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-input-export-20260908-r2\\flow_input_r2.sim",
+        "journal_id": "SimulationObject[Duct Opening]",
+        "display_name": "Duct Opening"
+      },
+      "native_type": "SimSimulationObject",
+      "target_set_count": 1,
+      "descriptor": "Opening",
+      "provenance": null,
+      "coefficient_basis": null,
+      "energy_accounting": null,
+      "properties": [
+        {
+          "name": "description",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "Inlet Conditions",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "Turbulence Characteristics Modeling Object",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "External Pressure Type",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Pressure",
+          "native_type": "3",
+          "units": null,
+          "value": 1
+        },
+        {
+          "name": "Pressure Value",
+          "native_type": "6",
+          "units": "PressurePascals",
+          "expression": "101325.0",
+          "unit_symbol": "Pa(N/m^2)",
+          "representation": "expression"
+        },
+        {
+          "name": "External Relative Pressure",
+          "native_type": "6",
+          "units": "PressurePascals",
+          "expression": "0.0",
+          "unit_symbol": "Pa(N/m^2)",
+          "representation": "expression"
+        },
+        {
+          "name": "Head Loss",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "Tracer Fluid",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Tracer Fluid List",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "Tracer Fluid Mass Fractions",
+          "native_type": "8",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "Mixture",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Mixture Mass Fractions",
+          "native_type": "8",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "Alignment",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Flow Direction Vector",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "distributionType",
+          "native_type": "3",
+          "units": null,
+          "value": 32
+        }
+      ],
+      "target_sets": [
+        {
+          "index": 0,
+          "count": 1,
+          "native_slot_count": 1,
+          "empty_slot_count": 0,
+          "members": [
+            {
+              "native_type": "CAEFace",
+              "subtype": "0",
+              "sub_id": 0,
+              "face": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_5c8aae8dfdcc413ebbee26aef6191b58",
+                "kind": "face",
+                "name": "HANDLE R-38155",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_abf19f0b5631403fb507517856de3740",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "abf19f0b5631403fb507517856de3740",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-input-export-20260908-r2\\flow_input_r2.sim",
+                "journal_id": "HANDLE R-38155",
+                "display_name": ""
+              }
+            }
+          ],
+          "truncated": false
+        }
+      ]
+    }
+  ],
+  "document_flags_preserved": true,
+  "active_document_restored": true
+}

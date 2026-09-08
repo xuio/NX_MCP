@@ -1,0 +1,412 @@
+{
+  "status": "success",
+  "properties": [
+    {
+      "name": "MaterialType",
+      "native_type": "3",
+      "units": null,
+      "value": 4
+    },
+    {
+      "name": "AltName",
+      "native_type": "1",
+      "units": null,
+      "value": ""
+    },
+    {
+      "name": "Category",
+      "native_type": "1",
+      "units": null,
+      "value": ""
+    },
+    {
+      "name": "SubCategory",
+      "native_type": "1",
+      "units": null,
+      "value": ""
+    },
+    {
+      "name": "Version",
+      "native_type": "1",
+      "units": null,
+      "value": ""
+    },
+    {
+      "name": "Description",
+      "native_type": "0",
+      "units": null,
+      "inspection_status": "unsupported_property_type"
+    },
+    {
+      "name": "DensityControl",
+      "native_type": "3",
+      "units": null,
+      "value": 0
+    },
+    {
+      "name": "MassDensity",
+      "native_type": "6",
+      "units": "KilogramPerCubicMeter",
+      "expression": "1.2",
+      "representation": "expression"
+    },
+    {
+      "name": "MassDensityComplex",
+      "native_type": "14",
+      "units": null,
+      "inspection_status": "unsupported_property_type"
+    },
+    {
+      "name": "MassDensityTempPress",
+      "native_type": "6",
+      "units": null,
+      "value": null
+    },
+    {
+      "name": "ElasticDependencyControl",
+      "native_type": "3",
+      "units": null,
+      "value": 0
+    },
+    {
+      "name": "AnisotropicElasticDependencyControl",
+      "native_type": "3",
+      "units": null,
+      "value": 0
+    },
+    {
+      "name": "StructuralDamping",
+      "native_type": "6",
+      "units": "dimensionless",
+      "expression": "-777777",
+      "representation": "expression"
+    },
+    {
+      "name": "BulkModulus",
+      "native_type": "6",
+      "units": "StressNewtonPerSquareMilliMeter",
+      "expression": "-777777",
+      "representation": "expression"
+    },
+    {
+      "name": "BulkModulusRatio",
+      "native_type": "6",
+      "units": "dimensionless",
+      "expression": "-777777",
+      "representation": "expression"
+    },
+    {
+      "name": "SpeedofSoundControl",
+      "native_type": "3",
+      "units": null,
+      "value": 0
+    },
+    {
+      "name": "SoundSpeed",
+      "native_type": "4",
+      "units": "MilliMeterPerSecond",
+      "value": -777777.0
+    },
+    {
+      "name": "SoundSpeedComplex",
+      "native_type": "14",
+      "units": null,
+      "inspection_status": "unsupported_property_type"
+    },
+    {
+      "name": "ThermalExpansionCoefficientType",
+      "native_type": "3",
+      "units": null,
+      "value": 1
+    },
+    {
+      "name": "ThermalExpansion",
+      "native_type": "6",
+      "units": "ThermalExpansion_Metric1",
+      "expression": "-777777",
+      "representation": "expression"
+    },
+    {
+      "name": "ThermalExpansionCoefficientControl2",
+      "native_type": "3",
+      "units": null,
+      "value": 0
+    },
+    {
+      "name": "ThermalConductivityControl",
+      "native_type": "3",
+      "units": null,
+      "value": 0
+    },
+    {
+      "name": "TempConductivityBehaviorType",
+      "native_type": "3",
+      "units": null,
+      "value": 0
+    },
+    {
+      "name": "ThermalConductivity",
+      "native_type": "6",
+      "units": "ThermalConductivity_Metric3",
+      "expression": "0.0257",
+      "representation": "expression"
+    },
+    {
+      "name": "DummyThermalConductivity1",
+      "native_type": "3",
+      "units": null,
+      "value": 0
+    },
+    {
+      "name": "DummyThermalConductivity2",
+      "native_type": "3",
+      "units": null,
+      "value": 0
+    },
+    {
+      "name": "DummyThermalConductivity3",
+      "native_type": "3",
+      "units": null,
+      "value": 0
+    },
+    {
+      "name": "DummyThermalConductivity4",
+      "native_type": "3",
+      "units": null,
+      "value": 0
+    },
+    {
+      "name": "ThermalConductivityTempPress",
+      "native_type": "6",
+      "units": null,
+      "value": null
+    },
+    {
+      "name": "CuringMatConductivityBehaviorType",
+      "native_type": "3",
+      "units": null,
+      "value": 0
+    },
+    {
+      "name": "ThermalConductivityTempDocTg",
+      "native_type": "6",
+      "units": "ThermalConductivity_Metric2",
+      "expression": "-777777",
+      "representation": "expression"
+    },
+    {
+      "name": "ThermalConductivityTempDocTg2",
+      "native_type": "6",
+      "units": "ThermalConductivity_Metric2",
+      "expression": "-777777",
+      "representation": "expression"
+    },
+    {
+      "name": "ThermalConductivityTempDocTg3",
+      "native_type": "6",
+      "units": "ThermalConductivity_Metric2",
+      "expression": "-777777",
+      "representation": "expression"
+    },
+    {
+      "name": "SpecificHeatControl",
+      "native_type": "3",
+      "units": null,
+      "value": 0
+    },
+    {
+      "name": "SpecificHeat",
+      "native_type": "6",
+      "units": "SpecificHeat_Metric2",
+      "expression": "1005.0",
+      "representation": "expression"
+    },
+    {
+      "name": "SpecificHeatTempPress",
+      "native_type": "6",
+      "units": null,
+      "value": null
+    },
+    {
+      "name": "SpecificHeatTempDocTg",
+      "native_type": "6",
+      "units": "SpecificHeat_Metric2",
+      "expression": "-777777",
+      "representation": "expression"
+    },
+    {
+      "name": "MolarMass",
+      "native_type": "4",
+      "units": "Kilogram",
+      "value": -777777.0
+    },
+    {
+      "name": "GasConstant",
+      "native_type": "4",
+      "units": "SpecificHeat_Metric2",
+      "value": -777777.0
+    },
+    {
+      "name": "DynamicViscosityControl",
+      "native_type": "3",
+      "units": null,
+      "value": 0
+    },
+    {
+      "name": "PressureCutoff",
+      "native_type": "4",
+      "units": "PressureNewtonPerSquareMilliMeter",
+      "value": 0.0
+    },
+    {
+      "name": "DynamicVisc",
+      "native_type": "6",
+      "units": "DynamicViscosity_PascalSecond",
+      "expression": "1.81e-05",
+      "representation": "expression"
+    },
+    {
+      "name": "DynamicViscTempPress",
+      "native_type": "6",
+      "units": null,
+      "value": null
+    },
+    {
+      "name": "CoatingsVisualizationColor",
+      "native_type": "8",
+      "units": null,
+      "inspection_status": "unsupported_property_type"
+    },
+    {
+      "name": "CoatingsStudioMaterialName",
+      "native_type": "1",
+      "units": null,
+      "value": ""
+    },
+    {
+      "name": "CrosshatchPattern",
+      "native_type": "1",
+      "units": null,
+      "value": ""
+    },
+    {
+      "name": "ConfigurableProperties",
+      "native_type": "1",
+      "units": null,
+      "value": ""
+    },
+    {
+      "name": "SCNastranAppliedViews",
+      "native_type": "0",
+      "units": null,
+      "inspection_status": "unsupported_property_type"
+    },
+    {
+      "name": "SCSamcefAppliedViews",
+      "native_type": "0",
+      "units": null,
+      "inspection_status": "unsupported_property_type"
+    },
+    {
+      "name": "SCThermalFlowAppliedViews",
+      "native_type": "0",
+      "units": null,
+      "inspection_status": "unsupported_property_type"
+    },
+    {
+      "name": "SCSpaceSystemsThermalAppliedViews",
+      "native_type": "0",
+      "units": null,
+      "inspection_status": "unsupported_property_type"
+    },
+    {
+      "name": "SCElectronicSystemCoolingAppliedViews",
+      "native_type": "0",
+      "units": null,
+      "inspection_status": "unsupported_property_type"
+    },
+    {
+      "name": "SCAcousticsBEMAppliedViews",
+      "native_type": "0",
+      "units": null,
+      "inspection_status": "unsupported_property_type"
+    },
+    {
+      "name": "SCAcousticsTransientBEMAppliedViews",
+      "native_type": "0",
+      "units": null,
+      "inspection_status": "unsupported_property_type"
+    },
+    {
+      "name": "SCRayAcousticsAppliedViews",
+      "native_type": "0",
+      "units": null,
+      "inspection_status": "unsupported_property_type"
+    },
+    {
+      "name": "SCNoiseVibrationAppliedViews",
+      "native_type": "0",
+      "units": null,
+      "inspection_status": "unsupported_property_type"
+    },
+    {
+      "name": "SCMagnetAppliedViews",
+      "native_type": "0",
+      "units": null,
+      "inspection_status": "unsupported_property_type"
+    },
+    {
+      "name": "AbaqusAppliedViews",
+      "native_type": "0",
+      "units": null,
+      "inspection_status": "unsupported_property_type"
+    },
+    {
+      "name": "AnsysAppliedViews",
+      "native_type": "0",
+      "units": null,
+      "inspection_status": "unsupported_property_type"
+    },
+    {
+      "name": "LSDynaAppliedViews",
+      "native_type": "0",
+      "units": null,
+      "inspection_status": "unsupported_property_type"
+    },
+    {
+      "name": "MotionAppliedViews",
+      "native_type": "0",
+      "units": null,
+      "inspection_status": "unsupported_property_type"
+    },
+    {
+      "name": "HFEMIDSAppliedViews",
+      "native_type": "0",
+      "units": null,
+      "inspection_status": "unsupported_property_type"
+    },
+    {
+      "name": "ModelingAppliedViews",
+      "native_type": "0",
+      "units": null,
+      "inspection_status": "unsupported_property_type"
+    },
+    {
+      "name": "SVSensingAppliedViews",
+      "native_type": "0",
+      "units": null,
+      "inspection_status": "unsupported_property_type"
+    }
+  ],
+  "provenance": "Assumed benchmark values near room temperature; constant density and transport properties, not measured product data. Solver control interpretation pending.",
+  "collector_count": 1,
+  "inherited": false,
+  "solver_control_semantics": "not_verified",
+  "saved": false,
+  "material_name": "Benchmark constant air",
+  "operation_id": "op_93c6184f4f9a443b87b361cc1b01d7ef",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

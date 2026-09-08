@@ -1,0 +1,36 @@
+{
+  "material": "Generic_air[2]",
+  "properties": {
+    "DENSITY": {
+      "intended": 1.2,
+      "translated": 1.2943761618099998,
+      "units": "kg/m3",
+      "relative_error": 0.07864680150833323,
+      "matches_relative_1e_6": false
+    },
+    "SPECIFIC_HEAT_P": {
+      "intended": 1005.0,
+      "translated": 1005.0,
+      "units": "J/(kg K)",
+      "relative_error": 0.0,
+      "matches_relative_1e_6": true
+    },
+    "DYNAMIC_VISCOSITY": {
+      "intended": 1.81e-05,
+      "translated": 1.80999997212e-05,
+      "units": "Pa s",
+      "relative_error": 1.540331492386523e-08,
+      "matches_relative_1e_6": true
+    },
+    "CONDUCTIVITY": {
+      "intended": 0.0257,
+      "translated": 0.0257000007629,
+      "units": "W/(m K)",
+      "relative_error": 2.9684824907294644e-08,
+      "matches_relative_1e_6": true
+    }
+  },
+  "all_properties_match": false,
+  "scope": "one constant liquid in the generic finned benchmark; not solve or physical acceptance",
+  "package_sha256": "f36e43cedbaf352cddb475fb98cf5c24d45fa87368faebaffc0ade248d7465bc"
+}

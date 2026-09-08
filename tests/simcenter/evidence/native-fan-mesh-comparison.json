@@ -1,0 +1,133 @@
+{
+  "scope": "Two-mesh native fan comparison; not a convergence pass",
+  "coarse": {
+    "size_mm": 5,
+    "elements": 3308,
+    "nodes": 939,
+    "summary": {
+      "fans": [
+        {
+          "name": "Duct Inlet",
+          "loss_coefficient": 0.0,
+          "pressure_rise_Pa": 0.4458,
+          "mass_flow_kg_s": 0.000266,
+          "pressure_convention": "unverified",
+          "volume_flow_m3_s": 0.00022170000000000002
+        }
+      ],
+      "boundaries": [
+        {
+          "name": "Duct Inlet",
+          "volume_flow_m3_s": 0.00022170000000000002,
+          "mass_flow_kg_s": 0.000266,
+          "positive_direction": "into_domain"
+        },
+        {
+          "name": "Duct Opening",
+          "volume_flow_m3_s": -0.00022170000000000002,
+          "mass_flow_kg_s": -0.000266,
+          "positive_direction": "into_domain"
+        }
+      ],
+      "native_pressure_unit": "mN/mm^2",
+      "precision": "rounded_native_log",
+      "identity": "display_names_only",
+      "engineering_accepted": false
+    }
+  },
+  "refined": {
+    "size_mm": 3,
+    "elements": 13397,
+    "nodes": 3200,
+    "summary": {
+      "fans": [
+        {
+          "name": "Duct Inlet",
+          "loss_coefficient": 0.0,
+          "pressure_rise_Pa": 0.4703,
+          "mass_flow_kg_s": 0.0002543,
+          "pressure_convention": "unverified",
+          "volume_flow_m3_s": 0.0002119
+        }
+      ],
+      "boundaries": [
+        {
+          "name": "Duct Inlet",
+          "volume_flow_m3_s": 0.0002119,
+          "mass_flow_kg_s": 0.0002542,
+          "positive_direction": "into_domain"
+        },
+        {
+          "name": "Duct Opening",
+          "volume_flow_m3_s": -0.0002119,
+          "mass_flow_kg_s": -0.0002543,
+          "positive_direction": "into_domain"
+        }
+      ],
+      "native_pressure_unit": "mN/mm^2",
+      "precision": "rounded_native_log",
+      "identity": "display_names_only",
+      "engineering_accepted": false
+    }
+  },
+  "flow_change_percent": -4.420387911592251,
+  "mass_imbalance_percent": 0.07751,
+  "momentum_imbalance_percent": 0.007027,
+  "elapsed_seconds": 26,
+  "mesh_convergence_established": false,
+  "job": {
+    "mesh_counts": {
+      "elements": 13397,
+      "nodes": 3200
+    },
+    "mesh_size_mm": 3.0,
+    "job_id": "cavity-fan-solve-04",
+    "state": "completed",
+    "deck_sha256": "dea83f70566fbcdc4fd11e27f9b2a28500d7da26983ab88aaaf67c3ec132360c",
+    "created_at": "2026-09-08T02:16:04.062567+00:00",
+    "iteration_limit": 1000,
+    "solver_launched": true,
+    "numerical_validation": "mesh_sensitivity_4_percent_not_converged",
+    "scope": "synthetic fan mode-5 verification; no thermal load; not acceptance D",
+    "log_sha256": "6FED08C4448ED187138A8B89DE17AB75AFAA207B02128D2605AA1DA046883249",
+    "result_sha256": "B868158878D098DFF0B4A237947CE523EC0B3EDE755AA038468EF45E00D43216"
+  },
+  "files": {
+    "benchmark_4ba7072a1d7a_analysis-Flow_benchmark.xml": {
+      "size": 972220,
+      "sha256": "48465f4843e4b843eee4f9cbae003bb083ee027abecf6ffd9ed57d4e90d9bae3"
+    },
+    "benchmark_4ba7072a1d7a_analysis-Flow_benchmark.bun": {
+      "size": 2812732,
+      "sha256": "b868158878d098dff0b4a237947ce523ec0b3ede755aa038468ef45e00d43216"
+    },
+    "fan-reference-pressure-01.json": {
+      "size": 248,
+      "sha256": "6f0c8d9fbf605c99ba4654c25faa8814d7e1f201f53137af1af98519dcb1d5cb"
+    },
+    "fluid-refinement-01.json": {
+      "size": 16700,
+      "sha256": "79565847ffc4e2c9e3268a30e629a71d3cfdbbd6f424f56494c6db7941ef33c6"
+    },
+    "cavity-fan-solve-04.json": {
+      "size": 778,
+      "sha256": "c7951432872242e15c453b902b6f02e38d823acf88d8e75c6174fb07badc5586"
+    },
+    "fan-configuration-01.json": {
+      "size": 1093,
+      "sha256": "6c38e1c575b8884b2b89a932847a046c6f09dc67102ed06402b003c29017e8ac"
+    },
+    "benchmark_4ba7072a1d7a_analysis-Flow_benchmark.log": {
+      "size": 31837,
+      "sha256": "6fed08c4448ed187138a8b89de17ab75afaa207b02128d2605aa1da046883249"
+    },
+    "head-loss-config-02.json": {
+      "size": 2025,
+      "sha256": "6c7be0299f72a286f0f5168773c2beb13a2473836b32de31adcec08faee3e118"
+    },
+    "benchmark_4ba7072a1d7a_analysis-Flow_benchmark.map": {
+      "size": 21886,
+      "sha256": "fd4ebb9b963e64364365f99c471b34633f7f36389f3283e2f133dd9ccc108f1f"
+    }
+  }
+}

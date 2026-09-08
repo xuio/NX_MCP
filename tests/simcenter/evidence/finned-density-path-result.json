@@ -1,0 +1,32 @@
+{
+  "status": "success",
+  "field_names": [
+    "Velocity - Element-Nodal",
+    "Temperature - Nodal",
+    "Temperature - Elemental",
+    "Temperature - Element-Nodal",
+    "Total Heat Load - Elemental",
+    "Total Heat Flux - Elemental",
+    "Total Pressure - Element-Nodal",
+    "Fluid Density - Element-Nodal",
+    "Mass Flux - Nodal",
+    "Pressure - Element-Nodal"
+  ],
+  "density_field": "Fluid Density - Element-Nodal",
+  "units": "kg/m3",
+  "minimum": 1.2943761348724365,
+  "maximum": 1.2943761348724365,
+  "minimum_native_id": 2472,
+  "maximum_native_id": 2472,
+  "minimum_native_sub_id": 710,
+  "maximum_native_sub_id": 710,
+  "location": "2",
+  "expected_constant_density": 1.2,
+  "constant_density_matches": false,
+  "reference_lifetime": "indices apply only to this result revision",
+  "result_freshness": "not_verified",
+  "operation_id": "op_6283753bc31c429081b652364bc47c59",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": []
+}

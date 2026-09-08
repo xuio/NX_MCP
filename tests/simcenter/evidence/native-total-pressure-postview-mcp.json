@@ -1,0 +1,176 @@
+{
+  "created": {
+    "meta": null,
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"Pa\", \"postview_id\": 7, \"postview_owner\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F-input-export-20260908-r2\\\\flow_input_r2.sim\", \"readback\": {\"loadcase_index\": 0, \"iteration_index\": 0, \"field\": \"Total Pressure - Element-Nodal\", \"unit\": \"PressurePascals\"}, \"existing_view_ids\": [5, 6], \"overlay\": true, \"main_postview_id\": 7, \"saved\": false, \"result_freshness\": \"not_verified\", \"reference_lifetime\": \"postview ID is document-local within this session; use postview_owner and reacquire after closure\", \"operation_id\": \"show-duct-total-pressure-02\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+        "annotations": null,
+        "meta": null
+      }
+    ],
+    "structuredContent": {
+      "status": "success",
+      "warnings": [],
+      "units": "Pa",
+      "postview_id": 7,
+      "postview_owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-input-export-20260908-r2\\flow_input_r2.sim",
+      "readback": {
+        "loadcase_index": 0,
+        "iteration_index": 0,
+        "field": "Total Pressure - Element-Nodal",
+        "unit": "PressurePascals"
+      },
+      "existing_view_ids": [
+        5,
+        6
+      ],
+      "overlay": true,
+      "main_postview_id": 7,
+      "saved": false,
+      "result_freshness": "not_verified",
+      "reference_lifetime": "postview ID is document-local within this session; use postview_owner and reacquire after closure",
+      "operation_id": "show-duct-total-pressure-02",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "mutation_outcome": "committed"
+    },
+    "isError": false
+  },
+  "replay": {
+    "meta": null,
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"Pa\", \"postview_id\": 7, \"postview_owner\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F-input-export-20260908-r2\\\\flow_input_r2.sim\", \"readback\": {\"loadcase_index\": 0, \"iteration_index\": 0, \"field\": \"Total Pressure - Element-Nodal\", \"unit\": \"PressurePascals\"}, \"existing_view_ids\": [5, 6], \"overlay\": true, \"main_postview_id\": 7, \"saved\": false, \"result_freshness\": \"not_verified\", \"reference_lifetime\": \"postview ID is document-local within this session; use postview_owner and reacquire after closure\", \"operation_id\": \"show-duct-total-pressure-02\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\", \"replayed\": true}",
+        "annotations": null,
+        "meta": null
+      }
+    ],
+    "structuredContent": {
+      "status": "success",
+      "warnings": [],
+      "units": "Pa",
+      "postview_id": 7,
+      "postview_owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-input-export-20260908-r2\\flow_input_r2.sim",
+      "readback": {
+        "loadcase_index": 0,
+        "iteration_index": 0,
+        "field": "Total Pressure - Element-Nodal",
+        "unit": "PressurePascals"
+      },
+      "existing_view_ids": [
+        5,
+        6
+      ],
+      "overlay": true,
+      "main_postview_id": 7,
+      "saved": false,
+      "result_freshness": "not_verified",
+      "reference_lifetime": "postview ID is document-local within this session; use postview_owner and reacquire after closure",
+      "operation_id": "show-duct-total-pressure-02",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "mutation_outcome": "committed",
+      "replayed": true
+    },
+    "isError": false
+  },
+  "invalid": {
+    "meta": null,
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"status\": \"error\", \"warnings\": [], \"units\": null, \"code\": \"NX_SIM_POSTVIEW_FAILED\", \"message\": \"Scalar view failed; inspect current views\", \"retryable\": false, \"details\": {\"reason\": \"Loadcase index outside result\", \"cleanup_issues\": [], \"mutation_outcome\": \"rolled_back\", \"operation_id\": \"show-duct-total-pressure-invalid-02\"}}",
+        "annotations": null,
+        "meta": null
+      }
+    ],
+    "structuredContent": {
+      "status": "error",
+      "warnings": [],
+      "units": null,
+      "code": "NX_SIM_POSTVIEW_FAILED",
+      "message": "Scalar view failed; inspect current views",
+      "retryable": false,
+      "details": {
+        "reason": "Loadcase index outside result",
+        "cleanup_issues": [],
+        "mutation_outcome": "rolled_back",
+        "operation_id": "show-duct-total-pressure-invalid-02"
+      }
+    },
+    "isError": true
+  },
+  "capture": {
+    "status": "success",
+    "warnings": [
+      "NX returned a different resolution than requested"
+    ],
+    "units": "mm",
+    "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\captures\\nx-f7200f44d083432e830ca7c2373b340a.png",
+    "artifact_path": "captures\\nx-f7200f44d083432e830ca7c2373b340a.png",
+    "capture_kind": "nx_model_viewport",
+    "model_preview": true,
+    "resolution": [
+      2458,
+      1484
+    ],
+    "requested_resolution": [
+      1600,
+      1000
+    ],
+    "camera": {
+      "part": {
+        "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_962a7e77a54244b99a217f6c74134f19",
+        "kind": "part",
+        "name": "flow_input_r2",
+        "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_abf19f0b5631403fb507517856de3740",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "generation_id": "abf19f0b5631403fb507517856de3740",
+        "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-input-export-20260908-r2\\flow_input_r2.sim",
+        "journal_id": "flow_input_r2",
+        "display_name": "flow_input_r2"
+      },
+      "name": "ANALYSIS_1",
+      "rotation": [
+        [
+          0.63121905864763,
+          -0.29117688182626567,
+          0.7188730927569433
+        ],
+        [
+          0.7756046028744285,
+          0.23697177216995516,
+          -0.5850486126764433
+        ],
+        [
+          -0.0,
+          0.9268551141815876,
+          0.3754192287502549
+        ]
+      ],
+      "origin": [
+        -59.660394382076746,
+        10.783231678060547,
+        -55.92279729012432
+      ],
+      "absolute_origin": [
+        81.0,
+        11.000000000000014,
+        10.999999999999996
+      ],
+      "scale": 5.445878527181183,
+      "coordinate_frame": "display_part",
+      "matrix_layout": "row-major 3x3; columns are NX view axes",
+      "rendering_style": "shaded",
+      "interactive": true
+    },
+    "background": "white",
+    "rendering": "NX viewport rasterization",
+    "size": 215342,
+    "sha256": "6d63e17f776083a0c3e787314effb81a9119b8d87188e713e0c158745d849e7b",
+    "operation_id": "op_ab9b3eaf441349519e43eea4443eb656",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed"
+  },
+  "inline_image_checksum_verified": true
+}

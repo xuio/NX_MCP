@@ -1,0 +1,173 @@
+{
+  "schema": {
+    "additionalProperties": false,
+    "properties": {
+      "document": {
+        "title": "Document",
+        "type": "string"
+      },
+      "loadcase_index": {
+        "default": 0,
+        "title": "Loadcase Index",
+        "type": "integer"
+      },
+      "iteration_index": {
+        "default": 0,
+        "title": "Iteration Index",
+        "type": "integer"
+      },
+      "location": {
+        "default": "nodal",
+        "enum": [
+          "nodal",
+          "elemental",
+          "element_nodal"
+        ],
+        "title": "Location",
+        "type": "string"
+      }
+    },
+    "required": [
+      "document"
+    ],
+    "title": "nx_sim_temperature_resultArguments",
+    "type": "object"
+  },
+  "responses": {
+    "nodal": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"degC\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_fecd16611b4b4e5da094a8b32116b273\", \"kind\": \"part\", \"name\": \"coupled_external_diagnostic_r1\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_561fa45718d5495aa50d102546603bd8\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"561fa45718d5495aa50d102546603bd8\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\E-external-diagnostic-20260908-r1\\\\coupled_external_diagnostic_r1.sim\", \"journal_id\": \"coupled_external_diagnostic_r1\", \"display_name\": \"coupled_external_diagnostic_r1\"}, \"field\": \"Temperature - Nodal\", \"field_location\": \"nodal\", \"loadcase_index\": 0, \"iteration_index\": 0, \"minimum\": 43.193336486816406, \"maximum\": 43.201297760009766, \"native_location\": \"0\", \"minimum_native_id\": 24, \"maximum_native_id\": 12, \"minimum_native_sub_id\": 0, \"maximum_native_sub_id\": 0, \"node_count\": 68, \"result_freshness\": \"not_verified\", \"reference_lifetime\": \"indices apply only to this result revision\", \"operation_id\": \"op_6b7d06cbd5b04ff389fd3b5b9bb0dec2\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "degC",
+        "document": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_fecd16611b4b4e5da094a8b32116b273",
+          "kind": "part",
+          "name": "coupled_external_diagnostic_r1",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_561fa45718d5495aa50d102546603bd8",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "561fa45718d5495aa50d102546603bd8",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-diagnostic-20260908-r1\\coupled_external_diagnostic_r1.sim",
+          "journal_id": "coupled_external_diagnostic_r1",
+          "display_name": "coupled_external_diagnostic_r1"
+        },
+        "field": "Temperature - Nodal",
+        "field_location": "nodal",
+        "loadcase_index": 0,
+        "iteration_index": 0,
+        "minimum": 43.193336486816406,
+        "maximum": 43.201297760009766,
+        "native_location": "0",
+        "minimum_native_id": 24,
+        "maximum_native_id": 12,
+        "minimum_native_sub_id": 0,
+        "maximum_native_sub_id": 0,
+        "node_count": 68,
+        "result_freshness": "not_verified",
+        "reference_lifetime": "indices apply only to this result revision",
+        "operation_id": "op_6b7d06cbd5b04ff389fd3b5b9bb0dec2",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "not_applicable"
+      },
+      "isError": false
+    },
+    "elemental": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"degC\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_fecd16611b4b4e5da094a8b32116b273\", \"kind\": \"part\", \"name\": \"coupled_external_diagnostic_r1\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_561fa45718d5495aa50d102546603bd8\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"561fa45718d5495aa50d102546603bd8\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\E-external-diagnostic-20260908-r1\\\\coupled_external_diagnostic_r1.sim\", \"journal_id\": \"coupled_external_diagnostic_r1\", \"display_name\": \"coupled_external_diagnostic_r1\"}, \"field\": \"Temperature - Elemental\", \"field_location\": \"elemental\", \"loadcase_index\": 0, \"iteration_index\": 0, \"minimum\": 43.19285583496094, \"maximum\": 43.20115661621094, \"native_location\": \"1\", \"minimum_native_id\": 73, \"maximum_native_id\": 31, \"minimum_native_sub_id\": 0, \"maximum_native_sub_id\": 0, \"node_count\": 68, \"result_freshness\": \"not_verified\", \"reference_lifetime\": \"indices apply only to this result revision\", \"operation_id\": \"op_8ce949060a434b7183d4aeb8c28e6939\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "degC",
+        "document": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_fecd16611b4b4e5da094a8b32116b273",
+          "kind": "part",
+          "name": "coupled_external_diagnostic_r1",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_561fa45718d5495aa50d102546603bd8",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "561fa45718d5495aa50d102546603bd8",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-diagnostic-20260908-r1\\coupled_external_diagnostic_r1.sim",
+          "journal_id": "coupled_external_diagnostic_r1",
+          "display_name": "coupled_external_diagnostic_r1"
+        },
+        "field": "Temperature - Elemental",
+        "field_location": "elemental",
+        "loadcase_index": 0,
+        "iteration_index": 0,
+        "minimum": 43.19285583496094,
+        "maximum": 43.20115661621094,
+        "native_location": "1",
+        "minimum_native_id": 73,
+        "maximum_native_id": 31,
+        "minimum_native_sub_id": 0,
+        "maximum_native_sub_id": 0,
+        "node_count": 68,
+        "result_freshness": "not_verified",
+        "reference_lifetime": "indices apply only to this result revision",
+        "operation_id": "op_8ce949060a434b7183d4aeb8c28e6939",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "not_applicable"
+      },
+      "isError": false
+    },
+    "element_nodal": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"degC\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_fecd16611b4b4e5da094a8b32116b273\", \"kind\": \"part\", \"name\": \"coupled_external_diagnostic_r1\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_561fa45718d5495aa50d102546603bd8\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"561fa45718d5495aa50d102546603bd8\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\E-external-diagnostic-20260908-r1\\\\coupled_external_diagnostic_r1.sim\", \"journal_id\": \"coupled_external_diagnostic_r1\", \"display_name\": \"coupled_external_diagnostic_r1\"}, \"field\": \"Temperature - Element-Nodal\", \"field_location\": \"element_nodal\", \"loadcase_index\": 0, \"iteration_index\": 0, \"minimum\": 20.02562713623047, \"maximum\": 22.133399963378906, \"native_location\": \"2\", \"minimum_native_id\": 137, \"maximum_native_id\": 144, \"minimum_native_sub_id\": 44, \"maximum_native_sub_id\": 61, \"node_count\": 68, \"result_freshness\": \"not_verified\", \"reference_lifetime\": \"indices apply only to this result revision\", \"operation_id\": \"op_449150d9ef034c87adc967249e8ce446\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "degC",
+        "document": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_fecd16611b4b4e5da094a8b32116b273",
+          "kind": "part",
+          "name": "coupled_external_diagnostic_r1",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_561fa45718d5495aa50d102546603bd8",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "561fa45718d5495aa50d102546603bd8",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-diagnostic-20260908-r1\\coupled_external_diagnostic_r1.sim",
+          "journal_id": "coupled_external_diagnostic_r1",
+          "display_name": "coupled_external_diagnostic_r1"
+        },
+        "field": "Temperature - Element-Nodal",
+        "field_location": "element_nodal",
+        "loadcase_index": 0,
+        "iteration_index": 0,
+        "minimum": 20.02562713623047,
+        "maximum": 22.133399963378906,
+        "native_location": "2",
+        "minimum_native_id": 137,
+        "maximum_native_id": 144,
+        "minimum_native_sub_id": 44,
+        "maximum_native_sub_id": 61,
+        "node_count": 68,
+        "result_freshness": "not_verified",
+        "reference_lifetime": "indices apply only to this result revision",
+        "operation_id": "op_449150d9ef034c87adc967249e8ce446",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "not_applicable"
+      },
+      "isError": false
+    }
+  }
+}

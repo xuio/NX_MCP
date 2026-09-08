@@ -1,0 +1,112 @@
+{
+  "status": "success",
+  "rejection": {
+    "overlaps": [
+      {
+        "load_name": "MCP surface flux",
+        "load_journal_id": "Load[MCP surface flux]",
+        "requested_target_index": 0,
+        "relation": "face_within_heated_body"
+      }
+    ],
+    "next_step": "Inspect existing sources; use allow_additive only for intentionally separate heat contributions",
+    "mutation_outcome": "not_started"
+  },
+  "accepted": {
+    "kind": "volume_generation",
+    "value": 1000.0,
+    "units": "W/m^3",
+    "target_count": 1,
+    "properties": [
+      {
+        "name": "description",
+        "native_type": "0",
+        "units": null,
+        "inspection_status": "unsupported_property_type"
+      },
+      {
+        "name": "Heat Generation",
+        "native_type": "6",
+        "units": "HeatGeneration_Metric3",
+        "expression": "1000",
+        "unit_symbol": "W/m^3",
+        "representation": "expression"
+      },
+      {
+        "name": "Specify Reference Temperature Set",
+        "native_type": "2",
+        "units": null,
+        "value": false
+      },
+      {
+        "name": "Reference Temperature Set",
+        "native_type": "0",
+        "units": null,
+        "inspection_status": "unsupported_property_type"
+      },
+      {
+        "name": "Control Heater",
+        "native_type": "2",
+        "units": null,
+        "value": false
+      },
+      {
+        "name": "Thermostat",
+        "native_type": "0",
+        "units": null,
+        "inspection_status": "unsupported_property_type"
+      },
+      {
+        "name": "Specify Layer to Apply to",
+        "native_type": "2",
+        "units": null,
+        "value": false
+      },
+      {
+        "name": "Apply to",
+        "native_type": "3",
+        "units": null,
+        "value": 0
+      },
+      {
+        "name": "Layer Number",
+        "native_type": "3",
+        "units": null,
+        "value": 1
+      },
+      {
+        "name": "distributionType",
+        "native_type": "3",
+        "units": null,
+        "value": 32
+      }
+    ],
+    "provenance": "Explicit separate contribution for native test",
+    "total_power_w": 0.0010000000000000002,
+    "total_power_status": "integrated_native_geometry",
+    "target_measures": [
+      1.0000000000000002e-06
+    ],
+    "measure_units": "m^3",
+    "integration_scope": "sum of selected native areas/volumes at constant density; not geometric union or solved heat flow",
+    "saved": false,
+    "solver_launched": false,
+    "duplicate_check_scope": "same target and face/body ownership; geometric intersections between distinct bodies not checked",
+    "overlap_policy": "allow_additive",
+    "overlaps": [
+      {
+        "load_name": "MCP surface flux",
+        "load_journal_id": "Load[MCP surface flux]",
+        "requested_target_index": 0,
+        "relation": "face_within_heated_body"
+      }
+    ]
+  },
+  "rollback_verified": true,
+  "flags_preserved": true,
+  "operation_id": "op_3da5d90ae9d540c8bf2197405fc09181",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

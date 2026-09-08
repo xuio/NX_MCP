@@ -1,0 +1,52 @@
+{
+  "benchmark": "C_transient",
+  "state": "configured_and_solved_coarse_run_not_accepted",
+  "paths": {
+    "cad": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\C-transient-20260907\\benchmark_4ed90ef8215b_geometry.prt",
+    "fem": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\C-transient-20260907\\benchmark_4ed90ef8215b_mesh.fem",
+    "sim": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\C-transient-20260907\\benchmark_4ed90ef8215b_analysis.sim"
+  },
+  "geometry_mm": [
+    10,
+    10,
+    10
+  ],
+  "mesh_size_mm": 2,
+  "mesh_counts": {
+    "elements": 804,
+    "nodes": 246
+  },
+  "material_properties": [
+    {
+      "name": "MassDensityConstant",
+      "native_type": "6",
+      "units": "KilogramPerCubicMeter",
+      "expression": "2700.0",
+      "representation": "expression"
+    },
+    {
+      "name": "ThermalConductivity",
+      "native_type": "6",
+      "units": "ThermalConductivity_Metric3",
+      "expression": "200.0",
+      "representation": "expression"
+    },
+    {
+      "name": "SpecificHeat",
+      "native_type": "6",
+      "units": "SpecificHeat_Metric2",
+      "expression": "900.0",
+      "representation": "expression"
+    }
+  ],
+  "convection_descriptor": "Convection",
+  "convection_descriptor_status": "native builder inspected; not assigned",
+  "coefficient_unit": {
+    "native_name": "ConvectionCoefficient_Metric8",
+    "symbol": "W/m^2-dK"
+  },
+  "boundaries": "Convection 10 W/(m\u00b2 K) on six verified faces; 0.1 W body heat input",
+  "time_controls": "Two transient steps at 0 and 2025 s; native default method, observed final integration step 506.25 s",
+  "numerical_acceptance": "not_passed; time refinement and full history comparison required",
+  "convection_targets_verified": true
+}

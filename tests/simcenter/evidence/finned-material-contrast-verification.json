@@ -1,0 +1,66 @@
+{
+  "material": "Generic_air[2]",
+  "properties": {
+    "DENSITY": {
+      "intended": 2.0,
+      "translated": 1.2943761618099998,
+      "units": "kg/m3",
+      "relative_error": 0.3528119190950001,
+      "matches_relative_1e_6": false
+    },
+    "SPECIFIC_HEAT_P": {
+      "intended": 1200.0,
+      "translated": 1200.0,
+      "units": "J/(kg K)",
+      "relative_error": 0.0,
+      "matches_relative_1e_6": true
+    },
+    "DYNAMIC_VISCOSITY": {
+      "intended": 3e-05,
+      "translated": 2.99999989295e-05,
+      "units": "Pa s",
+      "relative_error": 3.568333339042367e-08,
+      "matches_relative_1e_6": true
+    },
+    "CONDUCTIVITY": {
+      "intended": 0.05,
+      "translated": 0.05,
+      "units": "W/(m K)",
+      "relative_error": 0.0,
+      "matches_relative_1e_6": true
+    }
+  },
+  "all_properties_match": false,
+  "scope": "one constant liquid in the generic finned benchmark; not solve or physical acceptance",
+  "package_sha256": "05674051fe733f250715be3680793d2abd55bdbcf9c9749e32293169036307d9",
+  "xml_material": {
+    "Mass Density": "2.0000000E-09",
+    "Thermal Conductivity": "5.0000000E+01",
+    "Thermal Expansion": "0.0000000E+00",
+    "Dynamic Viscosity": "3.0000000E-08",
+    "Specific Heat Constant Pressure": "1.2000000E+09",
+    "Molar Mass": "0.0000000E+00"
+  },
+  "xml_sha256": "50844ca068ec8cb23e445ae80ff3197c205e433c8aa1a9763e466fc1cc28e092",
+  "job_id": "coupled-finned-material-contrast-r1",
+  "hypothesis": "All assigned fluid properties may be ignored; earlier matches could be default air values.",
+  "outcome": "rejected: distinct heat capacity, viscosity and conductivity survive translation; density alone among these four is replaced",
+  "acceptance": false,
+  "native_material_readback": true,
+  "setup_seconds": 6.532,
+  "mesh_elements": 2130,
+  "mesh_nodes": 745,
+  "temperature_guard": "preserved",
+  "pressure_guard": "preserved",
+  "public_job_state": "solver_exited",
+  "public_gate_released": true,
+  "control_correction": {
+    "original_iteration_limit": 500,
+    "original_completed_iterations": 14,
+    "previous_100_iteration_claim": "incorrect: contrast variant omitted from conditional",
+    "corrected_script_limit": 100,
+    "native_xml_correction_verified": true,
+    "corrected_export_solved": false,
+    "evidence": "material-contrast-control-export.json"
+  }
+}

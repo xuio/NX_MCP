@@ -1,0 +1,60 @@
+{
+  "compact": {
+    "status": "success",
+    "warnings": [],
+    "units": null,
+    "job_id": "fine-k0-flow-01",
+    "request_sha256": "1238064dbcf81a9a8ca0d0299bd93e081a8e14773a64a91a471d212f0e254573",
+    "state": "solver_exited",
+    "revision": 3,
+    "process_binding_revision": null,
+    "launch_retry_allowed": false,
+    "numerical_convergence": "not_established",
+    "results_validated": false,
+    "observed_at": "2026-09-08T10:39:55.226337+00:00",
+    "observation_kind": "persisted_record",
+    "live_process_state": "not_checked",
+    "job_folder": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs",
+    "observer": {
+      "tracked_in_this_nx_process": true,
+      "thread_alive": false,
+      "log_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs\\fine-k0-flow-01\\observer-12ba430fc886413ab00516051403a174.log"
+    },
+    "operation_id": "op_e9b421886ae243a5af157079fc79fd76",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "not_applicable"
+  },
+  "expanded": {
+    "status": "success",
+    "warnings": [],
+    "units": null,
+    "job_id": "fine-k0-flow-01",
+    "request_sha256": "1238064dbcf81a9a8ca0d0299bd93e081a8e14773a64a91a471d212f0e254573",
+    "state": "solver_exited",
+    "revision": 3,
+    "process_binding_revision": null,
+    "launch_retry_allowed": false,
+    "numerical_convergence": "not_established",
+    "results_validated": false,
+    "observed_at": "2026-09-08T10:39:55.226337+00:00",
+    "observation_kind": "persisted_record",
+    "live_process_state": "not_checked",
+    "job_folder": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs",
+    "observer": {
+      "tracked_in_this_nx_process": true,
+      "thread_alive": false,
+      "log_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs\\fine-k0-flow-01\\observer-12ba430fc886413ab00516051403a174.log"
+    },
+    "launch_gate": {
+      "automatic_expiry": false,
+      "solver_process_state": "not_checked",
+      "launch_authorized_by_inspection": false,
+      "state": "unclaimed",
+      "note": "No persistent owner observed; this is not a solver-idle check or a launch reservation"
+    },
+    "operation_id": "op_7bcc7d00f87a47babf1e24e4f7fb5392",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "not_applicable"
+  },
+  "modified_flags_preserved": true
+}

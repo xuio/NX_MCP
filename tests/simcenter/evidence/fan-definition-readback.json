@@ -1,0 +1,128 @@
+{
+  "status": "success",
+  "passed": true,
+  "matches": [
+    {
+      "document": "obj_20bc234ffa5249ceb4fb4d82b993c626_26108c2b5bb24f4ea290e01e178c468a",
+      "boundary": "SimulationObject[Duct Inlet]",
+      "row": {
+        "name": "Fan Curve",
+        "native_type": "6",
+        "units": null,
+        "field_scale": 1.0,
+        "field_reference": {
+          "journal_id": "Definition readback fixture",
+          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F1-fan-definition-20260909-r1\\f1_fan_definition_r1.sim",
+          "tag": 7260648,
+          "lifetime": "current loaded document; not a cross-session reference"
+        },
+        "representation": "FieldTable",
+        "field_definition": {
+          "kind": "validated_fan_table",
+          "manifest": {
+            "extrapolation": "reject",
+            "interpolation": "linear",
+            "name": "Definition readback fixture",
+            "points": [
+              {
+                "flow_m3_s": 0.0,
+                "pressure_Pa": 1.0
+              },
+              {
+                "flow_m3_s": 0.0004,
+                "pressure_Pa": 0.0
+              }
+            ],
+            "pressure_convention": "static",
+            "provenance": {
+              "kind": "assumed",
+              "source": "API readback test"
+            },
+            "reference_density_kg_m3": 1.2,
+            "reverse_flow": "unsupported",
+            "rpm": 1000,
+            "schema_version": 1,
+            "stall_region": "Synthetic fixture"
+          },
+          "native_samples_si": {
+            "flow_m3_s": [
+              0.0,
+              0.0004
+            ],
+            "pressure_Pa": [
+              1.0,
+              0.0
+            ]
+          },
+          "scale_application": "scalar wrapper scales dependent pressure values only",
+          "definition_scope": "table values and interpolation; not solver or boundary semantics"
+        }
+      }
+    },
+    {
+      "document": "obj_20bc234ffa5249ceb4fb4d82b993c626_26108c2b5bb24f4ea290e01e178c468a",
+      "boundary": "SimulationObject[Duct Inlet]",
+      "row": {
+        "name": "Fan Curve",
+        "native_type": "6",
+        "units": null,
+        "field_scale": 2.0,
+        "field_reference": {
+          "journal_id": "Definition readback fixture",
+          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F1-fan-definition-20260909-r1\\f1_fan_definition_r1.sim",
+          "tag": 7260648,
+          "lifetime": "current loaded document; not a cross-session reference"
+        },
+        "representation": "FieldTable",
+        "field_definition": {
+          "kind": "validated_fan_table",
+          "manifest": {
+            "extrapolation": "reject",
+            "interpolation": "linear",
+            "name": "Definition readback fixture",
+            "points": [
+              {
+                "flow_m3_s": 0.0,
+                "pressure_Pa": 1.0
+              },
+              {
+                "flow_m3_s": 0.0004,
+                "pressure_Pa": 0.0
+              }
+            ],
+            "pressure_convention": "static",
+            "provenance": {
+              "kind": "assumed",
+              "source": "API readback test"
+            },
+            "reference_density_kg_m3": 1.2,
+            "reverse_flow": "unsupported",
+            "rpm": 1000,
+            "schema_version": 1,
+            "stall_region": "Synthetic fixture"
+          },
+          "native_samples_si": {
+            "flow_m3_s": [
+              0.0,
+              0.0004
+            ],
+            "pressure_Pa": [
+              1.0,
+              0.0
+            ]
+          },
+          "scale_application": "scalar wrapper scales dependent pressure values only",
+          "definition_scope": "table values and interpolation; not solver or boundary semantics"
+        }
+      }
+    }
+  ],
+  "modified_flags_preserved": true,
+  "solver_launched": false,
+  "scope": "Native registered fan-table definition and scalar scale readback",
+  "operation_id": "op_e6f3de5d668d4011befcaf6cdd36e542",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

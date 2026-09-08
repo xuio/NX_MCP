@@ -1,0 +1,90 @@
+{
+  "scope": "Native UF language load/constraint discovery on inactive thermal SIM; no contact builder or solve",
+  "first": {
+    "status": "success",
+    "warnings": [],
+    "units": null,
+    "descriptors": [
+      {
+        "descriptor_name": "Heat Load",
+        "kind": "load"
+      }
+    ],
+    "total": 3,
+    "unfiltered_total": 17,
+    "next_offset": 1,
+    "solver": "NX MULTIPHYSICS",
+    "analysis_type": "Thermal",
+    "solution": "Conduction",
+    "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-thermal-export-20260908-r1\\thermal_input_r1.sim",
+    "scope": "installed language load/constraint descriptor names; not object instances",
+    "builder_creation_tested_by_call": false,
+    "solution_applicability": "not_tested",
+    "simulation_object_descriptors": "not_enumerated_by_this_API",
+    "licence_checkout": "not_tested",
+    "operation_id": "op_8085515c181f4f21b2f7fdb83d735002",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "not_applicable"
+  },
+  "second": {
+    "status": "success",
+    "warnings": [],
+    "units": null,
+    "descriptors": [
+      {
+        "descriptor_name": "Heat Flux",
+        "kind": "load"
+      }
+    ],
+    "total": 3,
+    "unfiltered_total": 17,
+    "next_offset": 2,
+    "solver": "NX MULTIPHYSICS",
+    "analysis_type": "Thermal",
+    "solution": "Conduction",
+    "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-thermal-export-20260908-r1\\thermal_input_r1.sim",
+    "scope": "installed language load/constraint descriptor names; not object instances",
+    "builder_creation_tested_by_call": false,
+    "solution_applicability": "not_tested",
+    "simulation_object_descriptors": "not_enumerated_by_this_API",
+    "licence_checkout": "not_tested",
+    "operation_id": "op_511960bc4582403a9841c45311a62e4c",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "not_applicable"
+  },
+  "constraints": {
+    "status": "success",
+    "warnings": [],
+    "units": null,
+    "descriptors": [
+      {
+        "descriptor_name": "Convection",
+        "kind": "constraint"
+      },
+      {
+        "descriptor_name": "Free Convection",
+        "kind": "constraint"
+      },
+      {
+        "descriptor_name": "Forced Convection",
+        "kind": "constraint"
+      }
+    ],
+    "total": 3,
+    "unfiltered_total": 11,
+    "next_offset": null,
+    "solver": "NX MULTIPHYSICS",
+    "analysis_type": "Thermal",
+    "solution": "Conduction",
+    "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-thermal-export-20260908-r1\\thermal_input_r1.sim",
+    "scope": "installed language load/constraint descriptor names; not object instances",
+    "builder_creation_tested_by_call": false,
+    "solution_applicability": "not_tested",
+    "simulation_object_descriptors": "not_enumerated_by_this_API",
+    "licence_checkout": "not_tested",
+    "operation_id": "op_22f26689513d4280ab716e36fb551fa0",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "not_applicable"
+  },
+  "document_state_preserved": true
+}

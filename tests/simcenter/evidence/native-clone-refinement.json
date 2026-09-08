@@ -1,0 +1,38 @@
+{
+  "status": "success",
+  "state": "refined_and_saved",
+  "before_counts": {
+    "elements": 186765,
+    "nodes": 71748
+  },
+  "requested_size_mm": 1.25,
+  "solver_launched": false,
+  "results_stale": true,
+  "saved": true,
+  "layer_control": {
+    "layers": 8,
+    "growth_rate": 1.2,
+    "first_layer_mm": 0.1,
+    "face_count": 4
+  },
+  "after_counts": {
+    "elements": 261589,
+    "nodes": 98632
+  },
+  "actual_size_mm": 1.25,
+  "other_meshes_preserved": true,
+  "other_flags_preserved": true,
+  "source_files_preserved": true,
+  "save_started": true,
+  "remaining_validation": [
+    "SIM reopen and fresh deck export",
+    "mesh quality",
+    "refined solve",
+    "numerical mesh sensitivity"
+  ],
+  "operation_id": "op_9acf1e3c253f4e2eaa3de966b4350361",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

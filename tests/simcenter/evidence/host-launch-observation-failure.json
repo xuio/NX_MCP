@@ -1,0 +1,21 @@
+{
+  "status": "success",
+  "scope": "Windows durable job replay after injected observation write failure",
+  "error": {
+    "job_id": "observation-failure",
+    "mutation_outcome": "unknown",
+    "api_returned": true,
+    "observation_persisted": false
+  },
+  "callback_count": 1,
+  "replayed": true,
+  "persisted_state": "launch_requested",
+  "solver_launched": false,
+  "actual_solver_interruption_tested": false,
+  "job_folder": "ui-benchmarks/F-launch-observation-20260908-r1/jobs",
+  "operation_id": "op_0645f255de3d4212a2fae46a0d2468e2",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

@@ -1,0 +1,31 @@
+{
+  "scope": "Two-level core-mesh sensitivity for the synthetic K=0 duct",
+  "reference": {
+    "job_id": "fine-k0-flow-01",
+    "flow_m3_s": 0.0002524,
+    "fan_pressure_rise_Pa": 0.36910000000000004,
+    "native_mass_imbalance_percent": 0.01252,
+    "curve_error_Pa": 0.0001000000000000445,
+    "iterations": 13,
+    "log_sha256": "9214724af72ad49ca0e1f5c2f4e90297b79e4fe47449113a6414b072eb9cb1f2"
+  },
+  "refined": {
+    "job_id": "independent-refined-flow-01",
+    "flow_m3_s": 0.000253,
+    "fan_pressure_rise_Pa": 0.3674,
+    "native_mass_imbalance_percent": 0.008828,
+    "curve_error_Pa": 9.999999999993348e-05,
+    "iterations": 13,
+    "log_sha256": "6184e544408e386f5bb6096c1c16f77f5c2d179a4ab6cd0a8b637a98c72d623d"
+  },
+  "flow_change_percent": 0.23771790808242432,
+  "pressure_change_percent": -0.4605797886751639,
+  "mesh_convergence_established": false,
+  "limitations": [
+    "Only core sizing refined; boundary-layer spacing unchanged",
+    "Two levels do not establish observed convergence order or an extrapolated error bound",
+    "Model and boundary equivalence require the separate deck audit",
+    "Constant-density surrogate, not coupled or natural-convection validation",
+    "Rounded native log values; no acoustic or product certification"
+  ]
+}

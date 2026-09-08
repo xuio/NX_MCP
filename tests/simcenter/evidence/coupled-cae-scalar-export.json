@@ -1,0 +1,75 @@
+{
+  "status": "success",
+  "copy": {
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_d3931eb954734c3f826d5d3c77bad664",
+      "kind": "part",
+      "name": "coupled_cae_scalar_r1",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_64b6944de1374a198630e5e986d646e3",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "64b6944de1374a198630e5e986d646e3",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-environment-cae-scalar-20260908-r1\\coupled_cae_scalar_r1.sim",
+      "journal_id": "coupled_cae_scalar_r1",
+      "display_name": "coupled_cae_scalar_r1"
+    },
+    "source": {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-diagnostic-20260908-r1\\coupled_diagnostic_r1.sim",
+      "bytes": 7667288,
+      "sha256": "c10279808929e710e8c2134037dcd93a03d1d5fac89e60f181063fefdd3b31fd"
+    },
+    "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-environment-cae-scalar-20260908-r1\\coupled_cae_scalar_r1.sim",
+    "source_file_unchanged": true,
+    "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-environment-cae-scalar-20260908-r1\\coupled_cae_scalar_r1.sim",
+    "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-environment-cae-scalar-20260908-r1\\coupled_cae_scalar_r1.sim",
+    "shared_fem_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-development-20260908-r1\\benchmark_99f1fecb220c_mesh.fem",
+    "independent_geometry_variant": false,
+    "saved": true,
+    "result_freshness": "not_verified",
+    "next_step": "Reacquire document IDs. Duplicate and reassociate FEM/CAD before changing shared geometry or mesh."
+  },
+  "step_type": {
+    "before": 0,
+    "after": 0,
+    "interpretation": "steady hypothesis pending native export validation"
+  },
+  "setup_report": "          Solution Model Setup Check Error Summary \n \n------------------------------------------------------------\n \n Solver is Simcenter 3D Multiphysics\n\n Environment: Simcenter 3D Multiphysics - Coupled Thermal-Flow\n\n Solution is Thermal-Flow\n \n------------------------------------------------------------\n \nMesh Error Summary\n==================\n\nNo Mesh Errors\n\nMaterial Error Summary\n======================\n\nNo Material Errors\n\nPhysical Property Error Summary\n===============================\n\nNo Physical Property Errors\n\nModeling Object Error Summary\n=============================\n\nNo Modeling Object Errors\n\nLoad and Constraint Error Summary\n=================================\n\nNo Load and Constraint Errors\n\nSolution Error Summary\n======================\n\nNo Solution Errors\n\nExpression Errors Summary\n==============================\n\nNo Expression Errors\n\n",
+  "native_error": null,
+  "files": [
+    {
+      "name": "coupled_cae_scalar_r1-Coupled_benchmark.map",
+      "bytes": 34860
+    },
+    {
+      "name": "coupled_cae_scalar_r1-Coupled_benchmark.xml",
+      "bytes": 63855,
+      "input": {
+        "state": "well_formed",
+        "step_definitions": 1,
+        "mesh_counts": {
+          "elements": 126,
+          "nodes": 68,
+          "element_sets": 2,
+          "scope": "observed_multiphysics_xml_layout"
+        },
+        "solve_readiness": "not_established"
+      }
+    },
+    {
+      "name": "coupled_cae_scalar_r1.sim",
+      "bytes": 7667937
+    },
+    {
+      "name": "setup-report.txt",
+      "bytes": 138063
+    }
+  ],
+  "elapsed_seconds": 1.7339999999967404,
+  "solver_launched": false,
+  "numerical_acceptance": false,
+  "boundary_conditions_complete": false,
+  "operation_id": "op_d36267e6def0498cad5beb06665fe98e",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

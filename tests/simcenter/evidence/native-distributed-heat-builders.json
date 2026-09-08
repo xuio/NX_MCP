@@ -1,0 +1,166 @@
+{
+  "status": "success",
+  "context": {
+    "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\B-contact-context-20260908-r2\\contact_context_r2.sim",
+    "solver": "NX MULTIPHYSICS",
+    "solver_display": "Simcenter 3D Multiphysics",
+    "analysis": "Thermal",
+    "solution": "Conduction",
+    "current_language": 1519622,
+    "solution_language": 1519622
+  },
+  "copied": {
+    "new_copy_created": false,
+    "isolated_existing_copy": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\B-contact-context-20260908-r2\\contact_context_r2.sim"
+  },
+  "probes": [
+    {
+      "descriptor": "Heat Flux",
+      "accepted": true,
+      "neutral": "Heat Flux",
+      "properties": [
+        {
+          "name": "description",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "Heat Flux",
+          "native_type": "6",
+          "units": "dimensionless",
+          "expression": "-777777",
+          "unit_symbol": null,
+          "representation": "expression"
+        },
+        {
+          "name": "Specify Reference Temperature Set",
+          "native_type": "2",
+          "units": null,
+          "value": false
+        },
+        {
+          "name": "Reference Temperature Set",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "Control Heater",
+          "native_type": "2",
+          "units": null,
+          "value": false
+        },
+        {
+          "name": "Thermostat",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "Specify Layer to Apply to",
+          "native_type": "2",
+          "units": null,
+          "value": false
+        },
+        {
+          "name": "Apply to",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Layer Number",
+          "native_type": "3",
+          "units": null,
+          "value": 1
+        },
+        {
+          "name": "distributionType",
+          "native_type": "3",
+          "units": null,
+          "value": 32
+        }
+      ],
+      "target_sets": 1,
+      "committed": false
+    },
+    {
+      "descriptor": "Heat Generation",
+      "accepted": true,
+      "neutral": "Heat Generation",
+      "properties": [
+        {
+          "name": "description",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "Heat Generation",
+          "native_type": "6",
+          "units": "dimensionless",
+          "expression": "-777777",
+          "unit_symbol": null,
+          "representation": "expression"
+        },
+        {
+          "name": "Specify Reference Temperature Set",
+          "native_type": "2",
+          "units": null,
+          "value": false
+        },
+        {
+          "name": "Reference Temperature Set",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "Control Heater",
+          "native_type": "2",
+          "units": null,
+          "value": false
+        },
+        {
+          "name": "Thermostat",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "Specify Layer to Apply to",
+          "native_type": "2",
+          "units": null,
+          "value": false
+        },
+        {
+          "name": "Apply to",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Layer Number",
+          "native_type": "3",
+          "units": null,
+          "value": 1
+        },
+        {
+          "name": "distributionType",
+          "native_type": "3",
+          "units": null,
+          "value": 32
+        }
+      ],
+      "target_sets": 1,
+      "committed": false
+    }
+  ],
+  "rollback_verified": true,
+  "operation_id": "op_5668a193e6d3473694bf0e7e692834e7",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

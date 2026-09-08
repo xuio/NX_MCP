@@ -1,0 +1,47 @@
+{
+  "status": "success",
+  "committed_readback": {
+    "properties": {
+      "ThermalConductivity": {
+        "value": 12.0,
+        "unit": "ThermalConductivity_Metric3",
+        "symbol": "W/m-dK"
+      },
+      "ThermalConductivity2": {
+        "value": 7.0,
+        "unit": "ThermalConductivity_Metric3",
+        "symbol": "W/m-dK"
+      },
+      "ThermalConductivity3": {
+        "value": 0.4,
+        "unit": "ThermalConductivity_Metric3",
+        "symbol": "W/m-dK"
+      },
+      "MassDensity": {
+        "value": 1900.0,
+        "unit": "KilogramPerCubicMeter",
+        "symbol": "kg/m^3"
+      },
+      "SpecificHeat": {
+        "value": 900.0,
+        "unit": "SpecificHeat_Metric2",
+        "symbol": "J/kg-dK"
+      }
+    },
+    "provenance": "Synthetic orthotropic material readback benchmark; not approved PCB data",
+    "coordinate_frame": "material_axes",
+    "orientation_assigned": false,
+    "collector_assignment": false,
+    "saved": false,
+    "solver_verified": false
+  },
+  "material_name": "MCP_DIRECTIONAL_NATIVE_PROBE",
+  "assigned": false,
+  "saved": false,
+  "rolled_back_after_readback": true,
+  "operation_id": "op_efac5d4222cf4e949dcc8cae050dd894",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

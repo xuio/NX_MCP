@@ -1,0 +1,42 @@
+{
+  "status": "success",
+  "existing_views": {
+    "5": {
+      "result_tag": 2032579,
+      "field": "Pressure - Element-Nodal"
+    },
+    "6": {
+      "result_tag": 2032601,
+      "field": "Total Pressure - Element-Nodal"
+    },
+    "7": {
+      "result_tag": 2032647,
+      "field": "Total Pressure - Element-Nodal"
+    }
+  },
+  "main": 7,
+  "pressure": {
+    "field": "Pressure - Element-Nodal",
+    "units": "Pa",
+    "minimum": 0.1233869269490242,
+    "maximum": 0.6596712470054626,
+    "native_location": "2",
+    "minimum_native_id": 158870,
+    "maximum_native_id": 145038,
+    "minimum_native_sub_id": 3,
+    "maximum_native_sub_id": 8,
+    "node_count": 71748,
+    "loadcase_index": 0,
+    "iteration_index": 0,
+    "result_freshness": "not_verified",
+    "pressure_reference": "native_solution_reference",
+    "reference_lifetime": "indices apply only to this result revision"
+  },
+  "successful_and_failed_reads_preserved_views": true,
+  "solver_launched": false,
+  "operation_id": "op_9a6199c5a8a64aea9c91378f16541591",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

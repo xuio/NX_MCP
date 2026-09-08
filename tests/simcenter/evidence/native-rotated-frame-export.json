@@ -1,0 +1,129 @@
+{
+  "status": "success",
+  "clone": {
+    "associated_files_copied": false,
+    "complete_analysis_package": false,
+    "dependency_rebinding": "not_verified_until_open",
+    "document_flags_preserved": true,
+    "folder": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-rotated-20260908-r1",
+    "outputs": [
+      {
+        "bytes": 7791926,
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-rotated-20260908-r1\\RotatedOrthoR1_analysis.sim",
+        "sha256": "dcc260526877ab9c3c61e81bab0287fa1ab239964e732aecff14b4fa548dfd86"
+      },
+      {
+        "bytes": 3012863,
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-rotated-20260908-r1\\RotatedOrthoR1_mesh.fem",
+        "sha256": "3ad53d7d1abe0d4738a2937e20687aaed29c8a92db8cd31db8c6e7b08c8ef31c"
+      },
+      {
+        "bytes": 76338,
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-rotated-20260908-r1\\RotatedOrthoR1_cad_01.prt",
+        "sha256": "43056a737921bd42b38b2447114784a10911b4e4fac1a1c0eb61359fef2d6eb7"
+      }
+    ],
+    "plan_sha256": "05214b938c9f847fa99163d60470a95c491b15a0c8dee9739ce5d0f00875694b",
+    "replayed": true,
+    "result_freshness": "not_verified",
+    "saved_snapshot": true,
+    "solver_launched": false,
+    "source_files_preserved": true,
+    "state": "native_files_cloned",
+    "unsaved_sources_excluded": [],
+    "receipt_semantics": "historical committed clone; current source revision not implied"
+  },
+  "frame_readback": {
+    "orientation_type": 0,
+    "matrix_fields": {
+      "Xx": 0.0,
+      "Xy": 1.0,
+      "Xz": 0.0,
+      "Yx": -1.0,
+      "Yy": 0.0,
+      "Yz": 0.0,
+      "Zx": 0.0,
+      "Zy": -0.0,
+      "Zz": 1.0
+    },
+    "requested_material_x_in_part": [
+      0,
+      1,
+      0
+    ],
+    "requested_material_y_in_part": [
+      -1,
+      0,
+      0
+    ]
+  },
+  "saved": {
+    "saved": true,
+    "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-rotated-20260908-r1\\RotatedOrthoR1_mesh.fem",
+    "file": {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-rotated-20260908-r1\\RotatedOrthoR1_mesh.fem",
+      "bytes": 3013438,
+      "sha256": "6161bd007ee70966635f0bd212733f05b0650351ffc33958794d4bc5391a72c2"
+    },
+    "previous_file": {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-rotated-20260908-r1\\RotatedOrthoR1_mesh.fem",
+      "bytes": 3012863,
+      "sha256": "3ad53d7d1abe0d4738a2937e20687aaed29c8a92db8cd31db8c6e7b08c8ef31c"
+    },
+    "backup_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-rotated-20260908-r1\\.nx-mcp-save-backups\\d23f9e985e0142bd9d77103127815778\\RotatedOrthoR1_mesh.fem",
+    "saved_components": false,
+    "closed": false,
+    "other_modified_flags_unchanged": true,
+    "result_freshness": "not_verified"
+  },
+  "export": {
+    "input_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-rotated-export-20260908-r1\\rotated_ortho_export_r1-Conduction.xml",
+    "input_identity": {
+      "sha256": "d5bd5a4403e5a872135ba9e8f09fb02fcb6fa8b177d8746864db0df6511f725d",
+      "xml_content_sha256": "ab20371a447f728a1ec9ee35ef34d8d88e8c71ac6111a4b4e65c4edcb2a300f8",
+      "bytes": 282117,
+      "canonicalization": "xml_c14n2_no_comments"
+    },
+    "validation": {
+      "state": "well_formed",
+      "step_definitions": 1,
+      "mesh_counts": {
+        "elements": 2658,
+        "nodes": 756,
+        "element_sets": 1,
+        "scope": "observed_multiphysics_xml_layout"
+      },
+      "solve_readiness": "not_established"
+    },
+    "artifacts": [
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-rotated-export-20260908-r1\\rotated_ortho_export_r1-Conduction.map",
+        "bytes": 18552
+      },
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-rotated-export-20260908-r1\\rotated_ortho_export_r1-Conduction.xml",
+        "bytes": 282117
+      }
+    ],
+    "translator_reports": [],
+    "solver": "NX MULTIPHYSICS",
+    "analysis_type": "Thermal",
+    "solution": "Conduction",
+    "source_sim": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-rotated-export-20260908-r1\\rotated_ortho_export_r1.sim",
+    "source_modified": false,
+    "solver_launched": false,
+    "solve_readiness": "not_established",
+    "scope": "Native thermal/flow input export, not a solve or convergence check"
+  },
+  "sections": {
+    "MaterialList": "<MaterialList>\n    <Material uid=\"1\" uname=\"BENCHMARK_K200::RotatedOrthoR1_mesh::[1]\" type=\"ISO\">\n      <Property name=\"Dependency Control\">\n        <Value>0</Value>\n      </Property>\n      <Property name=\"Mass Density Constant\" type=\"Constant\">\n        <Value>  2.7000000E-06</Value>\n      </Property>\n      <Property name=\"Mass Density Temperature\" type=\"Constant\">\n        <Value>  0.0000000E+00</Value>\n      </Property>\n      <Property name=\"Specific Heat\" type=\"Constant\">\n        <Value>  9.0000000E+08</Value>\n      </Property>\n      <Property name=\"Thermal Conductivity\" type=\"Constant\">\n        <Value>  2.0000000E+05</Value>\n      </Property>\n      <Property name=\"Latent Heat\" type=\"Constant\">\n        <Value>  0.0000000E+00</Value>\n      </Property>\n      <Property name=\"Phase Temperature\" type=\"Constant\">\n        <Value>  0.0000000E+00</Value>\n      </Property>\n      <Property name=\"Phase Temperature Range\" type=\"Constant\">\n        <Value>  0.0000000E+00</Value>\n      </Property>\n      <Property name=\"Phase Specific Heat\" type=\"Constant\">\n        <Value>  0.0000000E+00</Value>\n      </Property>\n      <Property name=\"IR Scattering\" type=\"Constant\">\n        <Value>  0.0000000E+00</Value>\n      </Property>\n      <Property name=\"IR Extinction\" type=\"Constant\">\n        <Value>  0.0000000E+00</Value>\n      </Property>\n      <Property name=\"Solar Scattering\" type=\"Constant\">\n        <Value>  0.0000000E+00</Value>\n      </Property>\n      <Property name=\"Solar Extinction\" type=\"Constant\">\n        <Value>  0.0000000E+00</Value>\n      </Property>\n      <Property name=\"Electrical Resistivity\" type=\"Constant\">\n        <Value>  0.0000000E+00</Value>\n      </Property>\n    </Material>\n    <Material uid=\"2\" uname=\"ORTHOTROPIC_STUDY_12_7_04::RotatedOrthoR1_mesh::[2]\" type=\"ORTHO\">\n      <Property name=\"Mass Density\" type=\"Constant\">\n        <Value>  1.9000000E-06</Value>\n      </Property>\n      <Property name=\"Specific Heat\" type=\"Constant\">\n        <Value>  9.0000000E+08</Value>\n      </Property>\n      <Property name=\"Thermal Conductivity X\" type=\"Constant\">\n        <Value>  1.2000000E+04</Value>\n      </Property>\n      <Property name=\"Thermal Conductivity Y\" type=\"Constant\">\n        <Value>  7.0000000E+03</Value>\n      </Property>\n      <Property name=\"Thermal Conductivity Z\" type=\"Constant\">\n        <Value>  4.0000000E+02</Value>\n      </Property>\n      <Property name=\"Latent Heat\" type=\"Constant\">\n        <Value>  0.0000000E+00</Value>\n      </Property>\n      <Property name=\"Phase Temperature\" type=\"Constant\">\n        <Value>  0.0000000E+00</Value>\n      </Property>\n      <Property name=\"Phase Temperature Range\" type=\"Constant\">\n        <Value>  0.0000000E+00</Value>\n      </Property>\n      <Property name=\"Phase Specific Heat\" type=\"Constant\">\n        <Value>  0.0000000E+00</Value>\n      </Property>\n      <Property name=\"IR Scattering\" type=\"Constant\">\n        <Value>  0.0000000E+00</Value>\n      </Property>\n      <Property name=\"IR Extinction\" type=\"Constant\">\n        <Value>  0.0000000E+00</Value>\n      </Property>\n      <Property name=\"Solar Scattering\" type=\"Constant\">\n        <Value>  0.0000000E+00</Value>\n      </Property>\n      <Property name=\"Solar Extinction\" type=\"Constant\">\n        <Value>  0.0000000E+00</Value>\n      </Property>\n      <Property name=\"Electrical Resistivity\" type=\"Constant\">\n        <Value>  0.0000000E+00</Value>\n      </Property>\n    </Material>\n  </MaterialList>\n  ",
+    "PhysicalPropertyTableList": "<PhysicalPropertyTableList>\n    <PhysicalPropertyTable uid=\"1\" uname=\"Solid1::RotatedOrthoR1_mesh::[1]\" type=\"Solid\">\n      <Property name=\"Material\">\n        <Value>2</Value>\n      </Property>\n      <Property name=\"Material Orientation Type\">\n        <Value>0</Value>\n      </Property>\n      <Property name=\"Radiation\">\n        <Value>1</Value>\n      </Property>\n      <Property name=\"Optical Properties\">\n        <Value>-1</Value>\n      </Property>\n    </PhysicalPropertyTable>\n  </PhysicalPropertyTableList>\n  "
+  },
+  "source_flags_preserved": true,
+  "solver_launched": false,
+  "operation_id": "op_c28601f5c67b4eb1b78e52e3935b5a8f",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

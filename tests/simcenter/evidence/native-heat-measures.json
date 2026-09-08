@@ -1,0 +1,109 @@
+{
+  "status": "success",
+  "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\volume-numerical-solve-20260908-r1\\volume_solve_r1.sim",
+  "part_units": "1",
+  "areas": [
+    {
+      "bounds": {
+        "minimum": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "maximum": [
+          0.0,
+          10.0,
+          10.0
+        ]
+      },
+      "area": 100.0
+    },
+    {
+      "bounds": {
+        "minimum": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "maximum": [
+          100.0,
+          0.0,
+          10.0
+        ]
+      },
+      "area": 1000.0
+    },
+    {
+      "bounds": {
+        "minimum": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "maximum": [
+          100.0,
+          10.0,
+          0.0
+        ]
+      },
+      "area": 1000.0
+    },
+    {
+      "bounds": {
+        "minimum": [
+          0.0,
+          0.0,
+          10.0
+        ],
+        "maximum": [
+          100.0,
+          10.0,
+          10.0
+        ]
+      },
+      "area": 1000.0
+    },
+    {
+      "bounds": {
+        "minimum": [
+          0.0,
+          10.0,
+          0.0
+        ],
+        "maximum": [
+          100.0,
+          10.0,
+          10.0
+        ]
+      },
+      "area": 1000.0
+    },
+    {
+      "bounds": {
+        "minimum": [
+          100.0,
+          0.0,
+          0.0
+        ],
+        "maximum": [
+          100.0,
+          10.0,
+          10.0
+        ]
+      },
+      "area": 100.0
+    }
+  ],
+  "volume": 10000.0,
+  "centroid": [
+    50.0,
+    5.0,
+    5.000000000000001
+  ],
+  "flags_preserved": true,
+  "operation_id": "op_37dc7b48d21842399c1cdf803dcc5b0d",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

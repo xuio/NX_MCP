@@ -1,0 +1,144 @@
+{
+  "transport": "new MCP stdio client after launch client disconnected",
+  "responses": {
+    "status_observations": [],
+    "audit": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"job_id\": \"coupled-diagnostic-r1\", \"request_sha256\": \"561e0f88022568eab24084f777c9ae987c5f57f287431805a72e7471153ae4e1\", \"persisted_job_state\": \"solver_exited\", \"log_name\": \"coupled_diagnostic_r1-Coupled_benchmark.log\", \"log_sha256\": \"274d6b055dd62edf710dad98c461bdc6d12525b3bd4835fc16220cb1bae426c1\", \"observed_bytes\": 50544, \"snapshot_semantics\": \"bytes read; file may still be growing\", \"format\": \"observed_simcenter_2606_steady_coupled\", \"completion_marker_present\": true, \"failure_evidence\": {\"state\": \"unknown\", \"stage\": \"unknown\", \"translator_fatal_codes\": [], \"fatal_abort_reported\": false, \"numerical_convergence\": \"not_established\", \"results_validated\": false, \"next_action\": \"Inspect job process status, residuals and result validation before classifying.\"}, \"residual_threshold\": 0.0002, \"last_iteration\": 10, \"final_equations_complete\": true, \"final_residual_criteria_met\": null, \"reported_imbalances\": {\"momentum\": {\"value\": 0.000148, \"units\": \"%\", \"definition\": \"native reported imbalance; denominator not independently established\"}, \"mass\": {\"value\": 0.02541, \"units\": \"%\", \"definition\": \"native reported imbalance; denominator not independently established\"}, \"energy\": {\"value\": 0.04384, \"units\": \"%\", \"definition\": \"native reported imbalance; denominator not independently established\"}}, \"boundary_flows\": [{\"name\": \"Coupled Inlet\", \"volume_flow_m3_s\": 5e-05, \"mass_flow_kg_s\": 6.472e-05, \"positive_direction\": \"into_domain\"}, {\"name\": \"Coupled Opening\", \"volume_flow_m3_s\": -5e-05, \"mass_flow_kg_s\": -6.472e-05, \"positive_direction\": \"into_domain\"}], \"fan_operating_points\": {\"state\": \"not_present\", \"fans\": []}, \"coupled_summary\": {\"ambient_temperature_degC\": 0.0, \"temperature_summaries\": [{\"maximum\": 2.127, \"minimum\": 0.02555, \"average\": 0.8969, \"quantity\": \"Fluid Temperature\", \"units\": \"degC\", \"association\": \"native summary row; region identity not established\"}, {\"maximum\": 23.13, \"minimum\": 23.13, \"average\": 23.13, \"quantity\": \"Solid Temperature\", \"units\": \"degC\", \"association\": \"native summary row; region identity not established\"}, {\"maximum\": 23.13, \"minimum\": 23.13, \"average\": 23.13, \"quantity\": \"Solid Temperature\", \"units\": \"degC\", \"association\": \"native summary row; region identity not established\"}], \"applied_solid_power_W\": 0.09999999999999999, \"heat_to_fluid_W\": 0.09971, \"maximum_coupled_temperature_change_degC\": 1.185, \"normalized_coupled_heat_imbalance\": 0.05549, \"iteration_limit_reached_without_convergence\": true, \"numerical_convergence\": \"failed\", \"warnings\": {\"coincident_thermal_nodes\": true, \"no_interior_pressure_anchor\": true}, \"scope\": \"Rounded native log summaries; not independent field extraction, complete criteria validation or mesh acceptance\"}, \"rounded_boundary_mass_sum_kg_s\": 0.0, \"rounding_warning\": \"Boundary values are rounded in the log; a zero sum does not establish zero imbalance\", \"numerical_convergence\": \"not_established\", \"results_validated\": false, \"scope\": \"Log observations only; input/job association, all configured criteria and mesh sensitivity require separate audits\", \"residual_history\": [{\"iteration\": 1, \"region\": \"Flow Enclosure\", \"equation\": \"U - Mom\", \"linear_iterations\": 1, \"linear_residual\": 1.339e-05, \"rate\": 0.0, \"rate_overflow\": false, \"residual\": 41.75, \"native_message\": \"--\"}], \"history_total\": 50, \"next_offset\": 1, \"job_state_changed\": false, \"operation_id\": \"op_a20e7cc0718f4218bcd50ac8a96ceae4\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "job_id": "coupled-diagnostic-r1",
+        "request_sha256": "561e0f88022568eab24084f777c9ae987c5f57f287431805a72e7471153ae4e1",
+        "persisted_job_state": "solver_exited",
+        "log_name": "coupled_diagnostic_r1-Coupled_benchmark.log",
+        "log_sha256": "274d6b055dd62edf710dad98c461bdc6d12525b3bd4835fc16220cb1bae426c1",
+        "observed_bytes": 50544,
+        "snapshot_semantics": "bytes read; file may still be growing",
+        "format": "observed_simcenter_2606_steady_coupled",
+        "completion_marker_present": true,
+        "failure_evidence": {
+          "state": "unknown",
+          "stage": "unknown",
+          "translator_fatal_codes": [],
+          "fatal_abort_reported": false,
+          "numerical_convergence": "not_established",
+          "results_validated": false,
+          "next_action": "Inspect job process status, residuals and result validation before classifying."
+        },
+        "residual_threshold": 0.0002,
+        "last_iteration": 10,
+        "final_equations_complete": true,
+        "final_residual_criteria_met": null,
+        "reported_imbalances": {
+          "momentum": {
+            "value": 0.000148,
+            "units": "%",
+            "definition": "native reported imbalance; denominator not independently established"
+          },
+          "mass": {
+            "value": 0.02541,
+            "units": "%",
+            "definition": "native reported imbalance; denominator not independently established"
+          },
+          "energy": {
+            "value": 0.04384,
+            "units": "%",
+            "definition": "native reported imbalance; denominator not independently established"
+          }
+        },
+        "boundary_flows": [
+          {
+            "name": "Coupled Inlet",
+            "volume_flow_m3_s": 5e-05,
+            "mass_flow_kg_s": 6.472e-05,
+            "positive_direction": "into_domain"
+          },
+          {
+            "name": "Coupled Opening",
+            "volume_flow_m3_s": -5e-05,
+            "mass_flow_kg_s": -6.472e-05,
+            "positive_direction": "into_domain"
+          }
+        ],
+        "fan_operating_points": {
+          "state": "not_present",
+          "fans": []
+        },
+        "coupled_summary": {
+          "ambient_temperature_degC": 0.0,
+          "temperature_summaries": [
+            {
+              "maximum": 2.127,
+              "minimum": 0.02555,
+              "average": 0.8969,
+              "quantity": "Fluid Temperature",
+              "units": "degC",
+              "association": "native summary row; region identity not established"
+            },
+            {
+              "maximum": 23.13,
+              "minimum": 23.13,
+              "average": 23.13,
+              "quantity": "Solid Temperature",
+              "units": "degC",
+              "association": "native summary row; region identity not established"
+            },
+            {
+              "maximum": 23.13,
+              "minimum": 23.13,
+              "average": 23.13,
+              "quantity": "Solid Temperature",
+              "units": "degC",
+              "association": "native summary row; region identity not established"
+            }
+          ],
+          "applied_solid_power_W": 0.09999999999999999,
+          "heat_to_fluid_W": 0.09971,
+          "maximum_coupled_temperature_change_degC": 1.185,
+          "normalized_coupled_heat_imbalance": 0.05549,
+          "iteration_limit_reached_without_convergence": true,
+          "numerical_convergence": "failed",
+          "warnings": {
+            "coincident_thermal_nodes": true,
+            "no_interior_pressure_anchor": true
+          },
+          "scope": "Rounded native log summaries; not independent field extraction, complete criteria validation or mesh acceptance"
+        },
+        "rounded_boundary_mass_sum_kg_s": 0.0,
+        "rounding_warning": "Boundary values are rounded in the log; a zero sum does not establish zero imbalance",
+        "numerical_convergence": "not_established",
+        "results_validated": false,
+        "scope": "Log observations only; input/job association, all configured criteria and mesh sensitivity require separate audits",
+        "residual_history": [
+          {
+            "iteration": 1,
+            "region": "Flow Enclosure",
+            "equation": "U - Mom",
+            "linear_iterations": 1,
+            "linear_residual": 1.339e-05,
+            "rate": 0.0,
+            "rate_overflow": false,
+            "residual": 41.75,
+            "native_message": "--"
+          }
+        ],
+        "history_total": 50,
+        "next_offset": 1,
+        "job_state_changed": false,
+        "operation_id": "op_a20e7cc0718f4218bcd50ac8a96ceae4",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "not_applicable"
+      },
+      "isError": false
+    }
+  }
+}

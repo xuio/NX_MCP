@@ -1,0 +1,42 @@
+{
+  "scope": "NX2606 Python native dialog invocation probe; no working dialog-control capability established",
+  "invocation": {
+    "state": "invoke_failed",
+    "command": "UG_SFEM_INSERT_SOLUTION",
+    "journal_path_base": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\coupled-solution-dialog-r1",
+    "model_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-coupled-mcp-20260908-r1\\benchmark_d1e2b031a3dd_analysis.sim",
+    "solver_launched": false,
+    "nx_code": 900000,
+    "error_type": "NXException",
+    "message": "Error number: 900000",
+    "document_flags_preserved": true
+  },
+  "inspection": {
+    "status": "success",
+    "nx_code": 900000,
+    "recording_active": false,
+    "decode_error": "AttributeError",
+    "button": {
+      "ButtonId": "22997",
+      "ButtonName": "UG_SFEM_INSERT_SOLUTION",
+      "ButtonType": "1",
+      "ButtonTypeName": "Item",
+      "ButtonSensitivity": "0",
+      "ButtonAvailability": "0"
+    },
+    "journal_files": [
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\coupled-solution-dialog-r1.cs",
+        "bytes": 2220,
+        "text": "// Simcenter 3D 2606\r\n// Journal created by cadadmin on Tue Sep  8 12:58:37 2026 W. Europe Daylight Time\r\n//\r\nusing System;\r\nusing NXOpen;\r\n\r\npublic class SCJournal\r\n{\r\n  public static void Main(string[] args)\r\n  {\r\n    NXOpen.Session theSession = NXOpen.Session.GetSession();\r\n    NXOpen.UI theUI = NXOpen.UI.GetUI();\r\n    \r\n    // The system could not find a variable to use for argument number 1\r\n    // This may be because of previous exceptions\r\n    // ----------------------------------------------\r\n    //   Menu: Insert->Solution...\r\n    // ----------------------------------------------\r\n    bool actionStatus1;\r\n    try\r\n    {\r\n      actionStatus1 = theUI.DialogTester.InvokeMenuButtonAction(null);\r\n    }\r\n    catch (NXException ex)\r\n    {\r\n      ex.AssertErrorCode(900000);\r\n    }\r\n    \r\n    NXOpen.CAE.SimPart workSimPart = ((NXOpen.CAE.SimPart)theSession.Parts.BaseWork);\r\n    NXOpen.CAE.SimPart displaySimPart = ((NXOpen.CAE.SimPart)theSession.Parts.BaseDisplay);\r\n    \r\n  }\r\n  public static int GetUnloadOption(string dummy) { return (int)NXOpen.Session.LibraryUnloadOption.Immediately; }\r\n}\r\n"
+      }
+    ],
+    "operation_id": "op_6661098227ce4dff83a30e9763359572",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed",
+    "warnings": [],
+    "units": "mm"
+  },
+  "licence_diagnosis": "not_established",
+  "configuration_changes": false
+}

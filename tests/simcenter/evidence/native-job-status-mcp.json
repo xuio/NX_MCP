@@ -1,0 +1,353 @@
+{
+  "transport": "MCP stdio -> descriptor bridge -> NX host",
+  "schema": {
+    "name": "nx_sim_job_status",
+    "title": null,
+    "description": "Inspect a persistent Simcenter job record without launching, retrying or changing it. job_folder is its workspace-relative storage folder; job_id is its durable ID. Returns recorded state/revision, observation time, request hash and retry prohibition. Optional manifest/evidence expand the compact default. This reads persisted observations, not live process status: a launch return is not proof of solver execution, and solver exit is not numerical validation. Incomplete records return state unknown and prohibit automatic relaunch. Missing jobs and paths outside the workspace are errors. Requires the bridge to respond; background process monitoring and cancellation are not implemented by this tool.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "job_id": {
+          "title": "Job Id",
+          "type": "string"
+        },
+        "job_folder": {
+          "default": "simcenter-jobs",
+          "title": "Job Folder",
+          "type": "string"
+        },
+        "include_manifest": {
+          "default": false,
+          "title": "Include Manifest",
+          "type": "boolean"
+        },
+        "include_evidence": {
+          "default": false,
+          "title": "Include Evidence",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "job_id"
+      ],
+      "title": "nx_sim_job_statusArguments",
+      "type": "object"
+    },
+    "outputSchema": {
+      "additionalProperties": true,
+      "description": "Structured success/error envelope with additive metadata. Tool-specific payload remains extensible.",
+      "properties": {
+        "status": {
+          "enum": [
+            "success",
+            "error"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "warnings": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Warnings",
+          "type": "array"
+        },
+        "units": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Units"
+        },
+        "operation_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Operation Id"
+        },
+        "mutation_outcome": {
+          "anyOf": [
+            {
+              "enum": [
+                "not_started",
+                "running",
+                "committed",
+                "rolled_back",
+                "partial",
+                "unknown",
+                "not_applicable"
+              ]
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "full_result": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "sha256": {
+              "type": "string"
+            },
+            "size": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "tool": {
+              "const": "nx_read_result"
+            },
+            "immutable": {
+              "const": true
+            }
+          },
+          "required": [
+            "id",
+            "sha256",
+            "size",
+            "tool",
+            "immutable"
+          ],
+          "additionalProperties": true
+        },
+        "omitted": {
+          "type": "object"
+        },
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "retryable": {
+          "type": "boolean"
+        },
+        "suggestion": {
+          "type": "string"
+        },
+        "nx_code": {
+          "type": [
+            "integer",
+            "string"
+          ]
+        },
+        "details": {
+          "type": "object",
+          "properties": {
+            "operation_id": {
+              "type": "string"
+            },
+            "mutation_outcome": {
+              "enum": [
+                "not_started",
+                "running",
+                "committed",
+                "rolled_back",
+                "partial",
+                "unknown",
+                "not_applicable"
+              ]
+            }
+          },
+          "required": [],
+          "additionalProperties": true
+        }
+      },
+      "required": [
+        "status",
+        "warnings",
+        "units"
+      ],
+      "title": "nx_sim_job_status result",
+      "type": "object",
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "error"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "code",
+              "message",
+              "retryable"
+            ]
+          }
+        }
+      ]
+    },
+    "icons": null,
+    "annotations": {
+      "title": null,
+      "readOnlyHint": true,
+      "destructiveHint": null,
+      "idempotentHint": true,
+      "openWorldHint": null
+    },
+    "meta": null,
+    "execution": null
+  },
+  "responses": {
+    "compact": {
+      "is_error": false,
+      "result": {
+        "status": "success",
+        "warnings": [],
+        "units": null,
+        "job_id": "cavity-fan-solve-09",
+        "request_sha256": "c54b1535483b0012235f985721e51de33c5a845ff69a969c3423a06642c8ad1d",
+        "state": "solver_exited",
+        "revision": 3,
+        "launch_retry_allowed": false,
+        "numerical_convergence": "not_established",
+        "results_validated": false,
+        "observed_at": "2026-09-08T03:29:24.587891+00:00",
+        "observation_kind": "persisted_record",
+        "live_process_state": "not_checked",
+        "job_folder": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\jobs",
+        "operation_id": "op_638389c820b64c2ea99de9232e9b714d",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "not_applicable"
+      }
+    },
+    "expanded": {
+      "is_error": false,
+      "result": {
+        "status": "success",
+        "warnings": [],
+        "units": null,
+        "job_id": "cavity-fan-solve-09",
+        "request_sha256": "c54b1535483b0012235f985721e51de33c5a845ff69a969c3423a06642c8ad1d",
+        "state": "solver_exited",
+        "revision": 3,
+        "launch_retry_allowed": false,
+        "numerical_convergence": "not_established",
+        "results_validated": false,
+        "observed_at": "2026-09-08T03:29:24.587891+00:00",
+        "observation_kind": "persisted_record",
+        "live_process_state": "not_checked",
+        "job_folder": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\jobs",
+        "manifest": {
+          "analysis_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_analysis.sim",
+          "convergence": {
+            "flow_imbalance_enabled": true,
+            "flow_imbalance_fraction": 0.001,
+            "rms_residual": 1e-06
+          },
+          "element_sets": {
+            "TET4 Fluid": 77133,
+            "WEDGE6 Fluid": 109632
+          },
+          "input_xml_content_sha256": "83d3c9b323ff8ac9cf0a4723e833ec9f1dba1b59ce02c704ca8b2c9649ee55da",
+          "iteration_limit": 1000,
+          "job_id": "cavity-fan-solve-09",
+          "mesh_counts": {
+            "elements": 186765,
+            "nodes": 71748
+          },
+          "mesh_size_mm": 1.5,
+          "quality_preflight": {
+            "element_count": 186765,
+            "errors": 0,
+            "warnings": 0
+          },
+          "scope": "synthetic fan mode-5 verification; no thermal load; not acceptance D"
+        },
+        "evidence": {
+          "completion_footer": true,
+          "input": {
+            "bytes": 18628224,
+            "canonicalization": "xml_c14n2_no_comments",
+            "sha256": "dc19e94dfd9718e1cec236cfc5920ac8900ee2821df3911a916f13cfe875ac05",
+            "xml_content_sha256": "83d3c9b323ff8ac9cf0a4723e833ec9f1dba1b59ce02c704ca8b2c9649ee55da"
+          },
+          "log": {
+            "bytes": 39351,
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_analysis-Flow_benchmark.log",
+            "sha256": "fa4c3b975457cfec40774443621b0797c5a086495bd3a7a3ef5e06becec0d0b6"
+          },
+          "numerical_validation": "separate",
+          "pid_absent_now": true,
+          "previously_observed_pid": 17900,
+          "result": {
+            "bytes": 46367644,
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_analysis-Flow_benchmark.bun",
+            "sha256": "6f076a9cdd65a6a25a4ebe5a3a4b97312f20041957f108adfa0edb14a46a95d8"
+          },
+          "scope": "fixture-specific terminal reconciliation; not a general process identity monitor"
+        },
+        "operation_id": "op_1d1fa5bcef1d41ec8432ac153fa11d3b",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "not_applicable"
+      }
+    },
+    "unknown": {
+      "is_error": false,
+      "result": {
+        "status": "success",
+        "warnings": [],
+        "units": null,
+        "job_id": "interrupted-write",
+        "state": "unknown",
+        "revision": null,
+        "launch_retry_allowed": false,
+        "next_action": "Inspect retained job records and native solver state; do not relaunch or overwrite this identity",
+        "numerical_convergence": "not_established",
+        "results_validated": false,
+        "observed_at": null,
+        "observation_kind": "persisted_record",
+        "live_process_state": "not_checked",
+        "job_folder": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-job-ledger-20260908-r1",
+        "operation_id": "op_e1b8135db049454fba30cf3d086293d9",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "not_applicable"
+      }
+    },
+    "outside": {
+      "is_error": true,
+      "result": {
+        "status": "error",
+        "warnings": [],
+        "units": null,
+        "code": "NX_API_ERROR",
+        "message": "Path must stay inside the configured workspace",
+        "retryable": false,
+        "details": {
+          "operation_id": "op_da6ed594affc425e93cdb0c8d26a1aa5",
+          "mutation_outcome": "not_started"
+        }
+      }
+    },
+    "missing": {
+      "is_error": true,
+      "result": {
+        "status": "error",
+        "warnings": [],
+        "units": null,
+        "code": "NX_SIM_JOB_NOT_FOUND",
+        "message": "No reserved job with this identity",
+        "retryable": false,
+        "details": {
+          "operation_id": "op_6a7ee64233cd46d083a3b3366b68aecf",
+          "mutation_outcome": "not_started"
+        }
+      }
+    }
+  },
+  "scope": "Persistent-record inspection via real MCP; no live process polling"
+}

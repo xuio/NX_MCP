@@ -1,0 +1,436 @@
+{
+  "status": "success",
+  "builders": [
+    {
+      "type": "Orthotropic",
+      "accepted": true,
+      "thermal_properties": [
+        {
+          "name": "DensityControl",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "MassDensity",
+          "native_type": "6",
+          "units": "KilogramPerCubicMilliMeter",
+          "expression": "-777777",
+          "unit_symbol": "kg/mm^3",
+          "representation": "expression"
+        },
+        {
+          "name": "SpecificHeatControl",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "SpecificHeat",
+          "native_type": "6",
+          "units": "SpecificHeat_Metric2",
+          "expression": "-777777",
+          "unit_symbol": "J/kg-dK",
+          "representation": "expression"
+        },
+        {
+          "name": "ThermalExpansionCoefficientType",
+          "native_type": "3",
+          "units": null,
+          "value": 1
+        },
+        {
+          "name": "ThermalExpansion",
+          "native_type": "6",
+          "units": "ThermalExpansion_Metric1",
+          "expression": "-777777",
+          "unit_symbol": "1/dC",
+          "representation": "expression"
+        },
+        {
+          "name": "ThermalExpansion2",
+          "native_type": "6",
+          "units": "ThermalExpansion_Metric1",
+          "expression": "-777777",
+          "unit_symbol": "1/dC",
+          "representation": "expression"
+        },
+        {
+          "name": "ThermalExpansion3",
+          "native_type": "6",
+          "units": "ThermalExpansion_Metric1",
+          "expression": "-777777",
+          "unit_symbol": "1/dC",
+          "representation": "expression"
+        },
+        {
+          "name": "ThermalExpansionCoefficientControl2",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "ThermalConductivityControl",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "TempConductivityBehaviorType",
+          "native_type": "3",
+          "units": null,
+          "value": 1
+        },
+        {
+          "name": "ThermalConductivity",
+          "native_type": "6",
+          "units": "ThermalConductivity_Metric2",
+          "expression": "-777777",
+          "unit_symbol": "W/mm-dC",
+          "representation": "expression"
+        },
+        {
+          "name": "ThermalConductivity2",
+          "native_type": "6",
+          "units": "ThermalConductivity_Metric2",
+          "expression": "-777777",
+          "unit_symbol": "W/mm-dC",
+          "representation": "expression"
+        },
+        {
+          "name": "ThermalConductivity3",
+          "native_type": "6",
+          "units": "ThermalConductivity_Metric2",
+          "expression": "-777777",
+          "unit_symbol": "W/mm-dC",
+          "representation": "expression"
+        },
+        {
+          "name": "DummyThermalConductivity1",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "DummyThermalConductivity2",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "DummyThermalConductivity3",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "DummyThermalConductivity4",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "PhaseSpecificHeat",
+          "native_type": "6",
+          "units": "SpecificHeat_Metric2",
+          "expression": "-777777",
+          "unit_symbol": "J/kg-dK",
+          "representation": "expression"
+        },
+        {
+          "name": "ElectConductivityResistivityMode",
+          "native_type": "3",
+          "units": null,
+          "value": 1
+        },
+        {
+          "name": "ElectConductivityMethod",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "SCThermalFlowAppliedViews",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "SCSpaceSystemsThermalAppliedViews",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        }
+      ],
+      "committed": false
+    },
+    {
+      "type": "Anisotropic",
+      "accepted": true,
+      "thermal_properties": [
+        {
+          "name": "DensityControl",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "MassDensity",
+          "native_type": "6",
+          "units": "KilogramPerCubicMilliMeter",
+          "expression": "-777777",
+          "unit_symbol": "kg/mm^3",
+          "representation": "expression"
+        },
+        {
+          "name": "SpecificHeatControl",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "SpecificHeat",
+          "native_type": "6",
+          "units": "SpecificHeat_Metric2",
+          "expression": "-777777",
+          "unit_symbol": "J/kg-dK",
+          "representation": "expression"
+        },
+        {
+          "name": "ThermalExpansionCoefficientType",
+          "native_type": "3",
+          "units": null,
+          "value": 1
+        },
+        {
+          "name": "ThermalExpansion",
+          "native_type": "6",
+          "units": "ThermalExpansion_Metric1",
+          "expression": "-777777",
+          "unit_symbol": "1/dC",
+          "representation": "expression"
+        },
+        {
+          "name": "ThermalExpansion2",
+          "native_type": "6",
+          "units": "ThermalExpansion_Metric1",
+          "expression": "-777777",
+          "unit_symbol": "1/dC",
+          "representation": "expression"
+        },
+        {
+          "name": "ThermalExpansion3",
+          "native_type": "6",
+          "units": "ThermalExpansion_Metric1",
+          "expression": "-777777",
+          "unit_symbol": "1/dC",
+          "representation": "expression"
+        },
+        {
+          "name": "ThermalExpansionCoefficientControl2",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "ThermalExpansion4",
+          "native_type": "6",
+          "units": "ThermalExpansion_Metric1",
+          "expression": "-777777",
+          "unit_symbol": "1/dC",
+          "representation": "expression"
+        },
+        {
+          "name": "ThermalExpansion5",
+          "native_type": "6",
+          "units": "ThermalExpansion_Metric1",
+          "expression": "-777777",
+          "unit_symbol": "1/dC",
+          "representation": "expression"
+        },
+        {
+          "name": "ThermalExpansion6",
+          "native_type": "6",
+          "units": "ThermalExpansion_Metric1",
+          "expression": "-777777",
+          "unit_symbol": "1/dC",
+          "representation": "expression"
+        },
+        {
+          "name": "ThermalExpansionA",
+          "native_type": "6",
+          "units": "ThermalExpansion_Metric1",
+          "expression": "0",
+          "unit_symbol": "1/dC",
+          "representation": "expression"
+        },
+        {
+          "name": "ThermalConductivityControl",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "TempConductivityBehaviorType",
+          "native_type": "3",
+          "units": null,
+          "value": 1
+        },
+        {
+          "name": "ThermalConductivity",
+          "native_type": "6",
+          "units": "ThermalConductivity_Metric2",
+          "expression": "-777777",
+          "unit_symbol": "W/mm-dC",
+          "representation": "expression"
+        },
+        {
+          "name": "ThermalConductivity2",
+          "native_type": "6",
+          "units": "ThermalConductivity_Metric2",
+          "expression": "-777777",
+          "unit_symbol": "W/mm-dC",
+          "representation": "expression"
+        },
+        {
+          "name": "ThermalConductivity3",
+          "native_type": "6",
+          "units": "ThermalConductivity_Metric2",
+          "expression": "-777777",
+          "unit_symbol": "W/mm-dC",
+          "representation": "expression"
+        },
+        {
+          "name": "DummyThermalConductivity1",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "DummyThermalConductivity2",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "ThermalConductivity21",
+          "native_type": "6",
+          "units": "ThermalConductivity_Metric2",
+          "expression": "-777777",
+          "unit_symbol": "W/mm-dC",
+          "representation": "expression"
+        },
+        {
+          "name": "ThermalConductivity22",
+          "native_type": "6",
+          "units": "ThermalConductivity_Metric2",
+          "expression": "-777777",
+          "unit_symbol": "W/mm-dC",
+          "representation": "expression"
+        },
+        {
+          "name": "ThermalConductivity23",
+          "native_type": "6",
+          "units": "ThermalConductivity_Metric2",
+          "expression": "-777777",
+          "unit_symbol": "W/mm-dC",
+          "representation": "expression"
+        },
+        {
+          "name": "DummyThermalConductivity3",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "DummyThermalConductivity4",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "ThermalConductivity31",
+          "native_type": "6",
+          "units": "ThermalConductivity_Metric2",
+          "expression": "-777777",
+          "unit_symbol": "W/mm-dC",
+          "representation": "expression"
+        },
+        {
+          "name": "ThermalConductivity32",
+          "native_type": "6",
+          "units": "ThermalConductivity_Metric2",
+          "expression": "-777777",
+          "unit_symbol": "W/mm-dC",
+          "representation": "expression"
+        },
+        {
+          "name": "ThermalConductivity33",
+          "native_type": "6",
+          "units": "ThermalConductivity_Metric2",
+          "expression": "-777777",
+          "unit_symbol": "W/mm-dC",
+          "representation": "expression"
+        },
+        {
+          "name": "PhaseSpecificHeat",
+          "native_type": "6",
+          "units": "SpecificHeat_Metric2",
+          "expression": "-777777",
+          "unit_symbol": "J/kg-dK",
+          "representation": "expression"
+        },
+        {
+          "name": "ElectConductivityResistivityMode",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "ElectConductivityMethod",
+          "native_type": "3",
+          "units": null,
+          "value": 2
+        },
+        {
+          "name": "AnisotropicLinearElectricConductivity",
+          "native_type": "5",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "CalculateAnisotropicConductivity",
+          "native_type": "1",
+          "units": null,
+          "value": "Calculate Conductivity from %IACS"
+        },
+        {
+          "name": "AnisotropicLinearElectricConductivityIACS",
+          "native_type": "5",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "SCThermalFlowAppliedViews",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "SCSpaceSystemsThermalAppliedViews",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        }
+      ],
+      "committed": false
+    }
+  ],
+  "materials_unchanged": true,
+  "flags_preserved": true,
+  "operation_id": "op_a7d940721ee14770a341c723a6b2451f",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

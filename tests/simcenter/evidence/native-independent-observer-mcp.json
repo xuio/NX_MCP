@@ -1,0 +1,65 @@
+{
+  "scope": "External Python observer terminal artifact audit, persisted transition and public MCP readback; not full lifecycle acceptance",
+  "readback": {
+    "status": "success",
+    "warnings": [],
+    "units": null,
+    "job_id": "public-prepared-flow-01",
+    "request_sha256": "29f33da70f9fbaa78160266c417bb662501e40757446aa3c3ddbf9a041b69238",
+    "state": "solver_exited",
+    "revision": 3,
+    "process_binding_revision": null,
+    "launch_retry_allowed": false,
+    "numerical_convergence": "not_established",
+    "results_validated": false,
+    "observed_at": "2026-09-08T08:11:09.494901+00:00",
+    "observation_kind": "persisted_record",
+    "live_process_state": "not_checked",
+    "job_folder": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs",
+    "evidence": {
+      "gate_released": false,
+      "input_comparison": {
+        "after": {
+          "bytes": 18628170,
+          "canonicalization": "xml_c14n2_no_comments",
+          "sha256": "cdeb6212fff9deb154e00e0fde16d476797ea5965bc0c12d82e747ba42f09be9",
+          "xml_content_sha256": "c338e27f9f235ecbf249da29757a9ce0a98c71bd6d263c214a5ca8cee165b84f"
+        },
+        "before": {
+          "bytes": 18628170,
+          "canonicalization": "xml_c14n2_no_comments",
+          "sha256": "9d80a35ad2ceef69bc4d6324efcef492fcb5b509c8cf9232b7d7bce1a4d12539",
+          "xml_content_sha256": "c338e27f9f235ecbf249da29757a9ce0a98c71bd6d263c214a5ca8cee165b84f"
+        },
+        "byte_identical": false,
+        "scope": "input XML only; result association and solver outcome require separate verification",
+        "xml_content_identical": true
+      },
+      "log": {
+        "bytes": 39351,
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-prepare-20260908-r1\\prepared_flow_r1-Flow_benchmark.log",
+        "sha256": "82fc059a4046072ce16dedb9d99dcc8df953011eeffbbc1302f1c4d8b48ce1da"
+      },
+      "model_result_freshness": "not_established",
+      "numerical_convergence": "not_established",
+      "observer_adapter": 1,
+      "process_exit_code": null,
+      "process_job_binding": "not_established",
+      "result": {
+        "bytes": 46367644,
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-prepare-20260908-r1\\prepared_flow_r1-Flow_benchmark.bun",
+        "sha256": "6f076a9cdd65a6a25a4ebe5a3a4b97312f20041957f108adfa0edb14a46a95d8"
+      },
+      "solver_process_observation": {
+        "exclusion": "point-in-time process snapshot; not an atomic lock",
+        "scope": "host-wide known solver/translator names",
+        "solver_processes": 0
+      },
+      "terminal_basis": "fresh owned completion log and native result, matching canonical input, known solver processes absent"
+    },
+    "process_binding_evidence": null,
+    "operation_id": "op_d20f64a429c0460cb48a58a1ba2c949e",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "not_applicable"
+  }
+}

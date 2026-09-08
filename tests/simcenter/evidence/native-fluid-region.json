@@ -1,0 +1,67 @@
+{
+  "scope": "Native body-only fluid-region generation, settings and geometric measurement; topology not certified",
+  "result": {
+    "status": "success",
+    "body_count": 1,
+    "name": "Duct air region",
+    "settings": {
+      "interior_point_mm": [
+        81.0,
+        11.0,
+        11.0
+      ],
+      "coordinate_frame": "FEM_absolute",
+      "resolution_mm": 2.0,
+      "closing_size_mm": 0.0,
+      "output_type": "0",
+      "source_count": 1
+    },
+    "volume_mesh_created": false,
+    "geometry_validation": "required",
+    "saved": false,
+    "source_solid_volume_mm3": 14407.999999999993,
+    "expected_cavity_volume_mm3": 64000.0,
+    "recipe_tag": 1163696,
+    "bodies": [
+      {
+        "tag": 1164638,
+        "type": "CAEBody"
+      }
+    ],
+    "operation_id": "op_f13f03c7e75946e2aec32bac9c89c6e5",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed",
+    "warnings": [],
+    "units": "mm"
+  },
+  "fixes": [
+    "Use BlockFeatureBuilder.SetBooleanOperationAndTarget; generic BooleanOption produced overlapping blocks in this fixture",
+    "Verify one enclosure body and analytic wall volume before FEM creation",
+    "Set InteriorPoint to a native Point; SetCavityPoint did not populate it",
+    "Call FluidDomainCollection.UpdateRecipe after recipe creation and reject empty body arrays"
+  ],
+  "geometry_readback": {
+    "bodies": [
+      {
+        "bounds_mm": [
+          1.0,
+          1.0,
+          1.0,
+          161.0,
+          21.0,
+          21.0
+        ],
+        "volume_mm3": 64000.00000000001,
+        "centroid_mm": [
+          80.99999999999999,
+          10.999999999999996,
+          10.999999999999998
+        ]
+      }
+    ],
+    "body_count": 1,
+    "coordinate_frame": "FEM_absolute",
+    "volume_semantics": "individual polygon bodies; overlaps are not removed",
+    "topology_validation": "not_performed"
+  }
+}

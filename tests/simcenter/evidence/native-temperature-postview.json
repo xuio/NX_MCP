@@ -1,0 +1,62 @@
+{
+  "created": {
+    "status": "success",
+    "warnings": [],
+    "units": "degC",
+    "postview_id": 1,
+    "readback": {
+      "loadcase_index": 0,
+      "iteration_index": 0,
+      "field": "Temperature - Nodal",
+      "unit": "Celsius"
+    },
+    "existing_view_ids": [],
+    "main_postview_id": 1,
+    "saved": false,
+    "result_freshness": "not_verified",
+    "reference_lifetime": "postview ID is session-local; reacquire after manual edits or document closure",
+    "operation_id": "show-conduction-temperature-01",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed"
+  },
+  "replay": {
+    "status": "success",
+    "warnings": [],
+    "units": "degC",
+    "postview_id": 1,
+    "readback": {
+      "loadcase_index": 0,
+      "iteration_index": 0,
+      "field": "Temperature - Nodal",
+      "unit": "Celsius"
+    },
+    "existing_view_ids": [],
+    "main_postview_id": 1,
+    "saved": false,
+    "result_freshness": "not_verified",
+    "reference_lifetime": "postview ID is session-local; reacquire after manual edits or document closure",
+    "operation_id": "show-conduction-temperature-01",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed",
+    "replayed": true
+  },
+  "invalid": {
+    "status": "error",
+    "warnings": [],
+    "units": null,
+    "code": "NX_SIM_POSTVIEW_FAILED",
+    "message": "Temperature view failed; inspect current views",
+    "retryable": false,
+    "details": {
+      "reason": "Loadcase index outside result",
+      "cleanup_issues": [],
+      "mutation_outcome": "rolled_back",
+      "operation_id": "show-conduction-invalid-01"
+    }
+  },
+  "visual_check": "Temperature contour and Celsius legend visible; existing Windows Security prompt obscures part of viewport. Clean screenshot acceptance pending.",
+  "screenshot_sha256": "05e4cda39ead73fcadb853559079e022617838b3d6ddac55e8a54e73f94b0e30",
+  "fixture": "examples/simcenter/verify_temperature_postview_mcp.py",
+  "local_tests_passed": 188,
+  "scope": "Native creation, readback and replay; cleanup-failure injection and multiple preexisting views not natively tested"
+}

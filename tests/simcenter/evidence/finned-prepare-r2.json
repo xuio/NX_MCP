@@ -1,0 +1,71 @@
+{
+  "status": "success",
+  "solver_launched": false,
+  "acceptance": false,
+  "copy": {
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_b46c0dec3c8f494595f7eb105c6af270",
+      "kind": "part",
+      "name": "finned_run_r2",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_7c1420819b004f25b5422d1137685bc1",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "7c1420819b004f25b5422d1137685bc1",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-run-20260908-r2\\finned_run_r2.sim",
+      "journal_id": "finned_run_r2",
+      "display_name": "finned_run_r2"
+    },
+    "source": {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-run-20260908-r1\\finned_run_r1.sim",
+      "bytes": 7670628,
+      "sha256": "fe562b9b23ebbd0bea3fd1757efcda6e1f8d9d3b6d6e31d7710dfd9b331b777d"
+    },
+    "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-run-20260908-r2\\finned_run_r2.sim",
+    "source_file_unchanged": true,
+    "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-run-20260908-r2\\finned_run_r2.sim",
+    "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-run-20260908-r2\\finned_run_r2.sim",
+    "shared_fem_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-baseline-20260908-r1\\finned_r1_mesh.fem",
+    "independent_geometry_variant": false,
+    "saved": true,
+    "result_freshness": "not_verified",
+    "next_step": "Reacquire document IDs. Duplicate and reassociate FEM/CAD before changing shared geometry or mesh."
+  },
+  "opening_pressure": {
+    "mode": "specified_absolute",
+    "value": 101325.0,
+    "units": "PressurePascals"
+  },
+  "prepare": {
+    "job_id": "coupled-finned-baseline-r2",
+    "state": "accepted",
+    "request_sha256": "f4c541eb17240d7edbcdcea74a1af6f5b0cb44429be1cbebb3680032269a606f",
+    "replayed": false,
+    "preparation_revalidated": true,
+    "solver_launched_by_call": false,
+    "input_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-run-20260908-r2\\finned_run_r2-Finned_coupled_benchmark.xml",
+    "input_sha256": "96a67ee88548008536ab4cdd5bbf104a8b0b8d087398fb5c10b2493b789202ba",
+    "output_claim": {
+      "schema": 1,
+      "job_id": "coupled-finned-baseline-r2",
+      "job_directory": "d:\\cad\\simcenter_mcp_workspace\\simcenter-jobs\\coupled-finned-baseline-r2",
+      "request_sha256": "f4c541eb17240d7edbcdcea74a1af6f5b0cb44429be1cbebb3680032269a606f",
+      "output_directory": "d:\\cad\\simcenter_mcp_workspace\\ui-benchmarks\\e-finned-run-20260908-r2",
+      "replayed": false,
+      "retention": "permanent; no automatic release"
+    },
+    "mesh_counts": {
+      "element_sets": 2,
+      "elements": 2130,
+      "nodes": 745,
+      "scope": "observed_multiphysics_xml_layout"
+    },
+    "dependency_completeness": "not_established",
+    "solve_readiness": "not_established",
+    "next_step": "Inspect the immutable manifest with nx_sim_job_status(include_manifest=True), then use nx_sim_launch; cancellation is not yet implemented"
+  },
+  "prepare_seconds": 2.3589999999967404,
+  "operation_id": "op_1389231af83c453096263a88b12b976c",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

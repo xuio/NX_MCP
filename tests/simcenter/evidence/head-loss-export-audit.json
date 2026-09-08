@@ -1,0 +1,31 @@
+{
+  "scope": "NX 2606 exported manual dynamic-pressure opening coefficient",
+  "solution": {
+    "version": "Simcenter 3D 2606",
+    "solver": "Simcenter 3D Multiphysics",
+    "class": "Flow",
+    "solution": "Flow",
+    "simulationName": "f3_head_loss_export_r1",
+    "solutionName": "Flow benchmark"
+  },
+  "opening": "Duct Opening",
+  "table_uid": "4",
+  "table_name": "Synthetic outlet restriction K2",
+  "selectors": {
+    "Type": 0,
+    "Proportional to": 0
+  },
+  "coefficient": 2.0,
+  "units": "dimensionless",
+  "selections": [
+    {
+      "step": "1",
+      "face_count": 718
+    }
+  ],
+  "export_settings_verified": true,
+  "numerical_acceptance": "not_tested_by_this_audit",
+  "source_path": "outputs/simcenter/head-loss-export.xml",
+  "source_sha256": "557631312ab36e6f77614e88ac46fcbdcf133d3a7adbc5b584c768010c9c1bf9",
+  "source_bytes": 18628198
+}

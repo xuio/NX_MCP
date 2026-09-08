@@ -1,0 +1,96 @@
+{
+  "status": "success",
+  "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-coupled-mcp-20260908-r1\\benchmark_d1e2b031a3dd_analysis.sim",
+  "references": [
+    {
+      "key": "Thermal Parameters",
+      "enumerated": true,
+      "uf_tag": 0,
+      "base_type": "0",
+      "reference": {
+        "tag": 2773245,
+        "name": "Coupled defaults Thermal Parameters",
+        "descriptor": "Thermal Parameters"
+      }
+    },
+    {
+      "key": "Thermal Solution Parameters",
+      "enumerated": false,
+      "uf_tag": 2772816,
+      "base_type": "0",
+      "reference_error": {
+        "type": "NXException",
+        "nx_code": 3520001
+      }
+    },
+    {
+      "key": "Coupled Solution Parameters",
+      "enumerated": true,
+      "uf_tag": 2772833,
+      "base_type": "0",
+      "reference": null
+    },
+    {
+      "key": "Flow Solution Parameters",
+      "enumerated": true,
+      "uf_tag": 2772821,
+      "base_type": "0",
+      "reference": {
+        "tag": 2773496,
+        "name": "Coupled defaults Flow Solution Parameters",
+        "descriptor": "Flow Solution Parameters"
+      }
+    },
+    {
+      "key": "Flow Surface Parameters",
+      "enumerated": true,
+      "uf_tag": 2772827,
+      "base_type": "0",
+      "reference": {
+        "tag": 2773525,
+        "name": "Coupled defaults Flow Surface Parameters",
+        "descriptor": "Flow Surface Parameters"
+      }
+    },
+    {
+      "key": "Thermal-Flow Output Requests",
+      "enumerated": true,
+      "uf_tag": 2772912,
+      "base_type": "0",
+      "reference": {
+        "tag": 2773728,
+        "name": "Coupled defaults Thermal-Flow Output Requests",
+        "descriptor": "Thermal-Flow Output Requests"
+      }
+    }
+  ],
+  "all_tables": [
+    {
+      "name": "Coupled defaults Thermal Parameters",
+      "descriptor": "Thermal Parameters",
+      "tag": 2773245
+    },
+    {
+      "name": "Coupled defaults Flow Solution Parameters",
+      "descriptor": "Flow Solution Parameters",
+      "tag": 2773496
+    },
+    {
+      "name": "Coupled defaults Flow Surface Parameters",
+      "descriptor": "Flow Surface Parameters",
+      "tag": 2773525
+    },
+    {
+      "name": "Coupled defaults Thermal-Flow Output Requests",
+      "descriptor": "Thermal-Flow Output Requests",
+      "tag": 2773728
+    }
+  ],
+  "document_flags_preserved": true,
+  "elapsed_seconds": 0.0,
+  "operation_id": "op_9c726b43cd334cc6a95680da5ec36a6d",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

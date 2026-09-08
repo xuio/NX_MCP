@@ -1,0 +1,62 @@
+{
+  "part": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-material_contrast-20260908-r1\\finned_material_contrast_r1_geometry.prt",
+  "edge_journal": "EDGE * 2 * 3 {(0,0,0)(0,0,1)(0,0,2) BLOCK(0)}",
+  "sample": [
+    1.0,
+    1.0,
+    5.0,
+    0.0,
+    0.002,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.5,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    1.5,
+    0.0,
+    0.0,
+    2.0
+  ],
+  "before": [
+    1.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "after_success": [
+    1.0,
+    1.0,
+    1.0,
+    0.0
+  ],
+  "failure": {
+    "nx_code": 3600008,
+    "message": "Exception while invoking method in managed code"
+  },
+  "after_failure": [
+    1.0,
+    2.0,
+    2.0,
+    0.0
+  ],
+  "endpoint_error_part_units": 0.0,
+  "modified_flags_preserved": true,
+  "python_pointer_accessed": false,
+  "passed": true
+}

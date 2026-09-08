@@ -1,0 +1,137 @@
+{
+  "capture": {
+    "status": "success",
+    "warnings": [
+      "NX returned a different resolution than requested"
+    ],
+    "units": "mm",
+    "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\captures\\nx-8bcc40f44fb24bc88fcd7bbcbafee469.png",
+    "artifact_path": "captures\\nx-8bcc40f44fb24bc88fcd7bbcbafee469.png",
+    "capture_kind": "nx_model_viewport",
+    "model_preview": true,
+    "resolution": [
+      2458,
+      1484
+    ],
+    "requested_resolution": [
+      1600,
+      1000
+    ],
+    "camera": {
+      "part": {
+        "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_6138e87e19f5445d98738a6bf69d6842",
+        "kind": "part",
+        "name": "thermal_input_r1",
+        "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6a4b8c1adf6d49d6b11b612545d0cb1b"
+      },
+      "name": "ANALYSIS_1",
+      "rotation": [
+        [
+          0.63121905864763,
+          -0.29117688182626567,
+          0.7188730927569433
+        ],
+        [
+          0.7756046028744285,
+          0.23697177216995516,
+          -0.5850486126764433
+        ],
+        [
+          -0.0,
+          0.9268551141815876,
+          0.3754192287502549
+        ]
+      ],
+      "origin": [
+        -35.43897594675364,
+        8.739709659555569,
+        -34.89550771821621
+      ],
+      "absolute_origin": [
+        49.999999999999986,
+        5.000000000000007,
+        4.999999999999995
+      ],
+      "scale": 8.951778696860453,
+      "coordinate_frame": "display_part",
+      "matrix_layout": "row-major 3x3; columns are NX view axes",
+      "rendering_style": "shaded",
+      "interactive": true
+    },
+    "background": "white",
+    "rendering": "NX viewport rasterization",
+    "size": 282120,
+    "sha256": "4e0c7574f2402c49937dcd56ef64d010c3cd7db5268b96a8ae97d8e8e01a618a",
+    "operation_id": "op_02c95d27810147bda7ed33ef9a2d9653",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed",
+    "result_id": "result_64ca6321897e4b64b31d4790f369359a",
+    "detail": "compact",
+    "next_actions": [
+      {
+        "tool": "nx_download_file",
+        "arguments": {
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\captures\\nx-8bcc40f44fb24bc88fcd7bbcbafee469.png",
+          "delivery": "metadata"
+        },
+        "purpose": "Retrieve artifact metadata before programmatic download"
+      }
+    ]
+  },
+  "inline_image": {
+    "mime_type": "image/png",
+    "bytes": 282120,
+    "sha256": "4e0c7574f2402c49937dcd56ef64d010c3cd7db5268b96a8ae97d8e8e01a618a"
+  },
+  "native_resolution_probe": {
+    "status": "success",
+    "exports": [
+      {
+        "requested": [
+          800,
+          500
+        ],
+        "builder_before": [
+          800,
+          500
+        ],
+        "builder_after": [
+          800,
+          500
+        ],
+        "png_resolution": [
+          2458,
+          1484
+        ],
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\captures\\resolution-probe-e80d12a483b340adb3e955d42159d2c2.png"
+      },
+      {
+        "requested": [
+          1600,
+          1000
+        ],
+        "builder_before": [
+          1600,
+          1000
+        ],
+        "builder_after": [
+          1600,
+          1000
+        ],
+        "png_resolution": [
+          2458,
+          1484
+        ],
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\captures\\resolution-probe-f0968ff60ba94e7399d1275a36a68e47.png"
+      }
+    ],
+    "scope": "Native ImageExportBuilder dimensions with an active Simcenter postview",
+    "operation_id": "op_50fd5231855b4a388a8d27be1e6dc6cf",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed",
+    "warnings": [],
+    "units": "mm"
+  },
+  "visual_inspection": "Clean viewport export excludes desktop dialogs and contains mesh, temperature contour, Celsius legend and extrema; legend/title overlap geometry at current camera framing",
+  "scope": "Existing MCP viewport capture and inline delivery verified; exact resolution control not achieved"
+}

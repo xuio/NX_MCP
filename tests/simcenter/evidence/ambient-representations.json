@@ -1,0 +1,147 @@
+{
+  "status": "success",
+  "rows": [
+    {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-environment-expression-20260908-r1\\coupled_expression_r1.sim",
+      "solution": "Coupled benchmark",
+      "analysis_type": "Coupled Thermal-Flow",
+      "properties": [
+        {
+          "name": "Fluid Temperature",
+          "property_type": "6",
+          "GetScalarWithDataPropertyValue": {
+            "value": 20.0,
+            "units": "Celsius"
+          },
+          "GetScalarFieldWrapperPropertyValue": {
+            "type": "ScalarFieldWrapper",
+            "tag": 5174978,
+            "expression": "20"
+          },
+          "GetScalarFieldPropertyValue": {
+            "type": "FieldExpression",
+            "tag": 5176286,
+            "field_expression": "20"
+          }
+        },
+        {
+          "name": "Absolute Pressure",
+          "property_type": "6",
+          "GetScalarWithDataPropertyValue": {
+            "value": 101325.0,
+            "units": "PressurePascals"
+          },
+          "GetScalarFieldWrapperPropertyValue": {
+            "type": "ScalarFieldWrapper",
+            "tag": 5175502,
+            "expression": "101325"
+          },
+          "GetScalarFieldPropertyValue": {
+            "type": "FieldExpression",
+            "tag": 5176297,
+            "field_expression": "101325"
+          }
+        }
+      ]
+    },
+    {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\additive-heat-public-20260908-r1\\additive_heat_r1.sim",
+      "solution": "Conduction",
+      "analysis_type": "Thermal",
+      "properties": [
+        {
+          "name": "Fluid Temperature",
+          "property_type": "6",
+          "GetScalarWithDataPropertyValue": {
+            "value": 20.0,
+            "units": "Celsius"
+          },
+          "GetScalarFieldWrapperPropertyValue": {
+            "type": "ScalarFieldWrapper",
+            "tag": 4816073,
+            "expression": "20"
+          },
+          "GetScalarFieldPropertyValue": {
+            "type": "FieldExpression",
+            "tag": 5176309,
+            "field_expression": "20"
+          }
+        },
+        {
+          "name": "Absolute Pressure",
+          "property_type": "6",
+          "GetScalarWithDataPropertyValue": {
+            "value": 0.101351,
+            "units": "PressureNewtonPerSquareMilliMeter"
+          },
+          "GetScalarFieldWrapperPropertyValue": {
+            "type": "ScalarFieldWrapper",
+            "tag": 4816071,
+            "expression": "0.101351"
+          },
+          "GetScalarFieldPropertyValue": {
+            "type": "FieldExpression",
+            "tag": 5175442,
+            "field_expression": "0.101351"
+          }
+        }
+      ]
+    },
+    {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\fan-scaling-public-20260908-r1\\fan_scaling_public_r1.sim",
+      "solution": "Flow benchmark",
+      "analysis_type": "Flow",
+      "properties": [
+        {
+          "name": "Fluid Temperature",
+          "property_type": "6",
+          "GetScalarWithDataPropertyValue": {
+            "value": 20.0,
+            "units": "Celsius"
+          },
+          "GetScalarFieldWrapperPropertyValue": {
+            "type": "ScalarFieldWrapper",
+            "tag": 1751875,
+            "expression": "20"
+          },
+          "GetScalarFieldPropertyValue": {
+            "type": "FieldExpression",
+            "tag": 5175449,
+            "field_expression": "20"
+          }
+        },
+        {
+          "name": "Absolute Pressure",
+          "property_type": "6",
+          "GetScalarWithDataPropertyValue": {
+            "value": 0.101351,
+            "units": "PressureNewtonPerSquareMilliMeter"
+          },
+          "GetScalarFieldWrapperPropertyValue": {
+            "type": "ScalarFieldWrapper",
+            "tag": 1751874,
+            "expression": "0.101351"
+          },
+          "GetScalarFieldPropertyValue": {
+            "type": "FieldExpression",
+            "tag": 5175457,
+            "field_expression": "0.101351"
+          }
+        }
+      ]
+    }
+  ],
+  "elapsed_seconds": 0.0470000000204891,
+  "document_flags_preserved": false,
+  "changed_flags": [
+    4894689,
+    4760705,
+    3575809
+  ],
+  "solver_launched": false,
+  "operation_id": "op_d757dc6d30ee483b933dc2b70ab5529d",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

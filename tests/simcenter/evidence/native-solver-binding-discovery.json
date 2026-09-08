@@ -1,0 +1,173 @@
+{
+  "scope": "Sanitized native solver process correlation; basename match is insufficient for cancellation",
+  "observation": {
+    "state": "observation_window_finished",
+    "observations": [
+      {
+        "executable_path": "C:\\Program Files\\Siemens\\Designcenter2606\\thermalflow\\tmgsolver\\exe\\niece_solver.exe",
+        "command_line_available": true,
+        "matches_job_root": false,
+        "observed_at": "2026-09-08T03:46:36.7619581Z",
+        "name": "niece_solver.exe",
+        "parent_pid": 9656,
+        "pid": 12832,
+        "matches_input_basename": true,
+        "creation_utc": "2026-09-08T03:45:51.9881740Z"
+      },
+      {
+        "executable_path": "C:\\Program Files\\Siemens\\Designcenter2606\\thermalflow\\tmgsolver\\IntelMPI\\bin\\mpiexec.exe",
+        "command_line_available": true,
+        "matches_job_root": false,
+        "observed_at": "2026-09-08T03:46:36.6934290Z",
+        "name": "mpiexec.exe",
+        "parent_pid": 9876,
+        "pid": 9200,
+        "matches_input_basename": true,
+        "creation_utc": "2026-09-08T03:45:51.9458340Z"
+      }
+    ]
+  },
+  "native_launch": {
+    "status": "success",
+    "job": {
+      "job_id": "cavity-fan-solve-10",
+      "manifest": {
+        "analysis_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_analysis.sim",
+        "convergence": {
+          "flow_imbalance_enabled": true,
+          "flow_imbalance_fraction": 0.001,
+          "rms_residual": 1e-06
+        },
+        "element_sets": {
+          "TET4 Fluid": 77133,
+          "WEDGE6 Fluid": 109632
+        },
+        "input_xml_content_sha256": "83d3c9b323ff8ac9cf0a4723e833ec9f1dba1b59ce02c704ca8b2c9649ee55da",
+        "iteration_limit": 1000,
+        "job_id": "cavity-fan-solve-10",
+        "mesh_counts": {
+          "elements": 186765,
+          "nodes": 71748
+        },
+        "mesh_size_mm": 1.5,
+        "quality_preflight": {
+          "element_count": 186765,
+          "errors": 0,
+          "warnings": 0
+        },
+        "scope": "synthetic fan mode-5 verification; no thermal load; not acceptance D"
+      },
+      "request_sha256": "fe2fbfcba8270ef68baf7798c469d2d38a834cfb1340b7cc49c2aeefecf699a0",
+      "state": "launch_returned",
+      "revision": 2,
+      "record": {
+        "evidence": {
+          "api_returned": true,
+          "process_state": "not_yet_observed",
+          "readback": {
+            "background_launch_requested": true,
+            "foreground_setting_restored": true
+          }
+        },
+        "job_id": "cavity-fan-solve-10",
+        "observed_at": "2026-09-08T03:45:27.428783+00:00",
+        "previous_sha256": "772d1ab51f521a630643b64374e09dfda08c16f66970bbe775b1351f63626d9b",
+        "request_sha256": "fe2fbfcba8270ef68baf7798c469d2d38a834cfb1340b7cc49c2aeefecf699a0",
+        "revision": 2,
+        "state": "launch_returned"
+      },
+      "launch_retry_allowed": false,
+      "numerical_convergence": "not_established",
+      "results_validated": false,
+      "replayed": false
+    },
+    "scope": "actual native asynchronous launch with durable intent; process/result audit remains separate",
+    "operation_id": "op_0f747a591e5c45eaaba71b626938c6f7",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed",
+    "warnings": [],
+    "units": "mm"
+  },
+  "native_exit": {
+    "status": "success",
+    "job": {
+      "job_id": "cavity-fan-solve-10",
+      "manifest": {
+        "analysis_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_analysis.sim",
+        "convergence": {
+          "flow_imbalance_enabled": true,
+          "flow_imbalance_fraction": 0.001,
+          "rms_residual": 1e-06
+        },
+        "element_sets": {
+          "TET4 Fluid": 77133,
+          "WEDGE6 Fluid": 109632
+        },
+        "input_xml_content_sha256": "83d3c9b323ff8ac9cf0a4723e833ec9f1dba1b59ce02c704ca8b2c9649ee55da",
+        "iteration_limit": 1000,
+        "job_id": "cavity-fan-solve-10",
+        "mesh_counts": {
+          "elements": 186765,
+          "nodes": 71748
+        },
+        "mesh_size_mm": 1.5,
+        "quality_preflight": {
+          "element_count": 186765,
+          "errors": 0,
+          "warnings": 0
+        },
+        "scope": "synthetic fan mode-5 verification; no thermal load; not acceptance D"
+      },
+      "request_sha256": "fe2fbfcba8270ef68baf7798c469d2d38a834cfb1340b7cc49c2aeefecf699a0",
+      "state": "solver_exited",
+      "revision": 3,
+      "record": {
+        "evidence": {
+          "completion_footer": true,
+          "input": {
+            "bytes": 18628224,
+            "canonicalization": "xml_c14n2_no_comments",
+            "sha256": "68570c2ff5c83f0d1f5ef19fa052a78c2b8fed6673b08100e234b3fe8ae6eed7",
+            "xml_content_sha256": "83d3c9b323ff8ac9cf0a4723e833ec9f1dba1b59ce02c704ca8b2c9649ee55da"
+          },
+          "log": {
+            "bytes": 39350,
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_analysis-Flow_benchmark.log",
+            "sha256": "fe15346a8c422c15aa8c9a5f4af089418f64c9b38cc4e6d34dcfaf17a56573a6"
+          },
+          "numerical_validation": "separate",
+          "pid_absent_now": true,
+          "previously_observed_pid": 12832,
+          "result": {
+            "bytes": 46367644,
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_analysis-Flow_benchmark.bun",
+            "sha256": "6f076a9cdd65a6a25a4ebe5a3a4b97312f20041957f108adfa0edb14a46a95d8"
+          },
+          "scope": "fixture-specific terminal reconciliation; not a general process identity monitor"
+        },
+        "job_id": "cavity-fan-solve-10",
+        "observed_at": "2026-09-08T03:49:44.651876+00:00",
+        "previous_sha256": "4eb22cb42f61bfdafc50418eb0b88ae655bc828138ed3f195a80a1ca32401756",
+        "request_sha256": "fe2fbfcba8270ef68baf7798c469d2d38a834cfb1340b7cc49c2aeefecf699a0",
+        "revision": 3,
+        "state": "solver_exited"
+      },
+      "launch_retry_allowed": false,
+      "numerical_convergence": "not_established",
+      "results_validated": false
+    },
+    "operation_id": "op_edea926784454738aec4c599dd3f9e48",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed",
+    "warnings": [],
+    "units": "mm"
+  },
+  "safe_job_binding_established": false,
+  "observer_notes": [
+    "Detached observer exited before evidence; direct bounded observation used",
+    "Direct observer PID 15064 was re-polled after client timeout and verified exited with code zero",
+    "Shared diagnostic contained overwritten JSON frames; retained final complete frame separately",
+    "Native-workspace atomic publication subsequently returned valid empty snapshot after solver exit"
+  ],
+  "next_requirement": "Unique per-job solver output name/directory plus creation identity and session/output exclusion"
+}

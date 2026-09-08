@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "job_id": "coupled-finned-baseline-r2",
+  "acceptance": false,
+  "stage": "launch_returned",
+  "scope": "Finned coupled baseline; global reference explicitly 0 C, external temperatures 20 C; general ambient export limitation persists",
+  "launch": {
+    "job_id": "coupled-finned-baseline-r2",
+    "state": "launch_returned",
+    "revision": 2,
+    "request_sha256": "f4c541eb17240d7edbcdcea74a1af6f5b0cb44429be1cbebb3680032269a606f",
+    "replayed": false,
+    "solver_state": "not_observed_by_launch",
+    "numerical_convergence": "not_established",
+    "results_validated": false,
+    "cancellation": "not_implemented",
+    "next_step": "Inspect nx_sim_job_status and nx_sim_job_logs; API return is not solver completion",
+    "observer": {
+      "state": "started",
+      "reused": false,
+      "log_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs\\coupled-finned-baseline-r2\\observer-51fcb83b3cb943c2940fc52fff65c044.log",
+      "maximum_seconds": 3600,
+      "nx_api_calls": false,
+      "lifetime": "NX process; durable job survives observer exit",
+      "timeout_semantics": "observation ends; solver is not cancelled or relaunched"
+    }
+  },
+  "operation_id": "op_b1f0fbf464a34f8e88726cdd5a3fbcbb",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

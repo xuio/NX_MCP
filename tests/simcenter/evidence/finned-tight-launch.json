@@ -1,0 +1,127 @@
+{
+  "status": "success",
+  "acceptance": false,
+  "mesh_changed": false,
+  "job_id": "coupled-finned-tight-r1",
+  "copy": {
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_35b00a15e4f94da58f699d689083a904",
+      "kind": "part",
+      "name": "finned_tight_r1",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_7c1420819b004f25b5422d1137685bc1",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "7c1420819b004f25b5422d1137685bc1",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-tight-20260908-r1\\finned_tight_r1.sim",
+      "journal_id": "finned_tight_r1",
+      "display_name": "finned_tight_r1"
+    },
+    "source": {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-run-20260908-r2\\finned_run_r2.sim",
+      "bytes": 7671522,
+      "sha256": "2a214d009c1b3a42d61c34a496d25119a598aef569b766272a0ff4afea6b2637"
+    },
+    "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-tight-20260908-r1\\finned_tight_r1.sim",
+    "source_file_unchanged": true,
+    "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-tight-20260908-r1\\finned_tight_r1.sim",
+    "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-tight-20260908-r1\\finned_tight_r1.sim",
+    "shared_fem_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-baseline-20260908-r1\\finned_r1_mesh.fem",
+    "independent_geometry_variant": false,
+    "saved": true,
+    "result_freshness": "not_verified",
+    "next_step": "Reacquire document IDs. Duplicate and reassociate FEM/CAD before changing shared geometry or mesh."
+  },
+  "settings": [
+    {
+      "table": "Flow Solution Parameters",
+      "property": "Maximum Residuals",
+      "previous": 0.0002,
+      "value": 1e-06,
+      "units": "dimensionless"
+    },
+    {
+      "table": "Flow Solution Parameters",
+      "property": "Global Flow Imbalance Fraction",
+      "previous": 0.02,
+      "value": 0.001,
+      "units": "dimensionless"
+    },
+    {
+      "table": "Flow Solution Parameters",
+      "property": "Global Heat Imbalance Fraction",
+      "previous": 0.02,
+      "value": 0.001,
+      "units": "dimensionless"
+    },
+    {
+      "table": "Coupled Solution Parameters",
+      "property": "Coupled Solver Maximum Temperature Change",
+      "previous": 0.1,
+      "value": 0.001,
+      "units": "CelsiusDifference"
+    },
+    {
+      "table": "Coupled Solution Parameters",
+      "property": "Coupled Solver Global Heat Imbalance Fraction",
+      "previous": 0.01,
+      "value": 0.0001,
+      "units": "dimensionless"
+    }
+  ],
+  "prepare": {
+    "job_id": "coupled-finned-tight-r1",
+    "state": "accepted",
+    "request_sha256": "fd0d7509531365846562d01387a7875f97bd1d97e7bd3cc3844c3f6837237bce",
+    "replayed": false,
+    "preparation_revalidated": true,
+    "solver_launched_by_call": false,
+    "input_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-tight-20260908-r1\\finned_tight_r1-Finned_coupled_benchmark.xml",
+    "input_sha256": "7d900cbf5e11eb0b3806b085527d352e4424ec3a427786eac6a848dfd461c40b",
+    "output_claim": {
+      "schema": 1,
+      "job_id": "coupled-finned-tight-r1",
+      "job_directory": "d:\\cad\\simcenter_mcp_workspace\\simcenter-jobs\\coupled-finned-tight-r1",
+      "request_sha256": "fd0d7509531365846562d01387a7875f97bd1d97e7bd3cc3844c3f6837237bce",
+      "output_directory": "d:\\cad\\simcenter_mcp_workspace\\ui-benchmarks\\e-finned-tight-20260908-r1",
+      "replayed": false,
+      "retention": "permanent; no automatic release"
+    },
+    "mesh_counts": {
+      "element_sets": 2,
+      "elements": 2130,
+      "nodes": 745,
+      "scope": "observed_multiphysics_xml_layout"
+    },
+    "dependency_completeness": "not_established",
+    "solve_readiness": "not_established",
+    "next_step": "Inspect the immutable manifest with nx_sim_job_status(include_manifest=True), then use nx_sim_launch; cancellation is not yet implemented"
+  },
+  "prepare_seconds": 2.327999999979511,
+  "exported_controls_match": true,
+  "launch_intent": "Inspect existing job after interruption; never relaunch",
+  "launch": {
+    "job_id": "coupled-finned-tight-r1",
+    "state": "launch_returned",
+    "revision": 2,
+    "request_sha256": "fd0d7509531365846562d01387a7875f97bd1d97e7bd3cc3844c3f6837237bce",
+    "replayed": false,
+    "solver_state": "not_observed_by_launch",
+    "numerical_convergence": "not_established",
+    "results_validated": false,
+    "cancellation": "not_implemented",
+    "next_step": "Inspect nx_sim_job_status and nx_sim_job_logs; API return is not solver completion",
+    "observer": {
+      "state": "started",
+      "reused": false,
+      "log_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs\\coupled-finned-tight-r1\\observer-85b28847a60d45da85fda9bb37f95bd9.log",
+      "maximum_seconds": 3600,
+      "nx_api_calls": false,
+      "lifetime": "NX process; durable job survives observer exit",
+      "timeout_semantics": "observation ends; solver is not cancelled or relaunched"
+    }
+  },
+  "operation_id": "op_63df5d3d3d5b41268d7acc84c6477e19",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

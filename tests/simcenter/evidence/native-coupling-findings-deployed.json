@@ -1,0 +1,62 @@
+{
+  "status": "success",
+  "findings": [
+    {
+      "capability": "coupled_solution_controls",
+      "status": "descriptor_mapping_unresolved",
+      "tested_version": "v2606",
+      "tested_language": "NX MULTIPHYSICS - Coupled Thermal-Flow",
+      "property": "Coupled Solution Parameters",
+      "rejected_descriptor": "Coupled Solution Parameters",
+      "nx_code": 3520001,
+      "rollback_verified": true,
+      "licence_availability": "not_established_by_descriptor_failure",
+      "next_step": "Determine the native control-table descriptor from a supported catalog or a recorded native command; do not launch an unvalidated coupled model",
+      "evidence": "tests/simcenter/evidence/native-coupled-setup-mcp.json"
+    },
+    {
+      "capability": "thermal_contact",
+      "status": "descriptor_mapping_unresolved",
+      "tested_version": "v2606",
+      "tested_language": "NX MULTIPHYSICS - Thermal",
+      "candidates": [
+        "Interface Resistance",
+        "Thermal Coupling"
+      ],
+      "additional_native_probe": {
+        "rejected": [
+          "Advanced Thermal Coupling",
+          "Convection Coupling"
+        ],
+        "builder_accepted": "Radiation Thermal Coupling",
+        "radiation_target_sets": 2,
+        "radiation_committed": false,
+        "radiation_solved": false,
+        "scope": "Builder initialization and property inspection only; radiation does not establish conductive contact support",
+        "evidence": "tests/simcenter/evidence/native-contact-alternative-descriptors.json"
+      },
+      "solver_display_name": "Simcenter 3D Multiphysics",
+      "active_language_matches_solution": true,
+      "network_failure": "not_indicated_by_native_descriptor_rejection",
+      "candidate_source": "installed UGII/command_finder/cae_lang_commands.xml",
+      "builder_nx_code": 1543292,
+      "legacy_creation_nx_code": 3520001,
+      "rollback_verified": true,
+      "licence_availability": "not_established_by_descriptor_failures",
+      "journal_probe": {
+        "record_start_stop": "tested",
+        "contact_command_recorded": false,
+        "ui_obstacle": "Loads and Conditions tab exposes no accessibility action"
+      },
+      "next_step": "Obtain a journal of an actual native contact command; recorder alone does not establish the descriptor mapping",
+      "evidence": "tests/simcenter/evidence/native-contact-context.json",
+      "historical_evidence": "tests/simcenter/evidence/native-contact-descriptors.json"
+    }
+  ],
+  "document_state_preserved": true,
+  "operation_id": "op_3d312fb8c3be467a88f65906e4050af4",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

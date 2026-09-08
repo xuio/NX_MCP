@@ -1,0 +1,114 @@
+{
+  "status": "success",
+  "nx_version": "v2606",
+  "public_tool_evidence": {
+    "scope": "Indexed public-tool regression evidence; not a complete capability inventory",
+    "tools": [
+      {
+        "tool": "nx_sim_save",
+        "status": "implemented_and_tested",
+        "tested_version": "v2606",
+        "tested_scope": "Existing isolated FEM/SIM save, backup hashes and replay",
+        "evidence": "tests/simcenter/evidence/native-conduction-setup-save.json",
+        "current_session_test": "not_performed_by_discovery",
+        "licence_checkout": "not_tested"
+      },
+      {
+        "tool": "nx_sim_export_input",
+        "status": "implemented_and_tested",
+        "tested_version": "v2606",
+        "tested_scope": "Thermal input export, 2658 elements, retry and overwrite rejection",
+        "evidence": "tests/simcenter/evidence/native-thermal-export-mcp.json",
+        "current_session_test": "not_performed_by_discovery",
+        "licence_checkout": "not_tested"
+      },
+      {
+        "tool": "nx_sim_temperature",
+        "status": "implemented_and_tested",
+        "tested_version": "v2606",
+        "tested_scope": "Constant Kelvin face boundary, replay and save/reopen",
+        "evidence": "tests/simcenter/evidence/native-temperature-mcp.json",
+        "current_session_test": "not_performed_by_discovery",
+        "licence_checkout": "not_tested"
+      },
+      {
+        "tool": "nx_sim_heat_power",
+        "status": "implemented_and_tested",
+        "tested_version": "v2606",
+        "tested_scope": "Single-body total internal watts, duplicate rejection and save/reopen",
+        "evidence": "tests/simcenter/evidence/native-heat-power-mcp.json",
+        "current_session_test": "not_performed_by_discovery",
+        "licence_checkout": "not_tested"
+      },
+      {
+        "tool": "nx_sim_convection",
+        "status": "implemented_and_tested",
+        "tested_version": "v2606",
+        "tested_scope": "Thermal-only assumed convection coefficient and face readback",
+        "evidence": "tests/simcenter/evidence/native-convection-mcp.json",
+        "current_session_test": "not_performed_by_discovery",
+        "licence_checkout": "not_tested"
+      },
+      {
+        "tool": "nx_sim_constraints",
+        "status": "implemented_and_tested",
+        "tested_version": "v2606",
+        "tested_scope": "Paged constraint properties and assigned targets",
+        "evidence": "tests/simcenter/evidence/native-constraint-inventory-mcp.json",
+        "current_session_test": "not_performed_by_discovery",
+        "licence_checkout": "not_tested"
+      },
+      {
+        "tool": "nx_sim_loads",
+        "status": "implemented_and_tested",
+        "tested_version": "v2606",
+        "tested_scope": "Paged load properties and targets including empty target slots",
+        "evidence": "tests/simcenter/evidence/native-load-inventory-mcp.json",
+        "current_session_test": "not_performed_by_discovery",
+        "licence_checkout": "not_tested"
+      },
+      {
+        "tool": "nx_sim_temperature_result",
+        "status": "implemented_and_tested",
+        "tested_version": "v2606",
+        "tested_scope": "Nodal Celsius extrema, invalid indices and preserved document flags",
+        "evidence": "tests/simcenter/evidence/native-temperature-result-mcp.json",
+        "current_session_test": "not_performed_by_discovery",
+        "licence_checkout": "not_tested"
+      },
+      {
+        "tool": "nx_sim_show_temperature",
+        "status": "implemented_and_tested",
+        "tested_version": "v2606",
+        "tested_scope": "Temperature postview field/unit readback and replay; multiple existing views untested",
+        "evidence": "tests/simcenter/evidence/native-temperature-postview.json",
+        "current_session_test": "not_performed_by_discovery",
+        "licence_checkout": "not_tested"
+      },
+      {
+        "tool": "nx_sim_mesh_quality",
+        "status": "implemented_and_tested",
+        "tested_version": "v2606",
+        "tested_scope": "All-mesh native quality and criteria readback on a 2658-element thermal FEM",
+        "evidence": "tests/simcenter/evidence/native-mesh-quality-mcp.json",
+        "current_session_test": "not_performed_by_discovery",
+        "licence_checkout": "not_tested"
+      }
+    ],
+    "remaining_work": {
+      "generic_async_solve_and_cancel": "not_exposed; native fixtures do not constitute a public solve lifecycle",
+      "coupled_cooling_acceptance": "not_complete",
+      "thermal_contact": "native descriptor mapping unresolved",
+      "detailed_rotating_fans_and_acoustics": "not_validated; module availability must be established separately",
+      "full_model_result_freshness": "not_established; live SIM may be modified after solving",
+      "exact_screenshot_resolution": "native postview export ignores requested device dimensions in observed test"
+    }
+  },
+  "modified_flags_preserved": true,
+  "licensing_configuration_modified": false,
+  "operation_id": "op_d6582698348f410182f7fa8700e57f03",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

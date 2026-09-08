@@ -1,0 +1,39 @@
+{
+  "benchmark": "C_transient",
+  "state": "temperature_history_and_time_refinement_verified_mesh_refinement_pending",
+  "runs": [
+    {
+      "job_id": "transient-solve-02",
+      "archived_deck_sha256": "c38160a2ff2b53bd572cc3947841ed660eb4dc5b1ef75e1dd52c5402269b3793",
+      "preflight_deck_sha256": "51a51d47b3d1d155b19f5bde5f6090a2a3a0a36df5382463398bb9f9bfac1eb4",
+      "input_identity_limitation": "Solve regenerated the deck; preflight bytes were not retained for this earlier run",
+      "bundle_sha256": "20a2fafd3624d812c4dca8c6fd0ff5c4b94e207013ae19c2cba01c43fd06a274",
+      "mesh_elements": 804,
+      "mesh_nodes": 246,
+      "reported_final_integration_step_s": 25.3125,
+      "maximum_normalized_temperature_error": 0.011296431631292236
+    },
+    {
+      "job_id": "transient-solve-03",
+      "archived_deck_sha256": "741cc821488bffa1408d8618c64dff4a0338a0717f73a23b4565377fba49819e",
+      "preflight_deck_sha256": "88684cca6efccfc0de4204a5c92f4b60ec4ecf20ab88c17f01422b91c992e90b",
+      "input_identity_limitation": "Solve regenerated the deck; preflight bytes were not retained for this earlier run",
+      "bundle_sha256": "222d32c38f37f0626603150216ab9c41c5f4e51b4917978dc7849e6a33f7aac6",
+      "mesh_elements": 804,
+      "mesh_nodes": 246,
+      "reported_final_integration_step_s": 12.6562,
+      "maximum_normalized_temperature_error": 0.005768477529729736
+    }
+  ],
+  "same_mesh_time_comparison": {
+    "common_samples": 21,
+    "maximum_change_K": 0.09215927124023438,
+    "maximum_change_normalized_by_steady_rise": 0.005529556274414062
+  },
+  "remaining": [
+    "independent mesh refinement",
+    "energy balance audit",
+    "complete public MCP workflow and stale-result enforcement"
+  ],
+  "time_control_caveat": "Output-step endpoints demonstrably changed integration intervals. Stored maximum-temperature-change and minimum-step controls have not been demonstrated to govern the installed method."
+}

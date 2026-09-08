@@ -1,0 +1,40 @@
+{
+  "ambient_temperature_degC": 0.0,
+  "temperature_summaries": [
+    {
+      "maximum": 23.9,
+      "minimum": 19.99,
+      "average": 21.68,
+      "quantity": "Fluid Temperature",
+      "units": "degC",
+      "association": "native summary row; region identity not established"
+    },
+    {
+      "maximum": 23.91,
+      "minimum": 23.84,
+      "average": 23.89,
+      "quantity": "Solid Temperature",
+      "units": "degC",
+      "association": "native summary row; region identity not established"
+    },
+    {
+      "maximum": 23.91,
+      "minimum": 23.84,
+      "average": 23.89,
+      "quantity": "Solid Temperature",
+      "units": "degC",
+      "association": "native summary row; region identity not established"
+    }
+  ],
+  "applied_solid_power_W": 0.09999999999999999,
+  "heat_to_fluid_W": 0.09999,
+  "maximum_coupled_temperature_change_degC": 5.722e-06,
+  "normalized_coupled_heat_imbalance": 9.817e-05,
+  "iteration_limit_reached_without_convergence": false,
+  "numerical_convergence": "not_established",
+  "warnings": {
+    "coincident_thermal_nodes": true,
+    "no_interior_pressure_anchor": false
+  },
+  "scope": "Rounded native log summaries; not independent field extraction, complete criteria validation or mesh acceptance"
+}

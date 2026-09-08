@@ -1,0 +1,63 @@
+{
+  "scope": "Post-run gate fixture release using real terminal artifacts; not automatic launch-to-release acceptance",
+  "released": {
+    "status": "success",
+    "warnings": [],
+    "units": "mm",
+    "job_id": "public-prepared-flow-01",
+    "released": true,
+    "replayed": false,
+    "receipt": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs\\public-prepared-flow-01\\launch-gate-release.json",
+    "result_files_preserved": true,
+    "job_state_changed": false,
+    "old_job_relaunch_allowed": false,
+    "operation_id": "public-gate-release-flow-01",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed"
+  },
+  "replay": {
+    "status": "success",
+    "warnings": [],
+    "units": "mm",
+    "job_id": "public-prepared-flow-01",
+    "released": true,
+    "replayed": true,
+    "receipt": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs\\public-prepared-flow-01\\launch-gate-release.json",
+    "other_gate_untouched": false,
+    "operation_id": "public-gate-release-flow-01-recheck",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed"
+  },
+  "document_flags_preserved": true,
+  "receipt": {
+    "action": "release workspace launch gate only",
+    "artifacts": {
+      "log": {
+        "bytes": 39351,
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-prepare-20260908-r1\\prepared_flow_r1-Flow_benchmark.log",
+        "sha256": "82fc059a4046072ce16dedb9d99dcc8df953011eeffbbc1302f1c4d8b48ce1da"
+      },
+      "result": {
+        "bytes": 46367644,
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-prepare-20260908-r1\\prepared_flow_r1-Flow_benchmark.bun",
+        "sha256": "6f076a9cdd65a6a25a4ebe5a3a4b97312f20041957f108adfa0edb14a46a95d8"
+      }
+    },
+    "input": {
+      "bytes": 18628170,
+      "canonicalization": "xml_c14n2_no_comments",
+      "sha256": "cdeb6212fff9deb154e00e0fde16d476797ea5965bc0c12d82e747ba42f09be9",
+      "xml_content_sha256": "c338e27f9f235ecbf249da29757a9ce0a98c71bd6d263c214a5ca8cee165b84f"
+    },
+    "numerical_acceptance": "not_established",
+    "observer_revision": 3,
+    "owner": {
+      "job_directory": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs\\public-prepared-flow-01",
+      "job_id": "public-prepared-flow-01",
+      "request_sha256": "29f33da70f9fbaa78160266c417bb662501e40757446aa3c3ddbf9a041b69238",
+      "schema": 1
+    },
+    "schema": 1
+  },
+  "gate_absent": true
+}

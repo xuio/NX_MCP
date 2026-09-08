@@ -1,0 +1,560 @@
+{
+  "sim": {
+    "transport": "real MCP stdio -> Simcenter UI bridge",
+    "responses": {
+      "unsaved": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"status\": \"error\", \"warnings\": [], \"units\": null, \"code\": \"NX_SIM_UNSAVED_DOCUMENT\", \"message\": \"Save approved analysis changes explicitly before closing\", \"retryable\": false, \"details\": {\"mutation_outcome\": \"not_started\", \"operation_id\": \"sim-close-unsaved-r1\"}}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": {
+          "status": "error",
+          "warnings": [],
+          "units": null,
+          "code": "NX_SIM_UNSAVED_DOCUMENT",
+          "message": "Save approved analysis changes explicitly before closing",
+          "retryable": false,
+          "details": {
+            "mutation_outcome": "not_started",
+            "operation_id": "sim-close-unsaved-r1"
+          }
+        },
+        "isError": true
+      },
+      "dependencies": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"documents\": [{\"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_d75bc25759eb41fa80c28152a1c614c9\", \"kind\": \"part\", \"name\": \"public_open_r1\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_a110bca0afc24dde9c5765f87e6392bd\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"a110bca0afc24dde9c5765f87e6392bd\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\scenario-multi-mcp-20260908-r1\\\\public_open_r1.sim\", \"journal_id\": \"public_open_r1\", \"display_name\": \"public_open_r1\"}, \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\scenario-multi-mcp-20260908-r1\\\\public_open_r1.sim\", \"roles\": [\"simulation\"], \"document_type\": \"SimPart\", \"modified\": true, \"fully_loaded\": true, \"file_state\": \"exists\", \"work\": true, \"display\": true, \"units\": \"mm\"}, {\"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_99f6f8ac65e34de68e1da19c42c4622f\", \"kind\": \"part\", \"name\": \"benchmark_6fd2a790ec2f_mesh\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_b7ea4fd6cd444e6188e035a97ba53996\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"b7ea4fd6cd444e6188e035a97ba53996\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\scenario-multi-mcp-20260908-r1\\\\benchmark_6fd2a790ec2f_mesh.fem\", \"journal_id\": \"benchmark_6fd2a790ec2f_mesh\", \"display_name\": \"benchmark_6fd2a790ec2f_mesh\"}, \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\scenario-multi-mcp-20260908-r1\\\\benchmark_6fd2a790ec2f_mesh.fem\", \"roles\": [\"mesh\"], \"document_type\": \"FemPart\", \"modified\": false, \"fully_loaded\": true, \"file_state\": \"exists\", \"work\": false, \"display\": false, \"units\": \"mm\"}, {\"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_7bb66df6d67e495282f7b9aff3a1946f\", \"kind\": \"part\", \"name\": \"benchmark_6fd2a790ec2f_geometry\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_c92e98ada125430e80517021f84417f6\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"c92e98ada125430e80517021f84417f6\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\scenario-multi-mcp-20260908-r1\\\\benchmark_6fd2a790ec2f_geometry.prt\", \"journal_id\": \"benchmark_6fd2a790ec2f_geometry\", \"display_name\": \"benchmark_6fd2a790ec2f_geometry\"}, \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\scenario-multi-mcp-20260908-r1\\\\benchmark_6fd2a790ec2f_geometry.prt\", \"roles\": [\"AssociatedCadPart\", \"MasterCadPart\"], \"document_type\": \"Part\", \"modified\": false, \"fully_loaded\": true, \"file_state\": \"exists\", \"work\": false, \"display\": false, \"units\": \"mm\"}], \"total\": 3, \"next_offset\": null, \"associations\": [{\"association\": \"AssociatedCadPart\", \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\scenario-multi-mcp-20260908-r1\\\\benchmark_6fd2a790ec2f_geometry.prt\"}, {\"association\": \"IdealizedPart\", \"path\": null}, {\"association\": \"MasterCadPart\", \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\scenario-multi-mcp-20260908-r1\\\\benchmark_6fd2a790ec2f_geometry.prt\"}], \"unresolved\": [], \"scope\": \"direct_sim_fem_cad_associations\", \"complete_analysis_package\": false, \"excluded\": \"recursive components, external fields/material files, solver artifacts and result dependencies\", \"operation_id\": \"op_f1f82b34a819479fb132fb6a4eae863a\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": {
+          "status": "success",
+          "warnings": [],
+          "units": "mm",
+          "documents": [
+            {
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_d75bc25759eb41fa80c28152a1c614c9",
+                "kind": "part",
+                "name": "public_open_r1",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_a110bca0afc24dde9c5765f87e6392bd",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "a110bca0afc24dde9c5765f87e6392bd",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-mcp-20260908-r1\\public_open_r1.sim",
+                "journal_id": "public_open_r1",
+                "display_name": "public_open_r1"
+              },
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-mcp-20260908-r1\\public_open_r1.sim",
+              "roles": [
+                "simulation"
+              ],
+              "document_type": "SimPart",
+              "modified": true,
+              "fully_loaded": true,
+              "file_state": "exists",
+              "work": true,
+              "display": true,
+              "units": "mm"
+            },
+            {
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_99f6f8ac65e34de68e1da19c42c4622f",
+                "kind": "part",
+                "name": "benchmark_6fd2a790ec2f_mesh",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_b7ea4fd6cd444e6188e035a97ba53996",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "b7ea4fd6cd444e6188e035a97ba53996",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-mcp-20260908-r1\\benchmark_6fd2a790ec2f_mesh.fem",
+                "journal_id": "benchmark_6fd2a790ec2f_mesh",
+                "display_name": "benchmark_6fd2a790ec2f_mesh"
+              },
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-mcp-20260908-r1\\benchmark_6fd2a790ec2f_mesh.fem",
+              "roles": [
+                "mesh"
+              ],
+              "document_type": "FemPart",
+              "modified": false,
+              "fully_loaded": true,
+              "file_state": "exists",
+              "work": false,
+              "display": false,
+              "units": "mm"
+            },
+            {
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_7bb66df6d67e495282f7b9aff3a1946f",
+                "kind": "part",
+                "name": "benchmark_6fd2a790ec2f_geometry",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_c92e98ada125430e80517021f84417f6",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "c92e98ada125430e80517021f84417f6",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-mcp-20260908-r1\\benchmark_6fd2a790ec2f_geometry.prt",
+                "journal_id": "benchmark_6fd2a790ec2f_geometry",
+                "display_name": "benchmark_6fd2a790ec2f_geometry"
+              },
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-mcp-20260908-r1\\benchmark_6fd2a790ec2f_geometry.prt",
+              "roles": [
+                "AssociatedCadPart",
+                "MasterCadPart"
+              ],
+              "document_type": "Part",
+              "modified": false,
+              "fully_loaded": true,
+              "file_state": "exists",
+              "work": false,
+              "display": false,
+              "units": "mm"
+            }
+          ],
+          "total": 3,
+          "next_offset": null,
+          "associations": [
+            {
+              "association": "AssociatedCadPart",
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-mcp-20260908-r1\\benchmark_6fd2a790ec2f_geometry.prt"
+            },
+            {
+              "association": "IdealizedPart",
+              "path": null
+            },
+            {
+              "association": "MasterCadPart",
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-mcp-20260908-r1\\benchmark_6fd2a790ec2f_geometry.prt"
+            }
+          ],
+          "unresolved": [],
+          "scope": "direct_sim_fem_cad_associations",
+          "complete_analysis_package": false,
+          "excluded": "recursive components, external fields/material files, solver artifacts and result dependencies",
+          "operation_id": "op_f1f82b34a819479fb132fb6a4eae863a",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "mutation_outcome": "not_applicable"
+        },
+        "isError": false
+      },
+      "in_use": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"status\": \"error\", \"warnings\": [], \"units\": null, \"code\": \"NX_SIM_DOCUMENT_IN_USE\", \"message\": \"Loaded documents depend on this analysis part\", \"retryable\": false, \"details\": {\"mutation_outcome\": \"not_started\", \"dependent_documents\": [\"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\scenario-multi-mcp-20260908-r1\\\\benchmark_6fd2a790ec2f_analysis.sim\", \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\scenario-multi-mcp-20260908-r1\\\\public_open_r1.sim\", \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\scenario-multi-mcp-20260908-r1\\\\reopen_modified_probe_r1.sim\"], \"operation_id\": \"sim-close-in-use-r1\"}}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": {
+          "status": "error",
+          "warnings": [],
+          "units": null,
+          "code": "NX_SIM_DOCUMENT_IN_USE",
+          "message": "Loaded documents depend on this analysis part",
+          "retryable": false,
+          "details": {
+            "mutation_outcome": "not_started",
+            "dependent_documents": [
+              "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-mcp-20260908-r1\\benchmark_6fd2a790ec2f_analysis.sim",
+              "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-mcp-20260908-r1\\public_open_r1.sim",
+              "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-mcp-20260908-r1\\reopen_modified_probe_r1.sim"
+            ],
+            "operation_id": "sim-close-in-use-r1"
+          }
+        },
+        "isError": true
+      },
+      "saved": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"saved\": true, \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\scenario-multi-mcp-20260908-r1\\\\public_open_r1.sim\", \"file\": {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\scenario-multi-mcp-20260908-r1\\\\public_open_r1.sim\", \"bytes\": 7720623, \"sha256\": \"52e3197e716c56b5a26d7f33862932574ffb02834cae0ebab926bedc7171942b\"}, \"previous_file\": {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\scenario-multi-mcp-20260908-r1\\\\public_open_r1.sim\", \"bytes\": 7720111, \"sha256\": \"60ad842d3b7e9ca673ff02f4de3a630530a9c6242ebc5fe2481f238fdf797b8d\"}, \"backup_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\scenario-multi-mcp-20260908-r1\\\\.nx-mcp-save-backups\\\\f643f37ceb824589869826d352e0f402\\\\public_open_r1.sim\", \"saved_components\": false, \"closed\": false, \"other_modified_flags_unchanged\": true, \"result_freshness\": \"not_verified\", \"operation_id\": \"sim-close-save-r1\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": {
+          "status": "success",
+          "warnings": [],
+          "units": "mm",
+          "saved": true,
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-mcp-20260908-r1\\public_open_r1.sim",
+          "file": {
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-mcp-20260908-r1\\public_open_r1.sim",
+            "bytes": 7720623,
+            "sha256": "52e3197e716c56b5a26d7f33862932574ffb02834cae0ebab926bedc7171942b"
+          },
+          "previous_file": {
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-mcp-20260908-r1\\public_open_r1.sim",
+            "bytes": 7720111,
+            "sha256": "60ad842d3b7e9ca673ff02f4de3a630530a9c6242ebc5fe2481f238fdf797b8d"
+          },
+          "backup_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-mcp-20260908-r1\\.nx-mcp-save-backups\\f643f37ceb824589869826d352e0f402\\public_open_r1.sim",
+          "saved_components": false,
+          "closed": false,
+          "other_modified_flags_unchanged": true,
+          "result_freshness": "not_verified",
+          "operation_id": "sim-close-save-r1",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "mutation_outcome": "committed"
+        },
+        "isError": false
+      },
+      "closed": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"status\": \"success\", \"warnings\": [\"NX may unload unused dependencies; reacquire document references before continuing\"], \"units\": null, \"closed_parts\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_d75bc25759eb41fa80c28152a1c614c9\", \"kind\": \"part\", \"name\": \"public_open_r1\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_a110bca0afc24dde9c5765f87e6392bd\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"a110bca0afc24dde9c5765f87e6392bd\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\scenario-multi-mcp-20260908-r1\\\\public_open_r1.sim\", \"journal_id\": \"public_open_r1\", \"display_name\": \"public_open_r1\"}], \"closed_count\": 1, \"remaining_count\": 53, \"saved\": false, \"discarded_modified_parts\": false, \"work_path\": null, \"display_path\": null, \"operation_id\": \"sim-close-clean-r1\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": {
+          "status": "success",
+          "warnings": [
+            "NX may unload unused dependencies; reacquire document references before continuing"
+          ],
+          "units": null,
+          "closed_parts": [
+            {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_d75bc25759eb41fa80c28152a1c614c9",
+              "kind": "part",
+              "name": "public_open_r1",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_a110bca0afc24dde9c5765f87e6392bd",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "a110bca0afc24dde9c5765f87e6392bd",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-mcp-20260908-r1\\public_open_r1.sim",
+              "journal_id": "public_open_r1",
+              "display_name": "public_open_r1"
+            }
+          ],
+          "closed_count": 1,
+          "remaining_count": 53,
+          "saved": false,
+          "discarded_modified_parts": false,
+          "work_path": null,
+          "display_path": null,
+          "operation_id": "sim-close-clean-r1",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "mutation_outcome": "committed"
+        },
+        "isError": false
+      },
+      "replay": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"status\": \"success\", \"warnings\": [\"NX may unload unused dependencies; reacquire document references before continuing\"], \"units\": null, \"closed_parts\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_d75bc25759eb41fa80c28152a1c614c9\", \"kind\": \"part\", \"name\": \"public_open_r1\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_a110bca0afc24dde9c5765f87e6392bd\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"a110bca0afc24dde9c5765f87e6392bd\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\scenario-multi-mcp-20260908-r1\\\\public_open_r1.sim\", \"journal_id\": \"public_open_r1\", \"display_name\": \"public_open_r1\"}], \"closed_count\": 1, \"remaining_count\": 53, \"saved\": false, \"discarded_modified_parts\": false, \"work_path\": null, \"display_path\": null, \"operation_id\": \"sim-close-clean-r1\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\", \"replayed\": true}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": {
+          "status": "success",
+          "warnings": [
+            "NX may unload unused dependencies; reacquire document references before continuing"
+          ],
+          "units": null,
+          "closed_parts": [
+            {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_d75bc25759eb41fa80c28152a1c614c9",
+              "kind": "part",
+              "name": "public_open_r1",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_a110bca0afc24dde9c5765f87e6392bd",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "a110bca0afc24dde9c5765f87e6392bd",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-mcp-20260908-r1\\public_open_r1.sim",
+              "journal_id": "public_open_r1",
+              "display_name": "public_open_r1"
+            }
+          ],
+          "closed_count": 1,
+          "remaining_count": 53,
+          "saved": false,
+          "discarded_modified_parts": false,
+          "work_path": null,
+          "display_path": null,
+          "operation_id": "sim-close-clean-r1",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "mutation_outcome": "committed",
+          "replayed": true
+        },
+        "isError": false
+      },
+      "stale": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"status\": \"error\", \"warnings\": [], \"units\": null, \"code\": \"NX_OBJECT_STALE\", \"message\": \"Object reference is not valid: obj_20bc234ffa5249ceb4fb4d82b993c626_d75bc25759eb41fa80c28152a1c614c9\", \"retryable\": false, \"details\": {\"operation_id\": \"sim-close-stale-r1\", \"mutation_outcome\": \"unknown\"}}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": {
+          "status": "error",
+          "warnings": [],
+          "units": null,
+          "code": "NX_OBJECT_STALE",
+          "message": "Object reference is not valid: obj_20bc234ffa5249ceb4fb4d82b993c626_d75bc25759eb41fa80c28152a1c614c9",
+          "retryable": false,
+          "details": {
+            "operation_id": "sim-close-stale-r1",
+            "mutation_outcome": "unknown"
+          }
+        },
+        "isError": true
+      },
+      "reopened": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_7373017322154735ab47cf65e3bfaae7\", \"kind\": \"part\", \"name\": \"public_open_r1\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_50d700d878fd4b5ab7a848090335818f\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"50d700d878fd4b5ab7a848090335818f\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\scenario-multi-mcp-20260908-r1\\\\public_open_r1.sim\", \"journal_id\": \"public_open_r1\", \"display_name\": \"public_open_r1\"}, \"coordinate_frame\": \"part_absolute\", \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\scenario-multi-mcp-20260908-r1\\\\public_open_r1.sim\", \"already_loaded\": false, \"modified_after_native_open\": false, \"modified_before_activation\": false, \"modified\": false, \"fully_loaded\": true, \"load_issues\": [], \"changed_existing_part_flags\": [], \"application\": \"UG_APP_SFEM\", \"work_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\scenario-multi-mcp-20260908-r1\\\\public_open_r1.sim\", \"display_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\scenario-multi-mcp-20260908-r1\\\\public_open_r1.sim\", \"saved\": false, \"result_freshness\": \"not_verified\", \"operation_id\": \"sim-close-reopen-r1\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": {
+          "status": "success",
+          "warnings": [],
+          "units": "mm",
+          "document": {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_7373017322154735ab47cf65e3bfaae7",
+            "kind": "part",
+            "name": "public_open_r1",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_50d700d878fd4b5ab7a848090335818f",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "50d700d878fd4b5ab7a848090335818f",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-mcp-20260908-r1\\public_open_r1.sim",
+            "journal_id": "public_open_r1",
+            "display_name": "public_open_r1"
+          },
+          "coordinate_frame": "part_absolute",
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-mcp-20260908-r1\\public_open_r1.sim",
+          "already_loaded": false,
+          "modified_after_native_open": false,
+          "modified_before_activation": false,
+          "modified": false,
+          "fully_loaded": true,
+          "load_issues": [],
+          "changed_existing_part_flags": [],
+          "application": "UG_APP_SFEM",
+          "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-mcp-20260908-r1\\public_open_r1.sim",
+          "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-mcp-20260908-r1\\public_open_r1.sim",
+          "saved": false,
+          "result_freshness": "not_verified",
+          "operation_id": "sim-close-reopen-r1",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "mutation_outcome": "committed"
+        },
+        "isError": false
+      },
+      "other_flags_preserved": true
+    }
+  },
+  "fem": {
+    "transport": "real MCP stdio -> Simcenter UI bridge",
+    "responses": {
+      "saved": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"saved\": true, \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\scenario-multi-mcp-20260908-r1\\\\public_open_fem_r2.fem\", \"file\": {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\scenario-multi-mcp-20260908-r1\\\\public_open_fem_r2.fem\", \"bytes\": 2807630, \"sha256\": \"703bad47995ce31927d2c6dce54f5bec880bb1dfdad0c26b4e3886140f78dca5\"}, \"previous_file\": {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\scenario-multi-mcp-20260908-r1\\\\public_open_fem_r2.fem\", \"bytes\": 2803226, \"sha256\": \"772978d1229186f775c66bf4917ec2e6f7a1f3ea3c7e0a1b461e77cd291bbcab\"}, \"backup_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\scenario-multi-mcp-20260908-r1\\\\.nx-mcp-save-backups\\\\e0e81bb42fab437fbcb543916a8ab8b4\\\\public_open_fem_r2.fem\", \"saved_components\": false, \"closed\": false, \"other_modified_flags_unchanged\": true, \"result_freshness\": \"not_verified\", \"operation_id\": \"fem-close-save-r1\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": {
+          "status": "success",
+          "warnings": [],
+          "units": "mm",
+          "saved": true,
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-mcp-20260908-r1\\public_open_fem_r2.fem",
+          "file": {
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-mcp-20260908-r1\\public_open_fem_r2.fem",
+            "bytes": 2807630,
+            "sha256": "703bad47995ce31927d2c6dce54f5bec880bb1dfdad0c26b4e3886140f78dca5"
+          },
+          "previous_file": {
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-mcp-20260908-r1\\public_open_fem_r2.fem",
+            "bytes": 2803226,
+            "sha256": "772978d1229186f775c66bf4917ec2e6f7a1f3ea3c7e0a1b461e77cd291bbcab"
+          },
+          "backup_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-mcp-20260908-r1\\.nx-mcp-save-backups\\e0e81bb42fab437fbcb543916a8ab8b4\\public_open_fem_r2.fem",
+          "saved_components": false,
+          "closed": false,
+          "other_modified_flags_unchanged": true,
+          "result_freshness": "not_verified",
+          "operation_id": "fem-close-save-r1",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "mutation_outcome": "committed"
+        },
+        "isError": false
+      },
+      "closed": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"status\": \"success\", \"warnings\": [\"NX may unload unused dependencies; reacquire document references before continuing\"], \"units\": \"mm\", \"closed_parts\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_163f6922497a4420a9bbdc5bbf677ae4\", \"kind\": \"part\", \"name\": \"public_open_fem_r2\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_bcade140e3ce4ae1a8038df9e00c7e02\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"bcade140e3ce4ae1a8038df9e00c7e02\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\scenario-multi-mcp-20260908-r1\\\\public_open_fem_r2.fem\", \"journal_id\": \"public_open_fem_r2\", \"display_name\": \"public_open_fem_r2\"}], \"closed_count\": 1, \"remaining_count\": 53, \"saved\": false, \"discarded_modified_parts\": false, \"work_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\scenario-multi-mcp-20260908-r1\\\\public_open_r1.sim\", \"display_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\scenario-multi-mcp-20260908-r1\\\\public_open_r1.sim\", \"operation_id\": \"fem-close-clean-r1\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": {
+          "status": "success",
+          "warnings": [
+            "NX may unload unused dependencies; reacquire document references before continuing"
+          ],
+          "units": "mm",
+          "closed_parts": [
+            {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_163f6922497a4420a9bbdc5bbf677ae4",
+              "kind": "part",
+              "name": "public_open_fem_r2",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_bcade140e3ce4ae1a8038df9e00c7e02",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "bcade140e3ce4ae1a8038df9e00c7e02",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-mcp-20260908-r1\\public_open_fem_r2.fem",
+              "journal_id": "public_open_fem_r2",
+              "display_name": "public_open_fem_r2"
+            }
+          ],
+          "closed_count": 1,
+          "remaining_count": 53,
+          "saved": false,
+          "discarded_modified_parts": false,
+          "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-mcp-20260908-r1\\public_open_r1.sim",
+          "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-mcp-20260908-r1\\public_open_r1.sim",
+          "operation_id": "fem-close-clean-r1",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "mutation_outcome": "committed"
+        },
+        "isError": false
+      },
+      "replay": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"status\": \"success\", \"warnings\": [\"NX may unload unused dependencies; reacquire document references before continuing\"], \"units\": \"mm\", \"closed_parts\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_163f6922497a4420a9bbdc5bbf677ae4\", \"kind\": \"part\", \"name\": \"public_open_fem_r2\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_bcade140e3ce4ae1a8038df9e00c7e02\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"bcade140e3ce4ae1a8038df9e00c7e02\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\scenario-multi-mcp-20260908-r1\\\\public_open_fem_r2.fem\", \"journal_id\": \"public_open_fem_r2\", \"display_name\": \"public_open_fem_r2\"}], \"closed_count\": 1, \"remaining_count\": 53, \"saved\": false, \"discarded_modified_parts\": false, \"work_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\scenario-multi-mcp-20260908-r1\\\\public_open_r1.sim\", \"display_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\scenario-multi-mcp-20260908-r1\\\\public_open_r1.sim\", \"operation_id\": \"fem-close-clean-r1\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\", \"replayed\": true}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": {
+          "status": "success",
+          "warnings": [
+            "NX may unload unused dependencies; reacquire document references before continuing"
+          ],
+          "units": "mm",
+          "closed_parts": [
+            {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_163f6922497a4420a9bbdc5bbf677ae4",
+              "kind": "part",
+              "name": "public_open_fem_r2",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_bcade140e3ce4ae1a8038df9e00c7e02",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "bcade140e3ce4ae1a8038df9e00c7e02",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-mcp-20260908-r1\\public_open_fem_r2.fem",
+              "journal_id": "public_open_fem_r2",
+              "display_name": "public_open_fem_r2"
+            }
+          ],
+          "closed_count": 1,
+          "remaining_count": 53,
+          "saved": false,
+          "discarded_modified_parts": false,
+          "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-mcp-20260908-r1\\public_open_r1.sim",
+          "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-mcp-20260908-r1\\public_open_r1.sim",
+          "operation_id": "fem-close-clean-r1",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "mutation_outcome": "committed",
+          "replayed": true
+        },
+        "isError": false
+      },
+      "stale": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"status\": \"error\", \"warnings\": [], \"units\": null, \"code\": \"NX_OBJECT_STALE\", \"message\": \"Object reference is not valid: obj_20bc234ffa5249ceb4fb4d82b993c626_163f6922497a4420a9bbdc5bbf677ae4\", \"retryable\": false, \"details\": {\"operation_id\": \"fem-close-stale-r1\", \"mutation_outcome\": \"unknown\"}}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": {
+          "status": "error",
+          "warnings": [],
+          "units": null,
+          "code": "NX_OBJECT_STALE",
+          "message": "Object reference is not valid: obj_20bc234ffa5249ceb4fb4d82b993c626_163f6922497a4420a9bbdc5bbf677ae4",
+          "retryable": false,
+          "details": {
+            "operation_id": "fem-close-stale-r1",
+            "mutation_outcome": "unknown"
+          }
+        },
+        "isError": true
+      },
+      "reopened": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_886352a47c264161839b8b3a6d68e389\", \"kind\": \"part\", \"name\": \"public_open_fem_r2\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_71ce18e33ef34412a478f3d3ffeeba2c\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"71ce18e33ef34412a478f3d3ffeeba2c\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\scenario-multi-mcp-20260908-r1\\\\public_open_fem_r2.fem\", \"journal_id\": \"public_open_fem_r2\", \"display_name\": \"public_open_fem_r2\"}, \"coordinate_frame\": \"part_absolute\", \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\scenario-multi-mcp-20260908-r1\\\\public_open_fem_r2.fem\", \"already_loaded\": false, \"modified_after_native_open\": false, \"modified_before_activation\": false, \"modified\": false, \"fully_loaded\": true, \"load_issues\": [], \"changed_existing_part_flags\": [], \"application\": \"UG_APP_SFEM\", \"work_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\scenario-multi-mcp-20260908-r1\\\\public_open_fem_r2.fem\", \"display_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\scenario-multi-mcp-20260908-r1\\\\public_open_fem_r2.fem\", \"saved\": false, \"result_freshness\": \"not_verified\", \"operation_id\": \"fem-close-reopen-r1\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": {
+          "status": "success",
+          "warnings": [],
+          "units": "mm",
+          "document": {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_886352a47c264161839b8b3a6d68e389",
+            "kind": "part",
+            "name": "public_open_fem_r2",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_71ce18e33ef34412a478f3d3ffeeba2c",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "71ce18e33ef34412a478f3d3ffeeba2c",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-mcp-20260908-r1\\public_open_fem_r2.fem",
+            "journal_id": "public_open_fem_r2",
+            "display_name": "public_open_fem_r2"
+          },
+          "coordinate_frame": "part_absolute",
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-mcp-20260908-r1\\public_open_fem_r2.fem",
+          "already_loaded": false,
+          "modified_after_native_open": false,
+          "modified_before_activation": false,
+          "modified": false,
+          "fully_loaded": true,
+          "load_issues": [],
+          "changed_existing_part_flags": [],
+          "application": "UG_APP_SFEM",
+          "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-mcp-20260908-r1\\public_open_fem_r2.fem",
+          "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-mcp-20260908-r1\\public_open_fem_r2.fem",
+          "saved": false,
+          "result_freshness": "not_verified",
+          "operation_id": "fem-close-reopen-r1",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "mutation_outcome": "committed"
+        },
+        "isError": false
+      },
+      "other_flags_preserved": true
+    }
+  }
+}

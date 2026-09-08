@@ -1,0 +1,91 @@
+{
+  "status": "success",
+  "clone": {
+    "state": "native_files_cloned",
+    "folder": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-z-20260908-r1",
+    "plan_sha256": "2ca63ee609b80c51d299c3ac1830409c1de249ecc72b0acbb3ce85684d44b1b3",
+    "outputs": [
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-z-20260908-r1\\OrthoZR1_analysis.sim",
+        "bytes": 7793269,
+        "sha256": "f9802a11e5f919fed650950393c2fd2535033ab89f98e64cb53a22b980af0ea9"
+      },
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-z-20260908-r1\\OrthoZR1_mesh.fem",
+        "bytes": 3013661,
+        "sha256": "f7ced676b998f126c97b0dcfaa1cfde4f2a724b84481160790e7ec66c7d393c3"
+      },
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-z-20260908-r1\\OrthoZR1_cad_01.prt",
+        "bytes": 76278,
+        "sha256": "07e84f4b08eb65e7ee99327048a29b1cb984d6f87043fbe8ecb024d1f96dd4a2"
+      }
+    ],
+    "source_files_preserved": true,
+    "document_flags_preserved": true,
+    "associated_files_copied": false,
+    "saved_snapshot": true,
+    "unsaved_sources_excluded": [
+      "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-rotated-solve-20260908-r1\\rotated_ortho_solve_r1.sim"
+    ],
+    "dependency_rebinding": "not_verified_until_open",
+    "complete_analysis_package": false,
+    "result_freshness": "not_verified",
+    "solver_launched": false,
+    "replayed": false
+  },
+  "frame": {
+    "origin_mm": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "axes_in_part_absolute": [
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "native_selector": 1,
+    "coordinate_system": "Cartesian",
+    "saved": false,
+    "solver_verified": false
+  },
+  "saved": {
+    "saved": true,
+    "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-z-20260908-r1\\OrthoZR1_mesh.fem",
+    "file": {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-z-20260908-r1\\OrthoZR1_mesh.fem",
+      "bytes": 3013752,
+      "sha256": "36db754281258d591feb9b5146c5a9a6e0d09f84437502273b55263ebee8973d"
+    },
+    "previous_file": {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-z-20260908-r1\\OrthoZR1_mesh.fem",
+      "bytes": 3013661,
+      "sha256": "f7ced676b998f126c97b0dcfaa1cfde4f2a724b84481160790e7ec66c7d393c3"
+    },
+    "backup_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-z-20260908-r1\\.nx-mcp-save-backups\\ef8bf19b07ca47a69af8c5d348776fc8\\OrthoZR1_mesh.fem",
+    "saved_components": false,
+    "closed": false,
+    "other_modified_flags_unchanged": true,
+    "result_freshness": "not_verified"
+  },
+  "source_flags_preserved": true,
+  "solver_launched": false,
+  "operation_id": "op_9a79b136faea4ebf8cdef29d9fe8bde2",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

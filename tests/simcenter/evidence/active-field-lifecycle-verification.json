@@ -1,0 +1,358 @@
+{
+  "stages": [
+    {
+      "stage": "authored",
+      "elapsed_s": 0.015000000013969839,
+      "property": {
+        "name": "Heat Load",
+        "native_type": "6",
+        "units": "Watt",
+        "field_scale": 2.0,
+        "field_reference": {
+          "journal_id": "sys_field(1)",
+          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F1-active-field-20260908-r1\\draft\\field_draft.sim",
+          "tag": 6707842,
+          "lifetime": "current loaded document; not a cross-session reference"
+        },
+        "expression": "0.1",
+        "unit_symbol": "W",
+        "representation": "field_expression",
+        "field_definition": {
+          "kind": "numeric_constant",
+          "value": 0.1
+        },
+        "evaluated_value": 0.2
+      }
+    },
+    {
+      "stage": "saved_before_export",
+      "elapsed_s": 0.45300000003771856,
+      "state": {
+        "property": {
+          "name": "Heat Load",
+          "native_type": "6",
+          "units": "Watt",
+          "field_scale": 2.0,
+          "field_reference": {
+            "journal_id": "sys_field(1)",
+            "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F1-active-field-20260908-r1\\export\\active_field.sim",
+            "tag": 6707842,
+            "lifetime": "current loaded document; not a cross-session reference"
+          },
+          "expression": "0.1",
+          "unit_symbol": "W",
+          "representation": "field_expression",
+          "field_definition": {
+            "kind": "numeric_constant",
+            "value": 0.1
+          },
+          "evaluated_value": 0.2
+        },
+        "membership": {
+          "solution": {
+            "owner": {
+              "journal_id": "Solution[Finned coupled benchmark]",
+              "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F1-active-field-20260908-r1\\export\\active_field.sim"
+            },
+            "bcs": [
+              {
+                "journal_id": "Load[Generic solid 0.1 W]",
+                "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F1-active-field-20260908-r1\\export\\active_field.sim"
+              },
+              {
+                "journal_id": "SimulationObject[Coupled Inlet]",
+                "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F1-active-field-20260908-r1\\export\\active_field.sim"
+              },
+              {
+                "journal_id": "SimulationObject[Coupled Opening]",
+                "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F1-active-field-20260908-r1\\export\\active_field.sim"
+              }
+            ],
+            "unfoldered_bcs": [
+              {
+                "journal_id": "Load[Generic solid 0.1 W]",
+                "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F1-active-field-20260908-r1\\export\\active_field.sim"
+              },
+              {
+                "journal_id": "SimulationObject[Coupled Inlet]",
+                "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F1-active-field-20260908-r1\\export\\active_field.sim"
+              },
+              {
+                "journal_id": "SimulationObject[Coupled Opening]",
+                "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F1-active-field-20260908-r1\\export\\active_field.sim"
+              }
+            ],
+            "folders": [],
+            "conflict_override_count": 0
+          },
+          "steps": [
+            {
+              "index": 0,
+              "owner": {
+                "journal_id": "SolutionStep[Finned steady]",
+                "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F1-active-field-20260908-r1\\export\\active_field.sim"
+              },
+              "bcs": [],
+              "unfoldered_bcs": [],
+              "folders": []
+            }
+          ],
+          "errors": [],
+          "comparison_verified": true,
+          "sha256": "091fbbf6eea0f6224010c9d201eefe56204e13cf1ffc10edbe67d0d41140840e"
+        }
+      }
+    },
+    {
+      "stage": "exported",
+      "elapsed_s": 2.4060000000172295,
+      "result": {
+        "input_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F1-active-field-20260908-r1\\export\\active_field-Finned_coupled_benchmark.xml",
+        "input_identity": {
+          "sha256": "9f63089ce3e53b12dcc0562c22717a8fc3a48d8a59fe49f19a82ff0d40a1f3c1",
+          "xml_content_sha256": "7ecf5b63a85c2c47df3dc38d6b670cc6a9ef4298d6f7ced6600d39a074672e47",
+          "bytes": 235558,
+          "canonicalization": "xml_c14n2_no_comments"
+        },
+        "validation": {
+          "state": "well_formed",
+          "step_definitions": 1,
+          "mesh_counts": {
+            "elements": 2130,
+            "nodes": 745,
+            "element_sets": 2,
+            "scope": "observed_multiphysics_xml_layout"
+          },
+          "solve_readiness": "not_established"
+        },
+        "coupled_ambient_validation": {
+          "property": "Fluid Temperature",
+          "native_value": 0.0,
+          "exported_value": 0.0,
+          "units": "degC",
+          "matches": true,
+          "absolute_tolerance_degC": 1e-06,
+          "scope": "constant ambient temperature only; not complete solve readiness"
+        },
+        "coupled_pressure_validation": {
+          "mode": "altitude_standard_conditions",
+          "stored_absolute_pressure_active": false,
+          "matches": true,
+          "scope": "selector only; altitude-derived pressure and density not verified"
+        },
+        "artifacts": [
+          {
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F1-active-field-20260908-r1\\export\\active_field-Finned_coupled_benchmark.map",
+            "bytes": 36003
+          },
+          {
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F1-active-field-20260908-r1\\export\\active_field-Finned_coupled_benchmark.xml",
+            "bytes": 235558
+          }
+        ],
+        "translator_reports": [],
+        "solver": "NX MULTIPHYSICS",
+        "analysis_type": "Coupled Thermal-Flow",
+        "solution": "Finned coupled benchmark",
+        "source_sim": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F1-active-field-20260908-r1\\export\\active_field.sim",
+        "source_modified": false,
+        "solver_launched": false,
+        "solve_readiness": "not_established",
+        "scope": "Native thermal/flow input export, not a solve or convergence check"
+      }
+    },
+    {
+      "stage": "reopened",
+      "elapsed_s": 5.078000000037719
+    }
+  ],
+  "solver_launched": false,
+  "document": "obj_20bc234ffa5249ceb4fb4d82b993c626_6dd59d70d8124e4985292d6e93b38f4b",
+  "native_lifecycle_passed": true,
+  "stale_reference_error": "NX_OBJECT_STALE",
+  "before": {
+    "property": {
+      "name": "Heat Load",
+      "native_type": "6",
+      "units": "Watt",
+      "field_scale": 2.0,
+      "field_reference": {
+        "journal_id": "sys_field(1)",
+        "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F1-active-field-20260908-r1\\export\\active_field.sim",
+        "tag": 6707842,
+        "lifetime": "current loaded document; not a cross-session reference"
+      },
+      "expression": "0.1",
+      "unit_symbol": "W",
+      "representation": "field_expression",
+      "field_definition": {
+        "kind": "numeric_constant",
+        "value": 0.1
+      },
+      "evaluated_value": 0.2
+    },
+    "membership": {
+      "solution": {
+        "owner": {
+          "journal_id": "Solution[Finned coupled benchmark]",
+          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F1-active-field-20260908-r1\\export\\active_field.sim"
+        },
+        "bcs": [
+          {
+            "journal_id": "Load[Generic solid 0.1 W]",
+            "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F1-active-field-20260908-r1\\export\\active_field.sim"
+          },
+          {
+            "journal_id": "SimulationObject[Coupled Inlet]",
+            "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F1-active-field-20260908-r1\\export\\active_field.sim"
+          },
+          {
+            "journal_id": "SimulationObject[Coupled Opening]",
+            "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F1-active-field-20260908-r1\\export\\active_field.sim"
+          }
+        ],
+        "unfoldered_bcs": [
+          {
+            "journal_id": "Load[Generic solid 0.1 W]",
+            "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F1-active-field-20260908-r1\\export\\active_field.sim"
+          },
+          {
+            "journal_id": "SimulationObject[Coupled Inlet]",
+            "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F1-active-field-20260908-r1\\export\\active_field.sim"
+          },
+          {
+            "journal_id": "SimulationObject[Coupled Opening]",
+            "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F1-active-field-20260908-r1\\export\\active_field.sim"
+          }
+        ],
+        "folders": [],
+        "conflict_override_count": 0
+      },
+      "steps": [
+        {
+          "index": 0,
+          "owner": {
+            "journal_id": "SolutionStep[Finned steady]",
+            "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F1-active-field-20260908-r1\\export\\active_field.sim"
+          },
+          "bcs": [],
+          "unfoldered_bcs": [],
+          "folders": []
+        }
+      ],
+      "errors": [],
+      "comparison_verified": true,
+      "sha256": "091fbbf6eea0f6224010c9d201eefe56204e13cf1ffc10edbe67d0d41140840e"
+    }
+  },
+  "after": {
+    "property": {
+      "name": "Heat Load",
+      "native_type": "6",
+      "units": "Watt",
+      "field_scale": 2.0,
+      "field_reference": {
+        "journal_id": "sys_field(1)",
+        "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F1-active-field-20260908-r1\\export\\active_field.sim",
+        "tag": 6529848,
+        "lifetime": "current loaded document; not a cross-session reference"
+      },
+      "expression": "0.1",
+      "unit_symbol": "W",
+      "representation": "field_expression",
+      "field_definition": {
+        "kind": "numeric_constant",
+        "value": 0.1
+      },
+      "evaluated_value": 0.2
+    },
+    "membership": {
+      "solution": {
+        "owner": {
+          "journal_id": "Solution[Finned coupled benchmark]",
+          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F1-active-field-20260908-r1\\export\\active_field.sim"
+        },
+        "bcs": [
+          {
+            "journal_id": "Load[Generic solid 0.1 W]",
+            "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F1-active-field-20260908-r1\\export\\active_field.sim"
+          },
+          {
+            "journal_id": "SimulationObject[Coupled Inlet]",
+            "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F1-active-field-20260908-r1\\export\\active_field.sim"
+          },
+          {
+            "journal_id": "SimulationObject[Coupled Opening]",
+            "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F1-active-field-20260908-r1\\export\\active_field.sim"
+          }
+        ],
+        "unfoldered_bcs": [
+          {
+            "journal_id": "Load[Generic solid 0.1 W]",
+            "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F1-active-field-20260908-r1\\export\\active_field.sim"
+          },
+          {
+            "journal_id": "SimulationObject[Coupled Inlet]",
+            "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F1-active-field-20260908-r1\\export\\active_field.sim"
+          },
+          {
+            "journal_id": "SimulationObject[Coupled Opening]",
+            "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F1-active-field-20260908-r1\\export\\active_field.sim"
+          }
+        ],
+        "folders": [],
+        "conflict_override_count": 0
+      },
+      "steps": [
+        {
+          "index": 0,
+          "owner": {
+            "journal_id": "SolutionStep[Finned steady]",
+            "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F1-active-field-20260908-r1\\export\\active_field.sim"
+          },
+          "bcs": [],
+          "unfoldered_bcs": [],
+          "folders": []
+        }
+      ],
+      "errors": [],
+      "comparison_verified": true,
+      "sha256": "091fbbf6eea0f6224010c9d201eefe56204e13cf1ffc10edbe67d0d41140840e"
+    }
+  },
+  "export_heat_value_verified": true,
+  "numerical_acceptance": "not_tested",
+  "unrelated_modified_flags_preserved": true,
+  "public_readback": {
+    "passed": true,
+    "document_inventory_preserved": true,
+    "public_field_matches_native": true,
+    "solver_launched": false,
+    "numerical_acceptance": "not_tested"
+  },
+  "public_receipt_sha256": "dc0ee8017698b8c44254526afc11965d546df926c83a5f8c554bf08053f443f3",
+  "export_audit": {
+    "passed": true,
+    "xml_sha256": "9f63089ce3e53b12dcc0562c22717a8fc3a48d8a59fe49f19a82ff0d40a1f3c1",
+    "exported_raw_value": 200000.0,
+    "power_W": 0.2,
+    "absolute_tolerance_W": 1e-09,
+    "force_and_length_conversion": [
+      1000.0,
+      1000.0
+    ],
+    "time_convention": "seconds; tested NX 2606 Multiphysics millimeter fixture only",
+    "selected_element_count": 764,
+    "scope": "exported total heat value and nonempty step selection; not physical solution acceptance"
+  },
+  "source_sha256": {
+    "properties.py": "4e60e6fd231ea687b265199198b70fc5c877a037531516b36a88556d496da84f",
+    "boundary_state.py": "960c7b80928379018ea54955e6999c17cbccf92b27a199bf1998b1ec6c23aefc"
+  },
+  "prior_attempt": {
+    "stage": "precondition",
+    "reason": "native unit name HeatFlow_Metric2 instead of assumed Watt; native symbol W",
+    "changed_heat_value": false,
+    "source_preserved": true
+  }
+}

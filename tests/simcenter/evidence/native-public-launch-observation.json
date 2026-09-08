@@ -1,0 +1,138 @@
+{
+  "files": [
+    {
+      "name": ".nx-sim-output-owner.json",
+      "bytes": 315,
+      "mtime": 1788853751.173756
+    },
+    {
+      "name": "Duct Inlet.png",
+      "bytes": 21659,
+      "mtime": 1788854228.6553526
+    },
+    {
+      "name": "Flow Enclosure - Steady State Convergence.png",
+      "bytes": 45863,
+      "mtime": 1788854228.629227
+    },
+    {
+      "name": "Flow Enclosure Fluid Pressure.png",
+      "bytes": 27101,
+      "mtime": 1788854228.7870061
+    },
+    {
+      "name": "Flow Enclosure Fluid Temperature.png",
+      "bytes": 14254,
+      "mtime": 1788854228.681484
+    },
+    {
+      "name": "Flow Enclosure Fluid Velocity.png",
+      "bytes": 21952,
+      "mtime": 1788854228.7311835
+    },
+    {
+      "name": "prepared_flow_r1-Flow_benchmark.bun",
+      "bytes": 46367644,
+      "mtime": 1788854213.1535683
+    },
+    {
+      "name": "prepared_flow_r1-Flow_benchmark.err",
+      "bytes": 1,
+      "mtime": 1788854214.7695856
+    },
+    {
+      "name": "prepared_flow_r1-Flow_benchmark.log",
+      "bytes": 39351,
+      "mtime": 1788854214.7690852
+    },
+    {
+      "name": "prepared_flow_r1-Flow_benchmark.map",
+      "bytes": 21847,
+      "mtime": 1788854106.236767
+    },
+    {
+      "name": "prepared_flow_r1-Flow_benchmark.xml",
+      "bytes": 18628170,
+      "mtime": 1788854105.9878943
+    },
+    {
+      "name": "prepared_flow_r1-Flow_benchmark.zip",
+      "bytes": 12117905,
+      "mtime": 1788854214.763069
+    },
+    {
+      "name": "prepared_flow_r1.sim",
+      "bytes": 7787501,
+      "mtime": 1788853740.6801436
+    },
+    {
+      "name": "Solution_Monitor_Graphs.html",
+      "bytes": 27833,
+      "mtime": 1788854228.7899995
+    }
+  ],
+  "logs": [
+    {
+      "name": "prepared_flow_r1-Flow_benchmark.log",
+      "report": {
+        "state": "unknown",
+        "stage": "unknown",
+        "translator_fatal_codes": [],
+        "fatal_abort_reported": false,
+        "numerical_convergence": "not_established",
+        "results_validated": false,
+        "next_action": "Inspect job process status, residuals and result validation before classifying."
+      }
+    }
+  ],
+  "processes": [],
+  "tracked_processes": [
+    {
+      "identity": {
+        "pid": 12812,
+        "creation_filetime_100ns": "134333277306485361",
+        "executable_path": "C:\\Program Files\\Siemens\\Designcenter2606\\THERMALFLOW\\tmgsolver\\IntelMPI\\bin\\mpiexec.exe"
+      },
+      "correlation": {
+        "state": "original_process_not_present",
+        "reason": "pid_missing",
+        "solver_success": "not_established"
+      }
+    },
+    {
+      "identity": {
+        "pid": 18220,
+        "creation_filetime_100ns": "134333277306901841",
+        "executable_path": "C:\\Program Files\\Siemens\\Designcenter2606\\THERMALFLOW\\tmgsolver\\exe\\niece_solver.exe"
+      },
+      "correlation": {
+        "state": "original_process_not_present",
+        "reason": "pid_missing",
+        "solver_success": "not_established"
+      }
+    }
+  ],
+  "input_comparison": {
+    "before": {
+      "sha256": "9d80a35ad2ceef69bc4d6324efcef492fcb5b509c8cf9232b7d7bce1a4d12539",
+      "xml_content_sha256": "c338e27f9f235ecbf249da29757a9ce0a98c71bd6d263c214a5ca8cee165b84f",
+      "bytes": 18628170,
+      "canonicalization": "xml_c14n2_no_comments"
+    },
+    "after": {
+      "sha256": "cdeb6212fff9deb154e00e0fde16d476797ea5965bc0c12d82e747ba42f09be9",
+      "xml_content_sha256": "c338e27f9f235ecbf249da29757a9ce0a98c71bd6d263c214a5ca8cee165b84f",
+      "bytes": 18628170,
+      "canonicalization": "xml_c14n2_no_comments"
+    },
+    "byte_identical": false,
+    "xml_content_identical": true,
+    "scope": "input XML only; result association and solver outcome require separate verification"
+  },
+  "completion_marker_present": true,
+  "result": {
+    "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-prepare-20260908-r1\\prepared_flow_r1-Flow_benchmark.bun",
+    "bytes": 46367644,
+    "sha256": "6f076a9cdd65a6a25a4ebe5a3a4b97312f20041957f108adfa0edb14a46a95d8"
+  }
+}

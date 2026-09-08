@@ -1,0 +1,78 @@
+{
+  "status": "success",
+  "sections": [
+    "CustomerDefaultList",
+    "Units",
+    "NXBaseModelUnits",
+    "ModelInformation",
+    "SolverParameters",
+    "SolutionParameters",
+    "SolutionStepList",
+    "MaterialList",
+    "PhysicalPropertyTableList",
+    "BeamCrossSectionList",
+    "SetList",
+    "NamedPointList",
+    "CurveList",
+    "OpticalPropertyList",
+    "AdvancedOpticalPropertyList",
+    "NonGeometricElementList",
+    "AblationList",
+    "ActiveHeaterControllerList",
+    "ArticulationJointList",
+    "ConvectionCorrectionList",
+    "DuctHeadLossList",
+    "ExternalSolverList",
+    "MonteCarloSettingsList",
+    "ReferenceTemperatureList",
+    "ThermalOutputRequestList",
+    "ThermalParameterList",
+    "ThermostatList",
+    "Alignments",
+    "ElementList",
+    "ElementAssociatedDataList",
+    "NodeList",
+    "RegionList",
+    "Loads",
+    "Constraints",
+    "SimulationObjects",
+    "ThicknessFieldTableList",
+    "MOVSpatialFieldTableList",
+    "FieldTableList",
+    "SpatialFieldTableList"
+  ],
+  "orientation_records": [
+    {
+      "tag": "Orientation",
+      "attributes": {},
+      "xml": "<Orientation>\n      <X>  1.0000000E+00     0.0000000E+00     0.0000000E+00</X>\n      <Y>  0.0000000E+00     1.0000000E+00     0.0000000E+00</Y>\n      <Z>  0.0000000E+00     0.0000000E+00     1.0000000E+00</Z>\n    </Orientation>\n  ",
+      "truncated": false
+    },
+    {
+      "tag": "Property",
+      "attributes": {
+        "name": "Material Orientation Type"
+      },
+      "xml": "<Property name=\"Material Orientation Type\">\n        <Value>0</Value>\n      </Property>\n      ",
+      "truncated": false
+    }
+  ],
+  "alignment_sections": {
+    "Alignments": "<Alignments>\n  </Alignments>\n  ",
+    "ElementAssociatedDataList": "<ElementAssociatedDataList>\n  </ElementAssociatedDataList>\n  "
+  },
+  "element_group_attributes": [
+    {
+      "uname": "3d_mesh(1)",
+      "elementType": "TET4",
+      "physicalProperty": "1"
+    }
+  ],
+  "file_modified": false,
+  "solver_launched": false,
+  "operation_id": "op_7c1d5cd8288149609c6fcbda5e1a0549",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

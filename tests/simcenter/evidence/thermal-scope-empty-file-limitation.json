@@ -1,0 +1,317 @@
+{
+  "status": "success",
+  "passed": false,
+  "state": {
+    "adapter": 3,
+    "boundary_scope": "observed_boundary_values_and_selected_solution_ordered_step_membership_v4",
+    "scope": "solid_material_frame_properties_and_observed_thermal_boundaries",
+    "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\volume-numerical-solve-20260908-r1\\volume_solve_r1.sim",
+    "material_state": {
+      "adapter": 1,
+      "scope": "solid_material_assignment_frame_constant_thermal_properties",
+      "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\volume-numerical-20260908-r1\\benchmark_45af73238372_mesh.fem",
+      "collectors": [
+        {
+          "collector": {
+            "kind": "mesh_collector",
+            "journal_id": "MeshCollector[Solid(1)]",
+            "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\volume-numerical-20260908-r1\\benchmark_45af73238372_mesh.fem"
+          },
+          "native_type": "Solid",
+          "coordinate_frame": "part_absolute",
+          "length_units": "mm",
+          "material": {
+            "kind": "material",
+            "journal_id": "PhysicalMaterial[FLUX_K200]",
+            "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\volume-numerical-20260908-r1\\benchmark_45af73238372_mesh.fem"
+          },
+          "material_inherited": false,
+          "orientation": {
+            "native_selector": 0,
+            "stored_frame": null,
+            "interpretation": "default_frame_stored_frame_ignored"
+          },
+          "thermal_properties": {
+            "ThermalConductivity": {
+              "value": 200.0,
+              "units": "ThermalConductivity_Metric3"
+            },
+            "SpecificHeat": {
+              "value": 900.0,
+              "units": "SpecificHeat_Metric2"
+            },
+            "MassDensityConstant": {
+              "value": 2700.0,
+              "units": "KilogramPerCubicMeter"
+            }
+          }
+        }
+      ],
+      "errors": [],
+      "full_model_freshness": "not_verified",
+      "sha256": "49f7f4bb4a264f8e0794a3afa703daa1d5f42aad4ebb440e4d9bf60be03ae3ee"
+    },
+    "boundary_state": {
+      "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\volume-numerical-solve-20260908-r1\\volume_solve_r1.sim",
+      "boundaries": [
+        {
+          "category": "constraints",
+          "journal_id": "Constraint[Cold end 293 K]",
+          "descriptor": "Temperature",
+          "properties": [
+            {
+              "name": "description",
+              "native_type": "0",
+              "units": null,
+              "representation": "text_lines",
+              "value": []
+            },
+            {
+              "name": "Selection Method",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Option",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Temperature",
+              "native_type": "6",
+              "units": "Kelvin",
+              "expression": "293.15",
+              "unit_symbol": "K",
+              "representation": "expression",
+              "evaluated_value": 293.15
+            },
+            {
+              "name": "Temperature File",
+              "native_type": "16",
+              "units": null,
+              "inspection_status": "unsupported_property_type"
+            },
+            {
+              "name": "Results Directory",
+              "native_type": "1",
+              "units": null,
+              "value": ""
+            },
+            {
+              "name": "Specify Layer to Apply to",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Apply to",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Layer Number",
+              "native_type": "3",
+              "units": null,
+              "value": 1
+            },
+            {
+              "name": "Custom Settings Option",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Custom Settings",
+              "native_type": "1",
+              "units": null,
+              "value": "BCONX"
+            },
+            {
+              "name": "distributionType",
+              "native_type": "3",
+              "units": null,
+              "value": 32
+            }
+          ],
+          "targets": [
+            {
+              "index": 0,
+              "members": [
+                {
+                  "journal_id": "HANDLE R-37374",
+                  "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\volume-numerical-solve-20260908-r1\\volume_solve_r1.sim",
+                  "type": "CAEFace",
+                  "subtype": "0",
+                  "sub_id": 0
+                }
+              ]
+            },
+            {
+              "index": 1,
+              "members": [
+                null
+              ]
+            }
+          ]
+        },
+        {
+          "category": "loads",
+          "journal_id": "Load[End volume]",
+          "descriptor": "Heat Generation",
+          "properties": [
+            {
+              "name": "description",
+              "native_type": "0",
+              "units": null,
+              "representation": "text_lines",
+              "value": []
+            },
+            {
+              "name": "Heat Generation",
+              "native_type": "6",
+              "units": "HeatGeneration_Metric3",
+              "expression": "100000.0",
+              "unit_symbol": "W/m^3",
+              "representation": "expression",
+              "evaluated_value": 100000.0
+            },
+            {
+              "name": "Specify Reference Temperature Set",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Reference Temperature Set",
+              "native_type": "0",
+              "units": null,
+              "representation": "named_property_table",
+              "value": null
+            },
+            {
+              "name": "Control Heater",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Thermostat",
+              "native_type": "0",
+              "units": null,
+              "representation": "named_property_table",
+              "value": null
+            },
+            {
+              "name": "Specify Layer to Apply to",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Apply to",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Layer Number",
+              "native_type": "3",
+              "units": null,
+              "value": 1
+            },
+            {
+              "name": "distributionType",
+              "native_type": "3",
+              "units": null,
+              "value": 32
+            }
+          ],
+          "targets": [
+            {
+              "index": 0,
+              "members": [
+                {
+                  "journal_id": "HANDLE R-37481",
+                  "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\volume-numerical-solve-20260908-r1\\volume_solve_r1.sim",
+                  "type": "CAEBody",
+                  "subtype": "0",
+                  "sub_id": 0
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "effective_membership": {
+        "solution": {
+          "owner": {
+            "journal_id": "Solution[Conduction]",
+            "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\volume-numerical-solve-20260908-r1\\volume_solve_r1.sim"
+          },
+          "bcs": [
+            {
+              "journal_id": "Constraint[Cold end 293 K]",
+              "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\volume-numerical-solve-20260908-r1\\volume_solve_r1.sim"
+            },
+            {
+              "journal_id": "Load[End volume]",
+              "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\volume-numerical-solve-20260908-r1\\volume_solve_r1.sim"
+            }
+          ],
+          "unfoldered_bcs": [
+            {
+              "journal_id": "Constraint[Cold end 293 K]",
+              "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\volume-numerical-solve-20260908-r1\\volume_solve_r1.sim"
+            },
+            {
+              "journal_id": "Load[End volume]",
+              "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\volume-numerical-solve-20260908-r1\\volume_solve_r1.sim"
+            }
+          ],
+          "folders": [],
+          "conflict_override_count": 0
+        },
+        "steps": [
+          {
+            "index": 0,
+            "owner": {
+              "journal_id": "SolutionStep[Conduction]",
+              "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\volume-numerical-solve-20260908-r1\\volume_solve_r1.sim"
+            },
+            "bcs": [],
+            "unfoldered_bcs": [],
+            "folders": []
+          }
+        ],
+        "errors": [],
+        "comparison_verified": true,
+        "sha256": "154c6cbcebdf7b99819ddc85011099ec9562067d180561705bed4cfd4c347805"
+      },
+      "errors": [],
+      "uninspected_properties": [
+        {
+          "boundary": "Constraint[Cold end 293 K]",
+          "property": "Temperature File",
+          "reason": "unsupported_property_type"
+        }
+      ],
+      "sha256": null,
+      "comparison_verified": false,
+      "scope": "observed_boundary_values_and_selected_solution_ordered_step_membership_v4",
+      "full_model_freshness": "not_verified"
+    },
+    "errors": [],
+    "sha256": null,
+    "full_model_freshness": "not_verified"
+  },
+  "solver_launched": false,
+  "limitation": "Native fixture cannot establish a complete scoped snapshot",
+  "operation_id": "op_75725994138b4cecb47389e8668172bd",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

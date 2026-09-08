@@ -1,0 +1,138 @@
+{
+  "scope": "Third mesh and native pressure field extraction; benchmark D remains incomplete",
+  "job": {
+    "mesh_counts": {
+      "elements": 44061,
+      "nodes": 9474
+    },
+    "mesh_size_mm": 2.0,
+    "job_id": "cavity-fan-solve-05",
+    "state": "completed",
+    "deck_sha256": "ce2bb91d4b12a51a01e0534a5dffa82538f21c2b536d4d1ef3235ef50e9f4a48",
+    "created_at": "2026-09-08T02:20:37.357351+00:00",
+    "iteration_limit": 1000,
+    "solver_launched": true,
+    "numerical_validation": "mesh_sensitivity_4_86_percent_not_converged",
+    "scope": "synthetic fan mode-5 verification; no thermal load; not acceptance D",
+    "log_sha256": "C8125FEFEE8A9B70C3657E57594B287AA2023B40C15723C87439B98B3FC02077",
+    "result_sha256": "08A33D2C9FA72E0ABB6827A53614FCEBB6DCB59D5E34ECDCF1E54B2E9931643A"
+  },
+  "summary": {
+    "fans": [
+      {
+        "name": "Duct Inlet",
+        "loss_coefficient": 0.0,
+        "pressure_rise_Pa": 0.496,
+        "mass_flow_kg_s": 0.0002419,
+        "pressure_convention": "unverified",
+        "volume_flow_m3_s": 0.00020160000000000002
+      }
+    ],
+    "boundaries": [
+      {
+        "name": "Duct Inlet",
+        "volume_flow_m3_s": 0.00020160000000000002,
+        "mass_flow_kg_s": 0.0002419,
+        "positive_direction": "into_domain"
+      },
+      {
+        "name": "Duct Opening",
+        "volume_flow_m3_s": -0.00020160000000000002,
+        "mass_flow_kg_s": -0.0002419,
+        "positive_direction": "into_domain"
+      }
+    ],
+    "native_pressure_unit": "mN/mm^2",
+    "precision": "rounded_native_log",
+    "identity": "display_names_only",
+    "engineering_accepted": false
+  },
+  "flow_change_from_3mm_percent": -4.860783388390743,
+  "mass_imbalance_percent": 0.07659,
+  "momentum_imbalance_percent": 0.01569,
+  "elapsed_seconds": 32,
+  "mesh_convergence_established": false,
+  "pressure_adapter": {
+    "status": "success",
+    "fields": [
+      {
+        "field": "Pressure - Element-Nodal",
+        "units": "Pa",
+        "minimum": 0.27164798974990845,
+        "maximum": 0.5069066286087036,
+        "native_location": "2",
+        "minimum_native_id": 25217,
+        "maximum_native_id": 18689,
+        "minimum_native_sub_id": 5,
+        "maximum_native_sub_id": 4,
+        "node_count": 9474,
+        "loadcase_index": 0,
+        "iteration_index": 0,
+        "result_freshness": "not_verified",
+        "pressure_reference": "native_solution_reference",
+        "reference_lifetime": "indices apply only to this result revision"
+      },
+      {
+        "field": "Total Pressure - Element-Nodal",
+        "units": "Pa",
+        "minimum": 0.3778245449066162,
+        "maximum": 0.6522974371910095,
+        "native_location": "2",
+        "minimum_native_id": 16583,
+        "maximum_native_id": 42542,
+        "minimum_native_sub_id": 360,
+        "maximum_native_sub_id": 3989,
+        "node_count": 9474,
+        "loadcase_index": 0,
+        "iteration_index": 0,
+        "result_freshness": "not_verified",
+        "pressure_reference": "native_solution_reference",
+        "reference_lifetime": "indices apply only to this result revision"
+      }
+    ],
+    "scope": "native extraction only; model/job freshness must be audited separately",
+    "operation_id": "op_7058e09c79d44531ba4a881d0dfee2c6",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed",
+    "warnings": [],
+    "units": "mm"
+  },
+  "files": {
+    "benchmark_4ba7072a1d7a_analysis-Flow_benchmark.xml": {
+      "size": 3068142,
+      "sha256": "04bf076ae92c639252bde9b9aa65fcd87713ecee380b4ff47729677ce024a188"
+    },
+    "benchmark_4ba7072a1d7a_analysis-Flow_benchmark.bun": {
+      "size": 9196492,
+      "sha256": "08a33d2c9fa72e0abb6827a53614fcebb6dcb59d5e34ecdcf1e54b2e9931643a"
+    },
+    "fan-reference-pressure-01.json": {
+      "size": 248,
+      "sha256": "6f0c8d9fbf605c99ba4654c25faa8814d7e1f201f53137af1af98519dcb1d5cb"
+    },
+    "cavity-fan-solve-05.json": {
+      "size": 781,
+      "sha256": "31501085e16250d899a5d6e4856727f18736f3cbc78539fd5643c98ef4eec147"
+    },
+    "fluid-refinement-02.json": {
+      "size": 16733,
+      "sha256": "95e77cd0f149d84c224591eed325cd45a83ab8994aca59f6181b2ba17ff41456"
+    },
+    "fan-configuration-01.json": {
+      "size": 1093,
+      "sha256": "6c38e1c575b8884b2b89a932847a046c6f09dc67102ed06402b003c29017e8ac"
+    },
+    "benchmark_4ba7072a1d7a_analysis-Flow_benchmark.log": {
+      "size": 31837,
+      "sha256": "c8125fefee8a9b70c3657e57594b287aa2023b40c15723c87439b98b3fc02077"
+    },
+    "head-loss-config-02.json": {
+      "size": 2025,
+      "sha256": "6c7be0299f72a286f0f5168773c2beb13a2473836b32de31adcec08faee3e118"
+    },
+    "benchmark_4ba7072a1d7a_analysis-Flow_benchmark.map": {
+      "size": 21886,
+      "sha256": "a2eeaa6f433008c11eeacbfa97a7c3f4cd93ed80759299f64d3d294b804b989e"
+    }
+  }
+}

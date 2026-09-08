@@ -1,0 +1,135 @@
+{
+  "status": "success",
+  "plan": {
+    "schema": 1,
+    "folder": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\variant-transaction-20260908-r1",
+    "name": "VariantTxnR1",
+    "saved_snapshot": true,
+    "unsaved_sources_excluded": [
+      "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-independent-refined-solve-20260908-r1\\refined_flow_r1.sim"
+    ],
+    "source_bytes": 23033982,
+    "mapping": [
+      {
+        "source": {
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-independent-refined-solve-20260908-r1\\refined_flow_r1.sim",
+          "bytes": 7765054,
+          "sha256": "1b15a1c4bfcb37acf1844d6168aeb2f9e836ba10e2fc5ffb2bf70eb0911a0822"
+        },
+        "destination": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\variant-transaction-20260908-r1\\VariantTxnR1_analysis.sim",
+        "roles": [
+          "simulation"
+        ],
+        "units": "mm",
+        "source_modified": true
+      },
+      {
+        "source": {
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-independent-clone-native-20260908-r1\\independent_mesh.fem",
+          "bytes": 15181281,
+          "sha256": "40cbaae5dcac87b96ec226d5b56cc6e36feac7496fd71e9c0d0e3d03b1b4a201"
+        },
+        "destination": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\variant-transaction-20260908-r1\\VariantTxnR1_mesh.fem",
+        "roles": [
+          "mesh"
+        ],
+        "units": "mm",
+        "source_modified": false
+      },
+      {
+        "source": {
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-independent-clone-native-20260908-r1\\independent_geometry.prt",
+          "bytes": 87647,
+          "sha256": "1dd1d9f19d918542eda147e783583e10bea6ea6740ae8d9478b702548dbd080d"
+        },
+        "destination": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\variant-transaction-20260908-r1\\VariantTxnR1_cad_01.prt",
+        "roles": [
+          "AssociatedCadPart",
+          "MasterCadPart"
+        ],
+        "units": "mm",
+        "source_modified": false
+      }
+    ],
+    "scope": "direct standalone SIM/FEM/CAD native files",
+    "complete_analysis_package": false,
+    "result_freshness": "not_verified",
+    "plan_sha256": "d55ab43224ae73d23c2ec453dfc1688091647dc1cdb374ff797e2f6630c17795"
+  },
+  "created": {
+    "state": "native_files_cloned",
+    "folder": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\variant-transaction-20260908-r1",
+    "plan_sha256": "d55ab43224ae73d23c2ec453dfc1688091647dc1cdb374ff797e2f6630c17795",
+    "outputs": [
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\variant-transaction-20260908-r1\\VariantTxnR1_analysis.sim",
+        "bytes": 7764924,
+        "sha256": "dde2cd49f15371352f4c0149cb0febf37fee25f44665b72491a40085c0d1e5af"
+      },
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\variant-transaction-20260908-r1\\VariantTxnR1_mesh.fem",
+        "bytes": 15181043,
+        "sha256": "8dba2b4e5f9cac0131df9e09c20c4d53bd77884acc32a98cdadca3122ff15e14"
+      },
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\variant-transaction-20260908-r1\\VariantTxnR1_cad_01.prt",
+        "bytes": 87631,
+        "sha256": "924d224a2a7ccb6abc808e0fb694db338ed178fa559945a2603355fc91dee1d6"
+      }
+    ],
+    "source_files_preserved": true,
+    "document_flags_preserved": true,
+    "associated_files_copied": false,
+    "saved_snapshot": true,
+    "unsaved_sources_excluded": [
+      "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-independent-refined-solve-20260908-r1\\refined_flow_r1.sim"
+    ],
+    "dependency_rebinding": "not_verified_until_open",
+    "complete_analysis_package": false,
+    "result_freshness": "not_verified",
+    "solver_launched": false,
+    "replayed": false
+  },
+  "replayed": {
+    "associated_files_copied": false,
+    "complete_analysis_package": false,
+    "dependency_rebinding": "not_verified_until_open",
+    "document_flags_preserved": true,
+    "folder": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\variant-transaction-20260908-r1",
+    "outputs": [
+      {
+        "bytes": 7764924,
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\variant-transaction-20260908-r1\\VariantTxnR1_analysis.sim",
+        "sha256": "dde2cd49f15371352f4c0149cb0febf37fee25f44665b72491a40085c0d1e5af"
+      },
+      {
+        "bytes": 15181043,
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\variant-transaction-20260908-r1\\VariantTxnR1_mesh.fem",
+        "sha256": "8dba2b4e5f9cac0131df9e09c20c4d53bd77884acc32a98cdadca3122ff15e14"
+      },
+      {
+        "bytes": 87631,
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\variant-transaction-20260908-r1\\VariantTxnR1_cad_01.prt",
+        "sha256": "924d224a2a7ccb6abc808e0fb694db338ed178fa559945a2603355fc91dee1d6"
+      }
+    ],
+    "plan_sha256": "d55ab43224ae73d23c2ec453dfc1688091647dc1cdb374ff797e2f6630c17795",
+    "replayed": true,
+    "result_freshness": "not_verified",
+    "saved_snapshot": true,
+    "solver_launched": false,
+    "source_files_preserved": true,
+    "state": "native_files_cloned",
+    "unsaved_sources_excluded": [
+      "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-independent-refined-solve-20260908-r1\\refined_flow_r1.sim"
+    ],
+    "receipt_semantics": "historical committed clone; current source revision not implied"
+  },
+  "work_display_preserved": true,
+  "document_flags_preserved": true,
+  "operation_id": "op_19731a29a9f74d8abf74588b4838c9ca",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

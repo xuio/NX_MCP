@@ -1,0 +1,33 @@
+{
+  "job_id": "orthotropic-z-thermal-01",
+  "benchmark_scope": "idealized constant properties; not physical product temperatures",
+  "material_axes_in_part": [
+    [
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      1
+    ],
+    [
+      1,
+      0,
+      0
+    ]
+  ],
+  "effective_x_conductivity_w_m_k": 0.4,
+  "power_w": 1,
+  "length_m": 0.1,
+  "cross_section_m2": 0.0001,
+  "expected_rise_k": 1250,
+  "observed_rise_k": 1250.049560546875,
+  "absolute_error_k": 0.049560546875,
+  "relative_error_percent": 0.0039648437500039435,
+  "minimum_c": 20.0,
+  "maximum_c": 1270.049560546875,
+  "node_count": 756,
+  "mesh_convergence_established": false
+}

@@ -1,0 +1,388 @@
+{
+  "first": {
+    "meta": null,
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"solution\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_2edeacd630db47348d2ae36f7e10da59\", \"kind\": \"simulation_solution\", \"name\": \"MCP_SELECTION_PROBE\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6a4b8c1adf6d49d6b11b612545d0cb1b\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6a4b8c1adf6d49d6b11b612545d0cb1b\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\A-thermal-export-20260908-r1\\\\thermal_input_r1.sim\", \"journal_id\": \"Solution[MCP_SELECTION_PROBE]\", \"display_name\": \"MCP_SELECTION_PROBE\"}, \"solution_active\": false, \"steps\": [{\"step\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_c87736d41cec4496a9ddfba057bb3a8f\", \"kind\": \"simulation_step\", \"name\": \"Transient probe\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6a4b8c1adf6d49d6b11b612545d0cb1b\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6a4b8c1adf6d49d6b11b612545d0cb1b\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\A-thermal-export-20260908-r1\\\\thermal_input_r1.sim\", \"journal_id\": \"SolutionStep[Transient probe]\", \"display_name\": \"Transient probe\"}, \"index\": 0, \"step_type\": 0, \"active_in_solution\": false, \"properties\": [{\"name\": \"Description\", \"native_type\": \"0\", \"units\": null, \"inspection_status\": \"unsupported_property_type\"}, {\"name\": \"Solution Type\", \"native_type\": \"3\", \"units\": null, \"value\": 1}, {\"name\": \"End Time\", \"native_type\": \"4\", \"units\": \"Second\", \"value\": 0.0, \"unit_symbol\": \"sec\"}, {\"name\": \"Thermal Time Step Method\", \"native_type\": \"3\", \"units\": null, \"value\": 3}, {\"name\": \"Thermal Number of Steps\", \"native_type\": \"3\", \"units\": null, \"value\": 10}, {\"name\": \"Thermal Time Step\", \"native_type\": \"4\", \"units\": \"Second\", \"value\": 1.0, \"unit_symbol\": \"sec\"}, {\"name\": \"Maximum Temperature Change\", \"native_type\": \"4\", \"units\": \"CelsiusDifference\", \"value\": 0.05, \"unit_symbol\": \"dC\"}, {\"name\": \"Minimum Time Step\", \"native_type\": \"4\", \"units\": \"Second\", \"value\": 0.01, \"unit_symbol\": \"sec\"}, {\"name\": \"Maximum Time Step Option\", \"native_type\": \"3\", \"units\": null, \"value\": 1}, {\"name\": \"Maximum Time Step\", \"native_type\": \"4\", \"units\": \"Second\", \"value\": 1.0, \"unit_symbol\": \"sec\"}, {\"name\": \"Maximum Time Step Increment\", \"native_type\": \"3\", \"units\": null, \"value\": 4}, {\"name\": \"Output Flag\", \"native_type\": \"3\", \"units\": null, \"value\": 1}, {\"name\": \"Thermal Output Requests\", \"native_type\": \"0\", \"units\": null, \"inspection_status\": \"unsupported_property_type\"}]}, {\"step\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_3f3a757c6f704304b57cc076fa6b4eed\", \"kind\": \"simulation_step\", \"name\": \"Transient sample 1\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6a4b8c1adf6d49d6b11b612545d0cb1b\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6a4b8c1adf6d49d6b11b612545d0cb1b\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\A-thermal-export-20260908-r1\\\\thermal_input_r1.sim\", \"journal_id\": \"SolutionStep[Transient sample 1]\", \"display_name\": \"Transient sample 1\"}, \"index\": 1, \"step_type\": 0, \"active_in_solution\": false, \"properties\": [{\"name\": \"Description\", \"native_type\": \"0\", \"units\": null, \"inspection_status\": \"unsupported_property_type\"}, {\"name\": \"Solution Type\", \"native_type\": \"3\", \"units\": null, \"value\": 1}, {\"name\": \"End Time\", \"native_type\": \"4\", \"units\": \"Second\", \"value\": 10.0, \"unit_symbol\": \"sec\"}, {\"name\": \"Thermal Time Step Method\", \"native_type\": \"3\", \"units\": null, \"value\": 3}, {\"name\": \"Thermal Number of Steps\", \"native_type\": \"3\", \"units\": null, \"value\": 10}, {\"name\": \"Thermal Time Step\", \"native_type\": \"4\", \"units\": \"Second\", \"value\": 1.0, \"unit_symbol\": \"sec\"}, {\"name\": \"Maximum Temperature Change\", \"native_type\": \"4\", \"units\": \"CelsiusDifference\", \"value\": 0.05, \"unit_symbol\": \"dC\"}, {\"name\": \"Minimum Time Step\", \"native_type\": \"4\", \"units\": \"Second\", \"value\": 0.01, \"unit_symbol\": \"sec\"}, {\"name\": \"Maximum Time Step Option\", \"native_type\": \"3\", \"units\": null, \"value\": 1}, {\"name\": \"Maximum Time Step\", \"native_type\": \"4\", \"units\": \"Second\", \"value\": 1.0, \"unit_symbol\": \"sec\"}, {\"name\": \"Maximum Time Step Increment\", \"native_type\": \"3\", \"units\": null, \"value\": 4}, {\"name\": \"Output Flag\", \"native_type\": \"3\", \"units\": null, \"value\": 1}, {\"name\": \"Thermal Output Requests\", \"native_type\": \"0\", \"units\": null, \"inspection_status\": \"unsupported_property_type\"}]}], \"total\": 3, \"next_offset\": 2, \"index_lifetime\": \"Reacquire after step creation, removal or reordering\", \"result_freshness\": \"not_verified\", \"operation_id\": \"op_2ab2bbfc74f74b1f97be37076643862a\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+        "annotations": null,
+        "meta": null
+      }
+    ],
+    "structuredContent": {
+      "status": "success",
+      "warnings": [],
+      "units": "mm",
+      "solution": {
+        "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_2edeacd630db47348d2ae36f7e10da59",
+        "kind": "simulation_solution",
+        "name": "MCP_SELECTION_PROBE",
+        "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6a4b8c1adf6d49d6b11b612545d0cb1b",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "generation_id": "6a4b8c1adf6d49d6b11b612545d0cb1b",
+        "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-thermal-export-20260908-r1\\thermal_input_r1.sim",
+        "journal_id": "Solution[MCP_SELECTION_PROBE]",
+        "display_name": "MCP_SELECTION_PROBE"
+      },
+      "solution_active": false,
+      "steps": [
+        {
+          "step": {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_c87736d41cec4496a9ddfba057bb3a8f",
+            "kind": "simulation_step",
+            "name": "Transient probe",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6a4b8c1adf6d49d6b11b612545d0cb1b",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "6a4b8c1adf6d49d6b11b612545d0cb1b",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-thermal-export-20260908-r1\\thermal_input_r1.sim",
+            "journal_id": "SolutionStep[Transient probe]",
+            "display_name": "Transient probe"
+          },
+          "index": 0,
+          "step_type": 0,
+          "active_in_solution": false,
+          "properties": [
+            {
+              "name": "Description",
+              "native_type": "0",
+              "units": null,
+              "inspection_status": "unsupported_property_type"
+            },
+            {
+              "name": "Solution Type",
+              "native_type": "3",
+              "units": null,
+              "value": 1
+            },
+            {
+              "name": "End Time",
+              "native_type": "4",
+              "units": "Second",
+              "value": 0.0,
+              "unit_symbol": "sec"
+            },
+            {
+              "name": "Thermal Time Step Method",
+              "native_type": "3",
+              "units": null,
+              "value": 3
+            },
+            {
+              "name": "Thermal Number of Steps",
+              "native_type": "3",
+              "units": null,
+              "value": 10
+            },
+            {
+              "name": "Thermal Time Step",
+              "native_type": "4",
+              "units": "Second",
+              "value": 1.0,
+              "unit_symbol": "sec"
+            },
+            {
+              "name": "Maximum Temperature Change",
+              "native_type": "4",
+              "units": "CelsiusDifference",
+              "value": 0.05,
+              "unit_symbol": "dC"
+            },
+            {
+              "name": "Minimum Time Step",
+              "native_type": "4",
+              "units": "Second",
+              "value": 0.01,
+              "unit_symbol": "sec"
+            },
+            {
+              "name": "Maximum Time Step Option",
+              "native_type": "3",
+              "units": null,
+              "value": 1
+            },
+            {
+              "name": "Maximum Time Step",
+              "native_type": "4",
+              "units": "Second",
+              "value": 1.0,
+              "unit_symbol": "sec"
+            },
+            {
+              "name": "Maximum Time Step Increment",
+              "native_type": "3",
+              "units": null,
+              "value": 4
+            },
+            {
+              "name": "Output Flag",
+              "native_type": "3",
+              "units": null,
+              "value": 1
+            },
+            {
+              "name": "Thermal Output Requests",
+              "native_type": "0",
+              "units": null,
+              "inspection_status": "unsupported_property_type"
+            }
+          ]
+        },
+        {
+          "step": {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_3f3a757c6f704304b57cc076fa6b4eed",
+            "kind": "simulation_step",
+            "name": "Transient sample 1",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6a4b8c1adf6d49d6b11b612545d0cb1b",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "6a4b8c1adf6d49d6b11b612545d0cb1b",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-thermal-export-20260908-r1\\thermal_input_r1.sim",
+            "journal_id": "SolutionStep[Transient sample 1]",
+            "display_name": "Transient sample 1"
+          },
+          "index": 1,
+          "step_type": 0,
+          "active_in_solution": false,
+          "properties": [
+            {
+              "name": "Description",
+              "native_type": "0",
+              "units": null,
+              "inspection_status": "unsupported_property_type"
+            },
+            {
+              "name": "Solution Type",
+              "native_type": "3",
+              "units": null,
+              "value": 1
+            },
+            {
+              "name": "End Time",
+              "native_type": "4",
+              "units": "Second",
+              "value": 10.0,
+              "unit_symbol": "sec"
+            },
+            {
+              "name": "Thermal Time Step Method",
+              "native_type": "3",
+              "units": null,
+              "value": 3
+            },
+            {
+              "name": "Thermal Number of Steps",
+              "native_type": "3",
+              "units": null,
+              "value": 10
+            },
+            {
+              "name": "Thermal Time Step",
+              "native_type": "4",
+              "units": "Second",
+              "value": 1.0,
+              "unit_symbol": "sec"
+            },
+            {
+              "name": "Maximum Temperature Change",
+              "native_type": "4",
+              "units": "CelsiusDifference",
+              "value": 0.05,
+              "unit_symbol": "dC"
+            },
+            {
+              "name": "Minimum Time Step",
+              "native_type": "4",
+              "units": "Second",
+              "value": 0.01,
+              "unit_symbol": "sec"
+            },
+            {
+              "name": "Maximum Time Step Option",
+              "native_type": "3",
+              "units": null,
+              "value": 1
+            },
+            {
+              "name": "Maximum Time Step",
+              "native_type": "4",
+              "units": "Second",
+              "value": 1.0,
+              "unit_symbol": "sec"
+            },
+            {
+              "name": "Maximum Time Step Increment",
+              "native_type": "3",
+              "units": null,
+              "value": 4
+            },
+            {
+              "name": "Output Flag",
+              "native_type": "3",
+              "units": null,
+              "value": 1
+            },
+            {
+              "name": "Thermal Output Requests",
+              "native_type": "0",
+              "units": null,
+              "inspection_status": "unsupported_property_type"
+            }
+          ]
+        }
+      ],
+      "total": 3,
+      "next_offset": 2,
+      "index_lifetime": "Reacquire after step creation, removal or reordering",
+      "result_freshness": "not_verified",
+      "operation_id": "op_2ab2bbfc74f74b1f97be37076643862a",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "mutation_outcome": "not_applicable"
+    },
+    "isError": false
+  },
+  "second": {
+    "meta": null,
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"solution\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_2edeacd630db47348d2ae36f7e10da59\", \"kind\": \"simulation_solution\", \"name\": \"MCP_SELECTION_PROBE\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6a4b8c1adf6d49d6b11b612545d0cb1b\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6a4b8c1adf6d49d6b11b612545d0cb1b\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\A-thermal-export-20260908-r1\\\\thermal_input_r1.sim\", \"journal_id\": \"Solution[MCP_SELECTION_PROBE]\", \"display_name\": \"MCP_SELECTION_PROBE\"}, \"solution_active\": false, \"steps\": [{\"step\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_bee25743b4ef40fda8f052fcdb9d0b9e\", \"kind\": \"simulation_step\", \"name\": \"Transient sample 2\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6a4b8c1adf6d49d6b11b612545d0cb1b\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6a4b8c1adf6d49d6b11b612545d0cb1b\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\A-thermal-export-20260908-r1\\\\thermal_input_r1.sim\", \"journal_id\": \"SolutionStep[Transient sample 2]\", \"display_name\": \"Transient sample 2\"}, \"index\": 2, \"step_type\": 0, \"active_in_solution\": true, \"properties\": [{\"name\": \"Description\", \"native_type\": \"0\", \"units\": null, \"inspection_status\": \"unsupported_property_type\"}, {\"name\": \"Solution Type\", \"native_type\": \"3\", \"units\": null, \"value\": 1}, {\"name\": \"End Time\", \"native_type\": \"4\", \"units\": \"Second\", \"value\": 20.0, \"unit_symbol\": \"sec\"}, {\"name\": \"Thermal Time Step Method\", \"native_type\": \"3\", \"units\": null, \"value\": 3}, {\"name\": \"Thermal Number of Steps\", \"native_type\": \"3\", \"units\": null, \"value\": 10}, {\"name\": \"Thermal Time Step\", \"native_type\": \"4\", \"units\": \"Second\", \"value\": 1.0, \"unit_symbol\": \"sec\"}, {\"name\": \"Maximum Temperature Change\", \"native_type\": \"4\", \"units\": \"CelsiusDifference\", \"value\": 0.05, \"unit_symbol\": \"dC\"}, {\"name\": \"Minimum Time Step\", \"native_type\": \"4\", \"units\": \"Second\", \"value\": 0.01, \"unit_symbol\": \"sec\"}, {\"name\": \"Maximum Time Step Option\", \"native_type\": \"3\", \"units\": null, \"value\": 1}, {\"name\": \"Maximum Time Step\", \"native_type\": \"4\", \"units\": \"Second\", \"value\": 1.0, \"unit_symbol\": \"sec\"}, {\"name\": \"Maximum Time Step Increment\", \"native_type\": \"3\", \"units\": null, \"value\": 4}, {\"name\": \"Output Flag\", \"native_type\": \"3\", \"units\": null, \"value\": 1}, {\"name\": \"Thermal Output Requests\", \"native_type\": \"0\", \"units\": null, \"inspection_status\": \"unsupported_property_type\"}]}], \"total\": 3, \"next_offset\": null, \"index_lifetime\": \"Reacquire after step creation, removal or reordering\", \"result_freshness\": \"not_verified\", \"operation_id\": \"op_c698a96211b149f79390a649f0fce8a0\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+        "annotations": null,
+        "meta": null
+      }
+    ],
+    "structuredContent": {
+      "status": "success",
+      "warnings": [],
+      "units": "mm",
+      "solution": {
+        "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_2edeacd630db47348d2ae36f7e10da59",
+        "kind": "simulation_solution",
+        "name": "MCP_SELECTION_PROBE",
+        "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6a4b8c1adf6d49d6b11b612545d0cb1b",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "generation_id": "6a4b8c1adf6d49d6b11b612545d0cb1b",
+        "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-thermal-export-20260908-r1\\thermal_input_r1.sim",
+        "journal_id": "Solution[MCP_SELECTION_PROBE]",
+        "display_name": "MCP_SELECTION_PROBE"
+      },
+      "solution_active": false,
+      "steps": [
+        {
+          "step": {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_bee25743b4ef40fda8f052fcdb9d0b9e",
+            "kind": "simulation_step",
+            "name": "Transient sample 2",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6a4b8c1adf6d49d6b11b612545d0cb1b",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "6a4b8c1adf6d49d6b11b612545d0cb1b",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-thermal-export-20260908-r1\\thermal_input_r1.sim",
+            "journal_id": "SolutionStep[Transient sample 2]",
+            "display_name": "Transient sample 2"
+          },
+          "index": 2,
+          "step_type": 0,
+          "active_in_solution": true,
+          "properties": [
+            {
+              "name": "Description",
+              "native_type": "0",
+              "units": null,
+              "inspection_status": "unsupported_property_type"
+            },
+            {
+              "name": "Solution Type",
+              "native_type": "3",
+              "units": null,
+              "value": 1
+            },
+            {
+              "name": "End Time",
+              "native_type": "4",
+              "units": "Second",
+              "value": 20.0,
+              "unit_symbol": "sec"
+            },
+            {
+              "name": "Thermal Time Step Method",
+              "native_type": "3",
+              "units": null,
+              "value": 3
+            },
+            {
+              "name": "Thermal Number of Steps",
+              "native_type": "3",
+              "units": null,
+              "value": 10
+            },
+            {
+              "name": "Thermal Time Step",
+              "native_type": "4",
+              "units": "Second",
+              "value": 1.0,
+              "unit_symbol": "sec"
+            },
+            {
+              "name": "Maximum Temperature Change",
+              "native_type": "4",
+              "units": "CelsiusDifference",
+              "value": 0.05,
+              "unit_symbol": "dC"
+            },
+            {
+              "name": "Minimum Time Step",
+              "native_type": "4",
+              "units": "Second",
+              "value": 0.01,
+              "unit_symbol": "sec"
+            },
+            {
+              "name": "Maximum Time Step Option",
+              "native_type": "3",
+              "units": null,
+              "value": 1
+            },
+            {
+              "name": "Maximum Time Step",
+              "native_type": "4",
+              "units": "Second",
+              "value": 1.0,
+              "unit_symbol": "sec"
+            },
+            {
+              "name": "Maximum Time Step Increment",
+              "native_type": "3",
+              "units": null,
+              "value": 4
+            },
+            {
+              "name": "Output Flag",
+              "native_type": "3",
+              "units": null,
+              "value": 1
+            },
+            {
+              "name": "Thermal Output Requests",
+              "native_type": "0",
+              "units": null,
+              "inspection_status": "unsupported_property_type"
+            }
+          ]
+        }
+      ],
+      "total": 3,
+      "next_offset": null,
+      "index_lifetime": "Reacquire after step creation, removal or reordering",
+      "result_freshness": "not_verified",
+      "operation_id": "op_c698a96211b149f79390a649f0fce8a0",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "mutation_outcome": "not_applicable"
+    },
+    "isError": false
+  },
+  "times_s": [
+    0.0,
+    10.0,
+    20.0
+  ],
+  "active_solution_preserved": true,
+  "document_flags_preserved": true
+}

@@ -1,0 +1,51 @@
+{
+  "status": "success",
+  "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F1-active-field-20260908-r1\\export\\active_field.sim",
+  "rows": [
+    {
+      "boundary": "Coupled Inlet",
+      "key": "Inlet Conditions",
+      "base_type": "0",
+      "cae_type": "-10",
+      "named_enum": "-10",
+      "table": {
+        "journal_id": "SsmoPropTable[Finned external air 20 C]",
+        "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F1-active-field-20260908-r1\\export\\active_field.sim",
+        "descriptor": "External Conditions"
+      }
+    },
+    {
+      "boundary": "Coupled Inlet",
+      "key": "Head Loss",
+      "base_type": "0",
+      "cae_type": "-10",
+      "named_enum": "-10",
+      "table": null
+    },
+    {
+      "boundary": "Coupled Opening",
+      "key": "Inlet Conditions",
+      "base_type": "0",
+      "cae_type": "-10",
+      "named_enum": "-10",
+      "table": {
+        "journal_id": "SsmoPropTable[Finned external air 20 C]",
+        "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F1-active-field-20260908-r1\\export\\active_field.sim",
+        "descriptor": "External Conditions"
+      }
+    },
+    {
+      "boundary": "Coupled Opening",
+      "key": "Head Loss",
+      "base_type": "0",
+      "cae_type": "-10",
+      "named_enum": "-10",
+      "table": null
+    }
+  ],
+  "operation_id": "op_79571b4d5ef04285818828aa5a19d396",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

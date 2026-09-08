@@ -1,0 +1,119 @@
+{
+  "status": "success",
+  "context": {
+    "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\B-contact-context-20260908-r2\\contact_context_r2.sim",
+    "solver": "NX MULTIPHYSICS",
+    "solver_display": "Simcenter 3D Multiphysics",
+    "analysis": "Thermal",
+    "solution": "Conduction",
+    "current_language": 1519622,
+    "solution_language": 1519622
+  },
+  "copied": {
+    "new_copy_created": false,
+    "isolated_existing_copy": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\B-contact-context-20260908-r2\\contact_context_r2.sim"
+  },
+  "probes": [
+    {
+      "descriptor": "Advanced Thermal Coupling",
+      "accepted": false,
+      "nx_code": 1543292,
+      "error": "Invalid LBC neutral name"
+    },
+    {
+      "descriptor": "Convection Coupling",
+      "accepted": false,
+      "nx_code": 1543292,
+      "error": "Invalid LBC neutral name"
+    },
+    {
+      "descriptor": "Radiation Thermal Coupling",
+      "accepted": true,
+      "neutral": "Radiation Thermal Coupling",
+      "properties": [
+        {
+          "name": "description",
+          "native_type": "0",
+          "units": null,
+          "inspection_status": "unsupported_property_type"
+        },
+        {
+          "name": "Swap Regions",
+          "native_type": "1",
+          "units": null,
+          "value": "Swap Regions"
+        },
+        {
+          "name": "Specify Region Side to Apply to",
+          "native_type": "2",
+          "units": null,
+          "value": false
+        },
+        {
+          "name": "Primary Region Side",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Secondary Region Side",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Specify",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Gray Body View Factor",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": -777777.0,
+          "unit_symbol": null
+        },
+        {
+          "name": "ScriptF (E*Gray Body View Factor)",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": -777777.0,
+          "unit_symbol": null
+        },
+        {
+          "name": "Coupling Resolution",
+          "native_type": "3",
+          "units": null,
+          "value": 2
+        },
+        {
+          "name": "Only Connect Overlapping Elements",
+          "native_type": "2",
+          "units": null,
+          "value": true
+        },
+        {
+          "name": "Overlap Projection Direction",
+          "native_type": "3",
+          "units": null,
+          "value": 1
+        },
+        {
+          "name": "distributionType",
+          "native_type": "3",
+          "units": null,
+          "value": 5
+        }
+      ],
+      "target_sets": 2,
+      "committed": false
+    }
+  ],
+  "rollback_verified": true,
+  "operation_id": "op_fa34122b6dcb414f96e44a0a3af25623",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

@@ -1,0 +1,64 @@
+{
+  "status": "success",
+  "closed_partial": {
+    "closed_parts": [
+      {
+        "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_f7ae60c5c12b404db6ef2cd5bb1dcfea",
+        "kind": "part",
+        "name": "orthotropic_solve_r1",
+        "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_4a1bc803914b4365820ea8e742c47fc0",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "generation_id": "4a1bc803914b4365820ea8e742c47fc0",
+        "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-solve-20260908-r1\\orthotropic_solve_r1.sim",
+        "journal_id": "orthotropic_solve_r1",
+        "display_name": "orthotropic_solve_r1"
+      }
+    ],
+    "closed_count": 1,
+    "remaining_count": 69,
+    "saved": false,
+    "discarded_modified_parts": false,
+    "work_path": null,
+    "display_path": null,
+    "warnings": [
+      "NX may unload unused dependencies; reacquire document references before continuing"
+    ]
+  },
+  "opened": {
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_3eab8e0f6b294b0ea9c62d7a0550fedc",
+      "kind": "part",
+      "name": "orthotropic_solve_r1",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_7d327e7fcc074ee486b431eeb7d72e83",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "7d327e7fcc074ee486b431eeb7d72e83",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-solve-20260908-r1\\orthotropic_solve_r1.sim",
+      "journal_id": "orthotropic_solve_r1",
+      "display_name": "orthotropic_solve_r1"
+    },
+    "units": "mm",
+    "coordinate_frame": "part_absolute",
+    "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-solve-20260908-r1\\orthotropic_solve_r1.sim",
+    "already_loaded": false,
+    "modified_after_native_open": false,
+    "modified_before_activation": false,
+    "modified": false,
+    "fully_loaded": true,
+    "load_issues": [],
+    "changed_existing_part_flags": [],
+    "application": "UG_APP_SFEM",
+    "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-solve-20260908-r1\\orthotropic_solve_r1.sim",
+    "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-solve-20260908-r1\\orthotropic_solve_r1.sim",
+    "saved": false,
+    "result_freshness": "not_verified",
+    "warnings": []
+  },
+  "fem_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-conduction-20260908-r1\\OrthotropicR1_mesh.fem",
+  "load_preference_restored": true,
+  "unrelated_flags_preserved": true,
+  "operation_id": "op_939a39b60b1b4ffe93f89962b29e7d50",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

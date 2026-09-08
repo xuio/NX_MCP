@@ -1,0 +1,95 @@
+{
+  "status": "success",
+  "manifest": {
+    "name": "Retained synthetic fan",
+    "pressure_convention": "static",
+    "rpm": 1000,
+    "reference_density_kg_m3": 1.2,
+    "points": [
+      {
+        "flow_m3_s": 0,
+        "pressure_Pa": 1
+      },
+      {
+        "flow_m3_s": 0.0002,
+        "pressure_Pa": 0.5
+      },
+      {
+        "flow_m3_s": 0.0004,
+        "pressure_Pa": 0
+      }
+    ],
+    "stall_region": "Synthetic benchmark only",
+    "provenance": {
+      "kind": "assumed",
+      "source": "Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture Save/reopen \u2192 fixture "
+    },
+    "scaling_rpm_range": [
+      800,
+      1200
+    ],
+    "scaling_validity": "Synthetic only",
+    "schema_version": 1,
+    "interpolation": "linear",
+    "extrapolation": "reject",
+    "reverse_flow": "unsupported"
+  },
+  "readback": {
+    "flow_m3_s": [
+      0.0,
+      0.0002,
+      0.0004
+    ],
+    "pressure_Pa": [
+      1.0,
+      0.5,
+      0.0
+    ],
+    "native_flow": [
+      0.0,
+      200000.0,
+      400000.0
+    ],
+    "native_pressure": [
+      1.0,
+      0.5,
+      0.0
+    ],
+    "native_flow_units": "CubicMilliMeterPerSecond",
+    "native_pressure_units": "PressurePascals",
+    "interpolation": "linear",
+    "outside_table": "undefined"
+  },
+  "boundary_attached": false,
+  "solver_semantics": "not_verified",
+  "manifest_persisted": true,
+  "manifest_storage": "native table attributes; SIM not saved",
+  "saved": true,
+  "document_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-fan-reopen-20260908-r1\\benchmark_9c5a613280cc_analysis.sim",
+  "save_reopen_tested": true,
+  "document_sha256": "cdfcb8e74fdf2c2e3b7dd01c91399dbfa3257b9332516ae39842f7b3eb749205",
+  "reopened_flow_m3_s": [
+    0.0,
+    0.0002,
+    0.0004
+  ],
+  "reopened_pressure_Pa": [
+    1.0,
+    0.5,
+    0.0
+  ],
+  "reopened_modified": true,
+  "solver_launched": false,
+  "original_document_flags_preserved": true,
+  "previous_work_display_restored": true,
+  "operation_id": "op_eed9df47de134972b7b1bdb62181603c",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm",
+  "evidence_notes": [
+    "manifest_storage describes the pre-save adapter return; saved and save_reopen_tested describe the subsequent lifecycle check.",
+    "Reopened SIM is modified despite identical disk checksum; no result freshness claim.",
+    "Table only: no fan boundary attachment, mesh, solver or operating-point verification in this test."
+  ]
+}

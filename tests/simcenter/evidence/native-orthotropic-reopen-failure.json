@@ -1,0 +1,19 @@
+{
+  "status": "error",
+  "message": "Simulation open/activation failed; inspect current documents before retrying",
+  "details": {
+    "mutation_outcome": "partial",
+    "requested_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-solve-20260908-r1\\orthotropic_solve_r1.sim",
+    "document_loaded": true,
+    "already_loaded": false,
+    "load_issues": [
+      {
+        "path": "OrthotropicR1_mesh.fem",
+        "nx_code": 641044
+      }
+    ],
+    "next_step": "Inspect nx_sim_documents; no documents were saved or automatically closed",
+    "operation_id": "op_44944719c0c8437c86bb2ca7d2a335fc"
+  },
+  "nx_code": null
+}

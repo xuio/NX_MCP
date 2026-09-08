@@ -1,0 +1,39 @@
+{
+  "status": "success",
+  "frame_readback": {
+    "origin_mm": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "axes_in_part_absolute": [
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        -0.0,
+        1.0
+      ]
+    ],
+    "native_selector": 1,
+    "coordinate_system": "Cartesian",
+    "saved": false,
+    "solver_verified": false
+  },
+  "rollback_verified": true,
+  "flags_preserved": true,
+  "dependencies_loaded": true,
+  "operation_id": "op_b3dc6f683dbf467d87eabe007f13b4c3",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

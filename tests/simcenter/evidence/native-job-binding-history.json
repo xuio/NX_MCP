@@ -1,0 +1,60 @@
+{
+  "status": "success",
+  "job_id": "isolated-flow-01",
+  "job_revision": 4,
+  "binding_revision": 4,
+  "observations": {
+    "state": "observed",
+    "processes": [
+      {
+        "recorded_identity": {
+          "creation_filetime_100ns": "134333155981124861",
+          "executable_path": "C:\\Program Files\\Siemens\\Designcenter2606\\THERMALFLOW\\tmgsolver\\exe\\niece_solver.exe",
+          "pid": 6836
+        },
+        "observation": {
+          "pid": 6836,
+          "observed_at": "2026-09-08T06:57:50.814146+00:00",
+          "state": "missing",
+          "win32_error": 87
+        },
+        "correlation": {
+          "state": "original_process_not_present",
+          "reason": "pid_missing",
+          "solver_success": "not_established"
+        }
+      },
+      {
+        "recorded_identity": {
+          "creation_filetime_100ns": "134333155980710309",
+          "executable_path": "C:\\Program Files\\Siemens\\Designcenter2606\\THERMALFLOW\\tmgsolver\\IntelMPI\\bin\\mpiexec.exe",
+          "pid": 16012
+        },
+        "observation": {
+          "pid": 16012,
+          "observed_at": "2026-09-08T06:57:50.814146+00:00",
+          "state": "missing",
+          "win32_error": 87
+        },
+        "correlation": {
+          "state": "original_process_not_present",
+          "reason": "pid_missing",
+          "solver_success": "not_established"
+        }
+      }
+    ],
+    "job_state_changed": false,
+    "binding_revision": 4,
+    "solver_success": "not_established",
+    "scope": "recorded identities only; does not discover children or prove original job binding"
+  },
+  "job_unchanged": true,
+  "document_flags_preserved": true,
+  "scope": "Existing real solver identities read from verified history; no relaunch or job transition",
+  "solver_success": "not_established_by_this_check",
+  "operation_id": "op_ee6ce574ce5b4646a54fc9413bf7d20f",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

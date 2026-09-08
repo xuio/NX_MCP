@@ -1,0 +1,53 @@
+{
+  "status": "success",
+  "seconds": 0.030999999959021807,
+  "loaded_part_state_unchanged": true,
+  "solver_launched": false,
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "catalog": {
+    "state": "enumerated",
+    "solver_count": 2,
+    "scope": "descriptors registered in this NX session; not licence availability",
+    "languages": [
+      {
+        "language": "NX MULTIPHYSICS - Thermal",
+        "solutions": [
+          "Thermal"
+        ]
+      },
+      {
+        "language": "NX MULTIPHYSICS - Flow",
+        "solutions": [
+          "Flow"
+        ]
+      },
+      {
+        "language": "NX MULTIPHYSICS - Coupled Thermal-Structural",
+        "solutions": [
+          "Thermal-Structural (SOL 401 Multi-Step Nonlinear)",
+          "Thermal-Structural (SOL 402 Multi-Step Nonlinear Kinematics)"
+        ]
+      },
+      {
+        "language": "NX MULTIPHYSICS - Coupled Flow-Structural",
+        "solutions": [
+          "Flow-Structural (Multi-Step Nonlinear)"
+        ]
+      },
+      {
+        "language": "NX MULTIPHYSICS - Coupled Thermal-Flow",
+        "solutions": [
+          "Thermal-Flow"
+        ]
+      },
+      {
+        "language": "NX MULTIPHYSICS - Coupled Thermal-Flow-Structural",
+        "solutions": [
+          "Thermal-Flow-Structural (Multi-Step Nonlinear)"
+        ]
+      }
+    ]
+  },
+  "legacy_thermal_flow_registered": false,
+  "licence_availability": "not_established"
+}

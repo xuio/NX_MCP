@@ -1,0 +1,153 @@
+{
+  "status": "success",
+  "lifecycle": {
+    "state": "verified",
+    "created_at": "2026-09-08T01:00:27.312738+00:00",
+    "before": {
+      "geometry": {
+        "bodies": [
+          {
+            "bounds_mm": [
+              1.0,
+              1.0,
+              1.0,
+              161.0,
+              21.0,
+              21.0
+            ],
+            "volume_mm3": 64000.00000000001,
+            "centroid_mm": [
+              80.99999999999999,
+              10.999999999999996,
+              10.999999999999998
+            ]
+          }
+        ],
+        "body_count": 1,
+        "coordinate_frame": "FEM_absolute",
+        "volume_semantics": "individual polygon bodies; overlaps are not removed",
+        "topology_validation": "not_performed"
+      },
+      "counts": {
+        "elements": 3308,
+        "nodes": 939
+      },
+      "assignments": [
+        {
+          "collector": "Fluid(1)",
+          "inherited": false,
+          "material": "Benchmark constant air",
+          "values": [
+            {
+              "name": "MassDensity",
+              "native_type": "6",
+              "units": "KilogramPerCubicMeter",
+              "expression": "1.2",
+              "representation": "expression"
+            },
+            {
+              "name": "ThermalConductivity",
+              "native_type": "6",
+              "units": "ThermalConductivity_Metric3",
+              "expression": "0.0257",
+              "representation": "expression"
+            },
+            {
+              "name": "SpecificHeat",
+              "native_type": "6",
+              "units": "SpecificHeat_Metric2",
+              "expression": "1005.0",
+              "representation": "expression"
+            },
+            {
+              "name": "DynamicVisc",
+              "native_type": "6",
+              "units": "DynamicViscosity_PascalSecond",
+              "expression": "1.81e-05",
+              "representation": "expression"
+            }
+          ]
+        }
+      ]
+    },
+    "paths": {
+      ".prt": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_geometry.prt",
+      ".fem": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_mesh.fem",
+      ".sim": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_analysis.sim"
+    },
+    "after": {
+      "geometry": {
+        "bodies": [
+          {
+            "bounds_mm": [
+              1.0,
+              1.0,
+              1.0,
+              161.0,
+              21.0,
+              21.0
+            ],
+            "volume_mm3": 64000.00000000001,
+            "centroid_mm": [
+              80.99999999999999,
+              10.999999999999996,
+              10.999999999999998
+            ]
+          }
+        ],
+        "body_count": 1,
+        "coordinate_frame": "FEM_absolute",
+        "volume_semantics": "individual polygon bodies; overlaps are not removed",
+        "topology_validation": "not_performed"
+      },
+      "counts": {
+        "elements": 3308,
+        "nodes": 939
+      },
+      "assignments": [
+        {
+          "collector": "Fluid(1)",
+          "inherited": false,
+          "material": "Benchmark constant air",
+          "values": [
+            {
+              "name": "MassDensity",
+              "native_type": "6",
+              "units": "KilogramPerCubicMeter",
+              "expression": "1.2",
+              "representation": "expression"
+            },
+            {
+              "name": "ThermalConductivity",
+              "native_type": "6",
+              "units": "ThermalConductivity_Metric3",
+              "expression": "0.0257",
+              "representation": "expression"
+            },
+            {
+              "name": "SpecificHeat",
+              "native_type": "6",
+              "units": "SpecificHeat_Metric2",
+              "expression": "1005.0",
+              "representation": "expression"
+            },
+            {
+              "name": "DynamicVisc",
+              "native_type": "6",
+              "units": "DynamicViscosity_PascalSecond",
+              "expression": "1.81e-05",
+              "representation": "expression"
+            }
+          ]
+        }
+      ]
+    },
+    "consistent": true,
+    "displayed_document": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_analysis.sim"
+  },
+  "operation_id": "op_fe290ea2940f436ca5c1476db8aa4ba8",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

@@ -1,0 +1,337 @@
+{
+  "status": "success",
+  "created": {
+    "paths": {
+      "cad": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-apply-20260908-r1\\benchmark_ebfa27d8b223_geometry.prt",
+      "fem": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-apply-20260908-r1\\benchmark_ebfa27d8b223_mesh.fem",
+      "sim": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-apply-20260908-r1\\benchmark_ebfa27d8b223_analysis.sim"
+    },
+    "solution": {
+      "solver": "NX MULTIPHYSICS",
+      "analysis": "Thermal",
+      "solution": "Thermal",
+      "parameter_tables": [
+        {
+          "property": "Thermal Parameters",
+          "descriptor": "Thermal Parameters",
+          "name": "Thermal Parameters"
+        },
+        {
+          "property": "Thermal Output Requests",
+          "descriptor": "Multiphysics Thermal Output Requests",
+          "name": "Thermal Output Requests"
+        }
+      ],
+      "step": {
+        "name": "Conduction",
+        "descriptor": "Step - Thermal",
+        "active": true,
+        "properties": [
+          {
+            "name": "Description",
+            "native_type": "0",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "Solution Type",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "End Time",
+            "native_type": "4",
+            "units": "Second",
+            "value": -777777.0,
+            "unit_symbol": "sec"
+          },
+          {
+            "name": "Thermal Time Step Method",
+            "native_type": "3",
+            "units": null,
+            "value": 3
+          },
+          {
+            "name": "Thermal Number of Steps",
+            "native_type": "3",
+            "units": null,
+            "value": 10
+          },
+          {
+            "name": "Thermal Time Step",
+            "native_type": "4",
+            "units": "Second",
+            "value": 1.0,
+            "unit_symbol": "sec"
+          },
+          {
+            "name": "Maximum Temperature Change",
+            "native_type": "4",
+            "units": "CelsiusDifference",
+            "value": 5.0,
+            "unit_symbol": "dC"
+          },
+          {
+            "name": "Minimum Time Step",
+            "native_type": "4",
+            "units": "Second",
+            "value": 1.0,
+            "unit_symbol": "sec"
+          },
+          {
+            "name": "Maximum Time Step Option",
+            "native_type": "3",
+            "units": null,
+            "value": 1
+          },
+          {
+            "name": "Maximum Time Step",
+            "native_type": "4",
+            "units": "Second",
+            "value": 1.0,
+            "unit_symbol": "sec"
+          },
+          {
+            "name": "Maximum Time Step Increment",
+            "native_type": "3",
+            "units": null,
+            "value": 4
+          },
+          {
+            "name": "Output Flag",
+            "native_type": "3",
+            "units": null,
+            "value": 1
+          },
+          {
+            "name": "Thermal Output Requests",
+            "native_type": "0",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          }
+        ]
+      }
+    },
+    "documents": [
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-apply-20260908-r1\\benchmark_ebfa27d8b223_geometry.prt",
+        "name": "benchmark_ebfa27d8b223_geometry",
+        "document_type": "Part",
+        "modified": false,
+        "work": false,
+        "display": false,
+        "units": "mm",
+        "coordinate_frame": "part_absolute"
+      },
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-apply-20260908-r1\\benchmark_ebfa27d8b223_mesh.fem",
+        "name": "benchmark_ebfa27d8b223_mesh",
+        "document_type": "FemPart",
+        "modified": false,
+        "work": false,
+        "display": false,
+        "units": "mm",
+        "coordinate_frame": "part_absolute"
+      },
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-apply-20260908-r1\\benchmark_ebfa27d8b223_analysis.sim",
+        "name": "benchmark_ebfa27d8b223_analysis",
+        "document_type": "SimPart",
+        "modified": false,
+        "work": true,
+        "display": true,
+        "units": "mm",
+        "coordinate_frame": "part_absolute"
+      }
+    ],
+    "units": "mm",
+    "coordinate_frame": "part_absolute",
+    "mesh_created": false,
+    "solve_launched": false
+  },
+  "args": {
+    "document": "obj_20bc234ffa5249ceb4fb4d82b993c626_bacb0d389b9a49758823f551147d1fc5",
+    "path": "ui-benchmarks/scenario-preview-20260908-r1.csv",
+    "region_targets": {
+      "SOC": "obj_20bc234ffa5249ceb4fb4d82b993c626_c3b18437b69547899c341db0ce1a07ed"
+    },
+    "format": "csv",
+    "metadata": {
+      "name": "apply-benchmark",
+      "workload_revision": "assumed-r1",
+      "ambient_K": 298.15
+    }
+  },
+  "forced_failure": {
+    "code": "NX_SIM_READBACK_MISMATCH",
+    "details": {
+      "mutation_outcome": "rolled_back",
+      "creation_snapshot_restored": true,
+      "cleanup_issues": [],
+      "verification_scope": "load, constraint and expression identities; creation-only operation"
+    }
+  },
+  "result": {
+    "loads": [
+      {
+        "load": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_ff89d4994cf54be3b70e52fdc0ad6abc",
+          "kind": "simulation_load",
+          "name": "CPU",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_f864a9bdd0504c4bbcb39914c6b931e3",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "f864a9bdd0504c4bbcb39914c6b931e3",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-apply-20260908-r1\\benchmark_ebfa27d8b223_analysis.sim",
+          "journal_id": "Load[CPU]",
+          "display_name": "CPU"
+        },
+        "power_w": 8.0,
+        "power_units": "W",
+        "properties": [
+          {
+            "name": "description",
+            "native_type": "0",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "Selection Method",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Override Region",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Non-Geometric Element",
+            "native_type": "0",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "Heat Load",
+            "native_type": "6",
+            "units": "HeatFlow_Metric2",
+            "expression": "8.0",
+            "unit_symbol": "W",
+            "representation": "expression"
+          },
+          {
+            "name": "Heat Load Override",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "Specify Reference Temperature Set",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Reference Temperature Set",
+            "native_type": "0",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "Control Heater",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Thermostat",
+            "native_type": "0",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "Specify Layer to Apply to",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Apply to",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Layer Number",
+            "native_type": "3",
+            "units": null,
+            "value": 1
+          },
+          {
+            "name": "Per Element",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Per Node",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "distributionType",
+            "native_type": "3",
+            "units": null,
+            "value": 32
+          },
+          {
+            "name": "Custom Settings Option",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Custom Settings",
+            "native_type": "1",
+            "units": null,
+            "value": "BCONX"
+          }
+        ],
+        "provenance": "{\"accounting_id\": \"cpu\", \"kind\": \"assumed\", \"scenario_sha256\": \"5adff971e1f143e283b454343723a140415a6692629a28a736427952f8d2aab7\", \"source\": \"benchmark\", \"workload_revision\": \"assumed-r1\"}",
+        "energy_accounting": "internal_heat",
+        "target_count": 1,
+        "saved": false,
+        "solver_launched": false
+      }
+    ],
+    "applied_internal_heat_W": 8.0,
+    "applied_to_nx": true,
+    "scenario_sha256": "5adff971e1f143e283b454343723a140415a6692629a28a736427952f8d2aab7",
+    "source_sha256": "6cc868800bb30fc7b474c74c219907e5e1aab70fef839d4508f1b8454b32a2e0",
+    "totals_W": {
+      "internal_heat": 8.0,
+      "exported_electrical": 10.0,
+      "battery_storage": 0
+    },
+    "excluded_sources": [
+      "USB"
+    ],
+    "ambient_K": 298.15,
+    "ambient_applied": false,
+    "saved": false,
+    "solver_launched": false,
+    "results_require_revalidation": true
+  },
+  "repeated_application": "NX_SIM_SCENARIO_CONFLICT",
+  "existing_part_flags_preserved": true,
+  "operation_id": "op_484cd4a654e44f368e5377554b6a1b12",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

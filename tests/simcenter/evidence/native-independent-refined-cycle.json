@@ -1,0 +1,225 @@
+{
+  "scope": "Public MCP refined native flow completion and residual audit; not full numerical acceptance",
+  "status_observations": [
+    {
+      "status": "success",
+      "warnings": [],
+      "units": null,
+      "job_id": "independent-refined-flow-01",
+      "request_sha256": "0eee746512cf061d83946445defce1ad4b99a437d0fec1d02774a01ac70d240a",
+      "state": "launch_returned",
+      "revision": 2,
+      "process_binding_revision": null,
+      "launch_retry_allowed": false,
+      "numerical_convergence": "not_established",
+      "results_validated": false,
+      "observed_at": "2026-09-08T11:52:27.110861+00:00",
+      "observation_kind": "persisted_record",
+      "live_process_state": "not_checked",
+      "job_folder": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs",
+      "observer": {
+        "tracked_in_this_nx_process": true,
+        "thread_alive": true,
+        "log_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs\\independent-refined-flow-01\\observer-e9d03bb5989949468f1b7e563e205b9e.log"
+      },
+      "evidence": {
+        "api_returned": true,
+        "process_state": "not_yet_observed",
+        "readback": {
+          "background_requested": true,
+          "executed_input_identity": "not_yet_audited",
+          "foreground_setting_restored": true,
+          "native_may_regenerate_input": true,
+          "prepared_inputs_validated": true
+        }
+      },
+      "process_binding_evidence": null,
+      "operation_id": "op_b1a14f4d23d3411cb014e213ebbe3fc6",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "mutation_outcome": "not_applicable"
+    },
+    {
+      "status": "success",
+      "warnings": [],
+      "units": null,
+      "job_id": "independent-refined-flow-01",
+      "request_sha256": "0eee746512cf061d83946445defce1ad4b99a437d0fec1d02774a01ac70d240a",
+      "state": "solver_exited",
+      "revision": 3,
+      "process_binding_revision": null,
+      "launch_retry_allowed": false,
+      "numerical_convergence": "not_established",
+      "results_validated": false,
+      "observed_at": "2026-09-08T11:55:12.211457+00:00",
+      "observation_kind": "persisted_record",
+      "live_process_state": "not_checked",
+      "job_folder": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs",
+      "observer": {
+        "tracked_in_this_nx_process": true,
+        "thread_alive": false,
+        "log_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs\\independent-refined-flow-01\\observer-e9d03bb5989949468f1b7e563e205b9e.log"
+      },
+      "evidence": {
+        "gate_released": false,
+        "input_comparison": {
+          "after": {
+            "bytes": 25908282,
+            "canonicalization": "xml_c14n2_no_comments",
+            "sha256": "5e1c75d57589f853616e4e3668473751077a838d1bb4ba75f9b128bcdeee51d8",
+            "xml_content_sha256": "c63fbd7eee898f28ca4c0ae7c7cab4fbae0b3e893745fcc782af9a7d4999ddb7"
+          },
+          "before": {
+            "bytes": 25908282,
+            "canonicalization": "xml_c14n2_no_comments",
+            "sha256": "24a2f58f78e89a5942d06acaf9ff066fb0786599c29344e6c2df8127f99aecb9",
+            "xml_content_sha256": "c63fbd7eee898f28ca4c0ae7c7cab4fbae0b3e893745fcc782af9a7d4999ddb7"
+          },
+          "byte_identical": false,
+          "scope": "input XML only; result association and solver outcome require separate verification",
+          "xml_content_identical": true
+        },
+        "log": {
+          "bytes": 37474,
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-independent-refined-solve-20260908-r1\\refined_flow_r1-Flow_benchmark.log",
+          "sha256": "6184e544408e386f5bb6096c1c16f77f5c2d179a4ab6cd0a8b637a98c72d623d"
+        },
+        "model_result_freshness": "not_established",
+        "numerical_convergence": "not_established",
+        "observer_adapter": 1,
+        "process_exit_code": null,
+        "process_job_binding": "not_established",
+        "result": {
+          "bytes": 64594044,
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-independent-refined-solve-20260908-r1\\refined_flow_r1-Flow_benchmark.bun",
+          "sha256": "9841496a12cfcaa638c6b72dcc500b4bc585918e3b027517740fe962277196e8"
+        },
+        "solver_process_observation": {
+          "exclusion": "point-in-time process snapshot; not an atomic lock",
+          "scope": "host-wide known solver/translator names",
+          "solver_processes": 0
+        },
+        "terminal_basis": "fresh owned completion log and native result, matching canonical input, known solver processes absent"
+      },
+      "process_binding_evidence": null,
+      "operation_id": "op_8853f6384a304e43b042efffb73f15d1",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "mutation_outcome": "not_applicable"
+    }
+  ],
+  "release": {
+    "status": "success",
+    "warnings": [],
+    "units": "mm",
+    "job_id": "independent-refined-flow-01",
+    "released": true,
+    "replayed": false,
+    "receipt": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs\\independent-refined-flow-01\\launch-gate-release.json",
+    "result_files_preserved": true,
+    "job_state_changed": false,
+    "old_job_relaunch_allowed": false,
+    "operation_id": "independent-refined-release-01",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed"
+  },
+  "audit": {
+    "status": "success",
+    "warnings": [],
+    "units": "mm",
+    "job_id": "independent-refined-flow-01",
+    "request_sha256": "0eee746512cf061d83946445defce1ad4b99a437d0fec1d02774a01ac70d240a",
+    "persisted_job_state": "solver_exited",
+    "log_name": "refined_flow_r1-Flow_benchmark.log",
+    "log_sha256": "6184e544408e386f5bb6096c1c16f77f5c2d179a4ab6cd0a8b637a98c72d623d",
+    "observed_bytes": 37474,
+    "snapshot_semantics": "bytes read; file may still be growing",
+    "format": "observed_simcenter_2606_steady_flow",
+    "completion_marker_present": true,
+    "failure_evidence": {
+      "state": "unknown",
+      "stage": "unknown",
+      "translator_fatal_codes": [],
+      "fatal_abort_reported": false,
+      "numerical_convergence": "not_established",
+      "results_validated": false,
+      "next_action": "Inspect job process status, residuals and result validation before classifying."
+    },
+    "residual_threshold": 1e-06,
+    "last_iteration": 13,
+    "final_equations_complete": true,
+    "final_residual_criteria_met": true,
+    "reported_imbalances": {
+      "momentum": {
+        "value": 0.0001033,
+        "units": "%",
+        "definition": "native reported imbalance; denominator not independently established"
+      },
+      "mass": {
+        "value": 0.008828,
+        "units": "%",
+        "definition": "native reported imbalance; denominator not independently established"
+      },
+      "energy": {
+        "value": 0.0,
+        "units": "%",
+        "definition": "native reported imbalance; denominator not independently established"
+      }
+    },
+    "boundary_flows": [
+      {
+        "name": "Duct Inlet",
+        "volume_flow_m3_s": 0.000253,
+        "mass_flow_kg_s": 0.0003036,
+        "positive_direction": "into_domain"
+      },
+      {
+        "name": "Duct Opening",
+        "volume_flow_m3_s": -0.000253,
+        "mass_flow_kg_s": -0.0003036,
+        "positive_direction": "into_domain"
+      }
+    ],
+    "fan_operating_points": {
+      "state": "reported",
+      "fans": [
+        {
+          "name": "Duct Inlet",
+          "loss_coefficient": 0.0,
+          "pressure_rise_Pa": 0.3674,
+          "mass_flow_kg_s": 0.0003036,
+          "pressure_convention": "unverified",
+          "volume_flow_m3_s": 0.000253
+        }
+      ],
+      "native_pressure_unit": "mN/mm^2",
+      "unit_basis": "observed NX2606 fluid pressure summary header",
+      "precision": "rounded_native_log",
+      "identity": "display_names_only",
+      "engineering_accepted": false,
+      "scope": "Native rounded operating-point rows; static/total convention and exact model/job binding require separate audits"
+    },
+    "rounded_boundary_mass_sum_kg_s": 0.0,
+    "rounding_warning": "Boundary values are rounded in the log; a zero sum does not establish zero imbalance",
+    "numerical_convergence": "not_established",
+    "results_validated": false,
+    "scope": "Log observations only; input/job association, all configured criteria and mesh sensitivity require separate audits",
+    "residual_history": [
+      {
+        "iteration": 1,
+        "region": "Flow Enclosure",
+        "equation": "U - Mom",
+        "linear_iterations": 9,
+        "linear_residual": 2.518e-14,
+        "rate": 0.0,
+        "rate_overflow": false,
+        "residual": 0.03363,
+        "native_message": "--"
+      }
+    ],
+    "history_total": 52,
+    "next_offset": 1,
+    "job_state_changed": false,
+    "operation_id": "op_63ee3f99826c44809a20c1618f60e07a",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "not_applicable"
+  }
+}

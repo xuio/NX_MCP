@@ -1,0 +1,26 @@
+{
+  "status": "success",
+  "opening_readback": {
+    "table_name": "Public opening loss",
+    "coefficient": 0.0,
+    "units": "dimensionless",
+    "convention": "native Head Loss coefficient; general pressure-loss convention not independently verified"
+  },
+  "tool": {
+    "tool": "nx_sim_head_loss",
+    "status": "implemented_and_tested",
+    "tested_version": "v2606",
+    "tested_scope": "Opening resistance creation, compare-and-set update, conflict/no-op and replay in an isolated Flow SIM; no porous-volume support or native failure-injection claim",
+    "evidence": "tests/simcenter/evidence/native-head-loss-mcp.json",
+    "current_session_test": "not_performed_by_discovery",
+    "licence_checkout": "not_tested"
+  },
+  "exposed_tool_count": 47,
+  "indexed_tool_count": 31,
+  "document_flags_preserved": true,
+  "operation_id": "op_dd639eceb69c47dfa3958c86cf2594ae",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

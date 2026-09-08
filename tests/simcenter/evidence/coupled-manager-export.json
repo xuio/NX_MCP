@@ -1,0 +1,79 @@
+{
+  "status": "success",
+  "copy": {
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_080410637aa94764a3d2136ca6ab275a",
+      "kind": "part",
+      "name": "coupled_manager_r1",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_ef39cecd5f8a45e0a69ada7277d0b5de",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "ef39cecd5f8a45e0a69ada7277d0b5de",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-manager-export-20260908-r1\\coupled_manager_r1.sim",
+      "journal_id": "coupled_manager_r1",
+      "display_name": "coupled_manager_r1"
+    },
+    "source": {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-ambient-reopen-20260908-r1\\coupled_reopen_r1.sim",
+      "bytes": 7670955,
+      "sha256": "d900b88243df470f10095af2479a92fdaf2d9e37ca703f99604db1aa5185010c"
+    },
+    "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-manager-export-20260908-r1\\coupled_manager_r1.sim",
+    "source_file_unchanged": true,
+    "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-manager-export-20260908-r1\\coupled_manager_r1.sim",
+    "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-manager-export-20260908-r1\\coupled_manager_r1.sim",
+    "shared_fem_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-development-20260908-r1\\benchmark_99f1fecb220c_mesh.fem",
+    "independent_geometry_variant": false,
+    "saved": true,
+    "result_freshness": "not_verified",
+    "next_step": "Reacquire document IDs. Duplicate and reassociate FEM/CAD before changing shared geometry or mesh."
+  },
+  "manager_counts": [
+    1,
+    0,
+    0
+  ],
+  "prerequisites": [
+    [],
+    []
+  ],
+  "setup_report": "          Solution Model Setup Check Error Summary \n \n------------------------------------------------------------\n \n Solver is Simcenter 3D Multiphysics\n\n Environment: Simcenter 3D Multiphysics - Coupled Thermal-Flow\n\n Solution is Thermal-Flow\n \n------------------------------------------------------------\n \nMesh Error Summary\n==================\n\nNo Mesh Errors\n\nMaterial Error Summary\n======================\n\nNo Material Errors\n\nPhysical Property Error Summary\n===============================\n\nNo Physical Property Errors\n\nModeling Object Error Summary\n=============================\n\nNo Modeling Object Errors\n\nLoad and Constraint Error Summary\n=================================\n\nNo Load and Constraint Errors\n\nSolution Error Summary\n======================\n\nNo Solution Errors\n\nExpression Errors Summary\n==============================\n\nNo Expression Errors\n\n",
+  "native_error": null,
+  "files": [
+    {
+      "name": "coupled_manager_r1-Coupled_benchmark.map",
+      "bytes": 34846
+    },
+    {
+      "name": "coupled_manager_r1-Coupled_benchmark.xml",
+      "bytes": 63838,
+      "input": {
+        "state": "well_formed",
+        "step_definitions": 1,
+        "mesh_counts": {
+          "elements": 126,
+          "nodes": 68,
+          "element_sets": 2,
+          "scope": "observed_multiphysics_xml_layout"
+        },
+        "solve_readiness": "not_established"
+      }
+    },
+    {
+      "name": "coupled_manager_r1.sim",
+      "bytes": 7742985
+    },
+    {
+      "name": "setup-report.txt",
+      "bytes": 142613
+    }
+  ],
+  "elapsed_seconds": 2.3589999999967404,
+  "solver_launched": false,
+  "numerical_acceptance": false,
+  "boundary_conditions_complete": false,
+  "operation_id": "op_8925a74d002a49cb9d3c67e5466d8289",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

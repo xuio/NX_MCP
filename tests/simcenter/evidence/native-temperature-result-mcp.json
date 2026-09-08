@@ -1,0 +1,63 @@
+{
+  "transport": "MCP stdio -> descriptor bridge -> NX UI thread",
+  "result": {
+    "status": "success",
+    "warnings": [],
+    "units": "degC",
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_6138e87e19f5445d98738a6bf69d6842",
+      "kind": "part",
+      "name": "thermal_input_r1",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6a4b8c1adf6d49d6b11b612545d0cb1b",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "6a4b8c1adf6d49d6b11b612545d0cb1b",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-thermal-export-20260908-r1\\thermal_input_r1.sim",
+      "journal_id": "thermal_input_r1",
+      "display_name": "thermal_input_r1"
+    },
+    "field": "Temperature - Nodal",
+    "loadcase_index": 0,
+    "iteration_index": 0,
+    "minimum": 20.0,
+    "maximum": 22.500463485717773,
+    "native_location": "0",
+    "minimum_native_id": 158,
+    "maximum_native_id": 145,
+    "minimum_native_sub_id": 0,
+    "maximum_native_sub_id": 0,
+    "node_count": 756,
+    "result_freshness": "not_verified",
+    "reference_lifetime": "indices apply only to this result revision",
+    "operation_id": "op_556123b1cd3f4f86a6387e5921dbbe57",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "not_applicable"
+  },
+  "invalid": {
+    "status": "error",
+    "warnings": [],
+    "units": null,
+    "code": "NX_INVALID_ARGUMENT",
+    "message": "Result indices must be nonnegative integers",
+    "retryable": false,
+    "details": {
+      "operation_id": "op_688c2b80d6ae428080c5df416e4536de",
+      "mutation_outcome": "not_started"
+    }
+  },
+  "out_of_range": {
+    "status": "error",
+    "warnings": [],
+    "units": null,
+    "code": "NX_SIM_RESULT_SELECTION",
+    "message": "loadcase_index is outside this result",
+    "retryable": false,
+    "details": {
+      "operation_id": "op_053df647b7b342f6a52681d4046670d1",
+      "mutation_outcome": "not_started"
+    }
+  },
+  "modified_flags_unchanged": true,
+  "scope": "Native public nodal extrema and selection errors, not freshness or general region results",
+  "fixture": "examples/simcenter/verify_temperature_result_mcp.py",
+  "local_tests_passed": 180
+}

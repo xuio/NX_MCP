@@ -1,0 +1,78 @@
+{
+  "status": "success",
+  "duplicate_rejected": true,
+  "post_creation_failure_rollback_verified": true,
+  "manifest": {
+    "name": "MCP disposable fan metadata probe",
+    "pressure_convention": "static",
+    "rpm": 1000,
+    "reference_density_kg_m3": 1.2,
+    "points": [
+      {
+        "flow_m3_s": 0,
+        "pressure_Pa": 1
+      },
+      {
+        "flow_m3_s": 0.0002,
+        "pressure_Pa": 0.5
+      },
+      {
+        "flow_m3_s": 0.0004,
+        "pressure_Pa": 0
+      }
+    ],
+    "stall_region": "Synthetic fixture, no stall prediction",
+    "provenance": {
+      "kind": "assumed",
+      "source": "Native metadata test \u2192 Native metadata test \u2192 Native metadata test \u2192 Native metadata test \u2192 Native metadata test \u2192 Native metadata test \u2192 Native metadata test \u2192 Native metadata test \u2192 Native metadata test \u2192 Native metadata test \u2192 Native metadata test \u2192 Native metadata test \u2192 Native metadata test \u2192 Native metadata test \u2192 Native metadata test \u2192 Native metadata test \u2192 Native metadata test \u2192 Native metadata test \u2192 Native metadata test \u2192 Native metadata test \u2192 Native metadata test \u2192 Native metadata test \u2192 Native metadata test \u2192 Native metadata test \u2192 Native metadata test \u2192 Native metadata test \u2192 Native metadata test \u2192 Native metadata test \u2192 Native metadata test \u2192 Native metadata test \u2192 "
+    },
+    "scaling_rpm_range": [
+      800,
+      1200
+    ],
+    "scaling_validity": "Synthetic fan-law fixture only",
+    "schema_version": 1,
+    "interpolation": "linear",
+    "extrapolation": "reject",
+    "reverse_flow": "unsupported"
+  },
+  "readback": {
+    "flow_m3_s": [
+      0.0,
+      0.0002,
+      0.0004
+    ],
+    "pressure_Pa": [
+      1.0,
+      0.5,
+      0.0
+    ],
+    "native_flow": [
+      0.0,
+      200000.0,
+      400000.0
+    ],
+    "native_pressure": [
+      1.0,
+      0.5,
+      0.0
+    ],
+    "native_flow_units": "CubicMilliMeterPerSecond",
+    "native_pressure_units": "PressurePascals",
+    "interpolation": "linear",
+    "outside_table": "undefined"
+  },
+  "boundary_attached": false,
+  "solver_semantics": "not_verified",
+  "manifest_persisted": true,
+  "manifest_storage": "native table attributes; SIM not saved",
+  "saved": false,
+  "native_type": "FieldTable",
+  "save_reopen_tested": false,
+  "outer_rollback_verified": true,
+  "operation_id": "op_708585d844f44732abb0bfb3685c85f2",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

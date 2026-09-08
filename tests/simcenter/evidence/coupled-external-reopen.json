@@ -1,0 +1,638 @@
+{
+  "status": "success",
+  "solver_launched": false,
+  "numerical_acceptance": false,
+  "copy": {
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_f5152f0a77b44eb79995711aea6ad6d6",
+      "kind": "part",
+      "name": "coupled_external_reopen_r1",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_561fa45718d5495aa50d102546603bd8",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "561fa45718d5495aa50d102546603bd8",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-reopen-20260908-r1\\coupled_external_reopen_r1.sim",
+      "journal_id": "coupled_external_reopen_r1",
+      "display_name": "coupled_external_reopen_r1"
+    },
+    "source": {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-diagnostic-20260908-r1\\coupled_external_diagnostic_r1.sim",
+      "bytes": 7745941,
+      "sha256": "9018056edba6d48226c4be754e42dcc91624c529664fa5c122dafd84c7d84293"
+    },
+    "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-reopen-20260908-r1\\coupled_external_reopen_r1.sim",
+    "source_file_unchanged": true,
+    "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-reopen-20260908-r1\\coupled_external_reopen_r1.sim",
+    "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-reopen-20260908-r1\\coupled_external_reopen_r1.sim",
+    "shared_fem_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-development-20260908-r1\\benchmark_99f1fecb220c_mesh.fem",
+    "independent_geometry_variant": false,
+    "saved": true,
+    "result_freshness": "not_verified",
+    "next_step": "Reacquire document IDs. Duplicate and reassociate FEM/CAD before changing shared geometry or mesh."
+  },
+  "before_close": {
+    "solution": {
+      "owner": {
+        "journal_id": "Solution[Coupled benchmark]",
+        "name": "Coupled benchmark",
+        "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-reopen-20260908-r1\\coupled_external_reopen_r1.sim"
+      },
+      "bcs": [
+        {
+          "journal_id": "Load[Generic solid 0.1 W]",
+          "name": "Generic solid 0.1 W",
+          "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-reopen-20260908-r1\\coupled_external_reopen_r1.sim"
+        },
+        {
+          "journal_id": "SimulationObject[Coupled Inlet]",
+          "name": "Coupled Inlet",
+          "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-reopen-20260908-r1\\coupled_external_reopen_r1.sim"
+        },
+        {
+          "journal_id": "SimulationObject[Coupled Opening]",
+          "name": "Coupled Opening",
+          "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-reopen-20260908-r1\\coupled_external_reopen_r1.sim"
+        }
+      ],
+      "unfoldered_bcs": [
+        {
+          "journal_id": "Load[Generic solid 0.1 W]",
+          "name": "Generic solid 0.1 W",
+          "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-reopen-20260908-r1\\coupled_external_reopen_r1.sim"
+        },
+        {
+          "journal_id": "SimulationObject[Coupled Inlet]",
+          "name": "Coupled Inlet",
+          "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-reopen-20260908-r1\\coupled_external_reopen_r1.sim"
+        },
+        {
+          "journal_id": "SimulationObject[Coupled Opening]",
+          "name": "Coupled Opening",
+          "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-reopen-20260908-r1\\coupled_external_reopen_r1.sim"
+        }
+      ],
+      "folders": [],
+      "conflict_override_count": 0
+    },
+    "steps": [
+      {
+        "index": 0,
+        "owner": {
+          "journal_id": "SolutionStep[Coupled development]",
+          "name": "Coupled development",
+          "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-reopen-20260908-r1\\coupled_external_reopen_r1.sim"
+        },
+        "bcs": [],
+        "unfoldered_bcs": [],
+        "folders": []
+      }
+    ],
+    "document_boundaries": [
+      {
+        "kind": "loads",
+        "journal_id": "Load[Generic solid 0.1 W]",
+        "name": "Generic solid 0.1 W",
+        "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-reopen-20260908-r1\\coupled_external_reopen_r1.sim",
+        "fields": [
+          {
+            "property": "Heat Load",
+            "expression": {
+              "formula": "0.1",
+              "units": "HeatFlow_Metric2",
+              "value": 0.1
+            },
+            "field": null,
+            "representation": "expression"
+          },
+          {
+            "property": "Heat Load Override",
+            "expression": {
+              "formula": "-777777",
+              "units": null,
+              "value": -777777.0
+            },
+            "field": null,
+            "representation": "expression"
+          }
+        ]
+      }
+    ],
+    "solution_fields": [
+      {
+        "property": "Altitude Value",
+        "expression": {
+          "formula": "0",
+          "units": "MilliMeter",
+          "value": 0.0
+        },
+        "field": null,
+        "representation": "expression"
+      },
+      {
+        "property": "Absolute Pressure",
+        "expression": null,
+        "field": {
+          "journal_id": "sys_field(7)",
+          "name": "sys_field(7)",
+          "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-reopen-20260908-r1\\coupled_external_reopen_r1.sim"
+        },
+        "scale": 1.0,
+        "representation": "field"
+      },
+      {
+        "property": "Fluid Temperature",
+        "expression": {
+          "formula": "0",
+          "units": "Celsius",
+          "value": 0.0
+        },
+        "field": null,
+        "representation": "expression"
+      },
+      {
+        "property": "Radiative Environment Temperature",
+        "expression": null,
+        "field": {
+          "journal_id": "sys_field(3)",
+          "name": "sys_field(3)",
+          "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-reopen-20260908-r1\\coupled_external_reopen_r1.sim"
+        },
+        "scale": 1.0,
+        "representation": "field"
+      },
+      {
+        "property": "Ambient Relative Humidity Value",
+        "expression": {
+          "formula": "0",
+          "units": null,
+          "value": 0.0
+        },
+        "field": null,
+        "representation": "expression"
+      },
+      {
+        "property": "Ambient Water Vapor to Dry Air Mass Ratio Value",
+        "expression": {
+          "formula": "0",
+          "units": null,
+          "value": 0.0
+        },
+        "field": null,
+        "representation": "expression"
+      },
+      {
+        "property": "Articulation Interval vs Time Table",
+        "representation": "unset"
+      }
+    ],
+    "ambient_pressure_mode": 1,
+    "tables": [
+      {
+        "name": "Development Thermal Parameters",
+        "descriptor": "Thermal Parameters",
+        "fields": [
+          {
+            "property": "Solar Intensity Table",
+            "representation": "unset"
+          }
+        ]
+      },
+      {
+        "name": "Development Flow Solution Parameters",
+        "descriptor": "Flow Solution Parameters",
+        "fields": [
+          {
+            "property": "Time Step",
+            "expression": {
+              "formula": "0.5",
+              "units": "Second",
+              "value": 0.5
+            },
+            "field": null,
+            "representation": "expression"
+          }
+        ]
+      },
+      {
+        "name": "Development Flow Surface Parameters",
+        "descriptor": "Flow Surface Parameters",
+        "fields": []
+      },
+      {
+        "name": "Development Thermal-Flow Output Requests",
+        "descriptor": "Thermal-Flow Output Requests",
+        "fields": []
+      },
+      {
+        "name": "Documented coupled controls",
+        "descriptor": "Thermal-Flow Coupled Solution Parameters",
+        "fields": []
+      },
+      {
+        "name": "External air 20 C",
+        "descriptor": "External Conditions",
+        "fields": [
+          {
+            "property": "Temperature Value",
+            "expression": {
+              "formula": "20.0",
+              "units": "Celsius",
+              "value": 20.0
+            },
+            "field": null,
+            "representation": "expression"
+          },
+          {
+            "property": "Relative Humidity Value",
+            "expression": {
+              "formula": "0",
+              "units": null,
+              "value": 0.0
+            },
+            "field": null,
+            "representation": "expression"
+          },
+          {
+            "property": "Water Vapor to Dry Air Mass Ratio Value",
+            "expression": {
+              "formula": "0",
+              "units": null,
+              "value": 0.0
+            },
+            "field": null,
+            "representation": "expression"
+          }
+        ]
+      }
+    ],
+    "solver_launched": false,
+    "numerical_acceptance": false
+  },
+  "close": {
+    "closed_parts": [
+      {
+        "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_f5152f0a77b44eb79995711aea6ad6d6",
+        "kind": "part",
+        "name": "coupled_external_reopen_r1",
+        "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_561fa45718d5495aa50d102546603bd8",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "generation_id": "561fa45718d5495aa50d102546603bd8",
+        "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-reopen-20260908-r1\\coupled_external_reopen_r1.sim",
+        "journal_id": "coupled_external_reopen_r1",
+        "display_name": "coupled_external_reopen_r1"
+      }
+    ],
+    "closed_count": 1,
+    "remaining_count": 100,
+    "saved": false,
+    "discarded_modified_parts": false,
+    "work_path": null,
+    "display_path": null,
+    "warnings": [
+      "NX may unload unused dependencies; reacquire document references before continuing"
+    ]
+  },
+  "open": {
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_0a8a24aec4344efc969e3524621f766d",
+      "kind": "part",
+      "name": "coupled_external_reopen_r1",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_b610ba35135b400cbf4e9d16df48f30b",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "b610ba35135b400cbf4e9d16df48f30b",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-reopen-20260908-r1\\coupled_external_reopen_r1.sim",
+      "journal_id": "coupled_external_reopen_r1",
+      "display_name": "coupled_external_reopen_r1"
+    },
+    "units": "mm",
+    "coordinate_frame": "part_absolute",
+    "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-reopen-20260908-r1\\coupled_external_reopen_r1.sim",
+    "already_loaded": false,
+    "modified_after_native_open": false,
+    "modified_before_activation": false,
+    "modified": false,
+    "fully_loaded": true,
+    "load_issues": [],
+    "changed_existing_part_flags": [],
+    "application": "UG_APP_SFEM",
+    "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-reopen-20260908-r1\\coupled_external_reopen_r1.sim",
+    "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-reopen-20260908-r1\\coupled_external_reopen_r1.sim",
+    "saved": false,
+    "result_freshness": "not_verified",
+    "warnings": []
+  },
+  "after_reopen": {
+    "solution": {
+      "owner": {
+        "journal_id": "Solution[Coupled benchmark]",
+        "name": "Coupled benchmark",
+        "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-reopen-20260908-r1\\coupled_external_reopen_r1.sim"
+      },
+      "bcs": [
+        {
+          "journal_id": "Load[Generic solid 0.1 W]",
+          "name": "Generic solid 0.1 W",
+          "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-reopen-20260908-r1\\coupled_external_reopen_r1.sim"
+        },
+        {
+          "journal_id": "SimulationObject[Coupled Inlet]",
+          "name": "Coupled Inlet",
+          "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-reopen-20260908-r1\\coupled_external_reopen_r1.sim"
+        },
+        {
+          "journal_id": "SimulationObject[Coupled Opening]",
+          "name": "Coupled Opening",
+          "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-reopen-20260908-r1\\coupled_external_reopen_r1.sim"
+        }
+      ],
+      "unfoldered_bcs": [
+        {
+          "journal_id": "Load[Generic solid 0.1 W]",
+          "name": "Generic solid 0.1 W",
+          "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-reopen-20260908-r1\\coupled_external_reopen_r1.sim"
+        },
+        {
+          "journal_id": "SimulationObject[Coupled Inlet]",
+          "name": "Coupled Inlet",
+          "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-reopen-20260908-r1\\coupled_external_reopen_r1.sim"
+        },
+        {
+          "journal_id": "SimulationObject[Coupled Opening]",
+          "name": "Coupled Opening",
+          "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-reopen-20260908-r1\\coupled_external_reopen_r1.sim"
+        }
+      ],
+      "folders": [],
+      "conflict_override_count": 0
+    },
+    "steps": [
+      {
+        "index": 0,
+        "owner": {
+          "journal_id": "SolutionStep[Coupled development]",
+          "name": "Coupled development",
+          "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-reopen-20260908-r1\\coupled_external_reopen_r1.sim"
+        },
+        "bcs": [],
+        "unfoldered_bcs": [],
+        "folders": []
+      }
+    ],
+    "document_boundaries": [
+      {
+        "kind": "loads",
+        "journal_id": "Load[Generic solid 0.1 W]",
+        "name": "Generic solid 0.1 W",
+        "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-reopen-20260908-r1\\coupled_external_reopen_r1.sim",
+        "fields": [
+          {
+            "property": "Heat Load",
+            "expression": {
+              "formula": "0.1",
+              "units": "HeatFlow_Metric2",
+              "value": 0.1
+            },
+            "field": null,
+            "representation": "expression"
+          },
+          {
+            "property": "Heat Load Override",
+            "expression": {
+              "formula": "-777777",
+              "units": null,
+              "value": -777777.0
+            },
+            "field": null,
+            "representation": "expression"
+          }
+        ]
+      }
+    ],
+    "solution_fields": [
+      {
+        "property": "Altitude Value",
+        "expression": {
+          "formula": "0",
+          "units": "MilliMeter",
+          "value": 0.0
+        },
+        "field": null,
+        "representation": "expression"
+      },
+      {
+        "property": "Absolute Pressure",
+        "expression": null,
+        "field": {
+          "journal_id": "sys_field(7)",
+          "name": "sys_field(7)",
+          "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-reopen-20260908-r1\\coupled_external_reopen_r1.sim"
+        },
+        "scale": 1.0,
+        "representation": "field"
+      },
+      {
+        "property": "Fluid Temperature",
+        "expression": {
+          "formula": "0",
+          "units": "Celsius",
+          "value": 0.0
+        },
+        "field": null,
+        "representation": "expression"
+      },
+      {
+        "property": "Radiative Environment Temperature",
+        "expression": null,
+        "field": {
+          "journal_id": "sys_field(3)",
+          "name": "sys_field(3)",
+          "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-reopen-20260908-r1\\coupled_external_reopen_r1.sim"
+        },
+        "scale": 1.0,
+        "representation": "field"
+      },
+      {
+        "property": "Ambient Relative Humidity Value",
+        "expression": {
+          "formula": "0",
+          "units": null,
+          "value": 0.0
+        },
+        "field": null,
+        "representation": "expression"
+      },
+      {
+        "property": "Ambient Water Vapor to Dry Air Mass Ratio Value",
+        "expression": {
+          "formula": "0",
+          "units": null,
+          "value": 0.0
+        },
+        "field": null,
+        "representation": "expression"
+      },
+      {
+        "property": "Articulation Interval vs Time Table",
+        "representation": "unset"
+      }
+    ],
+    "ambient_pressure_mode": 1,
+    "tables": [
+      {
+        "name": "Development Thermal Parameters",
+        "descriptor": "Thermal Parameters",
+        "fields": [
+          {
+            "property": "Solar Intensity Table",
+            "representation": "unset"
+          }
+        ]
+      },
+      {
+        "name": "Development Flow Solution Parameters",
+        "descriptor": "Flow Solution Parameters",
+        "fields": [
+          {
+            "property": "Time Step",
+            "expression": {
+              "formula": "0.5",
+              "units": "Second",
+              "value": 0.5
+            },
+            "field": null,
+            "representation": "expression"
+          }
+        ]
+      },
+      {
+        "name": "Development Flow Surface Parameters",
+        "descriptor": "Flow Surface Parameters",
+        "fields": []
+      },
+      {
+        "name": "Development Thermal-Flow Output Requests",
+        "descriptor": "Thermal-Flow Output Requests",
+        "fields": []
+      },
+      {
+        "name": "Documented coupled controls",
+        "descriptor": "Thermal-Flow Coupled Solution Parameters",
+        "fields": []
+      },
+      {
+        "name": "External air 20 C",
+        "descriptor": "External Conditions",
+        "fields": [
+          {
+            "property": "Temperature Value",
+            "expression": {
+              "formula": "20.0",
+              "units": "Celsius",
+              "value": 20.0
+            },
+            "field": null,
+            "representation": "expression"
+          },
+          {
+            "property": "Relative Humidity Value",
+            "expression": {
+              "formula": "0",
+              "units": null,
+              "value": 0.0
+            },
+            "field": null,
+            "representation": "expression"
+          },
+          {
+            "property": "Water Vapor to Dry Air Mass Ratio Value",
+            "expression": {
+              "formula": "0",
+              "units": null,
+              "value": 0.0
+            },
+            "field": null,
+            "representation": "expression"
+          }
+        ]
+      }
+    ],
+    "solver_launched": false,
+    "numerical_acceptance": false
+  },
+  "readback_equal": {
+    "solution": true,
+    "steps": true,
+    "document_boundaries": true,
+    "solution_fields": true,
+    "ambient_pressure_mode": true,
+    "tables": true
+  },
+  "export": {
+    "input_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-reopen-20260908-r1\\coupled_external_reopen_r1-Coupled_benchmark.xml",
+    "input_identity": {
+      "sha256": "6f706425a50cf09e841f74ce903f104f7c6a587e97d867c4e360b48ef60bb144",
+      "xml_content_sha256": "5c0ddf72f9943ecab517c1fda73eaf8d941054a1c1aa9e8c9ed769d65022ab71",
+      "bytes": 65086,
+      "canonicalization": "xml_c14n2_no_comments"
+    },
+    "validation": {
+      "state": "well_formed",
+      "step_definitions": 1,
+      "mesh_counts": {
+        "elements": 126,
+        "nodes": 68,
+        "element_sets": 2,
+        "scope": "observed_multiphysics_xml_layout"
+      },
+      "solve_readiness": "not_established"
+    },
+    "coupled_ambient_validation": {
+      "property": "Fluid Temperature",
+      "native_value": 0.0,
+      "exported_value": 0.0,
+      "units": "degC",
+      "matches": true,
+      "absolute_tolerance_degC": 1e-06,
+      "scope": "constant ambient temperature only; not complete solve readiness"
+    },
+    "artifacts": [
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-reopen-20260908-r1\\coupled_external_reopen_r1-Coupled_benchmark.map",
+        "bytes": 36034
+      },
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-reopen-20260908-r1\\coupled_external_reopen_r1-Coupled_benchmark.xml",
+        "bytes": 65086
+      }
+    ],
+    "translator_reports": [],
+    "solver": "NX MULTIPHYSICS",
+    "analysis_type": "Coupled Thermal-Flow",
+    "solution": "Coupled benchmark",
+    "source_sim": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-reopen-20260908-r1\\coupled_external_reopen_r1.sim",
+    "source_modified": false,
+    "solver_launched": false,
+    "solve_readiness": "not_established",
+    "scope": "Native thermal/flow input export, not a solve or convergence check"
+  },
+  "external_export": {
+    "temperature_c": 20,
+    "mode": "specified",
+    "boundary_bindings": [
+      {
+        "name": "Coupled Inlet",
+        "condition_uid": "6"
+      },
+      {
+        "name": "Coupled Opening",
+        "condition_uid": "6"
+      }
+    ]
+  },
+  "elapsed_seconds": 5.625,
+  "persistence_export_passed": true,
+  "operation_id": "op_a54fd33e62464719a79a910dcf937596",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

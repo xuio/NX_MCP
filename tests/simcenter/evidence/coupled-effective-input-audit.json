@@ -1,0 +1,244 @@
+{
+  "status": "success",
+  "solution": {
+    "owner": {
+      "journal_id": "Solution[Coupled benchmark]",
+      "name": "Coupled benchmark",
+      "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-diagnostic-20260908-r1\\coupled_external_diagnostic_r1.sim"
+    },
+    "bcs": [
+      {
+        "journal_id": "Load[Generic solid 0.1 W]",
+        "name": "Generic solid 0.1 W",
+        "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-diagnostic-20260908-r1\\coupled_external_diagnostic_r1.sim"
+      },
+      {
+        "journal_id": "SimulationObject[Coupled Inlet]",
+        "name": "Coupled Inlet",
+        "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-diagnostic-20260908-r1\\coupled_external_diagnostic_r1.sim"
+      },
+      {
+        "journal_id": "SimulationObject[Coupled Opening]",
+        "name": "Coupled Opening",
+        "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-diagnostic-20260908-r1\\coupled_external_diagnostic_r1.sim"
+      }
+    ],
+    "unfoldered_bcs": [
+      {
+        "journal_id": "Load[Generic solid 0.1 W]",
+        "name": "Generic solid 0.1 W",
+        "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-diagnostic-20260908-r1\\coupled_external_diagnostic_r1.sim"
+      },
+      {
+        "journal_id": "SimulationObject[Coupled Inlet]",
+        "name": "Coupled Inlet",
+        "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-diagnostic-20260908-r1\\coupled_external_diagnostic_r1.sim"
+      },
+      {
+        "journal_id": "SimulationObject[Coupled Opening]",
+        "name": "Coupled Opening",
+        "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-diagnostic-20260908-r1\\coupled_external_diagnostic_r1.sim"
+      }
+    ],
+    "folders": [],
+    "conflict_override_count": 0
+  },
+  "steps": [
+    {
+      "index": 0,
+      "owner": {
+        "journal_id": "SolutionStep[Coupled development]",
+        "name": "Coupled development",
+        "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-diagnostic-20260908-r1\\coupled_external_diagnostic_r1.sim"
+      },
+      "bcs": [],
+      "unfoldered_bcs": [],
+      "folders": []
+    }
+  ],
+  "document_boundaries": [
+    {
+      "kind": "loads",
+      "journal_id": "Load[Generic solid 0.1 W]",
+      "name": "Generic solid 0.1 W",
+      "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-diagnostic-20260908-r1\\coupled_external_diagnostic_r1.sim",
+      "fields": [
+        {
+          "property": "Heat Load",
+          "expression": {
+            "formula": "0.1",
+            "units": "HeatFlow_Metric2",
+            "value": 0.1
+          },
+          "field": null,
+          "representation": "expression"
+        },
+        {
+          "property": "Heat Load Override",
+          "expression": {
+            "formula": "-777777",
+            "units": null,
+            "value": -777777.0
+          },
+          "field": null,
+          "representation": "expression"
+        }
+      ]
+    }
+  ],
+  "solution_fields": [
+    {
+      "property": "Altitude Value",
+      "expression": {
+        "formula": "0",
+        "units": "MilliMeter",
+        "value": 0.0
+      },
+      "field": null,
+      "representation": "expression"
+    },
+    {
+      "property": "Absolute Pressure",
+      "expression": null,
+      "field": {
+        "journal_id": "sys_field(7)",
+        "name": "sys_field(7)",
+        "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-diagnostic-20260908-r1\\coupled_external_diagnostic_r1.sim"
+      },
+      "scale": 1.0,
+      "representation": "field"
+    },
+    {
+      "property": "Fluid Temperature",
+      "expression": {
+        "formula": "0",
+        "units": "Celsius",
+        "value": 0.0
+      },
+      "field": null,
+      "representation": "expression"
+    },
+    {
+      "property": "Radiative Environment Temperature",
+      "expression": null,
+      "field": {
+        "journal_id": "sys_field(3)",
+        "name": "sys_field(3)",
+        "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-diagnostic-20260908-r1\\coupled_external_diagnostic_r1.sim"
+      },
+      "scale": 1.0,
+      "representation": "field"
+    },
+    {
+      "property": "Ambient Relative Humidity Value",
+      "expression": {
+        "formula": "0",
+        "units": null,
+        "value": 0.0
+      },
+      "field": null,
+      "representation": "expression"
+    },
+    {
+      "property": "Ambient Water Vapor to Dry Air Mass Ratio Value",
+      "expression": {
+        "formula": "0",
+        "units": null,
+        "value": 0.0
+      },
+      "field": null,
+      "representation": "expression"
+    },
+    {
+      "property": "Articulation Interval vs Time Table",
+      "representation": "unset"
+    }
+  ],
+  "ambient_pressure_mode": 1,
+  "tables": [
+    {
+      "name": "Development Thermal Parameters",
+      "descriptor": "Thermal Parameters",
+      "fields": [
+        {
+          "property": "Solar Intensity Table",
+          "representation": "unset"
+        }
+      ]
+    },
+    {
+      "name": "Development Flow Solution Parameters",
+      "descriptor": "Flow Solution Parameters",
+      "fields": [
+        {
+          "property": "Time Step",
+          "expression": {
+            "formula": "0.5",
+            "units": "Second",
+            "value": 0.5
+          },
+          "field": null,
+          "representation": "expression"
+        }
+      ]
+    },
+    {
+      "name": "Development Flow Surface Parameters",
+      "descriptor": "Flow Surface Parameters",
+      "fields": []
+    },
+    {
+      "name": "Development Thermal-Flow Output Requests",
+      "descriptor": "Thermal-Flow Output Requests",
+      "fields": []
+    },
+    {
+      "name": "Documented coupled controls",
+      "descriptor": "Thermal-Flow Coupled Solution Parameters",
+      "fields": []
+    },
+    {
+      "name": "External air 20 C",
+      "descriptor": "External Conditions",
+      "fields": [
+        {
+          "property": "Temperature Value",
+          "expression": {
+            "formula": "20.0",
+            "units": "Celsius",
+            "value": 20.0
+          },
+          "field": null,
+          "representation": "expression"
+        },
+        {
+          "property": "Relative Humidity Value",
+          "expression": {
+            "formula": "0",
+            "units": null,
+            "value": 0.0
+          },
+          "field": null,
+          "representation": "expression"
+        },
+        {
+          "property": "Water Vapor to Dry Air Mass Ratio Value",
+          "expression": {
+            "formula": "0",
+            "units": null,
+            "value": 0.0
+          },
+          "field": null,
+          "representation": "expression"
+        }
+      ]
+    }
+  ],
+  "solver_launched": false,
+  "numerical_acceptance": false,
+  "operation_id": "op_2a38aef13e7643d4ad253413812d13ef",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

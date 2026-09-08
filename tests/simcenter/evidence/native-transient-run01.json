@@ -1,0 +1,12 @@
+{
+  "benchmark": "C_transient",
+  "job_id": "transient-solve-01",
+  "state": "results_present_not_accepted",
+  "observed_final_integration_step_s": 506.25,
+  "reported_final_max_temperature_C": 36.019,
+  "analytical_final_temperature_C": 36.55436755001524,
+  "endpoint_error_estimate_normalized_by_steady_rise": 0.03212205300091469,
+  "temperature_relative_tolerance": 0.02,
+  "observation_precision": "native printed log; full result history not yet extracted",
+  "next_action": "Refine time stepping, verify actual integration steps, then compare full native history; preserve this run"
+}

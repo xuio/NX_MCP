@@ -1,0 +1,74 @@
+{
+  "scope": "Native v2606 Flow control mapping and numerical diagnostics; no mesh convergence or fan acceptance",
+  "runs": [
+    {
+      "run": 2,
+      "flow_selector": 0,
+      "wall_selector": 2,
+      "solver_model": "Laminar",
+      "completed": true,
+      "imbalance_percent": {
+        "momentum": 0.001435,
+        "mass": 0.1541,
+        "energy": 0.0
+      },
+      "warning_present": true,
+      "numerical_acceptance": "not_established",
+      "artifact_hashes": {
+        "benchmark_4ba7072a1d7a_analysis-Flow_benchmark.xml": "5689550520b395272037dbb3b6dc5ae1a6f338c0612a6a1da0dbac2e25f27a4f",
+        "benchmark_4ba7072a1d7a_analysis-Flow_benchmark.bun": "57e9e38b5538b797b83e4d6a7359b64e7f482bb69f3c6a1b33665558e7331c84",
+        "cavity-flow-solve-02.json": "f7fe5c4168f858a5165fab17746a0f2d9c1802971a490cf505db421680eda8e6",
+        "benchmark_4ba7072a1d7a_analysis-Flow_benchmark.log": "6f116c30ce08a108d5368642edefdc7ad33201b4c2e213a4f468527c07747dbe",
+        "benchmark_4ba7072a1d7a_analysis-Flow_benchmark.map": "0daf280e57d03c857638192c923c0b51a48b399b7caf74b1e72c1da1becb2eff"
+      }
+    },
+    {
+      "run": 3,
+      "flow_selector": 0,
+      "wall_selector": 1,
+      "solver_model": "Laminar",
+      "completed": true,
+      "imbalance_percent": {
+        "momentum": 195.0,
+        "mass": 39.51,
+        "energy": 0.0
+      },
+      "warning_present": false,
+      "numerical_acceptance": "not_established",
+      "artifact_hashes": {
+        "benchmark_4ba7072a1d7a_analysis-Flow_benchmark.xml": "b08ad56e0e74dd11279bde05afc712b898b49678b7526bea737df60fdbf3fae1",
+        "benchmark_4ba7072a1d7a_analysis-Flow_benchmark.bun": "b29f2859635c8b0f5802f5134e42c46725ffd7ce90383b8368fa0bd5c17dfc9d",
+        "cavity-flow-solve-03.json": "af4c387c5ccff5c7af539c0a6d2f9b74eae99c56995667a7ff3d6762c57ba013",
+        "benchmark_4ba7072a1d7a_analysis-Flow_benchmark.log": "d812e570c40959176b0d264b7c140856c5cdb8117c49720f6c5570ba43b45cb1",
+        "benchmark_4ba7072a1d7a_analysis-Flow_benchmark.map": "2d88a0f1461faebb032825b81fff8a6e7e3f71a5875775d58b2f0cc517d3176e"
+      }
+    },
+    {
+      "run": 4,
+      "flow_selector": 0,
+      "wall_selector": 0,
+      "solver_model": "Laminar",
+      "completed": true,
+      "imbalance_percent": {
+        "momentum": 0.001435,
+        "mass": 0.1541,
+        "energy": 0.0
+      },
+      "warning_present": false,
+      "numerical_acceptance": "not_established",
+      "artifact_hashes": {
+        "benchmark_4ba7072a1d7a_analysis-Flow_benchmark.xml": "0a7592fcb5aed6ade175add2a5a476ee3fbd723cfb1cf8e08d72575ca3d4342f",
+        "benchmark_4ba7072a1d7a_analysis-Flow_benchmark.bun": "57e9e38b5538b797b83e4d6a7359b64e7f482bb69f3c6a1b33665558e7331c84",
+        "cavity-flow-solve-04.json": "7c2d34663ca9a164205f51a075152fe17e9ee5e0f8c08a10b5c6191258d07cba",
+        "benchmark_4ba7072a1d7a_analysis-Flow_benchmark.log": "18306119f0c43fb01382b168530354eca4806b9f6267f3f3a4e3ccd99660e2d1",
+        "benchmark_4ba7072a1d7a_analysis-Flow_benchmark.map": "682372a19703b77ae486d431ed3f38fed01e2d83669001bcfcd30b00d615adb7"
+      }
+    }
+  ],
+  "findings": [
+    "Turbulence Model 0 is Laminar per solver log",
+    "Wall Treatment 2 causes warning 1900 and substitutes no-slip in laminar mode",
+    "Wall Treatment 1 produces SLIPADIABATIC F boundaries; run 3 has unacceptable recovered balances despite residual rows marked OK",
+    "Wall Treatment 0 produces ADIABATIC FACES with nonzero shear; run 4 matches the no-slip fallback summary without warnings"
+  ]
+}

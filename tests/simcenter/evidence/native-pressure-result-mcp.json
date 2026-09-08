@@ -1,0 +1,94 @@
+{
+  "pressure": {
+    "status": "success",
+    "warnings": [],
+    "units": "Pa",
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_962a7e77a54244b99a217f6c74134f19",
+      "kind": "part",
+      "name": "flow_input_r2",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_abf19f0b5631403fb507517856de3740",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "abf19f0b5631403fb507517856de3740",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-input-export-20260908-r2\\flow_input_r2.sim",
+      "journal_id": "flow_input_r2",
+      "display_name": "flow_input_r2"
+    },
+    "field": "Pressure - Element-Nodal",
+    "minimum": 0.1233869269490242,
+    "maximum": 0.6596712470054626,
+    "native_location": "2",
+    "minimum_native_id": 158870,
+    "maximum_native_id": 145038,
+    "minimum_native_sub_id": 3,
+    "maximum_native_sub_id": 8,
+    "node_count": 71748,
+    "loadcase_index": 0,
+    "iteration_index": 0,
+    "result_freshness": "not_verified",
+    "pressure_reference": "native_solution_reference",
+    "reference_lifetime": "indices apply only to this result revision",
+    "operation_id": "op_07b5f7e17f33489f8ecda9a2419261e2",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "not_applicable"
+  },
+  "total_pressure": {
+    "status": "success",
+    "warnings": [],
+    "units": "Pa",
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_962a7e77a54244b99a217f6c74134f19",
+      "kind": "part",
+      "name": "flow_input_r2",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_abf19f0b5631403fb507517856de3740",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "abf19f0b5631403fb507517856de3740",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-input-export-20260908-r2\\flow_input_r2.sim",
+      "journal_id": "flow_input_r2",
+      "display_name": "flow_input_r2"
+    },
+    "field": "Total Pressure - Element-Nodal",
+    "minimum": 0.12482593953609467,
+    "maximum": 0.7094562649726868,
+    "native_location": "2",
+    "minimum_native_id": 158870,
+    "maximum_native_id": 145042,
+    "minimum_native_sub_id": 3,
+    "maximum_native_sub_id": 7243,
+    "node_count": 71748,
+    "loadcase_index": 0,
+    "iteration_index": 0,
+    "result_freshness": "not_verified",
+    "pressure_reference": "native_solution_reference",
+    "reference_lifetime": "indices apply only to this result revision",
+    "operation_id": "op_67f8bc51690e48babd9df8aa4398d040",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "not_applicable"
+  },
+  "invalid_index": {
+    "meta": null,
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"status\": \"error\", \"warnings\": [], \"units\": null, \"code\": \"NX_SIM_RESULT_SELECTION\", \"message\": \"Loadcase index outside result\", \"retryable\": false, \"details\": {\"operation_id\": \"op_85102091face4105bacda5c7a9c2362b\", \"mutation_outcome\": \"not_started\"}}",
+        "annotations": null,
+        "meta": null
+      }
+    ],
+    "structuredContent": {
+      "status": "error",
+      "warnings": [],
+      "units": null,
+      "code": "NX_SIM_RESULT_SELECTION",
+      "message": "Loadcase index outside result",
+      "retryable": false,
+      "details": {
+        "operation_id": "op_85102091face4105bacda5c7a9c2362b",
+        "mutation_outcome": "not_started"
+      }
+    },
+    "isError": true
+  },
+  "document_flags_preserved": true,
+  "active_document_restored": true
+}

@@ -1,0 +1,484 @@
+{
+  "format": "observed_simcenter_2606_steady_coupled",
+  "completion_marker_present": true,
+  "failure_evidence": {
+    "state": "unknown",
+    "stage": "unknown",
+    "translator_fatal_codes": [],
+    "fatal_abort_reported": false,
+    "numerical_convergence": "not_established",
+    "results_validated": false,
+    "next_action": "Inspect job process status, residuals and result validation before classifying."
+  },
+  "residual_threshold": 0.0002,
+  "last_iteration": 7,
+  "final_equations_complete": true,
+  "final_residual_criteria_met": null,
+  "residual_history": [
+    {
+      "iteration": 1,
+      "region": "Flow Enclosure",
+      "equation": "U - Mom",
+      "linear_iterations": 1,
+      "linear_residual": 1.153e-05,
+      "rate": 0.0,
+      "rate_overflow": false,
+      "residual": 6.307,
+      "native_message": "--"
+    },
+    {
+      "iteration": 1,
+      "region": "Flow Enclosure",
+      "equation": "V - Mom",
+      "linear_iterations": 1,
+      "linear_residual": 1.153e-05,
+      "rate": 0.0,
+      "rate_overflow": false,
+      "residual": 7.638e-18,
+      "native_message": "OK"
+    },
+    {
+      "iteration": 1,
+      "region": "Flow Enclosure",
+      "equation": "W - Mom",
+      "linear_iterations": 1,
+      "linear_residual": 1.153e-05,
+      "rate": 0.0,
+      "rate_overflow": false,
+      "residual": 3.229e-18,
+      "native_message": "OK"
+    },
+    {
+      "iteration": 1,
+      "region": "Flow Enclosure",
+      "equation": "P - Mass",
+      "linear_iterations": 1,
+      "linear_residual": 1.153e-05,
+      "rate": 0.0,
+      "rate_overflow": false,
+      "residual": 0.06931,
+      "native_message": "--"
+    },
+    {
+      "iteration": 1,
+      "region": "Flow Enclosure",
+      "equation": "H - Energy",
+      "linear_iterations": 3,
+      "linear_residual": 28.73,
+      "rate": 0.0,
+      "rate_overflow": false,
+      "residual": 20.46,
+      "native_message": "--"
+    },
+    {
+      "iteration": 2,
+      "region": "Flow Enclosure",
+      "equation": "U - Mom",
+      "linear_iterations": 1,
+      "linear_residual": 6.465e-05,
+      "rate": 0.09,
+      "rate_overflow": false,
+      "residual": 0.5755,
+      "native_message": "--"
+    },
+    {
+      "iteration": 2,
+      "region": "Flow Enclosure",
+      "equation": "V - Mom",
+      "linear_iterations": 1,
+      "linear_residual": 6.465e-05,
+      "rate": null,
+      "rate_overflow": true,
+      "residual": 0.03157,
+      "native_message": "--"
+    },
+    {
+      "iteration": 2,
+      "region": "Flow Enclosure",
+      "equation": "W - Mom",
+      "linear_iterations": 1,
+      "linear_residual": 6.465e-05,
+      "rate": null,
+      "rate_overflow": true,
+      "residual": 0.03471,
+      "native_message": "--"
+    },
+    {
+      "iteration": 2,
+      "region": "Flow Enclosure",
+      "equation": "P - Mass",
+      "linear_iterations": 1,
+      "linear_residual": 6.465e-05,
+      "rate": 3.9,
+      "rate_overflow": false,
+      "residual": 0.2701,
+      "native_message": "--"
+    },
+    {
+      "iteration": 2,
+      "region": "Flow Enclosure",
+      "equation": "H - Energy",
+      "linear_iterations": 2,
+      "linear_residual": 2.523,
+      "rate": 0.01,
+      "rate_overflow": false,
+      "residual": 0.107,
+      "native_message": "--"
+    },
+    {
+      "iteration": 3,
+      "region": "Flow Enclosure",
+      "equation": "U - Mom",
+      "linear_iterations": 1,
+      "linear_residual": 3.69e-06,
+      "rate": 0.16,
+      "rate_overflow": false,
+      "residual": 0.09144,
+      "native_message": "--"
+    },
+    {
+      "iteration": 3,
+      "region": "Flow Enclosure",
+      "equation": "V - Mom",
+      "linear_iterations": 1,
+      "linear_residual": 3.69e-06,
+      "rate": 0.13,
+      "rate_overflow": false,
+      "residual": 0.004134,
+      "native_message": "--"
+    },
+    {
+      "iteration": 3,
+      "region": "Flow Enclosure",
+      "equation": "W - Mom",
+      "linear_iterations": 1,
+      "linear_residual": 3.69e-06,
+      "rate": 0.16,
+      "rate_overflow": false,
+      "residual": 0.005672,
+      "native_message": "--"
+    },
+    {
+      "iteration": 3,
+      "region": "Flow Enclosure",
+      "equation": "P - Mass",
+      "linear_iterations": 1,
+      "linear_residual": 3.69e-06,
+      "rate": 0.03,
+      "rate_overflow": false,
+      "residual": 0.007458,
+      "native_message": "--"
+    },
+    {
+      "iteration": 3,
+      "region": "Flow Enclosure",
+      "equation": "H - Energy",
+      "linear_iterations": 2,
+      "linear_residual": 1.183,
+      "rate": 0.31,
+      "rate_overflow": false,
+      "residual": 0.03332,
+      "native_message": "--"
+    },
+    {
+      "iteration": 4,
+      "region": "Flow Enclosure",
+      "equation": "U - Mom",
+      "linear_iterations": 1,
+      "linear_residual": 5.599e-07,
+      "rate": 0.12,
+      "rate_overflow": false,
+      "residual": 0.0113,
+      "native_message": "--"
+    },
+    {
+      "iteration": 4,
+      "region": "Flow Enclosure",
+      "equation": "V - Mom",
+      "linear_iterations": 1,
+      "linear_residual": 5.599e-07,
+      "rate": 0.11,
+      "rate_overflow": false,
+      "residual": 0.0004699,
+      "native_message": "--"
+    },
+    {
+      "iteration": 4,
+      "region": "Flow Enclosure",
+      "equation": "W - Mom",
+      "linear_iterations": 1,
+      "linear_residual": 5.599e-07,
+      "rate": 0.12,
+      "rate_overflow": false,
+      "residual": 0.0006907,
+      "native_message": "--"
+    },
+    {
+      "iteration": 4,
+      "region": "Flow Enclosure",
+      "equation": "P - Mass",
+      "linear_iterations": 1,
+      "linear_residual": 5.599e-07,
+      "rate": 0.24,
+      "rate_overflow": false,
+      "residual": 0.001759,
+      "native_message": "--"
+    },
+    {
+      "iteration": 4,
+      "region": "Flow Enclosure",
+      "equation": "H - Energy",
+      "linear_iterations": 2,
+      "linear_residual": 0.2928,
+      "rate": 0.16,
+      "rate_overflow": false,
+      "residual": 0.005391,
+      "native_message": "--"
+    },
+    {
+      "iteration": 5,
+      "region": "Flow Enclosure",
+      "equation": "U - Mom",
+      "linear_iterations": 1,
+      "linear_residual": 8.327e-08,
+      "rate": 0.21,
+      "rate_overflow": false,
+      "residual": 0.002383,
+      "native_message": "--"
+    },
+    {
+      "iteration": 5,
+      "region": "Flow Enclosure",
+      "equation": "V - Mom",
+      "linear_iterations": 1,
+      "linear_residual": 8.327e-08,
+      "rate": 0.17,
+      "rate_overflow": false,
+      "residual": 7.781e-05,
+      "native_message": "OK"
+    },
+    {
+      "iteration": 5,
+      "region": "Flow Enclosure",
+      "equation": "W - Mom",
+      "linear_iterations": 1,
+      "linear_residual": 8.327e-08,
+      "rate": 0.19,
+      "rate_overflow": false,
+      "residual": 0.0001302,
+      "native_message": "OK"
+    },
+    {
+      "iteration": 5,
+      "region": "Flow Enclosure",
+      "equation": "P - Mass",
+      "linear_iterations": 1,
+      "linear_residual": 8.327e-08,
+      "rate": 0.15,
+      "rate_overflow": false,
+      "residual": 0.0002656,
+      "native_message": "--"
+    },
+    {
+      "iteration": 5,
+      "region": "Flow Enclosure",
+      "equation": "H - Energy",
+      "linear_iterations": 2,
+      "linear_residual": 0.06709,
+      "rate": 0.21,
+      "rate_overflow": false,
+      "residual": 0.001117,
+      "native_message": "--"
+    },
+    {
+      "iteration": 6,
+      "region": "Flow Enclosure",
+      "equation": "U - Mom",
+      "linear_iterations": 1,
+      "linear_residual": 1.727e-08,
+      "rate": 0.26,
+      "rate_overflow": false,
+      "residual": 0.0006216,
+      "native_message": "--"
+    },
+    {
+      "iteration": 6,
+      "region": "Flow Enclosure",
+      "equation": "V - Mom",
+      "linear_iterations": 1,
+      "linear_residual": 1.727e-08,
+      "rate": 0.24,
+      "rate_overflow": false,
+      "residual": 1.864e-05,
+      "native_message": "OK"
+    },
+    {
+      "iteration": 6,
+      "region": "Flow Enclosure",
+      "equation": "W - Mom",
+      "linear_iterations": 1,
+      "linear_residual": 1.727e-08,
+      "rate": 0.24,
+      "rate_overflow": false,
+      "residual": 3.15e-05,
+      "native_message": "OK"
+    },
+    {
+      "iteration": 6,
+      "region": "Flow Enclosure",
+      "equation": "P - Mass",
+      "linear_iterations": 1,
+      "linear_residual": 1.727e-08,
+      "rate": 0.32,
+      "rate_overflow": false,
+      "residual": 8.483e-05,
+      "native_message": "OK"
+    },
+    {
+      "iteration": 6,
+      "region": "Flow Enclosure",
+      "equation": "H - Energy",
+      "linear_iterations": 2,
+      "linear_residual": 0.01464,
+      "rate": 0.21,
+      "rate_overflow": false,
+      "residual": 0.0002322,
+      "native_message": "--"
+    },
+    {
+      "iteration": 7,
+      "region": "Flow Enclosure",
+      "equation": "U - Mom",
+      "linear_iterations": 1,
+      "linear_residual": 4.547e-09,
+      "rate": 0.27,
+      "rate_overflow": false,
+      "residual": 0.0001676,
+      "native_message": "OK"
+    },
+    {
+      "iteration": 7,
+      "region": "Flow Enclosure",
+      "equation": "V - Mom",
+      "linear_iterations": 1,
+      "linear_residual": 4.547e-09,
+      "rate": 0.25,
+      "rate_overflow": false,
+      "residual": 4.74e-06,
+      "native_message": "OK"
+    },
+    {
+      "iteration": 7,
+      "region": "Flow Enclosure",
+      "equation": "W - Mom",
+      "linear_iterations": 1,
+      "linear_residual": 4.547e-09,
+      "rate": 0.26,
+      "rate_overflow": false,
+      "residual": 8.299e-06,
+      "native_message": "OK"
+    },
+    {
+      "iteration": 7,
+      "region": "Flow Enclosure",
+      "equation": "P - Mass",
+      "linear_iterations": 1,
+      "linear_residual": 4.547e-09,
+      "rate": 0.29,
+      "rate_overflow": false,
+      "residual": 2.501e-05,
+      "native_message": "OK"
+    },
+    {
+      "iteration": 7,
+      "region": "Flow Enclosure",
+      "equation": "H - Energy",
+      "linear_iterations": 2,
+      "linear_residual": 0.003013,
+      "rate": 0.2,
+      "rate_overflow": false,
+      "residual": 4.545e-05,
+      "native_message": "OK"
+    }
+  ],
+  "reported_imbalances": {
+    "momentum": {
+      "value": 0.01157,
+      "units": "%",
+      "definition": "native reported imbalance; denominator not independently established"
+    },
+    "mass": {
+      "value": 1.388,
+      "units": "%",
+      "definition": "native reported imbalance; denominator not independently established"
+    },
+    "energy": {
+      "value": 0.07882,
+      "units": "%",
+      "definition": "native reported imbalance; denominator not independently established"
+    }
+  },
+  "boundary_flows": [
+    {
+      "name": "Coupled Inlet",
+      "volume_flow_m3_s": 7.2e-05,
+      "mass_flow_kg_s": 9.32e-05,
+      "positive_direction": "into_domain"
+    },
+    {
+      "name": "Coupled Opening",
+      "volume_flow_m3_s": -7.2e-05,
+      "mass_flow_kg_s": -9.319e-05,
+      "positive_direction": "into_domain"
+    }
+  ],
+  "fan_operating_points": {
+    "state": "not_present",
+    "fans": []
+  },
+  "coupled_summary": {
+    "ambient_temperature_degC": 0.0,
+    "temperature_summaries": [
+      {
+        "maximum": 22.58,
+        "minimum": 20.0,
+        "average": 20.73,
+        "quantity": "Fluid Temperature",
+        "units": "degC",
+        "association": "native summary row; region identity not established"
+      },
+      {
+        "maximum": 24.6,
+        "minimum": 24.57,
+        "average": 24.59,
+        "quantity": "Solid Temperature",
+        "units": "degC",
+        "association": "native summary row; region identity not established"
+      },
+      {
+        "maximum": 24.6,
+        "minimum": 24.57,
+        "average": 24.59,
+        "quantity": "Solid Temperature",
+        "units": "degC",
+        "association": "native summary row; region identity not established"
+      }
+    ],
+    "applied_solid_power_W": 0.09999999999999999,
+    "heat_to_fluid_W": 0.09998,
+    "maximum_coupled_temperature_change_degC": 0.0007267,
+    "normalized_coupled_heat_imbalance": 0.0002168,
+    "iteration_limit_reached_without_convergence": false,
+    "numerical_convergence": "not_established",
+    "warnings": {
+      "coincident_thermal_nodes": true,
+      "no_interior_pressure_anchor": false
+    },
+    "scope": "Rounded native log summaries; not independent field extraction, complete criteria validation or mesh acceptance"
+  },
+  "rounded_boundary_mass_sum_kg_s": 1.0000000000008375e-08,
+  "rounding_warning": "Boundary values are rounded in the log; a zero sum does not establish zero imbalance",
+  "numerical_convergence": "not_established",
+  "results_validated": false,
+  "scope": "Log observations only; input/job association, all configured criteria and mesh sensitivity require separate audits"
+}

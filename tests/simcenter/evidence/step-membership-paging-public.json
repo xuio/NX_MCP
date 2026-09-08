@@ -1,0 +1,344 @@
+{
+  "responses": {
+    "solutions": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"solutions\": [{\"solution\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_7b1710b14a63421ab47ae63aeadee02f\", \"kind\": \"simulation_solution\", \"name\": \"Conduction\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_fd64fa4bd724463bb1b456216bcd8afd\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"fd64fa4bd724463bb1b456216bcd8afd\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F2-step-membership-20260909-r1\\\\f2_step_membership_r1.sim\", \"journal_id\": \"Solution[Conduction]\", \"display_name\": \"Conduction\"}, \"solver\": \"NX MULTIPHYSICS\", \"analysis\": \"Thermal\", \"solution_type\": \"Thermal\", \"active\": true, \"step_count\": 2, \"membership\": {\"solution\": {\"owner\": {\"journal_id\": \"Solution[Conduction]\", \"owner_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F2-step-membership-20260909-r1\\\\f2_step_membership_r1.sim\"}, \"bcs\": [{\"journal_id\": \"Constraint[Cold end 293 K]\", \"owner_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F2-step-membership-20260909-r1\\\\f2_step_membership_r1.sim\"}, {\"journal_id\": \"Load[End volume]\", \"owner_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F2-step-membership-20260909-r1\\\\f2_step_membership_r1.sim\"}], \"unfoldered_bcs\": [{\"journal_id\": \"Constraint[Cold end 293 K]\", \"owner_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F2-step-membership-20260909-r1\\\\f2_step_membership_r1.sim\"}, {\"journal_id\": \"Load[End volume]\", \"owner_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F2-step-membership-20260909-r1\\\\f2_step_membership_r1.sim\"}], \"folders\": [], \"conflict_override_count\": 0}, \"steps\": [{\"index\": 0, \"owner\": {\"journal_id\": \"SolutionStep[Membership phase two]\", \"owner_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F2-step-membership-20260909-r1\\\\f2_step_membership_r1.sim\"}, \"bcs\": [], \"unfoldered_bcs\": [], \"folders\": []}, {\"index\": 1, \"owner\": {\"journal_id\": \"SolutionStep[Conduction]\", \"owner_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F2-step-membership-20260909-r1\\\\f2_step_membership_r1.sim\"}, \"bcs\": [], \"unfoldered_bcs\": [], \"folders\": []}], \"errors\": [], \"comparison_verified\": true, \"sha256\": \"4ebbe82b91e1ed2f2cb56e8acdcf6485c6f6d2c4be6701f18ac30778b3af6182\"}}], \"total\": 1, \"next_offset\": null, \"result_freshness\": \"not_verified\", \"operation_id\": \"op_328df000aeff491087beeda77cf7a1ff\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "solutions": [
+          {
+            "solution": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_7b1710b14a63421ab47ae63aeadee02f",
+              "kind": "simulation_solution",
+              "name": "Conduction",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_fd64fa4bd724463bb1b456216bcd8afd",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "fd64fa4bd724463bb1b456216bcd8afd",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-step-membership-20260909-r1\\f2_step_membership_r1.sim",
+              "journal_id": "Solution[Conduction]",
+              "display_name": "Conduction"
+            },
+            "solver": "NX MULTIPHYSICS",
+            "analysis": "Thermal",
+            "solution_type": "Thermal",
+            "active": true,
+            "step_count": 2,
+            "membership": {
+              "solution": {
+                "owner": {
+                  "journal_id": "Solution[Conduction]",
+                  "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-step-membership-20260909-r1\\f2_step_membership_r1.sim"
+                },
+                "bcs": [
+                  {
+                    "journal_id": "Constraint[Cold end 293 K]",
+                    "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-step-membership-20260909-r1\\f2_step_membership_r1.sim"
+                  },
+                  {
+                    "journal_id": "Load[End volume]",
+                    "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-step-membership-20260909-r1\\f2_step_membership_r1.sim"
+                  }
+                ],
+                "unfoldered_bcs": [
+                  {
+                    "journal_id": "Constraint[Cold end 293 K]",
+                    "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-step-membership-20260909-r1\\f2_step_membership_r1.sim"
+                  },
+                  {
+                    "journal_id": "Load[End volume]",
+                    "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-step-membership-20260909-r1\\f2_step_membership_r1.sim"
+                  }
+                ],
+                "folders": [],
+                "conflict_override_count": 0
+              },
+              "steps": [
+                {
+                  "index": 0,
+                  "owner": {
+                    "journal_id": "SolutionStep[Membership phase two]",
+                    "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-step-membership-20260909-r1\\f2_step_membership_r1.sim"
+                  },
+                  "bcs": [],
+                  "unfoldered_bcs": [],
+                  "folders": []
+                },
+                {
+                  "index": 1,
+                  "owner": {
+                    "journal_id": "SolutionStep[Conduction]",
+                    "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-step-membership-20260909-r1\\f2_step_membership_r1.sim"
+                  },
+                  "bcs": [],
+                  "unfoldered_bcs": [],
+                  "folders": []
+                }
+              ],
+              "errors": [],
+              "comparison_verified": true,
+              "sha256": "4ebbe82b91e1ed2f2cb56e8acdcf6485c6f6d2c4be6701f18ac30778b3af6182"
+            }
+          }
+        ],
+        "total": 1,
+        "next_offset": null,
+        "result_freshness": "not_verified",
+        "operation_id": "op_328df000aeff491087beeda77cf7a1ff",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "not_applicable"
+      },
+      "isError": false
+    },
+    "compact_0": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"solution\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_7b1710b14a63421ab47ae63aeadee02f\", \"kind\": \"simulation_solution\", \"name\": \"Conduction\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_fd64fa4bd724463bb1b456216bcd8afd\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"fd64fa4bd724463bb1b456216bcd8afd\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F2-step-membership-20260909-r1\\\\f2_step_membership_r1.sim\", \"journal_id\": \"Solution[Conduction]\", \"display_name\": \"Conduction\"}, \"solution_active\": true, \"steps\": [{\"step\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_3eacde46cf9b4e79acf72be61a4959da\", \"kind\": \"simulation_step\", \"name\": \"Membership phase two\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_fd64fa4bd724463bb1b456216bcd8afd\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"fd64fa4bd724463bb1b456216bcd8afd\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F2-step-membership-20260909-r1\\\\f2_step_membership_r1.sim\", \"journal_id\": \"SolutionStep[Membership phase two]\", \"display_name\": \"Membership phase two\"}, \"index\": 0, \"step_type\": 0, \"active_in_solution\": false}], \"total\": 2, \"next_offset\": 1, \"index_lifetime\": \"Reacquire after step creation, removal or reordering\", \"result_freshness\": \"not_verified\", \"operation_id\": \"op_1603abfb9dc44ce1a827ffd89dc32583\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "solution": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_7b1710b14a63421ab47ae63aeadee02f",
+          "kind": "simulation_solution",
+          "name": "Conduction",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_fd64fa4bd724463bb1b456216bcd8afd",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "fd64fa4bd724463bb1b456216bcd8afd",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-step-membership-20260909-r1\\f2_step_membership_r1.sim",
+          "journal_id": "Solution[Conduction]",
+          "display_name": "Conduction"
+        },
+        "solution_active": true,
+        "steps": [
+          {
+            "step": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_3eacde46cf9b4e79acf72be61a4959da",
+              "kind": "simulation_step",
+              "name": "Membership phase two",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_fd64fa4bd724463bb1b456216bcd8afd",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "fd64fa4bd724463bb1b456216bcd8afd",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-step-membership-20260909-r1\\f2_step_membership_r1.sim",
+              "journal_id": "SolutionStep[Membership phase two]",
+              "display_name": "Membership phase two"
+            },
+            "index": 0,
+            "step_type": 0,
+            "active_in_solution": false
+          }
+        ],
+        "total": 2,
+        "next_offset": 1,
+        "index_lifetime": "Reacquire after step creation, removal or reordering",
+        "result_freshness": "not_verified",
+        "operation_id": "op_1603abfb9dc44ce1a827ffd89dc32583",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "not_applicable"
+      },
+      "isError": false
+    },
+    "expanded_0": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"solution\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_7b1710b14a63421ab47ae63aeadee02f\", \"kind\": \"simulation_solution\", \"name\": \"Conduction\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_fd64fa4bd724463bb1b456216bcd8afd\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"fd64fa4bd724463bb1b456216bcd8afd\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F2-step-membership-20260909-r1\\\\f2_step_membership_r1.sim\", \"journal_id\": \"Solution[Conduction]\", \"display_name\": \"Conduction\"}, \"solution_active\": true, \"steps\": [{\"step\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_3eacde46cf9b4e79acf72be61a4959da\", \"kind\": \"simulation_step\", \"name\": \"Membership phase two\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_fd64fa4bd724463bb1b456216bcd8afd\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"fd64fa4bd724463bb1b456216bcd8afd\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F2-step-membership-20260909-r1\\\\f2_step_membership_r1.sim\", \"journal_id\": \"SolutionStep[Membership phase two]\", \"display_name\": \"Membership phase two\"}, \"index\": 0, \"step_type\": 0, \"active_in_solution\": false, \"membership\": {\"owner\": {\"journal_id\": \"SolutionStep[Membership phase two]\", \"owner_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F2-step-membership-20260909-r1\\\\f2_step_membership_r1.sim\"}, \"bcs\": [], \"unfoldered_bcs\": [], \"folders\": [], \"errors\": [], \"comparison_verified\": true, \"scope\": \"direct_step_membership; excludes solution-level conditions and inferred inheritance\"}}], \"total\": 2, \"next_offset\": 1, \"index_lifetime\": \"Reacquire after step creation, removal or reordering\", \"result_freshness\": \"not_verified\", \"operation_id\": \"op_42a8f51951a040e5b11a9abbfc544f16\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "solution": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_7b1710b14a63421ab47ae63aeadee02f",
+          "kind": "simulation_solution",
+          "name": "Conduction",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_fd64fa4bd724463bb1b456216bcd8afd",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "fd64fa4bd724463bb1b456216bcd8afd",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-step-membership-20260909-r1\\f2_step_membership_r1.sim",
+          "journal_id": "Solution[Conduction]",
+          "display_name": "Conduction"
+        },
+        "solution_active": true,
+        "steps": [
+          {
+            "step": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_3eacde46cf9b4e79acf72be61a4959da",
+              "kind": "simulation_step",
+              "name": "Membership phase two",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_fd64fa4bd724463bb1b456216bcd8afd",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "fd64fa4bd724463bb1b456216bcd8afd",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-step-membership-20260909-r1\\f2_step_membership_r1.sim",
+              "journal_id": "SolutionStep[Membership phase two]",
+              "display_name": "Membership phase two"
+            },
+            "index": 0,
+            "step_type": 0,
+            "active_in_solution": false,
+            "membership": {
+              "owner": {
+                "journal_id": "SolutionStep[Membership phase two]",
+                "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-step-membership-20260909-r1\\f2_step_membership_r1.sim"
+              },
+              "bcs": [],
+              "unfoldered_bcs": [],
+              "folders": [],
+              "errors": [],
+              "comparison_verified": true,
+              "scope": "direct_step_membership; excludes solution-level conditions and inferred inheritance"
+            }
+          }
+        ],
+        "total": 2,
+        "next_offset": 1,
+        "index_lifetime": "Reacquire after step creation, removal or reordering",
+        "result_freshness": "not_verified",
+        "operation_id": "op_42a8f51951a040e5b11a9abbfc544f16",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "not_applicable"
+      },
+      "isError": false
+    },
+    "compact_1": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"solution\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_7b1710b14a63421ab47ae63aeadee02f\", \"kind\": \"simulation_solution\", \"name\": \"Conduction\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_fd64fa4bd724463bb1b456216bcd8afd\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"fd64fa4bd724463bb1b456216bcd8afd\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F2-step-membership-20260909-r1\\\\f2_step_membership_r1.sim\", \"journal_id\": \"Solution[Conduction]\", \"display_name\": \"Conduction\"}, \"solution_active\": true, \"steps\": [{\"step\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_a97268d729f1474a933e3f7d3bbd5364\", \"kind\": \"simulation_step\", \"name\": \"Conduction\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_fd64fa4bd724463bb1b456216bcd8afd\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"fd64fa4bd724463bb1b456216bcd8afd\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F2-step-membership-20260909-r1\\\\f2_step_membership_r1.sim\", \"journal_id\": \"SolutionStep[Conduction]\", \"display_name\": \"Conduction\"}, \"index\": 1, \"step_type\": 0, \"active_in_solution\": true}], \"total\": 2, \"next_offset\": null, \"index_lifetime\": \"Reacquire after step creation, removal or reordering\", \"result_freshness\": \"not_verified\", \"operation_id\": \"op_1baf2511046f4fe08477fe846281bf2c\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "solution": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_7b1710b14a63421ab47ae63aeadee02f",
+          "kind": "simulation_solution",
+          "name": "Conduction",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_fd64fa4bd724463bb1b456216bcd8afd",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "fd64fa4bd724463bb1b456216bcd8afd",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-step-membership-20260909-r1\\f2_step_membership_r1.sim",
+          "journal_id": "Solution[Conduction]",
+          "display_name": "Conduction"
+        },
+        "solution_active": true,
+        "steps": [
+          {
+            "step": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_a97268d729f1474a933e3f7d3bbd5364",
+              "kind": "simulation_step",
+              "name": "Conduction",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_fd64fa4bd724463bb1b456216bcd8afd",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "fd64fa4bd724463bb1b456216bcd8afd",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-step-membership-20260909-r1\\f2_step_membership_r1.sim",
+              "journal_id": "SolutionStep[Conduction]",
+              "display_name": "Conduction"
+            },
+            "index": 1,
+            "step_type": 0,
+            "active_in_solution": true
+          }
+        ],
+        "total": 2,
+        "next_offset": null,
+        "index_lifetime": "Reacquire after step creation, removal or reordering",
+        "result_freshness": "not_verified",
+        "operation_id": "op_1baf2511046f4fe08477fe846281bf2c",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "not_applicable"
+      },
+      "isError": false
+    },
+    "expanded_1": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"solution\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_7b1710b14a63421ab47ae63aeadee02f\", \"kind\": \"simulation_solution\", \"name\": \"Conduction\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_fd64fa4bd724463bb1b456216bcd8afd\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"fd64fa4bd724463bb1b456216bcd8afd\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F2-step-membership-20260909-r1\\\\f2_step_membership_r1.sim\", \"journal_id\": \"Solution[Conduction]\", \"display_name\": \"Conduction\"}, \"solution_active\": true, \"steps\": [{\"step\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_a97268d729f1474a933e3f7d3bbd5364\", \"kind\": \"simulation_step\", \"name\": \"Conduction\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_fd64fa4bd724463bb1b456216bcd8afd\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"fd64fa4bd724463bb1b456216bcd8afd\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F2-step-membership-20260909-r1\\\\f2_step_membership_r1.sim\", \"journal_id\": \"SolutionStep[Conduction]\", \"display_name\": \"Conduction\"}, \"index\": 1, \"step_type\": 0, \"active_in_solution\": true, \"membership\": {\"owner\": {\"journal_id\": \"SolutionStep[Conduction]\", \"owner_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F2-step-membership-20260909-r1\\\\f2_step_membership_r1.sim\"}, \"bcs\": [], \"unfoldered_bcs\": [], \"folders\": [], \"errors\": [], \"comparison_verified\": true, \"scope\": \"direct_step_membership; excludes solution-level conditions and inferred inheritance\"}}], \"total\": 2, \"next_offset\": null, \"index_lifetime\": \"Reacquire after step creation, removal or reordering\", \"result_freshness\": \"not_verified\", \"operation_id\": \"op_b81d100a9ace4b9ba802eae0f5d0f174\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "solution": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_7b1710b14a63421ab47ae63aeadee02f",
+          "kind": "simulation_solution",
+          "name": "Conduction",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_fd64fa4bd724463bb1b456216bcd8afd",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "fd64fa4bd724463bb1b456216bcd8afd",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-step-membership-20260909-r1\\f2_step_membership_r1.sim",
+          "journal_id": "Solution[Conduction]",
+          "display_name": "Conduction"
+        },
+        "solution_active": true,
+        "steps": [
+          {
+            "step": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_a97268d729f1474a933e3f7d3bbd5364",
+              "kind": "simulation_step",
+              "name": "Conduction",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_fd64fa4bd724463bb1b456216bcd8afd",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "fd64fa4bd724463bb1b456216bcd8afd",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-step-membership-20260909-r1\\f2_step_membership_r1.sim",
+              "journal_id": "SolutionStep[Conduction]",
+              "display_name": "Conduction"
+            },
+            "index": 1,
+            "step_type": 0,
+            "active_in_solution": true,
+            "membership": {
+              "owner": {
+                "journal_id": "SolutionStep[Conduction]",
+                "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-step-membership-20260909-r1\\f2_step_membership_r1.sim"
+              },
+              "bcs": [],
+              "unfoldered_bcs": [],
+              "folders": [],
+              "errors": [],
+              "comparison_verified": true,
+              "scope": "direct_step_membership; excludes solution-level conditions and inferred inheritance"
+            }
+          }
+        ],
+        "total": 2,
+        "next_offset": null,
+        "index_lifetime": "Reacquire after step creation, removal or reordering",
+        "result_freshness": "not_verified",
+        "operation_id": "op_b81d100a9ace4b9ba802eae0f5d0f174",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "not_applicable"
+      },
+      "isError": false
+    }
+  },
+  "passed": true,
+  "scope": "Paged native/public direct step membership; no inherited membership or step mutation claim"
+}

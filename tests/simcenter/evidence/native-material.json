@@ -1,0 +1,50 @@
+{
+  "nx_version": "v2606",
+  "execution": "Simcenter UI main-thread bridge",
+  "scope": "isotropic material creation and solid mesh collector assignment",
+  "properties": [
+    {
+      "name": "MassDensityConstant",
+      "native_type": "6",
+      "units": "KilogramPerCubicMeter",
+      "expression": "2700.0"
+    },
+    {
+      "name": "ThermalConductivity",
+      "native_type": "6",
+      "units": "ThermalConductivity_Metric3",
+      "expression": "200.0"
+    },
+    {
+      "name": "SpecificHeat",
+      "native_type": "6",
+      "units": "SpecificHeat_Metric2",
+      "expression": "900.0"
+    }
+  ],
+  "assignment_count": 1,
+  "material_readback_matches": true,
+  "mutation_outcome": "committed",
+  "numerical_acceptance": "not_tested",
+  "source": "native adapter invocation; material-tool-native.json local receipt",
+  "persistence_check": {
+    "conductivity_expression": "200.0",
+    "unit": "ThermalConductivity_Metric3",
+    "density_expression": "2700.0",
+    "heat_capacity_expression": "900.0"
+  },
+  "solver_setup_validation": "failed: conductivity and optional material fields rejected; persistence alone does not prove solver readiness",
+  "explicit_binding_probe": {
+    "conductivity": 0.2,
+    "units": "W/mm-K",
+    "committed": true,
+    "solver_validation": "pending"
+  },
+  "optional_field_probe": "Null fields rejected; unitless sentinel assignment was accepted but readback retained default units, so equivalence to the library representation is unproven",
+  "solver_reference_check": {
+    "same_fem_and_sim_collector_material": true,
+    "conductivity": "0.2 W/(mm C)",
+    "phase_change_native_report": "None",
+    "setup_check": "still rejects conductivity, latent heat and electrical resistivity"
+  }
+}

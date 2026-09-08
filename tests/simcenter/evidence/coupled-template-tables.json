@@ -1,0 +1,36 @@
+{
+  "status": "success",
+  "templates": [
+    {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-template-inspection-20260908-r1\\SimMultiPhysicsMetric.sim",
+      "solutions": [],
+      "tables": [],
+      "load_warnings": [],
+      "solve_ready": false
+    },
+    {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-template-inspection-20260908-r1\\SimThermalFlowMetric.sim",
+      "solutions": [],
+      "tables": [],
+      "load_warnings": [
+        {
+          "part": "FemThermalFlowMetric.fem",
+          "description": "Failed to find file using current search options, part left unloaded"
+        },
+        {
+          "part": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-template-inspection-20260908-r1\\SimThermalFlowMetric.sim",
+          "description": "Read-only part is modified. You will not be able to save the changes to it."
+        }
+      ],
+      "solve_ready": false
+    }
+  ],
+  "original_document_flags_preserved": true,
+  "solver_launched": false,
+  "elapsed_seconds": 0.9530000000086147,
+  "operation_id": "op_99061c0b3d104417876c2b65fbb77d45",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

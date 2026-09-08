@@ -1,0 +1,89 @@
+{
+  "responses": {
+    "cancel": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"job_id\": \"accepted\", \"state\": \"cancelled\", \"revision\": 1, \"request_sha256\": \"adfe130e50dc9e3ccbd785e6dd202192cd182639187de17bb74f663908e46510\", \"replayed\": false, \"cancellation_scope\": \"before_launch\", \"solver_stop_requested\": false, \"files_deleted\": false, \"launch_retry_allowed\": false, \"operation_id\": \"cancel-contract-public-r1\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "job_id": "accepted",
+        "state": "cancelled",
+        "revision": 1,
+        "request_sha256": "adfe130e50dc9e3ccbd785e6dd202192cd182639187de17bb74f663908e46510",
+        "replayed": false,
+        "cancellation_scope": "before_launch",
+        "solver_stop_requested": false,
+        "files_deleted": false,
+        "launch_retry_allowed": false,
+        "operation_id": "cancel-contract-public-r1",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed"
+      },
+      "isError": false
+    },
+    "replay": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"job_id\": \"accepted\", \"state\": \"cancelled\", \"revision\": 1, \"request_sha256\": \"adfe130e50dc9e3ccbd785e6dd202192cd182639187de17bb74f663908e46510\", \"replayed\": true, \"cancellation_scope\": \"before_launch\", \"solver_stop_requested\": false, \"files_deleted\": false, \"launch_retry_allowed\": false, \"operation_id\": \"cancel-contract-public-r1\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "job_id": "accepted",
+        "state": "cancelled",
+        "revision": 1,
+        "request_sha256": "adfe130e50dc9e3ccbd785e6dd202192cd182639187de17bb74f663908e46510",
+        "replayed": true,
+        "cancellation_scope": "before_launch",
+        "solver_stop_requested": false,
+        "files_deleted": false,
+        "launch_retry_allowed": false,
+        "operation_id": "cancel-contract-public-r1",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed"
+      },
+      "isError": false
+    },
+    "intent_rejected": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"error\", \"warnings\": [], \"units\": null, \"code\": \"NX_SIM_CANCELLATION_UNAVAILABLE\", \"message\": \"Only accepted, unlaunched jobs can be cancelled. Running native solver cancellation is unverified; inspect job status and the native monitor.\", \"retryable\": false, \"details\": {\"state\": \"launch_requested\", \"mutation_outcome\": \"not_started\", \"operation_id\": \"cancel-contract-rejected-r1\"}}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "error",
+        "warnings": [],
+        "units": null,
+        "code": "NX_SIM_CANCELLATION_UNAVAILABLE",
+        "message": "Only accepted, unlaunched jobs can be cancelled. Running native solver cancellation is unverified; inspect job status and the native monitor.",
+        "retryable": false,
+        "details": {
+          "state": "launch_requested",
+          "mutation_outcome": "not_started",
+          "operation_id": "cancel-contract-rejected-r1"
+        }
+      },
+      "isError": true
+    }
+  },
+  "passed": true,
+  "scope": "durable job-store/public MCP contract; not native solver cancellation"
+}

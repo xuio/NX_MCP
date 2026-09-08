@@ -1,0 +1,85 @@
+{
+  "scope": "Windows filesystem through dedicated Simcenter UI bridge; no solver launch or cancellation",
+  "first_client": {
+    "status": "success",
+    "owner": {
+      "schema": 1,
+      "job_id": "owner",
+      "job_directory": "d:\\cad\\simcenter_mcp_workspace\\ui-benchmarks\\f-output-claims-20260908-r1\\ledger-a\\owner",
+      "request_sha256": "0cf8dffb6e8fa09b267a47bb8f3fcc09f54648efae65b7b2b90dada8c7ab2fdd",
+      "output_directory": "d:\\cad\\simcenter_mcp_workspace\\ui-benchmarks\\f-output-claims-20260908-r1\\isolated-output",
+      "replayed": false,
+      "retention": "permanent; no automatic release"
+    },
+    "reconnect": {
+      "schema": 1,
+      "job_id": "owner",
+      "job_directory": "d:\\cad\\simcenter_mcp_workspace\\ui-benchmarks\\f-output-claims-20260908-r1\\ledger-a\\owner",
+      "request_sha256": "0cf8dffb6e8fa09b267a47bb8f3fcc09f54648efae65b7b2b90dada8c7ab2fdd",
+      "output_directory": "d:\\cad\\simcenter_mcp_workspace\\ui-benchmarks\\f-output-claims-20260908-r1\\isolated-output",
+      "replayed": true,
+      "retention": "permanent; no automatic release"
+    },
+    "windows_case_alias": {
+      "schema": 1,
+      "job_id": "owner",
+      "job_directory": "d:\\cad\\simcenter_mcp_workspace\\ui-benchmarks\\f-output-claims-20260908-r1\\ledger-a\\owner",
+      "request_sha256": "0cf8dffb6e8fa09b267a47bb8f3fcc09f54648efae65b7b2b90dada8c7ab2fdd",
+      "output_directory": "d:\\cad\\simcenter_mcp_workspace\\ui-benchmarks\\f-output-claims-20260908-r1\\isolated-output",
+      "replayed": true,
+      "retention": "permanent; no automatic release"
+    },
+    "cross_store_conflict": "NX_SIM_OUTPUT_CONFLICT",
+    "interrupted_record": "NX_SIM_OUTPUT_UNCERTAIN",
+    "application": "UG_APP_SFEM",
+    "display_document": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-sim-copy-20260908-r1\\mcp_saved_copy.sim",
+    "solver_launched": false,
+    "scope": "Windows output ownership only; not solve/cancellation acceptance",
+    "operation_id": "op_f6ed6dceb8684a24877173604c767c23",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed",
+    "warnings": [],
+    "units": "mm"
+  },
+  "second_client": {
+    "status": "success",
+    "owner": {
+      "schema": 1,
+      "job_id": "owner",
+      "job_directory": "d:\\cad\\simcenter_mcp_workspace\\ui-benchmarks\\f-output-claims-20260908-r1\\ledger-a\\owner",
+      "request_sha256": "0cf8dffb6e8fa09b267a47bb8f3fcc09f54648efae65b7b2b90dada8c7ab2fdd",
+      "output_directory": "d:\\cad\\simcenter_mcp_workspace\\ui-benchmarks\\f-output-claims-20260908-r1\\isolated-output",
+      "replayed": true,
+      "retention": "permanent; no automatic release"
+    },
+    "reconnect": {
+      "schema": 1,
+      "job_id": "owner",
+      "job_directory": "d:\\cad\\simcenter_mcp_workspace\\ui-benchmarks\\f-output-claims-20260908-r1\\ledger-a\\owner",
+      "request_sha256": "0cf8dffb6e8fa09b267a47bb8f3fcc09f54648efae65b7b2b90dada8c7ab2fdd",
+      "output_directory": "d:\\cad\\simcenter_mcp_workspace\\ui-benchmarks\\f-output-claims-20260908-r1\\isolated-output",
+      "replayed": true,
+      "retention": "permanent; no automatic release"
+    },
+    "windows_case_alias": {
+      "schema": 1,
+      "job_id": "owner",
+      "job_directory": "d:\\cad\\simcenter_mcp_workspace\\ui-benchmarks\\f-output-claims-20260908-r1\\ledger-a\\owner",
+      "request_sha256": "0cf8dffb6e8fa09b267a47bb8f3fcc09f54648efae65b7b2b90dada8c7ab2fdd",
+      "output_directory": "d:\\cad\\simcenter_mcp_workspace\\ui-benchmarks\\f-output-claims-20260908-r1\\isolated-output",
+      "replayed": true,
+      "retention": "permanent; no automatic release"
+    },
+    "cross_store_conflict": "NX_SIM_OUTPUT_CONFLICT",
+    "interrupted_record": "NX_SIM_OUTPUT_UNCERTAIN",
+    "application": "UG_APP_SFEM",
+    "display_document": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-sim-copy-20260908-r1\\mcp_saved_copy.sim",
+    "solver_launched": false,
+    "scope": "Windows output ownership only; not solve/cancellation acceptance",
+    "operation_id": "op_42f5d78be7d4494f9be2cb0f194b7f83",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed",
+    "warnings": [],
+    "units": "mm"
+  }
+}

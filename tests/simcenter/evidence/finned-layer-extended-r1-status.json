@@ -1,0 +1,643 @@
+{
+  "transport": "new MCP stdio client after launch client disconnected",
+  "responses": {
+    "status_observations": [
+      {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"status\": \"success\", \"warnings\": [], \"units\": null, \"job_id\": \"coupled-finned-layer-extended-r1\", \"request_sha256\": \"70120ea3f14f684365069bfa290cfd4dffe9b53869526eff330f7920ae17ef91\", \"state\": \"launch_returned\", \"revision\": 2, \"process_binding_revision\": null, \"launch_retry_allowed\": false, \"numerical_convergence\": \"not_established\", \"results_validated\": false, \"observed_at\": \"2026-09-08T18:55:57.847127+00:00\", \"observation_kind\": \"persisted_record\", \"live_process_state\": \"not_checked\", \"job_folder\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\simcenter-jobs\", \"observer\": {\"tracked_in_this_nx_process\": true, \"thread_alive\": true, \"log_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\simcenter-jobs\\\\coupled-finned-layer-extended-r1\\\\observer-a1a66af3e08544cda1b22bcde89224d8.log\"}, \"evidence\": {\"api_returned\": true, \"process_state\": \"not_yet_observed\", \"readback\": {\"background_requested\": true, \"executed_input_identity\": \"not_yet_audited\", \"foreground_setting_restored\": true, \"native_may_regenerate_input\": true, \"prepared_inputs_validated\": true}}, \"process_binding_evidence\": null, \"operation_id\": \"op_cd2a731f7be34493b1f3b5b8083e63a9\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": {
+          "status": "success",
+          "warnings": [],
+          "units": null,
+          "job_id": "coupled-finned-layer-extended-r1",
+          "request_sha256": "70120ea3f14f684365069bfa290cfd4dffe9b53869526eff330f7920ae17ef91",
+          "state": "launch_returned",
+          "revision": 2,
+          "process_binding_revision": null,
+          "launch_retry_allowed": false,
+          "numerical_convergence": "not_established",
+          "results_validated": false,
+          "observed_at": "2026-09-08T18:55:57.847127+00:00",
+          "observation_kind": "persisted_record",
+          "live_process_state": "not_checked",
+          "job_folder": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs",
+          "observer": {
+            "tracked_in_this_nx_process": true,
+            "thread_alive": true,
+            "log_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs\\coupled-finned-layer-extended-r1\\observer-a1a66af3e08544cda1b22bcde89224d8.log"
+          },
+          "evidence": {
+            "api_returned": true,
+            "process_state": "not_yet_observed",
+            "readback": {
+              "background_requested": true,
+              "executed_input_identity": "not_yet_audited",
+              "foreground_setting_restored": true,
+              "native_may_regenerate_input": true,
+              "prepared_inputs_validated": true
+            }
+          },
+          "process_binding_evidence": null,
+          "operation_id": "op_cd2a731f7be34493b1f3b5b8083e63a9",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "mutation_outcome": "not_applicable"
+        },
+        "isError": false
+      },
+      {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"status\": \"success\", \"warnings\": [], \"units\": null, \"job_id\": \"coupled-finned-layer-extended-r1\", \"request_sha256\": \"70120ea3f14f684365069bfa290cfd4dffe9b53869526eff330f7920ae17ef91\", \"state\": \"launch_returned\", \"revision\": 2, \"process_binding_revision\": null, \"launch_retry_allowed\": false, \"numerical_convergence\": \"not_established\", \"results_validated\": false, \"observed_at\": \"2026-09-08T18:55:57.847127+00:00\", \"observation_kind\": \"persisted_record\", \"live_process_state\": \"not_checked\", \"job_folder\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\simcenter-jobs\", \"observer\": {\"tracked_in_this_nx_process\": true, \"thread_alive\": true, \"log_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\simcenter-jobs\\\\coupled-finned-layer-extended-r1\\\\observer-a1a66af3e08544cda1b22bcde89224d8.log\"}, \"evidence\": {\"api_returned\": true, \"process_state\": \"not_yet_observed\", \"readback\": {\"background_requested\": true, \"executed_input_identity\": \"not_yet_audited\", \"foreground_setting_restored\": true, \"native_may_regenerate_input\": true, \"prepared_inputs_validated\": true}}, \"process_binding_evidence\": null, \"operation_id\": \"op_d85eb4c15d9249569f98b749dc9b2a61\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": {
+          "status": "success",
+          "warnings": [],
+          "units": null,
+          "job_id": "coupled-finned-layer-extended-r1",
+          "request_sha256": "70120ea3f14f684365069bfa290cfd4dffe9b53869526eff330f7920ae17ef91",
+          "state": "launch_returned",
+          "revision": 2,
+          "process_binding_revision": null,
+          "launch_retry_allowed": false,
+          "numerical_convergence": "not_established",
+          "results_validated": false,
+          "observed_at": "2026-09-08T18:55:57.847127+00:00",
+          "observation_kind": "persisted_record",
+          "live_process_state": "not_checked",
+          "job_folder": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs",
+          "observer": {
+            "tracked_in_this_nx_process": true,
+            "thread_alive": true,
+            "log_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs\\coupled-finned-layer-extended-r1\\observer-a1a66af3e08544cda1b22bcde89224d8.log"
+          },
+          "evidence": {
+            "api_returned": true,
+            "process_state": "not_yet_observed",
+            "readback": {
+              "background_requested": true,
+              "executed_input_identity": "not_yet_audited",
+              "foreground_setting_restored": true,
+              "native_may_regenerate_input": true,
+              "prepared_inputs_validated": true
+            }
+          },
+          "process_binding_evidence": null,
+          "operation_id": "op_d85eb4c15d9249569f98b749dc9b2a61",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "mutation_outcome": "not_applicable"
+        },
+        "isError": false
+      },
+      {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"status\": \"success\", \"warnings\": [], \"units\": null, \"job_id\": \"coupled-finned-layer-extended-r1\", \"request_sha256\": \"70120ea3f14f684365069bfa290cfd4dffe9b53869526eff330f7920ae17ef91\", \"state\": \"launch_returned\", \"revision\": 2, \"process_binding_revision\": null, \"launch_retry_allowed\": false, \"numerical_convergence\": \"not_established\", \"results_validated\": false, \"observed_at\": \"2026-09-08T18:55:57.847127+00:00\", \"observation_kind\": \"persisted_record\", \"live_process_state\": \"not_checked\", \"job_folder\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\simcenter-jobs\", \"observer\": {\"tracked_in_this_nx_process\": true, \"thread_alive\": true, \"log_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\simcenter-jobs\\\\coupled-finned-layer-extended-r1\\\\observer-a1a66af3e08544cda1b22bcde89224d8.log\"}, \"evidence\": {\"api_returned\": true, \"process_state\": \"not_yet_observed\", \"readback\": {\"background_requested\": true, \"executed_input_identity\": \"not_yet_audited\", \"foreground_setting_restored\": true, \"native_may_regenerate_input\": true, \"prepared_inputs_validated\": true}}, \"process_binding_evidence\": null, \"operation_id\": \"op_ba32acf5c9724da19095a32f2c3a9fc7\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": {
+          "status": "success",
+          "warnings": [],
+          "units": null,
+          "job_id": "coupled-finned-layer-extended-r1",
+          "request_sha256": "70120ea3f14f684365069bfa290cfd4dffe9b53869526eff330f7920ae17ef91",
+          "state": "launch_returned",
+          "revision": 2,
+          "process_binding_revision": null,
+          "launch_retry_allowed": false,
+          "numerical_convergence": "not_established",
+          "results_validated": false,
+          "observed_at": "2026-09-08T18:55:57.847127+00:00",
+          "observation_kind": "persisted_record",
+          "live_process_state": "not_checked",
+          "job_folder": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs",
+          "observer": {
+            "tracked_in_this_nx_process": true,
+            "thread_alive": true,
+            "log_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs\\coupled-finned-layer-extended-r1\\observer-a1a66af3e08544cda1b22bcde89224d8.log"
+          },
+          "evidence": {
+            "api_returned": true,
+            "process_state": "not_yet_observed",
+            "readback": {
+              "background_requested": true,
+              "executed_input_identity": "not_yet_audited",
+              "foreground_setting_restored": true,
+              "native_may_regenerate_input": true,
+              "prepared_inputs_validated": true
+            }
+          },
+          "process_binding_evidence": null,
+          "operation_id": "op_ba32acf5c9724da19095a32f2c3a9fc7",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "mutation_outcome": "not_applicable"
+        },
+        "isError": false
+      },
+      {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"status\": \"success\", \"warnings\": [], \"units\": null, \"job_id\": \"coupled-finned-layer-extended-r1\", \"request_sha256\": \"70120ea3f14f684365069bfa290cfd4dffe9b53869526eff330f7920ae17ef91\", \"state\": \"launch_returned\", \"revision\": 2, \"process_binding_revision\": null, \"launch_retry_allowed\": false, \"numerical_convergence\": \"not_established\", \"results_validated\": false, \"observed_at\": \"2026-09-08T18:55:57.847127+00:00\", \"observation_kind\": \"persisted_record\", \"live_process_state\": \"not_checked\", \"job_folder\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\simcenter-jobs\", \"observer\": {\"tracked_in_this_nx_process\": true, \"thread_alive\": true, \"log_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\simcenter-jobs\\\\coupled-finned-layer-extended-r1\\\\observer-a1a66af3e08544cda1b22bcde89224d8.log\"}, \"evidence\": {\"api_returned\": true, \"process_state\": \"not_yet_observed\", \"readback\": {\"background_requested\": true, \"executed_input_identity\": \"not_yet_audited\", \"foreground_setting_restored\": true, \"native_may_regenerate_input\": true, \"prepared_inputs_validated\": true}}, \"process_binding_evidence\": null, \"operation_id\": \"op_385221dc54e840b196585b7dec6e6f10\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": {
+          "status": "success",
+          "warnings": [],
+          "units": null,
+          "job_id": "coupled-finned-layer-extended-r1",
+          "request_sha256": "70120ea3f14f684365069bfa290cfd4dffe9b53869526eff330f7920ae17ef91",
+          "state": "launch_returned",
+          "revision": 2,
+          "process_binding_revision": null,
+          "launch_retry_allowed": false,
+          "numerical_convergence": "not_established",
+          "results_validated": false,
+          "observed_at": "2026-09-08T18:55:57.847127+00:00",
+          "observation_kind": "persisted_record",
+          "live_process_state": "not_checked",
+          "job_folder": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs",
+          "observer": {
+            "tracked_in_this_nx_process": true,
+            "thread_alive": true,
+            "log_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs\\coupled-finned-layer-extended-r1\\observer-a1a66af3e08544cda1b22bcde89224d8.log"
+          },
+          "evidence": {
+            "api_returned": true,
+            "process_state": "not_yet_observed",
+            "readback": {
+              "background_requested": true,
+              "executed_input_identity": "not_yet_audited",
+              "foreground_setting_restored": true,
+              "native_may_regenerate_input": true,
+              "prepared_inputs_validated": true
+            }
+          },
+          "process_binding_evidence": null,
+          "operation_id": "op_385221dc54e840b196585b7dec6e6f10",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "mutation_outcome": "not_applicable"
+        },
+        "isError": false
+      },
+      {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"status\": \"success\", \"warnings\": [], \"units\": null, \"job_id\": \"coupled-finned-layer-extended-r1\", \"request_sha256\": \"70120ea3f14f684365069bfa290cfd4dffe9b53869526eff330f7920ae17ef91\", \"state\": \"launch_returned\", \"revision\": 2, \"process_binding_revision\": null, \"launch_retry_allowed\": false, \"numerical_convergence\": \"not_established\", \"results_validated\": false, \"observed_at\": \"2026-09-08T18:55:57.847127+00:00\", \"observation_kind\": \"persisted_record\", \"live_process_state\": \"not_checked\", \"job_folder\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\simcenter-jobs\", \"observer\": {\"tracked_in_this_nx_process\": true, \"thread_alive\": true, \"log_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\simcenter-jobs\\\\coupled-finned-layer-extended-r1\\\\observer-a1a66af3e08544cda1b22bcde89224d8.log\"}, \"evidence\": {\"api_returned\": true, \"process_state\": \"not_yet_observed\", \"readback\": {\"background_requested\": true, \"executed_input_identity\": \"not_yet_audited\", \"foreground_setting_restored\": true, \"native_may_regenerate_input\": true, \"prepared_inputs_validated\": true}}, \"process_binding_evidence\": null, \"operation_id\": \"op_f645210ec97d488098b9958113046de1\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": {
+          "status": "success",
+          "warnings": [],
+          "units": null,
+          "job_id": "coupled-finned-layer-extended-r1",
+          "request_sha256": "70120ea3f14f684365069bfa290cfd4dffe9b53869526eff330f7920ae17ef91",
+          "state": "launch_returned",
+          "revision": 2,
+          "process_binding_revision": null,
+          "launch_retry_allowed": false,
+          "numerical_convergence": "not_established",
+          "results_validated": false,
+          "observed_at": "2026-09-08T18:55:57.847127+00:00",
+          "observation_kind": "persisted_record",
+          "live_process_state": "not_checked",
+          "job_folder": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs",
+          "observer": {
+            "tracked_in_this_nx_process": true,
+            "thread_alive": true,
+            "log_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs\\coupled-finned-layer-extended-r1\\observer-a1a66af3e08544cda1b22bcde89224d8.log"
+          },
+          "evidence": {
+            "api_returned": true,
+            "process_state": "not_yet_observed",
+            "readback": {
+              "background_requested": true,
+              "executed_input_identity": "not_yet_audited",
+              "foreground_setting_restored": true,
+              "native_may_regenerate_input": true,
+              "prepared_inputs_validated": true
+            }
+          },
+          "process_binding_evidence": null,
+          "operation_id": "op_f645210ec97d488098b9958113046de1",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "mutation_outcome": "not_applicable"
+        },
+        "isError": false
+      },
+      {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"status\": \"success\", \"warnings\": [], \"units\": null, \"job_id\": \"coupled-finned-layer-extended-r1\", \"request_sha256\": \"70120ea3f14f684365069bfa290cfd4dffe9b53869526eff330f7920ae17ef91\", \"state\": \"launch_returned\", \"revision\": 2, \"process_binding_revision\": null, \"launch_retry_allowed\": false, \"numerical_convergence\": \"not_established\", \"results_validated\": false, \"observed_at\": \"2026-09-08T18:55:57.847127+00:00\", \"observation_kind\": \"persisted_record\", \"live_process_state\": \"not_checked\", \"job_folder\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\simcenter-jobs\", \"observer\": {\"tracked_in_this_nx_process\": true, \"thread_alive\": true, \"log_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\simcenter-jobs\\\\coupled-finned-layer-extended-r1\\\\observer-a1a66af3e08544cda1b22bcde89224d8.log\"}, \"evidence\": {\"api_returned\": true, \"process_state\": \"not_yet_observed\", \"readback\": {\"background_requested\": true, \"executed_input_identity\": \"not_yet_audited\", \"foreground_setting_restored\": true, \"native_may_regenerate_input\": true, \"prepared_inputs_validated\": true}}, \"process_binding_evidence\": null, \"operation_id\": \"op_a74f854a6dd74018bb122ef421544437\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": {
+          "status": "success",
+          "warnings": [],
+          "units": null,
+          "job_id": "coupled-finned-layer-extended-r1",
+          "request_sha256": "70120ea3f14f684365069bfa290cfd4dffe9b53869526eff330f7920ae17ef91",
+          "state": "launch_returned",
+          "revision": 2,
+          "process_binding_revision": null,
+          "launch_retry_allowed": false,
+          "numerical_convergence": "not_established",
+          "results_validated": false,
+          "observed_at": "2026-09-08T18:55:57.847127+00:00",
+          "observation_kind": "persisted_record",
+          "live_process_state": "not_checked",
+          "job_folder": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs",
+          "observer": {
+            "tracked_in_this_nx_process": true,
+            "thread_alive": true,
+            "log_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs\\coupled-finned-layer-extended-r1\\observer-a1a66af3e08544cda1b22bcde89224d8.log"
+          },
+          "evidence": {
+            "api_returned": true,
+            "process_state": "not_yet_observed",
+            "readback": {
+              "background_requested": true,
+              "executed_input_identity": "not_yet_audited",
+              "foreground_setting_restored": true,
+              "native_may_regenerate_input": true,
+              "prepared_inputs_validated": true
+            }
+          },
+          "process_binding_evidence": null,
+          "operation_id": "op_a74f854a6dd74018bb122ef421544437",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "mutation_outcome": "not_applicable"
+        },
+        "isError": false
+      },
+      {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"status\": \"success\", \"warnings\": [], \"units\": null, \"job_id\": \"coupled-finned-layer-extended-r1\", \"request_sha256\": \"70120ea3f14f684365069bfa290cfd4dffe9b53869526eff330f7920ae17ef91\", \"state\": \"launch_returned\", \"revision\": 2, \"process_binding_revision\": null, \"launch_retry_allowed\": false, \"numerical_convergence\": \"not_established\", \"results_validated\": false, \"observed_at\": \"2026-09-08T18:55:57.847127+00:00\", \"observation_kind\": \"persisted_record\", \"live_process_state\": \"not_checked\", \"job_folder\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\simcenter-jobs\", \"observer\": {\"tracked_in_this_nx_process\": true, \"thread_alive\": true, \"log_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\simcenter-jobs\\\\coupled-finned-layer-extended-r1\\\\observer-a1a66af3e08544cda1b22bcde89224d8.log\"}, \"evidence\": {\"api_returned\": true, \"process_state\": \"not_yet_observed\", \"readback\": {\"background_requested\": true, \"executed_input_identity\": \"not_yet_audited\", \"foreground_setting_restored\": true, \"native_may_regenerate_input\": true, \"prepared_inputs_validated\": true}}, \"process_binding_evidence\": null, \"operation_id\": \"op_94446f7837bf4d1094d577a800512b32\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": {
+          "status": "success",
+          "warnings": [],
+          "units": null,
+          "job_id": "coupled-finned-layer-extended-r1",
+          "request_sha256": "70120ea3f14f684365069bfa290cfd4dffe9b53869526eff330f7920ae17ef91",
+          "state": "launch_returned",
+          "revision": 2,
+          "process_binding_revision": null,
+          "launch_retry_allowed": false,
+          "numerical_convergence": "not_established",
+          "results_validated": false,
+          "observed_at": "2026-09-08T18:55:57.847127+00:00",
+          "observation_kind": "persisted_record",
+          "live_process_state": "not_checked",
+          "job_folder": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs",
+          "observer": {
+            "tracked_in_this_nx_process": true,
+            "thread_alive": true,
+            "log_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs\\coupled-finned-layer-extended-r1\\observer-a1a66af3e08544cda1b22bcde89224d8.log"
+          },
+          "evidence": {
+            "api_returned": true,
+            "process_state": "not_yet_observed",
+            "readback": {
+              "background_requested": true,
+              "executed_input_identity": "not_yet_audited",
+              "foreground_setting_restored": true,
+              "native_may_regenerate_input": true,
+              "prepared_inputs_validated": true
+            }
+          },
+          "process_binding_evidence": null,
+          "operation_id": "op_94446f7837bf4d1094d577a800512b32",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "mutation_outcome": "not_applicable"
+        },
+        "isError": false
+      },
+      {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"status\": \"success\", \"warnings\": [], \"units\": null, \"job_id\": \"coupled-finned-layer-extended-r1\", \"request_sha256\": \"70120ea3f14f684365069bfa290cfd4dffe9b53869526eff330f7920ae17ef91\", \"state\": \"launch_returned\", \"revision\": 2, \"process_binding_revision\": null, \"launch_retry_allowed\": false, \"numerical_convergence\": \"not_established\", \"results_validated\": false, \"observed_at\": \"2026-09-08T18:55:57.847127+00:00\", \"observation_kind\": \"persisted_record\", \"live_process_state\": \"not_checked\", \"job_folder\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\simcenter-jobs\", \"observer\": {\"tracked_in_this_nx_process\": true, \"thread_alive\": true, \"log_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\simcenter-jobs\\\\coupled-finned-layer-extended-r1\\\\observer-a1a66af3e08544cda1b22bcde89224d8.log\"}, \"evidence\": {\"api_returned\": true, \"process_state\": \"not_yet_observed\", \"readback\": {\"background_requested\": true, \"executed_input_identity\": \"not_yet_audited\", \"foreground_setting_restored\": true, \"native_may_regenerate_input\": true, \"prepared_inputs_validated\": true}}, \"process_binding_evidence\": null, \"operation_id\": \"op_a21c51f1c23f49d5a09d00e9d73e8ed0\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": {
+          "status": "success",
+          "warnings": [],
+          "units": null,
+          "job_id": "coupled-finned-layer-extended-r1",
+          "request_sha256": "70120ea3f14f684365069bfa290cfd4dffe9b53869526eff330f7920ae17ef91",
+          "state": "launch_returned",
+          "revision": 2,
+          "process_binding_revision": null,
+          "launch_retry_allowed": false,
+          "numerical_convergence": "not_established",
+          "results_validated": false,
+          "observed_at": "2026-09-08T18:55:57.847127+00:00",
+          "observation_kind": "persisted_record",
+          "live_process_state": "not_checked",
+          "job_folder": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs",
+          "observer": {
+            "tracked_in_this_nx_process": true,
+            "thread_alive": true,
+            "log_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs\\coupled-finned-layer-extended-r1\\observer-a1a66af3e08544cda1b22bcde89224d8.log"
+          },
+          "evidence": {
+            "api_returned": true,
+            "process_state": "not_yet_observed",
+            "readback": {
+              "background_requested": true,
+              "executed_input_identity": "not_yet_audited",
+              "foreground_setting_restored": true,
+              "native_may_regenerate_input": true,
+              "prepared_inputs_validated": true
+            }
+          },
+          "process_binding_evidence": null,
+          "operation_id": "op_a21c51f1c23f49d5a09d00e9d73e8ed0",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "mutation_outcome": "not_applicable"
+        },
+        "isError": false
+      },
+      {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"status\": \"success\", \"warnings\": [], \"units\": null, \"job_id\": \"coupled-finned-layer-extended-r1\", \"request_sha256\": \"70120ea3f14f684365069bfa290cfd4dffe9b53869526eff330f7920ae17ef91\", \"state\": \"solver_exited\", \"revision\": 3, \"process_binding_revision\": null, \"launch_retry_allowed\": false, \"numerical_convergence\": \"not_established\", \"results_validated\": false, \"observed_at\": \"2026-09-08T19:07:02.237967+00:00\", \"observation_kind\": \"persisted_record\", \"live_process_state\": \"not_checked\", \"job_folder\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\simcenter-jobs\", \"observer\": {\"tracked_in_this_nx_process\": true, \"thread_alive\": false, \"log_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\simcenter-jobs\\\\coupled-finned-layer-extended-r1\\\\observer-a1a66af3e08544cda1b22bcde89224d8.log\"}, \"evidence\": {\"gate_released\": false, \"input_comparison\": {\"after\": {\"bytes\": 3634611, \"canonicalization\": \"xml_c14n2_no_comments\", \"sha256\": \"e32afd0a0b088fb282f613fecc379be861f45303ff00bf7fb8f29c0250a73b01\", \"xml_content_sha256\": \"fd03abd806967902a3c0d3bee277a836beeb69e60d994f6e09bd4d5f9c3370ef\"}, \"before\": {\"bytes\": 3634611, \"canonicalization\": \"xml_c14n2_no_comments\", \"sha256\": \"b289c63f8e9d738458ef6a9e586604ada5e1229ce8a18e2e56f750866863e23d\", \"xml_content_sha256\": \"fd03abd806967902a3c0d3bee277a836beeb69e60d994f6e09bd4d5f9c3370ef\"}, \"byte_identical\": false, \"scope\": \"input XML only; result association and solver outcome require separate verification\", \"xml_content_identical\": true}, \"log\": {\"bytes\": 1850052, \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\E-finned-layer-extended-20260908-r1\\\\finned_layer_extended_r1-Finned_coupled_benchmark.log\", \"sha256\": \"64e7cd1a843aafc6f24bf30f6bce722a15c667bf6375de020a74503ebd406be6\"}, \"model_result_freshness\": \"not_established\", \"numerical_convergence\": \"not_established\", \"observer_adapter\": 1, \"process_exit_code\": null, \"process_job_binding\": \"not_established\", \"result\": {\"bytes\": 9311500, \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\E-finned-layer-extended-20260908-r1\\\\finned_layer_extended_r1-Finned_coupled_benchmark.bun\", \"sha256\": \"e2b7132185262791f27df9ed451ac478fb39f2b59ce10b2adb0cf78891f3f840\"}, \"solver_process_observation\": {\"exclusion\": \"point-in-time process snapshot; not an atomic lock\", \"scope\": \"host-wide known solver/translator names\", \"solver_processes\": 0}, \"terminal_basis\": \"fresh owned completion log and native result, matching canonical input, known solver processes absent\"}, \"process_binding_evidence\": null, \"operation_id\": \"op_58329a78411b4340a9e291deb4b710cc\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": {
+          "status": "success",
+          "warnings": [],
+          "units": null,
+          "job_id": "coupled-finned-layer-extended-r1",
+          "request_sha256": "70120ea3f14f684365069bfa290cfd4dffe9b53869526eff330f7920ae17ef91",
+          "state": "solver_exited",
+          "revision": 3,
+          "process_binding_revision": null,
+          "launch_retry_allowed": false,
+          "numerical_convergence": "not_established",
+          "results_validated": false,
+          "observed_at": "2026-09-08T19:07:02.237967+00:00",
+          "observation_kind": "persisted_record",
+          "live_process_state": "not_checked",
+          "job_folder": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs",
+          "observer": {
+            "tracked_in_this_nx_process": true,
+            "thread_alive": false,
+            "log_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs\\coupled-finned-layer-extended-r1\\observer-a1a66af3e08544cda1b22bcde89224d8.log"
+          },
+          "evidence": {
+            "gate_released": false,
+            "input_comparison": {
+              "after": {
+                "bytes": 3634611,
+                "canonicalization": "xml_c14n2_no_comments",
+                "sha256": "e32afd0a0b088fb282f613fecc379be861f45303ff00bf7fb8f29c0250a73b01",
+                "xml_content_sha256": "fd03abd806967902a3c0d3bee277a836beeb69e60d994f6e09bd4d5f9c3370ef"
+              },
+              "before": {
+                "bytes": 3634611,
+                "canonicalization": "xml_c14n2_no_comments",
+                "sha256": "b289c63f8e9d738458ef6a9e586604ada5e1229ce8a18e2e56f750866863e23d",
+                "xml_content_sha256": "fd03abd806967902a3c0d3bee277a836beeb69e60d994f6e09bd4d5f9c3370ef"
+              },
+              "byte_identical": false,
+              "scope": "input XML only; result association and solver outcome require separate verification",
+              "xml_content_identical": true
+            },
+            "log": {
+              "bytes": 1850052,
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1-Finned_coupled_benchmark.log",
+              "sha256": "64e7cd1a843aafc6f24bf30f6bce722a15c667bf6375de020a74503ebd406be6"
+            },
+            "model_result_freshness": "not_established",
+            "numerical_convergence": "not_established",
+            "observer_adapter": 1,
+            "process_exit_code": null,
+            "process_job_binding": "not_established",
+            "result": {
+              "bytes": 9311500,
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1-Finned_coupled_benchmark.bun",
+              "sha256": "e2b7132185262791f27df9ed451ac478fb39f2b59ce10b2adb0cf78891f3f840"
+            },
+            "solver_process_observation": {
+              "exclusion": "point-in-time process snapshot; not an atomic lock",
+              "scope": "host-wide known solver/translator names",
+              "solver_processes": 0
+            },
+            "terminal_basis": "fresh owned completion log and native result, matching canonical input, known solver processes absent"
+          },
+          "process_binding_evidence": null,
+          "operation_id": "op_58329a78411b4340a9e291deb4b710cc",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "mutation_outcome": "not_applicable"
+        },
+        "isError": false
+      }
+    ],
+    "release": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"job_id\": \"coupled-finned-layer-extended-r1\", \"released\": true, \"replayed\": false, \"receipt\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\simcenter-jobs\\\\coupled-finned-layer-extended-r1\\\\launch-gate-release.json\", \"result_files_preserved\": true, \"job_state_changed\": false, \"old_job_relaunch_allowed\": false, \"operation_id\": \"coupled-finned-layer-extended-r1-release\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "job_id": "coupled-finned-layer-extended-r1",
+        "released": true,
+        "replayed": false,
+        "receipt": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs\\coupled-finned-layer-extended-r1\\launch-gate-release.json",
+        "result_files_preserved": true,
+        "job_state_changed": false,
+        "old_job_relaunch_allowed": false,
+        "operation_id": "coupled-finned-layer-extended-r1-release",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed"
+      },
+      "isError": false
+    },
+    "audit": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"job_id\": \"coupled-finned-layer-extended-r1\", \"request_sha256\": \"70120ea3f14f684365069bfa290cfd4dffe9b53869526eff330f7920ae17ef91\", \"persisted_job_state\": \"solver_exited\", \"log_name\": \"finned_layer_extended_r1-Finned_coupled_benchmark.log\", \"log_sha256\": \"64e7cd1a843aafc6f24bf30f6bce722a15c667bf6375de020a74503ebd406be6\", \"observed_bytes\": 1850052, \"snapshot_semantics\": \"bytes read; file may still be growing\", \"format\": \"observed_simcenter_2606_steady_coupled\", \"completion_marker_present\": true, \"failure_evidence\": {\"state\": \"unknown\", \"stage\": \"unknown\", \"translator_fatal_codes\": [], \"fatal_abort_reported\": false, \"numerical_convergence\": \"not_established\", \"results_validated\": false, \"next_action\": \"Inspect job process status, residuals and result validation before classifying.\"}, \"residual_threshold\": 1e-06, \"last_iteration\": 883, \"final_equations_complete\": true, \"final_residual_criteria_met\": null, \"reported_imbalances\": {\"momentum\": {\"value\": 2.987e-15, \"units\": \"%\", \"definition\": \"native reported imbalance; denominator not independently established\"}, \"mass\": {\"value\": 1.382e-11, \"units\": \"%\", \"definition\": \"native reported imbalance; denominator not independently established\"}, \"energy\": {\"value\": 0.008777, \"units\": \"%\", \"definition\": \"native reported imbalance; denominator not independently established\"}}, \"boundary_flows\": [{\"name\": \"Coupled Inlet\", \"volume_flow_m3_s\": 7.2e-05, \"mass_flow_kg_s\": 9.32e-05, \"positive_direction\": \"into_domain\"}, {\"name\": \"Coupled Opening\", \"volume_flow_m3_s\": -7.2e-05, \"mass_flow_kg_s\": -9.32e-05, \"positive_direction\": \"into_domain\"}], \"fan_operating_points\": {\"state\": \"not_present\", \"fans\": []}, \"coupled_summary\": {\"ambient_temperature_degC\": 0.0, \"temperature_summaries\": [{\"maximum\": 23.9, \"minimum\": 19.99, \"average\": 21.68, \"quantity\": \"Fluid Temperature\", \"units\": \"degC\", \"association\": \"native summary row; region identity not established\"}, {\"maximum\": 23.91, \"minimum\": 23.84, \"average\": 23.89, \"quantity\": \"Solid Temperature\", \"units\": \"degC\", \"association\": \"native summary row; region identity not established\"}, {\"maximum\": 23.91, \"minimum\": 23.84, \"average\": 23.89, \"quantity\": \"Solid Temperature\", \"units\": \"degC\", \"association\": \"native summary row; region identity not established\"}], \"applied_solid_power_W\": 0.09999999999999999, \"heat_to_fluid_W\": 0.09999, \"maximum_coupled_temperature_change_degC\": 5.722e-06, \"normalized_coupled_heat_imbalance\": 9.817e-05, \"iteration_limit_reached_without_convergence\": false, \"numerical_convergence\": \"not_established\", \"warnings\": {\"coincident_thermal_nodes\": true, \"no_interior_pressure_anchor\": false}, \"scope\": \"Rounded native log summaries; not independent field extraction, complete criteria validation or mesh acceptance\"}, \"rounded_boundary_mass_sum_kg_s\": 0.0, \"rounding_warning\": \"Boundary values are rounded in the log; a zero sum does not establish zero imbalance\", \"numerical_convergence\": \"not_established\", \"results_validated\": false, \"scope\": \"Log observations only; input/job association, all configured criteria and mesh sensitivity require separate audits\", \"residual_history\": [{\"iteration\": 1, \"region\": \"Flow Enclosure\", \"equation\": \"U - Mom\", \"linear_iterations\": 11, \"linear_residual\": 4.254e-12, \"rate\": 0.0, \"rate_overflow\": false, \"residual\": 0.2887, \"native_message\": \"--\"}], \"history_total\": 4415, \"next_offset\": 1, \"job_state_changed\": false, \"operation_id\": \"op_c99453f8f2014ed6be315e852d65a21e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "job_id": "coupled-finned-layer-extended-r1",
+        "request_sha256": "70120ea3f14f684365069bfa290cfd4dffe9b53869526eff330f7920ae17ef91",
+        "persisted_job_state": "solver_exited",
+        "log_name": "finned_layer_extended_r1-Finned_coupled_benchmark.log",
+        "log_sha256": "64e7cd1a843aafc6f24bf30f6bce722a15c667bf6375de020a74503ebd406be6",
+        "observed_bytes": 1850052,
+        "snapshot_semantics": "bytes read; file may still be growing",
+        "format": "observed_simcenter_2606_steady_coupled",
+        "completion_marker_present": true,
+        "failure_evidence": {
+          "state": "unknown",
+          "stage": "unknown",
+          "translator_fatal_codes": [],
+          "fatal_abort_reported": false,
+          "numerical_convergence": "not_established",
+          "results_validated": false,
+          "next_action": "Inspect job process status, residuals and result validation before classifying."
+        },
+        "residual_threshold": 1e-06,
+        "last_iteration": 883,
+        "final_equations_complete": true,
+        "final_residual_criteria_met": null,
+        "reported_imbalances": {
+          "momentum": {
+            "value": 2.987e-15,
+            "units": "%",
+            "definition": "native reported imbalance; denominator not independently established"
+          },
+          "mass": {
+            "value": 1.382e-11,
+            "units": "%",
+            "definition": "native reported imbalance; denominator not independently established"
+          },
+          "energy": {
+            "value": 0.008777,
+            "units": "%",
+            "definition": "native reported imbalance; denominator not independently established"
+          }
+        },
+        "boundary_flows": [
+          {
+            "name": "Coupled Inlet",
+            "volume_flow_m3_s": 7.2e-05,
+            "mass_flow_kg_s": 9.32e-05,
+            "positive_direction": "into_domain"
+          },
+          {
+            "name": "Coupled Opening",
+            "volume_flow_m3_s": -7.2e-05,
+            "mass_flow_kg_s": -9.32e-05,
+            "positive_direction": "into_domain"
+          }
+        ],
+        "fan_operating_points": {
+          "state": "not_present",
+          "fans": []
+        },
+        "coupled_summary": {
+          "ambient_temperature_degC": 0.0,
+          "temperature_summaries": [
+            {
+              "maximum": 23.9,
+              "minimum": 19.99,
+              "average": 21.68,
+              "quantity": "Fluid Temperature",
+              "units": "degC",
+              "association": "native summary row; region identity not established"
+            },
+            {
+              "maximum": 23.91,
+              "minimum": 23.84,
+              "average": 23.89,
+              "quantity": "Solid Temperature",
+              "units": "degC",
+              "association": "native summary row; region identity not established"
+            },
+            {
+              "maximum": 23.91,
+              "minimum": 23.84,
+              "average": 23.89,
+              "quantity": "Solid Temperature",
+              "units": "degC",
+              "association": "native summary row; region identity not established"
+            }
+          ],
+          "applied_solid_power_W": 0.09999999999999999,
+          "heat_to_fluid_W": 0.09999,
+          "maximum_coupled_temperature_change_degC": 5.722e-06,
+          "normalized_coupled_heat_imbalance": 9.817e-05,
+          "iteration_limit_reached_without_convergence": false,
+          "numerical_convergence": "not_established",
+          "warnings": {
+            "coincident_thermal_nodes": true,
+            "no_interior_pressure_anchor": false
+          },
+          "scope": "Rounded native log summaries; not independent field extraction, complete criteria validation or mesh acceptance"
+        },
+        "rounded_boundary_mass_sum_kg_s": 0.0,
+        "rounding_warning": "Boundary values are rounded in the log; a zero sum does not establish zero imbalance",
+        "numerical_convergence": "not_established",
+        "results_validated": false,
+        "scope": "Log observations only; input/job association, all configured criteria and mesh sensitivity require separate audits",
+        "residual_history": [
+          {
+            "iteration": 1,
+            "region": "Flow Enclosure",
+            "equation": "U - Mom",
+            "linear_iterations": 11,
+            "linear_residual": 4.254e-12,
+            "rate": 0.0,
+            "rate_overflow": false,
+            "residual": 0.2887,
+            "native_message": "--"
+          }
+        ],
+        "history_total": 4415,
+        "next_offset": 1,
+        "job_state_changed": false,
+        "operation_id": "op_c99453f8f2014ed6be315e852d65a21e",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "not_applicable"
+      },
+      "isError": false
+    }
+  }
+}

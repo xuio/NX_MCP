@@ -1,0 +1,358 @@
+{
+  "source_sha256": {
+    "native.py": "720d4de0f43069b131bc5c72d73ac702ddc90871aa82ace5c8ee5070428ff845",
+    "server.py": "c074683718e39956de53c8bb7a20d7f33b7d36388fb444b4ec2641e0cb7267a9",
+    "boundary_state.py": "960c7b80928379018ea54955e6999c17cbccf92b27a199bf1998b1ec6c23aefc"
+  },
+  "passed": true,
+  "document_inventory_preserved": true,
+  "public_membership_matches_native": true,
+  "solver_launched": false,
+  "numerical_acceptance": "not_tested",
+  "public_tool": {
+    "name": "nx_sim_solutions",
+    "title": null,
+    "description": "Page solutions in a loaded SIM with typed simulation_solution references, active flag, solver/analysis identifiers and step count. offset >=0, limit 1..100. Optional properties expose committed native solution values and explicit unsupported reads. include_execution_options separately reports the native solver-options table, including execution/parallelism/scratch settings and raw enum values; licence-related properties are excluded. Reading settings neither changes them nor tests solver availability. Does not activate, save or solve. include_membership optionally adds direct BC membership and ordered steps for each returned solution without activating it; unsupported folders/overrides are explicitly unverified, and this membership hash excludes boundary values. Expansion is bounded to 1000 steps per solution; use limit=1 for inspection. Result freshness requires separate inspection; references follow the owner SIM's session/generation lifetime.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "document": {
+          "title": "Document",
+          "type": "string"
+        },
+        "offset": {
+          "default": 0,
+          "title": "Offset",
+          "type": "integer"
+        },
+        "limit": {
+          "default": 20,
+          "title": "Limit",
+          "type": "integer"
+        },
+        "include_properties": {
+          "default": false,
+          "title": "Include Properties",
+          "type": "boolean"
+        },
+        "include_execution_options": {
+          "default": false,
+          "title": "Include Execution Options",
+          "type": "boolean"
+        },
+        "include_membership": {
+          "default": false,
+          "title": "Include Membership",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "document"
+      ],
+      "title": "nx_sim_solutionsArguments",
+      "type": "object"
+    },
+    "outputSchema": {
+      "additionalProperties": true,
+      "description": "Structured success/error envelope with additive metadata. Tool-specific payload remains extensible.",
+      "properties": {
+        "status": {
+          "enum": [
+            "success",
+            "error"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "warnings": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Warnings",
+          "type": "array"
+        },
+        "units": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Units"
+        },
+        "operation_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Operation Id"
+        },
+        "mutation_outcome": {
+          "anyOf": [
+            {
+              "enum": [
+                "not_started",
+                "running",
+                "committed",
+                "rolled_back",
+                "partial",
+                "unknown",
+                "not_applicable"
+              ]
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "full_result": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "sha256": {
+              "type": "string"
+            },
+            "size": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "tool": {
+              "const": "nx_read_result"
+            },
+            "immutable": {
+              "const": true
+            }
+          },
+          "required": [
+            "id",
+            "sha256",
+            "size",
+            "tool",
+            "immutable"
+          ],
+          "additionalProperties": true
+        },
+        "omitted": {
+          "type": "object"
+        },
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "retryable": {
+          "type": "boolean"
+        },
+        "suggestion": {
+          "type": "string"
+        },
+        "nx_code": {
+          "type": [
+            "integer",
+            "string"
+          ]
+        },
+        "details": {
+          "type": "object",
+          "properties": {
+            "operation_id": {
+              "type": "string"
+            },
+            "mutation_outcome": {
+              "enum": [
+                "not_started",
+                "running",
+                "committed",
+                "rolled_back",
+                "partial",
+                "unknown",
+                "not_applicable"
+              ]
+            }
+          },
+          "required": [],
+          "additionalProperties": true
+        }
+      },
+      "required": [
+        "status",
+        "warnings",
+        "units"
+      ],
+      "title": "nx_sim_solutions result",
+      "type": "object",
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "error"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "code",
+              "message",
+              "retryable"
+            ]
+          }
+        }
+      ]
+    },
+    "icons": null,
+    "annotations": {
+      "title": null,
+      "readOnlyHint": true,
+      "destructiveHint": null,
+      "idempotentHint": true,
+      "openWorldHint": null
+    },
+    "meta": null,
+    "execution": null
+  },
+  "compact": {
+    "status": "success",
+    "warnings": [],
+    "units": "mm",
+    "solutions": [
+      {
+        "solution": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_7807f3392ed743e78a4f6fc270aa599c",
+          "kind": "simulation_solution",
+          "name": "Finned coupled benchmark",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_871b948721504f8ebaf2a64f7b166b3a",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "871b948721504f8ebaf2a64f7b166b3a",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-membership-audit-20260908-r1\\membership.sim",
+          "journal_id": "Solution[Finned coupled benchmark]",
+          "display_name": "Finned coupled benchmark"
+        },
+        "solver": "NX MULTIPHYSICS",
+        "analysis": "Coupled Thermal-Flow",
+        "solution_type": "Thermal-Flow",
+        "active": true,
+        "step_count": 1
+      }
+    ],
+    "total": 1,
+    "next_offset": null,
+    "result_freshness": "not_verified",
+    "operation_id": "op_4d40f1e63bed405e8f939b0164db516f",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "not_applicable"
+  },
+  "expanded": {
+    "status": "success",
+    "warnings": [],
+    "units": "mm",
+    "solutions": [
+      {
+        "solution": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_7807f3392ed743e78a4f6fc270aa599c",
+          "kind": "simulation_solution",
+          "name": "Finned coupled benchmark",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_871b948721504f8ebaf2a64f7b166b3a",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "871b948721504f8ebaf2a64f7b166b3a",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-membership-audit-20260908-r1\\membership.sim",
+          "journal_id": "Solution[Finned coupled benchmark]",
+          "display_name": "Finned coupled benchmark"
+        },
+        "solver": "NX MULTIPHYSICS",
+        "analysis": "Coupled Thermal-Flow",
+        "solution_type": "Thermal-Flow",
+        "active": true,
+        "step_count": 1,
+        "membership": {
+          "solution": {
+            "owner": {
+              "journal_id": "Solution[Finned coupled benchmark]",
+              "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-membership-audit-20260908-r1\\membership.sim"
+            },
+            "bcs": [
+              {
+                "journal_id": "Load[Generic solid 0.1 W]",
+                "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-membership-audit-20260908-r1\\membership.sim"
+              },
+              {
+                "journal_id": "SimulationObject[Coupled Inlet]",
+                "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-membership-audit-20260908-r1\\membership.sim"
+              },
+              {
+                "journal_id": "SimulationObject[Coupled Opening]",
+                "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-membership-audit-20260908-r1\\membership.sim"
+              }
+            ],
+            "unfoldered_bcs": [
+              {
+                "journal_id": "Load[Generic solid 0.1 W]",
+                "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-membership-audit-20260908-r1\\membership.sim"
+              },
+              {
+                "journal_id": "SimulationObject[Coupled Inlet]",
+                "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-membership-audit-20260908-r1\\membership.sim"
+              },
+              {
+                "journal_id": "SimulationObject[Coupled Opening]",
+                "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-membership-audit-20260908-r1\\membership.sim"
+              }
+            ],
+            "folders": [],
+            "conflict_override_count": 0
+          },
+          "steps": [
+            {
+              "index": 0,
+              "owner": {
+                "journal_id": "SolutionStep[Finned steady]",
+                "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-membership-audit-20260908-r1\\membership.sim"
+              },
+              "bcs": [],
+              "unfoldered_bcs": [],
+              "folders": []
+            }
+          ],
+          "errors": [],
+          "comparison_verified": true,
+          "sha256": "69a2438c749baac194d09d094bae14820eb6198d1211b64a4e99d72a97acf4ee"
+        }
+      }
+    ],
+    "total": 1,
+    "next_offset": null,
+    "result_freshness": "not_verified",
+    "operation_id": "op_814d87f4a3b34b05bb194001620da6b5",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "not_applicable"
+  },
+  "document_count": 127,
+  "document_inventory_sha256": "a8a98f2183b31b21fbbf2e7dbda89d96eddd1980aaebbc338a2541d7a6c1a3d7",
+  "full_receipt_sha256": "0dcd0aa72b80e9203f0f913ee4aa592629b5bc54bf64533c80f71b8e4905aa5d",
+  "full_receipt_local_path": "/Users/moritz/Documents/Codex/2026-09-05/ple/outputs/simcenter/membership-public-verification.json",
+  "prior_failed_attempts": [
+    {
+      "kind": "PowerShell launcher stderr handling",
+      "model_mutation": false
+    },
+    {
+      "kind": "live handler retained prior signature",
+      "code": "NX_INVALID_ARGUMENT",
+      "resolved": "explicit bound method refresh"
+    },
+    {
+      "kind": "test compared per-call operation IDs",
+      "resolved": "compare document rows, count and pagination"
+    }
+  ]
+}

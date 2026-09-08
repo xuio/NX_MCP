@@ -1,0 +1,114 @@
+{
+  "status": "success",
+  "copy": {
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_b937f694f6aa4403974669ff1eae94ae",
+      "kind": "part",
+      "name": "coupled_reopen_r1",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_64b6944de1374a198630e5e986d646e3",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "64b6944de1374a198630e5e986d646e3",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-ambient-reopen-20260908-r1\\coupled_reopen_r1.sim",
+      "journal_id": "coupled_reopen_r1",
+      "display_name": "coupled_reopen_r1"
+    },
+    "source": {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-environment-copy-property-20260908-r1\\coupled_copy_property_r1.sim",
+      "bytes": 7670597,
+      "sha256": "dfef0ed937bd726e984be04f17bf3154e144eb6e1f5b4f792c3b1b3c3f21e388"
+    },
+    "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-ambient-reopen-20260908-r1\\coupled_reopen_r1.sim",
+    "source_file_unchanged": true,
+    "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-ambient-reopen-20260908-r1\\coupled_reopen_r1.sim",
+    "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-ambient-reopen-20260908-r1\\coupled_reopen_r1.sim",
+    "shared_fem_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-development-20260908-r1\\benchmark_99f1fecb220c_mesh.fem",
+    "independent_geometry_variant": false,
+    "saved": true,
+    "result_freshness": "not_verified",
+    "next_step": "Reacquire document IDs. Duplicate and reassociate FEM/CAD before changing shared geometry or mesh."
+  },
+  "close": {
+    "closed_parts": [
+      {
+        "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_b937f694f6aa4403974669ff1eae94ae",
+        "kind": "part",
+        "name": "coupled_reopen_r1",
+        "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_64b6944de1374a198630e5e986d646e3",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "generation_id": "64b6944de1374a198630e5e986d646e3",
+        "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-ambient-reopen-20260908-r1\\coupled_reopen_r1.sim",
+        "journal_id": "coupled_reopen_r1",
+        "display_name": "coupled_reopen_r1"
+      }
+    ],
+    "closed_count": 1,
+    "remaining_count": 96,
+    "saved": false,
+    "discarded_modified_parts": false,
+    "work_path": null,
+    "display_path": null,
+    "warnings": [
+      "NX may unload unused dependencies; reacquire document references before continuing"
+    ]
+  },
+  "open": {
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_bcb9f5c351b348538233184bf2a4373f",
+      "kind": "part",
+      "name": "coupled_reopen_r1",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_ef39cecd5f8a45e0a69ada7277d0b5de",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "ef39cecd5f8a45e0a69ada7277d0b5de",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-ambient-reopen-20260908-r1\\coupled_reopen_r1.sim",
+      "journal_id": "coupled_reopen_r1",
+      "display_name": "coupled_reopen_r1"
+    },
+    "units": "mm",
+    "coordinate_frame": "part_absolute",
+    "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-ambient-reopen-20260908-r1\\coupled_reopen_r1.sim",
+    "already_loaded": false,
+    "modified_after_native_open": true,
+    "modified_before_activation": true,
+    "modified": true,
+    "fully_loaded": true,
+    "load_issues": [],
+    "changed_existing_part_flags": [],
+    "application": "UG_APP_SFEM",
+    "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-ambient-reopen-20260908-r1\\coupled_reopen_r1.sim",
+    "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-ambient-reopen-20260908-r1\\coupled_reopen_r1.sim",
+    "saved": false,
+    "result_freshness": "not_verified",
+    "warnings": [
+      "Document has unsaved native state; inspect and explicitly save approved analysis changes before preparing a solve"
+    ]
+  },
+  "reopened_ambient": {
+    "value": 20.0,
+    "units": "Celsius"
+  },
+  "export": {
+    "error_code": "NX_SIM_EXPORT_FAILED",
+    "details": {
+      "mutation_outcome": "partial",
+      "reason": "Coupled ambient temperature differs between native readback and exported input",
+      "retained_directory": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-ambient-reopen-20260908-r1",
+      "automatic_cleanup": false,
+      "coupled_ambient_validation": {
+        "property": "Fluid Temperature",
+        "native_value": 20.0,
+        "exported_value": 0.0,
+        "units": "degC",
+        "matches": false,
+        "absolute_tolerance_degC": 1e-06,
+        "scope": "constant ambient temperature only; not complete solve readiness"
+      }
+    }
+  },
+  "elapsed_seconds": 8.920999999972992,
+  "solver_launched": false,
+  "operation_id": "op_77af26042ac54536a077a04fe443b674",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

@@ -1,0 +1,75 @@
+{
+  "status": "success",
+  "copy": {
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_d84f6bf8a71d4aed8162a25890cf4508",
+      "kind": "part",
+      "name": "coupled_copy_property_r1",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_64b6944de1374a198630e5e986d646e3",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "64b6944de1374a198630e5e986d646e3",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-environment-copy-property-20260908-r1\\coupled_copy_property_r1.sim",
+      "journal_id": "coupled_copy_property_r1",
+      "display_name": "coupled_copy_property_r1"
+    },
+    "source": {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-environment-expression-20260908-r1\\coupled_expression_r1.sim",
+      "bytes": 7669275,
+      "sha256": "6203a26d50f146c1afcf228bbca54b2cd07f074e639123087bb2767b52e85d2d"
+    },
+    "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-environment-copy-property-20260908-r1\\coupled_copy_property_r1.sim",
+    "source_file_unchanged": true,
+    "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-environment-copy-property-20260908-r1\\coupled_copy_property_r1.sim",
+    "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-environment-copy-property-20260908-r1\\coupled_copy_property_r1.sim",
+    "shared_fem_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-development-20260908-r1\\benchmark_99f1fecb220c_mesh.fem",
+    "independent_geometry_variant": false,
+    "saved": true,
+    "result_freshness": "not_verified",
+    "next_step": "Reacquire document IDs. Duplicate and reassociate FEM/CAD before changing shared geometry or mesh."
+  },
+  "step_type": {
+    "before": 0,
+    "after": 0,
+    "interpretation": "steady hypothesis pending native export validation"
+  },
+  "setup_report": "          Solution Model Setup Check Error Summary \n \n------------------------------------------------------------\n \n Solver is Simcenter 3D Multiphysics\n\n Environment: Simcenter 3D Multiphysics - Coupled Thermal-Flow\n\n Solution is Thermal-Flow\n \n------------------------------------------------------------\n \nMesh Error Summary\n==================\n\nNo Mesh Errors\n\nMaterial Error Summary\n======================\n\nNo Material Errors\n\nPhysical Property Error Summary\n===============================\n\nNo Physical Property Errors\n\nModeling Object Error Summary\n=============================\n\nNo Modeling Object Errors\n\nLoad and Constraint Error Summary\n=================================\n\nNo Load and Constraint Errors\n\nSolution Error Summary\n======================\n\nNo Solution Errors\n\nExpression Errors Summary\n==============================\n\nNo Expression Errors\n\n",
+  "native_error": null,
+  "files": [
+    {
+      "name": "coupled_copy_property_r1-Coupled_benchmark.map",
+      "bytes": 34869
+    },
+    {
+      "name": "coupled_copy_property_r1-Coupled_benchmark.xml",
+      "bytes": 63867,
+      "input": {
+        "state": "well_formed",
+        "step_definitions": 1,
+        "mesh_counts": {
+          "elements": 126,
+          "nodes": 68,
+          "element_sets": 2,
+          "scope": "observed_multiphysics_xml_layout"
+        },
+        "solve_readiness": "not_established"
+      }
+    },
+    {
+      "name": "coupled_copy_property_r1.sim",
+      "bytes": 7670597
+    },
+    {
+      "name": "setup-report.txt",
+      "bytes": 140455
+    }
+  ],
+  "elapsed_seconds": 2.2189999999827705,
+  "solver_launched": false,
+  "numerical_acceptance": false,
+  "boundary_conditions_complete": false,
+  "operation_id": "op_36504b4a472840c98ba4e4802c1693ff",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

@@ -1,0 +1,40 @@
+{
+  "status": "success",
+  "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-fine-k0-20260908-r1\\fine_k0_r1.sim",
+  "source_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-auto-observer-20260908-r1\\auto_flow_r1.sim",
+  "source_sha256": "d97b7ea7d45a9b6c4a13e7446149402662aa2283115af70ec843d7e3adfa70cf",
+  "mesh_counts": {
+    "elements": 186765,
+    "nodes": 71748
+  },
+  "coefficient_before": 2.0,
+  "coefficient_after": 0.0,
+  "saved": {
+    "saved": true,
+    "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-fine-k0-20260908-r1\\fine_k0_r1.sim",
+    "file": {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-fine-k0-20260908-r1\\fine_k0_r1.sim",
+      "bytes": 7763486,
+      "sha256": "eb49c4b4b4cd970ac9009b0e89c150adf13de3e85e2317fc002c86f625324d31"
+    },
+    "previous_file": {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-fine-k0-20260908-r1\\fine_k0_r1.sim",
+      "bytes": 7763297,
+      "sha256": "d97b7ea7d45a9b6c4a13e7446149402662aa2283115af70ec843d7e3adfa70cf"
+    },
+    "backup_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-fine-k0-20260908-r1\\.nx-mcp-save-backups\\f171f974505b4d7588cfcd00f7cefb10\\fine_k0_r1.sim",
+    "saved_components": false,
+    "closed": false,
+    "other_modified_flags_unchanged": true,
+    "result_freshness": "not_verified"
+  },
+  "source_file_preserved": true,
+  "existing_document_flags_preserved": true,
+  "solver_launched": false,
+  "comparison_status": "not_solved",
+  "operation_id": "op_704e579b552b426fb442451835121495",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

@@ -1,0 +1,207 @@
+{
+  "status": "success",
+  "saved": {
+    "saved": true,
+    "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-solve-20260908-r1\\orthotropic_solve_r1.sim",
+    "file": {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-solve-20260908-r1\\orthotropic_solve_r1.sim",
+      "bytes": 7792055,
+      "sha256": "b94c061bc13eedff6c32bbed745897bd5b74b64983a46a57bf0ffea86d5e7e20"
+    },
+    "previous_file": {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-solve-20260908-r1\\orthotropic_solve_r1.sim",
+      "bytes": 7810221,
+      "sha256": "0c26c24cbdbebdd240d4ba545415ab1a6efd15d0f8e8342a44d507727620700d"
+    },
+    "backup_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-solve-20260908-r1\\.nx-mcp-save-backups\\f5fcaf0484274c24965a263b35d40881\\orthotropic_solve_r1.sim",
+    "saved_components": false,
+    "closed": false,
+    "other_modified_flags_unchanged": true,
+    "result_freshness": "not_verified"
+  },
+  "closed": [
+    {
+      "closed_parts": [
+        {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_3eab8e0f6b294b0ea9c62d7a0550fedc",
+          "kind": "part",
+          "name": "orthotropic_solve_r1",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_7d327e7fcc074ee486b431eeb7d72e83",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "7d327e7fcc074ee486b431eeb7d72e83",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-solve-20260908-r1\\orthotropic_solve_r1.sim",
+          "journal_id": "orthotropic_solve_r1",
+          "display_name": "orthotropic_solve_r1"
+        }
+      ],
+      "closed_count": 1,
+      "remaining_count": 70,
+      "saved": false,
+      "discarded_modified_parts": false,
+      "work_path": null,
+      "display_path": null,
+      "warnings": [
+        "NX may unload unused dependencies; reacquire document references before continuing"
+      ]
+    },
+    {
+      "closed_parts": [
+        {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_1e6eaf27bed8438bb57572f8c87d9fdd",
+          "kind": "part",
+          "name": "OrthotropicR1_mesh",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_8378e1167fef43abbe2e83f508f548f0",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "8378e1167fef43abbe2e83f508f548f0",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-conduction-20260908-r1\\OrthotropicR1_mesh.fem",
+          "journal_id": "OrthotropicR1_mesh",
+          "display_name": "OrthotropicR1_mesh"
+        }
+      ],
+      "closed_count": 1,
+      "remaining_count": 69,
+      "saved": false,
+      "discarded_modified_parts": false,
+      "work_path": null,
+      "display_path": null,
+      "warnings": [
+        "NX may unload unused dependencies; reacquire document references before continuing"
+      ]
+    }
+  ],
+  "opened": {
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_9546ff21c8ef488896f0f9c7b3a3e0e9",
+      "kind": "part",
+      "name": "orthotropic_solve_r1",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_4a6e1c6c8fe546d88b0a1a97352fb5c3",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "4a6e1c6c8fe546d88b0a1a97352fb5c3",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-solve-20260908-r1\\orthotropic_solve_r1.sim",
+      "journal_id": "orthotropic_solve_r1",
+      "display_name": "orthotropic_solve_r1"
+    },
+    "units": "mm",
+    "coordinate_frame": "part_absolute",
+    "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-solve-20260908-r1\\orthotropic_solve_r1.sim",
+    "already_loaded": false,
+    "modified_after_native_open": false,
+    "modified_before_activation": false,
+    "modified": false,
+    "fully_loaded": true,
+    "load_issues": [],
+    "changed_existing_part_flags": [],
+    "application": "UG_APP_SFEM",
+    "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-solve-20260908-r1\\orthotropic_solve_r1.sim",
+    "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-solve-20260908-r1\\orthotropic_solve_r1.sim",
+    "saved": false,
+    "result_freshness": "not_verified",
+    "warnings": []
+  },
+  "stale_reference_errors": [
+    "NX_OBJECT_STALE",
+    "NX_OBJECT_STALE"
+  ],
+  "material_properties": {
+    "ThermalConductivity": {
+      "value": 12.0,
+      "unit": "ThermalConductivity_Metric3"
+    },
+    "ThermalConductivity2": {
+      "value": 7.0,
+      "unit": "ThermalConductivity_Metric3"
+    },
+    "ThermalConductivity3": {
+      "value": 0.4,
+      "unit": "ThermalConductivity_Metric3"
+    },
+    "MassDensity": {
+      "value": 1900.0,
+      "unit": "KilogramPerCubicMeter"
+    },
+    "SpecificHeat": {
+      "value": 900.0,
+      "unit": "SpecificHeat_Metric2"
+    }
+  },
+  "assignment_preserved": true,
+  "temperature_before": {
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_3eab8e0f6b294b0ea9c62d7a0550fedc",
+      "kind": "part",
+      "name": "orthotropic_solve_r1",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_7d327e7fcc074ee486b431eeb7d72e83",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "7d327e7fcc074ee486b431eeb7d72e83",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-solve-20260908-r1\\orthotropic_solve_r1.sim",
+      "journal_id": "orthotropic_solve_r1",
+      "display_name": "orthotropic_solve_r1"
+    },
+    "field": "Temperature - Nodal",
+    "loadcase_index": 0,
+    "iteration_index": 0,
+    "units": "degC",
+    "minimum": 20.0,
+    "maximum": 61.713905334472656,
+    "native_location": "0",
+    "minimum_native_id": 158,
+    "maximum_native_id": 8,
+    "minimum_native_sub_id": 0,
+    "maximum_native_sub_id": 0,
+    "node_count": 756,
+    "result_freshness": "not_verified",
+    "reference_lifetime": "indices apply only to this result revision"
+  },
+  "temperature_after": {
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_9546ff21c8ef488896f0f9c7b3a3e0e9",
+      "kind": "part",
+      "name": "orthotropic_solve_r1",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_4a6e1c6c8fe546d88b0a1a97352fb5c3",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "4a6e1c6c8fe546d88b0a1a97352fb5c3",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-solve-20260908-r1\\orthotropic_solve_r1.sim",
+      "journal_id": "orthotropic_solve_r1",
+      "display_name": "orthotropic_solve_r1"
+    },
+    "field": "Temperature - Nodal",
+    "loadcase_index": 0,
+    "iteration_index": 0,
+    "units": "degC",
+    "minimum": 20.0,
+    "maximum": 61.713905334472656,
+    "native_location": "0",
+    "minimum_native_id": 158,
+    "maximum_native_id": 8,
+    "minimum_native_sub_id": 0,
+    "maximum_native_sub_id": 0,
+    "node_count": 756,
+    "result_freshness": "not_verified",
+    "reference_lifetime": "indices apply only to this result revision"
+  },
+  "view": {
+    "postview_id": 3,
+    "postview_owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-solve-20260908-r1\\orthotropic_solve_r1.sim",
+    "readback": {
+      "loadcase_index": 0,
+      "iteration_index": 0,
+      "field": "Temperature - Nodal",
+      "unit": "Celsius"
+    },
+    "units": "degC",
+    "existing_view_ids": [],
+    "overlay": false,
+    "main_postview_id": 3,
+    "saved": false,
+    "result_freshness": "not_verified",
+    "reference_lifetime": "postview ID is document-local within this session; use postview_owner and reacquire after closure"
+  },
+  "unrelated_flags_preserved": true,
+  "both_documents_fully_unloaded": true,
+  "solver_launched": false,
+  "operation_id": "op_64f2cf2c03fc4c55a0cd16978a0ad064",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

@@ -1,0 +1,102 @@
+{
+  "status": "success",
+  "state": "direct_dependency_rebinding_verified",
+  "document": {
+    "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_73008e0dad74430b9526b4a36c403f70",
+    "kind": "part",
+    "name": "independent_flow",
+    "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_a16dc30866b24e118fcccc188e9a09d3",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "generation_id": "a16dc30866b24e118fcccc188e9a09d3",
+    "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-independent-clone-native-20260908-r1\\independent_flow.sim",
+    "journal_id": "independent_flow",
+    "display_name": "independent_flow"
+  },
+  "dependencies": [
+    {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-independent-clone-native-20260908-r1\\independent_flow.sim",
+      "roles": [
+        "simulation"
+      ],
+      "document_type": "SimPart",
+      "modified": false,
+      "fully_loaded": true,
+      "file_state": "exists",
+      "work": true,
+      "display": true,
+      "units": "mm"
+    },
+    {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-independent-clone-native-20260908-r1\\independent_mesh.fem",
+      "roles": [
+        "mesh"
+      ],
+      "document_type": "FemPart",
+      "modified": false,
+      "fully_loaded": true,
+      "file_state": "exists",
+      "work": false,
+      "display": false,
+      "units": "mm"
+    },
+    {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-independent-clone-native-20260908-r1\\independent_geometry.prt",
+      "roles": [
+        "AssociatedCadPart",
+        "MasterCadPart"
+      ],
+      "document_type": "Part",
+      "modified": false,
+      "fully_loaded": true,
+      "file_state": "exists",
+      "work": false,
+      "display": false,
+      "units": "mm"
+    }
+  ],
+  "associations": [
+    {
+      "association": "AssociatedCadPart",
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-independent-clone-native-20260908-r1\\independent_geometry.prt"
+    },
+    {
+      "association": "IdealizedPart",
+      "path": null
+    },
+    {
+      "association": "MasterCadPart",
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-independent-clone-native-20260908-r1\\independent_geometry.prt"
+    }
+  ],
+  "initial_unresolved": [
+    {
+      "association": "AssociatedCadPart",
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-independent-clone-native-20260908-r1\\independent_geometry.prt",
+      "reason": "not_loaded_or_unresolved"
+    }
+  ],
+  "mesh_counts": {
+    "elements": 186765,
+    "nodes": 71748
+  },
+  "solution": {
+    "name": "Flow benchmark",
+    "solver": "NX MULTIPHYSICS",
+    "analysis": "Flow"
+  },
+  "head_loss_coefficient": 0.0,
+  "source_files_preserved": true,
+  "existing_document_flags_preserved": true,
+  "solver_launched": false,
+  "result_freshness": "not_verified",
+  "remaining_checks": [
+    "fan and selection equivalence",
+    "mesh edit independence",
+    "complete package dependencies"
+  ],
+  "operation_id": "op_9b8807d9b17c4d4bb7b392a69bfd85c8",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

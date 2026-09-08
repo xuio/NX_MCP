@@ -1,0 +1,38 @@
+{
+  "status": "success",
+  "first": {
+    "postview_id": 5,
+    "postview_owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-input-export-20260908-r2\\flow_input_r2.sim",
+    "readback": {
+      "loadcase_index": 0,
+      "iteration_index": 0,
+      "field": "Pressure - Element-Nodal",
+      "unit": "PressurePascals"
+    },
+    "units": "Pa",
+    "existing_view_ids": [],
+    "main_postview_id": 5,
+    "saved": false,
+    "result_freshness": "not_verified",
+    "reference_lifetime": "postview ID is document-local within this session; use postview_owner and reacquire after closure"
+  },
+  "before_acquire": [
+    5
+  ],
+  "after_acquire": [
+    5
+  ],
+  "owned": true,
+  "after_overlay": [
+    5,
+    6
+  ],
+  "main": 6,
+  "new_view": 6,
+  "preserved": true,
+  "operation_id": "op_91742897acf24bd0a744abdcc3495944",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

@@ -1,0 +1,60 @@
+{
+  "status": "success",
+  "retained_copy_readback": {
+    "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-environment-override-20260908-r1\\coupled_override_r1.sim",
+    "ambient_value": 20.0,
+    "ambient_units": "Celsius"
+  },
+  "copy": {
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_e14bc719d0ed4bbdb237496f6b0e65e4",
+      "kind": "part",
+      "name": "coupled_ambient_guard_r1",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_64b6944de1374a198630e5e986d646e3",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "64b6944de1374a198630e5e986d646e3",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-ambient-guard-20260908-r1\\coupled_ambient_guard_r1.sim",
+      "journal_id": "coupled_ambient_guard_r1",
+      "display_name": "coupled_ambient_guard_r1"
+    },
+    "source": {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-environment-override-20260908-r1\\coupled_override_r1.sim",
+      "bytes": 7668357,
+      "sha256": "5215b5d2c014e01cd243b3a11b20f10453b39f84454b16cb57c56e5cc97d67d9"
+    },
+    "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-ambient-guard-20260908-r1\\coupled_ambient_guard_r1.sim",
+    "source_file_unchanged": true,
+    "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-ambient-guard-20260908-r1\\coupled_ambient_guard_r1.sim",
+    "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-ambient-guard-20260908-r1\\coupled_ambient_guard_r1.sim",
+    "shared_fem_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-development-20260908-r1\\benchmark_99f1fecb220c_mesh.fem",
+    "independent_geometry_variant": false,
+    "saved": true,
+    "result_freshness": "not_verified",
+    "next_step": "Reacquire document IDs. Duplicate and reassociate FEM/CAD before changing shared geometry or mesh."
+  },
+  "guard_verified": true,
+  "error_code": "NX_SIM_EXPORT_FAILED",
+  "details": {
+    "mutation_outcome": "partial",
+    "reason": "Coupled ambient temperature differs between native readback and exported input",
+    "retained_directory": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-ambient-guard-20260908-r1",
+    "automatic_cleanup": false,
+    "coupled_ambient_validation": {
+      "property": "Fluid Temperature",
+      "native_value": 20.0,
+      "exported_value": 0.0,
+      "units": "degC",
+      "matches": false,
+      "absolute_tolerance_degC": 1e-06,
+      "scope": "constant ambient temperature only; not complete solve readiness"
+    }
+  },
+  "native_export_and_validation_seconds": 1.952999999979511,
+  "solver_launched": false,
+  "numerical_acceptance": false,
+  "operation_id": "op_27b56d24449040ccbc06419c7bacc5ee",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

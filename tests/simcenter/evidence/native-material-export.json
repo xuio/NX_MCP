@@ -1,0 +1,19 @@
+{
+  "job_id": "conduction-input-export-09",
+  "material": "MCP_MATERIAL_V2",
+  "material_section_values": {
+    "Mass Density Constant": 2.7e-06,
+    "Specific Heat": 900000000.0,
+    "Thermal Conductivity": 200000.0
+  },
+  "conductivity_W_per_m_K": 200,
+  "density_kg_per_m3": 2700,
+  "specific_heat_J_per_kg_K": 900,
+  "collector_material_id": 4,
+  "native_checked_export": "returned",
+  "whole_deck_xml": "malformed",
+  "xml_error": "mismatched tag at line 114, column 8",
+  "xml_sha256": "b2470b2c3a07a320ee0eb40c4bf4ae647244879b3d1bb55e4e3343e0058711b4",
+  "numerical_acceptance": "not_tested",
+  "limitation": "Material section verified independently; entire deck rejected due to malformed ambient properties."
+}

@@ -1,0 +1,102 @@
+{
+  "status": "success",
+  "scope": {
+    "acceptance": false,
+    "known_ambient_export_mismatch": true,
+    "interface_connection_unverified": true,
+    "iteration_caps": 100
+  },
+  "copy": {
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_4ccae6df392f4c5dbc7d619046256deb",
+      "kind": "part",
+      "name": "coupled_diagnostic_r1",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_64b6944de1374a198630e5e986d646e3",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "64b6944de1374a198630e5e986d646e3",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-diagnostic-20260908-r1\\coupled_diagnostic_r1.sim",
+      "journal_id": "coupled_diagnostic_r1",
+      "display_name": "coupled_diagnostic_r1"
+    },
+    "source": {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-ambient-time-table-20260908-r1\\coupled_time_table_r1.sim",
+      "bytes": 7666699,
+      "sha256": "f08a45ada34fbc1ec73392a2086d79a6a9780ae28210b748ad3038f6ff925bcc"
+    },
+    "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-diagnostic-20260908-r1\\coupled_diagnostic_r1.sim",
+    "source_file_unchanged": true,
+    "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-diagnostic-20260908-r1\\coupled_diagnostic_r1.sim",
+    "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-diagnostic-20260908-r1\\coupled_diagnostic_r1.sim",
+    "shared_fem_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-development-20260908-r1\\benchmark_99f1fecb220c_mesh.fem",
+    "independent_geometry_variant": false,
+    "saved": true,
+    "result_freshness": "not_verified",
+    "next_step": "Reacquire document IDs. Duplicate and reassociate FEM/CAD before changing shared geometry or mesh."
+  },
+  "controls": [
+    {
+      "name": "Thermal Steady State - Iteration Limit",
+      "value": 100
+    },
+    {
+      "name": "3D Flow Steady State - Iteration Limit",
+      "value": 100
+    }
+  ],
+  "prepare": {
+    "job_id": "coupled-diagnostic-r1",
+    "state": "accepted",
+    "request_sha256": "561e0f88022568eab24084f777c9ae987c5f57f287431805a72e7471153ae4e1",
+    "replayed": false,
+    "preparation_revalidated": true,
+    "solver_launched_by_call": false,
+    "input_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-diagnostic-20260908-r1\\coupled_diagnostic_r1-Coupled_benchmark.xml",
+    "input_sha256": "2d6b237655ec698bbb75026dab51cc429945bb0aa59e2f38336cb919028da569",
+    "output_claim": {
+      "schema": 1,
+      "job_id": "coupled-diagnostic-r1",
+      "job_directory": "d:\\cad\\simcenter_mcp_workspace\\simcenter-jobs\\coupled-diagnostic-r1",
+      "request_sha256": "561e0f88022568eab24084f777c9ae987c5f57f287431805a72e7471153ae4e1",
+      "output_directory": "d:\\cad\\simcenter_mcp_workspace\\ui-benchmarks\\e-diagnostic-20260908-r1",
+      "replayed": false,
+      "retention": "permanent; no automatic release"
+    },
+    "mesh_counts": {
+      "element_sets": 2,
+      "elements": 126,
+      "nodes": 68,
+      "scope": "observed_multiphysics_xml_layout"
+    },
+    "dependency_completeness": "not_established",
+    "solve_readiness": "not_established",
+    "next_step": "Inspect the immutable manifest with nx_sim_job_status(include_manifest=True), then use nx_sim_launch; cancellation is not yet implemented"
+  },
+  "prepare_seconds": 2.10999999998603,
+  "launch_intent": "Inspect persistent job coupled-diagnostic-r1 after any interruption; never relaunch",
+  "launch": {
+    "job_id": "coupled-diagnostic-r1",
+    "state": "launch_returned",
+    "revision": 2,
+    "request_sha256": "561e0f88022568eab24084f777c9ae987c5f57f287431805a72e7471153ae4e1",
+    "replayed": false,
+    "solver_state": "not_observed_by_launch",
+    "numerical_convergence": "not_established",
+    "results_validated": false,
+    "cancellation": "not_implemented",
+    "next_step": "Inspect nx_sim_job_status and nx_sim_job_logs; API return is not solver completion",
+    "observer": {
+      "state": "started",
+      "reused": false,
+      "log_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs\\coupled-diagnostic-r1\\observer-b2cb51a26ced4fafb733cb40384853cd.log",
+      "maximum_seconds": 3600,
+      "nx_api_calls": false,
+      "lifetime": "NX process; durable job survives observer exit",
+      "timeout_semantics": "observation ends; solver is not cancelled or relaunched"
+    }
+  },
+  "operation_id": "op_5f05d723f7f24de3bae964b4e5982999",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

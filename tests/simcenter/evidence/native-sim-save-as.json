@@ -1,0 +1,374 @@
+{
+  "scope": "Native SIM SaveAs and distinct input export; FEM/CAD remain shared",
+  "save_as_probe": {
+    "status": "success",
+    "state": "verified",
+    "source_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_analysis.sim",
+    "target_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-sim-copy-20260908-r1\\unique_job_copy.sim",
+    "source_sha256_before": "0c8581b6c386cbcbaf9a20332629fe9c56fef550fbe780255860150a124130b8",
+    "fem_before": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_mesh.fem",
+    "solution_before": "Flow benchmark",
+    "source_live_modified_before": true,
+    "unsaved_parts": 0,
+    "unsaved_objects": 0,
+    "target_exists": true,
+    "target_bytes": 7760997,
+    "source_sha256_after": "0c8581b6c386cbcbaf9a20332629fe9c56fef550fbe780255860150a124130b8",
+    "current_object_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-sim-copy-20260908-r1\\unique_job_copy.sim",
+    "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-sim-copy-20260908-r1\\unique_job_copy.sim",
+    "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-sim-copy-20260908-r1\\unique_job_copy.sim",
+    "fem_after": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_mesh.fem",
+    "solution_after": "Flow benchmark",
+    "shared_fem": true,
+    "independent_geometry_variant": false,
+    "scope": "Native SIM copy only; FEM/CAD duplication and reassociation remain required",
+    "operation_id": "op_8a07875eafe746ea88b99fce044d80b4",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed",
+    "warnings": [],
+    "units": "mm"
+  },
+  "export_probe": {
+    "status": "success",
+    "export_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-sim-copy-20260908-r1\\unique_job_copy-Flow_benchmark.xml",
+    "export_bytes": 18628168,
+    "export_sha256": "129e91047119f5d4f03e198ef50cfa85244f2c219622d4b786d7b014960e4231",
+    "mesh_counts": {
+      "elements": 186765,
+      "nodes": 71748
+    },
+    "original_files_unchanged": true,
+    "original_hashes": {
+      "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_analysis.sim": "0c8581b6c386cbcbaf9a20332629fe9c56fef550fbe780255860150a124130b8",
+      "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_analysis-Flow_benchmark.xml": "68570c2ff5c83f0d1f5ef19fa052a78c2b8fed6673b08100e234b3fe8ae6eed7",
+      "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_analysis-Flow_benchmark.bun": "6f076a9cdd65a6a25a4ebe5a3a4b97312f20041957f108adfa0edb14a46a95d8"
+    },
+    "result_associations": [
+      {
+        "directory": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-sim-copy-20260908-r1",
+        "name": "unique_job_copy-Flow_benchmark.bun",
+        "freshness": "not_verified"
+      }
+    ],
+    "solver_launched": false,
+    "shared_fem": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_mesh.fem",
+    "scope": "Distinct export from SIM copy; not independent FEM geometry or solved variant",
+    "operation_id": "op_2ce26153b06d473aa564df95ae2975d1",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed",
+    "warnings": [],
+    "units": "mm"
+  },
+  "mcp": {
+    "transport": "real MCP stdio -> Simcenter UI bridge",
+    "schema": {
+      "name": "nx_sim_save_as",
+      "title": null,
+      "description": "Save the active SIM under a new workspace .sim path, creating parent folders. Requires a live SIM document ID and a basename not already loaded. Existing files are rejected. Copies current live edits into the new SIM and preserves the original disk file; the active document acquires the new path. Returns new references and actual work/display paths. FEM/CAD remain shared: this is not an independent geometry variant, and copied result associations are not freshness evidence. Reacquire IDs after copying; never edit a shared FEM as though it were private. Failure retains files and reports partial state. Supply operation_id for safe retry.",
+      "inputSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "document": {
+            "title": "Document",
+            "type": "string"
+          },
+          "path": {
+            "title": "Path",
+            "type": "string"
+          },
+          "operation_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Operation Id"
+          }
+        },
+        "required": [
+          "document",
+          "path"
+        ],
+        "title": "nx_sim_save_asArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "additionalProperties": true,
+        "description": "Structured success/error envelope with additive metadata. Tool-specific payload remains extensible.",
+        "properties": {
+          "status": {
+            "enum": [
+              "success",
+              "error"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Warnings",
+            "type": "array"
+          },
+          "units": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Units"
+          },
+          "operation_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Operation Id"
+          },
+          "mutation_outcome": {
+            "anyOf": [
+              {
+                "enum": [
+                  "not_started",
+                  "running",
+                  "committed",
+                  "rolled_back",
+                  "partial",
+                  "unknown",
+                  "not_applicable"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "full_result": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "sha256": {
+                "type": "string"
+              },
+              "size": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "tool": {
+                "const": "nx_read_result"
+              },
+              "immutable": {
+                "const": true
+              }
+            },
+            "required": [
+              "id",
+              "sha256",
+              "size",
+              "tool",
+              "immutable"
+            ],
+            "additionalProperties": true
+          },
+          "omitted": {
+            "type": "object"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "retryable": {
+            "type": "boolean"
+          },
+          "suggestion": {
+            "type": "string"
+          },
+          "nx_code": {
+            "type": [
+              "integer",
+              "string"
+            ]
+          },
+          "details": {
+            "type": "object",
+            "properties": {
+              "operation_id": {
+                "type": "string"
+              },
+              "mutation_outcome": {
+                "enum": [
+                  "not_started",
+                  "running",
+                  "committed",
+                  "rolled_back",
+                  "partial",
+                  "unknown",
+                  "not_applicable"
+                ]
+              }
+            },
+            "required": [],
+            "additionalProperties": true
+          }
+        },
+        "required": [
+          "status",
+          "warnings",
+          "units"
+        ],
+        "title": "nx_sim_save_as result",
+        "type": "object",
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "status": {
+                  "const": "error"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "code",
+                "message",
+                "retryable"
+              ]
+            }
+          }
+        ]
+      },
+      "icons": null,
+      "annotations": {
+        "title": null,
+        "readOnlyHint": false,
+        "destructiveHint": null,
+        "idempotentHint": false,
+        "openWorldHint": null
+      },
+      "meta": null,
+      "execution": null
+    },
+    "responses": {
+      "invalid": {
+        "is_error": true,
+        "result": {
+          "status": "error",
+          "warnings": [],
+          "units": null,
+          "code": "NX_INVALID_ARGUMENT",
+          "message": "Choose a new .sim path; existing files are not overwritten",
+          "retryable": false,
+          "details": {
+            "mutation_outcome": "not_started",
+            "operation_id": "verify-saveas-reject-20260908-01"
+          }
+        }
+      },
+      "copied": {
+        "is_error": false,
+        "result": {
+          "status": "success",
+          "warnings": [],
+          "units": "mm",
+          "document": {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_aab0f877a8734b36871601e9bc19fc40",
+            "kind": "part",
+            "name": "mcp_saved_copy",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_abf19f0b5631403fb507517856de3740",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "abf19f0b5631403fb507517856de3740",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-sim-copy-20260908-r1\\mcp_saved_copy.sim",
+            "journal_id": "mcp_saved_copy",
+            "display_name": "mcp_saved_copy"
+          },
+          "source": {
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-sim-copy-20260908-r1\\unique_job_copy.sim",
+            "bytes": 7760997,
+            "sha256": "992392a61f7cedd3e182fe5486e0f721c952d87c25ffc93472c3b1ca4bccead6"
+          },
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-sim-copy-20260908-r1\\mcp_saved_copy.sim",
+          "source_file_unchanged": true,
+          "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-sim-copy-20260908-r1\\mcp_saved_copy.sim",
+          "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-sim-copy-20260908-r1\\mcp_saved_copy.sim",
+          "shared_fem_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_mesh.fem",
+          "independent_geometry_variant": false,
+          "saved": true,
+          "result_freshness": "not_verified",
+          "next_step": "Reacquire document IDs. Duplicate and reassociate FEM/CAD before changing shared geometry or mesh.",
+          "operation_id": "verify-saveas-20260908-01",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "mutation_outcome": "committed"
+        }
+      },
+      "replay": {
+        "is_error": false,
+        "result": {
+          "status": "success",
+          "warnings": [],
+          "units": "mm",
+          "document": {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_aab0f877a8734b36871601e9bc19fc40",
+            "kind": "part",
+            "name": "mcp_saved_copy",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_abf19f0b5631403fb507517856de3740",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "abf19f0b5631403fb507517856de3740",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-sim-copy-20260908-r1\\mcp_saved_copy.sim",
+            "journal_id": "mcp_saved_copy",
+            "display_name": "mcp_saved_copy"
+          },
+          "source": {
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-sim-copy-20260908-r1\\unique_job_copy.sim",
+            "bytes": 7760997,
+            "sha256": "992392a61f7cedd3e182fe5486e0f721c952d87c25ffc93472c3b1ca4bccead6"
+          },
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-sim-copy-20260908-r1\\mcp_saved_copy.sim",
+          "source_file_unchanged": true,
+          "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-sim-copy-20260908-r1\\mcp_saved_copy.sim",
+          "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-sim-copy-20260908-r1\\mcp_saved_copy.sim",
+          "shared_fem_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_mesh.fem",
+          "independent_geometry_variant": false,
+          "saved": true,
+          "result_freshness": "not_verified",
+          "next_step": "Reacquire document IDs. Duplicate and reassociate FEM/CAD before changing shared geometry or mesh.",
+          "operation_id": "verify-saveas-20260908-01",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "mutation_outcome": "committed",
+          "replayed": true
+        }
+      },
+      "stale": {
+        "is_error": true,
+        "result": {
+          "status": "error",
+          "warnings": [],
+          "units": null,
+          "code": "NX_OBJECT_STALE",
+          "message": "Object reference is not valid: obj_20bc234ffa5249ceb4fb4d82b993c626_1390550604db403385a7d50c311e3aa8",
+          "retryable": false,
+          "details": {
+            "operation_id": "op_79516c30bf324f6fb71369216ad63d5e",
+            "mutation_outcome": "not_started"
+          }
+        }
+      }
+    }
+  }
+}

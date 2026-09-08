@@ -1,0 +1,19 @@
+{
+  "nx_version": "v2606",
+  "fem_elements": 496,
+  "fem_nodes": 196,
+  "sim_root_elements": 0,
+  "sim_root_nodes": 0,
+  "sim_modeling_property_tables": 0,
+  "interpretation": "FEM mesh exists; child occurrence traversal and simulation update need inspection before diagnosing association loss",
+  "export_job": "conduction-input-export-04",
+  "export_terminal_state": "failed",
+  "solver_launched": false,
+  "modal_recovery": "Verified native Error dialog, IDOK control; WM_COMMAND acknowledgment released the pending operation without restart",
+  "sim_save_reopen": {
+    "elements": 496,
+    "step_count": 1,
+    "loaded_parts": 3,
+    "result": "Saved SIM reopen restores occurrence mesh; UpdateFemodel alone did not"
+  }
+}

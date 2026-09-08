@@ -1,0 +1,52 @@
+{
+  "status": "success",
+  "ui": {
+    "interactive": true,
+    "pid": 6584,
+    "mode": "agent",
+    "activity": "running",
+    "running_method": "nx_simcenter_probe",
+    "operation_elapsed_seconds": 0.0629999999946449,
+    "last_duration_seconds": 0.0159999999741558,
+    "sampled_at": 1788869884.627537,
+    "snapshot_only": false,
+    "pause_semantics": "between operations; does not interrupt a native call",
+    "ui_locked_by_bridge": true,
+    "actual_ui_lock": false,
+    "native_lock_value": "1",
+    "can_open_part": false,
+    "last_unlock": {
+      "before": "0",
+      "after": "1",
+      "can_open_part": true
+    },
+    "nx_window_input_enabled": false,
+    "main_thread_id": 2976,
+    "callback_thread_id": 2976,
+    "ticks": 541982,
+    "completed_operations": 783,
+    "last_method": "nx_simcenter_probe",
+    "last_error": null,
+    "simulation_observers": {
+      "active_count": 0,
+      "job_ids": [],
+      "scope": "observer_thread_liveness_in_this_nx_process",
+      "solver_state": "not_checked",
+      "no_active_observer_does_not_imply_solver_idle": true
+    },
+    "uptime_seconds": 61199.090245723724,
+    "scheduler": "Win32 UI-thread timer; one queued call per tick"
+  },
+  "bridge_restarted": false,
+  "document_flags_preserved": true,
+  "patched_methods": [
+    "simulation_observers",
+    "panel_text",
+    "status"
+  ],
+  "operation_id": "op_bb990661c1c742a48dcff5eb633d86f4",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

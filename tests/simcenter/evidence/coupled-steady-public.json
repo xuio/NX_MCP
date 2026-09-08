@@ -1,0 +1,159 @@
+{
+  "schema": {
+    "additionalProperties": false,
+    "properties": {
+      "document": {
+        "title": "Document",
+        "type": "string"
+      },
+      "action": {
+        "enum": [
+          "create_step",
+          "attach_defaults",
+          "coupled_steady"
+        ],
+        "title": "Action",
+        "type": "string"
+      },
+      "name": {
+        "default": "Flow",
+        "title": "Name",
+        "type": "string"
+      },
+      "operation_id": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Operation Id"
+      }
+    },
+    "required": [
+      "document",
+      "action"
+    ],
+    "title": "nx_sim_flow_setupArguments",
+    "type": "object"
+  },
+  "first": {
+    "meta": null,
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_49fbe70158e04d828ebf53fbc31309d4\", \"kind\": \"part\", \"name\": \"coupled_steady_r1\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_64b6944de1374a198630e5e986d646e3\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"64b6944de1374a198630e5e986d646e3\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\E-development-steady-20260908-r1\\\\coupled_steady_r1.sim\", \"journal_id\": \"coupled_steady_r1\", \"display_name\": \"coupled_steady_r1\"}, \"action\": \"coupled_steady\", \"step\": \"Coupled development\", \"solution_type\": \"steady\", \"native_value\": 0, \"previous_native_value\": 0, \"saved\": false, \"solve_ready\": false, \"name_semantics\": \"existing step name retained\", \"operation_id\": \"coupled-steady-public-r1\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+        "annotations": null,
+        "meta": null
+      }
+    ],
+    "structuredContent": {
+      "status": "success",
+      "warnings": [],
+      "units": "mm",
+      "document": {
+        "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_49fbe70158e04d828ebf53fbc31309d4",
+        "kind": "part",
+        "name": "coupled_steady_r1",
+        "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_64b6944de1374a198630e5e986d646e3",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "generation_id": "64b6944de1374a198630e5e986d646e3",
+        "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-development-steady-20260908-r1\\coupled_steady_r1.sim",
+        "journal_id": "coupled_steady_r1",
+        "display_name": "coupled_steady_r1"
+      },
+      "action": "coupled_steady",
+      "step": "Coupled development",
+      "solution_type": "steady",
+      "native_value": 0,
+      "previous_native_value": 0,
+      "saved": false,
+      "solve_ready": false,
+      "name_semantics": "existing step name retained",
+      "operation_id": "coupled-steady-public-r1",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "mutation_outcome": "committed"
+    },
+    "isError": false
+  },
+  "replay": {
+    "meta": null,
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_49fbe70158e04d828ebf53fbc31309d4\", \"kind\": \"part\", \"name\": \"coupled_steady_r1\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_64b6944de1374a198630e5e986d646e3\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"64b6944de1374a198630e5e986d646e3\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\E-development-steady-20260908-r1\\\\coupled_steady_r1.sim\", \"journal_id\": \"coupled_steady_r1\", \"display_name\": \"coupled_steady_r1\"}, \"action\": \"coupled_steady\", \"step\": \"Coupled development\", \"solution_type\": \"steady\", \"native_value\": 0, \"previous_native_value\": 0, \"saved\": false, \"solve_ready\": false, \"name_semantics\": \"existing step name retained\", \"operation_id\": \"coupled-steady-public-r1\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\", \"replayed\": true}",
+        "annotations": null,
+        "meta": null
+      }
+    ],
+    "structuredContent": {
+      "status": "success",
+      "warnings": [],
+      "units": "mm",
+      "document": {
+        "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_49fbe70158e04d828ebf53fbc31309d4",
+        "kind": "part",
+        "name": "coupled_steady_r1",
+        "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_64b6944de1374a198630e5e986d646e3",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "generation_id": "64b6944de1374a198630e5e986d646e3",
+        "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-development-steady-20260908-r1\\coupled_steady_r1.sim",
+        "journal_id": "coupled_steady_r1",
+        "display_name": "coupled_steady_r1"
+      },
+      "action": "coupled_steady",
+      "step": "Coupled development",
+      "solution_type": "steady",
+      "native_value": 0,
+      "previous_native_value": 0,
+      "saved": false,
+      "solve_ready": false,
+      "name_semantics": "existing step name retained",
+      "operation_id": "coupled-steady-public-r1",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "mutation_outcome": "committed",
+      "replayed": true
+    },
+    "isError": false
+  },
+  "saved": {
+    "meta": null,
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"saved\": true, \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\E-development-steady-20260908-r1\\\\coupled_steady_r1.sim\", \"file\": {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\E-development-steady-20260908-r1\\\\coupled_steady_r1.sim\", \"bytes\": 7658908, \"sha256\": \"0cee5cc6852ee61a3a6c7974e77bda1c81ad86b3ab318edc471ccfbdf4cf1f69\"}, \"previous_file\": {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\E-development-steady-20260908-r1\\\\coupled_steady_r1.sim\", \"bytes\": 7652669, \"sha256\": \"ae08080af2b44770e8c731e09cf8320d81a8afd698d20cd809264b4ca9954438\"}, \"backup_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\simcenter-save-backups\\\\14c56944aa1445b3ad45013c6acb10fc\\\\coupled_steady_r1.sim\", \"saved_components\": false, \"closed\": false, \"other_modified_flags_unchanged\": true, \"result_freshness\": \"not_verified\", \"operation_id\": \"coupled-boundaries-save-r1\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+        "annotations": null,
+        "meta": null
+      }
+    ],
+    "structuredContent": {
+      "status": "success",
+      "warnings": [],
+      "units": "mm",
+      "saved": true,
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-development-steady-20260908-r1\\coupled_steady_r1.sim",
+      "file": {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-development-steady-20260908-r1\\coupled_steady_r1.sim",
+        "bytes": 7658908,
+        "sha256": "0cee5cc6852ee61a3a6c7974e77bda1c81ad86b3ab318edc471ccfbdf4cf1f69"
+      },
+      "previous_file": {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-development-steady-20260908-r1\\coupled_steady_r1.sim",
+        "bytes": 7652669,
+        "sha256": "ae08080af2b44770e8c731e09cf8320d81a8afd698d20cd809264b4ca9954438"
+      },
+      "backup_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-save-backups\\14c56944aa1445b3ad45013c6acb10fc\\coupled_steady_r1.sim",
+      "saved_components": false,
+      "closed": false,
+      "other_modified_flags_unchanged": true,
+      "result_freshness": "not_verified",
+      "operation_id": "coupled-boundaries-save-r1",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "mutation_outcome": "committed"
+    },
+    "isError": false
+  }
+}

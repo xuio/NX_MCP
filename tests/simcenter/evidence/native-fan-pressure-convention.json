@@ -1,0 +1,293 @@
+{
+  "scope": "Native samples and boundary-integrated pressure diagnostics for synthetic constant-density fan case",
+  "samples": {
+    "status": "success",
+    "samples": [
+      {
+        "name": "inlet_center",
+        "requested_mm": [
+          1,
+          11,
+          11
+        ],
+        "actual_mm": [
+          1.0,
+          10.998003959655762,
+          10.99680233001709
+        ],
+        "node_index": 3902,
+        "element_index": 7067,
+        "incident_element_count": 12,
+        "values": {
+          "Pressure - Element-Nodal": {
+            "value": 0.4911912977695465,
+            "unit": "PressurePascals"
+          },
+          "Total Pressure - Element-Nodal": {
+            "value": 0.6466395258903503,
+            "unit": "PressurePascals"
+          },
+          "Velocity - Element-Nodal": {
+            "value": 0.5089994072914124,
+            "unit": "MeterPerSecond"
+          }
+        }
+      },
+      {
+        "name": "outlet_center",
+        "requested_mm": [
+          161,
+          11,
+          11
+        ],
+        "actual_mm": [
+          161.0,
+          11.001995086669922,
+          10.99680233001709
+        ],
+        "node_index": 4007,
+        "element_index": 5454,
+        "incident_element_count": 12,
+        "values": {
+          "Pressure - Element-Nodal": {
+            "value": 0.32344669103622437,
+            "unit": "PressurePascals"
+          },
+          "Total Pressure - Element-Nodal": {
+            "value": 0.48618677258491516,
+            "unit": "PressurePascals"
+          },
+          "Velocity - Element-Nodal": {
+            "value": 0.520800769329071,
+            "unit": "MeterPerSecond"
+          }
+        }
+      },
+      {
+        "name": "mid_center",
+        "requested_mm": [
+          81,
+          11,
+          11
+        ],
+        "actual_mm": [
+          81.578369140625,
+          10.266819953918457,
+          10.709519386291504
+        ],
+        "node_index": 4244,
+        "element_index": 62,
+        "incident_element_count": 22,
+        "values": {
+          "Pressure - Element-Nodal": {
+            "value": 0.39616501331329346,
+            "unit": "PressurePascals"
+          },
+          "Total Pressure - Element-Nodal": {
+            "value": 0.5789196491241455,
+            "unit": "PressurePascals"
+          },
+          "Velocity - Element-Nodal": {
+            "value": 0.5518978238105774,
+            "unit": "MeterPerSecond"
+          }
+        }
+      },
+      {
+        "name": "mid_wall",
+        "requested_mm": [
+          81,
+          1,
+          11
+        ],
+        "actual_mm": [
+          81.0,
+          1.0,
+          11.0
+        ],
+        "node_index": 1277,
+        "element_index": 6280,
+        "incident_element_count": 10,
+        "values": {
+          "Pressure - Element-Nodal": {
+            "value": 0.39723753929138184,
+            "unit": "PressurePascals"
+          },
+          "Total Pressure - Element-Nodal": {
+            "value": 0.5305074453353882,
+            "unit": "PressurePascals"
+          },
+          "Velocity - Element-Nodal": {
+            "value": 0.47129231691360474,
+            "unit": "MeterPerSecond"
+          }
+        }
+      },
+      {
+        "name": "mid_near_wall",
+        "requested_mm": [
+          81,
+          2,
+          11
+        ],
+        "actual_mm": [
+          81.0,
+          1.0,
+          11.0
+        ],
+        "node_index": 1277,
+        "element_index": 6280,
+        "incident_element_count": 10,
+        "values": {
+          "Pressure - Element-Nodal": {
+            "value": 0.39723753929138184,
+            "unit": "PressurePascals"
+          },
+          "Total Pressure - Element-Nodal": {
+            "value": 0.5305074453353882,
+            "unit": "PressurePascals"
+          },
+          "Velocity - Element-Nodal": {
+            "value": 0.47129231691360474,
+            "unit": "MeterPerSecond"
+          }
+        }
+      }
+    ],
+    "bounds_mm": {
+      "min": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "max": [
+        161.0,
+        21.0,
+        21.0
+      ]
+    },
+    "sampling": "nearest mesh node, first incident element; no averaging",
+    "freshness": "not_verified",
+    "operation_id": "op_ac3f80d21f2c4f33ac3ddaf76d62b0b6",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed",
+    "warnings": [],
+    "units": "mm"
+  },
+  "boundary_integrals": {
+    "status": "success",
+    "boundaries": [
+      {
+        "name": "Duct Inlet",
+        "area_mm2": 400.0,
+        "values": {
+          "Pressure - Element-Nodal": {
+            "area_mean": 0.4960479324369807,
+            "unit": "PressurePascals"
+          },
+          "Total Pressure - Element-Nodal": {
+            "area_mean": 0.6481951274259533,
+            "unit": "PressurePascals"
+          },
+          "Velocity - Element-Nodal": {
+            "area_mean": 0.5035313691200346,
+            "unit": "MeterPerSecond"
+          }
+        },
+        "recovered_volume_flow_m3_s_positive_x": 0.0002014125476480138,
+        "facet_count": 248
+      },
+      {
+        "name": "Duct Opening",
+        "area_mm2": 400.0,
+        "values": {
+          "Pressure - Element-Nodal": {
+            "area_mean": 0.30195403057329623,
+            "unit": "PressurePascals"
+          },
+          "Total Pressure - Element-Nodal": {
+            "area_mean": 0.4534309507401357,
+            "unit": "PressurePascals"
+          },
+          "Velocity - Element-Nodal": {
+            "area_mean": 0.5019460006133032,
+            "unit": "MeterPerSecond"
+          }
+        },
+        "recovered_volume_flow_m3_s_positive_x": 0.00020077840024532127,
+        "facet_count": 248
+      }
+    ],
+    "method": "linear triangular integration of recovered element-nodal values",
+    "conservation": "not_established_by_recovered_field_integrals",
+    "freshness": "not_verified",
+    "operation_id": "op_a936f8dbf7014cb3838a5c6231705635",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed",
+    "warnings": [],
+    "units": "mm"
+  },
+  "density_kg_m3": 1.2,
+  "density_provenance": "benchmark assumption, committed explicit fluid material",
+  "pressure_decomposition_audits": [
+    {
+      "sample": "inlet_center",
+      "accepted": true,
+      "observed_dynamic_pressure_Pa": 0.15544822812080383,
+      "expected_dynamic_pressure_Pa": 0.15544823797380544,
+      "absolute_error_Pa": 9.853001609050338e-09,
+      "allowed_error_Pa": 2.5544823797380545e-06,
+      "scope": "incompressible_field_consistency_only"
+    },
+    {
+      "sample": "outlet_center",
+      "accepted": true,
+      "observed_dynamic_pressure_Pa": 0.1627400815486908,
+      "expected_dynamic_pressure_Pa": 0.16274006480025136,
+      "absolute_error_Pa": 1.6748439440883445e-08,
+      "allowed_error_Pa": 2.6274006480025134e-06,
+      "scope": "incompressible_field_consistency_only"
+    },
+    {
+      "sample": "mid_center",
+      "accepted": true,
+      "observed_dynamic_pressure_Pa": 0.18275463581085205,
+      "expected_dynamic_pressure_Pa": 0.18275472475611068,
+      "absolute_error_Pa": 8.894525863056835e-08,
+      "allowed_error_Pa": 2.827547247561107e-06,
+      "scope": "incompressible_field_consistency_only"
+    },
+    {
+      "sample": "mid_wall",
+      "accepted": true,
+      "observed_dynamic_pressure_Pa": 0.13326990604400635,
+      "expected_dynamic_pressure_Pa": 0.13326986878907618,
+      "absolute_error_Pa": 3.725493016859538e-08,
+      "allowed_error_Pa": 2.3326986878907616e-06,
+      "scope": "incompressible_field_consistency_only"
+    },
+    {
+      "sample": "mid_near_wall",
+      "accepted": true,
+      "observed_dynamic_pressure_Pa": 0.13326990604400635,
+      "expected_dynamic_pressure_Pa": 0.13326986878907618,
+      "absolute_error_Pa": 3.725493016859538e-08,
+      "allowed_error_Pa": 2.3326986878907616e-06,
+      "scope": "incompressible_field_consistency_only"
+    }
+  ],
+  "fan_curve_check": {
+    "solver_reported_flow_m3_s": 0.0002016,
+    "curve_expected_pressure_Pa": 0.496,
+    "inlet_mean_pressure_Pa": 0.4960479324369807,
+    "inlet_mean_total_pressure_Pa": 0.6481951274259533,
+    "interpretation": "tested fan inlet mode 5 is consistent with static pressure rise relative to ambient; total-pressure curve support not established"
+  },
+  "limitations": [
+    "Recovered boundary integrals are not solver conservation fluxes",
+    "Exact pressure/loss convention outside this tested configuration remains unverified",
+    "Nonzero recovered wall-node speed requires recovery/boundary interpretation before using as wall condition evidence",
+    "Mesh convergence remains unproven"
+  ],
+  "result_sha256": "08a33d2c9fa72e0abb6827a53614fcebb6dcb59d5e34ecdcf1e54b2e9931643a"
+}

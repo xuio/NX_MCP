@@ -1,0 +1,85 @@
+{
+  "job_id": "coupled-finned-pressure-r1",
+  "physical_acceptance": false,
+  "mesh_changed": false,
+  "copy": {
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_769f220208a54e17986a5fa5adbe64d8",
+      "kind": "part",
+      "name": "finned_pressure_r1",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_7c1420819b004f25b5422d1137685bc1",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "7c1420819b004f25b5422d1137685bc1",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-pressure-20260908-r1\\finned_pressure_r1.sim",
+      "journal_id": "finned_pressure_r1",
+      "display_name": "finned_pressure_r1"
+    },
+    "source": {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-tight-20260908-r1\\finned_tight_r1.sim",
+      "bytes": 7672132,
+      "sha256": "a9a40e1c3a17a00b3c6ef0643db4e96fb42b2f8a0a3f0bbd3223673347757aae"
+    },
+    "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-pressure-20260908-r1\\finned_pressure_r1.sim",
+    "source_file_unchanged": true,
+    "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-pressure-20260908-r1\\finned_pressure_r1.sim",
+    "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-pressure-20260908-r1\\finned_pressure_r1.sim",
+    "shared_fem_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-baseline-20260908-r1\\finned_r1_mesh.fem",
+    "independent_geometry_variant": false,
+    "saved": true,
+    "result_freshness": "not_verified",
+    "next_step": "Reacquire document IDs. Duplicate and reassociate FEM/CAD before changing shared geometry or mesh."
+  },
+  "native_controls": {
+    "ambient_pressure_mode": 0,
+    "absolute_pressure_Pa": 101325,
+    "iteration_limits": 100,
+    "density_and_mass_flux_output": true
+  },
+  "save": {
+    "saved": true,
+    "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-pressure-20260908-r1\\finned_pressure_r1.sim",
+    "file": {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-pressure-20260908-r1\\finned_pressure_r1.sim",
+      "bytes": 7673847,
+      "sha256": "4898833a7463d9f9ee6b0e5318c5fe53900e2fc73addd685ed87ae62b75a1abf"
+    },
+    "previous_file": {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-pressure-20260908-r1\\finned_pressure_r1.sim",
+      "bytes": 7673701,
+      "sha256": "7236837e0fde3b050ccc5a53b4a9cfc3586f81d05cf6da7a5bb4717b407cbfa8"
+    },
+    "backup_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-save-backups\\d6b5a5dd63014352a74e4eb3c93c24a8\\finned_pressure_r1.sim",
+    "saved_components": false,
+    "closed": false,
+    "other_modified_flags_unchanged": true,
+    "result_freshness": "not_verified"
+  },
+  "prepare": {
+    "job_id": "coupled-finned-pressure-r1",
+    "state": "accepted",
+    "request_sha256": "2ad76bb922a3d168bb50d7d5bfb495710d1c46c5765cc5e4793ea2d7a1d1517f",
+    "replayed": false,
+    "preparation_revalidated": true,
+    "solver_launched_by_call": false,
+    "input_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-pressure-20260908-r1\\finned_pressure_r1-Finned_coupled_benchmark.xml",
+    "input_sha256": "9a8f318500beed70bdd9699b16bfb70cce18df2ba7c50162b2688e917d1f857e",
+    "output_claim": {
+      "schema": 1,
+      "job_id": "coupled-finned-pressure-r1",
+      "job_directory": "d:\\cad\\simcenter_mcp_workspace\\simcenter-jobs\\coupled-finned-pressure-r1",
+      "request_sha256": "2ad76bb922a3d168bb50d7d5bfb495710d1c46c5765cc5e4793ea2d7a1d1517f",
+      "output_directory": "d:\\cad\\simcenter_mcp_workspace\\ui-benchmarks\\e-finned-pressure-20260908-r1",
+      "replayed": false,
+      "retention": "permanent; no automatic release"
+    },
+    "mesh_counts": {
+      "element_sets": 2,
+      "elements": 2130,
+      "nodes": 745,
+      "scope": "observed_multiphysics_xml_layout"
+    },
+    "dependency_completeness": "not_established",
+    "solve_readiness": "not_established",
+    "next_step": "Inspect the immutable manifest with nx_sim_job_status(include_manifest=True), then use nx_sim_launch; cancellation is not yet implemented"
+  }
+}

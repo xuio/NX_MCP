@@ -1,0 +1,18 @@
+{
+  "scope": "bounded copied documentation and native runtime review",
+  "python_evaluator_ownership": "unverified",
+  "python_memory_leak_measured": false,
+  "automatic_python_evaluator_cleanup_established": false,
+  "ordinary_UF_free_wrapper_management_documented": true,
+  "existing_python_pointer_wrappers_manually_released": false,
+  "net_route": "compiled against installed NX 2606 assemblies; Initialize2/EvaluateUnitVectors/Free tested on one existing edge",
+  "helper_source_sha256": "615f96800e76a42ad50252e6f93547fa9581322e956098235d3e8cc4b8f6f3b3",
+  "licensing_configuration_changed": false,
+  "native_authentication": "existing DotNet author licence present; authentication passed per NX syslog",
+  "pending": [
+    "planar DXF adapter integration",
+    "surface-continuity adapter integration",
+    "line/arc/circle, reversed normals, mm/inch, unsupported curve, curved sheet boundary acceptance"
+  ],
+  "operations_reenabled": false
+}

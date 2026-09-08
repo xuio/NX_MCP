@@ -1,0 +1,414 @@
+{
+  "new_public_mcp_client": true,
+  "tools": [
+    {
+      "name": "nx_sim_prepare_solve",
+      "title": null,
+      "description": "Export native Thermal, Flow or Coupled Thermal-Flow input and reserve an immutable job, without solving. Coupled temperature and active specified-pressure export guards apply. Activate a standalone SIM saved in a fresh subfolder containing only that SIM; save/load all direct FEM/CAD dependencies first. job_id: 1..80 lowercase letters/digits/_/-, first alphanumeric. job_folder must be outside the native output folder. Checks known solver processes, exports with native setup checks, hashes saved dependencies and input, and permanently claims outputs. Same accepted job revalidates bytes without re-export; launched jobs only report their existing state. Retains partial files on failure. No saving, licence modification, solver launch, convergence or complete-dependency claim. Inspect the manifest through nx_sim_job_status. Supply operation_id for transport retry.",
+      "inputSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "document": {
+            "title": "Document",
+            "type": "string"
+          },
+          "job_id": {
+            "title": "Job Id",
+            "type": "string"
+          },
+          "job_folder": {
+            "default": "simcenter-jobs",
+            "title": "Job Folder",
+            "type": "string"
+          },
+          "operation_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Operation Id"
+          }
+        },
+        "required": [
+          "document",
+          "job_id"
+        ],
+        "title": "nx_sim_prepare_solveArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "additionalProperties": true,
+        "description": "Structured success/error envelope with additive metadata. Tool-specific payload remains extensible.",
+        "properties": {
+          "status": {
+            "enum": [
+              "success",
+              "error"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Warnings",
+            "type": "array"
+          },
+          "units": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Units"
+          },
+          "operation_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Operation Id"
+          },
+          "mutation_outcome": {
+            "anyOf": [
+              {
+                "enum": [
+                  "not_started",
+                  "running",
+                  "committed",
+                  "rolled_back",
+                  "partial",
+                  "unknown",
+                  "not_applicable"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "full_result": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "sha256": {
+                "type": "string"
+              },
+              "size": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "tool": {
+                "const": "nx_read_result"
+              },
+              "immutable": {
+                "const": true
+              }
+            },
+            "required": [
+              "id",
+              "sha256",
+              "size",
+              "tool",
+              "immutable"
+            ],
+            "additionalProperties": true
+          },
+          "omitted": {
+            "type": "object"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "retryable": {
+            "type": "boolean"
+          },
+          "suggestion": {
+            "type": "string"
+          },
+          "nx_code": {
+            "type": [
+              "integer",
+              "string"
+            ]
+          },
+          "details": {
+            "type": "object",
+            "properties": {
+              "operation_id": {
+                "type": "string"
+              },
+              "mutation_outcome": {
+                "enum": [
+                  "not_started",
+                  "running",
+                  "committed",
+                  "rolled_back",
+                  "partial",
+                  "unknown",
+                  "not_applicable"
+                ]
+              }
+            },
+            "required": [],
+            "additionalProperties": true
+          }
+        },
+        "required": [
+          "status",
+          "warnings",
+          "units"
+        ],
+        "title": "nx_sim_prepare_solve result",
+        "type": "object",
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "status": {
+                  "const": "error"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "code",
+                "message",
+                "retryable"
+              ]
+            }
+          }
+        ]
+      },
+      "icons": null,
+      "annotations": {
+        "title": null,
+        "readOnlyHint": false,
+        "destructiveHint": null,
+        "idempotentHint": false,
+        "openWorldHint": null
+      },
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "nx_sim_export_input",
+      "title": null,
+      "description": "Export and inspect native NX MULTIPHYSICS Thermal, Flow or Coupled Thermal-Flow input from the active SIM ID. Requires a workspace subfolder containing only that saved SIM; use nx_sim_save_as to create it. Existing artifacts are rejected before export. Returns actual XML/artifact paths, hashes, mesh counts and translator diagnostics; retains partial files on failure. Does not save edits or launch a solver. XML validity is not solve readiness or convergence evidence. Coupled export compares constant Celsius ambient readback with XML. Specified ambient pressure requires an expression-backed Pa value and matching XML; field-backed pressure is rejected. Altitude mode leaves stored absolute pressure inactive. These guards do not establish regional density, full field state or physical acceptance. Supply operation_id for safe retry.",
+      "inputSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "document": {
+            "title": "Document",
+            "type": "string"
+          },
+          "operation_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Operation Id"
+          }
+        },
+        "required": [
+          "document"
+        ],
+        "title": "nx_sim_export_inputArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "additionalProperties": true,
+        "description": "Structured success/error envelope with additive metadata. Tool-specific payload remains extensible.",
+        "properties": {
+          "status": {
+            "enum": [
+              "success",
+              "error"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Warnings",
+            "type": "array"
+          },
+          "units": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Units"
+          },
+          "operation_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Operation Id"
+          },
+          "mutation_outcome": {
+            "anyOf": [
+              {
+                "enum": [
+                  "not_started",
+                  "running",
+                  "committed",
+                  "rolled_back",
+                  "partial",
+                  "unknown",
+                  "not_applicable"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "full_result": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "sha256": {
+                "type": "string"
+              },
+              "size": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "tool": {
+                "const": "nx_read_result"
+              },
+              "immutable": {
+                "const": true
+              }
+            },
+            "required": [
+              "id",
+              "sha256",
+              "size",
+              "tool",
+              "immutable"
+            ],
+            "additionalProperties": true
+          },
+          "omitted": {
+            "type": "object"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "retryable": {
+            "type": "boolean"
+          },
+          "suggestion": {
+            "type": "string"
+          },
+          "nx_code": {
+            "type": [
+              "integer",
+              "string"
+            ]
+          },
+          "details": {
+            "type": "object",
+            "properties": {
+              "operation_id": {
+                "type": "string"
+              },
+              "mutation_outcome": {
+                "enum": [
+                  "not_started",
+                  "running",
+                  "committed",
+                  "rolled_back",
+                  "partial",
+                  "unknown",
+                  "not_applicable"
+                ]
+              }
+            },
+            "required": [],
+            "additionalProperties": true
+          }
+        },
+        "required": [
+          "status",
+          "warnings",
+          "units"
+        ],
+        "title": "nx_sim_export_input result",
+        "type": "object",
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "status": {
+                  "const": "error"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "code",
+                "message",
+                "retryable"
+              ]
+            }
+          }
+        ]
+      },
+      "icons": null,
+      "annotations": {
+        "title": null,
+        "readOnlyHint": false,
+        "destructiveHint": null,
+        "idempotentHint": false,
+        "openWorldHint": null
+      },
+      "meta": null,
+      "execution": null
+    }
+  ],
+  "native_operations_invoked": false
+}

@@ -1,0 +1,1202 @@
+{
+  "status": "success",
+  "physical_acceptance": false,
+  "solver_launched": false,
+  "unrelated_before": {
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer_fine-20260908-r1\\finned_layer_fine_r1_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer_coarse-20260908-r1\\finned_layer_coarse_r1_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-fine-20260908-r1\\finned_fine_r1_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-refined-20260908-r1\\finned_refined_r1_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-baseline-20260908-r1\\finned_r1_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-defaults-public-20260908-r1\\benchmark_c97edffd963e_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-development-20260908-r1\\benchmark_99f1fecb220c_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\distributed-heat-public-20260908-r2\\benchmark_fcce35d5b974_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\volume-numerical-20260908-r1\\benchmark_45af73238372_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\flux-numerical-20260908-r1\\benchmark_ff936fa1d1be_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\distributed-heat-public-20260908-r1\\benchmark_b88ba7d4ef90_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\volume-heat-authoring-20260908-r1\\benchmark_c2c73c8e49e9_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-z-20260908-r1\\OrthoZR1_cad_01.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-rotated-20260908-r1\\RotatedOrthoR1_cad_01.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-conduction-20260908-r1\\OrthotropicR1_cad_01.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\variant-transaction-20260908-r1\\VariantTxnR1_cad_01.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-independent-clone-native-20260908-r1\\independent_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-coupled-mcp-20260908-r1\\benchmark_d1e2b031a3dd_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-coupled-setup-20260908-r1\\benchmark_afc1178b2153_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-mcp-20260908-r1\\benchmark_6fd2a790ec2f_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-20260908-r1\\benchmark_42867001f37a_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-apply-mcp-20260908-r2\\benchmark_18db101c4a43_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-apply-mcp-20260908-r1\\benchmark_15b44b21f66b_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-apply-20260908-r1\\benchmark_ebfa27d8b223_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-fan-reopen-20260908-r1\\benchmark_9c5a613280cc_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-temperature-mcp-20260908-r1\\benchmark_eecaf3edf587_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-mcp-20260908-r1\\benchmark_cac991745074_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908\\benchmark_d58d2f7c41d9_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-flow-mcp-20260908\\benchmark_d4824c95f973_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-coupled-documents-20260908\\benchmark_66f5994b70bc_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-flow-documents-20260908\\benchmark_7f0e82b41fe3_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\C-transient-fine-20260908\\benchmark_29b2bd9b1155_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\C-transient-20260907\\benchmark_4ed90ef8215b_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\factory-steady-20260907-r2\\benchmark_c553623676a1_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\conduction-20260907\\geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer_fine-20260908-r1\\finned_layer_fine_r1_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer_coarse-20260908-r1\\finned_layer_coarse_r1_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-fine-20260908-r1\\finned_fine_r1_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-refined-20260908-r1\\finned_refined_r1_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-baseline-20260908-r1\\finned_r1_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-defaults-public-20260908-r1\\benchmark_c97edffd963e_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-development-20260908-r1\\benchmark_99f1fecb220c_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\distributed-heat-public-20260908-r2\\benchmark_fcce35d5b974_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\volume-numerical-20260908-r1\\benchmark_45af73238372_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\flux-numerical-20260908-r1\\benchmark_ff936fa1d1be_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\distributed-heat-public-20260908-r1\\benchmark_b88ba7d4ef90_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\volume-heat-authoring-20260908-r1\\benchmark_c2c73c8e49e9_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-z-20260908-r1\\OrthoZR1_mesh.fem": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-rotated-20260908-r1\\RotatedOrthoR1_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-conduction-20260908-r1\\OrthotropicR1_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\variant-transaction-20260908-r1\\VariantTxnR1_mesh.fem": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-independent-clone-native-20260908-r1\\independent_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-coupled-mcp-20260908-r1\\benchmark_d1e2b031a3dd_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-coupled-setup-20260908-r1\\benchmark_afc1178b2153_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-mcp-20260908-r1\\public_open_fem_r2.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-mcp-20260908-r1\\benchmark_6fd2a790ec2f_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-20260908-r1\\benchmark_42867001f37a_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-apply-mcp-20260908-r2\\benchmark_18db101c4a43_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-apply-mcp-20260908-r1\\benchmark_15b44b21f66b_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-apply-20260908-r1\\benchmark_ebfa27d8b223_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-fan-reopen-20260908-r1\\benchmark_9c5a613280cc_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-temperature-mcp-20260908-r1\\benchmark_eecaf3edf587_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-mcp-20260908-r1\\benchmark_cac991745074_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908\\benchmark_d58d2f7c41d9_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-flow-mcp-20260908\\benchmark_d4824c95f973_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-coupled-documents-20260908\\benchmark_66f5994b70bc_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-flow-documents-20260908\\benchmark_7f0e82b41fe3_mesh.fem": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\C-transient-fine-20260908\\benchmark_29b2bd9b1155_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\C-transient-20260907\\benchmark_4ed90ef8215b_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\factory-steady-20260907-r2\\benchmark_c553623676a1_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\conduction-20260907\\mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer_coarse-20260908-r1\\finned_layer_coarse_r1_analysis.sim": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-fine-run-20260908-r1\\finned_fine_run_r1.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-refined-run-20260908-r1\\finned_refined_run_r1.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-tight-20260908-r1\\finned_tight_r1.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-reopen-20260908-r1\\coupled_external_reopen_r1.sim": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-defaults-public-20260908-r1\\benchmark_c97edffd963e_analysis.sim": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-conditions-20260908-r1\\coupled_external_conditions_r1.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-template-inspection-20260908-r1\\SimThermalFlowMetric.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-template-inspection-20260908-r1\\SimMultiPhysicsMetric.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\additive-heat-public-20260908-r1\\additive_heat_r1.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\boundary-guard-20260908-r1\\boundary_guard_r1.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\flux-numerical-solve-20260908-r1\\flux_solve_r1.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\distributed-heat-public-20260908-r1\\benchmark_b88ba7d4ef90_analysis.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\volume-heat-authoring-20260908-r1\\benchmark_c2c73c8e49e9_analysis.sim": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\fan-scaling-public-20260908-r1\\fan_scaling_public_r1.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\live-revision-solve-20260908-r1\\live_revision_solve_r1.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-rotated-solve-20260908-r1\\rotated_ortho_solve_r1.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-solve-20260908-r1\\orthotropic_solve_r1.sim": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\variant-transaction-20260908-r1\\VariantTxnR1_analysis.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\monitor-probe-20260908-r2\\monitor_probe_r2.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-head-loss-mcp-20260908-r1\\head_loss_test_r1.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-fine-k0-solve-20260908-r1\\fine_k0_solve_r1.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-coupled-mcp-20260908-r1\\benchmark_d1e2b031a3dd_analysis.sim": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-coupled-setup-20260908-r1\\benchmark_afc1178b2153_analysis.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-mcp-20260908-r1\\public_open_r1.sim": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-mcp-20260908-r1\\reopen_modified_probe_r1.sim": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-mcp-20260908-r1\\benchmark_6fd2a790ec2f_analysis.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-20260908-r1\\benchmark_42867001f37a_analysis.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-apply-mcp-20260908-r2\\benchmark_18db101c4a43_analysis.sim": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-apply-mcp-20260908-r1\\benchmark_15b44b21f66b_analysis.sim": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-apply-20260908-r1\\benchmark_ebfa27d8b223_analysis.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\B-contact-context-20260908-r2\\contact_context_r2.sim": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-mcp-20260908-r1\\saved_power.sim": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-auto-observer-20260908-r1\\auto_flow_r1.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908\\benchmark_d58d2f7c41d9_analysis.sim": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-flow-mcp-20260908\\benchmark_d4824c95f973_analysis.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-coupled-documents-20260908\\benchmark_66f5994b70bc_analysis.sim": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-flow-documents-20260908\\benchmark_7f0e82b41fe3_analysis.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\C-transient-fine-20260908\\benchmark_29b2bd9b1155_analysis.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\C-transient-20260907\\benchmark_4ed90ef8215b_analysis.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\factory-steady-20260907-r2\\benchmark_c553623676a1_analysis.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\conduction-20260907\\analysis.sim": false
+  },
+  "files_before": {
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1-Finned_coupled_benchmark.bun": "e2b7132185262791f27df9ed451ac478fb39f2b59ce10b2adb0cf78891f3f840",
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1-Finned_coupled_benchmark.xml": "e32afd0a0b088fb282f613fecc379be861f45303ff00bf7fb8f29c0250a73b01"
+  },
+  "before": {
+    "solution": {
+      "owner": {
+        "journal_id": "Solution[Finned coupled benchmark]",
+        "name": "Finned coupled benchmark",
+        "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1.sim"
+      },
+      "bcs": [
+        {
+          "journal_id": "Load[Generic solid 0.1 W]",
+          "name": "Generic solid 0.1 W",
+          "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1.sim"
+        },
+        {
+          "journal_id": "SimulationObject[Coupled Inlet]",
+          "name": "Coupled Inlet",
+          "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1.sim"
+        },
+        {
+          "journal_id": "SimulationObject[Coupled Opening]",
+          "name": "Coupled Opening",
+          "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1.sim"
+        }
+      ],
+      "unfoldered_bcs": [
+        {
+          "journal_id": "Load[Generic solid 0.1 W]",
+          "name": "Generic solid 0.1 W",
+          "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1.sim"
+        },
+        {
+          "journal_id": "SimulationObject[Coupled Inlet]",
+          "name": "Coupled Inlet",
+          "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1.sim"
+        },
+        {
+          "journal_id": "SimulationObject[Coupled Opening]",
+          "name": "Coupled Opening",
+          "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1.sim"
+        }
+      ],
+      "folders": [],
+      "conflict_override_count": 0
+    },
+    "steps": [
+      {
+        "index": 0,
+        "owner": {
+          "journal_id": "SolutionStep[Finned steady]",
+          "name": "Finned steady",
+          "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1.sim"
+        },
+        "bcs": [],
+        "unfoldered_bcs": [],
+        "folders": []
+      }
+    ],
+    "document_boundaries": [
+      {
+        "kind": "loads",
+        "journal_id": "Load[Generic solid 0.1 W]",
+        "name": "Generic solid 0.1 W",
+        "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1.sim",
+        "fields": [
+          {
+            "property": "Heat Load",
+            "expression": {
+              "formula": "0.1",
+              "units": "HeatFlow_Metric2",
+              "value": 0.1
+            },
+            "field": null,
+            "representation": "expression"
+          },
+          {
+            "property": "Heat Load Override",
+            "expression": {
+              "formula": "-777777",
+              "units": null,
+              "value": -777777.0
+            },
+            "field": null,
+            "representation": "expression"
+          }
+        ]
+      },
+      {
+        "kind": "simulation_objects",
+        "journal_id": "SimulationObject[Coupled Inlet]",
+        "name": "Coupled Inlet",
+        "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1.sim",
+        "fields": [
+          {
+            "property": "Velocity",
+            "expression": {
+              "formula": "1.0",
+              "units": "MeterPerSecond",
+              "value": 1.0
+            },
+            "field": null,
+            "representation": "expression"
+          },
+          {
+            "property": "Mass Flow",
+            "expression": {
+              "formula": "-777777",
+              "units": null,
+              "value": -777777.0
+            },
+            "field": null,
+            "representation": "expression"
+          },
+          {
+            "property": "Volume Flow",
+            "expression": {
+              "formula": "-777777",
+              "units": null,
+              "value": -777777.0
+            },
+            "field": null,
+            "representation": "expression"
+          },
+          {
+            "property": "Pressure Rise",
+            "expression": {
+              "formula": "-777777",
+              "units": null,
+              "value": -777777.0
+            },
+            "field": null,
+            "representation": "expression"
+          },
+          {
+            "property": "Fan Curve",
+            "representation": "unset"
+          }
+        ],
+        "descriptor": "Inlet",
+        "external_conditions": {
+          "journal_id": "SsmoPropTable[Finned external air 20 C]",
+          "name": "Finned external air 20 C",
+          "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1.sim"
+        }
+      },
+      {
+        "kind": "simulation_objects",
+        "journal_id": "SimulationObject[Coupled Opening]",
+        "name": "Coupled Opening",
+        "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1.sim",
+        "fields": [
+          {
+            "property": "Pressure Value",
+            "expression": {
+              "formula": "101325.0",
+              "units": "PressurePascals",
+              "value": 101325.0
+            },
+            "field": null,
+            "representation": "expression"
+          },
+          {
+            "property": "External Relative Pressure",
+            "expression": {
+              "formula": "-777777",
+              "units": null,
+              "value": -777777.0
+            },
+            "field": null,
+            "representation": "expression"
+          }
+        ],
+        "descriptor": "Opening",
+        "external_conditions": {
+          "journal_id": "SsmoPropTable[Finned external air 20 C]",
+          "name": "Finned external air 20 C",
+          "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1.sim"
+        }
+      }
+    ],
+    "solution_fields": [
+      {
+        "property": "Altitude Value",
+        "expression": {
+          "formula": "0",
+          "units": "MilliMeter",
+          "value": 0.0
+        },
+        "field": null,
+        "representation": "expression"
+      },
+      {
+        "property": "Absolute Pressure",
+        "expression": {
+          "formula": "0.101351",
+          "units": "PressureNewtonPerSquareMilliMeter",
+          "value": 0.101351
+        },
+        "field": null,
+        "representation": "expression"
+      },
+      {
+        "property": "Fluid Temperature",
+        "expression": {
+          "formula": "0",
+          "units": "Celsius",
+          "value": 0.0
+        },
+        "field": null,
+        "representation": "expression"
+      },
+      {
+        "property": "Radiative Environment Temperature",
+        "expression": {
+          "formula": "20",
+          "units": "Celsius",
+          "value": 20.0
+        },
+        "field": null,
+        "representation": "expression"
+      },
+      {
+        "property": "Ambient Relative Humidity Value",
+        "expression": {
+          "formula": "0",
+          "units": null,
+          "value": 0.0
+        },
+        "field": null,
+        "representation": "expression"
+      },
+      {
+        "property": "Ambient Water Vapor to Dry Air Mass Ratio Value",
+        "expression": {
+          "formula": "0",
+          "units": null,
+          "value": 0.0
+        },
+        "field": null,
+        "representation": "expression"
+      },
+      {
+        "property": "Articulation Interval vs Time Table",
+        "representation": "unset"
+      }
+    ],
+    "ambient_pressure_mode": 1,
+    "tables": [
+      {
+        "name": "Finned Thermal Parameters",
+        "descriptor": "Thermal Parameters",
+        "fields": [
+          {
+            "property": "Solar Intensity Table",
+            "representation": "unset"
+          }
+        ]
+      },
+      {
+        "name": "Finned Flow Solution Parameters",
+        "descriptor": "Flow Solution Parameters",
+        "fields": [
+          {
+            "property": "Time Step",
+            "expression": {
+              "formula": "0.5",
+              "units": "Second",
+              "value": 0.5
+            },
+            "field": null,
+            "representation": "expression"
+          }
+        ]
+      },
+      {
+        "name": "Finned Flow Surface Parameters",
+        "descriptor": "Flow Surface Parameters",
+        "fields": []
+      },
+      {
+        "name": "Finned Thermal-Flow Output Requests",
+        "descriptor": "Thermal-Flow Output Requests",
+        "fields": []
+      },
+      {
+        "name": "Finned Coupled Solution Parameters",
+        "descriptor": "Thermal-Flow Coupled Solution Parameters",
+        "fields": []
+      },
+      {
+        "name": "Finned external air 20 C",
+        "descriptor": "External Conditions",
+        "fields": [
+          {
+            "property": "Temperature Value",
+            "expression": {
+              "formula": "20.0",
+              "units": "Celsius",
+              "value": 20.0
+            },
+            "field": null,
+            "representation": "expression"
+          },
+          {
+            "property": "Relative Humidity Value",
+            "expression": {
+              "formula": "0",
+              "units": null,
+              "value": 0.0
+            },
+            "field": null,
+            "representation": "expression"
+          },
+          {
+            "property": "Water Vapor to Dry Air Mass Ratio Value",
+            "expression": {
+              "formula": "0",
+              "units": null,
+              "value": 0.0
+            },
+            "field": null,
+            "representation": "expression"
+          }
+        ],
+        "reference": {
+          "journal_id": "SsmoPropTable[Finned external air 20 C]",
+          "name": "Finned external air 20 C",
+          "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1.sim"
+        },
+        "temperature_option": 0
+      }
+    ],
+    "solver_launched": false,
+    "numerical_acceptance": false
+  },
+  "before_validation": {
+    "fixture_effective_inputs": "verified_snapshot",
+    "F1": "active heat and boundary temperatures are expression-backed; no boundary fields",
+    "F2": "exact solution membership and empty single step verified",
+    "F3": "no head-loss tables; inapplicable to this fixture",
+    "general_freshness": "not_verified",
+    "physical_acceptance": false
+  },
+  "results_before": {
+    "nodal": {
+      "field": "Temperature - Nodal",
+      "field_location": "nodal",
+      "loadcase_index": 0,
+      "iteration_index": 0,
+      "units": "degC",
+      "minimum": 23.844715118408203,
+      "maximum": 23.9112548828125,
+      "native_location": "0",
+      "minimum_native_id": 5,
+      "maximum_native_id": 13,
+      "minimum_native_sub_id": 0,
+      "maximum_native_sub_id": 0,
+      "node_count": 15116,
+      "result_freshness": "not_verified",
+      "reference_lifetime": "indices apply only to this result revision"
+    },
+    "elemental": {
+      "field": "Temperature - Elemental",
+      "field_location": "elemental",
+      "loadcase_index": 0,
+      "iteration_index": 0,
+      "units": "degC",
+      "minimum": 23.844715118408203,
+      "maximum": 23.91126823425293,
+      "native_location": "1",
+      "minimum_native_id": 4376,
+      "maximum_native_id": 1026,
+      "minimum_native_sub_id": 0,
+      "maximum_native_sub_id": 0,
+      "node_count": 15116,
+      "result_freshness": "not_verified",
+      "reference_lifetime": "indices apply only to this result revision"
+    },
+    "element_nodal": {
+      "field": "Temperature - Element-Nodal",
+      "field_location": "element_nodal",
+      "loadcase_index": 0,
+      "iteration_index": 0,
+      "units": "degC",
+      "minimum": 19.99071502685547,
+      "maximum": 23.900646209716797,
+      "native_location": "2",
+      "minimum_native_id": 15720,
+      "maximum_native_id": 17866,
+      "minimum_native_sub_id": 1676,
+      "maximum_native_sub_id": 1328,
+      "node_count": 15116,
+      "result_freshness": "not_verified",
+      "reference_lifetime": "indices apply only to this result revision"
+    }
+  },
+  "save": {
+    "saved": true,
+    "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1.sim",
+    "file": {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1.sim",
+      "bytes": 7672127,
+      "sha256": "47d13954ba86d76fe4310ae4c35211852920d62b3c0e39edb4b8111cc7bd5223"
+    },
+    "previous_file": {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1.sim",
+      "bytes": 7671890,
+      "sha256": "78c6f4620b9d707969efbf1bf23f9e2f84d42c20a02ff36470c148dd2128764e"
+    },
+    "backup_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-save-backups\\85e1343c50de4a07b7361ff6215c67bd\\finned_layer_extended_r1.sim",
+    "saved_components": false,
+    "closed": false,
+    "other_modified_flags_unchanged": true,
+    "result_freshness": "not_verified"
+  },
+  "close": {
+    "closed_parts": [
+      {
+        "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_a3c47d8c690a449eabbe243d67d85231",
+        "kind": "part",
+        "name": "finned_layer_extended_r1",
+        "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_1120bb5a74d1409488c179dc81ce183b",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "generation_id": "1120bb5a74d1409488c179dc81ce183b",
+        "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1.sim",
+        "journal_id": "finned_layer_extended_r1",
+        "display_name": "finned_layer_extended_r1"
+      }
+    ],
+    "closed_count": 1,
+    "remaining_count": 115,
+    "saved": false,
+    "discarded_modified_parts": false,
+    "work_path": null,
+    "display_path": null,
+    "warnings": [
+      "NX may unload unused dependencies; reacquire document references before continuing"
+    ]
+  },
+  "open": {
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_700fb9c0d1de43b8a923b32d74f6e6d0",
+      "kind": "part",
+      "name": "finned_layer_extended_r1",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_c25ae694645448e2a68cc295b53cca64",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "c25ae694645448e2a68cc295b53cca64",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1.sim",
+      "journal_id": "finned_layer_extended_r1",
+      "display_name": "finned_layer_extended_r1"
+    },
+    "units": "mm",
+    "coordinate_frame": "part_absolute",
+    "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1.sim",
+    "already_loaded": false,
+    "modified_after_native_open": true,
+    "modified_before_activation": true,
+    "modified": true,
+    "fully_loaded": true,
+    "load_issues": [],
+    "changed_existing_part_flags": [],
+    "application": "UG_APP_SFEM",
+    "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1.sim",
+    "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1.sim",
+    "saved": false,
+    "result_freshness": "not_verified",
+    "warnings": [
+      "Document has unsaved native state; inspect and explicitly save approved analysis changes before preparing a solve"
+    ]
+  },
+  "after": {
+    "solution": {
+      "owner": {
+        "journal_id": "Solution[Finned coupled benchmark]",
+        "name": "Finned coupled benchmark",
+        "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1.sim"
+      },
+      "bcs": [
+        {
+          "journal_id": "Load[Generic solid 0.1 W]",
+          "name": "Generic solid 0.1 W",
+          "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1.sim"
+        },
+        {
+          "journal_id": "SimulationObject[Coupled Inlet]",
+          "name": "Coupled Inlet",
+          "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1.sim"
+        },
+        {
+          "journal_id": "SimulationObject[Coupled Opening]",
+          "name": "Coupled Opening",
+          "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1.sim"
+        }
+      ],
+      "unfoldered_bcs": [
+        {
+          "journal_id": "Load[Generic solid 0.1 W]",
+          "name": "Generic solid 0.1 W",
+          "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1.sim"
+        },
+        {
+          "journal_id": "SimulationObject[Coupled Inlet]",
+          "name": "Coupled Inlet",
+          "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1.sim"
+        },
+        {
+          "journal_id": "SimulationObject[Coupled Opening]",
+          "name": "Coupled Opening",
+          "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1.sim"
+        }
+      ],
+      "folders": [],
+      "conflict_override_count": 0
+    },
+    "steps": [
+      {
+        "index": 0,
+        "owner": {
+          "journal_id": "SolutionStep[Finned steady]",
+          "name": "Finned steady",
+          "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1.sim"
+        },
+        "bcs": [],
+        "unfoldered_bcs": [],
+        "folders": []
+      }
+    ],
+    "document_boundaries": [
+      {
+        "kind": "loads",
+        "journal_id": "Load[Generic solid 0.1 W]",
+        "name": "Generic solid 0.1 W",
+        "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1.sim",
+        "fields": [
+          {
+            "property": "Heat Load",
+            "expression": {
+              "formula": "0.1",
+              "units": "HeatFlow_Metric2",
+              "value": 0.1
+            },
+            "field": null,
+            "representation": "expression"
+          },
+          {
+            "property": "Heat Load Override",
+            "expression": {
+              "formula": "-777777",
+              "units": null,
+              "value": -777777.0
+            },
+            "field": null,
+            "representation": "expression"
+          }
+        ]
+      },
+      {
+        "kind": "simulation_objects",
+        "journal_id": "SimulationObject[Coupled Inlet]",
+        "name": "Coupled Inlet",
+        "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1.sim",
+        "fields": [
+          {
+            "property": "Velocity",
+            "expression": {
+              "formula": "1.0",
+              "units": "MeterPerSecond",
+              "value": 1.0
+            },
+            "field": null,
+            "representation": "expression"
+          },
+          {
+            "property": "Mass Flow",
+            "expression": {
+              "formula": "-777777",
+              "units": null,
+              "value": -777777.0
+            },
+            "field": null,
+            "representation": "expression"
+          },
+          {
+            "property": "Volume Flow",
+            "expression": {
+              "formula": "-777777",
+              "units": null,
+              "value": -777777.0
+            },
+            "field": null,
+            "representation": "expression"
+          },
+          {
+            "property": "Pressure Rise",
+            "expression": {
+              "formula": "-777777",
+              "units": null,
+              "value": -777777.0
+            },
+            "field": null,
+            "representation": "expression"
+          },
+          {
+            "property": "Fan Curve",
+            "representation": "unset"
+          }
+        ],
+        "descriptor": "Inlet",
+        "external_conditions": {
+          "journal_id": "SsmoPropTable[Finned external air 20 C]",
+          "name": "Finned external air 20 C",
+          "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1.sim"
+        }
+      },
+      {
+        "kind": "simulation_objects",
+        "journal_id": "SimulationObject[Coupled Opening]",
+        "name": "Coupled Opening",
+        "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1.sim",
+        "fields": [
+          {
+            "property": "Pressure Value",
+            "expression": {
+              "formula": "101325.0",
+              "units": "PressurePascals",
+              "value": 101325.0
+            },
+            "field": null,
+            "representation": "expression"
+          },
+          {
+            "property": "External Relative Pressure",
+            "expression": {
+              "formula": "-777777",
+              "units": null,
+              "value": -777777.0
+            },
+            "field": null,
+            "representation": "expression"
+          }
+        ],
+        "descriptor": "Opening",
+        "external_conditions": {
+          "journal_id": "SsmoPropTable[Finned external air 20 C]",
+          "name": "Finned external air 20 C",
+          "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1.sim"
+        }
+      }
+    ],
+    "solution_fields": [
+      {
+        "property": "Altitude Value",
+        "expression": {
+          "formula": "0",
+          "units": "MilliMeter",
+          "value": 0.0
+        },
+        "field": null,
+        "representation": "expression"
+      },
+      {
+        "property": "Absolute Pressure",
+        "expression": {
+          "formula": "0.101351",
+          "units": "PressureNewtonPerSquareMilliMeter",
+          "value": 0.101351
+        },
+        "field": null,
+        "representation": "expression"
+      },
+      {
+        "property": "Fluid Temperature",
+        "expression": {
+          "formula": "0",
+          "units": "Celsius",
+          "value": 0.0
+        },
+        "field": null,
+        "representation": "expression"
+      },
+      {
+        "property": "Radiative Environment Temperature",
+        "expression": {
+          "formula": "20",
+          "units": "Celsius",
+          "value": 20.0
+        },
+        "field": null,
+        "representation": "expression"
+      },
+      {
+        "property": "Ambient Relative Humidity Value",
+        "expression": {
+          "formula": "0",
+          "units": null,
+          "value": 0.0
+        },
+        "field": null,
+        "representation": "expression"
+      },
+      {
+        "property": "Ambient Water Vapor to Dry Air Mass Ratio Value",
+        "expression": {
+          "formula": "0",
+          "units": null,
+          "value": 0.0
+        },
+        "field": null,
+        "representation": "expression"
+      },
+      {
+        "property": "Articulation Interval vs Time Table",
+        "representation": "unset"
+      }
+    ],
+    "ambient_pressure_mode": 1,
+    "tables": [
+      {
+        "name": "Finned Thermal Parameters",
+        "descriptor": "Thermal Parameters",
+        "fields": [
+          {
+            "property": "Solar Intensity Table",
+            "representation": "unset"
+          }
+        ]
+      },
+      {
+        "name": "Finned Flow Solution Parameters",
+        "descriptor": "Flow Solution Parameters",
+        "fields": [
+          {
+            "property": "Time Step",
+            "expression": {
+              "formula": "0.5",
+              "units": "Second",
+              "value": 0.5
+            },
+            "field": null,
+            "representation": "expression"
+          }
+        ]
+      },
+      {
+        "name": "Finned Flow Surface Parameters",
+        "descriptor": "Flow Surface Parameters",
+        "fields": []
+      },
+      {
+        "name": "Finned Thermal-Flow Output Requests",
+        "descriptor": "Thermal-Flow Output Requests",
+        "fields": []
+      },
+      {
+        "name": "Finned Coupled Solution Parameters",
+        "descriptor": "Thermal-Flow Coupled Solution Parameters",
+        "fields": []
+      },
+      {
+        "name": "Finned external air 20 C",
+        "descriptor": "External Conditions",
+        "fields": [
+          {
+            "property": "Temperature Value",
+            "expression": {
+              "formula": "20.0",
+              "units": "Celsius",
+              "value": 20.0
+            },
+            "field": null,
+            "representation": "expression"
+          },
+          {
+            "property": "Relative Humidity Value",
+            "expression": {
+              "formula": "0",
+              "units": null,
+              "value": 0.0
+            },
+            "field": null,
+            "representation": "expression"
+          },
+          {
+            "property": "Water Vapor to Dry Air Mass Ratio Value",
+            "expression": {
+              "formula": "0",
+              "units": null,
+              "value": 0.0
+            },
+            "field": null,
+            "representation": "expression"
+          }
+        ],
+        "reference": {
+          "journal_id": "SsmoPropTable[Finned external air 20 C]",
+          "name": "Finned external air 20 C",
+          "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1.sim"
+        },
+        "temperature_option": 0
+      }
+    ],
+    "solver_launched": false,
+    "numerical_acceptance": false
+  },
+  "after_validation": {
+    "fixture_effective_inputs": "verified_snapshot",
+    "F1": "active heat and boundary temperatures are expression-backed; no boundary fields",
+    "F2": "exact solution membership and empty single step verified",
+    "F3": "no head-loss tables; inapplicable to this fixture",
+    "general_freshness": "not_verified",
+    "physical_acceptance": false
+  },
+  "native_state_equal": {
+    "solution": true,
+    "steps": true,
+    "document_boundaries": true,
+    "solution_fields": true,
+    "ambient_pressure_mode": true,
+    "tables": true
+  },
+  "results_after": {
+    "nodal": {
+      "field": "Temperature - Nodal",
+      "field_location": "nodal",
+      "loadcase_index": 0,
+      "iteration_index": 0,
+      "units": "degC",
+      "minimum": 23.844715118408203,
+      "maximum": 23.9112548828125,
+      "native_location": "0",
+      "minimum_native_id": 5,
+      "maximum_native_id": 13,
+      "minimum_native_sub_id": 0,
+      "maximum_native_sub_id": 0,
+      "node_count": 15116,
+      "result_freshness": "not_verified",
+      "reference_lifetime": "indices apply only to this result revision"
+    },
+    "elemental": {
+      "field": "Temperature - Elemental",
+      "field_location": "elemental",
+      "loadcase_index": 0,
+      "iteration_index": 0,
+      "units": "degC",
+      "minimum": 23.844715118408203,
+      "maximum": 23.91126823425293,
+      "native_location": "1",
+      "minimum_native_id": 4376,
+      "maximum_native_id": 1026,
+      "minimum_native_sub_id": 0,
+      "maximum_native_sub_id": 0,
+      "node_count": 15116,
+      "result_freshness": "not_verified",
+      "reference_lifetime": "indices apply only to this result revision"
+    },
+    "element_nodal": {
+      "field": "Temperature - Element-Nodal",
+      "field_location": "element_nodal",
+      "loadcase_index": 0,
+      "iteration_index": 0,
+      "units": "degC",
+      "minimum": 19.99071502685547,
+      "maximum": 23.900646209716797,
+      "native_location": "2",
+      "minimum_native_id": 15720,
+      "maximum_native_id": 17866,
+      "minimum_native_sub_id": 1676,
+      "maximum_native_sub_id": 1328,
+      "node_count": 15116,
+      "result_freshness": "not_verified",
+      "reference_lifetime": "indices apply only to this result revision"
+    }
+  },
+  "results_equal": true,
+  "unrelated_after": {
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer_fine-20260908-r1\\finned_layer_fine_r1_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer_coarse-20260908-r1\\finned_layer_coarse_r1_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-fine-20260908-r1\\finned_fine_r1_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-refined-20260908-r1\\finned_refined_r1_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-baseline-20260908-r1\\finned_r1_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-defaults-public-20260908-r1\\benchmark_c97edffd963e_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-development-20260908-r1\\benchmark_99f1fecb220c_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\distributed-heat-public-20260908-r2\\benchmark_fcce35d5b974_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\volume-numerical-20260908-r1\\benchmark_45af73238372_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\flux-numerical-20260908-r1\\benchmark_ff936fa1d1be_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\distributed-heat-public-20260908-r1\\benchmark_b88ba7d4ef90_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\volume-heat-authoring-20260908-r1\\benchmark_c2c73c8e49e9_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-z-20260908-r1\\OrthoZR1_cad_01.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-rotated-20260908-r1\\RotatedOrthoR1_cad_01.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-conduction-20260908-r1\\OrthotropicR1_cad_01.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\variant-transaction-20260908-r1\\VariantTxnR1_cad_01.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-independent-clone-native-20260908-r1\\independent_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-coupled-mcp-20260908-r1\\benchmark_d1e2b031a3dd_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-coupled-setup-20260908-r1\\benchmark_afc1178b2153_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-mcp-20260908-r1\\benchmark_6fd2a790ec2f_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-20260908-r1\\benchmark_42867001f37a_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-apply-mcp-20260908-r2\\benchmark_18db101c4a43_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-apply-mcp-20260908-r1\\benchmark_15b44b21f66b_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-apply-20260908-r1\\benchmark_ebfa27d8b223_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-fan-reopen-20260908-r1\\benchmark_9c5a613280cc_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-temperature-mcp-20260908-r1\\benchmark_eecaf3edf587_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-mcp-20260908-r1\\benchmark_cac991745074_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908\\benchmark_d58d2f7c41d9_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-flow-mcp-20260908\\benchmark_d4824c95f973_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-coupled-documents-20260908\\benchmark_66f5994b70bc_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-flow-documents-20260908\\benchmark_7f0e82b41fe3_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\C-transient-fine-20260908\\benchmark_29b2bd9b1155_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\C-transient-20260907\\benchmark_4ed90ef8215b_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\factory-steady-20260907-r2\\benchmark_c553623676a1_geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\conduction-20260907\\geometry.prt": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer_fine-20260908-r1\\finned_layer_fine_r1_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer_coarse-20260908-r1\\finned_layer_coarse_r1_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-fine-20260908-r1\\finned_fine_r1_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-refined-20260908-r1\\finned_refined_r1_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-baseline-20260908-r1\\finned_r1_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-defaults-public-20260908-r1\\benchmark_c97edffd963e_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-development-20260908-r1\\benchmark_99f1fecb220c_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\distributed-heat-public-20260908-r2\\benchmark_fcce35d5b974_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\volume-numerical-20260908-r1\\benchmark_45af73238372_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\flux-numerical-20260908-r1\\benchmark_ff936fa1d1be_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\distributed-heat-public-20260908-r1\\benchmark_b88ba7d4ef90_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\volume-heat-authoring-20260908-r1\\benchmark_c2c73c8e49e9_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-z-20260908-r1\\OrthoZR1_mesh.fem": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-rotated-20260908-r1\\RotatedOrthoR1_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-conduction-20260908-r1\\OrthotropicR1_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\variant-transaction-20260908-r1\\VariantTxnR1_mesh.fem": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-independent-clone-native-20260908-r1\\independent_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-coupled-mcp-20260908-r1\\benchmark_d1e2b031a3dd_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-coupled-setup-20260908-r1\\benchmark_afc1178b2153_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-mcp-20260908-r1\\public_open_fem_r2.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-mcp-20260908-r1\\benchmark_6fd2a790ec2f_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-20260908-r1\\benchmark_42867001f37a_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-apply-mcp-20260908-r2\\benchmark_18db101c4a43_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-apply-mcp-20260908-r1\\benchmark_15b44b21f66b_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-apply-20260908-r1\\benchmark_ebfa27d8b223_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-fan-reopen-20260908-r1\\benchmark_9c5a613280cc_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-temperature-mcp-20260908-r1\\benchmark_eecaf3edf587_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-mcp-20260908-r1\\benchmark_cac991745074_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908\\benchmark_d58d2f7c41d9_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-flow-mcp-20260908\\benchmark_d4824c95f973_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-coupled-documents-20260908\\benchmark_66f5994b70bc_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-flow-documents-20260908\\benchmark_7f0e82b41fe3_mesh.fem": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\C-transient-fine-20260908\\benchmark_29b2bd9b1155_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\C-transient-20260907\\benchmark_4ed90ef8215b_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\factory-steady-20260907-r2\\benchmark_c553623676a1_mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\conduction-20260907\\mesh.fem": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer_coarse-20260908-r1\\finned_layer_coarse_r1_analysis.sim": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-fine-run-20260908-r1\\finned_fine_run_r1.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-refined-run-20260908-r1\\finned_refined_run_r1.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-tight-20260908-r1\\finned_tight_r1.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-reopen-20260908-r1\\coupled_external_reopen_r1.sim": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-defaults-public-20260908-r1\\benchmark_c97edffd963e_analysis.sim": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-external-conditions-20260908-r1\\coupled_external_conditions_r1.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-template-inspection-20260908-r1\\SimThermalFlowMetric.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-template-inspection-20260908-r1\\SimMultiPhysicsMetric.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\additive-heat-public-20260908-r1\\additive_heat_r1.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\boundary-guard-20260908-r1\\boundary_guard_r1.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\flux-numerical-solve-20260908-r1\\flux_solve_r1.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\distributed-heat-public-20260908-r1\\benchmark_b88ba7d4ef90_analysis.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\volume-heat-authoring-20260908-r1\\benchmark_c2c73c8e49e9_analysis.sim": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\fan-scaling-public-20260908-r1\\fan_scaling_public_r1.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\live-revision-solve-20260908-r1\\live_revision_solve_r1.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-rotated-solve-20260908-r1\\rotated_ortho_solve_r1.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-solve-20260908-r1\\orthotropic_solve_r1.sim": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\variant-transaction-20260908-r1\\VariantTxnR1_analysis.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\monitor-probe-20260908-r2\\monitor_probe_r2.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-head-loss-mcp-20260908-r1\\head_loss_test_r1.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-fine-k0-solve-20260908-r1\\fine_k0_solve_r1.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-coupled-mcp-20260908-r1\\benchmark_d1e2b031a3dd_analysis.sim": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-coupled-setup-20260908-r1\\benchmark_afc1178b2153_analysis.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-mcp-20260908-r1\\public_open_r1.sim": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-mcp-20260908-r1\\reopen_modified_probe_r1.sim": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-mcp-20260908-r1\\benchmark_6fd2a790ec2f_analysis.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-multi-20260908-r1\\benchmark_42867001f37a_analysis.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-apply-mcp-20260908-r2\\benchmark_18db101c4a43_analysis.sim": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-apply-mcp-20260908-r1\\benchmark_15b44b21f66b_analysis.sim": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\scenario-apply-20260908-r1\\benchmark_ebfa27d8b223_analysis.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\B-contact-context-20260908-r2\\contact_context_r2.sim": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-mcp-20260908-r1\\saved_power.sim": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-auto-observer-20260908-r1\\auto_flow_r1.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908\\benchmark_d58d2f7c41d9_analysis.sim": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-flow-mcp-20260908\\benchmark_d4824c95f973_analysis.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-coupled-documents-20260908\\benchmark_66f5994b70bc_analysis.sim": false,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-flow-documents-20260908\\benchmark_7f0e82b41fe3_analysis.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\C-transient-fine-20260908\\benchmark_29b2bd9b1155_analysis.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\C-transient-20260907\\benchmark_4ed90ef8215b_analysis.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\factory-steady-20260907-r2\\benchmark_c553623676a1_analysis.sim": true,
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\conduction-20260907\\analysis.sim": false
+  },
+  "copy": {
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_4163214b443b4a3aa609d4f520bdf64a",
+      "kind": "part",
+      "name": "finned_reopen_export_r1",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_c25ae694645448e2a68cc295b53cca64",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "c25ae694645448e2a68cc295b53cca64",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-reopen-export-20260908-r1\\finned_reopen_export_r1.sim",
+      "journal_id": "finned_reopen_export_r1",
+      "display_name": "finned_reopen_export_r1"
+    },
+    "source": {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1.sim",
+      "bytes": 7672127,
+      "sha256": "47d13954ba86d76fe4310ae4c35211852920d62b3c0e39edb4b8111cc7bd5223"
+    },
+    "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-reopen-export-20260908-r1\\finned_reopen_export_r1.sim",
+    "source_file_unchanged": true,
+    "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-reopen-export-20260908-r1\\finned_reopen_export_r1.sim",
+    "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-reopen-export-20260908-r1\\finned_reopen_export_r1.sim",
+    "shared_fem_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer_fine-20260908-r1\\finned_layer_fine_r1_mesh.fem",
+    "independent_geometry_variant": false,
+    "saved": true,
+    "result_freshness": "not_verified",
+    "next_step": "Reacquire document IDs. Duplicate and reassociate FEM/CAD before changing shared geometry or mesh."
+  },
+  "export": {
+    "input_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-reopen-export-20260908-r1\\finned_reopen_export_r1-Finned_coupled_benchmark.xml",
+    "input_identity": {
+      "sha256": "bd522fadb3b104671e220331c52c48640e622c75f29cd20b16a5819b7280a208",
+      "xml_content_sha256": "2bd65e217494ca9838d7f8ca9eab21c79f323b4d5ef7026bb93a7c3da8e9bdc8",
+      "bytes": 3634613,
+      "canonicalization": "xml_c14n2_no_comments"
+    },
+    "validation": {
+      "state": "well_formed",
+      "step_definitions": 1,
+      "mesh_counts": {
+        "elements": 33275,
+        "nodes": 15116,
+        "element_sets": 5,
+        "scope": "observed_multiphysics_xml_layout"
+      },
+      "solve_readiness": "not_established"
+    },
+    "coupled_ambient_validation": {
+      "property": "Fluid Temperature",
+      "native_value": 0.0,
+      "exported_value": 0.0,
+      "units": "degC",
+      "matches": true,
+      "absolute_tolerance_degC": 1e-06,
+      "scope": "constant ambient temperature only; not complete solve readiness"
+    },
+    "artifacts": [
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-reopen-export-20260908-r1\\finned_reopen_export_r1-Finned_coupled_benchmark.map",
+        "bytes": 36046
+      },
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-reopen-export-20260908-r1\\finned_reopen_export_r1-Finned_coupled_benchmark.xml",
+        "bytes": 3634613
+      }
+    ],
+    "translator_reports": [],
+    "solver": "NX MULTIPHYSICS",
+    "analysis_type": "Coupled Thermal-Flow",
+    "solution": "Finned coupled benchmark",
+    "source_sim": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-reopen-export-20260908-r1\\finned_reopen_export_r1.sim",
+    "source_modified": false,
+    "solver_launched": false,
+    "solve_readiness": "not_established",
+    "scope": "Native thermal/flow input export, not a solve or convergence check"
+  },
+  "files_after": {
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1-Finned_coupled_benchmark.bun": "e2b7132185262791f27df9ed451ac478fb39f2b59ce10b2adb0cf78891f3f840",
+    "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1-Finned_coupled_benchmark.xml": "e32afd0a0b088fb282f613fecc379be861f45303ff00bf7fb8f29c0250a73b01"
+  },
+  "persistence_verified": true,
+  "elapsed_seconds": 8.53100000001723,
+  "operation_id": "op_fd56403bb5764761975ac40e9e9f8814",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

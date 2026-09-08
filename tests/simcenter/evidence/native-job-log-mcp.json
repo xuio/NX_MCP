@@ -1,0 +1,100 @@
+{
+  "first": {
+    "status": "success",
+    "warnings": [],
+    "units": "mm",
+    "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-input-export-20260908-r2\\flow_input_r2-Flow_benchmark.log",
+    "file_identity": "12700771946731968468:844424930181461",
+    "offset": 0,
+    "next_offset": 963,
+    "observed_size_bytes": 39351,
+    "text": " Thermal/Flow Analysis\r\n =====================\r\n MAYA Heat Transfer Technologies Ltd.\r\n\r\n\r\n Simcenter 3D Thermal/Flow 2606.1  May 22 2026 (Build 20260522_1_8daed8e)\r\n\r\n Simcenter 3D Installation Directory: C:\\Program Files\\Siemens\\Designcenter2606\r\n\r\n Solver Installation Directory: C:/Program Files/Siemens/Designcenter2606/thermalflow/tmgsolver\r\n\r\n Run directory specified for analysis:\r\n .\\\r\n\r\n NX2TMG - Thermal/flow model file builder\r\n ======================================================================\r\n Time: Tue Sep 8 06:33:15 2026\r\n\r\n +--------------------------------------------------------------------+                              \r\r\n |                            Model Builder                           |                              \r\r\n +--------------------------------------------------------------------+                              \r\r\n                                                                                                     \r\r\n",
+    "redacted_line_count": 0,
+    "trailing_partial_line_held": true,
+    "more_bytes_at_snapshot": true,
+    "encoding": "UTF-8 with replacement",
+    "numerical_convergence": "not_established",
+    "redaction_scope": "credential/licensing keyword lines; not a complete secret scanner",
+    "job_id": "isolated-flow-01",
+    "request_sha256": "c688e9f9d1ae80cdea76436f87bc1c218b3aaf3ecc630da15e24e00976dfb4e9",
+    "persisted_job_state": "solver_exited",
+    "job_state_changed": false,
+    "operation_id": "op_830f24cda45542378803807dc5e47b83",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "not_applicable"
+  },
+  "second": {
+    "status": "success",
+    "warnings": [],
+    "units": "mm",
+    "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-input-export-20260908-r2\\flow_input_r2-Flow_benchmark.log",
+    "file_identity": "12700771946731968468:844424930181461",
+    "offset": 963,
+    "next_offset": 1899,
+    "observed_size_bytes": 39351,
+    "text": " Reading model file...                                                                               \r\r\n ...model file read.                                                                                 \r\r\n                                                                                                     \r\r\n +--------------------------------------------------------------------+                              \r\r\n |                            Model Summary                           |                              \r\r\n +--------------------------------------------------------------------+                              \r\r\n                                                                                                     \r\r\n Finite Element Model                                                                                \r\r\n --------------------                                                                                \r\r\n",
+    "redacted_line_count": 0,
+    "trailing_partial_line_held": true,
+    "more_bytes_at_snapshot": true,
+    "encoding": "UTF-8 with replacement",
+    "numerical_convergence": "not_established",
+    "redaction_scope": "credential/licensing keyword lines; not a complete secret scanner",
+    "job_id": "isolated-flow-01",
+    "request_sha256": "c688e9f9d1ae80cdea76436f87bc1c218b3aaf3ecc630da15e24e00976dfb4e9",
+    "persisted_job_state": "solver_exited",
+    "job_state_changed": false,
+    "operation_id": "op_d2379c3f9e41445397f9153ac3c4bd4e",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "not_applicable"
+  },
+  "path_rejection": {
+    "meta": null,
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"status\": \"error\", \"warnings\": [], \"units\": null, \"code\": \"NX_INVALID_ARGUMENT\", \"message\": \"Supply a simple ASCII .log basename, not a path\", \"retryable\": false, \"details\": {\"operation_id\": \"op_6a1db68beb054e0da6990941b700f637\", \"mutation_outcome\": \"not_started\"}}",
+        "annotations": null,
+        "meta": null
+      }
+    ],
+    "structuredContent": {
+      "status": "error",
+      "warnings": [],
+      "units": null,
+      "code": "NX_INVALID_ARGUMENT",
+      "message": "Supply a simple ASCII .log basename, not a path",
+      "retryable": false,
+      "details": {
+        "operation_id": "op_6a1db68beb054e0da6990941b700f637",
+        "mutation_outcome": "not_started"
+      }
+    },
+    "isError": true
+  },
+  "identity_rejection": {
+    "meta": null,
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"status\": \"error\", \"warnings\": [], \"units\": null, \"code\": \"NX_SIM_LOG_CHANGED\", \"message\": \"Log file was replaced; restart inspection\", \"retryable\": false, \"details\": {\"operation_id\": \"op_58de2af7cd3e4ac49dee0fbf510450a1\", \"mutation_outcome\": \"not_started\"}}",
+        "annotations": null,
+        "meta": null
+      }
+    ],
+    "structuredContent": {
+      "status": "error",
+      "warnings": [],
+      "units": null,
+      "code": "NX_SIM_LOG_CHANGED",
+      "message": "Log file was replaced; restart inspection",
+      "retryable": false,
+      "details": {
+        "operation_id": "op_58de2af7cd3e4ac49dee0fbf510450a1",
+        "mutation_outcome": "not_started"
+      }
+    },
+    "isError": true
+  },
+  "job_unchanged": true,
+  "document_flags_preserved": true
+}

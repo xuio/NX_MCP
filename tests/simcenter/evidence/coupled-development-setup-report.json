@@ -1,0 +1,11 @@
+{
+  "status": "success",
+  "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-development-export-20260908-r1\\setup-report.txt",
+  "text": "          Solution Model Setup Check Error Summary \n \n------------------------------------------------------------\n \n Solver is Simcenter 3D Multiphysics\n\n Environment: Simcenter 3D Multiphysics - Coupled Thermal-Flow\n\n Solution is Thermal-Flow\n \n------------------------------------------------------------\n \nMesh Error Summary\n==================\n\nNo Mesh Errors\n\nMaterial Error Summary\n======================\n\nNo Material Errors\n\nPhysical Property Error Summary\n===============================\n\nNo Physical Property Errors\n\nModeling Object Error Summary\n=============================\n\nNo Modeling Object Errors\n\nLoad and Constraint Error Summary\n=================================\n\nNo Load and Constraint Errors\n\nSolution Error Summary\n======================\n\nERROR\n\nOnly one transient step defined for the solution.\nEither modify the step to be steady state or define more steps.\n\nExpression Errors Summary\n==============================\n\nNo Expression Errors\n\n",
+  "operation_id": "op_869515fd1f8e43029911503064eeccb2",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm",
+  "scope": "last coupled setup summary only; preceding accumulated historical reports excluded"
+}

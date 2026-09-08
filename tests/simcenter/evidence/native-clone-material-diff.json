@@ -1,0 +1,38 @@
+{
+  "status": "success",
+  "differences": [
+    {
+      "path": "MaterialList/Material[0]",
+      "reference_attributes": {
+        "uid": "1",
+        "uname": "Benchmark constant air::benchmark_4ba7072a1d7a_mesh::[1]",
+        "type": "LIQUID"
+      },
+      "clone_attributes": {
+        "uid": "1",
+        "uname": "Benchmark constant air::independent_mesh::[1]",
+        "type": "LIQUID"
+      }
+    },
+    {
+      "path": "PhysicalPropertyTableList/PhysicalPropertyTable[0]",
+      "reference_attributes": {
+        "uid": "1",
+        "uname": "Fluid1::benchmark_4ba7072a1d7a_mesh::[1]",
+        "type": "Fluid"
+      },
+      "clone_attributes": {
+        "uid": "1",
+        "uname": "Fluid1::independent_mesh::[1]",
+        "type": "Fluid"
+      }
+    }
+  ],
+  "solver_launched": false,
+  "files_modified": false,
+  "operation_id": "op_b135465555824daba999a8d02afafaa6",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

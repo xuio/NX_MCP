@@ -1,0 +1,581 @@
+{
+  "responses": {
+    "objects": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"simulation_objects\": [{\"object\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_d2b335288862483795f9dea8a5a2cb65\", \"kind\": \"simulation_object\", \"name\": \"Duct Inlet\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_c23c1533e22a48ecb45a0c146ccde77a\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"c23c1533e22a48ecb45a0c146ccde77a\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F1-fan-definition-20260909-r1\\\\f1_fan_definition_r1.sim\", \"journal_id\": \"SimulationObject[Duct Inlet]\", \"display_name\": \"Duct Inlet\"}, \"native_type\": \"SimSimulationObject\", \"target_set_count\": 1, \"descriptor\": \"Inlet\", \"fan_binding\": {\"mode\": 5, \"field\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_c4eceb9742944386a8606637375a5a75\", \"kind\": \"simulation_field\", \"name\": \"Definition readback fixture\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_c23c1533e22a48ecb45a0c146ccde77a\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"c23c1533e22a48ecb45a0c146ccde77a\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F1-fan-definition-20260909-r1\\\\f1_fan_definition_r1.sim\", \"journal_id\": \"Definition readback fixture\", \"display_name\": \"Definition readback fixture\"}, \"scale_factor\": 1.0, \"interpretation\": \"mode 5 static fan inlet verified for NX 2606 Flow only\"}, \"provenance\": null, \"coefficient_basis\": null, \"energy_accounting\": null, \"overlap_policy\": null, \"properties\": [{\"name\": \"description\", \"native_type\": \"0\", \"units\": null, \"representation\": \"text_lines\", \"value\": []}, {\"name\": \"Mode Option\", \"native_type\": \"3\", \"units\": null, \"value\": 5}, {\"name\": \"Velocity\", \"native_type\": \"6\", \"units\": \"MeterPerSecond\", \"expression\": \"1.0\", \"unit_symbol\": \"m/sec\", \"representation\": \"expression\"}, {\"name\": \"Velocity Vector\", \"native_type\": \"0\", \"units\": null, \"representation\": \"vector_expressions\", \"components\": [{\"expression\": \"-777777\", \"evaluated_value\": -777777.0, \"units\": \"MilliMeterPerSecond\", \"unit_symbol\": \"mm/sec\"}, {\"expression\": \"-777777\", \"evaluated_value\": -777777.0, \"units\": \"MilliMeterPerSecond\", \"unit_symbol\": \"mm/sec\"}, {\"expression\": \"-777777\", \"evaluated_value\": -777777.0, \"units\": \"MilliMeterPerSecond\", \"unit_symbol\": \"mm/sec\"}], \"coordinate_frame\": \"owning_property_convention; not inferred\"}, {\"name\": \"Mass Flow\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"-777777\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Volume Flow\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"-777777\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Pressure Rise\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"-777777\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Fan Curve\", \"native_type\": \"6\", \"units\": null, \"field_scale\": 1.0, \"field_reference\": {\"journal_id\": \"Definition readback fixture\", \"owner_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F1-fan-definition-20260909-r1\\\\f1_fan_definition_r1.sim\", \"tag\": 7260648, \"lifetime\": \"current loaded document; not a cross-session reference\"}, \"representation\": \"FieldTable\", \"field_definition\": {\"kind\": \"validated_fan_table\", \"manifest\": {\"extrapolation\": \"reject\", \"interpolation\": \"linear\", \"name\": \"Definition readback fixture\", \"points\": [{\"flow_m3_s\": 0.0, \"pressure_Pa\": 1.0}, {\"flow_m3_s\": 0.0004, \"pressure_Pa\": 0.0}], \"pressure_convention\": \"static\", \"provenance\": {\"kind\": \"assumed\", \"source\": \"API readback test\"}, \"reference_density_kg_m3\": 1.2, \"reverse_flow\": \"unsupported\", \"rpm\": 1000, \"schema_version\": 1, \"stall_region\": \"Synthetic fixture\"}, \"native_samples_si\": {\"flow_m3_s\": [0.0, 0.0004], \"pressure_Pa\": [1.0, 0.0]}, \"scale_application\": \"scalar wrapper scales dependent pressure values only\", \"definition_scope\": \"table values and interpolation; not solver or boundary semantics\"}}, {\"name\": \"Inlet Conditions\", \"native_type\": \"0\", \"units\": null, \"representation\": \"named_property_table\", \"value\": null}, {\"name\": \"Pressure\", \"native_type\": \"3\", \"units\": null, \"value\": 1}, {\"name\": \"Pressure Value\", \"native_type\": \"4\", \"units\": \"PressurePascals\", \"value\": 101325.0, \"unit_symbol\": \"Pa(N/m^2)\"}, {\"name\": \"Turbulence Characteristics Modeling Object\", \"native_type\": \"0\", \"units\": null, \"representation\": \"named_property_table\", \"value\": null}, {\"name\": \"Head Loss\", \"native_type\": \"0\", \"units\": null, \"representation\": \"named_property_table\", \"value\": null}, {\"name\": \"Heat Generated by Fan\", \"native_type\": \"4\", \"units\": \"HeatFlow_Metric2\", \"value\": 0.0, \"unit_symbol\": \"W\"}, {\"name\": \"Tracer Fluid\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Tracer Fluid List\", \"native_type\": \"0\", \"units\": null, \"representation\": \"named_table_array\", \"value\": []}, {\"name\": \"Tracer Fluid Mass Fractions\", \"native_type\": \"8\", \"units\": \"dimensionless\", \"value\": [-777777.0], \"unit_symbol\": null, \"value_semantics\": \"native values; sentinel meaning depends on owning property\"}, {\"name\": \"Mixture\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Mixture Mass Fractions\", \"native_type\": \"8\", \"units\": \"dimensionless\", \"value\": [-777777.0], \"unit_symbol\": null, \"value_semantics\": \"native values; sentinel meaning depends on owning property\"}, {\"name\": \"Alignment\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Swirl\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Rotation Axis Option\", \"native_type\": \"3\", \"units\": null, \"value\": 5}, {\"name\": \"Rotation Axis\", \"native_type\": \"0\", \"units\": null, \"representation\": \"axis\", \"value\": null}, {\"name\": \"Normal to Tangential Velocity Angle\", \"native_type\": \"4\", \"units\": \"Degrees\", \"value\": -777777.0, \"unit_symbol\": \"degrees\"}, {\"name\": \"Rotation Velocity\", \"native_type\": \"4\", \"units\": \"DegreesPerSecond\", \"value\": -777777.0, \"unit_symbol\": \"degrees/sec\"}, {\"name\": \"Alignment Vector\", \"native_type\": \"0\", \"units\": null, \"representation\": \"vector\", \"value\": null}, {\"name\": \"Controller Type\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Thermostat\", \"native_type\": \"0\", \"units\": null, \"representation\": \"named_property_table\", \"value\": null}, {\"name\": \"Fan Speed Controller\", \"native_type\": \"0\", \"units\": null, \"representation\": \"named_property_table\", \"value\": null}, {\"name\": \"Nominal Fan Speed\", \"native_type\": \"4\", \"units\": \"DegreesPerSecond\", \"value\": -777777.0, \"unit_symbol\": \"degrees/sec\"}, {\"name\": \"distributionType\", \"native_type\": \"3\", \"units\": null, \"value\": 32}]}, {\"object\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_b044add5a7584d96b548400e965e3675\", \"kind\": \"simulation_object\", \"name\": \"Duct Opening\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_c23c1533e22a48ecb45a0c146ccde77a\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"c23c1533e22a48ecb45a0c146ccde77a\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F1-fan-definition-20260909-r1\\\\f1_fan_definition_r1.sim\", \"journal_id\": \"SimulationObject[Duct Opening]\", \"display_name\": \"Duct Opening\"}, \"native_type\": \"SimSimulationObject\", \"target_set_count\": 1, \"descriptor\": \"Opening\", \"head_loss\": {\"table_name\": \"Synthetic outlet restriction K2\", \"coefficient\": 0.0, \"units\": \"dimensionless\", \"convention\": \"native Head Loss coefficient; general pressure-loss convention not independently verified\"}, \"provenance\": null, \"coefficient_basis\": null, \"energy_accounting\": null, \"overlap_policy\": null, \"properties\": [{\"name\": \"description\", \"native_type\": \"0\", \"units\": null, \"representation\": \"text_lines\", \"value\": []}, {\"name\": \"Inlet Conditions\", \"native_type\": \"0\", \"units\": null, \"representation\": \"named_property_table\", \"value\": null}, {\"name\": \"Turbulence Characteristics Modeling Object\", \"native_type\": \"0\", \"units\": null, \"representation\": \"named_property_table\", \"value\": null}, {\"name\": \"External Pressure Type\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Pressure\", \"native_type\": \"3\", \"units\": null, \"value\": 1}, {\"name\": \"Pressure Value\", \"native_type\": \"6\", \"units\": \"PressurePascals\", \"expression\": \"101325.0\", \"unit_symbol\": \"Pa(N/m^2)\", \"representation\": \"expression\"}, {\"name\": \"External Relative Pressure\", \"native_type\": \"6\", \"units\": \"PressurePascals\", \"expression\": \"0.0\", \"unit_symbol\": \"Pa(N/m^2)\", \"representation\": \"expression\"}, {\"name\": \"Head Loss\", \"native_type\": \"0\", \"units\": null, \"representation\": \"named_property_table\", \"value\": {\"journal_id\": \"SsmoPropTable[Synthetic outlet restriction K2]\", \"owner_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F1-fan-definition-20260909-r1\\\\f1_fan_definition_r1.sim\", \"descriptor\": \"Head Loss\", \"lifetime\": \"owner document revision; inspect again after regeneration\"}, \"properties\": [{\"name\": \"description\", \"native_type\": \"0\", \"units\": null, \"representation\": \"text_lines\", \"value\": []}, {\"name\": \"Type\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Proportional to\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Head Loss Coefficient\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": 0.0, \"unit_symbol\": null}, {\"name\": \"Pressure Drop to Velocity Ratio\", \"native_type\": \"4\", \"units\": \"NewtonSecondPerCubicMeter\", \"value\": 0.0, \"unit_symbol\": \"N-sec/m^3\"}, {\"name\": \"Orifice Geometry\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Edge Radius\", \"native_type\": \"4\", \"units\": \"MilliMeter\", \"value\": -777777.0, \"unit_symbol\": \"mm\"}, {\"name\": \"Plate Thickness\", \"native_type\": \"4\", \"units\": \"MilliMeter\", \"value\": -777777.0, \"unit_symbol\": \"mm\"}, {\"name\": \"Orifice Hydraulic Diameter\", \"native_type\": \"4\", \"units\": \"MilliMeter\", \"value\": -777777.0, \"unit_symbol\": \"mm\"}, {\"name\": \"Free Area Ratio\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": -777777.0, \"unit_symbol\": null}, {\"name\": \"Compute Head Loss Coefficient\", \"native_type\": \"1\", \"units\": null, \"value\": \"Compute\"}, {\"name\": \"Computed Head Loss Coefficient\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": -777777.0, \"unit_symbol\": null}]}, {\"name\": \"Tracer Fluid\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Tracer Fluid List\", \"native_type\": \"0\", \"units\": null, \"representation\": \"named_table_array\", \"value\": []}, {\"name\": \"Tracer Fluid Mass Fractions\", \"native_type\": \"8\", \"units\": \"dimensionless\", \"value\": [-777777.0], \"unit_symbol\": null, \"value_semantics\": \"native values; sentinel meaning depends on owning property\"}, {\"name\": \"Mixture\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Mixture Mass Fractions\", \"native_type\": \"8\", \"units\": \"dimensionless\", \"value\": [-777777.0], \"unit_symbol\": null, \"value_semantics\": \"native values; sentinel meaning depends on owning property\"}, {\"name\": \"Alignment\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Flow Direction Vector\", \"native_type\": \"0\", \"units\": null, \"representation\": \"vector\", \"value\": null}, {\"name\": \"distributionType\", \"native_type\": \"3\", \"units\": null, \"value\": 32}]}], \"total\": 2, \"next_offset\": null, \"scope\": \"SIM simulation_objects collection only; other boundary collections are separate\", \"operation_id\": \"op_de955ea9517f43c7b212b6e935aeea66\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "simulation_objects": [
+          {
+            "object": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_d2b335288862483795f9dea8a5a2cb65",
+              "kind": "simulation_object",
+              "name": "Duct Inlet",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_c23c1533e22a48ecb45a0c146ccde77a",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "c23c1533e22a48ecb45a0c146ccde77a",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F1-fan-definition-20260909-r1\\f1_fan_definition_r1.sim",
+              "journal_id": "SimulationObject[Duct Inlet]",
+              "display_name": "Duct Inlet"
+            },
+            "native_type": "SimSimulationObject",
+            "target_set_count": 1,
+            "descriptor": "Inlet",
+            "fan_binding": {
+              "mode": 5,
+              "field": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_c4eceb9742944386a8606637375a5a75",
+                "kind": "simulation_field",
+                "name": "Definition readback fixture",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_c23c1533e22a48ecb45a0c146ccde77a",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "c23c1533e22a48ecb45a0c146ccde77a",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F1-fan-definition-20260909-r1\\f1_fan_definition_r1.sim",
+                "journal_id": "Definition readback fixture",
+                "display_name": "Definition readback fixture"
+              },
+              "scale_factor": 1.0,
+              "interpretation": "mode 5 static fan inlet verified for NX 2606 Flow only"
+            },
+            "provenance": null,
+            "coefficient_basis": null,
+            "energy_accounting": null,
+            "overlap_policy": null,
+            "properties": [
+              {
+                "name": "description",
+                "native_type": "0",
+                "units": null,
+                "representation": "text_lines",
+                "value": []
+              },
+              {
+                "name": "Mode Option",
+                "native_type": "3",
+                "units": null,
+                "value": 5
+              },
+              {
+                "name": "Velocity",
+                "native_type": "6",
+                "units": "MeterPerSecond",
+                "expression": "1.0",
+                "unit_symbol": "m/sec",
+                "representation": "expression"
+              },
+              {
+                "name": "Velocity Vector",
+                "native_type": "0",
+                "units": null,
+                "representation": "vector_expressions",
+                "components": [
+                  {
+                    "expression": "-777777",
+                    "evaluated_value": -777777.0,
+                    "units": "MilliMeterPerSecond",
+                    "unit_symbol": "mm/sec"
+                  },
+                  {
+                    "expression": "-777777",
+                    "evaluated_value": -777777.0,
+                    "units": "MilliMeterPerSecond",
+                    "unit_symbol": "mm/sec"
+                  },
+                  {
+                    "expression": "-777777",
+                    "evaluated_value": -777777.0,
+                    "units": "MilliMeterPerSecond",
+                    "unit_symbol": "mm/sec"
+                  }
+                ],
+                "coordinate_frame": "owning_property_convention; not inferred"
+              },
+              {
+                "name": "Mass Flow",
+                "native_type": "6",
+                "units": "dimensionless",
+                "expression": "-777777",
+                "unit_symbol": null,
+                "representation": "expression"
+              },
+              {
+                "name": "Volume Flow",
+                "native_type": "6",
+                "units": "dimensionless",
+                "expression": "-777777",
+                "unit_symbol": null,
+                "representation": "expression"
+              },
+              {
+                "name": "Pressure Rise",
+                "native_type": "6",
+                "units": "dimensionless",
+                "expression": "-777777",
+                "unit_symbol": null,
+                "representation": "expression"
+              },
+              {
+                "name": "Fan Curve",
+                "native_type": "6",
+                "units": null,
+                "field_scale": 1.0,
+                "field_reference": {
+                  "journal_id": "Definition readback fixture",
+                  "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F1-fan-definition-20260909-r1\\f1_fan_definition_r1.sim",
+                  "tag": 7260648,
+                  "lifetime": "current loaded document; not a cross-session reference"
+                },
+                "representation": "FieldTable",
+                "field_definition": {
+                  "kind": "validated_fan_table",
+                  "manifest": {
+                    "extrapolation": "reject",
+                    "interpolation": "linear",
+                    "name": "Definition readback fixture",
+                    "points": [
+                      {
+                        "flow_m3_s": 0.0,
+                        "pressure_Pa": 1.0
+                      },
+                      {
+                        "flow_m3_s": 0.0004,
+                        "pressure_Pa": 0.0
+                      }
+                    ],
+                    "pressure_convention": "static",
+                    "provenance": {
+                      "kind": "assumed",
+                      "source": "API readback test"
+                    },
+                    "reference_density_kg_m3": 1.2,
+                    "reverse_flow": "unsupported",
+                    "rpm": 1000,
+                    "schema_version": 1,
+                    "stall_region": "Synthetic fixture"
+                  },
+                  "native_samples_si": {
+                    "flow_m3_s": [
+                      0.0,
+                      0.0004
+                    ],
+                    "pressure_Pa": [
+                      1.0,
+                      0.0
+                    ]
+                  },
+                  "scale_application": "scalar wrapper scales dependent pressure values only",
+                  "definition_scope": "table values and interpolation; not solver or boundary semantics"
+                }
+              },
+              {
+                "name": "Inlet Conditions",
+                "native_type": "0",
+                "units": null,
+                "representation": "named_property_table",
+                "value": null
+              },
+              {
+                "name": "Pressure",
+                "native_type": "3",
+                "units": null,
+                "value": 1
+              },
+              {
+                "name": "Pressure Value",
+                "native_type": "4",
+                "units": "PressurePascals",
+                "value": 101325.0,
+                "unit_symbol": "Pa(N/m^2)"
+              },
+              {
+                "name": "Turbulence Characteristics Modeling Object",
+                "native_type": "0",
+                "units": null,
+                "representation": "named_property_table",
+                "value": null
+              },
+              {
+                "name": "Head Loss",
+                "native_type": "0",
+                "units": null,
+                "representation": "named_property_table",
+                "value": null
+              },
+              {
+                "name": "Heat Generated by Fan",
+                "native_type": "4",
+                "units": "HeatFlow_Metric2",
+                "value": 0.0,
+                "unit_symbol": "W"
+              },
+              {
+                "name": "Tracer Fluid",
+                "native_type": "3",
+                "units": null,
+                "value": 0
+              },
+              {
+                "name": "Tracer Fluid List",
+                "native_type": "0",
+                "units": null,
+                "representation": "named_table_array",
+                "value": []
+              },
+              {
+                "name": "Tracer Fluid Mass Fractions",
+                "native_type": "8",
+                "units": "dimensionless",
+                "value": [
+                  -777777.0
+                ],
+                "unit_symbol": null,
+                "value_semantics": "native values; sentinel meaning depends on owning property"
+              },
+              {
+                "name": "Mixture",
+                "native_type": "3",
+                "units": null,
+                "value": 0
+              },
+              {
+                "name": "Mixture Mass Fractions",
+                "native_type": "8",
+                "units": "dimensionless",
+                "value": [
+                  -777777.0
+                ],
+                "unit_symbol": null,
+                "value_semantics": "native values; sentinel meaning depends on owning property"
+              },
+              {
+                "name": "Alignment",
+                "native_type": "3",
+                "units": null,
+                "value": 0
+              },
+              {
+                "name": "Swirl",
+                "native_type": "3",
+                "units": null,
+                "value": 0
+              },
+              {
+                "name": "Rotation Axis Option",
+                "native_type": "3",
+                "units": null,
+                "value": 5
+              },
+              {
+                "name": "Rotation Axis",
+                "native_type": "0",
+                "units": null,
+                "representation": "axis",
+                "value": null
+              },
+              {
+                "name": "Normal to Tangential Velocity Angle",
+                "native_type": "4",
+                "units": "Degrees",
+                "value": -777777.0,
+                "unit_symbol": "degrees"
+              },
+              {
+                "name": "Rotation Velocity",
+                "native_type": "4",
+                "units": "DegreesPerSecond",
+                "value": -777777.0,
+                "unit_symbol": "degrees/sec"
+              },
+              {
+                "name": "Alignment Vector",
+                "native_type": "0",
+                "units": null,
+                "representation": "vector",
+                "value": null
+              },
+              {
+                "name": "Controller Type",
+                "native_type": "3",
+                "units": null,
+                "value": 0
+              },
+              {
+                "name": "Thermostat",
+                "native_type": "0",
+                "units": null,
+                "representation": "named_property_table",
+                "value": null
+              },
+              {
+                "name": "Fan Speed Controller",
+                "native_type": "0",
+                "units": null,
+                "representation": "named_property_table",
+                "value": null
+              },
+              {
+                "name": "Nominal Fan Speed",
+                "native_type": "4",
+                "units": "DegreesPerSecond",
+                "value": -777777.0,
+                "unit_symbol": "degrees/sec"
+              },
+              {
+                "name": "distributionType",
+                "native_type": "3",
+                "units": null,
+                "value": 32
+              }
+            ]
+          },
+          {
+            "object": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_b044add5a7584d96b548400e965e3675",
+              "kind": "simulation_object",
+              "name": "Duct Opening",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_c23c1533e22a48ecb45a0c146ccde77a",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "c23c1533e22a48ecb45a0c146ccde77a",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F1-fan-definition-20260909-r1\\f1_fan_definition_r1.sim",
+              "journal_id": "SimulationObject[Duct Opening]",
+              "display_name": "Duct Opening"
+            },
+            "native_type": "SimSimulationObject",
+            "target_set_count": 1,
+            "descriptor": "Opening",
+            "head_loss": {
+              "table_name": "Synthetic outlet restriction K2",
+              "coefficient": 0.0,
+              "units": "dimensionless",
+              "convention": "native Head Loss coefficient; general pressure-loss convention not independently verified"
+            },
+            "provenance": null,
+            "coefficient_basis": null,
+            "energy_accounting": null,
+            "overlap_policy": null,
+            "properties": [
+              {
+                "name": "description",
+                "native_type": "0",
+                "units": null,
+                "representation": "text_lines",
+                "value": []
+              },
+              {
+                "name": "Inlet Conditions",
+                "native_type": "0",
+                "units": null,
+                "representation": "named_property_table",
+                "value": null
+              },
+              {
+                "name": "Turbulence Characteristics Modeling Object",
+                "native_type": "0",
+                "units": null,
+                "representation": "named_property_table",
+                "value": null
+              },
+              {
+                "name": "External Pressure Type",
+                "native_type": "3",
+                "units": null,
+                "value": 0
+              },
+              {
+                "name": "Pressure",
+                "native_type": "3",
+                "units": null,
+                "value": 1
+              },
+              {
+                "name": "Pressure Value",
+                "native_type": "6",
+                "units": "PressurePascals",
+                "expression": "101325.0",
+                "unit_symbol": "Pa(N/m^2)",
+                "representation": "expression"
+              },
+              {
+                "name": "External Relative Pressure",
+                "native_type": "6",
+                "units": "PressurePascals",
+                "expression": "0.0",
+                "unit_symbol": "Pa(N/m^2)",
+                "representation": "expression"
+              },
+              {
+                "name": "Head Loss",
+                "native_type": "0",
+                "units": null,
+                "representation": "named_property_table",
+                "value": {
+                  "journal_id": "SsmoPropTable[Synthetic outlet restriction K2]",
+                  "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F1-fan-definition-20260909-r1\\f1_fan_definition_r1.sim",
+                  "descriptor": "Head Loss",
+                  "lifetime": "owner document revision; inspect again after regeneration"
+                },
+                "properties": [
+                  {
+                    "name": "description",
+                    "native_type": "0",
+                    "units": null,
+                    "representation": "text_lines",
+                    "value": []
+                  },
+                  {
+                    "name": "Type",
+                    "native_type": "3",
+                    "units": null,
+                    "value": 0
+                  },
+                  {
+                    "name": "Proportional to",
+                    "native_type": "3",
+                    "units": null,
+                    "value": 0
+                  },
+                  {
+                    "name": "Head Loss Coefficient",
+                    "native_type": "4",
+                    "units": "dimensionless",
+                    "value": 0.0,
+                    "unit_symbol": null
+                  },
+                  {
+                    "name": "Pressure Drop to Velocity Ratio",
+                    "native_type": "4",
+                    "units": "NewtonSecondPerCubicMeter",
+                    "value": 0.0,
+                    "unit_symbol": "N-sec/m^3"
+                  },
+                  {
+                    "name": "Orifice Geometry",
+                    "native_type": "3",
+                    "units": null,
+                    "value": 0
+                  },
+                  {
+                    "name": "Edge Radius",
+                    "native_type": "4",
+                    "units": "MilliMeter",
+                    "value": -777777.0,
+                    "unit_symbol": "mm"
+                  },
+                  {
+                    "name": "Plate Thickness",
+                    "native_type": "4",
+                    "units": "MilliMeter",
+                    "value": -777777.0,
+                    "unit_symbol": "mm"
+                  },
+                  {
+                    "name": "Orifice Hydraulic Diameter",
+                    "native_type": "4",
+                    "units": "MilliMeter",
+                    "value": -777777.0,
+                    "unit_symbol": "mm"
+                  },
+                  {
+                    "name": "Free Area Ratio",
+                    "native_type": "4",
+                    "units": "dimensionless",
+                    "value": -777777.0,
+                    "unit_symbol": null
+                  },
+                  {
+                    "name": "Compute Head Loss Coefficient",
+                    "native_type": "1",
+                    "units": null,
+                    "value": "Compute"
+                  },
+                  {
+                    "name": "Computed Head Loss Coefficient",
+                    "native_type": "4",
+                    "units": "dimensionless",
+                    "value": -777777.0,
+                    "unit_symbol": null
+                  }
+                ]
+              },
+              {
+                "name": "Tracer Fluid",
+                "native_type": "3",
+                "units": null,
+                "value": 0
+              },
+              {
+                "name": "Tracer Fluid List",
+                "native_type": "0",
+                "units": null,
+                "representation": "named_table_array",
+                "value": []
+              },
+              {
+                "name": "Tracer Fluid Mass Fractions",
+                "native_type": "8",
+                "units": "dimensionless",
+                "value": [
+                  -777777.0
+                ],
+                "unit_symbol": null,
+                "value_semantics": "native values; sentinel meaning depends on owning property"
+              },
+              {
+                "name": "Mixture",
+                "native_type": "3",
+                "units": null,
+                "value": 0
+              },
+              {
+                "name": "Mixture Mass Fractions",
+                "native_type": "8",
+                "units": "dimensionless",
+                "value": [
+                  -777777.0
+                ],
+                "unit_symbol": null,
+                "value_semantics": "native values; sentinel meaning depends on owning property"
+              },
+              {
+                "name": "Alignment",
+                "native_type": "3",
+                "units": null,
+                "value": 0
+              },
+              {
+                "name": "Flow Direction Vector",
+                "native_type": "0",
+                "units": null,
+                "representation": "vector",
+                "value": null
+              },
+              {
+                "name": "distributionType",
+                "native_type": "3",
+                "units": null,
+                "value": 32
+              }
+            ]
+          }
+        ],
+        "total": 2,
+        "next_offset": null,
+        "scope": "SIM simulation_objects collection only; other boundary collections are separate",
+        "operation_id": "op_de955ea9517f43c7b212b6e935aeea66",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "not_applicable"
+      },
+      "isError": false
+    }
+  },
+  "passed": true
+}

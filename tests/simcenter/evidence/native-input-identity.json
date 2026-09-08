@@ -1,0 +1,58 @@
+{
+  "status": "success",
+  "job_id": "transient-solve-04",
+  "input_comparison": {
+    "before": {
+      "sha256": "741cc821488bffa1408d8618c64dff4a0338a0717f73a23b4565377fba49819e",
+      "xml_content_sha256": "f14333ed927066de4900dc3cfa32a2dba8845f7c697d694b6d196fa99285305f",
+      "bytes": 169860,
+      "canonicalization": "xml_c14n2_no_comments"
+    },
+    "after": {
+      "sha256": "1aeb3c60ac7a297031e7845f57bf44813f789a05e8025d2192cb35b83e34e41b",
+      "xml_content_sha256": "f14333ed927066de4900dc3cfa32a2dba8845f7c697d694b6d196fa99285305f",
+      "bytes": 169860,
+      "canonicalization": "xml_c14n2_no_comments"
+    },
+    "byte_identical": false,
+    "xml_content_identical": true,
+    "scope": "input XML only; result association and solver outcome require separate verification"
+  },
+  "model_files": [
+    {
+      "name": "benchmark_4ed90ef8215b_analysis.sim",
+      "unchanged": true
+    },
+    {
+      "name": "benchmark_4ed90ef8215b_geometry.prt",
+      "unchanged": true
+    },
+    {
+      "name": "benchmark_4ed90ef8215b_mesh.fem",
+      "unchanged": true
+    }
+  ],
+  "result_written_after_job_created": true,
+  "bundle_sha256": "222d32c38f37f0626603150216ab9c41c5f4e51b4917978dc7849e6a33f7aac6",
+  "final_temperature": {
+    "field": "Temperature - Nodal",
+    "loadcase_index": 40,
+    "iteration_index": 0,
+    "units": "degC",
+    "minimum": 36.54294204711914,
+    "maximum": 36.5477180480957,
+    "native_location": "0",
+    "minimum_native_id": 2,
+    "maximum_native_id": 201,
+    "minimum_native_sub_id": 0,
+    "maximum_native_sub_id": 0,
+    "node_count": 246,
+    "result_freshness": "not_verified",
+    "reference_lifetime": "indices apply only to this result revision"
+  },
+  "scope": "isolated benchmark identity check; generic job recovery and result freshness still incomplete",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

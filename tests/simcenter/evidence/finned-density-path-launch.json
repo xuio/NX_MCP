@@ -1,0 +1,149 @@
+{
+  "status": "success",
+  "job_id": "coupled-finned-density-path-r1",
+  "physical_acceptance": false,
+  "mesh_changed": false,
+  "open_source": {
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_fb19e1b696a0456da96fea6518402c22",
+      "kind": "part",
+      "name": "finned_tight_r1",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6bf144b616f0493baf5964bc4cd96aec",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "6bf144b616f0493baf5964bc4cd96aec",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-tight-20260908-r1\\finned_tight_r1.sim",
+      "journal_id": "finned_tight_r1",
+      "display_name": "finned_tight_r1"
+    },
+    "units": "mm",
+    "coordinate_frame": "part_absolute",
+    "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-tight-20260908-r1\\finned_tight_r1.sim",
+    "already_loaded": false,
+    "modified_after_native_open": true,
+    "modified_before_activation": true,
+    "modified": true,
+    "fully_loaded": true,
+    "load_issues": [],
+    "changed_existing_part_flags": [],
+    "application": "UG_APP_SFEM",
+    "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-tight-20260908-r1\\finned_tight_r1.sim",
+    "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-tight-20260908-r1\\finned_tight_r1.sim",
+    "saved": false,
+    "result_freshness": "not_verified",
+    "warnings": [
+      "Document has unsaved native state; inspect and explicitly save approved analysis changes before preparing a solve"
+    ]
+  },
+  "copy": {
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_24881e3cb4894bfaaec8a0e551bc05e5",
+      "kind": "part",
+      "name": "finned_density_path_r1",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6bf144b616f0493baf5964bc4cd96aec",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "6bf144b616f0493baf5964bc4cd96aec",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-density-path-20260908-r1\\finned_density_path_r1.sim",
+      "journal_id": "finned_density_path_r1",
+      "display_name": "finned_density_path_r1"
+    },
+    "source": {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-tight-20260908-r1\\finned_tight_r1.sim",
+      "bytes": 7672132,
+      "sha256": "a9a40e1c3a17a00b3c6ef0643db4e96fb42b2f8a0a3f0bbd3223673347757aae"
+    },
+    "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-density-path-20260908-r1\\finned_density_path_r1.sim",
+    "source_file_unchanged": true,
+    "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-density-path-20260908-r1\\finned_density_path_r1.sim",
+    "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-density-path-20260908-r1\\finned_density_path_r1.sim",
+    "shared_fem_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-baseline-20260908-r1\\finned_r1_mesh.fem",
+    "independent_geometry_variant": false,
+    "saved": true,
+    "result_freshness": "not_verified",
+    "next_step": "Reacquire document IDs. Duplicate and reassociate FEM/CAD before changing shared geometry or mesh."
+  },
+  "native_controls": {
+    "buoyancy": true,
+    "gravity_loads": [],
+    "iteration_limit": 100,
+    "ambient_pressure_mode": 1
+  },
+  "save": {
+    "saved": true,
+    "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-density-path-20260908-r1\\finned_density_path_r1.sim",
+    "file": {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-density-path-20260908-r1\\finned_density_path_r1.sim",
+      "bytes": 7745199,
+      "sha256": "48b3a5cb3fdb9d456006a8a914a9cd74f97e91af76862cee11b0b1b0cc62ea75"
+    },
+    "previous_file": {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-density-path-20260908-r1\\finned_density_path_r1.sim",
+      "bytes": 7745028,
+      "sha256": "1b06504d678a916c792fa80fcf06d58cf9d1443c9771ccd07047668d5891da01"
+    },
+    "backup_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-save-backups\\3490f16924314618899e3188cd7685d4\\finned_density_path_r1.sim",
+    "saved_components": false,
+    "closed": false,
+    "other_modified_flags_unchanged": true,
+    "result_freshness": "not_verified"
+  },
+  "prepare": {
+    "job_id": "coupled-finned-density-path-r1",
+    "state": "accepted",
+    "request_sha256": "079d3d1882575b34322c90e38f58fbc1823e6ebae2bc7426bcccd88c41b699f0",
+    "replayed": false,
+    "preparation_revalidated": true,
+    "solver_launched_by_call": false,
+    "input_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-density-path-20260908-r1\\finned_density_path_r1-Finned_coupled_benchmark.xml",
+    "input_sha256": "63a0016e80722b1886d4683d55b3f3076a791b24871d3169ae13edab6d3c2961",
+    "output_claim": {
+      "schema": 1,
+      "job_id": "coupled-finned-density-path-r1",
+      "job_directory": "d:\\cad\\simcenter_mcp_workspace\\simcenter-jobs\\coupled-finned-density-path-r1",
+      "request_sha256": "079d3d1882575b34322c90e38f58fbc1823e6ebae2bc7426bcccd88c41b699f0",
+      "output_directory": "d:\\cad\\simcenter_mcp_workspace\\ui-benchmarks\\e-finned-density-path-20260908-r1",
+      "replayed": false,
+      "retention": "permanent; no automatic release"
+    },
+    "mesh_counts": {
+      "element_sets": 2,
+      "elements": 2130,
+      "nodes": 745,
+      "scope": "observed_multiphysics_xml_layout"
+    },
+    "dependency_completeness": "not_established",
+    "solve_readiness": "not_established",
+    "next_step": "Inspect the immutable manifest with nx_sim_job_status(include_manifest=True), then use nx_sim_launch; cancellation is not yet implemented"
+  },
+  "export_checks": {
+    "buoyancy": 1,
+    "gravity_loads": [],
+    "temperature_and_pressure_guards": "passed"
+  },
+  "launch_intent": "Observe this existing durable job after interruption; never duplicate",
+  "launch": {
+    "job_id": "coupled-finned-density-path-r1",
+    "state": "launch_returned",
+    "revision": 2,
+    "request_sha256": "079d3d1882575b34322c90e38f58fbc1823e6ebae2bc7426bcccd88c41b699f0",
+    "replayed": false,
+    "solver_state": "not_observed_by_launch",
+    "numerical_convergence": "not_established",
+    "results_validated": false,
+    "cancellation": "not_implemented",
+    "next_step": "Inspect nx_sim_job_status and nx_sim_job_logs; API return is not solver completion",
+    "observer": {
+      "state": "started",
+      "reused": false,
+      "log_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs\\coupled-finned-density-path-r1\\observer-3344e45b2a884e8bbdb604c0b2f9d4bb.log",
+      "maximum_seconds": 3600,
+      "nx_api_calls": false,
+      "lifetime": "NX process; durable job survives observer exit",
+      "timeout_semantics": "observation ends; solver is not cancelled or relaunched"
+    }
+  },
+  "operation_id": "op_04c4419662724f08abb50dac41a8efe4",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

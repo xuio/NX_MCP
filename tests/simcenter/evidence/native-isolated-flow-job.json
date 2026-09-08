@@ -1,0 +1,467 @@
+{
+  "launch": {
+    "status": "success",
+    "job": {
+      "job_id": "isolated-flow-01",
+      "manifest": {
+        "analysis_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-input-export-20260908-r2\\flow_input_r2.sim",
+        "convergence": {
+          "flow_imbalance_enabled": true,
+          "flow_imbalance_fraction": 0.001,
+          "rms_residual": 1e-06
+        },
+        "dependency_scope": "direct_sim_fem_cad_associations",
+        "element_sets": {
+          "TET4 Fluid": 77133,
+          "WEDGE6 Fluid": 109632
+        },
+        "excluded_dependencies": "recursive components, external fields/material files, solver artifacts and result dependencies",
+        "input_xml_content_sha256": "cd5a86a6635a581e9aa00540a4de7e1a908d72177a0ab6e886d2971b8b5b10db",
+        "isolated_output_directory": "d:\\cad\\simcenter_mcp_workspace\\ui-benchmarks\\f-input-export-20260908-r2",
+        "iteration_limit": 1000,
+        "job_id": "isolated-flow-01",
+        "mesh_counts": {
+          "elements": 186765,
+          "nodes": 71748
+        },
+        "mesh_size_mm": 1.5,
+        "prepared_input": {
+          "dependencies": [
+            {
+              "bytes": 7762226,
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-input-export-20260908-r2\\flow_input_r2.sim",
+              "sha256": "64fc3c7e43fb6cb5d7f35fffdf079e343b6c258f9b4ec2c7618ec8c57474f136"
+            },
+            {
+              "bytes": 11752256,
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_mesh.fem",
+              "sha256": "16c652bed6aa66c55d601818f5f50162834ab3426803e585f1156c117806c205"
+            },
+            {
+              "bytes": 87738,
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_geometry.prt",
+              "sha256": "270bc149c45752454069abf1999fe8bf1da5f0a24b6459daffe89189b5157776"
+            }
+          ],
+          "dependency_completeness": "not_established",
+          "input": {
+            "bytes": 18628166,
+            "canonicalization": "xml_c14n2_no_comments",
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-input-export-20260908-r2\\flow_input_r2-Flow_benchmark.xml",
+            "sha256": "ce15b1e8f3c6e1c5e67fff47b5a23817f3343c64dafd689aa5b2481c20a1cb8f",
+            "xml_content_sha256": "cd5a86a6635a581e9aa00540a4de7e1a908d72177a0ab6e886d2971b8b5b10db"
+          },
+          "schema": 1,
+          "scope": "explicit saved dependencies and input bytes only",
+          "solve_readiness": "not_established"
+        },
+        "quality_preflight": {
+          "element_count": 186765,
+          "errors": 0,
+          "warnings": 0
+        },
+        "scope": "synthetic fan mode-5 verification; no thermal load; not acceptance D"
+      },
+      "request_sha256": "c688e9f9d1ae80cdea76436f87bc1c218b3aaf3ecc630da15e24e00976dfb4e9",
+      "state": "launch_returned",
+      "revision": 2,
+      "record": {
+        "evidence": {
+          "api_returned": true,
+          "process_state": "not_yet_observed",
+          "readback": {
+            "background_launch_requested": true,
+            "foreground_setting_restored": true
+          }
+        },
+        "job_id": "isolated-flow-01",
+        "observed_at": "2026-09-08T04:32:54.012514+00:00",
+        "previous_sha256": "0ac9b3b5cb7fe5847e77a6621b5699ba6897375b9f2764e5667a4d7aad90aa65",
+        "request_sha256": "c688e9f9d1ae80cdea76436f87bc1c218b3aaf3ecc630da15e24e00976dfb4e9",
+        "revision": 2,
+        "state": "launch_returned"
+      },
+      "launch_retry_allowed": false,
+      "numerical_convergence": "not_established",
+      "results_validated": false,
+      "replayed": false,
+      "output_claim": {
+        "schema": 1,
+        "job_id": "isolated-flow-01",
+        "job_directory": "d:\\cad\\simcenter_mcp_workspace\\ui-benchmarks\\f-input-export-20260908-r2\\jobs\\isolated-flow-01",
+        "request_sha256": "c688e9f9d1ae80cdea76436f87bc1c218b3aaf3ecc630da15e24e00976dfb4e9",
+        "output_directory": "d:\\cad\\simcenter_mcp_workspace\\ui-benchmarks\\f-input-export-20260908-r2",
+        "replayed": false,
+        "retention": "permanent; no automatic release"
+      }
+    },
+    "scope": "actual native asynchronous launch with durable intent; process/result audit remains separate",
+    "operation_id": "op_c026ba55280a4572ab80df9b2558c3da",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed",
+    "warnings": [],
+    "units": "mm"
+  },
+  "running": {
+    "status": "success",
+    "job": {
+      "job_id": "isolated-flow-01",
+      "manifest": {
+        "analysis_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-input-export-20260908-r2\\flow_input_r2.sim",
+        "convergence": {
+          "flow_imbalance_enabled": true,
+          "flow_imbalance_fraction": 0.001,
+          "rms_residual": 1e-06
+        },
+        "dependency_scope": "direct_sim_fem_cad_associations",
+        "element_sets": {
+          "TET4 Fluid": 77133,
+          "WEDGE6 Fluid": 109632
+        },
+        "excluded_dependencies": "recursive components, external fields/material files, solver artifacts and result dependencies",
+        "input_xml_content_sha256": "cd5a86a6635a581e9aa00540a4de7e1a908d72177a0ab6e886d2971b8b5b10db",
+        "isolated_output_directory": "d:\\cad\\simcenter_mcp_workspace\\ui-benchmarks\\f-input-export-20260908-r2",
+        "iteration_limit": 1000,
+        "job_id": "isolated-flow-01",
+        "mesh_counts": {
+          "elements": 186765,
+          "nodes": 71748
+        },
+        "mesh_size_mm": 1.5,
+        "prepared_input": {
+          "dependencies": [
+            {
+              "bytes": 7762226,
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-input-export-20260908-r2\\flow_input_r2.sim",
+              "sha256": "64fc3c7e43fb6cb5d7f35fffdf079e343b6c258f9b4ec2c7618ec8c57474f136"
+            },
+            {
+              "bytes": 11752256,
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_mesh.fem",
+              "sha256": "16c652bed6aa66c55d601818f5f50162834ab3426803e585f1156c117806c205"
+            },
+            {
+              "bytes": 87738,
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_geometry.prt",
+              "sha256": "270bc149c45752454069abf1999fe8bf1da5f0a24b6459daffe89189b5157776"
+            }
+          ],
+          "dependency_completeness": "not_established",
+          "input": {
+            "bytes": 18628166,
+            "canonicalization": "xml_c14n2_no_comments",
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-input-export-20260908-r2\\flow_input_r2-Flow_benchmark.xml",
+            "sha256": "ce15b1e8f3c6e1c5e67fff47b5a23817f3343c64dafd689aa5b2481c20a1cb8f",
+            "xml_content_sha256": "cd5a86a6635a581e9aa00540a4de7e1a908d72177a0ab6e886d2971b8b5b10db"
+          },
+          "schema": 1,
+          "scope": "explicit saved dependencies and input bytes only",
+          "solve_readiness": "not_established"
+        },
+        "quality_preflight": {
+          "element_count": 186765,
+          "errors": 0,
+          "warnings": 0
+        },
+        "scope": "synthetic fan mode-5 verification; no thermal load; not acceptance D"
+      },
+      "request_sha256": "c688e9f9d1ae80cdea76436f87bc1c218b3aaf3ecc630da15e24e00976dfb4e9",
+      "state": "running",
+      "revision": 3,
+      "record": {
+        "evidence": {
+          "process_observations": [
+            {
+              "identity": {
+                "creation_filetime_100ns": "134333155981124861",
+                "executable_path": "C:\\Program Files\\Siemens\\Designcenter2606\\THERMALFLOW\\tmgsolver\\exe\\niece_solver.exe",
+                "pid": 6836
+              },
+              "observed_at": "2026-09-08T04:34:23.250787+00:00",
+              "pid": 6836,
+              "state": "running"
+            },
+            {
+              "identity": {
+                "creation_filetime_100ns": "134333155980710309",
+                "executable_path": "C:\\Program Files\\Siemens\\Designcenter2606\\THERMALFLOW\\tmgsolver\\IntelMPI\\bin\\mpiexec.exe",
+                "pid": 16012
+              },
+              "observed_at": "2026-09-08T04:34:23.251287+00:00",
+              "pid": 16012,
+              "state": "running"
+            }
+          ],
+          "scope": "fixture-specific PIDs from host observer; not generic automatic job binding"
+        },
+        "job_id": "isolated-flow-01",
+        "observed_at": "2026-09-08T04:34:23.254288+00:00",
+        "previous_sha256": "b02e674b5995a8b603abfbf335cb6051e3b913bc6951bfb9cc5434fd84b40e77",
+        "request_sha256": "c688e9f9d1ae80cdea76436f87bc1c218b3aaf3ecc630da15e24e00976dfb4e9",
+        "revision": 3,
+        "state": "running"
+      },
+      "launch_retry_allowed": false,
+      "numerical_convergence": "not_established",
+      "results_validated": false
+    },
+    "observations": [
+      {
+        "pid": 6836,
+        "observed_at": "2026-09-08T04:34:23.250787+00:00",
+        "state": "running",
+        "identity": {
+          "pid": 6836,
+          "creation_filetime_100ns": "134333155981124861",
+          "executable_path": "C:\\Program Files\\Siemens\\Designcenter2606\\THERMALFLOW\\tmgsolver\\exe\\niece_solver.exe"
+        }
+      },
+      {
+        "pid": 16012,
+        "observed_at": "2026-09-08T04:34:23.251287+00:00",
+        "state": "running",
+        "identity": {
+          "pid": 16012,
+          "creation_filetime_100ns": "134333155980710309",
+          "executable_path": "C:\\Program Files\\Siemens\\Designcenter2606\\THERMALFLOW\\tmgsolver\\IntelMPI\\bin\\mpiexec.exe"
+        }
+      }
+    ],
+    "operation_id": "op_4fda6e4e18c848db9aefcaf0bd92507c",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed",
+    "warnings": [],
+    "units": "mm"
+  },
+  "terminal": {
+    "status": "success",
+    "job": {
+      "job_id": "isolated-flow-01",
+      "manifest": {
+        "analysis_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-input-export-20260908-r2\\flow_input_r2.sim",
+        "convergence": {
+          "flow_imbalance_enabled": true,
+          "flow_imbalance_fraction": 0.001,
+          "rms_residual": 1e-06
+        },
+        "dependency_scope": "direct_sim_fem_cad_associations",
+        "element_sets": {
+          "TET4 Fluid": 77133,
+          "WEDGE6 Fluid": 109632
+        },
+        "excluded_dependencies": "recursive components, external fields/material files, solver artifacts and result dependencies",
+        "input_xml_content_sha256": "cd5a86a6635a581e9aa00540a4de7e1a908d72177a0ab6e886d2971b8b5b10db",
+        "isolated_output_directory": "d:\\cad\\simcenter_mcp_workspace\\ui-benchmarks\\f-input-export-20260908-r2",
+        "iteration_limit": 1000,
+        "job_id": "isolated-flow-01",
+        "mesh_counts": {
+          "elements": 186765,
+          "nodes": 71748
+        },
+        "mesh_size_mm": 1.5,
+        "prepared_input": {
+          "dependencies": [
+            {
+              "bytes": 7762226,
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-input-export-20260908-r2\\flow_input_r2.sim",
+              "sha256": "64fc3c7e43fb6cb5d7f35fffdf079e343b6c258f9b4ec2c7618ec8c57474f136"
+            },
+            {
+              "bytes": 11752256,
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_mesh.fem",
+              "sha256": "16c652bed6aa66c55d601818f5f50162834ab3426803e585f1156c117806c205"
+            },
+            {
+              "bytes": 87738,
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_geometry.prt",
+              "sha256": "270bc149c45752454069abf1999fe8bf1da5f0a24b6459daffe89189b5157776"
+            }
+          ],
+          "dependency_completeness": "not_established",
+          "input": {
+            "bytes": 18628166,
+            "canonicalization": "xml_c14n2_no_comments",
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-input-export-20260908-r2\\flow_input_r2-Flow_benchmark.xml",
+            "sha256": "ce15b1e8f3c6e1c5e67fff47b5a23817f3343c64dafd689aa5b2481c20a1cb8f",
+            "xml_content_sha256": "cd5a86a6635a581e9aa00540a4de7e1a908d72177a0ab6e886d2971b8b5b10db"
+          },
+          "schema": 1,
+          "scope": "explicit saved dependencies and input bytes only",
+          "solve_readiness": "not_established"
+        },
+        "quality_preflight": {
+          "element_count": 186765,
+          "errors": 0,
+          "warnings": 0
+        },
+        "scope": "synthetic fan mode-5 verification; no thermal load; not acceptance D"
+      },
+      "request_sha256": "c688e9f9d1ae80cdea76436f87bc1c218b3aaf3ecc630da15e24e00976dfb4e9",
+      "state": "solver_exited",
+      "revision": 4,
+      "record": {
+        "evidence": {
+          "completion_footer": true,
+          "input": {
+            "bytes": 18628166,
+            "canonicalization": "xml_c14n2_no_comments",
+            "sha256": "37cb2e5c753e3a310e70d4ac2fc9bb48172f8f3d5218cfb99d3151039ca93430",
+            "xml_content_sha256": "cd5a86a6635a581e9aa00540a4de7e1a908d72177a0ab6e886d2971b8b5b10db"
+          },
+          "log": {
+            "bytes": 39351,
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-input-export-20260908-r2\\flow_input_r2-Flow_benchmark.log",
+            "sha256": "6eb1ef25e794a3a30ebf42e3310c0c08c240f6d230263e0c648543531353fcb3"
+          },
+          "numerical_acceptance": "not_established",
+          "previous_processes": [
+            {
+              "identity": {
+                "creation_filetime_100ns": "134333155981124861",
+                "executable_path": "C:\\Program Files\\Siemens\\Designcenter2606\\THERMALFLOW\\tmgsolver\\exe\\niece_solver.exe",
+                "pid": 6836
+              },
+              "observed_at": "2026-09-08T04:34:23.250787+00:00",
+              "pid": 6836,
+              "state": "running"
+            },
+            {
+              "identity": {
+                "creation_filetime_100ns": "134333155980710309",
+                "executable_path": "C:\\Program Files\\Siemens\\Designcenter2606\\THERMALFLOW\\tmgsolver\\IntelMPI\\bin\\mpiexec.exe",
+                "pid": 16012
+              },
+              "observed_at": "2026-09-08T04:34:23.251287+00:00",
+              "pid": 16012,
+              "state": "running"
+            }
+          ],
+          "process_observations": [
+            {
+              "observed_at": "2026-09-08T04:35:59.724521+00:00",
+              "pid": 6836,
+              "state": "missing",
+              "win32_error": 87
+            },
+            {
+              "observed_at": "2026-09-08T04:35:59.724521+00:00",
+              "pid": 16012,
+              "state": "missing",
+              "win32_error": 87
+            }
+          ],
+          "result": {
+            "bytes": 46367644,
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-input-export-20260908-r2\\flow_input_r2-Flow_benchmark.bun",
+            "sha256": "6f076a9cdd65a6a25a4ebe5a3a4b97312f20041957f108adfa0edb14a46a95d8"
+          },
+          "saved_revision_audit": {
+            "engineering_accepted": false,
+            "files": [
+              {
+                "bytes": 7762226,
+                "expected_sha256": "64fc3c7e43fb6cb5d7f35fffdf079e343b6c258f9b4ec2c7618ec8c57474f136",
+                "matches": true,
+                "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-input-export-20260908-r2\\flow_input_r2.sim",
+                "sha256": "64fc3c7e43fb6cb5d7f35fffdf079e343b6c258f9b4ec2c7618ec8c57474f136"
+              },
+              {
+                "bytes": 11752256,
+                "expected_sha256": "16c652bed6aa66c55d601818f5f50162834ab3426803e585f1156c117806c205",
+                "matches": true,
+                "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_mesh.fem",
+                "sha256": "16c652bed6aa66c55d601818f5f50162834ab3426803e585f1156c117806c205"
+              },
+              {
+                "bytes": 87738,
+                "expected_sha256": "270bc149c45752454069abf1999fe8bf1da5f0a24b6459daffe89189b5157776",
+                "matches": true,
+                "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_geometry.prt",
+                "sha256": "270bc149c45752454069abf1999fe8bf1da5f0a24b6459daffe89189b5157776"
+              }
+            ],
+            "issues": [
+              {
+                "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-input-export-20260908-r2\\flow_input_r2.sim",
+                "reason": "unsaved_edits"
+              }
+            ],
+            "revision_matches": false,
+            "scope": "supplied dependency set only",
+            "state": "revision_mismatch"
+          },
+          "scope": "fixture-specific terminal reconciliation; generic automatic binding and cancellation remain incomplete"
+        },
+        "job_id": "isolated-flow-01",
+        "observed_at": "2026-09-08T04:36:02.348065+00:00",
+        "previous_sha256": "1b7f32d36aaab57d92ba525ab2b989e8fea165313ce89b43184c9cfcb256cfc8",
+        "request_sha256": "c688e9f9d1ae80cdea76436f87bc1c218b3aaf3ecc630da15e24e00976dfb4e9",
+        "revision": 4,
+        "state": "solver_exited"
+      },
+      "launch_retry_allowed": false,
+      "numerical_convergence": "not_established",
+      "results_validated": false
+    },
+    "operation_id": "op_9f448dd494c64221b5d1b940d4f31400",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed",
+    "warnings": [],
+    "units": "mm"
+  },
+  "stale_guard": {
+    "status": "success",
+    "rejected": true,
+    "code": "NX_SIM_REVISION_CHANGED",
+    "details": {
+      "mutation_outcome": "not_started",
+      "audit": {
+        "state": "revision_mismatch",
+        "revision_matches": false,
+        "files": [
+          {
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-input-export-20260908-r2\\flow_input_r2.sim",
+            "bytes": 7762226,
+            "sha256": "64fc3c7e43fb6cb5d7f35fffdf079e343b6c258f9b4ec2c7618ec8c57474f136",
+            "expected_sha256": "64fc3c7e43fb6cb5d7f35fffdf079e343b6c258f9b4ec2c7618ec8c57474f136",
+            "matches": true
+          },
+          {
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_mesh.fem",
+            "bytes": 11752256,
+            "sha256": "16c652bed6aa66c55d601818f5f50162834ab3426803e585f1156c117806c205",
+            "expected_sha256": "16c652bed6aa66c55d601818f5f50162834ab3426803e585f1156c117806c205",
+            "matches": true
+          },
+          {
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_geometry.prt",
+            "bytes": 87738,
+            "sha256": "270bc149c45752454069abf1999fe8bf1da5f0a24b6459daffe89189b5157776",
+            "expected_sha256": "270bc149c45752454069abf1999fe8bf1da5f0a24b6459daffe89189b5157776",
+            "matches": true
+          }
+        ],
+        "issues": [
+          {
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-input-export-20260908-r2\\flow_input_r2.sim",
+            "reason": "unsaved_edits"
+          }
+        ],
+        "scope": "supplied dependency set only",
+        "engineering_accepted": false
+      }
+    },
+    "solver_launched": false,
+    "scope": "Native post-solve unsaved SIM flag rejection, not intentional geometry-change acceptance",
+    "operation_id": "op_fcb52b7340584adba58c7a641281b35c",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed",
+    "warnings": [],
+    "units": "mm"
+  },
+  "numerical_log_readback": {
+    "mass_imbalance_percent": 0.008865,
+    "momentum_imbalance_percent": 2.26e-05,
+    "full_benchmark_acceptance": false
+  }
+}

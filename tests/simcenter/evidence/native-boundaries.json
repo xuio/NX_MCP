@@ -1,0 +1,25 @@
+{
+  "nx_version": "v2606",
+  "scope": "native probe only; general boundary tool not yet implemented",
+  "boundaries": [
+    {
+      "name": "MCP_CONDUCTION_Temperature",
+      "type": "SimConstraint",
+      "expression": "293.15",
+      "units": "Kelvin"
+    },
+    {
+      "name": "MCP_CONDUCTION_Heat_Load",
+      "type": "SimLoad",
+      "expression": "1.0",
+      "units": "Watt"
+    }
+  ],
+  "selection_mapping": "FEM CAE polygon end faces mapped through SIM component FindOccurrence",
+  "end_face_x_mm": [
+    0,
+    100
+  ],
+  "solver_launched": false,
+  "numerical_acceptance": "not_tested"
+}

@@ -1,0 +1,163 @@
+{
+  "status": "success",
+  "before": {
+    "solution": {
+      "owner": {
+        "journal_id": "Solution[Finned coupled benchmark]",
+        "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-membership-audit-20260908-r1\\membership.sim"
+      },
+      "bcs": [
+        {
+          "journal_id": "Load[Generic solid 0.1 W]",
+          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-membership-audit-20260908-r1\\membership.sim"
+        },
+        {
+          "journal_id": "SimulationObject[Coupled Inlet]",
+          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-membership-audit-20260908-r1\\membership.sim"
+        },
+        {
+          "journal_id": "SimulationObject[Coupled Opening]",
+          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-membership-audit-20260908-r1\\membership.sim"
+        }
+      ],
+      "unfoldered_bcs": [
+        {
+          "journal_id": "Load[Generic solid 0.1 W]",
+          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-membership-audit-20260908-r1\\membership.sim"
+        },
+        {
+          "journal_id": "SimulationObject[Coupled Inlet]",
+          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-membership-audit-20260908-r1\\membership.sim"
+        },
+        {
+          "journal_id": "SimulationObject[Coupled Opening]",
+          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-membership-audit-20260908-r1\\membership.sim"
+        }
+      ],
+      "folders": [],
+      "conflict_override_count": 0
+    },
+    "steps": [
+      {
+        "index": 0,
+        "owner": {
+          "journal_id": "SolutionStep[Finned steady]",
+          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-membership-audit-20260908-r1\\membership.sim"
+        },
+        "bcs": [],
+        "unfoldered_bcs": [],
+        "folders": []
+      }
+    ],
+    "errors": [],
+    "comparison_verified": true,
+    "sha256": "69a2438c749baac194d09d094bae14820eb6198d1211b64a4e99d72a97acf4ee"
+  },
+  "removed": {
+    "solution": {
+      "owner": {
+        "journal_id": "Solution[Finned coupled benchmark]",
+        "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-membership-audit-20260908-r1\\membership.sim"
+      },
+      "bcs": [
+        {
+          "journal_id": "SimulationObject[Coupled Inlet]",
+          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-membership-audit-20260908-r1\\membership.sim"
+        },
+        {
+          "journal_id": "SimulationObject[Coupled Opening]",
+          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-membership-audit-20260908-r1\\membership.sim"
+        }
+      ],
+      "unfoldered_bcs": [
+        {
+          "journal_id": "SimulationObject[Coupled Inlet]",
+          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-membership-audit-20260908-r1\\membership.sim"
+        },
+        {
+          "journal_id": "SimulationObject[Coupled Opening]",
+          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-membership-audit-20260908-r1\\membership.sim"
+        }
+      ],
+      "folders": [],
+      "conflict_override_count": 0
+    },
+    "steps": [
+      {
+        "index": 0,
+        "owner": {
+          "journal_id": "SolutionStep[Finned steady]",
+          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-membership-audit-20260908-r1\\membership.sim"
+        },
+        "bcs": [],
+        "unfoldered_bcs": [],
+        "folders": []
+      }
+    ],
+    "errors": [],
+    "comparison_verified": true,
+    "sha256": "b200750f5da7c9e4bdd860295f59deb9b1eeb1f9cc3c7f01ed767df3eb926304"
+  },
+  "restored": {
+    "solution": {
+      "owner": {
+        "journal_id": "Solution[Finned coupled benchmark]",
+        "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-membership-audit-20260908-r1\\membership.sim"
+      },
+      "bcs": [
+        {
+          "journal_id": "Load[Generic solid 0.1 W]",
+          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-membership-audit-20260908-r1\\membership.sim"
+        },
+        {
+          "journal_id": "SimulationObject[Coupled Inlet]",
+          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-membership-audit-20260908-r1\\membership.sim"
+        },
+        {
+          "journal_id": "SimulationObject[Coupled Opening]",
+          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-membership-audit-20260908-r1\\membership.sim"
+        }
+      ],
+      "unfoldered_bcs": [
+        {
+          "journal_id": "Load[Generic solid 0.1 W]",
+          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-membership-audit-20260908-r1\\membership.sim"
+        },
+        {
+          "journal_id": "SimulationObject[Coupled Inlet]",
+          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-membership-audit-20260908-r1\\membership.sim"
+        },
+        {
+          "journal_id": "SimulationObject[Coupled Opening]",
+          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-membership-audit-20260908-r1\\membership.sim"
+        }
+      ],
+      "folders": [],
+      "conflict_override_count": 0
+    },
+    "steps": [
+      {
+        "index": 0,
+        "owner": {
+          "journal_id": "SolutionStep[Finned steady]",
+          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-membership-audit-20260908-r1\\membership.sim"
+        },
+        "bcs": [],
+        "unfoldered_bcs": [],
+        "folders": []
+      }
+    ],
+    "errors": [],
+    "comparison_verified": true,
+    "sha256": "69a2438c749baac194d09d094bae14820eb6198d1211b64a4e99d72a97acf4ee"
+  },
+  "document_inventory_unchanged": true,
+  "audit_edits_rolled_back": true,
+  "solver_launched": false,
+  "scope": "Native direct membership; no complete boundary-property or public MCP acceptance claim",
+  "operation_id": "op_214394481823436b84e40afbd7eb603e",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

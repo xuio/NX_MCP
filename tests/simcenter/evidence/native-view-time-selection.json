@@ -1,0 +1,48 @@
+{
+  "status": "success",
+  "state": "verified",
+  "selections": [
+    {
+      "postview_id": 2,
+      "selection": {
+        "loadcase_index": 0,
+        "iteration_index": 0,
+        "field": "Temperature - Nodal",
+        "unit": "Celsius"
+      },
+      "saved": false
+    },
+    {
+      "postview_id": 2,
+      "selection": {
+        "loadcase_index": 20,
+        "iteration_index": 0,
+        "field": "Temperature - Nodal",
+        "unit": "Celsius"
+      },
+      "saved": false
+    },
+    {
+      "postview_id": 2,
+      "selection": {
+        "loadcase_index": 40,
+        "iteration_index": 0,
+        "field": "Temperature - Nodal",
+        "unit": "Celsius"
+      },
+      "saved": false
+    }
+  ],
+  "invalid_index_rejection": "Loadcase is outside this result",
+  "legend": [
+    20,
+    40
+  ],
+  "result_retained": true,
+  "sim": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\C-transient-fine-20260908\\benchmark_29b2bd9b1155_analysis.sim",
+  "operation_id": "op_621974b690c84271b9af113af09ae846",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

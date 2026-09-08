@@ -1,0 +1,42 @@
+{
+  "scope": "Read-only cancellation API investigation; no solver cancellation was attempted",
+  "vendor_documentation": "https://help.mayahtt.com/tmg/topics/thermalapi/StopRun.html",
+  "documented_hook": "void StopRun(), invoked inside a thermal plugin function",
+  "installed_version": "v2606",
+  "searches": [
+    {
+      "path": "THERMALFLOW/tmgsolver/include",
+      "extensions": [
+        ".h",
+        ".hpp"
+      ],
+      "matching_stoprun_declarations": 0
+    },
+    {
+      "path": "ugstructures/evalplugin/src",
+      "exists": true,
+      "extensions": [
+        ".h",
+        ".hpp",
+        ".cpp"
+      ],
+      "matching_stoprun_declarations": 0
+    }
+  ],
+  "build_example": "THERMALFLOW/tmgsolver/plugin_examples/thermal_solver/ExpressionsShell/build_windows.cmd",
+  "build_example_sdk_paths": [
+    "ugstructures/evalplugin/src",
+    "THERMALFLOW/tmgsolver/include/maya/expeval_utils"
+  ],
+  "conclusion": "External cancel API not established. Vendor plugin documentation is a candidate route, but the StopRun declaration was not found in searched installed SDK files. This is not proof that every cancellation mechanism is unsupported.",
+  "licensing_configuration_modified": false,
+  "processes_terminated": false,
+  "followup": {
+    "sdk_header_extension": ".hxx",
+    "earlier_search_omission_corrected": true,
+    "context_header": "ugstructures/evalplugin/src/CaeUtils_Exp_IContext.hxx",
+    "context_method_inspection": "Virtual method declarations include field, material, time and evaluation-state accessors; no StopRun/stop/abort declaration",
+    "stoprun_matches_with_hxx": 0,
+    "conclusion": "Documented plugin cancellation hook cannot yet be compiled against the inspected installed interface; external monitor route remains to investigate"
+  }
+}

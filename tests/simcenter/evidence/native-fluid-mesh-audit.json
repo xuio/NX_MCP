@@ -1,0 +1,24 @@
+{
+  "elements": 3308,
+  "nodes": 939,
+  "face_connected_regions": 1,
+  "nonmanifold_faces": 0,
+  "boundary_triangles": 1396,
+  "nonmanifold_boundary_edges": 0,
+  "boundary_triangles_off_expected_planes": 0,
+  "bounds_mm": [
+    1.0,
+    0.9999999999999999,
+    0.9999999999999999,
+    161.0,
+    21.000000000000004,
+    21.000000000000004
+  ],
+  "summed_tetra_volume_mm3": 64000.0,
+  "minimum_tetra_volume_mm3": 7.0827558070343954,
+  "degenerate_elements": 0,
+  "volume_relative_error": 0.0,
+  "passed": true,
+  "scope": "Rectangular cavity connectivity and geometric coverage checks; not a general intersection test or CFD convergence test",
+  "input_sha256": "670945939dbe866f12ebc57195d71b6cc75d3475ae04c44aed6a20de7de0fad3"
+}

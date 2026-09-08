@@ -1,0 +1,224 @@
+{
+  "status": "success",
+  "saved": {
+    "saved": true,
+    "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-z-solve-20260908-r1\\orthotropic_z_solve_r1.sim",
+    "file": {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-z-solve-20260908-r1\\orthotropic_z_solve_r1.sim",
+      "bytes": 7794568,
+      "sha256": "8033cebcc571b32e383b8efba1f57e627c0e843c2db8837b9addb4cf726a1d44"
+    },
+    "previous_file": {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-z-solve-20260908-r1\\orthotropic_z_solve_r1.sim",
+      "bytes": 7794365,
+      "sha256": "21e420cf318a75ce9b5b645045aea36e6142aa053f96a6aa66c23d57034bddc1"
+    },
+    "backup_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-z-solve-20260908-r1\\.nx-mcp-save-backups\\3a2511ef213c40fc8837e4e2b264ada6\\orthotropic_z_solve_r1.sim",
+    "saved_components": false,
+    "closed": false,
+    "other_modified_flags_unchanged": true,
+    "result_freshness": "not_verified"
+  },
+  "closed": [
+    {
+      "closed_parts": [
+        {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_b5832ecfdf7b4ab9bf8bcc50911fbf23",
+          "kind": "part",
+          "name": "orthotropic_z_solve_r1",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_f8a0bc637b774921a95ca213b1cc85cb",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "f8a0bc637b774921a95ca213b1cc85cb",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-z-solve-20260908-r1\\orthotropic_z_solve_r1.sim",
+          "journal_id": "orthotropic_z_solve_r1",
+          "display_name": "orthotropic_z_solve_r1"
+        }
+      ],
+      "closed_count": 1,
+      "remaining_count": 76,
+      "saved": false,
+      "discarded_modified_parts": false,
+      "work_path": null,
+      "display_path": null,
+      "warnings": [
+        "NX may unload unused dependencies; reacquire document references before continuing"
+      ]
+    },
+    {
+      "closed_parts": [
+        {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_e13bf5e6fdd1425ab600d539a28cf95b",
+          "kind": "part",
+          "name": "OrthoZR1_mesh",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_d44bf6ae40ca49f8a2982b1bad658651",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "d44bf6ae40ca49f8a2982b1bad658651",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-z-20260908-r1\\OrthoZR1_mesh.fem",
+          "journal_id": "OrthoZR1_mesh",
+          "display_name": "OrthoZR1_mesh"
+        }
+      ],
+      "closed_count": 1,
+      "remaining_count": 75,
+      "saved": false,
+      "discarded_modified_parts": false,
+      "work_path": null,
+      "display_path": null,
+      "warnings": [
+        "NX may unload unused dependencies; reacquire document references before continuing"
+      ]
+    }
+  ],
+  "opened": {
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_5a3828b4c68d45d1aaa9def8bbd4ad39",
+      "kind": "part",
+      "name": "orthotropic_z_solve_r1",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_46e514096cc84ba9821bdee43ac0bf56",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "46e514096cc84ba9821bdee43ac0bf56",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-z-solve-20260908-r1\\orthotropic_z_solve_r1.sim",
+      "journal_id": "orthotropic_z_solve_r1",
+      "display_name": "orthotropic_z_solve_r1"
+    },
+    "units": "mm",
+    "coordinate_frame": "part_absolute",
+    "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-z-solve-20260908-r1\\orthotropic_z_solve_r1.sim",
+    "already_loaded": false,
+    "modified_after_native_open": false,
+    "modified_before_activation": false,
+    "modified": false,
+    "fully_loaded": true,
+    "load_issues": [],
+    "changed_existing_part_flags": [],
+    "application": "UG_APP_SFEM",
+    "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-z-solve-20260908-r1\\orthotropic_z_solve_r1.sim",
+    "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-z-solve-20260908-r1\\orthotropic_z_solve_r1.sim",
+    "saved": false,
+    "result_freshness": "not_verified",
+    "warnings": []
+  },
+  "stale_reference_errors": [
+    "NX_OBJECT_STALE",
+    "NX_OBJECT_STALE"
+  ],
+  "material_properties": {
+    "ThermalConductivity": {
+      "value": 12.0,
+      "unit": "ThermalConductivity_Metric3"
+    },
+    "ThermalConductivity2": {
+      "value": 7.0,
+      "unit": "ThermalConductivity_Metric3"
+    },
+    "ThermalConductivity3": {
+      "value": 0.4,
+      "unit": "ThermalConductivity_Metric3"
+    },
+    "MassDensity": {
+      "value": 1900.0,
+      "unit": "KilogramPerCubicMeter"
+    },
+    "SpecificHeat": {
+      "value": 900.0,
+      "unit": "SpecificHeat_Metric2"
+    }
+  },
+  "assignment_preserved": true,
+  "reopened_material_axes": [
+    [
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ],
+    [
+      1.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "temperature_before": {
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_b5832ecfdf7b4ab9bf8bcc50911fbf23",
+      "kind": "part",
+      "name": "orthotropic_z_solve_r1",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_f8a0bc637b774921a95ca213b1cc85cb",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "f8a0bc637b774921a95ca213b1cc85cb",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-z-solve-20260908-r1\\orthotropic_z_solve_r1.sim",
+      "journal_id": "orthotropic_z_solve_r1",
+      "display_name": "orthotropic_z_solve_r1"
+    },
+    "field": "Temperature - Nodal",
+    "loadcase_index": 0,
+    "iteration_index": 0,
+    "units": "degC",
+    "minimum": 20.0,
+    "maximum": 1270.049560546875,
+    "native_location": "0",
+    "minimum_native_id": 158,
+    "maximum_native_id": 149,
+    "minimum_native_sub_id": 0,
+    "maximum_native_sub_id": 0,
+    "node_count": 756,
+    "result_freshness": "not_verified",
+    "reference_lifetime": "indices apply only to this result revision"
+  },
+  "temperature_after": {
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_5a3828b4c68d45d1aaa9def8bbd4ad39",
+      "kind": "part",
+      "name": "orthotropic_z_solve_r1",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_46e514096cc84ba9821bdee43ac0bf56",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "46e514096cc84ba9821bdee43ac0bf56",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-z-solve-20260908-r1\\orthotropic_z_solve_r1.sim",
+      "journal_id": "orthotropic_z_solve_r1",
+      "display_name": "orthotropic_z_solve_r1"
+    },
+    "field": "Temperature - Nodal",
+    "loadcase_index": 0,
+    "iteration_index": 0,
+    "units": "degC",
+    "minimum": 20.0,
+    "maximum": 1270.049560546875,
+    "native_location": "0",
+    "minimum_native_id": 158,
+    "maximum_native_id": 149,
+    "minimum_native_sub_id": 0,
+    "maximum_native_sub_id": 0,
+    "node_count": 756,
+    "result_freshness": "not_verified",
+    "reference_lifetime": "indices apply only to this result revision"
+  },
+  "view": {
+    "postview_id": 5,
+    "postview_owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\orthotropic-z-solve-20260908-r1\\orthotropic_z_solve_r1.sim",
+    "readback": {
+      "loadcase_index": 0,
+      "iteration_index": 0,
+      "field": "Temperature - Nodal",
+      "unit": "Celsius"
+    },
+    "units": "degC",
+    "existing_view_ids": [],
+    "overlay": false,
+    "main_postview_id": 5,
+    "saved": false,
+    "result_freshness": "not_verified",
+    "reference_lifetime": "postview ID is document-local within this session; use postview_owner and reacquire after closure"
+  },
+  "unrelated_flags_preserved": true,
+  "both_documents_fully_unloaded": true,
+  "solver_launched": false,
+  "operation_id": "op_65e40c91ea52451888c9b198d0eeba5a",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

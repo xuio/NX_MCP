@@ -1,0 +1,40 @@
+{
+  "scope": "Native public background API launch and durable replay; completion and convergence require separate evidence",
+  "launch": {
+    "status": "success",
+    "warnings": [],
+    "units": "mm",
+    "job_id": "public-prepared-flow-01",
+    "state": "launch_returned",
+    "revision": 2,
+    "request_sha256": "29f33da70f9fbaa78160266c417bb662501e40757446aa3c3ddbf9a041b69238",
+    "replayed": false,
+    "solver_state": "not_observed_by_launch",
+    "numerical_convergence": "not_established",
+    "results_validated": false,
+    "cancellation": "not_implemented",
+    "next_step": "Inspect nx_sim_job_status and nx_sim_job_logs; API return is not solver completion",
+    "operation_id": "public-native-launch-flow-01",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed"
+  },
+  "observed_processes": [],
+  "replay": {
+    "status": "success",
+    "warnings": [],
+    "units": "mm",
+    "job_id": "public-prepared-flow-01",
+    "state": "launch_returned",
+    "revision": 2,
+    "request_sha256": "29f33da70f9fbaa78160266c417bb662501e40757446aa3c3ddbf9a041b69238",
+    "replayed": true,
+    "solver_state": "not_observed_by_launch",
+    "numerical_convergence": "not_established",
+    "results_validated": false,
+    "cancellation": "not_implemented",
+    "next_step": "Inspect nx_sim_job_status and nx_sim_job_logs; API return is not solver completion",
+    "operation_id": "public-native-launch-flow-01-recheck",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed"
+  }
+}

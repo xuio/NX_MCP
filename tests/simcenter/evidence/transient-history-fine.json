@@ -1,0 +1,336 @@
+{
+  "benchmark": "C_transient",
+  "temperature_history_passed": true,
+  "benchmark_accepted": false,
+  "acceptance_scope": "temperature history only; independent mesh/time refinement and energy audit required",
+  "reference": {
+    "id": "C_transient",
+    "geometry_mm": [
+      10,
+      10,
+      10
+    ],
+    "conductivity_W_m_K": 200,
+    "density_kg_m3": 2700,
+    "specific_heat_J_kg_K": 900,
+    "convection_W_m2_K": 10,
+    "power_W": 0.1,
+    "initial_and_ambient_K": 293.15,
+    "radiation": "disabled",
+    "expected_lumped_time_constant_s": 405,
+    "expected_lumped_steady_delta_T_K": 16.666666666666668,
+    "temperature_relative_tolerance": 0.02,
+    "tolerance_basis": "Bi = h(V/A)/k = 0.0000833 supports a lumped reference. Compare rise normalized by steady rise and separately refine time step and mesh."
+  },
+  "normalization": "absolute error divided by analytical steady temperature rise",
+  "maximum_normalized_error": 0.00578644475385083,
+  "worst_time_s": 405.00000000000006,
+  "samples": [
+    {
+      "time_s": 0.0,
+      "minimum_C": 20.0,
+      "maximum_C": 20.0,
+      "analytical_C": 20.0,
+      "normalized_error": 0.0
+    },
+    {
+      "time_s": 50.625,
+      "minimum_C": 21.9298152923584,
+      "maximum_C": 21.93045997619629,
+      "analytical_C": 21.95838495692341,
+      "normalized_error": 0.0017141798739007184
+    },
+    {
+      "time_s": 101.25000000000001,
+      "minimum_C": 23.636150360107422,
+      "maximum_C": 23.637365341186523,
+      "analytical_C": 23.686653615476587,
+      "normalized_error": 0.003030195322149893
+    },
+    {
+      "time_s": 151.875,
+      "minimum_C": 25.14488410949707,
+      "maximum_C": 25.146604537963867,
+      "analytical_C": 25.211845353483795,
+      "normalized_error": 0.004017674639203505
+    },
+    {
+      "time_s": 202.50000000000003,
+      "minimum_C": 26.478900909423828,
+      "maximum_C": 26.481067657470703,
+      "analytical_C": 26.55782233812278,
+      "normalized_error": 0.004735285721937074
+    },
+    {
+      "time_s": 253.12500000000003,
+      "minimum_C": 27.65843391418457,
+      "maximum_C": 27.660993576049805,
+      "analytical_C": 27.74564285801683,
+      "normalized_error": 0.005232536629935538
+    },
+    {
+      "time_s": 303.75,
+      "minimum_C": 28.701370239257812,
+      "maximum_C": 28.704280853271484,
+      "analytical_C": 28.793890787649758,
+      "normalized_error": 0.005551232903516733
+    },
+    {
+      "time_s": 354.37500000000006,
+      "minimum_C": 29.623531341552734,
+      "maximum_C": 29.62674903869629,
+      "analytical_C": 29.71896633869153,
+      "normalized_error": 0.005726099828327733
+    },
+    {
+      "time_s": 405.00000000000006,
+      "minimum_C": 30.438901901245117,
+      "maximum_C": 30.442392349243164,
+      "analytical_C": 30.53534264714263,
+      "normalized_error": 0.00578644475385083
+    },
+    {
+      "time_s": 455.62500000000006,
+      "minimum_C": 31.15985107421875,
+      "maximum_C": 31.1635799407959,
+      "analytical_C": 31.25579221069417,
+      "normalized_error": 0.00575646818852526
+    },
+    {
+      "time_s": 506.25000000000006,
+      "minimum_C": 31.79730796813965,
+      "maximum_C": 31.801252365112305,
+      "analytical_C": 31.891586718996834,
+      "normalized_error": 0.005656725051431124
+    },
+    {
+      "time_s": 556.875,
+      "minimum_C": 32.36094665527344,
+      "maximum_C": 32.36507797241211,
+      "analytical_C": 32.452673403254224,
+      "normalized_error": 0.00550360487884717
+    },
+    {
+      "time_s": 607.5,
+      "minimum_C": 32.859310150146484,
+      "maximum_C": 32.863609313964844,
+      "analytical_C": 32.947830664192836,
+      "normalized_error": 0.005311230842781072
+    },
+    {
+      "time_s": 658.125,
+      "minimum_C": 33.299964904785156,
+      "maximum_C": 33.30440902709961,
+      "analytical_C": 33.384805413263436,
+      "normalized_error": 0.0050904305086967834
+    },
+    {
+      "time_s": 708.7500000000001,
+      "minimum_C": 33.6895866394043,
+      "maximum_C": 33.69416427612305,
+      "analytical_C": 33.77043427582592,
+      "normalized_error": 0.004850858185297397
+    },
+    {
+      "time_s": 759.3750000000001,
+      "minimum_C": 34.034088134765625,
+      "maximum_C": 34.038780212402344,
+      "analytical_C": 34.11075055258453,
+      "normalized_error": 0.004599745069134116
+    },
+    {
+      "time_s": 810.0000000000001,
+      "minimum_C": 34.33869552612305,
+      "maximum_C": 34.34349060058594,
+      "analytical_C": 34.411078612723124,
+      "normalized_error": 0.004342985196004605
+    },
+    {
+      "time_s": 860.6250000000001,
+      "minimum_C": 34.608028411865234,
+      "maximum_C": 34.612911224365234,
+      "analytical_C": 34.676117195554674,
+      "normalized_error": 0.004085327021366396
+    },
+    {
+      "time_s": 911.2500000000001,
+      "minimum_C": 34.84617233276367,
+      "maximum_C": 34.85113525390625,
+      "analytical_C": 34.91001292396893,
+      "normalized_error": 0.003830435472315372
+    },
+    {
+      "time_s": 961.8750000000001,
+      "minimum_C": 35.05673599243164,
+      "maximum_C": 35.061771392822266,
+      "analytical_C": 35.11642517982228,
+      "normalized_error": 0.00358135124343832
+    },
+    {
+      "time_s": 1012.5,
+      "minimum_C": 35.242919921875,
+      "maximum_C": 35.248016357421875,
+      "analytical_C": 35.29858335626835,
+      "normalized_error": 0.003339806063601145
+    },
+    {
+      "time_s": 1063.125,
+      "minimum_C": 35.40754318237305,
+      "maximum_C": 35.412696838378906,
+      "analytical_C": 35.45933738276248,
+      "normalized_error": 0.00310765202336583
+    },
+    {
+      "time_s": 1113.75,
+      "minimum_C": 35.553104400634766,
+      "maximum_C": 35.55830383300781,
+      "analytical_C": 35.60120231322154,
+      "normalized_error": 0.002885874755206572
+    },
+    {
+      "time_s": 1164.375,
+      "minimum_C": 35.68180847167969,
+      "maximum_C": 35.68705368041992,
+      "analytical_C": 35.72639767493705,
+      "normalized_error": 0.002675352195441576
+    },
+    {
+      "time_s": 1215.0,
+      "minimum_C": 35.795616149902344,
+      "maximum_C": 35.800899505615234,
+      "analytical_C": 35.83688219386894,
+      "normalized_error": 0.0024759626379956498
+    },
+    {
+      "time_s": 1265.625,
+      "minimum_C": 35.896236419677734,
+      "maximum_C": 35.901554107666016,
+      "analytical_C": 35.93438443960988,
+      "normalized_error": 0.002288881195928667
+    },
+    {
+      "time_s": 1316.25,
+      "minimum_C": 35.98520278930664,
+      "maximum_C": 35.99054718017578,
+      "analytical_C": 36.0204298694713,
+      "normalized_error": 0.0021136248098795815
+    },
+    {
+      "time_s": 1366.875,
+      "minimum_C": 36.063865661621094,
+      "maximum_C": 36.069236755371094,
+      "analytical_C": 36.09636469480557,
+      "normalized_error": 0.0019499419910687264
+    },
+    {
+      "time_s": 1417.5,
+      "minimum_C": 36.13341522216797,
+      "maximum_C": 36.13880920410156,
+      "analytical_C": 36.163376942961364,
+      "normalized_error": 0.0017977032476036924
+    },
+    {
+      "time_s": 1468.125,
+      "minimum_C": 36.194923400878906,
+      "maximum_C": 36.20033645629883,
+      "analytical_C": 36.22251504439407,
+      "normalized_error": 0.0016554986109099444
+    },
+    {
+      "time_s": 1518.75,
+      "minimum_C": 36.249305725097656,
+      "maximum_C": 36.25474166870117,
+      "analytical_C": 36.27470423573318,
+      "normalized_error": 0.0015239106381315535
+    },
+    {
+      "time_s": 1569.375,
+      "minimum_C": 36.297386169433594,
+      "maximum_C": 36.30283737182617,
+      "analytical_C": 36.32076103543834,
+      "normalized_error": 0.0014024919602846353
+    },
+    {
+      "time_s": 1620.0,
+      "minimum_C": 36.339900970458984,
+      "maximum_C": 36.345333099365234,
+      "analytical_C": 36.361406018521095,
+      "normalized_error": 0.0012903028837266105
+    },
+    {
+      "time_s": 1670.625,
+      "minimum_C": 36.37749099731445,
+      "maximum_C": 36.382938385009766,
+      "analytical_C": 36.39727509019724,
+      "normalized_error": 0.0011870455729672358
+    },
+    {
+      "time_s": 1721.25,
+      "minimum_C": 36.41073226928711,
+      "maximum_C": 36.41618728637695,
+      "analytical_C": 36.42892943485002,
+      "normalized_error": 0.0010918299337745905
+    },
+    {
+      "time_s": 1771.875,
+      "minimum_C": 36.440120697021484,
+      "maximum_C": 36.445587158203125,
+      "analytical_C": 36.456864295959434,
+      "normalized_error": 0.0010046159362769912
+    },
+    {
+      "time_s": 1822.5,
+      "minimum_C": 36.46610641479492,
+      "maximum_C": 36.471580505371094,
+      "analytical_C": 36.481516724362635,
+      "normalized_error": 0.0009246185740627765
+    },
+    {
+      "time_s": 1873.125,
+      "minimum_C": 36.489078521728516,
+      "maximum_C": 36.494564056396484,
+      "analytical_C": 36.503272416069635,
+      "normalized_error": 0.0008516336604671436
+    },
+    {
+      "time_s": 1923.75,
+      "minimum_C": 36.509395599365234,
+      "maximum_C": 36.51488494873047,
+      "analytical_C": 36.522471746614656,
+      "normalized_error": 0.0007845688349652845
+    },
+    {
+      "time_s": 1974.375,
+      "minimum_C": 36.52734375,
+      "maximum_C": 36.532840728759766,
+      "analytical_C": 36.539415096352336,
+      "normalized_error": 0.0007242807811401519
+    },
+    {
+      "time_s": 2025.0,
+      "minimum_C": 36.5432243347168,
+      "maximum_C": 36.54872131347656,
+      "analytical_C": 36.55436755001524,
+      "normalized_error": 0.0006685929179067784
+    }
+  ],
+  "energy_audit": {
+    "benchmark": "C_transient",
+    "energy_balance_passed": true,
+    "tolerance": 0.005,
+    "tolerance_basis": "0.5% bounds printed sink-energy and cell-temperature rounding; independent temperature/refinement checks remain required",
+    "applied_energy_J": 202.5,
+    "printed_rejected_energy_J": 162.3,
+    "rejected_energy_rounding_J": 0.05,
+    "stored_energy_bound_J": [
+      40.180049999999994,
+      40.22865
+    ],
+    "balance_residual_bound_J": [
+      -0.07865000000001032,
+      0.06994999999999152
+    ],
+    "worst_normalized_residual": 0.000388395061728446,
+    "basis": "native body cell extrema and uniform benchmark thermal capacity; no nodal-average approximation"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "status": "success",
+  "deployed_hashes": {
+    "planar_dxf": "c7deeec62420baca24a561ec30c49b2556deffb97068f3dfbf11a35555dc7e4f",
+    "freeform": "38897af7f4f99c6b2230b1d1ec6e19f73cc64f440bf9df09b6fdbd7444769718"
+  },
+  "planar_native_export": {
+    "rejected_before_allocation": true,
+    "error_code": "NX_API_UNAVAILABLE",
+    "details": {
+      "mutation_outcome": "not_started",
+      "missing_api": "UF_EVAL_free"
+    }
+  },
+  "loaded_part_state_unchanged": true,
+  "freeform_native_verification": "pending",
+  "failure_cleanup": "offline regressions only",
+  "solver_launched": false,
+  "operation_id": "op_240fa959f4094606993f044b83c725d4",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

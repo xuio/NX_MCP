@@ -1,0 +1,108 @@
+{
+  "status": "success",
+  "copy": {
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_51efcb0eb2234e4ba56d444aa339cdbb",
+      "kind": "part",
+      "name": "coupled_documented_controls_r1",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_ef39cecd5f8a45e0a69ada7277d0b5de",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "ef39cecd5f8a45e0a69ada7277d0b5de",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-documented-controls-20260908-r1\\coupled_documented_controls_r1.sim",
+      "journal_id": "coupled_documented_controls_r1",
+      "display_name": "coupled_documented_controls_r1"
+    },
+    "source": {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-manager-export-20260908-r1\\coupled_manager_r1.sim",
+      "bytes": 7742985,
+      "sha256": "acdc3def3943a4fd0f8e1819e517bf73313d118bb19d2aba90e1a474ce2e7b75"
+    },
+    "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-documented-controls-20260908-r1\\coupled_documented_controls_r1.sim",
+    "source_file_unchanged": true,
+    "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-documented-controls-20260908-r1\\coupled_documented_controls_r1.sim",
+    "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-documented-controls-20260908-r1\\coupled_documented_controls_r1.sim",
+    "shared_fem_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-development-20260908-r1\\benchmark_99f1fecb220c_mesh.fem",
+    "independent_geometry_variant": false,
+    "saved": true,
+    "result_freshness": "not_verified",
+    "next_step": "Reacquire document IDs. Duplicate and reassociate FEM/CAD before changing shared geometry or mesh."
+  },
+  "controls_descriptor": "Thermal-Flow Coupled Solution Parameters",
+  "controls_properties": [
+    {
+      "name": "description",
+      "native_type": "0",
+      "units": null,
+      "inspection_status": "unsupported_property_type"
+    },
+    {
+      "name": "Communication Frequency",
+      "native_type": "3",
+      "units": null,
+      "value": 1
+    },
+    {
+      "name": "Coupled Solver Maximum Temperature Change",
+      "native_type": "4",
+      "units": "CelsiusDifference",
+      "value": 0.1,
+      "unit_symbol": "dC"
+    },
+    {
+      "name": "Coupled Solver Global Heat Imbalance Fraction",
+      "native_type": "4",
+      "units": "dimensionless",
+      "value": 0.01,
+      "unit_symbol": null
+    }
+  ],
+  "manager_counts": [
+    1,
+    0,
+    0
+  ],
+  "prerequisites": [
+    [],
+    []
+  ],
+  "setup_report": "          Solution Model Setup Check Error Summary \n \n------------------------------------------------------------\n \n Solver is Simcenter 3D Multiphysics\n\n Environment: Simcenter 3D Multiphysics - Coupled Thermal-Flow\n\n Solution is Thermal-Flow\n \n------------------------------------------------------------\n \nMesh Error Summary\n==================\n\nNo Mesh Errors\n\nMaterial Error Summary\n======================\n\nNo Material Errors\n\nPhysical Property Error Summary\n===============================\n\nNo Physical Property Errors\n\nModeling Object Error Summary\n=============================\n\nNo Modeling Object Errors\n\nLoad and Constraint Error Summary\n=================================\n\nNo Load and Constraint Errors\n\nSolution Error Summary\n======================\n\nNo Solution Errors\n\nExpression Errors Summary\n==============================\n\nNo Expression Errors\n\n",
+  "native_error": null,
+  "files": [
+    {
+      "name": "coupled_documented_controls_r1-Coupled_benchmark.map",
+      "bytes": 35424
+    },
+    {
+      "name": "coupled_documented_controls_r1-Coupled_benchmark.xml",
+      "bytes": 64428,
+      "input": {
+        "state": "well_formed",
+        "step_definitions": 1,
+        "mesh_counts": {
+          "elements": 126,
+          "nodes": 68,
+          "element_sets": 2,
+          "scope": "observed_multiphysics_xml_layout"
+        },
+        "solve_readiness": "not_established"
+      }
+    },
+    {
+      "name": "coupled_documented_controls_r1.sim",
+      "bytes": 7744051
+    },
+    {
+      "name": "setup-report.txt",
+      "bytes": 143587
+    }
+  ],
+  "elapsed_seconds": 2.202999999979511,
+  "solver_launched": false,
+  "numerical_acceptance": false,
+  "boundary_conditions_complete": false,
+  "operation_id": "op_42bbe92394f742e998034edf26b27911",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

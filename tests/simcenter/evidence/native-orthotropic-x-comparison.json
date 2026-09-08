@@ -1,0 +1,31 @@
+{
+  "job_id": "orthotropic-x-thermal-01",
+  "analytical_model": "uniform volumetric heating, X=0 fixed at 20 C, remaining surfaces adiabatic",
+  "length_m": 0.1,
+  "cross_section_m2": 0.0001,
+  "power_w": 1,
+  "conductivity_x_w_m_k": 12,
+  "expected_rise_k": 41.666666666666664,
+  "observed_rise_k": 41.713905334472656,
+  "absolute_error_k": 0.04723866780599195,
+  "relative_error_percent": 0.11337280273437944,
+  "temperature_minimum_c": 20.0,
+  "temperature_maximum_c": 61.713905334472656,
+  "mesh": {
+    "elements": 2658,
+    "nodes": 756
+  },
+  "energy_summary": {
+    "input_w": 1,
+    "heat_to_sinks_w": 1,
+    "precision": "rounded native log, not an exact integrated field result",
+    "reported_native_deviation": -0.02027,
+    "reported_deviation_semantics": "not established"
+  },
+  "x_direction_comparison": "supports X conductivity and native unit interpretation in this benchmark",
+  "mesh_convergence_established": false,
+  "yz_directions_verified": false,
+  "save_reopen_verified": false,
+  "decoded_log_text_sha256": "4f0837e19555aff95154b29839c19a5a370b384a9e10098a2ffcb7407b7fd5de",
+  "native_log_sha256": "bee654db41f30882491e80f5bb87f5bed859b89354239852645aa8f28ebd5133"
+}

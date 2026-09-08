@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-07",
+  "nx_version": "v2606",
+  "adapter": "nx2606_python",
+  "execution": "interactive NX UI thread through authenticated bridge",
+  "checks": {
+    "isolated_template_open_close": "passed",
+    "cad_fem_sim_create_and_save": "passed",
+    "thermal_solution_create": "passed",
+    "tetrahedral_mesh_create_and_readback": "passed",
+    "original_28_loaded_parts_preserved": "passed",
+    "active_fem_status_after_basework_fix": "passed",
+    "visible_mesh_whole_vm_screenshot": "passed"
+  },
+  "mesh": {"block_mm": [100, 10, 10], "requested_size_mm": 5, "elements": 496, "nodes": 196},
+  "solver_identifiers": {"solver": "NX MULTIPHYSICS", "analysis": "Thermal", "solution": "Thermal"},
+  "enumerated_languages": ["Thermal", "Flow", "Coupled Thermal-Flow"],
+  "licence_checkout": "API calls succeeded; solver checkout not tested; configuration unchanged",
+  "numerical_benchmarks_A_to_E": "not_run",
+  "lifecycle_benchmark_F": "partial_coverage_not_passed"
+}

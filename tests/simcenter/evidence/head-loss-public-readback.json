@@ -1,0 +1,45 @@
+{
+  "status": "success",
+  "passed": true,
+  "rows": [
+    {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F3-public-selector-20260908-r1\\f3_public_selector_r1_0.sim",
+      "coefficient": 0.0,
+      "units": "dimensionless",
+      "selectors": [
+        1,
+        0
+      ],
+      "rejected_edits_preserved_or_success_restored": true
+    },
+    {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F3-public-selector-20260908-r1\\f3_public_selector_r1_1.sim",
+      "coefficient": 0.0,
+      "units": "dimensionless",
+      "selectors": [
+        0,
+        1
+      ],
+      "rejected_edits_preserved_or_success_restored": true
+    },
+    {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F3-public-selector-20260908-r1\\f3_public_selector_r1_2.sim",
+      "coefficient": 0.0,
+      "units": "dimensionless",
+      "selectors": [
+        0,
+        0
+      ],
+      "rejected_edits_preserved_or_success_restored": true
+    }
+  ],
+  "unrelated_modified_flags_preserved": true,
+  "original_work_part_restored": true,
+  "solver_launched": false,
+  "scope": "Native/public MCP selectors, compare-and-set, replay and committed readback; no export/numerical acceptance",
+  "operation_id": "op_b9b80a62edbd492a8837473e2dd9c02b",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

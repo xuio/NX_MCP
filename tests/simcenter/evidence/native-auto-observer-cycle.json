@@ -1,0 +1,491 @@
+{
+  "scope": "Native successful prepare/launch/automatic observation across MCP client disconnect/terminal record/gate release/flow audit; no NX restart or cancellation test",
+  "launch": {
+    "copy": {
+      "status": "success",
+      "warnings": [],
+      "units": "mm",
+      "document": {
+        "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_1a967b804d4b4c6a9e0c1fed25a8102b",
+        "kind": "part",
+        "name": "auto_flow_r1",
+        "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_abf19f0b5631403fb507517856de3740",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "generation_id": "abf19f0b5631403fb507517856de3740",
+        "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-auto-observer-20260908-r1\\auto_flow_r1.sim",
+        "journal_id": "auto_flow_r1",
+        "display_name": "auto_flow_r1"
+      },
+      "source": {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-prepare-20260908-r1\\prepared_flow_r1.sim",
+        "bytes": 7787501,
+        "sha256": "8b596518fa1d2238bd10728eed0b68b353e51ab49b0ff6466795effe7dba4f20"
+      },
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-auto-observer-20260908-r1\\auto_flow_r1.sim",
+      "source_file_unchanged": true,
+      "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-auto-observer-20260908-r1\\auto_flow_r1.sim",
+      "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-auto-observer-20260908-r1\\auto_flow_r1.sim",
+      "shared_fem_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-cavity-documents-20260908-r2\\benchmark_4ba7072a1d7a_mesh.fem",
+      "independent_geometry_variant": false,
+      "saved": true,
+      "result_freshness": "not_verified",
+      "next_step": "Reacquire document IDs. Duplicate and reassociate FEM/CAD before changing shared geometry or mesh.",
+      "operation_id": "auto-observer-copy-01",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "mutation_outcome": "committed"
+    },
+    "prepare": {
+      "status": "success",
+      "warnings": [],
+      "units": "mm",
+      "job_id": "auto-observed-flow-01",
+      "state": "accepted",
+      "request_sha256": "16d819f99b8c12c55ff8fdbfdc469fbb8de60a40bc4c88d688740b8ca99688c6",
+      "replayed": false,
+      "preparation_revalidated": true,
+      "solver_launched_by_call": false,
+      "input_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-auto-observer-20260908-r1\\auto_flow_r1-Flow_benchmark.xml",
+      "input_sha256": "d463bd3924a6b1fa11df3a6ecc36b1c87a1d6cfe746c3515d949f310e2e90938",
+      "output_claim": {
+        "schema": 1,
+        "job_id": "auto-observed-flow-01",
+        "job_directory": "d:\\cad\\simcenter_mcp_workspace\\simcenter-jobs\\auto-observed-flow-01",
+        "request_sha256": "16d819f99b8c12c55ff8fdbfdc469fbb8de60a40bc4c88d688740b8ca99688c6",
+        "output_directory": "d:\\cad\\simcenter_mcp_workspace\\ui-benchmarks\\f-auto-observer-20260908-r1",
+        "replayed": false,
+        "retention": "permanent; no automatic release"
+      },
+      "mesh_counts": {
+        "element_sets": 2,
+        "elements": 186765,
+        "nodes": 71748,
+        "scope": "observed_multiphysics_xml_layout"
+      },
+      "dependency_completeness": "not_established",
+      "solve_readiness": "not_established",
+      "next_step": "Inspect the immutable manifest with nx_sim_job_status(include_manifest=True), then use nx_sim_launch; cancellation is not yet implemented",
+      "operation_id": "auto-observer-prepare-01",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "mutation_outcome": "committed"
+    },
+    "launch": {
+      "status": "success",
+      "warnings": [],
+      "units": "mm",
+      "job_id": "auto-observed-flow-01",
+      "state": "launch_returned",
+      "revision": 2,
+      "request_sha256": "16d819f99b8c12c55ff8fdbfdc469fbb8de60a40bc4c88d688740b8ca99688c6",
+      "replayed": false,
+      "solver_state": "not_observed_by_launch",
+      "numerical_convergence": "not_established",
+      "results_validated": false,
+      "cancellation": "not_implemented",
+      "next_step": "Inspect nx_sim_job_status and nx_sim_job_logs; API return is not solver completion",
+      "observer": {
+        "state": "started",
+        "reused": false,
+        "log_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs\\auto-observed-flow-01\\observer-c0c34c7f097142e6a241a8014758c1c1.log",
+        "maximum_seconds": 3600,
+        "nx_api_calls": false,
+        "lifetime": "NX process; durable job survives observer exit",
+        "timeout_semantics": "observation ends; solver is not cancelled or relaunched"
+      },
+      "operation_id": "auto-observer-launch-01",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "mutation_outcome": "committed"
+    },
+    "observe_again": {
+      "status": "success",
+      "warnings": [],
+      "units": "mm",
+      "job_id": "auto-observed-flow-01",
+      "observer": {
+        "state": "observing",
+        "reused": true,
+        "log_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs\\auto-observed-flow-01\\observer-c0c34c7f097142e6a241a8014758c1c1.log",
+        "nx_api_calls": false
+      },
+      "solver_launched": false,
+      "operation_id": "op_51ffc9420ec94da7a3e9c852ae9107ac",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "mutation_outcome": "committed"
+    },
+    "status": {
+      "status": "success",
+      "warnings": [],
+      "units": null,
+      "job_id": "auto-observed-flow-01",
+      "request_sha256": "16d819f99b8c12c55ff8fdbfdc469fbb8de60a40bc4c88d688740b8ca99688c6",
+      "state": "launch_returned",
+      "revision": 2,
+      "process_binding_revision": null,
+      "launch_retry_allowed": false,
+      "numerical_convergence": "not_established",
+      "results_validated": false,
+      "observed_at": "2026-09-08T08:25:10.847531+00:00",
+      "observation_kind": "persisted_record",
+      "live_process_state": "not_checked",
+      "job_folder": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs",
+      "observer": {
+        "tracked_in_this_nx_process": true,
+        "thread_alive": true,
+        "log_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs\\auto-observed-flow-01\\observer-c0c34c7f097142e6a241a8014758c1c1.log"
+      },
+      "operation_id": "op_3773b0bba9864664867a7e7861697d25",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "mutation_outcome": "not_applicable"
+    }
+  },
+  "status_observations": [
+    {
+      "status": "success",
+      "warnings": [],
+      "units": null,
+      "job_id": "auto-observed-flow-01",
+      "request_sha256": "16d819f99b8c12c55ff8fdbfdc469fbb8de60a40bc4c88d688740b8ca99688c6",
+      "state": "launch_returned",
+      "revision": 2,
+      "process_binding_revision": null,
+      "launch_retry_allowed": false,
+      "numerical_convergence": "not_established",
+      "results_validated": false,
+      "observed_at": "2026-09-08T08:25:10.847531+00:00",
+      "observation_kind": "persisted_record",
+      "live_process_state": "not_checked",
+      "job_folder": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs",
+      "observer": {
+        "tracked_in_this_nx_process": true,
+        "thread_alive": true,
+        "log_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs\\auto-observed-flow-01\\observer-c0c34c7f097142e6a241a8014758c1c1.log"
+      },
+      "evidence": {
+        "api_returned": true,
+        "process_state": "not_yet_observed",
+        "readback": {
+          "background_requested": true,
+          "executed_input_identity": "not_yet_audited",
+          "foreground_setting_restored": true,
+          "native_may_regenerate_input": true,
+          "prepared_inputs_validated": true
+        }
+      },
+      "process_binding_evidence": null,
+      "operation_id": "op_d128910f49024c62861bd8d155d18cd3",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "mutation_outcome": "not_applicable"
+    },
+    {
+      "status": "success",
+      "warnings": [],
+      "units": null,
+      "job_id": "auto-observed-flow-01",
+      "request_sha256": "16d819f99b8c12c55ff8fdbfdc469fbb8de60a40bc4c88d688740b8ca99688c6",
+      "state": "launch_returned",
+      "revision": 2,
+      "process_binding_revision": null,
+      "launch_retry_allowed": false,
+      "numerical_convergence": "not_established",
+      "results_validated": false,
+      "observed_at": "2026-09-08T08:25:10.847531+00:00",
+      "observation_kind": "persisted_record",
+      "live_process_state": "not_checked",
+      "job_folder": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs",
+      "observer": {
+        "tracked_in_this_nx_process": true,
+        "thread_alive": true,
+        "log_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs\\auto-observed-flow-01\\observer-c0c34c7f097142e6a241a8014758c1c1.log"
+      },
+      "evidence": {
+        "api_returned": true,
+        "process_state": "not_yet_observed",
+        "readback": {
+          "background_requested": true,
+          "executed_input_identity": "not_yet_audited",
+          "foreground_setting_restored": true,
+          "native_may_regenerate_input": true,
+          "prepared_inputs_validated": true
+        }
+      },
+      "process_binding_evidence": null,
+      "operation_id": "op_a94e3342b0304671885b8ddbfdba50ae",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "mutation_outcome": "not_applicable"
+    },
+    {
+      "status": "success",
+      "warnings": [],
+      "units": null,
+      "job_id": "auto-observed-flow-01",
+      "request_sha256": "16d819f99b8c12c55ff8fdbfdc469fbb8de60a40bc4c88d688740b8ca99688c6",
+      "state": "launch_returned",
+      "revision": 2,
+      "process_binding_revision": null,
+      "launch_retry_allowed": false,
+      "numerical_convergence": "not_established",
+      "results_validated": false,
+      "observed_at": "2026-09-08T08:25:10.847531+00:00",
+      "observation_kind": "persisted_record",
+      "live_process_state": "not_checked",
+      "job_folder": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs",
+      "observer": {
+        "tracked_in_this_nx_process": true,
+        "thread_alive": true,
+        "log_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs\\auto-observed-flow-01\\observer-c0c34c7f097142e6a241a8014758c1c1.log"
+      },
+      "evidence": {
+        "api_returned": true,
+        "process_state": "not_yet_observed",
+        "readback": {
+          "background_requested": true,
+          "executed_input_identity": "not_yet_audited",
+          "foreground_setting_restored": true,
+          "native_may_regenerate_input": true,
+          "prepared_inputs_validated": true
+        }
+      },
+      "process_binding_evidence": null,
+      "operation_id": "op_b87b6f778ad1468c94688895ea64e83c",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "mutation_outcome": "not_applicable"
+    },
+    {
+      "status": "success",
+      "warnings": [],
+      "units": null,
+      "job_id": "auto-observed-flow-01",
+      "request_sha256": "16d819f99b8c12c55ff8fdbfdc469fbb8de60a40bc4c88d688740b8ca99688c6",
+      "state": "launch_returned",
+      "revision": 2,
+      "process_binding_revision": null,
+      "launch_retry_allowed": false,
+      "numerical_convergence": "not_established",
+      "results_validated": false,
+      "observed_at": "2026-09-08T08:25:10.847531+00:00",
+      "observation_kind": "persisted_record",
+      "live_process_state": "not_checked",
+      "job_folder": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs",
+      "observer": {
+        "tracked_in_this_nx_process": true,
+        "thread_alive": true,
+        "log_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs\\auto-observed-flow-01\\observer-c0c34c7f097142e6a241a8014758c1c1.log"
+      },
+      "evidence": {
+        "api_returned": true,
+        "process_state": "not_yet_observed",
+        "readback": {
+          "background_requested": true,
+          "executed_input_identity": "not_yet_audited",
+          "foreground_setting_restored": true,
+          "native_may_regenerate_input": true,
+          "prepared_inputs_validated": true
+        }
+      },
+      "process_binding_evidence": null,
+      "operation_id": "op_381bf79ceb384fecaec9947bc9e58b5a",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "mutation_outcome": "not_applicable"
+    },
+    {
+      "status": "success",
+      "warnings": [],
+      "units": null,
+      "job_id": "auto-observed-flow-01",
+      "request_sha256": "16d819f99b8c12c55ff8fdbfdc469fbb8de60a40bc4c88d688740b8ca99688c6",
+      "state": "launch_returned",
+      "revision": 2,
+      "process_binding_revision": null,
+      "launch_retry_allowed": false,
+      "numerical_convergence": "not_established",
+      "results_validated": false,
+      "observed_at": "2026-09-08T08:25:10.847531+00:00",
+      "observation_kind": "persisted_record",
+      "live_process_state": "not_checked",
+      "job_folder": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs",
+      "observer": {
+        "tracked_in_this_nx_process": true,
+        "thread_alive": true,
+        "log_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs\\auto-observed-flow-01\\observer-c0c34c7f097142e6a241a8014758c1c1.log"
+      },
+      "evidence": {
+        "api_returned": true,
+        "process_state": "not_yet_observed",
+        "readback": {
+          "background_requested": true,
+          "executed_input_identity": "not_yet_audited",
+          "foreground_setting_restored": true,
+          "native_may_regenerate_input": true,
+          "prepared_inputs_validated": true
+        }
+      },
+      "process_binding_evidence": null,
+      "operation_id": "op_e4f4f422a04743ecb795ee1ec28ba18a",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "mutation_outcome": "not_applicable"
+    },
+    {
+      "status": "success",
+      "warnings": [],
+      "units": null,
+      "job_id": "auto-observed-flow-01",
+      "request_sha256": "16d819f99b8c12c55ff8fdbfdc469fbb8de60a40bc4c88d688740b8ca99688c6",
+      "state": "solver_exited",
+      "revision": 3,
+      "process_binding_revision": null,
+      "launch_retry_allowed": false,
+      "numerical_convergence": "not_established",
+      "results_validated": false,
+      "observed_at": "2026-09-08T08:27:24.195105+00:00",
+      "observation_kind": "persisted_record",
+      "live_process_state": "not_checked",
+      "job_folder": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs",
+      "observer": {
+        "tracked_in_this_nx_process": true,
+        "thread_alive": false,
+        "log_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs\\auto-observed-flow-01\\observer-c0c34c7f097142e6a241a8014758c1c1.log"
+      },
+      "evidence": {
+        "gate_released": false,
+        "input_comparison": {
+          "after": {
+            "bytes": 18628164,
+            "canonicalization": "xml_c14n2_no_comments",
+            "sha256": "ac0e2cefe8487d6f1fd15bef97cbcf47234bb6b4d93c3b45d87c4e61e1530ec4",
+            "xml_content_sha256": "b026de33dc843b87fef94fc9bb1ba9152643e91ce703cb72040f76126829f3a9"
+          },
+          "before": {
+            "bytes": 18628164,
+            "canonicalization": "xml_c14n2_no_comments",
+            "sha256": "d463bd3924a6b1fa11df3a6ecc36b1c87a1d6cfe746c3515d949f310e2e90938",
+            "xml_content_sha256": "b026de33dc843b87fef94fc9bb1ba9152643e91ce703cb72040f76126829f3a9"
+          },
+          "byte_identical": false,
+          "scope": "input XML only; result association and solver outcome require separate verification",
+          "xml_content_identical": true
+        },
+        "log": {
+          "bytes": 39351,
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-auto-observer-20260908-r1\\auto_flow_r1-Flow_benchmark.log",
+          "sha256": "d2a05a72a80d283ec0b004ceb1a223cebd5a276f28783ad001156159290ef540"
+        },
+        "model_result_freshness": "not_established",
+        "numerical_convergence": "not_established",
+        "observer_adapter": 1,
+        "process_exit_code": null,
+        "process_job_binding": "not_established",
+        "result": {
+          "bytes": 46367644,
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-auto-observer-20260908-r1\\auto_flow_r1-Flow_benchmark.bun",
+          "sha256": "6f076a9cdd65a6a25a4ebe5a3a4b97312f20041957f108adfa0edb14a46a95d8"
+        },
+        "solver_process_observation": {
+          "exclusion": "point-in-time process snapshot; not an atomic lock",
+          "scope": "host-wide known solver/translator names",
+          "solver_processes": 0
+        },
+        "terminal_basis": "fresh owned completion log and native result, matching canonical input, known solver processes absent"
+      },
+      "process_binding_evidence": null,
+      "operation_id": "op_d4399879cff746fa8ffd581610773e16",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "mutation_outcome": "not_applicable"
+    }
+  ],
+  "release": {
+    "status": "success",
+    "warnings": [],
+    "units": "mm",
+    "job_id": "auto-observed-flow-01",
+    "released": true,
+    "replayed": false,
+    "receipt": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs\\auto-observed-flow-01\\launch-gate-release.json",
+    "result_files_preserved": true,
+    "job_state_changed": false,
+    "old_job_relaunch_allowed": false,
+    "operation_id": "auto-observer-release-01",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed"
+  },
+  "audit": {
+    "status": "success",
+    "warnings": [],
+    "units": "mm",
+    "job_id": "auto-observed-flow-01",
+    "request_sha256": "16d819f99b8c12c55ff8fdbfdc469fbb8de60a40bc4c88d688740b8ca99688c6",
+    "persisted_job_state": "solver_exited",
+    "log_name": "auto_flow_r1-Flow_benchmark.log",
+    "log_sha256": "d2a05a72a80d283ec0b004ceb1a223cebd5a276f28783ad001156159290ef540",
+    "observed_bytes": 39351,
+    "snapshot_semantics": "bytes read; file may still be growing",
+    "format": "observed_simcenter_2606_steady_flow",
+    "completion_marker_present": true,
+    "failure_evidence": {
+      "state": "unknown",
+      "stage": "unknown",
+      "translator_fatal_codes": [],
+      "fatal_abort_reported": false,
+      "numerical_convergence": "not_established",
+      "results_validated": false,
+      "next_action": "Inspect job process status, residuals and result validation before classifying."
+    },
+    "residual_threshold": 1e-06,
+    "last_iteration": 15,
+    "final_equations_complete": true,
+    "final_residual_criteria_met": true,
+    "reported_imbalances": {
+      "momentum": {
+        "value": 2.26e-05,
+        "units": "%",
+        "definition": "native reported imbalance; denominator not independently established"
+      },
+      "mass": {
+        "value": 0.008865,
+        "units": "%",
+        "definition": "native reported imbalance; denominator not independently established"
+      },
+      "energy": {
+        "value": 0.0,
+        "units": "%",
+        "definition": "native reported imbalance; denominator not independently established"
+      }
+    },
+    "boundary_flows": [
+      {
+        "name": "Duct Inlet",
+        "volume_flow_m3_s": 0.0001912,
+        "mass_flow_kg_s": 0.0002294,
+        "positive_direction": "into_domain"
+      },
+      {
+        "name": "Duct Opening",
+        "volume_flow_m3_s": -0.0001912,
+        "mass_flow_kg_s": -0.0002294,
+        "positive_direction": "into_domain"
+      }
+    ],
+    "rounded_boundary_mass_sum_kg_s": 0.0,
+    "rounding_warning": "Boundary values are rounded in the log; a zero sum does not establish zero imbalance",
+    "numerical_convergence": "not_established",
+    "results_validated": false,
+    "scope": "Log observations only; input/job association, all configured criteria and mesh sensitivity require separate audits",
+    "residual_history": [
+      {
+        "iteration": 1,
+        "region": "Flow Enclosure",
+        "equation": "U - Mom",
+        "linear_iterations": 10,
+        "linear_residual": 3.816e-15,
+        "rate": 0.0,
+        "rate_overflow": false,
+        "residual": 0.02987,
+        "native_message": "--"
+      }
+    ],
+    "history_total": 60,
+    "next_offset": 1,
+    "job_state_changed": false,
+    "operation_id": "op_4d35e5aab1164bc79a19148abc56c853",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "not_applicable"
+  }
+}

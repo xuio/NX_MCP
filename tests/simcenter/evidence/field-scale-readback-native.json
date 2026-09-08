@@ -1,0 +1,68 @@
+{
+  "status": "success",
+  "before": {
+    "name": "Absolute Pressure",
+    "native_type": "6",
+    "units": "PressurePascals",
+    "field_scale": 1.0,
+    "field_reference": {
+      "journal_id": "sys_field(1)",
+      "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F1-field-scale-audit-20260908-r1\\field_scale.sim",
+      "tag": 6718151,
+      "lifetime": "current loaded document; not a cross-session reference"
+    },
+    "expression": "101325.0",
+    "representation": "field_expression",
+    "field_definition": {
+      "kind": "numeric_constant",
+      "value": 101325.0
+    },
+    "evaluated_value": 101325.0
+  },
+  "after": {
+    "name": "Absolute Pressure",
+    "native_type": "6",
+    "units": "PressurePascals",
+    "field_scale": 2.0,
+    "field_reference": {
+      "journal_id": "sys_field(1)",
+      "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F1-field-scale-audit-20260908-r1\\field_scale.sim",
+      "tag": 6718151,
+      "lifetime": "current loaded document; not a cross-session reference"
+    },
+    "expression": "101325.0",
+    "representation": "field_expression",
+    "field_definition": {
+      "kind": "numeric_constant",
+      "value": 101325.0
+    },
+    "evaluated_value": 202650.0
+  },
+  "restored": {
+    "name": "Absolute Pressure",
+    "native_type": "6",
+    "units": "PressurePascals",
+    "field_scale": 1.0,
+    "field_reference": {
+      "journal_id": "sys_field(1)",
+      "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F1-field-scale-audit-20260908-r1\\field_scale.sim",
+      "tag": 6718151,
+      "lifetime": "current loaded document; not a cross-session reference"
+    },
+    "expression": "101325.0",
+    "representation": "field_expression",
+    "field_definition": {
+      "kind": "numeric_constant",
+      "value": 101325.0
+    },
+    "evaluated_value": 101325.0
+  },
+  "native_scale_readback_verified": true,
+  "save_reopen_export": "pending; this probe does not claim it",
+  "solver_launched": false,
+  "operation_id": "op_90d2c5fd408e466996b710b0a127b077",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

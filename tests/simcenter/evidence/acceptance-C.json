@@ -1,0 +1,131 @@
+{
+  "benchmark": "C_transient",
+  "state": "passed",
+  "scope": "isolated native thermal benchmark: analytical history, independent time/mesh refinement and energy balance; not complete MCP workflow acceptance",
+  "fine_mesh": {
+    "size_mm": 1,
+    "elements": 5752,
+    "nodes": 1353
+  },
+  "coarse_mesh": {
+    "size_mm": 2,
+    "elements": 804,
+    "nodes": 246
+  },
+  "temperature_history": {
+    "samples": 41,
+    "end_time_s": 2025,
+    "worst_normalized_error": 0.00578644475385083,
+    "tolerance": 0.02,
+    "normalization": "absolute error divided by analytical steady temperature rise"
+  },
+  "time_refinement": {
+    "same_mesh": true,
+    "reported_steps_s": [
+      25.3125,
+      12.6562
+    ],
+    "worst_normalized_errors": [
+      0.011296431631292236,
+      0.005768477529729736
+    ],
+    "max_common_time_change_K": 0.09215927124023438
+  },
+  "mesh_refinement": {
+    "same_time_settings": true,
+    "maximum_temperature_change_K": 0.001003265380859375,
+    "normalized_change": 6.01959228515625e-05
+  },
+  "energy_audit": {
+    "benchmark": "C_transient",
+    "energy_balance_passed": true,
+    "tolerance": 0.005,
+    "tolerance_basis": "0.5% bounds printed sink-energy and cell-temperature rounding; independent temperature/refinement checks remain required",
+    "applied_energy_J": 202.5,
+    "printed_rejected_energy_J": 162.3,
+    "rejected_energy_rounding_J": 0.05,
+    "stored_energy_bound_J": [
+      40.180049999999994,
+      40.22865
+    ],
+    "balance_residual_bound_J": [
+      -0.07865000000001032,
+      0.06994999999999152
+    ],
+    "worst_normalized_residual": 0.000388395061728446,
+    "basis": "native body cell extrema and uniform benchmark thermal capacity; no nodal-average approximation"
+  },
+  "identity": {
+    "status": "success",
+    "cad_bounds_mm": [
+      0.0,
+      0.0,
+      0.0,
+      10.0,
+      10.0,
+      10.0
+    ],
+    "coordinate_frame": "CAD_absolute",
+    "job_id": "fine-solve-01",
+    "input_comparison": {
+      "before": {
+        "sha256": "1e63f8680f043c9a4a642e9f996a5ecbf8c49ff493f2a37aedf83e9c2a84dc92",
+        "xml_content_sha256": "a3bc1e1c62100c096fe823c4134b02ebc47f316977b67e4a393d96588cc5845f",
+        "bytes": 655159,
+        "canonicalization": "xml_c14n2_no_comments"
+      },
+      "after": {
+        "sha256": "c2b9385a8123262e75889933d17b0792283b1ec072074d2af19ea69f8754e4bd",
+        "xml_content_sha256": "a3bc1e1c62100c096fe823c4134b02ebc47f316977b67e4a393d96588cc5845f",
+        "bytes": 655159,
+        "canonicalization": "xml_c14n2_no_comments"
+      },
+      "byte_identical": false,
+      "xml_content_identical": true,
+      "scope": "input XML only; result association and solver outcome require separate verification"
+    },
+    "model_files": [
+      {
+        "name": "benchmark_29b2bd9b1155_analysis.sim",
+        "unchanged": true
+      },
+      {
+        "name": "benchmark_29b2bd9b1155_geometry.prt",
+        "unchanged": true
+      },
+      {
+        "name": "benchmark_29b2bd9b1155_mesh.fem",
+        "unchanged": true
+      }
+    ],
+    "result_written_after_job_created": true,
+    "bundle_sha256": "1af6fd2702beee82ebb81ff9cb5e95f17d47b44540b58070c7eceb7075e3104e",
+    "final_temperature": {
+      "field": "Temperature - Nodal",
+      "loadcase_index": 40,
+      "iteration_index": 0,
+      "units": "degC",
+      "minimum": 36.5432243347168,
+      "maximum": 36.54872131347656,
+      "native_location": "0",
+      "minimum_native_id": 5,
+      "maximum_native_id": 756,
+      "minimum_native_sub_id": 0,
+      "maximum_native_sub_id": 0,
+      "node_count": 1353,
+      "result_freshness": "not_verified",
+      "reference_lifetime": "indices apply only to this result revision"
+    },
+    "scope": "isolated benchmark identity check; generic job recovery and result freshness still incomplete",
+    "operation_id": "op_7923cdc7e9224d8d9374c2cfe0e0d5b6",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed",
+    "warnings": [],
+    "units": "mm"
+  },
+  "limitations": [
+    "Stored maximum-temperature-change control is not established as active under installed time method",
+    "Generic job lifecycle/stale-result enforcement and remaining acceptance benchmarks are incomplete",
+    "This benchmark is not a Baldower product thermal or acoustic certification"
+  ]
+}

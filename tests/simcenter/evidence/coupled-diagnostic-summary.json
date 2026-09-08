@@ -1,0 +1,53 @@
+{
+  "job_id": "coupled-diagnostic-r1",
+  "purpose": "bounded diagnostic; not acceptance E",
+  "source_log": "coupled-diagnostic.log",
+  "log_sha256": "274d6b055dd62edf710dad98c461bdc6d12525b3bd4835fc16220cb1bae426c1",
+  "solver_elapsed_seconds": 26,
+  "preparation_seconds": 2.10999999998603,
+  "mesh": {
+    "elements": 126,
+    "nodes": 68
+  },
+  "state": "solver_exited",
+  "numerical_convergence": false,
+  "acceptance_passed": false,
+  "requested": {
+    "ambient_temperature_C": 20,
+    "air_density_kg_m3": 1.2,
+    "solid_power_W": 0.1
+  },
+  "reported": {
+    "ambient_temperature_C": 0,
+    "adjusted_fluid_density_kg_m3": 1.2944,
+    "solid_temperature_max_C": 23.13,
+    "fluid_temperature_max_C": 2.127,
+    "fluid_temperature_min_C": 0.02555,
+    "fluid_pressure_max_Pa": 0.8344,
+    "fluid_pressure_min_Pa": 0.7858,
+    "inlet_volume_flow_m3_s": 5e-05,
+    "inlet_mass_flow_kg_s": 6.472e-05,
+    "opening_mass_flow_kg_s": -6.472e-05,
+    "heat_to_fluid_W": 0.09971,
+    "thermal_heat_to_fluid_W": 0.1,
+    "flow_mass_imbalance_percent": 0.02541,
+    "flow_energy_imbalance_percent": 0.04384,
+    "coupled_max_temperature_change_C": 1.185,
+    "coupled_normalized_heat_imbalance": 0.05549
+  },
+  "interpretation": "Rounded native log observations; pressure reference and imbalance denominators require further audit. Positive boundary flow enters domain. Coupling transferred heat but interface and material semantics are not accepted. The adjusted density is a global altitude/ambient diagnostic, not established as per-region density; the log explicitly identifies Development air[2] for the fluid subdomain.",
+  "warnings": [
+    "Maximum flow steady iteration limit reached without convergence",
+    "NX2TMG 1587 coincident thermal nodes",
+    "No interior pressure anchor node warning"
+  ],
+  "remaining": [
+    "Ambient field exports 0 despite native 20 C readback",
+    "Requested versus solver fluid density mismatch",
+    "Validate interface mapping",
+    "Convergence",
+    "Independent result fields and freshness",
+    "Fins and refinement"
+  ],
+  "timing_scope": "Only native preparation and solver elapsed time measured here; discovery/deployment/verification durations not inferred."
+}

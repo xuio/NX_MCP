@@ -1,0 +1,59 @@
+{
+  "nx_version": "v2606",
+  "operation": "WriteSolverInputFile",
+  "setup_check": "CompleteCheckAndOutputErrors",
+  "state": "failed",
+  "nx_code": 3828124,
+  "solver_launched": false,
+  "solver_deck_created": false,
+  "analysis_files_saved": true,
+  "solution_step_count": 0,
+  "diagnosis": "Native setup report retrieved from Simcenter Information window; model setup corrections required",
+  "numerical_acceptance": "not_tested",
+  "second_attempt": {
+    "job_id": "conduction-input-export-02",
+    "step_count": 1,
+    "active_step": true,
+    "nx_code": 3828124,
+    "solver_launched": false
+  },
+  "third_attempt": {
+    "application": "UG_APP_SFEM",
+    "nx_code": 3828124,
+    "solver_launched": false
+  },
+  "direct_export_setup_errors": [
+    "SIM reports no valid mesh",
+    "Heat and temperature selections have no valid underlying elements",
+    "Thermal Solution Parameters undefined",
+    "Thermal Output Requests undefined",
+    "Only one transient step; steady state or additional steps required"
+  ],
+  "fifth_attempt_setup": {
+    "step_type_candidate": 0,
+    "mesh_errors": 0,
+    "load_errors": 0,
+    "solution_errors": 0,
+    "material_errors": [
+      "Thermal Conductivity undefined",
+      "Latent Heat undefined",
+      "Electrical Resistivity undefined"
+    ],
+    "solver_launched": false
+  },
+  "seventh_attempt": {
+    "job_id": "conduction-input-export-07",
+    "state": "export_returned",
+    "solver_launched": false,
+    "solver_deck_created": true,
+    "material": "AISI_Steel_1008-HR",
+    "elements": 496,
+    "nodes": 196,
+    "applied_power_W": 1,
+    "fixed_temperature_C": 20,
+    "thermal_conductivity_W_per_m_K": 65.2,
+    "xml_sha256": "246b3e0e5c34dea451e64be2faf7b9b8ae4548fd94a26e51b94f655a59a3d3d1",
+    "numerical_acceptance": "not_tested",
+    "custom_material_export": "still_failing"
+  }
+}

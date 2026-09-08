@@ -1,0 +1,16 @@
+{
+  "deck_sha256": "12927fc9dbace7b418a426f5535050e8eed9c214d49053af58ee4c72567992f7",
+  "native_update_errors": 0,
+  "native_setup_error": null,
+  "requested": {
+    "fluid_temperature_c": 20,
+    "absolute_pressure_pa": 101325
+  },
+  "exported": {
+    "fluid_temperature_c": 0.0,
+    "absolute_pressure_pa": 0.0
+  },
+  "passed": false,
+  "scope": "Observed mm/mN/C deck; compares explicit ambient scalar values, not solver-resolved defaults",
+  "next_action": "Record native UI ambient edit to identify missing API operation; do not solve this deck as the requested scenario"
+}

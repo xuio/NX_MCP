@@ -1,0 +1,76 @@
+{
+  "status": "success",
+  "default_preflight": {
+    "state": "rejected",
+    "code": "NX_SIM_UNSAVED_DOCUMENT",
+    "details": {
+      "mutation_outcome": "not_started",
+      "unsaved_sources": [
+        "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-independent-refined-solve-20260908-r1\\refined_flow_r1.sim"
+      ]
+    }
+  },
+  "saved_snapshot_plan": {
+    "schema": 1,
+    "folder": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\variant-api-preflight-20260908-r1",
+    "name": "VariantApiR1",
+    "saved_snapshot": true,
+    "unsaved_sources_excluded": [
+      "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-independent-refined-solve-20260908-r1\\refined_flow_r1.sim"
+    ],
+    "source_bytes": 23033982,
+    "mapping": [
+      {
+        "source": {
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-independent-refined-solve-20260908-r1\\refined_flow_r1.sim",
+          "bytes": 7765054,
+          "sha256": "1b15a1c4bfcb37acf1844d6168aeb2f9e836ba10e2fc5ffb2bf70eb0911a0822"
+        },
+        "destination": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\variant-api-preflight-20260908-r1\\VariantApiR1_analysis.sim",
+        "roles": [
+          "simulation"
+        ],
+        "units": "mm",
+        "source_modified": true
+      },
+      {
+        "source": {
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-independent-clone-native-20260908-r1\\independent_mesh.fem",
+          "bytes": 15181281,
+          "sha256": "40cbaae5dcac87b96ec226d5b56cc6e36feac7496fd71e9c0d0e3d03b1b4a201"
+        },
+        "destination": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\variant-api-preflight-20260908-r1\\VariantApiR1_mesh.fem",
+        "roles": [
+          "mesh"
+        ],
+        "units": "mm",
+        "source_modified": false
+      },
+      {
+        "source": {
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-independent-clone-native-20260908-r1\\independent_geometry.prt",
+          "bytes": 87647,
+          "sha256": "1dd1d9f19d918542eda147e783583e10bea6ea6740ae8d9478b702548dbd080d"
+        },
+        "destination": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\variant-api-preflight-20260908-r1\\VariantApiR1_cad_01.prt",
+        "roles": [
+          "AssociatedCadPart",
+          "MasterCadPart"
+        ],
+        "units": "mm",
+        "source_modified": false
+      }
+    ],
+    "scope": "direct standalone SIM/FEM/CAD native files",
+    "complete_analysis_package": false,
+    "result_freshness": "not_verified",
+    "plan_sha256": "5de8e23681cc13263dc94e9d8d6c7660968a83134d6db9c20715284cad8ccc1f"
+  },
+  "destination_created": false,
+  "document_flags_preserved": true,
+  "operation_id": "op_390411bc7c7047a49051fa09c51a8c60",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

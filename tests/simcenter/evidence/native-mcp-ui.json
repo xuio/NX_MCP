@@ -1,0 +1,150 @@
+{
+  "date": "2026-09-08",
+  "scope": "Native MCP stdio agent discovery, paged result metadata, SIM viewport export and inline image delivery; not solve or complete lifecycle acceptance",
+  "script": "examples/simcenter/verify_stdio.py",
+  "transport": "MCP stdio agent surface -> NX UI bridge",
+  "core_tool_count": 13,
+  "discovered_tool": "nx_sim_result_inventory",
+  "page": {
+    "status": "success",
+    "warnings": [],
+    "units": "mm",
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_89d86e463cea4ee8b488bec82395e676",
+      "kind": "part",
+      "name": "benchmark_29b2bd9b1155_analysis",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_37c238c9df354380a97d69769250c51d"
+    },
+    "items": [
+      {
+        "loadcase_index": 40,
+        "iteration_index": 0,
+        "values": [
+          {
+            "kind": "time",
+            "native_type": "0",
+            "value": 2025.0,
+            "native_unit": "Second"
+          }
+        ],
+        "fields": [
+          "Temperature - Nodal",
+          "Temperature - Elemental",
+          "Total Heat Load - Elemental",
+          "Total Heat Flux - Elemental"
+        ]
+      },
+      {
+        "loadcase_index": 41,
+        "iteration_index": 0,
+        "values": [
+          {
+            "kind": "other",
+            "native_type": "-1",
+            "value": -777777.0,
+            "native_unit": null
+          }
+        ],
+        "fields": [
+          "Max Temperature - Elemental",
+          "Min Temperature - Elemental",
+          "Time at Max Temperature - Elemental",
+          "Time at Min Temperature - Elemental"
+        ]
+      }
+    ],
+    "total": 42,
+    "next_offset": null,
+    "result_freshness": "not_verified",
+    "reference_lifetime": "indices apply only to this result revision",
+    "operation_id": "op_68d6b97f2aa4425e98c2754681bb83a0",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "not_applicable",
+    "result_id": "result_ba3445c4c512412d9348a3a27ff6d481",
+    "detail": "compact"
+  },
+  "capture": {
+    "status": "success",
+    "warnings": [
+      "NX returned a different resolution than requested"
+    ],
+    "units": "mm",
+    "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\captures\\nx-1fba2ceb691c44faaa24f073adaa83b9.png",
+    "artifact_path": "captures\\nx-1fba2ceb691c44faaa24f073adaa83b9.png",
+    "capture_kind": "nx_model_viewport",
+    "model_preview": true,
+    "resolution": [
+      2458,
+      1484
+    ],
+    "requested_resolution": [
+      1600,
+      1000
+    ],
+    "camera": {
+      "part": {
+        "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_89d86e463cea4ee8b488bec82395e676",
+        "kind": "part",
+        "name": "benchmark_29b2bd9b1155_analysis",
+        "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_37c238c9df354380a97d69769250c51d"
+      },
+      "name": "ANALYSIS_1",
+      "rotation": [
+        [
+          0.63121905864763,
+          -0.29117688182626567,
+          0.7188730927569433
+        ],
+        [
+          0.7756046028744285,
+          0.23697177216995516,
+          -0.5850486126764433
+        ],
+        [
+          -0.0,
+          0.9268551141815876,
+          0.3754192287502549
+        ]
+      ],
+      "origin": [
+        -7.034118307610292,
+        -4.363250022626385,
+        -2.546218544153774
+      ],
+      "absolute_origin": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "scale": 23.69468341770196,
+      "coordinate_frame": "display_part",
+      "matrix_layout": "row-major 3x3; columns are NX view axes",
+      "rendering_style": "shaded",
+      "interactive": true
+    },
+    "background": "white",
+    "rendering": "NX viewport rasterization",
+    "size": 166617,
+    "sha256": "0019645da6a744c331f7d351db3921ce0f6d8da5ba71c2e7e018fc1f5cf6c57b",
+    "operation_id": "op_b459dfef71144d5a98f351dd4fb173e6",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed",
+    "result_id": "result_987f32dceb3c45069234311d9575499a",
+    "detail": "compact",
+    "next_actions": [
+      {
+        "tool": "nx_download_file",
+        "arguments": {
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\captures\\nx-1fba2ceb691c44faaa24f073adaa83b9.png",
+          "delivery": "metadata"
+        },
+        "purpose": "Retrieve artifact metadata before programmatic download"
+      }
+    ]
+  },
+  "inline_image": {
+    "mime_type": "image/png",
+    "bytes": 166617,
+    "sha256": "0019645da6a744c331f7d351db3921ce0f6d8da5ba71c2e7e018fc1f5cf6c57b"
+  }
+}

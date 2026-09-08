@@ -1,0 +1,453 @@
+{
+  "status": "success",
+  "audit": {
+    "solution": {
+      "owner": {
+        "journal_id": "Solution[Finned coupled benchmark]",
+        "name": "Finned coupled benchmark",
+        "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1.sim"
+      },
+      "bcs": [
+        {
+          "journal_id": "Load[Generic solid 0.1 W]",
+          "name": "Generic solid 0.1 W",
+          "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1.sim"
+        },
+        {
+          "journal_id": "SimulationObject[Coupled Inlet]",
+          "name": "Coupled Inlet",
+          "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1.sim"
+        },
+        {
+          "journal_id": "SimulationObject[Coupled Opening]",
+          "name": "Coupled Opening",
+          "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1.sim"
+        }
+      ],
+      "unfoldered_bcs": [
+        {
+          "journal_id": "Load[Generic solid 0.1 W]",
+          "name": "Generic solid 0.1 W",
+          "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1.sim"
+        },
+        {
+          "journal_id": "SimulationObject[Coupled Inlet]",
+          "name": "Coupled Inlet",
+          "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1.sim"
+        },
+        {
+          "journal_id": "SimulationObject[Coupled Opening]",
+          "name": "Coupled Opening",
+          "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1.sim"
+        }
+      ],
+      "folders": [],
+      "conflict_override_count": 0
+    },
+    "steps": [
+      {
+        "index": 0,
+        "owner": {
+          "journal_id": "SolutionStep[Finned steady]",
+          "name": "Finned steady",
+          "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1.sim"
+        },
+        "bcs": [],
+        "unfoldered_bcs": [],
+        "folders": []
+      }
+    ],
+    "document_boundaries": [
+      {
+        "kind": "loads",
+        "journal_id": "Load[Generic solid 0.1 W]",
+        "name": "Generic solid 0.1 W",
+        "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1.sim",
+        "fields": [
+          {
+            "property": "Heat Load",
+            "expression": {
+              "formula": "0.1",
+              "units": "HeatFlow_Metric2",
+              "value": 0.1
+            },
+            "field": null,
+            "representation": "expression"
+          },
+          {
+            "property": "Heat Load Override",
+            "expression": {
+              "formula": "-777777",
+              "units": null,
+              "value": -777777.0
+            },
+            "field": null,
+            "representation": "expression"
+          }
+        ]
+      },
+      {
+        "kind": "simulation_objects",
+        "journal_id": "SimulationObject[Coupled Inlet]",
+        "name": "Coupled Inlet",
+        "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1.sim",
+        "fields": [
+          {
+            "property": "Velocity",
+            "expression": {
+              "formula": "1.0",
+              "units": "MeterPerSecond",
+              "value": 1.0
+            },
+            "field": null,
+            "representation": "expression"
+          },
+          {
+            "property": "Mass Flow",
+            "expression": {
+              "formula": "-777777",
+              "units": null,
+              "value": -777777.0
+            },
+            "field": null,
+            "representation": "expression"
+          },
+          {
+            "property": "Volume Flow",
+            "expression": {
+              "formula": "-777777",
+              "units": null,
+              "value": -777777.0
+            },
+            "field": null,
+            "representation": "expression"
+          },
+          {
+            "property": "Pressure Rise",
+            "expression": {
+              "formula": "-777777",
+              "units": null,
+              "value": -777777.0
+            },
+            "field": null,
+            "representation": "expression"
+          },
+          {
+            "property": "Fan Curve",
+            "representation": "unset"
+          }
+        ],
+        "descriptor": "Inlet",
+        "external_conditions": {
+          "journal_id": "SsmoPropTable[Finned external air 20 C]",
+          "name": "Finned external air 20 C",
+          "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1.sim"
+        }
+      },
+      {
+        "kind": "simulation_objects",
+        "journal_id": "SimulationObject[Coupled Opening]",
+        "name": "Coupled Opening",
+        "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1.sim",
+        "fields": [
+          {
+            "property": "Pressure Value",
+            "expression": {
+              "formula": "101325.0",
+              "units": "PressurePascals",
+              "value": 101325.0
+            },
+            "field": null,
+            "representation": "expression"
+          },
+          {
+            "property": "External Relative Pressure",
+            "expression": {
+              "formula": "-777777",
+              "units": null,
+              "value": -777777.0
+            },
+            "field": null,
+            "representation": "expression"
+          }
+        ],
+        "descriptor": "Opening",
+        "external_conditions": {
+          "journal_id": "SsmoPropTable[Finned external air 20 C]",
+          "name": "Finned external air 20 C",
+          "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1.sim"
+        }
+      }
+    ],
+    "solution_fields": [
+      {
+        "property": "Altitude Value",
+        "expression": {
+          "formula": "0",
+          "units": "MilliMeter",
+          "value": 0.0
+        },
+        "field": null,
+        "representation": "expression"
+      },
+      {
+        "property": "Absolute Pressure",
+        "expression": {
+          "formula": "0.101351",
+          "units": "PressureNewtonPerSquareMilliMeter",
+          "value": 0.101351
+        },
+        "field": null,
+        "representation": "expression"
+      },
+      {
+        "property": "Fluid Temperature",
+        "expression": {
+          "formula": "0",
+          "units": "Celsius",
+          "value": 0.0
+        },
+        "field": null,
+        "representation": "expression"
+      },
+      {
+        "property": "Radiative Environment Temperature",
+        "expression": {
+          "formula": "20",
+          "units": "Celsius",
+          "value": 20.0
+        },
+        "field": null,
+        "representation": "expression"
+      },
+      {
+        "property": "Ambient Relative Humidity Value",
+        "expression": {
+          "formula": "0",
+          "units": null,
+          "value": 0.0
+        },
+        "field": null,
+        "representation": "expression"
+      },
+      {
+        "property": "Ambient Water Vapor to Dry Air Mass Ratio Value",
+        "expression": {
+          "formula": "0",
+          "units": null,
+          "value": 0.0
+        },
+        "field": null,
+        "representation": "expression"
+      },
+      {
+        "property": "Articulation Interval vs Time Table",
+        "representation": "unset"
+      }
+    ],
+    "ambient_pressure_mode": 1,
+    "tables": [
+      {
+        "name": "Finned Thermal Parameters",
+        "descriptor": "Thermal Parameters",
+        "fields": [
+          {
+            "property": "Solar Intensity Table",
+            "representation": "unset"
+          }
+        ]
+      },
+      {
+        "name": "Finned Flow Solution Parameters",
+        "descriptor": "Flow Solution Parameters",
+        "fields": [
+          {
+            "property": "Time Step",
+            "expression": {
+              "formula": "0.5",
+              "units": "Second",
+              "value": 0.5
+            },
+            "field": null,
+            "representation": "expression"
+          }
+        ]
+      },
+      {
+        "name": "Finned Flow Surface Parameters",
+        "descriptor": "Flow Surface Parameters",
+        "fields": []
+      },
+      {
+        "name": "Finned Thermal-Flow Output Requests",
+        "descriptor": "Thermal-Flow Output Requests",
+        "fields": []
+      },
+      {
+        "name": "Finned Coupled Solution Parameters",
+        "descriptor": "Thermal-Flow Coupled Solution Parameters",
+        "fields": []
+      },
+      {
+        "name": "Finned external air 20 C",
+        "descriptor": "External Conditions",
+        "fields": [
+          {
+            "property": "Temperature Value",
+            "expression": {
+              "formula": "20.0",
+              "units": "Celsius",
+              "value": 20.0
+            },
+            "field": null,
+            "representation": "expression"
+          },
+          {
+            "property": "Relative Humidity Value",
+            "expression": {
+              "formula": "0",
+              "units": null,
+              "value": 0.0
+            },
+            "field": null,
+            "representation": "expression"
+          },
+          {
+            "property": "Water Vapor to Dry Air Mass Ratio Value",
+            "expression": {
+              "formula": "0",
+              "units": null,
+              "value": 0.0
+            },
+            "field": null,
+            "representation": "expression"
+          }
+        ],
+        "reference": {
+          "journal_id": "SsmoPropTable[Finned external air 20 C]",
+          "name": "Finned external air 20 C",
+          "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1.sim"
+        },
+        "temperature_option": 0
+      }
+    ],
+    "solver_launched": false,
+    "numerical_acceptance": false
+  },
+  "audit_validation": {
+    "fixture_effective_inputs": "verified_snapshot",
+    "F1": "active heat and boundary temperatures are expression-backed; no boundary fields",
+    "F2": "exact solution membership and empty single step verified",
+    "F3": "no head-loss tables; inapplicable to this fixture",
+    "general_freshness": "not_verified",
+    "physical_acceptance": false
+  },
+  "density": {
+    "field_names": [
+      "Velocity - Element-Nodal",
+      "Temperature - Nodal",
+      "Temperature - Elemental",
+      "Temperature - Element-Nodal",
+      "Total Heat Load - Elemental",
+      "Total Heat Flux - Elemental",
+      "Total Pressure - Element-Nodal",
+      "Fluid Density - Element-Nodal",
+      "Mass Flux - Nodal",
+      "Pressure - Element-Nodal"
+    ],
+    "density_field": "Fluid Density - Element-Nodal",
+    "units": "kg/m3",
+    "minimum": 1.2943761348724365,
+    "maximum": 1.2943761348724365,
+    "minimum_native_id": 34577,
+    "maximum_native_id": 34577,
+    "minimum_native_sub_id": 11137,
+    "maximum_native_sub_id": 11137,
+    "location": "2",
+    "expected_constant_density": 1.2,
+    "constant_density_matches": false,
+    "reference_lifetime": "indices apply only to this result revision",
+    "result_freshness": "not_verified"
+  },
+  "boundary_fields": {
+    "document": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer-extended-20260908-r1\\finned_layer_extended_r1.sim",
+    "input_sha256": "e32afd0a0b088fb282f613fecc379be861f45303ff00bf7fb8f29c0250a73b01",
+    "static_pressure_drop_Pa": 1.1167310277286544,
+    "boundaries": [
+      {
+        "name": "Coupled Inlet",
+        "area_mm2": 72.0,
+        "values": {
+          "Pressure - Element-Nodal": {
+            "area_mean": 1.9049256291182621,
+            "unit": "PressurePascals"
+          },
+          "Total Pressure - Element-Nodal": {
+            "area_mean": 2.5504505343732333,
+            "unit": "PressurePascals"
+          },
+          "Velocity - Element-Nodal": {
+            "area_mean": 0.9844338237320047,
+            "unit": "MeterPerSecond"
+          },
+          "Temperature - Element-Nodal": {
+            "area_mean": 20.15344026341166,
+            "unit": "Celsius"
+          }
+        },
+        "recovered_volume_flow_m3_s_positive_x": 7.087923530870434e-05,
+        "facet_count": 1110
+      },
+      {
+        "name": "Coupled Opening",
+        "area_mm2": 72.0,
+        "values": {
+          "Pressure - Element-Nodal": {
+            "area_mean": 0.7881946013896077,
+            "unit": "PressurePascals"
+          },
+          "Total Pressure - Element-Nodal": {
+            "area_mean": 1.5192953191907335,
+            "unit": "PressurePascals"
+          },
+          "Velocity - Element-Nodal": {
+            "area_mean": 0.9996798000779398,
+            "unit": "MeterPerSecond"
+          },
+          "Temperature - Element-Nodal": {
+            "area_mean": 21.285292412758324,
+            "unit": "Celsius"
+          }
+        },
+        "recovered_volume_flow_m3_s_positive_x": 7.197694560561165e-05,
+        "facet_count": 1120
+      }
+    ],
+    "method": "piecewise linear triangular integration of recovered element-nodal values; planar quads split geometrically",
+    "conservation": "not_established_by_recovered_field_integrals",
+    "freshness": "not_verified"
+  },
+  "solid_temperature": {
+    "field": "Temperature - Nodal",
+    "field_location": "nodal",
+    "loadcase_index": 0,
+    "iteration_index": 0,
+    "units": "degC",
+    "minimum": 23.844715118408203,
+    "maximum": 23.9112548828125,
+    "native_location": "0",
+    "minimum_native_id": 5,
+    "maximum_native_id": 13,
+    "minimum_native_sub_id": 0,
+    "maximum_native_sub_id": 0,
+    "node_count": 15116,
+    "result_freshness": "not_verified",
+    "reference_lifetime": "indices apply only to this result revision"
+  },
+  "physical_acceptance": false,
+  "operation_id": "op_bb23024ce670485eb25086a7f78869d2",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

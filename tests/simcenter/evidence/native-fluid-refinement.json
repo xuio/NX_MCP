@@ -1,0 +1,23 @@
+{
+  "status": "success",
+  "state": "verified",
+  "counts": {
+    "elements": 13397,
+    "nodes": 3200
+  },
+  "export_counts": {
+    "elements": 13397,
+    "nodes": 3200
+  },
+  "boundary_readback_preserved": true,
+  "deck_sha256": "dea83f70566fbcdc4fd11e27f9b2a28500d7da26983ab88aaaf67c3ec132360c",
+  "solver_launched": false,
+  "prior_results_stale": true,
+  "previous_failure": "ElementList groups counted instead of nested E elements",
+  "operation_id": "op_2cda9caa27a04ad8b85356db4514ce5e",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm",
+  "scope": "Native mesh edit/save/reopen/export verification only; no refined solve or mesh-sensitivity acceptance"
+}

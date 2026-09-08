@@ -1,0 +1,205 @@
+{
+  "status": "success",
+  "nx_version": "v2606",
+  "public_tool_evidence": {
+    "scope": "Indexed public-tool regression evidence; not a complete capability inventory",
+    "exposed_tool_count": 32,
+    "indexed_tool_count": 18,
+    "unindexed_tools": [
+      "nx_sim_activate",
+      "nx_sim_capabilities",
+      "nx_sim_create_benchmark",
+      "nx_sim_dependencies",
+      "nx_sim_documents",
+      "nx_sim_faces",
+      "nx_sim_flow_convergence",
+      "nx_sim_flow_setup",
+      "nx_sim_job_status",
+      "nx_sim_material",
+      "nx_sim_mesh",
+      "nx_sim_result_identity",
+      "nx_sim_result_inventory",
+      "nx_sim_save_as"
+    ],
+    "unindexed_semantics": "No assessment in this evidence index; consult the per-operation capability and benchmark records",
+    "tools": [
+      {
+        "tool": "nx_sim_save",
+        "status": "implemented_and_tested",
+        "tested_version": "v2606",
+        "tested_scope": "Existing isolated FEM/SIM save, backup hashes and replay",
+        "evidence": "tests/simcenter/evidence/native-conduction-setup-save.json",
+        "current_session_test": "not_performed_by_discovery",
+        "licence_checkout": "not_tested"
+      },
+      {
+        "tool": "nx_sim_export_input",
+        "status": "implemented_and_tested",
+        "tested_version": "v2606",
+        "tested_scope": "Thermal input export, 2658 elements, retry and overwrite rejection",
+        "evidence": "tests/simcenter/evidence/native-thermal-export-mcp.json",
+        "current_session_test": "not_performed_by_discovery",
+        "licence_checkout": "not_tested"
+      },
+      {
+        "tool": "nx_sim_temperature",
+        "status": "implemented_and_tested",
+        "tested_version": "v2606",
+        "tested_scope": "Constant Kelvin face boundary, replay and save/reopen",
+        "evidence": "tests/simcenter/evidence/native-temperature-mcp.json",
+        "current_session_test": "not_performed_by_discovery",
+        "licence_checkout": "not_tested"
+      },
+      {
+        "tool": "nx_sim_heat_power",
+        "status": "implemented_and_tested",
+        "tested_version": "v2606",
+        "tested_scope": "Single-body total internal watts, duplicate rejection and save/reopen",
+        "evidence": "tests/simcenter/evidence/native-heat-power-mcp.json",
+        "current_session_test": "not_performed_by_discovery",
+        "licence_checkout": "not_tested"
+      },
+      {
+        "tool": "nx_sim_convection",
+        "status": "implemented_and_tested",
+        "tested_version": "v2606",
+        "tested_scope": "Thermal-only assumed convection coefficient and face readback",
+        "evidence": "tests/simcenter/evidence/native-convection-mcp.json",
+        "current_session_test": "not_performed_by_discovery",
+        "licence_checkout": "not_tested"
+      },
+      {
+        "tool": "nx_sim_constraints",
+        "status": "implemented_and_tested",
+        "tested_version": "v2606",
+        "tested_scope": "Paged constraint properties and assigned targets",
+        "evidence": "tests/simcenter/evidence/native-constraint-inventory-mcp.json",
+        "current_session_test": "not_performed_by_discovery",
+        "licence_checkout": "not_tested"
+      },
+      {
+        "tool": "nx_sim_loads",
+        "status": "implemented_and_tested",
+        "tested_version": "v2606",
+        "tested_scope": "Paged load properties and targets including empty target slots",
+        "evidence": "tests/simcenter/evidence/native-load-inventory-mcp.json",
+        "current_session_test": "not_performed_by_discovery",
+        "licence_checkout": "not_tested"
+      },
+      {
+        "tool": "nx_sim_temperature_result",
+        "status": "implemented_and_tested",
+        "tested_version": "v2606",
+        "tested_scope": "Nodal Celsius extrema, invalid indices and preserved document flags",
+        "evidence": "tests/simcenter/evidence/native-temperature-result-mcp.json",
+        "current_session_test": "not_performed_by_discovery",
+        "licence_checkout": "not_tested"
+      },
+      {
+        "tool": "nx_sim_show_temperature",
+        "status": "implemented_and_tested",
+        "tested_version": "v2606",
+        "tested_scope": "Temperature postview field/unit readback and replay; multiple existing views untested",
+        "evidence": "tests/simcenter/evidence/native-temperature-postview.json",
+        "current_session_test": "not_performed_by_discovery",
+        "licence_checkout": "not_tested"
+      },
+      {
+        "tool": "nx_sim_mesh_quality",
+        "status": "implemented_and_tested",
+        "tested_version": "v2606",
+        "tested_scope": "All-mesh native quality and criteria readback on a 2658-element thermal FEM",
+        "evidence": "tests/simcenter/evidence/native-mesh-quality-mcp.json",
+        "current_session_test": "not_performed_by_discovery",
+        "licence_checkout": "not_tested"
+      },
+      {
+        "tool": "nx_sim_solutions",
+        "status": "implemented_and_tested",
+        "tested_version": "v2606",
+        "tested_scope": "Paged solution references and active-state inspection; no solve readiness claim",
+        "evidence": "tests/simcenter/evidence/native-solutions-mcp.json",
+        "current_session_test": "not_performed_by_discovery",
+        "licence_checkout": "not_tested"
+      },
+      {
+        "tool": "nx_sim_select_solution",
+        "status": "implemented_and_tested",
+        "tested_version": "v2606",
+        "tested_scope": "Switch between distinct solutions, reject foreign ownership, restore original selection",
+        "evidence": "tests/simcenter/evidence/native-solution-switch-mcp.json",
+        "current_session_test": "not_performed_by_discovery",
+        "licence_checkout": "not_tested"
+      },
+      {
+        "tool": "nx_sim_transient_setup",
+        "status": "implemented_and_tested",
+        "tested_version": "v2606",
+        "tested_scope": "Three output times, committed step values, replay and extra-step rejection; no solve in this test",
+        "evidence": "tests/simcenter/evidence/native-transient-setup-mcp.json",
+        "current_session_test": "not_performed_by_discovery",
+        "licence_checkout": "not_tested"
+      },
+      {
+        "tool": "nx_sim_steps",
+        "status": "implemented_and_tested",
+        "tested_version": "v2606",
+        "tested_scope": "Paged inactive-solution steps and End Time readback; active solution preserved",
+        "evidence": "tests/simcenter/evidence/native-steps-mcp.json",
+        "current_session_test": "not_performed_by_discovery",
+        "licence_checkout": "not_tested"
+      },
+      {
+        "tool": "nx_sim_fan_table",
+        "status": "implemented_and_tested",
+        "tested_version": "v2606",
+        "tested_scope": "Static synthetic table, SI sample readback, typed reference, replay and duplicate-name rejection",
+        "evidence": "tests/simcenter/evidence/native-fan-tables-mcp.json",
+        "current_session_test": "not_performed_by_discovery",
+        "licence_checkout": "not_tested"
+      },
+      {
+        "tool": "nx_sim_fan_tables",
+        "status": "implemented_and_tested",
+        "tested_version": "v2606",
+        "tested_scope": "Full and compact table inventory; metadata and sample readback; no operating-point calculation",
+        "evidence": "tests/simcenter/evidence/native-fan-tables-mcp.json",
+        "current_session_test": "not_performed_by_discovery",
+        "licence_checkout": "not_tested"
+      },
+      {
+        "tool": "nx_sim_objects",
+        "status": "implemented_and_tested",
+        "tested_version": "v2606",
+        "tested_scope": "Paged Inlet/Opening descriptors, targets and committed properties; preserved document flags",
+        "evidence": "tests/simcenter/evidence/native-sim-objects-mcp.json",
+        "current_session_test": "not_performed_by_discovery",
+        "licence_checkout": "not_tested"
+      },
+      {
+        "tool": "nx_sim_assign_fan",
+        "status": "implemented_and_tested",
+        "tested_version": "v2606",
+        "tested_scope": "Static fan assignment to an existing Flow inlet, replay, wrong-kind rejection and outer rollback; no solve",
+        "evidence": "tests/simcenter/evidence/native-assign-fan-mcp.json",
+        "current_session_test": "not_performed_by_discovery",
+        "licence_checkout": "not_tested"
+      }
+    ],
+    "remaining_work": {
+      "generic_async_solve_and_cancel": "not_exposed; native fixtures do not constitute a public solve lifecycle",
+      "coupled_cooling_acceptance": "not_complete",
+      "thermal_contact": "native descriptor mapping unresolved",
+      "detailed_rotating_fans_and_acoustics": "not_validated; module availability must be established separately",
+      "full_model_result_freshness": "not_established; live SIM may be modified after solving",
+      "exact_screenshot_resolution": "native postview export ignores requested device dimensions in observed test"
+    }
+  },
+  "modified_flags_preserved": true,
+  "licensing_configuration_modified": false,
+  "operation_id": "op_3d300f8122cb40749596cabf4ec0beb0",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

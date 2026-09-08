@@ -1,0 +1,56 @@
+﻿[
+    {
+        "title":  "Thermal Convecting Zone",
+        "description":  "Defines heat transfer to the environment due to convection",
+        "id":  "UG_SFEM_INSERT_LOAD_TYPES",
+        "subId":  "Thermal Convecting Zone"
+    },
+    {
+        "title":  "Convection to Environment",
+        "description":  "Defines heat transfer to the environment due to convection",
+        "id":  "UG_SFEM_INSERT_CONSTRAINT_TYPES",
+        "subId":  "Convection to Environment"
+    },
+    {
+        "title":  "Initial Conditions",
+        "description":  "Defines fluid conditions and movement at the start of the analysis",
+        "id":  "UG_SFEM_INSERT_CONSTRAINT_TYPES",
+        "subId":  "Initial Conditions"
+    },
+    {
+        "title":  "Duct Flow Boundary Conditions",
+        "description":  "Applies 1D fluid flow conditions and related duct parameters",
+        "id":  "UG_SFEM_INSERT_SSSO_TYPES",
+        "subId":  "Duct Flow Boundary Conditions"
+    },
+    {
+        "title":  "Flow Blockage",
+        "description":  "Partially or completely blocks 3D fluid flow and applies convection",
+        "id":  "UG_SFEM_INSERT_SSSO_TYPES",
+        "subId":  "Flow Blockage"
+    },
+    {
+        "title":  "Flow Boundary Condition",
+        "description":  "Specifies inlet, outlet and opening 3D fluid flow conditions",
+        "id":  "UG_SFEM_INSERT_SSSO_TYPES",
+        "subId":  "Flow Boundary Condition"
+    },
+    {
+        "title":  "Flow Surface",
+        "description":  "Specifies wall convection and friction properties to the fluid",
+        "id":  "UG_SFEM_INSERT_SSSO_TYPES",
+        "subId":  "Flow Surface"
+    },
+    {
+        "title":  "Immersed Ducts",
+        "description":  "Models duct convection with surrounding solids",
+        "id":  "UG_SFEM_INSERT_SSSO_TYPES",
+        "subId":  "Immersed Ducts"
+    },
+    {
+        "title":  "Thermal Coupling - Convection",
+        "description":  "Applies convective couplings between model surfaces due to convection",
+        "id":  "UG_SFEM_INSERT_SSSO_TYPES",
+        "subId":  "Convection Coupling"
+    }
+]

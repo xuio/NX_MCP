@@ -1,0 +1,743 @@
+{
+  "schema": {
+    "name": "nx_sim_loads",
+    "title": null,
+    "description": "Page loads in the active SIM and reacquire simulation_load references after reopen. offset >=0; limit 1..100. Compact rows include type, target-set count, stored provenance and energy-accounting label. Optional properties expose actual native values/units and unsupported reads. Optional targets return up to 100 members per set with counts/truncation flags; direct SIM body/face targets have typed references, other kinds are explicit unsupported targets. Does not sum mixed loads or infer total applied scenario power. Constraints and simulation objects are separate collections. Read-only; does not save, activate or solve.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "document": {
+          "title": "Document",
+          "type": "string"
+        },
+        "offset": {
+          "default": 0,
+          "title": "Offset",
+          "type": "integer"
+        },
+        "limit": {
+          "default": 20,
+          "title": "Limit",
+          "type": "integer"
+        },
+        "include_properties": {
+          "default": false,
+          "title": "Include Properties",
+          "type": "boolean"
+        },
+        "include_targets": {
+          "default": false,
+          "title": "Include Targets",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "document"
+      ],
+      "title": "nx_sim_loadsArguments",
+      "type": "object"
+    },
+    "outputSchema": {
+      "additionalProperties": true,
+      "description": "Structured success/error envelope with additive metadata. Tool-specific payload remains extensible.",
+      "properties": {
+        "status": {
+          "enum": [
+            "success",
+            "error"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "warnings": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Warnings",
+          "type": "array"
+        },
+        "units": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Units"
+        },
+        "operation_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Operation Id"
+        },
+        "mutation_outcome": {
+          "anyOf": [
+            {
+              "enum": [
+                "not_started",
+                "running",
+                "committed",
+                "rolled_back",
+                "partial",
+                "unknown",
+                "not_applicable"
+              ]
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "full_result": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "sha256": {
+              "type": "string"
+            },
+            "size": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "tool": {
+              "const": "nx_read_result"
+            },
+            "immutable": {
+              "const": true
+            }
+          },
+          "required": [
+            "id",
+            "sha256",
+            "size",
+            "tool",
+            "immutable"
+          ],
+          "additionalProperties": true
+        },
+        "omitted": {
+          "type": "object"
+        },
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "retryable": {
+          "type": "boolean"
+        },
+        "suggestion": {
+          "type": "string"
+        },
+        "nx_code": {
+          "type": [
+            "integer",
+            "string"
+          ]
+        },
+        "details": {
+          "type": "object",
+          "properties": {
+            "operation_id": {
+              "type": "string"
+            },
+            "mutation_outcome": {
+              "enum": [
+                "not_started",
+                "running",
+                "committed",
+                "rolled_back",
+                "partial",
+                "unknown",
+                "not_applicable"
+              ]
+            }
+          },
+          "required": [],
+          "additionalProperties": true
+        }
+      },
+      "required": [
+        "status",
+        "warnings",
+        "units"
+      ],
+      "title": "nx_sim_loads result",
+      "type": "object",
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "error"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "code",
+              "message",
+              "retryable"
+            ]
+          }
+        }
+      ]
+    },
+    "icons": null,
+    "annotations": {
+      "title": null,
+      "readOnlyHint": true,
+      "destructiveHint": null,
+      "idempotentHint": true,
+      "openWorldHint": null
+    },
+    "meta": null,
+    "execution": null
+  },
+  "compact": {
+    "meta": null,
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"loads\": [{\"load\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_092e9fdaafd24c39911538f41cbec99e\", \"kind\": \"simulation_load\", \"name\": \"MCP_INTERNAL_POWER\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_963bae45c22b43d9ab8354e6d7079d30\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"963bae45c22b43d9ab8354e6d7079d30\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F-convection-mcp-20260908-r1\\\\saved_power.sim\", \"journal_id\": \"Load[MCP_INTERNAL_POWER]\", \"display_name\": \"MCP_INTERNAL_POWER\"}, \"native_type\": \"SimLoad\", \"target_set_count\": 2, \"provenance\": \"Assumed 0.1 W internal heat for isolated thermal authoring verification\", \"coefficient_basis\": null, \"energy_accounting\": \"internal_heat\"}], \"total\": 1, \"next_offset\": null, \"scope\": \"SIM loads collection only; other boundary collections are separate\", \"operation_id\": \"op_5fe1c00ad63748178d5572bcc502307f\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+        "annotations": null,
+        "meta": null
+      }
+    ],
+    "structuredContent": {
+      "status": "success",
+      "warnings": [],
+      "units": "mm",
+      "loads": [
+        {
+          "load": {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_092e9fdaafd24c39911538f41cbec99e",
+            "kind": "simulation_load",
+            "name": "MCP_INTERNAL_POWER",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_963bae45c22b43d9ab8354e6d7079d30",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "963bae45c22b43d9ab8354e6d7079d30",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-mcp-20260908-r1\\saved_power.sim",
+            "journal_id": "Load[MCP_INTERNAL_POWER]",
+            "display_name": "MCP_INTERNAL_POWER"
+          },
+          "native_type": "SimLoad",
+          "target_set_count": 2,
+          "provenance": "Assumed 0.1 W internal heat for isolated thermal authoring verification",
+          "coefficient_basis": null,
+          "energy_accounting": "internal_heat"
+        }
+      ],
+      "total": 1,
+      "next_offset": null,
+      "scope": "SIM loads collection only; other boundary collections are separate",
+      "operation_id": "op_5fe1c00ad63748178d5572bcc502307f",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "mutation_outcome": "not_applicable"
+    },
+    "isError": false
+  },
+  "expanded": {
+    "meta": null,
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"loads\": [{\"load\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_092e9fdaafd24c39911538f41cbec99e\", \"kind\": \"simulation_load\", \"name\": \"MCP_INTERNAL_POWER\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_963bae45c22b43d9ab8354e6d7079d30\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"963bae45c22b43d9ab8354e6d7079d30\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F-convection-mcp-20260908-r1\\\\saved_power.sim\", \"journal_id\": \"Load[MCP_INTERNAL_POWER]\", \"display_name\": \"MCP_INTERNAL_POWER\"}, \"native_type\": \"SimLoad\", \"target_set_count\": 2, \"provenance\": \"Assumed 0.1 W internal heat for isolated thermal authoring verification\", \"coefficient_basis\": null, \"energy_accounting\": \"internal_heat\", \"properties\": [{\"name\": \"description\", \"native_type\": \"0\", \"units\": null, \"inspection_status\": \"unsupported_property_type\"}, {\"name\": \"Selection Method\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Override Region\", \"native_type\": \"2\", \"units\": null, \"value\": false}, {\"name\": \"Non-Geometric Element\", \"native_type\": \"0\", \"units\": null, \"inspection_status\": \"unsupported_property_type\"}, {\"name\": \"Heat Load\", \"native_type\": \"6\", \"units\": \"HeatFlow_Metric2\", \"expression\": \"0.1\", \"unit_symbol\": \"W\", \"representation\": \"expression\"}, {\"name\": \"Heat Load Override\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"-777777\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Specify Reference Temperature Set\", \"native_type\": \"2\", \"units\": null, \"value\": false}, {\"name\": \"Reference Temperature Set\", \"native_type\": \"0\", \"units\": null, \"inspection_status\": \"unsupported_property_type\"}, {\"name\": \"Control Heater\", \"native_type\": \"2\", \"units\": null, \"value\": false}, {\"name\": \"Thermostat\", \"native_type\": \"0\", \"units\": null, \"inspection_status\": \"unsupported_property_type\"}, {\"name\": \"Specify Layer to Apply to\", \"native_type\": \"2\", \"units\": null, \"value\": false}, {\"name\": \"Apply to\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Layer Number\", \"native_type\": \"3\", \"units\": null, \"value\": 1}, {\"name\": \"Per Element\", \"native_type\": \"2\", \"units\": null, \"value\": false}, {\"name\": \"Per Node\", \"native_type\": \"2\", \"units\": null, \"value\": false}, {\"name\": \"distributionType\", \"native_type\": \"3\", \"units\": null, \"value\": 32}, {\"name\": \"Custom Settings Option\", \"native_type\": \"2\", \"units\": null, \"value\": false}, {\"name\": \"Custom Settings\", \"native_type\": \"1\", \"units\": null, \"value\": \"BCONX\"}], \"target_sets\": [{\"index\": 0, \"count\": 1, \"native_slot_count\": 1, \"empty_slot_count\": 0, \"members\": [{\"native_type\": \"CAEBody\", \"subtype\": \"0\", \"sub_id\": 0, \"body\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_04e1479062f54ce398ca52cb0074b98c\", \"kind\": \"body\", \"name\": \"HANDLE R-37481\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_963bae45c22b43d9ab8354e6d7079d30\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"963bae45c22b43d9ab8354e6d7079d30\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F-convection-mcp-20260908-r1\\\\saved_power.sim\", \"journal_id\": \"HANDLE R-37481\", \"display_name\": \"\"}}], \"truncated\": false}, {\"index\": 1, \"count\": 0, \"native_slot_count\": 1, \"empty_slot_count\": 1, \"members\": [], \"truncated\": false}]}], \"total\": 1, \"next_offset\": null, \"scope\": \"SIM loads collection only; other boundary collections are separate\", \"operation_id\": \"op_c2616bd69c6d49db8a04b0260b6a0266\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+        "annotations": null,
+        "meta": null
+      }
+    ],
+    "structuredContent": {
+      "status": "success",
+      "warnings": [],
+      "units": "mm",
+      "loads": [
+        {
+          "load": {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_092e9fdaafd24c39911538f41cbec99e",
+            "kind": "simulation_load",
+            "name": "MCP_INTERNAL_POWER",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_963bae45c22b43d9ab8354e6d7079d30",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "963bae45c22b43d9ab8354e6d7079d30",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-mcp-20260908-r1\\saved_power.sim",
+            "journal_id": "Load[MCP_INTERNAL_POWER]",
+            "display_name": "MCP_INTERNAL_POWER"
+          },
+          "native_type": "SimLoad",
+          "target_set_count": 2,
+          "provenance": "Assumed 0.1 W internal heat for isolated thermal authoring verification",
+          "coefficient_basis": null,
+          "energy_accounting": "internal_heat",
+          "properties": [
+            {
+              "name": "description",
+              "native_type": "0",
+              "units": null,
+              "inspection_status": "unsupported_property_type"
+            },
+            {
+              "name": "Selection Method",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Override Region",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Non-Geometric Element",
+              "native_type": "0",
+              "units": null,
+              "inspection_status": "unsupported_property_type"
+            },
+            {
+              "name": "Heat Load",
+              "native_type": "6",
+              "units": "HeatFlow_Metric2",
+              "expression": "0.1",
+              "unit_symbol": "W",
+              "representation": "expression"
+            },
+            {
+              "name": "Heat Load Override",
+              "native_type": "6",
+              "units": "dimensionless",
+              "expression": "-777777",
+              "unit_symbol": null,
+              "representation": "expression"
+            },
+            {
+              "name": "Specify Reference Temperature Set",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Reference Temperature Set",
+              "native_type": "0",
+              "units": null,
+              "inspection_status": "unsupported_property_type"
+            },
+            {
+              "name": "Control Heater",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Thermostat",
+              "native_type": "0",
+              "units": null,
+              "inspection_status": "unsupported_property_type"
+            },
+            {
+              "name": "Specify Layer to Apply to",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Apply to",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Layer Number",
+              "native_type": "3",
+              "units": null,
+              "value": 1
+            },
+            {
+              "name": "Per Element",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Per Node",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "distributionType",
+              "native_type": "3",
+              "units": null,
+              "value": 32
+            },
+            {
+              "name": "Custom Settings Option",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Custom Settings",
+              "native_type": "1",
+              "units": null,
+              "value": "BCONX"
+            }
+          ],
+          "target_sets": [
+            {
+              "index": 0,
+              "count": 1,
+              "native_slot_count": 1,
+              "empty_slot_count": 0,
+              "members": [
+                {
+                  "native_type": "CAEBody",
+                  "subtype": "0",
+                  "sub_id": 0,
+                  "body": {
+                    "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_04e1479062f54ce398ca52cb0074b98c",
+                    "kind": "body",
+                    "name": "HANDLE R-37481",
+                    "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_963bae45c22b43d9ab8354e6d7079d30",
+                    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                    "generation_id": "963bae45c22b43d9ab8354e6d7079d30",
+                    "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-mcp-20260908-r1\\saved_power.sim",
+                    "journal_id": "HANDLE R-37481",
+                    "display_name": ""
+                  }
+                }
+              ],
+              "truncated": false
+            },
+            {
+              "index": 1,
+              "count": 0,
+              "native_slot_count": 1,
+              "empty_slot_count": 1,
+              "members": [],
+              "truncated": false
+            }
+          ]
+        }
+      ],
+      "total": 1,
+      "next_offset": null,
+      "scope": "SIM loads collection only; other boundary collections are separate",
+      "operation_id": "op_c2616bd69c6d49db8a04b0260b6a0266",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "mutation_outcome": "not_applicable"
+    },
+    "isError": false
+  },
+  "empty": {
+    "meta": null,
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"loads\": [], \"total\": 1, \"next_offset\": null, \"scope\": \"SIM loads collection only; other boundary collections are separate\", \"operation_id\": \"op_10d85c241ccc44d7976f52ac61acc852\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+        "annotations": null,
+        "meta": null
+      }
+    ],
+    "structuredContent": {
+      "status": "success",
+      "warnings": [],
+      "units": "mm",
+      "loads": [],
+      "total": 1,
+      "next_offset": null,
+      "scope": "SIM loads collection only; other boundary collections are separate",
+      "operation_id": "op_10d85c241ccc44d7976f52ac61acc852",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "mutation_outcome": "not_applicable"
+    },
+    "isError": false
+  },
+  "documents_unchanged": true,
+  "constraint_regression": {
+    "meta": null,
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"constraints\": [{\"constraint\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_b373ed7094654dcc8a0c33500f7c215e\", \"kind\": \"constraint\", \"name\": \"MCP_ASSUMED_CONVECTION\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_963bae45c22b43d9ab8354e6d7079d30\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"963bae45c22b43d9ab8354e6d7079d30\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F-convection-mcp-20260908-r1\\\\saved_power.sim\", \"journal_id\": \"Constraint[MCP_ASSUMED_CONVECTION]\", \"display_name\": \"MCP_ASSUMED_CONVECTION\"}, \"native_type\": \"SimConstraint\", \"target_set_count\": 1, \"provenance\": \"Assumed h=10 W/(m2 K); isolated MCP authoring verification, no CFD interface\", \"coefficient_basis\": \"assumed\", \"energy_accounting\": null, \"properties\": [{\"name\": \"description\", \"native_type\": \"0\", \"units\": null, \"inspection_status\": \"unsupported_property_type\"}, {\"name\": \"Convect From\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Specify\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Convection Coefficient\", \"native_type\": \"6\", \"units\": \"ConvectionCoefficient_Metric8\", \"expression\": \"10.0\", \"unit_symbol\": \"W/m^2-dK\", \"representation\": \"expression\"}, {\"name\": \"Convection Parameter\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": -777777.0, \"unit_symbol\": null}, {\"name\": \"Exponent\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": -777777.0, \"unit_symbol\": null}, {\"name\": \"Specify Bottom\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Convection Coefficient Bottom\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"-777777\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Convection Parameter Bottom\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": -777777.0, \"unit_symbol\": null}, {\"name\": \"Exponent Bottom\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": -777777.0, \"unit_symbol\": null}, {\"name\": \"Use Same Magnitude as Top\", \"native_type\": \"2\", \"units\": null, \"value\": true}, {\"name\": \"Specify Bottom Top Bottom\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Convection Coefficient Bottom Top Bottom\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"-777777\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Convection Parameter Bottom Top Bottom\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": -777777.0, \"unit_symbol\": null}, {\"name\": \"Exponent Bottom Top Bottom\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": -777777.0, \"unit_symbol\": null}, {\"name\": \"Environment Temperature Type\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Environment Temperature\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"-777777\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"distributionType\", \"native_type\": \"3\", \"units\": null, \"value\": 32}], \"target_sets\": [{\"index\": 0, \"count\": 6, \"native_slot_count\": 6, \"empty_slot_count\": 0, \"members\": [{\"native_type\": \"CAEFace\", \"subtype\": \"0\", \"sub_id\": 0, \"face\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_b06ccca1635043d88f69f22c7c2ad075\", \"kind\": \"face\", \"name\": \"HANDLE R-37374\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_963bae45c22b43d9ab8354e6d7079d30\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"963bae45c22b43d9ab8354e6d7079d30\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F-convection-mcp-20260908-r1\\\\saved_power.sim\", \"journal_id\": \"HANDLE R-37374\", \"display_name\": \"\"}}, {\"native_type\": \"CAEFace\", \"subtype\": \"0\", \"sub_id\": 0, \"face\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_f59130cf3edb4a1daf383199b133b9dd\", \"kind\": \"face\", \"name\": \"HANDLE R-37390\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_963bae45c22b43d9ab8354e6d7079d30\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"963bae45c22b43d9ab8354e6d7079d30\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F-convection-mcp-20260908-r1\\\\saved_power.sim\", \"journal_id\": \"HANDLE R-37390\", \"display_name\": \"\"}}, {\"native_type\": \"CAEFace\", \"subtype\": \"0\", \"sub_id\": 0, \"face\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_dcde4534eea444b29193c302a1e1c792\", \"kind\": \"face\", \"name\": \"HANDLE R-37406\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_963bae45c22b43d9ab8354e6d7079d30\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"963bae45c22b43d9ab8354e6d7079d30\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F-convection-mcp-20260908-r1\\\\saved_power.sim\", \"journal_id\": \"HANDLE R-37406\", \"display_name\": \"\"}}, {\"native_type\": \"CAEFace\", \"subtype\": \"0\", \"sub_id\": 0, \"face\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_6cefd8d42d9f43b397647bb0efbe34ba\", \"kind\": \"face\", \"name\": \"HANDLE R-37422\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_963bae45c22b43d9ab8354e6d7079d30\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"963bae45c22b43d9ab8354e6d7079d30\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F-convection-mcp-20260908-r1\\\\saved_power.sim\", \"journal_id\": \"HANDLE R-37422\", \"display_name\": \"\"}}, {\"native_type\": \"CAEFace\", \"subtype\": \"0\", \"sub_id\": 0, \"face\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_b80bef7a2c2848a695fa9bb303ce5a90\", \"kind\": \"face\", \"name\": \"HANDLE R-37438\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_963bae45c22b43d9ab8354e6d7079d30\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"963bae45c22b43d9ab8354e6d7079d30\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F-convection-mcp-20260908-r1\\\\saved_power.sim\", \"journal_id\": \"HANDLE R-37438\", \"display_name\": \"\"}}, {\"native_type\": \"CAEFace\", \"subtype\": \"0\", \"sub_id\": 0, \"face\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_5b17b157d43b4958bfad44d846f26377\", \"kind\": \"face\", \"name\": \"HANDLE R-37454\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_963bae45c22b43d9ab8354e6d7079d30\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"963bae45c22b43d9ab8354e6d7079d30\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F-convection-mcp-20260908-r1\\\\saved_power.sim\", \"journal_id\": \"HANDLE R-37454\", \"display_name\": \"\"}}], \"truncated\": false}]}], \"total\": 1, \"next_offset\": null, \"scope\": \"SIM constraints collection only; other boundary collections are separate\", \"operation_id\": \"op_21b41272488b4bfbb9fc5a1d036dac27\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+        "annotations": null,
+        "meta": null
+      }
+    ],
+    "structuredContent": {
+      "status": "success",
+      "warnings": [],
+      "units": "mm",
+      "constraints": [
+        {
+          "constraint": {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_b373ed7094654dcc8a0c33500f7c215e",
+            "kind": "constraint",
+            "name": "MCP_ASSUMED_CONVECTION",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_963bae45c22b43d9ab8354e6d7079d30",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "963bae45c22b43d9ab8354e6d7079d30",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-mcp-20260908-r1\\saved_power.sim",
+            "journal_id": "Constraint[MCP_ASSUMED_CONVECTION]",
+            "display_name": "MCP_ASSUMED_CONVECTION"
+          },
+          "native_type": "SimConstraint",
+          "target_set_count": 1,
+          "provenance": "Assumed h=10 W/(m2 K); isolated MCP authoring verification, no CFD interface",
+          "coefficient_basis": "assumed",
+          "energy_accounting": null,
+          "properties": [
+            {
+              "name": "description",
+              "native_type": "0",
+              "units": null,
+              "inspection_status": "unsupported_property_type"
+            },
+            {
+              "name": "Convect From",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Specify",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Convection Coefficient",
+              "native_type": "6",
+              "units": "ConvectionCoefficient_Metric8",
+              "expression": "10.0",
+              "unit_symbol": "W/m^2-dK",
+              "representation": "expression"
+            },
+            {
+              "name": "Convection Parameter",
+              "native_type": "4",
+              "units": "dimensionless",
+              "value": -777777.0,
+              "unit_symbol": null
+            },
+            {
+              "name": "Exponent",
+              "native_type": "4",
+              "units": "dimensionless",
+              "value": -777777.0,
+              "unit_symbol": null
+            },
+            {
+              "name": "Specify Bottom",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Convection Coefficient Bottom",
+              "native_type": "6",
+              "units": "dimensionless",
+              "expression": "-777777",
+              "unit_symbol": null,
+              "representation": "expression"
+            },
+            {
+              "name": "Convection Parameter Bottom",
+              "native_type": "4",
+              "units": "dimensionless",
+              "value": -777777.0,
+              "unit_symbol": null
+            },
+            {
+              "name": "Exponent Bottom",
+              "native_type": "4",
+              "units": "dimensionless",
+              "value": -777777.0,
+              "unit_symbol": null
+            },
+            {
+              "name": "Use Same Magnitude as Top",
+              "native_type": "2",
+              "units": null,
+              "value": true
+            },
+            {
+              "name": "Specify Bottom Top Bottom",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Convection Coefficient Bottom Top Bottom",
+              "native_type": "6",
+              "units": "dimensionless",
+              "expression": "-777777",
+              "unit_symbol": null,
+              "representation": "expression"
+            },
+            {
+              "name": "Convection Parameter Bottom Top Bottom",
+              "native_type": "4",
+              "units": "dimensionless",
+              "value": -777777.0,
+              "unit_symbol": null
+            },
+            {
+              "name": "Exponent Bottom Top Bottom",
+              "native_type": "4",
+              "units": "dimensionless",
+              "value": -777777.0,
+              "unit_symbol": null
+            },
+            {
+              "name": "Environment Temperature Type",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Environment Temperature",
+              "native_type": "6",
+              "units": "dimensionless",
+              "expression": "-777777",
+              "unit_symbol": null,
+              "representation": "expression"
+            },
+            {
+              "name": "distributionType",
+              "native_type": "3",
+              "units": null,
+              "value": 32
+            }
+          ],
+          "target_sets": [
+            {
+              "index": 0,
+              "count": 6,
+              "native_slot_count": 6,
+              "empty_slot_count": 0,
+              "members": [
+                {
+                  "native_type": "CAEFace",
+                  "subtype": "0",
+                  "sub_id": 0,
+                  "face": {
+                    "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_b06ccca1635043d88f69f22c7c2ad075",
+                    "kind": "face",
+                    "name": "HANDLE R-37374",
+                    "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_963bae45c22b43d9ab8354e6d7079d30",
+                    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                    "generation_id": "963bae45c22b43d9ab8354e6d7079d30",
+                    "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-mcp-20260908-r1\\saved_power.sim",
+                    "journal_id": "HANDLE R-37374",
+                    "display_name": ""
+                  }
+                },
+                {
+                  "native_type": "CAEFace",
+                  "subtype": "0",
+                  "sub_id": 0,
+                  "face": {
+                    "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_f59130cf3edb4a1daf383199b133b9dd",
+                    "kind": "face",
+                    "name": "HANDLE R-37390",
+                    "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_963bae45c22b43d9ab8354e6d7079d30",
+                    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                    "generation_id": "963bae45c22b43d9ab8354e6d7079d30",
+                    "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-mcp-20260908-r1\\saved_power.sim",
+                    "journal_id": "HANDLE R-37390",
+                    "display_name": ""
+                  }
+                },
+                {
+                  "native_type": "CAEFace",
+                  "subtype": "0",
+                  "sub_id": 0,
+                  "face": {
+                    "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_dcde4534eea444b29193c302a1e1c792",
+                    "kind": "face",
+                    "name": "HANDLE R-37406",
+                    "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_963bae45c22b43d9ab8354e6d7079d30",
+                    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                    "generation_id": "963bae45c22b43d9ab8354e6d7079d30",
+                    "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-mcp-20260908-r1\\saved_power.sim",
+                    "journal_id": "HANDLE R-37406",
+                    "display_name": ""
+                  }
+                },
+                {
+                  "native_type": "CAEFace",
+                  "subtype": "0",
+                  "sub_id": 0,
+                  "face": {
+                    "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_6cefd8d42d9f43b397647bb0efbe34ba",
+                    "kind": "face",
+                    "name": "HANDLE R-37422",
+                    "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_963bae45c22b43d9ab8354e6d7079d30",
+                    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                    "generation_id": "963bae45c22b43d9ab8354e6d7079d30",
+                    "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-mcp-20260908-r1\\saved_power.sim",
+                    "journal_id": "HANDLE R-37422",
+                    "display_name": ""
+                  }
+                },
+                {
+                  "native_type": "CAEFace",
+                  "subtype": "0",
+                  "sub_id": 0,
+                  "face": {
+                    "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_b80bef7a2c2848a695fa9bb303ce5a90",
+                    "kind": "face",
+                    "name": "HANDLE R-37438",
+                    "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_963bae45c22b43d9ab8354e6d7079d30",
+                    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                    "generation_id": "963bae45c22b43d9ab8354e6d7079d30",
+                    "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-mcp-20260908-r1\\saved_power.sim",
+                    "journal_id": "HANDLE R-37438",
+                    "display_name": ""
+                  }
+                },
+                {
+                  "native_type": "CAEFace",
+                  "subtype": "0",
+                  "sub_id": 0,
+                  "face": {
+                    "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_5b17b157d43b4958bfad44d846f26377",
+                    "kind": "face",
+                    "name": "HANDLE R-37454",
+                    "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_963bae45c22b43d9ab8354e6d7079d30",
+                    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                    "generation_id": "963bae45c22b43d9ab8354e6d7079d30",
+                    "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-mcp-20260908-r1\\saved_power.sim",
+                    "journal_id": "HANDLE R-37454",
+                    "display_name": ""
+                  }
+                }
+              ],
+              "truncated": false
+            }
+          ]
+        }
+      ],
+      "total": 1,
+      "next_offset": null,
+      "scope": "SIM constraints collection only; other boundary collections are separate",
+      "operation_id": "op_21b41272488b4bfbb9fc5a1d036dac27",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "mutation_outcome": "not_applicable"
+    },
+    "isError": false
+  }
+}

@@ -1,0 +1,515 @@
+{
+  "quality": {
+    "status": "success",
+    "warnings": [],
+    "units": "mm",
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_a4d2eae1b8a14f1f87868655c8ac08a7",
+      "kind": "part",
+      "name": "benchmark_eecaf3edf587_mesh",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_9e20ff11d0074c0680298214e0aa671f",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "9e20ff11d0074c0680298214e0aa671f",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-temperature-mcp-20260908-r1\\benchmark_eecaf3edf587_mesh.fem",
+      "journal_id": "benchmark_eecaf3edf587_mesh",
+      "display_name": "benchmark_eecaf3edf587_mesh"
+    },
+    "mesh_count": 1,
+    "error_occurrences": 0,
+    "warning_occurrences": 0,
+    "count_semantics": "Sum across tests; an element can contribute to multiple tests",
+    "solve_readiness": "not_established",
+    "settings": {
+      "solver": "NX MULTIPHYSICS",
+      "analysis": "Thermal",
+      "limit_option": "1",
+      "element_specific": false,
+      "tests": [
+        {
+          "test_type": "LengthMinimum",
+          "enabled": false,
+          "validator": "3",
+          "has_criteria": true,
+          "criteria": {
+            "Warning": [
+              {
+                "unit": "MilliMeter"
+              },
+              1.0
+            ],
+            "Error": [
+              {
+                "unit": "MilliMeter"
+              },
+              0.1
+            ]
+          },
+          "specific_count": 0
+        },
+        {
+          "test_type": "LengthMaximum",
+          "enabled": false,
+          "validator": "1",
+          "has_criteria": true,
+          "criteria": {
+            "Warning": [
+              {
+                "unit": "MilliMeter"
+              },
+              50.0
+            ],
+            "Error": [
+              {
+                "unit": "MilliMeter"
+              },
+              100.0
+            ]
+          },
+          "specific_count": 0
+        },
+        {
+          "test_type": "Area",
+          "enabled": false,
+          "validator": "4",
+          "has_criteria": true,
+          "criteria": {
+            "Warning": [
+              {
+                "unit": "SquareMilliMeter"
+              },
+              0.01
+            ],
+            "Error": [
+              {
+                "unit": "SquareMilliMeter"
+              },
+              0.0
+            ]
+          },
+          "specific_count": 0
+        },
+        {
+          "test_type": "JacobianSign",
+          "enabled": true,
+          "validator": "0",
+          "has_criteria": false,
+          "specific_count": 4
+        },
+        {
+          "test_type": "JacobianZero",
+          "enabled": true,
+          "validator": "4",
+          "has_criteria": true,
+          "criteria": {
+            "Warning": [
+              null,
+              0.01
+            ],
+            "Error": [
+              null,
+              0.0
+            ]
+          },
+          "specific_count": 8
+        },
+        {
+          "test_type": "Volume",
+          "enabled": true,
+          "validator": "4",
+          "has_criteria": true,
+          "criteria": {
+            "Warning": [
+              {
+                "unit": "CubicMilliMeter"
+              },
+              0.01
+            ],
+            "Error": [
+              {
+                "unit": "CubicMilliMeter"
+              },
+              0.0
+            ]
+          },
+          "specific_count": 2
+        },
+        {
+          "test_type": "AxisymmetricY",
+          "enabled": true,
+          "validator": "1",
+          "has_criteria": true,
+          "criteria": {
+            "Warning": [
+              null,
+              1e-06
+            ],
+            "Error": [
+              null,
+              2e-06
+            ]
+          },
+          "specific_count": 2
+        },
+        {
+          "test_type": "AxisymmetricX",
+          "enabled": true,
+          "validator": "3",
+          "has_criteria": true,
+          "criteria": {
+            "Warning": [
+              null,
+              0.001
+            ],
+            "Error": [
+              null,
+              0.0
+            ]
+          },
+          "specific_count": 2
+        },
+        {
+          "test_type": "AspectRatio",
+          "enabled": true,
+          "validator": "1",
+          "has_criteria": true,
+          "criteria": {
+            "Warning": [
+              null,
+              10.0
+            ],
+            "Error": [
+              null,
+              100.0
+            ]
+          },
+          "specific_count": 8
+        },
+        {
+          "test_type": "SkewAngle",
+          "enabled": true,
+          "validator": "3",
+          "has_criteria": true,
+          "criteria": {
+            "Warning": [
+              {
+                "unit": "Degrees"
+              },
+              45.0
+            ],
+            "Error": [
+              {
+                "unit": "Degrees"
+              },
+              30.0
+            ]
+          },
+          "specific_count": 3
+        },
+        {
+          "test_type": "InteriorAngleMaximum",
+          "enabled": true,
+          "validator": "1",
+          "has_criteria": true,
+          "criteria": {
+            "Warning": [
+              {
+                "unit": "Degrees"
+              },
+              135.0
+            ],
+            "Error": [
+              {
+                "unit": "Degrees"
+              },
+              150.0
+            ]
+          },
+          "specific_count": 4
+        },
+        {
+          "test_type": "InteriorAngleMinimum",
+          "enabled": true,
+          "validator": "3",
+          "has_criteria": true,
+          "criteria": {
+            "Warning": [
+              {
+                "unit": "Degrees"
+              },
+              45.0
+            ],
+            "Error": [
+              {
+                "unit": "Degrees"
+              },
+              30.0
+            ]
+          },
+          "specific_count": 4
+        },
+        {
+          "test_type": "Taper",
+          "enabled": true,
+          "validator": "1",
+          "has_criteria": true,
+          "criteria": {
+            "Warning": [
+              null,
+              0.1
+            ],
+            "Error": [
+              null,
+              0.5
+            ]
+          },
+          "specific_count": 2
+        },
+        {
+          "test_type": "WarpFactor",
+          "enabled": true,
+          "validator": "1",
+          "has_criteria": true,
+          "criteria": {
+            "Warning": [
+              null,
+              0.01
+            ],
+            "Error": [
+              null,
+              0.05
+            ]
+          },
+          "specific_count": 1
+        },
+        {
+          "test_type": "FaceWarpCoefficient",
+          "enabled": true,
+          "validator": "3",
+          "has_criteria": true,
+          "criteria": {
+            "Warning": [
+              null,
+              0.866
+            ],
+            "Error": [
+              null,
+              0.707
+            ]
+          },
+          "specific_count": 3
+        },
+        {
+          "test_type": "EdgePointIncludedAngle",
+          "enabled": true,
+          "validator": "1",
+          "has_criteria": true,
+          "criteria": {
+            "Warning": [
+              {
+                "unit": "Degrees"
+              },
+              20.0
+            ],
+            "Error": [
+              {
+                "unit": "Degrees"
+              },
+              30.0
+            ]
+          },
+          "specific_count": 4
+        },
+        {
+          "test_type": "EdgePointLengthRatio",
+          "enabled": true,
+          "validator": "3",
+          "has_criteria": true,
+          "criteria": {
+            "Warning": [
+              null,
+              0.6
+            ],
+            "Error": [
+              null,
+              0.5
+            ]
+          },
+          "specific_count": 8
+        },
+        {
+          "test_type": "LengthRatioOffset",
+          "enabled": true,
+          "validator": "1",
+          "has_criteria": true,
+          "criteria": {
+            "Warning": [
+              null,
+              0.1
+            ],
+            "Error": [
+              null,
+              0.15
+            ]
+          },
+          "specific_count": 2
+        },
+        {
+          "test_type": "LaminateTaperRatio",
+          "enabled": false,
+          "validator": "1",
+          "has_criteria": true,
+          "criteria": {
+            "Warning": [
+              null,
+              1.1
+            ],
+            "Error": [
+              null,
+              1.2
+            ]
+          },
+          "specific_count": 2
+        },
+        {
+          "test_type": "LaminateThicknessRatio",
+          "enabled": false,
+          "validator": "1",
+          "has_criteria": true,
+          "criteria": {
+            "Warning": [
+              null,
+              0.01
+            ],
+            "Error": [
+              null,
+              0.05
+            ]
+          },
+          "specific_count": 2
+        }
+      ]
+    },
+    "element_count": 2658,
+    "tests": [
+      {
+        "type": "JacobianSign",
+        "count": 2658,
+        "errors": 0,
+        "warnings": 0,
+        "worst_value": 1.0
+      },
+      {
+        "type": "JacobianZero",
+        "count": 2658,
+        "errors": 0,
+        "warnings": 0,
+        "worst_value": 8.812783717254405
+      },
+      {
+        "type": "Volume",
+        "count": 2658,
+        "errors": 0,
+        "warnings": 0,
+        "worst_value": 1.4687972862090672
+      },
+      {
+        "type": "AxisymmetricY",
+        "count": 2658,
+        "errors": 0,
+        "warnings": 0,
+        "worst_value": null
+      },
+      {
+        "type": "AxisymmetricX",
+        "count": 2658,
+        "errors": 0,
+        "warnings": 0,
+        "worst_value": null
+      },
+      {
+        "type": "AspectRatio",
+        "count": 2658,
+        "errors": 0,
+        "warnings": 0,
+        "worst_value": 3.779347106481123
+      },
+      {
+        "type": "SkewAngle",
+        "count": 2658,
+        "errors": 0,
+        "warnings": 0,
+        "worst_value": null
+      },
+      {
+        "type": "InteriorAngleMaximum",
+        "count": 2658,
+        "errors": 0,
+        "warnings": 0,
+        "worst_value": null
+      },
+      {
+        "type": "InteriorAngleMinimum",
+        "count": 2658,
+        "errors": 0,
+        "warnings": 0,
+        "worst_value": null
+      },
+      {
+        "type": "Taper",
+        "count": 2658,
+        "errors": 0,
+        "warnings": 0,
+        "worst_value": null
+      },
+      {
+        "type": "WarpFactor",
+        "count": 2658,
+        "errors": 0,
+        "warnings": 0,
+        "worst_value": null
+      },
+      {
+        "type": "FaceWarpCoefficient",
+        "count": 2658,
+        "errors": 0,
+        "warnings": 0,
+        "worst_value": null
+      },
+      {
+        "type": "EdgePointIncludedAngle",
+        "count": 2658,
+        "errors": 0,
+        "warnings": 0,
+        "worst_value": null
+      },
+      {
+        "type": "EdgePointLengthRatio",
+        "count": 2658,
+        "errors": 0,
+        "warnings": 0,
+        "worst_value": null
+      },
+      {
+        "type": "LengthRatioOffset",
+        "count": 2658,
+        "errors": 0,
+        "warnings": 0,
+        "worst_value": null
+      }
+    ],
+    "repair_attempted": false,
+    "scope": "1",
+    "limitations": [
+      "Native check may highlight failed elements",
+      "Does not establish CFD convergence",
+      "Element-specific overrides are not enumerated; inspect element_specific flag"
+    ],
+    "operation_id": "op_9f955b2f73a94e4d99ffe4aee9fae8a5",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed"
+  },
+  "compact_same_tests": true,
+  "modified_flags_preserved": true,
+  "fixture": "examples/simcenter/verify_mesh_quality_mcp.py",
+  "scope": "All-mesh quality diagnostics on isolated thermal FEM; not mesh convergence or fluid connectivity acceptance"
+}

@@ -1,0 +1,102 @@
+{
+  "scope": "Layered core refinement with unchanged eight wall layers; not benchmark D acceptance",
+  "job": {
+    "quality_preflight": {
+      "element_count": 186765,
+      "errors": 0,
+      "warnings": 0
+    },
+    "element_sets": {
+      "TET4 Fluid": 77133,
+      "WEDGE6 Fluid": 109632
+    },
+    "mesh_counts": {
+      "elements": 186765,
+      "nodes": 71748
+    },
+    "mesh_size_mm": 1.5,
+    "job_id": "cavity-fan-solve-07",
+    "state": "completed",
+    "deck_sha256": "c2d06fdb175d829fa8978c3cad9bb8d5a866df261fbccc06691d1faacb93e901",
+    "created_at": "2026-09-08T02:50:56.810659+00:00",
+    "iteration_limit": 1000,
+    "solver_launched": true,
+    "numerical_validation": "acceptance_pending_mass_imbalance_0_5464_percent",
+    "scope": "synthetic fan mode-5 verification; no thermal load; not acceptance D",
+    "log_sha256": "C24029E16E2B161348108D724719338C12A31C300F01DF7A990BDB1D646AD4CF",
+    "result_sha256": "59A84EED4AF427C0D85646EB2B9F853F9F1FF34F6804F2F3DF8951A00D5D37D4"
+  },
+  "summary": {
+    "fans": [
+      {
+        "name": "Duct Inlet",
+        "loss_coefficient": 0.0,
+        "pressure_rise_Pa": 0.5214,
+        "mass_flow_kg_s": 0.0002297,
+        "pressure_convention": "unverified",
+        "volume_flow_m3_s": 0.00019130000000000001
+      }
+    ],
+    "boundaries": [
+      {
+        "name": "Duct Inlet",
+        "volume_flow_m3_s": 0.00019130000000000001,
+        "mass_flow_kg_s": 0.0002296,
+        "positive_direction": "into_domain"
+      },
+      {
+        "name": "Duct Opening",
+        "volume_flow_m3_s": -0.00019150000000000002,
+        "mass_flow_kg_s": -0.0002298,
+        "positive_direction": "into_domain"
+      }
+    ],
+    "native_pressure_unit": "mN/mm^2",
+    "precision": "rounded_native_log",
+    "identity": "display_names_only",
+    "engineering_accepted": false
+  },
+  "flow_change_from_layered_2mm_percent": 0.7372301211163723,
+  "mass_imbalance_percent": 0.5464,
+  "momentum_imbalance_percent": 0.0278,
+  "mesh_convergence_established": false,
+  "engineering_accepted": false,
+  "files": {
+    "benchmark_4ba7072a1d7a_analysis-Flow_benchmark.xml": {
+      "size": 18628224,
+      "sha256": "2849b2443dc6771f061360461fce06b160b9507c17e060a979d10f5963c54a77"
+    },
+    "benchmark_4ba7072a1d7a_analysis-Flow_benchmark.bun": {
+      "size": 46367644,
+      "sha256": "59a84eed4af427c0d85646eb2b9f853f9f1ff34f6804f2f3df8951a00d5d37d4"
+    },
+    "fluid-layered-02.json": {
+      "size": 17477,
+      "sha256": "ca3f5f501331cba97c253819d14e2a2312eb629e75cd0c71c02aa09d5d1e49b7"
+    },
+    "fan-reference-pressure-01.json": {
+      "size": 248,
+      "sha256": "6f0c8d9fbf605c99ba4654c25faa8814d7e1f201f53137af1af98519dcb1d5cb"
+    },
+    "cavity-fan-solve-07.json": {
+      "size": 1142,
+      "sha256": "a67209fe0b8c630fbd36b02251647f883739bfaf1a52729badb6da515a9f6b3d"
+    },
+    "fan-configuration-01.json": {
+      "size": 1093,
+      "sha256": "6c38e1c575b8884b2b89a932847a046c6f09dc67102ed06402b003c29017e8ac"
+    },
+    "benchmark_4ba7072a1d7a_analysis-Flow_benchmark.log": {
+      "size": 30900,
+      "sha256": "c24029e16e2b161348108d724719338c12a31c300f01df7a990bdb1d646ad4cf"
+    },
+    "head-loss-config-02.json": {
+      "size": 2025,
+      "sha256": "6c7be0299f72a286f0f5168773c2beb13a2473836b32de31adcec08faee3e118"
+    },
+    "benchmark_4ba7072a1d7a_analysis-Flow_benchmark.map": {
+      "size": 21886,
+      "sha256": "e79502015ff8f0af94fc044fa391f352f0f7f91dd0230ff0e650d36f2b7ff5b7"
+    }
+  }
+}

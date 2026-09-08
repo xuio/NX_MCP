@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "load": {
+    "total": 17,
+    "descriptors": []
+  },
+  "constraint": {
+    "total": 18,
+    "descriptors": [
+      {
+        "descriptor_name": "Initial Fluid Pressure",
+        "kind": "constraint"
+      },
+      {
+        "descriptor_name": "Initial Fluid Velocity",
+        "kind": "constraint"
+      },
+      {
+        "descriptor_name": "Initial Fluid Turbulence",
+        "kind": "constraint"
+      },
+      {
+        "descriptor_name": "Initial Tracer Fluid",
+        "kind": "constraint"
+      }
+    ]
+  },
+  "operation_id": "op_7d5a310aea294841bfa75263b14283e3",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

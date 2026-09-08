@@ -1,0 +1,1367 @@
+{
+  "scope": "Real MCP stdio compact agent gateway: Flow activation/setup and durable mutation replay; no mesh, solve or numerical acceptance",
+  "activation": {
+    "status": "success",
+    "warnings": [],
+    "units": "mm",
+    "application_before": "UG_APP_SFEM",
+    "application": "UG_APP_SFEM",
+    "documents": {
+      "documents": [
+        {
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-flow-mcp-20260908\\benchmark_d4824c95f973_geometry.prt",
+          "name": "benchmark_d4824c95f973_geometry",
+          "document_type": "Part",
+          "modified": false,
+          "work": false,
+          "display": false,
+          "units": "mm",
+          "coordinate_frame": "part_absolute",
+          "document": {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_1b424f850bc44c4c81b7128d28dd55d3",
+            "kind": "part",
+            "name": "benchmark_d4824c95f973_geometry",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_56e895a93c1740178fd5fa44da9a0738",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "56e895a93c1740178fd5fa44da9a0738",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-flow-mcp-20260908\\benchmark_d4824c95f973_geometry.prt",
+            "journal_id": "benchmark_d4824c95f973_geometry",
+            "display_name": "benchmark_d4824c95f973_geometry"
+          }
+        },
+        {
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-coupled-documents-20260908\\benchmark_66f5994b70bc_geometry.prt",
+          "name": "benchmark_66f5994b70bc_geometry",
+          "document_type": "Part",
+          "modified": false,
+          "work": false,
+          "display": false,
+          "units": "mm",
+          "coordinate_frame": "part_absolute",
+          "document": {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_c5395e25b19b4f419e8b1c2ecb556942",
+            "kind": "part",
+            "name": "benchmark_66f5994b70bc_geometry",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_81963b7265ae490a9151bd6846a366fd",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "81963b7265ae490a9151bd6846a366fd",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-coupled-documents-20260908\\benchmark_66f5994b70bc_geometry.prt",
+            "journal_id": "benchmark_66f5994b70bc_geometry",
+            "display_name": "benchmark_66f5994b70bc_geometry"
+          }
+        },
+        {
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-flow-documents-20260908\\benchmark_7f0e82b41fe3_geometry.prt",
+          "name": "benchmark_7f0e82b41fe3_geometry",
+          "document_type": "Part",
+          "modified": false,
+          "work": false,
+          "display": false,
+          "units": "mm",
+          "coordinate_frame": "part_absolute",
+          "document": {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_267df599c8c64463820bb1bc518b854d",
+            "kind": "part",
+            "name": "benchmark_7f0e82b41fe3_geometry",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_8202a619a17a42e18933f9426e4a29fd",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "8202a619a17a42e18933f9426e4a29fd",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-flow-documents-20260908\\benchmark_7f0e82b41fe3_geometry.prt",
+            "journal_id": "benchmark_7f0e82b41fe3_geometry",
+            "display_name": "benchmark_7f0e82b41fe3_geometry"
+          }
+        },
+        {
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\C-transient-fine-20260908\\benchmark_29b2bd9b1155_geometry.prt",
+          "name": "benchmark_29b2bd9b1155_geometry",
+          "document_type": "Part",
+          "modified": false,
+          "work": false,
+          "display": false,
+          "units": "mm",
+          "coordinate_frame": "part_absolute",
+          "document": {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_1406703ea8144ed084684862ec42fb70",
+            "kind": "part",
+            "name": "benchmark_29b2bd9b1155_geometry",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_c0923d2cd1b1458eb6025347df7dc8d4",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "c0923d2cd1b1458eb6025347df7dc8d4",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\C-transient-fine-20260908\\benchmark_29b2bd9b1155_geometry.prt",
+            "journal_id": "benchmark_29b2bd9b1155_geometry",
+            "display_name": "benchmark_29b2bd9b1155_geometry"
+          }
+        },
+        {
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\C-transient-20260907\\benchmark_4ed90ef8215b_geometry.prt",
+          "name": "benchmark_4ed90ef8215b_geometry",
+          "document_type": "Part",
+          "modified": false,
+          "work": false,
+          "display": false,
+          "units": "mm",
+          "coordinate_frame": "part_absolute",
+          "document": {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_00d6382aba0a4a49bdee85e34b9c20be",
+            "kind": "part",
+            "name": "benchmark_4ed90ef8215b_geometry",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_4a5066e7bad34db7b56b5efc790ae6c0",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "4a5066e7bad34db7b56b5efc790ae6c0",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\C-transient-20260907\\benchmark_4ed90ef8215b_geometry.prt",
+            "journal_id": "benchmark_4ed90ef8215b_geometry",
+            "display_name": "benchmark_4ed90ef8215b_geometry"
+          }
+        },
+        {
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\factory-steady-20260907-r2\\benchmark_c553623676a1_geometry.prt",
+          "name": "benchmark_c553623676a1_geometry",
+          "document_type": "Part",
+          "modified": false,
+          "work": false,
+          "display": false,
+          "units": "mm",
+          "coordinate_frame": "part_absolute",
+          "document": {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_8b820f735f2845128caaa80512bc761a",
+            "kind": "part",
+            "name": "benchmark_c553623676a1_geometry",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_ee53c397b9514fc3a3b9098f0a73ed48",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "ee53c397b9514fc3a3b9098f0a73ed48",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\factory-steady-20260907-r2\\benchmark_c553623676a1_geometry.prt",
+            "journal_id": "benchmark_c553623676a1_geometry",
+            "display_name": "benchmark_c553623676a1_geometry"
+          }
+        },
+        {
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\conduction-20260907\\geometry.prt",
+          "name": "geometry",
+          "document_type": "Part",
+          "modified": false,
+          "work": false,
+          "display": false,
+          "units": "mm",
+          "coordinate_frame": "part_absolute",
+          "document": {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_d4f32b8ec8ea489284fed5381ac0f89b",
+            "kind": "part",
+            "name": "geometry",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_f3ed5fa8fb4d4c96a7330c1eb0983b30",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "f3ed5fa8fb4d4c96a7330c1eb0983b30",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\conduction-20260907\\geometry.prt",
+            "journal_id": "geometry",
+            "display_name": "geometry"
+          }
+        },
+        {
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-flow-mcp-20260908\\benchmark_d4824c95f973_mesh.fem",
+          "name": "benchmark_d4824c95f973_mesh",
+          "document_type": "FemPart",
+          "modified": false,
+          "work": false,
+          "display": false,
+          "units": "mm",
+          "coordinate_frame": "part_absolute",
+          "document": {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_25b8e79e4f8445af8185ad98081476b1",
+            "kind": "part",
+            "name": "benchmark_d4824c95f973_mesh",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_cbb19df049d94c418e416508dc4f26a5",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "cbb19df049d94c418e416508dc4f26a5",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-flow-mcp-20260908\\benchmark_d4824c95f973_mesh.fem",
+            "journal_id": "benchmark_d4824c95f973_mesh",
+            "display_name": "benchmark_d4824c95f973_mesh"
+          }
+        },
+        {
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-coupled-documents-20260908\\benchmark_66f5994b70bc_mesh.fem",
+          "name": "benchmark_66f5994b70bc_mesh",
+          "document_type": "FemPart",
+          "modified": false,
+          "work": false,
+          "display": false,
+          "units": "mm",
+          "coordinate_frame": "part_absolute",
+          "document": {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_15a59bd5b4b84ae5af1160b0e21415c0",
+            "kind": "part",
+            "name": "benchmark_66f5994b70bc_mesh",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_97f79f6bc4a94ceb88eb32fff5ef034b",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "97f79f6bc4a94ceb88eb32fff5ef034b",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-coupled-documents-20260908\\benchmark_66f5994b70bc_mesh.fem",
+            "journal_id": "benchmark_66f5994b70bc_mesh",
+            "display_name": "benchmark_66f5994b70bc_mesh"
+          }
+        },
+        {
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-flow-documents-20260908\\benchmark_7f0e82b41fe3_mesh.fem",
+          "name": "benchmark_7f0e82b41fe3_mesh",
+          "document_type": "FemPart",
+          "modified": false,
+          "work": false,
+          "display": false,
+          "units": "mm",
+          "coordinate_frame": "part_absolute",
+          "document": {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_ece293266cc241878643f7d84b668b1e",
+            "kind": "part",
+            "name": "benchmark_7f0e82b41fe3_mesh",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_f5a6d8048dd4450da2df005014b68b7c",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "f5a6d8048dd4450da2df005014b68b7c",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-flow-documents-20260908\\benchmark_7f0e82b41fe3_mesh.fem",
+            "journal_id": "benchmark_7f0e82b41fe3_mesh",
+            "display_name": "benchmark_7f0e82b41fe3_mesh"
+          }
+        },
+        {
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\C-transient-fine-20260908\\benchmark_29b2bd9b1155_mesh.fem",
+          "name": "benchmark_29b2bd9b1155_mesh",
+          "document_type": "FemPart",
+          "modified": false,
+          "work": false,
+          "display": false,
+          "units": "mm",
+          "coordinate_frame": "part_absolute",
+          "document": {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_13d663863ad7410082f1b0c4be8d5ae7",
+            "kind": "part",
+            "name": "benchmark_29b2bd9b1155_mesh",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_0437b13179c9451ba1ab3d89e8f67eb2",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "0437b13179c9451ba1ab3d89e8f67eb2",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\C-transient-fine-20260908\\benchmark_29b2bd9b1155_mesh.fem",
+            "journal_id": "benchmark_29b2bd9b1155_mesh",
+            "display_name": "benchmark_29b2bd9b1155_mesh"
+          }
+        },
+        {
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\C-transient-20260907\\benchmark_4ed90ef8215b_mesh.fem",
+          "name": "benchmark_4ed90ef8215b_mesh",
+          "document_type": "FemPart",
+          "modified": false,
+          "work": false,
+          "display": false,
+          "units": "mm",
+          "coordinate_frame": "part_absolute",
+          "document": {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_b4147309415543ca8be6f5fa54c125e5",
+            "kind": "part",
+            "name": "benchmark_4ed90ef8215b_mesh",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_505e12e05c3340c0a9d0be39d8b71fce",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "505e12e05c3340c0a9d0be39d8b71fce",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\C-transient-20260907\\benchmark_4ed90ef8215b_mesh.fem",
+            "journal_id": "benchmark_4ed90ef8215b_mesh",
+            "display_name": "benchmark_4ed90ef8215b_mesh"
+          }
+        },
+        {
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\factory-steady-20260907-r2\\benchmark_c553623676a1_mesh.fem",
+          "name": "benchmark_c553623676a1_mesh",
+          "document_type": "FemPart",
+          "modified": false,
+          "work": false,
+          "display": false,
+          "units": "mm",
+          "coordinate_frame": "part_absolute",
+          "document": {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_57c39976511e4d5fa7afcca6abc7e885",
+            "kind": "part",
+            "name": "benchmark_c553623676a1_mesh",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_15fe7da17151467c9bad2706d26bf122",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "15fe7da17151467c9bad2706d26bf122",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\factory-steady-20260907-r2\\benchmark_c553623676a1_mesh.fem",
+            "journal_id": "benchmark_c553623676a1_mesh",
+            "display_name": "benchmark_c553623676a1_mesh"
+          }
+        },
+        {
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\conduction-20260907\\mesh.fem",
+          "name": "mesh",
+          "document_type": "FemPart",
+          "modified": false,
+          "work": false,
+          "display": false,
+          "units": "mm",
+          "coordinate_frame": "part_absolute",
+          "document": {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_fc04894f25e642cd95814202c6384927",
+            "kind": "part",
+            "name": "mesh",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_9594e831099845ce8afb9e7ee34e9a6d",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "9594e831099845ce8afb9e7ee34e9a6d",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\conduction-20260907\\mesh.fem",
+            "journal_id": "mesh",
+            "display_name": "mesh"
+          }
+        },
+        {
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-flow-mcp-20260908\\benchmark_d4824c95f973_analysis.sim",
+          "name": "benchmark_d4824c95f973_analysis",
+          "document_type": "SimPart",
+          "modified": true,
+          "work": false,
+          "display": false,
+          "units": "mm",
+          "coordinate_frame": "part_absolute",
+          "document": {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_5ef8ec52b2214ca5ba7aeadec1729a09",
+            "kind": "part",
+            "name": "benchmark_d4824c95f973_analysis",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_8bd38b63812c4fb190d5d443bbf33c25",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "8bd38b63812c4fb190d5d443bbf33c25",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-flow-mcp-20260908\\benchmark_d4824c95f973_analysis.sim",
+            "journal_id": "benchmark_d4824c95f973_analysis",
+            "display_name": "benchmark_d4824c95f973_analysis"
+          }
+        },
+        {
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-coupled-documents-20260908\\benchmark_66f5994b70bc_analysis.sim",
+          "name": "benchmark_66f5994b70bc_analysis",
+          "document_type": "SimPart",
+          "modified": false,
+          "work": false,
+          "display": false,
+          "units": "mm",
+          "coordinate_frame": "part_absolute",
+          "document": {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_5abf502e72554d759b5b87e59be698fc",
+            "kind": "part",
+            "name": "benchmark_66f5994b70bc_analysis",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_65021ded86ec4c84b46b4dd276a0da3e",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "65021ded86ec4c84b46b4dd276a0da3e",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-coupled-documents-20260908\\benchmark_66f5994b70bc_analysis.sim",
+            "journal_id": "benchmark_66f5994b70bc_analysis",
+            "display_name": "benchmark_66f5994b70bc_analysis"
+          }
+        },
+        {
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-flow-documents-20260908\\benchmark_7f0e82b41fe3_analysis.sim",
+          "name": "benchmark_7f0e82b41fe3_analysis",
+          "document_type": "SimPart",
+          "modified": false,
+          "work": true,
+          "display": true,
+          "units": "mm",
+          "coordinate_frame": "part_absolute",
+          "document": {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_6cb75996546d4fa48c4bb5cdbcdaddd3",
+            "kind": "part",
+            "name": "benchmark_7f0e82b41fe3_analysis",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_0ccdc9eba2044b5cb7e7df8aeedfb97b",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "0ccdc9eba2044b5cb7e7df8aeedfb97b",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-flow-documents-20260908\\benchmark_7f0e82b41fe3_analysis.sim",
+            "journal_id": "benchmark_7f0e82b41fe3_analysis",
+            "display_name": "benchmark_7f0e82b41fe3_analysis"
+          }
+        },
+        {
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\C-transient-fine-20260908\\benchmark_29b2bd9b1155_analysis.sim",
+          "name": "benchmark_29b2bd9b1155_analysis",
+          "document_type": "SimPart",
+          "modified": true,
+          "work": false,
+          "display": false,
+          "units": "mm",
+          "coordinate_frame": "part_absolute",
+          "document": {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_a69fbe11bcbc48c5848af8378bae5003",
+            "kind": "part",
+            "name": "benchmark_29b2bd9b1155_analysis",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_37c238c9df354380a97d69769250c51d",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "37c238c9df354380a97d69769250c51d",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\C-transient-fine-20260908\\benchmark_29b2bd9b1155_analysis.sim",
+            "journal_id": "benchmark_29b2bd9b1155_analysis",
+            "display_name": "benchmark_29b2bd9b1155_analysis"
+          }
+        },
+        {
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\C-transient-20260907\\benchmark_4ed90ef8215b_analysis.sim",
+          "name": "benchmark_4ed90ef8215b_analysis",
+          "document_type": "SimPart",
+          "modified": true,
+          "work": false,
+          "display": false,
+          "units": "mm",
+          "coordinate_frame": "part_absolute",
+          "document": {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_67af1be973a44578925f56636a5c7abe",
+            "kind": "part",
+            "name": "benchmark_4ed90ef8215b_analysis",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_37e588052b2d483b8acb7ceb47c3ebd6",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "37e588052b2d483b8acb7ceb47c3ebd6",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\C-transient-20260907\\benchmark_4ed90ef8215b_analysis.sim",
+            "journal_id": "benchmark_4ed90ef8215b_analysis",
+            "display_name": "benchmark_4ed90ef8215b_analysis"
+          }
+        },
+        {
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\factory-steady-20260907-r2\\benchmark_c553623676a1_analysis.sim",
+          "name": "benchmark_c553623676a1_analysis",
+          "document_type": "SimPart",
+          "modified": true,
+          "work": false,
+          "display": false,
+          "units": "mm",
+          "coordinate_frame": "part_absolute",
+          "document": {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_7debb058ee9e4a368590a1e8ba569d78",
+            "kind": "part",
+            "name": "benchmark_c553623676a1_analysis",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_4a9b531f912b475585a6f820e4dfe8ef",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "4a9b531f912b475585a6f820e4dfe8ef",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\factory-steady-20260907-r2\\benchmark_c553623676a1_analysis.sim",
+            "journal_id": "benchmark_c553623676a1_analysis",
+            "display_name": "benchmark_c553623676a1_analysis"
+          }
+        }
+      ],
+      "total": 21,
+      "next_offset": 20
+    },
+    "saved": false,
+    "operation_id": "op_b397fb0ec305446abf172cc2a4e02360",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed"
+  },
+  "step": {
+    "status": "success",
+    "warnings": [],
+    "units": "mm",
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_6cb75996546d4fa48c4bb5cdbcdaddd3",
+      "kind": "part",
+      "name": "benchmark_7f0e82b41fe3_analysis",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_0ccdc9eba2044b5cb7e7df8aeedfb97b",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "0ccdc9eba2044b5cb7e7df8aeedfb97b",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-flow-documents-20260908\\benchmark_7f0e82b41fe3_analysis.sim",
+      "journal_id": "benchmark_7f0e82b41fe3_analysis",
+      "display_name": "benchmark_7f0e82b41fe3_analysis"
+    },
+    "action": "create_step",
+    "name": "MCP verified flow step",
+    "descriptor": "Step - Flow",
+    "active": true,
+    "properties": [
+      {
+        "name": "Description",
+        "native_type": "0",
+        "units": null,
+        "inspection_status": "unsupported_property_type"
+      },
+      {
+        "name": "Solution Type",
+        "native_type": "3",
+        "units": null,
+        "value": 1
+      },
+      {
+        "name": "End Time",
+        "native_type": "4",
+        "units": "Second",
+        "value": -777777.0
+      },
+      {
+        "name": "Flow Time Integration Method",
+        "native_type": "3",
+        "units": null,
+        "value": 0
+      },
+      {
+        "name": "Flow Time Step Option",
+        "native_type": "3",
+        "units": null,
+        "value": 0
+      },
+      {
+        "name": "Flow Number of Increments",
+        "native_type": "3",
+        "units": null,
+        "value": 10
+      },
+      {
+        "name": "Flow Step Size",
+        "native_type": "4",
+        "units": "Second",
+        "value": 1.0
+      },
+      {
+        "name": "Output Flag",
+        "native_type": "3",
+        "units": null,
+        "value": 1
+      },
+      {
+        "name": "Flow Output Requests",
+        "native_type": "0",
+        "units": null,
+        "inspection_status": "unsupported_property_type"
+      }
+    ],
+    "saved": false,
+    "solve_ready": false,
+    "defaults_basis": "installed native defaults; solver interpretation not yet verified",
+    "operation_id": "op_aad4b29a614f4cc38cff8230ab64e6fd",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed"
+  },
+  "replay": {
+    "status": "success",
+    "warnings": [],
+    "units": "mm",
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_6cb75996546d4fa48c4bb5cdbcdaddd3",
+      "kind": "part",
+      "name": "benchmark_7f0e82b41fe3_analysis",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_0ccdc9eba2044b5cb7e7df8aeedfb97b",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "0ccdc9eba2044b5cb7e7df8aeedfb97b",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-flow-documents-20260908\\benchmark_7f0e82b41fe3_analysis.sim",
+      "journal_id": "benchmark_7f0e82b41fe3_analysis",
+      "display_name": "benchmark_7f0e82b41fe3_analysis"
+    },
+    "action": "create_step",
+    "name": "MCP verified flow step",
+    "descriptor": "Step - Flow",
+    "active": true,
+    "properties": [
+      {
+        "name": "Description",
+        "native_type": "0",
+        "units": null,
+        "inspection_status": "unsupported_property_type"
+      },
+      {
+        "name": "Solution Type",
+        "native_type": "3",
+        "units": null,
+        "value": 1
+      },
+      {
+        "name": "End Time",
+        "native_type": "4",
+        "units": "Second",
+        "value": -777777.0
+      },
+      {
+        "name": "Flow Time Integration Method",
+        "native_type": "3",
+        "units": null,
+        "value": 0
+      },
+      {
+        "name": "Flow Time Step Option",
+        "native_type": "3",
+        "units": null,
+        "value": 0
+      },
+      {
+        "name": "Flow Number of Increments",
+        "native_type": "3",
+        "units": null,
+        "value": 10
+      },
+      {
+        "name": "Flow Step Size",
+        "native_type": "4",
+        "units": "Second",
+        "value": 1.0
+      },
+      {
+        "name": "Output Flag",
+        "native_type": "3",
+        "units": null,
+        "value": 1
+      },
+      {
+        "name": "Flow Output Requests",
+        "native_type": "0",
+        "units": null,
+        "inspection_status": "unsupported_property_type"
+      }
+    ],
+    "saved": false,
+    "solve_ready": false,
+    "defaults_basis": "installed native defaults; solver interpretation not yet verified",
+    "operation_id": "op_aad4b29a614f4cc38cff8230ab64e6fd",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed",
+    "replayed": true
+  },
+  "tables": {
+    "status": "success",
+    "warnings": [],
+    "units": "mm",
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_6cb75996546d4fa48c4bb5cdbcdaddd3",
+      "kind": "part",
+      "name": "benchmark_7f0e82b41fe3_analysis",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_0ccdc9eba2044b5cb7e7df8aeedfb97b",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "0ccdc9eba2044b5cb7e7df8aeedfb97b",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-flow-documents-20260908\\benchmark_7f0e82b41fe3_analysis.sim",
+      "journal_id": "benchmark_7f0e82b41fe3_analysis",
+      "display_name": "benchmark_7f0e82b41fe3_analysis"
+    },
+    "action": "attach_defaults",
+    "tables": [
+      {
+        "property": "Flow Solution Parameters",
+        "name": "MCP verified Flow Solution Parameters",
+        "descriptor": "Flow Solution Parameters",
+        "properties": [
+          {
+            "name": "description",
+            "native_type": "0",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "Steady State - Relaxation Time Step",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Time Step",
+            "native_type": "6",
+            "units": "Second",
+            "expression": "0.5",
+            "representation": "expression"
+          },
+          {
+            "name": "Time Step Factor",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 20.0
+          },
+          {
+            "name": "Convergence Criteria",
+            "native_type": "3",
+            "units": null,
+            "value": 1
+          },
+          {
+            "name": "Maximum Residuals",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 0.0002
+          },
+          {
+            "name": "Global Flow Imbalance Fraction Option",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Global Flow Imbalance Fraction",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 0.02
+          },
+          {
+            "name": "Global Heat Imbalance Fraction Option",
+            "native_type": "2",
+            "units": null,
+            "value": true
+          },
+          {
+            "name": "Global Heat Imbalance Fraction",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 0.02
+          },
+          {
+            "name": "3D Flow Steady State - Iteration Limit",
+            "native_type": "3",
+            "units": null,
+            "value": 1000
+          },
+          {
+            "name": "3D Flow Transient - Iteration Limit",
+            "native_type": "3",
+            "units": null,
+            "value": 100
+          },
+          {
+            "name": "Freeze Flow Field at Convergence for Steady State",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Restart Flow Field for Steady State",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Restart Temperature Change for Steady State",
+            "native_type": "4",
+            "units": "CelsiusDifference",
+            "value": 2.0
+          },
+          {
+            "name": "Freeze Flow Field for Transient",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Maximum Normalized Velocity Change",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 1.0
+          },
+          {
+            "name": "Maximum Normalized Pressure Change",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 1e-08
+          },
+          {
+            "name": "Freeze Flow Field at Specified Times",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Freeze Flow Field Specified Times",
+            "native_type": "8",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "Reactivate Flow Calculation at Specified Times",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Reactivate Flow Calculation Specified Times",
+            "native_type": "8",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "Restart Flow Field for Transient",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Restart Temperature Change for Transient",
+            "native_type": "4",
+            "units": "CelsiusDifference",
+            "value": 2.0
+          },
+          {
+            "name": "Global Relaxation Factor",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 0.75
+          },
+          {
+            "name": "Mass Relaxation Factor",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 0.75
+          },
+          {
+            "name": "Fluids Relaxation Factor",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 0.9
+          },
+          {
+            "name": "Turbulence Relaxation Factor",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 1.0
+          },
+          {
+            "name": "Screen Resistance Relaxation Factor",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 0.25
+          },
+          {
+            "name": "Fan Curves (I/O/Internal Fans) Relaxation Factor",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 1.0
+          },
+          {
+            "name": "Fan Curves (Recirculation Fans) Relaxation Factor",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 1.0
+          },
+          {
+            "name": "Momentum Advection Scheme",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Momentum Limiter Option",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Momentum Limiter Stabilization",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Momentum Limiter",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 1.0
+          },
+          {
+            "name": "Momentum Limiter Option MUSCL",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Energy Advection Scheme",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Energy Limiter Option",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Energy Limiter Stabilization",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Energy Limiter",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 1.0
+          },
+          {
+            "name": "Energy Limiter Option MUSCL",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "K-Epsilon Advection Scheme",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "K-Epsilon Limiter Option",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "K-Epsilon Limiter Stabilization",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "K-Epsilon Limiter",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 1.0
+          },
+          {
+            "name": "K-Epsilon Limiter Option MUSCL",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Humidity Tracer Fluids Homogeneous Mixtures Advection Scheme",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Humidity Tracer Fluids Homogeneous Mixtures Limiter Option",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Humidity Tracer Fluids Homogeneous Mixtures Limiter Stabilization",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Humidity Tracer Fluids Homogeneous Mixtures Limiter",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 1.0
+          },
+          {
+            "name": "Humidity Tracer Fluids Homogeneous Mixtures Limiter Option MUSCL",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Buoyancy Model",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Injection Duration",
+            "native_type": "4",
+            "units": "Second",
+            "value": 100.0
+          },
+          {
+            "name": "Steady State Simulation Time",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Total Time",
+            "native_type": "4",
+            "units": "Second",
+            "value": 100.0
+          },
+          {
+            "name": "Output Option",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Number of Outputs",
+            "native_type": "3",
+            "units": null,
+            "value": 10
+          },
+          {
+            "name": "Output Interval",
+            "native_type": "4",
+            "units": "Second",
+            "value": 10.0
+          },
+          {
+            "name": "Neglect Stochastic Drag Terms",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Use Cunningham Correction Factor",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Sutherland Constant",
+            "native_type": "4",
+            "units": "Celsius",
+            "value": -777777.0
+          },
+          {
+            "name": "Slip Correction Reference Temperature",
+            "native_type": "4",
+            "units": "Celsius",
+            "value": -777777.0
+          },
+          {
+            "name": "Slip Correction Reference Pressure",
+            "native_type": "4",
+            "units": "PressureNewtonPerSquareMilliMeter",
+            "value": -777777.0
+          },
+          {
+            "name": "Slip Correction Reference Dynamic Viscosity",
+            "native_type": "4",
+            "units": "DynamicViscosity_Metric2",
+            "value": -777777.0
+          }
+        ]
+      },
+      {
+        "property": "Flow Surface Parameters",
+        "name": "MCP verified Flow Surface Parameters",
+        "descriptor": "Flow Surface Parameters",
+        "properties": [
+          {
+            "name": "description",
+            "native_type": "0",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "Non-fluid 2D and 3D Elements Block Flow",
+            "native_type": "2",
+            "units": null,
+            "value": true
+          },
+          {
+            "name": "Wall Treatment",
+            "native_type": "3",
+            "units": null,
+            "value": 2
+          },
+          {
+            "name": "Default Wall Friction",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Height",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": 0.0
+          },
+          {
+            "name": "Default Convection Properties",
+            "native_type": "0",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "Reference Temperature for Bulk Heat Transfer Coefficient",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Reference Temperature",
+            "native_type": "4",
+            "units": "Celsius",
+            "value": -777777.0
+          },
+          {
+            "name": "Default Particle Impact Type",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Default Coefficient of Restitution",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "property": "Flow Output Requests",
+        "name": "MCP verified Flow Output Requests",
+        "descriptor": "Flow Output Requests",
+        "properties": [
+          {
+            "name": "description",
+            "native_type": "0",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "All On/Off",
+            "native_type": "1",
+            "units": null,
+            "value": "All On/Off"
+          },
+          {
+            "name": "Flow Entity",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Flow Select Entity",
+            "native_type": "0",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "Flow Temperatures",
+            "native_type": "2",
+            "units": null,
+            "value": true
+          },
+          {
+            "name": "Velocities",
+            "native_type": "2",
+            "units": null,
+            "value": true
+          },
+          {
+            "name": "Velocities Adjusted",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Vorticity",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Pressures",
+            "native_type": "2",
+            "units": null,
+            "value": true
+          },
+          {
+            "name": "Local and Bulk Convection Coefficients",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "K-Epsilon Turbulence",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Non-Newtonian Model Quantities",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Fluid Densities",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Shear Stresses",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Roughness",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Y+",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Surface Pressure",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Mass Fluxes",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Convective Fluxes",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Humidity and Mixtures",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "PMV",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "PPD",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Mach Numbers",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Acoustic Power Density",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Pressure and Shear Resultants",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Results Condensation Evaporation",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Flow Residuals",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Duct Entity",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Duct Select Entity",
+            "native_type": "0",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "Temperatures Duct",
+            "native_type": "2",
+            "units": null,
+            "value": true
+          },
+          {
+            "name": "Temperature Results Location Duct",
+            "native_type": "3",
+            "units": null,
+            "value": 2
+          },
+          {
+            "name": "Velocities Duct",
+            "native_type": "2",
+            "units": null,
+            "value": true
+          },
+          {
+            "name": "Velocity Results Location Duct",
+            "native_type": "3",
+            "units": null,
+            "value": 2
+          },
+          {
+            "name": "Pressures Duct",
+            "native_type": "2",
+            "units": null,
+            "value": true
+          },
+          {
+            "name": "Pressure Results Location Duct",
+            "native_type": "3",
+            "units": null,
+            "value": 2
+          },
+          {
+            "name": "Densities Duct",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Density Results Location Duct",
+            "native_type": "3",
+            "units": null,
+            "value": 2
+          },
+          {
+            "name": "Mass Flows Duct",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Mass Flow Results Location Duct",
+            "native_type": "3",
+            "units": null,
+            "value": 2
+          },
+          {
+            "name": "Reynold Numbers",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Reynolds Number Results Location Duct",
+            "native_type": "3",
+            "units": null,
+            "value": 2
+          },
+          {
+            "name": "Tecplot",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "CGNS",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Transient Results",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "ParaView",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          }
+        ]
+      }
+    ],
+    "saved": false,
+    "solve_ready": false,
+    "defaults_basis": "installed Flow table defaults, not numerical acceptance",
+    "operation_id": "op_2fcbcd3a0eb3499bb97091799dd94562",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed"
+  },
+  "deployment_fix": "Reload all eight Simcenter handlers; first attempt failed before activation with NX_TOOL_NOT_FOUND"
+}

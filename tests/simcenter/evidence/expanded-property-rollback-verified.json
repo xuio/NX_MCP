@@ -1,0 +1,736 @@
+{
+  "document": "obj_20bc234ffa5249ceb4fb4d82b993c626_5017deca6a2547bc812fa76942a3b98d",
+  "state": {
+    "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-getter-audit-20260908-r1\\getter_audit.sim",
+    "boundaries": [
+      {
+        "category": "loads",
+        "journal_id": "Load[Generic solid 0.1 W]",
+        "descriptor": "Heat Load",
+        "properties": [
+          {
+            "name": "description",
+            "native_type": "0",
+            "units": null,
+            "representation": "text_lines",
+            "value": []
+          },
+          {
+            "name": "Selection Method",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Override Region",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Non-Geometric Element",
+            "native_type": "0",
+            "units": null,
+            "representation": "named_property_table",
+            "value": null
+          },
+          {
+            "name": "Heat Load",
+            "native_type": "6",
+            "units": "Watt",
+            "field_scale": 2.0,
+            "field_reference": {
+              "journal_id": "sys_field(1)",
+              "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-getter-audit-20260908-r1\\getter_audit.sim",
+              "tag": 6707397,
+              "lifetime": "current loaded document; not a cross-session reference"
+            },
+            "expression": "0.1",
+            "unit_symbol": "W",
+            "representation": "field_expression",
+            "field_definition": {
+              "kind": "numeric_constant",
+              "value": 0.1
+            },
+            "evaluated_value": 0.2
+          },
+          {
+            "name": "Heat Load Override",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression",
+            "evaluated_value": -777777.0
+          },
+          {
+            "name": "Specify Reference Temperature Set",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Reference Temperature Set",
+            "native_type": "0",
+            "units": null,
+            "representation": "named_property_table",
+            "value": null
+          },
+          {
+            "name": "Control Heater",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Thermostat",
+            "native_type": "0",
+            "units": null,
+            "representation": "named_property_table",
+            "value": null
+          },
+          {
+            "name": "Specify Layer to Apply to",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Apply to",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Layer Number",
+            "native_type": "3",
+            "units": null,
+            "value": 1
+          },
+          {
+            "name": "Per Element",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Per Node",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "distributionType",
+            "native_type": "3",
+            "units": null,
+            "value": 32
+          },
+          {
+            "name": "Custom Settings Option",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Custom Settings",
+            "native_type": "1",
+            "units": null,
+            "value": "BCONX"
+          }
+        ],
+        "targets": [
+          {
+            "index": 0,
+            "members": [
+              {
+                "journal_id": "HANDLE R-37953",
+                "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-getter-audit-20260908-r1\\getter_audit.sim",
+                "type": "CAEBody",
+                "subtype": "0",
+                "sub_id": 0
+              }
+            ]
+          },
+          {
+            "index": 1,
+            "members": [
+              null
+            ]
+          }
+        ]
+      },
+      {
+        "category": "simulation_objects",
+        "journal_id": "SimulationObject[Coupled Inlet]",
+        "descriptor": "Inlet",
+        "properties": [
+          {
+            "name": "description",
+            "native_type": "0",
+            "units": null,
+            "representation": "text_lines",
+            "value": []
+          },
+          {
+            "name": "Mode Option",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Velocity",
+            "native_type": "6",
+            "units": "MeterPerSecond",
+            "expression": "1.0",
+            "unit_symbol": "m/sec",
+            "representation": "expression",
+            "evaluated_value": 1.0
+          },
+          {
+            "name": "Velocity Vector",
+            "native_type": "0",
+            "units": null,
+            "representation": "vector_expressions",
+            "components": [
+              {
+                "expression": "-777777",
+                "evaluated_value": -777777.0,
+                "units": "MilliMeterPerSecond",
+                "unit_symbol": "mm/sec"
+              },
+              {
+                "expression": "-777777",
+                "evaluated_value": -777777.0,
+                "units": "MilliMeterPerSecond",
+                "unit_symbol": "mm/sec"
+              },
+              {
+                "expression": "-777777",
+                "evaluated_value": -777777.0,
+                "units": "MilliMeterPerSecond",
+                "unit_symbol": "mm/sec"
+              }
+            ],
+            "coordinate_frame": "owning_property_convention; not inferred"
+          },
+          {
+            "name": "Mass Flow",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression",
+            "evaluated_value": -777777.0
+          },
+          {
+            "name": "Volume Flow",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression",
+            "evaluated_value": -777777.0
+          },
+          {
+            "name": "Pressure Rise",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression",
+            "evaluated_value": -777777.0
+          },
+          {
+            "name": "Fan Curve",
+            "native_type": "6",
+            "units": null,
+            "value": null
+          },
+          {
+            "name": "Inlet Conditions",
+            "native_type": "0",
+            "units": null,
+            "representation": "named_property_table",
+            "value": {
+              "journal_id": "SsmoPropTable[Finned external air 20 C]",
+              "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-getter-audit-20260908-r1\\getter_audit.sim",
+              "descriptor": "External Conditions",
+              "lifetime": "owner document revision; inspect again after regeneration"
+            },
+            "properties": [
+              {
+                "name": "description",
+                "native_type": "0",
+                "units": null,
+                "representation": "text_lines",
+                "value": []
+              },
+              {
+                "name": "Temperature Option",
+                "native_type": "3",
+                "units": null,
+                "value": 0
+              },
+              {
+                "name": "Temperature Value",
+                "native_type": "6",
+                "units": "Celsius",
+                "expression": "20.0",
+                "unit_symbol": "C",
+                "representation": "expression",
+                "evaluated_value": 20.0
+              },
+              {
+                "name": "Humidity",
+                "native_type": "3",
+                "units": null,
+                "value": 0
+              },
+              {
+                "name": "Relative Humidity Value",
+                "native_type": "6",
+                "units": "dimensionless",
+                "expression": "0",
+                "unit_symbol": null,
+                "representation": "expression",
+                "evaluated_value": 0.0
+              },
+              {
+                "name": "Water Vapor to Dry Air Mass Ratio Value",
+                "native_type": "6",
+                "units": "dimensionless",
+                "expression": "0",
+                "unit_symbol": null,
+                "representation": "expression",
+                "evaluated_value": 0.0
+              }
+            ]
+          },
+          {
+            "name": "Pressure",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Pressure Value",
+            "native_type": "4",
+            "units": "PressureNewtonPerSquareMilliMeter",
+            "value": -777777.0,
+            "unit_symbol": "N/mm^2(MPa)"
+          },
+          {
+            "name": "Turbulence Characteristics Modeling Object",
+            "native_type": "0",
+            "units": null,
+            "representation": "named_property_table",
+            "value": null
+          },
+          {
+            "name": "Head Loss",
+            "native_type": "0",
+            "units": null,
+            "representation": "named_property_table",
+            "value": null
+          },
+          {
+            "name": "Heat Generated by Fan",
+            "native_type": "4",
+            "units": "HeatFlow_Metric2",
+            "value": 0.0,
+            "unit_symbol": "W"
+          },
+          {
+            "name": "Tracer Fluid",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Tracer Fluid List",
+            "native_type": "0",
+            "units": null,
+            "representation": "named_table_array",
+            "value": []
+          },
+          {
+            "name": "Tracer Fluid Mass Fractions",
+            "native_type": "8",
+            "units": "dimensionless",
+            "value": [
+              -777777.0
+            ],
+            "unit_symbol": null,
+            "value_semantics": "native values; sentinel meaning depends on owning property"
+          },
+          {
+            "name": "Mixture",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Mixture Mass Fractions",
+            "native_type": "8",
+            "units": "dimensionless",
+            "value": [
+              -777777.0
+            ],
+            "unit_symbol": null,
+            "value_semantics": "native values; sentinel meaning depends on owning property"
+          },
+          {
+            "name": "Alignment",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Swirl",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Rotation Axis Option",
+            "native_type": "3",
+            "units": null,
+            "value": 5
+          },
+          {
+            "name": "Rotation Axis",
+            "native_type": "0",
+            "units": null,
+            "representation": "axis",
+            "value": null
+          },
+          {
+            "name": "Normal to Tangential Velocity Angle",
+            "native_type": "4",
+            "units": "Degrees",
+            "value": -777777.0,
+            "unit_symbol": "degrees"
+          },
+          {
+            "name": "Rotation Velocity",
+            "native_type": "4",
+            "units": "DegreesPerSecond",
+            "value": -777777.0,
+            "unit_symbol": "degrees/sec"
+          },
+          {
+            "name": "Alignment Vector",
+            "native_type": "0",
+            "units": null,
+            "representation": "vector",
+            "value": null
+          },
+          {
+            "name": "Controller Type",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Thermostat",
+            "native_type": "0",
+            "units": null,
+            "representation": "named_property_table",
+            "value": null
+          },
+          {
+            "name": "Fan Speed Controller",
+            "native_type": "0",
+            "units": null,
+            "representation": "named_property_table",
+            "value": null
+          },
+          {
+            "name": "Nominal Fan Speed",
+            "native_type": "4",
+            "units": "DegreesPerSecond",
+            "value": -777777.0,
+            "unit_symbol": "degrees/sec"
+          },
+          {
+            "name": "distributionType",
+            "native_type": "3",
+            "units": null,
+            "value": 32
+          }
+        ],
+        "targets": [
+          {
+            "index": 0,
+            "members": [
+              {
+                "journal_id": "HANDLE R-38434",
+                "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-getter-audit-20260908-r1\\getter_audit.sim",
+                "type": "CAEFace",
+                "subtype": "0",
+                "sub_id": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "category": "simulation_objects",
+        "journal_id": "SimulationObject[Coupled Opening]",
+        "descriptor": "Opening",
+        "properties": [
+          {
+            "name": "description",
+            "native_type": "0",
+            "units": null,
+            "representation": "text_lines",
+            "value": []
+          },
+          {
+            "name": "Inlet Conditions",
+            "native_type": "0",
+            "units": null,
+            "representation": "named_property_table",
+            "value": {
+              "journal_id": "SsmoPropTable[Finned external air 20 C]",
+              "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-getter-audit-20260908-r1\\getter_audit.sim",
+              "descriptor": "External Conditions",
+              "lifetime": "owner document revision; inspect again after regeneration"
+            },
+            "properties": [
+              {
+                "name": "description",
+                "native_type": "0",
+                "units": null,
+                "representation": "text_lines",
+                "value": []
+              },
+              {
+                "name": "Temperature Option",
+                "native_type": "3",
+                "units": null,
+                "value": 0
+              },
+              {
+                "name": "Temperature Value",
+                "native_type": "6",
+                "units": "Celsius",
+                "expression": "20.0",
+                "unit_symbol": "C",
+                "representation": "expression",
+                "evaluated_value": 20.0
+              },
+              {
+                "name": "Humidity",
+                "native_type": "3",
+                "units": null,
+                "value": 0
+              },
+              {
+                "name": "Relative Humidity Value",
+                "native_type": "6",
+                "units": "dimensionless",
+                "expression": "0",
+                "unit_symbol": null,
+                "representation": "expression",
+                "evaluated_value": 0.0
+              },
+              {
+                "name": "Water Vapor to Dry Air Mass Ratio Value",
+                "native_type": "6",
+                "units": "dimensionless",
+                "expression": "0",
+                "unit_symbol": null,
+                "representation": "expression",
+                "evaluated_value": 0.0
+              }
+            ]
+          },
+          {
+            "name": "Turbulence Characteristics Modeling Object",
+            "native_type": "0",
+            "units": null,
+            "representation": "named_property_table",
+            "value": null
+          },
+          {
+            "name": "External Pressure Type",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Pressure",
+            "native_type": "3",
+            "units": null,
+            "value": 1
+          },
+          {
+            "name": "Pressure Value",
+            "native_type": "6",
+            "units": "PressurePascals",
+            "expression": "101325.0",
+            "unit_symbol": "Pa(N/m^2)",
+            "representation": "expression",
+            "evaluated_value": 101325.0
+          },
+          {
+            "name": "External Relative Pressure",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression",
+            "evaluated_value": -777777.0
+          },
+          {
+            "name": "Head Loss",
+            "native_type": "0",
+            "units": null,
+            "representation": "named_property_table",
+            "value": null
+          },
+          {
+            "name": "Tracer Fluid",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Tracer Fluid List",
+            "native_type": "0",
+            "units": null,
+            "representation": "named_table_array",
+            "value": []
+          },
+          {
+            "name": "Tracer Fluid Mass Fractions",
+            "native_type": "8",
+            "units": "dimensionless",
+            "value": [
+              -777777.0
+            ],
+            "unit_symbol": null,
+            "value_semantics": "native values; sentinel meaning depends on owning property"
+          },
+          {
+            "name": "Mixture",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Mixture Mass Fractions",
+            "native_type": "8",
+            "units": "dimensionless",
+            "value": [
+              -777777.0
+            ],
+            "unit_symbol": null,
+            "value_semantics": "native values; sentinel meaning depends on owning property"
+          },
+          {
+            "name": "Alignment",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Flow Direction Vector",
+            "native_type": "0",
+            "units": null,
+            "representation": "vector",
+            "value": null
+          },
+          {
+            "name": "distributionType",
+            "native_type": "3",
+            "units": null,
+            "value": 32
+          }
+        ],
+        "targets": [
+          {
+            "index": 0,
+            "members": [
+              {
+                "journal_id": "HANDLE R-38658",
+                "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-getter-audit-20260908-r1\\getter_audit.sim",
+                "type": "CAEFace",
+                "subtype": "0",
+                "sub_id": 0
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "effective_membership": {
+      "solution": {
+        "owner": {
+          "journal_id": "Solution[Finned coupled benchmark]",
+          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-getter-audit-20260908-r1\\getter_audit.sim"
+        },
+        "bcs": [
+          {
+            "journal_id": "Load[Generic solid 0.1 W]",
+            "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-getter-audit-20260908-r1\\getter_audit.sim"
+          },
+          {
+            "journal_id": "SimulationObject[Coupled Inlet]",
+            "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-getter-audit-20260908-r1\\getter_audit.sim"
+          },
+          {
+            "journal_id": "SimulationObject[Coupled Opening]",
+            "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-getter-audit-20260908-r1\\getter_audit.sim"
+          }
+        ],
+        "unfoldered_bcs": [
+          {
+            "journal_id": "Load[Generic solid 0.1 W]",
+            "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-getter-audit-20260908-r1\\getter_audit.sim"
+          },
+          {
+            "journal_id": "SimulationObject[Coupled Inlet]",
+            "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-getter-audit-20260908-r1\\getter_audit.sim"
+          },
+          {
+            "journal_id": "SimulationObject[Coupled Opening]",
+            "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-getter-audit-20260908-r1\\getter_audit.sim"
+          }
+        ],
+        "folders": [],
+        "conflict_override_count": 0
+      },
+      "steps": [
+        {
+          "index": 0,
+          "owner": {
+            "journal_id": "SolutionStep[Finned steady]",
+            "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-getter-audit-20260908-r1\\getter_audit.sim"
+          },
+          "bcs": [],
+          "unfoldered_bcs": [],
+          "folders": []
+        }
+      ],
+      "errors": [],
+      "comparison_verified": true,
+      "sha256": "c121c7050ebd9287c341006583d618a94706142e4aaee527a3c9bcdedc366fbe"
+    },
+    "errors": [],
+    "uninspected_properties": [],
+    "sha256": "6c3f885eddad999627a6b233d0c9b72646039cd77d559938428c282c29ed587c",
+    "comparison_verified": true,
+    "scope": "observed_boundary_values_and_selected_solution_ordered_step_membership_v3",
+    "full_model_freshness": "not_verified"
+  },
+  "modified_flags_preserved": true,
+  "flag_changes": {},
+  "solver_launched": false,
+  "source_sha256": {
+    "property_values.py": "38cd79976692403d50e586761e1f7f724c9a7d2dcf7bc66e6db8ea55e6bf71b6",
+    "properties.py": "8034209737af76197cef87218bbfcfbf50820c0c347a53f1fab6afd0d6ccbd28",
+    "boundary_state.py": "454cc82f84e3d06827da63bde4c6a64cabc33113ea846f58aaffcf26dad9529b"
+  }
+}

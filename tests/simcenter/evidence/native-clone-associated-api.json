@@ -1,0 +1,173 @@
+{
+  "status": "success",
+  "load_options": {
+    "search_directories": [
+      [
+        "C:\\WINDOWS\\system32"
+      ],
+      [
+        true
+      ]
+    ],
+    "component_load_method": "1",
+    "methods": {
+      "GetSearchDirectories": "Returns which search directories are to appear in the list.  \n\n\n\n\nSignature ``GetSearchDirectories()`` \n\n:returns: a tuple \n:rtype: A tuple consisting of (searchDirectories, searchSubDirs). searchDirectories is a list of str.   True indicates that sub-directories will be searched as wellsearchSubDirs is a list of bool. \n.. versionadded:: NX3.0.0\n\n\n\n\n\n\nLicense requirements: None.\n\n\n\n",
+      "SetSearchDirectories": "Set which search directories are to appear in the list.  \n\n\n\n\nSignature ``SetSearchDirectories(searchDirectories, searchSubDirs)`` \n\n:param searchDirectories:  True indicates that sub-directories should be searched as well  \n:type searchDirectories: list of str \n:param searchSubDirs: \n:type searchSubDirs: list of bool \n\n.. versionadded:: NX3.0.0\n\n\n\n\n\n\nLicense requirements: None.\n\n\n\n"
+    },
+    "load_method_values": {
+      "AsSaved": "0",
+      "FromDirectory": "1",
+      "SearchDirectories": "2"
+    }
+  },
+  "clone_type": "<class 'NXOpen.UF.Clone'>",
+  "module_clone_names": [
+    "Clone",
+    "CloneAction",
+    "CloneActionMemberType",
+    "CloneCheckinData_Struct",
+    "CloneCheckoutData_Struct",
+    "CloneCloneRelCae",
+    "CloneCloneRelCaeMemberType",
+    "CloneConvertCb",
+    "CloneConvertCbMemberType",
+    "CloneCopyNmOpt_Struct",
+    "CloneExLogOpts_Struct",
+    "CloneFamilyTreatment",
+    "CloneFamilyTreatmentMemberType",
+    "CloneGenLogOpts_Struct",
+    "CloneLogFileFailure_Struct",
+    "CloneNameRuleDef_Struct",
+    "CloneNameRuleType",
+    "CloneNameRuleTypeMemberType",
+    "CloneNamingFailures_Struct",
+    "CloneNamingTechnique",
+    "CloneNamingTechniqueMemberType",
+    "CloneNotifyCb",
+    "CloneNotifyCbMemberType",
+    "CloneOperationClass",
+    "CloneOperationClassMemberType",
+    "ClonePartStateS",
+    "ClonePartStateSMemberType",
+    "CloneValidationMode",
+    "CloneValidationModeMemberType",
+    "CloneValidationOpts_Struct"
+  ],
+  "methods": {
+    "Initialise": {
+      "present": true,
+      "signature": "Refer to `UF_CLONE_initialise <../ugopen_doc/uf_clone/global.html#UF_CLONE_initialise>`_ for documentation.  \n\n\nSignature: \n``Initialise(operationClass)``  \n\n:param operationClass:  class of operation to initialise\n:type operationClass: ``NXOpen.UF.Clone.OperationClass``  Refer to `UF_CLONE_operation_class_e <../ugopen_doc/uf_clone/types.html#UF_CLONE_operation_class_e>`_ for documentation.\n\nLicense requirements: ASSEMBLIES MODULE\n"
+    },
+    "Terminate": {
+      "present": true,
+      "signature": "Refer to `UF_CLONE_terminate <../ugopen_doc/uf_clone/global.html#UF_CLONE_terminate>`_ for documentation.  \n\n\nSignature: \n``Terminate()``  \n\n\nLicense requirements: ASSEMBLIES MODULE\n"
+    },
+    "AddAssembly": {
+      "present": true,
+      "signature": "Refer to `UF_CLONE_add_assembly <../ugopen_doc/uf_clone/global.html#UF_CLONE_add_assembly>`_ for documentation.  \n\n\nSignature: \n``AddAssembly(partName)``  \n\n:param partName:  The name of the top-level assembly file to add; for native, or import, an O/S filename; in NX Manager or for export, a CLI name\n:type partName: str\n:returns: A Tuple\n\n:rtype: A tuple consisting of (loadStatus,int) \n\n\n    loadStatus(```NXOpen.UF.Part.LoadStatus``  Refer to `UF_PART_load_status_s <../ugopen_doc/uf_part/UF_PART_load_status_s.html>`_ for documentation.`):  The load status for the initialisation operation\n\n    retVar(`int`): \nLicense requirements: ASSEMBLIES MODULE\n"
+    },
+    "AddPart": {
+      "present": true,
+      "signature": "Refer to `UF_CLONE_add_part <../ugopen_doc/uf_clone/global.html#UF_CLONE_add_part>`_ for documentation.  \n\n\nSignature: \n``AddPart(partName)``  \n\n:param partName:  The name of the part file to add; for native, or import, an O/S filename, in NX Manager or for export, a CLI name\n:type partName: str\n\nLicense requirements: ASSEMBLIES MODULE\n"
+    },
+    "StartIteration": {
+      "present": true,
+      "signature": "Refer to `UF_CLONE_start_iteration <../ugopen_doc/uf_clone/global.html#UF_CLONE_start_iteration>`_ for documentation.  \n\n\nSignature: \n``StartIteration()``  \n\n\nLicense requirements: ASSEMBLIES MODULE\n"
+    },
+    "Iterate": {
+      "present": true,
+      "signature": "Refer to `UF_CLONE_iterate <../ugopen_doc/uf_clone/global.html#UF_CLONE_iterate>`_ for documentation.  \n\n\nSignature: \n``Iterate()``  \n\n:returns:  The name of a part in the current clone operation; for native, or import, an O/S filename; in NX Manager or for export, a CLI name\n:rtype: str \nLicense requirements: ASSEMBLIES MODULE\n"
+    },
+    "StopIteration": {
+      "present": true,
+      "signature": "Refer to `UF_CLONE_stop_iteration <../ugopen_doc/uf_clone/global.html#UF_CLONE_stop_iteration>`_ for documentation.  \n\n\nSignature: \n``StopIteration()``  \n\n\nLicense requirements: ASSEMBLIES MODULE\n"
+    },
+    "SetDefAction": {
+      "present": true,
+      "signature": "Refer to `UF_CLONE_set_def_action <../ugopen_doc/uf_clone/global.html#UF_CLONE_set_def_action>`_ for documentation.  \n\n\nSignature: \n``SetDefAction(action)``  \n\n:param action:  any action except UF_CLONE_default_action and UF_CLONE_replace\n:type action: ``NXOpen.UF.Clone.Action``  Refer to `UF_CLONE_action_e <../ugopen_doc/uf_clone/types.html#UF_CLONE_action_e>`_ for documentation.\n\nLicense requirements: ASSEMBLIES MODULE\n"
+    },
+    "SetDefNaming": {
+      "present": true,
+      "signature": "Refer to `UF_CLONE_set_def_naming <../ugopen_doc/uf_clone/global.html#UF_CLONE_set_def_naming>`_ for documentation.  \n\n\nSignature: \n``SetDefNaming(namingTechnique)``  \n\n:param namingTechnique:  any naming_technique except UF_CLONE_default_naming\n:type namingTechnique: ``NXOpen.UF.Clone.NamingTechnique``  Refer to `UF_CLONE_naming_technique_e <../ugopen_doc/uf_clone/types.html#UF_CLONE_naming_technique_e>`_ for documentation.\n\nLicense requirements: ASSEMBLIES MODULE\n"
+    },
+    "SetNaming": {
+      "present": true,
+      "signature": "Refer to `UF_CLONE_set_naming <../ugopen_doc/uf_clone/global.html#UF_CLONE_set_naming>`_ for documentation.  \n\n\nSignature: \n``SetNaming(inputPartName, namingTechnique, outputPartName)``  \n\n:param inputPartName:  part name of part in the current cloning operation, in NX Manager clone, or for an export operation , this should be an encoded name, otherwise a native O/S file name\n:type inputPartName: str\n:param namingTechnique:  naming technique to be assigned to the specified part\n:type namingTechnique: ``NXOpen.UF.Clone.NamingTechnique``  Refer to `UF_CLONE_naming_technique_e <../ugopen_doc/uf_clone/types.html#UF_CLONE_naming_technique_e>`_ for documentation.\n:param outputPartName:  output part name to be set if naming_technique is UF_CLONE_user_name, otherwise None. In NX Manager clone, or for an import operation, this should be an encoded name, otherwise a native O/S file name\n:type outputPartName: str\n\nLicense requirements: ASSEMBLIES MODULE\n"
+    },
+    "SetDryrun": {
+      "present": true,
+      "signature": "Refer to `UF_CLONE_set_dryrun <../ugopen_doc/uf_clone/global.html#UF_CLONE_set_dryrun>`_ for documentation.  \n\n\nSignature: \n``SetDryrun(dryrun)``  \n\n:param dryrun:  true for a dryrun, false for the clone to actually take place\n:type dryrun: bool\n\nLicense requirements: ASSEMBLIES MODULE\n"
+    },
+    "SetLogfile": {
+      "present": true,
+      "signature": "Refer to `UF_CLONE_set_logfile <../ugopen_doc/uf_clone/global.html#UF_CLONE_set_logfile>`_ for documentation.  \n\n\nSignature: \n``SetLogfile(logFileName)``  \n\n:param logFileName:  name of logfile to be written (an O/S file name, even in NX Manager)\n:type logFileName: str\n\nLicense requirements: ASSEMBLIES MODULE\n"
+    },
+    "PerformClone": {
+      "present": true,
+      "signature": "Refer to `UF_CLONE_perform_clone <../ugopen_doc/uf_clone/global.html#UF_CLONE_perform_clone>`_ for documentation.  \n\n\nSignature: \n``PerformClone(namingFailures)``  \n\n:param namingFailures:  naming failures if any\n:type namingFailures: ``NXOpen.UF.Clone.NamingFailures``  Refer to `UF_CLONE_naming_failures_s <../ugopen_doc/uf_clone/UF_CLONE_naming_failures_s.html>`_ for documentation.\n:returns: Modified value of namingFailures\n:rtype: ``NXOpen.UF.Clone.NamingFailures``  Refer to `UF_CLONE_naming_failures_s <../ugopen_doc/uf_clone/UF_CLONE_naming_failures_s.html>`_ for documentation. \nLicense requirements: None\n"
+    },
+    "InitNamingFailures": {
+      "present": true,
+      "signature": "Refer to `UF_CLONE_init_naming_failures <../ugopen_doc/uf_clone/global.html#UF_CLONE_init_naming_failures>`_ for documentation.  \n\n\nSignature: \n``InitNamingFailures()``  \n\n:returns:  pointer to structure to be initialised\n:rtype: ``NXOpen.UF.Clone.NamingFailures``  Refer to `UF_CLONE_naming_failures_s <../ugopen_doc/uf_clone/UF_CLONE_naming_failures_s.html>`_ for documentation. \nLicense requirements: ASSEMBLIES MODULE\n"
+    },
+    "SetDefAssocFileCopy": {
+      "present": true,
+      "signature": "Refer to `UF_CLONE_set_def_assoc_file_copy <../ugopen_doc/uf_clone/global.html#UF_CLONE_set_def_assoc_file_copy>`_ for documentation.  \n\n\nSignature: \n``SetDefAssocFileCopy(copyAssociated)``  \n\n:param copyAssociated:  whether to copy associated files by default\n:type copyAssociated: bool\n\nLicense requirements: ASSEMBLIES MODULE\n"
+    },
+    "AskDefAssocFileCopy": {
+      "present": true,
+      "signature": "Refer to `UF_CLONE_ask_def_assoc_file_copy <../ugopen_doc/uf_clone/global.html#UF_CLONE_ask_def_assoc_file_copy>`_ for documentation.  \n\n\nSignature: \n``AskDefAssocFileCopy()``  \n\n:returns:  whether to copy associated files by default\n:rtype: bool \nLicense requirements: None\n"
+    },
+    "SetCloneRelatedCae": {
+      "present": true,
+      "signature": "Refer to `UF_CLONE_set_clone_related_cae <../ugopen_doc/uf_clone/global.html#UF_CLONE_set_clone_related_cae>`_ for documentation.  \n\n\nSignature: \n``SetCloneRelatedCae(relCae)``  \n\n:param relCae:  \n:type relCae: ``NXOpen.UF.Clone.CloneRelCae``  Refer to `UF_CLONE_clone_rel_cae_e <../ugopen_doc/uf_clone/types.html#UF_CLONE_clone_rel_cae_e>`_ for documentation.\n\nLicense requirements: ASSEMBLIES MODULE\n"
+    },
+    "AskCloneRelatedCae": {
+      "present": true,
+      "signature": "Refer to `UF_CLONE_ask_clone_related_cae <../ugopen_doc/uf_clone/global.html#UF_CLONE_ask_clone_related_cae>`_ for documentation.  \n\n\nSignature: \n``AskCloneRelatedCae()``  \n\n:returns:  \n:rtype: ``NXOpen.UF.Clone.CloneRelCae``  Refer to `UF_CLONE_clone_rel_cae_e <../ugopen_doc/uf_clone/types.html#UF_CLONE_clone_rel_cae_e>`_ for documentation. \nLicense requirements: ASSEMBLIES MODULE\n"
+    }
+  },
+  "enums": {
+    "OperationClass": {
+      "CLONE_OPERATION": "0",
+      "EDIT_OPERATION": "1",
+      "EXPORT_OPERATION": "3",
+      "IMPORT_OPERATION": "2",
+      "ValueOf": "<built-in method ValueOf of type object at 0x00007FF4E82EA130>"
+    },
+    "Action": {
+      "CLONE": "0",
+      "DEFAULT_ACTION": "5",
+      "EXCLUDE": "6",
+      "NEW_REVISION": "7",
+      "OVERWRITE": "3",
+      "REPLACE": "2",
+      "RETAIN": "1",
+      "USE_EXISTING": "4",
+      "ValueOf": "<built-in method ValueOf of type object at 0x00007FF4E82E86E0>"
+    },
+    "NamingTechnique": {
+      "ALTID_AUTOTRANSLATE": "5",
+      "AUTOGEN": "0",
+      "AUTOTRANSLATE": "1",
+      "DEFAULT_NAMING": "4",
+      "MIXED_NAME_RULE": "6",
+      "NAMING_RULE": "2",
+      "USER_NAME": "3",
+      "ValueOf": "<built-in method ValueOf of type object at 0x00007FF4E82E99E0>"
+    },
+    "CloneRelCae": {
+      "CLONE_FEM_IDEAL": "1",
+      "CLONE_IDEAL": "2",
+      "CLONE_NONE": "3",
+      "CLONE_SIM_FEM_IDEAL": "0",
+      "ValueOf": "<built-in method ValueOf of type object at 0x00007FF4E82E8AC0>"
+    }
+  },
+  "operation_started": false,
+  "operation_id": "op_f81a936672154725928184b32be6a479",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

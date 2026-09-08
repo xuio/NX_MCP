@@ -1,0 +1,78 @@
+{
+  "status": "success",
+  "result_types": [
+    "Velocity - Element-Nodal",
+    "Temperature - Nodal",
+    "Temperature - Elemental",
+    "Temperature - Element-Nodal",
+    "Total Heat Load - Elemental",
+    "Total Heat Flux - Elemental",
+    "Total Pressure - Element-Nodal",
+    "Pressure - Element-Nodal"
+  ],
+  "boundary_fields": {
+    "document": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer_fine-run-20260908-r1\\finned_layer_fine_run_r1.sim",
+    "input_sha256": "9ca0891aa9bcaa7c2f01d7fa0d2c7810e302c09502a63b5d5660cf8b4dabf07b",
+    "static_pressure_drop_Pa": 1.1167310277286544,
+    "boundaries": [
+      {
+        "name": "Coupled Inlet",
+        "area_mm2": 72.0,
+        "values": {
+          "Pressure - Element-Nodal": {
+            "area_mean": 1.9049256291182621,
+            "unit": "PressurePascals"
+          },
+          "Total Pressure - Element-Nodal": {
+            "area_mean": 2.5504505343732333,
+            "unit": "PressurePascals"
+          },
+          "Velocity - Element-Nodal": {
+            "area_mean": 0.9844338237320047,
+            "unit": "MeterPerSecond"
+          },
+          "Temperature - Element-Nodal": {
+            "area_mean": 20.152479440347655,
+            "unit": "Celsius"
+          }
+        },
+        "recovered_volume_flow_m3_s_positive_x": 7.087923530870434e-05,
+        "facet_count": 1110
+      },
+      {
+        "name": "Coupled Opening",
+        "area_mm2": 72.0,
+        "values": {
+          "Pressure - Element-Nodal": {
+            "area_mean": 0.7881946013896077,
+            "unit": "PressurePascals"
+          },
+          "Total Pressure - Element-Nodal": {
+            "area_mean": 1.5192953191907335,
+            "unit": "PressurePascals"
+          },
+          "Velocity - Element-Nodal": {
+            "area_mean": 0.9996798000779398,
+            "unit": "MeterPerSecond"
+          },
+          "Temperature - Element-Nodal": {
+            "area_mean": 21.27721297027803,
+            "unit": "Celsius"
+          }
+        },
+        "recovered_volume_flow_m3_s_positive_x": 7.197694560561165e-05,
+        "facet_count": 1120
+      }
+    ],
+    "method": "piecewise linear triangular integration of recovered element-nodal values; planar quads split geometrically",
+    "conservation": "not_established_by_recovered_field_integrals",
+    "freshness": "not_verified"
+  },
+  "acceptance": false,
+  "reason": "500 iteration convergence failure; diagnostic fields only",
+  "operation_id": "op_55ebbc88293f4a5587d4eeda2c874b9e",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

@@ -1,0 +1,1024 @@
+{
+  "status": "success",
+  "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-coupled-mcp-20260908-r1\\benchmark_d1e2b031a3dd_analysis.sim",
+  "rows": [
+    {
+      "kind": "property",
+      "count": 102,
+      "items": [
+        {
+          "index": 0,
+          "tag": 2772799,
+          "name": "Description",
+          "property_type": "13",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 1,
+          "tag": 2772800,
+          "name": "Solve Thermal",
+          "property_type": "12",
+          "value": "(True, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 2,
+          "tag": 2772801,
+          "name": "Solve Flow",
+          "property_type": "12",
+          "value": "(True, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 3,
+          "tag": 2772802,
+          "name": "Solver Type",
+          "property_type": "4",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 4,
+          "tag": 2772803,
+          "name": "Run Job in Foreground",
+          "property_type": "12",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 5,
+          "tag": 2772804,
+          "name": "Values Outside Time-dependent Tables",
+          "property_type": "4",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 6,
+          "tag": 2772805,
+          "name": "Thermal Include File",
+          "property_type": "12",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 7,
+          "tag": 2772806,
+          "name": "Select File",
+          "property_type": "14",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 8,
+          "tag": 2772807,
+          "name": "Fields File Directory",
+          "property_type": "12",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 9,
+          "tag": 2772808,
+          "name": "Fields Directory",
+          "property_type": "15",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 10,
+          "tag": 2772809,
+          "name": "User Defined API File",
+          "property_type": "12",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 11,
+          "tag": 2772810,
+          "name": "Select File",
+          "property_type": "14",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 12,
+          "tag": 2772811,
+          "name": "Evaluation Time",
+          "property_type": "2",
+          "value": "(False, 0, 0.0, '', 0, [])"
+        },
+        {
+          "index": 13,
+          "tag": 2772812,
+          "name": "Evaluation Frequency",
+          "property_type": "2",
+          "value": "(False, 0, 0.0, '', 0, [])"
+        },
+        {
+          "index": 14,
+          "tag": 2772813,
+          "name": "Evaluation Temperature",
+          "property_type": "2",
+          "value": "(False, 0, 293.15, '', 0, [])"
+        },
+        {
+          "index": 15,
+          "tag": 2772815,
+          "name": "Compress Output Files",
+          "property_type": "12",
+          "value": "(True, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 16,
+          "tag": 2772816,
+          "name": "Thermal Solution Parameters",
+          "property_type": "16",
+          "value_error": {
+            "type": "NXException",
+            "nx_code": 1765131
+          }
+        },
+        {
+          "index": 17,
+          "tag": 2772817,
+          "name": "Thermostat",
+          "property_type": "4",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 18,
+          "tag": 2772818,
+          "name": "Ablation-Charring Material",
+          "property_type": "30",
+          "value_error": {
+            "type": "NXException",
+            "nx_code": 1765131
+          }
+        },
+        {
+          "index": 19,
+          "tag": 2772819,
+          "name": "Apply Heater Control to all Thermal Loads",
+          "property_type": "12",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 20,
+          "tag": 2772820,
+          "name": "Heater Controller or Thermostat",
+          "property_type": "16",
+          "value_error": {
+            "type": "NXException",
+            "nx_code": 1765131
+          }
+        },
+        {
+          "index": 21,
+          "tag": 2772821,
+          "name": "Flow Solution Parameters",
+          "property_type": "16",
+          "value_error": {
+            "type": "NXException",
+            "nx_code": 1765131
+          }
+        },
+        {
+          "index": 22,
+          "tag": 2772822,
+          "name": "Turbulence Model",
+          "property_type": "4",
+          "value": "(False, 2, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 23,
+          "tag": 2772823,
+          "name": "Length Scales",
+          "property_type": "4",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 24,
+          "tag": 2772824,
+          "name": "Characteristic Length Scale",
+          "property_type": "2",
+          "value": "(False, 0, 0.0, '', 0, [])"
+        },
+        {
+          "index": 25,
+          "tag": 2772825,
+          "name": "Fixed Viscosity Mean Flow Velocity Scale",
+          "property_type": "2",
+          "value": "(False, 0, 0.0, '', 0, [])"
+        },
+        {
+          "index": 26,
+          "tag": 2772826,
+          "name": "Wall Distance Calculation Method",
+          "property_type": "4",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 27,
+          "tag": 2772827,
+          "name": "Flow Surface Parameters",
+          "property_type": "16",
+          "value_error": {
+            "type": "NXException",
+            "nx_code": 1765131
+          }
+        },
+        {
+          "index": 28,
+          "tag": 2772828,
+          "name": "Buoyancy",
+          "property_type": "12",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 29,
+          "tag": 2772829,
+          "name": "Condensation/Evaporation",
+          "property_type": "12",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 30,
+          "tag": 2772830,
+          "name": "High Resolution of Flow Features",
+          "property_type": "12",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 31,
+          "tag": 2772831,
+          "name": "High Speed Flow",
+          "property_type": "12",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 32,
+          "tag": 2772832,
+          "name": "Non-Newtonian Fluid",
+          "property_type": "30",
+          "value_error": {
+            "type": "NXException",
+            "nx_code": 1765131
+          }
+        },
+        {
+          "index": 33,
+          "tag": 2772833,
+          "name": "Coupled Solution Parameters",
+          "property_type": "16",
+          "value_error": {
+            "type": "NXException",
+            "nx_code": 1765131
+          }
+        },
+        {
+          "index": 34,
+          "tag": 2772834,
+          "name": "Solve-Time Units",
+          "property_type": "4",
+          "value": "(False, 9, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 35,
+          "tag": 2772835,
+          "name": "Temperature SI",
+          "property_type": "4",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 36,
+          "tag": 2772836,
+          "name": "Temperature IN",
+          "property_type": "4",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 37,
+          "tag": 2772837,
+          "name": "Mass",
+          "property_type": "3",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 38,
+          "tag": 2772838,
+          "name": "Length",
+          "property_type": "3",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 39,
+          "tag": 2772839,
+          "name": "##68Time",
+          "property_type": "3",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 40,
+          "tag": 2772840,
+          "name": "Power",
+          "property_type": "3",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 41,
+          "tag": 2772841,
+          "name": "Heat Flux",
+          "property_type": "3",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 42,
+          "tag": 2772842,
+          "name": "Energy",
+          "property_type": "3",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 43,
+          "tag": 2772843,
+          "name": "Velocity",
+          "property_type": "3",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 44,
+          "tag": 2772844,
+          "name": "Pressure",
+          "property_type": "3",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 45,
+          "tag": 2772845,
+          "name": "Viscosity",
+          "property_type": "3",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 46,
+          "tag": 2772846,
+          "name": "Density",
+          "property_type": "3",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 47,
+          "tag": 2772847,
+          "name": "Specific Heat",
+          "property_type": "3",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 48,
+          "tag": 2772848,
+          "name": "Force",
+          "property_type": "3",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 49,
+          "tag": 2772849,
+          "name": "Altitude",
+          "property_type": "37",
+          "value_error": {
+            "type": "NXException",
+            "nx_code": 1765131
+          }
+        },
+        {
+          "index": 50,
+          "tag": 2772850,
+          "name": "Ambient Pressure",
+          "property_type": "4",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 51,
+          "tag": 2772851,
+          "name": "Absolute Pressure Value",
+          "property_type": "37",
+          "value_error": {
+            "type": "NXException",
+            "nx_code": 1765131
+          }
+        },
+        {
+          "index": 52,
+          "tag": 2772854,
+          "name": "Fluid Temperature",
+          "property_type": "37",
+          "value_error": {
+            "type": "NXException",
+            "nx_code": 1765131
+          }
+        },
+        {
+          "index": 53,
+          "tag": 2772855,
+          "name": "Radiative Environment Temperature",
+          "property_type": "37",
+          "value_error": {
+            "type": "NXException",
+            "nx_code": 1765131
+          }
+        },
+        {
+          "index": 54,
+          "tag": 2760388,
+          "name": "Ambient Humidity",
+          "property_type": "4",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 55,
+          "tag": 2760389,
+          "name": "Relative Humidity (%)",
+          "property_type": "37",
+          "value_error": {
+            "type": "NXException",
+            "nx_code": 1765131
+          }
+        },
+        {
+          "index": 56,
+          "tag": 2772866,
+          "name": "Water Vapor to Dry Air Mass Ratio",
+          "property_type": "37",
+          "value_error": {
+            "type": "NXException",
+            "nx_code": 1765131
+          }
+        },
+        {
+          "index": 57,
+          "tag": 2772867,
+          "name": "Ambient Tracer Fluid",
+          "property_type": "4",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 58,
+          "tag": 2772868,
+          "name": "Tracer Fluid List",
+          "property_type": "30",
+          "value_error": {
+            "type": "NXException",
+            "nx_code": 1765131
+          }
+        },
+        {
+          "index": 59,
+          "tag": 2772871,
+          "name": "Tracer Fluid Mass Fractions",
+          "property_type": "27",
+          "value_error": {
+            "type": "NXException",
+            "nx_code": 1765131
+          }
+        },
+        {
+          "index": 60,
+          "tag": 2772872,
+          "name": "Ambient Mixture",
+          "property_type": "4",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 61,
+          "tag": 2772873,
+          "name": "Mixture Mass Fractions",
+          "property_type": "27",
+          "value_error": {
+            "type": "NXException",
+            "nx_code": 1765131
+          }
+        },
+        {
+          "index": 62,
+          "tag": 2772874,
+          "name": "Initial Conditions",
+          "property_type": "4",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 63,
+          "tag": 2772875,
+          "name": "Temperature Value",
+          "property_type": "2",
+          "value": "(False, 0, 293.15, '', 0, [])"
+        },
+        {
+          "index": 64,
+          "tag": 2772876,
+          "name": "X Velocity",
+          "property_type": "2",
+          "value": "(False, 0, 0.0, '', 0, [])"
+        },
+        {
+          "index": 65,
+          "tag": 2772877,
+          "name": "Y Velocity",
+          "property_type": "2",
+          "value": "(False, 0, 0.0, '', 0, [])"
+        },
+        {
+          "index": 66,
+          "tag": 2772878,
+          "name": "Z Velocity",
+          "property_type": "2",
+          "value": "(False, 0, 0.0, '', 0, [])"
+        },
+        {
+          "index": 67,
+          "tag": 2772879,
+          "name": "Pressure",
+          "property_type": "2",
+          "value": "(False, 0, 101.351, '', 0, [])"
+        },
+        {
+          "index": 68,
+          "tag": 2772880,
+          "name": "Fluid Temperature",
+          "property_type": "2",
+          "value": "(False, 0, 293.15, '', 0, [])"
+        },
+        {
+          "index": 69,
+          "tag": 2772881,
+          "name": "Turbulence Characteristics",
+          "property_type": "16",
+          "value_error": {
+            "type": "NXException",
+            "nx_code": 1765131
+          }
+        },
+        {
+          "index": 70,
+          "tag": 2772882,
+          "name": "Initial Humidity",
+          "property_type": "4",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 71,
+          "tag": 2772883,
+          "name": "Relative Humidity (%)",
+          "property_type": "2",
+          "value": "(False, 0, 0.0, '', 0, [])"
+        },
+        {
+          "index": 72,
+          "tag": 2772884,
+          "name": "Water Vapor to Dry Air Mass Ratio",
+          "property_type": "2",
+          "value": "(False, 0, 0.0, '', 0, [])"
+        },
+        {
+          "index": 73,
+          "tag": 2772885,
+          "name": "Initial Tracer Fluid",
+          "property_type": "4",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 74,
+          "tag": 2772886,
+          "name": "Tracer Fluid List",
+          "property_type": "30",
+          "value_error": {
+            "type": "NXException",
+            "nx_code": 1765131
+          }
+        },
+        {
+          "index": 75,
+          "tag": 2772887,
+          "name": "Tracer Fluid Mass Fractions",
+          "property_type": "27",
+          "value_error": {
+            "type": "NXException",
+            "nx_code": 1765131
+          }
+        },
+        {
+          "index": 76,
+          "tag": 2772888,
+          "name": "Initial Mixture",
+          "property_type": "4",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 77,
+          "tag": 2772889,
+          "name": "Mixture Mass Fractions",
+          "property_type": "27",
+          "value_error": {
+            "type": "NXException",
+            "nx_code": 1765131
+          }
+        },
+        {
+          "index": 78,
+          "tag": 2772890,
+          "name": "Water Content Top",
+          "property_type": "4",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 79,
+          "tag": 2772891,
+          "name": "Film Thickness",
+          "property_type": "2",
+          "value": "(False, 0, 0.0, '', 0, [])"
+        },
+        {
+          "index": 80,
+          "tag": 2772892,
+          "name": "Total Mass",
+          "property_type": "2",
+          "value": "(False, 0, 0.0, '', 0, [])"
+        },
+        {
+          "index": 81,
+          "tag": 2772894,
+          "name": "Surface Density",
+          "property_type": "2",
+          "value": "(False, 0, 0.0, '', 0, [])"
+        },
+        {
+          "index": 82,
+          "tag": 2772896,
+          "name": "Water Content Bottom",
+          "property_type": "4",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 83,
+          "tag": 2772897,
+          "name": "Film Thickness",
+          "property_type": "2",
+          "value": "(False, 0, 0.0, '', 0, [])"
+        },
+        {
+          "index": 84,
+          "tag": 2772898,
+          "name": "Total Mass",
+          "property_type": "2",
+          "value": "(False, 0, 0.0, '', 0, [])"
+        },
+        {
+          "index": 85,
+          "tag": 2772899,
+          "name": "Surface Density",
+          "property_type": "2",
+          "value": "(False, 0, 0.0, '', 0, [])"
+        },
+        {
+          "index": 86,
+          "tag": 2772900,
+          "name": "Results Directory",
+          "property_type": "15",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 87,
+          "tag": 2772901,
+          "name": "Thermal Temperature File",
+          "property_type": "12",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 88,
+          "tag": 2772902,
+          "name": "Temperature File (TEMPF Format)",
+          "property_type": "14",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 89,
+          "tag": 2772903,
+          "name": "Results to Use for Initial Conditions",
+          "property_type": "4",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 90,
+          "tag": 2772904,
+          "name": "Initial Conditions Use Results at Time",
+          "property_type": "2",
+          "value": "(False, 0, 0.0, '', 0, [])"
+        },
+        {
+          "index": 91,
+          "tag": 2772905,
+          "name": "Articulation Time Step Option",
+          "property_type": "4",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 92,
+          "tag": 2772906,
+          "name": "Start Time",
+          "property_type": "2",
+          "value": "(False, 0, 0.0, '', 0, [])"
+        },
+        {
+          "index": 93,
+          "tag": 2772907,
+          "name": "End Time",
+          "property_type": "2",
+          "value": "(False, 0, 0.0, '', 0, [])"
+        },
+        {
+          "index": 94,
+          "tag": 2772908,
+          "name": "Calculation Interval",
+          "property_type": "2",
+          "value": "(False, 0, 0.0, '', 0, [])"
+        },
+        {
+          "index": 95,
+          "tag": 2772909,
+          "name": "Number of Time Steps",
+          "property_type": "1",
+          "value": "(False, 10, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 96,
+          "tag": 2772910,
+          "name": "Articulation Times",
+          "property_type": "27",
+          "value_error": {
+            "type": "NXException",
+            "nx_code": 1765131
+          }
+        },
+        {
+          "index": 97,
+          "tag": 2772911,
+          "name": "Time Step Variation",
+          "property_type": "37",
+          "value_error": {
+            "type": "NXException",
+            "nx_code": 1765131
+          }
+        },
+        {
+          "index": 98,
+          "tag": 2772912,
+          "name": "Thermal-Flow Output Requests",
+          "property_type": "16",
+          "value_error": {
+            "type": "NXException",
+            "nx_code": 1765131
+          }
+        },
+        {
+          "index": 99,
+          "tag": 2772913,
+          "name": "Refresh Results",
+          "property_type": "28",
+          "value_error": {
+            "type": "NXException",
+            "nx_code": 1765131
+          }
+        },
+        {
+          "index": 100,
+          "tag": 2772914,
+          "name": "Refresh Reports",
+          "property_type": "28",
+          "value_error": {
+            "type": "NXException",
+            "nx_code": 1765131
+          }
+        },
+        {
+          "index": 101,
+          "tag": 2772915,
+          "name": "Output Files for Refresh Results / Refresh Reports",
+          "property_type": "12",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        }
+      ]
+    },
+    {
+      "kind": "solver_property",
+      "count": 30,
+      "items": [
+        {
+          "index": 0,
+          "tag": 2772917,
+          "name": "Remote Solve",
+          "property_type": "12",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 1,
+          "tag": 2772918,
+          "name": "Enable Solution Monitor",
+          "property_type": "12",
+          "value": "(True, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 2,
+          "tag": 2772919,
+          "name": "Enable Solution Summary Tab for Legacy Monitor",
+          "property_type": "12",
+          "value": "(True, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 3,
+          "tag": 2772920,
+          "name": "Scratch Directory",
+          "property_type": "4",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 4,
+          "tag": 2772921,
+          "name": "Scratch Directory Location",
+          "property_type": "15",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 6,
+          "tag": 2772923,
+          "name": "Input File Formatting",
+          "property_type": "4",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 7,
+          "tag": 2772924,
+          "name": "Real Data Filter",
+          "property_type": "12",
+          "value": "(True, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 8,
+          "tag": 2772925,
+          "name": "Real Filter Value",
+          "property_type": "2",
+          "value": "(False, 0, 1e-15, '', 0, [])"
+        },
+        {
+          "index": 9,
+          "tag": 2772926,
+          "name": "File Path Format",
+          "property_type": "4",
+          "value": "(False, 1, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 10,
+          "tag": 2772927,
+          "name": "Use environment variable UGII_NX_NASTRAN",
+          "property_type": "12",
+          "value": "(True, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 11,
+          "tag": 2772858,
+          "name": "User Specified",
+          "property_type": "14",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 12,
+          "tag": 2772861,
+          "name": "Use environment variable UGII_NX_NASTRAN_VERSION",
+          "property_type": "12",
+          "value": "(True, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 13,
+          "tag": 2772928,
+          "name": "User Specified",
+          "property_type": "3",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 14,
+          "tag": 2772929,
+          "name": "Open Core Memory to Allocate",
+          "property_type": "3",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 15,
+          "tag": 2772930,
+          "name": "Save Previous Copies of the Output Files",
+          "property_type": "12",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 16,
+          "tag": 2772931,
+          "name": "Delete Database Files",
+          "property_type": "4",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 17,
+          "tag": 2772932,
+          "name": "Enable Shared-Memory Parallel",
+          "property_type": "12",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 18,
+          "tag": 2772933,
+          "name": "Maximum Number of CPUs",
+          "property_type": "1",
+          "value": "(False, 1, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 19,
+          "tag": 2772934,
+          "name": "Shared Library for User Defined Materials",
+          "property_type": "14",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 20,
+          "tag": 2772935,
+          "name": "Shared Library for User Defined Creep Materials",
+          "property_type": "14",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 21,
+          "tag": 2772936,
+          "name": "Additional Keywords",
+          "property_type": "3",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 22,
+          "tag": 2772937,
+          "name": "Solver Command Window",
+          "property_type": "4",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 23,
+          "tag": 2772938,
+          "name": "Version Number",
+          "property_type": "3",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 24,
+          "tag": 2772939,
+          "name": "Run Solution in Parallel",
+          "property_type": "12",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 25,
+          "tag": 2772940,
+          "name": "Parallel Configuration File",
+          "property_type": "14",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 26,
+          "tag": 2772941,
+          "name": "Create New File...",
+          "property_type": "28",
+          "value_error": {
+            "type": "NXException",
+            "nx_code": 1765131
+          }
+        },
+        {
+          "index": 27,
+          "tag": 2772942,
+          "name": "Modify Existing File...",
+          "property_type": "28",
+          "value_error": {
+            "type": "NXException",
+            "nx_code": 1765131
+          }
+        },
+        {
+          "index": 28,
+          "tag": 2772943,
+          "name": "Export Mechanical Properties",
+          "property_type": "12",
+          "value": "(False, 0, -777777.0, '', 0, [])"
+        },
+        {
+          "index": 29,
+          "tag": 2772944,
+          "name": "Invalid Material Properties Check",
+          "property_type": "4",
+          "value": "(False, 1, -777777.0, '', 0, [])"
+        }
+      ]
+    }
+  ],
+  "document_flags_preserved": true,
+  "solver_launched": false,
+  "elapsed_seconds": 0.0159999999741558,
+  "operation_id": "op_b5049ee62f114d12a7f7fc14e0668534",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

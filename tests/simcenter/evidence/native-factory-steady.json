@@ -1,0 +1,18 @@
+{
+  "nx_version": "v2606",
+  "state": "verified",
+  "paths": {
+    "cad": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\factory-steady-20260907-r2\\benchmark_c553623676a1_geometry.prt",
+    "fem": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\factory-steady-20260907-r2\\benchmark_c553623676a1_mesh.fem",
+    "sim": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\factory-steady-20260907-r2\\benchmark_c553623676a1_analysis.sim"
+  },
+  "thermal_step_active": true,
+  "thermal_solution_type": 0,
+  "previous_failure": {
+    "nx_code": 1020004,
+    "stage": "cad",
+    "cause": "duplicate loaded basename across different folders"
+  },
+  "fix": "Folder-specific deterministic basenames; explicit steady thermal step",
+  "scope": "Document creation/readback only; this new fixture has not been meshed or solved"
+}

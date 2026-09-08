@@ -1,0 +1,34 @@
+{
+  "status": "success",
+  "passed": true,
+  "before": {
+    "table": "Synthetic outlet restriction K2",
+    "selectors": {
+      "Type": 0,
+      "Proportional to": 0
+    },
+    "coefficient": 2.0,
+    "unit": "dimensionless"
+  },
+  "after": {
+    "table": "Synthetic outlet restriction K2",
+    "selectors": {
+      "Type": 0,
+      "Proportional to": 0
+    },
+    "coefficient": 2.0,
+    "unit": "dimensionless"
+  },
+  "stale_errors": [
+    "NX_OBJECT_STALE",
+    "NX_OBJECT_STALE"
+  ],
+  "unrelated_modified_flags_preserved": true,
+  "document_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F3-head-loss-export-20260909-r1\\f3_head_loss_export_r1.sim",
+  "solver_launched": false,
+  "operation_id": "op_3a4a70f1e1e34df385f0b5607df63e97",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

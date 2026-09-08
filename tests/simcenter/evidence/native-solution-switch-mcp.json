@@ -1,0 +1,239 @@
+{
+  "before": {
+    "status": "success",
+    "warnings": [],
+    "units": "mm",
+    "solutions": [
+      {
+        "solution": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_b73c5ce885d8414d80888f7590ec4315",
+          "kind": "simulation_solution",
+          "name": "Conduction",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6a4b8c1adf6d49d6b11b612545d0cb1b",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "6a4b8c1adf6d49d6b11b612545d0cb1b",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-thermal-export-20260908-r1\\thermal_input_r1.sim",
+          "journal_id": "Solution[Conduction]",
+          "display_name": "Conduction"
+        },
+        "solver": "NX MULTIPHYSICS",
+        "analysis": "Thermal",
+        "solution_type": "Thermal",
+        "active": true,
+        "step_count": 1
+      },
+      {
+        "solution": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_2edeacd630db47348d2ae36f7e10da59",
+          "kind": "simulation_solution",
+          "name": "MCP_SELECTION_PROBE",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6a4b8c1adf6d49d6b11b612545d0cb1b",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "6a4b8c1adf6d49d6b11b612545d0cb1b",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-thermal-export-20260908-r1\\thermal_input_r1.sim",
+          "journal_id": "Solution[MCP_SELECTION_PROBE]",
+          "display_name": "MCP_SELECTION_PROBE"
+        },
+        "solver": "NX MULTIPHYSICS",
+        "analysis": "Thermal",
+        "solution_type": "Thermal",
+        "active": false,
+        "step_count": 0
+      }
+    ],
+    "total": 2,
+    "next_offset": null,
+    "result_freshness": "not_verified",
+    "operation_id": "op_b12f6502f06d40dfa22bae47307e3291",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "not_applicable"
+  },
+  "switched": {
+    "status": "success",
+    "warnings": [],
+    "units": "mm",
+    "solution": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_2edeacd630db47348d2ae36f7e10da59",
+      "kind": "simulation_solution",
+      "name": "MCP_SELECTION_PROBE",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6a4b8c1adf6d49d6b11b612545d0cb1b",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "6a4b8c1adf6d49d6b11b612545d0cb1b",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-thermal-export-20260908-r1\\thermal_input_r1.sim",
+      "journal_id": "Solution[MCP_SELECTION_PROBE]",
+      "display_name": "MCP_SELECTION_PROBE"
+    },
+    "active": true,
+    "already_active": false,
+    "saved": false,
+    "result_freshness": "not_verified",
+    "operation_id": "distinct-solution-switch-01",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed"
+  },
+  "readback": {
+    "status": "success",
+    "warnings": [],
+    "units": "mm",
+    "solutions": [
+      {
+        "solution": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_b73c5ce885d8414d80888f7590ec4315",
+          "kind": "simulation_solution",
+          "name": "Conduction",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6a4b8c1adf6d49d6b11b612545d0cb1b",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "6a4b8c1adf6d49d6b11b612545d0cb1b",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-thermal-export-20260908-r1\\thermal_input_r1.sim",
+          "journal_id": "Solution[Conduction]",
+          "display_name": "Conduction"
+        },
+        "solver": "NX MULTIPHYSICS",
+        "analysis": "Thermal",
+        "solution_type": "Thermal",
+        "active": false,
+        "step_count": 1
+      },
+      {
+        "solution": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_2edeacd630db47348d2ae36f7e10da59",
+          "kind": "simulation_solution",
+          "name": "MCP_SELECTION_PROBE",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6a4b8c1adf6d49d6b11b612545d0cb1b",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "6a4b8c1adf6d49d6b11b612545d0cb1b",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-thermal-export-20260908-r1\\thermal_input_r1.sim",
+          "journal_id": "Solution[MCP_SELECTION_PROBE]",
+          "display_name": "MCP_SELECTION_PROBE"
+        },
+        "solver": "NX MULTIPHYSICS",
+        "analysis": "Thermal",
+        "solution_type": "Thermal",
+        "active": true,
+        "step_count": 0
+      }
+    ],
+    "total": 2,
+    "next_offset": null,
+    "result_freshness": "not_verified",
+    "operation_id": "op_328ca138082c47f9b387f59bb25a747d",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "not_applicable"
+  },
+  "foreign_inventory": {
+    "status": "success",
+    "warnings": [],
+    "units": "mm",
+    "solutions": [
+      {
+        "solution": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_9a0fa42618c14e598042bea55aee4063",
+          "kind": "simulation_solution",
+          "name": "Conduction",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_963bae45c22b43d9ab8354e6d7079d30",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "963bae45c22b43d9ab8354e6d7079d30",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-mcp-20260908-r1\\saved_power.sim",
+          "journal_id": "Solution[Conduction]",
+          "display_name": "Conduction"
+        },
+        "solver": "NX MULTIPHYSICS",
+        "analysis": "Thermal",
+        "solution_type": "Thermal",
+        "active": true,
+        "step_count": 1
+      }
+    ],
+    "total": 1,
+    "next_offset": null,
+    "result_freshness": "not_verified",
+    "operation_id": "op_14931ac8d8764220929455ad291e1cf2",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "not_applicable"
+  },
+  "foreign_rejected": {
+    "status": "error",
+    "warnings": [],
+    "units": null,
+    "code": "NX_SIM_SELECTION_OWNER",
+    "message": "Solution does not belong to this SIM",
+    "retryable": false,
+    "details": {
+      "operation_id": "foreign-solution-reject-01",
+      "mutation_outcome": "unknown"
+    }
+  },
+  "restored": {
+    "status": "success",
+    "warnings": [],
+    "units": "mm",
+    "solution": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_b73c5ce885d8414d80888f7590ec4315",
+      "kind": "simulation_solution",
+      "name": "Conduction",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6a4b8c1adf6d49d6b11b612545d0cb1b",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "6a4b8c1adf6d49d6b11b612545d0cb1b",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-thermal-export-20260908-r1\\thermal_input_r1.sim",
+      "journal_id": "Solution[Conduction]",
+      "display_name": "Conduction"
+    },
+    "active": true,
+    "already_active": false,
+    "saved": false,
+    "result_freshness": "not_verified",
+    "operation_id": "restore-conduction-solution-01",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed"
+  },
+  "final": {
+    "status": "success",
+    "warnings": [],
+    "units": "mm",
+    "solutions": [
+      {
+        "solution": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_b73c5ce885d8414d80888f7590ec4315",
+          "kind": "simulation_solution",
+          "name": "Conduction",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6a4b8c1adf6d49d6b11b612545d0cb1b",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "6a4b8c1adf6d49d6b11b612545d0cb1b",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-thermal-export-20260908-r1\\thermal_input_r1.sim",
+          "journal_id": "Solution[Conduction]",
+          "display_name": "Conduction"
+        },
+        "solver": "NX MULTIPHYSICS",
+        "analysis": "Thermal",
+        "solution_type": "Thermal",
+        "active": true,
+        "step_count": 1
+      },
+      {
+        "solution": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_2edeacd630db47348d2ae36f7e10da59",
+          "kind": "simulation_solution",
+          "name": "MCP_SELECTION_PROBE",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6a4b8c1adf6d49d6b11b612545d0cb1b",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "6a4b8c1adf6d49d6b11b612545d0cb1b",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-thermal-export-20260908-r1\\thermal_input_r1.sim",
+          "journal_id": "Solution[MCP_SELECTION_PROBE]",
+          "display_name": "MCP_SELECTION_PROBE"
+        },
+        "solver": "NX MULTIPHYSICS",
+        "analysis": "Thermal",
+        "solution_type": "Thermal",
+        "active": false,
+        "step_count": 0
+      }
+    ],
+    "total": 2,
+    "next_offset": null,
+    "result_freshness": "not_verified",
+    "operation_id": "op_c6e79c36683d46199e2921929041ac17",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "not_applicable"
+  },
+  "scope": "Native public switching between distinct solutions, readback, foreign-owner rejection and restoration. Forced API-failure rollback and stale generations remain untested."
+}

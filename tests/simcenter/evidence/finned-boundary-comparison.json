@@ -1,0 +1,298 @@
+{
+  "status": "success",
+  "rows": [
+    {
+      "mesh": "2mm",
+      "boundary_fields": {
+        "document": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-tight-20260908-r1\\finned_tight_r1.sim",
+        "input_sha256": "ed79671d478bbe202b180ff88615b211f280c8dc0ebeb4622a8103afb25ccc7e",
+        "static_pressure_drop_Pa": 0.14231961450979536,
+        "boundaries": [
+          {
+            "name": "Coupled Inlet",
+            "area_mm2": 72.0,
+            "values": {
+              "Pressure - Element-Nodal": {
+                "area_mean": 0.9283964499035415,
+                "unit": "PressurePascals"
+              },
+              "Total Pressure - Element-Nodal": {
+                "area_mean": 1.5727526546223456,
+                "unit": "PressurePascals"
+              },
+              "Velocity - Element-Nodal": {
+                "area_mean": 0.9977950131019908,
+                "unit": "MeterPerSecond"
+              },
+              "Temperature - Element-Nodal": {
+                "area_mean": 20.054650598724898,
+                "unit": "Celsius"
+              }
+            },
+            "recovered_volume_flow_m3_s_positive_x": 7.184124094334334e-05,
+            "facet_count": 59
+          },
+          {
+            "name": "Coupled Opening",
+            "area_mm2": 72.0,
+            "values": {
+              "Pressure - Element-Nodal": {
+                "area_mean": 0.7860768353937462,
+                "unit": "PressurePascals"
+              },
+              "Total Pressure - Element-Nodal": {
+                "area_mean": 1.4292369357783843,
+                "unit": "PressurePascals"
+              },
+              "Velocity - Element-Nodal": {
+                "area_mean": 0.9963767406512947,
+                "unit": "MeterPerSecond"
+              },
+              "Temperature - Element-Nodal": {
+                "area_mean": 21.077915971642042,
+                "unit": "Celsius"
+              }
+            },
+            "recovered_volume_flow_m3_s_positive_x": 7.173912532689322e-05,
+            "facet_count": 59
+          }
+        ],
+        "method": "linear triangular integration of recovered element-nodal values",
+        "conservation": "not_established_by_recovered_field_integrals",
+        "freshness": "not_verified"
+      },
+      "temperature": {
+        "field": "Temperature - Nodal",
+        "field_location": "nodal",
+        "loadcase_index": 0,
+        "iteration_index": 0,
+        "units": "degC",
+        "minimum": 24.569364547729492,
+        "maximum": 24.602048873901367,
+        "native_location": "0",
+        "minimum_native_id": 5,
+        "maximum_native_id": 23,
+        "minimum_native_sub_id": 0,
+        "maximum_native_sub_id": 0,
+        "node_count": 745,
+        "result_freshness": "not_verified",
+        "reference_lifetime": "indices apply only to this result revision"
+      },
+      "fluid_temperature": {
+        "field": "Temperature - Element-Nodal",
+        "field_location": "element_nodal",
+        "loadcase_index": 0,
+        "iteration_index": 0,
+        "units": "degC",
+        "minimum": 19.999975204467773,
+        "maximum": 22.58298110961914,
+        "native_location": "2",
+        "minimum_native_id": 2084,
+        "maximum_native_id": 1770,
+        "minimum_native_sub_id": 329,
+        "maximum_native_sub_id": 308,
+        "node_count": 745,
+        "result_freshness": "not_verified",
+        "reference_lifetime": "indices apply only to this result revision"
+      }
+    },
+    {
+      "mesh": "1mm",
+      "boundary_fields": {
+        "document": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-refined-run-20260908-r1\\finned_refined_run_r1.sim",
+        "input_sha256": "75b61dded9a53d688240c0d007d046f42895c43aef69dfd60bf5e2f9a3ba5f7c",
+        "static_pressure_drop_Pa": 0.304006075772829,
+        "boundaries": [
+          {
+            "name": "Coupled Inlet",
+            "area_mm2": 72.0,
+            "values": {
+              "Pressure - Element-Nodal": {
+                "area_mean": 1.0900861443777252,
+                "unit": "PressurePascals"
+              },
+              "Total Pressure - Element-Nodal": {
+                "area_mean": 1.7354588793006072,
+                "unit": "PressurePascals"
+              },
+              "Velocity - Element-Nodal": {
+                "area_mean": 0.9985628423259703,
+                "unit": "MeterPerSecond"
+              },
+              "Temperature - Element-Nodal": {
+                "area_mean": 20.04653962627112,
+                "unit": "Celsius"
+              }
+            },
+            "recovered_volume_flow_m3_s_positive_x": 7.189652464746985e-05,
+            "facet_count": 176
+          },
+          {
+            "name": "Coupled Opening",
+            "area_mm2": 72.0,
+            "values": {
+              "Pressure - Element-Nodal": {
+                "area_mean": 0.7860800686048962,
+                "unit": "PressurePascals"
+              },
+              "Total Pressure - Element-Nodal": {
+                "area_mean": 1.4328963626128288,
+                "unit": "PressurePascals"
+              },
+              "Velocity - Element-Nodal": {
+                "area_mean": 0.9975968434822453,
+                "unit": "MeterPerSecond"
+              },
+              "Temperature - Element-Nodal": {
+                "area_mean": 21.095418511993735,
+                "unit": "Celsius"
+              }
+            },
+            "recovered_volume_flow_m3_s_positive_x": 7.182697273072165e-05,
+            "facet_count": 176
+          }
+        ],
+        "method": "linear triangular integration of recovered element-nodal values",
+        "conservation": "not_established_by_recovered_field_integrals",
+        "freshness": "not_verified"
+      },
+      "temperature": {
+        "field": "Temperature - Nodal",
+        "field_location": "nodal",
+        "loadcase_index": 0,
+        "iteration_index": 0,
+        "units": "degC",
+        "minimum": 23.251161575317383,
+        "maximum": 23.298219680786133,
+        "native_location": "0",
+        "minimum_native_id": 10,
+        "maximum_native_id": 23,
+        "minimum_native_sub_id": 0,
+        "maximum_native_sub_id": 0,
+        "node_count": 3402,
+        "result_freshness": "not_verified",
+        "reference_lifetime": "indices apply only to this result revision"
+      },
+      "fluid_temperature": {
+        "field": "Temperature - Element-Nodal",
+        "field_location": "element_nodal",
+        "loadcase_index": 0,
+        "iteration_index": 0,
+        "units": "degC",
+        "minimum": 19.99999237060547,
+        "maximum": 22.831693649291992,
+        "native_location": "2",
+        "minimum_native_id": 12358,
+        "maximum_native_id": 13542,
+        "minimum_native_sub_id": 1209,
+        "maximum_native_sub_id": 1404,
+        "node_count": 3402,
+        "result_freshness": "not_verified",
+        "reference_lifetime": "indices apply only to this result revision"
+      }
+    },
+    {
+      "mesh": "0.5mm",
+      "boundary_fields": {
+        "document": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-fine-run-20260908-r1\\finned_fine_run_r1.sim",
+        "input_sha256": "2d69ea96833a90ccaa311abd4da3fb26b47c6bd60850117a088c8c0d9ba692b5",
+        "static_pressure_drop_Pa": 0.5739218761732442,
+        "boundaries": [
+          {
+            "name": "Coupled Inlet",
+            "area_mm2": 72.0,
+            "values": {
+              "Pressure - Element-Nodal": {
+                "area_mean": 1.360499549177697,
+                "unit": "PressurePascals"
+              },
+              "Total Pressure - Element-Nodal": {
+                "area_mean": 2.006701805192455,
+                "unit": "PressurePascals"
+              },
+              "Velocity - Element-Nodal": {
+                "area_mean": 0.9991735264683661,
+                "unit": "MeterPerSecond"
+              },
+              "Temperature - Element-Nodal": {
+                "area_mean": 20.03619766124769,
+                "unit": "Celsius"
+              }
+            },
+            "recovered_volume_flow_m3_s_positive_x": 7.194049390572236e-05,
+            "facet_count": 702
+          },
+          {
+            "name": "Coupled Opening",
+            "area_mm2": 72.0,
+            "values": {
+              "Pressure - Element-Nodal": {
+                "area_mean": 0.7865776730044528,
+                "unit": "PressurePascals"
+              },
+              "Total Pressure - Element-Nodal": {
+                "area_mean": 1.4466949584971782,
+                "unit": "PressurePascals"
+              },
+              "Velocity - Element-Nodal": {
+                "area_mean": 0.998439032857347,
+                "unit": "MeterPerSecond"
+              },
+              "Temperature - Element-Nodal": {
+                "area_mean": 21.12802711813605,
+                "unit": "Celsius"
+              }
+            },
+            "recovered_volume_flow_m3_s_positive_x": 7.188761036572899e-05,
+            "facet_count": 702
+          }
+        ],
+        "method": "linear triangular integration of recovered element-nodal values",
+        "conservation": "not_established_by_recovered_field_integrals",
+        "freshness": "not_verified"
+      },
+      "temperature": {
+        "field": "Temperature - Nodal",
+        "field_location": "nodal",
+        "loadcase_index": 0,
+        "iteration_index": 0,
+        "units": "degC",
+        "minimum": 22.725969314575195,
+        "maximum": 22.793630599975586,
+        "native_location": "0",
+        "minimum_native_id": 4,
+        "maximum_native_id": 13,
+        "minimum_native_sub_id": 0,
+        "maximum_native_sub_id": 0,
+        "node_count": 17766,
+        "result_freshness": "not_verified",
+        "reference_lifetime": "indices apply only to this result revision"
+      },
+      "fluid_temperature": {
+        "field": "Temperature - Element-Nodal",
+        "field_location": "element_nodal",
+        "loadcase_index": 0,
+        "iteration_index": 0,
+        "units": "degC",
+        "minimum": 19.999217987060547,
+        "maximum": 22.730655670166016,
+        "native_location": "2",
+        "minimum_native_id": 68685,
+        "maximum_native_id": 69878,
+        "minimum_native_sub_id": 6264,
+        "maximum_native_sub_id": 6471,
+        "node_count": 17766,
+        "result_freshness": "not_verified",
+        "reference_lifetime": "indices apply only to this result revision"
+      }
+    }
+  ],
+  "elapsed_seconds": 4.452999999979511,
+  "solver_launched": false,
+  "acceptance": false,
+  "operation_id": "op_073b799017f74374beea1affc42b2166",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

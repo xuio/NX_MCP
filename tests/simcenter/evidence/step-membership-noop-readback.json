@@ -1,0 +1,63 @@
+{
+  "status": "success",
+  "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-step-membership-20260909-r1\\f2_step_membership_r1.sim",
+  "step_count": 2,
+  "loads": [
+    {
+      "name": "End volume",
+      "journal": "Load[End volume]"
+    }
+  ],
+  "membership": {
+    "solution": {
+      "owner": {
+        "journal_id": "Solution[Conduction]",
+        "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-step-membership-20260909-r1\\f2_step_membership_r1.sim"
+      },
+      "bcs": [
+        {
+          "journal_id": "Constraint[Cold end 293 K]",
+          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-step-membership-20260909-r1\\f2_step_membership_r1.sim"
+        }
+      ],
+      "unfoldered_bcs": [
+        {
+          "journal_id": "Constraint[Cold end 293 K]",
+          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-step-membership-20260909-r1\\f2_step_membership_r1.sim"
+        }
+      ],
+      "folders": [],
+      "conflict_override_count": 0
+    },
+    "steps": [
+      {
+        "index": 0,
+        "owner": {
+          "journal_id": "SolutionStep[Conduction]",
+          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-step-membership-20260909-r1\\f2_step_membership_r1.sim"
+        },
+        "bcs": [],
+        "unfoldered_bcs": [],
+        "folders": []
+      },
+      {
+        "index": 1,
+        "owner": {
+          "journal_id": "SolutionStep[Membership phase two]",
+          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-step-membership-20260909-r1\\f2_step_membership_r1.sim"
+        },
+        "bcs": [],
+        "unfoldered_bcs": [],
+        "folders": []
+      }
+    ],
+    "errors": [],
+    "comparison_verified": true,
+    "sha256": "547aed47da1d65067a2b913456871cf8d0eb7de9c47f64558c47c7432d1085dd"
+  },
+  "operation_id": "op_98da88c24fc24bc2a9608de0db9d8fa8",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

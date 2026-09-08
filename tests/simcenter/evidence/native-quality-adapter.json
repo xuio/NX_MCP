@@ -1,0 +1,493 @@
+{
+  "status": "success",
+  "settings": {
+    "solver": "NX MULTIPHYSICS",
+    "analysis": "Flow",
+    "limit_option": "1",
+    "element_specific": false,
+    "tests": [
+      {
+        "test_type": "LengthMinimum",
+        "enabled": false,
+        "validator": "3",
+        "has_criteria": true,
+        "criteria": {
+          "Warning": [
+            {
+              "unit": "MilliMeter"
+            },
+            1.0
+          ],
+          "Error": [
+            {
+              "unit": "MilliMeter"
+            },
+            0.1
+          ]
+        },
+        "specific_count": 0
+      },
+      {
+        "test_type": "LengthMaximum",
+        "enabled": false,
+        "validator": "1",
+        "has_criteria": true,
+        "criteria": {
+          "Warning": [
+            {
+              "unit": "MilliMeter"
+            },
+            50.0
+          ],
+          "Error": [
+            {
+              "unit": "MilliMeter"
+            },
+            100.0
+          ]
+        },
+        "specific_count": 0
+      },
+      {
+        "test_type": "Area",
+        "enabled": false,
+        "validator": "4",
+        "has_criteria": true,
+        "criteria": {
+          "Warning": [
+            {
+              "unit": "SquareMilliMeter"
+            },
+            0.01
+          ],
+          "Error": [
+            {
+              "unit": "SquareMilliMeter"
+            },
+            0.0
+          ]
+        },
+        "specific_count": 0
+      },
+      {
+        "test_type": "JacobianSign",
+        "enabled": true,
+        "validator": "0",
+        "has_criteria": false,
+        "specific_count": 4
+      },
+      {
+        "test_type": "JacobianZero",
+        "enabled": true,
+        "validator": "4",
+        "has_criteria": true,
+        "criteria": {
+          "Warning": [
+            null,
+            0.01
+          ],
+          "Error": [
+            null,
+            0.0
+          ]
+        },
+        "specific_count": 8
+      },
+      {
+        "test_type": "Volume",
+        "enabled": true,
+        "validator": "4",
+        "has_criteria": true,
+        "criteria": {
+          "Warning": [
+            {
+              "unit": "CubicMilliMeter"
+            },
+            0.01
+          ],
+          "Error": [
+            {
+              "unit": "CubicMilliMeter"
+            },
+            0.0
+          ]
+        },
+        "specific_count": 2
+      },
+      {
+        "test_type": "AxisymmetricY",
+        "enabled": true,
+        "validator": "1",
+        "has_criteria": true,
+        "criteria": {
+          "Warning": [
+            null,
+            1e-06
+          ],
+          "Error": [
+            null,
+            2e-06
+          ]
+        },
+        "specific_count": 2
+      },
+      {
+        "test_type": "AxisymmetricX",
+        "enabled": true,
+        "validator": "3",
+        "has_criteria": true,
+        "criteria": {
+          "Warning": [
+            null,
+            0.001
+          ],
+          "Error": [
+            null,
+            0.0
+          ]
+        },
+        "specific_count": 2
+      },
+      {
+        "test_type": "AspectRatio",
+        "enabled": true,
+        "validator": "1",
+        "has_criteria": true,
+        "criteria": {
+          "Warning": [
+            null,
+            10.0
+          ],
+          "Error": [
+            null,
+            100.0
+          ]
+        },
+        "specific_count": 8
+      },
+      {
+        "test_type": "SkewAngle",
+        "enabled": true,
+        "validator": "3",
+        "has_criteria": true,
+        "criteria": {
+          "Warning": [
+            {
+              "unit": "Degrees"
+            },
+            45.0
+          ],
+          "Error": [
+            {
+              "unit": "Degrees"
+            },
+            30.0
+          ]
+        },
+        "specific_count": 3
+      },
+      {
+        "test_type": "InteriorAngleMaximum",
+        "enabled": true,
+        "validator": "1",
+        "has_criteria": true,
+        "criteria": {
+          "Warning": [
+            {
+              "unit": "Degrees"
+            },
+            135.0
+          ],
+          "Error": [
+            {
+              "unit": "Degrees"
+            },
+            150.0
+          ]
+        },
+        "specific_count": 4
+      },
+      {
+        "test_type": "InteriorAngleMinimum",
+        "enabled": true,
+        "validator": "3",
+        "has_criteria": true,
+        "criteria": {
+          "Warning": [
+            {
+              "unit": "Degrees"
+            },
+            45.0
+          ],
+          "Error": [
+            {
+              "unit": "Degrees"
+            },
+            30.0
+          ]
+        },
+        "specific_count": 4
+      },
+      {
+        "test_type": "Taper",
+        "enabled": true,
+        "validator": "1",
+        "has_criteria": true,
+        "criteria": {
+          "Warning": [
+            null,
+            0.1
+          ],
+          "Error": [
+            null,
+            0.5
+          ]
+        },
+        "specific_count": 2
+      },
+      {
+        "test_type": "WarpFactor",
+        "enabled": true,
+        "validator": "1",
+        "has_criteria": true,
+        "criteria": {
+          "Warning": [
+            null,
+            0.01
+          ],
+          "Error": [
+            null,
+            0.05
+          ]
+        },
+        "specific_count": 1
+      },
+      {
+        "test_type": "FaceWarpCoefficient",
+        "enabled": true,
+        "validator": "3",
+        "has_criteria": true,
+        "criteria": {
+          "Warning": [
+            null,
+            0.866
+          ],
+          "Error": [
+            null,
+            0.707
+          ]
+        },
+        "specific_count": 3
+      },
+      {
+        "test_type": "EdgePointIncludedAngle",
+        "enabled": true,
+        "validator": "1",
+        "has_criteria": true,
+        "criteria": {
+          "Warning": [
+            {
+              "unit": "Degrees"
+            },
+            20.0
+          ],
+          "Error": [
+            {
+              "unit": "Degrees"
+            },
+            30.0
+          ]
+        },
+        "specific_count": 4
+      },
+      {
+        "test_type": "EdgePointLengthRatio",
+        "enabled": true,
+        "validator": "3",
+        "has_criteria": true,
+        "criteria": {
+          "Warning": [
+            null,
+            0.6
+          ],
+          "Error": [
+            null,
+            0.5
+          ]
+        },
+        "specific_count": 8
+      },
+      {
+        "test_type": "LengthRatioOffset",
+        "enabled": true,
+        "validator": "1",
+        "has_criteria": true,
+        "criteria": {
+          "Warning": [
+            null,
+            0.1
+          ],
+          "Error": [
+            null,
+            0.15
+          ]
+        },
+        "specific_count": 2
+      },
+      {
+        "test_type": "LaminateTaperRatio",
+        "enabled": false,
+        "validator": "1",
+        "has_criteria": true,
+        "criteria": {
+          "Warning": [
+            null,
+            1.1
+          ],
+          "Error": [
+            null,
+            1.2
+          ]
+        },
+        "specific_count": 2
+      },
+      {
+        "test_type": "LaminateThicknessRatio",
+        "enabled": false,
+        "validator": "1",
+        "has_criteria": true,
+        "criteria": {
+          "Warning": [
+            null,
+            0.01
+          ],
+          "Error": [
+            null,
+            0.05
+          ]
+        },
+        "specific_count": 2
+      }
+    ]
+  },
+  "element_count": 3308,
+  "tests": [
+    {
+      "type": "JacobianSign",
+      "count": 3308,
+      "errors": 0,
+      "warnings": 0,
+      "worst_value": 1.0
+    },
+    {
+      "type": "JacobianZero",
+      "count": 3308,
+      "errors": 0,
+      "warnings": 0,
+      "worst_value": 42.496534842206366
+    },
+    {
+      "type": "Volume",
+      "count": 3308,
+      "errors": 0,
+      "warnings": 0,
+      "worst_value": 7.0827558070343954
+    },
+    {
+      "type": "AxisymmetricY",
+      "count": 3308,
+      "errors": 0,
+      "warnings": 0,
+      "worst_value": null
+    },
+    {
+      "type": "AxisymmetricX",
+      "count": 3308,
+      "errors": 0,
+      "warnings": 0,
+      "worst_value": null
+    },
+    {
+      "type": "AspectRatio",
+      "count": 3308,
+      "errors": 0,
+      "warnings": 0,
+      "worst_value": 4.0829705687292055
+    },
+    {
+      "type": "SkewAngle",
+      "count": 3308,
+      "errors": 0,
+      "warnings": 0,
+      "worst_value": null
+    },
+    {
+      "type": "InteriorAngleMaximum",
+      "count": 3308,
+      "errors": 0,
+      "warnings": 0,
+      "worst_value": null
+    },
+    {
+      "type": "InteriorAngleMinimum",
+      "count": 3308,
+      "errors": 0,
+      "warnings": 0,
+      "worst_value": null
+    },
+    {
+      "type": "Taper",
+      "count": 3308,
+      "errors": 0,
+      "warnings": 0,
+      "worst_value": null
+    },
+    {
+      "type": "WarpFactor",
+      "count": 3308,
+      "errors": 0,
+      "warnings": 0,
+      "worst_value": null
+    },
+    {
+      "type": "FaceWarpCoefficient",
+      "count": 3308,
+      "errors": 0,
+      "warnings": 0,
+      "worst_value": null
+    },
+    {
+      "type": "EdgePointIncludedAngle",
+      "count": 3308,
+      "errors": 0,
+      "warnings": 0,
+      "worst_value": null
+    },
+    {
+      "type": "EdgePointLengthRatio",
+      "count": 3308,
+      "errors": 0,
+      "warnings": 0,
+      "worst_value": null
+    },
+    {
+      "type": "LengthRatioOffset",
+      "count": 3308,
+      "errors": 0,
+      "warnings": 0,
+      "worst_value": null
+    }
+  ],
+  "repair_attempted": false,
+  "scope": "1",
+  "limitations": [
+    "Native check may highlight failed elements",
+    "Does not establish CFD convergence",
+    "Element-specific overrides are not enumerated; inspect element_specific flag"
+  ],
+  "operation_id": "op_22b6e1845f7a45b3959b8b43d095d0cd",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

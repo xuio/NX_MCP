@@ -1,0 +1,205 @@
+{
+  "fine-k0-flow-01": {
+    "status": "success",
+    "warnings": [],
+    "units": "mm",
+    "job_id": "fine-k0-flow-01",
+    "request_sha256": "1238064dbcf81a9a8ca0d0299bd93e081a8e14773a64a91a471d212f0e254573",
+    "persisted_job_state": "solver_exited",
+    "log_name": "fine_k0_solve_r1-Flow_benchmark.log",
+    "log_sha256": "9214724af72ad49ca0e1f5c2f4e90297b79e4fe47449113a6414b072eb9cb1f2",
+    "observed_bytes": 37473,
+    "snapshot_semantics": "bytes read; file may still be growing",
+    "format": "observed_simcenter_2606_steady_flow",
+    "completion_marker_present": true,
+    "failure_evidence": {
+      "state": "unknown",
+      "stage": "unknown",
+      "translator_fatal_codes": [],
+      "fatal_abort_reported": false,
+      "numerical_convergence": "not_established",
+      "results_validated": false,
+      "next_action": "Inspect job process status, residuals and result validation before classifying."
+    },
+    "residual_threshold": 1e-06,
+    "last_iteration": 13,
+    "final_equations_complete": true,
+    "final_residual_criteria_met": true,
+    "reported_imbalances": {
+      "momentum": {
+        "value": 8.001e-06,
+        "units": "%",
+        "definition": "native reported imbalance; denominator not independently established"
+      },
+      "mass": {
+        "value": 0.01252,
+        "units": "%",
+        "definition": "native reported imbalance; denominator not independently established"
+      },
+      "energy": {
+        "value": 0.0,
+        "units": "%",
+        "definition": "native reported imbalance; denominator not independently established"
+      }
+    },
+    "boundary_flows": [
+      {
+        "name": "Duct Inlet",
+        "volume_flow_m3_s": 0.0002524,
+        "mass_flow_kg_s": 0.0003029,
+        "positive_direction": "into_domain"
+      },
+      {
+        "name": "Duct Opening",
+        "volume_flow_m3_s": -0.0002524,
+        "mass_flow_kg_s": -0.0003028,
+        "positive_direction": "into_domain"
+      }
+    ],
+    "fan_operating_points": {
+      "state": "reported",
+      "fans": [
+        {
+          "name": "Duct Inlet",
+          "loss_coefficient": 0.0,
+          "pressure_rise_Pa": 0.36910000000000004,
+          "mass_flow_kg_s": 0.0003028,
+          "pressure_convention": "unverified",
+          "volume_flow_m3_s": 0.0002524
+        }
+      ],
+      "native_pressure_unit": "mN/mm^2",
+      "unit_basis": "observed NX2606 fluid pressure summary header",
+      "precision": "rounded_native_log",
+      "identity": "display_names_only",
+      "engineering_accepted": false,
+      "scope": "Native rounded operating-point rows; static/total convention and exact model/job binding require separate audits"
+    },
+    "rounded_boundary_mass_sum_kg_s": 1.0000000000000243e-07,
+    "rounding_warning": "Boundary values are rounded in the log; a zero sum does not establish zero imbalance",
+    "numerical_convergence": "not_established",
+    "results_validated": false,
+    "scope": "Log observations only; input/job association, all configured criteria and mesh sensitivity require separate audits",
+    "residual_history": [
+      {
+        "iteration": 1,
+        "region": "Flow Enclosure",
+        "equation": "U - Mom",
+        "linear_iterations": 10,
+        "linear_residual": 3.816e-15,
+        "rate": 0.0,
+        "rate_overflow": false,
+        "residual": 0.02987,
+        "native_message": "--"
+      }
+    ],
+    "history_total": 52,
+    "next_offset": 1,
+    "job_state_changed": false,
+    "operation_id": "op_d46487769d53430eb7683bbbb681210c",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "not_applicable"
+  },
+  "auto-observed-flow-01": {
+    "status": "success",
+    "warnings": [],
+    "units": "mm",
+    "job_id": "auto-observed-flow-01",
+    "request_sha256": "16d819f99b8c12c55ff8fdbfdc469fbb8de60a40bc4c88d688740b8ca99688c6",
+    "persisted_job_state": "solver_exited",
+    "log_name": "auto_flow_r1-Flow_benchmark.log",
+    "log_sha256": "d2a05a72a80d283ec0b004ceb1a223cebd5a276f28783ad001156159290ef540",
+    "observed_bytes": 39351,
+    "snapshot_semantics": "bytes read; file may still be growing",
+    "format": "observed_simcenter_2606_steady_flow",
+    "completion_marker_present": true,
+    "failure_evidence": {
+      "state": "unknown",
+      "stage": "unknown",
+      "translator_fatal_codes": [],
+      "fatal_abort_reported": false,
+      "numerical_convergence": "not_established",
+      "results_validated": false,
+      "next_action": "Inspect job process status, residuals and result validation before classifying."
+    },
+    "residual_threshold": 1e-06,
+    "last_iteration": 15,
+    "final_equations_complete": true,
+    "final_residual_criteria_met": true,
+    "reported_imbalances": {
+      "momentum": {
+        "value": 2.26e-05,
+        "units": "%",
+        "definition": "native reported imbalance; denominator not independently established"
+      },
+      "mass": {
+        "value": 0.008865,
+        "units": "%",
+        "definition": "native reported imbalance; denominator not independently established"
+      },
+      "energy": {
+        "value": 0.0,
+        "units": "%",
+        "definition": "native reported imbalance; denominator not independently established"
+      }
+    },
+    "boundary_flows": [
+      {
+        "name": "Duct Inlet",
+        "volume_flow_m3_s": 0.0001912,
+        "mass_flow_kg_s": 0.0002294,
+        "positive_direction": "into_domain"
+      },
+      {
+        "name": "Duct Opening",
+        "volume_flow_m3_s": -0.0001912,
+        "mass_flow_kg_s": -0.0002294,
+        "positive_direction": "into_domain"
+      }
+    ],
+    "fan_operating_points": {
+      "state": "reported",
+      "fans": [
+        {
+          "name": "Duct Inlet",
+          "loss_coefficient": 0.0,
+          "pressure_rise_Pa": 0.5220999999999999,
+          "mass_flow_kg_s": 0.0002294,
+          "pressure_convention": "unverified",
+          "volume_flow_m3_s": 0.0001912
+        }
+      ],
+      "native_pressure_unit": "mN/mm^2",
+      "unit_basis": "observed NX2606 fluid pressure summary header",
+      "precision": "rounded_native_log",
+      "identity": "display_names_only",
+      "engineering_accepted": false,
+      "scope": "Native rounded operating-point rows; static/total convention and exact model/job binding require separate audits"
+    },
+    "rounded_boundary_mass_sum_kg_s": 0.0,
+    "rounding_warning": "Boundary values are rounded in the log; a zero sum does not establish zero imbalance",
+    "numerical_convergence": "not_established",
+    "results_validated": false,
+    "scope": "Log observations only; input/job association, all configured criteria and mesh sensitivity require separate audits",
+    "residual_history": [
+      {
+        "iteration": 1,
+        "region": "Flow Enclosure",
+        "equation": "U - Mom",
+        "linear_iterations": 10,
+        "linear_residual": 3.816e-15,
+        "rate": 0.0,
+        "rate_overflow": false,
+        "residual": 0.02987,
+        "native_message": "--"
+      }
+    ],
+    "history_total": 60,
+    "next_offset": 1,
+    "job_state_changed": false,
+    "operation_id": "op_4eac3063a68a4a718052c97f9f78f406",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "not_applicable"
+  },
+  "document_flags_preserved": true
+}

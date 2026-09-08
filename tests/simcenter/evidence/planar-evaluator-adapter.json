@@ -1,0 +1,471 @@
+{
+  "status": "success",
+  "cases": [
+    {
+      "units": "mm",
+      "reverse": false,
+      "result": {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F4-planar-adapter-20260908-r3\\mm_normal.dxf",
+        "size": 573,
+        "sha256": "bfdb8f0259e5350e954bd37a0c9d9420f059b448aba9ab2c93de102766c86e4f",
+        "units": "mm",
+        "scale": 1.0,
+        "coordinate_frame": {
+          "origin": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "x_axis": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "y_axis": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "source_units": "mm"
+        },
+        "entity_count": 3,
+        "entity_counts": {
+          "LINE": 1,
+          "CIRCLE": 1,
+          "ARC": 1
+        },
+        "entities": [
+          {
+            "source": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_c6798a91e5244fc79c135a818027581d",
+              "kind": "curve",
+              "name": "Line1",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_e816abd555654d14a99a47ed6cc622e4",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "e816abd555654d14a99a47ed6cc622e4",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F4-planar-adapter-20260908-r3\\f4_r3_curves_mm.prt",
+              "journal_id": "ENTITY 3 1 1",
+              "display_name": "Line1"
+            },
+            "layer": "OUTLINE",
+            "type": "LINE",
+            "start": [
+              0.0,
+              0.0
+            ],
+            "end": [
+              2.0,
+              0.0
+            ]
+          },
+          {
+            "source": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_ee09edf7699a4b7c89496d5710910fa3",
+              "kind": "curve",
+              "name": "Arc1",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_e816abd555654d14a99a47ed6cc622e4",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "e816abd555654d14a99a47ed6cc622e4",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F4-planar-adapter-20260908-r3\\f4_r3_curves_mm.prt",
+              "journal_id": "ENTITY 5 2 1",
+              "display_name": "Arc1"
+            },
+            "layer": "OUTLINE",
+            "type": "CIRCLE",
+            "center": [
+              5.0,
+              5.0
+            ],
+            "radius": 1.0
+          },
+          {
+            "source": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_e09c2484cb1e4ee9ad98a1bd372a6053",
+              "kind": "curve",
+              "name": "Arc2",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_e816abd555654d14a99a47ed6cc622e4",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "e816abd555654d14a99a47ed6cc622e4",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F4-planar-adapter-20260908-r3\\f4_r3_curves_mm.prt",
+              "journal_id": "ENTITY 5 1 1",
+              "display_name": "Arc2"
+            },
+            "layer": "OUTLINE",
+            "type": "ARC",
+            "center": [
+              9.0,
+              5.0
+            ],
+            "radius": 1.0,
+            "start_angle": 0.0,
+            "end_angle": 90.0
+          }
+        ],
+        "all_boundary_loops_included": true,
+        "warnings": [
+          "Exports the selected analytic geometry; does not certify loop validity or fabrication readiness."
+        ]
+      },
+      "passed": true
+    },
+    {
+      "units": "mm",
+      "reverse": true,
+      "result": {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F4-planar-adapter-20260908-r3\\mm_reverse.dxf",
+        "size": 576,
+        "sha256": "e6d3fee434a66cb3527fd966eba42fce1bc37e6f5ef83c5e5ac4cf4b90475cd1",
+        "units": "mm",
+        "scale": 1.0,
+        "coordinate_frame": {
+          "origin": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "x_axis": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "y_axis": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "source_units": "mm"
+        },
+        "entity_count": 3,
+        "entity_counts": {
+          "LINE": 1,
+          "CIRCLE": 1,
+          "ARC": 1
+        },
+        "entities": [
+          {
+            "source": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_c6798a91e5244fc79c135a818027581d",
+              "kind": "curve",
+              "name": "Line1",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_e816abd555654d14a99a47ed6cc622e4",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "e816abd555654d14a99a47ed6cc622e4",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F4-planar-adapter-20260908-r3\\f4_r3_curves_mm.prt",
+              "journal_id": "ENTITY 3 1 1",
+              "display_name": "Line1"
+            },
+            "layer": "OUTLINE",
+            "type": "LINE",
+            "start": [
+              0.0,
+              0.0
+            ],
+            "end": [
+              2.0,
+              0.0
+            ]
+          },
+          {
+            "source": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_ee09edf7699a4b7c89496d5710910fa3",
+              "kind": "curve",
+              "name": "Arc1",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_e816abd555654d14a99a47ed6cc622e4",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "e816abd555654d14a99a47ed6cc622e4",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F4-planar-adapter-20260908-r3\\f4_r3_curves_mm.prt",
+              "journal_id": "ENTITY 5 2 1",
+              "display_name": "Arc1"
+            },
+            "layer": "OUTLINE",
+            "type": "CIRCLE",
+            "center": [
+              5.0,
+              -5.0
+            ],
+            "radius": 1.0
+          },
+          {
+            "source": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_e09c2484cb1e4ee9ad98a1bd372a6053",
+              "kind": "curve",
+              "name": "Arc2",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_e816abd555654d14a99a47ed6cc622e4",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "e816abd555654d14a99a47ed6cc622e4",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F4-planar-adapter-20260908-r3\\f4_r3_curves_mm.prt",
+              "journal_id": "ENTITY 5 1 1",
+              "display_name": "Arc2"
+            },
+            "layer": "OUTLINE",
+            "type": "ARC",
+            "center": [
+              9.0,
+              -5.0
+            ],
+            "radius": 1.0,
+            "start_angle": 270.0,
+            "end_angle": 0.0
+          }
+        ],
+        "all_boundary_loops_included": true,
+        "warnings": [
+          "Exports the selected analytic geometry; does not certify loop validity or fabrication readiness."
+        ]
+      },
+      "passed": true
+    },
+    {
+      "units": "mm",
+      "unsupported_ellipse_rejected": true,
+      "code": "NX_UNSUPPORTED_GEOMETRY"
+    },
+    {
+      "units": "inch",
+      "reverse": false,
+      "result": {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F4-planar-adapter-20260908-r3\\inch_normal.dxf",
+        "size": 592,
+        "sha256": "3f35c00a8e72714c1aca9308a3dfe130a6e618a2f2b5b84c3071a70b8dc38212",
+        "units": "mm",
+        "scale": 1.0,
+        "coordinate_frame": {
+          "origin": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "x_axis": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "y_axis": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "source_units": "inch"
+        },
+        "entity_count": 3,
+        "entity_counts": {
+          "LINE": 1,
+          "CIRCLE": 1,
+          "ARC": 1
+        },
+        "entities": [
+          {
+            "source": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_97b46e34ebbb424fa152caded9cd5003",
+              "kind": "curve",
+              "name": "Line1",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_37cc7d35aa034fafa3ba78eccf1aad87",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "37cc7d35aa034fafa3ba78eccf1aad87",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F4-planar-adapter-20260908-r3\\f4_r3_curves_inch.prt",
+              "journal_id": "ENTITY 3 1 1",
+              "display_name": "Line1"
+            },
+            "layer": "OUTLINE",
+            "type": "LINE",
+            "start": [
+              0.0,
+              0.0
+            ],
+            "end": [
+              50.8,
+              0.0
+            ]
+          },
+          {
+            "source": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_030fac954ea34c699c4c6cec993e1079",
+              "kind": "curve",
+              "name": "Arc1",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_37cc7d35aa034fafa3ba78eccf1aad87",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "37cc7d35aa034fafa3ba78eccf1aad87",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F4-planar-adapter-20260908-r3\\f4_r3_curves_inch.prt",
+              "journal_id": "ENTITY 5 2 1",
+              "display_name": "Arc1"
+            },
+            "layer": "OUTLINE",
+            "type": "CIRCLE",
+            "center": [
+              127.0,
+              127.0
+            ],
+            "radius": 25.4
+          },
+          {
+            "source": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_3730212ff3774cf1af8717bf94176f03",
+              "kind": "curve",
+              "name": "Arc2",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_37cc7d35aa034fafa3ba78eccf1aad87",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "37cc7d35aa034fafa3ba78eccf1aad87",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F4-planar-adapter-20260908-r3\\f4_r3_curves_inch.prt",
+              "journal_id": "ENTITY 5 1 1",
+              "display_name": "Arc2"
+            },
+            "layer": "OUTLINE",
+            "type": "ARC",
+            "center": [
+              228.6,
+              127.0
+            ],
+            "radius": 25.4,
+            "start_angle": 0.0,
+            "end_angle": 90.0
+          }
+        ],
+        "all_boundary_loops_included": true,
+        "warnings": [
+          "Exports the selected analytic geometry; does not certify loop validity or fabrication readiness."
+        ]
+      },
+      "passed": true
+    },
+    {
+      "units": "inch",
+      "reverse": true,
+      "result": {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F4-planar-adapter-20260908-r3\\inch_reverse.dxf",
+        "size": 595,
+        "sha256": "50dde39efd44b6768675cb4e86b86487f0edd49afcad2d320bff76a786270f7d",
+        "units": "mm",
+        "scale": 1.0,
+        "coordinate_frame": {
+          "origin": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "x_axis": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "y_axis": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "normal": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "source_units": "inch"
+        },
+        "entity_count": 3,
+        "entity_counts": {
+          "LINE": 1,
+          "CIRCLE": 1,
+          "ARC": 1
+        },
+        "entities": [
+          {
+            "source": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_97b46e34ebbb424fa152caded9cd5003",
+              "kind": "curve",
+              "name": "Line1",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_37cc7d35aa034fafa3ba78eccf1aad87",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "37cc7d35aa034fafa3ba78eccf1aad87",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F4-planar-adapter-20260908-r3\\f4_r3_curves_inch.prt",
+              "journal_id": "ENTITY 3 1 1",
+              "display_name": "Line1"
+            },
+            "layer": "OUTLINE",
+            "type": "LINE",
+            "start": [
+              0.0,
+              0.0
+            ],
+            "end": [
+              50.8,
+              0.0
+            ]
+          },
+          {
+            "source": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_030fac954ea34c699c4c6cec993e1079",
+              "kind": "curve",
+              "name": "Arc1",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_37cc7d35aa034fafa3ba78eccf1aad87",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "37cc7d35aa034fafa3ba78eccf1aad87",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F4-planar-adapter-20260908-r3\\f4_r3_curves_inch.prt",
+              "journal_id": "ENTITY 5 2 1",
+              "display_name": "Arc1"
+            },
+            "layer": "OUTLINE",
+            "type": "CIRCLE",
+            "center": [
+              127.0,
+              -127.0
+            ],
+            "radius": 25.4
+          },
+          {
+            "source": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_3730212ff3774cf1af8717bf94176f03",
+              "kind": "curve",
+              "name": "Arc2",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_37cc7d35aa034fafa3ba78eccf1aad87",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "37cc7d35aa034fafa3ba78eccf1aad87",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F4-planar-adapter-20260908-r3\\f4_r3_curves_inch.prt",
+              "journal_id": "ENTITY 5 1 1",
+              "display_name": "Arc2"
+            },
+            "layer": "OUTLINE",
+            "type": "ARC",
+            "center": [
+              228.6,
+              -127.0
+            ],
+            "radius": 25.4,
+            "start_angle": 270.0,
+            "end_angle": 0.0
+          }
+        ],
+        "all_boundary_loops_included": true,
+        "warnings": [
+          "Exports the selected analytic geometry; does not certify loop validity or fabrication readiness."
+        ]
+      },
+      "passed": true
+    },
+    {
+      "units": "inch",
+      "unsupported_ellipse_rejected": true,
+      "code": "NX_UNSUPPORTED_GEOMETRY"
+    }
+  ],
+  "passed": true,
+  "unrelated_modified_flags_preserved": true,
+  "solver_launched": false,
+  "operation_id": "op_b9d512f553244424838bfda6e83e17ec",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "inch"
+}

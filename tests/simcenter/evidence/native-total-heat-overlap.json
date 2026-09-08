@@ -1,0 +1,154 @@
+{
+  "status": "success",
+  "rejection": {
+    "overlaps": [
+      {
+        "load_name": "MCP surface flux",
+        "load_journal_id": "Load[MCP surface flux]",
+        "requested_target_index": 0,
+        "relation": "face_within_heated_body"
+      }
+    ],
+    "next_step": "Inspect existing loads; use allow_additive only for separate intended contributions",
+    "mutation_outcome": "not_started"
+  },
+  "accepted": {
+    "power_w": 0.1,
+    "power_units": "W",
+    "properties": [
+      {
+        "name": "description",
+        "native_type": "0",
+        "units": null,
+        "inspection_status": "unsupported_property_type"
+      },
+      {
+        "name": "Selection Method",
+        "native_type": "3",
+        "units": null,
+        "value": 0
+      },
+      {
+        "name": "Override Region",
+        "native_type": "2",
+        "units": null,
+        "value": false
+      },
+      {
+        "name": "Non-Geometric Element",
+        "native_type": "0",
+        "units": null,
+        "inspection_status": "unsupported_property_type"
+      },
+      {
+        "name": "Heat Load",
+        "native_type": "6",
+        "units": "HeatFlow_Metric2",
+        "expression": "0.1",
+        "unit_symbol": "W",
+        "representation": "expression"
+      },
+      {
+        "name": "Heat Load Override",
+        "native_type": "6",
+        "units": "dimensionless",
+        "expression": "-777777",
+        "unit_symbol": null,
+        "representation": "expression"
+      },
+      {
+        "name": "Specify Reference Temperature Set",
+        "native_type": "2",
+        "units": null,
+        "value": false
+      },
+      {
+        "name": "Reference Temperature Set",
+        "native_type": "0",
+        "units": null,
+        "inspection_status": "unsupported_property_type"
+      },
+      {
+        "name": "Control Heater",
+        "native_type": "2",
+        "units": null,
+        "value": false
+      },
+      {
+        "name": "Thermostat",
+        "native_type": "0",
+        "units": null,
+        "inspection_status": "unsupported_property_type"
+      },
+      {
+        "name": "Specify Layer to Apply to",
+        "native_type": "2",
+        "units": null,
+        "value": false
+      },
+      {
+        "name": "Apply to",
+        "native_type": "3",
+        "units": null,
+        "value": 0
+      },
+      {
+        "name": "Layer Number",
+        "native_type": "3",
+        "units": null,
+        "value": 1
+      },
+      {
+        "name": "Per Element",
+        "native_type": "2",
+        "units": null,
+        "value": false
+      },
+      {
+        "name": "Per Node",
+        "native_type": "2",
+        "units": null,
+        "value": false
+      },
+      {
+        "name": "distributionType",
+        "native_type": "3",
+        "units": null,
+        "value": 32
+      },
+      {
+        "name": "Custom Settings Option",
+        "native_type": "2",
+        "units": null,
+        "value": false
+      },
+      {
+        "name": "Custom Settings",
+        "native_type": "1",
+        "units": null,
+        "value": "BCONX"
+      }
+    ],
+    "provenance": "Separate contribution for native test",
+    "energy_accounting": "internal_heat",
+    "target_count": 1,
+    "saved": false,
+    "solver_launched": false,
+    "overlap_policy": "allow_additive",
+    "overlaps": [
+      {
+        "load_name": "MCP surface flux",
+        "load_journal_id": "Load[MCP surface flux]",
+        "requested_target_index": 0,
+        "relation": "face_within_heated_body"
+      }
+    ]
+  },
+  "rollback_verified": true,
+  "flags_preserved": true,
+  "operation_id": "op_dfb91613fce748d48097a57b0e329e8a",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

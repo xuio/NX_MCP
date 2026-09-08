@@ -1,0 +1,64 @@
+{
+  "scope": "Native fan selector and table export discovery; fan/duct acceptance has NOT passed",
+  "job": {
+    "job_id": "cavity-fan-solve-01",
+    "state": "completed",
+    "deck_sha256": "392936ca8a3706302b6da6a35acf337a56459a1684bec6b2e607ad7b4517e4c1",
+    "created_at": "2026-09-08T01:52:19.010450+00:00",
+    "iteration_limit": 1000,
+    "solver_launched": true,
+    "numerical_validation": "rejected_fan_operating_point_requires_pressure_reference_audit",
+    "scope": "synthetic fan mode-5 verification; no thermal load; not acceptance D",
+    "log_sha256": "FC530CAA83C7E3DECA74FF034BF06159493BF9B9B087322C580061E9930FC6CE",
+    "result_sha256": "1257685DEE22B996AA921FB0E1D16CD9347FE8495043091904298E97D78BC7E6"
+  },
+  "observations": {
+    "native_mode_option": 5,
+    "translator_inlet_label": "Fan Curve",
+    "curve_flow_m3_s": [
+      0,
+      0.0002,
+      0.0004
+    ],
+    "curve_pressure_Pa": [
+      1,
+      0.5,
+      0
+    ],
+    "inlet_volume_flow_m3_s": 0.0004,
+    "inlet_mass_flow_kg_s": 0.00048,
+    "reported_fan_delta_p_native": -0.02586,
+    "reported_loss_coefficient": 0,
+    "mass_imbalance_percent": 0.01818,
+    "momentum_imbalance_percent": 0.008471,
+    "runtime_seconds": 25,
+    "pressure_reference_audit_pending": true,
+    "reported_point_agrees_with_curve": false
+  },
+  "files": {
+    "cavity-fan-solve-01.json": {
+      "size": 641,
+      "sha256": "427501b9c1274d603d3a3ed9f2780e1d5fb1ca8cefdfd24a02faca87ab08049b"
+    },
+    "benchmark_4ba7072a1d7a_analysis-Flow_benchmark.xml": {
+      "size": 265110,
+      "sha256": "e7cc2ca54f7f98a8d11c7a8422fbc2c148d4c5068df3e866c85eb074bfae8d17"
+    },
+    "benchmark_4ba7072a1d7a_analysis-Flow_benchmark.bun": {
+      "size": 704492,
+      "sha256": "1257685dee22b996aa921fb0e1d16cd9347fe8495043091904298e97d78bc7e6"
+    },
+    "fan-configuration-01.json": {
+      "size": 1093,
+      "sha256": "6c38e1c575b8884b2b89a932847a046c6f09dc67102ed06402b003c29017e8ac"
+    },
+    "benchmark_4ba7072a1d7a_analysis-Flow_benchmark.log": {
+      "size": 47799,
+      "sha256": "fc530caa83c7e3deca74ff034bf06159493bf9b9b087322c580061e9930fc6ce"
+    },
+    "benchmark_4ba7072a1d7a_analysis-Flow_benchmark.map": {
+      "size": 20778,
+      "sha256": "c9d30226957aff976ea570c04e068019049e3a7b3cd2312dd881e7605f5a6e09"
+    }
+  }
+}

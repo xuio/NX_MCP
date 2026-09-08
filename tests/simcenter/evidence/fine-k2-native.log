@@ -1,0 +1,530 @@
+ Thermal/Flow Analysis
+ =====================
+ MAYA Heat Transfer Technologies Ltd.
+
+
+ Simcenter 3D Thermal/Flow 2606.1  May 22 2026 (Build 20260522_1_8daed8e)
+
+ Simcenter 3D Installation Directory: C:\Program Files\Siemens\Designcenter2606
+
+ Solver Installation Directory: C:/Program Files/Siemens/Designcenter2606/thermalflow/tmgsolver
+
+ Run directory specified for analysis:
+ .\
+
+ NX2TMG - Thermal/flow model file builder
+ ======================================================================
+ Time: Tue Sep 8 10:25:32 2026
+
+ +--------------------------------------------------------------------+                              
+ |                            Model Builder                           |                              
+ +--------------------------------------------------------------------+                              
+                                                                                                     
+ Reading model file...                                                                               
+ ...model file read.                                                                                 
+                                                                                                     
+ +--------------------------------------------------------------------+                              
+ |                            Model Summary                           |                              
+ +--------------------------------------------------------------------+                              
+                                                                                                     
+ Finite Element Model                                                                                
+ --------------------                                                                                
+                                                                                                     
+ Solver type:     Simcenter 3D Multiphysics                                                          
+ Analysis type:   Flow                                                                               
+ Solution type:   Flow                                                                               
+ Simulation File: D:\CAD\SIMCENTER_MCP_WORKSPACE\ui-benchmarks\F-auto-observer-2                     
+ 0260908-r1\auto_flow_r1.sim                                                                         
+ Solution:        Flow_benchmark                                                                     
+                                                                                                     
+ Number of nodes in thermal model:                        0                                          
+ Number of elements in thermal model:                     0                                          
+                                                                                                     
+ Number of nodes in flow model:                       71748                                          
+ Number of elements in flow model:                   186765                                          
+                                                                                                     
+ Number of fluid nodes reused for surface coating:     1188                                          
+ Number of elements created for surface coating:       1436                                          
+                                                                                                     
+ Solution Options                                                                                    
+ ----------------                                                                                    
+                                                                                                     
+ Solving Flow and Thermal                                                                            
+                                                                                                     
+ Number of Solution Steps:                     1                                                     
+ ----------------------------------------------------------------------                              
+          1 - Duct benchmark step                                                                    
+       Type:                              Steady-State                                               
+       End Time:                          0.000E+00 s                                                
+       Ouput Request:                     Duct benchmark Flow Output Re                              
+                                                                                                     
+                                                                                                     
+ Ambient Temperature:                             2.000E+01 C                                        
+ Ambient Pressure:                                1.013E+02 mN/mm^2                                  
+ Gravitational Acceleration:                      0.000E+00 mm/s^2                                   
+ Gravity Direction: X: 0.000E+00  Y: 0.000E+00  Z: 0.000E+00                                         
+ Fluid buoyancy:                                  Off                                                
+                                                                                                     
+ Flow solver type:                                Parallel                                           
+ Parallel flow solver scheme:                     Fully Coupled Pressure-Velocity                    
+                                                                                                     
+ Flow laminar/turbulent model:                    Laminar                                            
+                                                                                                     
+ Flow solver iteration limit:                          1000                                          
+ Flow converged when RMS residual less than:      1.000E-06                                          
+ Flow solver physical time step:                  5.000E-01 s                                        
+ Flow solver heat imbalance:                      2.000E-02                                          
+                                                                                                     
+ Advection Scheme Momentum:                       First Order                                        
+ Advection Scheme Energy (if Solve_Energy):       First Order                                        
+                                                                                                     
+ Global Relaxation Factor:                        7.500E-01                                          
+ Mass Relaxation Factor:                          7.500E-01                                          
+ Fluids Relaxation Factor:                        9.000E-01                                          
+ Turbulence Relaxation Factor:                    1.000E+00                                          
+ Fan Curves Relaxation Factor                                                                        
+      Inlet, Outlet and Internal Fans:            1.000E+00                                          
+      Recirculation Loops:                        1.000E+00                                          
+                                                                                                     
+ Freeze flow field:                               Off                                                
+ High Speed Flow:                                 Off                                                
+                                                                                                     
+ Performing mesh checks...                                                                           
+                                                                                                     
+  - interior and warping angle                                                                       
+    checks on thermal elements...                                                                    
+    ...angle checks on thermal                                                                       
+       elements completed.                                                                           
+                                                                                                     
+  - coincident node check                                                                            
+    on thermal model...                                                                              
+    ...node check on thermal                                                                         
+       model completed.                                                                              
+                                                                                                     
+ ...mesh checks completed.                                                                           
+                                                                                                     
+ Building free face list...                                                                          
+ ...found   15140 free faces.                                                                        
+                                                                                                     
+ Processing inlets/outlets/internal fans...                                                          
+                                                                                                     
+  - Building entity face list...                                                                     
+    ...found        718 entity faces.                                                                
+ ...Inlet   2 done.                                                                                  
+                                                                                                     
+ Processing openings...                                                                              
+                                                                                                     
+  - Building entity face list...                                                                     
+    ...found        718 entity faces.                                                                
+ ...Opening  4 done.                                                                                 
+                                                                                                     
+ Surface Property Definitions                                                                        
+ -----------------------------                                                                       
+                                                                                                     
+   1 - Default surface property                                                                      
+       Roughness:  0.000E+00 mm                                                                      
+       Heat Transfer Coefficient: Auto. Calc. Forced Convection                                      
+                                                                                                     
+ Inlets                                                                                              
+ ------                                                                                              
+                                                                                                     
+ Number of inlet:                                          1                                         
+                                                                                                     
+ Inlet                               Type           Value                                            
+ ----------------------------------------------------------------------                              
+   2 - Duct Inlet                    Fan Curve                                                       
+       Area:  4.000E+02 mm^2                                                                         
+ ----------------------------------------------------------------------                              
+                                                                                                     
+ Openings                                                                                            
+ --------                                                                                            
+                                                                                                     
+ Number of openings:                                       1                                         
+                                                                                                     
+ Opening                             Type                                                            
+ ----------------------------------------------------------------------                              
+   4 - Duct Opening                  Specified T, Absolute P                                         
+       Area:  4.000E+02 mm^2                                                                         
+       Temp:  2.000E+01 C                                                                            
+       Pres:  1.013E+02 mN/mm^2                                                                      
+ ----------------------------------------------------------------------                              
+                                                                                                     
+ Sub-domains                                                                                         
+ -----------                                                                                         
+                                                                                                     
+ Sub-domain Elements   Fluid                           Volume                                        
+ ----------------------------------------------------------------------                              
+   1          186765   Liquid : Benchmark constant     6.3995E+04 mm^3                               
+ ----------------------------------------------------------------------                              
+                                                                                                     
+ Writing flow model files...                                                                         
+ ...done.                                                                                            
+ Parallel Flow Solver
+ ====================================
+ MAYA Heat Transfer Technologies Ltd.
+
+
+ Version: 2606.1  May 22 2026
+
+
+ Run directory specified for analysis:
+ .\
+
+ Executing Flow Solver Only
+
+ FLOW - Flow analysis
+ ======================================================================
+ Time: Tue Sep 8 10:25:34 2026
+
+
+ Solver - Parallel Flow Solve
+ ======================================================================
+ Time: Tue Sep 8 10:25:35 2026
+
+ +------------------------------------------------------------------------+
+ |                    NIECE - Fluid Domain Partitioner                    |
+ |                  MAYA Heat Transfer Technologies Ltd.                  |
+ +------------------------------------------------------------------------+
+
+  Loading geometry...
+    Loading nodes...
+    Loading elements...
+    Loading faces...
+  Found 1 global flow enclosure 
+  Partitioning enclosure 1 (71748 nodes)
+    Storing partitioning information...
+  Done. 
+
+ +------------------------------------------------------------------------+
+ |                      NIECE - Parallel Flow Solver                      |
+ |                  MAYA Heat Transfer Technologies Ltd.                  |
+ +------------------------------------------------------------------------+
+
+   This product includes Trilinos: An Object-Oriented Solver Framework,
+   Copyright (2001) Sandia Corporation. The Trilinos library is licensed
+   under the GNU Lesser General Public License, a copy of which is found
+   in the TMG installation folder (tmg/install). Please consult the Flow
+   Reference Manual for more information about Trilinos.
+
+
+
+ Running on 1 process(es)
+
+ Initializing...
+  Loading geometry...
+    Loading nodes...
+    Loading elements...
+    Loading faces...
+  Loading physical conditions...
+  Creating solver enclosures...
+    Creating Flow Enclosure 1...
+  Initializing Flow Enclosure...
+ Done initializing, ready to start run.
+
+ +------------------------------------------------------------------------+
+ |                                                                        |
+ |           Steady-state convergence history - Flow simulation           |
+ |                                                                        |
+ +------------------------------------------------------------------------+
+
+                   +----------------------+-------------------------------+
+  Global iteration |     Linear Solver    |       Convergence info        |
+         1         +----------------------+-------------------------------+
+                   | Iters |    |Ax-b|    |  Rate  |   Residual   |  Msg  |
+ +-----------------+-------+--------------+--------+--------------+-------+
+ | Flow Enclosure - Step of 0.500000s - Step 1                            |
+ +-----------------+-------+--------------+--------+--------------+-------+
+ | U - Mom         |   10  |   3.816e-15  |  0.00  |   2.987e-02  |  --   |
+ | V - Mom         |   10  |   3.816e-15  |  0.00  |   7.880e-19  |  OK   |
+ | W - Mom         |   10  |   3.816e-15  |  0.00  |   7.552e-19  |  OK   |
+ | P - Mass        |   10  |   3.816e-15  |  0.00  |   2.328e-03  |  --   |
+ +-----------------+-------+--------------+--------+--------------+-------+
+
+                   +----------------------+-------------------------------+
+  Global iteration |     Linear Solver    |       Convergence info        |
+         2         +----------------------+-------------------------------+
+                   | Iters |    |Ax-b|    |  Rate  |   Residual   |  Msg  |
+ +-----------------+-------+--------------+--------+--------------+-------+
+ | Flow Enclosure - Step of 0.500000s - Step 2                            |
+ +-----------------+-------+--------------+--------+--------------+-------+
+ | U - Mom         |    1  |   1.541e-04  |  0.96  |   2.858e-02  |  --   |
+ | V - Mom         |    1  |   1.541e-04  |  ++++  |   5.948e-03  |  --   |
+ | W - Mom         |    1  |   1.541e-04  |  ++++  |   5.810e-03  |  --   |
+ | P - Mass        |    1  |   1.541e-04  |  9.62  |   2.238e-02  |  --   |
+ +-----------------+-------+--------------+--------+--------------+-------+
+
+                   +----------------------+-------------------------------+
+  Global iteration |     Linear Solver    |       Convergence info        |
+         3         +----------------------+-------------------------------+
+                   | Iters |    |Ax-b|    |  Rate  |   Residual   |  Msg  |
+ +-----------------+-------+--------------+--------+--------------+-------+
+ | Flow Enclosure - Step of 0.500000s - Step 3                            |
+ +-----------------+-------+--------------+--------+--------------+-------+
+ | U - Mom         |    1  |   3.979e-05  |  0.19  |   5.426e-03  |  --   |
+ | V - Mom         |    1  |   3.979e-05  |  0.24  |   1.430e-03  |  --   |
+ | W - Mom         |    1  |   3.979e-05  |  0.24  |   1.401e-03  |  --   |
+ | P - Mass        |    1  |   3.979e-05  |  0.16  |   3.493e-03  |  --   |
+ +-----------------+-------+--------------+--------+--------------+-------+
+
+                   +----------------------+-------------------------------+
+  Global iteration |     Linear Solver    |       Convergence info        |
+         4         +----------------------+-------------------------------+
+                   | Iters |    |Ax-b|    |  Rate  |   Residual   |  Msg  |
+ +-----------------+-------+--------------+--------+--------------+-------+
+ | Flow Enclosure - Step of 0.500000s - Step 4                            |
+ +-----------------+-------+--------------+--------+--------------+-------+
+ | U - Mom         |    1  |   6.237e-06  |  0.16  |   8.600e-04  |  --   |
+ | V - Mom         |    1  |   6.237e-06  |  0.31  |   4.407e-04  |  --   |
+ | W - Mom         |    1  |   6.237e-06  |  0.30  |   4.227e-04  |  --   |
+ | P - Mass        |    1  |   6.237e-06  |  0.06  |   2.021e-04  |  --   |
+ +-----------------+-------+--------------+--------+--------------+-------+
+
+                   +----------------------+-------------------------------+
+  Global iteration |     Linear Solver    |       Convergence info        |
+         5         +----------------------+-------------------------------+
+                   | Iters |    |Ax-b|    |  Rate  |   Residual   |  Msg  |
+ +-----------------+-------+--------------+--------+--------------+-------+
+ | Flow Enclosure - Step of 0.500000s - Step 5                            |
+ +-----------------+-------+--------------+--------+--------------+-------+
+ | U - Mom         |    1  |   2.421e-06  |  0.34  |   2.952e-04  |  --   |
+ | V - Mom         |    1  |   2.421e-06  |  0.23  |   1.023e-04  |  --   |
+ | W - Mom         |    1  |   2.421e-06  |  0.24  |   1.005e-04  |  --   |
+ | P - Mass        |    1  |   2.421e-06  |  0.39  |   7.982e-05  |  --   |
+ +-----------------+-------+--------------+--------+--------------+-------+
+
+                   +----------------------+-------------------------------+
+  Global iteration |     Linear Solver    |       Convergence info        |
+         6         +----------------------+-------------------------------+
+                   | Iters |    |Ax-b|    |  Rate  |   Residual   |  Msg  |
+ +-----------------+-------+--------------+--------+--------------+-------+
+ | Flow Enclosure - Step of 0.500000s - Step 6                            |
+ +-----------------+-------+--------------+--------+--------------+-------+
+ | U - Mom         |    2  |   2.244e-07  |  0.39  |   1.161e-04  |  --   |
+ | V - Mom         |    2  |   2.244e-07  |  0.36  |   3.732e-05  |  --   |
+ | W - Mom         |    2  |   2.244e-07  |  0.39  |   3.870e-05  |  --   |
+ | P - Mass        |    2  |   2.244e-07  |  0.36  |   2.840e-05  |  --   |
+ +-----------------+-------+--------------+--------+--------------+-------+
+
+                   +----------------------+-------------------------------+
+  Global iteration |     Linear Solver    |       Convergence info        |
+         7         +----------------------+-------------------------------+
+                   | Iters |    |Ax-b|    |  Rate  |   Residual   |  Msg  |
+ +-----------------+-------+--------------+--------+--------------+-------+
+ | Flow Enclosure - Step of 0.500000s - Step 7                            |
+ +-----------------+-------+--------------+--------+--------------+-------+
+ | U - Mom         |    2  |   7.068e-08  |  0.48  |   5.518e-05  |  --   |
+ | V - Mom         |    2  |   7.068e-08  |  0.40  |   1.484e-05  |  --   |
+ | W - Mom         |    2  |   7.068e-08  |  0.39  |   1.519e-05  |  --   |
+ | P - Mass        |    2  |   7.068e-08  |  0.48  |   1.362e-05  |  --   |
+ +-----------------+-------+--------------+--------+--------------+-------+
+
+                   +----------------------+-------------------------------+
+  Global iteration |     Linear Solver    |       Convergence info        |
+         8         +----------------------+-------------------------------+
+                   | Iters |    |Ax-b|    |  Rate  |   Residual   |  Msg  |
+ +-----------------+-------+--------------+--------+--------------+-------+
+ | Flow Enclosure - Step of 0.500000s - Step 8                            |
+ +-----------------+-------+--------------+--------+--------------+-------+
+ | U - Mom         |    2  |   3.910e-08  |  0.53  |   2.904e-05  |  --   |
+ | V - Mom         |    2  |   3.910e-08  |  0.38  |   5.661e-06  |  --   |
+ | W - Mom         |    2  |   3.910e-08  |  0.39  |   5.882e-06  |  --   |
+ | P - Mass        |    2  |   3.910e-08  |  0.53  |   7.193e-06  |  --   |
+ +-----------------+-------+--------------+--------+--------------+-------+
+
+                   +----------------------+-------------------------------+
+  Global iteration |     Linear Solver    |       Convergence info        |
+         9         +----------------------+-------------------------------+
+                   | Iters |    |Ax-b|    |  Rate  |   Residual   |  Msg  |
+ +-----------------+-------+--------------+--------+--------------+-------+
+ | Flow Enclosure - Step of 0.500000s - Step 9                            |
+ +-----------------+-------+--------------+--------+--------------+-------+
+ | U - Mom         |    2  |   2.418e-08  |  0.57  |   1.660e-05  |  --   |
+ | V - Mom         |    2  |   2.418e-08  |  0.49  |   2.782e-06  |  --   |
+ | W - Mom         |    2  |   2.418e-08  |  0.50  |   2.938e-06  |  --   |
+ | P - Mass        |    2  |   2.418e-08  |  0.55  |   3.947e-06  |  --   |
+ +-----------------+-------+--------------+--------+--------------+-------+
+
+                   +----------------------+-------------------------------+
+  Global iteration |     Linear Solver    |       Convergence info        |
+        10         +----------------------+-------------------------------+
+                   | Iters |    |Ax-b|    |  Rate  |   Residual   |  Msg  |
+ +-----------------+-------+--------------+--------+--------------+-------+
+ | Flow Enclosure - Step of 0.500000s - Step 10                           |
+ +-----------------+-------+--------------+--------+--------------+-------+
+ | U - Mom         |    2  |   1.567e-08  |  0.59  |   9.835e-06  |  --   |
+ | V - Mom         |    2  |   1.567e-08  |  0.60  |   1.664e-06  |  --   |
+ | W - Mom         |    2  |   1.567e-08  |  0.60  |   1.768e-06  |  --   |
+ | P - Mass        |    2  |   1.567e-08  |  0.57  |   2.246e-06  |  --   |
+ +-----------------+-------+--------------+--------+--------------+-------+
+
+                   +----------------------+-------------------------------+
+  Global iteration |     Linear Solver    |       Convergence info        |
+        11         +----------------------+-------------------------------+
+                   | Iters |    |Ax-b|    |  Rate  |   Residual   |  Msg  |
+ +-----------------+-------+--------------+--------+--------------+-------+
+ | Flow Enclosure - Step of 0.500000s - Step 11                           |
+ +-----------------+-------+--------------+--------+--------------+-------+
+ | U - Mom         |    2  |   1.034e-08  |  0.60  |   5.892e-06  |  --   |
+ | V - Mom         |    2  |   1.034e-08  |  0.62  |   1.031e-06  |  --   |
+ | W - Mom         |    2  |   1.034e-08  |  0.63  |   1.116e-06  |  --   |
+ | P - Mass        |    2  |   1.034e-08  |  0.58  |   1.294e-06  |  --   |
+ +-----------------+-------+--------------+--------+--------------+-------+
+
+                   +----------------------+-------------------------------+
+  Global iteration |     Linear Solver    |       Convergence info        |
+        12         +----------------------+-------------------------------+
+                   | Iters |    |Ax-b|    |  Rate  |   Residual   |  Msg  |
+ +-----------------+-------+--------------+--------+--------------+-------+
+ | Flow Enclosure - Step of 0.500000s - Step 12                           |
+ +-----------------+-------+--------------+--------+--------------+-------+
+ | U - Mom         |    2  |   6.640e-09  |  0.60  |   3.536e-06  |  --   |
+ | V - Mom         |    2  |   6.640e-09  |  0.62  |   6.412e-07  |  OK   |
+ | W - Mom         |    2  |   6.640e-09  |  0.63  |   7.069e-07  |  OK   |
+ | P - Mass        |    2  |   6.640e-09  |  0.58  |   7.454e-07  |  OK   |
+ +-----------------+-------+--------------+--------+--------------+-------+
+
+                   +----------------------+-------------------------------+
+  Global iteration |     Linear Solver    |       Convergence info        |
+        13         +----------------------+-------------------------------+
+                   | Iters |    |Ax-b|    |  Rate  |   Residual   |  Msg  |
+ +-----------------+-------+--------------+--------+--------------+-------+
+ | Flow Enclosure - Step of 0.500000s - Step 13                           |
+ +-----------------+-------+--------------+--------+--------------+-------+
+ | U - Mom         |    2  |   4.033e-09  |  0.60  |   2.119e-06  |  --   |
+ | V - Mom         |    2  |   4.033e-09  |  0.61  |   3.917e-07  |  OK   |
+ | W - Mom         |    2  |   4.033e-09  |  0.62  |   4.390e-07  |  OK   |
+ | P - Mass        |    2  |   4.033e-09  |  0.58  |   4.302e-07  |  OK   |
+ +-----------------+-------+--------------+--------+--------------+-------+
+
+                   +----------------------+-------------------------------+
+  Global iteration |     Linear Solver    |       Convergence info        |
+        14         +----------------------+-------------------------------+
+                   | Iters |    |Ax-b|    |  Rate  |   Residual   |  Msg  |
+ +-----------------+-------+--------------+--------+--------------+-------+
+ | Flow Enclosure - Step of 0.500000s - Step 14                           |
+ +-----------------+-------+--------------+--------+--------------+-------+
+ | U - Mom         |    2  |   2.326e-09  |  0.60  |   1.267e-06  |  --   |
+ | V - Mom         |    2  |   2.326e-09  |  0.60  |   2.336e-07  |  OK   |
+ | W - Mom         |    2  |   2.326e-09  |  0.60  |   2.650e-07  |  OK   |
+ | P - Mass        |    2  |   2.326e-09  |  0.58  |   2.501e-07  |  OK   |
+ +-----------------+-------+--------------+--------+--------------+-------+
+
+                   +----------------------+-------------------------------+
+  Global iteration |     Linear Solver    |       Convergence info        |
+        15         +----------------------+-------------------------------+
+                   | Iters |    |Ax-b|    |  Rate  |   Residual   |  Msg  |
+ +-----------------+-------+--------------+--------+--------------+-------+
+ | Flow Enclosure - Step of 0.500000s - Step 15                           |
+ +-----------------+-------+--------------+--------+--------------+-------+
+ | U - Mom         |    2  |   1.305e-09  |  0.60  |   7.568e-07  |  OK   |
+ | V - Mom         |    2  |   1.305e-09  |  0.58  |   1.363e-07  |  OK   |
+ | W - Mom         |    2  |   1.305e-09  |  0.59  |   1.557e-07  |  OK   |
+ | P - Mass        |    2  |   1.305e-09  |  0.59  |   1.475e-07  |  OK   |
+ +-----------------+-------+--------------+--------+--------------+-------+
+
+ Performing results sampling for Flow Enclosure...
+ Done.
+
+ +-------------------------------------------------------+
+ |              Boundary Mass Flow Summary               |
+ |                    Flow Enclosure                     |
+ +---------------------------+---------------------------+
+ |      ADIABATIC FACES      |            0.000e+00      |
+ |        Duct Inlet         |            2.294e-04      |
+ |       Duct Opening        |           -2.294e-04      |
+ +---------------------------+---------------------------+
+
+ +-------------------------------------------------------+
+ |             Boundary Volume Flow Summary              |
+ |                    Flow Enclosure                     |
+ +---------------------------+---------------------------+
+ |      ADIABATIC FACES      |            0.000e+00      |
+ |        Duct Inlet         |            1.912e+05      |
+ |       Duct Opening        |           -1.912e+05      |
+ +---------------------------+---------------------------+
+
+ +-----------------------------------------------------------------------+
+ |                    Boundary Momentum Flow Summary                     |
+ |                            Flow Enclosure                             |
+ +-----------------+-----------------+-----------------+-----------------+
+ |                 |         X-Comp. |         Y-Comp. |         Z-Comp. |
+ +-----------------+-----------------+-----------------+-----------------+
+ | ADIABATIC FACES |      -9.749e-02 |      -1.579e-05 |      -4.937e-05 |
+ |   Duct Inlet    |       3.189e-01 |      -3.057e-07 |      -2.590e-07 |
+ |  Duct Opening   |      -2.214e-01 |       1.608e-05 |       4.963e-05 |
+ +-----------------+-----------------+-----------------+-----------------+
+
+ +-----------------------------------------------------------------------+
+ |                   Fan Curve Operating Point Summary                   |
+ |                            Flow Enclosure                             |
+ +-----------------+-----------------+-----------------+-----------------+
+ |                 |     Loss Coeff. |         Delta P |  Mass Flow Rate |
+ +-----------------+-----------------+-----------------+-----------------+
+ |   Duct Inlet    |       0.000e+00 |       5.221e-04 |       2.294e-04 |
+ +-----------------+-----------------+-----------------+-----------------+
+
+ Total parallel flow solver time (s): 80.826
+
+
+
+ ESCRR - Convert analysis results
+ ======================================================================
+ Time: Tue Sep 8 10:26:57 2026
+
+ +--------------------------------------------------------------------+                              
+ |                          Results Recovery                          |                              
+ +--------------------------------------------------------------------+                              
+                                                                                                     
+ Recovering Velocity                                                                                 
+ Recovering Pressure                                                                                 
+ Recovering Temperature                                                                              
+                                                                                                     
+ Reading fluid flow results...                                                                       
+ Reading thermal results...                                                                          
+ Writing results data...                                                                             
+ 
+ 
+ +--------------------------------------------------------------------+                              
+ |                          Solution Summary                          |                              
+ +--------------------------------------------------------------------+                              
+                                                                                                     
+                                                                                                     
+ Results Summary       Maximum       Minimum       Average                                           
+ ----------------------------------------------------------------------                              
+ Fluid Temperature     2.000E+01     2.000E+01     2.000E+01 C                                       
+           at node             1             1                                                       
+ Fluid Velocity        6.135E+02     1.504E-02     2.637E+02 mm/s                                    
+           at node         62413          6765                                                       
+ Fluid Pressure        6.597E-04     1.234E-04     3.663E-04 mN/mm^2                                 
+           at node             8             3                                                       
+ ----------------------------------------------------------------------                              
+                                                                                                     
+                                                                                                     
+ Volume/Mass Flow Summary                                                                            
+ (Values > 0 are inflows)     Volume Flow          Mass Flow                                         
+ ----------------------------------------------------------------------                              
+ Duct Inlet                   1.912E+05 mm^3/s     2.294E-04 kg/s                                    
+ Duct Opening                -1.912E+05 mm^3/s    -2.294E-04 kg/s                                    
+ ----------------------------------------------------------------------                              
+                                                                                                     
+                                                                                                     
+ Solver Convergence                                                                                  
+ ----------------------------------------------------------------------                              
+ Flow solver - Momentum imbalance                  2.260E-05 Percent                                 
+ Flow solver - Mass imbalance                      8.865E-03 Percent                                 
+ Flow solver - Energy imbalance                    0.000E+00 Percent                                 
+ ----------------------------------------------------------------------                              
+                                                                                                     
+
+
+
+ +--------------------------------------------------------------------+
+ |                                END                                 |
+ +--------------------------------------------------------------------+
+
+ Solution elapsed time: 01 min 48 sec
+
+ Solve completed at:
+ ======================================================================
+ Time: Tue Sep 8 10:26:58 2026
+

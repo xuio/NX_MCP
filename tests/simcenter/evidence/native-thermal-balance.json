@@ -1,0 +1,30 @@
+{
+  "native_summary": {
+    "summaries": [
+      {
+        "ordinal": 0,
+        "values": {
+          "heat_flow_into_sinks": 1000000.0,
+          "heat_flow_from_nonfluid_sinks": 1e-10,
+          "heat_load_into_elements": 1000000.0,
+          "heat_load_into_sinks": 0.0,
+          "heat_flow_from_fluid_sinks": 0.0,
+          "reported_deviation": 0.0499
+        },
+        "issues": [],
+        "missing_fields": [],
+        "state": "complete"
+      }
+    ],
+    "power_unit": "mN-mm/s",
+    "unit_source": "caller_verified",
+    "time_association": "not_established",
+    "conservation_accepted": false,
+    "deviation_semantics": "native reported value; global versus local meaning not established",
+    "scope": "Observed TMG aggregate summaries; named sink and field integrals require separate inspection"
+  },
+  "detailed_report_sha256": "497c2be7f8df709d8475340ed83c290299a91dd95a843d97e9771356e7d020e3",
+  "finding": "Detailed report repeats aggregate values but does not explain named-sink discrepancy",
+  "energy_acceptance": "unresolved",
+  "fixture": "examples/simcenter/audit_conduction_isolated.py"
+}

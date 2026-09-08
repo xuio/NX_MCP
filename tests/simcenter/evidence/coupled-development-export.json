@@ -1,0 +1,50 @@
+{
+  "status": "success",
+  "copy": {
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_e9b98be0ca864678b59f6f54df5424ed",
+      "kind": "part",
+      "name": "coupled_development",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_64b6944de1374a198630e5e986d646e3",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "64b6944de1374a198630e5e986d646e3",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-development-export-20260908-r1\\coupled_development.sim",
+      "journal_id": "coupled_development",
+      "display_name": "coupled_development"
+    },
+    "source": {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-development-20260908-r1\\benchmark_99f1fecb220c_analysis.sim",
+      "bytes": 7649666,
+      "sha256": "f3e6795b54c460f5f9b0bb7079853153742c9dd5450deceadebddd6983f8b53d"
+    },
+    "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-development-export-20260908-r1\\coupled_development.sim",
+    "source_file_unchanged": true,
+    "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-development-export-20260908-r1\\coupled_development.sim",
+    "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-development-export-20260908-r1\\coupled_development.sim",
+    "shared_fem_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-development-20260908-r1\\benchmark_99f1fecb220c_mesh.fem",
+    "independent_geometry_variant": false,
+    "saved": true,
+    "result_freshness": "not_verified",
+    "next_step": "Reacquire document IDs. Duplicate and reassociate FEM/CAD before changing shared geometry or mesh."
+  },
+  "native_error": {
+    "type": "NXException",
+    "nx_code": 1,
+    "message": "Error number: 1"
+  },
+  "files": [
+    {
+      "name": "coupled_development.sim",
+      "bytes": 7652055
+    }
+  ],
+  "elapsed_seconds": 0.8599999999860302,
+  "solver_launched": false,
+  "numerical_acceptance": false,
+  "boundary_conditions_complete": false,
+  "operation_id": "op_e5035bb359044517b684c7266806ed41",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

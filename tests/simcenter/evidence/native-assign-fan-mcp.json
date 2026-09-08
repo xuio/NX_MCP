@@ -1,0 +1,222 @@
+{
+  "assigned": {
+    "status": "success",
+    "warnings": [],
+    "units": "mm",
+    "solver_preflight": {
+      "solver_processes": 0,
+      "scope": "host-wide known solver/translator names",
+      "exclusion": "point-in-time process snapshot; not an atomic lock"
+    },
+    "binding": {
+      "mode": 5,
+      "scale_factor": 1.0
+    },
+    "previous_binding": {
+      "mode": 5,
+      "scale_factor": 1.0
+    },
+    "manifest": {
+      "extrapolation": "reject",
+      "interpolation": "linear",
+      "name": "Public assignment test r1",
+      "points": [
+        {
+          "flow_m3_s": 0.0,
+          "pressure_Pa": 1.0
+        },
+        {
+          "flow_m3_s": 0.0004,
+          "pressure_Pa": 0.0
+        }
+      ],
+      "pressure_convention": "static",
+      "provenance": {
+        "kind": "assumed",
+        "source": "Reversible public MCP assignment fixture"
+      },
+      "reference_density_kg_m3": 1.2,
+      "reverse_flow": "unsupported",
+      "rpm": 1000.0,
+      "schema_version": 1,
+      "stall_region": "Synthetic only"
+    },
+    "results_stale": true,
+    "saved": false,
+    "orientation": "existing inlet definition; unchanged",
+    "pressure_reference": "existing inlet and solution values; unchanged",
+    "motor_heat": "not_assigned",
+    "operating_point": "requires solve",
+    "inlet": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_d89d0e6da95543278ae42dd1b420da27",
+      "kind": "simulation_object",
+      "name": "Duct Inlet",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_abf19f0b5631403fb507517856de3740",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "abf19f0b5631403fb507517856de3740",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-input-export-20260908-r2\\flow_input_r2.sim",
+      "journal_id": "SimulationObject[Duct Inlet]",
+      "display_name": "Duct Inlet"
+    },
+    "field": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_72489ae741b64f3cba95625a588c8779",
+      "kind": "simulation_field",
+      "name": "Public assignment test r1",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_abf19f0b5631403fb507517856de3740",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "abf19f0b5631403fb507517856de3740",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-input-export-20260908-r2\\flow_input_r2.sim",
+      "journal_id": "Public assignment test r1",
+      "display_name": "Public assignment test r1"
+    },
+    "operation_id": "assign-fan-public-20260908-r1",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed"
+  },
+  "replay": {
+    "status": "success",
+    "warnings": [],
+    "units": "mm",
+    "solver_preflight": {
+      "solver_processes": 0,
+      "scope": "host-wide known solver/translator names",
+      "exclusion": "point-in-time process snapshot; not an atomic lock"
+    },
+    "binding": {
+      "mode": 5,
+      "scale_factor": 1.0
+    },
+    "previous_binding": {
+      "mode": 5,
+      "scale_factor": 1.0
+    },
+    "manifest": {
+      "extrapolation": "reject",
+      "interpolation": "linear",
+      "name": "Public assignment test r1",
+      "points": [
+        {
+          "flow_m3_s": 0.0,
+          "pressure_Pa": 1.0
+        },
+        {
+          "flow_m3_s": 0.0004,
+          "pressure_Pa": 0.0
+        }
+      ],
+      "pressure_convention": "static",
+      "provenance": {
+        "kind": "assumed",
+        "source": "Reversible public MCP assignment fixture"
+      },
+      "reference_density_kg_m3": 1.2,
+      "reverse_flow": "unsupported",
+      "rpm": 1000.0,
+      "schema_version": 1,
+      "stall_region": "Synthetic only"
+    },
+    "results_stale": true,
+    "saved": false,
+    "orientation": "existing inlet definition; unchanged",
+    "pressure_reference": "existing inlet and solution values; unchanged",
+    "motor_heat": "not_assigned",
+    "operating_point": "requires solve",
+    "inlet": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_d89d0e6da95543278ae42dd1b420da27",
+      "kind": "simulation_object",
+      "name": "Duct Inlet",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_abf19f0b5631403fb507517856de3740",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "abf19f0b5631403fb507517856de3740",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-input-export-20260908-r2\\flow_input_r2.sim",
+      "journal_id": "SimulationObject[Duct Inlet]",
+      "display_name": "Duct Inlet"
+    },
+    "field": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_72489ae741b64f3cba95625a588c8779",
+      "kind": "simulation_field",
+      "name": "Public assignment test r1",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_abf19f0b5631403fb507517856de3740",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "abf19f0b5631403fb507517856de3740",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-input-export-20260908-r2\\flow_input_r2.sim",
+      "journal_id": "Public assignment test r1",
+      "display_name": "Public assignment test r1"
+    },
+    "operation_id": "assign-fan-public-20260908-r1",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed",
+    "replayed": true
+  },
+  "readback": {
+    "object": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_d89d0e6da95543278ae42dd1b420da27",
+      "kind": "simulation_object",
+      "name": "Duct Inlet",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_abf19f0b5631403fb507517856de3740",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "abf19f0b5631403fb507517856de3740",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-input-export-20260908-r2\\flow_input_r2.sim",
+      "journal_id": "SimulationObject[Duct Inlet]",
+      "display_name": "Duct Inlet"
+    },
+    "native_type": "SimSimulationObject",
+    "target_set_count": 1,
+    "descriptor": "Inlet",
+    "fan_binding": {
+      "mode": 5,
+      "field": {
+        "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_72489ae741b64f3cba95625a588c8779",
+        "kind": "simulation_field",
+        "name": "Public assignment test r1",
+        "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_abf19f0b5631403fb507517856de3740",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "generation_id": "abf19f0b5631403fb507517856de3740",
+        "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-input-export-20260908-r2\\flow_input_r2.sim",
+        "journal_id": "Public assignment test r1",
+        "display_name": "Public assignment test r1"
+      },
+      "scale_factor": 1.0,
+      "interpretation": "mode 5 static fan inlet verified for NX 2606 Flow only"
+    },
+    "provenance": null,
+    "coefficient_basis": null,
+    "energy_accounting": null
+  },
+  "wrong_kind": {
+    "meta": null,
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"status\": \"error\", \"warnings\": [], \"units\": null, \"code\": \"NX_OBJECT_TYPE_MISMATCH\", \"message\": \"Expected simulation_field, got part\", \"retryable\": false, \"details\": {\"operation_id\": \"op_61c71b55f3394824ba65bf1e38abf2b4\", \"mutation_outcome\": \"unknown\"}}",
+        "annotations": null,
+        "meta": null
+      }
+    ],
+    "structuredContent": {
+      "status": "error",
+      "warnings": [],
+      "units": null,
+      "code": "NX_OBJECT_TYPE_MISMATCH",
+      "message": "Expected simulation_field, got part",
+      "retryable": false,
+      "details": {
+        "operation_id": "op_61c71b55f3394824ba65bf1e38abf2b4",
+        "mutation_outcome": "unknown"
+      }
+    },
+    "isError": true
+  },
+  "cleanup": {
+    "status": "success",
+    "phase": "cleanup",
+    "original_binding_restored": true,
+    "field_inventory_restored": true,
+    "document_flags_preserved": true,
+    "operation_id": "op_08c9ee1212a14edbb42f7e4a1bb7c7ae",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "mutation_outcome": "committed",
+    "warnings": [],
+    "units": "mm"
+  }
+}

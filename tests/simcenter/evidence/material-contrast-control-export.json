@@ -1,0 +1,88 @@
+{
+  "status": "success",
+  "controls": [
+    [
+      "Thermal Parameters",
+      "Thermal Steady State - Iteration Limit",
+      100
+    ],
+    [
+      "Flow Solution Parameters",
+      "3D Flow Steady State - Iteration Limit",
+      100
+    ],
+    [
+      "Thermal-Flow Output Requests",
+      "Fluid Densities",
+      true
+    ],
+    [
+      "Thermal-Flow Output Requests",
+      "Mass Fluxes",
+      true
+    ]
+  ],
+  "native_and_xml_match": true,
+  "export": {
+    "input_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-material-control-export-20260908-r1\\control_export-Finned_coupled_benchmark.xml",
+    "input_identity": {
+      "sha256": "e51d567ee49014f6c98ba47aec4511d969ea1aa02ed205ecd57df522267a4597",
+      "xml_content_sha256": "03c1a954dcefea33c377b456a9533974c9470b55f2486a99a2bfc8da8f27b47d",
+      "bytes": 235673,
+      "canonicalization": "xml_c14n2_no_comments"
+    },
+    "validation": {
+      "state": "well_formed",
+      "step_definitions": 1,
+      "mesh_counts": {
+        "elements": 2130,
+        "nodes": 745,
+        "element_sets": 2,
+        "scope": "observed_multiphysics_xml_layout"
+      },
+      "solve_readiness": "not_established"
+    },
+    "coupled_ambient_validation": {
+      "property": "Fluid Temperature",
+      "native_value": 0.0,
+      "exported_value": 0.0,
+      "units": "degC",
+      "matches": true,
+      "absolute_tolerance_degC": 1e-06,
+      "scope": "constant ambient temperature only; not complete solve readiness"
+    },
+    "coupled_pressure_validation": {
+      "mode": "altitude_standard_conditions",
+      "stored_absolute_pressure_active": false,
+      "matches": true,
+      "scope": "selector only; altitude-derived pressure and density not verified"
+    },
+    "artifacts": [
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-material-control-export-20260908-r1\\control_export-Finned_coupled_benchmark.map",
+        "bytes": 36044
+      },
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-material-control-export-20260908-r1\\control_export-Finned_coupled_benchmark.xml",
+        "bytes": 235673
+      }
+    ],
+    "translator_reports": [],
+    "solver": "NX MULTIPHYSICS",
+    "analysis_type": "Coupled Thermal-Flow",
+    "solution": "Finned coupled benchmark",
+    "source_sim": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-material-control-export-20260908-r1\\control_export.sim",
+    "source_modified": false,
+    "solver_launched": false,
+    "solve_readiness": "not_established",
+    "scope": "Native thermal/flow input export, not a solve or convergence check"
+  },
+  "solver_launched": false,
+  "prior_results_reused_for_acceptance": false,
+  "limitation": "Prior contrast run used default 500-iteration cap, exited at 14; corrected export is not a rerun.",
+  "operation_id": "op_437b53f8071a4e909171feba4498624d",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

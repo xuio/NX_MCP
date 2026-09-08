@@ -1,0 +1,79 @@
+{
+  "scope": "matched fine-mesh synthetic fan/duct restriction response",
+  "cases": {
+    "K0": {
+      "job_id": "fine-k0-flow-01",
+      "flow_m3_s": 0.0002524,
+      "fan_pressure_rise_Pa": 0.36910000000000004,
+      "curve_pressure_Pa": 0.369,
+      "curve_absolute_error_Pa": 0.0001000000000000445,
+      "native_mass_imbalance_percent": 0.01252,
+      "iterations": 13,
+      "residual_threshold": 1e-06,
+      "log_sha256": "9214724af72ad49ca0e1f5c2f4e90297b79e4fe47449113a6414b072eb9cb1f2"
+    },
+    "K2": {
+      "job_id": "auto-observed-flow-01",
+      "flow_m3_s": 0.0001912,
+      "fan_pressure_rise_Pa": 0.5220999999999999,
+      "curve_pressure_Pa": 0.522,
+      "curve_absolute_error_Pa": 9.999999999987796e-05,
+      "native_mass_imbalance_percent": 0.008865,
+      "iterations": 15,
+      "residual_threshold": 1e-06,
+      "log_sha256": "d2a05a72a80d283ec0b004ceb1a223cebd5a276f28783ad001156159290ef540"
+    }
+  },
+  "flow_reduction_percent": 24.247226624405705,
+  "checks_passed": [
+    "identical exported node and element XML",
+    "identical fan curve; head loss is only differing exported property",
+    "positive inlet and negative outlet flow",
+    "native reported mass imbalance below 0.1 percent",
+    "final RMS threshold met",
+    "fan curve within 0.0002 Pa log-rounding allowance",
+    "flow reduction exceeds 5 percent"
+  ],
+  "limitations": [
+    "constant-density fluid surrogate; no buoyancy or conjugate heat transfer validation",
+    "static fan convention relies on the earlier native mode-5 pressure audit",
+    "mesh convergence and full benchmark D acceptance remain incomplete",
+    "rounded log values; no acoustic or product certification"
+  ],
+  "input_comparison": {
+    "inputs": {
+      "K0": {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\D-fine-k0-solve-20260908-r1\\fine_k0_solve_r1-Flow_benchmark.xml",
+        "sha256": "1071af3cf70191b833f4787709ad604ac0d0da11a07be1fc1d04d97d79e439dc",
+        "mesh_hashes": {
+          "NodeList": "4e481fd24e33b759f5e456d4298b5fc6577a6e36a4fc29c8438aaed85009240e",
+          "ElementList": "7070c0df4d1d38d0e048dc182b0c23526f5279d75542091d45007b7df7e40bb8"
+        }
+      },
+      "K2": {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-auto-observer-20260908-r1\\auto_flow_r1-Flow_benchmark.xml",
+        "sha256": "ac0e2cefe8487d6f1fd15bef97cbcf47234bb6b4d93c3b45d87c4e61e1530ec4",
+        "mesh_hashes": {
+          "NodeList": "4e481fd24e33b759f5e456d4298b5fc6577a6e36a4fc29c8438aaed85009240e",
+          "ElementList": "7070c0df4d1d38d0e048dc182b0c23526f5279d75542091d45007b7df7e40bb8"
+        }
+      }
+    },
+    "mesh_xml_identical": true,
+    "different_property_names": [
+      "Head Loss Coefficient"
+    ],
+    "property_differences": {
+      "Head Loss Coefficient": {
+        "K0": [
+          "<Property name=\"Head Loss Coefficient\">\n        <Value>  0.0000000E+00</Value>\n      </Property>\n      "
+        ],
+        "K2": [
+          "<Property name=\"Head Loss Coefficient\">\n        <Value>  2.0000000E+00</Value>\n      </Property>\n      "
+        ]
+      }
+    },
+    "fan_curve_identical": true,
+    "scope": "Mesh XML, fan curve and property comparison; not numerical acceptance"
+  }
+}

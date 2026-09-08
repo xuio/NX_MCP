@@ -1,0 +1,181 @@
+{
+  "status": "success",
+  "step_order_and_reopen_passed": true,
+  "step_bc_assignment_passed": false,
+  "first_add_committed": false,
+  "second_add_committed": false,
+  "global_membership_present_during_attempt": true,
+  "before": {
+    "solution": {
+      "owner": {
+        "journal_id": "Solution[Conduction]",
+        "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-step-membership-20260909-r1\\f2_step_membership_r1.sim"
+      },
+      "bcs": [
+        {
+          "journal_id": "Constraint[Cold end 293 K]",
+          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-step-membership-20260909-r1\\f2_step_membership_r1.sim"
+        },
+        {
+          "journal_id": "Load[End volume]",
+          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-step-membership-20260909-r1\\f2_step_membership_r1.sim"
+        }
+      ],
+      "unfoldered_bcs": [
+        {
+          "journal_id": "Constraint[Cold end 293 K]",
+          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-step-membership-20260909-r1\\f2_step_membership_r1.sim"
+        },
+        {
+          "journal_id": "Load[End volume]",
+          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-step-membership-20260909-r1\\f2_step_membership_r1.sim"
+        }
+      ],
+      "folders": [],
+      "conflict_override_count": 0
+    },
+    "steps": [
+      {
+        "index": 0,
+        "owner": {
+          "journal_id": "SolutionStep[Conduction]",
+          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-step-membership-20260909-r1\\f2_step_membership_r1.sim"
+        },
+        "bcs": [],
+        "unfoldered_bcs": [],
+        "folders": []
+      },
+      {
+        "index": 1,
+        "owner": {
+          "journal_id": "SolutionStep[Membership phase two]",
+          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-step-membership-20260909-r1\\f2_step_membership_r1.sim"
+        },
+        "bcs": [],
+        "unfoldered_bcs": [],
+        "folders": []
+      }
+    ],
+    "errors": [],
+    "comparison_verified": true,
+    "sha256": "a39204f12b7559981ab2581629c492f920af266effb69e4e323f0f93d0e3a41d"
+  },
+  "attempted": {
+    "solution": {
+      "owner": {
+        "journal_id": "Solution[Conduction]",
+        "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-step-membership-20260909-r1\\f2_step_membership_r1.sim"
+      },
+      "bcs": [
+        {
+          "journal_id": "Constraint[Cold end 293 K]",
+          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-step-membership-20260909-r1\\f2_step_membership_r1.sim"
+        },
+        {
+          "journal_id": "Load[End volume]",
+          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-step-membership-20260909-r1\\f2_step_membership_r1.sim"
+        }
+      ],
+      "unfoldered_bcs": [
+        {
+          "journal_id": "Constraint[Cold end 293 K]",
+          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-step-membership-20260909-r1\\f2_step_membership_r1.sim"
+        },
+        {
+          "journal_id": "Load[End volume]",
+          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-step-membership-20260909-r1\\f2_step_membership_r1.sim"
+        }
+      ],
+      "folders": [],
+      "conflict_override_count": 0
+    },
+    "steps": [
+      {
+        "index": 0,
+        "owner": {
+          "journal_id": "SolutionStep[Conduction]",
+          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-step-membership-20260909-r1\\f2_step_membership_r1.sim"
+        },
+        "bcs": [],
+        "unfoldered_bcs": [],
+        "folders": []
+      },
+      {
+        "index": 1,
+        "owner": {
+          "journal_id": "SolutionStep[Membership phase two]",
+          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-step-membership-20260909-r1\\f2_step_membership_r1.sim"
+        },
+        "bcs": [],
+        "unfoldered_bcs": [],
+        "folders": []
+      }
+    ],
+    "errors": [],
+    "comparison_verified": true,
+    "sha256": "a39204f12b7559981ab2581629c492f920af266effb69e4e323f0f93d0e3a41d"
+  },
+  "ordered": {
+    "solution": {
+      "owner": {
+        "journal_id": "Solution[Conduction]",
+        "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-step-membership-20260909-r1\\f2_step_membership_r1.sim"
+      },
+      "bcs": [
+        {
+          "journal_id": "Constraint[Cold end 293 K]",
+          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-step-membership-20260909-r1\\f2_step_membership_r1.sim"
+        },
+        {
+          "journal_id": "Load[End volume]",
+          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-step-membership-20260909-r1\\f2_step_membership_r1.sim"
+        }
+      ],
+      "unfoldered_bcs": [
+        {
+          "journal_id": "Constraint[Cold end 293 K]",
+          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-step-membership-20260909-r1\\f2_step_membership_r1.sim"
+        },
+        {
+          "journal_id": "Load[End volume]",
+          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-step-membership-20260909-r1\\f2_step_membership_r1.sim"
+        }
+      ],
+      "folders": [],
+      "conflict_override_count": 0
+    },
+    "steps": [
+      {
+        "index": 0,
+        "owner": {
+          "journal_id": "SolutionStep[Membership phase two]",
+          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-step-membership-20260909-r1\\f2_step_membership_r1.sim"
+        },
+        "bcs": [],
+        "unfoldered_bcs": [],
+        "folders": []
+      },
+      {
+        "index": 1,
+        "owner": {
+          "journal_id": "SolutionStep[Conduction]",
+          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-step-membership-20260909-r1\\f2_step_membership_r1.sim"
+        },
+        "bcs": [],
+        "unfoldered_bcs": [],
+        "folders": []
+      }
+    ],
+    "errors": [],
+    "comparison_verified": true,
+    "sha256": "4ebbe82b91e1ed2f2cb56e8acdcf6485c6f6d2c4be6701f18ac30778b3af6182"
+  },
+  "document": "obj_20bc234ffa5249ceb4fb4d82b993c626_ced054f3d6c2454582acb556bbf5a95c",
+  "unrelated_modified_flags_preserved": true,
+  "solver_launched": false,
+  "operation_id": "op_f2a928512ceb4ca086970e7e2c1709a0",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

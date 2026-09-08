@@ -1,0 +1,31 @@
+{
+  "installed_input_version": "TMG 2606.1",
+  "reviewed_updates": [
+    "2606.2",
+    "2606.3",
+    "2606.4"
+  ],
+  "sources": [
+    {
+      "url": "https://help.mayahtt.com/tmg/tmgfixes/topics/critical_fixes/2026_06_critical_fixes.html",
+      "sha256": "ca43271e8c59e4cd696613852e91ff9ada91db25bbea5940a9602c2c2e11862a",
+      "bytes": 29853
+    },
+    {
+      "url": "https://help.mayahtt.com/tmg/tmgfixes/topics/critical_fixes/2026_07_critical_fixes.html",
+      "sha256": "816a1818540a6c63e4ccc0066f794abe3fb0367de0de5377d7f51846f08cd19f",
+      "bytes": 28387
+    },
+    {
+      "url": "https://help.mayahtt.com/tmg/tmgfixes/topics/critical_fixes/2026_08_critical_fixes.html",
+      "sha256": "976c7613fe6979201f5dffb4a330f235d7042fd1576be4883b70dc3ebc9211c0",
+      "bytes": 25328
+    }
+  ],
+  "matching_density_or_ambient_fix_identified": false,
+  "scope": "Published critical fixes only; not the complete release-note README and not proof a later release cannot fix the case",
+  "installed_readme": "THERMALFLOW/tmgsolver/README contains product telemetry documentation, not solver release notes",
+  "native_software_changed": false,
+  "licensing_changed": false,
+  "next_action": "Obtain complete release notes or vendor guidance using user support access; no outreach sent"
+}

@@ -1,0 +1,272 @@
+{
+  "compact": {
+    "meta": null,
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"solutions\": [{\"solution\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_5677c05095a6492f8d4b4099b47943c1\", \"kind\": \"simulation_solution\", \"name\": \"Coupled benchmark\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_927a04e272fa4dad806d871ac5fd96e7\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"927a04e272fa4dad806d871ac5fd96e7\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\E-coupled-mcp-20260908-r1\\\\benchmark_d1e2b031a3dd_analysis.sim\", \"journal_id\": \"Solution[Coupled benchmark]\", \"display_name\": \"Coupled benchmark\"}, \"solver\": \"NX MULTIPHYSICS\", \"analysis\": \"Coupled Thermal-Flow\", \"solution_type\": \"Thermal-Flow\", \"active\": true, \"step_count\": 1}], \"total\": 1, \"next_offset\": null, \"result_freshness\": \"not_verified\", \"operation_id\": \"op_e4c634efc3574750bfe64decf58c5b85\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+        "annotations": null,
+        "meta": null
+      }
+    ],
+    "structuredContent": {
+      "status": "success",
+      "warnings": [],
+      "units": "mm",
+      "solutions": [
+        {
+          "solution": {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_5677c05095a6492f8d4b4099b47943c1",
+            "kind": "simulation_solution",
+            "name": "Coupled benchmark",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_927a04e272fa4dad806d871ac5fd96e7",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "927a04e272fa4dad806d871ac5fd96e7",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-coupled-mcp-20260908-r1\\benchmark_d1e2b031a3dd_analysis.sim",
+            "journal_id": "Solution[Coupled benchmark]",
+            "display_name": "Coupled benchmark"
+          },
+          "solver": "NX MULTIPHYSICS",
+          "analysis": "Coupled Thermal-Flow",
+          "solution_type": "Thermal-Flow",
+          "active": true,
+          "step_count": 1
+        }
+      ],
+      "total": 1,
+      "next_offset": null,
+      "result_freshness": "not_verified",
+      "operation_id": "op_e4c634efc3574750bfe64decf58c5b85",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "mutation_outcome": "not_applicable"
+    },
+    "isError": false
+  },
+  "expanded": {
+    "meta": null,
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"solutions\": [{\"solution\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_5677c05095a6492f8d4b4099b47943c1\", \"kind\": \"simulation_solution\", \"name\": \"Coupled benchmark\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_927a04e272fa4dad806d871ac5fd96e7\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"927a04e272fa4dad806d871ac5fd96e7\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\E-coupled-mcp-20260908-r1\\\\benchmark_d1e2b031a3dd_analysis.sim\", \"journal_id\": \"Solution[Coupled benchmark]\", \"display_name\": \"Coupled benchmark\"}, \"solver\": \"NX MULTIPHYSICS\", \"analysis\": \"Coupled Thermal-Flow\", \"solution_type\": \"Thermal-Flow\", \"active\": true, \"step_count\": 1, \"execution_options\": {\"descriptor_neutral_name\": \"NX MULTIPHYSICS\", \"descriptor_specific_name\": \"NX MULTIPHYSICS\", \"properties\": [{\"name\": \"Remote Solve\", \"native_type\": \"2\", \"units\": null, \"value\": false}, {\"name\": \"solution monitor\", \"native_type\": \"2\", \"units\": null, \"value\": true}, {\"name\": \"solution summary tab\", \"native_type\": \"2\", \"units\": null, \"value\": true}, {\"name\": \"Scratch Directory\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Scratch Directory Location\", \"native_type\": \"1\", \"units\": null, \"value\": \"\"}, {\"name\": \"Input File Formatting\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Real Data Filter\", \"native_type\": \"2\", \"units\": null, \"value\": true}, {\"name\": \"Real Filter Value\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": 1e-15, \"unit_symbol\": null}, {\"name\": \"File Path Format\", \"native_type\": \"3\", \"units\": null, \"value\": 1}, {\"name\": \"Use Environment Solver Executable\", \"native_type\": \"2\", \"units\": null, \"value\": true}, {\"name\": \"solver executable\", \"native_type\": \"16\", \"units\": null, \"inspection_status\": \"unsupported_property_type\"}, {\"name\": \"Use Environment Solver Version\", \"native_type\": \"2\", \"units\": null, \"value\": true}, {\"name\": \"solver version\", \"native_type\": \"1\", \"units\": null, \"value\": \"\"}, {\"name\": \"memory\", \"native_type\": \"1\", \"units\": null, \"value\": \"\"}, {\"name\": \"old\", \"native_type\": \"2\", \"units\": null, \"value\": false}, {\"name\": \"scratch\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Enable Shared-Memory Parallel\", \"native_type\": \"2\", \"units\": null, \"value\": false}, {\"name\": \"Maximum Number of CPUs\", \"native_type\": \"3\", \"units\": null, \"value\": 1}, {\"name\": \"Shared Library for User Defined Materials\", \"native_type\": \"16\", \"units\": null, \"inspection_status\": \"unsupported_property_type\"}, {\"name\": \"Shared Library for User Creep Defined Materials\", \"native_type\": \"16\", \"units\": null, \"inspection_status\": \"unsupported_property_type\"}, {\"name\": \"additional keywords\", \"native_type\": \"1\", \"units\": null, \"value\": \"\"}, {\"name\": \"solver command window\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Version Number\", \"native_type\": \"1\", \"units\": null, \"value\": \"\"}, {\"name\": \"Run Solution in Parallel\", \"native_type\": \"2\", \"units\": null, \"value\": false}, {\"name\": \"Parallel Configuration File\", \"native_type\": \"16\", \"units\": null, \"inspection_status\": \"unsupported_property_type\"}, {\"name\": \"Create New File\", \"native_type\": \"1\", \"units\": null, \"value\": \"Create New File...\"}, {\"name\": \"Modify Existing File\", \"native_type\": \"1\", \"units\": null, \"value\": \"Modify Existing File...\"}, {\"name\": \"Export Mechanical Properties\", \"native_type\": \"2\", \"units\": null, \"value\": false}, {\"name\": \"Invalid Material Properties Check\", \"native_type\": \"3\", \"units\": null, \"value\": 1}], \"settings_applied_by_call\": false, \"licence_checkout_tested\": false}}], \"total\": 1, \"next_offset\": null, \"result_freshness\": \"not_verified\", \"operation_id\": \"op_0da61f075ee242179159700a4be0b201\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+        "annotations": null,
+        "meta": null
+      }
+    ],
+    "structuredContent": {
+      "status": "success",
+      "warnings": [],
+      "units": "mm",
+      "solutions": [
+        {
+          "solution": {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_5677c05095a6492f8d4b4099b47943c1",
+            "kind": "simulation_solution",
+            "name": "Coupled benchmark",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_927a04e272fa4dad806d871ac5fd96e7",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "927a04e272fa4dad806d871ac5fd96e7",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-coupled-mcp-20260908-r1\\benchmark_d1e2b031a3dd_analysis.sim",
+            "journal_id": "Solution[Coupled benchmark]",
+            "display_name": "Coupled benchmark"
+          },
+          "solver": "NX MULTIPHYSICS",
+          "analysis": "Coupled Thermal-Flow",
+          "solution_type": "Thermal-Flow",
+          "active": true,
+          "step_count": 1,
+          "execution_options": {
+            "descriptor_neutral_name": "NX MULTIPHYSICS",
+            "descriptor_specific_name": "NX MULTIPHYSICS",
+            "properties": [
+              {
+                "name": "Remote Solve",
+                "native_type": "2",
+                "units": null,
+                "value": false
+              },
+              {
+                "name": "solution monitor",
+                "native_type": "2",
+                "units": null,
+                "value": true
+              },
+              {
+                "name": "solution summary tab",
+                "native_type": "2",
+                "units": null,
+                "value": true
+              },
+              {
+                "name": "Scratch Directory",
+                "native_type": "3",
+                "units": null,
+                "value": 0
+              },
+              {
+                "name": "Scratch Directory Location",
+                "native_type": "1",
+                "units": null,
+                "value": ""
+              },
+              {
+                "name": "Input File Formatting",
+                "native_type": "3",
+                "units": null,
+                "value": 0
+              },
+              {
+                "name": "Real Data Filter",
+                "native_type": "2",
+                "units": null,
+                "value": true
+              },
+              {
+                "name": "Real Filter Value",
+                "native_type": "4",
+                "units": "dimensionless",
+                "value": 1e-15,
+                "unit_symbol": null
+              },
+              {
+                "name": "File Path Format",
+                "native_type": "3",
+                "units": null,
+                "value": 1
+              },
+              {
+                "name": "Use Environment Solver Executable",
+                "native_type": "2",
+                "units": null,
+                "value": true
+              },
+              {
+                "name": "solver executable",
+                "native_type": "16",
+                "units": null,
+                "inspection_status": "unsupported_property_type"
+              },
+              {
+                "name": "Use Environment Solver Version",
+                "native_type": "2",
+                "units": null,
+                "value": true
+              },
+              {
+                "name": "solver version",
+                "native_type": "1",
+                "units": null,
+                "value": ""
+              },
+              {
+                "name": "memory",
+                "native_type": "1",
+                "units": null,
+                "value": ""
+              },
+              {
+                "name": "old",
+                "native_type": "2",
+                "units": null,
+                "value": false
+              },
+              {
+                "name": "scratch",
+                "native_type": "3",
+                "units": null,
+                "value": 0
+              },
+              {
+                "name": "Enable Shared-Memory Parallel",
+                "native_type": "2",
+                "units": null,
+                "value": false
+              },
+              {
+                "name": "Maximum Number of CPUs",
+                "native_type": "3",
+                "units": null,
+                "value": 1
+              },
+              {
+                "name": "Shared Library for User Defined Materials",
+                "native_type": "16",
+                "units": null,
+                "inspection_status": "unsupported_property_type"
+              },
+              {
+                "name": "Shared Library for User Creep Defined Materials",
+                "native_type": "16",
+                "units": null,
+                "inspection_status": "unsupported_property_type"
+              },
+              {
+                "name": "additional keywords",
+                "native_type": "1",
+                "units": null,
+                "value": ""
+              },
+              {
+                "name": "solver command window",
+                "native_type": "3",
+                "units": null,
+                "value": 0
+              },
+              {
+                "name": "Version Number",
+                "native_type": "1",
+                "units": null,
+                "value": ""
+              },
+              {
+                "name": "Run Solution in Parallel",
+                "native_type": "2",
+                "units": null,
+                "value": false
+              },
+              {
+                "name": "Parallel Configuration File",
+                "native_type": "16",
+                "units": null,
+                "inspection_status": "unsupported_property_type"
+              },
+              {
+                "name": "Create New File",
+                "native_type": "1",
+                "units": null,
+                "value": "Create New File..."
+              },
+              {
+                "name": "Modify Existing File",
+                "native_type": "1",
+                "units": null,
+                "value": "Modify Existing File..."
+              },
+              {
+                "name": "Export Mechanical Properties",
+                "native_type": "2",
+                "units": null,
+                "value": false
+              },
+              {
+                "name": "Invalid Material Properties Check",
+                "native_type": "3",
+                "units": null,
+                "value": 1
+              }
+            ],
+            "settings_applied_by_call": false,
+            "licence_checkout_tested": false
+          }
+        }
+      ],
+      "total": 1,
+      "next_offset": null,
+      "result_freshness": "not_verified",
+      "operation_id": "op_0da61f075ee242179159700a4be0b201",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "mutation_outcome": "not_applicable"
+    },
+    "isError": false
+  },
+  "modified_flags_preserved": true
+}

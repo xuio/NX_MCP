@@ -1,0 +1,44 @@
+{
+  "status": "success",
+  "temperature": {
+    "postview_id": 2,
+    "postview_owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\A-thermal-export-20260908-r1\\thermal_input_r1.sim",
+    "readback": {
+      "loadcase_index": 0,
+      "iteration_index": 0,
+      "field": "Temperature - Nodal",
+      "unit": "Celsius"
+    },
+    "units": "degC",
+    "existing_view_ids": [],
+    "main_postview_id": 2,
+    "saved": false,
+    "result_freshness": "not_verified",
+    "reference_lifetime": "postview ID is document-local within this session; use postview_owner and reacquire after closure"
+  },
+  "pressure": {
+    "postview_id": 3,
+    "postview_owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-input-export-20260908-r2\\flow_input_r2.sim",
+    "readback": {
+      "loadcase_index": 0,
+      "iteration_index": 0,
+      "field": "Pressure - Element-Nodal",
+      "unit": "PressurePascals"
+    },
+    "units": "Pa",
+    "existing_view_ids": [],
+    "main_postview_id": 3,
+    "saved": false,
+    "result_freshness": "not_verified",
+    "reference_lifetime": "postview ID is document-local within this session; use postview_owner and reacquire after closure"
+  },
+  "retained_count_before": 2,
+  "retained_count_after": 4,
+  "previous_handles_preserved": true,
+  "pressure_left_visible": true,
+  "operation_id": "op_9c1d4cac7aef4e14b20d8f04d7e94f16",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}
