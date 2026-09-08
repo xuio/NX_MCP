@@ -1,0 +1,32 @@
+{
+  "status": "success",
+  "passed": true,
+  "reopened_primary_secondary_geometry_verified": true,
+  "targets": [
+    {
+      "index": 0,
+      "count": 1,
+      "prototype_journal": "CAE_Face(7)"
+    },
+    {
+      "index": 1,
+      "count": 1,
+      "prototype_journal": "CAE_Face(6)"
+    }
+  ],
+  "resistance_readback": {
+    "name": "Total Resistance",
+    "native_type": "6",
+    "units": "ThermalResistance_Metric4",
+    "expression": "0.5",
+    "unit_symbol": "dK/W",
+    "representation": "expression"
+  },
+  "unrelated_modified_flags_preserved": true,
+  "solver_launched": false,
+  "operation_id": "op_60110e87507d471cb5337950a3686740",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

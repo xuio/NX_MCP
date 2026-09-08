@@ -1,0 +1,35 @@
+{
+  "status": "success",
+  "contact_capability": {
+    "capability": "thermal_contact",
+    "status": "authoring_native_public_verified",
+    "tested_version": "v2606",
+    "tested_language": "NX MULTIPHYSICS - Thermal",
+    "descriptor": "Contact Thermal Coupling",
+    "supported_modes": [
+      "total resistance K/W",
+      "total conductance W/K"
+    ],
+    "scope": "Two disjoint SIM CAE face sets; direct expressions; no secondary-region override; total conductance is not per-element",
+    "native_authoring": true,
+    "public_authoring_replay": true,
+    "resistance_persistence": true,
+    "conductance_persistence": "not_tested",
+    "export_verification": "not_tested",
+    "numerical_acceptance": "not_tested",
+    "licence_availability": "not_established_for_solve",
+    "next_step": "Verify exported settings and generic two-solid contact heat flow; extend persistence coverage to conductance",
+    "evidence": "tests/simcenter/evidence/contact-authoring-native.json",
+    "public_evidence": "tests/simcenter/evidence/contact-public.json",
+    "persistence_evidence": "tests/simcenter/evidence/contact-persistence-public.json",
+    "historical_evidence": "tests/simcenter/evidence/native-contact-descriptors.json",
+    "historical_failure_cause": "Earlier candidates did not use the documented descriptor name"
+  },
+  "licensing_configuration_modified": false,
+  "solver_launched": false,
+  "operation_id": "op_7a02a35a6b7a4b5f84e5681e356b4baa",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

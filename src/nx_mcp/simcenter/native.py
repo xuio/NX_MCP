@@ -1128,6 +1128,33 @@ class SimcenterMixin:
             + " collection only; other boundary collections are separate",
         }
 
+    def _sim_contact(self, document, primary_faces, secondary_faces, mode, value, name, provenance):
+        from nx_mcp.simcenter.contact import create_contact
+
+        sim = self.objects.resolve(document, expected_kind="part")
+        for ids in (primary_faces, secondary_faces):
+            if (
+                not isinstance(ids, list)
+                or not 1 <= len(ids) <= 1000
+                or any(not isinstance(i, str) for i in ids)
+                or len(set(ids)) != len(ids)
+            ):
+                raise NXToolError(
+                    "NX_INVALID_ARGUMENT", "Supply 1..1000 distinct face IDs per region"
+                )
+        primary = [self.objects.resolve(i, expected_kind="face") for i in primary_faces]
+        secondary = [self.objects.resolve(i, expected_kind="face") for i in secondary_faces]
+        result = create_contact(
+            self.session, sim, primary, secondary, mode, value, name, provenance
+        )
+        boundary = result.pop("boundary")
+        return {
+            "contact": self._reference(boundary, "simulation_object", sim, "contact"),
+            "primary_faces": [self._reference(f, "face", sim, "face") for f in primary],
+            "secondary_faces": [self._reference(f, "face", sim, "face") for f in secondary],
+            **result,
+        }
+
     def _sim_convection(self, document, faces, coefficient_w_m2_k, name, provenance):
         from nx_mcp.simcenter.boundaries import create_convection
 

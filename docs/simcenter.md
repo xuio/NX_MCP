@@ -15,15 +15,21 @@ listed below. Native step-level load assignment, running-solver cancellation and
 ambient-export/density behavior remain explicitly unresolved; no blanket numerical
 or whole-model freshness claim is made.
 
-Phase 2 is active. The installed Open CAE reference identifies the exact
-`Contact Thermal Coupling` descriptor. A bounded native check now accepts it with
-two target sets and verifies cleanup without committing geometry or launching a
-solver (`evidence/documented-contact-descriptor.json`). This supersedes the old
-wrong-name descriptor probes. Contact authoring, units, assignments, export and
-numerical acceptance remain to implement/test. Next: explicit primary/secondary
-selection and a total-resistance field with verified K/W units; do not interpret
-the unset `-777777` field sentinel as a physical resistance. Historical runtime
-capability wording still needs reconciliation with this new evidence.
+Phase 2 is active. `nx_sim_contact` now authors the documented
+`Contact Thermal Coupling` with explicit primary/secondary CAE face sets and total
+resistance (K/W) or conductance (W/K). Native tests verify 0.5 K/W and 2 W/K,
+selectors, units, both target sets, solution membership and rollback. Public MCP
+verifies discovery, overlap rejection, creation, replay, inventory and save/reopen;
+resistance properties/provenance and actual per-side geometry persist. Native
+opening marks the isolated SIM modified; the warning is retained. Conductance
+persistence, exported settings and numerical contact acceptance remain outstanding.
+The current fixture is `ui-benchmarks/B-contact-authoring-20260909-r1/`.
+Evidence: `contact-authoring-native.json`, `contact-public.json`,
+`contact-persistence-public.json`, `contact-reopened-targets.json` under
+`tests/simcenter/evidence/`. `contact-authoring-r1-failure.json` preserves a
+rolled-back direct-expression readback guard error, now corrected and covered by
+a regression test. Earlier descriptor failures used incorrect names, not an
+unavailable contact module. No new licensing or solve-availability claim is made.
 
 ### Reconciled Phase 2 backlog
 
@@ -32,7 +38,7 @@ from installed modules. A missing implementation/test is not an external blocker
 
 | Requirement | Current state | Reuse / next acceptance work |
 |---|---|---|
-| Thermal contacts/interface resistance | Partial: documented descriptor accepted natively with two target sets; authoring missing | Explicit pair/unit/readback benchmark using `Contact Thermal Coupling` |
+| Thermal contacts/interface resistance | Partial: native/public total R/G authoring and resistance persistence verified | Conductance persistence, exported settings and two-solid heat-flow benchmark |
 | Convection and dependencies | Partial, public constant assumed convection | `boundaries.py`, `external_conditions.py`; verify dependency/time-field cases |
 | Radiation/emissivity/enclosures | Missing public authoring | Discover native applicable descriptors and test assignments/export |
 | Temperature-dependent materials | Missing | Extend constant/orthotropic material path with supported fields, units and persistence |

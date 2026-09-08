@@ -328,7 +328,12 @@ NON_MODEL.add("nx_sim_transient_setup")
 
 
 def nx_sim_steps(
-    document: str, solution: str, offset: int = 0, limit: int = 20, include_properties: bool = False, include_membership: bool = False
+    document: str,
+    solution: str,
+    offset: int = 0,
+    limit: int = 20,
+    include_properties: bool = False,
+    include_membership: bool = False,
 ):
     """Page steps/subcases of a typed solution belonging to the selected loaded SIM. offset >=0, limit 1..100. Returns owner-scoped simulation_step references, ordinal, native step type and active flag within the solution; optionally includes actual property values/units. include_membership adds direct BC/folder membership for returned steps only, flags unsupported folders, and does not infer inherited solution-level conditions. Supports inactive solutions without activating them. Ordinals change when steps are added/removed/reordered; typed references follow the existing owner generation lifetime. Stored settings are not proof of actual solver integration intervals. Does not modify, save or solve, and does not establish result freshness."""
 
@@ -582,3 +587,18 @@ def nx_sim_cancel(job_id: str, expected_revision: int, job_folder: str = "simcen
 
 
 NON_MODEL.add("nx_sim_cancel")
+
+
+def nx_sim_contact(
+    document: str,
+    primary_faces: list[str],
+    secondary_faces: list[str],
+    mode: Literal["resistance", "conductance"],
+    value: float,
+    name: str,
+    provenance: str,
+):
+    """Create native Contact Thermal Coupling between disjoint SIM CAE face sets (1..1000 each). Active NX MULTIPHYSICS Thermal only. mode resistance: positive total K/W; conductance: positive total W/K, Per Element disabled. No area normalization. Explicit primary/secondary regions; no override region or shell-side assignment. Returns actual native properties, typed targets and verified active-solution membership. Does not validate physical contact, mesh coupling, save or solve. Nonempty provenance stored on boundary. Uses undo/rollback; operation_id provides safe retry. Inspect via nx_sim_objects(include_properties=True, include_targets=True). Numerical acceptance remains unverified."""
+
+
+NON_MODEL.add("nx_sim_contact")

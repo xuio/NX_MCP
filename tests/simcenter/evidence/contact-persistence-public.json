@@ -1,0 +1,303 @@
+{
+  "responses": {
+    "reopened_inventory": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"simulation_objects\": [{\"object\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_1ea881bff08240bf9bbe78ff33ce2fa3\", \"kind\": \"simulation_object\", \"name\": \"MCP_PUBLIC_CONTACT_R1\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_20f514a7c43f4ebabcb9cbf293ff3582\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"20f514a7c43f4ebabcb9cbf293ff3582\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\B-contact-authoring-20260909-r1\\\\benchmark_47530a89f645_analysis.sim\", \"journal_id\": \"SimulationObject[MCP_PUBLIC_CONTACT_R1]\", \"display_name\": \"MCP_PUBLIC_CONTACT_R1\"}, \"native_type\": \"SimSimulationObject\", \"target_set_count\": 2, \"descriptor\": \"Contact Thermal Coupling\", \"provenance\": \"Assumed generic API fixture\", \"coefficient_basis\": null, \"energy_accounting\": null, \"overlap_policy\": null, \"properties\": [{\"name\": \"description\", \"native_type\": \"0\", \"units\": null, \"representation\": \"text_lines\", \"value\": []}, {\"name\": \"Override Secondary Region\", \"native_type\": \"2\", \"units\": null, \"value\": false}, {\"name\": \"Secondary Non-Geometric Element\", \"native_type\": \"0\", \"units\": null, \"representation\": \"named_property_table\", \"value\": null}, {\"name\": \"Swap Regions\", \"native_type\": \"1\", \"units\": null, \"value\": \"Swap Regions\"}, {\"name\": \"Specify Region Side to Apply to\", \"native_type\": \"2\", \"units\": null, \"value\": false}, {\"name\": \"Primary Region Side\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Secondary Region Side\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Type\", \"native_type\": \"3\", \"units\": null, \"value\": 1}, {\"name\": \"Total Conductance\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"-777777\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Total Resistance\", \"native_type\": \"6\", \"units\": \"ThermalResistance_Metric4\", \"expression\": \"0.5\", \"unit_symbol\": \"dK/W\", \"representation\": \"expression\"}, {\"name\": \"Heat Transfer Coefficient\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"-777777\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Conductance per Length\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"-777777\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Conductive Proportional to Distance\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"-777777\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Type Override\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Total Conductance Override\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"-777777\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Total Resistance Override\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"-777777\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Heat Transfer Coefficient Override\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"-777777\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Conductance per Length Override\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"-777777\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Method\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Coupling Resolution\", \"native_type\": \"3\", \"units\": null, \"value\": 2}, {\"name\": \"Override Coupling Resolution\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Only Connect Overlapping Elements\", \"native_type\": \"2\", \"units\": null, \"value\": true}, {\"name\": \"Overlap Projection Direction\", \"native_type\": \"3\", \"units\": null, \"value\": 1}, {\"name\": \"Projective Intersection Overlap Projection Direction\", \"native_type\": \"3\", \"units\": null, \"value\": 1}, {\"name\": \"Projective Intersection Overlap Projection Vector\", \"native_type\": \"0\", \"units\": null, \"representation\": \"vector\", \"value\": null}, {\"name\": \"Temperature Dependence Uses\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Per Element\", \"native_type\": \"2\", \"units\": null, \"value\": false}, {\"name\": \"Per Element Override\", \"native_type\": \"2\", \"units\": null, \"value\": false}, {\"name\": \"distributionType\", \"native_type\": \"3\", \"units\": null, \"value\": 32}], \"target_sets\": [{\"index\": 0, \"count\": 1, \"native_slot_count\": 1, \"empty_slot_count\": 0, \"members\": [{\"native_type\": \"CAEFace\", \"subtype\": \"0\", \"sub_id\": 0, \"face\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_9ea8a8baf5684f809418ed78767c06ab\", \"kind\": \"face\", \"name\": \"HANDLE R-37650\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_20f514a7c43f4ebabcb9cbf293ff3582\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"20f514a7c43f4ebabcb9cbf293ff3582\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\B-contact-authoring-20260909-r1\\\\benchmark_47530a89f645_analysis.sim\", \"journal_id\": \"HANDLE R-37650\", \"display_name\": \"\"}}], \"truncated\": false}, {\"index\": 1, \"count\": 1, \"native_slot_count\": 1, \"empty_slot_count\": 0, \"members\": [{\"native_type\": \"CAEFace\", \"subtype\": \"0\", \"sub_id\": 0, \"face\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_7f8b673bbaf34a8182986096643fdccf\", \"kind\": \"face\", \"name\": \"HANDLE R-37454\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_20f514a7c43f4ebabcb9cbf293ff3582\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"20f514a7c43f4ebabcb9cbf293ff3582\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\B-contact-authoring-20260909-r1\\\\benchmark_47530a89f645_analysis.sim\", \"journal_id\": \"HANDLE R-37454\", \"display_name\": \"\"}}], \"truncated\": false}]}], \"total\": 1, \"next_offset\": null, \"scope\": \"SIM simulation_objects collection only; other boundary collections are separate\", \"operation_id\": \"op_0d48f976971040b3bcac59037287679b\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "simulation_objects": [
+          {
+            "object": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_1ea881bff08240bf9bbe78ff33ce2fa3",
+              "kind": "simulation_object",
+              "name": "MCP_PUBLIC_CONTACT_R1",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_20f514a7c43f4ebabcb9cbf293ff3582",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "20f514a7c43f4ebabcb9cbf293ff3582",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\B-contact-authoring-20260909-r1\\benchmark_47530a89f645_analysis.sim",
+              "journal_id": "SimulationObject[MCP_PUBLIC_CONTACT_R1]",
+              "display_name": "MCP_PUBLIC_CONTACT_R1"
+            },
+            "native_type": "SimSimulationObject",
+            "target_set_count": 2,
+            "descriptor": "Contact Thermal Coupling",
+            "provenance": "Assumed generic API fixture",
+            "coefficient_basis": null,
+            "energy_accounting": null,
+            "overlap_policy": null,
+            "properties": [
+              {
+                "name": "description",
+                "native_type": "0",
+                "units": null,
+                "representation": "text_lines",
+                "value": []
+              },
+              {
+                "name": "Override Secondary Region",
+                "native_type": "2",
+                "units": null,
+                "value": false
+              },
+              {
+                "name": "Secondary Non-Geometric Element",
+                "native_type": "0",
+                "units": null,
+                "representation": "named_property_table",
+                "value": null
+              },
+              {
+                "name": "Swap Regions",
+                "native_type": "1",
+                "units": null,
+                "value": "Swap Regions"
+              },
+              {
+                "name": "Specify Region Side to Apply to",
+                "native_type": "2",
+                "units": null,
+                "value": false
+              },
+              {
+                "name": "Primary Region Side",
+                "native_type": "3",
+                "units": null,
+                "value": 0
+              },
+              {
+                "name": "Secondary Region Side",
+                "native_type": "3",
+                "units": null,
+                "value": 0
+              },
+              {
+                "name": "Type",
+                "native_type": "3",
+                "units": null,
+                "value": 1
+              },
+              {
+                "name": "Total Conductance",
+                "native_type": "6",
+                "units": "dimensionless",
+                "expression": "-777777",
+                "unit_symbol": null,
+                "representation": "expression"
+              },
+              {
+                "name": "Total Resistance",
+                "native_type": "6",
+                "units": "ThermalResistance_Metric4",
+                "expression": "0.5",
+                "unit_symbol": "dK/W",
+                "representation": "expression"
+              },
+              {
+                "name": "Heat Transfer Coefficient",
+                "native_type": "6",
+                "units": "dimensionless",
+                "expression": "-777777",
+                "unit_symbol": null,
+                "representation": "expression"
+              },
+              {
+                "name": "Conductance per Length",
+                "native_type": "6",
+                "units": "dimensionless",
+                "expression": "-777777",
+                "unit_symbol": null,
+                "representation": "expression"
+              },
+              {
+                "name": "Conductive Proportional to Distance",
+                "native_type": "6",
+                "units": "dimensionless",
+                "expression": "-777777",
+                "unit_symbol": null,
+                "representation": "expression"
+              },
+              {
+                "name": "Type Override",
+                "native_type": "3",
+                "units": null,
+                "value": 0
+              },
+              {
+                "name": "Total Conductance Override",
+                "native_type": "6",
+                "units": "dimensionless",
+                "expression": "-777777",
+                "unit_symbol": null,
+                "representation": "expression"
+              },
+              {
+                "name": "Total Resistance Override",
+                "native_type": "6",
+                "units": "dimensionless",
+                "expression": "-777777",
+                "unit_symbol": null,
+                "representation": "expression"
+              },
+              {
+                "name": "Heat Transfer Coefficient Override",
+                "native_type": "6",
+                "units": "dimensionless",
+                "expression": "-777777",
+                "unit_symbol": null,
+                "representation": "expression"
+              },
+              {
+                "name": "Conductance per Length Override",
+                "native_type": "6",
+                "units": "dimensionless",
+                "expression": "-777777",
+                "unit_symbol": null,
+                "representation": "expression"
+              },
+              {
+                "name": "Method",
+                "native_type": "3",
+                "units": null,
+                "value": 0
+              },
+              {
+                "name": "Coupling Resolution",
+                "native_type": "3",
+                "units": null,
+                "value": 2
+              },
+              {
+                "name": "Override Coupling Resolution",
+                "native_type": "3",
+                "units": null,
+                "value": 0
+              },
+              {
+                "name": "Only Connect Overlapping Elements",
+                "native_type": "2",
+                "units": null,
+                "value": true
+              },
+              {
+                "name": "Overlap Projection Direction",
+                "native_type": "3",
+                "units": null,
+                "value": 1
+              },
+              {
+                "name": "Projective Intersection Overlap Projection Direction",
+                "native_type": "3",
+                "units": null,
+                "value": 1
+              },
+              {
+                "name": "Projective Intersection Overlap Projection Vector",
+                "native_type": "0",
+                "units": null,
+                "representation": "vector",
+                "value": null
+              },
+              {
+                "name": "Temperature Dependence Uses",
+                "native_type": "3",
+                "units": null,
+                "value": 0
+              },
+              {
+                "name": "Per Element",
+                "native_type": "2",
+                "units": null,
+                "value": false
+              },
+              {
+                "name": "Per Element Override",
+                "native_type": "2",
+                "units": null,
+                "value": false
+              },
+              {
+                "name": "distributionType",
+                "native_type": "3",
+                "units": null,
+                "value": 32
+              }
+            ],
+            "target_sets": [
+              {
+                "index": 0,
+                "count": 1,
+                "native_slot_count": 1,
+                "empty_slot_count": 0,
+                "members": [
+                  {
+                    "native_type": "CAEFace",
+                    "subtype": "0",
+                    "sub_id": 0,
+                    "face": {
+                      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_9ea8a8baf5684f809418ed78767c06ab",
+                      "kind": "face",
+                      "name": "HANDLE R-37650",
+                      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_20f514a7c43f4ebabcb9cbf293ff3582",
+                      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                      "generation_id": "20f514a7c43f4ebabcb9cbf293ff3582",
+                      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\B-contact-authoring-20260909-r1\\benchmark_47530a89f645_analysis.sim",
+                      "journal_id": "HANDLE R-37650",
+                      "display_name": ""
+                    }
+                  }
+                ],
+                "truncated": false
+              },
+              {
+                "index": 1,
+                "count": 1,
+                "native_slot_count": 1,
+                "empty_slot_count": 0,
+                "members": [
+                  {
+                    "native_type": "CAEFace",
+                    "subtype": "0",
+                    "sub_id": 0,
+                    "face": {
+                      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_7f8b673bbaf34a8182986096643fdccf",
+                      "kind": "face",
+                      "name": "HANDLE R-37454",
+                      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_20f514a7c43f4ebabcb9cbf293ff3582",
+                      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                      "generation_id": "20f514a7c43f4ebabcb9cbf293ff3582",
+                      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\B-contact-authoring-20260909-r1\\benchmark_47530a89f645_analysis.sim",
+                      "journal_id": "HANDLE R-37454",
+                      "display_name": ""
+                    }
+                  }
+                ],
+                "truncated": false
+              }
+            ]
+          }
+        ],
+        "total": 1,
+        "next_offset": null,
+        "scope": "SIM simulation_objects collection only; other boundary collections are separate",
+        "operation_id": "op_0d48f976971040b3bcac59037287679b",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "not_applicable"
+      },
+      "isError": false
+    }
+  },
+  "passed": true,
+  "scope": "Reopened native contact properties, provenance and per-side counts through public MCP; native geometry association checked separately",
+  "open_warning": [
+    "Document has unsaved native state; inspect and explicitly save approved analysis changes before preparing a solve"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "status": "error",
+  "message": "Contact authoring failed; inspect recovery details",
+  "details": {
+    "mutation_outcome": "rolled_back",
+    "cleanup": [],
+    "cause": "Contact value or units differ after commit",
+    "verification_scope": "simulation objects, expressions, solution membership",
+    "operation_id": "op_7c1fe16dd3434578985b8560b734d3c7"
+  },
+  "nx_code": null
+}
