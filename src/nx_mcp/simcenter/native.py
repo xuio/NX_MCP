@@ -33,6 +33,19 @@ def documents(session):
 
 
 class SimcenterMixin:
+    def _sim_create_analysis(self, cad_document, folder, name):
+        from nx_mcp.simcenter.analysis_documents import create
+
+        cad = self.objects.resolve(cad_document, expected_kind="part")
+        return create(self, cad, folder, name)
+
+    def _sim_environment(self, document, temperature_c, pressure_pa, buoyancy):
+        from nx_mcp.simcenter.environment import configure
+
+        sim = self.objects.resolve(document, expected_kind="part")
+        self.workspace.resolve(sim.FullPath)
+        return configure(self.session, sim, temperature_c, pressure_pa, buoyancy)
+
     def _sim_fluid_material(
         self,
         document,
@@ -49,9 +62,7 @@ class SimcenterMixin:
 
         fem = self.objects.resolve(document, expected_kind="part")
         self.workspace.resolve(fem.FullPath)
-        selected = [
-            self.objects.resolve(ref, expected_kind="mesh_collector") for ref in collectors
-        ]
+        selected = [self.objects.resolve(ref, expected_kind="mesh_collector") for ref in collectors]
         if not selected or len({int(c.Tag) for c in selected}) != len(selected):
             raise NXToolError("NX_INVALID_ARGUMENT", "Select distinct fluid collectors")
         require_solver_idle()

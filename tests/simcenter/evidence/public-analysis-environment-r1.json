@@ -1,0 +1,36 @@
+{
+  "responses": {
+    "create": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"error\", \"warnings\": [], \"units\": null, \"code\": \"NX_SIM_CREATION_FAILED\", \"message\": \"Analysis creation failed; partial files retained, source CAD not saved\", \"retryable\": false, \"nx_code\": 1020004, \"details\": {\"stage\": \"sim\", \"mutation_outcome\": \"partial\", \"cleanup_issues\": [], \"paths\": {\"fem\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-analysis-20260909-r1\\\\analysis_7cf31e3a5ff3.fem\", \"sim\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-analysis-20260909-r1\\\\analysis_7cf31e3a5ff3.sim\"}, \"cause\": \"File already exists\", \"operation_id\": \"public-analysis-create-20260909-r1\"}}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "error",
+        "warnings": [],
+        "units": null,
+        "code": "NX_SIM_CREATION_FAILED",
+        "message": "Analysis creation failed; partial files retained, source CAD not saved",
+        "retryable": false,
+        "nx_code": 1020004,
+        "details": {
+          "stage": "sim",
+          "mutation_outcome": "partial",
+          "cleanup_issues": [],
+          "paths": {
+            "fem": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-analysis-20260909-r1\\analysis_7cf31e3a5ff3.fem",
+            "sim": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-analysis-20260909-r1\\analysis_7cf31e3a5ff3.sim"
+          },
+          "cause": "File already exists",
+          "operation_id": "public-analysis-create-20260909-r1"
+        }
+      },
+      "isError": true
+    }
+  }
+}

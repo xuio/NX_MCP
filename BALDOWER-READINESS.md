@@ -19,12 +19,21 @@ Dimension synchronization is already verified by the engineering task.
 
 | Capability | Current implementation / verification | Next concrete action |
 |---|---|---|
-| Owned inlet/opening creation | Public `nx_sim_inlet` / `nx_sim_opening` deployed; schemas and offline ownership/rollback checks pass | Native creation, persistence and fan binding on fresh CAD |
-| Fluid properties / global environment | Public `nx_sim_fluid_material` deployed; global settings still missing | Verify collector assignment and implement explicit 25/40 °C environment |
-| User CAD associations / topology changes | Benchmark associations exist; dimensions passed; body additions/removals unverified | Inspect documented FEM creation/update route and test fresh CAD |
+| Owned inlet/opening creation | Public `nx_sim_inlet` / `nx_sim_opening` native creation, target/membership/readback and save pass (`public-boundary-authoring-r1.json`) | Bind fan and head loss; reopen/export/solve |
+| Fluid properties / global environment | Public `nx_sim_environment` deployed; sequential native 25/40 °C readback and save pass (`public-analysis-environment-r2.json`); fluid assignment pending | Verify separate-case exports, density behavior and gravity authoring |
+| User CAD associations / topology changes | Public `nx_sim_create_analysis` creates FEM/SIM from saved two-body CAD; source hash unchanged; distinct FEM/SIM basename fix native verified | Body addition/removal synchronization and isolated-variant preservation |
 | Multi-body meshing | Removed 16-body limits in plan and regeneration locally; validation covers 17/64/256 bodies | Verify native >16-body mesh and global-size edit/regeneration |
 | Temperature postview | Historical 3960043 isolated to naming in a separate fixture; new reported case not yet isolated | Compare failing arguments without modifying product simulation; reproduce on generic result |
 | Generic activation | FEM/SIM/AFM paths rejected before display/work calls locally, including typed references | Native/public rejection preserves work/display context (`public-authoring-surface-r1.json`) |
+
+The current public setup sequence is `nx_sim_create_analysis(cad_document, folder,
+name)` → `nx_sim_flow_setup` actions `create_step`, `attach_defaults`, then
+`coupled_steady` → `nx_sim_environment(document, temperature_c, pressure_pa,
+buoyancy)` → `nx_sim_faces` → `nx_sim_inlet` / `nx_sim_opening` →
+`nx_sim_external_temperature`. CAD must be saved, unmodified, millimeter and
+standalone; the association shares that CAD. Native 25/40 °C readback was sequential
+in one SIM, not two solved cases. Fan/material/mesh/export/reopen validation follows.
+Current Simcenter offline regression: 739 passed (`public-environment-regressions-r1.txt`).
 
 First targeted offline batch: 44 tests passed (mesh plan, regeneration and recovery).
 This is not native verification. Keep the previous numerical mesh-sensitivity

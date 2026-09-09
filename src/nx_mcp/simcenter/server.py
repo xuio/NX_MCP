@@ -873,3 +873,17 @@ def nx_sim_fluid_material(
 
 
 NON_MODEL.add("nx_sim_fluid_material")
+
+
+def nx_sim_environment(document: str, temperature_c: float, pressure_pa: float, buoyancy: bool):
+    """Set explicit global coupled fluid ambient temperature (Celsius), absolute pressure (Pa) and buoyancy boolean in the active SIM. Requires coupled_steady initialization. Writes scalar fields at scale one, Ambient Pressure=Specify and native Buoyancy; reads actual values, units, scale and selectors. Temperature must exceed absolute zero; pressure positive. Existing material density laws and native gravity loads remain unchanged; this does not create gravity or override fluid properties. Inlet/opening external conditions are separate nx_sim_external_temperature assignments. Returns before/actual state; no solver-file edits, save, mesh or solve. Rejects unsupported initialization; verified undo on failure. Use operation_id for safe retry. Effective solver values must still be checked on export; no numerical acceptance is implied."""
+
+
+NON_MODEL.add("nx_sim_environment")
+
+
+def nx_sim_create_analysis(cad_document: str, folder: str, name: str):
+    """Create standalone coupled FEM/SIM documents associated with an existing saved millimeter CAD part, using all directly owned bodies. cad_document is a loaded part ID; requires unmodified source CAD and a fresh workspace folder. Assemblies are explicitly unsupported. Verifies FEM master CAD, SIM FEM, body count and unchanged source file SHA256; saves only new FEM/SIM and displays/fits SIM. Source CAD is shared, not copied: use isolated CAD copies before geometry edits. Creates solution but no step/default tables/mesh/boundaries; use nx_sim_flow_setup create_step, attach_defaults and coupled_steady next. On failure closes only new documents, restores previous context where possible, retains partial files and reports paths. No source save, solve or model-specific logic. Use operation_id for safe retry."""
+
+
+NON_MODEL.add("nx_sim_create_analysis")
