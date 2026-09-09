@@ -537,6 +537,62 @@ session state; the failure is retained as
 the benchmark FEM to the UI. Use the reference fixture's `--restore-display`
 option to repeat only that final display action without editing or remeshing.
 
+### SIM activation after remeshing
+
+The generic U-sim-update fixture verifies propagation through the existing
+activation workflow. Its 10 mm cube starts with 100 tetrahedra, k=200 W/(m K),
+density 2700 kg/m³, heat capacity 900 J/(kg K), a 1 W body load and a 293.15 K
+boundary at x=10 mm. Changing global mesh size from 5 to 3 mm gives 182 elements
+and 73 nodes. While the FEM is active, the SIM occurrence's label maps report
+zero elements/nodes. Activating the SIM makes those maps match the FEM.
+Zero counts in an inactive occurrence therefore do not prove an empty FEM.
+
+The installed `SimSimulation.UpdateFemodel()` reference documents an FE-model
+update. Python exposes it in NX 2606: the bounded call returns, preserves the
+post-activation undo mark, retains the supported material/boundary fingerprint,
+and can be undone. Activation had already propagated the mesh in this fixture,
+so no additional update effect is established. No redundant public update action
+is added. `BaseFEModel.UpdateFemodel()` is a different documented operation: it
+can remesh pending meshes; it must not be substituted for a SIM-only refresh.
+
+The initial probe incorrectly put its undo mark before switching documents.
+Activation discarded that mark, and recovery reported NX code 1055008. A staged
+probe verifies this ordering explicitly: the pre-activation mark disappears,
+whereas the mark created after activation survives `UpdateFemodel()`. Two recovery
+inspectors also incorrectly assumed an active SIM or positive occurrence counts;
+their failures and the corrected raw-count inspection are retained. The first
+probe's refinement remained in the disposable fixture and was subsequently saved
+explicitly. Existing supported mutations require activation before checkpoints.
+
+Save/reopen preserves the inspected material frame/properties and observed thermal
+boundaries, including membership, within the existing partial fingerprint scope.
+The first export correctly rejected the shared CAD/FEM/SIM folder. A unique SIM
+save-as into a dedicated export directory then succeeds. The 47,191-byte native
+XML contains exactly 182 elements/73 nodes and the requested material, power and
+temperature values with their established native unit conversions. The heat
+selection contains all 182 elements once. The temperature selection forms one
+connected 22-face patch: area 100.00000000000003 mm², perimeter 40 mm, x=10 mm.
+Native/exported selected-node coordinates agree within 1e-7 mm; area/perimeter
+checks use relative tolerance 1e-6. No solve or numerical-convergence test occurred.
+The explicit update/readback/undo probe took approximately 0.156 seconds; that
+timing excludes document activation and transport overhead.
+
+Evidence: `sim-update-native-r2.json`, `sim-update-persistence-state.json`,
+`sim-update-export-boundaries.json` and `sim-update-export.xml` under
+`tests/simcenter/evidence/`; the other `sim-update-*` receipts retain public calls
+and failed attempts. The workflow is **remesh active FEM → activate SIM → inspect
+assignments and mesh → save/reopen → isolated export**. Whole-model freshness,
+automatic geometry regeneration and coupled/layered cases remain unverified.
+
+Reproduction scripts under `examples/simcenter/`: `prepare_sim_update_public.py`,
+the explicitly failing `reproduce_sim_update_checkpoint_failure.py`,
+`inspect_sim_update_recovery.py`, `probe_sim_update_after_activation.py`,
+`verify_sim_update_persistence_public.py`, `verify_sim_update_persistence_state.py`,
+`resume_sim_update_export_public.py`, and `verify_sim_update_export.py`. These are
+ordered retained experiments on the named disposable fixture, not a production
+setup command. Inspect receipts before resuming; do not repeat mutations or save-as
+with fresh operation IDs against an already completed fixture.
+
 ### Reconciled Phase 2 backlog
 
 Statuses below refer to the requested general capability, not availability inferred

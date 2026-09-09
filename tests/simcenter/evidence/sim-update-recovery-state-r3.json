@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\U-sim-update-20260909-r1\\benchmark_ec2b6f8c50fd_mesh.fem",
+  "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\U-sim-update-20260909-r1\\benchmark_ec2b6f8c50fd_mesh.fem",
+  "fem_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\U-sim-update-20260909-r1\\benchmark_ec2b6f8c50fd_mesh.fem",
+  "fem_counts": {
+    "elements": 182,
+    "nodes": 73
+  },
+  "sim_counts": {
+    "elements": 0,
+    "nodes": 0
+  },
+  "mesh_settings": [
+    {
+      "element_type": "Linear Tetrahedron",
+      "size_mm": 3.0,
+      "body_tags": [
+        8876631
+      ]
+    }
+  ],
+  "fem_modified": true,
+  "sim_modified": true,
+  "update_pending": false,
+  "solver_launched": false,
+  "flags_changed_by_inspection": false,
+  "operation_id": "op_0d062a0822114ebabd50dcbd79ba7e55",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

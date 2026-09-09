@@ -1,0 +1,390 @@
+{
+  "status": "success",
+  "passed": true,
+  "comparison": {
+    "state": "matches",
+    "scope": "solid_material_frame_properties_and_observed_thermal_boundaries",
+    "full_model_freshness": "not_verified"
+  },
+  "state": {
+    "adapter": 3,
+    "boundary_scope": "observed_boundary_values_and_selected_solution_ordered_step_membership_v4",
+    "scope": "solid_material_frame_properties_and_observed_thermal_boundaries",
+    "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\U-sim-update-20260909-r1\\benchmark_ec2b6f8c50fd_analysis.sim",
+    "material_state": {
+      "adapter": 1,
+      "scope": "solid_material_assignment_frame_constant_thermal_properties",
+      "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\U-sim-update-20260909-r1\\benchmark_ec2b6f8c50fd_mesh.fem",
+      "collectors": [
+        {
+          "collector": {
+            "kind": "mesh_collector",
+            "journal_id": "MeshCollector[Solid(1)]",
+            "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\U-sim-update-20260909-r1\\benchmark_ec2b6f8c50fd_mesh.fem"
+          },
+          "native_type": "Solid",
+          "coordinate_frame": "part_absolute",
+          "length_units": "mm",
+          "material": {
+            "kind": "material",
+            "journal_id": "PhysicalMaterial[UPDATE_SOLID]",
+            "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\U-sim-update-20260909-r1\\benchmark_ec2b6f8c50fd_mesh.fem"
+          },
+          "material_inherited": false,
+          "orientation": {
+            "native_selector": 0,
+            "stored_frame": null,
+            "interpretation": "default_frame_stored_frame_ignored"
+          },
+          "thermal_properties": {
+            "ThermalConductivity": {
+              "value": 200.0,
+              "units": "ThermalConductivity_Metric3"
+            },
+            "SpecificHeat": {
+              "value": 900.0,
+              "units": "SpecificHeat_Metric2"
+            },
+            "MassDensityConstant": {
+              "value": 2700.0,
+              "units": "KilogramPerCubicMeter"
+            }
+          }
+        }
+      ],
+      "errors": [],
+      "full_model_freshness": "not_verified",
+      "sha256": "fcee926403b0ce436f1ad8416dba400b96c9c33e19a46358ba4afa22d5e1533e"
+    },
+    "boundary_state": {
+      "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\U-sim-update-20260909-r1\\benchmark_ec2b6f8c50fd_analysis.sim",
+      "boundaries": [
+        {
+          "category": "constraints",
+          "journal_id": "Constraint[UPDATE_TEMPERATURE]",
+          "descriptor": "Temperature",
+          "properties": [
+            {
+              "name": "description",
+              "native_type": "0",
+              "units": null,
+              "cae_native_type": "-1",
+              "representation": "text_lines",
+              "value": []
+            },
+            {
+              "name": "Selection Method",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Option",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Temperature",
+              "native_type": "6",
+              "units": "Kelvin",
+              "expression": "293.15",
+              "unit_symbol": "K",
+              "representation": "expression",
+              "evaluated_value": 293.15
+            },
+            {
+              "name": "Temperature File",
+              "native_type": "16",
+              "units": null,
+              "representation": "file_reference",
+              "value": ""
+            },
+            {
+              "name": "Results Directory",
+              "native_type": "1",
+              "units": null,
+              "value": ""
+            },
+            {
+              "name": "Specify Layer to Apply to",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Apply to",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Layer Number",
+              "native_type": "3",
+              "units": null,
+              "value": 1
+            },
+            {
+              "name": "Custom Settings Option",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Custom Settings",
+              "native_type": "1",
+              "units": null,
+              "value": "BCONX"
+            },
+            {
+              "name": "distributionType",
+              "native_type": "3",
+              "units": null,
+              "value": 32
+            }
+          ],
+          "targets": [
+            {
+              "index": 0,
+              "members": [
+                {
+                  "journal_id": "HANDLE R-37454",
+                  "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\U-sim-update-20260909-r1\\benchmark_ec2b6f8c50fd_analysis.sim",
+                  "type": "CAEFace",
+                  "subtype": "0",
+                  "sub_id": 0
+                }
+              ]
+            },
+            {
+              "index": 1,
+              "members": [
+                null
+              ]
+            }
+          ]
+        },
+        {
+          "category": "loads",
+          "journal_id": "Load[UPDATE_POWER]",
+          "descriptor": "Heat Load",
+          "properties": [
+            {
+              "name": "description",
+              "native_type": "0",
+              "units": null,
+              "cae_native_type": "-1",
+              "representation": "text_lines",
+              "value": []
+            },
+            {
+              "name": "Selection Method",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Override Region",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Non-Geometric Element",
+              "native_type": "0",
+              "units": null,
+              "cae_native_type": "-10",
+              "representation": "named_property_table",
+              "value": null
+            },
+            {
+              "name": "Heat Load",
+              "native_type": "6",
+              "units": "HeatFlow_Metric2",
+              "expression": "1.0",
+              "unit_symbol": "W",
+              "representation": "expression",
+              "evaluated_value": 1.0
+            },
+            {
+              "name": "Heat Load Override",
+              "native_type": "6",
+              "units": "dimensionless",
+              "expression": "-777777",
+              "unit_symbol": null,
+              "representation": "expression",
+              "evaluated_value": -777777.0
+            },
+            {
+              "name": "Specify Reference Temperature Set",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Reference Temperature Set",
+              "native_type": "0",
+              "units": null,
+              "cae_native_type": "-10",
+              "representation": "named_property_table",
+              "value": null
+            },
+            {
+              "name": "Control Heater",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Thermostat",
+              "native_type": "0",
+              "units": null,
+              "cae_native_type": "-10",
+              "representation": "named_property_table",
+              "value": null
+            },
+            {
+              "name": "Specify Layer to Apply to",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Apply to",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Layer Number",
+              "native_type": "3",
+              "units": null,
+              "value": 1
+            },
+            {
+              "name": "Per Element",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Per Node",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "distributionType",
+              "native_type": "3",
+              "units": null,
+              "value": 32
+            },
+            {
+              "name": "Custom Settings Option",
+              "native_type": "2",
+              "units": null,
+              "value": false
+            },
+            {
+              "name": "Custom Settings",
+              "native_type": "1",
+              "units": null,
+              "value": "BCONX"
+            }
+          ],
+          "targets": [
+            {
+              "index": 0,
+              "members": [
+                {
+                  "journal_id": "HANDLE R-37481",
+                  "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\U-sim-update-20260909-r1\\benchmark_ec2b6f8c50fd_analysis.sim",
+                  "type": "CAEBody",
+                  "subtype": "0",
+                  "sub_id": 0
+                }
+              ]
+            },
+            {
+              "index": 1,
+              "members": [
+                null
+              ]
+            }
+          ]
+        }
+      ],
+      "effective_membership": {
+        "solution": {
+          "owner": {
+            "journal_id": "Solution[Conduction]",
+            "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\U-sim-update-20260909-r1\\benchmark_ec2b6f8c50fd_analysis.sim"
+          },
+          "bcs": [
+            {
+              "journal_id": "Constraint[UPDATE_TEMPERATURE]",
+              "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\U-sim-update-20260909-r1\\benchmark_ec2b6f8c50fd_analysis.sim"
+            },
+            {
+              "journal_id": "Load[UPDATE_POWER]",
+              "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\U-sim-update-20260909-r1\\benchmark_ec2b6f8c50fd_analysis.sim"
+            }
+          ],
+          "unfoldered_bcs": [
+            {
+              "journal_id": "Constraint[UPDATE_TEMPERATURE]",
+              "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\U-sim-update-20260909-r1\\benchmark_ec2b6f8c50fd_analysis.sim"
+            },
+            {
+              "journal_id": "Load[UPDATE_POWER]",
+              "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\U-sim-update-20260909-r1\\benchmark_ec2b6f8c50fd_analysis.sim"
+            }
+          ],
+          "folders": [],
+          "conflict_override_count": 0
+        },
+        "steps": [
+          {
+            "index": 0,
+            "owner": {
+              "journal_id": "SolutionStep[Conduction]",
+              "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\U-sim-update-20260909-r1\\benchmark_ec2b6f8c50fd_analysis.sim"
+            },
+            "bcs": [],
+            "unfoldered_bcs": [],
+            "folders": []
+          }
+        ],
+        "errors": [],
+        "comparison_verified": true,
+        "sha256": "cf04a1592faca524f351dc0fa0b25f101212bf59cd927430960451a1936e73b0"
+      },
+      "errors": [],
+      "uninspected_properties": [],
+      "sha256": "cf872fc494d0a0b2eb3ee4d5acc88414ad64087b3e921c6d6033cce3c8d0540b",
+      "comparison_verified": true,
+      "scope": "observed_boundary_values_and_selected_solution_ordered_step_membership_v4",
+      "full_model_freshness": "not_verified"
+    },
+    "errors": [],
+    "sha256": "d82f93d93d4eea6048d7f0ce99ddb9ea82102233a3ffb9a12a68c44db10b5b19",
+    "full_model_freshness": "not_verified"
+  },
+  "counts": {
+    "fem": {
+      "elements": 182,
+      "nodes": 73
+    },
+    "sim": {
+      "elements": 182,
+      "nodes": 73
+    }
+  },
+  "flags_unchanged": true,
+  "solver_launched": false,
+  "operation_id": "op_25cc8ee26800448a8a0e52f1d70890e7",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

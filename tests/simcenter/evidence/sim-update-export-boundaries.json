@@ -1,0 +1,57 @@
+{
+  "status": "success",
+  "passed": true,
+  "export_counts": {
+    "elements": 182,
+    "nodes": 73
+  },
+  "fem_counts": {
+    "elements": 182,
+    "nodes": 73
+  },
+  "sim_counts": {
+    "elements": 182,
+    "nodes": 73
+  },
+  "sha256": "a0e8c270c7809ff5c6a3a24d0e433a50c148a90c17a7724b9496cc2a4e4c7632",
+  "bytes": 47191,
+  "input_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\U-sim-update-export-20260909-r1\\sim_update_export_u_r1-Conduction.xml",
+  "source_sim": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\U-sim-update-export-20260909-r1\\sim_update_export_u_r1.sim",
+  "thermal_values_verified": {
+    "conductivity_w_m_k": 200,
+    "density_kg_m3": 2700,
+    "heat_capacity_j_kg_k": 900,
+    "total_heat_w": 1,
+    "temperature_k": 293.15
+  },
+  "heat_selected_elements": 182,
+  "temperature_patch": {
+    "state": "rectangular_patch_verified",
+    "face_count": 22,
+    "node_count": 18,
+    "area_mm2": 100.00000000000003,
+    "expected_area_mm2": 100,
+    "perimeter_mm": 40.0,
+    "plane_x_mm": 10,
+    "minimum_yz_mm": [
+      0,
+      0
+    ],
+    "maximum_yz_mm": [
+      10,
+      10
+    ],
+    "coordinate_tolerance_mm": 1e-07,
+    "area_perimeter_relative_tolerance": 1e-06,
+    "connected_components": 1,
+    "interior_free_edges": 0,
+    "scope": "Linear rectangular surface patch; not volume validity"
+  },
+  "solver_launched": false,
+  "numeric_acceptance": "not_established",
+  "operation_id": "op_9518079ffcee4e2a848990d6f2116760",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

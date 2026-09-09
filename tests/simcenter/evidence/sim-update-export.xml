@@ -1,0 +1,1322 @@
+<!--
+*================================================================
+*           Simcenter 3D Multiphysics - Version Simcenter 3D 2606 
+*           Maya Heat Transfer Technologies Ltd, 514-369-5706    
+*
+*        INPUT FILE: sim_update_export_u_r1-Conduction.xml
+*        CREATED ON: Wed Sep  9 15:40:09 2026
+*          SIM FILE: D:\CAD\SIMCENTER_MCP_WORKSPACE\ui-benchmarks\U-sim-update-export-20260909-r1\sim_update_export_u_r1.sim
+*          FEM FILE: D:\CAD\SIMCENTER_MCP_WORKSPACE\ui-benchmarks\U-sim-update-20260909-r1\benchmark_ec2b6f8c50fd_mesh.fem
+*
+*================================================================ 
+-->
+<SolutionFile version="Simcenter 3D 2606"
+  solver="Simcenter 3D Multiphysics"
+  class="Thermal"
+  solution="Thermal"
+  simulationName="sim_update_export_u_r1"
+  solutionName="Conduction">
+  <CustomerDefaultList>
+  </CustomerDefaultList>
+  <Units>
+    <System>Millimeters</System>
+    <LengthConversionFactor>  1.0000000E+03</LengthConversionFactor>
+    <ForceConversionFactor>  1.0000000E+03</ForceConversionFactor>
+    <TemperatureConversionFactor>  1.0000000E+00</TemperatureConversionFactor>
+    <AbsoluteTemperatureShift> -2.7315000E+02</AbsoluteTemperatureShift>
+  </Units>
+  <NXBaseModelUnits>
+    <System>Millimeters</System>
+    <LengthConversionFactor>  1.0000000E+03</LengthConversionFactor>
+    <ForceConversionFactor>  1.0000000E+03</ForceConversionFactor>
+    <TemperatureConversionFactor>  1.0000000E+00</TemperatureConversionFactor>
+    <AbsoluteTemperatureShift> -2.7315000E+02</AbsoluteTemperatureShift>
+  </NXBaseModelUnits>
+  <ModelInformation>
+    <NumberOfElements>182</NumberOfElements>
+    <NumberOfNodes>73</NumberOfNodes>
+    <Origin>  0.0000000E+00     0.0000000E+00     0.0000000E+00</Origin>
+    <AxisymmetricExtension>0</AxisymmetricExtension>
+    <UserFunctionHighestCorrelation>0</UserFunctionHighestCorrelation>
+    <Orientation>
+      <X>  1.0000000E+00     0.0000000E+00     0.0000000E+00</X>
+      <Y>  0.0000000E+00     1.0000000E+00     0.0000000E+00</Y>
+      <Z>  0.0000000E+00     0.0000000E+00     1.0000000E+00</Z>
+    </Orientation>
+  </ModelInformation>
+  <SolverParameters>
+    <Thermal-Flow>
+      <Property name="Scratch Directory">
+        <Value>0</Value>
+      </Property>
+      <Property name="Scratch Directory Location">
+        <Value></Value>
+      </Property>
+      <Property name="Run Solution in Parallel">
+        <Value>0</Value>
+      </Property>
+      <Property name="Parallel Configuration File">
+        <Value></Value>
+      </Property>
+      <Property name="Export Mechanical Properties">
+        <Value>0</Value>
+      </Property>
+      <Property name="Invalid Material Properties Check">
+        <Value>1</Value>
+      </Property>
+    </Thermal-Flow>
+  </SolverParameters>
+  <SolutionParameters>
+    <General>
+      <Property name="Description">
+        <Value></Value>
+      </Property>
+      <Property name="Solve Co-simulation">
+        <Value>0</Value>
+      </Property>
+      <Property name="Values Outside Time-dependent Tables">
+        <Value>0</Value>
+      </Property>
+      <Property name="Include File">
+        <Value>0</Value>
+      </Property>
+      <Property name="Select File">
+        <Value></Value>
+      </Property>
+      <Property name="Fields File Directory">
+        <Value>0</Value>
+      </Property>
+      <Property name="Fields Directory">
+        <Value></Value>
+      </Property>
+      <Property name="Compress Output Files">
+        <Value>1</Value>
+      </Property>
+    </General>
+    <Control>
+      <Property name="Thermal Parameters" type="Thermal Parameters">
+        <Value>1</Value>
+      </Property>
+      <Property name="Thermostat">
+        <Value>0</Value>
+      </Property>
+      <Property name="Ablation-Charring Material" type="arraySSMO">
+      </Property>
+      <Property name="Apply Heater Control to all Thermal Loads">
+        <Value>0</Value>
+      </Property>
+      <Property name="Heater Controller or Thermostat">
+        <Value>-1</Value>
+      </Property>
+    </Control>
+    <AmbientConditions>
+      <Property name="Altitude Value">
+        <Value>  0.0000000E+00</Value>
+      </Property>
+      <Property name="Ambient Pressure">
+        <Value>0</Value>
+      </Property>
+      <Property name="Absolute Pressure">
+        <Value>  1.0135100E+02</Value>
+      </Property>
+      <Property name="Fluid Temperature">
+        <Value>  2.0000000E+01</Value>
+      </Property>
+      <Property name="Radiative Environment Temperature">
+        <Value>  2.0000000E+01</Value>
+      </Property>
+    </AmbientConditions>
+    <InitialConditions>
+      <Property name="Thermal Initial Temperature">
+        <Value>0</Value>
+      </Property>
+      <Property name="Initial Temperature Value">
+        <Value>  2.0000000E+01</Value>
+      </Property>
+      <Property name="Results Directory">
+        <Value></Value>
+      </Property>
+      <Property name="TEMPF File">
+        <Value></Value>
+      </Property>
+      <Property name="Results to Use for Initial Conditions">
+        <Value>0</Value>
+      </Property>
+      <Property name="Initial Conditions Use Results at Time">
+        <Value>  0.0000000E+00</Value>
+      </Property>
+    </InitialConditions>
+    <ArticulationParameters>
+      <Property name="Articulation Time Step Option">
+        <Value>0</Value>
+      </Property>
+      <Property name="Articulation Start Time">
+        <Value>  0.0000000E+00</Value>
+      </Property>
+      <Property name="Articulation End Time">
+        <Value>  0.0000000E+00</Value>
+      </Property>
+      <Property name="Articulation Calculation Interval">
+        <Value>  0.0000000E+00</Value>
+      </Property>
+      <Property name="Articulation Number of Time Steps">
+        <Value>10</Value>
+      </Property>
+      <Property name="Articulation Times" type="arrayFloat">
+      </Property>
+      <Property name="Articulation Interval vs Time Table">
+        <Value>  0.0000000E+00</Value>
+      </Property>
+    </ArticulationParameters>
+    <ResultsOptions>
+      <Property name="Thermal Output Requests" type="Multiphysics Thermal Output Requests">
+        <Value>2</Value>
+      </Property>
+      <Property name="Output Files for Refresh Results Refresh Reports">
+        <Value>0</Value>
+      </Property>
+    </ResultsOptions>
+  </SolutionParameters>
+  <SolutionStepList>
+    <SolutionStep uname="Conduction" type="Multiphysics Thermal" stepid="1">
+      <Property name="Description">
+        <Value></Value>
+      </Property>
+      <Property name="Solution Type">
+        <Value>0</Value>
+      </Property>
+      <Property name="End Time">
+        <Value>  0.0000000E+00</Value>
+      </Property>
+      <Property name="Thermal Time Step Method">
+        <Value>2</Value>
+      </Property>
+      <Property name="Thermal Number of Steps">
+        <Value>10</Value>
+      </Property>
+      <Property name="Thermal Time Step">
+        <Value>  1.0000000E+00</Value>
+      </Property>
+      <Property name="Maximum Temperature Change">
+        <Value>  5.0000000E+00</Value>
+      </Property>
+      <Property name="Minimum Time Step">
+        <Value>  1.0000000E+00</Value>
+      </Property>
+      <Property name="Maximum Time Step Option">
+        <Value>1</Value>
+      </Property>
+      <Property name="Maximum Time Step">
+        <Value>  1.0000000E+00</Value>
+      </Property>
+      <Property name="Maximum Time Step Increment">
+        <Value>4</Value>
+      </Property>
+      <Property name="Output Flag">
+        <Value>1</Value>
+      </Property>
+      <Property name="Thermal Output Requests">
+        <Value>-1</Value>
+      </Property>
+    </SolutionStep>
+  </SolutionStepList>
+  <MaterialList>
+    <Material uid="1" uname="UPDATE_SOLID::benchmark_ec2b6f8c50fd_mesh::[1]" type="ISO">
+      <Property name="Dependency Control">
+        <Value>0</Value>
+      </Property>
+      <Property name="Mass Density Constant" type="Constant">
+        <Value>  2.7000000E-06</Value>
+      </Property>
+      <Property name="Mass Density Temperature" type="Constant">
+        <Value>  0.0000000E+00</Value>
+      </Property>
+      <Property name="Specific Heat" type="Constant">
+        <Value>  9.0000000E+08</Value>
+      </Property>
+      <Property name="Thermal Conductivity" type="Constant">
+        <Value>  2.0000000E+05</Value>
+      </Property>
+      <Property name="Latent Heat" type="Constant">
+        <Value>  0.0000000E+00</Value>
+      </Property>
+      <Property name="Phase Temperature" type="Constant">
+        <Value>  0.0000000E+00</Value>
+      </Property>
+      <Property name="Phase Temperature Range" type="Constant">
+        <Value>  0.0000000E+00</Value>
+      </Property>
+      <Property name="Phase Specific Heat" type="Constant">
+        <Value>  0.0000000E+00</Value>
+      </Property>
+      <Property name="IR Scattering" type="Constant">
+        <Value>  0.0000000E+00</Value>
+      </Property>
+      <Property name="IR Extinction" type="Constant">
+        <Value>  0.0000000E+00</Value>
+      </Property>
+      <Property name="Solar Scattering" type="Constant">
+        <Value>  0.0000000E+00</Value>
+      </Property>
+      <Property name="Solar Extinction" type="Constant">
+        <Value>  0.0000000E+00</Value>
+      </Property>
+      <Property name="Electrical Resistivity" type="Constant">
+        <Value>  0.0000000E+00</Value>
+      </Property>
+    </Material>
+  </MaterialList>
+  <PhysicalPropertyTableList>
+    <PhysicalPropertyTable uid="1" uname="Solid1::benchmark_ec2b6f8c50fd_mesh::[1]" type="Solid">
+      <Property name="Material">
+        <Value>1</Value>
+      </Property>
+      <Property name="Material Orientation Type">
+        <Value>0</Value>
+      </Property>
+      <Property name="Radiation">
+        <Value>1</Value>
+      </Property>
+      <Property name="Optical Properties">
+        <Value>-1</Value>
+      </Property>
+    </PhysicalPropertyTable>
+  </PhysicalPropertyTableList>
+  <BeamCrossSectionList>
+  </BeamCrossSectionList>
+  <SetList>
+  </SetList>
+  <NamedPointList>
+  </NamedPointList>
+  <CurveList>
+  </CurveList>
+  <OpticalPropertyList>
+  </OpticalPropertyList>
+  <AdvancedOpticalPropertyList>
+  </AdvancedOpticalPropertyList>
+  <NonGeometricElementList>
+  </NonGeometricElementList>
+  <AblationList>
+  </AblationList>
+  <ActiveHeaterControllerList>
+  </ActiveHeaterControllerList>
+  <ArticulationJointList>
+  </ArticulationJointList>
+  <ConvectionCorrectionList>
+  </ConvectionCorrectionList>
+  <DuctHeadLossList>
+  </DuctHeadLossList>
+  <ExternalSolverList>
+  </ExternalSolverList>
+  <MonteCarloSettingsList>
+  </MonteCarloSettingsList>
+  <ReferenceTemperatureList>
+  </ReferenceTemperatureList>
+  <ThermalOutputRequestList>
+    <ThermalOutputRequest uid="2" uname="Thermal Output Requests">
+      <Description></Description>
+      <Property name="Create Groups for Boundary Conditions">
+        <Value>1</Value>
+      </Property>
+      <Property name="Thermal Entity">
+        <Value>0</Value>
+      </Property>
+      <Selection propertyName="Thermal Select Entity" step="1">
+      </Selection>
+      <Property name="Temperatures">
+        <Value>1</Value>
+      </Property>
+      <Property name="Temperature Results Location">
+        <Value>2</Value>
+      </Property>
+      <Property name="Min/Max Temperatures and Occurrence Times">
+        <Value>1</Value>
+      </Property>
+      <Property name="Total Temperatures">
+        <Value>0</Value>
+      </Property>
+      <Property name="Total Temperature Results Location">
+        <Value>2</Value>
+      </Property>
+      <Property name="Local Temperature Error Estimate">
+        <Value>0</Value>
+      </Property>
+      <Property name="Conductive Fluxes">
+        <Value>0</Value>
+      </Property>
+      <Property name="Conductive Fluxes Results Location">
+        <Value>2</Value>
+      </Property>
+      <Property name="Convective Heat Fluxes">
+        <Value>0</Value>
+      </Property>
+      <Property name="Convective Heat Flux Results Location">
+        <Value>2</Value>
+      </Property>
+      <Property name="Temperature Gradients">
+        <Value>0</Value>
+      </Property>
+      <Property name="Temperature Gradients Results Location">
+        <Value>2</Value>
+      </Property>
+      <Property name="Transverse Temperature Gradients">
+        <Value>0</Value>
+      </Property>
+      <Property name="Total Loads and Fluxes">
+        <Value>1</Value>
+      </Property>
+      <Property name="Residuals">
+        <Value>0</Value>
+      </Property>
+      <Property name="Free and Forced Convection Coefficients">
+        <Value>0</Value>
+      </Property>
+      <Property name="Free and Forced Convection Coefficient Results Location">
+        <Value>2</Value>
+      </Property>
+      <Property name="Corrected Free and Forced Convection Coefficients">
+        <Value>0</Value>
+      </Property>
+      <Property name="Corrected Free and Forced Convection Coefficient Results Location">
+        <Value>2</Value>
+      </Property>
+      <Property name="Wall Velocities">
+        <Value>0</Value>
+      </Property>
+      <Property name="Wall Velocity Results Location">
+        <Value>2</Value>
+      </Property>
+      <Property name="Joule Data">
+        <Value>0</Value>
+      </Property>
+      <Property name="Phase Change Quality">
+        <Value>0</Value>
+      </Property>
+      <Property name="RC Products">
+        <Value>0</Value>
+      </Property>
+      <Property name="Thermal Connections">
+        <Value>0</Value>
+      </Property>
+      <Property name="Coupled Area Ratio">
+        <Value>0</Value>
+      </Property>
+      <Property name="Coupling Area">
+        <Value>0</Value>
+      </Property>
+      <Property name="Radiation Entity">
+        <Value>0</Value>
+      </Property>
+      <Selection propertyName="Radiation Select Entity" step="2">
+      </Selection>
+      <Property name="View factors Sums">
+        <Value>1</Value>
+      </Property>
+      <Property name="Environmental View Factors">
+        <Value>0</Value>
+      </Property>
+      <Property name="Apparent Temperatures">
+        <Value>0</Value>
+      </Property>
+      <Property name="Radiances">
+        <Value>0</Value>
+      </Property>
+      <Property name="Fluences">
+        <Value>0</Value>
+      </Property>
+      <Property name="Net Radiative Fluxes">
+        <Value>0</Value>
+      </Property>
+      <Property name="Radiosity Fluxes">
+        <Value>0</Value>
+      </Property>
+      <Property name="Irradiance Fluxes">
+        <Value>0</Value>
+      </Property>
+      <Property name="Radiative Source Fluxes Entity">
+        <Value>0</Value>
+      </Property>
+      <Selection propertyName="Radiative Source Fluxes Select Entity" step="4">
+      </Selection>
+      <Property name="Radiative Absorbed Fluxes">
+        <Value>1</Value>
+      </Property>
+      <Property name="Radiative Incident Fluxes">
+        <Value>0</Value>
+      </Property>
+      <Property name="Radiative Transmitted Fluxes">
+        <Value>0</Value>
+      </Property>
+      <Property name="Radiative Reflected Fluxes">
+        <Value>0</Value>
+      </Property>
+      <Property name="Duct Entity">
+        <Value>0</Value>
+      </Property>
+      <Selection propertyName="Duct Select Entity" step="3">
+      </Selection>
+      <Property name="Temperatures Duct">
+        <Value>1</Value>
+      </Property>
+      <Property name="Temperature Results Location Duct">
+        <Value>2</Value>
+      </Property>
+      <Property name="Total Temperatures Duct">
+        <Value>0</Value>
+      </Property>
+      <Property name="Total Temperature Results Location Duct">
+        <Value>2</Value>
+      </Property>
+      <Property name="Velocities Duct">
+        <Value>1</Value>
+      </Property>
+      <Property name="Velocity Results Location Duct">
+        <Value>2</Value>
+      </Property>
+      <Property name="Swirl Velocities Duct">
+        <Value>0</Value>
+      </Property>
+      <Property name="Swirl Velocity Results Location Duct">
+        <Value>2</Value>
+      </Property>
+      <Property name="Swirl Ratio Duct">
+        <Value>0</Value>
+      </Property>
+      <Property name="Swirl Ratio Results Location Duct">
+        <Value>2</Value>
+      </Property>
+      <Property name="Pressures Duct">
+        <Value>1</Value>
+      </Property>
+      <Property name="Pressure Results Location Duct">
+        <Value>2</Value>
+      </Property>
+      <Property name="Densities Duct">
+        <Value>0</Value>
+      </Property>
+      <Property name="Density Results Location Duct">
+        <Value>2</Value>
+      </Property>
+      <Property name="Mass Flows Duct">
+        <Value>0</Value>
+      </Property>
+      <Property name="Mass Flow Results Location Duct">
+        <Value>2</Value>
+      </Property>
+      <Property name="Reynold Numbers">
+        <Value>0</Value>
+      </Property>
+      <Property name="Reynolds Number Results Location Duct">
+        <Value>2</Value>
+      </Property>
+    </ThermalOutputRequest>
+  </ThermalOutputRequestList>
+  <ThermalParameterList>
+    <ThermalParameters uid="1" uname="Thermal Parameters">
+      <Description></Description>
+      <Property name="Steady State - Convergence Criteria">
+        <Value>0</Value>
+      </Property>
+      <Property name="Steady State - Maximum Temperature Change">
+        <Value>  1.0000000E-03</Value>
+      </Property>
+      <Property name="Steady State - Heat Imbalance">
+        <Value>0</Value>
+      </Property>
+      <Property name="Heat Imbalance Option">
+        <Value>0</Value>
+      </Property>
+      <Property name="Global Fraction">
+        <Value>  1.0000000E-02</Value>
+      </Property>
+      <Property name="Absolute">
+        <Value>  1.0000000E+00</Value>
+      </Property>
+      <Property name="Thermal Steady State - Iteration Limit">
+        <Value>10000</Value>
+      </Property>
+      <Property name="Transient - Maximum Temperature Change">
+        <Value>  1.0000000E-01</Value>
+      </Property>
+      <Property name="Thermal Transient - Iteration Limit">
+        <Value>10000</Value>
+      </Property>
+      <Property name="Integration Method">
+        <Value>0</Value>
+      </Property>
+      <Property name="Relaxation Factor">
+        <Value>  1.0000000E+00</Value>
+      </Property>
+      <Property name="Convergence Trace">
+        <Value>0</Value>
+      </Property>
+      <Property name="Duct Flow Pressure Convergence Criteria">
+        <Value>  1.0000000E-02</Value>
+      </Property>
+      <Property name="Duct Flow Iteration Limit">
+        <Value>100</Value>
+      </Property>
+      <Property name="Duct Flow Relaxation Factor">
+        <Value>  1.0000000E+00</Value>
+      </Property>
+      <Property name="Duct Flow Convergence Trace">
+        <Value>0</Value>
+      </Property>
+      <Property name="Duct Flow Include Head Loss Correlations for Bends and Branches">
+        <Value>0</Value>
+      </Property>
+      <Property name="Element Discretization">
+        <Value>1</Value>
+      </Property>
+      <Property name="Shell Accuracy">
+        <Value>1</Value>
+      </Property>
+      <Property name="Solid Element Capacitance Distribution">
+        <Value>1</Value>
+      </Property>
+      <Property name="Element Convention for Temperature Constraint">
+        <Value>0</Value>
+      </Property>
+      <Property name="Duct Thermal Discretization">
+        <Value>1</Value>
+      </Property>
+      <Property name="Convergence Norm">
+        <Value>0</Value>
+      </Property>
+      <Property name="Convergence Criterion MAX">
+        <Value>  1.0000000E-05</Value>
+      </Property>
+      <Property name="Convergence Criterion">
+        <Value>  1.0000000E-08</Value>
+      </Property>
+      <Property name="Finite Element Convergence Norm">
+        <Value>0</Value>
+      </Property>
+      <Property name="Finite Element Convergence Criterion MAX">
+        <Value>  1.0000000E-05</Value>
+      </Property>
+      <Property name="Finite Element Convergence Criterion">
+        <Value>  1.0000000E-07</Value>
+      </Property>
+      <Property name="Conjugate Gradient Solver Iteration Limit">
+        <Value>100</Value>
+      </Property>
+      <Property name="Convergence Matrix Fill Value">
+        <Value>10</Value>
+      </Property>
+      <Property name="Finite Element Convergence Matrix Fill Value">
+        <Value>20</Value>
+      </Property>
+      <Property name="Elements Part of a Thermal Coupling Do Not Convect to Environment">
+        <Value>1</Value>
+      </Property>
+      <Property name="View Factor Adjustment">
+        <Value>0</Value>
+      </Property>
+      <Property name="Small View Factors">
+        <Value>0</Value>
+      </Property>
+      <Property name="View Factors less than">
+        <Value>  1.0000000E-12</Value>
+      </Property>
+      <Property name="Sum of Disposed View Factors less than">
+        <Value>  5.0000000E-02</Value>
+      </Property>
+      <Property name="Close End of Beams">
+        <Value>0</Value>
+      </Property>
+      <Property name="Allow all elements to shadow for orbital and solar heating requests">
+        <Value>0</Value>
+      </Property>
+      <Property name="Number of Axisymmetric Segments">
+        <Value>16</Value>
+      </Property>
+      <Property name="Ignore specular and transparent effects for radiation request calculations">
+        <Value>1</Value>
+      </Property>
+      <Property name="Element Subdivision">
+        <Value>3</Value>
+      </Property>
+      <Property name="Use Radiation Patches">
+        <Value>0</Value>
+      </Property>
+      <Property name="Bands">
+        <Value>0</Value>
+      </Property>
+      <Property name="Minimum Black Body Temperature">
+        <Value>  0.0000000E+00</Value>
+      </Property>
+      <Property name="Maximum Black Body Temperature">
+        <Value>  0.0000000E+00</Value>
+      </Property>
+      <Property name="Black Body Temperature Table" type="arrayFloat">
+      </Property>
+      <Property name="Black Body Temperature">
+        <Value>  0.0000000E+00</Value>
+      </Property>
+      <Property name="Total Number of Bands">
+        <Value>2</Value>
+      </Property>
+      <Property name="Minimum Wavelength">
+        <Value>  0.0000000E+00</Value>
+      </Property>
+      <Property name="Maximum Wavelength">
+        <Value>  0.0000000E+00</Value>
+      </Property>
+      <Property name="Number of Bands in Range">
+        <Value>1</Value>
+      </Property>
+      <Property name="Wavelength Breakpoint Table" type="arrayFloat">
+      </Property>
+      <Property name="Spectral Model">
+        <Value>0</Value>
+      </Property>
+      <Property name="Solar to IR Transition Wavelength">
+        <Value>  3.0000000E-03</Value>
+      </Property>
+      <Property name="Solar Intensity versus Wavelength">
+        <Value>0</Value>
+      </Property>
+      <Property name="Solar Intensity Table">
+        <Value>  0.0000000E+00</Value>
+      </Property>
+    </ThermalParameters>
+  </ThermalParameterList>
+  <ThermostatList>
+  </ThermostatList>
+  <Alignments>
+  </Alignments>
+  <ElementList>
+    <Set uname="3d_mesh(1)" elementType="TET4" physicalProperty="1">
+      <E>1   40   48   43   69</E>
+      <E>2   25   64   48   69</E>
+      <E>3   69   70   71   72</E>
+      <E>4   43   69   70   73</E>
+      <E>5   49   69   61   72</E>
+      <E>6   46   47   48   69</E>
+      <E>7   46   64   66   69</E>
+      <E>8   33   71   35   72</E>
+      <E>9   57   71   59   72</E>
+      <E>10   58   59   71   72</E>
+      <E>11   49   62   61   69</E>
+      <E>12   45   49   50   72</E>
+      <E>13   35   71   70   72</E>
+      <E>14   39   43   70   73</E>
+      <E>15   12   44   45   70</E>
+      <E>16   34   70   35   73</E>
+      <E>17   12   45   37   70</E>
+      <E>18   20   41   39   52</E>
+      <E>19   41   54   42   73</E>
+      <E>20   57   65   63   69</E>
+      <E>21   40   42   67   73</E>
+      <E>22   53   55   71   73</E>
+      <E>23   41   52   54   73</E>
+      <E>24   63   67   68   73</E>
+      <E>25   37   50   38   72</E>
+      <E>26   11   37   45   50</E>
+      <E>27   3   22   38   50</E>
+      <E>28   22   38   50   72</E>
+      <E>29   33   58   60   71</E>
+      <E>30   56   60   59   71</E>
+      <E>31   34   39   70   73</E>
+      <E>32   14   35   33   71</E>
+      <E>33   14   4   56   60</E>
+      <E>34   58   61   59   72</E>
+      <E>35   21   49   46   62</E>
+      <E>36   21   22   49   61</E>
+      <E>37   29   57   32   63</E>
+      <E>38   22   49   61   72</E>
+      <E>39   15   3   22   38</E>
+      <E>40   35   52   36   73</E>
+      <E>41   15   16   33   58</E>
+      <E>42   30   53   63   68</E>
+      <E>43   6   42   54   68</E>
+      <E>44   29   51   24   57</E>
+      <E>45   29   51   57   71</E>
+      <E>46   29   24   32   57</E>
+      <E>47   57   61   62   69</E>
+      <E>48   15   38   22   58</E>
+      <E>49   43   48   47   69</E>
+      <E>50   25   27   48   64</E>
+      <E>51   27   28   46   64</E>
+      <E>52   46   48   64   69</E>
+      <E>53   25   27   5   48</E>
+      <E>54   37   45   50   72</E>
+      <E>55   11   38   37   50</E>
+      <E>56   19   42   41   54</E>
+      <E>57   42   54   68   73</E>
+      <E>58   12   44   17   45</E>
+      <E>59   12   34   44   70</E>
+      <E>60   33   38   58   72</E>
+      <E>61   28   7   21   62</E>
+      <E>62   51   59   57   71</E>
+      <E>63   63   65   67   69</E>
+      <E>64   14   56   55   71</E>
+      <E>65   14   33   60   71</E>
+      <E>66   51   55   56   71</E>
+      <E>67   4   23   56   60</E>
+      <E>68   51   56   59   71</E>
+      <E>69   14   55   35   71</E>
+      <E>70   44   47   45   70</E>
+      <E>71   43   47   44   70</E>
+      <E>72   45   47   49   69</E>
+      <E>73   37   70   45   72</E>
+      <E>74   63   71   69   73</E>
+      <E>75   21   61   49   62</E>
+      <E>76   35   71   55   73</E>
+      <E>77   13   20   36   52</E>
+      <E>78   36   52   39   73</E>
+      <E>79   19   41   20   52</E>
+      <E>80   10   2   20   36</E>
+      <E>81   10   34   36   39</E>
+      <E>82   28   21   46   62</E>
+      <E>83   64   65   66   69</E>
+      <E>84   24   57   51   59</E>
+      <E>85   39   52   41   73</E>
+      <E>86   40   69   43   73</E>
+      <E>87   26   42   6   68</E>
+      <E>88   18   43   40   48</E>
+      <E>89   25   67   64   69</E>
+      <E>90   26   40   42   67</E>
+      <E>91   18   47   43   48</E>
+      <E>92   19   41   52   54</E>
+      <E>93   35   55   52   73</E>
+      <E>94   34   35   36   73</E>
+      <E>95   51   53   55   71</E>
+      <E>96   1   17   12   44</E>
+      <E>97   39   43   44   70</E>
+      <E>98   29   53   51   71</E>
+      <E>99   57   69   71   72</E>
+      <E>100   23   24   51   59</E>
+      <E>101   9   34   10   39</E>
+      <E>102   29   63   53   71</E>
+      <E>103   22   50   49   72</E>
+      <E>104   14   33   16   60</E>
+      <E>105   22   61   58   72</E>
+      <E>106   58   59   60   71</E>
+      <E>107   22   58   38   72</E>
+      <E>108   40   41   42   73</E>
+      <E>109   29   57   63   71</E>
+      <E>110   12   37   34   70</E>
+      <E>111   34   39   44   70</E>
+      <E>112   29   30   53   63</E>
+      <E>113   13   36   35   52</E>
+      <E>114   35   70   37   72</E>
+      <E>115   33   35   37   72</E>
+      <E>116   20   39   36   52</E>
+      <E>117   27   46   48   64</E>
+      <E>118   52   53   54   73</E>
+      <E>119   2   13   20   36</E>
+      <E>120   63   69   67   73</E>
+      <E>121   40   67   69   73</E>
+      <E>122   16   33   58   60</E>
+      <E>123   34   37   35   70</E>
+      <E>124   45   70   69   72</E>
+      <E>125   53   68   54   73</E>
+      <E>126   33   58   71   72</E>
+      <E>127   6   54   30   68</E>
+      <E>128   29   24   8   32</E>
+      <E>129   69   71   70   73</E>
+      <E>130   13   52   35   55</E>
+      <E>131   6   42   19   54</E>
+      <E>132   53   63   68   73</E>
+      <E>133   9   12   34   44</E>
+      <E>134   23   51   56   59</E>
+      <E>135   11   37   12   45</E>
+      <E>136   53   71   63   73</E>
+      <E>137   64   67   65   69</E>
+      <E>138   40   43   41   73</E>
+      <E>139   57   62   65   69</E>
+      <E>140   25   5   18   48</E>
+      <E>141   39   41   43   73</E>
+      <E>142   25   40   26   67</E>
+      <E>143   57   69   63   71</E>
+      <E>144   32   63   57   65</E>
+      <E>145   35   70   71   73</E>
+      <E>146   57   59   61   72</E>
+      <E>147   42   68   67   73</E>
+      <E>148   13   35   14   55</E>
+      <E>149   46   49   47   69</E>
+      <E>150   33   37   38   72</E>
+      <E>151   26   67   42   68</E>
+      <E>152   28   46   64   66</E>
+      <E>153   25   40   67   69</E>
+      <E>154   45   47   69   70</E>
+      <E>155   31   65   62   66</E>
+      <E>156   9   34   39   44</E>
+      <E>157   14   16   4   60</E>
+      <E>158   17   43   18   47</E>
+      <E>159   25   18   40   48</E>
+      <E>160   43   69   47   70</E>
+      <E>161   28   7   62   66</E>
+      <E>162   14   60   56   71</E>
+      <E>163   30   54   53   68</E>
+      <E>164   34   36   39   73</E>
+      <E>165   3   38   11   50</E>
+      <E>166   46   66   62   69</E>
+      <E>167   25   48   40   69</E>
+      <E>168   31   57   62   65</E>
+      <E>169   9   1   12   44</E>
+      <E>170   17   44   43   47</E>
+      <E>171   15   33   38   58</E>
+      <E>172   31   32   57   65</E>
+      <E>173   52   55   53   73</E>
+      <E>174   23   59   56   60</E>
+      <E>175   7   31   62   66</E>
+      <E>176   10   36   20   39</E>
+      <E>177   62   66   65   69</E>
+      <E>178   28   62   46   66</E>
+      <E>179   17   45   44   47</E>
+      <E>180   45   69   49   72</E>
+      <E>181   57   61   69   72</E>
+      <E>182   46   62   49   69</E>
+    </Set>
+  </ElementList>
+  <ElementAssociatedDataList>
+  </ElementAssociatedDataList>
+  <NodeList>
+    <N>1     0.0000000000000000E+00     0.0000000000000000E+00     0.0000000000000000E+00</N>
+    <N>2     0.0000000000000000E+00     0.0000000000000000E+00     1.0000000000000000E+01</N>
+    <N>3     0.0000000000000000E+00     1.0000000000000000E+01     0.0000000000000000E+00</N>
+    <N>4     0.0000000000000000E+00     1.0000000000000000E+01     1.0000000000000000E+01</N>
+    <N>5     1.0000000000000000E+01     0.0000000000000000E+00     0.0000000000000000E+00</N>
+    <N>6     1.0000000000000000E+01     0.0000000000000000E+00     1.0000000000000000E+01</N>
+    <N>7     1.0000000000000000E+01     1.0000000000000000E+01     0.0000000000000000E+00</N>
+    <N>8     1.0000000000000000E+01     1.0000000000000000E+01     1.0000000000000000E+01</N>
+    <N>9     0.0000000000000000E+00     0.0000000000000000E+00     3.3333333333333330E+00</N>
+    <N>10     0.0000000000000000E+00     0.0000000000000000E+00     6.6666666666666661E+00</N>
+    <N>11     0.0000000000000000E+00     6.6666666666666670E+00     0.0000000000000000E+00</N>
+    <N>12     0.0000000000000000E+00     3.3333333333333339E+00     0.0000000000000000E+00</N>
+    <N>13     0.0000000000000000E+00     3.3333333333333330E+00     1.0000000000000000E+01</N>
+    <N>14     0.0000000000000000E+00     6.6666666666666661E+00     1.0000000000000000E+01</N>
+    <N>15     0.0000000000000000E+00     1.0000000000000000E+01     3.3333333333333330E+00</N>
+    <N>16     0.0000000000000000E+00     1.0000000000000000E+01     6.6666666666666661E+00</N>
+    <N>17     3.3333333333333330E+00     0.0000000000000000E+00     0.0000000000000000E+00</N>
+    <N>18     6.6666666666666661E+00     0.0000000000000000E+00     0.0000000000000000E+00</N>
+    <N>19     6.6666666666666670E+00     0.0000000000000000E+00     1.0000000000000000E+01</N>
+    <N>20     3.3333333333333339E+00     0.0000000000000000E+00     1.0000000000000000E+01</N>
+    <N>21     6.6666666666666670E+00     1.0000000000000000E+01     0.0000000000000000E+00</N>
+    <N>22     3.3333333333333339E+00     1.0000000000000000E+01     0.0000000000000000E+00</N>
+    <N>23     3.3333333333333330E+00     1.0000000000000000E+01     1.0000000000000000E+01</N>
+    <N>24     6.6666666666666661E+00     1.0000000000000000E+01     1.0000000000000000E+01</N>
+    <N>25     1.0000000000000000E+01     0.0000000000000000E+00     3.3333333333333330E+00</N>
+    <N>26     1.0000000000000000E+01     0.0000000000000000E+00     6.6666666666666661E+00</N>
+    <N>27     1.0000000000000000E+01     3.3333333333333330E+00     0.0000000000000000E+00</N>
+    <N>28     1.0000000000000000E+01     6.6666666666666661E+00     0.0000000000000000E+00</N>
+    <N>29     1.0000000000000000E+01     6.6666666666666670E+00     1.0000000000000000E+01</N>
+    <N>30     1.0000000000000000E+01     3.3333333333333339E+00     1.0000000000000000E+01</N>
+    <N>31     1.0000000000000000E+01     1.0000000000000000E+01     3.3333333333333330E+00</N>
+    <N>32     1.0000000000000000E+01     1.0000000000000000E+01     6.6666666666666661E+00</N>
+    <N>33     0.0000000000000000E+00     7.4158617419676993E+00     5.3067045126064691E+00</N>
+    <N>34     0.0000000000000000E+00     2.5599699369133533E+00     4.7155739208943555E+00</N>
+    <N>35     0.0000000000000000E+00     4.5819656254665517E+00     6.7798764797524429E+00</N>
+    <N>36     0.0000000000000000E+00     2.1218451327948973E+00     7.6131061673411278E+00</N>
+    <N>37     0.0000000000000000E+00     5.4052692087878000E+00     3.2165287814273640E+00</N>
+    <N>38     0.0000000000000000E+00     7.8699070728288083E+00     2.3888614705815185E+00</N>
+    <N>39     2.5841382580322998E+00     0.0000000000000000E+00     5.3067045126064709E+00</N>
+    <N>40     7.4400300630866436E+00     0.0000000000000000E+00     4.7155739208943563E+00</N>
+    <N>41     5.4180343745334483E+00     0.0000000000000000E+00     6.7798764797524429E+00</N>
+    <N>42     7.8781548672051009E+00     0.0000000000000000E+00     7.6131061673411278E+00</N>
+    <N>43     4.5947307912122000E+00     0.0000000000000000E+00     3.2165287814273640E+00</N>
+    <N>44     2.1300929271711935E+00     0.0000000000000000E+00     2.3888614705815185E+00</N>
+    <N>45     2.5841382580322998E+00     4.6932954873935291E+00     0.0000000000000000E+00</N>
+    <N>46     7.4400300630866454E+00     5.2844260791056445E+00     0.0000000000000000E+00</N>
+    <N>47     5.4180343745334483E+00     3.2201235202475575E+00     0.0000000000000000E+00</N>
+    <N>48     7.8781548672051009E+00     2.3868938326588718E+00     0.0000000000000000E+00</N>
+    <N>49     4.5947307912122008E+00     6.7834712185726369E+00     0.0000000000000000E+00</N>
+    <N>50     2.1300929271711935E+00     7.6111385294184819E+00     0.0000000000000000E+00</N>
+    <N>51     5.3067045126064709E+00     7.4158617419677002E+00     1.0000000000000000E+01</N>
+    <N>52     4.7155739208943563E+00     2.5599699369133551E+00     1.0000000000000000E+01</N>
+    <N>53     6.7798764797524447E+00     4.5819656254665517E+00     1.0000000000000000E+01</N>
+    <N>54     7.6131061673411295E+00     2.1218451327948973E+00     1.0000000000000000E+01</N>
+    <N>55     3.2165287814273649E+00     5.4052692087878009E+00     1.0000000000000000E+01</N>
+    <N>56     2.3888614705815185E+00     7.8699070728288065E+00     1.0000000000000000E+01</N>
+    <N>57     7.4158617419676993E+00     1.0000000000000000E+01     5.3067045126064691E+00</N>
+    <N>58     2.5599699369133533E+00     1.0000000000000000E+01     4.7155739208943555E+00</N>
+    <N>59     4.5819656254665517E+00     1.0000000000000000E+01     6.7798764797524429E+00</N>
+    <N>60     2.1218451327948973E+00     1.0000000000000000E+01     7.6131061673411278E+00</N>
+    <N>61     5.4052692087878000E+00     1.0000000000000000E+01     3.2165287814273640E+00</N>
+    <N>62     7.8699070728288083E+00     1.0000000000000000E+01     2.3888614705815185E+00</N>
+    <N>63     1.0000000000000000E+01     5.3067045126064718E+00     7.4158617419677002E+00</N>
+    <N>64     1.0000000000000000E+01     4.7155739208943555E+00     2.5599699369133533E+00</N>
+    <N>65     1.0000000000000000E+01     6.7798764797524429E+00     4.5819656254665517E+00</N>
+    <N>66     1.0000000000000000E+01     7.6131061673411269E+00     2.1218451327948982E+00</N>
+    <N>67     1.0000000000000000E+01     3.2165287814273640E+00     5.4052692087878000E+00</N>
+    <N>68     1.0000000000000000E+01     2.3888614705815185E+00     7.8699070728288065E+00</N>
+    <N>69     6.9468592204566679E+00     5.2573006688674671E+00     3.3968515975793494E+00</N>
+    <N>70     2.6840767894781759E+00     3.6306110179800868E+00     3.0589793344304566E+00</N>
+    <N>71     4.4199428620179679E+00     6.2528129879574053E+00     7.3439625350019169E+00</N>
+    <N>72     4.1055629270880765E+00     7.3008962130325736E+00     3.8270048081479127E+00</N>
+    <N>73     5.4966663184541478E+00     2.7600020163245840E+00     6.2562218228492421E+00</N>
+  </NodeList>
+  <RegionList>
+  </RegionList>
+  <Loads>
+    <GravityList>
+    </GravityList>
+    <RotationList>
+    </RotationList>
+    <ConvectionList>
+    </ConvectionList>
+    <ThermalLoadList>
+      <ThermalLoad uid="2" uname="UPDATE_POWER" type="Heat Load">
+        <Description></Description>
+        <Property name="Selection Method">
+          <Value>0</Value>
+        </Property>
+        <Property name="Override Region">
+          <Value>0</Value>
+        </Property>
+        <Property name="Non-Geometric Element">
+          <Value>-1</Value>
+        </Property>
+        <Property name="Heat Load">
+          <Value>  1.0000000E+06</Value>
+        </Property>
+        <Property name="Heat Load Override">
+          <Value>  0.0000000E+00</Value>
+        </Property>
+        <Property name="Specify Reference Temperature Set">
+          <Value>0</Value>
+        </Property>
+        <Property name="Reference Temperature Set">
+          <Value>-1</Value>
+        </Property>
+        <Property name="Control Heater">
+          <Value>0</Value>
+        </Property>
+        <Property name="Thermostat">
+          <Value>-1</Value>
+        </Property>
+        <Property name="Specify Layer to Apply to">
+          <Value>0</Value>
+        </Property>
+        <Property name="Apply to">
+          <Value>0</Value>
+        </Property>
+        <Property name="Layer Number">
+          <Value>1</Value>
+        </Property>
+        <Property name="Per Element">
+          <Value>0</Value>
+        </Property>
+        <Property name="Per Node">
+          <Value>0</Value>
+        </Property>
+        <Selection step="1">
+          <el>1</el>
+          <el>2</el>
+          <el>3</el>
+          <el>4</el>
+          <el>5</el>
+          <el>6</el>
+          <el>7</el>
+          <el>8</el>
+          <el>9</el>
+          <el>10</el>
+          <el>11</el>
+          <el>12</el>
+          <el>13</el>
+          <el>14</el>
+          <el>15</el>
+          <el>16</el>
+          <el>17</el>
+          <el>18</el>
+          <el>19</el>
+          <el>20</el>
+          <el>21</el>
+          <el>22</el>
+          <el>23</el>
+          <el>24</el>
+          <el>25</el>
+          <el>26</el>
+          <el>27</el>
+          <el>28</el>
+          <el>29</el>
+          <el>30</el>
+          <el>31</el>
+          <el>32</el>
+          <el>33</el>
+          <el>34</el>
+          <el>35</el>
+          <el>36</el>
+          <el>37</el>
+          <el>38</el>
+          <el>39</el>
+          <el>40</el>
+          <el>41</el>
+          <el>42</el>
+          <el>43</el>
+          <el>44</el>
+          <el>45</el>
+          <el>46</el>
+          <el>47</el>
+          <el>48</el>
+          <el>49</el>
+          <el>50</el>
+          <el>51</el>
+          <el>52</el>
+          <el>53</el>
+          <el>54</el>
+          <el>55</el>
+          <el>56</el>
+          <el>57</el>
+          <el>58</el>
+          <el>59</el>
+          <el>60</el>
+          <el>61</el>
+          <el>62</el>
+          <el>63</el>
+          <el>64</el>
+          <el>65</el>
+          <el>66</el>
+          <el>67</el>
+          <el>68</el>
+          <el>69</el>
+          <el>70</el>
+          <el>71</el>
+          <el>72</el>
+          <el>73</el>
+          <el>74</el>
+          <el>75</el>
+          <el>76</el>
+          <el>77</el>
+          <el>78</el>
+          <el>79</el>
+          <el>80</el>
+          <el>81</el>
+          <el>82</el>
+          <el>83</el>
+          <el>84</el>
+          <el>85</el>
+          <el>86</el>
+          <el>87</el>
+          <el>88</el>
+          <el>89</el>
+          <el>90</el>
+          <el>91</el>
+          <el>92</el>
+          <el>93</el>
+          <el>94</el>
+          <el>95</el>
+          <el>96</el>
+          <el>97</el>
+          <el>98</el>
+          <el>99</el>
+          <el>100</el>
+          <el>101</el>
+          <el>102</el>
+          <el>103</el>
+          <el>104</el>
+          <el>105</el>
+          <el>106</el>
+          <el>107</el>
+          <el>108</el>
+          <el>109</el>
+          <el>110</el>
+          <el>111</el>
+          <el>112</el>
+          <el>113</el>
+          <el>114</el>
+          <el>115</el>
+          <el>116</el>
+          <el>117</el>
+          <el>118</el>
+          <el>119</el>
+          <el>120</el>
+          <el>121</el>
+          <el>122</el>
+          <el>123</el>
+          <el>124</el>
+          <el>125</el>
+          <el>126</el>
+          <el>127</el>
+          <el>128</el>
+          <el>129</el>
+          <el>130</el>
+          <el>131</el>
+          <el>132</el>
+          <el>133</el>
+          <el>134</el>
+          <el>135</el>
+          <el>136</el>
+          <el>137</el>
+          <el>138</el>
+          <el>139</el>
+          <el>140</el>
+          <el>141</el>
+          <el>142</el>
+          <el>143</el>
+          <el>144</el>
+          <el>145</el>
+          <el>146</el>
+          <el>147</el>
+          <el>148</el>
+          <el>149</el>
+          <el>150</el>
+          <el>151</el>
+          <el>152</el>
+          <el>153</el>
+          <el>154</el>
+          <el>155</el>
+          <el>156</el>
+          <el>157</el>
+          <el>158</el>
+          <el>159</el>
+          <el>160</el>
+          <el>161</el>
+          <el>162</el>
+          <el>163</el>
+          <el>164</el>
+          <el>165</el>
+          <el>166</el>
+          <el>167</el>
+          <el>168</el>
+          <el>169</el>
+          <el>170</el>
+          <el>171</el>
+          <el>172</el>
+          <el>173</el>
+          <el>174</el>
+          <el>175</el>
+          <el>176</el>
+          <el>177</el>
+          <el>178</el>
+          <el>179</el>
+          <el>180</el>
+          <el>181</el>
+          <el>182</el>
+        </Selection>
+      </ThermalLoad>
+    </ThermalLoadList>
+    <ThermalStreamList>
+    </ThermalStreamList>
+    <ThermalVoidList>
+    </ThermalVoidList>
+  </Loads>
+  <Constraints>
+    <TemperatureList>
+      <Temperature uid="2" uname="UPDATE_TEMPERATURE" type="Temperature Constraint">
+        <Description></Description>
+        <Property name="Selection Method">
+          <Value>0</Value>
+        </Property>
+        <Property name="Option">
+          <Value>0</Value>
+        </Property>
+        <Property name="Temperature">
+          <Value>  2.0000000E+01</Value>
+        </Property>
+        <Property name="Temperature File">
+          <Value></Value>
+        </Property>
+        <Property name="Results Directory">
+          <Value></Value>
+        </Property>
+        <Property name="Specify Layer to Apply to">
+          <Value>0</Value>
+        </Property>
+        <Property name="Apply to">
+          <Value>0</Value>
+        </Property>
+        <Property name="Layer Number">
+          <Value>1</Value>
+        </Property>
+        <Selection step="1">
+          <fa>24   1</fa>
+          <fa>37   4</fa>
+          <fa>42   4</fa>
+          <fa>50   2</fa>
+          <fa>51   2</fa>
+          <fa>53   1</fa>
+          <fa>63   1</fa>
+          <fa>83   1</fa>
+          <fa>87   4</fa>
+          <fa>89   1</fa>
+          <fa>112   2</fa>
+          <fa>127   4</fa>
+          <fa>128   4</fa>
+          <fa>137   1</fa>
+          <fa>142   4</fa>
+          <fa>144   2</fa>
+          <fa>151   2</fa>
+          <fa>152   4</fa>
+          <fa>155   2</fa>
+          <fa>161   2</fa>
+          <fa>172   2</fa>
+          <fa>175   2</fa>
+        </Selection>
+      </Temperature>
+    </TemperatureList>
+    <InitialConditionsList>
+    </InitialConditionsList>
+    <SERadiationList>
+    </SERadiationList>
+    <ConvectionList>
+    </ConvectionList>
+    <FilmCoolingList>
+    </FilmCoolingList>
+    <MappingList>
+    </MappingList>
+  </Constraints>
+  <SimulationObjects>
+    <ThermalCouplingList>
+    </ThermalCouplingList>
+    <AdvancedThermalCouplingList>
+    </AdvancedThermalCouplingList>
+    <ConvectionCouplingList>
+    </ConvectionCouplingList>
+    <InterfaceResistanceList>
+    </InterfaceResistanceList>
+    <EdgeSurfaceGluingList>
+    </EdgeSurfaceGluingList>
+    <RadiationList>
+    </RadiationList>
+    <RadiativeElementSubdivisionList>
+    </RadiativeElementSubdivisionList>
+    <SolarHeatingList>
+    </SolarHeatingList>
+    <RadiativeHeatingList>
+    </RadiativeHeatingList>
+    <ArticulationList>
+    </ArticulationList>
+    <PeltierCoolerList>
+    </PeltierCoolerList>
+    <ThermalDevicesList>
+    </ThermalDevicesList>
+    <JouleHeatingList>
+    </JouleHeatingList>
+    <ThermalPeriodicityList>
+    </ThermalPeriodicityList>
+    <CyclicSymmetryList>
+    </CyclicSymmetryList>
+    <OverrideSetThermalList>
+    </OverrideSetThermalList>
+    <ProtectiveLayersList>
+    </ProtectiveLayersList>
+    <ThermalStreamsJunctionList>
+    </ThermalStreamsJunctionList>
+    <DeactivationSetList>
+    </DeactivationSetList>
+    <ElementAddRemoveList>
+    </ElementAddRemoveList>
+    <AdvancedControlsList>
+    </AdvancedControlsList>
+    <ReportList>
+    </ReportList>
+    <DuctBCList>
+    </DuctBCList>
+    <ImmersedDuctsList>
+    </ImmersedDuctsList>
+    <CosimulationInterfaceList>
+    </CosimulationInterfaceList>
+  </SimulationObjects>
+  <ThicknessFieldTableList>
+  </ThicknessFieldTableList>
+  <MOVSpatialFieldTableList>
+  </MOVSpatialFieldTableList>
+  <FieldTableList>
+  </FieldTableList>
+  <SpatialFieldTableList>
+  </SpatialFieldTableList>
+</SolutionFile>
