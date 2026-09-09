@@ -1,0 +1,33 @@
+{
+  "job_id": "public-full-coupled-r1",
+  "checks": {
+    "finite_temperature_rise": true,
+    "positive_flow_in_curve": true,
+    "fan_curve_match": true,
+    "mass_balance": true,
+    "energy_balance": true
+  },
+  "physical_checks_passed": true,
+  "peak_c": 35.35367202758789,
+  "flow_m3_s": 5.779e-05,
+  "fan_rise_pa": 0.8555,
+  "reported_imbalances": {
+    "momentum": {
+      "value": 0.0003777,
+      "units": "%",
+      "definition": "native reported imbalance; denominator not independently established"
+    },
+    "mass": {
+      "value": 0.002318,
+      "units": "%",
+      "definition": "native reported imbalance; denominator not independently established"
+    },
+    "energy": {
+      "value": 0.0003034,
+      "units": "%",
+      "definition": "native reported imbalance; denominator not independently established"
+    }
+  },
+  "numerical_convergence": "not_established",
+  "mesh_independence": "not established"
+}

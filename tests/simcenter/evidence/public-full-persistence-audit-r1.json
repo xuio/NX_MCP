@@ -1,0 +1,21 @@
+{
+  "checks": {
+    "solutions": true,
+    "objects": true,
+    "mesh": true,
+    "temperature": true
+  },
+  "passed": true,
+  "comparison_scope": "Returned solution properties/membership, simulation-object properties/targets, mesh fingerprint and temperature readback; unsupported readback stays unsupported",
+  "excluded_lifecycle_keys": [
+    "id",
+    "part_id",
+    "session_id",
+    "generation_id",
+    "operation_id",
+    "mutation_outcome",
+    "field_reference.tag"
+  ],
+  "screenshot_visually_verified": true,
+  "screenshot_sha256": "fee108643a4992d76726ee0d96260d9365c6951b346ad6d69ad2d0a14b4b68f9"
+}

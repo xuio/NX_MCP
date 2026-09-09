@@ -1,0 +1,75 @@
+{
+  "checks": {
+    "one_coupled_history": true,
+    "all_five_equations": true,
+    "declared_rms_threshold": true,
+    "final_rms_and_native_ok": true,
+    "native_solid_temperature_ok": true,
+    "native_coupled_heat_ok": true,
+    "native_coupled_temperature_ok": true,
+    "completion_marker": true
+  },
+  "reported_final_convergence_passed": true,
+  "final_iteration": 18,
+  "final_equations": [
+    {
+      "iteration": 18,
+      "region": "Flow Enclosure",
+      "equation": "U - Mom",
+      "linear_iterations": 1,
+      "linear_residual": 5.515e-11,
+      "rate": 0.46,
+      "rate_overflow": false,
+      "residual": 9.434e-07,
+      "native_message": "OK"
+    },
+    {
+      "iteration": 18,
+      "region": "Flow Enclosure",
+      "equation": "V - Mom",
+      "linear_iterations": 1,
+      "linear_residual": 5.515e-11,
+      "rate": 0.45,
+      "rate_overflow": false,
+      "residual": 4.007e-08,
+      "native_message": "OK"
+    },
+    {
+      "iteration": 18,
+      "region": "Flow Enclosure",
+      "equation": "W - Mom",
+      "linear_iterations": 1,
+      "linear_residual": 5.515e-11,
+      "rate": 0.47,
+      "rate_overflow": false,
+      "residual": 4.285e-08,
+      "native_message": "OK"
+    },
+    {
+      "iteration": 18,
+      "region": "Flow Enclosure",
+      "equation": "P - Mass",
+      "linear_iterations": 1,
+      "linear_residual": 5.515e-11,
+      "rate": 0.46,
+      "rate_overflow": false,
+      "residual": 1.028e-07,
+      "native_message": "OK"
+    },
+    {
+      "iteration": 18,
+      "region": "Flow Enclosure",
+      "equation": "H - Energy",
+      "linear_iterations": 2,
+      "linear_residual": 3.069e-05,
+      "rate": 0.47,
+      "rate_overflow": false,
+      "residual": 2.255e-07,
+      "native_message": "OK"
+    }
+  ],
+  "limitations": [
+    "Native y+ row reports LO; no mesh-independence claim",
+    "Public aggregate convergence remains conservative; this audits the retained single fixture table"
+  ]
+}
