@@ -7,7 +7,18 @@ from nx_mcp.simcenter.properties import read_properties
 from nx_mcp.simcenter.recovery import authoring_snapshot, rollback_creation
 
 
-def create_body_power(session, sim, body, power_w, name, provenance, overlap_policy="reject"):
+def create_body_power(
+    session,
+    sim,
+    body,
+    power_w,
+    name,
+    provenance,
+    overlap_policy="reject",
+    *,
+    schedule_field=None,
+    schedule_scale=1.0,
+):
     import NXOpen as nx
     import NXOpen.CAE as cae
 
@@ -64,15 +75,26 @@ def create_body_power(session, sim, body, power_w, name, provenance, overlap_pol
                     "next_step": "Inspect existing loads; use allow_additive only for separate intended contributions",
                 },
             )
+    schedule = None
+    if schedule_field is not None:
+        from nx_mcp.simcenter.heat_schedule import validate_binding
+
+        with preflight():
+            schedule = validate_binding(sim, schedule_field, schedule_scale)
     before = authoring_snapshot(sim)
     mark = session.SetUndoMark(nx.Session.MarkVisibility.Visible, "NX MCP internal heat")
     builder = None
     try:
         builder = sim.Simulation.CreateBcBuilderForLoadDescriptor("Heat Load", name)
-        expression = sim.Expressions.CreateSystemNumberExpression(
-            str(power_w), sim.UnitCollection.FindObject("Watt")
-        )
-        wrapper = sim.FieldManager.CreateScalarFieldWrapperWithExpression(expression)
+        if schedule_field is None:
+            expression = sim.Expressions.CreateSystemNumberExpression(
+                str(power_w), sim.UnitCollection.FindObject("Watt")
+            )
+            wrapper = sim.FieldManager.CreateScalarFieldWrapperWithExpression(expression)
+        else:
+            wrapper = sim.FieldManager.CreateScalarFieldWrapperWithField(
+                schedule_field, schedule_scale
+            )
         builder.PropertyTable.SetScalarFieldWrapperPropertyValue("Heat Load", wrapper)
         member = cae.SetObject()
         member.Obj, member.SubType, member.SubId = body, cae.CaeSetObjectSubType.NotSet, 0
@@ -93,14 +115,22 @@ def create_body_power(session, sim, body, power_w, name, provenance, overlap_pol
         actual = next(p for p in properties if p["name"] == "Heat Load")
         _, targets = load.TargetSetManager.GetTargetSetMembers(0)
         if (
-            float(actual["expression"]) != power_w
+            (schedule_field is None and float(actual["expression"]) != power_w)
             or len(targets) != 1
             or targets[0].Obj.Tag != body.Tag
         ):
             raise ValueError("Heat power or target changed during commit")
+        if schedule is not None:
+            from nx_mcp.simcenter.heat_schedule import verify_committed
+
+            verify_committed(sim, load, actual, schedule)
         return {
             "load": load,
-            "power_w": float(actual["expression"]),
+            **(
+                {"power_w": float(actual["expression"])}
+                if schedule is None
+                else {"schedule": schedule}
+            ),
             "power_units": "W",
             "properties": properties,
             "provenance": provenance,

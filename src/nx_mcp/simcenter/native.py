@@ -1023,6 +1023,55 @@ class SimcenterMixin:
             **result,
         }
 
+    def _sim_heat_schedule(
+        self, document, body, field, name, provenance, scale=1.0, overlap_policy="reject"
+    ):
+        from nx_mcp.simcenter.heat_loads import create_body_power
+
+        sim = self.objects.resolve(document, expected_kind="part")
+        solution = getattr(getattr(sim, "Simulation", None), "ActiveSolution", None)
+        if (
+            self.session.Parts.BaseWork != sim
+            or solution is None
+            or solution.SolverType != "NX MULTIPHYSICS"
+            or solution.AnalysisType != "Thermal"
+        ):
+            raise NXToolError(
+                "NX_SIM_UNSUPPORTED",
+                "Activate an NX MULTIPHYSICS Thermal SIM for body power assignment",
+                details={"mutation_outcome": "not_started"},
+            )
+        schedule_field = self.objects.resolve(field, expected_kind="simulation_field")
+        prototype = self.objects.resolve(body, expected_kind="body")
+        components = list(sim.ComponentAssembly.RootComponent.GetChildren())
+        if (
+            prototype.OwningPart != sim.FemPart
+            or len(components) != 1
+            or components[0].Prototype != sim.FemPart
+        ):
+            raise NXToolError(
+                "NX_SIM_SELECTION_OWNER",
+                "Select a prototype body from this SIM's direct FEM face inventory",
+            )
+        occurrence = components[0].FindOccurrence(prototype)
+        result = create_body_power(
+            self.session,
+            sim,
+            occurrence,
+            0.0,
+            name,
+            provenance,
+            overlap_policy=overlap_policy,
+            schedule_field=schedule_field,
+            schedule_scale=scale,
+        )
+        load = result.pop("load")
+        return {
+            "load": self._reference(load, "simulation_load", sim, "heat load"),
+            "target_body": self._reference(occurrence, "body", sim, "body"),
+            **result,
+        }
+
     def _sim_constraints(
         self, document, offset=0, limit=20, include_properties=False, include_targets=False
     ):

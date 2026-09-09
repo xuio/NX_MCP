@@ -219,6 +219,43 @@ These checks establish table authoring/readback and persistence. They do not yet
 establish temperature-dependent material assignment, transient load scheduling,
 solver interpolation behavior or numerical acceptance. No solver was launched.
 
+### Time-dependent body heat — implementation in verification
+
+The `nx_sim_heat_schedule` handler binds a registered time/power table to one
+FEM body occurrence. It validates nonnegative finite scaled powers, transient
+solution steps and coverage from zero through their configured end times.
+Committed readback checks the definition, wrapper scale, target body and global
+solution membership. It shares the existing duplicate/overlap and creation
+rollback path. It does not alter the table or configured times.
+
+The bounded native API probe retained in `time-heat-binding.json` and
+`time-heat-binding.xml` committed a 0/1/0 W table at 0/10/20 s with wrapper scale 2.
+The export has a linear time table at 0/2/0 W and 100 selected elements.
+`python examples/simcenter/audit_heat_schedule_export.py
+tests/simcenter/evidence/time-heat-binding.xml` reproduces the scoped export audit.
+The installed Python reference documents
+`FieldManager.CreateScalarFieldWrapperWithField(field, scaleFactor)` as a wrapper
+backed by a scaled scalar field (`a103977.html`, copied NX API documentation).
+The initial export-directory rejection is retained; the existing committed SIM
+was copied into an isolated export directory instead of recreating its loads.
+
+The deployed handler's native readback/export is retained in
+`heat-schedule-native.json` and `heat-schedule-native.xml`. Public MCP verification
+(`heat-schedule-public.json`) passes creation/replay, negative-scale and incomplete
+coverage rejection, duplicate-source protection, stale-reference rejection and
+preserved field definition, scale and provenance after save/close/reopen. Scripts
+are `examples/simcenter/verify_heat_schedule_{native,public}.py`. A transient SSH
+interruption was resolved by checking for the specific test process and receipt
+before launching again; the interrupted attempt had created neither.
+
+Schedule-specific post-commit rollback injection, geometric target identity after
+reopen and transient numerical behavior remain open. The shared constant-load
+rollback path is retained, but its earlier checks are not substituted for the new
+schedule-specific test. No solver was launched. The XML selection attribute is
+retained without claiming step inheritance semantics. Native time-step controls
+can be changed after assignment; this handler validates coverage when creating
+the load, not as a universal pre-solve gate.
+
 ### Reconciled Phase 2 backlog
 
 Statuses below refer to the requested general capability, not availability inferred
@@ -230,7 +267,7 @@ from installed modules. A missing implementation/test is not an external blocker
 | Convection and dependencies | Native/public constant coefficient and three temperature-source selectors verified | Explicit Kelvin value, persistence, exported conversion and disjoint face sets pass; time fields, ambient value resolution and shell-side options remain |
 | Radiation/emissivity/enclosures | Native/public simple environment radiation, constant emissivity override and deterministic enclosure authoring verified | Persistent/exported primary regions and active settings pass; view factors/numerical balances, Monte Carlo/GPU and secondary-slot authoring remain unverified |
 | Temperature-dependent materials | Native/public reusable temperature-axis tables verified; material binding missing | Bind supported property fields and verify solver export/persistence |
-| Transient loads/initial conditions/schedules | Partial time controls, constant distributed loads and native/public time-axis tables | `time_controls.py`, `distributed_heat.py`; schedule and initial-condition authoring/readback |
+| Transient loads/initial conditions/schedules | Partial time controls, constant distributed loads and native/public time-table body power | `time_controls.py`, `distributed_heat.py`; schedule and initial-condition authoring/readback |
 | Forced/natural convection and fluid models | Partial native controls/materials and coupled fixtures | `flow_controls.py`, `fluid_material.py`; selector/gravity/buoyancy scope and exports |
 | Fan curves and provenance | Scoped public authoring/readback verified | `fan_field.py`, `fan_boundary.py`; preserve static convention and assignment limits |
 | Fan-speed variants/operating points | Scoped scaling and extraction present | `fan_scaling.py`, `fan_summary.py`; retain validity range and per-run identity |

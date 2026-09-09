@@ -1,0 +1,534 @@
+{
+  "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-heat-schedule-export-20260909-r2\\heat_schedule_r1.sim",
+  "document": "obj_20bc234ffa5249ceb4fb4d82b993c626_7b3bb295a2234d61b376327589059a76",
+  "properties": [
+    {
+      "name": "description",
+      "native_type": "0",
+      "units": null,
+      "representation": "text_lines",
+      "value": []
+    },
+    {
+      "name": "Selection Method",
+      "native_type": "3",
+      "units": null,
+      "value": 0
+    },
+    {
+      "name": "Override Region",
+      "native_type": "2",
+      "units": null,
+      "value": false
+    },
+    {
+      "name": "Non-Geometric Element",
+      "native_type": "0",
+      "units": null,
+      "representation": "named_property_table",
+      "value": null
+    },
+    {
+      "name": "Heat Load",
+      "native_type": "6",
+      "units": null,
+      "field_scale": 2.0,
+      "field_reference": {
+        "journal_id": "MCP_TIME_POWER",
+        "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-heat-schedule-20260909-r1\\benchmark_40aa7155a7d4_analysis.sim",
+        "tag": 8354977,
+        "lifetime": "current loaded document; not a cross-session reference"
+      },
+      "representation": "FieldTable",
+      "field_definition": {
+        "kind": "validated_scalar_table",
+        "manifest": {
+          "axis": "time",
+          "interpolation": "linear",
+          "name": "MCP_TIME_POWER",
+          "outside_table": "undefined",
+          "provenance": "Generic time heat API fixture",
+          "quantity": "power",
+          "samples": [
+            [
+              0,
+              0
+            ],
+            [
+              10,
+              1
+            ],
+            [
+              20,
+              0
+            ]
+          ],
+          "version": 1
+        },
+        "native_samples_si": {
+          "samples_si": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              10.0,
+              1.0
+            ],
+            [
+              20.0,
+              0.0
+            ]
+          ],
+          "axis_units": "s",
+          "value_units": "W",
+          "native_axis_unit": "Second",
+          "native_value_unit": "Watt",
+          "interpolation": "linear",
+          "outside_table": "undefined"
+        },
+        "scale_application": "native scalar wrapper factor reported separately; binding semantics not established",
+        "definition_scope": "table samples, units and stored interpolation; not material/load or solver semantics"
+      }
+    },
+    {
+      "name": "Heat Load Override",
+      "native_type": "6",
+      "units": "dimensionless",
+      "expression": "-777777",
+      "unit_symbol": null,
+      "representation": "expression"
+    },
+    {
+      "name": "Specify Reference Temperature Set",
+      "native_type": "2",
+      "units": null,
+      "value": false
+    },
+    {
+      "name": "Reference Temperature Set",
+      "native_type": "0",
+      "units": null,
+      "representation": "named_property_table",
+      "value": null
+    },
+    {
+      "name": "Control Heater",
+      "native_type": "2",
+      "units": null,
+      "value": false
+    },
+    {
+      "name": "Thermostat",
+      "native_type": "0",
+      "units": null,
+      "representation": "named_property_table",
+      "value": null
+    },
+    {
+      "name": "Specify Layer to Apply to",
+      "native_type": "2",
+      "units": null,
+      "value": false
+    },
+    {
+      "name": "Apply to",
+      "native_type": "3",
+      "units": null,
+      "value": 0
+    },
+    {
+      "name": "Layer Number",
+      "native_type": "3",
+      "units": null,
+      "value": 1
+    },
+    {
+      "name": "Per Element",
+      "native_type": "2",
+      "units": null,
+      "value": false
+    },
+    {
+      "name": "Per Node",
+      "native_type": "2",
+      "units": null,
+      "value": false
+    },
+    {
+      "name": "distributionType",
+      "native_type": "3",
+      "units": null,
+      "value": 32
+    },
+    {
+      "name": "Custom Settings Option",
+      "native_type": "2",
+      "units": null,
+      "value": false
+    },
+    {
+      "name": "Custom Settings",
+      "native_type": "1",
+      "units": null,
+      "value": "BCONX"
+    }
+  ],
+  "table": {
+    "manifest": {
+      "axis": "time",
+      "interpolation": "linear",
+      "name": "MCP_TIME_POWER",
+      "outside_table": "undefined",
+      "provenance": "Generic time heat API fixture",
+      "quantity": "power",
+      "samples": [
+        [
+          0,
+          0
+        ],
+        [
+          10,
+          1
+        ],
+        [
+          20,
+          0
+        ]
+      ],
+      "version": 1
+    },
+    "manifest_sha256": "2c95c05ee2368a2914567e260c6d592b0cc6fdc7046be355d009f6365e4436a4",
+    "readback": {
+      "samples_si": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          10.0,
+          1.0
+        ],
+        [
+          20.0,
+          0.0
+        ]
+      ],
+      "axis_units": "s",
+      "value_units": "W",
+      "native_axis_unit": "Second",
+      "native_value_unit": "Watt",
+      "interpolation": "linear",
+      "outside_table": "undefined"
+    },
+    "binding_semantics": "not_inspected",
+    "numerical_acceptance": "not_established"
+  },
+  "steps": [
+    [
+      {
+        "name": "Description",
+        "native_type": "0",
+        "units": null,
+        "representation": "text_lines",
+        "value": []
+      },
+      {
+        "name": "Solution Type",
+        "native_type": "3",
+        "units": null,
+        "value": 1
+      },
+      {
+        "name": "End Time",
+        "native_type": "4",
+        "units": "Second",
+        "value": 0.0,
+        "unit_symbol": "sec"
+      },
+      {
+        "name": "Thermal Time Step Method",
+        "native_type": "3",
+        "units": null,
+        "value": 3
+      },
+      {
+        "name": "Thermal Number of Steps",
+        "native_type": "3",
+        "units": null,
+        "value": 10
+      },
+      {
+        "name": "Thermal Time Step",
+        "native_type": "4",
+        "units": "Second",
+        "value": 1.0,
+        "unit_symbol": "sec"
+      },
+      {
+        "name": "Maximum Temperature Change",
+        "native_type": "4",
+        "units": "CelsiusDifference",
+        "value": 1.0,
+        "unit_symbol": "dC"
+      },
+      {
+        "name": "Minimum Time Step",
+        "native_type": "4",
+        "units": "Second",
+        "value": 0.01,
+        "unit_symbol": "sec"
+      },
+      {
+        "name": "Maximum Time Step Option",
+        "native_type": "3",
+        "units": null,
+        "value": 1
+      },
+      {
+        "name": "Maximum Time Step",
+        "native_type": "4",
+        "units": "Second",
+        "value": 1.0,
+        "unit_symbol": "sec"
+      },
+      {
+        "name": "Maximum Time Step Increment",
+        "native_type": "3",
+        "units": null,
+        "value": 4
+      },
+      {
+        "name": "Output Flag",
+        "native_type": "3",
+        "units": null,
+        "value": 1
+      },
+      {
+        "name": "Thermal Output Requests",
+        "native_type": "0",
+        "units": null,
+        "representation": "named_property_table",
+        "value": null
+      }
+    ],
+    [
+      {
+        "name": "Description",
+        "native_type": "0",
+        "units": null,
+        "representation": "text_lines",
+        "value": []
+      },
+      {
+        "name": "Solution Type",
+        "native_type": "3",
+        "units": null,
+        "value": 1
+      },
+      {
+        "name": "End Time",
+        "native_type": "4",
+        "units": "Second",
+        "value": 10.0,
+        "unit_symbol": "sec"
+      },
+      {
+        "name": "Thermal Time Step Method",
+        "native_type": "3",
+        "units": null,
+        "value": 3
+      },
+      {
+        "name": "Thermal Number of Steps",
+        "native_type": "3",
+        "units": null,
+        "value": 10
+      },
+      {
+        "name": "Thermal Time Step",
+        "native_type": "4",
+        "units": "Second",
+        "value": 1.0,
+        "unit_symbol": "sec"
+      },
+      {
+        "name": "Maximum Temperature Change",
+        "native_type": "4",
+        "units": "CelsiusDifference",
+        "value": 1.0,
+        "unit_symbol": "dC"
+      },
+      {
+        "name": "Minimum Time Step",
+        "native_type": "4",
+        "units": "Second",
+        "value": 0.01,
+        "unit_symbol": "sec"
+      },
+      {
+        "name": "Maximum Time Step Option",
+        "native_type": "3",
+        "units": null,
+        "value": 1
+      },
+      {
+        "name": "Maximum Time Step",
+        "native_type": "4",
+        "units": "Second",
+        "value": 1.0,
+        "unit_symbol": "sec"
+      },
+      {
+        "name": "Maximum Time Step Increment",
+        "native_type": "3",
+        "units": null,
+        "value": 4
+      },
+      {
+        "name": "Output Flag",
+        "native_type": "3",
+        "units": null,
+        "value": 1
+      },
+      {
+        "name": "Thermal Output Requests",
+        "native_type": "0",
+        "units": null,
+        "representation": "named_property_table",
+        "value": null
+      }
+    ],
+    [
+      {
+        "name": "Description",
+        "native_type": "0",
+        "units": null,
+        "representation": "text_lines",
+        "value": []
+      },
+      {
+        "name": "Solution Type",
+        "native_type": "3",
+        "units": null,
+        "value": 1
+      },
+      {
+        "name": "End Time",
+        "native_type": "4",
+        "units": "Second",
+        "value": 20.0,
+        "unit_symbol": "sec"
+      },
+      {
+        "name": "Thermal Time Step Method",
+        "native_type": "3",
+        "units": null,
+        "value": 3
+      },
+      {
+        "name": "Thermal Number of Steps",
+        "native_type": "3",
+        "units": null,
+        "value": 10
+      },
+      {
+        "name": "Thermal Time Step",
+        "native_type": "4",
+        "units": "Second",
+        "value": 1.0,
+        "unit_symbol": "sec"
+      },
+      {
+        "name": "Maximum Temperature Change",
+        "native_type": "4",
+        "units": "CelsiusDifference",
+        "value": 1.0,
+        "unit_symbol": "dC"
+      },
+      {
+        "name": "Minimum Time Step",
+        "native_type": "4",
+        "units": "Second",
+        "value": 0.01,
+        "unit_symbol": "sec"
+      },
+      {
+        "name": "Maximum Time Step Option",
+        "native_type": "3",
+        "units": null,
+        "value": 1
+      },
+      {
+        "name": "Maximum Time Step",
+        "native_type": "4",
+        "units": "Second",
+        "value": 1.0,
+        "unit_symbol": "sec"
+      },
+      {
+        "name": "Maximum Time Step Increment",
+        "native_type": "3",
+        "units": null,
+        "value": 4
+      },
+      {
+        "name": "Output Flag",
+        "native_type": "3",
+        "units": null,
+        "value": 1
+      },
+      {
+        "name": "Thermal Output Requests",
+        "native_type": "0",
+        "units": null,
+        "representation": "named_property_table",
+        "value": null
+      }
+    ]
+  ],
+  "export": {
+    "input_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-heat-schedule-export-20260909-r2\\heat_schedule_r1-Conduction.xml",
+    "input_identity": {
+      "sha256": "826330a35b1a9dae78d16093d2f84ea03166f3c99e2ac0dd36c0cd64a0496c1d",
+      "xml_content_sha256": "b3cbfdaf0d02deb46928ff51b4765336ad61bafab2e38b8e208c4d330da2d620",
+      "bytes": 40762,
+      "canonicalization": "xml_c14n2_no_comments"
+    },
+    "validation": {
+      "state": "well_formed",
+      "step_definitions": 3,
+      "mesh_counts": {
+        "elements": 100,
+        "nodes": 45,
+        "element_sets": 1,
+        "scope": "observed_multiphysics_xml_layout"
+      },
+      "solve_readiness": "not_established"
+    },
+    "coupled_ambient_validation": null,
+    "coupled_pressure_validation": null,
+    "artifacts": [
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-heat-schedule-export-20260909-r2\\heat_schedule_r1-Conduction.map",
+        "bytes": 18538
+      },
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-heat-schedule-export-20260909-r2\\heat_schedule_r1-Conduction.xml",
+        "bytes": 40762
+      }
+    ],
+    "translator_reports": [],
+    "solver": "NX MULTIPHYSICS",
+    "analysis_type": "Thermal",
+    "solution": "Conduction",
+    "source_sim": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-heat-schedule-export-20260909-r2\\heat_schedule_r1.sim",
+    "source_modified": false,
+    "solver_launched": false,
+    "solve_readiness": "not_established",
+    "scope": "Native thermal/flow input export, not a solve or convergence check"
+  },
+  "target_count": 1,
+  "solution_membership_verified": true,
+  "solver_launched": false
+}

@@ -691,3 +691,18 @@ def nx_sim_steady_thermal_controls(
 
 
 NON_MODEL.add("nx_sim_steady_thermal_controls")
+
+
+def nx_sim_heat_schedule(
+    document: str,
+    body: str,
+    field: str,
+    name: str,
+    provenance: str,
+    scale: float = 1.0,
+    overlap_policy: Literal["reject", "allow_additive"] = "reject",
+):
+    """Bind a registered time/power scalar table to one body as total internal watts in the active Thermal SIM. body is a direct FEM prototype ID from nx_sim_faces; field is a simulation_field ID from nx_sim_scalar_table(s). Requires transient steps and table coverage from zero through every configured end time. Scale and scaled powers must be finite and nonnegative. Reads back the native field definition, separate scale, single-body target and global solution membership; no step-specific activation claim. Preserves linear/undefined-outside table settings. Rejects duplicate body sources and overlaps by default; allow_additive permits distinct intended overlapping contributions. Does not modify the table, time settings, save or solve. Later schedule/step edits require revalidation. Numerical behavior remains unverified. Supply operation_id for safe replay."""
+
+
+NON_MODEL.add("nx_sim_heat_schedule")
