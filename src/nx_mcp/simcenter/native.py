@@ -1179,6 +1179,56 @@ class SimcenterMixin:
             **result,
         }
 
+    def _sim_radiation_object(self, document, faces, name, provenance, **options):
+        from nx_mcp.simcenter.radiation_objects import create
+
+        sim = self.objects.resolve(document, expected_kind="part")
+        if not hasattr(sim, "Simulation"):
+            raise NXToolError("NX_SIM_DOCUMENT_TYPE", "Select a SIM document")
+        if (
+            not isinstance(faces, list)
+            or not 1 <= len(faces) <= 1000
+            or len(set(faces)) != len(faces)
+        ):
+            raise NXToolError(
+                "NX_INVALID_ARGUMENT",
+                "Supply 1..1000 distinct SIM face IDs",
+                details={"mutation_outcome": "not_started"},
+            )
+        targets = [self.objects.resolve(face, expected_kind="face") for face in faces]
+        result = create(self.session, sim, targets, name, provenance, **options)
+        boundary = result.pop("boundary")
+        return {
+            "object": self._reference(boundary, "simulation_object", sim, "radiation"),
+            "faces": [self._reference(face, "face", sim, "face") for face in targets],
+            **result,
+        }
+
+    def _sim_emissivity_override(self, document, faces, emissivity, name, provenance, side="both"):
+        return SimcenterMixin._sim_radiation_object(
+            self,
+            document,
+            faces,
+            name,
+            provenance,
+            kind="emissivity",
+            emissivity=emissivity,
+            side=side,
+        )
+
+    def _sim_enclosure_radiation(
+        self, document, faces, name, provenance, include_radiative_environment=True
+    ):
+        return SimcenterMixin._sim_radiation_object(
+            self,
+            document,
+            faces,
+            name,
+            provenance,
+            kind="enclosure",
+            include_environment=include_radiative_environment,
+        )
+
     def _sim_environment_radiation(
         self,
         document,

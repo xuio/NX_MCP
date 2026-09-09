@@ -94,6 +94,14 @@ PUBLIC_EVIDENCE = {
         "steady-controls-public-launch.json",
         "Explicit temperature stopping in K, public validation/replay/export; native persistence and optional relative-balance authoring separately verified",
     ),
+    "nx_sim_emissivity_override": (
+        "radiation-objects-public.json",
+        "Thermal constant both-side emissivity: native/public authoring, replay, persistence, faces, units and export; top/bottom native authoring separately tested without numerical interpretation",
+    ),
+    "nx_sim_enclosure_radiation": (
+        "radiation-objects-public.json",
+        "Thermal deterministic enclosure with radiative environment, primary faces and empty secondary slot: native/public lifecycle and export; environment-off native authoring separately tested; no view-factor acceptance",
+    ),
     "nx_sim_environment_radiation": (
         "radiation-environment-public.json",
         "Thermal simple environment radiation, constant effective emissivity, three temperature sources; native/public replay, units, targets, persistence and export; no numerical radiation acceptance",

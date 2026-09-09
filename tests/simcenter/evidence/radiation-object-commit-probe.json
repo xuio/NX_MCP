@@ -1,0 +1,155 @@
+{
+  "status": "success",
+  "trials": [
+    {
+      "descriptor": "Override Thermal Emissivity",
+      "properties": [
+        {
+          "name": "description",
+          "native_type": "0",
+          "units": null,
+          "representation": "text_lines",
+          "value": []
+        },
+        {
+          "name": "Emissivity",
+          "native_type": "6",
+          "units": "dimensionless",
+          "expression": "0.8",
+          "unit_symbol": null,
+          "representation": "expression"
+        },
+        {
+          "name": "Apply Override Set to",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "distributionType",
+          "native_type": "3",
+          "units": null,
+          "value": 32
+        }
+      ],
+      "sets": [
+        {
+          "index": 0,
+          "slots": null,
+          "members": [
+            7815010,
+            7815011,
+            7815012,
+            7815013,
+            7815014,
+            7815015
+          ]
+        }
+      ],
+      "solution_member": true,
+      "native_seconds": 0.0470000000204891
+    },
+    {
+      "descriptor": "Enclosure Radiation",
+      "properties": [
+        {
+          "name": "description",
+          "native_type": "0",
+          "units": null,
+          "representation": "text_lines",
+          "value": []
+        },
+        {
+          "name": "Include Radiative Environment",
+          "native_type": "2",
+          "units": null,
+          "value": true
+        },
+        {
+          "name": "Calculation Method",
+          "native_type": "3",
+          "units": null,
+          "value": 1
+        },
+        {
+          "name": "View Factor Accuracy",
+          "native_type": "3",
+          "units": null,
+          "value": 1
+        },
+        {
+          "name": "Element Subdivision",
+          "native_type": "3",
+          "units": null,
+          "value": 3
+        },
+        {
+          "name": "Criterion Value",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": 0.02,
+          "unit_symbol": null
+        },
+        {
+          "name": "Monte Carlo Settings",
+          "native_type": "0",
+          "units": null,
+          "representation": "named_property_table",
+          "value": null
+        },
+        {
+          "name": "Calculate View Factors only",
+          "native_type": "2",
+          "units": null,
+          "value": false
+        },
+        {
+          "name": "Number of Rays",
+          "native_type": "3",
+          "units": null,
+          "value": 15000
+        },
+        {
+          "name": "Elements not Part of this Enclosure Can Shadow",
+          "native_type": "2",
+          "units": null,
+          "value": false
+        },
+        {
+          "name": "distributionType",
+          "native_type": "3",
+          "units": null,
+          "value": 28
+        }
+      ],
+      "sets": [
+        {
+          "index": 0,
+          "slots": null,
+          "members": [
+            7815010,
+            7815011,
+            7815012,
+            7815013,
+            7815014,
+            7815015
+          ]
+        },
+        {
+          "index": 1,
+          "slots": null,
+          "members": []
+        }
+      ],
+      "solution_member": true,
+      "native_seconds": 0.01600000000325963
+    }
+  ],
+  "outer_rollback_verified": true,
+  "solver_launched": false,
+  "operation_id": "op_0dece504fa89415f81b9fd6046a61cb5",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

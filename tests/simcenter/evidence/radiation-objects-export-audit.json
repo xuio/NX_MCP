@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "input_sha256": "9f45f509798d4620012bf7dbd4d1b8cfa768b4ca52898a0d5005e53d12c5ccdb",
+  "objects": [
+    {
+      "name": "MCP_ENCLOSURE",
+      "active_values": {
+        "Calculation Method": 1.0,
+        "Include Radiative Environment": 1.0
+      },
+      "finite_element_faces": 84
+    },
+    {
+      "name": "MCP_EMISSIVITY",
+      "active_values": {
+        "Emissivity": 0.8,
+        "Apply Override Set to": 0.0
+      },
+      "finite_element_faces": 84
+    }
+  ],
+  "scope": "NX 2606 Thermal deterministic enclosure with environment, constant both-side emissivity and matching FE regions",
+  "inactive_properties": "Monte Carlo, GPU, hemicube and other inactive controls excluded from active-setting comparison",
+  "numerical_acceptance": "not_performed; no view-factor, cavity-closure, temperature or heat-balance result"
+}

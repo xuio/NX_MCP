@@ -186,6 +186,33 @@ def nx_sim_faces(document: str, offset: int = 0, limit: int = 50):
 READ_ONLY.add("nx_sim_faces")
 
 
+def nx_sim_emissivity_override(
+    document: str,
+    faces: list[str],
+    emissivity: float,
+    name: str,
+    provenance: str,
+    side: Literal["both", "top", "bottom"] = "both",
+):
+    """Create native Override Thermal Emissivity on 1..1000 distinct SIM CAE face IDs. Requires active NX MULTIPHYSICS Thermal. emissivity is a constant dimensionless value in [0,1]; side maps to native both/top/bottom selectors. Native side meaning depends on solid/shell geometry; no shell interpretation or numerical heat-transfer claim is made. Readback verifies value/units, selector, face targets, solution membership and provenance. Returns a typed simulation object, available in nx_sim_objects. Does not assign optical material, save, solve or remove other assignments; conflicting/overlapping existing overrides require inspection by the caller. Visible undo with verified creation rollback. Supply operation_id for deduplicated retry."""
+
+
+NON_MODEL.add("nx_sim_emissivity_override")
+
+
+def nx_sim_enclosure_radiation(
+    document: str,
+    faces: list[str],
+    name: str,
+    provenance: str,
+    include_radiative_environment: bool = True,
+):
+    """Create native Enclosure Radiation with deterministic calculation on 1..1000 distinct SIM CAE face IDs. Requires active NX MULTIPHYSICS Thermal. include_radiative_environment controls the native ambient-inclusion selector; ambient temperature is a separate unresolved dependency. Assigns documented target set 0 and verifies the second slot stays empty. Does not construct/check a closed cavity, assign emissivity, calculate view factors, save or solve. Monte Carlo/GPU methods and secondary-slot authoring are not exposed. Returns actual properties, typed simulation object, face/solution membership and provenance; inspect via nx_sim_objects. No numerical radiation acceptance is implied. Visible undo with verified creation rollback. Supply operation_id for retry deduplication."""
+
+
+NON_MODEL.add("nx_sim_enclosure_radiation")
+
+
 def nx_sim_environment_radiation(
     document: str,
     faces: list[str],

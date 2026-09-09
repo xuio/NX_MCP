@@ -141,9 +141,40 @@ document flags; face bounds persist through reopen/SaveAs. This is
 API/lifecycle/export verification; no radiation
 solve or heat-balance acceptance is claimed. The native factory also accepts
 `Override Thermal Emissivity` and `Enclosure Radiation` (two target slots), retained
-in `radiation-descriptors-native.json`. Those observations prove descriptor presence
-only; their committed assignments, secondary-slot semantics, settings and numerical
-behavior still need verification. Licensing configuration was not changed.
+in `radiation-descriptors-native.json`. The follow-up below verifies a committed subset of those objects. Licensing
+configuration was not changed.
+
+### Enclosure radiation and emissivity overrides
+
+`nx_sim_emissivity_override` authors the native `Override Thermal Emissivity`
+simulation object with a dimensionless constant and explicit both/top/bottom side
+selector. `nx_sim_enclosure_radiation` authors `Enclosure Radiation` using the
+deterministic calculation method and explicit ambient-inclusion boolean. Both
+verify actual CAE faces, selectors, values, provenance and active-solution
+membership. The enclosure uses documented primary target set 0 and verifies its
+second set remains empty; secondary-region semantics are not exposed.
+
+One 10 mm cube / 100-element fixture covers three emissivity-side selectors and
+both ambient-inclusion values under native rollback. Individual authoring/readback
+calls took 0.33–0.38 seconds. Public MCP verifies discovery, invalid emissivity
+rejection, creation/replay, save/close/reopen, stale-reference rejection and export
+for both-side emissivity 0.8 plus deterministic enclosure with ambient inclusion.
+Each object exports the same 84 finite-element faces. Inactive Monte Carlo/GPU
+properties are retained but excluded from active-setting comparisons.
+
+`radiation-objects-recovery.json` verifies that both injected post-commit failures
+roll back objects, expressions and solution membership without changing document
+flags. Both six-face geometric regions persist through reopen/SaveAs. Evidence:
+`radiation-objects-native.json`, `radiation-objects-public.json`,
+`radiation-objects.xml`, `radiation-objects-export-audit.json` and the recovery
+receipt under `tests/simcenter/evidence/`. Reproduce the export audit with
+`python examples/simcenter/audit_radiation_objects_export.py`.
+
+This verifies native authoring/lifecycle/export, not cavity closure, shell-side
+physical interpretation, view-factor accuracy, ambient effective temperature or
+numerical heat balance. It does not establish Monte Carlo/GPU support or full
+thermo-optical material authoring. Existing conflicting overrides are not removed
+or resolved automatically. No solver was launched for these checks.
 
 ### Reconciled Phase 2 backlog
 
@@ -154,7 +185,7 @@ from installed modules. A missing implementation/test is not an external blocker
 |---|---|---|
 | Thermal contacts/interface resistance | Partial: native/public total R/G authoring and resistance persistence verified | 200-element explicit-convergence artifact benchmark passes; general contact options and current-session freshness remain |
 | Convection and dependencies | Native/public constant coefficient and three temperature-source selectors verified | Explicit Kelvin value, persistence, exported conversion and disjoint face sets pass; time fields, ambient value resolution and shell-side options remain |
-| Radiation/emissivity/enclosures | Simple environment radiation native/public authoring, persistence and export verified | Effective-emissivity constant mode only; enclosure and emissivity-override descriptors accepted but committed behavior untested |
+| Radiation/emissivity/enclosures | Native/public simple environment radiation, constant emissivity override and deterministic enclosure authoring verified | Persistent/exported primary regions and active settings pass; view factors/numerical balances, Monte Carlo/GPU and secondary-slot authoring remain unverified |
 | Temperature-dependent materials | Missing | Extend constant/orthotropic material path with supported fields, units and persistence |
 | Transient loads/initial conditions/schedules | Partial time controls and constant distributed loads | `time_controls.py`, `distributed_heat.py`; schedule and initial-condition authoring/readback |
 | Forced/natural convection and fluid models | Partial native controls/materials and coupled fixtures | `flow_controls.py`, `fluid_material.py`; selector/gravity/buoyancy scope and exports |

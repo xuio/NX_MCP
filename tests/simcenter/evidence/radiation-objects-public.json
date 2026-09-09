@@ -1,0 +1,2162 @@
+{
+  "responses": {
+    "invalid_emissivity": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"error\", \"warnings\": [], \"units\": null, \"code\": \"NX_INVALID_ARGUMENT\", \"message\": \"emissivity must be finite and dimensionless in [0,1]\", \"retryable\": false, \"details\": {\"mutation_outcome\": \"not_started\", \"operation_id\": \"op_c31b5a3ec7644e67897c62daef3b766e\"}}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "error",
+        "warnings": [],
+        "units": null,
+        "code": "NX_INVALID_ARGUMENT",
+        "message": "emissivity must be finite and dimensionless in [0,1]",
+        "retryable": false,
+        "details": {
+          "mutation_outcome": "not_started",
+          "operation_id": "op_c31b5a3ec7644e67897c62daef3b766e"
+        }
+      },
+      "isError": true
+    },
+    "emissivity": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"object\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_7d406d830efa46aaa8275e359d5a91bd\", \"kind\": \"simulation_object\", \"name\": \"MCP_EMISSIVITY\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"41113d8623d2490f9d4a617437e96bae\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"SimulationObject[MCP_EMISSIVITY]\", \"display_name\": \"MCP_EMISSIVITY\"}, \"faces\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_ce20596b8f2646deaac5f0713766f0d1\", \"kind\": \"face\", \"name\": \"HANDLE R-37374\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"41113d8623d2490f9d4a617437e96bae\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"HANDLE R-37374\", \"display_name\": \"\"}, {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_b813e6718763469086b042873366795d\", \"kind\": \"face\", \"name\": \"HANDLE R-37390\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"41113d8623d2490f9d4a617437e96bae\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"HANDLE R-37390\", \"display_name\": \"\"}, {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_cf87c3310637472b9db6d5ee97be7926\", \"kind\": \"face\", \"name\": \"HANDLE R-37406\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"41113d8623d2490f9d4a617437e96bae\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"HANDLE R-37406\", \"display_name\": \"\"}, {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_c2ba84ee6f864680a2a282129e66651f\", \"kind\": \"face\", \"name\": \"HANDLE R-37422\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"41113d8623d2490f9d4a617437e96bae\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"HANDLE R-37422\", \"display_name\": \"\"}, {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_c821e7f0fefa460b8cb031251fa83db4\", \"kind\": \"face\", \"name\": \"HANDLE R-37438\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"41113d8623d2490f9d4a617437e96bae\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"HANDLE R-37438\", \"display_name\": \"\"}, {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_c09f0cd510d94ab6a4e0d300d1dc4c37\", \"kind\": \"face\", \"name\": \"HANDLE R-37454\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"41113d8623d2490f9d4a617437e96bae\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"HANDLE R-37454\", \"display_name\": \"\"}], \"descriptor\": \"Override Thermal Emissivity\", \"properties\": [{\"name\": \"description\", \"native_type\": \"0\", \"units\": null, \"representation\": \"text_lines\", \"value\": []}, {\"name\": \"Emissivity\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"0.8\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Apply Override Set to\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"distributionType\", \"native_type\": \"3\", \"units\": null, \"value\": 32}], \"face_count\": 6, \"solution_membership_verified\": true, \"provenance\": \"Generic radiation API fixture; assumed emissivity\", \"emissivity\": 0.8, \"side\": \"both\", \"calculation_method\": null, \"include_radiative_environment\": null, \"secondary_target_set\": null, \"saved\": false, \"solver_launched\": false, \"numerical_acceptance\": \"not_established\", \"operation_id\": \"radiation-objects-emissivity-r1\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "object": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_7d406d830efa46aaa8275e359d5a91bd",
+          "kind": "simulation_object",
+          "name": "MCP_EMISSIVITY",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "41113d8623d2490f9d4a617437e96bae",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+          "journal_id": "SimulationObject[MCP_EMISSIVITY]",
+          "display_name": "MCP_EMISSIVITY"
+        },
+        "faces": [
+          {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_ce20596b8f2646deaac5f0713766f0d1",
+            "kind": "face",
+            "name": "HANDLE R-37374",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "41113d8623d2490f9d4a617437e96bae",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+            "journal_id": "HANDLE R-37374",
+            "display_name": ""
+          },
+          {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_b813e6718763469086b042873366795d",
+            "kind": "face",
+            "name": "HANDLE R-37390",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "41113d8623d2490f9d4a617437e96bae",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+            "journal_id": "HANDLE R-37390",
+            "display_name": ""
+          },
+          {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_cf87c3310637472b9db6d5ee97be7926",
+            "kind": "face",
+            "name": "HANDLE R-37406",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "41113d8623d2490f9d4a617437e96bae",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+            "journal_id": "HANDLE R-37406",
+            "display_name": ""
+          },
+          {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_c2ba84ee6f864680a2a282129e66651f",
+            "kind": "face",
+            "name": "HANDLE R-37422",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "41113d8623d2490f9d4a617437e96bae",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+            "journal_id": "HANDLE R-37422",
+            "display_name": ""
+          },
+          {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_c821e7f0fefa460b8cb031251fa83db4",
+            "kind": "face",
+            "name": "HANDLE R-37438",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "41113d8623d2490f9d4a617437e96bae",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+            "journal_id": "HANDLE R-37438",
+            "display_name": ""
+          },
+          {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_c09f0cd510d94ab6a4e0d300d1dc4c37",
+            "kind": "face",
+            "name": "HANDLE R-37454",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "41113d8623d2490f9d4a617437e96bae",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+            "journal_id": "HANDLE R-37454",
+            "display_name": ""
+          }
+        ],
+        "descriptor": "Override Thermal Emissivity",
+        "properties": [
+          {
+            "name": "description",
+            "native_type": "0",
+            "units": null,
+            "representation": "text_lines",
+            "value": []
+          },
+          {
+            "name": "Emissivity",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "0.8",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "Apply Override Set to",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "distributionType",
+            "native_type": "3",
+            "units": null,
+            "value": 32
+          }
+        ],
+        "face_count": 6,
+        "solution_membership_verified": true,
+        "provenance": "Generic radiation API fixture; assumed emissivity",
+        "emissivity": 0.8,
+        "side": "both",
+        "calculation_method": null,
+        "include_radiative_environment": null,
+        "secondary_target_set": null,
+        "saved": false,
+        "solver_launched": false,
+        "numerical_acceptance": "not_established",
+        "operation_id": "radiation-objects-emissivity-r1",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed"
+      },
+      "isError": false
+    },
+    "emissivity_replay": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"object\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_7d406d830efa46aaa8275e359d5a91bd\", \"kind\": \"simulation_object\", \"name\": \"MCP_EMISSIVITY\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"41113d8623d2490f9d4a617437e96bae\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"SimulationObject[MCP_EMISSIVITY]\", \"display_name\": \"MCP_EMISSIVITY\"}, \"faces\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_ce20596b8f2646deaac5f0713766f0d1\", \"kind\": \"face\", \"name\": \"HANDLE R-37374\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"41113d8623d2490f9d4a617437e96bae\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"HANDLE R-37374\", \"display_name\": \"\"}, {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_b813e6718763469086b042873366795d\", \"kind\": \"face\", \"name\": \"HANDLE R-37390\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"41113d8623d2490f9d4a617437e96bae\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"HANDLE R-37390\", \"display_name\": \"\"}, {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_cf87c3310637472b9db6d5ee97be7926\", \"kind\": \"face\", \"name\": \"HANDLE R-37406\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"41113d8623d2490f9d4a617437e96bae\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"HANDLE R-37406\", \"display_name\": \"\"}, {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_c2ba84ee6f864680a2a282129e66651f\", \"kind\": \"face\", \"name\": \"HANDLE R-37422\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"41113d8623d2490f9d4a617437e96bae\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"HANDLE R-37422\", \"display_name\": \"\"}, {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_c821e7f0fefa460b8cb031251fa83db4\", \"kind\": \"face\", \"name\": \"HANDLE R-37438\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"41113d8623d2490f9d4a617437e96bae\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"HANDLE R-37438\", \"display_name\": \"\"}, {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_c09f0cd510d94ab6a4e0d300d1dc4c37\", \"kind\": \"face\", \"name\": \"HANDLE R-37454\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"41113d8623d2490f9d4a617437e96bae\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"HANDLE R-37454\", \"display_name\": \"\"}], \"descriptor\": \"Override Thermal Emissivity\", \"properties\": [{\"name\": \"description\", \"native_type\": \"0\", \"units\": null, \"representation\": \"text_lines\", \"value\": []}, {\"name\": \"Emissivity\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"0.8\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Apply Override Set to\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"distributionType\", \"native_type\": \"3\", \"units\": null, \"value\": 32}], \"face_count\": 6, \"solution_membership_verified\": true, \"provenance\": \"Generic radiation API fixture; assumed emissivity\", \"emissivity\": 0.8, \"side\": \"both\", \"calculation_method\": null, \"include_radiative_environment\": null, \"secondary_target_set\": null, \"saved\": false, \"solver_launched\": false, \"numerical_acceptance\": \"not_established\", \"operation_id\": \"radiation-objects-emissivity-r1\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\", \"replayed\": true}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "object": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_7d406d830efa46aaa8275e359d5a91bd",
+          "kind": "simulation_object",
+          "name": "MCP_EMISSIVITY",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "41113d8623d2490f9d4a617437e96bae",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+          "journal_id": "SimulationObject[MCP_EMISSIVITY]",
+          "display_name": "MCP_EMISSIVITY"
+        },
+        "faces": [
+          {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_ce20596b8f2646deaac5f0713766f0d1",
+            "kind": "face",
+            "name": "HANDLE R-37374",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "41113d8623d2490f9d4a617437e96bae",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+            "journal_id": "HANDLE R-37374",
+            "display_name": ""
+          },
+          {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_b813e6718763469086b042873366795d",
+            "kind": "face",
+            "name": "HANDLE R-37390",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "41113d8623d2490f9d4a617437e96bae",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+            "journal_id": "HANDLE R-37390",
+            "display_name": ""
+          },
+          {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_cf87c3310637472b9db6d5ee97be7926",
+            "kind": "face",
+            "name": "HANDLE R-37406",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "41113d8623d2490f9d4a617437e96bae",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+            "journal_id": "HANDLE R-37406",
+            "display_name": ""
+          },
+          {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_c2ba84ee6f864680a2a282129e66651f",
+            "kind": "face",
+            "name": "HANDLE R-37422",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "41113d8623d2490f9d4a617437e96bae",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+            "journal_id": "HANDLE R-37422",
+            "display_name": ""
+          },
+          {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_c821e7f0fefa460b8cb031251fa83db4",
+            "kind": "face",
+            "name": "HANDLE R-37438",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "41113d8623d2490f9d4a617437e96bae",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+            "journal_id": "HANDLE R-37438",
+            "display_name": ""
+          },
+          {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_c09f0cd510d94ab6a4e0d300d1dc4c37",
+            "kind": "face",
+            "name": "HANDLE R-37454",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "41113d8623d2490f9d4a617437e96bae",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+            "journal_id": "HANDLE R-37454",
+            "display_name": ""
+          }
+        ],
+        "descriptor": "Override Thermal Emissivity",
+        "properties": [
+          {
+            "name": "description",
+            "native_type": "0",
+            "units": null,
+            "representation": "text_lines",
+            "value": []
+          },
+          {
+            "name": "Emissivity",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "0.8",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "Apply Override Set to",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "distributionType",
+            "native_type": "3",
+            "units": null,
+            "value": 32
+          }
+        ],
+        "face_count": 6,
+        "solution_membership_verified": true,
+        "provenance": "Generic radiation API fixture; assumed emissivity",
+        "emissivity": 0.8,
+        "side": "both",
+        "calculation_method": null,
+        "include_radiative_environment": null,
+        "secondary_target_set": null,
+        "saved": false,
+        "solver_launched": false,
+        "numerical_acceptance": "not_established",
+        "operation_id": "radiation-objects-emissivity-r1",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed",
+        "replayed": true
+      },
+      "isError": false
+    },
+    "enclosure": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"object\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_6d0f8a3634814b99896995a65824ca68\", \"kind\": \"simulation_object\", \"name\": \"MCP_ENCLOSURE\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"41113d8623d2490f9d4a617437e96bae\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"SimulationObject[MCP_ENCLOSURE]\", \"display_name\": \"MCP_ENCLOSURE\"}, \"faces\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_ce20596b8f2646deaac5f0713766f0d1\", \"kind\": \"face\", \"name\": \"HANDLE R-37374\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"41113d8623d2490f9d4a617437e96bae\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"HANDLE R-37374\", \"display_name\": \"\"}, {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_b813e6718763469086b042873366795d\", \"kind\": \"face\", \"name\": \"HANDLE R-37390\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"41113d8623d2490f9d4a617437e96bae\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"HANDLE R-37390\", \"display_name\": \"\"}, {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_cf87c3310637472b9db6d5ee97be7926\", \"kind\": \"face\", \"name\": \"HANDLE R-37406\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"41113d8623d2490f9d4a617437e96bae\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"HANDLE R-37406\", \"display_name\": \"\"}, {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_c2ba84ee6f864680a2a282129e66651f\", \"kind\": \"face\", \"name\": \"HANDLE R-37422\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"41113d8623d2490f9d4a617437e96bae\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"HANDLE R-37422\", \"display_name\": \"\"}, {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_c821e7f0fefa460b8cb031251fa83db4\", \"kind\": \"face\", \"name\": \"HANDLE R-37438\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"41113d8623d2490f9d4a617437e96bae\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"HANDLE R-37438\", \"display_name\": \"\"}, {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_c09f0cd510d94ab6a4e0d300d1dc4c37\", \"kind\": \"face\", \"name\": \"HANDLE R-37454\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"41113d8623d2490f9d4a617437e96bae\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"HANDLE R-37454\", \"display_name\": \"\"}], \"descriptor\": \"Enclosure Radiation\", \"properties\": [{\"name\": \"description\", \"native_type\": \"0\", \"units\": null, \"representation\": \"text_lines\", \"value\": []}, {\"name\": \"Include Radiative Environment\", \"native_type\": \"2\", \"units\": null, \"value\": true}, {\"name\": \"Calculation Method\", \"native_type\": \"3\", \"units\": null, \"value\": 1}, {\"name\": \"View Factor Accuracy\", \"native_type\": \"3\", \"units\": null, \"value\": 1}, {\"name\": \"Element Subdivision\", \"native_type\": \"3\", \"units\": null, \"value\": 3}, {\"name\": \"Criterion Value\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": 0.02, \"unit_symbol\": null}, {\"name\": \"Monte Carlo Settings\", \"native_type\": \"0\", \"units\": null, \"representation\": \"named_property_table\", \"value\": null}, {\"name\": \"Calculate View Factors only\", \"native_type\": \"2\", \"units\": null, \"value\": false}, {\"name\": \"Number of Rays\", \"native_type\": \"3\", \"units\": null, \"value\": 15000}, {\"name\": \"Elements not Part of this Enclosure Can Shadow\", \"native_type\": \"2\", \"units\": null, \"value\": false}, {\"name\": \"distributionType\", \"native_type\": \"3\", \"units\": null, \"value\": 28}], \"face_count\": 6, \"solution_membership_verified\": true, \"provenance\": \"Generic radiation API fixture; assumed emissivity\", \"emissivity\": null, \"side\": null, \"calculation_method\": \"deterministic\", \"include_radiative_environment\": true, \"secondary_target_set\": \"empty; not exposed\", \"saved\": false, \"solver_launched\": false, \"numerical_acceptance\": \"not_established\", \"operation_id\": \"radiation-objects-enclosure-r1\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "object": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_6d0f8a3634814b99896995a65824ca68",
+          "kind": "simulation_object",
+          "name": "MCP_ENCLOSURE",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "41113d8623d2490f9d4a617437e96bae",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+          "journal_id": "SimulationObject[MCP_ENCLOSURE]",
+          "display_name": "MCP_ENCLOSURE"
+        },
+        "faces": [
+          {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_ce20596b8f2646deaac5f0713766f0d1",
+            "kind": "face",
+            "name": "HANDLE R-37374",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "41113d8623d2490f9d4a617437e96bae",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+            "journal_id": "HANDLE R-37374",
+            "display_name": ""
+          },
+          {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_b813e6718763469086b042873366795d",
+            "kind": "face",
+            "name": "HANDLE R-37390",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "41113d8623d2490f9d4a617437e96bae",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+            "journal_id": "HANDLE R-37390",
+            "display_name": ""
+          },
+          {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_cf87c3310637472b9db6d5ee97be7926",
+            "kind": "face",
+            "name": "HANDLE R-37406",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "41113d8623d2490f9d4a617437e96bae",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+            "journal_id": "HANDLE R-37406",
+            "display_name": ""
+          },
+          {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_c2ba84ee6f864680a2a282129e66651f",
+            "kind": "face",
+            "name": "HANDLE R-37422",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "41113d8623d2490f9d4a617437e96bae",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+            "journal_id": "HANDLE R-37422",
+            "display_name": ""
+          },
+          {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_c821e7f0fefa460b8cb031251fa83db4",
+            "kind": "face",
+            "name": "HANDLE R-37438",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "41113d8623d2490f9d4a617437e96bae",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+            "journal_id": "HANDLE R-37438",
+            "display_name": ""
+          },
+          {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_c09f0cd510d94ab6a4e0d300d1dc4c37",
+            "kind": "face",
+            "name": "HANDLE R-37454",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "41113d8623d2490f9d4a617437e96bae",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+            "journal_id": "HANDLE R-37454",
+            "display_name": ""
+          }
+        ],
+        "descriptor": "Enclosure Radiation",
+        "properties": [
+          {
+            "name": "description",
+            "native_type": "0",
+            "units": null,
+            "representation": "text_lines",
+            "value": []
+          },
+          {
+            "name": "Include Radiative Environment",
+            "native_type": "2",
+            "units": null,
+            "value": true
+          },
+          {
+            "name": "Calculation Method",
+            "native_type": "3",
+            "units": null,
+            "value": 1
+          },
+          {
+            "name": "View Factor Accuracy",
+            "native_type": "3",
+            "units": null,
+            "value": 1
+          },
+          {
+            "name": "Element Subdivision",
+            "native_type": "3",
+            "units": null,
+            "value": 3
+          },
+          {
+            "name": "Criterion Value",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 0.02,
+            "unit_symbol": null
+          },
+          {
+            "name": "Monte Carlo Settings",
+            "native_type": "0",
+            "units": null,
+            "representation": "named_property_table",
+            "value": null
+          },
+          {
+            "name": "Calculate View Factors only",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Number of Rays",
+            "native_type": "3",
+            "units": null,
+            "value": 15000
+          },
+          {
+            "name": "Elements not Part of this Enclosure Can Shadow",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "distributionType",
+            "native_type": "3",
+            "units": null,
+            "value": 28
+          }
+        ],
+        "face_count": 6,
+        "solution_membership_verified": true,
+        "provenance": "Generic radiation API fixture; assumed emissivity",
+        "emissivity": null,
+        "side": null,
+        "calculation_method": "deterministic",
+        "include_radiative_environment": true,
+        "secondary_target_set": "empty; not exposed",
+        "saved": false,
+        "solver_launched": false,
+        "numerical_acceptance": "not_established",
+        "operation_id": "radiation-objects-enclosure-r1",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed"
+      },
+      "isError": false
+    },
+    "enclosure_replay": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"object\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_6d0f8a3634814b99896995a65824ca68\", \"kind\": \"simulation_object\", \"name\": \"MCP_ENCLOSURE\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"41113d8623d2490f9d4a617437e96bae\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"SimulationObject[MCP_ENCLOSURE]\", \"display_name\": \"MCP_ENCLOSURE\"}, \"faces\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_ce20596b8f2646deaac5f0713766f0d1\", \"kind\": \"face\", \"name\": \"HANDLE R-37374\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"41113d8623d2490f9d4a617437e96bae\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"HANDLE R-37374\", \"display_name\": \"\"}, {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_b813e6718763469086b042873366795d\", \"kind\": \"face\", \"name\": \"HANDLE R-37390\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"41113d8623d2490f9d4a617437e96bae\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"HANDLE R-37390\", \"display_name\": \"\"}, {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_cf87c3310637472b9db6d5ee97be7926\", \"kind\": \"face\", \"name\": \"HANDLE R-37406\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"41113d8623d2490f9d4a617437e96bae\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"HANDLE R-37406\", \"display_name\": \"\"}, {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_c2ba84ee6f864680a2a282129e66651f\", \"kind\": \"face\", \"name\": \"HANDLE R-37422\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"41113d8623d2490f9d4a617437e96bae\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"HANDLE R-37422\", \"display_name\": \"\"}, {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_c821e7f0fefa460b8cb031251fa83db4\", \"kind\": \"face\", \"name\": \"HANDLE R-37438\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"41113d8623d2490f9d4a617437e96bae\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"HANDLE R-37438\", \"display_name\": \"\"}, {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_c09f0cd510d94ab6a4e0d300d1dc4c37\", \"kind\": \"face\", \"name\": \"HANDLE R-37454\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"41113d8623d2490f9d4a617437e96bae\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"HANDLE R-37454\", \"display_name\": \"\"}], \"descriptor\": \"Enclosure Radiation\", \"properties\": [{\"name\": \"description\", \"native_type\": \"0\", \"units\": null, \"representation\": \"text_lines\", \"value\": []}, {\"name\": \"Include Radiative Environment\", \"native_type\": \"2\", \"units\": null, \"value\": true}, {\"name\": \"Calculation Method\", \"native_type\": \"3\", \"units\": null, \"value\": 1}, {\"name\": \"View Factor Accuracy\", \"native_type\": \"3\", \"units\": null, \"value\": 1}, {\"name\": \"Element Subdivision\", \"native_type\": \"3\", \"units\": null, \"value\": 3}, {\"name\": \"Criterion Value\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": 0.02, \"unit_symbol\": null}, {\"name\": \"Monte Carlo Settings\", \"native_type\": \"0\", \"units\": null, \"representation\": \"named_property_table\", \"value\": null}, {\"name\": \"Calculate View Factors only\", \"native_type\": \"2\", \"units\": null, \"value\": false}, {\"name\": \"Number of Rays\", \"native_type\": \"3\", \"units\": null, \"value\": 15000}, {\"name\": \"Elements not Part of this Enclosure Can Shadow\", \"native_type\": \"2\", \"units\": null, \"value\": false}, {\"name\": \"distributionType\", \"native_type\": \"3\", \"units\": null, \"value\": 28}], \"face_count\": 6, \"solution_membership_verified\": true, \"provenance\": \"Generic radiation API fixture; assumed emissivity\", \"emissivity\": null, \"side\": null, \"calculation_method\": \"deterministic\", \"include_radiative_environment\": true, \"secondary_target_set\": \"empty; not exposed\", \"saved\": false, \"solver_launched\": false, \"numerical_acceptance\": \"not_established\", \"operation_id\": \"radiation-objects-enclosure-r1\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\", \"replayed\": true}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "object": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_6d0f8a3634814b99896995a65824ca68",
+          "kind": "simulation_object",
+          "name": "MCP_ENCLOSURE",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "41113d8623d2490f9d4a617437e96bae",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+          "journal_id": "SimulationObject[MCP_ENCLOSURE]",
+          "display_name": "MCP_ENCLOSURE"
+        },
+        "faces": [
+          {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_ce20596b8f2646deaac5f0713766f0d1",
+            "kind": "face",
+            "name": "HANDLE R-37374",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "41113d8623d2490f9d4a617437e96bae",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+            "journal_id": "HANDLE R-37374",
+            "display_name": ""
+          },
+          {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_b813e6718763469086b042873366795d",
+            "kind": "face",
+            "name": "HANDLE R-37390",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "41113d8623d2490f9d4a617437e96bae",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+            "journal_id": "HANDLE R-37390",
+            "display_name": ""
+          },
+          {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_cf87c3310637472b9db6d5ee97be7926",
+            "kind": "face",
+            "name": "HANDLE R-37406",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "41113d8623d2490f9d4a617437e96bae",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+            "journal_id": "HANDLE R-37406",
+            "display_name": ""
+          },
+          {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_c2ba84ee6f864680a2a282129e66651f",
+            "kind": "face",
+            "name": "HANDLE R-37422",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "41113d8623d2490f9d4a617437e96bae",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+            "journal_id": "HANDLE R-37422",
+            "display_name": ""
+          },
+          {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_c821e7f0fefa460b8cb031251fa83db4",
+            "kind": "face",
+            "name": "HANDLE R-37438",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "41113d8623d2490f9d4a617437e96bae",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+            "journal_id": "HANDLE R-37438",
+            "display_name": ""
+          },
+          {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_c09f0cd510d94ab6a4e0d300d1dc4c37",
+            "kind": "face",
+            "name": "HANDLE R-37454",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "41113d8623d2490f9d4a617437e96bae",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+            "journal_id": "HANDLE R-37454",
+            "display_name": ""
+          }
+        ],
+        "descriptor": "Enclosure Radiation",
+        "properties": [
+          {
+            "name": "description",
+            "native_type": "0",
+            "units": null,
+            "representation": "text_lines",
+            "value": []
+          },
+          {
+            "name": "Include Radiative Environment",
+            "native_type": "2",
+            "units": null,
+            "value": true
+          },
+          {
+            "name": "Calculation Method",
+            "native_type": "3",
+            "units": null,
+            "value": 1
+          },
+          {
+            "name": "View Factor Accuracy",
+            "native_type": "3",
+            "units": null,
+            "value": 1
+          },
+          {
+            "name": "Element Subdivision",
+            "native_type": "3",
+            "units": null,
+            "value": 3
+          },
+          {
+            "name": "Criterion Value",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 0.02,
+            "unit_symbol": null
+          },
+          {
+            "name": "Monte Carlo Settings",
+            "native_type": "0",
+            "units": null,
+            "representation": "named_property_table",
+            "value": null
+          },
+          {
+            "name": "Calculate View Factors only",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Number of Rays",
+            "native_type": "3",
+            "units": null,
+            "value": 15000
+          },
+          {
+            "name": "Elements not Part of this Enclosure Can Shadow",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "distributionType",
+            "native_type": "3",
+            "units": null,
+            "value": 28
+          }
+        ],
+        "face_count": 6,
+        "solution_membership_verified": true,
+        "provenance": "Generic radiation API fixture; assumed emissivity",
+        "emissivity": null,
+        "side": null,
+        "calculation_method": "deterministic",
+        "include_radiative_environment": true,
+        "secondary_target_set": "empty; not exposed",
+        "saved": false,
+        "solver_launched": false,
+        "numerical_acceptance": "not_established",
+        "operation_id": "radiation-objects-enclosure-r1",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed",
+        "replayed": true
+      },
+      "isError": false
+    },
+    "before": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"simulation_objects\": [{\"object\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_7d406d830efa46aaa8275e359d5a91bd\", \"kind\": \"simulation_object\", \"name\": \"MCP_EMISSIVITY\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"41113d8623d2490f9d4a617437e96bae\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"SimulationObject[MCP_EMISSIVITY]\", \"display_name\": \"MCP_EMISSIVITY\"}, \"native_type\": \"SimSimulationObject\", \"target_set_count\": 1, \"descriptor\": \"Override Thermal Emissivity\", \"provenance\": \"Generic radiation API fixture; assumed emissivity\", \"coefficient_basis\": null, \"energy_accounting\": null, \"overlap_policy\": null, \"properties\": [{\"name\": \"description\", \"native_type\": \"0\", \"units\": null, \"representation\": \"text_lines\", \"value\": []}, {\"name\": \"Emissivity\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"0.8\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Apply Override Set to\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"distributionType\", \"native_type\": \"3\", \"units\": null, \"value\": 32}], \"target_sets\": [{\"index\": 0, \"count\": 6, \"native_slot_count\": 6, \"empty_slot_count\": 0, \"members\": [{\"native_type\": \"CAEFace\", \"subtype\": \"0\", \"sub_id\": 0, \"face\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_ce20596b8f2646deaac5f0713766f0d1\", \"kind\": \"face\", \"name\": \"HANDLE R-37374\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"41113d8623d2490f9d4a617437e96bae\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"HANDLE R-37374\", \"display_name\": \"\"}}, {\"native_type\": \"CAEFace\", \"subtype\": \"0\", \"sub_id\": 0, \"face\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_b813e6718763469086b042873366795d\", \"kind\": \"face\", \"name\": \"HANDLE R-37390\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"41113d8623d2490f9d4a617437e96bae\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"HANDLE R-37390\", \"display_name\": \"\"}}, {\"native_type\": \"CAEFace\", \"subtype\": \"0\", \"sub_id\": 0, \"face\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_cf87c3310637472b9db6d5ee97be7926\", \"kind\": \"face\", \"name\": \"HANDLE R-37406\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"41113d8623d2490f9d4a617437e96bae\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"HANDLE R-37406\", \"display_name\": \"\"}}, {\"native_type\": \"CAEFace\", \"subtype\": \"0\", \"sub_id\": 0, \"face\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_c2ba84ee6f864680a2a282129e66651f\", \"kind\": \"face\", \"name\": \"HANDLE R-37422\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"41113d8623d2490f9d4a617437e96bae\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"HANDLE R-37422\", \"display_name\": \"\"}}, {\"native_type\": \"CAEFace\", \"subtype\": \"0\", \"sub_id\": 0, \"face\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_c821e7f0fefa460b8cb031251fa83db4\", \"kind\": \"face\", \"name\": \"HANDLE R-37438\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"41113d8623d2490f9d4a617437e96bae\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"HANDLE R-37438\", \"display_name\": \"\"}}, {\"native_type\": \"CAEFace\", \"subtype\": \"0\", \"sub_id\": 0, \"face\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_c09f0cd510d94ab6a4e0d300d1dc4c37\", \"kind\": \"face\", \"name\": \"HANDLE R-37454\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"41113d8623d2490f9d4a617437e96bae\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"HANDLE R-37454\", \"display_name\": \"\"}}], \"truncated\": false}]}, {\"object\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_6d0f8a3634814b99896995a65824ca68\", \"kind\": \"simulation_object\", \"name\": \"MCP_ENCLOSURE\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"41113d8623d2490f9d4a617437e96bae\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"SimulationObject[MCP_ENCLOSURE]\", \"display_name\": \"MCP_ENCLOSURE\"}, \"native_type\": \"SimSimulationObject\", \"target_set_count\": 2, \"descriptor\": \"Enclosure Radiation\", \"provenance\": \"Generic radiation API fixture; assumed emissivity\", \"coefficient_basis\": null, \"energy_accounting\": null, \"overlap_policy\": null, \"properties\": [{\"name\": \"description\", \"native_type\": \"0\", \"units\": null, \"representation\": \"text_lines\", \"value\": []}, {\"name\": \"Include Radiative Environment\", \"native_type\": \"2\", \"units\": null, \"value\": true}, {\"name\": \"Calculation Method\", \"native_type\": \"3\", \"units\": null, \"value\": 1}, {\"name\": \"View Factor Accuracy\", \"native_type\": \"3\", \"units\": null, \"value\": 1}, {\"name\": \"Element Subdivision\", \"native_type\": \"3\", \"units\": null, \"value\": 3}, {\"name\": \"Criterion Value\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": 0.02, \"unit_symbol\": null}, {\"name\": \"Monte Carlo Settings\", \"native_type\": \"0\", \"units\": null, \"representation\": \"named_property_table\", \"value\": null}, {\"name\": \"Calculate View Factors only\", \"native_type\": \"2\", \"units\": null, \"value\": false}, {\"name\": \"Number of Rays\", \"native_type\": \"3\", \"units\": null, \"value\": 15000}, {\"name\": \"Elements not Part of this Enclosure Can Shadow\", \"native_type\": \"2\", \"units\": null, \"value\": false}, {\"name\": \"distributionType\", \"native_type\": \"3\", \"units\": null, \"value\": 28}], \"target_sets\": [{\"index\": 0, \"count\": 6, \"native_slot_count\": 6, \"empty_slot_count\": 0, \"members\": [{\"native_type\": \"CAEFace\", \"subtype\": \"0\", \"sub_id\": 0, \"face\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_ce20596b8f2646deaac5f0713766f0d1\", \"kind\": \"face\", \"name\": \"HANDLE R-37374\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"41113d8623d2490f9d4a617437e96bae\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"HANDLE R-37374\", \"display_name\": \"\"}}, {\"native_type\": \"CAEFace\", \"subtype\": \"0\", \"sub_id\": 0, \"face\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_b813e6718763469086b042873366795d\", \"kind\": \"face\", \"name\": \"HANDLE R-37390\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"41113d8623d2490f9d4a617437e96bae\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"HANDLE R-37390\", \"display_name\": \"\"}}, {\"native_type\": \"CAEFace\", \"subtype\": \"0\", \"sub_id\": 0, \"face\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_cf87c3310637472b9db6d5ee97be7926\", \"kind\": \"face\", \"name\": \"HANDLE R-37406\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"41113d8623d2490f9d4a617437e96bae\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"HANDLE R-37406\", \"display_name\": \"\"}}, {\"native_type\": \"CAEFace\", \"subtype\": \"0\", \"sub_id\": 0, \"face\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_c2ba84ee6f864680a2a282129e66651f\", \"kind\": \"face\", \"name\": \"HANDLE R-37422\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"41113d8623d2490f9d4a617437e96bae\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"HANDLE R-37422\", \"display_name\": \"\"}}, {\"native_type\": \"CAEFace\", \"subtype\": \"0\", \"sub_id\": 0, \"face\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_c821e7f0fefa460b8cb031251fa83db4\", \"kind\": \"face\", \"name\": \"HANDLE R-37438\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"41113d8623d2490f9d4a617437e96bae\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"HANDLE R-37438\", \"display_name\": \"\"}}, {\"native_type\": \"CAEFace\", \"subtype\": \"0\", \"sub_id\": 0, \"face\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_c09f0cd510d94ab6a4e0d300d1dc4c37\", \"kind\": \"face\", \"name\": \"HANDLE R-37454\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"41113d8623d2490f9d4a617437e96bae\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"HANDLE R-37454\", \"display_name\": \"\"}}], \"truncated\": false}, {\"index\": 1, \"count\": 0, \"native_slot_count\": 1, \"empty_slot_count\": 1, \"members\": [], \"truncated\": false}]}], \"total\": 2, \"next_offset\": null, \"scope\": \"SIM simulation_objects collection only; other boundary collections are separate\", \"operation_id\": \"op_8f7cab9e4a224a93bef7e553ee8ddee4\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "simulation_objects": [
+          {
+            "object": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_7d406d830efa46aaa8275e359d5a91bd",
+              "kind": "simulation_object",
+              "name": "MCP_EMISSIVITY",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "41113d8623d2490f9d4a617437e96bae",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+              "journal_id": "SimulationObject[MCP_EMISSIVITY]",
+              "display_name": "MCP_EMISSIVITY"
+            },
+            "native_type": "SimSimulationObject",
+            "target_set_count": 1,
+            "descriptor": "Override Thermal Emissivity",
+            "provenance": "Generic radiation API fixture; assumed emissivity",
+            "coefficient_basis": null,
+            "energy_accounting": null,
+            "overlap_policy": null,
+            "properties": [
+              {
+                "name": "description",
+                "native_type": "0",
+                "units": null,
+                "representation": "text_lines",
+                "value": []
+              },
+              {
+                "name": "Emissivity",
+                "native_type": "6",
+                "units": "dimensionless",
+                "expression": "0.8",
+                "unit_symbol": null,
+                "representation": "expression"
+              },
+              {
+                "name": "Apply Override Set to",
+                "native_type": "3",
+                "units": null,
+                "value": 0
+              },
+              {
+                "name": "distributionType",
+                "native_type": "3",
+                "units": null,
+                "value": 32
+              }
+            ],
+            "target_sets": [
+              {
+                "index": 0,
+                "count": 6,
+                "native_slot_count": 6,
+                "empty_slot_count": 0,
+                "members": [
+                  {
+                    "native_type": "CAEFace",
+                    "subtype": "0",
+                    "sub_id": 0,
+                    "face": {
+                      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_ce20596b8f2646deaac5f0713766f0d1",
+                      "kind": "face",
+                      "name": "HANDLE R-37374",
+                      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae",
+                      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                      "generation_id": "41113d8623d2490f9d4a617437e96bae",
+                      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+                      "journal_id": "HANDLE R-37374",
+                      "display_name": ""
+                    }
+                  },
+                  {
+                    "native_type": "CAEFace",
+                    "subtype": "0",
+                    "sub_id": 0,
+                    "face": {
+                      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_b813e6718763469086b042873366795d",
+                      "kind": "face",
+                      "name": "HANDLE R-37390",
+                      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae",
+                      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                      "generation_id": "41113d8623d2490f9d4a617437e96bae",
+                      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+                      "journal_id": "HANDLE R-37390",
+                      "display_name": ""
+                    }
+                  },
+                  {
+                    "native_type": "CAEFace",
+                    "subtype": "0",
+                    "sub_id": 0,
+                    "face": {
+                      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_cf87c3310637472b9db6d5ee97be7926",
+                      "kind": "face",
+                      "name": "HANDLE R-37406",
+                      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae",
+                      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                      "generation_id": "41113d8623d2490f9d4a617437e96bae",
+                      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+                      "journal_id": "HANDLE R-37406",
+                      "display_name": ""
+                    }
+                  },
+                  {
+                    "native_type": "CAEFace",
+                    "subtype": "0",
+                    "sub_id": 0,
+                    "face": {
+                      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_c2ba84ee6f864680a2a282129e66651f",
+                      "kind": "face",
+                      "name": "HANDLE R-37422",
+                      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae",
+                      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                      "generation_id": "41113d8623d2490f9d4a617437e96bae",
+                      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+                      "journal_id": "HANDLE R-37422",
+                      "display_name": ""
+                    }
+                  },
+                  {
+                    "native_type": "CAEFace",
+                    "subtype": "0",
+                    "sub_id": 0,
+                    "face": {
+                      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_c821e7f0fefa460b8cb031251fa83db4",
+                      "kind": "face",
+                      "name": "HANDLE R-37438",
+                      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae",
+                      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                      "generation_id": "41113d8623d2490f9d4a617437e96bae",
+                      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+                      "journal_id": "HANDLE R-37438",
+                      "display_name": ""
+                    }
+                  },
+                  {
+                    "native_type": "CAEFace",
+                    "subtype": "0",
+                    "sub_id": 0,
+                    "face": {
+                      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_c09f0cd510d94ab6a4e0d300d1dc4c37",
+                      "kind": "face",
+                      "name": "HANDLE R-37454",
+                      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae",
+                      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                      "generation_id": "41113d8623d2490f9d4a617437e96bae",
+                      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+                      "journal_id": "HANDLE R-37454",
+                      "display_name": ""
+                    }
+                  }
+                ],
+                "truncated": false
+              }
+            ]
+          },
+          {
+            "object": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_6d0f8a3634814b99896995a65824ca68",
+              "kind": "simulation_object",
+              "name": "MCP_ENCLOSURE",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "41113d8623d2490f9d4a617437e96bae",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+              "journal_id": "SimulationObject[MCP_ENCLOSURE]",
+              "display_name": "MCP_ENCLOSURE"
+            },
+            "native_type": "SimSimulationObject",
+            "target_set_count": 2,
+            "descriptor": "Enclosure Radiation",
+            "provenance": "Generic radiation API fixture; assumed emissivity",
+            "coefficient_basis": null,
+            "energy_accounting": null,
+            "overlap_policy": null,
+            "properties": [
+              {
+                "name": "description",
+                "native_type": "0",
+                "units": null,
+                "representation": "text_lines",
+                "value": []
+              },
+              {
+                "name": "Include Radiative Environment",
+                "native_type": "2",
+                "units": null,
+                "value": true
+              },
+              {
+                "name": "Calculation Method",
+                "native_type": "3",
+                "units": null,
+                "value": 1
+              },
+              {
+                "name": "View Factor Accuracy",
+                "native_type": "3",
+                "units": null,
+                "value": 1
+              },
+              {
+                "name": "Element Subdivision",
+                "native_type": "3",
+                "units": null,
+                "value": 3
+              },
+              {
+                "name": "Criterion Value",
+                "native_type": "4",
+                "units": "dimensionless",
+                "value": 0.02,
+                "unit_symbol": null
+              },
+              {
+                "name": "Monte Carlo Settings",
+                "native_type": "0",
+                "units": null,
+                "representation": "named_property_table",
+                "value": null
+              },
+              {
+                "name": "Calculate View Factors only",
+                "native_type": "2",
+                "units": null,
+                "value": false
+              },
+              {
+                "name": "Number of Rays",
+                "native_type": "3",
+                "units": null,
+                "value": 15000
+              },
+              {
+                "name": "Elements not Part of this Enclosure Can Shadow",
+                "native_type": "2",
+                "units": null,
+                "value": false
+              },
+              {
+                "name": "distributionType",
+                "native_type": "3",
+                "units": null,
+                "value": 28
+              }
+            ],
+            "target_sets": [
+              {
+                "index": 0,
+                "count": 6,
+                "native_slot_count": 6,
+                "empty_slot_count": 0,
+                "members": [
+                  {
+                    "native_type": "CAEFace",
+                    "subtype": "0",
+                    "sub_id": 0,
+                    "face": {
+                      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_ce20596b8f2646deaac5f0713766f0d1",
+                      "kind": "face",
+                      "name": "HANDLE R-37374",
+                      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae",
+                      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                      "generation_id": "41113d8623d2490f9d4a617437e96bae",
+                      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+                      "journal_id": "HANDLE R-37374",
+                      "display_name": ""
+                    }
+                  },
+                  {
+                    "native_type": "CAEFace",
+                    "subtype": "0",
+                    "sub_id": 0,
+                    "face": {
+                      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_b813e6718763469086b042873366795d",
+                      "kind": "face",
+                      "name": "HANDLE R-37390",
+                      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae",
+                      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                      "generation_id": "41113d8623d2490f9d4a617437e96bae",
+                      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+                      "journal_id": "HANDLE R-37390",
+                      "display_name": ""
+                    }
+                  },
+                  {
+                    "native_type": "CAEFace",
+                    "subtype": "0",
+                    "sub_id": 0,
+                    "face": {
+                      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_cf87c3310637472b9db6d5ee97be7926",
+                      "kind": "face",
+                      "name": "HANDLE R-37406",
+                      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae",
+                      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                      "generation_id": "41113d8623d2490f9d4a617437e96bae",
+                      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+                      "journal_id": "HANDLE R-37406",
+                      "display_name": ""
+                    }
+                  },
+                  {
+                    "native_type": "CAEFace",
+                    "subtype": "0",
+                    "sub_id": 0,
+                    "face": {
+                      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_c2ba84ee6f864680a2a282129e66651f",
+                      "kind": "face",
+                      "name": "HANDLE R-37422",
+                      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae",
+                      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                      "generation_id": "41113d8623d2490f9d4a617437e96bae",
+                      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+                      "journal_id": "HANDLE R-37422",
+                      "display_name": ""
+                    }
+                  },
+                  {
+                    "native_type": "CAEFace",
+                    "subtype": "0",
+                    "sub_id": 0,
+                    "face": {
+                      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_c821e7f0fefa460b8cb031251fa83db4",
+                      "kind": "face",
+                      "name": "HANDLE R-37438",
+                      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae",
+                      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                      "generation_id": "41113d8623d2490f9d4a617437e96bae",
+                      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+                      "journal_id": "HANDLE R-37438",
+                      "display_name": ""
+                    }
+                  },
+                  {
+                    "native_type": "CAEFace",
+                    "subtype": "0",
+                    "sub_id": 0,
+                    "face": {
+                      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_c09f0cd510d94ab6a4e0d300d1dc4c37",
+                      "kind": "face",
+                      "name": "HANDLE R-37454",
+                      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae",
+                      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                      "generation_id": "41113d8623d2490f9d4a617437e96bae",
+                      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+                      "journal_id": "HANDLE R-37454",
+                      "display_name": ""
+                    }
+                  }
+                ],
+                "truncated": false
+              },
+              {
+                "index": 1,
+                "count": 0,
+                "native_slot_count": 1,
+                "empty_slot_count": 1,
+                "members": [],
+                "truncated": false
+              }
+            ]
+          }
+        ],
+        "total": 2,
+        "next_offset": null,
+        "scope": "SIM simulation_objects collection only; other boundary collections are separate",
+        "operation_id": "op_8f7cab9e4a224a93bef7e553ee8ddee4",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "not_applicable"
+      },
+      "isError": false
+    },
+    "save": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"saved\": true, \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"file\": {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"bytes\": 7698365, \"sha256\": \"bc6982e5b6f03b0c5692f53eb056f8cc05fee54c487faa4d5262a91b72dcab81\"}, \"previous_file\": {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"bytes\": 7641858, \"sha256\": \"1eda5867a34cda2f4c6995b21577fed5e6c4b7e9d7700438b5c481a8aea43b33\"}, \"backup_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\simcenter-save-backups\\\\40fdb3b2105540a28762c294d87ee58b\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"saved_components\": false, \"closed\": false, \"other_modified_flags_unchanged\": true, \"result_freshness\": \"not_verified\", \"operation_id\": \"op_ec7b74c32a4142fc8a3fccf81b06a3ca\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "saved": true,
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+        "file": {
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+          "bytes": 7698365,
+          "sha256": "bc6982e5b6f03b0c5692f53eb056f8cc05fee54c487faa4d5262a91b72dcab81"
+        },
+        "previous_file": {
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+          "bytes": 7641858,
+          "sha256": "1eda5867a34cda2f4c6995b21577fed5e6c4b7e9d7700438b5c481a8aea43b33"
+        },
+        "backup_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-save-backups\\40fdb3b2105540a28762c294d87ee58b\\benchmark_fd1cae97c9a6_analysis.sim",
+        "saved_components": false,
+        "closed": false,
+        "other_modified_flags_unchanged": true,
+        "result_freshness": "not_verified",
+        "operation_id": "op_ec7b74c32a4142fc8a3fccf81b06a3ca",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed"
+      },
+      "isError": false
+    },
+    "close": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [\"NX may unload unused dependencies; reacquire document references before continuing\"], \"units\": null, \"closed_parts\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_86932aeaed784f93b874124723dec487\", \"kind\": \"part\", \"name\": \"benchmark_fd1cae97c9a6_analysis\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"41113d8623d2490f9d4a617437e96bae\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"benchmark_fd1cae97c9a6_analysis\", \"display_name\": \"benchmark_fd1cae97c9a6_analysis\"}], \"closed_count\": 1, \"remaining_count\": 154, \"saved\": false, \"discarded_modified_parts\": false, \"work_path\": null, \"display_path\": null, \"operation_id\": \"op_c08c9d66227749a1a9bbb43e6b88c8d5\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [
+          "NX may unload unused dependencies; reacquire document references before continuing"
+        ],
+        "units": null,
+        "closed_parts": [
+          {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_86932aeaed784f93b874124723dec487",
+            "kind": "part",
+            "name": "benchmark_fd1cae97c9a6_analysis",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_41113d8623d2490f9d4a617437e96bae",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "41113d8623d2490f9d4a617437e96bae",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+            "journal_id": "benchmark_fd1cae97c9a6_analysis",
+            "display_name": "benchmark_fd1cae97c9a6_analysis"
+          }
+        ],
+        "closed_count": 1,
+        "remaining_count": 154,
+        "saved": false,
+        "discarded_modified_parts": false,
+        "work_path": null,
+        "display_path": null,
+        "operation_id": "op_c08c9d66227749a1a9bbb43e6b88c8d5",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed"
+      },
+      "isError": false
+    },
+    "stale": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"error\", \"warnings\": [], \"units\": null, \"code\": \"NX_OBJECT_STALE\", \"message\": \"Object reference is not valid: obj_20bc234ffa5249ceb4fb4d82b993c626_86932aeaed784f93b874124723dec487\", \"retryable\": false, \"details\": {\"operation_id\": \"op_74c09a0039254ae3901479edd11ee6d3\", \"mutation_outcome\": \"not_started\"}}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "error",
+        "warnings": [],
+        "units": null,
+        "code": "NX_OBJECT_STALE",
+        "message": "Object reference is not valid: obj_20bc234ffa5249ceb4fb4d82b993c626_86932aeaed784f93b874124723dec487",
+        "retryable": false,
+        "details": {
+          "operation_id": "op_74c09a0039254ae3901479edd11ee6d3",
+          "mutation_outcome": "not_started"
+        }
+      },
+      "isError": true
+    },
+    "reopen": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [\"Document has unsaved native state; inspect and explicitly save approved analysis changes before preparing a solve\"], \"units\": \"mm\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_f1e53a208a824d7ab5e34e09e8abd605\", \"kind\": \"part\", \"name\": \"benchmark_fd1cae97c9a6_analysis\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_d13d091981314d56b72f1d6542839a4f\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"d13d091981314d56b72f1d6542839a4f\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"benchmark_fd1cae97c9a6_analysis\", \"display_name\": \"benchmark_fd1cae97c9a6_analysis\"}, \"coordinate_frame\": \"part_absolute\", \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"already_loaded\": false, \"modified_after_native_open\": true, \"modified_before_activation\": true, \"modified\": true, \"fully_loaded\": true, \"load_issues\": [], \"changed_existing_part_flags\": [], \"application\": \"UG_APP_SFEM\", \"work_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"display_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"saved\": false, \"result_freshness\": \"not_verified\", \"operation_id\": \"op_70cbad6cc4024a60992a0a99e888ff7e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [
+          "Document has unsaved native state; inspect and explicitly save approved analysis changes before preparing a solve"
+        ],
+        "units": "mm",
+        "document": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_f1e53a208a824d7ab5e34e09e8abd605",
+          "kind": "part",
+          "name": "benchmark_fd1cae97c9a6_analysis",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_d13d091981314d56b72f1d6542839a4f",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "d13d091981314d56b72f1d6542839a4f",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+          "journal_id": "benchmark_fd1cae97c9a6_analysis",
+          "display_name": "benchmark_fd1cae97c9a6_analysis"
+        },
+        "coordinate_frame": "part_absolute",
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+        "already_loaded": false,
+        "modified_after_native_open": true,
+        "modified_before_activation": true,
+        "modified": true,
+        "fully_loaded": true,
+        "load_issues": [],
+        "changed_existing_part_flags": [],
+        "application": "UG_APP_SFEM",
+        "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+        "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+        "saved": false,
+        "result_freshness": "not_verified",
+        "operation_id": "op_70cbad6cc4024a60992a0a99e888ff7e",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed"
+      },
+      "isError": false
+    },
+    "after": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"simulation_objects\": [{\"object\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_63bfd2a7b39f4f62aa6f32d96270c9ee\", \"kind\": \"simulation_object\", \"name\": \"MCP_EMISSIVITY\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_d13d091981314d56b72f1d6542839a4f\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"d13d091981314d56b72f1d6542839a4f\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"SimulationObject[MCP_EMISSIVITY]\", \"display_name\": \"MCP_EMISSIVITY\"}, \"native_type\": \"SimSimulationObject\", \"target_set_count\": 1, \"descriptor\": \"Override Thermal Emissivity\", \"provenance\": \"Generic radiation API fixture; assumed emissivity\", \"coefficient_basis\": null, \"energy_accounting\": null, \"overlap_policy\": null, \"properties\": [{\"name\": \"description\", \"native_type\": \"0\", \"units\": null, \"representation\": \"text_lines\", \"value\": []}, {\"name\": \"Emissivity\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"0.8\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Apply Override Set to\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"distributionType\", \"native_type\": \"3\", \"units\": null, \"value\": 32}], \"target_sets\": [{\"index\": 0, \"count\": 6, \"native_slot_count\": 6, \"empty_slot_count\": 0, \"members\": [{\"native_type\": \"CAEFace\", \"subtype\": \"0\", \"sub_id\": 0, \"face\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_48056e50b2c04322aa913c69f4d8053a\", \"kind\": \"face\", \"name\": \"HANDLE R-37374\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_d13d091981314d56b72f1d6542839a4f\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"d13d091981314d56b72f1d6542839a4f\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"HANDLE R-37374\", \"display_name\": \"\"}}, {\"native_type\": \"CAEFace\", \"subtype\": \"0\", \"sub_id\": 0, \"face\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_26f0a64e06a542879129395c851350b0\", \"kind\": \"face\", \"name\": \"HANDLE R-37390\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_d13d091981314d56b72f1d6542839a4f\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"d13d091981314d56b72f1d6542839a4f\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"HANDLE R-37390\", \"display_name\": \"\"}}, {\"native_type\": \"CAEFace\", \"subtype\": \"0\", \"sub_id\": 0, \"face\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_8ec4fe08dabf49a3896e935de684fc75\", \"kind\": \"face\", \"name\": \"HANDLE R-37406\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_d13d091981314d56b72f1d6542839a4f\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"d13d091981314d56b72f1d6542839a4f\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"HANDLE R-37406\", \"display_name\": \"\"}}, {\"native_type\": \"CAEFace\", \"subtype\": \"0\", \"sub_id\": 0, \"face\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_889ad095074941a2aa39245f660fbfcc\", \"kind\": \"face\", \"name\": \"HANDLE R-37422\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_d13d091981314d56b72f1d6542839a4f\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"d13d091981314d56b72f1d6542839a4f\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"HANDLE R-37422\", \"display_name\": \"\"}}, {\"native_type\": \"CAEFace\", \"subtype\": \"0\", \"sub_id\": 0, \"face\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_2baacc4be7914baa87b18a37c65cf9fb\", \"kind\": \"face\", \"name\": \"HANDLE R-37438\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_d13d091981314d56b72f1d6542839a4f\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"d13d091981314d56b72f1d6542839a4f\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"HANDLE R-37438\", \"display_name\": \"\"}}, {\"native_type\": \"CAEFace\", \"subtype\": \"0\", \"sub_id\": 0, \"face\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_631aa9ec263748acb7aac0098125eb0f\", \"kind\": \"face\", \"name\": \"HANDLE R-37454\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_d13d091981314d56b72f1d6542839a4f\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"d13d091981314d56b72f1d6542839a4f\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"HANDLE R-37454\", \"display_name\": \"\"}}], \"truncated\": false}]}, {\"object\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_5436242fe2c44e5e9c9f66e15d5856b7\", \"kind\": \"simulation_object\", \"name\": \"MCP_ENCLOSURE\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_d13d091981314d56b72f1d6542839a4f\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"d13d091981314d56b72f1d6542839a4f\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"SimulationObject[MCP_ENCLOSURE]\", \"display_name\": \"MCP_ENCLOSURE\"}, \"native_type\": \"SimSimulationObject\", \"target_set_count\": 2, \"descriptor\": \"Enclosure Radiation\", \"provenance\": \"Generic radiation API fixture; assumed emissivity\", \"coefficient_basis\": null, \"energy_accounting\": null, \"overlap_policy\": null, \"properties\": [{\"name\": \"description\", \"native_type\": \"0\", \"units\": null, \"representation\": \"text_lines\", \"value\": []}, {\"name\": \"Include Radiative Environment\", \"native_type\": \"2\", \"units\": null, \"value\": true}, {\"name\": \"Calculation Method\", \"native_type\": \"3\", \"units\": null, \"value\": 1}, {\"name\": \"View Factor Accuracy\", \"native_type\": \"3\", \"units\": null, \"value\": 1}, {\"name\": \"Element Subdivision\", \"native_type\": \"3\", \"units\": null, \"value\": 3}, {\"name\": \"Criterion Value\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": 0.02, \"unit_symbol\": null}, {\"name\": \"Monte Carlo Settings\", \"native_type\": \"0\", \"units\": null, \"representation\": \"named_property_table\", \"value\": null}, {\"name\": \"Calculate View Factors only\", \"native_type\": \"2\", \"units\": null, \"value\": false}, {\"name\": \"Number of Rays\", \"native_type\": \"3\", \"units\": null, \"value\": 15000}, {\"name\": \"Elements not Part of this Enclosure Can Shadow\", \"native_type\": \"2\", \"units\": null, \"value\": false}, {\"name\": \"distributionType\", \"native_type\": \"3\", \"units\": null, \"value\": 28}], \"target_sets\": [{\"index\": 0, \"count\": 6, \"native_slot_count\": 6, \"empty_slot_count\": 0, \"members\": [{\"native_type\": \"CAEFace\", \"subtype\": \"0\", \"sub_id\": 0, \"face\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_48056e50b2c04322aa913c69f4d8053a\", \"kind\": \"face\", \"name\": \"HANDLE R-37374\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_d13d091981314d56b72f1d6542839a4f\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"d13d091981314d56b72f1d6542839a4f\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"HANDLE R-37374\", \"display_name\": \"\"}}, {\"native_type\": \"CAEFace\", \"subtype\": \"0\", \"sub_id\": 0, \"face\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_26f0a64e06a542879129395c851350b0\", \"kind\": \"face\", \"name\": \"HANDLE R-37390\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_d13d091981314d56b72f1d6542839a4f\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"d13d091981314d56b72f1d6542839a4f\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"HANDLE R-37390\", \"display_name\": \"\"}}, {\"native_type\": \"CAEFace\", \"subtype\": \"0\", \"sub_id\": 0, \"face\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_8ec4fe08dabf49a3896e935de684fc75\", \"kind\": \"face\", \"name\": \"HANDLE R-37406\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_d13d091981314d56b72f1d6542839a4f\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"d13d091981314d56b72f1d6542839a4f\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"HANDLE R-37406\", \"display_name\": \"\"}}, {\"native_type\": \"CAEFace\", \"subtype\": \"0\", \"sub_id\": 0, \"face\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_889ad095074941a2aa39245f660fbfcc\", \"kind\": \"face\", \"name\": \"HANDLE R-37422\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_d13d091981314d56b72f1d6542839a4f\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"d13d091981314d56b72f1d6542839a4f\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"HANDLE R-37422\", \"display_name\": \"\"}}, {\"native_type\": \"CAEFace\", \"subtype\": \"0\", \"sub_id\": 0, \"face\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_2baacc4be7914baa87b18a37c65cf9fb\", \"kind\": \"face\", \"name\": \"HANDLE R-37438\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_d13d091981314d56b72f1d6542839a4f\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"d13d091981314d56b72f1d6542839a4f\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"HANDLE R-37438\", \"display_name\": \"\"}}, {\"native_type\": \"CAEFace\", \"subtype\": \"0\", \"sub_id\": 0, \"face\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_631aa9ec263748acb7aac0098125eb0f\", \"kind\": \"face\", \"name\": \"HANDLE R-37454\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_d13d091981314d56b72f1d6542839a4f\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"d13d091981314d56b72f1d6542839a4f\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"journal_id\": \"HANDLE R-37454\", \"display_name\": \"\"}}], \"truncated\": false}, {\"index\": 1, \"count\": 0, \"native_slot_count\": 1, \"empty_slot_count\": 1, \"members\": [], \"truncated\": false}]}], \"total\": 2, \"next_offset\": null, \"scope\": \"SIM simulation_objects collection only; other boundary collections are separate\", \"operation_id\": \"op_4fdfe148d9fa4fb28dd372f50b33a66f\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "simulation_objects": [
+          {
+            "object": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_63bfd2a7b39f4f62aa6f32d96270c9ee",
+              "kind": "simulation_object",
+              "name": "MCP_EMISSIVITY",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_d13d091981314d56b72f1d6542839a4f",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "d13d091981314d56b72f1d6542839a4f",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+              "journal_id": "SimulationObject[MCP_EMISSIVITY]",
+              "display_name": "MCP_EMISSIVITY"
+            },
+            "native_type": "SimSimulationObject",
+            "target_set_count": 1,
+            "descriptor": "Override Thermal Emissivity",
+            "provenance": "Generic radiation API fixture; assumed emissivity",
+            "coefficient_basis": null,
+            "energy_accounting": null,
+            "overlap_policy": null,
+            "properties": [
+              {
+                "name": "description",
+                "native_type": "0",
+                "units": null,
+                "representation": "text_lines",
+                "value": []
+              },
+              {
+                "name": "Emissivity",
+                "native_type": "6",
+                "units": "dimensionless",
+                "expression": "0.8",
+                "unit_symbol": null,
+                "representation": "expression"
+              },
+              {
+                "name": "Apply Override Set to",
+                "native_type": "3",
+                "units": null,
+                "value": 0
+              },
+              {
+                "name": "distributionType",
+                "native_type": "3",
+                "units": null,
+                "value": 32
+              }
+            ],
+            "target_sets": [
+              {
+                "index": 0,
+                "count": 6,
+                "native_slot_count": 6,
+                "empty_slot_count": 0,
+                "members": [
+                  {
+                    "native_type": "CAEFace",
+                    "subtype": "0",
+                    "sub_id": 0,
+                    "face": {
+                      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_48056e50b2c04322aa913c69f4d8053a",
+                      "kind": "face",
+                      "name": "HANDLE R-37374",
+                      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_d13d091981314d56b72f1d6542839a4f",
+                      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                      "generation_id": "d13d091981314d56b72f1d6542839a4f",
+                      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+                      "journal_id": "HANDLE R-37374",
+                      "display_name": ""
+                    }
+                  },
+                  {
+                    "native_type": "CAEFace",
+                    "subtype": "0",
+                    "sub_id": 0,
+                    "face": {
+                      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_26f0a64e06a542879129395c851350b0",
+                      "kind": "face",
+                      "name": "HANDLE R-37390",
+                      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_d13d091981314d56b72f1d6542839a4f",
+                      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                      "generation_id": "d13d091981314d56b72f1d6542839a4f",
+                      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+                      "journal_id": "HANDLE R-37390",
+                      "display_name": ""
+                    }
+                  },
+                  {
+                    "native_type": "CAEFace",
+                    "subtype": "0",
+                    "sub_id": 0,
+                    "face": {
+                      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_8ec4fe08dabf49a3896e935de684fc75",
+                      "kind": "face",
+                      "name": "HANDLE R-37406",
+                      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_d13d091981314d56b72f1d6542839a4f",
+                      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                      "generation_id": "d13d091981314d56b72f1d6542839a4f",
+                      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+                      "journal_id": "HANDLE R-37406",
+                      "display_name": ""
+                    }
+                  },
+                  {
+                    "native_type": "CAEFace",
+                    "subtype": "0",
+                    "sub_id": 0,
+                    "face": {
+                      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_889ad095074941a2aa39245f660fbfcc",
+                      "kind": "face",
+                      "name": "HANDLE R-37422",
+                      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_d13d091981314d56b72f1d6542839a4f",
+                      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                      "generation_id": "d13d091981314d56b72f1d6542839a4f",
+                      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+                      "journal_id": "HANDLE R-37422",
+                      "display_name": ""
+                    }
+                  },
+                  {
+                    "native_type": "CAEFace",
+                    "subtype": "0",
+                    "sub_id": 0,
+                    "face": {
+                      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_2baacc4be7914baa87b18a37c65cf9fb",
+                      "kind": "face",
+                      "name": "HANDLE R-37438",
+                      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_d13d091981314d56b72f1d6542839a4f",
+                      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                      "generation_id": "d13d091981314d56b72f1d6542839a4f",
+                      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+                      "journal_id": "HANDLE R-37438",
+                      "display_name": ""
+                    }
+                  },
+                  {
+                    "native_type": "CAEFace",
+                    "subtype": "0",
+                    "sub_id": 0,
+                    "face": {
+                      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_631aa9ec263748acb7aac0098125eb0f",
+                      "kind": "face",
+                      "name": "HANDLE R-37454",
+                      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_d13d091981314d56b72f1d6542839a4f",
+                      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                      "generation_id": "d13d091981314d56b72f1d6542839a4f",
+                      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+                      "journal_id": "HANDLE R-37454",
+                      "display_name": ""
+                    }
+                  }
+                ],
+                "truncated": false
+              }
+            ]
+          },
+          {
+            "object": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_5436242fe2c44e5e9c9f66e15d5856b7",
+              "kind": "simulation_object",
+              "name": "MCP_ENCLOSURE",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_d13d091981314d56b72f1d6542839a4f",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "d13d091981314d56b72f1d6542839a4f",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+              "journal_id": "SimulationObject[MCP_ENCLOSURE]",
+              "display_name": "MCP_ENCLOSURE"
+            },
+            "native_type": "SimSimulationObject",
+            "target_set_count": 2,
+            "descriptor": "Enclosure Radiation",
+            "provenance": "Generic radiation API fixture; assumed emissivity",
+            "coefficient_basis": null,
+            "energy_accounting": null,
+            "overlap_policy": null,
+            "properties": [
+              {
+                "name": "description",
+                "native_type": "0",
+                "units": null,
+                "representation": "text_lines",
+                "value": []
+              },
+              {
+                "name": "Include Radiative Environment",
+                "native_type": "2",
+                "units": null,
+                "value": true
+              },
+              {
+                "name": "Calculation Method",
+                "native_type": "3",
+                "units": null,
+                "value": 1
+              },
+              {
+                "name": "View Factor Accuracy",
+                "native_type": "3",
+                "units": null,
+                "value": 1
+              },
+              {
+                "name": "Element Subdivision",
+                "native_type": "3",
+                "units": null,
+                "value": 3
+              },
+              {
+                "name": "Criterion Value",
+                "native_type": "4",
+                "units": "dimensionless",
+                "value": 0.02,
+                "unit_symbol": null
+              },
+              {
+                "name": "Monte Carlo Settings",
+                "native_type": "0",
+                "units": null,
+                "representation": "named_property_table",
+                "value": null
+              },
+              {
+                "name": "Calculate View Factors only",
+                "native_type": "2",
+                "units": null,
+                "value": false
+              },
+              {
+                "name": "Number of Rays",
+                "native_type": "3",
+                "units": null,
+                "value": 15000
+              },
+              {
+                "name": "Elements not Part of this Enclosure Can Shadow",
+                "native_type": "2",
+                "units": null,
+                "value": false
+              },
+              {
+                "name": "distributionType",
+                "native_type": "3",
+                "units": null,
+                "value": 28
+              }
+            ],
+            "target_sets": [
+              {
+                "index": 0,
+                "count": 6,
+                "native_slot_count": 6,
+                "empty_slot_count": 0,
+                "members": [
+                  {
+                    "native_type": "CAEFace",
+                    "subtype": "0",
+                    "sub_id": 0,
+                    "face": {
+                      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_48056e50b2c04322aa913c69f4d8053a",
+                      "kind": "face",
+                      "name": "HANDLE R-37374",
+                      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_d13d091981314d56b72f1d6542839a4f",
+                      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                      "generation_id": "d13d091981314d56b72f1d6542839a4f",
+                      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+                      "journal_id": "HANDLE R-37374",
+                      "display_name": ""
+                    }
+                  },
+                  {
+                    "native_type": "CAEFace",
+                    "subtype": "0",
+                    "sub_id": 0,
+                    "face": {
+                      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_26f0a64e06a542879129395c851350b0",
+                      "kind": "face",
+                      "name": "HANDLE R-37390",
+                      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_d13d091981314d56b72f1d6542839a4f",
+                      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                      "generation_id": "d13d091981314d56b72f1d6542839a4f",
+                      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+                      "journal_id": "HANDLE R-37390",
+                      "display_name": ""
+                    }
+                  },
+                  {
+                    "native_type": "CAEFace",
+                    "subtype": "0",
+                    "sub_id": 0,
+                    "face": {
+                      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_8ec4fe08dabf49a3896e935de684fc75",
+                      "kind": "face",
+                      "name": "HANDLE R-37406",
+                      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_d13d091981314d56b72f1d6542839a4f",
+                      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                      "generation_id": "d13d091981314d56b72f1d6542839a4f",
+                      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+                      "journal_id": "HANDLE R-37406",
+                      "display_name": ""
+                    }
+                  },
+                  {
+                    "native_type": "CAEFace",
+                    "subtype": "0",
+                    "sub_id": 0,
+                    "face": {
+                      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_889ad095074941a2aa39245f660fbfcc",
+                      "kind": "face",
+                      "name": "HANDLE R-37422",
+                      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_d13d091981314d56b72f1d6542839a4f",
+                      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                      "generation_id": "d13d091981314d56b72f1d6542839a4f",
+                      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+                      "journal_id": "HANDLE R-37422",
+                      "display_name": ""
+                    }
+                  },
+                  {
+                    "native_type": "CAEFace",
+                    "subtype": "0",
+                    "sub_id": 0,
+                    "face": {
+                      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_2baacc4be7914baa87b18a37c65cf9fb",
+                      "kind": "face",
+                      "name": "HANDLE R-37438",
+                      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_d13d091981314d56b72f1d6542839a4f",
+                      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                      "generation_id": "d13d091981314d56b72f1d6542839a4f",
+                      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+                      "journal_id": "HANDLE R-37438",
+                      "display_name": ""
+                    }
+                  },
+                  {
+                    "native_type": "CAEFace",
+                    "subtype": "0",
+                    "sub_id": 0,
+                    "face": {
+                      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_631aa9ec263748acb7aac0098125eb0f",
+                      "kind": "face",
+                      "name": "HANDLE R-37454",
+                      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_d13d091981314d56b72f1d6542839a4f",
+                      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                      "generation_id": "d13d091981314d56b72f1d6542839a4f",
+                      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+                      "journal_id": "HANDLE R-37454",
+                      "display_name": ""
+                    }
+                  }
+                ],
+                "truncated": false
+              },
+              {
+                "index": 1,
+                "count": 0,
+                "native_slot_count": 1,
+                "empty_slot_count": 1,
+                "members": [],
+                "truncated": false
+              }
+            ]
+          }
+        ],
+        "total": 2,
+        "next_offset": null,
+        "scope": "SIM simulation_objects collection only; other boundary collections are separate",
+        "operation_id": "op_4fdfe148d9fa4fb28dd372f50b33a66f",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "not_applicable"
+      },
+      "isError": false
+    },
+    "export_copy": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_e7cdeb7b6a6d4c509c90a21101f5dd0b\", \"kind\": \"part\", \"name\": \"enclosure_r1\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_d13d091981314d56b72f1d6542839a4f\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"d13d091981314d56b72f1d6542839a4f\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-export-20260909-r1\\\\enclosure_r1.sim\", \"journal_id\": \"enclosure_r1\", \"display_name\": \"enclosure_r1\"}, \"source\": {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_analysis.sim\", \"bytes\": 7698365, \"sha256\": \"bc6982e5b6f03b0c5692f53eb056f8cc05fee54c487faa4d5262a91b72dcab81\"}, \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-export-20260909-r1\\\\enclosure_r1.sim\", \"source_file_unchanged\": true, \"work_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-export-20260909-r1\\\\enclosure_r1.sim\", \"display_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-export-20260909-r1\\\\enclosure_r1.sim\", \"shared_fem_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_mesh.fem\", \"independent_geometry_variant\": false, \"saved\": true, \"result_freshness\": \"not_verified\", \"next_step\": \"Reacquire document IDs. Duplicate and reassociate FEM/CAD before changing shared geometry or mesh.\", \"operation_id\": \"op_10930f08adcd426ca4be9ed6c8a38a6f\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "document": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_e7cdeb7b6a6d4c509c90a21101f5dd0b",
+          "kind": "part",
+          "name": "enclosure_r1",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_d13d091981314d56b72f1d6542839a4f",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "d13d091981314d56b72f1d6542839a4f",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-export-20260909-r1\\enclosure_r1.sim",
+          "journal_id": "enclosure_r1",
+          "display_name": "enclosure_r1"
+        },
+        "source": {
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_analysis.sim",
+          "bytes": 7698365,
+          "sha256": "bc6982e5b6f03b0c5692f53eb056f8cc05fee54c487faa4d5262a91b72dcab81"
+        },
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-export-20260909-r1\\enclosure_r1.sim",
+        "source_file_unchanged": true,
+        "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-export-20260909-r1\\enclosure_r1.sim",
+        "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-export-20260909-r1\\enclosure_r1.sim",
+        "shared_fem_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_mesh.fem",
+        "independent_geometry_variant": false,
+        "saved": true,
+        "result_freshness": "not_verified",
+        "next_step": "Reacquire document IDs. Duplicate and reassociate FEM/CAD before changing shared geometry or mesh.",
+        "operation_id": "op_10930f08adcd426ca4be9ed6c8a38a6f",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed"
+      },
+      "isError": false
+    },
+    "export": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"input_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-export-20260909-r1\\\\enclosure_r1-Conduction.xml\", \"input_identity\": {\"sha256\": \"9f45f509798d4620012bf7dbd4d1b8cfa768b4ca52898a0d5005e53d12c5ccdb\", \"xml_content_sha256\": \"2a5fc1840321eb4af3cba661c7370005214ee567811d533f806cc026dc02a856\", \"bytes\": 40077, \"canonicalization\": \"xml_c14n2_no_comments\"}, \"validation\": {\"state\": \"well_formed\", \"step_definitions\": 1, \"mesh_counts\": {\"elements\": 100, \"nodes\": 45, \"element_sets\": 1, \"scope\": \"observed_multiphysics_xml_layout\"}, \"solve_readiness\": \"not_established\"}, \"coupled_ambient_validation\": null, \"coupled_pressure_validation\": null, \"artifacts\": [{\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-export-20260909-r1\\\\enclosure_r1-Conduction.map\", \"bytes\": 18532}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-export-20260909-r1\\\\enclosure_r1-Conduction.xml\", \"bytes\": 40077}], \"translator_reports\": [], \"solver\": \"NX MULTIPHYSICS\", \"analysis_type\": \"Thermal\", \"solution\": \"Conduction\", \"source_sim\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-export-20260909-r1\\\\enclosure_r1.sim\", \"source_modified\": false, \"solver_launched\": false, \"solve_readiness\": \"not_established\", \"scope\": \"Native thermal/flow input export, not a solve or convergence check\", \"operation_id\": \"op_f3eee3242cca425eaae85ab306b0e2f8\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "input_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-export-20260909-r1\\enclosure_r1-Conduction.xml",
+        "input_identity": {
+          "sha256": "9f45f509798d4620012bf7dbd4d1b8cfa768b4ca52898a0d5005e53d12c5ccdb",
+          "xml_content_sha256": "2a5fc1840321eb4af3cba661c7370005214ee567811d533f806cc026dc02a856",
+          "bytes": 40077,
+          "canonicalization": "xml_c14n2_no_comments"
+        },
+        "validation": {
+          "state": "well_formed",
+          "step_definitions": 1,
+          "mesh_counts": {
+            "elements": 100,
+            "nodes": 45,
+            "element_sets": 1,
+            "scope": "observed_multiphysics_xml_layout"
+          },
+          "solve_readiness": "not_established"
+        },
+        "coupled_ambient_validation": null,
+        "coupled_pressure_validation": null,
+        "artifacts": [
+          {
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-export-20260909-r1\\enclosure_r1-Conduction.map",
+            "bytes": 18532
+          },
+          {
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-export-20260909-r1\\enclosure_r1-Conduction.xml",
+            "bytes": 40077
+          }
+        ],
+        "translator_reports": [],
+        "solver": "NX MULTIPHYSICS",
+        "analysis_type": "Thermal",
+        "solution": "Conduction",
+        "source_sim": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-export-20260909-r1\\enclosure_r1.sim",
+        "source_modified": false,
+        "solver_launched": false,
+        "solve_readiness": "not_established",
+        "scope": "Native thermal/flow input export, not a solve or convergence check",
+        "operation_id": "op_f3eee3242cca425eaae85ab306b0e2f8",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed"
+      },
+      "isError": false
+    }
+  },
+  "schemas": [
+    {
+      "name": "nx_sim_emissivity_override",
+      "title": null,
+      "description": "Create native Override Thermal Emissivity on 1..1000 distinct SIM CAE face IDs. Requires active NX MULTIPHYSICS Thermal. emissivity is a constant dimensionless value in [0,1]; side maps to native both/top/bottom selectors. Native side meaning depends on solid/shell geometry; no shell interpretation or numerical heat-transfer claim is made. Readback verifies value/units, selector, face targets, solution membership and provenance. Returns a typed simulation object, available in nx_sim_objects. Does not assign optical material, save, solve or remove other assignments; conflicting/overlapping existing overrides require inspection by the caller. Visible undo with verified creation rollback. Supply operation_id for deduplicated retry.",
+      "inputSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "document": {
+            "title": "Document",
+            "type": "string"
+          },
+          "faces": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Faces",
+            "type": "array"
+          },
+          "emissivity": {
+            "title": "Emissivity",
+            "type": "number"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "provenance": {
+            "title": "Provenance",
+            "type": "string"
+          },
+          "side": {
+            "default": "both",
+            "enum": [
+              "both",
+              "top",
+              "bottom"
+            ],
+            "title": "Side",
+            "type": "string"
+          },
+          "operation_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Operation Id"
+          }
+        },
+        "required": [
+          "document",
+          "faces",
+          "emissivity",
+          "name",
+          "provenance"
+        ],
+        "title": "nx_sim_emissivity_overrideArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "additionalProperties": true,
+        "description": "Structured success/error envelope with additive metadata. Tool-specific payload remains extensible.",
+        "properties": {
+          "status": {
+            "enum": [
+              "success",
+              "error"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Warnings",
+            "type": "array"
+          },
+          "units": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Units"
+          },
+          "operation_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Operation Id"
+          },
+          "mutation_outcome": {
+            "anyOf": [
+              {
+                "enum": [
+                  "not_started",
+                  "running",
+                  "committed",
+                  "rolled_back",
+                  "partial",
+                  "unknown",
+                  "not_applicable"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "full_result": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "sha256": {
+                "type": "string"
+              },
+              "size": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "tool": {
+                "const": "nx_read_result"
+              },
+              "immutable": {
+                "const": true
+              }
+            },
+            "required": [
+              "id",
+              "sha256",
+              "size",
+              "tool",
+              "immutable"
+            ],
+            "additionalProperties": true
+          },
+          "omitted": {
+            "type": "object"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "retryable": {
+            "type": "boolean"
+          },
+          "suggestion": {
+            "type": "string"
+          },
+          "nx_code": {
+            "type": [
+              "integer",
+              "string"
+            ]
+          },
+          "details": {
+            "type": "object",
+            "properties": {
+              "operation_id": {
+                "type": "string"
+              },
+              "mutation_outcome": {
+                "enum": [
+                  "not_started",
+                  "running",
+                  "committed",
+                  "rolled_back",
+                  "partial",
+                  "unknown",
+                  "not_applicable"
+                ]
+              }
+            },
+            "required": [],
+            "additionalProperties": true
+          }
+        },
+        "required": [
+          "status",
+          "warnings",
+          "units"
+        ],
+        "title": "nx_sim_emissivity_override result",
+        "type": "object",
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "status": {
+                  "const": "error"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "code",
+                "message",
+                "retryable"
+              ]
+            }
+          }
+        ]
+      },
+      "icons": null,
+      "annotations": {
+        "title": null,
+        "readOnlyHint": false,
+        "destructiveHint": null,
+        "idempotentHint": false,
+        "openWorldHint": null
+      },
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "nx_sim_enclosure_radiation",
+      "title": null,
+      "description": "Create native Enclosure Radiation with deterministic calculation on 1..1000 distinct SIM CAE face IDs. Requires active NX MULTIPHYSICS Thermal. include_radiative_environment controls the native ambient-inclusion selector; ambient temperature is a separate unresolved dependency. Assigns documented target set 0 and verifies the second slot stays empty. Does not construct/check a closed cavity, assign emissivity, calculate view factors, save or solve. Monte Carlo/GPU methods and secondary-slot authoring are not exposed. Returns actual properties, typed simulation object, face/solution membership and provenance; inspect via nx_sim_objects. No numerical radiation acceptance is implied. Visible undo with verified creation rollback. Supply operation_id for retry deduplication.",
+      "inputSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "document": {
+            "title": "Document",
+            "type": "string"
+          },
+          "faces": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Faces",
+            "type": "array"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "provenance": {
+            "title": "Provenance",
+            "type": "string"
+          },
+          "include_radiative_environment": {
+            "default": true,
+            "title": "Include Radiative Environment",
+            "type": "boolean"
+          },
+          "operation_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Operation Id"
+          }
+        },
+        "required": [
+          "document",
+          "faces",
+          "name",
+          "provenance"
+        ],
+        "title": "nx_sim_enclosure_radiationArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "additionalProperties": true,
+        "description": "Structured success/error envelope with additive metadata. Tool-specific payload remains extensible.",
+        "properties": {
+          "status": {
+            "enum": [
+              "success",
+              "error"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Warnings",
+            "type": "array"
+          },
+          "units": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Units"
+          },
+          "operation_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Operation Id"
+          },
+          "mutation_outcome": {
+            "anyOf": [
+              {
+                "enum": [
+                  "not_started",
+                  "running",
+                  "committed",
+                  "rolled_back",
+                  "partial",
+                  "unknown",
+                  "not_applicable"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "full_result": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "sha256": {
+                "type": "string"
+              },
+              "size": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "tool": {
+                "const": "nx_read_result"
+              },
+              "immutable": {
+                "const": true
+              }
+            },
+            "required": [
+              "id",
+              "sha256",
+              "size",
+              "tool",
+              "immutable"
+            ],
+            "additionalProperties": true
+          },
+          "omitted": {
+            "type": "object"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "retryable": {
+            "type": "boolean"
+          },
+          "suggestion": {
+            "type": "string"
+          },
+          "nx_code": {
+            "type": [
+              "integer",
+              "string"
+            ]
+          },
+          "details": {
+            "type": "object",
+            "properties": {
+              "operation_id": {
+                "type": "string"
+              },
+              "mutation_outcome": {
+                "enum": [
+                  "not_started",
+                  "running",
+                  "committed",
+                  "rolled_back",
+                  "partial",
+                  "unknown",
+                  "not_applicable"
+                ]
+              }
+            },
+            "required": [],
+            "additionalProperties": true
+          }
+        },
+        "required": [
+          "status",
+          "warnings",
+          "units"
+        ],
+        "title": "nx_sim_enclosure_radiation result",
+        "type": "object",
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "status": {
+                  "const": "error"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "code",
+                "message",
+                "retryable"
+              ]
+            }
+          }
+        ]
+      },
+      "icons": null,
+      "annotations": {
+        "title": null,
+        "readOnlyHint": false,
+        "destructiveHint": null,
+        "idempotentHint": false,
+        "openWorldHint": null
+      },
+      "meta": null,
+      "execution": null
+    }
+  ],
+  "passed": true,
+  "document": "obj_20bc234ffa5249ceb4fb4d82b993c626_e7cdeb7b6a6d4c509c90a21101f5dd0b",
+  "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-export-20260909-r1\\enclosure_r1.sim",
+  "solver_launched": false,
+  "scope": "Native/public authoring, replay, persistence and export; numerical/view-factor validation separate"
+}

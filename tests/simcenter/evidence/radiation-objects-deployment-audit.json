@@ -1,4 +1,5 @@
 {
+  "status": "success",
   "passed": true,
   "checked_count": 64,
   "tools": [
@@ -163,5 +164,14 @@
   "scope": "Live handler argument names, required/default values and parameter kinds; not per-tool behavior verification",
   "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-export-20260909-r1\\enclosure_r1.sim",
   "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-export-20260909-r1\\enclosure_r1.sim",
-  "solver_launched": false
+  "solver_launched": false,
+  "solution_membership": [
+    "MCP_EMISSIVITY",
+    "MCP_ENCLOSURE"
+  ],
+  "operation_id": "op_c4328fb54263487381bcd553f77af130",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
 }
