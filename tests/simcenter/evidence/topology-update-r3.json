@@ -1,0 +1,46 @@
+{
+  "status": "success",
+  "rows": [
+    {
+      "stage": "before",
+      "cad_bodies": 17,
+      "fem_bodies": 17,
+      "mesh_counts": {
+        "elements": 8628,
+        "nodes": 2830
+      }
+    },
+    {
+      "stage": "added",
+      "cad_bodies": 18,
+      "fem_bodies": 18,
+      "mesh_counts": {
+        "elements": 8628,
+        "nodes": 2830
+      }
+    },
+    {
+      "stage": "removed",
+      "cad_bodies": 17,
+      "fem_bodies": 17,
+      "mesh_counts": {
+        "elements": 8628,
+        "nodes": 2830
+      }
+    }
+  ],
+  "passed": true,
+  "saved": false,
+  "solver_launched": false,
+  "presentation": {
+    "information_window_closed": true,
+    "view_fitted": true,
+    "display_refreshed": true,
+    "warnings": []
+  },
+  "operation_id": "op_66a05d6e28e540259c3107c38976fe11",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

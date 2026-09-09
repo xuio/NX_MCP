@@ -21,7 +21,7 @@ Dimension synchronization is already verified by the engineering task.
 |---|---|---|
 | Owned inlet/opening creation | Public `nx_sim_inlet` / `nx_sim_opening` native creation, target/membership/readback and save pass (`public-boundary-authoring-r1.json`) | Fan/head-loss binding, export and solve now pass; reopen still pending |
 | Fluid properties / global environment | Public `nx_sim_environment` deployed; sequential native 25/40 °C readback and save pass (`public-analysis-environment-r2.json`); fluid assignment pending | 40 °C export preserves values; fluid assignment and mesh pass. Separate 25 °C case and gravity remain |
-| User CAD associations / topology changes | Public `nx_sim_create_analysis` creates FEM/SIM from saved two-body CAD; source hash unchanged; distinct FEM/SIM basename fix native verified | Body addition/removal synchronization and isolated-variant preservation |
+| User CAD associations / topology changes | Public `nx_sim_create_analysis` creates FEM/SIM from saved two-body CAD; source hash unchanged; distinct FEM/SIM basename fix native verified | Native body add/remove now passes 17→18→17 via documented association/update APIs; public sync operation and isolated-variant preservation remain |
 | Multi-body meshing | Removed 16-body limits in plan and regeneration locally; validation covers 17/64/256 bodies | Native/public 17-body mesh passes. Size 0.75 mm regenerates 1,700→8,628 elements; replay, stale-ID rejection and save pass (`public-multibody-remesh-r3.json`). Geometry update/reopen remain |
 | Temperature postview | Exact reported name reproduced on generic result: periods/colons rejected, length accepted. Fixed with explicit normalization warning; public view/capture pass | Keep punctuation regression; viewport visually inspected |
 | Generic activation | FEM/SIM/AFM paths rejected before display/work calls locally, including typed references | Native/public rejection preserves work/display context (`public-authoring-surface-r1.json`) |
@@ -54,6 +54,13 @@ view. Separate 25 °C solve, reopen, gravity and topology/mesh work remain.
 `public-numerical-40c-r1.json` preserves the failed outcome. Screenshot creation
 and visual verification pass (`public-postview-fixed-r1.json`). This is generic
 infrastructure geometry, not a Baldower thermal result.
+
+Native topology probe `topology-update-r3.json` verifies 17→18→17 CAD/FEM
+bodies using `SetGeometryDataWithAttributes` and `BaseFEModel.UpdateFemodel`.
+The existing mesh remained 8,628 elements: a newly added body still needs its
+own mesh definition. This is native adapter evidence, not public MCP verification.
+The fixture is left unsaved with the final 17 bodies and a fitted view; no solver
+was launched. Earlier call-signature failures are retained as r1/r2.
 
 The multi-body fixture uses 17 separate 3 mm cubes. A 2→1.5 mm size edit
 committed correctly but retained the same 1,700 elements; the client count-growth
