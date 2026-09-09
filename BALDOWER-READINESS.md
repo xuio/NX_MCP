@@ -20,7 +20,7 @@ Dimension synchronization is already verified by the engineering task.
 | Capability | Current implementation / verification | Next concrete action |
 |---|---|---|
 | Owned inlet/opening creation | Public `nx_sim_inlet` / `nx_sim_opening` native creation, target/membership/readback and save pass (`public-boundary-authoring-r1.json`) | Fan/head-loss binding, export and solve now pass; reopen still pending |
-| Fluid properties / global environment | Public `nx_sim_environment` deployed; sequential native 25/40 °C readback and save pass (`public-analysis-environment-r2.json`); fluid assignment pending | 40 °C export preserves values; fluid assignment and mesh pass. Separate 25 °C case and gravity remain |
+| Fluid properties / global environment | Public `nx_sim_environment` deployed; sequential native 25/40 °C readback and save pass (`public-analysis-environment-r2.json`); fluid assignment pending | 40 °C export preserves values; fluid assignment and mesh pass. Native gravity authoring, SI readback and rollback pass; public gravity and separate 25 °C case remain |
 | User CAD associations / topology changes | Public `nx_sim_create_analysis` creates FEM/SIM from saved two-body CAD; source hash unchanged; distinct FEM/SIM basename fix native verified | Native body add/remove now passes 17→18→17 via documented association/update APIs; Public `nx_sim_sync_geometry` deployed; 17-body inventory, replay and stale-ID checks pass. Public transition/reopen and isolated-variant preservation remain |
 | Multi-body meshing | Removed 16-body limits in plan and regeneration locally; validation covers 17/64/256 bodies | Native/public 17-body mesh passes. Size 0.75 mm regenerates 1,700→8,628 elements; replay, stale-ID rejection and save pass (`public-multibody-remesh-r3.json`). Geometry update/reopen remain |
 | Temperature postview | Exact reported name reproduced on generic result: periods/colons rejected, length accepted. Fixed with explicit normalization warning; public view/capture pass | Keep punctuation regression; viewport visually inspected |
@@ -54,6 +54,14 @@ view. Separate 25 °C solve, reopen, gravity and topology/mesh work remain.
 `public-numerical-40c-r1.json` preserves the failed outcome. Screenshot creation
 and visual verification pass (`public-postview-fixed-r1.json`). This is generic
 infrastructure geometry, not a Baldower thermal result.
+
+Native gravity probe `gravity-author-r2.json` verifies the documented
+`ComponentGravityField` load on 17 explicit body occurrences, global Cartesian
+CSYS, active-solution membership, vector [0,0,-9.80665] m/s² and undo cleanup.
+`Expression.Value` reports base mm/s²; `GetValueUsingUnits(Expression)`
+returns the requested SI acceleration. This is native authoring evidence only:
+public gravity, export and buoyancy validation remain. No solve was launched
+and the temporary gravity load was undone.
 
 Native topology probe `topology-update-r3.json` verifies 17→18→17 CAD/FEM
 bodies using `SetGeometryDataWithAttributes` and `BaseFEModel.UpdateFemodel`.
