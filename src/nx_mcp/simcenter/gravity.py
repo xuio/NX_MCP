@@ -50,7 +50,10 @@ def create(session, sim, bodies, acceleration, name):
         ):
             for i in range(load.TargetSetManager.TargetSetCount):
                 _, members = load.TargetSetManager.GetTargetSetMembers(i)
-                if any(m is not None and m.Obj is not None and int(m.Obj.Tag) in expected for m in members):
+                if any(
+                    m is not None and m.Obj is not None and int(m.Obj.Tag) in expected
+                    for m in members
+                ):
                     raise NXToolError(
                         "NX_SIM_DUPLICATE_GRAVITY",
                         "Selected bodies already have gravity; inspect before adding another load",
@@ -104,6 +107,9 @@ def create(session, sim, bodies, acceleration, name):
             "solver_launched": False,
             "results_stale": True,
             "buoyancy_changed": False,
+            "warnings": [
+                "Whole-FEM gravity only: observed coupled export has no per-body selection; native global CSYS 0 is serialized as XML CSYSOption 1."
+            ],
         }
     except Exception as error:
         rollback_creation(session, sim, mark, builder, before, error)

@@ -20,7 +20,7 @@ Dimension synchronization is already verified by the engineering task.
 | Capability | Current implementation / verification | Next concrete action |
 |---|---|---|
 | Owned inlet/opening creation | Public `nx_sim_inlet` / `nx_sim_opening` native creation, target/membership/readback and save pass (`public-boundary-authoring-r1.json`) | Fan/head-loss binding, export and solve now pass; reopen still pending |
-| Fluid properties / global environment | Public `nx_sim_environment` deployed; sequential native 25/40 °C readback and save pass (`public-analysis-environment-r2.json`); fluid assignment pending | 40 °C export preserves values; fluid assignment and mesh pass. Native gravity authoring, SI readback and rollback pass; Public gravity now passes vector/target readback, replay and duplicate rejection; Separate 25 °C export/solve/physical checks and SIM reopen now pass; gravity export/buoyancy remain |
+| Fluid properties / global environment | Public `nx_sim_environment` deployed; sequential native 25/40 °C readback and save pass (`public-analysis-environment-r2.json`); fluid assignment pending | 40 °C export preserves values; fluid assignment and mesh pass. Native gravity authoring, SI readback and rollback pass; Public gravity now passes vector/target readback, replay and duplicate rejection; Separate 25 °C export/solve/physical checks and SIM reopen now pass; Gravity/buoyancy authoring and export vector verified; whole-FEM scope and unresolved CSYS encoding documented |
 | User CAD associations / topology changes | Public `nx_sim_create_analysis` creates FEM/SIM from saved two-body CAD; source hash unchanged; distinct FEM/SIM basename fix native verified | Native body add/remove now passes 17→18→17 via documented association/update APIs; Public `nx_sim_sync_geometry` deployed; 17-body inventory, replay and stale-ID checks pass. Public transition/reopen and isolated-variant preservation remain |
 | Multi-body meshing | Removed 16-body limits in plan and regeneration locally; validation covers 17/64/256 bodies | Native/public 17-body mesh passes. Size 0.75 mm regenerates 1,700→8,628 elements; replay, stale-ID rejection and save pass (`public-multibody-remesh-r3.json`). Geometry update/reopen remain |
 | Temperature postview | Exact reported name reproduced on generic result: periods/colons rejected, length accepted. Fixed with explicit normalization warning; public view/capture pass | Keep punctuation regression; viewport visually inspected |
@@ -76,7 +76,13 @@ CSYS, active-solution membership, vector [0,0,-9.80665] m/s² and undo cleanup.
 returns the requested SI acceleration. This is native authoring evidence only:
 public `nx_sim_gravity(document, bodies, acceleration_m_s2, name)` now passes
 17-body SI readback, solution membership, replay, duplicate-name and overlap
-rejection (`public-gravity-r3.json`). Export and buoyancy validation remain.
+rejection (`public-gravity-r3.json`). Export now preserves acceleration [0,0,-9.80665] m/s² and Buoyancy=1
+(`gravity-export-audit-r1.json`); the source 25 °C SIM checksum is preserved.
+The native global CSYS selector 0 serializes as XML 1, with no per-body gravity
+selection. That mapping is not independently documented. The public tool now
+requires every FEM body and rejects selective gravity before mutation; 12 targeted
+gravity tests pass. This confirms authoring/export values, not numerical buoyancy
+behavior of the constant-property fluid. No solver was launched for this variant.
 The public fixture now contains its unsaved gravity load. Two preflight defects
 were fixed: unsupported property-table descriptor access and empty native target
 entries; the r1/r2 failure receipts are retained. The offline suite passed 763

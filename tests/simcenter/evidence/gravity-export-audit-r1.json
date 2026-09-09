@@ -1,0 +1,19 @@
+{
+  "input_sha256": "e7b437a9ffd03bcc239f53ffd8a3e51f68d3a534c2885fda828b778f6713dacd",
+  "acceleration_m_s2": [
+    0.0,
+    0.0,
+    -9.80665
+  ],
+  "buoyancy_enabled": true,
+  "vector_and_buoyancy_verified": true,
+  "native_csys_selector": 0,
+  "exported_csys_selector": 1,
+  "selection_serialized": false,
+  "limitations": [
+    "No selective-body gravity claim; whole FEM only",
+    "Native global CSYS 0 serialized as 1: mapping not independently documented",
+    "Constant fluid law retained; no numerical buoyancy validation or solve"
+  ],
+  "solver_launched": false
+}

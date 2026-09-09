@@ -46,7 +46,9 @@ def test_overlap_uses_native_load_descriptor_and_rejects_before_mutation(monkeyp
     load = NS(
         Name="existing",
         DescriptorName="ComponentGravityField",
-        TargetSetManager=NS(TargetSetCount=1, GetTargetSetMembers=lambda i: (0, [None, NS(Obj=None), NS(Obj=body)])),
+        TargetSetManager=NS(
+            TargetSetCount=1, GetTargetSetMembers=lambda i: (0, [None, NS(Obj=None), NS(Obj=body)])
+        ),
     )
     sim = NS(Simulation=NS(ActiveSolution=NS(AnalysisType="Coupled Thermal-Flow"), Loads=[load]))
     body.OwningPart = sim
@@ -54,3 +56,20 @@ def test_overlap_uses_native_load_descriptor_and_rejects_before_mutation(monkeyp
     with pytest.raises(NXToolError) as error:
         create(session, sim, [body], [0, 0, -9.8], "new name")
     assert error.value.code == "NX_SIM_DUPLICATE_GRAVITY"
+
+
+def test_public_handler_rejects_subset_before_creation():
+    from nx_mcp.simcenter.native import SimcenterMixin
+
+    fem = NS()
+    first, second = NS(Tag=1, OwningPart=fem), NS(Tag=2, OwningPart=fem)
+    fem.Bodies = [first, second]
+    sim = NS(
+        Simulation=NS(),
+        FemPart=fem,
+        ComponentAssembly=NS(RootComponent=NS(GetChildren=lambda: [NS(Prototype=fem)])),
+    )
+    executor = NS(objects=NS(resolve=lambda ref, **kw: {"sim": sim, "body": first}[ref]))
+    with pytest.raises(NXToolError, match="every FEM body") as error:
+        SimcenterMixin._sim_gravity(executor, "sim", ["body"], [0, 0, -9.8], "gravity")
+    assert error.value.details["mutation_outcome"] == "not_started"

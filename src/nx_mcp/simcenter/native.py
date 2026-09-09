@@ -1120,6 +1120,12 @@ class SimcenterMixin:
             or any(b.OwningPart != sim.FemPart for b in prototypes)
         ):
             raise NXToolError("NX_SIM_SELECTION_OWNER", "Select bodies from the SIM's direct FEM")
+        if {int(body.Tag) for body in prototypes} != {int(body.Tag) for body in sim.FemPart.Bodies}:
+            raise NXToolError(
+                "NX_SIM_UNSUPPORTED",
+                "Select every FEM body: selective gravity is not verified in the coupled solver export",
+                details={"mutation_outcome": "not_started"},
+            )
         result = create(
             self.session,
             sim,

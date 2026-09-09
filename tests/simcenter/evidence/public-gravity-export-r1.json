@@ -1,0 +1,814 @@
+{
+  "responses": {
+    "open": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [\"Document has unsaved native state; inspect and explicitly save approved analysis changes before preparing a solve\"], \"units\": \"mm\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_7f7a7a6182324cc5ba41cb17bc4aa6d5\", \"kind\": \"part\", \"name\": \"public_25c_r1\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_19d86b5e031d4420b786569cf39e89ac\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"19d86b5e031d4420b786569cf39e89ac\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-run-25c-r1\\\\public_25c_r1.sim\", \"journal_id\": \"public_25c_r1\", \"display_name\": \"public_25c_r1\"}, \"coordinate_frame\": \"part_absolute\", \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-run-25c-r1\\\\public_25c_r1.sim\", \"already_loaded\": true, \"modified_after_native_open\": null, \"modified_before_activation\": true, \"modified\": true, \"fully_loaded\": true, \"load_issues\": [], \"changed_existing_part_flags\": [], \"application\": \"UG_APP_SFEM\", \"work_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-run-25c-r1\\\\public_25c_r1.sim\", \"display_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-run-25c-r1\\\\public_25c_r1.sim\", \"saved\": false, \"result_freshness\": \"not_verified\", \"operation_id\": \"op_8a36460d865044d3ae48e1c618b125aa\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [
+          "Document has unsaved native state; inspect and explicitly save approved analysis changes before preparing a solve"
+        ],
+        "units": "mm",
+        "document": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_7f7a7a6182324cc5ba41cb17bc4aa6d5",
+          "kind": "part",
+          "name": "public_25c_r1",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_19d86b5e031d4420b786569cf39e89ac",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "19d86b5e031d4420b786569cf39e89ac",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-run-25c-r1\\public_25c_r1.sim",
+          "journal_id": "public_25c_r1",
+          "display_name": "public_25c_r1"
+        },
+        "coordinate_frame": "part_absolute",
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-run-25c-r1\\public_25c_r1.sim",
+        "already_loaded": true,
+        "modified_after_native_open": null,
+        "modified_before_activation": true,
+        "modified": true,
+        "fully_loaded": true,
+        "load_issues": [],
+        "changed_existing_part_flags": [],
+        "application": "UG_APP_SFEM",
+        "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-run-25c-r1\\public_25c_r1.sim",
+        "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-run-25c-r1\\public_25c_r1.sim",
+        "saved": false,
+        "result_freshness": "not_verified",
+        "operation_id": "op_8a36460d865044d3ae48e1c618b125aa",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed"
+      },
+      "isError": false
+    },
+    "source_before": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": null, \"path\": \"ui-benchmarks\\\\public-run-25c-r1\\\\public_25c_r1.sim\", \"size\": 7776552, \"sha256\": \"928dec2659c787bd7ff7dc44ea7d5939551afbd5d0efc17c015c9fda15e44010\", \"delivery\": \"metadata\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": null,
+        "path": "ui-benchmarks\\public-run-25c-r1\\public_25c_r1.sim",
+        "size": 7776552,
+        "sha256": "928dec2659c787bd7ff7dc44ea7d5939551afbd5d0efc17c015c9fda15e44010",
+        "delivery": "metadata"
+      },
+      "isError": false
+    },
+    "copy": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_01977e60e4154619807fda7a72eb6f35\", \"kind\": \"part\", \"name\": \"gravity_export_r1\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_19d86b5e031d4420b786569cf39e89ac\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"19d86b5e031d4420b786569cf39e89ac\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-gravity-export-r1\\\\gravity_export_r1.sim\", \"journal_id\": \"gravity_export_r1\", \"display_name\": \"gravity_export_r1\"}, \"source\": {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-run-25c-r1\\\\public_25c_r1.sim\", \"bytes\": 7776552, \"sha256\": \"928dec2659c787bd7ff7dc44ea7d5939551afbd5d0efc17c015c9fda15e44010\"}, \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-gravity-export-r1\\\\gravity_export_r1.sim\", \"source_file_unchanged\": true, \"work_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-gravity-export-r1\\\\gravity_export_r1.sim\", \"display_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-gravity-export-r1\\\\gravity_export_r1.sim\", \"shared_fem_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-analysis-25c-r1\\\\analysis_90ee39325d75_mesh.fem\", \"independent_geometry_variant\": false, \"saved\": true, \"result_freshness\": \"not_verified\", \"next_step\": \"Reacquire document IDs. Duplicate and reassociate FEM/CAD before changing shared geometry or mesh.\", \"operation_id\": \"gravity-export-copy-r1\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "document": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_01977e60e4154619807fda7a72eb6f35",
+          "kind": "part",
+          "name": "gravity_export_r1",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_19d86b5e031d4420b786569cf39e89ac",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "19d86b5e031d4420b786569cf39e89ac",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-gravity-export-r1\\gravity_export_r1.sim",
+          "journal_id": "gravity_export_r1",
+          "display_name": "gravity_export_r1"
+        },
+        "source": {
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-run-25c-r1\\public_25c_r1.sim",
+          "bytes": 7776552,
+          "sha256": "928dec2659c787bd7ff7dc44ea7d5939551afbd5d0efc17c015c9fda15e44010"
+        },
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-gravity-export-r1\\gravity_export_r1.sim",
+        "source_file_unchanged": true,
+        "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-gravity-export-r1\\gravity_export_r1.sim",
+        "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-gravity-export-r1\\gravity_export_r1.sim",
+        "shared_fem_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-analysis-25c-r1\\analysis_90ee39325d75_mesh.fem",
+        "independent_geometry_variant": false,
+        "saved": true,
+        "result_freshness": "not_verified",
+        "next_step": "Reacquire document IDs. Duplicate and reassociate FEM/CAD before changing shared geometry or mesh.",
+        "operation_id": "gravity-export-copy-r1",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed"
+      },
+      "isError": false
+    },
+    "faces": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"faces\": [{\"face\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_7be228e0c40946b29747b234d3ecea3f\", \"kind\": \"face\", \"name\": \"HANDLE R-37374\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_19d86b5e031d4420b786569cf39e89ac\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"19d86b5e031d4420b786569cf39e89ac\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-gravity-export-r1\\\\gravity_export_r1.sim\", \"journal_id\": \"HANDLE R-37374\", \"display_name\": \"\"}, \"body\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_5f6c23e0b49b45b4ba7486a9659fc833\", \"kind\": \"body\", \"name\": \"CAE_Body(1)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_f95cdd8ea7924f8b97f4a0bb5e139924\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"f95cdd8ea7924f8b97f4a0bb5e139924\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-analysis-25c-r1\\\\analysis_90ee39325d75_mesh.fem\", \"journal_id\": \"CAE_Body(1)\", \"display_name\": \"\"}, \"bounds\": {\"minimum\": [0.0, 0.0, 0.0], \"maximum\": [0.0, 10.0, 2.0]}}, {\"face\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_d72b76ff5d514b0e95743464446006c1\", \"kind\": \"face\", \"name\": \"HANDLE R-37454\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_19d86b5e031d4420b786569cf39e89ac\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"19d86b5e031d4420b786569cf39e89ac\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-gravity-export-r1\\\\gravity_export_r1.sim\", \"journal_id\": \"HANDLE R-37454\", \"display_name\": \"\"}, \"body\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_5f6c23e0b49b45b4ba7486a9659fc833\", \"kind\": \"body\", \"name\": \"CAE_Body(1)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_f95cdd8ea7924f8b97f4a0bb5e139924\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"f95cdd8ea7924f8b97f4a0bb5e139924\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-analysis-25c-r1\\\\analysis_90ee39325d75_mesh.fem\", \"journal_id\": \"CAE_Body(1)\", \"display_name\": \"\"}, \"bounds\": {\"minimum\": [20.0, 0.0, 0.0], \"maximum\": [20.0, 10.0, 2.0]}}, {\"face\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_b2fdff354dea4e008e7e4480ba0a4d96\", \"kind\": \"face\", \"name\": \"HANDLE R-37390\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_19d86b5e031d4420b786569cf39e89ac\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"19d86b5e031d4420b786569cf39e89ac\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-gravity-export-r1\\\\gravity_export_r1.sim\", \"journal_id\": \"HANDLE R-37390\", \"display_name\": \"\"}, \"body\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_5f6c23e0b49b45b4ba7486a9659fc833\", \"kind\": \"body\", \"name\": \"CAE_Body(1)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_f95cdd8ea7924f8b97f4a0bb5e139924\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"f95cdd8ea7924f8b97f4a0bb5e139924\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-analysis-25c-r1\\\\analysis_90ee39325d75_mesh.fem\", \"journal_id\": \"CAE_Body(1)\", \"display_name\": \"\"}, \"bounds\": {\"minimum\": [0.0, 0.0, 0.0], \"maximum\": [20.0, 0.0, 2.0]}}, {\"face\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_fad529f2c8124dc7a96a0583cf137664\", \"kind\": \"face\", \"name\": \"HANDLE R-37438\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_19d86b5e031d4420b786569cf39e89ac\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"19d86b5e031d4420b786569cf39e89ac\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-gravity-export-r1\\\\gravity_export_r1.sim\", \"journal_id\": \"HANDLE R-37438\", \"display_name\": \"\"}, \"body\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_5f6c23e0b49b45b4ba7486a9659fc833\", \"kind\": \"body\", \"name\": \"CAE_Body(1)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_f95cdd8ea7924f8b97f4a0bb5e139924\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"f95cdd8ea7924f8b97f4a0bb5e139924\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-analysis-25c-r1\\\\analysis_90ee39325d75_mesh.fem\", \"journal_id\": \"CAE_Body(1)\", \"display_name\": \"\"}, \"bounds\": {\"minimum\": [0.0, 10.0, 0.0], \"maximum\": [20.0, 10.0, 2.0]}}, {\"face\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_c8a65e6296264368a7ffbaeead5620da\", \"kind\": \"face\", \"name\": \"HANDLE R-37406\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_19d86b5e031d4420b786569cf39e89ac\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"19d86b5e031d4420b786569cf39e89ac\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-gravity-export-r1\\\\gravity_export_r1.sim\", \"journal_id\": \"HANDLE R-37406\", \"display_name\": \"\"}, \"body\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_5f6c23e0b49b45b4ba7486a9659fc833\", \"kind\": \"body\", \"name\": \"CAE_Body(1)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_f95cdd8ea7924f8b97f4a0bb5e139924\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"f95cdd8ea7924f8b97f4a0bb5e139924\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-analysis-25c-r1\\\\analysis_90ee39325d75_mesh.fem\", \"journal_id\": \"CAE_Body(1)\", \"display_name\": \"\"}, \"bounds\": {\"minimum\": [0.0, 0.0, 0.0], \"maximum\": [20.0, 10.0, 0.0]}}, {\"face\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_7dde83fcd6c54ca08a2ce360028bd674\", \"kind\": \"face\", \"name\": \"HANDLE R-37422\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_19d86b5e031d4420b786569cf39e89ac\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"19d86b5e031d4420b786569cf39e89ac\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-gravity-export-r1\\\\gravity_export_r1.sim\", \"journal_id\": \"HANDLE R-37422\", \"display_name\": \"\"}, \"body\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_5f6c23e0b49b45b4ba7486a9659fc833\", \"kind\": \"body\", \"name\": \"CAE_Body(1)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_f95cdd8ea7924f8b97f4a0bb5e139924\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"f95cdd8ea7924f8b97f4a0bb5e139924\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-analysis-25c-r1\\\\analysis_90ee39325d75_mesh.fem\", \"journal_id\": \"CAE_Body(1)\", \"display_name\": \"\"}, \"bounds\": {\"minimum\": [0.0, 0.0, 2.0], \"maximum\": [20.0, 10.0, 2.0]}}, {\"face\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_25711f10931a4f368da902e3eb38bd31\", \"kind\": \"face\", \"name\": \"HANDLE R-37650\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_19d86b5e031d4420b786569cf39e89ac\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"19d86b5e031d4420b786569cf39e89ac\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-gravity-export-r1\\\\gravity_export_r1.sim\", \"journal_id\": \"HANDLE R-37650\", \"display_name\": \"\"}, \"body\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_288272bb2d2640b28d9381332005458c\", \"kind\": \"body\", \"name\": \"CAE_Body(2)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_f95cdd8ea7924f8b97f4a0bb5e139924\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"f95cdd8ea7924f8b97f4a0bb5e139924\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-analysis-25c-r1\\\\analysis_90ee39325d75_mesh.fem\", \"journal_id\": \"CAE_Body(2)\", \"display_name\": \"\"}, \"bounds\": {\"minimum\": [0.0, 0.0, 2.0], \"maximum\": [0.0, 10.0, 10.0]}}, {\"face\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_7558464c813344e79ff753c7b714a949\", \"kind\": \"face\", \"name\": \"HANDLE R-37730\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_19d86b5e031d4420b786569cf39e89ac\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"19d86b5e031d4420b786569cf39e89ac\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-gravity-export-r1\\\\gravity_export_r1.sim\", \"journal_id\": \"HANDLE R-37730\", \"display_name\": \"\"}, \"body\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_288272bb2d2640b28d9381332005458c\", \"kind\": \"body\", \"name\": \"CAE_Body(2)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_f95cdd8ea7924f8b97f4a0bb5e139924\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"f95cdd8ea7924f8b97f4a0bb5e139924\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-analysis-25c-r1\\\\analysis_90ee39325d75_mesh.fem\", \"journal_id\": \"CAE_Body(2)\", \"display_name\": \"\"}, \"bounds\": {\"minimum\": [20.0, 0.0, 2.0], \"maximum\": [20.0, 10.0, 10.0]}}, {\"face\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_9182e5972d6c49ce9b12787afc5ec17c\", \"kind\": \"face\", \"name\": \"HANDLE R-37666\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_19d86b5e031d4420b786569cf39e89ac\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"19d86b5e031d4420b786569cf39e89ac\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-gravity-export-r1\\\\gravity_export_r1.sim\", \"journal_id\": \"HANDLE R-37666\", \"display_name\": \"\"}, \"body\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_288272bb2d2640b28d9381332005458c\", \"kind\": \"body\", \"name\": \"CAE_Body(2)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_f95cdd8ea7924f8b97f4a0bb5e139924\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"f95cdd8ea7924f8b97f4a0bb5e139924\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-analysis-25c-r1\\\\analysis_90ee39325d75_mesh.fem\", \"journal_id\": \"CAE_Body(2)\", \"display_name\": \"\"}, \"bounds\": {\"minimum\": [0.0, 0.0, 2.0], \"maximum\": [20.0, 0.0, 10.0]}}, {\"face\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_d65340d8775a4e1ab4664b95836a73ed\", \"kind\": \"face\", \"name\": \"HANDLE R-37714\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_19d86b5e031d4420b786569cf39e89ac\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"19d86b5e031d4420b786569cf39e89ac\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-gravity-export-r1\\\\gravity_export_r1.sim\", \"journal_id\": \"HANDLE R-37714\", \"display_name\": \"\"}, \"body\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_288272bb2d2640b28d9381332005458c\", \"kind\": \"body\", \"name\": \"CAE_Body(2)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_f95cdd8ea7924f8b97f4a0bb5e139924\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"f95cdd8ea7924f8b97f4a0bb5e139924\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-analysis-25c-r1\\\\analysis_90ee39325d75_mesh.fem\", \"journal_id\": \"CAE_Body(2)\", \"display_name\": \"\"}, \"bounds\": {\"minimum\": [0.0, 10.0, 2.0], \"maximum\": [20.0, 10.0, 10.0]}}, {\"face\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_ed6ef8755c7f4b108ea154982f3195d3\", \"kind\": \"face\", \"name\": \"HANDLE R-37682\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_19d86b5e031d4420b786569cf39e89ac\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"19d86b5e031d4420b786569cf39e89ac\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-gravity-export-r1\\\\gravity_export_r1.sim\", \"journal_id\": \"HANDLE R-37682\", \"display_name\": \"\"}, \"body\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_288272bb2d2640b28d9381332005458c\", \"kind\": \"body\", \"name\": \"CAE_Body(2)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_f95cdd8ea7924f8b97f4a0bb5e139924\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"f95cdd8ea7924f8b97f4a0bb5e139924\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-analysis-25c-r1\\\\analysis_90ee39325d75_mesh.fem\", \"journal_id\": \"CAE_Body(2)\", \"display_name\": \"\"}, \"bounds\": {\"minimum\": [0.0, 0.0, 2.0], \"maximum\": [20.0, 10.0, 2.0]}}, {\"face\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_9b43657aba064a01bed8381501b9d2ba\", \"kind\": \"face\", \"name\": \"HANDLE R-37698\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_19d86b5e031d4420b786569cf39e89ac\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"19d86b5e031d4420b786569cf39e89ac\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-gravity-export-r1\\\\gravity_export_r1.sim\", \"journal_id\": \"HANDLE R-37698\", \"display_name\": \"\"}, \"body\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_288272bb2d2640b28d9381332005458c\", \"kind\": \"body\", \"name\": \"CAE_Body(2)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_f95cdd8ea7924f8b97f4a0bb5e139924\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"f95cdd8ea7924f8b97f4a0bb5e139924\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-analysis-25c-r1\\\\analysis_90ee39325d75_mesh.fem\", \"journal_id\": \"CAE_Body(2)\", \"display_name\": \"\"}, \"bounds\": {\"minimum\": [0.0, 0.0, 10.0], \"maximum\": [20.0, 10.0, 10.0]}}], \"total\": 12, \"next_offset\": null, \"fem_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-analysis-25c-r1\\\\analysis_90ee39325d75_mesh.fem\", \"component_name\": \"ANALYSIS_90EE39325D75_MESH\", \"selection_scope\": \"sim_occurrence\", \"coordinate_frame\": \"fem_part_absolute\", \"bounds_kind\": \"native_face_bounding_box; not exact surface geometry\", \"scope\": \"direct standalone FEM; no nested assembly traversal\", \"operation_id\": \"op_d5375db03a474fcd806775cba8b39e46\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "faces": [
+          {
+            "face": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_7be228e0c40946b29747b234d3ecea3f",
+              "kind": "face",
+              "name": "HANDLE R-37374",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_19d86b5e031d4420b786569cf39e89ac",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "19d86b5e031d4420b786569cf39e89ac",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-gravity-export-r1\\gravity_export_r1.sim",
+              "journal_id": "HANDLE R-37374",
+              "display_name": ""
+            },
+            "body": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_5f6c23e0b49b45b4ba7486a9659fc833",
+              "kind": "body",
+              "name": "CAE_Body(1)",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_f95cdd8ea7924f8b97f4a0bb5e139924",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "f95cdd8ea7924f8b97f4a0bb5e139924",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-analysis-25c-r1\\analysis_90ee39325d75_mesh.fem",
+              "journal_id": "CAE_Body(1)",
+              "display_name": ""
+            },
+            "bounds": {
+              "minimum": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "maximum": [
+                0.0,
+                10.0,
+                2.0
+              ]
+            }
+          },
+          {
+            "face": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_d72b76ff5d514b0e95743464446006c1",
+              "kind": "face",
+              "name": "HANDLE R-37454",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_19d86b5e031d4420b786569cf39e89ac",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "19d86b5e031d4420b786569cf39e89ac",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-gravity-export-r1\\gravity_export_r1.sim",
+              "journal_id": "HANDLE R-37454",
+              "display_name": ""
+            },
+            "body": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_5f6c23e0b49b45b4ba7486a9659fc833",
+              "kind": "body",
+              "name": "CAE_Body(1)",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_f95cdd8ea7924f8b97f4a0bb5e139924",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "f95cdd8ea7924f8b97f4a0bb5e139924",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-analysis-25c-r1\\analysis_90ee39325d75_mesh.fem",
+              "journal_id": "CAE_Body(1)",
+              "display_name": ""
+            },
+            "bounds": {
+              "minimum": [
+                20.0,
+                0.0,
+                0.0
+              ],
+              "maximum": [
+                20.0,
+                10.0,
+                2.0
+              ]
+            }
+          },
+          {
+            "face": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_b2fdff354dea4e008e7e4480ba0a4d96",
+              "kind": "face",
+              "name": "HANDLE R-37390",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_19d86b5e031d4420b786569cf39e89ac",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "19d86b5e031d4420b786569cf39e89ac",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-gravity-export-r1\\gravity_export_r1.sim",
+              "journal_id": "HANDLE R-37390",
+              "display_name": ""
+            },
+            "body": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_5f6c23e0b49b45b4ba7486a9659fc833",
+              "kind": "body",
+              "name": "CAE_Body(1)",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_f95cdd8ea7924f8b97f4a0bb5e139924",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "f95cdd8ea7924f8b97f4a0bb5e139924",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-analysis-25c-r1\\analysis_90ee39325d75_mesh.fem",
+              "journal_id": "CAE_Body(1)",
+              "display_name": ""
+            },
+            "bounds": {
+              "minimum": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "maximum": [
+                20.0,
+                0.0,
+                2.0
+              ]
+            }
+          },
+          {
+            "face": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_fad529f2c8124dc7a96a0583cf137664",
+              "kind": "face",
+              "name": "HANDLE R-37438",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_19d86b5e031d4420b786569cf39e89ac",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "19d86b5e031d4420b786569cf39e89ac",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-gravity-export-r1\\gravity_export_r1.sim",
+              "journal_id": "HANDLE R-37438",
+              "display_name": ""
+            },
+            "body": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_5f6c23e0b49b45b4ba7486a9659fc833",
+              "kind": "body",
+              "name": "CAE_Body(1)",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_f95cdd8ea7924f8b97f4a0bb5e139924",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "f95cdd8ea7924f8b97f4a0bb5e139924",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-analysis-25c-r1\\analysis_90ee39325d75_mesh.fem",
+              "journal_id": "CAE_Body(1)",
+              "display_name": ""
+            },
+            "bounds": {
+              "minimum": [
+                0.0,
+                10.0,
+                0.0
+              ],
+              "maximum": [
+                20.0,
+                10.0,
+                2.0
+              ]
+            }
+          },
+          {
+            "face": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_c8a65e6296264368a7ffbaeead5620da",
+              "kind": "face",
+              "name": "HANDLE R-37406",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_19d86b5e031d4420b786569cf39e89ac",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "19d86b5e031d4420b786569cf39e89ac",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-gravity-export-r1\\gravity_export_r1.sim",
+              "journal_id": "HANDLE R-37406",
+              "display_name": ""
+            },
+            "body": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_5f6c23e0b49b45b4ba7486a9659fc833",
+              "kind": "body",
+              "name": "CAE_Body(1)",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_f95cdd8ea7924f8b97f4a0bb5e139924",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "f95cdd8ea7924f8b97f4a0bb5e139924",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-analysis-25c-r1\\analysis_90ee39325d75_mesh.fem",
+              "journal_id": "CAE_Body(1)",
+              "display_name": ""
+            },
+            "bounds": {
+              "minimum": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "maximum": [
+                20.0,
+                10.0,
+                0.0
+              ]
+            }
+          },
+          {
+            "face": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_7dde83fcd6c54ca08a2ce360028bd674",
+              "kind": "face",
+              "name": "HANDLE R-37422",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_19d86b5e031d4420b786569cf39e89ac",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "19d86b5e031d4420b786569cf39e89ac",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-gravity-export-r1\\gravity_export_r1.sim",
+              "journal_id": "HANDLE R-37422",
+              "display_name": ""
+            },
+            "body": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_5f6c23e0b49b45b4ba7486a9659fc833",
+              "kind": "body",
+              "name": "CAE_Body(1)",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_f95cdd8ea7924f8b97f4a0bb5e139924",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "f95cdd8ea7924f8b97f4a0bb5e139924",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-analysis-25c-r1\\analysis_90ee39325d75_mesh.fem",
+              "journal_id": "CAE_Body(1)",
+              "display_name": ""
+            },
+            "bounds": {
+              "minimum": [
+                0.0,
+                0.0,
+                2.0
+              ],
+              "maximum": [
+                20.0,
+                10.0,
+                2.0
+              ]
+            }
+          },
+          {
+            "face": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_25711f10931a4f368da902e3eb38bd31",
+              "kind": "face",
+              "name": "HANDLE R-37650",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_19d86b5e031d4420b786569cf39e89ac",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "19d86b5e031d4420b786569cf39e89ac",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-gravity-export-r1\\gravity_export_r1.sim",
+              "journal_id": "HANDLE R-37650",
+              "display_name": ""
+            },
+            "body": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_288272bb2d2640b28d9381332005458c",
+              "kind": "body",
+              "name": "CAE_Body(2)",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_f95cdd8ea7924f8b97f4a0bb5e139924",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "f95cdd8ea7924f8b97f4a0bb5e139924",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-analysis-25c-r1\\analysis_90ee39325d75_mesh.fem",
+              "journal_id": "CAE_Body(2)",
+              "display_name": ""
+            },
+            "bounds": {
+              "minimum": [
+                0.0,
+                0.0,
+                2.0
+              ],
+              "maximum": [
+                0.0,
+                10.0,
+                10.0
+              ]
+            }
+          },
+          {
+            "face": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_7558464c813344e79ff753c7b714a949",
+              "kind": "face",
+              "name": "HANDLE R-37730",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_19d86b5e031d4420b786569cf39e89ac",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "19d86b5e031d4420b786569cf39e89ac",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-gravity-export-r1\\gravity_export_r1.sim",
+              "journal_id": "HANDLE R-37730",
+              "display_name": ""
+            },
+            "body": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_288272bb2d2640b28d9381332005458c",
+              "kind": "body",
+              "name": "CAE_Body(2)",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_f95cdd8ea7924f8b97f4a0bb5e139924",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "f95cdd8ea7924f8b97f4a0bb5e139924",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-analysis-25c-r1\\analysis_90ee39325d75_mesh.fem",
+              "journal_id": "CAE_Body(2)",
+              "display_name": ""
+            },
+            "bounds": {
+              "minimum": [
+                20.0,
+                0.0,
+                2.0
+              ],
+              "maximum": [
+                20.0,
+                10.0,
+                10.0
+              ]
+            }
+          },
+          {
+            "face": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_9182e5972d6c49ce9b12787afc5ec17c",
+              "kind": "face",
+              "name": "HANDLE R-37666",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_19d86b5e031d4420b786569cf39e89ac",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "19d86b5e031d4420b786569cf39e89ac",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-gravity-export-r1\\gravity_export_r1.sim",
+              "journal_id": "HANDLE R-37666",
+              "display_name": ""
+            },
+            "body": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_288272bb2d2640b28d9381332005458c",
+              "kind": "body",
+              "name": "CAE_Body(2)",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_f95cdd8ea7924f8b97f4a0bb5e139924",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "f95cdd8ea7924f8b97f4a0bb5e139924",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-analysis-25c-r1\\analysis_90ee39325d75_mesh.fem",
+              "journal_id": "CAE_Body(2)",
+              "display_name": ""
+            },
+            "bounds": {
+              "minimum": [
+                0.0,
+                0.0,
+                2.0
+              ],
+              "maximum": [
+                20.0,
+                0.0,
+                10.0
+              ]
+            }
+          },
+          {
+            "face": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_d65340d8775a4e1ab4664b95836a73ed",
+              "kind": "face",
+              "name": "HANDLE R-37714",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_19d86b5e031d4420b786569cf39e89ac",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "19d86b5e031d4420b786569cf39e89ac",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-gravity-export-r1\\gravity_export_r1.sim",
+              "journal_id": "HANDLE R-37714",
+              "display_name": ""
+            },
+            "body": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_288272bb2d2640b28d9381332005458c",
+              "kind": "body",
+              "name": "CAE_Body(2)",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_f95cdd8ea7924f8b97f4a0bb5e139924",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "f95cdd8ea7924f8b97f4a0bb5e139924",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-analysis-25c-r1\\analysis_90ee39325d75_mesh.fem",
+              "journal_id": "CAE_Body(2)",
+              "display_name": ""
+            },
+            "bounds": {
+              "minimum": [
+                0.0,
+                10.0,
+                2.0
+              ],
+              "maximum": [
+                20.0,
+                10.0,
+                10.0
+              ]
+            }
+          },
+          {
+            "face": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_ed6ef8755c7f4b108ea154982f3195d3",
+              "kind": "face",
+              "name": "HANDLE R-37682",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_19d86b5e031d4420b786569cf39e89ac",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "19d86b5e031d4420b786569cf39e89ac",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-gravity-export-r1\\gravity_export_r1.sim",
+              "journal_id": "HANDLE R-37682",
+              "display_name": ""
+            },
+            "body": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_288272bb2d2640b28d9381332005458c",
+              "kind": "body",
+              "name": "CAE_Body(2)",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_f95cdd8ea7924f8b97f4a0bb5e139924",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "f95cdd8ea7924f8b97f4a0bb5e139924",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-analysis-25c-r1\\analysis_90ee39325d75_mesh.fem",
+              "journal_id": "CAE_Body(2)",
+              "display_name": ""
+            },
+            "bounds": {
+              "minimum": [
+                0.0,
+                0.0,
+                2.0
+              ],
+              "maximum": [
+                20.0,
+                10.0,
+                2.0
+              ]
+            }
+          },
+          {
+            "face": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_9b43657aba064a01bed8381501b9d2ba",
+              "kind": "face",
+              "name": "HANDLE R-37698",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_19d86b5e031d4420b786569cf39e89ac",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "19d86b5e031d4420b786569cf39e89ac",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-gravity-export-r1\\gravity_export_r1.sim",
+              "journal_id": "HANDLE R-37698",
+              "display_name": ""
+            },
+            "body": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_288272bb2d2640b28d9381332005458c",
+              "kind": "body",
+              "name": "CAE_Body(2)",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_f95cdd8ea7924f8b97f4a0bb5e139924",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "f95cdd8ea7924f8b97f4a0bb5e139924",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-analysis-25c-r1\\analysis_90ee39325d75_mesh.fem",
+              "journal_id": "CAE_Body(2)",
+              "display_name": ""
+            },
+            "bounds": {
+              "minimum": [
+                0.0,
+                0.0,
+                10.0
+              ],
+              "maximum": [
+                20.0,
+                10.0,
+                10.0
+              ]
+            }
+          }
+        ],
+        "total": 12,
+        "next_offset": null,
+        "fem_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-analysis-25c-r1\\analysis_90ee39325d75_mesh.fem",
+        "component_name": "ANALYSIS_90EE39325D75_MESH",
+        "selection_scope": "sim_occurrence",
+        "coordinate_frame": "fem_part_absolute",
+        "bounds_kind": "native_face_bounding_box; not exact surface geometry",
+        "scope": "direct standalone FEM; no nested assembly traversal",
+        "operation_id": "op_d5375db03a474fcd806775cba8b39e46",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "not_applicable"
+      },
+      "isError": false
+    },
+    "gravity": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"m/s^2\", \"load\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_c084970da0f542e1a06580a4e0b331a5\", \"kind\": \"simulation_load\", \"name\": \"Export gravity\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_19d86b5e031d4420b786569cf39e89ac\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"19d86b5e031d4420b786569cf39e89ac\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-gravity-export-r1\\\\gravity_export_r1.sim\", \"journal_id\": \"Load[Export gravity]\", \"display_name\": \"Export gravity\"}, \"bodies\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_5f6c23e0b49b45b4ba7486a9659fc833\", \"kind\": \"body\", \"name\": \"CAE_Body(1)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_f95cdd8ea7924f8b97f4a0bb5e139924\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"f95cdd8ea7924f8b97f4a0bb5e139924\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-analysis-25c-r1\\\\analysis_90ee39325d75_mesh.fem\", \"journal_id\": \"CAE_Body(1)\", \"display_name\": \"\"}, {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_288272bb2d2640b28d9381332005458c\", \"kind\": \"body\", \"name\": \"CAE_Body(2)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_f95cdd8ea7924f8b97f4a0bb5e139924\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"f95cdd8ea7924f8b97f4a0bb5e139924\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-analysis-25c-r1\\\\analysis_90ee39325d75_mesh.fem\", \"journal_id\": \"CAE_Body(2)\", \"display_name\": \"\"}], \"acceleration_m_s2\": [0.0, 0.0, -9.80665], \"coordinate_frame\": \"global_cartesian\", \"target_count\": 2, \"solution_member\": true, \"saved\": false, \"solver_launched\": false, \"results_stale\": true, \"buoyancy_changed\": false, \"operation_id\": \"gravity-export-author-r1\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "m/s^2",
+        "load": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_c084970da0f542e1a06580a4e0b331a5",
+          "kind": "simulation_load",
+          "name": "Export gravity",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_19d86b5e031d4420b786569cf39e89ac",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "19d86b5e031d4420b786569cf39e89ac",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-gravity-export-r1\\gravity_export_r1.sim",
+          "journal_id": "Load[Export gravity]",
+          "display_name": "Export gravity"
+        },
+        "bodies": [
+          {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_5f6c23e0b49b45b4ba7486a9659fc833",
+            "kind": "body",
+            "name": "CAE_Body(1)",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_f95cdd8ea7924f8b97f4a0bb5e139924",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "f95cdd8ea7924f8b97f4a0bb5e139924",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-analysis-25c-r1\\analysis_90ee39325d75_mesh.fem",
+            "journal_id": "CAE_Body(1)",
+            "display_name": ""
+          },
+          {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_288272bb2d2640b28d9381332005458c",
+            "kind": "body",
+            "name": "CAE_Body(2)",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_f95cdd8ea7924f8b97f4a0bb5e139924",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "f95cdd8ea7924f8b97f4a0bb5e139924",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-analysis-25c-r1\\analysis_90ee39325d75_mesh.fem",
+            "journal_id": "CAE_Body(2)",
+            "display_name": ""
+          }
+        ],
+        "acceleration_m_s2": [
+          0.0,
+          0.0,
+          -9.80665
+        ],
+        "coordinate_frame": "global_cartesian",
+        "target_count": 2,
+        "solution_member": true,
+        "saved": false,
+        "solver_launched": false,
+        "results_stale": true,
+        "buoyancy_changed": false,
+        "operation_id": "gravity-export-author-r1",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed"
+      },
+      "isError": false
+    },
+    "environment": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"previous\": {\"ambient_pressure_selector\": 0, \"buoyancy\": false, \"values\": {\"Fluid Temperature\": {\"value\": 25.0, \"unit\": \"Celsius\", \"scale\": 1.0}, \"Absolute Pressure\": {\"value\": 101325.0, \"unit\": \"PressurePascals\", \"scale\": 1.0}}}, \"actual\": {\"ambient_pressure_selector\": 0, \"buoyancy\": true, \"values\": {\"Fluid Temperature\": {\"value\": 25.0, \"unit\": \"Celsius\", \"scale\": 1.0}, \"Absolute Pressure\": {\"value\": 101325.0, \"unit\": \"PressurePascals\", \"scale\": 1.0}}}, \"temperature_c\": 25.0, \"pressure_pa\": 101325.0, \"pressure_mode\": \"specified_absolute\", \"density_treatment\": \"assigned native material law; altitude-derived ambient pressure disabled\", \"gravity\": \"existing native gravity loads unchanged; inspect before buoyant solve\", \"saved\": false, \"results_stale\": true, \"solver_launched\": false, \"operation_id\": \"op_9199d6f8258542efa6fbce9f6cb05dec\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "previous": {
+          "ambient_pressure_selector": 0,
+          "buoyancy": false,
+          "values": {
+            "Fluid Temperature": {
+              "value": 25.0,
+              "unit": "Celsius",
+              "scale": 1.0
+            },
+            "Absolute Pressure": {
+              "value": 101325.0,
+              "unit": "PressurePascals",
+              "scale": 1.0
+            }
+          }
+        },
+        "actual": {
+          "ambient_pressure_selector": 0,
+          "buoyancy": true,
+          "values": {
+            "Fluid Temperature": {
+              "value": 25.0,
+              "unit": "Celsius",
+              "scale": 1.0
+            },
+            "Absolute Pressure": {
+              "value": 101325.0,
+              "unit": "PressurePascals",
+              "scale": 1.0
+            }
+          }
+        },
+        "temperature_c": 25.0,
+        "pressure_pa": 101325.0,
+        "pressure_mode": "specified_absolute",
+        "density_treatment": "assigned native material law; altitude-derived ambient pressure disabled",
+        "gravity": "existing native gravity loads unchanged; inspect before buoyant solve",
+        "saved": false,
+        "results_stale": true,
+        "solver_launched": false,
+        "operation_id": "op_9199d6f8258542efa6fbce9f6cb05dec",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed"
+      },
+      "isError": false
+    },
+    "save": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"saved\": true, \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-gravity-export-r1\\\\gravity_export_r1.sim\", \"file\": {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-gravity-export-r1\\\\gravity_export_r1.sim\", \"bytes\": 7790726, \"sha256\": \"ea30648d7f801f89c337a0206b0c2385fc880851f8bdd0761194deaf046dfee0\"}, \"previous_file\": {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-gravity-export-r1\\\\gravity_export_r1.sim\", \"bytes\": 7848532, \"sha256\": \"33f3a6c6b5173a2652fd148fadde9014572c859fb0bdfb0def19a7deac072ec8\"}, \"backup_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\simcenter-save-backups\\\\14aea8777824422086be0b84ac5d65b5\\\\gravity_export_r1.sim\", \"saved_components\": false, \"closed\": false, \"other_modified_flags_unchanged\": true, \"result_freshness\": \"not_verified\", \"operation_id\": \"op_793097f2f9b84750a25ac1ffeea291f4\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "saved": true,
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-gravity-export-r1\\gravity_export_r1.sim",
+        "file": {
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-gravity-export-r1\\gravity_export_r1.sim",
+          "bytes": 7790726,
+          "sha256": "ea30648d7f801f89c337a0206b0c2385fc880851f8bdd0761194deaf046dfee0"
+        },
+        "previous_file": {
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-gravity-export-r1\\gravity_export_r1.sim",
+          "bytes": 7848532,
+          "sha256": "33f3a6c6b5173a2652fd148fadde9014572c859fb0bdfb0def19a7deac072ec8"
+        },
+        "backup_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-save-backups\\14aea8777824422086be0b84ac5d65b5\\gravity_export_r1.sim",
+        "saved_components": false,
+        "closed": false,
+        "other_modified_flags_unchanged": true,
+        "result_freshness": "not_verified",
+        "operation_id": "op_793097f2f9b84750a25ac1ffeea291f4",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed"
+      },
+      "isError": false
+    },
+    "prepare": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"job_id\": \"public-gravity-export-r1\", \"state\": \"accepted\", \"request_sha256\": \"0f660e23ba8c0b850a7d4d9107997ad269cf3b7526ca086b253747f2dbdd09b8\", \"replayed\": false, \"preparation_revalidated\": true, \"solver_launched_by_call\": false, \"input_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-gravity-export-r1\\\\gravity_export_r1-Public_coupled.xml\", \"input_sha256\": \"e7b437a9ffd03bcc239f53ffd8a3e51f68d3a534c2885fda828b778f6713dacd\", \"output_claim\": {\"schema\": 1, \"job_id\": \"public-gravity-export-r1\", \"job_directory\": \"d:\\\\cad\\\\simcenter_mcp_workspace\\\\simcenter-jobs\\\\public-gravity-export-r1\", \"request_sha256\": \"0f660e23ba8c0b850a7d4d9107997ad269cf3b7526ca086b253747f2dbdd09b8\", \"output_directory\": \"d:\\\\cad\\\\simcenter_mcp_workspace\\\\ui-benchmarks\\\\public-gravity-export-r1\", \"replayed\": false, \"retention\": \"permanent; no automatic release\"}, \"mesh_counts\": {\"element_sets\": 2, \"elements\": 1816, \"nodes\": 563, \"scope\": \"observed_multiphysics_xml_layout\"}, \"dependency_completeness\": \"not_established\", \"solve_readiness\": \"not_established\", \"next_step\": \"Inspect the immutable manifest with nx_sim_job_status(include_manifest=True), then use nx_sim_launch; cancellation is not yet implemented\", \"operation_id\": \"gravity-export-prepare-r1\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "job_id": "public-gravity-export-r1",
+        "state": "accepted",
+        "request_sha256": "0f660e23ba8c0b850a7d4d9107997ad269cf3b7526ca086b253747f2dbdd09b8",
+        "replayed": false,
+        "preparation_revalidated": true,
+        "solver_launched_by_call": false,
+        "input_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-gravity-export-r1\\gravity_export_r1-Public_coupled.xml",
+        "input_sha256": "e7b437a9ffd03bcc239f53ffd8a3e51f68d3a534c2885fda828b778f6713dacd",
+        "output_claim": {
+          "schema": 1,
+          "job_id": "public-gravity-export-r1",
+          "job_directory": "d:\\cad\\simcenter_mcp_workspace\\simcenter-jobs\\public-gravity-export-r1",
+          "request_sha256": "0f660e23ba8c0b850a7d4d9107997ad269cf3b7526ca086b253747f2dbdd09b8",
+          "output_directory": "d:\\cad\\simcenter_mcp_workspace\\ui-benchmarks\\public-gravity-export-r1",
+          "replayed": false,
+          "retention": "permanent; no automatic release"
+        },
+        "mesh_counts": {
+          "element_sets": 2,
+          "elements": 1816,
+          "nodes": 563,
+          "scope": "observed_multiphysics_xml_layout"
+        },
+        "dependency_completeness": "not_established",
+        "solve_readiness": "not_established",
+        "next_step": "Inspect the immutable manifest with nx_sim_job_status(include_manifest=True), then use nx_sim_launch; cancellation is not yet implemented",
+        "operation_id": "gravity-export-prepare-r1",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed"
+      },
+      "isError": false
+    },
+    "source_after": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": null, \"path\": \"ui-benchmarks\\\\public-run-25c-r1\\\\public_25c_r1.sim\", \"size\": 7776552, \"sha256\": \"928dec2659c787bd7ff7dc44ea7d5939551afbd5d0efc17c015c9fda15e44010\", \"delivery\": \"metadata\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": null,
+        "path": "ui-benchmarks\\public-run-25c-r1\\public_25c_r1.sim",
+        "size": 7776552,
+        "sha256": "928dec2659c787bd7ff7dc44ea7d5939551afbd5d0efc17c015c9fda15e44010",
+        "delivery": "metadata"
+      },
+      "isError": false
+    }
+  },
+  "passed": true,
+  "solver_launched": false,
+  "document": "obj_20bc234ffa5249ceb4fb4d82b993c626_01977e60e4154619807fda7a72eb6f35",
+  "source_sim_preserved": true
+}
