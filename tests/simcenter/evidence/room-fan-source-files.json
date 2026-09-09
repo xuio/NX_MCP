@@ -1,0 +1,378 @@
+﻿{
+    "root":  "C:\\ProgramData\\BasementHypervisor\\nx-mcp-simcenter\\source\\src\\nx_mcp\\simcenter",
+    "files":  [
+                  {
+                      "sha256":  "e7475122710c7bbea23c2165ec76122b50a4650283cfb084055843f83b5f5d77",
+                      "name":  "benchmark_geometry.py"
+                  },
+                  {
+                      "sha256":  "3f027b4f0bccc351bd5fcc88b6c767d9fbbd34540e27f6f629c1eab41315d709",
+                      "name":  "boundaries.py"
+                  },
+                  {
+                      "sha256":  "05c86c9824c27f4cf983361bc0300d1ceec8bd484c9e7ea99df04bb9d6c8ecdb",
+                      "name":  "boundary_geometry.py"
+                  },
+                  {
+                      "sha256":  "da3a748004176426e4159e5b96fe32eda64ae7fef8b887ae7ccf813edb1e2024",
+                      "name":  "boundary_layers.py"
+                  },
+                  {
+                      "sha256":  "e9d8be61e6fd25a1b3215f50f5bb37b3e371bc3e43f97d5b6d6fe17207f12512",
+                      "name":  "boundary_state.py"
+                  },
+                  {
+                      "sha256":  "e343e6752f21927dc914e470a2edd599a96d092ae7ce9217d0c747783e5c3243",
+                      "name":  "cancellation.py"
+                  },
+                  {
+                      "sha256":  "74543c7b0d37aad32554f90e41e8f2d5799f585e6e86374004530bcfa3cc385c",
+                      "name":  "capabilities.py"
+                  },
+                  {
+                      "sha256":  "1661fa223e84aa76d448d16396cc94afc89e451ccc914e39b7766f19d944f8ef",
+                      "name":  "collector_state.py"
+                  },
+                  {
+                      "sha256":  "0bb81ab62a1b9e3fd0c843a52fcbea44b94f3bc0211169c1d884b355400471ea",
+                      "name":  "contact.py"
+                  },
+                  {
+                      "sha256":  "ce66323f29cad64b6f8f008174b94f48f128908842495c3f53d5bb64bb3740c5",
+                      "name":  "convection_environment.py"
+                  },
+                  {
+                      "sha256":  "159f97e6f6ddd142676f3cfa00b3fca22fab279977a9b2c054331e2d74816ecc",
+                      "name":  "coupled_input.py"
+                  },
+                  {
+                      "sha256":  "683abb0be36577335e2aa90d9fda62d6c0eace9a0f481dce0f7e77597155e08c",
+                      "name":  "coupled_log.py"
+                  },
+                  {
+                      "sha256":  "3219b25cb5f4b0d3f2d6a34b631cb4f6edfc1bc51fa253b59ca37ea82ccd9d8e",
+                      "name":  "coupled_setup.py"
+                  },
+                  {
+                      "sha256":  "a24e66eb5c7b058644861f73acbc670eb2d7370c402fe4207506715909d9dd45",
+                      "name":  "dependencies.py"
+                  },
+                  {
+                      "sha256":  "8487857a50a32a0a568f43cd62844fb2d098a259198e24572f3dcd6a2b83c0ca",
+                      "name":  "descriptors.py"
+                  },
+                  {
+                      "sha256":  "51b7bdbff19f8953f979a935704fa271e25ffa45245e0db300b2b2dccc5edc65",
+                      "name":  "directional_material.py"
+                  },
+                  {
+                      "sha256":  "527672ef39aaa4a70f29565f15f996c83a2806c5a5ba2ef1493b8bbed98f3fb5",
+                      "name":  "distributed_heat.py"
+                  },
+                  {
+                      "sha256":  "48b5acbd0acc1aa3ffe25a3c1de43bc87398bab38e6fa7a7f38816f5cc3e430f",
+                      "name":  "documents.py"
+                  },
+                  {
+                      "sha256":  "05dc4aba942cb98ddb4bbf273a67ea8047c39a0661e8fe9320c5c4664788480b",
+                      "name":  "external_conditions.py"
+                  },
+                  {
+                      "sha256":  "b40c5bf41f5a4d52ffddba152ef81602dfba808edb0d2436c215ccdaf7300caa",
+                      "name":  "fan_boundary.py"
+                  },
+                  {
+                      "sha256":  "3a8b39d03c29ab2caf9973443897835c5197cc837a0ede656bbc5cb409cf4860",
+                      "name":  "fan_field.py"
+                  },
+                  {
+                      "sha256":  "dfde11ae339dff18801602617f0e72c7421ccaeaa927a29123fd6925b17f6d45",
+                      "name":  "fan_results.py"
+                  },
+                  {
+                      "sha256":  "93c48ec626c81ad3eb0d510a000631bdf288fe913042e48b3c6ee44df44d44be",
+                      "name":  "fan_scaling.py"
+                  },
+                  {
+                      "sha256":  "ae2fb8e4df0a1e455f0063f4d571f3f25c1217748df605b69e19726f88060790",
+                      "name":  "fan_summary.py"
+                  },
+                  {
+                      "sha256":  "530c7ff57609a18f1271f416418a68d8828a7138c5eaf38204ab52df38a1a1df",
+                      "name":  "field_definition.py"
+                  },
+                  {
+                      "sha256":  "478cd7c714223c681c116d67959ae6db2acf569f82904a23149adc44e92c2888",
+                      "name":  "flow.py"
+                  },
+                  {
+                      "sha256":  "e06b18ea2e104ec827f8b2341c0654b7871fe0b4a1cb65a0994c8c25717a385f",
+                      "name":  "flow_audit.py"
+                  },
+                  {
+                      "sha256":  "abaa0f081cf655928c856db468ab8f9b7424fd4007da242ef59bc50d98b41dd7",
+                      "name":  "flow_controls.py"
+                  },
+                  {
+                      "sha256":  "277e7a5917b093d8b88b28e901f5d39a17e878a9c4b679ec1112caee067f2715",
+                      "name":  "flow_results.py"
+                  },
+                  {
+                      "sha256":  "a2304d966d9de5f965cce8cf9b8312342d0240ecbfa7f0d31ddcfd44a6ff1289",
+                      "name":  "fluid_domain.py"
+                  },
+                  {
+                      "sha256":  "012f9c17e96cfa52dfaf8b8e668fa4ad22bcb975e4ddcad3326461de577b25a8",
+                      "name":  "fluid_material.py"
+                  },
+                  {
+                      "sha256":  "b003893bd3039d232dfe3d827347c42a7e573495f2e2719b051877a4e890c151",
+                      "name":  "head_loss.py"
+                  },
+                  {
+                      "sha256":  "965e89756f3f9fc11f817a00dc94f61d55ff89469bde83f0117c5f09c183cec3",
+                      "name":  "heat_loads.py"
+                  },
+                  {
+                      "sha256":  "662ee1aee77dbfd1104836276d232f247c3787c0ffe9bc43743a948555f81668",
+                      "name":  "heat_overlap.py"
+                  },
+                  {
+                      "sha256":  "58718a99ebefc8bcd4e40eb6751ae0065d3eb677df3763863ef755698cb0c8a7",
+                      "name":  "heat_schedule.py"
+                  },
+                  {
+                      "sha256":  "6f319797d8824b4e6db0a81d89b647ccbc02bbf68cd9919ce341dc9d6e812c64",
+                      "name":  "initial_conditions.py"
+                  },
+                  {
+                      "sha256":  "82aef3142dd8c1bd76574d8d6aed78c277f00b528931a4a1dc04bdeb6cb4ec71",
+                      "name":  "inputs.py"
+                  },
+                  {
+                      "sha256":  "f2739d037f262aeff4745e9d458862d8efc1575c0107bfb1486111149eb3dcc7",
+                      "name":  "input_export.py"
+                  },
+                  {
+                      "sha256":  "6c225c7849ca64296f8fdbfefa8ea8bd3e315b27db7f58526e0698eacfac3e2d",
+                      "name":  "jobs.py"
+                  },
+                  {
+                      "sha256":  "d42d44d17f7caa4142a15456ca9aa265cd5a83fc5903f4bb7e45d65d17c2a763",
+                      "name":  "job_observer.py"
+                  },
+                  {
+                      "sha256":  "37e39e95074a52b352715657186c38a17cf5aa29196356b1e4d019158bafc52b",
+                      "name":  "job_processes.py"
+                  },
+                  {
+                      "sha256":  "578ba5a0e3e24583ac2cdb26cd4f0a257bf2dd7dfd5a0fad8f0909f062c96460",
+                      "name":  "launch.py"
+                  },
+                  {
+                      "sha256":  "65a4757fbe73a3c49c501f4b4d79d1abf6a8f70baa5f517b349b4fcd7feb77d1",
+                      "name":  "launch_gate.py"
+                  },
+                  {
+                      "sha256":  "23d94cde5c0c378df12d09866bb50f275c2ccc2910a3f8871995b565aa0fba5a",
+                      "name":  "local_size.py"
+                  },
+                  {
+                      "sha256":  "1832a482e8443a45a1e8141e7755df53227b1809d1374ac74be1974993e6553b",
+                      "name":  "log_reader.py"
+                  },
+                  {
+                      "sha256":  "ecef36307c8cf6c2933de60424aced8ea6b15e03931f7e4744b5a9cf61d3e00a",
+                      "name":  "material_assignment.py"
+                  },
+                  {
+                      "sha256":  "7405e399a7765f7b10599b28f5dfdcbf5dc9d144829db80b0f7db9dd1d38864c",
+                      "name":  "material_inventory.py"
+                  },
+                  {
+                      "sha256":  "a74dbdedfbae6615dcc4603d240d6628507f67ba62d1e0baad326cae848fbc66",
+                      "name":  "material_orientation.py"
+                  },
+                  {
+                      "sha256":  "110ef48709e0c702a4018bcf95b32eee75632a06ef2b04393b1630b928709406",
+                      "name":  "mesh_controls.py"
+                  },
+                  {
+                      "sha256":  "e6e9350c190c96c4f8cca1056814b21c6049947036d39811dac8cbc88db52b45",
+                      "name":  "mesh_guard.py"
+                  },
+                  {
+                      "sha256":  "5d01303f1503d2a1d3341ca3dab98bbe4dbee569bbb830cfa5a0a6676223a2f9",
+                      "name":  "mesh_plan.py"
+                  },
+                  {
+                      "sha256":  "09dee6935289f0a9ad2401c060b366eed03efcb7207dec478669fa7e14d32208",
+                      "name":  "mesh_state.py"
+                  },
+                  {
+                      "sha256":  "2b853fc4f5601a201bc247bcb4bf65fe3b4ab81b71fbeca0389ea580dd6f52d8",
+                      "name":  "native.py"
+                  },
+                  {
+                      "sha256":  "8c65b5e8b78885f9f9f5f9e3d9713769dc76ffcea2cc3aaeb96f19c15aeb7f03",
+                      "name":  "native_launch.py"
+                  },
+                  {
+                      "sha256":  "a36f0306e705a7ac198dead797f3a5d5f0a4b25236ddf2092427335923acdb78",
+                      "name":  "nodal_availability.py"
+                  },
+                  {
+                      "sha256":  "80e95c0ef1abff1733b0e7d6c94315ff5983b38c6f634e1df8fef44eaa29e125",
+                      "name":  "nodal_results.py"
+                  },
+                  {
+                      "sha256":  "68193cc8922fa893f2fc13fb57449e31be85e241c459b470bbe47f9bf67129c8",
+                      "name":  "observer_worker.py"
+                  },
+                  {
+                      "sha256":  "dfec926b3ba27b54f9ca551aeebcfb0aef26f44874d2f66180bdd66ce94896e1",
+                      "name":  "output_claims.py"
+                  },
+                  {
+                      "sha256":  "443cc196e818f05ad095a66997363ad7340d90916566e6de23783fccc377a7ac",
+                      "name":  "postprocessing.py"
+                  },
+                  {
+                      "sha256":  "305c496718b4b1e1df8b314b7243d606b615e28d4f67c97443b84c7c047ec1ba",
+                      "name":  "postviews.py"
+                  },
+                  {
+                      "sha256":  "86fc57a1ae999d22dfd6cdea78933af475ac3a463de1fef3100ee3f4d8bc5f12",
+                      "name":  "preparation.py"
+                  },
+                  {
+                      "sha256":  "b39143950a92380c22003a7224650e9044759b19c434857ecd5fa840c5486ce0",
+                      "name":  "prepared_input.py"
+                  },
+                  {
+                      "sha256":  "439047427fd4cef3b9ec66316bc0aa2863221487321cbd13f11f34caf6a54fdd",
+                      "name":  "process_identity.py"
+                  },
+                  {
+                      "sha256":  "036c4e34432c85e6c814464289d0785ecb8dee0bd24fd84782a3ca96ef8d157c",
+                      "name":  "properties.py"
+                  },
+                  {
+                      "sha256":  "38cd79976692403d50e586761e1f7f724c9a7d2dcf7bc66e6db8ea55e6bf71b6",
+                      "name":  "property_values.py"
+                  },
+                  {
+                      "sha256":  "afa1a8b3881980c504b202ce9a3d4c90d8da15cfb20b184b928fbbd60a649b5a",
+                      "name":  "quality.py"
+                  },
+                  {
+                      "sha256":  "0090d3bd60cdc655fc92b50e9118e3499afc30d58d418cc8a7a0b73f8e68d226",
+                      "name":  "radiation.py"
+                  },
+                  {
+                      "sha256":  "34f6086f22d6b661c7ab9c5a15d75bcd16096c6c485275d9385a3eb28277c8e2",
+                      "name":  "radiation_objects.py"
+                  },
+                  {
+                      "sha256":  "a8b355b41d3e6957a9e5d705ba187fd001ff63844a7ce05910669d4eb53180e7",
+                      "name":  "recovery.py"
+                  },
+                  {
+                      "sha256":  "f1093a08f1ed0049a25ee15d47c490ce3fdc5a3d5cb4280f72c0d73548886bd9",
+                      "name":  "region_results.py"
+                  },
+                  {
+                      "sha256":  "833f0fc5c1f45e1e5c0eb9d103a2fdd5c09578627f139632967aaccaf9c06844",
+                      "name":  "release_evidence.py"
+                  },
+                  {
+                      "sha256":  "9ce49967c2e65ad6099df65fac042deb293ae2e972cbbc2abc37578728895087",
+                      "name":  "remesh.py"
+                  },
+                  {
+                      "sha256":  "b752ee5c38be06998edeb509970b13c02484539b882ff4f36ad7d4ff7cf520d3",
+                      "name":  "results.py"
+                  },
+                  {
+                      "sha256":  "abf34d103a49eea82f2bf27f5032f88ce33f201f506162f8da4823fe881987b8",
+                      "name":  "result_binding.py"
+                  },
+                  {
+                      "sha256":  "7429956913f1b8f0e14ee24b51e9e50dfae8b4ea100aa8a49840fb90f0c71787",
+                      "name":  "result_identity.py"
+                  },
+                  {
+                      "sha256":  "70bd6d90212cf894db303edc2d6c0641a39fa8a95290c9e8f2f0f1c6cc3a8c0e",
+                      "name":  "result_reader.py"
+                  },
+                  {
+                      "sha256":  "54df6e6782650f8907e38fbf4945ff5ba0714a42725ada5685fba2bfea8dee98",
+                      "name":  "revisions.py"
+                  },
+                  {
+                      "sha256":  "9d7d6fc177ed05bbf95b78896184b005c7b89d1f1c2ee46c4673f48606b9acdf",
+                      "name":  "scalar_tables.py"
+                  },
+                  {
+                      "sha256":  "a7c39b08fa1258b0d985cde732d73c59aef3546e8d5a47aadb8003ce7e33bedd",
+                      "name":  "scenario_apply.py"
+                  },
+                  {
+                      "sha256":  "2a988b576eeb5613c45b60a93c0027eb93205de86882a11a0877ef4928b52949",
+                      "name":  "scenario_import.py"
+                  },
+                  {
+                      "sha256":  "ad6236219ffeccdf8792bcd5e25301145d5c58e8a999b79b3eca791be8845b9b",
+                      "name":  "selections.py"
+                  },
+                  {
+                      "sha256":  "5a7ba5116af1fa7a0e435cbf17306b2707c1364c9e8943fa60b52ed5d3948ead",
+                      "name":  "server.py"
+                  },
+                  {
+                      "sha256":  "654d79443a62936fe4ad9a7ffec9e11ef400b225dc0a441205ee52fec919ab58",
+                      "name":  "solver_guard.py"
+                  },
+                  {
+                      "sha256":  "ae14f187a4d049f64ad3965e2f1706269c1d718f08829573f363b26d65344afc",
+                      "name":  "solver_log.py"
+                  },
+                  {
+                      "sha256":  "d5aa313fae2bfd2c568ab93d9e70eaa1806c545274ec00ade104dc69e057cb15",
+                      "name":  "solver_manifest.py"
+                  },
+                  {
+                      "sha256":  "0f77c0c2539b6de9c0e0ecab3f32116f79a5a1f368bb93f9c0743cd21590be7f",
+                      "name":  "steady_controls.py"
+                  },
+                  {
+                      "sha256":  "4799f34e4acaab66f974a75b3c13465b954ecbe116e88424e51c2736b96e024b",
+                      "name":  "temperature_material.py"
+                  },
+                  {
+                      "sha256":  "e1402388673cf35df9bd32724749c80e3668d25dae268442e550cf1edc06f791",
+                      "name":  "thermal_balance.py"
+                  },
+                  {
+                      "sha256":  "473ef904ee3bbef1433e645e1098cf12237bad15b5c6bed89a83ae75abf7c337",
+                      "name":  "thermal_state.py"
+                  },
+                  {
+                      "sha256":  "21b1fefb066e237c273a288d88524be156597434262ee1e82220bf68da3eb676",
+                      "name":  "time_controls.py"
+                  },
+                  {
+                      "sha256":  "d621cdc95a20ae538d6ae4f8b2956ddd9190cba18addf8f6d1dcb2fefacee33a",
+                      "name":  "variant_clone.py"
+                  },
+                  {
+                      "sha256":  "1ba86b47bd333c67c33b435098ec1fcd119a02865699662ed4d92ba5fdf3b5d3",
+                      "name":  "variant_plan.py"
+                  },
+                  {
+                      "sha256":  "5f1a98c534967bca2ef1b754466007d54519b81325bca18d6d723ee8cc2c93aa",
+                      "name":  "__init__.py"
+                  }
+              ],
+    "kind":  "on-disk source audit; live bindings separately verified"
+}

@@ -1,0 +1,93 @@
+{
+  "schema": 1,
+  "scenario_id": "room-fan-0.1W-20C",
+  "job_id": "room-fan-half-20260909-r1",
+  "job_binding": "caller-supplied; retain and inspect the job manifest separately",
+  "region_mapping_source": "caller-supplied; verify against geometry",
+  "result_file": {
+    "index": 0,
+    "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-half-run-20260909-r1\\half_r1-Finned_coupled_benchmark.bun",
+    "bytes": 15184092,
+    "sha256": "d2aff7a42af772edd7de7b86b95a6ea128238846c277be5cf1178df1bf2a8f43"
+  },
+  "loadcase_index": 0,
+  "iteration_index": 0,
+  "field": "Temperature - Nodal",
+  "units": "degC",
+  "coordinate_units": "mm",
+  "coordinate_frame": "native_result_coordinates",
+  "mean_semantics": "Unweighted arithmetic mean over unique nodes with defined field values within each group; undefined values are excluded and counted, empty summaries are null; shared nodes may belong to multiple groups; not area/volume weighted",
+  "regions": [
+    {
+      "region": "fluid_nodal_field",
+      "group_index": 0,
+      "dimension": "3d",
+      "element_count": 52256,
+      "node_count": 11528,
+      "defined_node_count": 0,
+      "undefined_node_count": 11528,
+      "membership_sha256": "0e5fe9ad053255f61a2f4c8ac3c53d146c26a96d0503f7a9d50085a0c39e2a01",
+      "minimum": null,
+      "maximum": null,
+      "arithmetic_nodal_mean": null,
+      "bounds": {
+        "minimum": [
+          0.0,
+          0.0,
+          2.0
+        ],
+        "maximum": [
+          20.0,
+          10.0,
+          10.0
+        ]
+      }
+    },
+    {
+      "region": "heated_solid",
+      "group_index": 1,
+      "dimension": "3d",
+      "element_count": 24956,
+      "node_count": 6238,
+      "defined_node_count": 6238,
+      "undefined_node_count": 0,
+      "membership_sha256": "8c020e583ffd70cc74f09515a93a46e54947ac82e777063d703bdffea7764f54",
+      "minimum": {
+        "index": 9,
+        "label": 4156,
+        "coordinates": [
+          0.0,
+          7.0,
+          6.0
+        ],
+        "temperature": 23.841537475585938
+      },
+      "maximum": {
+        "index": 13,
+        "label": 4160,
+        "coordinates": [
+          20.0,
+          0.0,
+          0.0
+        ],
+        "temperature": 23.91877555847168
+      },
+      "arithmetic_nodal_mean": 23.894161854236696,
+      "bounds": {
+        "minimum": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "maximum": [
+          20.0,
+          10.0,
+          6.0
+        ]
+      }
+    }
+  ],
+  "model_freshness": "not_verified",
+  "engineering_accepted": false,
+  "source_receipt_sha256": "3e3c48e77d24e11d8c90a0e58dd178b86e969a68e564a31a5e71c90a40e87cf9"
+}

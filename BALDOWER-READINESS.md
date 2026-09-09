@@ -9,13 +9,14 @@ infrastructure features are planned unless they resolve a concrete readiness blo
 
 ## Source and deployed identity
 
-- Engine checkpoint: `c470bd007ca1a83556b79f910aefbf8b408a697c`, branch
+- Engine checkpoint: `e69fff5`, branch
   `simcenter/thermal-flow`, fork `xuio/NX_MCP`.
 - Native target: NX/Simcenter 3D 2606, executable build `2606.1700`, bridge protocol 1. Dedicated Simcenter UI
   session `20bc234ffa5249ceb4fb4d82b993c626`.
 - Deployed source: `C:\ProgramData\BasementHypervisor\nx-mcp-simcenter\source`.
   Workspace: `D:\CAD\SIMCENTER_MCP_WORKSPACE`.
-- [Final engine audit](tests/simcenter/evidence/coupled-bindings-deployment.json): 78 public
+- [Current source audit](tests/simcenter/evidence/room-fan-source-files.json): all 93 Simcenter Python files match the engine checkpoint; [live nodal-reader bindings](tests/simcenter/evidence/room-fan-availability-deployment.json) and public undefined-value extraction pass.
+- [Retained handler audit](tests/simcenter/evidence/coupled-bindings-deployment.json): 78 public
   handler signatures matched; every audited Simcenter Python source hash matched
   this checkpoint. [Runtime/helper audit](tests/simcenter/evidence/baldower-readiness-runtime.json)
   verifies the current installed helper hashes against the committed C# source.
@@ -230,7 +231,7 @@ Offline release regression:
 python -m pytest tests/simcenter -q -m 'not real_nx'
 ```
 
-**703 passed in 7.47 s**, recorded in
+The current Simcenter suite passed **717 tests in 7.46 s** after the undefined-value fix. The earlier **703-test** checkpoint is recorded in
 [baldower-readiness-regressions.txt](tests/simcenter/evidence/baldower-readiness-regressions.txt).
 Two additional readiness/export tests pass (`tests/simcenter/test_readiness_scripts.py`);
 [exported JSON](tests/simcenter/evidence/baldower-readiness-regions.json) and
@@ -246,8 +247,8 @@ Do not restart NX, close unrelated parts, save-all or reuse probe slots concurre
 
 baldower MECH may use the verified standalone extraction/thermal/Flow subsets with
 these limitations. It must not represent the full coupled cooling workflow as ready.
-The immediate handover action is to retain this NOT READY gate, obtain the missing
-native ambient/pressure reference, and resume only the bounded coupled fan gate.
+The immediate handover action is to retain this NOT READY gate, resolve the remaining
+flow mesh-sensitivity gate; native ambient/pressure and effective-density checks now pass.
 No product geometry, power assumptions, firmware limits or mechanical decisions
 are changed by this report.
 

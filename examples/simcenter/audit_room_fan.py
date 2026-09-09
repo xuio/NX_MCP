@@ -10,12 +10,17 @@ import re
 from pathlib import Path
 
 from nx_mcp.simcenter.coupled_log import inspect_coupled_summary
+from nx_mcp.simcenter.flow_audit import inspect_flow_log
 
 NUMBER = r"[+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?"
 
 
 def inspect_case(result, text):
     summary = inspect_coupled_summary(text)
+    flow_log = inspect_flow_log(text)
+    final = [
+        r for r in flow_log["residual_history"] if r["iteration"] == flow_log["last_iteration"]
+    ]
 
     def scalar(label, unit):
         matches = re.findall(re.escape(label) + r"\s+(" + NUMBER + r")\s+" + unit, text)
@@ -57,6 +62,10 @@ def inspect_case(result, text):
         and not summary["iteration_limit_reached_without_convergence"]
         and thermal_delta <= 0.001
         and coupled_delta <= 0.001,
+        "flow_residuals": flow_log["final_equations_complete"]
+        and flow_log["residual_threshold"] == 1e-6
+        and flow_log["last_iteration"] < 1000
+        and all(r["native_message"] == "OK" and 0 <= r["residual"] < 1e-6 for r in final),
         "mass_balance": abs(mass) < 0.1,
         "energy_balance": abs(energy) < 1,
         "solid_fluid_heat": all(
@@ -76,6 +85,8 @@ def inspect_case(result, text):
         "mass_imbalance_percent": mass,
         "energy_imbalance_percent": energy,
         "native_log_summary": summary,
+        "final_flow_equations": final,
+        "native_boundary_flows": flow_log["boundary_flows"],
         "limitations": "Rounded fan/log values; scoped physical checks, not complete model freshness or product accuracy",
     }
 
