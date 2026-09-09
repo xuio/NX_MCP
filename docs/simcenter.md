@@ -617,16 +617,45 @@ The direct native repeated snapshot/budget probe took approximately 0.032 second
 and preserved all document modification flags. Thirty-seven focused offline
 tests pass, including equal-count coordinate/connectivity/shape/ownership changes,
 malformed comparison metadata, nonfinite values and acquisition/traversal cleanup.
-Equal-count mutation detection is tested offline, not yet through native editing.
+Native editing now also verifies equal-count coordinate changes: moving one node
+0.01 mm changes the digest; undo restores the original digest and document flags
+(`node-mesh-state-native.json`).
+
+Preparation records this snapshot before export, checks it again afterward, and
+stores it with `mesh_inspection_limit` (default 200,000; maximum 1,000,000).
+Accepted-job replay and launch preflight compare against that immutable snapshot
+using its recorded budget. A changed or unverifiable mesh rejects launch before
+launch intent. Pending jobs created without a baseline require a new isolated
+analysis/output directory and job ID; their historical baseline is never invented.
+Already-launched job replay preserves its existing observer/recovery behavior.
+
+The public V fixture has 100 elements and 45 nodes. Preparation and accepted-job
+replay pass with a budget of 500. Moving an interior node 0.01 mm preserves counts
+but causes `NX_SIM_MESH_STATE_CHANGED`; the job remains accepted at revision 0.
+A test-only stop before gate acquisition was never reached. The bounded harness
+restored the hook and original mesh digest; only the isolated FEM/SIM were saved.
+The test job was cancelled before launch. No solver ran in this check, so previous
+native launch/observer evidence does not prove a successful launch with this new
+guard. Forty-five focused offline tests cover preparation, launch, mesh snapshots,
+guards and observer regressions.
+
+Reproduction uses `prepare_mesh_guard_public.py`, then
+`run-mesh-guard-bounded-test.ps1` with its arm/restore helpers, then
+`save_mesh_guard_fixture_public.py` in `examples/simcenter/`. The PowerShell harness
+uses the existing private native-probe adapter (`sim-client.py`/`sim-handler.txt`)
+in the authorized shared discovery directory; its `finally` restores the hook and
+geometry. These are one-run fixtures with fixed names/operation IDs: inspect the
+retained job before rerunning, and use fresh isolated names for a new test.
+Retained receipts are `mesh-guard-{fixture-public,arm-result,rejection-public,
+restoration,saved-public}.json` in `tests/simcenter/evidence/`.
 
 This is a mesh-only fingerprint. It excludes CAD geometry, mesh controls,
 materials, boundaries, solver element formulation, solution settings and external
-dependencies. It is not yet integrated into prepared-job/recovery/result gates;
-those integrations and native mutation tests are next. Existing partial freshness
-claims remain unchanged. Reproduce with `verify_mesh_state_native.py` and
-`verify_mesh_state_public.py` under `examples/simcenter/`; evidence:
-`mesh-state-native.json` and `mesh-state-public.json` under
-`tests/simcenter/evidence/`.
+dependencies. Result inspection and recovery freshness do not yet use this mesh
+baseline. Existing partial freshness claims remain unchanged. Standalone snapshot
+reproductions are `verify_mesh_state_native.py`, `verify_mesh_state_public.py` and
+`verify_node_mesh_state.py`; see `mesh-state-native.json`, `mesh-state-public.json`
+and `node-mesh-state-native.json`.
 
 ### Reconciled Phase 2 backlog
 

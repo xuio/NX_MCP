@@ -549,15 +549,20 @@ def nx_sim_show_pressure(
 NON_MODEL.add("nx_sim_show_pressure")
 
 
-def nx_sim_prepare_solve(document: str, job_id: str, job_folder: str = "simcenter-jobs"):
-    """Export native Thermal, Flow or Coupled Thermal-Flow input and reserve an immutable job, without solving. Coupled temperature and active specified-pressure export guards apply. Activate a standalone SIM saved in a fresh subfolder containing only that SIM; save/load all direct FEM/CAD dependencies first. job_id: 1..80 lowercase letters/digits/_/-, first alphanumeric. job_folder must be outside the native output folder. Checks known solver processes, exports with native setup checks, hashes saved dependencies and input, and permanently claims outputs. Same accepted job revalidates bytes without re-export; launched jobs only report their existing state. Retains partial files on failure. No saving, licence modification, solver launch, convergence or complete-dependency claim. Inspect the manifest through nx_sim_job_status. Supply operation_id for transport retry."""
+def nx_sim_prepare_solve(
+    document: str,
+    job_id: str,
+    job_folder: str = "simcenter-jobs",
+    mesh_inspection_limit: int = 200000,
+):
+    """Export native Thermal, Flow or Coupled Thermal-Flow input and reserve an immutable job, without solving. Coupled temperature and active specified-pressure export guards apply. Activate a standalone SIM saved in a fresh subfolder containing only that SIM; save/load all direct FEM/CAD dependencies first. job_id: 1..80 lowercase letters/digits/_/-, first alphanumeric. job_folder must be outside the native output folder. Checks known solver processes, exports with native setup checks, hashes saved dependencies and input, and permanently claims outputs. Records exact labelled mesh state before/after export; mesh_inspection_limit bounds nodes+elements (1..1000000, default 200000). Accepted-job replay uses its recorded mesh budget and baseline; historical pending jobs without a baseline require fresh preparation. Same accepted job revalidates bytes without re-export; launched jobs only report their existing state. Retains partial files on failure. No saving, licence modification, solver launch, convergence or complete-dependency claim. Inspect the manifest through nx_sim_job_status. Supply operation_id for transport retry."""
 
 
 NON_MODEL.add("nx_sim_prepare_solve")
 
 
 def nx_sim_launch(document: str, job_id: str, job_folder: str = "simcenter-jobs"):
-    """Launch one prepared Thermal/Flow job in native background mode. Requires the prepared SIM as work/display part, its unique active solution, unchanged saved dependencies/input and owned outputs, and no known host solver processes. Persists launch intent before calling NX; reusing the job ID never repeats a launch, even after a timeout. Returns API-observation state, not solver exit, convergence or validated results. Restores the native Foreground property; solving may modify SIM state and regenerate input, which requires subsequent auditing. Does not save documents or change licensing. Starts a bounded filesystem/process observer worker automatically; it does not use NX APIs and does not release the gate. Cancellation and exact process-to-job binding are not yet implemented. Use nx_sim_job_status and nx_sim_job_logs for observations. Supply operation_id for transport retry."""
+    """Launch one prepared Thermal/Flow job in native background mode. Requires the prepared SIM as work/display part, its unique active solution, unchanged saved dependencies/input, the recorded exact labelled mesh baseline and owned outputs, and no known host solver processes. Mesh checking precedes launch intent; historical pending jobs lacking a baseline must be prepared afresh. Already-launched jobs remain replay-only without inspecting the current mesh. Persists launch intent before calling NX; reusing the job ID never repeats a launch, even after a timeout. Returns API-observation state, not solver exit, convergence or validated results. Restores the native Foreground property; solving may modify SIM state and regenerate input, which requires subsequent auditing. Does not save documents or change licensing. Starts a bounded filesystem/process observer worker automatically; it does not use NX APIs and does not release the gate. Cancellation and exact process-to-job binding are not yet implemented. Use nx_sim_job_status and nx_sim_job_logs for observations. Supply operation_id for transport retry."""
 
 
 NON_MODEL.add("nx_sim_launch")

@@ -12,6 +12,24 @@ from nx_mcp.workspace import Workspace
 
 @pytest.fixture
 def context(tmp_path, monkeypatch):
+    from nx_mcp.simcenter import mesh_guard
+    from nx_mcp.simcenter.mesh_state import digest
+
+    monkeypatch.setattr(
+        mesh_guard,
+        "capture",
+        lambda sim, maximum_entities=200000: digest(
+            [
+                (1, [0.0, 0.0, 0.0]),
+                (2, [1.0, 0.0, 0.0]),
+                (3, [0.0, 1.0, 0.0]),
+                (4, [0.0, 0.0, 1.0]),
+            ],
+            [(1, "Tetrahedron", "Mesh[1]", "Collector[1]", [1, 2, 3, 4])],
+            units="mm",
+            owner_path=sim.FullPath + ".fem",
+        ),
+    )
     cae = ModuleType("NXOpen.CAE")
     cae.SimPart = type("SimPart", (), {})
     nx = ModuleType("NXOpen")
@@ -113,3 +131,44 @@ def test_job_folder_inside_output_rejected(context):
     with pytest.raises(NXToolError, match="outside"):
         preparation.prepare_solve(session, workspace, sim, "run-01", "run/jobs")
     assert not calls
+
+
+def test_mesh_change_during_export_retains_artifacts_without_reserving_job(context, monkeypatch):
+    from nx_mcp.simcenter import mesh_guard
+
+    session, workspace, sim, rows, calls = context
+    original = mesh_guard.capture
+    captures = []
+
+    def changed(sim, maximum_entities=200000):
+        snapshot = original(sim, maximum_entities)
+        captures.append(snapshot)
+        if len(captures) > 1:
+            snapshot["sha256"] = "b" * 64
+        return snapshot
+
+    monkeypatch.setattr(mesh_guard, "capture", changed)
+    with pytest.raises(NXToolError) as error:
+        preparation.prepare_solve(session, workspace, sim, "mesh-change")
+    assert error.value.details["cause_code"] == "NX_SIM_MESH_STATE_CHANGED"
+    assert (workspace.root / "run/input.xml").exists()
+    assert not (workspace.root / "simcenter-jobs").exists()
+
+
+def test_replay_checks_recorded_mesh_without_reexport(context, monkeypatch):
+    from nx_mcp.simcenter import mesh_guard
+
+    session, workspace, sim, rows, calls = context
+    preparation.prepare_solve(session, workspace, sim, "mesh-replay", mesh_inspection_limit=500)
+    original = mesh_guard.capture
+
+    def changed(sim, maximum_entities=200000):
+        assert maximum_entities == 500
+        result = original(sim, maximum_entities)
+        result["sha256"] = "b" * 64
+        return result
+
+    monkeypatch.setattr(mesh_guard, "capture", changed)
+    with pytest.raises(NXToolError) as error:
+        preparation.prepare_solve(session, workspace, sim, "mesh-replay")
+    assert error.value.code == "NX_SIM_MESH_STATE_CHANGED" and len(calls) == 1

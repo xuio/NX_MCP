@@ -1,0 +1,74 @@
+{
+  "status": "success",
+  "before": {
+    "adapter": 1,
+    "scope": "node_labels_coordinates_and_ordered_element_connectivity_shape_mesh_collector",
+    "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\U-sim-update-20260909-r1\\benchmark_ec2b6f8c50fd_mesh.fem",
+    "units": "mm",
+    "coordinate_frame": "fem_part_absolute",
+    "counts": {
+      "nodes": 73,
+      "elements": 182
+    },
+    "sha256": "554e86c0c3cc3fa86c29cf9b5296e706455ae1ad81a31ff53093897d2ac5493e",
+    "coordinate_encoding": "exact float64 hex; signed zero normalized",
+    "full_model_freshness": "not_verified",
+    "excluded": [
+      "CAD geometry",
+      "mesh controls",
+      "material assignments/properties",
+      "loads and boundary conditions",
+      "solver element formulation",
+      "solution settings",
+      "external dependencies"
+    ]
+  },
+  "before_coordinates": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "solver_launched": false,
+  "x_units": "MilliMeter",
+  "after_coordinates": [
+    0.01,
+    0.0,
+    0.0
+  ],
+  "after": {
+    "adapter": 1,
+    "scope": "node_labels_coordinates_and_ordered_element_connectivity_shape_mesh_collector",
+    "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\U-sim-update-20260909-r1\\benchmark_ec2b6f8c50fd_mesh.fem",
+    "units": "mm",
+    "coordinate_frame": "fem_part_absolute",
+    "counts": {
+      "nodes": 73,
+      "elements": 182
+    },
+    "sha256": "e2b1e5711f522cca1b43666b8f2366ad97520642ff1dda74f01bff0ceaa6cf9a",
+    "coordinate_encoding": "exact float64 hex; signed zero normalized",
+    "full_model_freshness": "not_verified",
+    "excluded": [
+      "CAD geometry",
+      "mesh controls",
+      "material assignments/properties",
+      "loads and boundary conditions",
+      "solver element formulation",
+      "solution settings",
+      "external dependencies"
+    ]
+  },
+  "comparison": {
+    "state": "changed",
+    "scope": "node_labels_coordinates_and_ordered_element_connectivity_shape_mesh_collector",
+    "full_model_freshness": "not_verified"
+  },
+  "passed": true,
+  "restored": true,
+  "flags_restored": true,
+  "operation_id": "op_065a62201d8749b297fc3b430b3d726f",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

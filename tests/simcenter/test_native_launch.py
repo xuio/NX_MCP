@@ -108,3 +108,46 @@ def test_live_thermal_change_rejects_before_launch_intent(launch_context, monkey
     assert error.value.code == "NX_SIM_LIVE_STATE_CHANGED"
     assert not calls and props["Foreground"]
     assert JobStore(workspace).inspect("native-01")["state"] == "accepted"
+
+
+def test_changed_mesh_rejected_before_launch_intent(launch_context, monkeypatch):
+    from nx_mcp.simcenter import mesh_guard
+
+    session, workspace, sim, rows, props, calls = launch_context
+    original = mesh_guard.capture
+
+    def changed(sim, maximum_entities=200000):
+        result = original(sim, maximum_entities)
+        result["sha256"] = "b" * 64
+        return result
+
+    monkeypatch.setattr(mesh_guard, "capture", changed)
+    with pytest.raises(NXToolError) as error:
+        native_launch.launch_prepared(session, workspace, sim, "native-01")
+    assert error.value.code == "NX_SIM_MESH_STATE_CHANGED"
+    assert not calls and props["Foreground"] is True
+    assert JobStore(workspace).inspect("native-01")["state"] == "accepted"
+
+
+def test_launched_job_replay_does_not_inspect_current_mesh(launch_context, monkeypatch):
+    from nx_mcp.simcenter import mesh_guard
+
+    session, workspace, sim, rows, props, calls = launch_context
+    native_launch.launch_prepared(session, workspace, sim, "native-01")
+
+    def forbidden(*args):
+        raise AssertionError("Replay inspected mutable mesh")
+
+    monkeypatch.setattr(mesh_guard, "verify_manifest", forbidden)
+    assert native_launch.launch_prepared(session, workspace, sim, "native-01")["replayed"]
+    assert len(calls) == 1
+
+
+def test_missing_mesh_baseline_is_not_invented(launch_context, monkeypatch):
+    from nx_mcp.simcenter.mesh_guard import verify_manifest
+
+    session, workspace, sim, rows, props, calls = launch_context
+    with pytest.raises(NXToolError) as error:
+        verify_manifest(sim, {"preparation_adapter": 1})
+    assert error.value.code == "NX_SIM_MESH_STATE_MISSING"
+    assert not calls

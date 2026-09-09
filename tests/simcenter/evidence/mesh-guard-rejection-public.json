@@ -1,0 +1,1154 @@
+{
+  "responses": {
+    "open": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [\"Document has unsaved native state; inspect and explicitly save approved analysis changes before preparing a solve\"], \"units\": \"mm\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_d0b042cae997447aa741c91aae9ef775\", \"kind\": \"part\", \"name\": \"mesh_guard_v_r1\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_d8b5717caed84d918b7d612c930808f3\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"d8b5717caed84d918b7d612c930808f3\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-export-20260909-r1\\\\mesh_guard_v_r1.sim\", \"journal_id\": \"mesh_guard_v_r1\", \"display_name\": \"mesh_guard_v_r1\"}, \"coordinate_frame\": \"part_absolute\", \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-export-20260909-r1\\\\mesh_guard_v_r1.sim\", \"already_loaded\": true, \"modified_after_native_open\": null, \"modified_before_activation\": true, \"modified\": true, \"fully_loaded\": true, \"load_issues\": [], \"changed_existing_part_flags\": [], \"application\": \"UG_APP_SFEM\", \"work_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-export-20260909-r1\\\\mesh_guard_v_r1.sim\", \"display_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-export-20260909-r1\\\\mesh_guard_v_r1.sim\", \"saved\": false, \"result_freshness\": \"not_verified\", \"operation_id\": \"op_7913e7025b974f7280e950b255ca0afd\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [
+          "Document has unsaved native state; inspect and explicitly save approved analysis changes before preparing a solve"
+        ],
+        "units": "mm",
+        "document": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_d0b042cae997447aa741c91aae9ef775",
+          "kind": "part",
+          "name": "mesh_guard_v_r1",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_d8b5717caed84d918b7d612c930808f3",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "d8b5717caed84d918b7d612c930808f3",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-export-20260909-r1\\mesh_guard_v_r1.sim",
+          "journal_id": "mesh_guard_v_r1",
+          "display_name": "mesh_guard_v_r1"
+        },
+        "coordinate_frame": "part_absolute",
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-export-20260909-r1\\mesh_guard_v_r1.sim",
+        "already_loaded": true,
+        "modified_after_native_open": null,
+        "modified_before_activation": true,
+        "modified": true,
+        "fully_loaded": true,
+        "load_issues": [],
+        "changed_existing_part_flags": [],
+        "application": "UG_APP_SFEM",
+        "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-export-20260909-r1\\mesh_guard_v_r1.sim",
+        "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-export-20260909-r1\\mesh_guard_v_r1.sim",
+        "saved": false,
+        "result_freshness": "not_verified",
+        "operation_id": "op_7913e7025b974f7280e950b255ca0afd",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed"
+      },
+      "isError": false
+    },
+    "activate": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"application_before\": \"UG_APP_SFEM\", \"application\": \"UG_APP_SFEM\", \"documents\": {\"documents\": [{\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-20260909-r1\\\\benchmark_2b3340c6f11a_geometry.prt\", \"name\": \"benchmark_2b3340c6f11a_geometry\", \"document_type\": \"Part\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_3e8d20aaee35485da45b8b6e92f59a1b\", \"kind\": \"part\", \"name\": \"benchmark_2b3340c6f11a_geometry\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_a762926108c747249165a3e60f819b01\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"a762926108c747249165a3e60f819b01\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-20260909-r1\\\\benchmark_2b3340c6f11a_geometry.prt\", \"journal_id\": \"benchmark_2b3340c6f11a_geometry\", \"display_name\": \"benchmark_2b3340c6f11a_geometry\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\U-sim-update-20260909-r1\\\\benchmark_ec2b6f8c50fd_geometry.prt\", \"name\": \"benchmark_ec2b6f8c50fd_geometry\", \"document_type\": \"Part\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_a2c281eac5c04240ac122fc1ad583f27\", \"kind\": \"part\", \"name\": \"benchmark_ec2b6f8c50fd_geometry\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_19101ed3189e470f98f11705888e3dad\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"19101ed3189e470f98f11705888e3dad\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\U-sim-update-20260909-r1\\\\benchmark_ec2b6f8c50fd_geometry.prt\", \"journal_id\": \"benchmark_ec2b6f8c50fd_geometry\", \"display_name\": \"benchmark_ec2b6f8c50fd_geometry\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\L-face-size-20260909-r1\\\\benchmark_d5f46585b1fa_geometry.prt\", \"name\": \"benchmark_d5f46585b1fa_geometry\", \"document_type\": \"Part\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_e0f796e826f94e2693fe1434a088ec2f\", \"kind\": \"part\", \"name\": \"benchmark_d5f46585b1fa_geometry\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_2fb24b4990b34c36870c03dfed521493\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"2fb24b4990b34c36870c03dfed521493\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\L-face-size-20260909-r1\\\\benchmark_d5f46585b1fa_geometry.prt\", \"journal_id\": \"benchmark_d5f46585b1fa_geometry\", \"display_name\": \"benchmark_d5f46585b1fa_geometry\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\M-mixed-mesh-20260909-r1\\\\benchmark_58e87a06afdb_geometry.prt\", \"name\": \"benchmark_58e87a06afdb_geometry\", \"document_type\": \"Part\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_3021396046454d89b972979666b9e504\", \"kind\": \"part\", \"name\": \"benchmark_58e87a06afdb_geometry\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_8427d22a49e443d4bc69eaca9cc5e123\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"8427d22a49e443d4bc69eaca9cc5e123\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\M-mixed-mesh-20260909-r1\\\\benchmark_58e87a06afdb_geometry.prt\", \"journal_id\": \"benchmark_58e87a06afdb_geometry\", \"display_name\": \"benchmark_58e87a06afdb_geometry\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\M-controls-public-20260909-r1\\\\benchmark_c774f716ecb3_geometry.prt\", \"name\": \"benchmark_c774f716ecb3_geometry\", \"document_type\": \"Part\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_25a960a1e9d54c05963a6a901983c05c\", \"kind\": \"part\", \"name\": \"benchmark_c774f716ecb3_geometry\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_8e1e3ae5ce2e4368802c38d384902b30\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"8e1e3ae5ce2e4368802c38d384902b30\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\M-controls-public-20260909-r1\\\\benchmark_c774f716ecb3_geometry.prt\", \"journal_id\": \"benchmark_c774f716ecb3_geometry\", \"display_name\": \"benchmark_c774f716ecb3_geometry\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-initial-conditions-public-20260909-r1\\\\benchmark_fa7a9e7c4e7c_geometry.prt\", \"name\": \"benchmark_fa7a9e7c4e7c_geometry\", \"document_type\": \"Part\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_4164c3bba06641899b0d67f9c593a2d7\", \"kind\": \"part\", \"name\": \"benchmark_fa7a9e7c4e7c_geometry\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_3830bbb528a944eba3107bf59d7f341e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"3830bbb528a944eba3107bf59d7f341e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-initial-conditions-public-20260909-r1\\\\benchmark_fa7a9e7c4e7c_geometry.prt\", \"journal_id\": \"benchmark_fa7a9e7c4e7c_geometry\", \"display_name\": \"benchmark_fa7a9e7c4e7c_geometry\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-temperature-material-public-20260909-r1\\\\benchmark_cfe079b0eed8_geometry.prt\", \"name\": \"benchmark_cfe079b0eed8_geometry\", \"document_type\": \"Part\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_0d485e7d928241f5a4f8000c6bbbeaf3\", \"kind\": \"part\", \"name\": \"benchmark_cfe079b0eed8_geometry\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_d22bafe32e4742d7aa7670205499d969\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"d22bafe32e4742d7aa7670205499d969\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-temperature-material-public-20260909-r1\\\\benchmark_cfe079b0eed8_geometry.prt\", \"journal_id\": \"benchmark_cfe079b0eed8_geometry\", \"display_name\": \"benchmark_cfe079b0eed8_geometry\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-heat-recovery-20260909-r1\\\\benchmark_b48bd54502e5_geometry.prt\", \"name\": \"benchmark_b48bd54502e5_geometry\", \"document_type\": \"Part\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_3ebe783a5c894b7bb6a148427051be4c\", \"kind\": \"part\", \"name\": \"benchmark_b48bd54502e5_geometry\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_23b334a7441b421fb6340af71a20777a\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"23b334a7441b421fb6340af71a20777a\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-heat-recovery-20260909-r1\\\\benchmark_b48bd54502e5_geometry.prt\", \"journal_id\": \"benchmark_b48bd54502e5_geometry\", \"display_name\": \"benchmark_b48bd54502e5_geometry\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-heat-schedule-public-20260909-r1\\\\benchmark_c9061a8738db_geometry.prt\", \"name\": \"benchmark_c9061a8738db_geometry\", \"document_type\": \"Part\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_6a82f6df0c82492e99077e5ea3c66f20\", \"kind\": \"part\", \"name\": \"benchmark_c9061a8738db_geometry\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_5bc9a37bd24749b6863c1c91072a844e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"5bc9a37bd24749b6863c1c91072a844e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-heat-schedule-public-20260909-r1\\\\benchmark_c9061a8738db_geometry.prt\", \"journal_id\": \"benchmark_c9061a8738db_geometry\", \"display_name\": \"benchmark_c9061a8738db_geometry\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-heat-schedule-20260909-r1\\\\benchmark_40aa7155a7d4_geometry.prt\", \"name\": \"benchmark_40aa7155a7d4_geometry\", \"document_type\": \"Part\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_73510454b7164d53ac21efce6724a5fa\", \"kind\": \"part\", \"name\": \"benchmark_40aa7155a7d4_geometry\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_b17f19cf83684b078991a3d3f99c960a\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"b17f19cf83684b078991a3d3f99c960a\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-heat-schedule-20260909-r1\\\\benchmark_40aa7155a7d4_geometry.prt\", \"journal_id\": \"benchmark_40aa7155a7d4_geometry\", \"display_name\": \"benchmark_40aa7155a7d4_geometry\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-heat-binding-20260909-r1\\\\benchmark_19990db7ac13_geometry.prt\", \"name\": \"benchmark_19990db7ac13_geometry\", \"document_type\": \"Part\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_1b84de09e2054fe9b1be77be3d68603b\", \"kind\": \"part\", \"name\": \"benchmark_19990db7ac13_geometry\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_4c98a10d8c3c40a5beaefb3cffb311e8\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"4c98a10d8c3c40a5beaefb3cffb311e8\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-heat-binding-20260909-r1\\\\benchmark_19990db7ac13_geometry.prt\", \"journal_id\": \"benchmark_19990db7ac13_geometry\", \"display_name\": \"benchmark_19990db7ac13_geometry\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-scalar-tables-20260909-r1\\\\benchmark_1ed9fb624b41_geometry.prt\", \"name\": \"benchmark_1ed9fb624b41_geometry\", \"document_type\": \"Part\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_be27ec22163344d5a81ab4398049daf8\", \"kind\": \"part\", \"name\": \"benchmark_1ed9fb624b41_geometry\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_e46ba4ef58f64ea28768af2bc9dc38f9\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"e46ba4ef58f64ea28768af2bc9dc38f9\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-scalar-tables-20260909-r1\\\\benchmark_1ed9fb624b41_geometry.prt\", \"journal_id\": \"benchmark_1ed9fb624b41_geometry\", \"display_name\": \"benchmark_1ed9fb624b41_geometry\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_geometry.prt\", \"name\": \"benchmark_fd1cae97c9a6_geometry\", \"document_type\": \"Part\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_d30a49a9978e432c8f56916b2ebe6d29\", \"kind\": \"part\", \"name\": \"benchmark_fd1cae97c9a6_geometry\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_566c06f38e7242e488e2c81baf70d488\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"566c06f38e7242e488e2c81baf70d488\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_geometry.prt\", \"journal_id\": \"benchmark_fd1cae97c9a6_geometry\", \"display_name\": \"benchmark_fd1cae97c9a6_geometry\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-environment-radiation-20260909-r1\\\\benchmark_5a40b73541f4_geometry.prt\", \"name\": \"benchmark_5a40b73541f4_geometry\", \"document_type\": \"Part\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_7ac03db345054d6f8b46312df3c2e078\", \"kind\": \"part\", \"name\": \"benchmark_5a40b73541f4_geometry\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_c78dfd04aa9043e2bbcba6987ed94bee\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"c78dfd04aa9043e2bbcba6987ed94bee\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-environment-radiation-20260909-r1\\\\benchmark_5a40b73541f4_geometry.prt\", \"journal_id\": \"benchmark_5a40b73541f4_geometry\", \"display_name\": \"benchmark_5a40b73541f4_geometry\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F-convection-environment-20260909-r1\\\\benchmark_c724ac72398e_geometry.prt\", \"name\": \"benchmark_c724ac72398e_geometry\", \"document_type\": \"Part\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_90b2eb845b4f46c39235380406068a5a\", \"kind\": \"part\", \"name\": \"benchmark_c724ac72398e_geometry\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_91e7bec490b3489bb7930073c75ec8f2\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"91e7bec490b3489bb7930073c75ec8f2\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F-convection-environment-20260909-r1\\\\benchmark_c724ac72398e_geometry.prt\", \"journal_id\": \"benchmark_c724ac72398e_geometry\", \"display_name\": \"benchmark_c724ac72398e_geometry\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\B-contact-authoring-20260909-r1\\\\benchmark_47530a89f645_geometry.prt\", \"name\": \"benchmark_47530a89f645_geometry\", \"document_type\": \"Part\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_bb2f6710ffbc4326809913e3b749182e\", \"kind\": \"part\", \"name\": \"benchmark_47530a89f645_geometry\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_b783fcd058374b2a94ca0cfa8ef21e7c\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"b783fcd058374b2a94ca0cfa8ef21e7c\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\B-contact-authoring-20260909-r1\\\\benchmark_47530a89f645_geometry.prt\", \"journal_id\": \"benchmark_47530a89f645_geometry\", \"display_name\": \"benchmark_47530a89f645_geometry\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F4-continuity-20260908-r1\\\\f4_continuity_r1.prt\", \"name\": \"f4_continuity_r1\", \"document_type\": \"Part\", \"modified\": true, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_c25a3d70f02745349aa0e5a30ed1cdc3\", \"kind\": \"part\", \"name\": \"f4_continuity_r1\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_3caab63111b84dd88c89c6e7c0d68c4f\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"3caab63111b84dd88c89c6e7c0d68c4f\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F4-continuity-20260908-r1\\\\f4_continuity_r1.prt\", \"journal_id\": \"f4_continuity_r1\", \"display_name\": \"f4_continuity_r1\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F4-planar-adapter-20260908-r3\\\\f4_r3_curves_inch.prt\", \"name\": \"f4_r3_curves_inch\", \"document_type\": \"Part\", \"modified\": true, \"work\": false, \"display\": false, \"units\": \"inch\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_0b8ef15f18af4a9d9cf136de0c8520cf\", \"kind\": \"part\", \"name\": \"f4_r3_curves_inch\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_37cc7d35aa034fafa3ba78eccf1aad87\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"37cc7d35aa034fafa3ba78eccf1aad87\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F4-planar-adapter-20260908-r3\\\\f4_r3_curves_inch.prt\", \"journal_id\": \"f4_r3_curves_inch\", \"display_name\": \"f4_r3_curves_inch\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F4-planar-adapter-20260908-r3\\\\f4_r3_curves_mm.prt\", \"name\": \"f4_r3_curves_mm\", \"document_type\": \"Part\", \"modified\": true, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_9ba3320fb3674ab4a03b19543521b0c7\", \"kind\": \"part\", \"name\": \"f4_r3_curves_mm\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_e816abd555654d14a99a47ed6cc622e4\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"e816abd555654d14a99a47ed6cc622e4\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F4-planar-adapter-20260908-r3\\\\f4_r3_curves_mm.prt\", \"journal_id\": \"f4_r3_curves_mm\", \"display_name\": \"f4_r3_curves_mm\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F4-planar-adapter-20260908-r1\\\\curves_mm.prt\", \"name\": \"curves_mm\", \"document_type\": \"Part\", \"modified\": true, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_5c5d272b74c24986a838b4344cfbf2b0\", \"kind\": \"part\", \"name\": \"curves_mm\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_68910bef64eb4629b9ee830bf6ffb2fa\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"68910bef64eb4629b9ee830bf6ffb2fa\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F4-planar-adapter-20260908-r1\\\\curves_mm.prt\", \"journal_id\": \"curves_mm\", \"display_name\": \"curves_mm\"}}], \"total\": 187, \"next_offset\": 20}, \"saved\": false, \"operation_id\": \"op_7a35f3da52c744b5b81c7fb79d88bc2d\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "application_before": "UG_APP_SFEM",
+        "application": "UG_APP_SFEM",
+        "documents": {
+          "documents": [
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-20260909-r1\\benchmark_2b3340c6f11a_geometry.prt",
+              "name": "benchmark_2b3340c6f11a_geometry",
+              "document_type": "Part",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_3e8d20aaee35485da45b8b6e92f59a1b",
+                "kind": "part",
+                "name": "benchmark_2b3340c6f11a_geometry",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_a762926108c747249165a3e60f819b01",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "a762926108c747249165a3e60f819b01",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-20260909-r1\\benchmark_2b3340c6f11a_geometry.prt",
+                "journal_id": "benchmark_2b3340c6f11a_geometry",
+                "display_name": "benchmark_2b3340c6f11a_geometry"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\U-sim-update-20260909-r1\\benchmark_ec2b6f8c50fd_geometry.prt",
+              "name": "benchmark_ec2b6f8c50fd_geometry",
+              "document_type": "Part",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_a2c281eac5c04240ac122fc1ad583f27",
+                "kind": "part",
+                "name": "benchmark_ec2b6f8c50fd_geometry",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_19101ed3189e470f98f11705888e3dad",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "19101ed3189e470f98f11705888e3dad",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\U-sim-update-20260909-r1\\benchmark_ec2b6f8c50fd_geometry.prt",
+                "journal_id": "benchmark_ec2b6f8c50fd_geometry",
+                "display_name": "benchmark_ec2b6f8c50fd_geometry"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\L-face-size-20260909-r1\\benchmark_d5f46585b1fa_geometry.prt",
+              "name": "benchmark_d5f46585b1fa_geometry",
+              "document_type": "Part",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_e0f796e826f94e2693fe1434a088ec2f",
+                "kind": "part",
+                "name": "benchmark_d5f46585b1fa_geometry",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_2fb24b4990b34c36870c03dfed521493",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "2fb24b4990b34c36870c03dfed521493",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\L-face-size-20260909-r1\\benchmark_d5f46585b1fa_geometry.prt",
+                "journal_id": "benchmark_d5f46585b1fa_geometry",
+                "display_name": "benchmark_d5f46585b1fa_geometry"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\M-mixed-mesh-20260909-r1\\benchmark_58e87a06afdb_geometry.prt",
+              "name": "benchmark_58e87a06afdb_geometry",
+              "document_type": "Part",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_3021396046454d89b972979666b9e504",
+                "kind": "part",
+                "name": "benchmark_58e87a06afdb_geometry",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_8427d22a49e443d4bc69eaca9cc5e123",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "8427d22a49e443d4bc69eaca9cc5e123",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\M-mixed-mesh-20260909-r1\\benchmark_58e87a06afdb_geometry.prt",
+                "journal_id": "benchmark_58e87a06afdb_geometry",
+                "display_name": "benchmark_58e87a06afdb_geometry"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\M-controls-public-20260909-r1\\benchmark_c774f716ecb3_geometry.prt",
+              "name": "benchmark_c774f716ecb3_geometry",
+              "document_type": "Part",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_25a960a1e9d54c05963a6a901983c05c",
+                "kind": "part",
+                "name": "benchmark_c774f716ecb3_geometry",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_8e1e3ae5ce2e4368802c38d384902b30",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "8e1e3ae5ce2e4368802c38d384902b30",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\M-controls-public-20260909-r1\\benchmark_c774f716ecb3_geometry.prt",
+                "journal_id": "benchmark_c774f716ecb3_geometry",
+                "display_name": "benchmark_c774f716ecb3_geometry"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-initial-conditions-public-20260909-r1\\benchmark_fa7a9e7c4e7c_geometry.prt",
+              "name": "benchmark_fa7a9e7c4e7c_geometry",
+              "document_type": "Part",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_4164c3bba06641899b0d67f9c593a2d7",
+                "kind": "part",
+                "name": "benchmark_fa7a9e7c4e7c_geometry",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_3830bbb528a944eba3107bf59d7f341e",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "3830bbb528a944eba3107bf59d7f341e",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-initial-conditions-public-20260909-r1\\benchmark_fa7a9e7c4e7c_geometry.prt",
+                "journal_id": "benchmark_fa7a9e7c4e7c_geometry",
+                "display_name": "benchmark_fa7a9e7c4e7c_geometry"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-temperature-material-public-20260909-r1\\benchmark_cfe079b0eed8_geometry.prt",
+              "name": "benchmark_cfe079b0eed8_geometry",
+              "document_type": "Part",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_0d485e7d928241f5a4f8000c6bbbeaf3",
+                "kind": "part",
+                "name": "benchmark_cfe079b0eed8_geometry",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_d22bafe32e4742d7aa7670205499d969",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "d22bafe32e4742d7aa7670205499d969",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-temperature-material-public-20260909-r1\\benchmark_cfe079b0eed8_geometry.prt",
+                "journal_id": "benchmark_cfe079b0eed8_geometry",
+                "display_name": "benchmark_cfe079b0eed8_geometry"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-heat-recovery-20260909-r1\\benchmark_b48bd54502e5_geometry.prt",
+              "name": "benchmark_b48bd54502e5_geometry",
+              "document_type": "Part",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_3ebe783a5c894b7bb6a148427051be4c",
+                "kind": "part",
+                "name": "benchmark_b48bd54502e5_geometry",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_23b334a7441b421fb6340af71a20777a",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "23b334a7441b421fb6340af71a20777a",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-heat-recovery-20260909-r1\\benchmark_b48bd54502e5_geometry.prt",
+                "journal_id": "benchmark_b48bd54502e5_geometry",
+                "display_name": "benchmark_b48bd54502e5_geometry"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-heat-schedule-public-20260909-r1\\benchmark_c9061a8738db_geometry.prt",
+              "name": "benchmark_c9061a8738db_geometry",
+              "document_type": "Part",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_6a82f6df0c82492e99077e5ea3c66f20",
+                "kind": "part",
+                "name": "benchmark_c9061a8738db_geometry",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_5bc9a37bd24749b6863c1c91072a844e",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "5bc9a37bd24749b6863c1c91072a844e",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-heat-schedule-public-20260909-r1\\benchmark_c9061a8738db_geometry.prt",
+                "journal_id": "benchmark_c9061a8738db_geometry",
+                "display_name": "benchmark_c9061a8738db_geometry"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-heat-schedule-20260909-r1\\benchmark_40aa7155a7d4_geometry.prt",
+              "name": "benchmark_40aa7155a7d4_geometry",
+              "document_type": "Part",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_73510454b7164d53ac21efce6724a5fa",
+                "kind": "part",
+                "name": "benchmark_40aa7155a7d4_geometry",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_b17f19cf83684b078991a3d3f99c960a",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "b17f19cf83684b078991a3d3f99c960a",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-heat-schedule-20260909-r1\\benchmark_40aa7155a7d4_geometry.prt",
+                "journal_id": "benchmark_40aa7155a7d4_geometry",
+                "display_name": "benchmark_40aa7155a7d4_geometry"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-heat-binding-20260909-r1\\benchmark_19990db7ac13_geometry.prt",
+              "name": "benchmark_19990db7ac13_geometry",
+              "document_type": "Part",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_1b84de09e2054fe9b1be77be3d68603b",
+                "kind": "part",
+                "name": "benchmark_19990db7ac13_geometry",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_4c98a10d8c3c40a5beaefb3cffb311e8",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "4c98a10d8c3c40a5beaefb3cffb311e8",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-heat-binding-20260909-r1\\benchmark_19990db7ac13_geometry.prt",
+                "journal_id": "benchmark_19990db7ac13_geometry",
+                "display_name": "benchmark_19990db7ac13_geometry"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-scalar-tables-20260909-r1\\benchmark_1ed9fb624b41_geometry.prt",
+              "name": "benchmark_1ed9fb624b41_geometry",
+              "document_type": "Part",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_be27ec22163344d5a81ab4398049daf8",
+                "kind": "part",
+                "name": "benchmark_1ed9fb624b41_geometry",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_e46ba4ef58f64ea28768af2bc9dc38f9",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "e46ba4ef58f64ea28768af2bc9dc38f9",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-scalar-tables-20260909-r1\\benchmark_1ed9fb624b41_geometry.prt",
+                "journal_id": "benchmark_1ed9fb624b41_geometry",
+                "display_name": "benchmark_1ed9fb624b41_geometry"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_geometry.prt",
+              "name": "benchmark_fd1cae97c9a6_geometry",
+              "document_type": "Part",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_d30a49a9978e432c8f56916b2ebe6d29",
+                "kind": "part",
+                "name": "benchmark_fd1cae97c9a6_geometry",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_566c06f38e7242e488e2c81baf70d488",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "566c06f38e7242e488e2c81baf70d488",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_geometry.prt",
+                "journal_id": "benchmark_fd1cae97c9a6_geometry",
+                "display_name": "benchmark_fd1cae97c9a6_geometry"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-environment-radiation-20260909-r1\\benchmark_5a40b73541f4_geometry.prt",
+              "name": "benchmark_5a40b73541f4_geometry",
+              "document_type": "Part",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_7ac03db345054d6f8b46312df3c2e078",
+                "kind": "part",
+                "name": "benchmark_5a40b73541f4_geometry",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_c78dfd04aa9043e2bbcba6987ed94bee",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "c78dfd04aa9043e2bbcba6987ed94bee",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-environment-radiation-20260909-r1\\benchmark_5a40b73541f4_geometry.prt",
+                "journal_id": "benchmark_5a40b73541f4_geometry",
+                "display_name": "benchmark_5a40b73541f4_geometry"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-environment-20260909-r1\\benchmark_c724ac72398e_geometry.prt",
+              "name": "benchmark_c724ac72398e_geometry",
+              "document_type": "Part",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_90b2eb845b4f46c39235380406068a5a",
+                "kind": "part",
+                "name": "benchmark_c724ac72398e_geometry",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_91e7bec490b3489bb7930073c75ec8f2",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "91e7bec490b3489bb7930073c75ec8f2",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-environment-20260909-r1\\benchmark_c724ac72398e_geometry.prt",
+                "journal_id": "benchmark_c724ac72398e_geometry",
+                "display_name": "benchmark_c724ac72398e_geometry"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\B-contact-authoring-20260909-r1\\benchmark_47530a89f645_geometry.prt",
+              "name": "benchmark_47530a89f645_geometry",
+              "document_type": "Part",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_bb2f6710ffbc4326809913e3b749182e",
+                "kind": "part",
+                "name": "benchmark_47530a89f645_geometry",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_b783fcd058374b2a94ca0cfa8ef21e7c",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "b783fcd058374b2a94ca0cfa8ef21e7c",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\B-contact-authoring-20260909-r1\\benchmark_47530a89f645_geometry.prt",
+                "journal_id": "benchmark_47530a89f645_geometry",
+                "display_name": "benchmark_47530a89f645_geometry"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F4-continuity-20260908-r1\\f4_continuity_r1.prt",
+              "name": "f4_continuity_r1",
+              "document_type": "Part",
+              "modified": true,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_c25a3d70f02745349aa0e5a30ed1cdc3",
+                "kind": "part",
+                "name": "f4_continuity_r1",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_3caab63111b84dd88c89c6e7c0d68c4f",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "3caab63111b84dd88c89c6e7c0d68c4f",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F4-continuity-20260908-r1\\f4_continuity_r1.prt",
+                "journal_id": "f4_continuity_r1",
+                "display_name": "f4_continuity_r1"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F4-planar-adapter-20260908-r3\\f4_r3_curves_inch.prt",
+              "name": "f4_r3_curves_inch",
+              "document_type": "Part",
+              "modified": true,
+              "work": false,
+              "display": false,
+              "units": "inch",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_0b8ef15f18af4a9d9cf136de0c8520cf",
+                "kind": "part",
+                "name": "f4_r3_curves_inch",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_37cc7d35aa034fafa3ba78eccf1aad87",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "37cc7d35aa034fafa3ba78eccf1aad87",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F4-planar-adapter-20260908-r3\\f4_r3_curves_inch.prt",
+                "journal_id": "f4_r3_curves_inch",
+                "display_name": "f4_r3_curves_inch"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F4-planar-adapter-20260908-r3\\f4_r3_curves_mm.prt",
+              "name": "f4_r3_curves_mm",
+              "document_type": "Part",
+              "modified": true,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_9ba3320fb3674ab4a03b19543521b0c7",
+                "kind": "part",
+                "name": "f4_r3_curves_mm",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_e816abd555654d14a99a47ed6cc622e4",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "e816abd555654d14a99a47ed6cc622e4",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F4-planar-adapter-20260908-r3\\f4_r3_curves_mm.prt",
+                "journal_id": "f4_r3_curves_mm",
+                "display_name": "f4_r3_curves_mm"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F4-planar-adapter-20260908-r1\\curves_mm.prt",
+              "name": "curves_mm",
+              "document_type": "Part",
+              "modified": true,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_5c5d272b74c24986a838b4344cfbf2b0",
+                "kind": "part",
+                "name": "curves_mm",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_68910bef64eb4629b9ee830bf6ffb2fa",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "68910bef64eb4629b9ee830bf6ffb2fa",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F4-planar-adapter-20260908-r1\\curves_mm.prt",
+                "journal_id": "curves_mm",
+                "display_name": "curves_mm"
+              }
+            }
+          ],
+          "total": 187,
+          "next_offset": 20
+        },
+        "saved": false,
+        "operation_id": "op_7a35f3da52c744b5b81c7fb79d88bc2d",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed"
+      },
+      "isError": false
+    },
+    "changed_mesh": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_93117695285b4164af31fc9663a95449\", \"kind\": \"part\", \"name\": \"benchmark_2b3340c6f11a_mesh\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_23f0fc943e6b4a0d8ecdf33b25c0bb5d\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"23f0fc943e6b4a0d8ecdf33b25c0bb5d\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-20260909-r1\\\\benchmark_2b3340c6f11a_mesh.fem\", \"journal_id\": \"benchmark_2b3340c6f11a_mesh\", \"display_name\": \"benchmark_2b3340c6f11a_mesh\"}, \"mesh_state\": {\"adapter\": 1, \"scope\": \"node_labels_coordinates_and_ordered_element_connectivity_shape_mesh_collector\", \"owner_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-20260909-r1\\\\benchmark_2b3340c6f11a_mesh.fem\", \"units\": \"mm\", \"coordinate_frame\": \"fem_part_absolute\", \"counts\": {\"nodes\": 45, \"elements\": 100}, \"sha256\": \"a7fcbd09f73992467a5119e5580e4647399eeccd86421d8dd61e156cd3f3a78f\", \"coordinate_encoding\": \"exact float64 hex; signed zero normalized\", \"full_model_freshness\": \"not_verified\", \"excluded\": [\"CAD geometry\", \"mesh controls\", \"material assignments/properties\", \"loads and boundary conditions\", \"solver element formulation\", \"solution settings\", \"external dependencies\"]}, \"operation_id\": \"op_1f34d650e20647d7b44c47b8e708e8c4\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "document": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_93117695285b4164af31fc9663a95449",
+          "kind": "part",
+          "name": "benchmark_2b3340c6f11a_mesh",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_23f0fc943e6b4a0d8ecdf33b25c0bb5d",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "23f0fc943e6b4a0d8ecdf33b25c0bb5d",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-20260909-r1\\benchmark_2b3340c6f11a_mesh.fem",
+          "journal_id": "benchmark_2b3340c6f11a_mesh",
+          "display_name": "benchmark_2b3340c6f11a_mesh"
+        },
+        "mesh_state": {
+          "adapter": 1,
+          "scope": "node_labels_coordinates_and_ordered_element_connectivity_shape_mesh_collector",
+          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-20260909-r1\\benchmark_2b3340c6f11a_mesh.fem",
+          "units": "mm",
+          "coordinate_frame": "fem_part_absolute",
+          "counts": {
+            "nodes": 45,
+            "elements": 100
+          },
+          "sha256": "a7fcbd09f73992467a5119e5580e4647399eeccd86421d8dd61e156cd3f3a78f",
+          "coordinate_encoding": "exact float64 hex; signed zero normalized",
+          "full_model_freshness": "not_verified",
+          "excluded": [
+            "CAD geometry",
+            "mesh controls",
+            "material assignments/properties",
+            "loads and boundary conditions",
+            "solver element formulation",
+            "solution settings",
+            "external dependencies"
+          ]
+        },
+        "operation_id": "op_1f34d650e20647d7b44c47b8e708e8c4",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "not_applicable"
+      },
+      "isError": false
+    },
+    "launch_rejected": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"error\", \"warnings\": [], \"units\": null, \"code\": \"NX_SIM_MESH_STATE_CHANGED\", \"message\": \"Prepared mesh differs or cannot be verified; prepare a new isolated job\", \"retryable\": false, \"details\": {\"comparison\": {\"state\": \"changed\", \"scope\": \"node_labels_coordinates_and_ordered_element_connectivity_shape_mesh_collector\", \"full_model_freshness\": \"not_verified\"}, \"mutation_outcome\": \"not_started\", \"operation_id\": \"mesh-guard-rejected-launch-r1\"}}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "error",
+        "warnings": [],
+        "units": null,
+        "code": "NX_SIM_MESH_STATE_CHANGED",
+        "message": "Prepared mesh differs or cannot be verified; prepare a new isolated job",
+        "retryable": false,
+        "details": {
+          "comparison": {
+            "state": "changed",
+            "scope": "node_labels_coordinates_and_ordered_element_connectivity_shape_mesh_collector",
+            "full_model_freshness": "not_verified"
+          },
+          "mutation_outcome": "not_started",
+          "operation_id": "mesh-guard-rejected-launch-r1"
+        }
+      },
+      "isError": true
+    },
+    "job_after_rejection": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": null, \"job_id\": \"mesh-guard-r1\", \"request_sha256\": \"d71def962f16b05cf2d1d9b86e6ba0206c1435588a6826f9d98aba4026e984e1\", \"state\": \"accepted\", \"revision\": 0, \"process_binding_revision\": null, \"launch_retry_allowed\": true, \"numerical_convergence\": \"not_established\", \"results_validated\": false, \"observed_at\": \"2026-09-09T14:11:30.397184+00:00\", \"observation_kind\": \"persisted_record\", \"live_process_state\": \"not_checked\", \"job_folder\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\simcenter-jobs\", \"observer\": {\"tracked_in_this_nx_process\": false}, \"manifest\": {\"analysis_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-export-20260909-r1\\\\mesh_guard_v_r1.sim\", \"analysis_type\": \"Thermal\", \"dependency_scope\": \"direct_sim_fem_cad_associations\", \"excluded_dependencies\": \"recursive components, external fields/material files, solver artifacts and result dependencies\", \"isolated_output_directory\": \"d:\\\\cad\\\\simcenter_mcp_workspace\\\\ui-benchmarks\\\\v-mesh-guard-export-20260909-r1\", \"live_mesh_state\": {\"adapter\": 1, \"coordinate_encoding\": \"exact float64 hex; signed zero normalized\", \"coordinate_frame\": \"fem_part_absolute\", \"counts\": {\"elements\": 100, \"nodes\": 45}, \"excluded\": [\"CAD geometry\", \"mesh controls\", \"material assignments/properties\", \"loads and boundary conditions\", \"solver element formulation\", \"solution settings\", \"external dependencies\"], \"full_model_freshness\": \"not_verified\", \"owner_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-20260909-r1\\\\benchmark_2b3340c6f11a_mesh.fem\", \"scope\": \"node_labels_coordinates_and_ordered_element_connectivity_shape_mesh_collector\", \"sha256\": \"b9797cc802a2ca6a57bc34372e6590d9ff18a92f4b54edd53caa57b9b5a84a70\", \"units\": \"mm\"}, \"live_thermal_state\": {\"adapter\": 3, \"boundary_scope\": \"observed_boundary_values_and_selected_solution_ordered_step_membership_v4\", \"boundary_state\": {\"boundaries\": [{\"category\": \"constraints\", \"descriptor\": \"Temperature\", \"journal_id\": \"Constraint[UPDATE_TEMPERATURE]\", \"properties\": [{\"cae_native_type\": \"-1\", \"name\": \"description\", \"native_type\": \"0\", \"representation\": \"text_lines\", \"units\": null, \"value\": []}, {\"name\": \"Selection Method\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Option\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"evaluated_value\": 293.15, \"expression\": \"293.15\", \"name\": \"Temperature\", \"native_type\": \"6\", \"representation\": \"expression\", \"unit_symbol\": \"K\", \"units\": \"Kelvin\"}, {\"name\": \"Temperature File\", \"native_type\": \"16\", \"representation\": \"file_reference\", \"units\": null, \"value\": \"\"}, {\"name\": \"Results Directory\", \"native_type\": \"1\", \"units\": null, \"value\": \"\"}, {\"name\": \"Specify Layer to Apply to\", \"native_type\": \"2\", \"units\": null, \"value\": false}, {\"name\": \"Apply to\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Layer Number\", \"native_type\": \"3\", \"units\": null, \"value\": 1}, {\"name\": \"Custom Settings Option\", \"native_type\": \"2\", \"units\": null, \"value\": false}, {\"name\": \"Custom Settings\", \"native_type\": \"1\", \"units\": null, \"value\": \"BCONX\"}, {\"name\": \"distributionType\", \"native_type\": \"3\", \"units\": null, \"value\": 32}], \"targets\": [{\"index\": 0, \"members\": [{\"journal_id\": \"HANDLE R-37454\", \"owner_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-export-20260909-r1\\\\mesh_guard_v_r1.sim\", \"sub_id\": 0, \"subtype\": \"0\", \"type\": \"CAEFace\"}]}, {\"index\": 1, \"members\": [null]}]}, {\"category\": \"loads\", \"descriptor\": \"Heat Load\", \"journal_id\": \"Load[UPDATE_POWER]\", \"properties\": [{\"cae_native_type\": \"-1\", \"name\": \"description\", \"native_type\": \"0\", \"representation\": \"text_lines\", \"units\": null, \"value\": []}, {\"name\": \"Selection Method\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Override Region\", \"native_type\": \"2\", \"units\": null, \"value\": false}, {\"cae_native_type\": \"-10\", \"name\": \"Non-Geometric Element\", \"native_type\": \"0\", \"representation\": \"named_property_table\", \"units\": null, \"value\": null}, {\"evaluated_value\": 1.0, \"expression\": \"1.0\", \"name\": \"Heat Load\", \"native_type\": \"6\", \"representation\": \"expression\", \"unit_symbol\": \"W\", \"units\": \"HeatFlow_Metric2\"}, {\"evaluated_value\": -777777.0, \"expression\": \"-777777\", \"name\": \"Heat Load Override\", \"native_type\": \"6\", \"representation\": \"expression\", \"unit_symbol\": null, \"units\": \"dimensionless\"}, {\"name\": \"Specify Reference Temperature Set\", \"native_type\": \"2\", \"units\": null, \"value\": false}, {\"cae_native_type\": \"-10\", \"name\": \"Reference Temperature Set\", \"native_type\": \"0\", \"representation\": \"named_property_table\", \"units\": null, \"value\": null}, {\"name\": \"Control Heater\", \"native_type\": \"2\", \"units\": null, \"value\": false}, {\"cae_native_type\": \"-10\", \"name\": \"Thermostat\", \"native_type\": \"0\", \"representation\": \"named_property_table\", \"units\": null, \"value\": null}, {\"name\": \"Specify Layer to Apply to\", \"native_type\": \"2\", \"units\": null, \"value\": false}, {\"name\": \"Apply to\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Layer Number\", \"native_type\": \"3\", \"units\": null, \"value\": 1}, {\"name\": \"Per Element\", \"native_type\": \"2\", \"units\": null, \"value\": false}, {\"name\": \"Per Node\", \"native_type\": \"2\", \"units\": null, \"value\": false}, {\"name\": \"distributionType\", \"native_type\": \"3\", \"units\": null, \"value\": 32}, {\"name\": \"Custom Settings Option\", \"native_type\": \"2\", \"units\": null, \"value\": false}, {\"name\": \"Custom Settings\", \"native_type\": \"1\", \"units\": null, \"value\": \"BCONX\"}], \"targets\": [{\"index\": 0, \"members\": [{\"journal_id\": \"HANDLE R-37481\", \"owner_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-export-20260909-r1\\\\mesh_guard_v_r1.sim\", \"sub_id\": 0, \"subtype\": \"0\", \"type\": \"CAEBody\"}]}, {\"index\": 1, \"members\": [null]}]}], \"comparison_verified\": true, \"effective_membership\": {\"comparison_verified\": true, \"errors\": [], \"sha256\": \"1ef6ff54743b93d1f0e8922a03a98f2a20c0710b8720b3623cdcda957b90e752\", \"solution\": {\"bcs\": [{\"journal_id\": \"Constraint[UPDATE_TEMPERATURE]\", \"owner_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-export-20260909-r1\\\\mesh_guard_v_r1.sim\"}, {\"journal_id\": \"Load[UPDATE_POWER]\", \"owner_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-export-20260909-r1\\\\mesh_guard_v_r1.sim\"}], \"conflict_override_count\": 0, \"folders\": [], \"owner\": {\"journal_id\": \"Solution[Conduction]\", \"owner_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-export-20260909-r1\\\\mesh_guard_v_r1.sim\"}, \"unfoldered_bcs\": [{\"journal_id\": \"Constraint[UPDATE_TEMPERATURE]\", \"owner_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-export-20260909-r1\\\\mesh_guard_v_r1.sim\"}, {\"journal_id\": \"Load[UPDATE_POWER]\", \"owner_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-export-20260909-r1\\\\mesh_guard_v_r1.sim\"}]}, \"steps\": [{\"bcs\": [], \"folders\": [], \"index\": 0, \"owner\": {\"journal_id\": \"SolutionStep[Conduction]\", \"owner_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-export-20260909-r1\\\\mesh_guard_v_r1.sim\"}, \"unfoldered_bcs\": []}]}, \"errors\": [], \"full_model_freshness\": \"not_verified\", \"owner_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-export-20260909-r1\\\\mesh_guard_v_r1.sim\", \"scope\": \"observed_boundary_values_and_selected_solution_ordered_step_membership_v4\", \"sha256\": \"cbf010142b5e5b5e430ef171b822b073ac14b92913af17050023e0757c76ae10\", \"uninspected_properties\": []}, \"errors\": [], \"full_model_freshness\": \"not_verified\", \"material_state\": {\"adapter\": 1, \"collectors\": [{\"collector\": {\"journal_id\": \"MeshCollector[Solid(1)]\", \"kind\": \"mesh_collector\", \"owner_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-20260909-r1\\\\benchmark_2b3340c6f11a_mesh.fem\"}, \"coordinate_frame\": \"part_absolute\", \"length_units\": \"mm\", \"material\": {\"journal_id\": \"PhysicalMaterial[UPDATE_SOLID]\", \"kind\": \"material\", \"owner_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-20260909-r1\\\\benchmark_2b3340c6f11a_mesh.fem\"}, \"material_inherited\": false, \"native_type\": \"Solid\", \"orientation\": {\"interpretation\": \"default_frame_stored_frame_ignored\", \"native_selector\": 0, \"stored_frame\": null}, \"thermal_properties\": {\"MassDensityConstant\": {\"units\": \"KilogramPerCubicMeter\", \"value\": 2700.0}, \"SpecificHeat\": {\"units\": \"SpecificHeat_Metric2\", \"value\": 900.0}, \"ThermalConductivity\": {\"units\": \"ThermalConductivity_Metric3\", \"value\": 200.0}}}], \"errors\": [], \"full_model_freshness\": \"not_verified\", \"owner_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-20260909-r1\\\\benchmark_2b3340c6f11a_mesh.fem\", \"scope\": \"solid_material_assignment_frame_constant_thermal_properties\", \"sha256\": \"0ba6aee33a0bed00d28d341b6c817baa3584d8f941801b3b67de9cf2bc12b07b\"}, \"owner_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-export-20260909-r1\\\\mesh_guard_v_r1.sim\", \"scope\": \"solid_material_frame_properties_and_observed_thermal_boundaries\", \"sha256\": \"52ec0db26df0435700bbb87b3e65cbeee0f49beec76b3458b43c2bd4cda687e5\"}, \"mesh_inspection_limit\": 500, \"native_export\": {\"analysis_type\": \"Thermal\", \"artifacts\": [{\"bytes\": 18530, \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-export-20260909-r1\\\\mesh_guard_v_r1-Conduction.map\"}, {\"bytes\": 39158, \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-export-20260909-r1\\\\mesh_guard_v_r1-Conduction.xml\"}], \"coupled_ambient_validation\": null, \"coupled_pressure_validation\": null, \"input_identity\": {\"bytes\": 39158, \"canonicalization\": \"xml_c14n2_no_comments\", \"sha256\": \"939056d30675d9d2b4614bff685eabb721c93dd93846cefd77a97f0b02b745d9\", \"xml_content_sha256\": \"022c8950a75b66cfcdd767206e565d657df480d6d32b7a7c4edc2c90d78b3f56\"}, \"input_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-export-20260909-r1\\\\mesh_guard_v_r1-Conduction.xml\", \"scope\": \"Native thermal/flow input export, not a solve or convergence check\", \"solution\": \"Conduction\", \"solve_readiness\": \"not_established\", \"solver\": \"NX MULTIPHYSICS\", \"solver_launched\": false, \"source_modified\": false, \"source_sim\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-export-20260909-r1\\\\mesh_guard_v_r1.sim\", \"translator_reports\": [], \"validation\": {\"mesh_counts\": {\"element_sets\": 1, \"elements\": 100, \"nodes\": 45, \"scope\": \"observed_multiphysics_xml_layout\"}, \"solve_readiness\": \"not_established\", \"state\": \"well_formed\", \"step_definitions\": 1}}, \"preparation_adapter\": 1, \"prepared_input\": {\"dependencies\": [{\"bytes\": 7678536, \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-export-20260909-r1\\\\mesh_guard_v_r1.sim\", \"sha256\": \"93c1d079237925624b26bd315b2f04ecad7f682aa2de4eeede87d087ae5b79f2\"}, {\"bytes\": 2912497, \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-20260909-r1\\\\benchmark_2b3340c6f11a_mesh.fem\", \"sha256\": \"cac12f7d2258606397d145bc24607920c4f06dbcd64f90b808d52f606fcfb036\"}, {\"bytes\": 76037, \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-20260909-r1\\\\benchmark_2b3340c6f11a_geometry.prt\", \"sha256\": \"a27db91c3cae9f09709bc98b2c38b5652b222d46cec992cc441bec35549b7f38\"}], \"dependency_completeness\": \"not_established\", \"input\": {\"bytes\": 39158, \"canonicalization\": \"xml_c14n2_no_comments\", \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-export-20260909-r1\\\\mesh_guard_v_r1-Conduction.xml\", \"sha256\": \"939056d30675d9d2b4614bff685eabb721c93dd93846cefd77a97f0b02b745d9\", \"xml_content_sha256\": \"022c8950a75b66cfcdd767206e565d657df480d6d32b7a7c4edc2c90d78b3f56\"}, \"schema\": 1, \"scope\": \"explicit saved dependencies and input bytes only\", \"solve_readiness\": \"not_established\"}, \"solution\": \"Conduction\", \"solver\": \"NX MULTIPHYSICS\"}, \"operation_id\": \"op_338878f59cac48329cb6ff8553bfca9e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": null,
+        "job_id": "mesh-guard-r1",
+        "request_sha256": "d71def962f16b05cf2d1d9b86e6ba0206c1435588a6826f9d98aba4026e984e1",
+        "state": "accepted",
+        "revision": 0,
+        "process_binding_revision": null,
+        "launch_retry_allowed": true,
+        "numerical_convergence": "not_established",
+        "results_validated": false,
+        "observed_at": "2026-09-09T14:11:30.397184+00:00",
+        "observation_kind": "persisted_record",
+        "live_process_state": "not_checked",
+        "job_folder": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs",
+        "observer": {
+          "tracked_in_this_nx_process": false
+        },
+        "manifest": {
+          "analysis_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-export-20260909-r1\\mesh_guard_v_r1.sim",
+          "analysis_type": "Thermal",
+          "dependency_scope": "direct_sim_fem_cad_associations",
+          "excluded_dependencies": "recursive components, external fields/material files, solver artifacts and result dependencies",
+          "isolated_output_directory": "d:\\cad\\simcenter_mcp_workspace\\ui-benchmarks\\v-mesh-guard-export-20260909-r1",
+          "live_mesh_state": {
+            "adapter": 1,
+            "coordinate_encoding": "exact float64 hex; signed zero normalized",
+            "coordinate_frame": "fem_part_absolute",
+            "counts": {
+              "elements": 100,
+              "nodes": 45
+            },
+            "excluded": [
+              "CAD geometry",
+              "mesh controls",
+              "material assignments/properties",
+              "loads and boundary conditions",
+              "solver element formulation",
+              "solution settings",
+              "external dependencies"
+            ],
+            "full_model_freshness": "not_verified",
+            "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-20260909-r1\\benchmark_2b3340c6f11a_mesh.fem",
+            "scope": "node_labels_coordinates_and_ordered_element_connectivity_shape_mesh_collector",
+            "sha256": "b9797cc802a2ca6a57bc34372e6590d9ff18a92f4b54edd53caa57b9b5a84a70",
+            "units": "mm"
+          },
+          "live_thermal_state": {
+            "adapter": 3,
+            "boundary_scope": "observed_boundary_values_and_selected_solution_ordered_step_membership_v4",
+            "boundary_state": {
+              "boundaries": [
+                {
+                  "category": "constraints",
+                  "descriptor": "Temperature",
+                  "journal_id": "Constraint[UPDATE_TEMPERATURE]",
+                  "properties": [
+                    {
+                      "cae_native_type": "-1",
+                      "name": "description",
+                      "native_type": "0",
+                      "representation": "text_lines",
+                      "units": null,
+                      "value": []
+                    },
+                    {
+                      "name": "Selection Method",
+                      "native_type": "3",
+                      "units": null,
+                      "value": 0
+                    },
+                    {
+                      "name": "Option",
+                      "native_type": "3",
+                      "units": null,
+                      "value": 0
+                    },
+                    {
+                      "evaluated_value": 293.15,
+                      "expression": "293.15",
+                      "name": "Temperature",
+                      "native_type": "6",
+                      "representation": "expression",
+                      "unit_symbol": "K",
+                      "units": "Kelvin"
+                    },
+                    {
+                      "name": "Temperature File",
+                      "native_type": "16",
+                      "representation": "file_reference",
+                      "units": null,
+                      "value": ""
+                    },
+                    {
+                      "name": "Results Directory",
+                      "native_type": "1",
+                      "units": null,
+                      "value": ""
+                    },
+                    {
+                      "name": "Specify Layer to Apply to",
+                      "native_type": "2",
+                      "units": null,
+                      "value": false
+                    },
+                    {
+                      "name": "Apply to",
+                      "native_type": "3",
+                      "units": null,
+                      "value": 0
+                    },
+                    {
+                      "name": "Layer Number",
+                      "native_type": "3",
+                      "units": null,
+                      "value": 1
+                    },
+                    {
+                      "name": "Custom Settings Option",
+                      "native_type": "2",
+                      "units": null,
+                      "value": false
+                    },
+                    {
+                      "name": "Custom Settings",
+                      "native_type": "1",
+                      "units": null,
+                      "value": "BCONX"
+                    },
+                    {
+                      "name": "distributionType",
+                      "native_type": "3",
+                      "units": null,
+                      "value": 32
+                    }
+                  ],
+                  "targets": [
+                    {
+                      "index": 0,
+                      "members": [
+                        {
+                          "journal_id": "HANDLE R-37454",
+                          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-export-20260909-r1\\mesh_guard_v_r1.sim",
+                          "sub_id": 0,
+                          "subtype": "0",
+                          "type": "CAEFace"
+                        }
+                      ]
+                    },
+                    {
+                      "index": 1,
+                      "members": [
+                        null
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "category": "loads",
+                  "descriptor": "Heat Load",
+                  "journal_id": "Load[UPDATE_POWER]",
+                  "properties": [
+                    {
+                      "cae_native_type": "-1",
+                      "name": "description",
+                      "native_type": "0",
+                      "representation": "text_lines",
+                      "units": null,
+                      "value": []
+                    },
+                    {
+                      "name": "Selection Method",
+                      "native_type": "3",
+                      "units": null,
+                      "value": 0
+                    },
+                    {
+                      "name": "Override Region",
+                      "native_type": "2",
+                      "units": null,
+                      "value": false
+                    },
+                    {
+                      "cae_native_type": "-10",
+                      "name": "Non-Geometric Element",
+                      "native_type": "0",
+                      "representation": "named_property_table",
+                      "units": null,
+                      "value": null
+                    },
+                    {
+                      "evaluated_value": 1.0,
+                      "expression": "1.0",
+                      "name": "Heat Load",
+                      "native_type": "6",
+                      "representation": "expression",
+                      "unit_symbol": "W",
+                      "units": "HeatFlow_Metric2"
+                    },
+                    {
+                      "evaluated_value": -777777.0,
+                      "expression": "-777777",
+                      "name": "Heat Load Override",
+                      "native_type": "6",
+                      "representation": "expression",
+                      "unit_symbol": null,
+                      "units": "dimensionless"
+                    },
+                    {
+                      "name": "Specify Reference Temperature Set",
+                      "native_type": "2",
+                      "units": null,
+                      "value": false
+                    },
+                    {
+                      "cae_native_type": "-10",
+                      "name": "Reference Temperature Set",
+                      "native_type": "0",
+                      "representation": "named_property_table",
+                      "units": null,
+                      "value": null
+                    },
+                    {
+                      "name": "Control Heater",
+                      "native_type": "2",
+                      "units": null,
+                      "value": false
+                    },
+                    {
+                      "cae_native_type": "-10",
+                      "name": "Thermostat",
+                      "native_type": "0",
+                      "representation": "named_property_table",
+                      "units": null,
+                      "value": null
+                    },
+                    {
+                      "name": "Specify Layer to Apply to",
+                      "native_type": "2",
+                      "units": null,
+                      "value": false
+                    },
+                    {
+                      "name": "Apply to",
+                      "native_type": "3",
+                      "units": null,
+                      "value": 0
+                    },
+                    {
+                      "name": "Layer Number",
+                      "native_type": "3",
+                      "units": null,
+                      "value": 1
+                    },
+                    {
+                      "name": "Per Element",
+                      "native_type": "2",
+                      "units": null,
+                      "value": false
+                    },
+                    {
+                      "name": "Per Node",
+                      "native_type": "2",
+                      "units": null,
+                      "value": false
+                    },
+                    {
+                      "name": "distributionType",
+                      "native_type": "3",
+                      "units": null,
+                      "value": 32
+                    },
+                    {
+                      "name": "Custom Settings Option",
+                      "native_type": "2",
+                      "units": null,
+                      "value": false
+                    },
+                    {
+                      "name": "Custom Settings",
+                      "native_type": "1",
+                      "units": null,
+                      "value": "BCONX"
+                    }
+                  ],
+                  "targets": [
+                    {
+                      "index": 0,
+                      "members": [
+                        {
+                          "journal_id": "HANDLE R-37481",
+                          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-export-20260909-r1\\mesh_guard_v_r1.sim",
+                          "sub_id": 0,
+                          "subtype": "0",
+                          "type": "CAEBody"
+                        }
+                      ]
+                    },
+                    {
+                      "index": 1,
+                      "members": [
+                        null
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "comparison_verified": true,
+              "effective_membership": {
+                "comparison_verified": true,
+                "errors": [],
+                "sha256": "1ef6ff54743b93d1f0e8922a03a98f2a20c0710b8720b3623cdcda957b90e752",
+                "solution": {
+                  "bcs": [
+                    {
+                      "journal_id": "Constraint[UPDATE_TEMPERATURE]",
+                      "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-export-20260909-r1\\mesh_guard_v_r1.sim"
+                    },
+                    {
+                      "journal_id": "Load[UPDATE_POWER]",
+                      "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-export-20260909-r1\\mesh_guard_v_r1.sim"
+                    }
+                  ],
+                  "conflict_override_count": 0,
+                  "folders": [],
+                  "owner": {
+                    "journal_id": "Solution[Conduction]",
+                    "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-export-20260909-r1\\mesh_guard_v_r1.sim"
+                  },
+                  "unfoldered_bcs": [
+                    {
+                      "journal_id": "Constraint[UPDATE_TEMPERATURE]",
+                      "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-export-20260909-r1\\mesh_guard_v_r1.sim"
+                    },
+                    {
+                      "journal_id": "Load[UPDATE_POWER]",
+                      "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-export-20260909-r1\\mesh_guard_v_r1.sim"
+                    }
+                  ]
+                },
+                "steps": [
+                  {
+                    "bcs": [],
+                    "folders": [],
+                    "index": 0,
+                    "owner": {
+                      "journal_id": "SolutionStep[Conduction]",
+                      "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-export-20260909-r1\\mesh_guard_v_r1.sim"
+                    },
+                    "unfoldered_bcs": []
+                  }
+                ]
+              },
+              "errors": [],
+              "full_model_freshness": "not_verified",
+              "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-export-20260909-r1\\mesh_guard_v_r1.sim",
+              "scope": "observed_boundary_values_and_selected_solution_ordered_step_membership_v4",
+              "sha256": "cbf010142b5e5b5e430ef171b822b073ac14b92913af17050023e0757c76ae10",
+              "uninspected_properties": []
+            },
+            "errors": [],
+            "full_model_freshness": "not_verified",
+            "material_state": {
+              "adapter": 1,
+              "collectors": [
+                {
+                  "collector": {
+                    "journal_id": "MeshCollector[Solid(1)]",
+                    "kind": "mesh_collector",
+                    "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-20260909-r1\\benchmark_2b3340c6f11a_mesh.fem"
+                  },
+                  "coordinate_frame": "part_absolute",
+                  "length_units": "mm",
+                  "material": {
+                    "journal_id": "PhysicalMaterial[UPDATE_SOLID]",
+                    "kind": "material",
+                    "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-20260909-r1\\benchmark_2b3340c6f11a_mesh.fem"
+                  },
+                  "material_inherited": false,
+                  "native_type": "Solid",
+                  "orientation": {
+                    "interpretation": "default_frame_stored_frame_ignored",
+                    "native_selector": 0,
+                    "stored_frame": null
+                  },
+                  "thermal_properties": {
+                    "MassDensityConstant": {
+                      "units": "KilogramPerCubicMeter",
+                      "value": 2700.0
+                    },
+                    "SpecificHeat": {
+                      "units": "SpecificHeat_Metric2",
+                      "value": 900.0
+                    },
+                    "ThermalConductivity": {
+                      "units": "ThermalConductivity_Metric3",
+                      "value": 200.0
+                    }
+                  }
+                }
+              ],
+              "errors": [],
+              "full_model_freshness": "not_verified",
+              "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-20260909-r1\\benchmark_2b3340c6f11a_mesh.fem",
+              "scope": "solid_material_assignment_frame_constant_thermal_properties",
+              "sha256": "0ba6aee33a0bed00d28d341b6c817baa3584d8f941801b3b67de9cf2bc12b07b"
+            },
+            "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-export-20260909-r1\\mesh_guard_v_r1.sim",
+            "scope": "solid_material_frame_properties_and_observed_thermal_boundaries",
+            "sha256": "52ec0db26df0435700bbb87b3e65cbeee0f49beec76b3458b43c2bd4cda687e5"
+          },
+          "mesh_inspection_limit": 500,
+          "native_export": {
+            "analysis_type": "Thermal",
+            "artifacts": [
+              {
+                "bytes": 18530,
+                "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-export-20260909-r1\\mesh_guard_v_r1-Conduction.map"
+              },
+              {
+                "bytes": 39158,
+                "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-export-20260909-r1\\mesh_guard_v_r1-Conduction.xml"
+              }
+            ],
+            "coupled_ambient_validation": null,
+            "coupled_pressure_validation": null,
+            "input_identity": {
+              "bytes": 39158,
+              "canonicalization": "xml_c14n2_no_comments",
+              "sha256": "939056d30675d9d2b4614bff685eabb721c93dd93846cefd77a97f0b02b745d9",
+              "xml_content_sha256": "022c8950a75b66cfcdd767206e565d657df480d6d32b7a7c4edc2c90d78b3f56"
+            },
+            "input_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-export-20260909-r1\\mesh_guard_v_r1-Conduction.xml",
+            "scope": "Native thermal/flow input export, not a solve or convergence check",
+            "solution": "Conduction",
+            "solve_readiness": "not_established",
+            "solver": "NX MULTIPHYSICS",
+            "solver_launched": false,
+            "source_modified": false,
+            "source_sim": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-export-20260909-r1\\mesh_guard_v_r1.sim",
+            "translator_reports": [],
+            "validation": {
+              "mesh_counts": {
+                "element_sets": 1,
+                "elements": 100,
+                "nodes": 45,
+                "scope": "observed_multiphysics_xml_layout"
+              },
+              "solve_readiness": "not_established",
+              "state": "well_formed",
+              "step_definitions": 1
+            }
+          },
+          "preparation_adapter": 1,
+          "prepared_input": {
+            "dependencies": [
+              {
+                "bytes": 7678536,
+                "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-export-20260909-r1\\mesh_guard_v_r1.sim",
+                "sha256": "93c1d079237925624b26bd315b2f04ecad7f682aa2de4eeede87d087ae5b79f2"
+              },
+              {
+                "bytes": 2912497,
+                "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-20260909-r1\\benchmark_2b3340c6f11a_mesh.fem",
+                "sha256": "cac12f7d2258606397d145bc24607920c4f06dbcd64f90b808d52f606fcfb036"
+              },
+              {
+                "bytes": 76037,
+                "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-20260909-r1\\benchmark_2b3340c6f11a_geometry.prt",
+                "sha256": "a27db91c3cae9f09709bc98b2c38b5652b222d46cec992cc441bec35549b7f38"
+              }
+            ],
+            "dependency_completeness": "not_established",
+            "input": {
+              "bytes": 39158,
+              "canonicalization": "xml_c14n2_no_comments",
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-export-20260909-r1\\mesh_guard_v_r1-Conduction.xml",
+              "sha256": "939056d30675d9d2b4614bff685eabb721c93dd93846cefd77a97f0b02b745d9",
+              "xml_content_sha256": "022c8950a75b66cfcdd767206e565d657df480d6d32b7a7c4edc2c90d78b3f56"
+            },
+            "schema": 1,
+            "scope": "explicit saved dependencies and input bytes only",
+            "solve_readiness": "not_established"
+          },
+          "solution": "Conduction",
+          "solver": "NX MULTIPHYSICS"
+        },
+        "operation_id": "op_338878f59cac48329cb6ff8553bfca9e",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "not_applicable"
+      },
+      "isError": false
+    },
+    "cancel": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"job_id\": \"mesh-guard-r1\", \"state\": \"cancelled\", \"revision\": 1, \"request_sha256\": \"d71def962f16b05cf2d1d9b86e6ba0206c1435588a6826f9d98aba4026e984e1\", \"replayed\": false, \"cancellation_scope\": \"before_launch\", \"solver_stop_requested\": false, \"files_deleted\": false, \"launch_retry_allowed\": false, \"operation_id\": \"mesh-guard-cancel-r1\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "job_id": "mesh-guard-r1",
+        "state": "cancelled",
+        "revision": 1,
+        "request_sha256": "d71def962f16b05cf2d1d9b86e6ba0206c1435588a6826f9d98aba4026e984e1",
+        "replayed": false,
+        "cancellation_scope": "before_launch",
+        "solver_stop_requested": false,
+        "files_deleted": false,
+        "launch_retry_allowed": false,
+        "operation_id": "mesh-guard-cancel-r1",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed"
+      },
+      "isError": false
+    },
+    "cancelled": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": null, \"job_id\": \"mesh-guard-r1\", \"request_sha256\": \"d71def962f16b05cf2d1d9b86e6ba0206c1435588a6826f9d98aba4026e984e1\", \"state\": \"cancelled\", \"revision\": 1, \"process_binding_revision\": null, \"launch_retry_allowed\": false, \"numerical_convergence\": \"not_established\", \"results_validated\": false, \"observed_at\": \"2026-09-09T14:15:56.256814+00:00\", \"observation_kind\": \"persisted_record\", \"live_process_state\": \"not_checked\", \"job_folder\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\simcenter-jobs\", \"observer\": {\"tracked_in_this_nx_process\": false}, \"operation_id\": \"op_6ec4050f31f446a58a3187b44d6d294f\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": null,
+        "job_id": "mesh-guard-r1",
+        "request_sha256": "d71def962f16b05cf2d1d9b86e6ba0206c1435588a6826f9d98aba4026e984e1",
+        "state": "cancelled",
+        "revision": 1,
+        "process_binding_revision": null,
+        "launch_retry_allowed": false,
+        "numerical_convergence": "not_established",
+        "results_validated": false,
+        "observed_at": "2026-09-09T14:15:56.256814+00:00",
+        "observation_kind": "persisted_record",
+        "live_process_state": "not_checked",
+        "job_folder": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs",
+        "observer": {
+          "tracked_in_this_nx_process": false
+        },
+        "operation_id": "op_6ec4050f31f446a58a3187b44d6d294f",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "not_applicable"
+      },
+      "isError": false
+    }
+  },
+  "passed": true,
+  "solver_launched": false,
+  "job_state": "cancelled"
+}

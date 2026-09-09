@@ -1674,11 +1674,15 @@ class SimcenterMixin:
             }
         return result
 
-    def _sim_prepare_solve(self, document, job_id, job_folder="simcenter-jobs"):
+    def _sim_prepare_solve(
+        self, document, job_id, job_folder="simcenter-jobs", mesh_inspection_limit=200000
+    ):
         from nx_mcp.simcenter.preparation import prepare_solve
 
         sim = self.objects.resolve(document, expected_kind="part")
-        return prepare_solve(self.session, self.workspace, sim, job_id, job_folder)
+        return prepare_solve(
+            self.session, self.workspace, sim, job_id, job_folder, mesh_inspection_limit
+        )
 
     def _sim_export_input(self, document):
         from nx_mcp.simcenter.input_export import export_flow_input

@@ -4,7 +4,7 @@
 PUBLIC_EVIDENCE = {
     "nx_sim_mesh_state": (
         "mesh-state-public.json",
-        "Exact labelled node/connectivity/shape/mesh/collector digest: repeat readback, bounded traversal, inactive/stale rejection and FEM save/close/reopen; same-count change detection tested offline; not whole-model freshness",
+        "Exact labelled node/connectivity/shape/mesh/collector digest: repeat readback, bounded traversal, inactive/stale rejection and FEM save/close/reopen; native same-count coordinate detection and public launch rejection retained in mesh-guard-rejection-public.json; not whole-model freshness",
     ),
     "nx_sim_face_size_edit": (
         "remesh-public.json",
@@ -68,7 +68,7 @@ PUBLIC_EVIDENCE = {
     ),
     "nx_sim_launch": (
         "native-auto-observer-cycle.json",
-        "Prepared Flow launch with automatic terminal observer surviving MCP client disconnect; no cancellation or NX restart test",
+        "Prepared Flow launch with automatic terminal observer surviving MCP client disconnect; predates mesh guard. New guard: mesh-guard-rejection-public.json verifies changed-mesh rejection before intent, not successful launch; no running cancellation or NX restart test",
     ),
     "nx_sim_observe_job": (
         "native-auto-observer-cycle.json",
@@ -83,8 +83,8 @@ PUBLIC_EVIDENCE = {
         "Two completed native duct jobs: residual observations, SI boundary flows and fan operating points with explicit pressure-unit/convention limits; no numerical acceptance",
     ),
     "nx_sim_prepare_solve": (
-        "native-preparation-mcp.json",
-        "Flow export, 186765 elements, saved dependency binding and accepted-job replay; no launch",
+        "mesh-guard-fixture-public.json",
+        "Thermal export, 100 elements/45 nodes, immutable mesh baseline and accepted-job replay using recorded 500-entity budget; no launch; earlier Flow evidence in native-preparation-mcp.json",
     ),
     "nx_sim_save": (
         "native-conduction-setup-save.json",

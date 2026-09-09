@@ -21,6 +21,8 @@ from nx_mcp.simcenter.thermal_state import capture_analysis_thermal_state, requi
 def launch_prepared(session, workspace, sim, job_id, job_folder="simcenter-jobs"):
     import NXOpen.CAE as cae
 
+    from nx_mcp.simcenter import mesh_guard
+
     store = JobStore(workspace, job_folder)
     current = store.inspect(job_id)
     manifest = current.get("manifest", {})
@@ -74,6 +76,7 @@ def launch_prepared(session, workspace, sim, job_id, job_folder="simcenter-jobs"
             "NX_SIM_DEPENDENCIES_UNRESOLVED", "Resolve dependencies and prepare a new job"
         )
     rows = [{k: v for k, v in row.items() if k != "part"} for row in dependencies["rows"]]
+    mesh_guard.verify_manifest(sim, manifest)
     if "live_thermal_state" in manifest:
         require_thermal_state(manifest["live_thermal_state"], capture_analysis_thermal_state(sim))
     validation = validate_prepared_input(workspace, manifest["prepared_input"], rows)

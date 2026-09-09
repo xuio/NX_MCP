@@ -14,8 +14,14 @@ from nx_mcp.simcenter.solver_guard import require_solver_idle
 from nx_mcp.simcenter.thermal_state import capture_analysis_thermal_state, require_thermal_state
 
 
-def prepare_solve(session, workspace, sim, job_id, job_folder="simcenter-jobs"):
+def prepare_solve(
+    session, workspace, sim, job_id, job_folder="simcenter-jobs", mesh_inspection_limit=200000
+):
     import NXOpen.CAE as cae
+
+    from nx_mcp.simcenter import mesh_guard
+
+    mesh_guard.validate_budget(mesh_inspection_limit)
 
     if not isinstance(sim, cae.SimPart) or session.Parts.BaseWork != sim:
         raise NXToolError("NX_SIM_DOCUMENT_NOT_ACTIVE", "Activate the selected SIM first")
@@ -86,6 +92,7 @@ def prepare_solve(session, workspace, sim, job_id, job_folder="simcenter-jobs"):
                 "request_sha256": current["request_sha256"],
             }
         _, rows = dependencies()
+        mesh_guard.verify_manifest(sim, manifest)
         if "live_thermal_state" in manifest:
             require_thermal_state(
                 manifest["live_thermal_state"], capture_analysis_thermal_state(sim)
@@ -96,6 +103,8 @@ def prepare_solve(session, workspace, sim, job_id, job_folder="simcenter-jobs"):
 
     require_solver_idle()
     report, rows = dependencies()
+    live_mesh_state = mesh_guard.capture(sim, mesh_inspection_limit)
+    mesh_guard.require(live_mesh_state, live_mesh_state)
     live_thermal_state = capture_analysis_thermal_state(sim)
     if live_thermal_state is not None:
         require_thermal_state(live_thermal_state, live_thermal_state)
@@ -120,10 +129,13 @@ def prepare_solve(session, workspace, sim, job_id, job_folder="simcenter-jobs"):
         if sim.Simulation.ActiveSolution != solution:
             raise ValueError("Active solution changed during preparation")
         prepared = capture_prepared_input(workspace, exported["input_path"], current_rows)
+        mesh_guard.require(live_mesh_state, mesh_guard.capture(sim, mesh_inspection_limit))
         if live_thermal_state is not None:
             require_thermal_state(live_thermal_state, capture_analysis_thermal_state(sim))
         manifest = {
             "preparation_adapter": 1,
+            "live_mesh_state": live_mesh_state,
+            "mesh_inspection_limit": mesh_inspection_limit,
             **identity,
             "isolated_output_directory": os.path.normcase(str(source.parent)),
             "prepared_input": prepared,
