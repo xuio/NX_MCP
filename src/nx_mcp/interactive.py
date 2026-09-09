@@ -459,18 +459,9 @@ class InteractiveHost:
                 self.last_error = "UI status publication failed: " + str(exc)
             result = self.executor.execute(method, params)
             self.completed += 1
-            from nx_mcp.hardened import READ_ONLY
+            from nx_mcp.ui_document import refresh_model_view
 
-            try:
-                part = getattr(self.session.Parts, "BaseDisplay", None)
-                if part is None:
-                    part = getattr(self.session.Parts, "Display", None)
-                sheet = getattr(getattr(part, "DrawingSheets", None), "CurrentDrawingSheet", None)
-                if part and method not in READ_ONLY and sheet is None:
-                    part.ModelingViews.WorkView.UpdateDisplay()
-            except Exception as exc:
-                # A view refresh must never fail an already committed mutation.
-                result.setdefault("warnings", []).append("View refresh: " + str(exc))
+            refresh_model_view(self.session, method, result)
             return result
         except BaseException as exc:
             self.last_error = str(exc)

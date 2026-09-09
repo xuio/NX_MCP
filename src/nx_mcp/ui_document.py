@@ -27,3 +27,28 @@ def update_document_caption(host):
     if work != context:
         title += " | Work: " + work["name"] + (" *" if work["modified"] else "")
     host.panel.user.SetWindowTextW(host.panel.hwnd, title)
+
+
+def refresh_model_view(session, method, result):
+    """Fit visible geometry after mutations, preserving explicit camera commands."""
+    from nx_mcp.hardened import READ_ONLY
+
+    if method in READ_ONLY:
+        return
+    try:
+        part = getattr(session.Parts, "BaseDisplay", None)
+        if part is None:
+            part = getattr(session.Parts, "Display", None)
+        sheet = getattr(getattr(part, "DrawingSheets", None), "CurrentDrawingSheet", None)
+        if part is None or sheet is not None:
+            return
+        view = part.ModelingViews.WorkView
+        if method not in {"nx_set_camera", "nx_fit_view"}:
+            try:
+                view.Fit()
+            except Exception as exc:
+                result.setdefault("warnings", []).append("View fit: " + str(exc))
+        view.UpdateDisplay()
+    except Exception as exc:
+        # Presentation failure must not invite a retry of committed geometry.
+        result.setdefault("warnings", []).append("View refresh: " + str(exc))

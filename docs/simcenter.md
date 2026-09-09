@@ -436,6 +436,16 @@ do not alter visible geometry. During test batches, keep the intended analysis
 copy displayed, identify property-only work, and verify the visible state after
 batch completion. Native operations can block repainting until they return.
 
+In interactive mode, successful mutations now fit the displayed model before
+redrawing, including document switches. Read-only inspection, explicit camera
+assignment and active drawing sheets preserve their framing. Fit failures return
+warnings without changing the mutation outcome. This fits the current display;
+it does not activate another document or regenerate solver results. Native
+`ui-auto-fit-native.json` records a successful fit in the running Simcenter
+session with unchanged document flags; 11 focused UI tests pass.
+`examples/simcenter/refresh_ui_fit.py` refreshes the live UI dispatch method
+without restarting the bridge.
+
 Temperature and pressure display now fit and refresh the viewport and close the
 Information window without clearing its contents. Each response reports these
 presentation actions; a failed fit or window operation produces a warning without

@@ -32,3 +32,33 @@ def test_caption_identifies_different_work_document_without_activating_it():
     )
     assert host._work_document["path"] == work.FullPath
     assert host.session.Parts.BaseDisplay is display
+
+
+def test_fit_mutation_but_preserve_camera_inspection_and_drawing():
+    from nx_mcp.ui_document import refresh_model_view
+
+    view = NS(Fit=Mock(), UpdateDisplay=Mock())
+    part = NS(ModelingViews=NS(WorkView=view))
+    session = NS(Parts=NS(BaseDisplay=part))
+    refresh_model_view(session, "nx_create_part", {})
+    view.Fit.assert_called_once()
+    view.UpdateDisplay.assert_called_once()
+    view.Fit.reset_mock()
+    for method in ("nx_set_camera", "nx_fit_view", "nx_list_bodies"):
+        refresh_model_view(session, method, {})
+    view.Fit.assert_not_called()
+    part.DrawingSheets = NS(CurrentDrawingSheet=object())
+    refresh_model_view(session, "nx_create_part", {})
+    view.Fit.assert_not_called()
+
+
+def test_fit_failure_keeps_committed_result_and_still_redraws():
+    from nx_mcp.ui_document import refresh_model_view
+
+    view = NS(Fit=Mock(side_effect=RuntimeError("empty view")), UpdateDisplay=Mock())
+    session = NS(Parts=NS(BaseDisplay=NS(ModelingViews=NS(WorkView=view))))
+    result = {"status": "success", "object": "committed"}
+    refresh_model_view(session, "nx_create_part", result)
+    assert result["status"] == "success" and result["object"] == "committed"
+    assert result["warnings"] == ["View fit: empty view"]
+    view.UpdateDisplay.assert_called_once()
