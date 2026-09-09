@@ -1,0 +1,21 @@
+{
+  "job_id": "public-user-cad-40c-r1",
+  "api_workflow_passed": true,
+  "solver_exited": true,
+  "numerical_acceptance": false,
+  "checks": {
+    "positive_temperature_rise": true,
+    "positive_flow_in_curve": true,
+    "fan_curve_match": true,
+    "mass_balance": false,
+    "energy_balance": true,
+    "final_residual_criteria_verified": false
+  },
+  "peak_c": 50.38538360595703,
+  "flow_m3_s": 5.771e-05,
+  "reported_mass_imbalance_percent": 0.3902,
+  "reported_energy_imbalance_percent": 0.02284,
+  "residual_status": null,
+  "mesh_independence": "not established",
+  "next_action": "Use documented coupled flow convergence controls on an isolated numerical-control variant; retain this failed attempt"
+}

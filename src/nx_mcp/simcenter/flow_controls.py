@@ -33,8 +33,14 @@ def configure_convergence(session, sim, *, residual, flow_imbalance_fraction, it
     if session.Parts.BaseWork != sim:
         raise _preflight_error("NX_SIM_DOCUMENT_NOT_ACTIVE", "Activate the selected SIM first")
     sol = sim.Simulation.ActiveSolution
-    if sol is None or sol.SolverType != "NX MULTIPHYSICS" or sol.AnalysisType != "Flow":
-        raise _preflight_error("NX_SIM_SOLUTION_TYPE", "Requires NX MULTIPHYSICS Flow")
+    if (
+        sol is None
+        or sol.SolverType != "NX MULTIPHYSICS"
+        or sol.AnalysisType not in ("Flow", "Coupled Thermal-Flow")
+    ):
+        raise _preflight_error(
+            "NX_SIM_SOLUTION_TYPE", "Requires NX MULTIPHYSICS Flow or Coupled Thermal-Flow"
+        )
     named = sol.PropertyTable.GetNamedPropertyTablePropertyValue("Flow Solution Parameters")
     if named is None:
         raise _preflight_error("NX_SIM_CONFIGURATION_MISSING", "Attach Flow parameter tables first")

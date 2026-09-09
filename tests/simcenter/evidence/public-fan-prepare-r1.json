@@ -1,0 +1,365 @@
+{
+  "responses": {
+    "fan": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"manifest\": {\"name\": \"Generic static fan\", \"points\": [{\"flow_m3_s\": 0.0, \"pressure_Pa\": 1.0}, {\"flow_m3_s\": 0.0004, \"pressure_Pa\": 0.0}], \"pressure_convention\": \"static\", \"rpm\": 1000.0, \"reference_density_kg_m3\": 1.2, \"stall_region\": \"not modeled; assumed linear curve\", \"provenance\": {\"kind\": \"assumed\", \"source\": \"Synthetic infrastructure fixture, not manufacturer performance\"}, \"scaling_rpm_range\": null, \"scaling_validity\": null, \"schema_version\": 1, \"interpolation\": \"linear\", \"extrapolation\": \"reject\", \"reverse_flow\": \"unsupported\"}, \"readback\": {\"flow_m3_s\": [0.0, 0.0004], \"pressure_Pa\": [1.0, 0.0], \"native_flow\": [0.0, 400000.0], \"native_pressure\": [1.0, 0.0], \"native_flow_units\": \"CubicMilliMeterPerSecond\", \"native_pressure_units\": \"PressurePascals\", \"interpolation\": \"linear\", \"outside_table\": \"undefined\"}, \"boundary_attached\": false, \"solver_semantics\": \"not_verified\", \"manifest_persisted\": true, \"manifest_storage\": \"native table attributes; SIM not saved\", \"saved\": false, \"field\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_63840326357c402397bb13ea8fbf66cb\", \"kind\": \"simulation_field\", \"name\": \"Generic static fan\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_208be4474d5542f4b56d89e4d8acd9a5\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"208be4474d5542f4b56d89e4d8acd9a5\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-analysis-20260909-r2\\\\analysis_49daa0d674d9_analysis.sim\", \"journal_id\": \"Generic static fan\", \"display_name\": \"Generic static fan\"}, \"operation_id\": \"op_c056d1b60a494df49e272f9c4e0d1d77\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "manifest": {
+          "name": "Generic static fan",
+          "points": [
+            {
+              "flow_m3_s": 0.0,
+              "pressure_Pa": 1.0
+            },
+            {
+              "flow_m3_s": 0.0004,
+              "pressure_Pa": 0.0
+            }
+          ],
+          "pressure_convention": "static",
+          "rpm": 1000.0,
+          "reference_density_kg_m3": 1.2,
+          "stall_region": "not modeled; assumed linear curve",
+          "provenance": {
+            "kind": "assumed",
+            "source": "Synthetic infrastructure fixture, not manufacturer performance"
+          },
+          "scaling_rpm_range": null,
+          "scaling_validity": null,
+          "schema_version": 1,
+          "interpolation": "linear",
+          "extrapolation": "reject",
+          "reverse_flow": "unsupported"
+        },
+        "readback": {
+          "flow_m3_s": [
+            0.0,
+            0.0004
+          ],
+          "pressure_Pa": [
+            1.0,
+            0.0
+          ],
+          "native_flow": [
+            0.0,
+            400000.0
+          ],
+          "native_pressure": [
+            1.0,
+            0.0
+          ],
+          "native_flow_units": "CubicMilliMeterPerSecond",
+          "native_pressure_units": "PressurePascals",
+          "interpolation": "linear",
+          "outside_table": "undefined"
+        },
+        "boundary_attached": false,
+        "solver_semantics": "not_verified",
+        "manifest_persisted": true,
+        "manifest_storage": "native table attributes; SIM not saved",
+        "saved": false,
+        "field": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_63840326357c402397bb13ea8fbf66cb",
+          "kind": "simulation_field",
+          "name": "Generic static fan",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_208be4474d5542f4b56d89e4d8acd9a5",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "208be4474d5542f4b56d89e4d8acd9a5",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-analysis-20260909-r2\\analysis_49daa0d674d9_analysis.sim",
+          "journal_id": "Generic static fan",
+          "display_name": "Generic static fan"
+        },
+        "operation_id": "op_c056d1b60a494df49e272f9c4e0d1d77",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed"
+      },
+      "isError": false
+    },
+    "bind_fan": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"solver_preflight\": {\"solver_processes\": 0, \"scope\": \"host-wide known solver/translator names\", \"exclusion\": \"point-in-time process snapshot; not an atomic lock\"}, \"analysis_type\": \"Coupled Thermal-Flow\", \"numerical_acceptance\": false, \"binding\": {\"mode\": 5, \"scale_factor\": 1.0}, \"previous_binding\": {\"mode\": 0, \"scale_factor\": null}, \"manifest\": {\"extrapolation\": \"reject\", \"interpolation\": \"linear\", \"name\": \"Generic static fan\", \"points\": [{\"flow_m3_s\": 0.0, \"pressure_Pa\": 1.0}, {\"flow_m3_s\": 0.0004, \"pressure_Pa\": 0.0}], \"pressure_convention\": \"static\", \"provenance\": {\"kind\": \"assumed\", \"source\": \"Synthetic infrastructure fixture, not manufacturer performance\"}, \"reference_density_kg_m3\": 1.2, \"reverse_flow\": \"unsupported\", \"rpm\": 1000.0, \"scaling_rpm_range\": null, \"scaling_validity\": null, \"schema_version\": 1, \"stall_region\": \"not modeled; assumed linear curve\"}, \"results_stale\": true, \"saved\": false, \"orientation\": \"existing inlet definition; unchanged\", \"pressure_reference\": \"existing inlet and solution values; unchanged\", \"motor_heat\": \"not_assigned\", \"operating_point\": \"requires solve\", \"inlet\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_c70390a62d874ed4a52d7b25848c57f3\", \"kind\": \"simulation_object\", \"name\": \"Public inlet\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_208be4474d5542f4b56d89e4d8acd9a5\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"208be4474d5542f4b56d89e4d8acd9a5\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-analysis-20260909-r2\\\\analysis_49daa0d674d9_analysis.sim\", \"journal_id\": \"SimulationObject[Public inlet]\", \"display_name\": \"Public inlet\"}, \"field\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_63840326357c402397bb13ea8fbf66cb\", \"kind\": \"simulation_field\", \"name\": \"Generic static fan\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_208be4474d5542f4b56d89e4d8acd9a5\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"208be4474d5542f4b56d89e4d8acd9a5\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-analysis-20260909-r2\\\\analysis_49daa0d674d9_analysis.sim\", \"journal_id\": \"Generic static fan\", \"display_name\": \"Generic static fan\"}, \"operation_id\": \"op_0158f04e3e194f52a59695635bea4c84\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "solver_preflight": {
+          "solver_processes": 0,
+          "scope": "host-wide known solver/translator names",
+          "exclusion": "point-in-time process snapshot; not an atomic lock"
+        },
+        "analysis_type": "Coupled Thermal-Flow",
+        "numerical_acceptance": false,
+        "binding": {
+          "mode": 5,
+          "scale_factor": 1.0
+        },
+        "previous_binding": {
+          "mode": 0,
+          "scale_factor": null
+        },
+        "manifest": {
+          "extrapolation": "reject",
+          "interpolation": "linear",
+          "name": "Generic static fan",
+          "points": [
+            {
+              "flow_m3_s": 0.0,
+              "pressure_Pa": 1.0
+            },
+            {
+              "flow_m3_s": 0.0004,
+              "pressure_Pa": 0.0
+            }
+          ],
+          "pressure_convention": "static",
+          "provenance": {
+            "kind": "assumed",
+            "source": "Synthetic infrastructure fixture, not manufacturer performance"
+          },
+          "reference_density_kg_m3": 1.2,
+          "reverse_flow": "unsupported",
+          "rpm": 1000.0,
+          "scaling_rpm_range": null,
+          "scaling_validity": null,
+          "schema_version": 1,
+          "stall_region": "not modeled; assumed linear curve"
+        },
+        "results_stale": true,
+        "saved": false,
+        "orientation": "existing inlet definition; unchanged",
+        "pressure_reference": "existing inlet and solution values; unchanged",
+        "motor_heat": "not_assigned",
+        "operating_point": "requires solve",
+        "inlet": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_c70390a62d874ed4a52d7b25848c57f3",
+          "kind": "simulation_object",
+          "name": "Public inlet",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_208be4474d5542f4b56d89e4d8acd9a5",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "208be4474d5542f4b56d89e4d8acd9a5",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-analysis-20260909-r2\\analysis_49daa0d674d9_analysis.sim",
+          "journal_id": "SimulationObject[Public inlet]",
+          "display_name": "Public inlet"
+        },
+        "field": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_63840326357c402397bb13ea8fbf66cb",
+          "kind": "simulation_field",
+          "name": "Generic static fan",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_208be4474d5542f4b56d89e4d8acd9a5",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "208be4474d5542f4b56d89e4d8acd9a5",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-analysis-20260909-r2\\analysis_49daa0d674d9_analysis.sim",
+          "journal_id": "Generic static fan",
+          "display_name": "Generic static fan"
+        },
+        "operation_id": "op_0158f04e3e194f52a59695635bea4c84",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed"
+      },
+      "isError": false
+    },
+    "loss": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"dimensionless\", \"boundary_name\": \"Public outlet\", \"analysis_type\": \"Coupled Thermal-Flow\", \"numerical_acceptance\": false, \"properties\": [{\"name\": \"description\", \"native_type\": \"0\", \"units\": null, \"cae_native_type\": \"-1\", \"representation\": \"text_lines\", \"value\": []}, {\"name\": \"Type\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Proportional to\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Head Loss Coefficient\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": 2.0, \"unit_symbol\": null}, {\"name\": \"Pressure Drop to Velocity Ratio\", \"native_type\": \"4\", \"units\": \"NewtonSecondPerCubicMeter\", \"value\": 0.0, \"unit_symbol\": \"N-sec/m^3\"}, {\"name\": \"Orifice Geometry\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Edge Radius\", \"native_type\": \"4\", \"units\": \"MilliMeter\", \"value\": -777777.0, \"unit_symbol\": \"mm\"}, {\"name\": \"Plate Thickness\", \"native_type\": \"4\", \"units\": \"MilliMeter\", \"value\": -777777.0, \"unit_symbol\": \"mm\"}, {\"name\": \"Orifice Hydraulic Diameter\", \"native_type\": \"4\", \"units\": \"MilliMeter\", \"value\": -777777.0, \"unit_symbol\": \"mm\"}, {\"name\": \"Free Area Ratio\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": -777777.0, \"unit_symbol\": null}, {\"name\": \"Compute Head Loss Coefficient\", \"native_type\": \"1\", \"units\": null, \"value\": \"Compute\"}, {\"name\": \"Computed Head Loss Coefficient\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": -777777.0, \"unit_symbol\": null}], \"coefficient\": 2.0, \"convention\": \"not_independently_verified\", \"saved\": false, \"results_require_revalidation\": true, \"table_name\": \"Generic outlet loss\", \"previous_coefficient\": null, \"changed\": true, \"action\": \"created\", \"opening\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_0a9295aee10243f9bdc13e91885cd235\", \"kind\": \"simulation_object\", \"name\": \"Public outlet\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_208be4474d5542f4b56d89e4d8acd9a5\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"208be4474d5542f4b56d89e4d8acd9a5\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-analysis-20260909-r2\\\\analysis_49daa0d674d9_analysis.sim\", \"journal_id\": \"SimulationObject[Public outlet]\", \"display_name\": \"Public outlet\"}, \"operation_id\": \"op_b6f21226ae994c198bad427e27049698\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "dimensionless",
+        "boundary_name": "Public outlet",
+        "analysis_type": "Coupled Thermal-Flow",
+        "numerical_acceptance": false,
+        "properties": [
+          {
+            "name": "description",
+            "native_type": "0",
+            "units": null,
+            "cae_native_type": "-1",
+            "representation": "text_lines",
+            "value": []
+          },
+          {
+            "name": "Type",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Proportional to",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Head Loss Coefficient",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 2.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "Pressure Drop to Velocity Ratio",
+            "native_type": "4",
+            "units": "NewtonSecondPerCubicMeter",
+            "value": 0.0,
+            "unit_symbol": "N-sec/m^3"
+          },
+          {
+            "name": "Orifice Geometry",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Edge Radius",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": -777777.0,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "Plate Thickness",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": -777777.0,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "Orifice Hydraulic Diameter",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": -777777.0,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "Free Area Ratio",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": -777777.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "Compute Head Loss Coefficient",
+            "native_type": "1",
+            "units": null,
+            "value": "Compute"
+          },
+          {
+            "name": "Computed Head Loss Coefficient",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": -777777.0,
+            "unit_symbol": null
+          }
+        ],
+        "coefficient": 2.0,
+        "convention": "not_independently_verified",
+        "saved": false,
+        "results_require_revalidation": true,
+        "table_name": "Generic outlet loss",
+        "previous_coefficient": null,
+        "changed": true,
+        "action": "created",
+        "opening": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_0a9295aee10243f9bdc13e91885cd235",
+          "kind": "simulation_object",
+          "name": "Public outlet",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_208be4474d5542f4b56d89e4d8acd9a5",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "208be4474d5542f4b56d89e4d8acd9a5",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-analysis-20260909-r2\\analysis_49daa0d674d9_analysis.sim",
+          "journal_id": "SimulationObject[Public outlet]",
+          "display_name": "Public outlet"
+        },
+        "operation_id": "op_b6f21226ae994c198bad427e27049698",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed"
+      },
+      "isError": false
+    },
+    "save": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"saved\": true, \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-analysis-20260909-r2\\\\analysis_49daa0d674d9_analysis.sim\", \"file\": {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-analysis-20260909-r2\\\\analysis_49daa0d674d9_analysis.sim\", \"bytes\": 7721031, \"sha256\": \"5c987a09d3aa810e06b31f25ccead0491d13d47e3ac74ecefab4ba520da88d32\"}, \"previous_file\": {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-analysis-20260909-r2\\\\analysis_49daa0d674d9_analysis.sim\", \"bytes\": 7682991, \"sha256\": \"34e77e5f8cafbd2d3911b2e66c3de9d527c51e562567112f37bd99412cb92ef9\"}, \"backup_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\simcenter-save-backups\\\\83b0cc0b627e45088880e159876b7d52\\\\analysis_49daa0d674d9_analysis.sim\", \"saved_components\": false, \"closed\": false, \"other_modified_flags_unchanged\": true, \"result_freshness\": \"not_verified\", \"operation_id\": \"op_00f44ab98e1f4ea09e9db218a503dabf\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "saved": true,
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-analysis-20260909-r2\\analysis_49daa0d674d9_analysis.sim",
+        "file": {
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-analysis-20260909-r2\\analysis_49daa0d674d9_analysis.sim",
+          "bytes": 7721031,
+          "sha256": "5c987a09d3aa810e06b31f25ccead0491d13d47e3ac74ecefab4ba520da88d32"
+        },
+        "previous_file": {
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-analysis-20260909-r2\\analysis_49daa0d674d9_analysis.sim",
+          "bytes": 7682991,
+          "sha256": "34e77e5f8cafbd2d3911b2e66c3de9d527c51e562567112f37bd99412cb92ef9"
+        },
+        "backup_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-save-backups\\83b0cc0b627e45088880e159876b7d52\\analysis_49daa0d674d9_analysis.sim",
+        "saved_components": false,
+        "closed": false,
+        "other_modified_flags_unchanged": true,
+        "result_freshness": "not_verified",
+        "operation_id": "op_00f44ab98e1f4ea09e9db218a503dabf",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed"
+      },
+      "isError": false
+    },
+    "prepare": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"error\", \"warnings\": [], \"units\": null, \"code\": \"NX_SIM_OUTPUT_CONFLICT\", \"message\": \"Export requires a directory containing only this SIM; copy the SIM to a fresh folder first\", \"retryable\": false, \"details\": {\"mutation_outcome\": \"not_started\", \"operation_id\": \"public-user-cad-40c-prepare-r1\"}}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "error",
+        "warnings": [],
+        "units": null,
+        "code": "NX_SIM_OUTPUT_CONFLICT",
+        "message": "Export requires a directory containing only this SIM; copy the SIM to a fresh folder first",
+        "retryable": false,
+        "details": {
+          "mutation_outcome": "not_started",
+          "operation_id": "public-user-cad-40c-prepare-r1"
+        }
+      },
+      "isError": true
+    }
+  }
+}

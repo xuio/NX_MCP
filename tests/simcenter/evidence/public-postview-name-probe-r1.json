@@ -1,0 +1,41 @@
+{
+  "status": "success",
+  "rows": [
+    {
+      "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "length": 31,
+      "accepted": true
+    },
+    {
+      "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "length": 32,
+      "accepted": true
+    },
+    {
+      "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "length": 40,
+      "accepted": true
+    },
+    {
+      "name": "Test 1.5 mm",
+      "length": 11,
+      "accepted": false,
+      "nx_code": 3960043
+    },
+    {
+      "name": "Baldower ideal spreader 1.5 mm - 1 mm mesh",
+      "length": 42,
+      "accepted": false,
+      "nx_code": 3960043
+    }
+  ],
+  "view": 27,
+  "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-run-40c-r1\\public_40c_r1.sim",
+  "restored_name": "Public40",
+  "solver_launched": false,
+  "operation_id": "op_1978ec8e8d5c41b8927325103bb82e33",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

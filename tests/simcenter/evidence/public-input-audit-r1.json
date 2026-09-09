@@ -1,0 +1,47 @@
+{
+  "input_sha256": "5e170232660bbd3ff7816c59f3dd07febf9bd59d6e69a9ecaace4ad03a1bad78",
+  "checks": {
+    "ambient_40_c": true,
+    "pressure_specified": true,
+    "pressure_101325_pa": true,
+    "air_density_1p2": true,
+    "air_viscosity": true,
+    "air_conductivity": true,
+    "air_heat_capacity": true,
+    "solid_conductivity": true,
+    "Inlet_exported_face_geometry": true,
+    "Inlet_step_1": true,
+    "Inlet_conditions": true,
+    "fan_mode": true,
+    "fan_curve": true,
+    "Opening_exported_face_geometry": true,
+    "Opening_step_1": true,
+    "Opening_conditions": true,
+    "outlet_pressure": true,
+    "heat_0p1_w": true,
+    "heat_only_solid_elements": true,
+    "external_40_c": true,
+    "head_loss_2": true
+  },
+  "passed": true,
+  "solver_launched": false,
+  "units_basis": "NX millimeter export: density kg/mm3, heat microW, pressure mN/mm2, velocity mm/s",
+  "acceptance_declared_before_solve": {
+    "temperature": "finite solid peak above 40 C; no analytical peak prediction",
+    "flow_m3_s": [
+      0,
+      0.0004
+    ],
+    "fan_curve_pressure_tolerance_pa": 0.001,
+    "mass_imbalance_percent_max": 0.1,
+    "energy_imbalance_percent_max": 1.0,
+    "flow_RMS_limit": 0.0002,
+    "thermal_change_C": 0.001,
+    "coupled_change_C": 0.1,
+    "iteration_limit": 1000,
+    "mesh_independence": "not claimed; separate later comparison",
+    "turbulence": "native Mixing Length=2",
+    "buoyancy": false,
+    "motor_heat_w": 0
+  }
+}

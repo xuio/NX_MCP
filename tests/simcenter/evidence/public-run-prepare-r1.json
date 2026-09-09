@@ -1,0 +1,99 @@
+{
+  "responses": {
+    "save_as": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_0f9f80ea4ba64dc3aa70869a63d5ca46\", \"kind\": \"part\", \"name\": \"public_40c_r1\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_208be4474d5542f4b56d89e4d8acd9a5\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"208be4474d5542f4b56d89e4d8acd9a5\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-run-40c-r1\\\\public_40c_r1.sim\", \"journal_id\": \"public_40c_r1\", \"display_name\": \"public_40c_r1\"}, \"source\": {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-analysis-20260909-r2\\\\analysis_49daa0d674d9_analysis.sim\", \"bytes\": 7721031, \"sha256\": \"5c987a09d3aa810e06b31f25ccead0491d13d47e3ac74ecefab4ba520da88d32\"}, \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-run-40c-r1\\\\public_40c_r1.sim\", \"source_file_unchanged\": true, \"work_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-run-40c-r1\\\\public_40c_r1.sim\", \"display_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-run-40c-r1\\\\public_40c_r1.sim\", \"shared_fem_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-analysis-20260909-r2\\\\analysis_49daa0d674d9_mesh.fem\", \"independent_geometry_variant\": false, \"saved\": true, \"result_freshness\": \"not_verified\", \"next_step\": \"Reacquire document IDs. Duplicate and reassociate FEM/CAD before changing shared geometry or mesh.\", \"operation_id\": \"public-run-40c-copy-r1\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "document": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_0f9f80ea4ba64dc3aa70869a63d5ca46",
+          "kind": "part",
+          "name": "public_40c_r1",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_208be4474d5542f4b56d89e4d8acd9a5",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "208be4474d5542f4b56d89e4d8acd9a5",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-run-40c-r1\\public_40c_r1.sim",
+          "journal_id": "public_40c_r1",
+          "display_name": "public_40c_r1"
+        },
+        "source": {
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-analysis-20260909-r2\\analysis_49daa0d674d9_analysis.sim",
+          "bytes": 7721031,
+          "sha256": "5c987a09d3aa810e06b31f25ccead0491d13d47e3ac74ecefab4ba520da88d32"
+        },
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-run-40c-r1\\public_40c_r1.sim",
+        "source_file_unchanged": true,
+        "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-run-40c-r1\\public_40c_r1.sim",
+        "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-run-40c-r1\\public_40c_r1.sim",
+        "shared_fem_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-analysis-20260909-r2\\analysis_49daa0d674d9_mesh.fem",
+        "independent_geometry_variant": false,
+        "saved": true,
+        "result_freshness": "not_verified",
+        "next_step": "Reacquire document IDs. Duplicate and reassociate FEM/CAD before changing shared geometry or mesh.",
+        "operation_id": "public-run-40c-copy-r1",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed"
+      },
+      "isError": false
+    },
+    "prepare": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"job_id\": \"public-user-cad-40c-r1\", \"state\": \"accepted\", \"request_sha256\": \"1a8c7f87fae5fd42861b429fa23740eb3b36ee58685ca5a5b55235a340fe3f78\", \"replayed\": false, \"preparation_revalidated\": true, \"solver_launched_by_call\": false, \"input_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-run-40c-r1\\\\public_40c_r1-Public_coupled.xml\", \"input_sha256\": \"5e170232660bbd3ff7816c59f3dd07febf9bd59d6e69a9ecaace4ad03a1bad78\", \"output_claim\": {\"schema\": 1, \"job_id\": \"public-user-cad-40c-r1\", \"job_directory\": \"d:\\\\cad\\\\simcenter_mcp_workspace\\\\simcenter-jobs\\\\public-user-cad-40c-r1\", \"request_sha256\": \"1a8c7f87fae5fd42861b429fa23740eb3b36ee58685ca5a5b55235a340fe3f78\", \"output_directory\": \"d:\\\\cad\\\\simcenter_mcp_workspace\\\\ui-benchmarks\\\\public-run-40c-r1\", \"replayed\": false, \"retention\": \"permanent; no automatic release\"}, \"mesh_counts\": {\"element_sets\": 2, \"elements\": 1816, \"nodes\": 563, \"scope\": \"observed_multiphysics_xml_layout\"}, \"dependency_completeness\": \"not_established\", \"solve_readiness\": \"not_established\", \"next_step\": \"Inspect the immutable manifest with nx_sim_job_status(include_manifest=True), then use nx_sim_launch; cancellation is not yet implemented\", \"operation_id\": \"public-user-cad-40c-prepare-r2\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "job_id": "public-user-cad-40c-r1",
+        "state": "accepted",
+        "request_sha256": "1a8c7f87fae5fd42861b429fa23740eb3b36ee58685ca5a5b55235a340fe3f78",
+        "replayed": false,
+        "preparation_revalidated": true,
+        "solver_launched_by_call": false,
+        "input_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-run-40c-r1\\public_40c_r1-Public_coupled.xml",
+        "input_sha256": "5e170232660bbd3ff7816c59f3dd07febf9bd59d6e69a9ecaace4ad03a1bad78",
+        "output_claim": {
+          "schema": 1,
+          "job_id": "public-user-cad-40c-r1",
+          "job_directory": "d:\\cad\\simcenter_mcp_workspace\\simcenter-jobs\\public-user-cad-40c-r1",
+          "request_sha256": "1a8c7f87fae5fd42861b429fa23740eb3b36ee58685ca5a5b55235a340fe3f78",
+          "output_directory": "d:\\cad\\simcenter_mcp_workspace\\ui-benchmarks\\public-run-40c-r1",
+          "replayed": false,
+          "retention": "permanent; no automatic release"
+        },
+        "mesh_counts": {
+          "element_sets": 2,
+          "elements": 1816,
+          "nodes": 563,
+          "scope": "observed_multiphysics_xml_layout"
+        },
+        "dependency_completeness": "not_established",
+        "solve_readiness": "not_established",
+        "next_step": "Inspect the immutable manifest with nx_sim_job_status(include_manifest=True), then use nx_sim_launch; cancellation is not yet implemented",
+        "operation_id": "public-user-cad-40c-prepare-r2",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed"
+      },
+      "isError": false
+    }
+  },
+  "passed": true,
+  "solver_launched": false,
+  "document": "obj_20bc234ffa5249ceb4fb4d82b993c626_0f9f80ea4ba64dc3aa70869a63d5ca46",
+  "job_id": "public-user-cad-40c-r1"
+}

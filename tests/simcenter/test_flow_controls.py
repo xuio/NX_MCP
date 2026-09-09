@@ -90,3 +90,16 @@ def test_failed_rollback_is_partial(native):
             session, sim, residual=1e-6, flow_imbalance_fraction=0.001, iteration_limit=1000
         )
     assert exc.value.details["mutation_outcome"] == "partial"
+
+
+@pytest.mark.parametrize("analysis", ["Flow", "Coupled Thermal-Flow"])
+def test_supported_analysis_controls_commit_and_repeat_without_mutation(native, analysis):
+    session, sim, table, data, events = native
+    sim.Simulation.ActiveSolution.AnalysisType = analysis
+    args = dict(residual=1e-6, flow_imbalance_fraction=0.001, iteration_limit=1000)
+    result = configure_convergence(session, sim, **args)
+    assert result["actual"]["flow_imbalance_enabled"]
+    assert result["actual"]["residual"] == 1e-6
+    count = len(events)
+    assert not configure_convergence(session, sim, **args)["changed"]
+    assert len(events) == count

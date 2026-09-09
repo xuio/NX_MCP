@@ -1108,11 +1108,11 @@ class SimcenterMixin:
             self.session.Parts.BaseWork != sim
             or solution is None
             or solution.SolverType != "NX MULTIPHYSICS"
-            or solution.AnalysisType != "Thermal"
+            or solution.AnalysisType not in ("Thermal", "Coupled Thermal-Flow")
         ):
             raise NXToolError(
                 "NX_SIM_UNSUPPORTED",
-                "Activate an NX MULTIPHYSICS Thermal SIM for body power assignment",
+                "Activate an NX MULTIPHYSICS Thermal or Coupled Thermal-Flow SIM for body power assignment",
                 details={"mutation_outcome": "not_started"},
             )
         prototype = self.objects.resolve(body, expected_kind="body")
@@ -1265,7 +1265,7 @@ class SimcenterMixin:
                         if field
                         else None,
                         "scale_factor": wrapper.GetFieldScaleFactor() if wrapper else None,
-                        "interpretation": "mode 5 static fan inlet verified for NX 2606 Flow only",
+                        "interpretation": "mode 5 static fan inlet verified for NX 2606 Flow and Coupled Thermal-Flow",
                     }
                 if bc.DescriptorName == "Opening" and include_properties:
                     table = bc.PropertyTable.GetNamedPropertyTablePropertyValue("Head Loss")

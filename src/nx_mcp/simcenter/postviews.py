@@ -114,7 +114,10 @@ def show_scalar(
         view = post.CreatePostviewForResult(0, result, bool(existing), params)
         if view in existing:
             raise ValueError("Native API did not return a new view")
-        post.PostviewRename(view, name)
+        # NX 2606 rejects periods and colons even in short names (3960043).
+        # Retain the request and report the transformation rather than hiding it.
+        applied_name = name.replace(".", "_").replace(":", "_")
+        post.PostviewRename(view, applied_name)
         post.PostviewUpdate(view)
         post.SetMainPostviewIdInActivePart(view)
         _, actual = post.GetResultForPostview(view)
@@ -142,7 +145,14 @@ def show_scalar(
         # Keep result alive for the visible view; never overwrite older retained handles.
         retain_result(handles, sim, view, result)
         presentation = present_result(session, sim)
+        if applied_name != name:
+            presentation["warnings"].append(
+                "NX rejected-character compatibility: periods/colons in the view name were replaced with underscores"
+            )
         return {
+            "requested_name": name,
+            "applied_name": applied_name,
+            "name_normalized": applied_name != name,
             "postview_id": view,
             "postview_owner": sim.FullPath,
             "readback": readback,

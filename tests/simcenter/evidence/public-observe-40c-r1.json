@@ -1,0 +1,149 @@
+{
+  "responses": {
+    "job": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": null, \"job_id\": \"public-user-cad-40c-r1\", \"request_sha256\": \"1a8c7f87fae5fd42861b429fa23740eb3b36ee58685ca5a5b55235a340fe3f78\", \"state\": \"solver_exited\", \"revision\": 3, \"process_binding_revision\": null, \"launch_retry_allowed\": false, \"numerical_convergence\": \"not_established\", \"results_validated\": false, \"observed_at\": \"2026-09-09T20:26:08.682240+00:00\", \"observation_kind\": \"persisted_record\", \"live_process_state\": \"unbound\", \"job_folder\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\simcenter-jobs\", \"observer\": {\"tracked_in_this_nx_process\": true, \"thread_alive\": false, \"log_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\simcenter-jobs\\\\public-user-cad-40c-r1\\\\observer-7720916001d74608bb2c6a0e65fc9dde.log\"}, \"evidence\": {\"gate_released\": false, \"input_comparison\": {\"after\": {\"bytes\": 196876, \"canonicalization\": \"xml_c14n2_no_comments\", \"sha256\": \"89df4113f7f98b16e2a52255f63a89966cf7316f54aa9cae1e7f2f6fccd8cc99\", \"xml_content_sha256\": \"f64d04dd443c404c6b149ed299b289eda8d0afea3024d95eed13eb995eed7cf3\"}, \"before\": {\"bytes\": 196876, \"canonicalization\": \"xml_c14n2_no_comments\", \"sha256\": \"5e170232660bbd3ff7816c59f3dd07febf9bd59d6e69a9ecaace4ad03a1bad78\", \"xml_content_sha256\": \"f64d04dd443c404c6b149ed299b289eda8d0afea3024d95eed13eb995eed7cf3\"}, \"byte_identical\": false, \"scope\": \"input XML only; result association and solver outcome require separate verification\", \"xml_content_identical\": true}, \"log\": {\"bytes\": 64449, \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-run-40c-r1\\\\public_40c_r1-Public_coupled.log\", \"sha256\": \"f2b28474b0eaeac4ff92d0973517f5e321e4d0bb122c499605a9cdec66e2a544\"}, \"model_result_freshness\": \"not_established\", \"numerical_convergence\": \"not_established\", \"observer_adapter\": 1, \"process_exit_code\": null, \"process_job_binding\": \"not_established\", \"result\": {\"bytes\": 357260, \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-run-40c-r1\\\\public_40c_r1-Public_coupled.bun\", \"sha256\": \"73518e10c647fead4556c4eacfbf52b8a9252a6c08a5547ae338c79b1bdb05b1\"}, \"solver_process_observation\": {\"exclusion\": \"point-in-time process snapshot; not an atomic lock\", \"scope\": \"host-wide known solver/translator names\", \"solver_processes\": 0}, \"terminal_basis\": \"fresh owned completion log and native result, matching canonical input, known solver processes absent\"}, \"process_binding_evidence\": null, \"live_processes\": {\"state\": \"unbound\", \"reason\": \"no_bounded_recorded_process_identities\", \"processes\": []}, \"launch_gate\": {\"automatic_expiry\": false, \"solver_process_state\": \"not_checked\", \"launch_authorized_by_inspection\": false, \"state\": \"claimed\", \"job_id\": \"public-user-cad-40c-r1\", \"job_folder\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\simcenter-jobs\", \"request_sha256\": \"1a8c7f87fae5fd42861b429fa23740eb3b36ee58685ca5a5b55235a340fe3f78\", \"recorded_job_state\": \"solver_exited\", \"recorded_job_revision\": 3, \"next_step\": \"Inspect the owning job; use explicit release only after independently verified terminal evidence\"}, \"operation_id\": \"op_1693e9afb9c4425aa195ee9577c3a30d\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": null,
+        "job_id": "public-user-cad-40c-r1",
+        "request_sha256": "1a8c7f87fae5fd42861b429fa23740eb3b36ee58685ca5a5b55235a340fe3f78",
+        "state": "solver_exited",
+        "revision": 3,
+        "process_binding_revision": null,
+        "launch_retry_allowed": false,
+        "numerical_convergence": "not_established",
+        "results_validated": false,
+        "observed_at": "2026-09-09T20:26:08.682240+00:00",
+        "observation_kind": "persisted_record",
+        "live_process_state": "unbound",
+        "job_folder": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs",
+        "observer": {
+          "tracked_in_this_nx_process": true,
+          "thread_alive": false,
+          "log_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs\\public-user-cad-40c-r1\\observer-7720916001d74608bb2c6a0e65fc9dde.log"
+        },
+        "evidence": {
+          "gate_released": false,
+          "input_comparison": {
+            "after": {
+              "bytes": 196876,
+              "canonicalization": "xml_c14n2_no_comments",
+              "sha256": "89df4113f7f98b16e2a52255f63a89966cf7316f54aa9cae1e7f2f6fccd8cc99",
+              "xml_content_sha256": "f64d04dd443c404c6b149ed299b289eda8d0afea3024d95eed13eb995eed7cf3"
+            },
+            "before": {
+              "bytes": 196876,
+              "canonicalization": "xml_c14n2_no_comments",
+              "sha256": "5e170232660bbd3ff7816c59f3dd07febf9bd59d6e69a9ecaace4ad03a1bad78",
+              "xml_content_sha256": "f64d04dd443c404c6b149ed299b289eda8d0afea3024d95eed13eb995eed7cf3"
+            },
+            "byte_identical": false,
+            "scope": "input XML only; result association and solver outcome require separate verification",
+            "xml_content_identical": true
+          },
+          "log": {
+            "bytes": 64449,
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-run-40c-r1\\public_40c_r1-Public_coupled.log",
+            "sha256": "f2b28474b0eaeac4ff92d0973517f5e321e4d0bb122c499605a9cdec66e2a544"
+          },
+          "model_result_freshness": "not_established",
+          "numerical_convergence": "not_established",
+          "observer_adapter": 1,
+          "process_exit_code": null,
+          "process_job_binding": "not_established",
+          "result": {
+            "bytes": 357260,
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-run-40c-r1\\public_40c_r1-Public_coupled.bun",
+            "sha256": "73518e10c647fead4556c4eacfbf52b8a9252a6c08a5547ae338c79b1bdb05b1"
+          },
+          "solver_process_observation": {
+            "exclusion": "point-in-time process snapshot; not an atomic lock",
+            "scope": "host-wide known solver/translator names",
+            "solver_processes": 0
+          },
+          "terminal_basis": "fresh owned completion log and native result, matching canonical input, known solver processes absent"
+        },
+        "process_binding_evidence": null,
+        "live_processes": {
+          "state": "unbound",
+          "reason": "no_bounded_recorded_process_identities",
+          "processes": []
+        },
+        "launch_gate": {
+          "automatic_expiry": false,
+          "solver_process_state": "not_checked",
+          "launch_authorized_by_inspection": false,
+          "state": "claimed",
+          "job_id": "public-user-cad-40c-r1",
+          "job_folder": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs",
+          "request_sha256": "1a8c7f87fae5fd42861b429fa23740eb3b36ee58685ca5a5b55235a340fe3f78",
+          "recorded_job_state": "solver_exited",
+          "recorded_job_revision": 3,
+          "next_step": "Inspect the owning job; use explicit release only after independently verified terminal evidence"
+        },
+        "operation_id": "op_1693e9afb9c4425aa195ee9577c3a30d",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "not_applicable"
+      },
+      "isError": false
+    },
+    "logs": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"job_id\": \"public-user-cad-40c-r1\", \"request_sha256\": \"1a8c7f87fae5fd42861b429fa23740eb3b36ee58685ca5a5b55235a340fe3f78\", \"logs\": [{\"log_name\": \"public_40c_r1-Public_coupled.log\", \"bytes\": 64449, \"modified_ns\": 1788985561816034000, \"file_identity\": \"12700771946731968468:27021597764275621\"}, {\"log_name\": \"public_40c_r1-Public_coupled_report.log\", \"bytes\": 108427, \"modified_ns\": 1788985560799391600, \"file_identity\": \"12700771946731968468:562949953473989\"}, {\"log_name\": \"public_40c_r1-Public_coupled_verbose.log\", \"bytes\": 3829, \"modified_ns\": 1788985561474418900, \"file_identity\": \"12700771946731968468:562949953473988\"}], \"total\": 3, \"next_offset\": null, \"scope\": \"Direct ASCII log files, excluding symlinks and device names\", \"consistency\": \"Live directory rescan; refresh if files change between pages\", \"job_state_changed\": false, \"operation_id\": \"op_5ee2fd33a9d54cf484f873a5efad17d5\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "job_id": "public-user-cad-40c-r1",
+        "request_sha256": "1a8c7f87fae5fd42861b429fa23740eb3b36ee58685ca5a5b55235a340fe3f78",
+        "logs": [
+          {
+            "log_name": "public_40c_r1-Public_coupled.log",
+            "bytes": 64449,
+            "modified_ns": 1788985561816034000,
+            "file_identity": "12700771946731968468:27021597764275621"
+          },
+          {
+            "log_name": "public_40c_r1-Public_coupled_report.log",
+            "bytes": 108427,
+            "modified_ns": 1788985560799391600,
+            "file_identity": "12700771946731968468:562949953473989"
+          },
+          {
+            "log_name": "public_40c_r1-Public_coupled_verbose.log",
+            "bytes": 3829,
+            "modified_ns": 1788985561474418900,
+            "file_identity": "12700771946731968468:562949953473988"
+          }
+        ],
+        "total": 3,
+        "next_offset": null,
+        "scope": "Direct ASCII log files, excluding symlinks and device names",
+        "consistency": "Live directory rescan; refresh if files change between pages",
+        "job_state_changed": false,
+        "operation_id": "op_5ee2fd33a9d54cf484f873a5efad17d5",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "not_applicable"
+      },
+      "isError": false
+    }
+  },
+  "passed": true,
+  "solver_launched": false
+}
