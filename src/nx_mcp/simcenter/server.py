@@ -787,3 +787,10 @@ def nx_sim_remesh(document: str):
 
 
 NON_MODEL.add("nx_sim_remesh")
+
+
+def nx_sim_mesh_state(document: str, maximum_entities: int = 200000):
+    """Read an exact labelled FEM mesh fingerprint, using an active millimeter FEM or active SIM with one standalone FEM. maximum_entities bounds nodes+elements (1..1000000). Includes node labels/float64 coordinates, ordered element connectivity, native shape and mesh/collector journal identities; returns counts, units, FEM-absolute frame, owner path and SHA256. Relabelling or tiny coordinate changes change the digest; this is not a geometric-equivalence test. Excludes CAD, mesh controls, materials, BCs, solver element formulation, solution settings and external dependencies: a matching digest never establishes full result freshness. No activation, saving, remeshing or solving. Exceeding the budget or failed inspection returns no digest."""
+
+
+READ_ONLY.add("nx_sim_mesh_state")

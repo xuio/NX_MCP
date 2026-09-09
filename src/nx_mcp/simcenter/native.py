@@ -1518,6 +1518,31 @@ class SimcenterMixin:
         except ValueError as error:
             raise NXToolError("NX_INVALID_ARGUMENT", str(error)) from error
 
+    def _sim_mesh_state(self, document, maximum_entities=200000):
+        import NXOpen.CAE as cae
+
+        from nx_mcp.simcenter.mesh_state import capture
+
+        part = self.objects.resolve(document, expected_kind="part")
+        if self.session.Parts.BaseWork != part:
+            raise NXToolError("NX_SIM_DOCUMENT_NOT_ACTIVE", "Activate the requested FEM or SIM")
+        fem = part.FemPart if isinstance(part, cae.SimPart) else part
+        if not isinstance(fem, cae.FemPart):
+            raise NXToolError("NX_SIM_UNSUPPORTED", "Select a standalone FEM or its active SIM")
+        try:
+            result = capture(fem, maximum_entities=maximum_entities)
+        except NXToolError:
+            raise
+        except ValueError as error:
+            raise NXToolError("NX_SIM_MESH_STATE_INVALID", str(error)) from error
+        except Exception as error:
+            raise NXToolError(
+                "NX_SIM_MESH_STATE_UNAVAILABLE",
+                str(error),
+                nx_code=getattr(error, "ErrorCode", None),
+            ) from error
+        return {"document": self._reference(fem, "part", fem, "FEM"), "mesh_state": result}
+
     def _sim_remesh(self, document):
         from nx_mcp.simcenter.remesh import regenerate
 
@@ -1528,8 +1553,7 @@ class SimcenterMixin:
         for row, mesh in zip(result["settings"], meshes, strict=True):
             row["mesh"] = self._reference(mesh, "simulation_mesh", fem, "mesh")
             row["bodies"] = [
-                self._reference(bodies[tag], "body", fem, "body")
-                for tag in row.pop("body_tags")
+                self._reference(bodies[tag], "body", fem, "body") for tag in row.pop("body_tags")
             ]
         return {"document": self._reference(fem, "part", fem, "FEM"), **result}
 

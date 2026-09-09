@@ -593,6 +593,41 @@ ordered retained experiments on the named disposable fixture, not a production
 setup command. Inspect receipts before resuming; do not repeat mutations or save-as
 with fresh operation IDs against an already completed fixture.
 
+### Exact labelled mesh state
+
+`nx_sim_mesh_state(document, maximum_entities=200000)` inspects an active
+millimeter FEM or the standalone FEM underlying an active SIM. It returns a
+SHA256 over ordered node labels/coordinates and element labels, ordered
+connectivity, native shape and mesh/collector journal identities. Coordinates
+use exact float64 hexadecimal values with signed zero normalized. Units and
+the FEM-absolute frame are part of the digest; owner path is compared separately.
+Relabelling, changing a coordinate or changing connectivity can change the digest
+without changing counts. It is not a geometric-equivalence test.
+
+The node-plus-element inspection budget is explicit (1..1,000,000). Inspection
+fails without returning a digest if the budget is exceeded or native data is
+unreadable/inconsistent. Both native label maps are disposed on success and
+failure. No activation, saving, remeshing or solving occurs in this tool.
+
+Native/public verification on the 182-element/73-node U fixture passes repeated
+readback, low-budget and inactive/stale reference rejection, and full FEM
+save/close/reopen. The digest stays
+`554e86c0c3cc3fa86c29cf9b5296e706455ae1ad81a31ff53093897d2ac5493e`.
+The direct native repeated snapshot/budget probe took approximately 0.032 seconds
+and preserved all document modification flags. Thirty-seven focused offline
+tests pass, including equal-count coordinate/connectivity/shape/ownership changes,
+malformed comparison metadata, nonfinite values and acquisition/traversal cleanup.
+Equal-count mutation detection is tested offline, not yet through native editing.
+
+This is a mesh-only fingerprint. It excludes CAD geometry, mesh controls,
+materials, boundaries, solver element formulation, solution settings and external
+dependencies. It is not yet integrated into prepared-job/recovery/result gates;
+those integrations and native mutation tests are next. Existing partial freshness
+claims remain unchanged. Reproduce with `verify_mesh_state_native.py` and
+`verify_mesh_state_public.py` under `examples/simcenter/`; evidence:
+`mesh-state-native.json` and `mesh-state-public.json` under
+`tests/simcenter/evidence/`.
+
 ### Reconciled Phase 2 backlog
 
 Statuses below refer to the requested general capability, not availability inferred
@@ -619,7 +654,7 @@ from installed modules. A missing implementation/test is not an external blocker
 | Pressure drop/fan operating point | Partial pressure fields and fan summary | `flow_results.py`, `fan_summary.py`; convention/unit/selection acceptance |
 | Mass/energy balance | Partial native-log audits and derived balances | `thermal_balance.py`, `flow_audit.py`; keep native versus derived provenance explicit |
 | Data/visualization export | Partial native result/postview and CAD artifact delivery | `postprocessing.py`, `postviews.py`; reusable result exports and dependency packaging |
-| Supported model/result freshness | Partial scoped material/boundary/file checks | Extend reliable geometry/mesh/settings/external dependency tracking; no whole-model claim |
+| Supported model/result freshness | Partial scoped material/boundary/file checks; exact labelled mesh snapshot native/public persistence verified | Integrate mesh snapshot into job gates and verify native mutations; geometry/settings/external dependency tracking remains; no whole-model claim |
 
 Phase 3 requires reproducible deployment (including the private helper), stable
 workflow docs/examples, scoped capability/release reports, clean commits and a

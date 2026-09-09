@@ -2,6 +2,10 @@
 
 # Each scope refers to actual public MCP native verification, not API reflection.
 PUBLIC_EVIDENCE = {
+    "nx_sim_mesh_state": (
+        "mesh-state-public.json",
+        "Exact labelled node/connectivity/shape/mesh/collector digest: repeat readback, bounded traversal, inactive/stale rejection and FEM save/close/reopen; same-count change detection tested offline; not whole-model freshness",
+    ),
     "nx_sim_face_size_edit": (
         "remesh-public.json",
         "Existing face-size edit with committed size/association readback, invalid input, replay, save/reopen; native post-commit failure rollback retained separately",

@@ -1,0 +1,50 @@
+{
+  "status": "success",
+  "passed": true,
+  "snapshot": {
+    "adapter": 1,
+    "scope": "node_labels_coordinates_and_ordered_element_connectivity_shape_mesh_collector",
+    "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\U-sim-update-20260909-r1\\benchmark_ec2b6f8c50fd_mesh.fem",
+    "units": "mm",
+    "coordinate_frame": "fem_part_absolute",
+    "counts": {
+      "nodes": 73,
+      "elements": 182
+    },
+    "sha256": "554e86c0c3cc3fa86c29cf9b5296e706455ae1ad81a31ff53093897d2ac5493e",
+    "coordinate_encoding": "exact float64 hex; signed zero normalized",
+    "full_model_freshness": "not_verified",
+    "excluded": [
+      "CAD geometry",
+      "mesh controls",
+      "material assignments/properties",
+      "loads and boundary conditions",
+      "solver element formulation",
+      "solution settings",
+      "external dependencies"
+    ]
+  },
+  "repeat_comparison": {
+    "state": "matches",
+    "scope": "node_labels_coordinates_and_ordered_element_connectivity_shape_mesh_collector",
+    "full_model_freshness": "not_verified"
+  },
+  "budget_rejection": {
+    "code": "NX_SIM_INSPECTION_LIMIT",
+    "details": {
+      "counts": {
+        "nodes": 73,
+        "elements": 182
+      },
+      "maximum_entities": 10
+    }
+  },
+  "elapsed_seconds": 0.03200000000651926,
+  "flags_unchanged": true,
+  "solver_launched": false,
+  "operation_id": "op_899f8cfafe09464fa66824cc4d241349",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}
