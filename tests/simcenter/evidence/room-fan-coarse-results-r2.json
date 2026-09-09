@@ -1,0 +1,176 @@
+{
+  "status": "success",
+  "identity": {
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_52ecf6bb272d4286859478b55e43fc90",
+      "kind": "part",
+      "name": "coarse_r2",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_9fcf29c576fb42499e5322235bfc72dc",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "9fcf29c576fb42499e5322235bfc72dc",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-coarse-run-20260909-r2\\coarse_r2.sim",
+      "journal_id": "coarse_r2",
+      "display_name": "coarse_r2"
+    },
+    "files": [
+      {
+        "index": 0,
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-coarse-run-20260909-r2\\coarse_r2-Finned_coupled_benchmark.bun",
+        "bytes": 447772,
+        "sha256": "b448c46d94642d873373eb0e5a6504ba3e9285406a32f8668f7ef39a21349131"
+      }
+    ],
+    "native_verification": {
+      "state": "results_changed",
+      "native_value": "2"
+    },
+    "result_freshness": "not_verified",
+    "engineering_accepted": false,
+    "scope": "Associated file identity and native verification only; model/job revision binding required",
+    "job_binding": {
+      "job_id": "room-fan-coarse-20260909-r2",
+      "request_sha256": "396f4cb3041d23b7f0e43418c37b27dbdd735ad25e0f2aafa0ae17042096eee0",
+      "state": "not_verified",
+      "associated_result_matches_observed_artifact": true,
+      "revision": {
+        "state": "revision_mismatch",
+        "revision_matches": false,
+        "files": [
+          {
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-coarse-run-20260909-r2\\coarse_r2.sim",
+            "bytes": 7809268,
+            "sha256": "1a1741ed07dac9295ff40e027bca9a62caadb14afe64456414b665ea1511fd7e",
+            "expected_sha256": "1a1741ed07dac9295ff40e027bca9a62caadb14afe64456414b665ea1511fd7e",
+            "matches": true
+          },
+          {
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-coarse-20260909-r1\\RoomFanCoarseR1_mesh.fem",
+            "bytes": 3021583,
+            "sha256": "d8eb160b889af78af7f016650c12d3f6d8b98cfd1ab430b20bf43a187443463c",
+            "expected_sha256": "d8eb160b889af78af7f016650c12d3f6d8b98cfd1ab430b20bf43a187443463c",
+            "matches": true
+          },
+          {
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-coarse-20260909-r1\\RoomFanCoarseR1_cad_01.prt",
+            "bytes": 137576,
+            "sha256": "3050770a15a5660110326cfcc8782528428bbeb6402e3621853de263640a94bf",
+            "expected_sha256": "3050770a15a5660110326cfcc8782528428bbeb6402e3621853de263640a94bf",
+            "matches": true
+          }
+        ],
+        "issues": [
+          {
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-coarse-run-20260909-r2\\coarse_r2.sim",
+            "reason": "unsaved_edits"
+          }
+        ],
+        "scope": "supplied dependency set only",
+        "engineering_accepted": false
+      },
+      "reasons": [
+        "current_saved_revision_not_verified_against_prepared_revision"
+      ],
+      "live_thermal_state": {
+        "state": "not_verified",
+        "reason": "live_thermal_state_evidence_missing"
+      },
+      "live_mesh_state": {
+        "state": "matches",
+        "scope": "node_labels_coordinates_and_ordered_element_connectivity_shape_mesh_collector",
+        "full_model_freshness": "not_verified"
+      },
+      "model_result_freshness": "not_verified",
+      "engineering_accepted": false,
+      "scope": "Exact analysis/solution ownership, observed result artifact, supplied pre-solve file revisions and recorded labelled mesh snapshot; numerical validation and dependency completeness remain separate",
+      "revision_note": "Native solve/save may change SIM metadata; a file mismatch does not by itself identify a physics change"
+    }
+  },
+  "density": {
+    "field_names": [
+      "Velocity - Element-Nodal",
+      "Temperature - Nodal",
+      "Temperature - Elemental",
+      "Temperature - Element-Nodal",
+      "Total Heat Load - Elemental",
+      "Total Heat Flux - Elemental",
+      "Total Pressure - Element-Nodal",
+      "Fluid Density - Element-Nodal",
+      "Mass Flux - Nodal",
+      "Pressure - Element-Nodal"
+    ],
+    "density_field": "Fluid Density - Element-Nodal",
+    "units": "kg/m3",
+    "minimum": 1.2000000476837158,
+    "maximum": 1.2000000476837158,
+    "minimum_native_id": 2472,
+    "maximum_native_id": 2472,
+    "minimum_native_sub_id": 710,
+    "maximum_native_sub_id": 710,
+    "location": "2",
+    "expected_constant_density": 1.2,
+    "constant_density_matches": true,
+    "reference_lifetime": "indices apply only to this result revision",
+    "result_freshness": "not_verified"
+  },
+  "temperature": {
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_52ecf6bb272d4286859478b55e43fc90",
+      "kind": "part",
+      "name": "coarse_r2",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_9fcf29c576fb42499e5322235bfc72dc",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "9fcf29c576fb42499e5322235bfc72dc",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-coarse-run-20260909-r2\\coarse_r2.sim",
+      "journal_id": "coarse_r2",
+      "display_name": "coarse_r2"
+    },
+    "field": "Temperature - Nodal",
+    "field_location": "nodal",
+    "loadcase_index": 0,
+    "iteration_index": 0,
+    "units": "degC",
+    "minimum": 25.028955459594727,
+    "maximum": 25.06661605834961,
+    "native_location": "0",
+    "minimum_native_id": 5,
+    "maximum_native_id": 23,
+    "minimum_native_sub_id": 0,
+    "maximum_native_sub_id": 0,
+    "node_count": 745,
+    "result_freshness": "not_verified",
+    "reference_lifetime": "indices apply only to this result revision"
+  },
+  "pressure": {
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_52ecf6bb272d4286859478b55e43fc90",
+      "kind": "part",
+      "name": "coarse_r2",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_9fcf29c576fb42499e5322235bfc72dc",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "9fcf29c576fb42499e5322235bfc72dc",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-coarse-run-20260909-r2\\coarse_r2.sim",
+      "journal_id": "coarse_r2",
+      "display_name": "coarse_r2"
+    },
+    "field": "Pressure - Element-Nodal",
+    "units": "Pa",
+    "minimum": 0.6989977955818176,
+    "maximum": 0.8665271997451782,
+    "native_location": "2",
+    "minimum_native_id": 2386,
+    "maximum_native_id": 1441,
+    "minimum_native_sub_id": 316,
+    "maximum_native_sub_id": 296,
+    "node_count": 745,
+    "loadcase_index": 0,
+    "iteration_index": 0,
+    "result_freshness": "not_verified",
+    "pressure_reference": "native_solution_reference",
+    "reference_lifetime": "indices apply only to this result revision"
+  },
+  "operation_id": "op_3ed1eba898574764b86d4a92d1ac6c8f",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

@@ -1,0 +1,1838 @@
+{
+  "responses": {
+    "open": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [\"Document has unsaved native state; inspect and explicitly save approved analysis changes before preparing a solve\"], \"units\": \"mm\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_ed78eb34b7f242cb9a6593a7e5967a1b\", \"kind\": \"part\", \"name\": \"half_r1\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_e49ba920ab554d1c8d863d17cba46b32\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"e49ba920ab554d1c8d863d17cba46b32\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\E-room-fan-half-run-20260909-r1\\\\half_r1.sim\", \"journal_id\": \"half_r1\", \"display_name\": \"half_r1\"}, \"coordinate_frame\": \"part_absolute\", \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\E-room-fan-half-run-20260909-r1\\\\half_r1.sim\", \"already_loaded\": true, \"modified_after_native_open\": null, \"modified_before_activation\": true, \"modified\": true, \"fully_loaded\": true, \"load_issues\": [], \"changed_existing_part_flags\": [], \"application\": \"UG_APP_SFEM\", \"work_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\E-room-fan-half-run-20260909-r1\\\\half_r1.sim\", \"display_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\E-room-fan-half-run-20260909-r1\\\\half_r1.sim\", \"saved\": false, \"result_freshness\": \"not_verified\", \"operation_id\": \"op_9c9cb9fb32db4b5195ee8bfda35bcb54\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [
+          "Document has unsaved native state; inspect and explicitly save approved analysis changes before preparing a solve"
+        ],
+        "units": "mm",
+        "document": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_ed78eb34b7f242cb9a6593a7e5967a1b",
+          "kind": "part",
+          "name": "half_r1",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_e49ba920ab554d1c8d863d17cba46b32",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "e49ba920ab554d1c8d863d17cba46b32",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-half-run-20260909-r1\\half_r1.sim",
+          "journal_id": "half_r1",
+          "display_name": "half_r1"
+        },
+        "coordinate_frame": "part_absolute",
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-half-run-20260909-r1\\half_r1.sim",
+        "already_loaded": true,
+        "modified_after_native_open": null,
+        "modified_before_activation": true,
+        "modified": true,
+        "fully_loaded": true,
+        "load_issues": [],
+        "changed_existing_part_flags": [],
+        "application": "UG_APP_SFEM",
+        "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-half-run-20260909-r1\\half_r1.sim",
+        "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-half-run-20260909-r1\\half_r1.sim",
+        "saved": false,
+        "result_freshness": "not_verified",
+        "operation_id": "op_9c9cb9fb32db4b5195ee8bfda35bcb54",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed"
+      },
+      "isError": false
+    },
+    "activate": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"application_before\": \"UG_APP_SFEM\", \"application\": \"UG_APP_SFEM\", \"documents\": {\"documents\": [{\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\E-room-fan-half-20260909-r1\\\\RoomFanHalfR1_cad_01.prt\", \"name\": \"RoomFanHalfR1_cad_01\", \"document_type\": \"Part\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_13d1a284a89446e3a7c3a84a1fff0e48\", \"kind\": \"part\", \"name\": \"RoomFanHalfR1_cad_01\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_428436d610554880b8586d0ef39989dd\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"428436d610554880b8586d0ef39989dd\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\E-room-fan-half-20260909-r1\\\\RoomFanHalfR1_cad_01.prt\", \"journal_id\": \"RoomFanHalfR1_cad_01\", \"display_name\": \"RoomFanHalfR1_cad_01\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\E-room-fan-fine-20260909-r1\\\\RoomFanFineR1_cad_01.prt\", \"name\": \"RoomFanFineR1_cad_01\", \"document_type\": \"Part\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_88bcf4f021844e72a126244d375d6f07\", \"kind\": \"part\", \"name\": \"RoomFanFineR1_cad_01\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_90521eb041cd4e9ea5829d1ca24c8757\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"90521eb041cd4e9ea5829d1ca24c8757\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\E-room-fan-fine-20260909-r1\\\\RoomFanFineR1_cad_01.prt\", \"journal_id\": \"RoomFanFineR1_cad_01\", \"display_name\": \"RoomFanFineR1_cad_01\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\E-room-fan-coarse-20260909-r1\\\\RoomFanCoarseR1_cad_01.prt\", \"name\": \"RoomFanCoarseR1_cad_01\", \"document_type\": \"Part\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_bc0ddfacea3a4660b587745b78c32266\", \"kind\": \"part\", \"name\": \"RoomFanCoarseR1_cad_01\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_507f683636e7410d8eeb7668303275bf\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"507f683636e7410d8eeb7668303275bf\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\E-room-fan-coarse-20260909-r1\\\\RoomFanCoarseR1_cad_01.prt\", \"journal_id\": \"RoomFanCoarseR1_cad_01\", \"display_name\": \"RoomFanCoarseR1_cad_01\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-20260909-r1\\\\benchmark_2b3340c6f11a_geometry.prt\", \"name\": \"benchmark_2b3340c6f11a_geometry\", \"document_type\": \"Part\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_3144f3ae8f654d3bbc44f8415db8a244\", \"kind\": \"part\", \"name\": \"benchmark_2b3340c6f11a_geometry\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_a762926108c747249165a3e60f819b01\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"a762926108c747249165a3e60f819b01\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-20260909-r1\\\\benchmark_2b3340c6f11a_geometry.prt\", \"journal_id\": \"benchmark_2b3340c6f11a_geometry\", \"display_name\": \"benchmark_2b3340c6f11a_geometry\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\U-sim-update-20260909-r1\\\\benchmark_ec2b6f8c50fd_geometry.prt\", \"name\": \"benchmark_ec2b6f8c50fd_geometry\", \"document_type\": \"Part\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_93416c52994349fea4dc0fd55899cd95\", \"kind\": \"part\", \"name\": \"benchmark_ec2b6f8c50fd_geometry\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_19101ed3189e470f98f11705888e3dad\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"19101ed3189e470f98f11705888e3dad\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\U-sim-update-20260909-r1\\\\benchmark_ec2b6f8c50fd_geometry.prt\", \"journal_id\": \"benchmark_ec2b6f8c50fd_geometry\", \"display_name\": \"benchmark_ec2b6f8c50fd_geometry\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\L-face-size-20260909-r1\\\\benchmark_d5f46585b1fa_geometry.prt\", \"name\": \"benchmark_d5f46585b1fa_geometry\", \"document_type\": \"Part\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_1e8d3433900f4beba977ecf4176acfc0\", \"kind\": \"part\", \"name\": \"benchmark_d5f46585b1fa_geometry\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_2fb24b4990b34c36870c03dfed521493\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"2fb24b4990b34c36870c03dfed521493\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\L-face-size-20260909-r1\\\\benchmark_d5f46585b1fa_geometry.prt\", \"journal_id\": \"benchmark_d5f46585b1fa_geometry\", \"display_name\": \"benchmark_d5f46585b1fa_geometry\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\M-mixed-mesh-20260909-r1\\\\benchmark_58e87a06afdb_geometry.prt\", \"name\": \"benchmark_58e87a06afdb_geometry\", \"document_type\": \"Part\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_90485098245a46d98c7d19cc5d826f53\", \"kind\": \"part\", \"name\": \"benchmark_58e87a06afdb_geometry\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_8427d22a49e443d4bc69eaca9cc5e123\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"8427d22a49e443d4bc69eaca9cc5e123\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\M-mixed-mesh-20260909-r1\\\\benchmark_58e87a06afdb_geometry.prt\", \"journal_id\": \"benchmark_58e87a06afdb_geometry\", \"display_name\": \"benchmark_58e87a06afdb_geometry\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\M-controls-public-20260909-r1\\\\benchmark_c774f716ecb3_geometry.prt\", \"name\": \"benchmark_c774f716ecb3_geometry\", \"document_type\": \"Part\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_522f63b713ca4508b906e1d42d7992bb\", \"kind\": \"part\", \"name\": \"benchmark_c774f716ecb3_geometry\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_8e1e3ae5ce2e4368802c38d384902b30\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"8e1e3ae5ce2e4368802c38d384902b30\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\M-controls-public-20260909-r1\\\\benchmark_c774f716ecb3_geometry.prt\", \"journal_id\": \"benchmark_c774f716ecb3_geometry\", \"display_name\": \"benchmark_c774f716ecb3_geometry\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-initial-conditions-public-20260909-r1\\\\benchmark_fa7a9e7c4e7c_geometry.prt\", \"name\": \"benchmark_fa7a9e7c4e7c_geometry\", \"document_type\": \"Part\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_dfa9b723b76d4f0dbfe3b7bfcbc6b3ea\", \"kind\": \"part\", \"name\": \"benchmark_fa7a9e7c4e7c_geometry\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_3830bbb528a944eba3107bf59d7f341e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"3830bbb528a944eba3107bf59d7f341e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-initial-conditions-public-20260909-r1\\\\benchmark_fa7a9e7c4e7c_geometry.prt\", \"journal_id\": \"benchmark_fa7a9e7c4e7c_geometry\", \"display_name\": \"benchmark_fa7a9e7c4e7c_geometry\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-temperature-material-public-20260909-r1\\\\benchmark_cfe079b0eed8_geometry.prt\", \"name\": \"benchmark_cfe079b0eed8_geometry\", \"document_type\": \"Part\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_8dbcaf14549d412182afa3a33f00cc95\", \"kind\": \"part\", \"name\": \"benchmark_cfe079b0eed8_geometry\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_d22bafe32e4742d7aa7670205499d969\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"d22bafe32e4742d7aa7670205499d969\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-temperature-material-public-20260909-r1\\\\benchmark_cfe079b0eed8_geometry.prt\", \"journal_id\": \"benchmark_cfe079b0eed8_geometry\", \"display_name\": \"benchmark_cfe079b0eed8_geometry\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-heat-recovery-20260909-r1\\\\benchmark_b48bd54502e5_geometry.prt\", \"name\": \"benchmark_b48bd54502e5_geometry\", \"document_type\": \"Part\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_17604f3ee7d641cfa43caec4c07a1f4e\", \"kind\": \"part\", \"name\": \"benchmark_b48bd54502e5_geometry\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_23b334a7441b421fb6340af71a20777a\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"23b334a7441b421fb6340af71a20777a\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-heat-recovery-20260909-r1\\\\benchmark_b48bd54502e5_geometry.prt\", \"journal_id\": \"benchmark_b48bd54502e5_geometry\", \"display_name\": \"benchmark_b48bd54502e5_geometry\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-heat-schedule-public-20260909-r1\\\\benchmark_c9061a8738db_geometry.prt\", \"name\": \"benchmark_c9061a8738db_geometry\", \"document_type\": \"Part\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_bb284afef5c54844b3bbd2f87f84e478\", \"kind\": \"part\", \"name\": \"benchmark_c9061a8738db_geometry\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_5bc9a37bd24749b6863c1c91072a844e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"5bc9a37bd24749b6863c1c91072a844e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-heat-schedule-public-20260909-r1\\\\benchmark_c9061a8738db_geometry.prt\", \"journal_id\": \"benchmark_c9061a8738db_geometry\", \"display_name\": \"benchmark_c9061a8738db_geometry\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-heat-schedule-20260909-r1\\\\benchmark_40aa7155a7d4_geometry.prt\", \"name\": \"benchmark_40aa7155a7d4_geometry\", \"document_type\": \"Part\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_b4c8cb6c330a46669f43c6780b4ff886\", \"kind\": \"part\", \"name\": \"benchmark_40aa7155a7d4_geometry\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_b17f19cf83684b078991a3d3f99c960a\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"b17f19cf83684b078991a3d3f99c960a\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-heat-schedule-20260909-r1\\\\benchmark_40aa7155a7d4_geometry.prt\", \"journal_id\": \"benchmark_40aa7155a7d4_geometry\", \"display_name\": \"benchmark_40aa7155a7d4_geometry\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-heat-binding-20260909-r1\\\\benchmark_19990db7ac13_geometry.prt\", \"name\": \"benchmark_19990db7ac13_geometry\", \"document_type\": \"Part\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_4ec6e7a6a1b8438d9d493e80920514ae\", \"kind\": \"part\", \"name\": \"benchmark_19990db7ac13_geometry\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_4c98a10d8c3c40a5beaefb3cffb311e8\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"4c98a10d8c3c40a5beaefb3cffb311e8\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-heat-binding-20260909-r1\\\\benchmark_19990db7ac13_geometry.prt\", \"journal_id\": \"benchmark_19990db7ac13_geometry\", \"display_name\": \"benchmark_19990db7ac13_geometry\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-scalar-tables-20260909-r1\\\\benchmark_1ed9fb624b41_geometry.prt\", \"name\": \"benchmark_1ed9fb624b41_geometry\", \"document_type\": \"Part\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_5966701b7c494bdb8909acef974b9bdf\", \"kind\": \"part\", \"name\": \"benchmark_1ed9fb624b41_geometry\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_e46ba4ef58f64ea28768af2bc9dc38f9\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"e46ba4ef58f64ea28768af2bc9dc38f9\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-scalar-tables-20260909-r1\\\\benchmark_1ed9fb624b41_geometry.prt\", \"journal_id\": \"benchmark_1ed9fb624b41_geometry\", \"display_name\": \"benchmark_1ed9fb624b41_geometry\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_geometry.prt\", \"name\": \"benchmark_fd1cae97c9a6_geometry\", \"document_type\": \"Part\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_c8d626c2dc46473ea7563ef4c13e091f\", \"kind\": \"part\", \"name\": \"benchmark_fd1cae97c9a6_geometry\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_566c06f38e7242e488e2c81baf70d488\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"566c06f38e7242e488e2c81baf70d488\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_geometry.prt\", \"journal_id\": \"benchmark_fd1cae97c9a6_geometry\", \"display_name\": \"benchmark_fd1cae97c9a6_geometry\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-environment-radiation-20260909-r1\\\\benchmark_5a40b73541f4_geometry.prt\", \"name\": \"benchmark_5a40b73541f4_geometry\", \"document_type\": \"Part\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_dbda54b15b474bf691e6d41336dc37dc\", \"kind\": \"part\", \"name\": \"benchmark_5a40b73541f4_geometry\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_c78dfd04aa9043e2bbcba6987ed94bee\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"c78dfd04aa9043e2bbcba6987ed94bee\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-environment-radiation-20260909-r1\\\\benchmark_5a40b73541f4_geometry.prt\", \"journal_id\": \"benchmark_5a40b73541f4_geometry\", \"display_name\": \"benchmark_5a40b73541f4_geometry\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F-convection-environment-20260909-r1\\\\benchmark_c724ac72398e_geometry.prt\", \"name\": \"benchmark_c724ac72398e_geometry\", \"document_type\": \"Part\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_c158fa2cba9046b0b4e2bb708772d3c9\", \"kind\": \"part\", \"name\": \"benchmark_c724ac72398e_geometry\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_91e7bec490b3489bb7930073c75ec8f2\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"91e7bec490b3489bb7930073c75ec8f2\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F-convection-environment-20260909-r1\\\\benchmark_c724ac72398e_geometry.prt\", \"journal_id\": \"benchmark_c724ac72398e_geometry\", \"display_name\": \"benchmark_c724ac72398e_geometry\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\B-contact-authoring-20260909-r1\\\\benchmark_47530a89f645_geometry.prt\", \"name\": \"benchmark_47530a89f645_geometry\", \"document_type\": \"Part\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_eae251cf9ba941a0a686147a69d4bad4\", \"kind\": \"part\", \"name\": \"benchmark_47530a89f645_geometry\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_b783fcd058374b2a94ca0cfa8ef21e7c\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"b783fcd058374b2a94ca0cfa8ef21e7c\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\B-contact-authoring-20260909-r1\\\\benchmark_47530a89f645_geometry.prt\", \"journal_id\": \"benchmark_47530a89f645_geometry\", \"display_name\": \"benchmark_47530a89f645_geometry\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F4-continuity-20260908-r1\\\\f4_continuity_r1.prt\", \"name\": \"f4_continuity_r1\", \"document_type\": \"Part\", \"modified\": true, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_82d402f5f4d34d1083a5a9dbd789c0e8\", \"kind\": \"part\", \"name\": \"f4_continuity_r1\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_3caab63111b84dd88c89c6e7c0d68c4f\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"3caab63111b84dd88c89c6e7c0d68c4f\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F4-continuity-20260908-r1\\\\f4_continuity_r1.prt\", \"journal_id\": \"f4_continuity_r1\", \"display_name\": \"f4_continuity_r1\"}}], \"total\": 204, \"next_offset\": 20}, \"saved\": false, \"operation_id\": \"op_5e26f4952ef84275bb9858a9aa0cc13f\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "application_before": "UG_APP_SFEM",
+        "application": "UG_APP_SFEM",
+        "documents": {
+          "documents": [
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-half-20260909-r1\\RoomFanHalfR1_cad_01.prt",
+              "name": "RoomFanHalfR1_cad_01",
+              "document_type": "Part",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_13d1a284a89446e3a7c3a84a1fff0e48",
+                "kind": "part",
+                "name": "RoomFanHalfR1_cad_01",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_428436d610554880b8586d0ef39989dd",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "428436d610554880b8586d0ef39989dd",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-half-20260909-r1\\RoomFanHalfR1_cad_01.prt",
+                "journal_id": "RoomFanHalfR1_cad_01",
+                "display_name": "RoomFanHalfR1_cad_01"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-fine-20260909-r1\\RoomFanFineR1_cad_01.prt",
+              "name": "RoomFanFineR1_cad_01",
+              "document_type": "Part",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_88bcf4f021844e72a126244d375d6f07",
+                "kind": "part",
+                "name": "RoomFanFineR1_cad_01",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_90521eb041cd4e9ea5829d1ca24c8757",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "90521eb041cd4e9ea5829d1ca24c8757",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-fine-20260909-r1\\RoomFanFineR1_cad_01.prt",
+                "journal_id": "RoomFanFineR1_cad_01",
+                "display_name": "RoomFanFineR1_cad_01"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-coarse-20260909-r1\\RoomFanCoarseR1_cad_01.prt",
+              "name": "RoomFanCoarseR1_cad_01",
+              "document_type": "Part",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_bc0ddfacea3a4660b587745b78c32266",
+                "kind": "part",
+                "name": "RoomFanCoarseR1_cad_01",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_507f683636e7410d8eeb7668303275bf",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "507f683636e7410d8eeb7668303275bf",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-coarse-20260909-r1\\RoomFanCoarseR1_cad_01.prt",
+                "journal_id": "RoomFanCoarseR1_cad_01",
+                "display_name": "RoomFanCoarseR1_cad_01"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-20260909-r1\\benchmark_2b3340c6f11a_geometry.prt",
+              "name": "benchmark_2b3340c6f11a_geometry",
+              "document_type": "Part",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_3144f3ae8f654d3bbc44f8415db8a244",
+                "kind": "part",
+                "name": "benchmark_2b3340c6f11a_geometry",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_a762926108c747249165a3e60f819b01",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "a762926108c747249165a3e60f819b01",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-20260909-r1\\benchmark_2b3340c6f11a_geometry.prt",
+                "journal_id": "benchmark_2b3340c6f11a_geometry",
+                "display_name": "benchmark_2b3340c6f11a_geometry"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\U-sim-update-20260909-r1\\benchmark_ec2b6f8c50fd_geometry.prt",
+              "name": "benchmark_ec2b6f8c50fd_geometry",
+              "document_type": "Part",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_93416c52994349fea4dc0fd55899cd95",
+                "kind": "part",
+                "name": "benchmark_ec2b6f8c50fd_geometry",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_19101ed3189e470f98f11705888e3dad",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "19101ed3189e470f98f11705888e3dad",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\U-sim-update-20260909-r1\\benchmark_ec2b6f8c50fd_geometry.prt",
+                "journal_id": "benchmark_ec2b6f8c50fd_geometry",
+                "display_name": "benchmark_ec2b6f8c50fd_geometry"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\L-face-size-20260909-r1\\benchmark_d5f46585b1fa_geometry.prt",
+              "name": "benchmark_d5f46585b1fa_geometry",
+              "document_type": "Part",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_1e8d3433900f4beba977ecf4176acfc0",
+                "kind": "part",
+                "name": "benchmark_d5f46585b1fa_geometry",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_2fb24b4990b34c36870c03dfed521493",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "2fb24b4990b34c36870c03dfed521493",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\L-face-size-20260909-r1\\benchmark_d5f46585b1fa_geometry.prt",
+                "journal_id": "benchmark_d5f46585b1fa_geometry",
+                "display_name": "benchmark_d5f46585b1fa_geometry"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\M-mixed-mesh-20260909-r1\\benchmark_58e87a06afdb_geometry.prt",
+              "name": "benchmark_58e87a06afdb_geometry",
+              "document_type": "Part",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_90485098245a46d98c7d19cc5d826f53",
+                "kind": "part",
+                "name": "benchmark_58e87a06afdb_geometry",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_8427d22a49e443d4bc69eaca9cc5e123",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "8427d22a49e443d4bc69eaca9cc5e123",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\M-mixed-mesh-20260909-r1\\benchmark_58e87a06afdb_geometry.prt",
+                "journal_id": "benchmark_58e87a06afdb_geometry",
+                "display_name": "benchmark_58e87a06afdb_geometry"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\M-controls-public-20260909-r1\\benchmark_c774f716ecb3_geometry.prt",
+              "name": "benchmark_c774f716ecb3_geometry",
+              "document_type": "Part",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_522f63b713ca4508b906e1d42d7992bb",
+                "kind": "part",
+                "name": "benchmark_c774f716ecb3_geometry",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_8e1e3ae5ce2e4368802c38d384902b30",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "8e1e3ae5ce2e4368802c38d384902b30",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\M-controls-public-20260909-r1\\benchmark_c774f716ecb3_geometry.prt",
+                "journal_id": "benchmark_c774f716ecb3_geometry",
+                "display_name": "benchmark_c774f716ecb3_geometry"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-initial-conditions-public-20260909-r1\\benchmark_fa7a9e7c4e7c_geometry.prt",
+              "name": "benchmark_fa7a9e7c4e7c_geometry",
+              "document_type": "Part",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_dfa9b723b76d4f0dbfe3b7bfcbc6b3ea",
+                "kind": "part",
+                "name": "benchmark_fa7a9e7c4e7c_geometry",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_3830bbb528a944eba3107bf59d7f341e",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "3830bbb528a944eba3107bf59d7f341e",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-initial-conditions-public-20260909-r1\\benchmark_fa7a9e7c4e7c_geometry.prt",
+                "journal_id": "benchmark_fa7a9e7c4e7c_geometry",
+                "display_name": "benchmark_fa7a9e7c4e7c_geometry"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-temperature-material-public-20260909-r1\\benchmark_cfe079b0eed8_geometry.prt",
+              "name": "benchmark_cfe079b0eed8_geometry",
+              "document_type": "Part",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_8dbcaf14549d412182afa3a33f00cc95",
+                "kind": "part",
+                "name": "benchmark_cfe079b0eed8_geometry",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_d22bafe32e4742d7aa7670205499d969",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "d22bafe32e4742d7aa7670205499d969",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-temperature-material-public-20260909-r1\\benchmark_cfe079b0eed8_geometry.prt",
+                "journal_id": "benchmark_cfe079b0eed8_geometry",
+                "display_name": "benchmark_cfe079b0eed8_geometry"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-heat-recovery-20260909-r1\\benchmark_b48bd54502e5_geometry.prt",
+              "name": "benchmark_b48bd54502e5_geometry",
+              "document_type": "Part",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_17604f3ee7d641cfa43caec4c07a1f4e",
+                "kind": "part",
+                "name": "benchmark_b48bd54502e5_geometry",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_23b334a7441b421fb6340af71a20777a",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "23b334a7441b421fb6340af71a20777a",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-heat-recovery-20260909-r1\\benchmark_b48bd54502e5_geometry.prt",
+                "journal_id": "benchmark_b48bd54502e5_geometry",
+                "display_name": "benchmark_b48bd54502e5_geometry"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-heat-schedule-public-20260909-r1\\benchmark_c9061a8738db_geometry.prt",
+              "name": "benchmark_c9061a8738db_geometry",
+              "document_type": "Part",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_bb284afef5c54844b3bbd2f87f84e478",
+                "kind": "part",
+                "name": "benchmark_c9061a8738db_geometry",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_5bc9a37bd24749b6863c1c91072a844e",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "5bc9a37bd24749b6863c1c91072a844e",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-heat-schedule-public-20260909-r1\\benchmark_c9061a8738db_geometry.prt",
+                "journal_id": "benchmark_c9061a8738db_geometry",
+                "display_name": "benchmark_c9061a8738db_geometry"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-heat-schedule-20260909-r1\\benchmark_40aa7155a7d4_geometry.prt",
+              "name": "benchmark_40aa7155a7d4_geometry",
+              "document_type": "Part",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_b4c8cb6c330a46669f43c6780b4ff886",
+                "kind": "part",
+                "name": "benchmark_40aa7155a7d4_geometry",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_b17f19cf83684b078991a3d3f99c960a",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "b17f19cf83684b078991a3d3f99c960a",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-heat-schedule-20260909-r1\\benchmark_40aa7155a7d4_geometry.prt",
+                "journal_id": "benchmark_40aa7155a7d4_geometry",
+                "display_name": "benchmark_40aa7155a7d4_geometry"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-heat-binding-20260909-r1\\benchmark_19990db7ac13_geometry.prt",
+              "name": "benchmark_19990db7ac13_geometry",
+              "document_type": "Part",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_4ec6e7a6a1b8438d9d493e80920514ae",
+                "kind": "part",
+                "name": "benchmark_19990db7ac13_geometry",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_4c98a10d8c3c40a5beaefb3cffb311e8",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "4c98a10d8c3c40a5beaefb3cffb311e8",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-heat-binding-20260909-r1\\benchmark_19990db7ac13_geometry.prt",
+                "journal_id": "benchmark_19990db7ac13_geometry",
+                "display_name": "benchmark_19990db7ac13_geometry"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-scalar-tables-20260909-r1\\benchmark_1ed9fb624b41_geometry.prt",
+              "name": "benchmark_1ed9fb624b41_geometry",
+              "document_type": "Part",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_5966701b7c494bdb8909acef974b9bdf",
+                "kind": "part",
+                "name": "benchmark_1ed9fb624b41_geometry",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_e46ba4ef58f64ea28768af2bc9dc38f9",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "e46ba4ef58f64ea28768af2bc9dc38f9",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-scalar-tables-20260909-r1\\benchmark_1ed9fb624b41_geometry.prt",
+                "journal_id": "benchmark_1ed9fb624b41_geometry",
+                "display_name": "benchmark_1ed9fb624b41_geometry"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_geometry.prt",
+              "name": "benchmark_fd1cae97c9a6_geometry",
+              "document_type": "Part",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_c8d626c2dc46473ea7563ef4c13e091f",
+                "kind": "part",
+                "name": "benchmark_fd1cae97c9a6_geometry",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_566c06f38e7242e488e2c81baf70d488",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "566c06f38e7242e488e2c81baf70d488",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_geometry.prt",
+                "journal_id": "benchmark_fd1cae97c9a6_geometry",
+                "display_name": "benchmark_fd1cae97c9a6_geometry"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-environment-radiation-20260909-r1\\benchmark_5a40b73541f4_geometry.prt",
+              "name": "benchmark_5a40b73541f4_geometry",
+              "document_type": "Part",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_dbda54b15b474bf691e6d41336dc37dc",
+                "kind": "part",
+                "name": "benchmark_5a40b73541f4_geometry",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_c78dfd04aa9043e2bbcba6987ed94bee",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "c78dfd04aa9043e2bbcba6987ed94bee",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-environment-radiation-20260909-r1\\benchmark_5a40b73541f4_geometry.prt",
+                "journal_id": "benchmark_5a40b73541f4_geometry",
+                "display_name": "benchmark_5a40b73541f4_geometry"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-environment-20260909-r1\\benchmark_c724ac72398e_geometry.prt",
+              "name": "benchmark_c724ac72398e_geometry",
+              "document_type": "Part",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_c158fa2cba9046b0b4e2bb708772d3c9",
+                "kind": "part",
+                "name": "benchmark_c724ac72398e_geometry",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_91e7bec490b3489bb7930073c75ec8f2",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "91e7bec490b3489bb7930073c75ec8f2",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-environment-20260909-r1\\benchmark_c724ac72398e_geometry.prt",
+                "journal_id": "benchmark_c724ac72398e_geometry",
+                "display_name": "benchmark_c724ac72398e_geometry"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\B-contact-authoring-20260909-r1\\benchmark_47530a89f645_geometry.prt",
+              "name": "benchmark_47530a89f645_geometry",
+              "document_type": "Part",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_eae251cf9ba941a0a686147a69d4bad4",
+                "kind": "part",
+                "name": "benchmark_47530a89f645_geometry",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_b783fcd058374b2a94ca0cfa8ef21e7c",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "b783fcd058374b2a94ca0cfa8ef21e7c",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\B-contact-authoring-20260909-r1\\benchmark_47530a89f645_geometry.prt",
+                "journal_id": "benchmark_47530a89f645_geometry",
+                "display_name": "benchmark_47530a89f645_geometry"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F4-continuity-20260908-r1\\f4_continuity_r1.prt",
+              "name": "f4_continuity_r1",
+              "document_type": "Part",
+              "modified": true,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_82d402f5f4d34d1083a5a9dbd789c0e8",
+                "kind": "part",
+                "name": "f4_continuity_r1",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_3caab63111b84dd88c89c6e7c0d68c4f",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "3caab63111b84dd88c89c6e7c0d68c4f",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F4-continuity-20260908-r1\\f4_continuity_r1.prt",
+                "journal_id": "f4_continuity_r1",
+                "display_name": "f4_continuity_r1"
+              }
+            }
+          ],
+          "total": 204,
+          "next_offset": 20
+        },
+        "saved": false,
+        "operation_id": "op_5e26f4952ef84275bb9858a9aa0cc13f",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed"
+      },
+      "isError": false
+    },
+    "identity": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_ed78eb34b7f242cb9a6593a7e5967a1b\", \"kind\": \"part\", \"name\": \"half_r1\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_e49ba920ab554d1c8d863d17cba46b32\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"e49ba920ab554d1c8d863d17cba46b32\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\E-room-fan-half-run-20260909-r1\\\\half_r1.sim\", \"journal_id\": \"half_r1\", \"display_name\": \"half_r1\"}, \"files\": [{\"index\": 0, \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\E-room-fan-half-run-20260909-r1\\\\half_r1-Finned_coupled_benchmark.bun\", \"bytes\": 15184092, \"sha256\": \"d2aff7a42af772edd7de7b86b95a6ea128238846c277be5cf1178df1bf2a8f43\"}], \"native_verification\": {\"state\": \"results_changed\", \"native_value\": \"2\"}, \"result_freshness\": \"not_verified\", \"engineering_accepted\": false, \"scope\": \"Associated file identity and native verification only; model/job revision binding required\", \"operation_id\": \"op_f93be044b46d4052bbc5ab285556348e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "document": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_ed78eb34b7f242cb9a6593a7e5967a1b",
+          "kind": "part",
+          "name": "half_r1",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_e49ba920ab554d1c8d863d17cba46b32",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "e49ba920ab554d1c8d863d17cba46b32",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-half-run-20260909-r1\\half_r1.sim",
+          "journal_id": "half_r1",
+          "display_name": "half_r1"
+        },
+        "files": [
+          {
+            "index": 0,
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-half-run-20260909-r1\\half_r1-Finned_coupled_benchmark.bun",
+            "bytes": 15184092,
+            "sha256": "d2aff7a42af772edd7de7b86b95a6ea128238846c277be5cf1178df1bf2a8f43"
+          }
+        ],
+        "native_verification": {
+          "state": "results_changed",
+          "native_value": "2"
+        },
+        "result_freshness": "not_verified",
+        "engineering_accepted": false,
+        "scope": "Associated file identity and native verification only; model/job revision binding required",
+        "operation_id": "op_f93be044b46d4052bbc5ab285556348e",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "not_applicable"
+      },
+      "isError": false
+    },
+    "regions": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"degC\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_ed78eb34b7f242cb9a6593a7e5967a1b\", \"kind\": \"part\", \"name\": \"half_r1\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_e49ba920ab554d1c8d863d17cba46b32\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"e49ba920ab554d1c8d863d17cba46b32\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\E-room-fan-half-run-20260909-r1\\\\half_r1.sim\", \"journal_id\": \"half_r1\", \"display_name\": \"half_r1\"}, \"result_file\": {\"index\": 0, \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\E-room-fan-half-run-20260909-r1\\\\half_r1-Finned_coupled_benchmark.bun\", \"bytes\": 15184092, \"sha256\": \"d2aff7a42af772edd7de7b86b95a6ea128238846c277be5cf1178df1bf2a8f43\"}, \"items\": [{\"group_index\": 0, \"dimension\": \"3d\", \"element_count\": 52256, \"node_count\": 11528, \"defined_node_count\": 0, \"undefined_node_count\": 11528, \"membership_sha256\": \"0e5fe9ad053255f61a2f4c8ac3c53d146c26a96d0503f7a9d50085a0c39e2a01\", \"minimum\": null, \"maximum\": null, \"arithmetic_nodal_mean\": null, \"bounds\": {\"minimum\": [0.0, 0.0, 2.0], \"maximum\": [20.0, 10.0, 10.0]}}, {\"group_index\": 1, \"dimension\": \"3d\", \"element_count\": 24956, \"node_count\": 6238, \"defined_node_count\": 6238, \"undefined_node_count\": 0, \"membership_sha256\": \"8c020e583ffd70cc74f09515a93a46e54947ac82e777063d703bdffea7764f54\", \"minimum\": {\"index\": 9, \"label\": 4156, \"coordinates\": [0.0, 7.0, 6.0], \"temperature\": 23.841537475585938}, \"maximum\": {\"index\": 13, \"label\": 4160, \"coordinates\": [20.0, 0.0, 0.0], \"temperature\": 23.91877555847168}, \"arithmetic_nodal_mean\": 23.894161854236696, \"bounds\": {\"minimum\": [0.0, 0.0, 0.0], \"maximum\": [20.0, 10.0, 6.0]}}], \"total\": 2, \"next_offset\": null, \"loadcase_index\": 0, \"iteration_index\": 0, \"field\": \"Temperature - Nodal\", \"coordinate_units\": \"mm\", \"coordinate_frame\": \"native_result_coordinates\", \"result_freshness\": \"not_verified\", \"mean_semantics\": \"Unweighted arithmetic mean over unique nodes with defined field values within each group; undefined values are excluded and counted, empty summaries are null; shared nodes may belong to multiple groups; not area/volume weighted\", \"extrema_semantics\": \"First node in increasing result-index order at each extremum\", \"selection_semantics\": \"Native dimension/group indices bound to the result file revision; not inferred CAD components or persistent semantic names\", \"operation_id\": \"op_01ed114cbe9040fdbc83efe60e1f1fce\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "degC",
+        "document": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_ed78eb34b7f242cb9a6593a7e5967a1b",
+          "kind": "part",
+          "name": "half_r1",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_e49ba920ab554d1c8d863d17cba46b32",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "e49ba920ab554d1c8d863d17cba46b32",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-half-run-20260909-r1\\half_r1.sim",
+          "journal_id": "half_r1",
+          "display_name": "half_r1"
+        },
+        "result_file": {
+          "index": 0,
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-half-run-20260909-r1\\half_r1-Finned_coupled_benchmark.bun",
+          "bytes": 15184092,
+          "sha256": "d2aff7a42af772edd7de7b86b95a6ea128238846c277be5cf1178df1bf2a8f43"
+        },
+        "items": [
+          {
+            "group_index": 0,
+            "dimension": "3d",
+            "element_count": 52256,
+            "node_count": 11528,
+            "defined_node_count": 0,
+            "undefined_node_count": 11528,
+            "membership_sha256": "0e5fe9ad053255f61a2f4c8ac3c53d146c26a96d0503f7a9d50085a0c39e2a01",
+            "minimum": null,
+            "maximum": null,
+            "arithmetic_nodal_mean": null,
+            "bounds": {
+              "minimum": [
+                0.0,
+                0.0,
+                2.0
+              ],
+              "maximum": [
+                20.0,
+                10.0,
+                10.0
+              ]
+            }
+          },
+          {
+            "group_index": 1,
+            "dimension": "3d",
+            "element_count": 24956,
+            "node_count": 6238,
+            "defined_node_count": 6238,
+            "undefined_node_count": 0,
+            "membership_sha256": "8c020e583ffd70cc74f09515a93a46e54947ac82e777063d703bdffea7764f54",
+            "minimum": {
+              "index": 9,
+              "label": 4156,
+              "coordinates": [
+                0.0,
+                7.0,
+                6.0
+              ],
+              "temperature": 23.841537475585938
+            },
+            "maximum": {
+              "index": 13,
+              "label": 4160,
+              "coordinates": [
+                20.0,
+                0.0,
+                0.0
+              ],
+              "temperature": 23.91877555847168
+            },
+            "arithmetic_nodal_mean": 23.894161854236696,
+            "bounds": {
+              "minimum": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "maximum": [
+                20.0,
+                10.0,
+                6.0
+              ]
+            }
+          }
+        ],
+        "total": 2,
+        "next_offset": null,
+        "loadcase_index": 0,
+        "iteration_index": 0,
+        "field": "Temperature - Nodal",
+        "coordinate_units": "mm",
+        "coordinate_frame": "native_result_coordinates",
+        "result_freshness": "not_verified",
+        "mean_semantics": "Unweighted arithmetic mean over unique nodes with defined field values within each group; undefined values are excluded and counted, empty summaries are null; shared nodes may belong to multiple groups; not area/volume weighted",
+        "extrema_semantics": "First node in increasing result-index order at each extremum",
+        "selection_semantics": "Native dimension/group indices bound to the result file revision; not inferred CAD components or persistent semantic names",
+        "operation_id": "op_01ed114cbe9040fdbc83efe60e1f1fce",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "not_applicable"
+      },
+      "isError": false
+    },
+    "tail": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"degC\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_ed78eb34b7f242cb9a6593a7e5967a1b\", \"kind\": \"part\", \"name\": \"half_r1\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_e49ba920ab554d1c8d863d17cba46b32\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"e49ba920ab554d1c8d863d17cba46b32\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\E-room-fan-half-run-20260909-r1\\\\half_r1.sim\", \"journal_id\": \"half_r1\", \"display_name\": \"half_r1\"}, \"result_file\": {\"index\": 0, \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\E-room-fan-half-run-20260909-r1\\\\half_r1-Finned_coupled_benchmark.bun\", \"bytes\": 15184092, \"sha256\": \"d2aff7a42af772edd7de7b86b95a6ea128238846c277be5cf1178df1bf2a8f43\"}, \"items\": [{\"index\": 17667, \"label\": 21814, \"coordinates\": [4.030473709106445, 8.780659675598145, 9.646391868591309], \"temperature\": null, \"defined\": false}, {\"index\": 17668, \"label\": 21815, \"coordinates\": [19.36132049560547, 8.196063041687012, 6.378831386566162], \"temperature\": null, \"defined\": false}, {\"index\": 17669, \"label\": 21816, \"coordinates\": [9.030582427978516, 0.5994448065757751, 4.491995811462402], \"temperature\": null, \"defined\": false}, {\"index\": 17670, \"label\": 21817, \"coordinates\": [4.234957695007324, 1.8083070516586304, 9.655255317687988], \"temperature\": null, \"defined\": false}, {\"index\": 17671, \"label\": 21818, \"coordinates\": [10.006695747375488, 0.622905969619751, 5.391453266143799], \"temperature\": null, \"defined\": false}, {\"index\": 17672, \"label\": 21819, \"coordinates\": [7.499994277954102, 0.3060869574546814, 7.742281436920166], \"temperature\": null, \"defined\": false}, {\"index\": 17673, \"label\": 21820, \"coordinates\": [9.674126625061035, 2.717480421066284, 6.372594356536865], \"temperature\": null, \"defined\": false}, {\"index\": 17674, \"label\": 21821, \"coordinates\": [8.499993324279785, 9.682977676391602, 7.766486167907715], \"temperature\": null, \"defined\": false}, {\"index\": 17675, \"label\": 21822, \"coordinates\": [12.685079574584961, 6.4665422439575195, 5.50204610824585], \"temperature\": null, \"defined\": false}, {\"index\": 17676, \"label\": 21823, \"coordinates\": [11.097801208496094, 0.404117226600647, 5.381404876708984], \"temperature\": null, \"defined\": false}, {\"index\": 17677, \"label\": 21824, \"coordinates\": [9.51880168914795, 0.6664640307426453, 5.407403945922852], \"temperature\": null, \"defined\": false}, {\"index\": 17678, \"label\": 21825, \"coordinates\": [8.530637741088867, 0.5999538898468018, 4.491930961608887], \"temperature\": null, \"defined\": false}, {\"index\": 17679, \"label\": 21826, \"coordinates\": [8.805506706237793, 1.3337507247924805, 4.8144965171813965], \"temperature\": null, \"defined\": false}, {\"index\": 17680, \"label\": 21827, \"coordinates\": [8.320867538452148, 1.308817744255066, 4.801792621612549], \"temperature\": null, \"defined\": false}, {\"index\": 17681, \"label\": 21828, \"coordinates\": [8.780197143554688, 0.6009920239448547, 4.916330814361572], \"temperature\": null, \"defined\": false}, {\"index\": 17682, \"label\": 21829, \"coordinates\": [9.631489753723145, 3.3225650787353516, 3.5187153816223145], \"temperature\": null, \"defined\": false}, {\"index\": 17683, \"label\": 21830, \"coordinates\": [14.30511474609375, 1.3335727453231812, 4.814713954925537], \"temperature\": null, \"defined\": false}, {\"index\": 17684, \"label\": 21831, \"coordinates\": [17.974159240722656, 1.664127230644226, 2.5260169506073], \"temperature\": null, \"defined\": false}, {\"index\": 17685, \"label\": 21832, \"coordinates\": [17.27313804626465, 0.6668698787689209, 4.388083457946777], \"temperature\": null, \"defined\": false}, {\"index\": 17686, \"label\": 21833, \"coordinates\": [2.964162588119507, 1.4062105417251587, 6.3089470863342285], \"temperature\": null, \"defined\": false}, {\"index\": 17687, \"label\": 21834, \"coordinates\": [16.612409591674805, 8.599453926086426, 3.063279867172241], \"temperature\": null, \"defined\": false}, {\"index\": 17688, \"label\": 21835, \"coordinates\": [0.3770075738430023, 6.1892547607421875, 5.838806629180908], \"temperature\": null, \"defined\": false}, {\"index\": 17689, \"label\": 21836, \"coordinates\": [12.754195213317871, 7.854576110839844, 9.343267440795898], \"temperature\": null, \"defined\": false}, {\"index\": 17690, \"label\": 21837, \"coordinates\": [15.700485229492188, 6.445103645324707, 4.377411842346191], \"temperature\": null, \"defined\": false}, {\"index\": 17691, \"label\": 21838, \"coordinates\": [12.616260528564453, 7.951120376586914, 6.53881311416626], \"temperature\": null, \"defined\": false}, {\"index\": 17692, \"label\": 21839, \"coordinates\": [18.16328239440918, 3.5628859996795654, 5.641000747680664], \"temperature\": null, \"defined\": false}, {\"index\": 17693, \"label\": 21840, \"coordinates\": [3.446899652481079, 3.485590934753418, 2.35724139213562], \"temperature\": null, \"defined\": false}, {\"index\": 17694, \"label\": 21841, \"coordinates\": [14.626396179199219, 4.0158305168151855, 2.3797030448913574], \"temperature\": null, \"defined\": false}, {\"index\": 17695, \"label\": 21842, \"coordinates\": [10.194580078125, 8.66602897644043, 4.8146443367004395], \"temperature\": null, \"defined\": false}, {\"index\": 17696, \"label\": 21843, \"coordinates\": [16.769079208374023, 9.237051010131836, 9.668792724609375], \"temperature\": null, \"defined\": false}, {\"index\": 17697, \"label\": 21844, \"coordinates\": [4.553736209869385, 3.321552276611328, 6.580483913421631], \"temperature\": null, \"defined\": false}, {\"index\": 17698, \"label\": 21845, \"coordinates\": [12.173650741577148, 3.93003511428833, 2.3743302822113037], \"temperature\": null, \"defined\": false}, {\"index\": 17699, \"label\": 21846, \"coordinates\": [17.269071578979492, 9.251496315002441, 9.68293285369873], \"temperature\": null, \"defined\": false}, {\"index\": 17700, \"label\": 21847, \"coordinates\": [19.472251892089844, 4.904666423797607, 9.689072608947754], \"temperature\": null, \"defined\": false}, {\"index\": 17701, \"label\": 21848, \"coordinates\": [12.527791976928711, 9.614341735839844, 2.588994026184082], \"temperature\": null, \"defined\": false}, {\"index\": 17702, \"label\": 21849, \"coordinates\": [15.954180717468262, 9.40023422241211, 3.6031861305236816], \"temperature\": null, \"defined\": false}, {\"index\": 17703, \"label\": 21850, \"coordinates\": [15.05022144317627, 6.494943141937256, 2.346571445465088], \"temperature\": null, \"defined\": false}, {\"index\": 17704, \"label\": 21851, \"coordinates\": [18.31268882751465, 8.436161041259766, 3.2204642295837402], \"temperature\": null, \"defined\": false}, {\"index\": 17705, \"label\": 21852, \"coordinates\": [2.963236093521118, 8.533320426940918, 3.482302188873291], \"temperature\": null, \"defined\": false}, {\"index\": 17706, \"label\": 21853, \"coordinates\": [19.646944046020508, 4.717341423034668, 3.1084814071655273], \"temperature\": null, \"defined\": false}, {\"index\": 17707, \"label\": 21854, \"coordinates\": [4.7415008544921875, 2.679638624191284, 6.55525016784668], \"temperature\": null, \"defined\": false}, {\"index\": 17708, \"label\": 21855, \"coordinates\": [19.679363250732422, 6.05349588394165, 3.764791965484619], \"temperature\": null, \"defined\": false}, {\"index\": 17709, \"label\": 21856, \"coordinates\": [17.359027862548828, 0.35260236263275146, 6.630633354187012], \"temperature\": null, \"defined\": false}, {\"index\": 17710, \"label\": 21857, \"coordinates\": [6.506479263305664, 8.599738121032715, 5.259143352508545], \"temperature\": null, \"defined\": false}, {\"index\": 17711, \"label\": 21858, \"coordinates\": [6.798882961273193, 8.463799476623535, 5.843551158905029], \"temperature\": null, \"defined\": false}, {\"index\": 17712, \"label\": 21859, \"coordinates\": [12.462908744812012, 8.600410461425781, 5.286007881164551], \"temperature\": null, \"defined\": false}, {\"index\": 17713, \"label\": 21860, \"coordinates\": [19.042987823486328, 6.613609790802002, 4.963118553161621], \"temperature\": null, \"defined\": false}, {\"index\": 17714, \"label\": 21861, \"coordinates\": [18.87864875793457, 3.225785732269287, 6.448757171630859], \"temperature\": null, \"defined\": false}, {\"index\": 17715, \"label\": 21862, \"coordinates\": [4.948520660400391, 2.029632091522217, 6.676757335662842], \"temperature\": null, \"defined\": false}, {\"index\": 17716, \"label\": 21863, \"coordinates\": [7.2943854331970215, 0.4872805178165436, 6.2968220710754395], \"temperature\": null, \"defined\": false}, {\"index\": 17717, \"label\": 21864, \"coordinates\": [7.4679951667785645, 1.2792980670928955, 9.584425926208496], \"temperature\": null, \"defined\": false}, {\"index\": 17718, \"label\": 21865, \"coordinates\": [5.805532932281494, 0.544945478439331, 4.936002731323242], \"temperature\": null, \"defined\": false}, {\"index\": 17719, \"label\": 21866, \"coordinates\": [5.018402576446533, 0.666019856929779, 5.407149791717529], \"temperature\": null, \"defined\": false}, {\"index\": 17720, \"label\": 21867, \"coordinates\": [9.272724151611328, 0.6002453565597534, 4.936504364013672], \"temperature\": null, \"defined\": false}, {\"index\": 17721, \"label\": 21868, \"coordinates\": [7.759139060974121, 1.3838247060775757, 4.829370498657227], \"temperature\": null, \"defined\": false}, {\"index\": 17722, \"label\": 21869, \"coordinates\": [11.003861427307129, 1.21487295627594, 9.547392845153809], \"temperature\": null, \"defined\": false}, {\"index\": 17723, \"label\": 21870, \"coordinates\": [11.203690528869629, 0.7590815424919128, 9.596714973449707], \"temperature\": null, \"defined\": false}, {\"index\": 17724, \"label\": 21871, \"coordinates\": [11.24682903289795, 0.33598557114601135, 9.131153106689453], \"temperature\": null, \"defined\": false}, {\"index\": 17725, \"label\": 21872, \"coordinates\": [12.9954252243042, 0.343184232711792, 9.671591758728027], \"temperature\": null, \"defined\": false}, {\"index\": 17726, \"label\": 21873, \"coordinates\": [9.000038146972656, 9.687756538391113, 7.683200836181641], \"temperature\": null, \"defined\": false}, {\"index\": 17727, \"label\": 21874, \"coordinates\": [10.008854866027832, 9.650486946105957, 9.646265983581543], \"temperature\": null, \"defined\": false}, {\"index\": 17728, \"label\": 21875, \"coordinates\": [7.786532402038574, 1.7753422260284424, 9.644134521484375], \"temperature\": null, \"defined\": false}, {\"index\": 17729, \"label\": 21876, \"coordinates\": [14.469600677490234, 9.39968490600586, 4.492060661315918], \"temperature\": null, \"defined\": false}, {\"index\": 17730, \"label\": 21877, \"coordinates\": [3.4536945819854736, 9.351304054260254, 5.374076843261719], \"temperature\": null, \"defined\": false}, {\"index\": 17731, \"label\": 21878, \"coordinates\": [4.423911094665527, 2.1612584590911865, 6.5557637214660645], \"temperature\": null, \"defined\": false}, {\"index\": 17732, \"label\": 21879, \"coordinates\": [10.091046333312988, 1.4215785264968872, 5.2873854637146], \"temperature\": null, \"defined\": false}, {\"index\": 17733, \"label\": 21880, \"coordinates\": [15.925887107849121, 8.666067123413086, 4.370635032653809], \"temperature\": null, \"defined\": false}, {\"index\": 17734, \"label\": 21881, \"coordinates\": [18.83489990234375, 8.427949905395508, 3.3536548614501953], \"temperature\": null, \"defined\": false}, {\"index\": 17735, \"label\": 21882, \"coordinates\": [19.56320571899414, 3.536452531814575, 6.879026412963867], \"temperature\": null, \"defined\": false}, {\"index\": 17736, \"label\": 21883, \"coordinates\": [6.178455352783203, 6.385192394256592, 4.321566104888916], \"temperature\": null, \"defined\": false}, {\"index\": 17737, \"label\": 21884, \"coordinates\": [11.96240234375, 9.333451271057129, 4.518634796142578], \"temperature\": null, \"defined\": false}, {\"index\": 17738, \"label\": 21885, \"coordinates\": [15.36602783203125, 6.678150177001953, 3.493412733078003], \"temperature\": null, \"defined\": false}, {\"index\": 17739, \"label\": 21886, \"coordinates\": [13.962772369384766, 9.333185195922852, 4.518220901489258], \"temperature\": null, \"defined\": false}, {\"index\": 17740, \"label\": 21887, \"coordinates\": [19.392227172851562, 2.315446376800537, 9.56425952911377], \"temperature\": null, \"defined\": false}, {\"index\": 17741, \"label\": 21888, \"coordinates\": [15.197104454040527, 6.542539596557617, 4.388126850128174], \"temperature\": null, \"defined\": false}, {\"index\": 17742, \"label\": 21889, \"coordinates\": [5.805439472198486, 1.3326852321624756, 4.814556121826172], \"temperature\": null, \"defined\": false}, {\"index\": 17743, \"label\": 21890, \"coordinates\": [16.51253890991211, 1.6702795028686523, 2.5362486839294434], \"temperature\": null, \"defined\": false}, {\"index\": 17744, \"label\": 21891, \"coordinates\": [9.11983871459961, 9.63496208190918, 6.640834331512451], \"temperature\": null, \"defined\": false}, {\"index\": 17745, \"label\": 21892, \"coordinates\": [13.829521179199219, 4.676793098449707, 9.637528419494629], \"temperature\": null, \"defined\": false}, {\"index\": 17746, \"label\": 21893, \"coordinates\": [17.759166717529297, 0.34284868836402893, 9.251832962036133], \"temperature\": null, \"defined\": false}, {\"index\": 17747, \"label\": 21894, \"coordinates\": [5.537237167358398, 1.3335063457489014, 5.259172439575195], \"temperature\": null, \"defined\": false}, {\"index\": 17748, \"label\": 21895, \"coordinates\": [17.631502151489258, 8.643758773803711, 3.6684839725494385], \"temperature\": null, \"defined\": false}, {\"index\": 17749, \"label\": 21896, \"coordinates\": [2.791428804397583, 9.337569236755371, 3.5497825145721436], \"temperature\": null, \"defined\": false}, {\"index\": 17750, \"label\": 21897, \"coordinates\": [17.003068923950195, 9.698637962341309, 9.65338134765625], \"temperature\": null, \"defined\": false}, {\"index\": 17751, \"label\": 21898, \"coordinates\": [8.045062065124512, 0.585649847984314, 4.4791059494018555], \"temperature\": null, \"defined\": false}, {\"index\": 17752, \"label\": 21899, \"coordinates\": [4.777927875518799, 0.6671750545501709, 4.962867736816406], \"temperature\": null, \"defined\": false}, {\"index\": 17753, \"label\": 21900, \"coordinates\": [16.25538444519043, 7.265119552612305, 6.473521709442139], \"temperature\": null, \"defined\": false}, {\"index\": 17754, \"label\": 21901, \"coordinates\": [15.694588661193848, 9.454876899719238, 4.936491012573242], \"temperature\": null, \"defined\": false}, {\"index\": 17755, \"label\": 21902, \"coordinates\": [18.211824417114258, 8.352448463439941, 3.8355185985565186], \"temperature\": null, \"defined\": false}, {\"index\": 17756, \"label\": 21903, \"coordinates\": [8.586137771606445, 1.252124547958374, 5.248190402984619], \"temperature\": null, \"defined\": false}, {\"index\": 17757, \"label\": 21904, \"coordinates\": [5.273062229156494, 0.5994442701339722, 4.936344146728516], \"temperature\": null, \"defined\": false}, {\"index\": 17758, \"label\": 21905, \"coordinates\": [11.298619270324707, 6.215144634246826, 9.437847137451172], \"temperature\": null, \"defined\": false}, {\"index\": 17759, \"label\": 21906, \"coordinates\": [3.1284799575805664, 9.578770637512207, 6.607542037963867], \"temperature\": null, \"defined\": false}, {\"index\": 17760, \"label\": 21907, \"coordinates\": [7.941983222961426, 8.66280746459961, 5.236326694488525], \"temperature\": null, \"defined\": false}, {\"index\": 17761, \"label\": 21908, \"coordinates\": [15.97632884979248, 9.467007637023926, 4.465465545654297], \"temperature\": null, \"defined\": false}, {\"index\": 17762, \"label\": 21909, \"coordinates\": [0.692121148109436, 6.203758716583252, 9.652606010437012], \"temperature\": null, \"defined\": false}, {\"index\": 17763, \"label\": 21910, \"coordinates\": [6.036602020263672, 1.3335731029510498, 5.259157180786133], \"temperature\": null, \"defined\": false}, {\"index\": 17764, \"label\": 21911, \"coordinates\": [10.692938804626465, 8.599719047546387, 4.841483116149902], \"temperature\": null, \"defined\": false}, {\"index\": 17765, \"label\": 21912, \"coordinates\": [18.243282318115234, 3.258815288543701, 9.713404655456543], \"temperature\": null, \"defined\": false}, {\"index\": 17766, \"label\": 21913, \"coordinates\": [9.805132865905762, 1.3329520225524902, 4.814674377441406], \"temperature\": null, \"defined\": false}], \"total\": 17766, \"next_offset\": null, \"loadcase_index\": 0, \"iteration_index\": 0, \"field\": \"Temperature - Nodal\", \"coordinate_units\": \"mm\", \"coordinate_frame\": \"native_result_coordinates\", \"result_freshness\": \"not_verified\", \"reference_lifetime\": \"Indices and labels belong to this result file revision; not live geometry or FEM references\", \"scope\": \"Native result nodes; undefined field values are null with defined=false, never zero or interpolated. Pagination counts all nodes. No region or averaging inference\", \"operation_id\": \"op_85c83ab6417140c88686eb089b424e4f\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "degC",
+        "document": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_ed78eb34b7f242cb9a6593a7e5967a1b",
+          "kind": "part",
+          "name": "half_r1",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_e49ba920ab554d1c8d863d17cba46b32",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "e49ba920ab554d1c8d863d17cba46b32",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-half-run-20260909-r1\\half_r1.sim",
+          "journal_id": "half_r1",
+          "display_name": "half_r1"
+        },
+        "result_file": {
+          "index": 0,
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-half-run-20260909-r1\\half_r1-Finned_coupled_benchmark.bun",
+          "bytes": 15184092,
+          "sha256": "d2aff7a42af772edd7de7b86b95a6ea128238846c277be5cf1178df1bf2a8f43"
+        },
+        "items": [
+          {
+            "index": 17667,
+            "label": 21814,
+            "coordinates": [
+              4.030473709106445,
+              8.780659675598145,
+              9.646391868591309
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17668,
+            "label": 21815,
+            "coordinates": [
+              19.36132049560547,
+              8.196063041687012,
+              6.378831386566162
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17669,
+            "label": 21816,
+            "coordinates": [
+              9.030582427978516,
+              0.5994448065757751,
+              4.491995811462402
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17670,
+            "label": 21817,
+            "coordinates": [
+              4.234957695007324,
+              1.8083070516586304,
+              9.655255317687988
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17671,
+            "label": 21818,
+            "coordinates": [
+              10.006695747375488,
+              0.622905969619751,
+              5.391453266143799
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17672,
+            "label": 21819,
+            "coordinates": [
+              7.499994277954102,
+              0.3060869574546814,
+              7.742281436920166
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17673,
+            "label": 21820,
+            "coordinates": [
+              9.674126625061035,
+              2.717480421066284,
+              6.372594356536865
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17674,
+            "label": 21821,
+            "coordinates": [
+              8.499993324279785,
+              9.682977676391602,
+              7.766486167907715
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17675,
+            "label": 21822,
+            "coordinates": [
+              12.685079574584961,
+              6.4665422439575195,
+              5.50204610824585
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17676,
+            "label": 21823,
+            "coordinates": [
+              11.097801208496094,
+              0.404117226600647,
+              5.381404876708984
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17677,
+            "label": 21824,
+            "coordinates": [
+              9.51880168914795,
+              0.6664640307426453,
+              5.407403945922852
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17678,
+            "label": 21825,
+            "coordinates": [
+              8.530637741088867,
+              0.5999538898468018,
+              4.491930961608887
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17679,
+            "label": 21826,
+            "coordinates": [
+              8.805506706237793,
+              1.3337507247924805,
+              4.8144965171813965
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17680,
+            "label": 21827,
+            "coordinates": [
+              8.320867538452148,
+              1.308817744255066,
+              4.801792621612549
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17681,
+            "label": 21828,
+            "coordinates": [
+              8.780197143554688,
+              0.6009920239448547,
+              4.916330814361572
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17682,
+            "label": 21829,
+            "coordinates": [
+              9.631489753723145,
+              3.3225650787353516,
+              3.5187153816223145
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17683,
+            "label": 21830,
+            "coordinates": [
+              14.30511474609375,
+              1.3335727453231812,
+              4.814713954925537
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17684,
+            "label": 21831,
+            "coordinates": [
+              17.974159240722656,
+              1.664127230644226,
+              2.5260169506073
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17685,
+            "label": 21832,
+            "coordinates": [
+              17.27313804626465,
+              0.6668698787689209,
+              4.388083457946777
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17686,
+            "label": 21833,
+            "coordinates": [
+              2.964162588119507,
+              1.4062105417251587,
+              6.3089470863342285
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17687,
+            "label": 21834,
+            "coordinates": [
+              16.612409591674805,
+              8.599453926086426,
+              3.063279867172241
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17688,
+            "label": 21835,
+            "coordinates": [
+              0.3770075738430023,
+              6.1892547607421875,
+              5.838806629180908
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17689,
+            "label": 21836,
+            "coordinates": [
+              12.754195213317871,
+              7.854576110839844,
+              9.343267440795898
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17690,
+            "label": 21837,
+            "coordinates": [
+              15.700485229492188,
+              6.445103645324707,
+              4.377411842346191
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17691,
+            "label": 21838,
+            "coordinates": [
+              12.616260528564453,
+              7.951120376586914,
+              6.53881311416626
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17692,
+            "label": 21839,
+            "coordinates": [
+              18.16328239440918,
+              3.5628859996795654,
+              5.641000747680664
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17693,
+            "label": 21840,
+            "coordinates": [
+              3.446899652481079,
+              3.485590934753418,
+              2.35724139213562
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17694,
+            "label": 21841,
+            "coordinates": [
+              14.626396179199219,
+              4.0158305168151855,
+              2.3797030448913574
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17695,
+            "label": 21842,
+            "coordinates": [
+              10.194580078125,
+              8.66602897644043,
+              4.8146443367004395
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17696,
+            "label": 21843,
+            "coordinates": [
+              16.769079208374023,
+              9.237051010131836,
+              9.668792724609375
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17697,
+            "label": 21844,
+            "coordinates": [
+              4.553736209869385,
+              3.321552276611328,
+              6.580483913421631
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17698,
+            "label": 21845,
+            "coordinates": [
+              12.173650741577148,
+              3.93003511428833,
+              2.3743302822113037
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17699,
+            "label": 21846,
+            "coordinates": [
+              17.269071578979492,
+              9.251496315002441,
+              9.68293285369873
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17700,
+            "label": 21847,
+            "coordinates": [
+              19.472251892089844,
+              4.904666423797607,
+              9.689072608947754
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17701,
+            "label": 21848,
+            "coordinates": [
+              12.527791976928711,
+              9.614341735839844,
+              2.588994026184082
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17702,
+            "label": 21849,
+            "coordinates": [
+              15.954180717468262,
+              9.40023422241211,
+              3.6031861305236816
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17703,
+            "label": 21850,
+            "coordinates": [
+              15.05022144317627,
+              6.494943141937256,
+              2.346571445465088
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17704,
+            "label": 21851,
+            "coordinates": [
+              18.31268882751465,
+              8.436161041259766,
+              3.2204642295837402
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17705,
+            "label": 21852,
+            "coordinates": [
+              2.963236093521118,
+              8.533320426940918,
+              3.482302188873291
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17706,
+            "label": 21853,
+            "coordinates": [
+              19.646944046020508,
+              4.717341423034668,
+              3.1084814071655273
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17707,
+            "label": 21854,
+            "coordinates": [
+              4.7415008544921875,
+              2.679638624191284,
+              6.55525016784668
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17708,
+            "label": 21855,
+            "coordinates": [
+              19.679363250732422,
+              6.05349588394165,
+              3.764791965484619
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17709,
+            "label": 21856,
+            "coordinates": [
+              17.359027862548828,
+              0.35260236263275146,
+              6.630633354187012
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17710,
+            "label": 21857,
+            "coordinates": [
+              6.506479263305664,
+              8.599738121032715,
+              5.259143352508545
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17711,
+            "label": 21858,
+            "coordinates": [
+              6.798882961273193,
+              8.463799476623535,
+              5.843551158905029
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17712,
+            "label": 21859,
+            "coordinates": [
+              12.462908744812012,
+              8.600410461425781,
+              5.286007881164551
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17713,
+            "label": 21860,
+            "coordinates": [
+              19.042987823486328,
+              6.613609790802002,
+              4.963118553161621
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17714,
+            "label": 21861,
+            "coordinates": [
+              18.87864875793457,
+              3.225785732269287,
+              6.448757171630859
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17715,
+            "label": 21862,
+            "coordinates": [
+              4.948520660400391,
+              2.029632091522217,
+              6.676757335662842
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17716,
+            "label": 21863,
+            "coordinates": [
+              7.2943854331970215,
+              0.4872805178165436,
+              6.2968220710754395
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17717,
+            "label": 21864,
+            "coordinates": [
+              7.4679951667785645,
+              1.2792980670928955,
+              9.584425926208496
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17718,
+            "label": 21865,
+            "coordinates": [
+              5.805532932281494,
+              0.544945478439331,
+              4.936002731323242
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17719,
+            "label": 21866,
+            "coordinates": [
+              5.018402576446533,
+              0.666019856929779,
+              5.407149791717529
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17720,
+            "label": 21867,
+            "coordinates": [
+              9.272724151611328,
+              0.6002453565597534,
+              4.936504364013672
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17721,
+            "label": 21868,
+            "coordinates": [
+              7.759139060974121,
+              1.3838247060775757,
+              4.829370498657227
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17722,
+            "label": 21869,
+            "coordinates": [
+              11.003861427307129,
+              1.21487295627594,
+              9.547392845153809
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17723,
+            "label": 21870,
+            "coordinates": [
+              11.203690528869629,
+              0.7590815424919128,
+              9.596714973449707
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17724,
+            "label": 21871,
+            "coordinates": [
+              11.24682903289795,
+              0.33598557114601135,
+              9.131153106689453
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17725,
+            "label": 21872,
+            "coordinates": [
+              12.9954252243042,
+              0.343184232711792,
+              9.671591758728027
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17726,
+            "label": 21873,
+            "coordinates": [
+              9.000038146972656,
+              9.687756538391113,
+              7.683200836181641
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17727,
+            "label": 21874,
+            "coordinates": [
+              10.008854866027832,
+              9.650486946105957,
+              9.646265983581543
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17728,
+            "label": 21875,
+            "coordinates": [
+              7.786532402038574,
+              1.7753422260284424,
+              9.644134521484375
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17729,
+            "label": 21876,
+            "coordinates": [
+              14.469600677490234,
+              9.39968490600586,
+              4.492060661315918
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17730,
+            "label": 21877,
+            "coordinates": [
+              3.4536945819854736,
+              9.351304054260254,
+              5.374076843261719
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17731,
+            "label": 21878,
+            "coordinates": [
+              4.423911094665527,
+              2.1612584590911865,
+              6.5557637214660645
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17732,
+            "label": 21879,
+            "coordinates": [
+              10.091046333312988,
+              1.4215785264968872,
+              5.2873854637146
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17733,
+            "label": 21880,
+            "coordinates": [
+              15.925887107849121,
+              8.666067123413086,
+              4.370635032653809
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17734,
+            "label": 21881,
+            "coordinates": [
+              18.83489990234375,
+              8.427949905395508,
+              3.3536548614501953
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17735,
+            "label": 21882,
+            "coordinates": [
+              19.56320571899414,
+              3.536452531814575,
+              6.879026412963867
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17736,
+            "label": 21883,
+            "coordinates": [
+              6.178455352783203,
+              6.385192394256592,
+              4.321566104888916
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17737,
+            "label": 21884,
+            "coordinates": [
+              11.96240234375,
+              9.333451271057129,
+              4.518634796142578
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17738,
+            "label": 21885,
+            "coordinates": [
+              15.36602783203125,
+              6.678150177001953,
+              3.493412733078003
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17739,
+            "label": 21886,
+            "coordinates": [
+              13.962772369384766,
+              9.333185195922852,
+              4.518220901489258
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17740,
+            "label": 21887,
+            "coordinates": [
+              19.392227172851562,
+              2.315446376800537,
+              9.56425952911377
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17741,
+            "label": 21888,
+            "coordinates": [
+              15.197104454040527,
+              6.542539596557617,
+              4.388126850128174
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17742,
+            "label": 21889,
+            "coordinates": [
+              5.805439472198486,
+              1.3326852321624756,
+              4.814556121826172
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17743,
+            "label": 21890,
+            "coordinates": [
+              16.51253890991211,
+              1.6702795028686523,
+              2.5362486839294434
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17744,
+            "label": 21891,
+            "coordinates": [
+              9.11983871459961,
+              9.63496208190918,
+              6.640834331512451
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17745,
+            "label": 21892,
+            "coordinates": [
+              13.829521179199219,
+              4.676793098449707,
+              9.637528419494629
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17746,
+            "label": 21893,
+            "coordinates": [
+              17.759166717529297,
+              0.34284868836402893,
+              9.251832962036133
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17747,
+            "label": 21894,
+            "coordinates": [
+              5.537237167358398,
+              1.3335063457489014,
+              5.259172439575195
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17748,
+            "label": 21895,
+            "coordinates": [
+              17.631502151489258,
+              8.643758773803711,
+              3.6684839725494385
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17749,
+            "label": 21896,
+            "coordinates": [
+              2.791428804397583,
+              9.337569236755371,
+              3.5497825145721436
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17750,
+            "label": 21897,
+            "coordinates": [
+              17.003068923950195,
+              9.698637962341309,
+              9.65338134765625
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17751,
+            "label": 21898,
+            "coordinates": [
+              8.045062065124512,
+              0.585649847984314,
+              4.4791059494018555
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17752,
+            "label": 21899,
+            "coordinates": [
+              4.777927875518799,
+              0.6671750545501709,
+              4.962867736816406
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17753,
+            "label": 21900,
+            "coordinates": [
+              16.25538444519043,
+              7.265119552612305,
+              6.473521709442139
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17754,
+            "label": 21901,
+            "coordinates": [
+              15.694588661193848,
+              9.454876899719238,
+              4.936491012573242
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17755,
+            "label": 21902,
+            "coordinates": [
+              18.211824417114258,
+              8.352448463439941,
+              3.8355185985565186
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17756,
+            "label": 21903,
+            "coordinates": [
+              8.586137771606445,
+              1.252124547958374,
+              5.248190402984619
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17757,
+            "label": 21904,
+            "coordinates": [
+              5.273062229156494,
+              0.5994442701339722,
+              4.936344146728516
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17758,
+            "label": 21905,
+            "coordinates": [
+              11.298619270324707,
+              6.215144634246826,
+              9.437847137451172
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17759,
+            "label": 21906,
+            "coordinates": [
+              3.1284799575805664,
+              9.578770637512207,
+              6.607542037963867
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17760,
+            "label": 21907,
+            "coordinates": [
+              7.941983222961426,
+              8.66280746459961,
+              5.236326694488525
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17761,
+            "label": 21908,
+            "coordinates": [
+              15.97632884979248,
+              9.467007637023926,
+              4.465465545654297
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17762,
+            "label": 21909,
+            "coordinates": [
+              0.692121148109436,
+              6.203758716583252,
+              9.652606010437012
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17763,
+            "label": 21910,
+            "coordinates": [
+              6.036602020263672,
+              1.3335731029510498,
+              5.259157180786133
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17764,
+            "label": 21911,
+            "coordinates": [
+              10.692938804626465,
+              8.599719047546387,
+              4.841483116149902
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17765,
+            "label": 21912,
+            "coordinates": [
+              18.243282318115234,
+              3.258815288543701,
+              9.713404655456543
+            ],
+            "temperature": null,
+            "defined": false
+          },
+          {
+            "index": 17766,
+            "label": 21913,
+            "coordinates": [
+              9.805132865905762,
+              1.3329520225524902,
+              4.814674377441406
+            ],
+            "temperature": null,
+            "defined": false
+          }
+        ],
+        "total": 17766,
+        "next_offset": null,
+        "loadcase_index": 0,
+        "iteration_index": 0,
+        "field": "Temperature - Nodal",
+        "coordinate_units": "mm",
+        "coordinate_frame": "native_result_coordinates",
+        "result_freshness": "not_verified",
+        "reference_lifetime": "Indices and labels belong to this result file revision; not live geometry or FEM references",
+        "scope": "Native result nodes; undefined field values are null with defined=false, never zero or interpolated. Pagination counts all nodes. No region or averaging inference",
+        "operation_id": "op_85c83ab6417140c88686eb089b424e4f",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "not_applicable"
+      },
+      "isError": false
+    },
+    "wrong_digest": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"error\", \"warnings\": [], \"units\": null, \"code\": \"NX_SIM_RESULT_CHANGED\", \"message\": \"Result identity differs; discard accumulated pages and inspect the new revision\", \"retryable\": false, \"details\": {\"operation_id\": \"op_e26daeff454e46aa83cba26f2f53713c\", \"mutation_outcome\": \"not_started\"}}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "error",
+        "warnings": [],
+        "units": null,
+        "code": "NX_SIM_RESULT_CHANGED",
+        "message": "Result identity differs; discard accumulated pages and inspect the new revision",
+        "retryable": false,
+        "details": {
+          "operation_id": "op_e26daeff454e46aa83cba26f2f53713c",
+          "mutation_outcome": "not_started"
+        }
+      },
+      "isError": true
+    }
+  },
+  "passed": true,
+  "solver_launched": false,
+  "document": "obj_20bc234ffa5249ceb4fb4d82b993c626_ed78eb34b7f242cb9a6593a7e5967a1b"
+}

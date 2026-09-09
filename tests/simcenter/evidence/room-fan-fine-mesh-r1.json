@@ -1,0 +1,65 @@
+{
+  "status": "success",
+  "variant": {
+    "state": "native_files_cloned",
+    "folder": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-fine-20260909-r1",
+    "plan_sha256": "81cfa56b503a45d4af8d72b2241e8c7032ef29c5c2579ca3be548f161163feef",
+    "outputs": [
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-fine-20260909-r1\\RoomFanFineR1_analysis.sim",
+        "bytes": 7809217,
+        "sha256": "359b159e2a29cb17ac107195e2dbde8ff2479757ec7a296333e86113206af1a2"
+      },
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-fine-20260909-r1\\RoomFanFineR1_mesh.fem",
+        "bytes": 3021742,
+        "sha256": "f4a2a3be020c186229dfdc0ba20dbb6e47bca1c52c5a5faab0723bb5471f65b3"
+      },
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-fine-20260909-r1\\RoomFanFineR1_cad_01.prt",
+        "bytes": 137556,
+        "sha256": "f669a8ad9e76832895d76f1c549058b87eac1c00e247c5544858c66d71570e5e"
+      }
+    ],
+    "source_files_preserved": true,
+    "document_flags_preserved": true,
+    "associated_files_copied": false,
+    "saved_snapshot": true,
+    "unsaved_sources_excluded": [
+      "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-coarse-run-20260909-r2\\coarse_r2.sim"
+    ],
+    "dependency_rebinding": "not_verified_until_open",
+    "complete_analysis_package": false,
+    "result_freshness": "not_verified",
+    "solver_launched": false,
+    "replayed": false
+  },
+  "before": {
+    "elements": 2130,
+    "nodes": 745
+  },
+  "after": {
+    "elements": 12468,
+    "nodes": 3402
+  },
+  "mesh_settings": [
+    {
+      "mesh": "3d_mesh(1)",
+      "before_mm": 2.0,
+      "after_mm": 1.0
+    },
+    {
+      "mesh": "3d_mesh(2)",
+      "before_mm": 2.0,
+      "after_mm": 1.0
+    }
+  ],
+  "source_files_preserved": true,
+  "sim": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-fine-20260909-r1\\RoomFanFineR1_analysis.sim",
+  "solver_launched": false,
+  "operation_id": "op_948fa3484fec45e188add534f6b292cd",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

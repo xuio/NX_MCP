@@ -1,0 +1,14 @@
+{
+  "status": "error",
+  "message": "Scalar view failed; inspect current views",
+  "details": {
+    "reason": "The input is invalid for this operation",
+    "stage": "post.PostviewRename(view, name)",
+    "existing": [],
+    "previous_main": -1,
+    "cleanup_issues": [],
+    "mutation_outcome": "rolled_back",
+    "operation_id": "op_0d2b0b9df92b41b9a0859a36498a12ba"
+  },
+  "nx_code": 3960043
+}

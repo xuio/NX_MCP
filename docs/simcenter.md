@@ -3950,6 +3950,20 @@ The read-only native audit is `audit_conduction_isolated.py`.
 
 ### Public nodal temperature results
 
+`nx_sim_temperature_nodes` retains every node in its page and uses the documented
+`ResultAccess.IsResultDefined` API before requesting values. Undefined values are
+`temperature: null, defined: false`; they are not zero or interpolated.
+`nx_sim_temperature_regions` reports `defined_node_count` and
+`undefined_node_count`, averages only defined nodes, and returns null extrema/mean
+when none are defined. Region bounds still include all member nodes. In coupled
+results, fluid temperatures can live in a different field/location; an undefined
+nodal field does not mean the fluid has no temperature result.
+
+The room-temperature fan fixture verifies 6,238 defined solid nodes and 11,528
+undefined fluid nodes, CSV export and image delivery. This fixes native error
+3960050 when a group/page contains nodes without nodal temperature data.
+
+
 `nx_sim_temperature_result(document, loadcase_index=0, iteration_index=0)`
 exposes the existing native result reader through public MCP. Select indices
 using `nx_sim_result_inventory`. The active SIM is required; negative or
@@ -3988,7 +4002,7 @@ The selected SIM must be work and display part. The tool verifies native field,
 indices and Celsius units, retains result handles for visible views, and returns
 a session-local postview ID. Existing views are retained; failed creation attempts
 remove only their new view and report cleanup failures as partial state. Supply
-an operation ID for retry deduplication. This does not save, solve, fit the camera,
+an operation ID for retry deduplication. The committed view is fitted and refreshed. This does not save, solve,
 export screenshots or certify freshness.
 
 Native public-MCP testing created the uniform-heating contour, read back the

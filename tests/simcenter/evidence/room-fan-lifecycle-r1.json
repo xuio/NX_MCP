@@ -1,0 +1,2281 @@
+{
+  "status": "success",
+  "before_identity": {
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_39def34d98ca4f559db489898d7455ed",
+      "kind": "part",
+      "name": "fine_r1",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_b8b0a95b6b5a4904b8d4ab5c2a617d7a",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "b8b0a95b6b5a4904b8d4ab5c2a617d7a",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-fine-run-20260909-r1\\fine_r1.sim",
+      "journal_id": "fine_r1",
+      "display_name": "fine_r1"
+    },
+    "files": [
+      {
+        "index": 0,
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-fine-run-20260909-r1\\fine_r1-Finned_coupled_benchmark.bun",
+        "bytes": 2550028,
+        "sha256": "1e332ac8b6d14a3ce8c94b477f871fd2d52d2df45997e3c7cb04fcc7515d1a89"
+      }
+    ],
+    "native_verification": {
+      "state": "results_changed",
+      "native_value": "2"
+    },
+    "result_freshness": "not_verified",
+    "engineering_accepted": false,
+    "scope": "Associated file identity and native verification only; model/job revision binding required"
+  },
+  "temperature_before": {
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_39def34d98ca4f559db489898d7455ed",
+      "kind": "part",
+      "name": "fine_r1",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_b8b0a95b6b5a4904b8d4ab5c2a617d7a",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "b8b0a95b6b5a4904b8d4ab5c2a617d7a",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-fine-run-20260909-r1\\fine_r1.sim",
+      "journal_id": "fine_r1",
+      "display_name": "fine_r1"
+    },
+    "field": "Temperature - Nodal",
+    "field_location": "nodal",
+    "loadcase_index": 0,
+    "iteration_index": 0,
+    "units": "degC",
+    "minimum": 23.99514389038086,
+    "maximum": 24.050878524780273,
+    "native_location": "0",
+    "minimum_native_id": 10,
+    "maximum_native_id": 23,
+    "minimum_native_sub_id": 0,
+    "maximum_native_sub_id": 0,
+    "node_count": 3402,
+    "result_freshness": "not_verified",
+    "reference_lifetime": "indices apply only to this result revision"
+  },
+  "nodes_before": {
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_39def34d98ca4f559db489898d7455ed",
+      "kind": "part",
+      "name": "fine_r1",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_b8b0a95b6b5a4904b8d4ab5c2a617d7a",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "b8b0a95b6b5a4904b8d4ab5c2a617d7a",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-fine-run-20260909-r1\\fine_r1.sim",
+      "journal_id": "fine_r1",
+      "display_name": "fine_r1"
+    },
+    "result_file": {
+      "index": 0,
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-fine-run-20260909-r1\\fine_r1-Finned_coupled_benchmark.bun",
+      "bytes": 2550028,
+      "sha256": "1e332ac8b6d14a3ce8c94b477f871fd2d52d2df45997e3c7cb04fcc7515d1a89"
+    },
+    "items": [
+      {
+        "index": 1,
+        "label": 746,
+        "coordinates": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "temperature": 24.021495819091797
+      },
+      {
+        "index": 2,
+        "label": 747,
+        "coordinates": [
+          0.0,
+          0.0,
+          2.0
+        ],
+        "temperature": 24.019540786743164
+      },
+      {
+        "index": 3,
+        "label": 748,
+        "coordinates": [
+          0.0,
+          2.0,
+          2.0
+        ],
+        "temperature": 24.015308380126953
+      },
+      {
+        "index": 4,
+        "label": 749,
+        "coordinates": [
+          0.0,
+          2.0,
+          6.0
+        ],
+        "temperature": 23.99590492248535
+      },
+      {
+        "index": 5,
+        "label": 750,
+        "coordinates": [
+          0.0,
+          3.0,
+          6.0
+        ],
+        "temperature": 23.99571990966797
+      },
+      {
+        "index": 6,
+        "label": 751,
+        "coordinates": [
+          0.0,
+          3.0,
+          2.0
+        ],
+        "temperature": 24.015216827392578
+      },
+      {
+        "index": 7,
+        "label": 752,
+        "coordinates": [
+          0.0,
+          10.0,
+          0.0
+        ],
+        "temperature": 24.021217346191406
+      },
+      {
+        "index": 8,
+        "label": 753,
+        "coordinates": [
+          0.0,
+          7.0,
+          2.0
+        ],
+        "temperature": 24.014514923095703
+      },
+      {
+        "index": 9,
+        "label": 754,
+        "coordinates": [
+          0.0,
+          7.0,
+          6.0
+        ],
+        "temperature": 23.99517059326172
+      },
+      {
+        "index": 10,
+        "label": 755,
+        "coordinates": [
+          0.0,
+          8.0,
+          6.0
+        ],
+        "temperature": 23.99514389038086
+      },
+      {
+        "index": 11,
+        "label": 756,
+        "coordinates": [
+          0.0,
+          8.0,
+          2.0
+        ],
+        "temperature": 24.014677047729492
+      },
+      {
+        "index": 12,
+        "label": 757,
+        "coordinates": [
+          0.0,
+          10.0,
+          2.0
+        ],
+        "temperature": 24.01915740966797
+      },
+      {
+        "index": 13,
+        "label": 758,
+        "coordinates": [
+          20.0,
+          0.0,
+          0.0
+        ],
+        "temperature": 24.050830841064453
+      },
+      {
+        "index": 14,
+        "label": 759,
+        "coordinates": [
+          20.0,
+          0.0,
+          2.0
+        ],
+        "temperature": 24.05027198791504
+      },
+      {
+        "index": 15,
+        "label": 760,
+        "coordinates": [
+          20.0,
+          2.0,
+          2.0
+        ],
+        "temperature": 24.04742431640625
+      },
+      {
+        "index": 16,
+        "label": 761,
+        "coordinates": [
+          20.0,
+          2.0,
+          6.0
+        ],
+        "temperature": 24.034496307373047
+      },
+      {
+        "index": 17,
+        "label": 762,
+        "coordinates": [
+          20.0,
+          3.0,
+          2.0
+        ],
+        "temperature": 24.047727584838867
+      },
+      {
+        "index": 18,
+        "label": 763,
+        "coordinates": [
+          20.0,
+          3.0,
+          6.0
+        ],
+        "temperature": 24.034337997436523
+      },
+      {
+        "index": 19,
+        "label": 764,
+        "coordinates": [
+          20.0,
+          7.0,
+          2.0
+        ],
+        "temperature": 24.047868728637695
+      },
+      {
+        "index": 20,
+        "label": 765,
+        "coordinates": [
+          20.0,
+          7.0,
+          6.0
+        ],
+        "temperature": 24.034870147705078
+      },
+      {
+        "index": 21,
+        "label": 766,
+        "coordinates": [
+          20.0,
+          8.0,
+          2.0
+        ],
+        "temperature": 24.047515869140625
+      },
+      {
+        "index": 22,
+        "label": 767,
+        "coordinates": [
+          20.0,
+          8.0,
+          6.0
+        ],
+        "temperature": 24.034841537475586
+      },
+      {
+        "index": 23,
+        "label": 768,
+        "coordinates": [
+          20.0,
+          10.0,
+          0.0
+        ],
+        "temperature": 24.050878524780273
+      },
+      {
+        "index": 24,
+        "label": 769,
+        "coordinates": [
+          20.0,
+          10.0,
+          2.0
+        ],
+        "temperature": 24.050289154052734
+      },
+      {
+        "index": 25,
+        "label": 770,
+        "coordinates": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "temperature": 24.02107048034668
+      },
+      {
+        "index": 26,
+        "label": 771,
+        "coordinates": [
+          0.0,
+          1.0,
+          2.0
+        ],
+        "temperature": 24.018844604492188
+      },
+      {
+        "index": 27,
+        "label": 772,
+        "coordinates": [
+          0.0,
+          2.0,
+          3.0
+        ],
+        "temperature": 24.006637573242188
+      },
+      {
+        "index": 28,
+        "label": 773,
+        "coordinates": [
+          0.0,
+          2.0,
+          4.0
+        ],
+        "temperature": 24.001277923583984
+      },
+      {
+        "index": 29,
+        "label": 774,
+        "coordinates": [
+          0.0,
+          2.0,
+          5.0
+        ],
+        "temperature": 23.99739646911621
+      },
+      {
+        "index": 30,
+        "label": 775,
+        "coordinates": [
+          0.0,
+          3.0,
+          3.0
+        ],
+        "temperature": 24.00632667541504
+      },
+      {
+        "index": 31,
+        "label": 776,
+        "coordinates": [
+          0.0,
+          3.0,
+          4.0
+        ],
+        "temperature": 24.001218795776367
+      },
+      {
+        "index": 32,
+        "label": 777,
+        "coordinates": [
+          0.0,
+          3.0,
+          5.0
+        ],
+        "temperature": 23.997262954711914
+      },
+      {
+        "index": 33,
+        "label": 778,
+        "coordinates": [
+          0.0,
+          9.0,
+          0.0
+        ],
+        "temperature": 24.021150588989258
+      },
+      {
+        "index": 34,
+        "label": 779,
+        "coordinates": [
+          0.0,
+          8.0,
+          0.0
+        ],
+        "temperature": 24.02086639404297
+      },
+      {
+        "index": 35,
+        "label": 780,
+        "coordinates": [
+          0.0,
+          7.0,
+          0.0
+        ],
+        "temperature": 24.02086067199707
+      },
+      {
+        "index": 36,
+        "label": 781,
+        "coordinates": [
+          0.0,
+          6.0,
+          0.0
+        ],
+        "temperature": 24.02114486694336
+      },
+      {
+        "index": 37,
+        "label": 782,
+        "coordinates": [
+          0.0,
+          5.0,
+          0.0
+        ],
+        "temperature": 24.02129554748535
+      },
+      {
+        "index": 38,
+        "label": 783,
+        "coordinates": [
+          0.0,
+          4.0,
+          0.0
+        ],
+        "temperature": 24.021198272705078
+      },
+      {
+        "index": 39,
+        "label": 784,
+        "coordinates": [
+          0.0,
+          3.0,
+          0.0
+        ],
+        "temperature": 24.021039962768555
+      },
+      {
+        "index": 40,
+        "label": 785,
+        "coordinates": [
+          0.0,
+          2.0,
+          0.0
+        ],
+        "temperature": 24.021106719970703
+      },
+      {
+        "index": 41,
+        "label": 786,
+        "coordinates": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "temperature": 24.021345138549805
+      },
+      {
+        "index": 42,
+        "label": 787,
+        "coordinates": [
+          0.0,
+          4.0,
+          2.0
+        ],
+        "temperature": 24.01877784729004
+      },
+      {
+        "index": 43,
+        "label": 788,
+        "coordinates": [
+          0.0,
+          5.0,
+          2.0
+        ],
+        "temperature": 24.018999099731445
+      },
+      {
+        "index": 44,
+        "label": 789,
+        "coordinates": [
+          0.0,
+          6.0,
+          2.0
+        ],
+        "temperature": 24.018264770507812
+      },
+      {
+        "index": 45,
+        "label": 790,
+        "coordinates": [
+          0.0,
+          7.0,
+          3.0
+        ],
+        "temperature": 24.00625228881836
+      },
+      {
+        "index": 46,
+        "label": 791,
+        "coordinates": [
+          0.0,
+          7.0,
+          4.0
+        ],
+        "temperature": 24.000720977783203
+      },
+      {
+        "index": 47,
+        "label": 792,
+        "coordinates": [
+          0.0,
+          7.0,
+          5.0
+        ],
+        "temperature": 23.996564865112305
+      },
+      {
+        "index": 48,
+        "label": 793,
+        "coordinates": [
+          0.0,
+          8.0,
+          3.0
+        ],
+        "temperature": 24.006147384643555
+      },
+      {
+        "index": 49,
+        "label": 794,
+        "coordinates": [
+          0.0,
+          8.0,
+          4.0
+        ],
+        "temperature": 24.000844955444336
+      },
+      {
+        "index": 50,
+        "label": 795,
+        "coordinates": [
+          0.0,
+          8.0,
+          5.0
+        ],
+        "temperature": 23.996826171875
+      },
+      {
+        "index": 51,
+        "label": 796,
+        "coordinates": [
+          0.0,
+          9.0,
+          2.0
+        ],
+        "temperature": 24.01838493347168
+      },
+      {
+        "index": 52,
+        "label": 797,
+        "coordinates": [
+          0.0,
+          10.0,
+          1.0
+        ],
+        "temperature": 24.020771026611328
+      },
+      {
+        "index": 53,
+        "label": 798,
+        "coordinates": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "temperature": 24.022123336791992
+      },
+      {
+        "index": 54,
+        "label": 799,
+        "coordinates": [
+          2.0,
+          0.0,
+          0.0
+        ],
+        "temperature": 24.02303695678711
+      },
+      {
+        "index": 55,
+        "label": 800,
+        "coordinates": [
+          3.0,
+          0.0,
+          0.0
+        ],
+        "temperature": 24.02436637878418
+      },
+      {
+        "index": 56,
+        "label": 801,
+        "coordinates": [
+          4.0,
+          0.0,
+          0.0
+        ],
+        "temperature": 24.026010513305664
+      },
+      {
+        "index": 57,
+        "label": 802,
+        "coordinates": [
+          5.0,
+          0.0,
+          0.0
+        ],
+        "temperature": 24.027889251708984
+      },
+      {
+        "index": 58,
+        "label": 803,
+        "coordinates": [
+          6.0,
+          0.0,
+          0.0
+        ],
+        "temperature": 24.02994728088379
+      },
+      {
+        "index": 59,
+        "label": 804,
+        "coordinates": [
+          7.0,
+          0.0,
+          0.0
+        ],
+        "temperature": 24.032100677490234
+      },
+      {
+        "index": 60,
+        "label": 805,
+        "coordinates": [
+          8.0,
+          0.0,
+          0.0
+        ],
+        "temperature": 24.034303665161133
+      },
+      {
+        "index": 61,
+        "label": 806,
+        "coordinates": [
+          9.0,
+          0.0,
+          0.0
+        ],
+        "temperature": 24.036518096923828
+      },
+      {
+        "index": 62,
+        "label": 807,
+        "coordinates": [
+          10.0,
+          0.0,
+          0.0
+        ],
+        "temperature": 24.038684844970703
+      },
+      {
+        "index": 63,
+        "label": 808,
+        "coordinates": [
+          11.0,
+          0.0,
+          0.0
+        ],
+        "temperature": 24.040771484375
+      },
+      {
+        "index": 64,
+        "label": 809,
+        "coordinates": [
+          12.0,
+          0.0,
+          0.0
+        ],
+        "temperature": 24.042715072631836
+      },
+      {
+        "index": 65,
+        "label": 810,
+        "coordinates": [
+          13.0,
+          0.0,
+          0.0
+        ],
+        "temperature": 24.04450798034668
+      },
+      {
+        "index": 66,
+        "label": 811,
+        "coordinates": [
+          14.0,
+          0.0,
+          0.0
+        ],
+        "temperature": 24.046113967895508
+      },
+      {
+        "index": 67,
+        "label": 812,
+        "coordinates": [
+          15.0,
+          0.0,
+          0.0
+        ],
+        "temperature": 24.047513961791992
+      },
+      {
+        "index": 68,
+        "label": 813,
+        "coordinates": [
+          16.0,
+          0.0,
+          0.0
+        ],
+        "temperature": 24.04869842529297
+      },
+      {
+        "index": 69,
+        "label": 814,
+        "coordinates": [
+          17.0,
+          0.0,
+          0.0
+        ],
+        "temperature": 24.049636840820312
+      },
+      {
+        "index": 70,
+        "label": 815,
+        "coordinates": [
+          18.0,
+          0.0,
+          0.0
+        ],
+        "temperature": 24.050321578979492
+      },
+      {
+        "index": 71,
+        "label": 816,
+        "coordinates": [
+          19.0,
+          0.0,
+          0.0
+        ],
+        "temperature": 24.050729751586914
+      },
+      {
+        "index": 72,
+        "label": 817,
+        "coordinates": [
+          19.0,
+          0.0,
+          2.0
+        ],
+        "temperature": 24.05017852783203
+      },
+      {
+        "index": 73,
+        "label": 818,
+        "coordinates": [
+          18.0,
+          0.0,
+          2.0
+        ],
+        "temperature": 24.049789428710938
+      },
+      {
+        "index": 74,
+        "label": 819,
+        "coordinates": [
+          17.0,
+          0.0,
+          2.0
+        ],
+        "temperature": 24.049087524414062
+      },
+      {
+        "index": 75,
+        "label": 820,
+        "coordinates": [
+          16.0,
+          0.0,
+          2.0
+        ],
+        "temperature": 24.0481014251709
+      },
+      {
+        "index": 76,
+        "label": 821,
+        "coordinates": [
+          15.0,
+          0.0,
+          2.0
+        ],
+        "temperature": 24.046907424926758
+      },
+      {
+        "index": 77,
+        "label": 822,
+        "coordinates": [
+          14.0,
+          0.0,
+          2.0
+        ],
+        "temperature": 24.04547882080078
+      },
+      {
+        "index": 78,
+        "label": 823,
+        "coordinates": [
+          13.0,
+          0.0,
+          2.0
+        ],
+        "temperature": 24.043838500976562
+      },
+      {
+        "index": 79,
+        "label": 824,
+        "coordinates": [
+          12.0,
+          0.0,
+          2.0
+        ],
+        "temperature": 24.042028427124023
+      },
+      {
+        "index": 80,
+        "label": 825,
+        "coordinates": [
+          11.0,
+          0.0,
+          2.0
+        ],
+        "temperature": 24.040056228637695
+      },
+      {
+        "index": 81,
+        "label": 826,
+        "coordinates": [
+          10.0,
+          0.0,
+          2.0
+        ],
+        "temperature": 24.03788948059082
+      },
+      {
+        "index": 82,
+        "label": 827,
+        "coordinates": [
+          9.0,
+          0.0,
+          2.0
+        ],
+        "temperature": 24.03561782836914
+      },
+      {
+        "index": 83,
+        "label": 828,
+        "coordinates": [
+          8.0,
+          0.0,
+          2.0
+        ],
+        "temperature": 24.03333854675293
+      },
+      {
+        "index": 84,
+        "label": 829,
+        "coordinates": [
+          7.0,
+          0.0,
+          2.0
+        ],
+        "temperature": 24.031082153320312
+      },
+      {
+        "index": 85,
+        "label": 830,
+        "coordinates": [
+          6.0,
+          0.0,
+          2.0
+        ],
+        "temperature": 24.028871536254883
+      },
+      {
+        "index": 86,
+        "label": 831,
+        "coordinates": [
+          5.0,
+          0.0,
+          2.0
+        ],
+        "temperature": 24.026750564575195
+      },
+      {
+        "index": 87,
+        "label": 832,
+        "coordinates": [
+          4.0,
+          0.0,
+          2.0
+        ],
+        "temperature": 24.024765014648438
+      },
+      {
+        "index": 88,
+        "label": 833,
+        "coordinates": [
+          3.0,
+          0.0,
+          2.0
+        ],
+        "temperature": 24.022994995117188
+      },
+      {
+        "index": 89,
+        "label": 834,
+        "coordinates": [
+          2.0,
+          0.0,
+          2.0
+        ],
+        "temperature": 24.02149200439453
+      },
+      {
+        "index": 90,
+        "label": 835,
+        "coordinates": [
+          1.0,
+          0.0,
+          2.0
+        ],
+        "temperature": 24.020221710205078
+      },
+      {
+        "index": 91,
+        "label": 836,
+        "coordinates": [
+          1.0,
+          2.0,
+          2.0
+        ],
+        "temperature": 24.01559829711914
+      },
+      {
+        "index": 92,
+        "label": 837,
+        "coordinates": [
+          2.0,
+          2.0,
+          2.0
+        ],
+        "temperature": 24.01689338684082
+      },
+      {
+        "index": 93,
+        "label": 838,
+        "coordinates": [
+          3.0,
+          2.0,
+          2.0
+        ],
+        "temperature": 24.0186767578125
+      },
+      {
+        "index": 94,
+        "label": 839,
+        "coordinates": [
+          4.0,
+          2.0,
+          2.0
+        ],
+        "temperature": 24.020734786987305
+      },
+      {
+        "index": 95,
+        "label": 840,
+        "coordinates": [
+          5.0,
+          2.0,
+          2.0
+        ],
+        "temperature": 24.022653579711914
+      },
+      {
+        "index": 96,
+        "label": 841,
+        "coordinates": [
+          6.0,
+          2.0,
+          2.0
+        ],
+        "temperature": 24.02509307861328
+      },
+      {
+        "index": 97,
+        "label": 842,
+        "coordinates": [
+          7.0,
+          2.0,
+          2.0
+        ],
+        "temperature": 24.0275821685791
+      },
+      {
+        "index": 98,
+        "label": 843,
+        "coordinates": [
+          8.0,
+          2.0,
+          2.0
+        ],
+        "temperature": 24.029916763305664
+      },
+      {
+        "index": 99,
+        "label": 844,
+        "coordinates": [
+          9.0,
+          2.0,
+          2.0
+        ],
+        "temperature": 24.032312393188477
+      },
+      {
+        "index": 100,
+        "label": 845,
+        "coordinates": [
+          10.0,
+          2.0,
+          2.0
+        ],
+        "temperature": 24.034603118896484
+      }
+    ],
+    "total": 3402,
+    "next_offset": 100,
+    "loadcase_index": 0,
+    "iteration_index": 0,
+    "field": "Temperature - Nodal",
+    "units": "degC",
+    "coordinate_units": "mm",
+    "coordinate_frame": "native_result_coordinates",
+    "result_freshness": "not_verified",
+    "reference_lifetime": "Indices and labels belong to this result file revision; not live geometry or FEM references",
+    "scope": "Native result nodes only; coupled nodal temperature may exclude fluid values; no region or averaging inference"
+  },
+  "save": {
+    "saved": true,
+    "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-fine-run-20260909-r1\\fine_r1.sim",
+    "file": {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-fine-run-20260909-r1\\fine_r1.sim",
+      "bytes": 7869163,
+      "sha256": "4426881320559b120217025bf4dfacfe67f799a82d5cb976c64966763ce29cbc"
+    },
+    "previous_file": {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-fine-run-20260909-r1\\fine_r1.sim",
+      "bytes": 7818836,
+      "sha256": "d7c4689bd53c52fafafa6d3e2372e0bd4bf0363c236e396ad1620abe0208186d"
+    },
+    "backup_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-save-backups\\da0fe494a8c14ac9a670de793c4cd56c\\fine_r1.sim",
+    "saved_components": false,
+    "closed": false,
+    "other_modified_flags_unchanged": true,
+    "result_freshness": "not_verified"
+  },
+  "close": {
+    "closed_parts": [
+      {
+        "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_39def34d98ca4f559db489898d7455ed",
+        "kind": "part",
+        "name": "fine_r1",
+        "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_b8b0a95b6b5a4904b8d4ab5c2a617d7a",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "generation_id": "b8b0a95b6b5a4904b8d4ab5c2a617d7a",
+        "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-fine-run-20260909-r1\\fine_r1.sim",
+        "journal_id": "fine_r1",
+        "display_name": "fine_r1"
+      }
+    ],
+    "closed_count": 1,
+    "remaining_count": 200,
+    "saved": false,
+    "discarded_modified_parts": false,
+    "work_path": null,
+    "display_path": null,
+    "warnings": [
+      "NX may unload unused dependencies; reacquire document references before continuing"
+    ]
+  },
+  "reopen": {
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_66191fec0b62453097615e2dc2c1203f",
+      "kind": "part",
+      "name": "fine_r1",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_b778e4bbf0be442eaab015afad646d4d",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "b778e4bbf0be442eaab015afad646d4d",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-fine-run-20260909-r1\\fine_r1.sim",
+      "journal_id": "fine_r1",
+      "display_name": "fine_r1"
+    },
+    "units": "mm",
+    "coordinate_frame": "part_absolute",
+    "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-fine-run-20260909-r1\\fine_r1.sim",
+    "already_loaded": false,
+    "modified_after_native_open": false,
+    "modified_before_activation": false,
+    "modified": false,
+    "fully_loaded": true,
+    "load_issues": [],
+    "changed_existing_part_flags": [],
+    "application": "UG_APP_SFEM",
+    "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-fine-run-20260909-r1\\fine_r1.sim",
+    "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-fine-run-20260909-r1\\fine_r1.sim",
+    "saved": false,
+    "result_freshness": "not_verified",
+    "warnings": []
+  },
+  "after_identity": {
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_66191fec0b62453097615e2dc2c1203f",
+      "kind": "part",
+      "name": "fine_r1",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_b778e4bbf0be442eaab015afad646d4d",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "b778e4bbf0be442eaab015afad646d4d",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-fine-run-20260909-r1\\fine_r1.sim",
+      "journal_id": "fine_r1",
+      "display_name": "fine_r1"
+    },
+    "files": [
+      {
+        "index": 0,
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-fine-run-20260909-r1\\fine_r1-Finned_coupled_benchmark.bun",
+        "bytes": 2550028,
+        "sha256": "1e332ac8b6d14a3ce8c94b477f871fd2d52d2df45997e3c7cb04fcc7515d1a89"
+      }
+    ],
+    "native_verification": {
+      "state": "results_changed",
+      "native_value": "2"
+    },
+    "result_freshness": "not_verified",
+    "engineering_accepted": false,
+    "scope": "Associated file identity and native verification only; model/job revision binding required"
+  },
+  "temperature_after": {
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_66191fec0b62453097615e2dc2c1203f",
+      "kind": "part",
+      "name": "fine_r1",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_b778e4bbf0be442eaab015afad646d4d",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "b778e4bbf0be442eaab015afad646d4d",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-fine-run-20260909-r1\\fine_r1.sim",
+      "journal_id": "fine_r1",
+      "display_name": "fine_r1"
+    },
+    "field": "Temperature - Nodal",
+    "field_location": "nodal",
+    "loadcase_index": 0,
+    "iteration_index": 0,
+    "units": "degC",
+    "minimum": 23.99514389038086,
+    "maximum": 24.050878524780273,
+    "native_location": "0",
+    "minimum_native_id": 10,
+    "maximum_native_id": 23,
+    "minimum_native_sub_id": 0,
+    "maximum_native_sub_id": 0,
+    "node_count": 3402,
+    "result_freshness": "not_verified",
+    "reference_lifetime": "indices apply only to this result revision"
+  },
+  "nodes_after": {
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_66191fec0b62453097615e2dc2c1203f",
+      "kind": "part",
+      "name": "fine_r1",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_b778e4bbf0be442eaab015afad646d4d",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "b778e4bbf0be442eaab015afad646d4d",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-fine-run-20260909-r1\\fine_r1.sim",
+      "journal_id": "fine_r1",
+      "display_name": "fine_r1"
+    },
+    "result_file": {
+      "index": 0,
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-fine-run-20260909-r1\\fine_r1-Finned_coupled_benchmark.bun",
+      "bytes": 2550028,
+      "sha256": "1e332ac8b6d14a3ce8c94b477f871fd2d52d2df45997e3c7cb04fcc7515d1a89"
+    },
+    "items": [
+      {
+        "index": 1,
+        "label": 746,
+        "coordinates": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "temperature": 24.021495819091797
+      },
+      {
+        "index": 2,
+        "label": 747,
+        "coordinates": [
+          0.0,
+          0.0,
+          2.0
+        ],
+        "temperature": 24.019540786743164
+      },
+      {
+        "index": 3,
+        "label": 748,
+        "coordinates": [
+          0.0,
+          2.0,
+          2.0
+        ],
+        "temperature": 24.015308380126953
+      },
+      {
+        "index": 4,
+        "label": 749,
+        "coordinates": [
+          0.0,
+          2.0,
+          6.0
+        ],
+        "temperature": 23.99590492248535
+      },
+      {
+        "index": 5,
+        "label": 750,
+        "coordinates": [
+          0.0,
+          3.0,
+          6.0
+        ],
+        "temperature": 23.99571990966797
+      },
+      {
+        "index": 6,
+        "label": 751,
+        "coordinates": [
+          0.0,
+          3.0,
+          2.0
+        ],
+        "temperature": 24.015216827392578
+      },
+      {
+        "index": 7,
+        "label": 752,
+        "coordinates": [
+          0.0,
+          10.0,
+          0.0
+        ],
+        "temperature": 24.021217346191406
+      },
+      {
+        "index": 8,
+        "label": 753,
+        "coordinates": [
+          0.0,
+          7.0,
+          2.0
+        ],
+        "temperature": 24.014514923095703
+      },
+      {
+        "index": 9,
+        "label": 754,
+        "coordinates": [
+          0.0,
+          7.0,
+          6.0
+        ],
+        "temperature": 23.99517059326172
+      },
+      {
+        "index": 10,
+        "label": 755,
+        "coordinates": [
+          0.0,
+          8.0,
+          6.0
+        ],
+        "temperature": 23.99514389038086
+      },
+      {
+        "index": 11,
+        "label": 756,
+        "coordinates": [
+          0.0,
+          8.0,
+          2.0
+        ],
+        "temperature": 24.014677047729492
+      },
+      {
+        "index": 12,
+        "label": 757,
+        "coordinates": [
+          0.0,
+          10.0,
+          2.0
+        ],
+        "temperature": 24.01915740966797
+      },
+      {
+        "index": 13,
+        "label": 758,
+        "coordinates": [
+          20.0,
+          0.0,
+          0.0
+        ],
+        "temperature": 24.050830841064453
+      },
+      {
+        "index": 14,
+        "label": 759,
+        "coordinates": [
+          20.0,
+          0.0,
+          2.0
+        ],
+        "temperature": 24.05027198791504
+      },
+      {
+        "index": 15,
+        "label": 760,
+        "coordinates": [
+          20.0,
+          2.0,
+          2.0
+        ],
+        "temperature": 24.04742431640625
+      },
+      {
+        "index": 16,
+        "label": 761,
+        "coordinates": [
+          20.0,
+          2.0,
+          6.0
+        ],
+        "temperature": 24.034496307373047
+      },
+      {
+        "index": 17,
+        "label": 762,
+        "coordinates": [
+          20.0,
+          3.0,
+          2.0
+        ],
+        "temperature": 24.047727584838867
+      },
+      {
+        "index": 18,
+        "label": 763,
+        "coordinates": [
+          20.0,
+          3.0,
+          6.0
+        ],
+        "temperature": 24.034337997436523
+      },
+      {
+        "index": 19,
+        "label": 764,
+        "coordinates": [
+          20.0,
+          7.0,
+          2.0
+        ],
+        "temperature": 24.047868728637695
+      },
+      {
+        "index": 20,
+        "label": 765,
+        "coordinates": [
+          20.0,
+          7.0,
+          6.0
+        ],
+        "temperature": 24.034870147705078
+      },
+      {
+        "index": 21,
+        "label": 766,
+        "coordinates": [
+          20.0,
+          8.0,
+          2.0
+        ],
+        "temperature": 24.047515869140625
+      },
+      {
+        "index": 22,
+        "label": 767,
+        "coordinates": [
+          20.0,
+          8.0,
+          6.0
+        ],
+        "temperature": 24.034841537475586
+      },
+      {
+        "index": 23,
+        "label": 768,
+        "coordinates": [
+          20.0,
+          10.0,
+          0.0
+        ],
+        "temperature": 24.050878524780273
+      },
+      {
+        "index": 24,
+        "label": 769,
+        "coordinates": [
+          20.0,
+          10.0,
+          2.0
+        ],
+        "temperature": 24.050289154052734
+      },
+      {
+        "index": 25,
+        "label": 770,
+        "coordinates": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "temperature": 24.02107048034668
+      },
+      {
+        "index": 26,
+        "label": 771,
+        "coordinates": [
+          0.0,
+          1.0,
+          2.0
+        ],
+        "temperature": 24.018844604492188
+      },
+      {
+        "index": 27,
+        "label": 772,
+        "coordinates": [
+          0.0,
+          2.0,
+          3.0
+        ],
+        "temperature": 24.006637573242188
+      },
+      {
+        "index": 28,
+        "label": 773,
+        "coordinates": [
+          0.0,
+          2.0,
+          4.0
+        ],
+        "temperature": 24.001277923583984
+      },
+      {
+        "index": 29,
+        "label": 774,
+        "coordinates": [
+          0.0,
+          2.0,
+          5.0
+        ],
+        "temperature": 23.99739646911621
+      },
+      {
+        "index": 30,
+        "label": 775,
+        "coordinates": [
+          0.0,
+          3.0,
+          3.0
+        ],
+        "temperature": 24.00632667541504
+      },
+      {
+        "index": 31,
+        "label": 776,
+        "coordinates": [
+          0.0,
+          3.0,
+          4.0
+        ],
+        "temperature": 24.001218795776367
+      },
+      {
+        "index": 32,
+        "label": 777,
+        "coordinates": [
+          0.0,
+          3.0,
+          5.0
+        ],
+        "temperature": 23.997262954711914
+      },
+      {
+        "index": 33,
+        "label": 778,
+        "coordinates": [
+          0.0,
+          9.0,
+          0.0
+        ],
+        "temperature": 24.021150588989258
+      },
+      {
+        "index": 34,
+        "label": 779,
+        "coordinates": [
+          0.0,
+          8.0,
+          0.0
+        ],
+        "temperature": 24.02086639404297
+      },
+      {
+        "index": 35,
+        "label": 780,
+        "coordinates": [
+          0.0,
+          7.0,
+          0.0
+        ],
+        "temperature": 24.02086067199707
+      },
+      {
+        "index": 36,
+        "label": 781,
+        "coordinates": [
+          0.0,
+          6.0,
+          0.0
+        ],
+        "temperature": 24.02114486694336
+      },
+      {
+        "index": 37,
+        "label": 782,
+        "coordinates": [
+          0.0,
+          5.0,
+          0.0
+        ],
+        "temperature": 24.02129554748535
+      },
+      {
+        "index": 38,
+        "label": 783,
+        "coordinates": [
+          0.0,
+          4.0,
+          0.0
+        ],
+        "temperature": 24.021198272705078
+      },
+      {
+        "index": 39,
+        "label": 784,
+        "coordinates": [
+          0.0,
+          3.0,
+          0.0
+        ],
+        "temperature": 24.021039962768555
+      },
+      {
+        "index": 40,
+        "label": 785,
+        "coordinates": [
+          0.0,
+          2.0,
+          0.0
+        ],
+        "temperature": 24.021106719970703
+      },
+      {
+        "index": 41,
+        "label": 786,
+        "coordinates": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "temperature": 24.021345138549805
+      },
+      {
+        "index": 42,
+        "label": 787,
+        "coordinates": [
+          0.0,
+          4.0,
+          2.0
+        ],
+        "temperature": 24.01877784729004
+      },
+      {
+        "index": 43,
+        "label": 788,
+        "coordinates": [
+          0.0,
+          5.0,
+          2.0
+        ],
+        "temperature": 24.018999099731445
+      },
+      {
+        "index": 44,
+        "label": 789,
+        "coordinates": [
+          0.0,
+          6.0,
+          2.0
+        ],
+        "temperature": 24.018264770507812
+      },
+      {
+        "index": 45,
+        "label": 790,
+        "coordinates": [
+          0.0,
+          7.0,
+          3.0
+        ],
+        "temperature": 24.00625228881836
+      },
+      {
+        "index": 46,
+        "label": 791,
+        "coordinates": [
+          0.0,
+          7.0,
+          4.0
+        ],
+        "temperature": 24.000720977783203
+      },
+      {
+        "index": 47,
+        "label": 792,
+        "coordinates": [
+          0.0,
+          7.0,
+          5.0
+        ],
+        "temperature": 23.996564865112305
+      },
+      {
+        "index": 48,
+        "label": 793,
+        "coordinates": [
+          0.0,
+          8.0,
+          3.0
+        ],
+        "temperature": 24.006147384643555
+      },
+      {
+        "index": 49,
+        "label": 794,
+        "coordinates": [
+          0.0,
+          8.0,
+          4.0
+        ],
+        "temperature": 24.000844955444336
+      },
+      {
+        "index": 50,
+        "label": 795,
+        "coordinates": [
+          0.0,
+          8.0,
+          5.0
+        ],
+        "temperature": 23.996826171875
+      },
+      {
+        "index": 51,
+        "label": 796,
+        "coordinates": [
+          0.0,
+          9.0,
+          2.0
+        ],
+        "temperature": 24.01838493347168
+      },
+      {
+        "index": 52,
+        "label": 797,
+        "coordinates": [
+          0.0,
+          10.0,
+          1.0
+        ],
+        "temperature": 24.020771026611328
+      },
+      {
+        "index": 53,
+        "label": 798,
+        "coordinates": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "temperature": 24.022123336791992
+      },
+      {
+        "index": 54,
+        "label": 799,
+        "coordinates": [
+          2.0,
+          0.0,
+          0.0
+        ],
+        "temperature": 24.02303695678711
+      },
+      {
+        "index": 55,
+        "label": 800,
+        "coordinates": [
+          3.0,
+          0.0,
+          0.0
+        ],
+        "temperature": 24.02436637878418
+      },
+      {
+        "index": 56,
+        "label": 801,
+        "coordinates": [
+          4.0,
+          0.0,
+          0.0
+        ],
+        "temperature": 24.026010513305664
+      },
+      {
+        "index": 57,
+        "label": 802,
+        "coordinates": [
+          5.0,
+          0.0,
+          0.0
+        ],
+        "temperature": 24.027889251708984
+      },
+      {
+        "index": 58,
+        "label": 803,
+        "coordinates": [
+          6.0,
+          0.0,
+          0.0
+        ],
+        "temperature": 24.02994728088379
+      },
+      {
+        "index": 59,
+        "label": 804,
+        "coordinates": [
+          7.0,
+          0.0,
+          0.0
+        ],
+        "temperature": 24.032100677490234
+      },
+      {
+        "index": 60,
+        "label": 805,
+        "coordinates": [
+          8.0,
+          0.0,
+          0.0
+        ],
+        "temperature": 24.034303665161133
+      },
+      {
+        "index": 61,
+        "label": 806,
+        "coordinates": [
+          9.0,
+          0.0,
+          0.0
+        ],
+        "temperature": 24.036518096923828
+      },
+      {
+        "index": 62,
+        "label": 807,
+        "coordinates": [
+          10.0,
+          0.0,
+          0.0
+        ],
+        "temperature": 24.038684844970703
+      },
+      {
+        "index": 63,
+        "label": 808,
+        "coordinates": [
+          11.0,
+          0.0,
+          0.0
+        ],
+        "temperature": 24.040771484375
+      },
+      {
+        "index": 64,
+        "label": 809,
+        "coordinates": [
+          12.0,
+          0.0,
+          0.0
+        ],
+        "temperature": 24.042715072631836
+      },
+      {
+        "index": 65,
+        "label": 810,
+        "coordinates": [
+          13.0,
+          0.0,
+          0.0
+        ],
+        "temperature": 24.04450798034668
+      },
+      {
+        "index": 66,
+        "label": 811,
+        "coordinates": [
+          14.0,
+          0.0,
+          0.0
+        ],
+        "temperature": 24.046113967895508
+      },
+      {
+        "index": 67,
+        "label": 812,
+        "coordinates": [
+          15.0,
+          0.0,
+          0.0
+        ],
+        "temperature": 24.047513961791992
+      },
+      {
+        "index": 68,
+        "label": 813,
+        "coordinates": [
+          16.0,
+          0.0,
+          0.0
+        ],
+        "temperature": 24.04869842529297
+      },
+      {
+        "index": 69,
+        "label": 814,
+        "coordinates": [
+          17.0,
+          0.0,
+          0.0
+        ],
+        "temperature": 24.049636840820312
+      },
+      {
+        "index": 70,
+        "label": 815,
+        "coordinates": [
+          18.0,
+          0.0,
+          0.0
+        ],
+        "temperature": 24.050321578979492
+      },
+      {
+        "index": 71,
+        "label": 816,
+        "coordinates": [
+          19.0,
+          0.0,
+          0.0
+        ],
+        "temperature": 24.050729751586914
+      },
+      {
+        "index": 72,
+        "label": 817,
+        "coordinates": [
+          19.0,
+          0.0,
+          2.0
+        ],
+        "temperature": 24.05017852783203
+      },
+      {
+        "index": 73,
+        "label": 818,
+        "coordinates": [
+          18.0,
+          0.0,
+          2.0
+        ],
+        "temperature": 24.049789428710938
+      },
+      {
+        "index": 74,
+        "label": 819,
+        "coordinates": [
+          17.0,
+          0.0,
+          2.0
+        ],
+        "temperature": 24.049087524414062
+      },
+      {
+        "index": 75,
+        "label": 820,
+        "coordinates": [
+          16.0,
+          0.0,
+          2.0
+        ],
+        "temperature": 24.0481014251709
+      },
+      {
+        "index": 76,
+        "label": 821,
+        "coordinates": [
+          15.0,
+          0.0,
+          2.0
+        ],
+        "temperature": 24.046907424926758
+      },
+      {
+        "index": 77,
+        "label": 822,
+        "coordinates": [
+          14.0,
+          0.0,
+          2.0
+        ],
+        "temperature": 24.04547882080078
+      },
+      {
+        "index": 78,
+        "label": 823,
+        "coordinates": [
+          13.0,
+          0.0,
+          2.0
+        ],
+        "temperature": 24.043838500976562
+      },
+      {
+        "index": 79,
+        "label": 824,
+        "coordinates": [
+          12.0,
+          0.0,
+          2.0
+        ],
+        "temperature": 24.042028427124023
+      },
+      {
+        "index": 80,
+        "label": 825,
+        "coordinates": [
+          11.0,
+          0.0,
+          2.0
+        ],
+        "temperature": 24.040056228637695
+      },
+      {
+        "index": 81,
+        "label": 826,
+        "coordinates": [
+          10.0,
+          0.0,
+          2.0
+        ],
+        "temperature": 24.03788948059082
+      },
+      {
+        "index": 82,
+        "label": 827,
+        "coordinates": [
+          9.0,
+          0.0,
+          2.0
+        ],
+        "temperature": 24.03561782836914
+      },
+      {
+        "index": 83,
+        "label": 828,
+        "coordinates": [
+          8.0,
+          0.0,
+          2.0
+        ],
+        "temperature": 24.03333854675293
+      },
+      {
+        "index": 84,
+        "label": 829,
+        "coordinates": [
+          7.0,
+          0.0,
+          2.0
+        ],
+        "temperature": 24.031082153320312
+      },
+      {
+        "index": 85,
+        "label": 830,
+        "coordinates": [
+          6.0,
+          0.0,
+          2.0
+        ],
+        "temperature": 24.028871536254883
+      },
+      {
+        "index": 86,
+        "label": 831,
+        "coordinates": [
+          5.0,
+          0.0,
+          2.0
+        ],
+        "temperature": 24.026750564575195
+      },
+      {
+        "index": 87,
+        "label": 832,
+        "coordinates": [
+          4.0,
+          0.0,
+          2.0
+        ],
+        "temperature": 24.024765014648438
+      },
+      {
+        "index": 88,
+        "label": 833,
+        "coordinates": [
+          3.0,
+          0.0,
+          2.0
+        ],
+        "temperature": 24.022994995117188
+      },
+      {
+        "index": 89,
+        "label": 834,
+        "coordinates": [
+          2.0,
+          0.0,
+          2.0
+        ],
+        "temperature": 24.02149200439453
+      },
+      {
+        "index": 90,
+        "label": 835,
+        "coordinates": [
+          1.0,
+          0.0,
+          2.0
+        ],
+        "temperature": 24.020221710205078
+      },
+      {
+        "index": 91,
+        "label": 836,
+        "coordinates": [
+          1.0,
+          2.0,
+          2.0
+        ],
+        "temperature": 24.01559829711914
+      },
+      {
+        "index": 92,
+        "label": 837,
+        "coordinates": [
+          2.0,
+          2.0,
+          2.0
+        ],
+        "temperature": 24.01689338684082
+      },
+      {
+        "index": 93,
+        "label": 838,
+        "coordinates": [
+          3.0,
+          2.0,
+          2.0
+        ],
+        "temperature": 24.0186767578125
+      },
+      {
+        "index": 94,
+        "label": 839,
+        "coordinates": [
+          4.0,
+          2.0,
+          2.0
+        ],
+        "temperature": 24.020734786987305
+      },
+      {
+        "index": 95,
+        "label": 840,
+        "coordinates": [
+          5.0,
+          2.0,
+          2.0
+        ],
+        "temperature": 24.022653579711914
+      },
+      {
+        "index": 96,
+        "label": 841,
+        "coordinates": [
+          6.0,
+          2.0,
+          2.0
+        ],
+        "temperature": 24.02509307861328
+      },
+      {
+        "index": 97,
+        "label": 842,
+        "coordinates": [
+          7.0,
+          2.0,
+          2.0
+        ],
+        "temperature": 24.0275821685791
+      },
+      {
+        "index": 98,
+        "label": 843,
+        "coordinates": [
+          8.0,
+          2.0,
+          2.0
+        ],
+        "temperature": 24.029916763305664
+      },
+      {
+        "index": 99,
+        "label": 844,
+        "coordinates": [
+          9.0,
+          2.0,
+          2.0
+        ],
+        "temperature": 24.032312393188477
+      },
+      {
+        "index": 100,
+        "label": 845,
+        "coordinates": [
+          10.0,
+          2.0,
+          2.0
+        ],
+        "temperature": 24.034603118896484
+      }
+    ],
+    "total": 3402,
+    "next_offset": 100,
+    "loadcase_index": 0,
+    "iteration_index": 0,
+    "field": "Temperature - Nodal",
+    "units": "degC",
+    "coordinate_units": "mm",
+    "coordinate_frame": "native_result_coordinates",
+    "result_freshness": "not_verified",
+    "reference_lifetime": "Indices and labels belong to this result file revision; not live geometry or FEM references",
+    "scope": "Native result nodes only; coupled nodal temperature may exclude fluid values; no region or averaging inference"
+  },
+  "passed": true,
+  "view": {
+    "postview_id": 23,
+    "postview_owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-fine-run-20260909-r1\\fine_r1.sim",
+    "readback": {
+      "loadcase_index": 0,
+      "iteration_index": 0,
+      "field": "Temperature - Nodal",
+      "unit": "Celsius"
+    },
+    "units": "degC",
+    "existing_view_ids": [],
+    "overlay": false,
+    "main_postview_id": 23,
+    "saved": false,
+    "presentation": {
+      "information_window_closed": true,
+      "view_fitted": true,
+      "display_refreshed": true,
+      "warnings": []
+    },
+    "warnings": [],
+    "result_freshness": "not_verified",
+    "reference_lifetime": "postview ID is document-local within this session; use postview_owner and reacquire after closure"
+  },
+  "operation_id": "op_54ba0dad9cad4edaa0e82362ad4498ac",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

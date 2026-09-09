@@ -3,6 +3,7 @@
 import math
 
 from nx_mcp.runtime import NXToolError
+from nx_mcp.simcenter.nodal_availability import read_defined
 from nx_mcp.simcenter.results import acquire_result
 
 
@@ -52,13 +53,12 @@ def temperature_nodes(session, sim, *, loadcase_index=0, iteration_index=0, offs
             params.SetUnit(sim.UnitCollection.FindObject("Celsius"))
             access = manager.CreateResultAccess(result, params)
             coords = result.AskNodeCoordinates(indices)
-            values = access.AskNodalResult(indices)
+            values = read_defined(access, indices)
             if len(coords) != len(indices) or len(values) != len(indices):
                 raise NXToolError("NX_SIM_RESULT_DATA", "Native nodal array cardinality differs")
             for index, point, value in zip(indices, coords, values, strict=True):
                 xyz = [float(point.X), float(point.Y), float(point.Z)]
-                value = float(value)
-                if not all(math.isfinite(v) for v in [*xyz, value]):
+                if not all(math.isfinite(v) for v in xyz):
                     raise NXToolError("NX_SIM_RESULT_DATA", "Nonfinite native nodal data")
                 rows.append(
                     {
@@ -66,6 +66,7 @@ def temperature_nodes(session, sim, *, loadcase_index=0, iteration_index=0, offs
                         "label": int(result.AskNodeLabel(index)),
                         "coordinates": xyz,
                         "temperature": value,
+                        "defined": value is not None,
                     }
                 )
         return {
@@ -80,7 +81,7 @@ def temperature_nodes(session, sim, *, loadcase_index=0, iteration_index=0, offs
             "coordinate_frame": "native_result_coordinates",
             "result_freshness": "not_verified",
             "reference_lifetime": "Indices and labels belong to this result file revision; not live geometry or FEM references",
-            "scope": "Native result nodes only; coupled nodal temperature may exclude fluid values; no region or averaging inference",
+            "scope": "Native result nodes; undefined field values are null with defined=false, never zero or interpolated. Pagination counts all nodes. No region or averaging inference",
         }
     finally:
         try:

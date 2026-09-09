@@ -22,7 +22,10 @@ def model(monkeypatch):
             NS(GetIterations=lambda: [NS(GetResultTypes=lambda: [NS(Name="Temperature - Nodal")])])
         ],
     )
-    access = NS(AskNodalResult=lambda indices: [20 + i for i in indices])
+    access = NS(
+        IsResultDefined=lambda ids: [True] * len(ids),
+        AskNodalResult=lambda indices: [20 + i for i in indices],
+    )
     params = NS(
         **{
             n: Mock()
@@ -133,3 +136,21 @@ def test_native_page_binds_exact_result_file_and_discards_changed_page(monkeypat
             SimcenterMixin._sim_temperature_nodes(host, "sim", "a" * 64)
         assert error.value.code == "NX_SIM_RESULT_CHANGED"
     assert reader.call_count == (0 if change == "before" else 1)
+
+
+def test_undefined_nodes_remain_in_page_with_null_not_zero(model):
+    session, sim, result, access, freed = model
+    access.IsResultDefined = lambda ids: [i == 2 for i in ids]
+    access.AskNodalResult = Mock(return_value=[42.0])
+    page = temperature_nodes(session, sim, limit=2)
+    access.AskNodalResult.assert_called_once_with([2])
+    assert page["items"][0]["temperature"] is None
+    assert page["items"][0]["defined"] is False
+    assert page["items"][1]["temperature"] == 42.0
+    assert page["next_offset"] == 2
+    access.IsResultDefined = lambda ids: [False] * len(ids)
+    access.AskNodalResult.reset_mock()
+    last = temperature_nodes(session, sim, offset=2)
+    assert last["next_offset"] is None
+    assert last["items"][0]["temperature"] is None
+    access.AskNodalResult.assert_not_called()

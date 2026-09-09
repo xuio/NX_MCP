@@ -1,8 +1,7 @@
 # Baldower thermal/airflow readiness
 
-**NOT READY for coupled Baldower cooling comparisons.** The standalone thermal and
-Flow subsets below are usable, but they do not establish the required coupled
-heated-solid/air/fan workflow at a verified room-temperature ambient. Do not start
+**NOT READY for coupled Baldower cooling comparisons.** The coupled heated-solid/air/fan workflow now executes at verified room-temperature
+conditions, but its declared flow mesh-sensitivity criterion remains unmet. Do not start
 Baldower-specific simulations on the strength of this release.
 
 This report supersedes the broad feature backlog for this handover. No additional
@@ -30,45 +29,46 @@ infrastructure features are planned unless they resolve a concrete readiness blo
 
 ## Primary gate and blocker classification
 
-1. **The ambient export setup omission is resolved; numerical acceptance is pending.**
-   A fresh UI-created coupled solution exports 20 °C and 101325 Pa correctly.
-   The same saved state exports correctly through `SimSolution.Solve`, including
-   after the current ambient getters. A controlled pair with identical inputs
-   reproduced zero-valued export before the UI-journaled initialization and correct
-   values after it: native `Solver Type=6` and explicit millimeter solution units.
-   `coupled_steady` now applies that initialization with readback and rollback,
-   rejecting conflicting pre-existing units. The pressure guard accepts verified
-   expression-backed Pa and MPa and converts to Pa; temperature protection remains.
-   [Native comparison](tests/simcenter/evidence/coupled-journal-initialization.json)
-   and [public setup/export/replay](tests/simcenter/evidence/coupled-journal-public.json)
-   pass. No correction factors, generated-file edits, or solver changes were used.
-   This demonstrates an MCP setup omission, not a Siemens solver defect. It does
-   not yet establish effective density, coupled convergence, or mesh acceptance.
-2. **The atmospheric density experiment did not isolate atmospheric adjustment.**
-   The retained log reports 1.207 kg/m³ × 1.0724 = 1.2943868 kg/m³, consistent with
-   its printed adjusted density. Those runs selected altitude-derived pressure,
-   global 0 °C and separate 20 °C inlet/opening temperatures. This explains the
-   number but not precedence over the assigned material density. It does not prove
-   room-temperature effective properties. The explicit-pressure case stopped at
-   export; it is not a completed comparison with altitude mode disabled.
-3. **Coupled fan authoring now passes; export/execution is unverified.** Public
-   `nx_sim_assign_fan` and `nx_sim_head_loss` now support coupled inlet/opening
-   bindings. Creation, committed readback, replay, conflict/stale rejection and
-   save/close/reopen passed in [the public receipt](tests/simcenter/evidence/coupled-fan-public.json).
-   A [native update/failure test](tests/simcenter/evidence/coupled-loss-update-native.json)
-   verified coefficient changes and rollback. These are authoring checks, not a
-   coupled fan operating-point benchmark. The retained heated finned case used a
-   velocity inlet. Coupled fan export and numerical validation remain missing tests,
-   not established external limitations.
-4. **The required coupled mesh comparison has not passed.** The extended layered
-   case has useful convergence/heat-transfer evidence, but the finer case reached
-   its iteration limit. Both use global 0 °C. Their similar temperatures do not
-   establish an accepted room-temperature, fan-driven mesh comparison.
+The native coupled room-temperature fan workflow now solves and returns the
+requested material and ambient state. The remaining numerical gate is mesh
+sensitivity, not an unresolved ambient/density authoring defect.
 
-The latest bounded UI comparison resolved the setup omission without changing
-physical inputs. [Injected native failure and save/reopen verification](tests/simcenter/evidence/coupled-journal-rollback-reopen.json)
-passed; no solve was launched in these tests. The coupled fan benchmark and mesh
-comparison remain the next readiness gates.
+| Mesh | Elements | Peak solid °C | Volume flow m³/s | Solver time |
+|---|---:|---:|---:|---:|
+| 2 mm | 2,130 | 25.066616 | 5.72250e-5 | 29 s |
+| 1 mm | 12,468 | 24.050879 | 5.34333e-5 | 35 s |
+| 0.5 mm | 77,212 | 23.918776 | 4.85667e-5 | 92 s |
+
+All use global 20 °C, 101325 Pa, native constant-property air at 1.2 kg/m³,
+0.1 W solid heating, the same synthetic static fan curve and outlet resistance.
+All 426 exported property entries match between cases. Native recovered density
+is 1.2000000477 kg/m³. Coupled convergence, fan-curve consistency, positive flow,
+solid/fluid heat transfer and reported mass/energy balance pass the declared
+checks. Canonical XML is unchanged by each launch; no generated input was edited.
+
+**Mesh acceptance remains failed.** The 2 mm/1 mm pair changes peak rise by
+20.05% and flow by 6.63%. The targeted 1 mm/0.5 mm pair changes peak rise by 3.26%
+and flow by 9.11%. The declared limits remain 5%; these are not mesh-independent
+results. Preserve both failed comparisons rather than relabeling them as passes.
+
+The fresh native UI journal identified the ambient setup omission: coupled
+solutions require `Solver Type=6` and explicit solution units. `coupled_steady`
+now initializes and verifies these settings with rollback. The pressure export
+guard supports expression-backed Pa/MPa; the temperature guard remains in place.
+The old altitude/global-0 °C logs are retained historical evidence, not current
+acceptance. No solver defect or density correction is claimed.
+
+Save/close/reopen preserved the 1 mm native result identity and values. Current
+contour creation, fit and image export pass. A newly reproduced result-export
+bug (3960050 on undefined fluid nodal values) is fixed using documented native
+field-availability readback. Undefined nodes remain explicit nulls; regional
+averages include only defined values and report coverage.
+
+Reproduce the retained audit with `PYTHONPATH=src python
+examples/simcenter/audit_room_fan.py`. It deliberately reports the failed mesh
+criterion. Native receipts and logs are under `tests/simcenter/evidence/room-fan-*`.
+API verification, log convergence, numerical balance and mesh acceptance remain
+separate conclusions. Final deployment identity and delivery audit are pending.
 
 ## Requirement-by-requirement audit
 
@@ -80,13 +80,13 @@ Evidence paths are under `tests/simcenter/evidence/`.
 | Isolated CAD/FEM/SIM variants | Native plan/clone/receipt and replay: `native-variant-tools-mcp.json`; standalone saved Flow chain | General assemblies and arbitrary missing-dependency recovery not verified. Save-as alone shares FEM/CAD. |
 | Materials and heat sources | Constant material/assignment, body watts and distributed heat: `native-scenario-multi.json`, `native-distributed-heat-mcp.json` | Record provenance, total heat and selections; do not double-count conversion power. |
 | Conduction/contact | `contact-explicit-numerical-acceptance.json`: Tmax 294.401486 K vs 294.4 K (0.03 K tolerance); contact drop 0.499074 K vs 0.5 K (0.01 K tolerance); aggregate rejection 1 W | Scoped 200-element two-block benchmark. Not product accuracy or general contact options. |
-| Explicit thermal environment | Kelvin face temperatures and specified convection environment; existing external-condition readback/export/reopen | Global coupled temperature/pressure mismatch blocks requested environment. |
+| Explicit thermal environment | Kelvin face temperatures and specified convection environment; existing external-condition readback/export/reopen | Room-temperature native/export/effective checks pass in `room-fan-*`; historical zero-export failure resolved. |
 | Solid/fluid meshes and wall/local controls | `mesh-plan-public.json`, `local-size-public.json`, `remesh-public.json`; explicit body plans, wall-layer and face-size effects | Fluid/layered remeshing is not verified. Authoring is not mesh convergence. |
-| Fixed-speed fan P–Q | Native static-pressure table and Flow inlet assignment; `native-fan-operating-points-mcp.json` | Coupled binding/replay/save-reopen verified in `coupled-fan-public.json`; coupled export/operating point unverified. No total-pressure or acoustics claim. |
+| Fixed-speed fan P–Q | Native static-pressure table and Flow inlet assignment; `native-fan-operating-points-mcp.json` | Coupled binding/replay/save-reopen verified in `coupled-fan-public.json`; coupled export and operating points verified in `room-fan-*`. No total-pressure or acoustics claim. |
 | Opening resistance | Native scalar head-loss modes/active coefficients, Flow fixtures | Coupled creation/replay/persistence and native update/rollback verified; coupled pressure-loss response unverified. Not general porous media. |
 | Prepare/export/launch/reconnect | `mesh-guard-positive-launch.json`, `mesh-guard-positive-finish.json`; canonical XML identity, persistent observer, terminal gate release | Preserve jobs after transport failure. No rerun because observation expires. |
 | Temperatures/regions | `temperature-regions-public.json`, `temperature-regions-lifecycle.json`; native groups, locations, nodal mean; node pages | Group-to-component meaning must be recorded per model; means are not volume/area weighted. |
-| Pressure, airflow, fan point | Native pressure/flow field and boundary extraction, `native-fan-operating-points-mcp.json`, existing duct comparison scripts | Conventions and selected surfaces must be explicit; Flow evidence is not coupled fan acceptance. |
+| Pressure, airflow, fan point | Native pressure/flow field and boundary extraction, `native-fan-operating-points-mcp.json`, existing duct comparison scripts | Conventions and selected surfaces must be explicit; Coupled operating points verified; mesh sensitivity remains unaccepted. |
 | Mass/energy diagnostics | Native log parsers and retained coupled/contact summaries | Rounded aggregates are not boundary integrals. V aggregate sink is 1 W but named sink row is 0.9732 W; unreconciled, retained. |
 | Result identity/freshness | `mesh-result-stale-public.json`, `mesh-result-restored-public.json`; changed mesh marks historical result stale; file hash paging guards | Partial material/boundary/mesh coverage only. No whole-model freshness, especially for coupled settings/external dependencies. |
 | Contours/artifacts | Temperature/pressure postviews; `native-conduction-screenshot.json`; download checksums | Actual viewport size may differ from request. Image is not numerical evidence. Current capture/retrieval verification is retained, not a new test of every render option. |

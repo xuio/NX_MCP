@@ -1,0 +1,38 @@
+{
+  "scope": "Generic coupled fan infrastructure benchmark",
+  "numerical_mesh_acceptance": "failed",
+  "criteria_file": "room-fan-acceptance-r1.json",
+  "cases": {
+    "coarse": {
+      "peak_degC": 25.06661605834961,
+      "rise_K": 5.066616058349609,
+      "density_kg_m3": 1.2000000476837158,
+      "fan_dp_Pa": 0.8569,
+      "mass_kg_s": 6.867e-05,
+      "flow_m3_s": 5.72249977260829e-05,
+      "fan_curve_error_Pa": 3.750568479277128e-05,
+      "fan_curve_passed": true,
+      "convergence_reported": true,
+      "log": "work/simcenter/room-fan-coarse-observation-r1/coarse_r2-Finned_coupled_benchmark.log",
+      "native_results": "room-fan-coarse-results-r2.json"
+    },
+    "fine": {
+      "peak_degC": 24.050878524780273,
+      "rise_K": 4.050878524780273,
+      "density_kg_m3": 1.2000000476837158,
+      "fan_dp_Pa": 0.8664000000000001,
+      "mass_kg_s": 6.412e-05,
+      "flow_m3_s": 5.343333121008352e-05,
+      "fan_curve_error_Pa": 1.6671974791160338e-05,
+      "fan_curve_passed": true,
+      "convergence_reported": true,
+      "log": "work/simcenter/room-fan-fine-observation-r1/fine_r1-Finned_coupled_benchmark.log",
+      "native_results": "room-fan-fine-results-r1.json"
+    }
+  },
+  "sensitivity": {
+    "rise_K": 20.047651566086902,
+    "flow_m3_s": 6.625891946992871
+  },
+  "remaining": "Declared 5% mesh sensitivity criterion not met; do not present this pair as mesh-independent."
+}

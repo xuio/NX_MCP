@@ -5,6 +5,7 @@ import json
 import math
 
 from nx_mcp.runtime import NXToolError
+from nx_mcp.simcenter.nodal_availability import read_defined
 from nx_mcp.simcenter.results import acquire_result
 
 
@@ -106,19 +107,22 @@ def temperature_regions(
                 )
             # Keep native array requests small even for a large selected group.
             values = []
+            all_coordinates = []
             for start in range(0, len(indices), 200):
                 selected = indices[start : start + 200]
                 coords = result.AskNodeCoordinates(selected)
-                temps = access.AskNodalResult(selected)
+                temps = read_defined(access, selected)
                 if len(coords) != len(selected) or len(temps) != len(selected):
                     raise NXToolError(
                         "NX_SIM_RESULT_DATA", "Native region array cardinality differs"
                     )
                 for index, point, value in zip(selected, coords, temps, strict=True):
                     xyz = [float(point.X), float(point.Y), float(point.Z)]
-                    value = float(value)
-                    if not all(math.isfinite(v) for v in [*xyz, value]):
+                    if not all(math.isfinite(v) for v in xyz):
                         raise NXToolError("NX_SIM_RESULT_DATA", "Nonfinite region result")
+                    all_coordinates.append(xyz)
+                    if value is None:
+                        continue
                     values.append(
                         {
                             "index": index,
@@ -127,14 +131,16 @@ def temperature_regions(
                             "temperature": value,
                         }
                     )
-            minimum = min(values, key=lambda r: r["temperature"])
-            maximum = max(values, key=lambda r: r["temperature"])
+            minimum = min(values, key=lambda r: r["temperature"]) if values else None
+            maximum = max(values, key=lambda r: r["temperature"]) if values else None
             rows.append(
                 {
                     "group_index": group_index,
                     "dimension": dimension,
                     "element_count": len(elements),
-                    "node_count": len(values),
+                    "node_count": len(indices),
+                    "defined_node_count": len(values),
+                    "undefined_node_count": len(indices) - len(values),
                     "membership_sha256": hashlib.sha256(
                         json.dumps([sorted(elements), indices], separators=(",", ":")).encode()
                     ).hexdigest(),
@@ -142,10 +148,12 @@ def temperature_regions(
                     "maximum": maximum,
                     "arithmetic_nodal_mean": math.fsum(
                         r["temperature"] / len(values) for r in values
-                    ),
+                    )
+                    if values
+                    else None,
                     "bounds": {
-                        "minimum": [min(r["coordinates"][i] for r in values) for i in range(3)],
-                        "maximum": [max(r["coordinates"][i] for r in values) for i in range(3)],
+                        "minimum": [min(xyz[i] for xyz in all_coordinates) for i in range(3)],
+                        "maximum": [max(xyz[i] for xyz in all_coordinates) for i in range(3)],
                     },
                 }
             )
@@ -160,7 +168,7 @@ def temperature_regions(
             "coordinate_units": "mm",
             "coordinate_frame": "native_result_coordinates",
             "result_freshness": "not_verified",
-            "mean_semantics": "Unweighted arithmetic mean over unique result nodes within each group; shared nodes may belong to multiple groups; not area/volume weighted",
+            "mean_semantics": "Unweighted arithmetic mean over unique nodes with defined field values within each group; undefined values are excluded and counted, empty summaries are null; shared nodes may belong to multiple groups; not area/volume weighted",
             "extrema_semantics": "First node in increasing result-index order at each extremum",
             "selection_semantics": "Native dimension/group indices bound to the result file revision; not inferred CAD components or persistent semantic names",
         }

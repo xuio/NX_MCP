@@ -28,7 +28,10 @@ def model(monkeypatch):
         AskNodeCoordinates=lambda ids: [NS(X=i, Y=0, Z=0) for i in ids],
         AskNodeLabel=lambda i: i + 100,
     )
-    access = NS(AskNodalResult=lambda ids: [{1: 10.0, 2: 30.0, 3: 50.0}[i] for i in ids])
+    access = NS(
+        IsResultDefined=lambda ids: [True] * len(ids),
+        AskNodalResult=lambda ids: [{1: 10.0, 2: 30.0, 3: 50.0}[i] for i in ids],
+    )
     params = NS(
         **{
             n: Mock()
@@ -107,3 +110,19 @@ def test_invalid_inputs_do_not_acquire_native_result(monkeypatch):
         with pytest.raises(NXToolError):
             temperature_regions(None, None, **args)
     acquire.assert_not_called()
+
+
+def test_partial_and_empty_fields_preserve_geometry_and_report_coverage(model):
+    session, sim, result, access, freed = model
+    access.IsResultDefined = lambda ids: [i == 1 for i in ids]
+    access.AskNodalResult = Mock(return_value=[10.0])
+    first, second = temperature_regions(session, sim)["items"]
+    access.AskNodalResult.assert_called_once_with([1])
+    assert first["node_count"] == 2
+    assert first["defined_node_count"] == first["undefined_node_count"] == 1
+    assert first["arithmetic_nodal_mean"] == 10
+    assert first["bounds"]["maximum"] == [2, 0, 0]
+    assert second["defined_node_count"] == 0
+    assert second["undefined_node_count"] == 2
+    assert second["minimum"] is second["maximum"] is second["arithmetic_nodal_mean"] is None
+    assert second["bounds"]["maximum"] == [3, 0, 0]

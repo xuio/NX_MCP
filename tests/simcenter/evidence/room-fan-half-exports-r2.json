@@ -1,0 +1,248 @@
+{
+  "status": "success",
+  "identity": {
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_ed78eb34b7f242cb9a6593a7e5967a1b",
+      "kind": "part",
+      "name": "half_r1",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_e49ba920ab554d1c8d863d17cba46b32",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "e49ba920ab554d1c8d863d17cba46b32",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-half-run-20260909-r1\\half_r1.sim",
+      "journal_id": "half_r1",
+      "display_name": "half_r1"
+    },
+    "files": [
+      {
+        "index": 0,
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-half-run-20260909-r1\\half_r1-Finned_coupled_benchmark.bun",
+        "bytes": 15184092,
+        "sha256": "d2aff7a42af772edd7de7b86b95a6ea128238846c277be5cf1178df1bf2a8f43"
+      }
+    ],
+    "native_verification": {
+      "state": "results_changed",
+      "native_value": "2"
+    },
+    "result_freshness": "not_verified",
+    "engineering_accepted": false,
+    "scope": "Associated file identity and native verification only; model/job revision binding required"
+  },
+  "regions": {
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_ed78eb34b7f242cb9a6593a7e5967a1b",
+      "kind": "part",
+      "name": "half_r1",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_e49ba920ab554d1c8d863d17cba46b32",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "e49ba920ab554d1c8d863d17cba46b32",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-half-run-20260909-r1\\half_r1.sim",
+      "journal_id": "half_r1",
+      "display_name": "half_r1"
+    },
+    "result_file": {
+      "index": 0,
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-half-run-20260909-r1\\half_r1-Finned_coupled_benchmark.bun",
+      "bytes": 15184092,
+      "sha256": "d2aff7a42af772edd7de7b86b95a6ea128238846c277be5cf1178df1bf2a8f43"
+    },
+    "items": [
+      {
+        "group_index": 0,
+        "dimension": "3d",
+        "element_count": 52256,
+        "node_count": 11528,
+        "defined_node_count": 0,
+        "undefined_node_count": 11528,
+        "membership_sha256": "0e5fe9ad053255f61a2f4c8ac3c53d146c26a96d0503f7a9d50085a0c39e2a01",
+        "minimum": null,
+        "maximum": null,
+        "arithmetic_nodal_mean": null,
+        "bounds": {
+          "minimum": [
+            0.0,
+            0.0,
+            2.0
+          ],
+          "maximum": [
+            20.0,
+            10.0,
+            10.0
+          ]
+        }
+      },
+      {
+        "group_index": 1,
+        "dimension": "3d",
+        "element_count": 24956,
+        "node_count": 6238,
+        "defined_node_count": 6238,
+        "undefined_node_count": 0,
+        "membership_sha256": "8c020e583ffd70cc74f09515a93a46e54947ac82e777063d703bdffea7764f54",
+        "minimum": {
+          "index": 9,
+          "label": 4156,
+          "coordinates": [
+            0.0,
+            7.0,
+            6.0
+          ],
+          "temperature": 23.841537475585938
+        },
+        "maximum": {
+          "index": 13,
+          "label": 4160,
+          "coordinates": [
+            20.0,
+            0.0,
+            0.0
+          ],
+          "temperature": 23.91877555847168
+        },
+        "arithmetic_nodal_mean": 23.894161854236696,
+        "bounds": {
+          "minimum": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "maximum": [
+            20.0,
+            10.0,
+            6.0
+          ]
+        }
+      }
+    ],
+    "total": 2,
+    "next_offset": null,
+    "loadcase_index": 0,
+    "iteration_index": 0,
+    "field": "Temperature - Nodal",
+    "units": "degC",
+    "coordinate_units": "mm",
+    "coordinate_frame": "native_result_coordinates",
+    "result_freshness": "not_verified",
+    "mean_semantics": "Unweighted arithmetic mean over unique nodes with defined field values within each group; undefined values are excluded and counted, empty summaries are null; shared nodes may belong to multiple groups; not area/volume weighted",
+    "extrema_semantics": "First node in increasing result-index order at each extremum",
+    "selection_semantics": "Native dimension/group indices bound to the result file revision; not inferred CAD components or persistent semantic names"
+  },
+  "pressure": {
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_ed78eb34b7f242cb9a6593a7e5967a1b",
+      "kind": "part",
+      "name": "half_r1",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_e49ba920ab554d1c8d863d17cba46b32",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "e49ba920ab554d1c8d863d17cba46b32",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-half-run-20260909-r1\\half_r1.sim",
+      "journal_id": "half_r1",
+      "display_name": "half_r1"
+    },
+    "field": "Pressure - Element-Nodal",
+    "units": "Pa",
+    "minimum": 0.3517034649848938,
+    "maximum": 0.9259042143821716,
+    "native_location": "2",
+    "minimum_native_id": 79075,
+    "maximum_native_id": 69649,
+    "minimum_native_sub_id": 11492,
+    "maximum_native_sub_id": 6241,
+    "node_count": 17766,
+    "loadcase_index": 0,
+    "iteration_index": 0,
+    "result_freshness": "not_verified",
+    "pressure_reference": "native_solution_reference",
+    "reference_lifetime": "indices apply only to this result revision"
+  },
+  "node_count": 17766,
+  "screenshot": {
+    "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-half-exports-20260909-r2\\temperature.png",
+    "artifact_path": "ui-benchmarks\\E-room-fan-half-exports-20260909-r2\\temperature.png",
+    "capture_kind": "nx_model_viewport",
+    "model_preview": true,
+    "resolution": [
+      2589,
+      1576
+    ],
+    "requested_resolution": [
+      1600,
+      1000
+    ],
+    "camera": {
+      "part": {
+        "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_ed78eb34b7f242cb9a6593a7e5967a1b",
+        "kind": "part",
+        "name": "half_r1",
+        "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_e49ba920ab554d1c8d863d17cba46b32",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "generation_id": "e49ba920ab554d1c8d863d17cba46b32",
+        "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-half-run-20260909-r1\\half_r1.sim",
+        "journal_id": "half_r1",
+        "display_name": "half_r1"
+      },
+      "name": "ANALYSIS_1",
+      "rotation": [
+        [
+          0.63121905864763,
+          -0.29117688182626567,
+          0.7188730927569433
+        ],
+        [
+          0.7756046028744285,
+          0.23697177216995516,
+          -0.5850486126764433
+        ],
+        [
+          -0.0,
+          0.9268551141815876,
+          0.3754192287502549
+        ]
+      ],
+      "origin": [
+        -10.190213600848441,
+        -2.907365613495058,
+        -6.140584007938493
+      ],
+      "absolute_origin": [
+        10.0,
+        4.999999999999998,
+        5.000000000000002
+      ],
+      "scale": 23.297303639754123,
+      "coordinate_frame": "display_part",
+      "matrix_layout": "row-major 3x3; columns are NX view axes",
+      "rendering_style": "shaded_with_edges",
+      "interactive": true
+    },
+    "background": "white",
+    "rendering": "NX viewport rasterization",
+    "size": 885802,
+    "sha256": "9ac144be7dd3b677154423e1b348ffbb10e5ca044cba40a243257e72572871f7",
+    "warnings": [
+      "NX returned a different resolution than requested"
+    ]
+  },
+  "files": [
+    {
+      "name": "nodal-temperatures.csv",
+      "bytes": 1131317,
+      "sha256": "dfc57b033a7fd3922ea897787c40be198482c6f2a6b081a2f76ac7d3846c094e"
+    },
+    {
+      "name": "regions-and-pressure.json",
+      "bytes": 5635,
+      "sha256": "22454f1632e7ff2d11f9e2ea190a4961f5a2bfb5aaf2586bea2a4a9657ff0a09"
+    },
+    {
+      "name": "temperature.png",
+      "bytes": 885802,
+      "sha256": "9ac144be7dd3b677154423e1b348ffbb10e5ca044cba40a243257e72572871f7"
+    }
+  ],
+  "operation_id": "op_1cc1b956099a4d60855f089b142f201c",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

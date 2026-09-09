@@ -1,0 +1,55 @@
+{
+  "scope": "Generic infrastructure readiness, no product or acoustic acceptance",
+  "job_id": "room-fan-half-20260909-r1",
+  "input_sha256": "be526e628132c9d62d07106f726152db7defd85b6eaad2905fa84d62e3a29e9d",
+  "physical_inputs": {
+    "ambient_degC": 20,
+    "absolute_pressure_Pa": 101325,
+    "fluid_model": "native constant-property Fluid/LIQUID pure substance, explicitly assigned",
+    "fluid_density_kg_m3": 1.2,
+    "viscosity_Pa_s": 1.81e-05,
+    "conductivity_W_mK": 0.0257,
+    "heat_capacity_J_kgK": 1005,
+    "heat_W": 0.1,
+    "fan_curve_SI": [
+      [
+        0,
+        1
+      ],
+      [
+        0.0004,
+        0
+      ]
+    ],
+    "fan_pressure": "static; assumed synthetic fixed speed 1000 RPM",
+    "fan_motor_heat_W": 0,
+    "outlet_K": 2,
+    "buoyancy": false,
+    "turbulence": "laminar selector 0",
+    "coupling": "native geometric solid/fluid interface; verify translator association and heat balance",
+    "bounds_mm": [
+      0,
+      0,
+      0,
+      20,
+      10,
+      10
+    ]
+  },
+  "acceptance": {
+    "solver_convergence": "native flow residual 1e-6 and thermal/coupled change 0.001 C, before 1000 iterations",
+    "mass_imbalance_percent_max": 0.1,
+    "energy_balance_relative_max": 0.01,
+    "fan_curve_error": "max(0.01 Pa,2% expected rise), positive flow inside supplied range",
+    "effective_materials": "verify assigned values and effective solver model; reference values alone do not prove applied density",
+    "peak_temperature": "positive rise above 20 C; no unaccounted heat sink",
+    "mesh_pair": "1 mm versus 0.5 mm, identical physics; peak rise and flow change <=5%, absolute temperature allowance 0.02 C",
+    "limitations": "small tetrahedral meshes; infrastructure sanity only, no product accuracy claim"
+  },
+  "mesh_counts": {
+    "elements": 77212,
+    "nodes": 17766
+  },
+  "solver_launched": false,
+  "comparison": "Targeted refinement after retained 2mm/1mm failure; fin width1mm. All426 XML properties match. No material/physical input changes."
+}
