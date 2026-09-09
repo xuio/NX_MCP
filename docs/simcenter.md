@@ -176,6 +176,49 @@ numerical heat balance. It does not establish Monte Carlo/GPU support or full
 thermo-optical material authoring. Existing conflicting overrides are not removed
 or resolved automatically. No solver was launched for these checks.
 
+### Reusable scalar thermal tables
+
+`nx_sim_scalar_table` creates a registered native one-dimensional table in the
+active millimeter SIM. Supply `document`, `name`, `axis` (`time` or `temperature`),
+`quantity`, `samples` and `provenance`. Samples are 2..1000 finite `[axis,value]`
+pairs with a nonnegative, strictly increasing axis. The public axis units are
+seconds or Kelvin. Value quantities and units are power (W), temperature (K),
+conductivity (W/(m K)), heat capacity (J/(kg K)), density (kg/m³) and convection
+coefficient (W/(m² K)). Property-specific physical limits belong to the binding
+operation; the generic table does not attach itself to a material or load.
+
+NX normalizes a temperature independent axis to Celsius without converting the
+supplied numbers. This adapter explicitly uses native unit conversion from Kelvin
+to Celsius before creating the table, then verifies SI readback. Linear 1D
+interpolation and undefined values outside the table are stored and checked.
+Consumers must validate their required domain; no extrapolation is implied.
+
+Example: `nx_sim_scalar_table(document=sim_id, name="POWER_TIME", axis="time",
+quantity="power", samples=[[0,0],[10,1],[20,0]], provenance="Assumed API fixture")`.
+`nx_sim_scalar_tables(document=sim_id, limit=20, include_samples=False)` returns
+compact, paginated definitions. Set `include_samples=True` for complete native SI
+samples. Creation returns a typed field reference and checksummed provenance.
+Property inspection reports registered definitions and wrapper scale separately.
+It does not evaluate opaque native field pointers.
+
+Native NX v2606 verification covers all twelve axis/quantity combinations and a
+heat-load property wrapper with scale 2. Public MCP verification covers three
+tables, operation replay, invalid requests, compact/full paging, stale references
+and identical samples/metadata after save/close/reopen. Native failure injection
+verifies creation rollback and corrupted metadata rejection without changing
+unrelated document flags. Reproduction scripts are
+`examples/simcenter/verify_scalar_tables_{native,public,recovery}.py`; run the
+native fixture through the existing serialized probe harness, then the public
+client, then recovery. Retained receipts are
+`tests/simcenter/evidence/scalar-tables-{native,public,recovery}.json`.
+`scalar-table-unit-probe.json` retains the earlier unconverted Kelvin-axis probe;
+its trial fields were rolled back. It is evidence of API unit normalization,
+not a physical acceptance case.
+
+These checks establish table authoring/readback and persistence. They do not yet
+establish temperature-dependent material assignment, transient load scheduling,
+solver interpolation behavior or numerical acceptance. No solver was launched.
+
 ### Reconciled Phase 2 backlog
 
 Statuses below refer to the requested general capability, not availability inferred
@@ -186,8 +229,8 @@ from installed modules. A missing implementation/test is not an external blocker
 | Thermal contacts/interface resistance | Partial: native/public total R/G authoring and resistance persistence verified | 200-element explicit-convergence artifact benchmark passes; general contact options and current-session freshness remain |
 | Convection and dependencies | Native/public constant coefficient and three temperature-source selectors verified | Explicit Kelvin value, persistence, exported conversion and disjoint face sets pass; time fields, ambient value resolution and shell-side options remain |
 | Radiation/emissivity/enclosures | Native/public simple environment radiation, constant emissivity override and deterministic enclosure authoring verified | Persistent/exported primary regions and active settings pass; view factors/numerical balances, Monte Carlo/GPU and secondary-slot authoring remain unverified |
-| Temperature-dependent materials | Missing | Extend constant/orthotropic material path with supported fields, units and persistence |
-| Transient loads/initial conditions/schedules | Partial time controls and constant distributed loads | `time_controls.py`, `distributed_heat.py`; schedule and initial-condition authoring/readback |
+| Temperature-dependent materials | Native/public reusable temperature-axis tables verified; material binding missing | Bind supported property fields and verify solver export/persistence |
+| Transient loads/initial conditions/schedules | Partial time controls, constant distributed loads and native/public time-axis tables | `time_controls.py`, `distributed_heat.py`; schedule and initial-condition authoring/readback |
 | Forced/natural convection and fluid models | Partial native controls/materials and coupled fixtures | `flow_controls.py`, `fluid_material.py`; selector/gravity/buoyancy scope and exports |
 | Fan curves and provenance | Scoped public authoring/readback verified | `fan_field.py`, `fan_boundary.py`; preserve static convention and assignment limits |
 | Fan-speed variants/operating points | Scoped scaling and extraction present | `fan_scaling.py`, `fan_summary.py`; retain validity range and per-run identity |

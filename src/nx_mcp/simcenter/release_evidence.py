@@ -94,6 +94,14 @@ PUBLIC_EVIDENCE = {
         "steady-controls-public-launch.json",
         "Explicit temperature stopping in K, public validation/replay/export; native persistence and optional relative-balance authoring separately verified",
     ),
+    "nx_sim_scalar_table": (
+        "scalar-tables-public.json",
+        "Registered time/temperature scalar tables: native unit conversion, public replay, validation and save/reopen; no load/material binding or numerical acceptance",
+    ),
+    "nx_sim_scalar_tables": (
+        "scalar-tables-public.json",
+        "Paged compact/full registered table inventory, SI samples, metadata checksum and stale-document rejection; native corrupted metadata rejection separately verified",
+    ),
     "nx_sim_emissivity_override": (
         "radiation-objects-public.json",
         "Thermal constant both-side emissivity: native/public authoring, replay, persistence, faces, units and export; top/bottom native authoring separately tested without numerical interpretation",

@@ -1,0 +1,844 @@
+{
+  "fixture": {
+    "paths": {
+      "cad": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-scalar-tables-20260909-r1\\benchmark_1ed9fb624b41_geometry.prt",
+      "fem": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-scalar-tables-20260909-r1\\benchmark_1ed9fb624b41_mesh.fem",
+      "sim": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-scalar-tables-20260909-r1\\benchmark_1ed9fb624b41_analysis.sim"
+    },
+    "solution": {
+      "solver": "NX MULTIPHYSICS",
+      "analysis": "Thermal",
+      "solution": "Thermal",
+      "parameter_tables": [
+        {
+          "property": "Thermal Parameters",
+          "descriptor": "Thermal Parameters",
+          "name": "Thermal Parameters"
+        },
+        {
+          "property": "Thermal Output Requests",
+          "descriptor": "Multiphysics Thermal Output Requests",
+          "name": "Thermal Output Requests"
+        }
+      ],
+      "step": {
+        "name": "Conduction",
+        "descriptor": "Step - Thermal",
+        "active": true,
+        "properties": [
+          {
+            "name": "Description",
+            "native_type": "0",
+            "units": null,
+            "representation": "text_lines",
+            "value": []
+          },
+          {
+            "name": "Solution Type",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "End Time",
+            "native_type": "4",
+            "units": "Second",
+            "value": -777777.0,
+            "unit_symbol": "sec"
+          },
+          {
+            "name": "Thermal Time Step Method",
+            "native_type": "3",
+            "units": null,
+            "value": 3
+          },
+          {
+            "name": "Thermal Number of Steps",
+            "native_type": "3",
+            "units": null,
+            "value": 10
+          },
+          {
+            "name": "Thermal Time Step",
+            "native_type": "4",
+            "units": "Second",
+            "value": 1.0,
+            "unit_symbol": "sec"
+          },
+          {
+            "name": "Maximum Temperature Change",
+            "native_type": "4",
+            "units": "CelsiusDifference",
+            "value": 5.0,
+            "unit_symbol": "dC"
+          },
+          {
+            "name": "Minimum Time Step",
+            "native_type": "4",
+            "units": "Second",
+            "value": 1.0,
+            "unit_symbol": "sec"
+          },
+          {
+            "name": "Maximum Time Step Option",
+            "native_type": "3",
+            "units": null,
+            "value": 1
+          },
+          {
+            "name": "Maximum Time Step",
+            "native_type": "4",
+            "units": "Second",
+            "value": 1.0,
+            "unit_symbol": "sec"
+          },
+          {
+            "name": "Maximum Time Step Increment",
+            "native_type": "3",
+            "units": null,
+            "value": 4
+          },
+          {
+            "name": "Output Flag",
+            "native_type": "3",
+            "units": null,
+            "value": 1
+          },
+          {
+            "name": "Thermal Output Requests",
+            "native_type": "0",
+            "units": null,
+            "representation": "named_property_table",
+            "value": null
+          }
+        ]
+      }
+    },
+    "documents": [
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-scalar-tables-20260909-r1\\benchmark_1ed9fb624b41_geometry.prt",
+        "name": "benchmark_1ed9fb624b41_geometry",
+        "document_type": "Part",
+        "modified": false,
+        "work": false,
+        "display": false,
+        "units": "mm",
+        "coordinate_frame": "part_absolute"
+      },
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-scalar-tables-20260909-r1\\benchmark_1ed9fb624b41_mesh.fem",
+        "name": "benchmark_1ed9fb624b41_mesh",
+        "document_type": "FemPart",
+        "modified": false,
+        "work": false,
+        "display": false,
+        "units": "mm",
+        "coordinate_frame": "part_absolute"
+      },
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-scalar-tables-20260909-r1\\benchmark_1ed9fb624b41_analysis.sim",
+        "name": "benchmark_1ed9fb624b41_analysis",
+        "document_type": "SimPart",
+        "modified": false,
+        "work": true,
+        "display": true,
+        "units": "mm",
+        "coordinate_frame": "part_absolute"
+      }
+    ],
+    "units": "mm",
+    "coordinate_frame": "part_absolute",
+    "body_count": 1,
+    "block_origins_mm": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "mesh_created": false,
+    "solve_launched": false
+  },
+  "document": "obj_20bc234ffa5249ceb4fb4d82b993c626_de963959d773443baa3b791b55c05b8d",
+  "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-scalar-tables-20260909-r1\\benchmark_1ed9fb624b41_analysis.sim",
+  "trials": [
+    {
+      "manifest": {
+        "axis": "time",
+        "interpolation": "linear",
+        "name": "MCP_SCALAR_TRIAL",
+        "outside_table": "undefined",
+        "provenance": "Generic API unit fixture",
+        "quantity": "power",
+        "samples": [
+          [
+            0,
+            1
+          ],
+          [
+            10,
+            2
+          ],
+          [
+            20,
+            3
+          ]
+        ],
+        "version": 1
+      },
+      "manifest_sha256": "f2457839c417c6fc2d8ccc4f9e6e45d0ca34ed5dfb27f39533d49765e0a49a2f",
+      "readback": {
+        "samples_si": [
+          [
+            0.0,
+            1.0
+          ],
+          [
+            10.0,
+            2.0
+          ],
+          [
+            20.0,
+            3.0
+          ]
+        ],
+        "axis_units": "s",
+        "value_units": "W",
+        "native_axis_unit": "Second",
+        "native_value_unit": "Watt",
+        "interpolation": "linear",
+        "outside_table": "undefined"
+      },
+      "binding_semantics": "not_inspected",
+      "numerical_acceptance": "not_established",
+      "property_wrapper_readback": {
+        "name": "Heat Load",
+        "native_type": "6",
+        "units": null,
+        "field_scale": 2.0,
+        "field_reference": {
+          "journal_id": "MCP_SCALAR_TRIAL",
+          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-scalar-tables-20260909-r1\\benchmark_1ed9fb624b41_analysis.sim",
+          "tag": 8119940,
+          "lifetime": "current loaded document; not a cross-session reference"
+        },
+        "representation": "FieldTable",
+        "field_definition": {
+          "kind": "validated_scalar_table",
+          "manifest": {
+            "axis": "time",
+            "interpolation": "linear",
+            "name": "MCP_SCALAR_TRIAL",
+            "outside_table": "undefined",
+            "provenance": "Generic API unit fixture",
+            "quantity": "power",
+            "samples": [
+              [
+                0,
+                1
+              ],
+              [
+                10,
+                2
+              ],
+              [
+                20,
+                3
+              ]
+            ],
+            "version": 1
+          },
+          "native_samples_si": {
+            "samples_si": [
+              [
+                0.0,
+                1.0
+              ],
+              [
+                10.0,
+                2.0
+              ],
+              [
+                20.0,
+                3.0
+              ]
+            ],
+            "axis_units": "s",
+            "value_units": "W",
+            "native_axis_unit": "Second",
+            "native_value_unit": "Watt",
+            "interpolation": "linear",
+            "outside_table": "undefined"
+          },
+          "scale_application": "native scalar wrapper factor reported separately; binding semantics not established",
+          "definition_scope": "table samples, units and stored interpolation; not material/load or solver semantics"
+        }
+      },
+      "native_seconds": 0.29699999996228144
+    },
+    {
+      "manifest": {
+        "axis": "time",
+        "interpolation": "linear",
+        "name": "MCP_SCALAR_TRIAL",
+        "outside_table": "undefined",
+        "provenance": "Generic API unit fixture",
+        "quantity": "temperature",
+        "samples": [
+          [
+            0,
+            280
+          ],
+          [
+            10,
+            300
+          ],
+          [
+            20,
+            320
+          ]
+        ],
+        "version": 1
+      },
+      "manifest_sha256": "74f116a867de7d491bfde2a2483109fcc78a422755c6d8578d0deb7761f53fc3",
+      "readback": {
+        "samples_si": [
+          [
+            0.0,
+            280.0
+          ],
+          [
+            10.0,
+            300.0
+          ],
+          [
+            20.0,
+            320.0
+          ]
+        ],
+        "axis_units": "s",
+        "value_units": "K",
+        "native_axis_unit": "Second",
+        "native_value_unit": "Kelvin",
+        "interpolation": "linear",
+        "outside_table": "undefined"
+      },
+      "binding_semantics": "not_inspected",
+      "numerical_acceptance": "not_established",
+      "native_seconds": 0.32900000002700835
+    },
+    {
+      "manifest": {
+        "axis": "time",
+        "interpolation": "linear",
+        "name": "MCP_SCALAR_TRIAL",
+        "outside_table": "undefined",
+        "provenance": "Generic API unit fixture",
+        "quantity": "conductivity",
+        "samples": [
+          [
+            0,
+            1
+          ],
+          [
+            10,
+            2
+          ],
+          [
+            20,
+            3
+          ]
+        ],
+        "version": 1
+      },
+      "manifest_sha256": "491d16157b548cd9efc10b9e4b8fcef1e9e78ff14bc7cd9b305739ca48e1e6af",
+      "readback": {
+        "samples_si": [
+          [
+            0.0,
+            1.0
+          ],
+          [
+            10.0,
+            2.0
+          ],
+          [
+            20.0,
+            3.0
+          ]
+        ],
+        "axis_units": "s",
+        "value_units": "W/(m K)",
+        "native_axis_unit": "Second",
+        "native_value_unit": "ThermalConductivity_Metric3",
+        "interpolation": "linear",
+        "outside_table": "undefined"
+      },
+      "binding_semantics": "not_inspected",
+      "numerical_acceptance": "not_established",
+      "native_seconds": 0.3130000000237487
+    },
+    {
+      "manifest": {
+        "axis": "time",
+        "interpolation": "linear",
+        "name": "MCP_SCALAR_TRIAL",
+        "outside_table": "undefined",
+        "provenance": "Generic API unit fixture",
+        "quantity": "heat_capacity",
+        "samples": [
+          [
+            0,
+            1
+          ],
+          [
+            10,
+            2
+          ],
+          [
+            20,
+            3
+          ]
+        ],
+        "version": 1
+      },
+      "manifest_sha256": "f92963babba97c2b1307b85ee2faccbfcf833e9bf003077b38948695b9ed6bf9",
+      "readback": {
+        "samples_si": [
+          [
+            0.0,
+            1.0
+          ],
+          [
+            10.0,
+            2.0
+          ],
+          [
+            20.0,
+            3.0
+          ]
+        ],
+        "axis_units": "s",
+        "value_units": "J/(kg K)",
+        "native_axis_unit": "Second",
+        "native_value_unit": "SpecificHeat_Metric2",
+        "interpolation": "linear",
+        "outside_table": "undefined"
+      },
+      "binding_semantics": "not_inspected",
+      "numerical_acceptance": "not_established",
+      "native_seconds": 0.3440000000409782
+    },
+    {
+      "manifest": {
+        "axis": "time",
+        "interpolation": "linear",
+        "name": "MCP_SCALAR_TRIAL",
+        "outside_table": "undefined",
+        "provenance": "Generic API unit fixture",
+        "quantity": "density",
+        "samples": [
+          [
+            0,
+            1
+          ],
+          [
+            10,
+            2
+          ],
+          [
+            20,
+            3
+          ]
+        ],
+        "version": 1
+      },
+      "manifest_sha256": "95a7bf7af6e1ef320692b247bec3e06712e6818b637c1d171ee473bae625d833",
+      "readback": {
+        "samples_si": [
+          [
+            0.0,
+            1.0
+          ],
+          [
+            10.0,
+            2.0
+          ],
+          [
+            20.0,
+            3.0
+          ]
+        ],
+        "axis_units": "s",
+        "value_units": "kg/m^3",
+        "native_axis_unit": "Second",
+        "native_value_unit": "KilogramPerCubicMeter",
+        "interpolation": "linear",
+        "outside_table": "undefined"
+      },
+      "binding_semantics": "not_inspected",
+      "numerical_acceptance": "not_established",
+      "native_seconds": 0.34399999998277053
+    },
+    {
+      "manifest": {
+        "axis": "time",
+        "interpolation": "linear",
+        "name": "MCP_SCALAR_TRIAL",
+        "outside_table": "undefined",
+        "provenance": "Generic API unit fixture",
+        "quantity": "convection",
+        "samples": [
+          [
+            0,
+            1
+          ],
+          [
+            10,
+            2
+          ],
+          [
+            20,
+            3
+          ]
+        ],
+        "version": 1
+      },
+      "manifest_sha256": "84f1021b75009cd229184af519b4aff541d638c909525e614b0a7dca793f6b7d",
+      "readback": {
+        "samples_si": [
+          [
+            0.0,
+            1.0
+          ],
+          [
+            10.0,
+            2.0
+          ],
+          [
+            20.0,
+            3.0
+          ]
+        ],
+        "axis_units": "s",
+        "value_units": "W/(m^2 K)",
+        "native_axis_unit": "Second",
+        "native_value_unit": "ConvectionCoefficient_Metric8",
+        "interpolation": "linear",
+        "outside_table": "undefined"
+      },
+      "binding_semantics": "not_inspected",
+      "numerical_acceptance": "not_established",
+      "native_seconds": 0.31299999996554106
+    },
+    {
+      "manifest": {
+        "axis": "temperature",
+        "interpolation": "linear",
+        "name": "MCP_SCALAR_TRIAL",
+        "outside_table": "undefined",
+        "provenance": "Generic API unit fixture",
+        "quantity": "power",
+        "samples": [
+          [
+            273.15,
+            1
+          ],
+          [
+            293.15,
+            2
+          ],
+          [
+            313.15,
+            3
+          ]
+        ],
+        "version": 1
+      },
+      "manifest_sha256": "ad80290c17305aaf2b147126c68db4344c6ab47f23f95032b93f8e1e5ca136ac",
+      "readback": {
+        "samples_si": [
+          [
+            273.15,
+            1.0
+          ],
+          [
+            293.15,
+            2.0
+          ],
+          [
+            313.15,
+            3.0
+          ]
+        ],
+        "axis_units": "K",
+        "value_units": "W",
+        "native_axis_unit": "Celsius",
+        "native_value_unit": "Watt",
+        "interpolation": "linear",
+        "outside_table": "undefined"
+      },
+      "binding_semantics": "not_inspected",
+      "numerical_acceptance": "not_established",
+      "native_seconds": 0.35999999998603016
+    },
+    {
+      "manifest": {
+        "axis": "temperature",
+        "interpolation": "linear",
+        "name": "MCP_SCALAR_TRIAL",
+        "outside_table": "undefined",
+        "provenance": "Generic API unit fixture",
+        "quantity": "temperature",
+        "samples": [
+          [
+            273.15,
+            280
+          ],
+          [
+            293.15,
+            300
+          ],
+          [
+            313.15,
+            320
+          ]
+        ],
+        "version": 1
+      },
+      "manifest_sha256": "e0d70c705eda5a0106c2e424cd946645967294ebac6745ff75f8e94f3c0040de",
+      "readback": {
+        "samples_si": [
+          [
+            273.15,
+            280.0
+          ],
+          [
+            293.15,
+            300.0
+          ],
+          [
+            313.15,
+            320.0
+          ]
+        ],
+        "axis_units": "K",
+        "value_units": "K",
+        "native_axis_unit": "Celsius",
+        "native_value_unit": "Kelvin",
+        "interpolation": "linear",
+        "outside_table": "undefined"
+      },
+      "binding_semantics": "not_inspected",
+      "numerical_acceptance": "not_established",
+      "native_seconds": 0.35899999999674037
+    },
+    {
+      "manifest": {
+        "axis": "temperature",
+        "interpolation": "linear",
+        "name": "MCP_SCALAR_TRIAL",
+        "outside_table": "undefined",
+        "provenance": "Generic API unit fixture",
+        "quantity": "conductivity",
+        "samples": [
+          [
+            273.15,
+            1
+          ],
+          [
+            293.15,
+            2
+          ],
+          [
+            313.15,
+            3
+          ]
+        ],
+        "version": 1
+      },
+      "manifest_sha256": "ae3a4d40af75b75ed130e6d68ef3eb2be5b4ecc090c55626ba7ab1a90117c24c",
+      "readback": {
+        "samples_si": [
+          [
+            273.15,
+            1.0
+          ],
+          [
+            293.15,
+            2.0
+          ],
+          [
+            313.15,
+            3.0
+          ]
+        ],
+        "axis_units": "K",
+        "value_units": "W/(m K)",
+        "native_axis_unit": "Celsius",
+        "native_value_unit": "ThermalConductivity_Metric3",
+        "interpolation": "linear",
+        "outside_table": "undefined"
+      },
+      "binding_semantics": "not_inspected",
+      "numerical_acceptance": "not_established",
+      "native_seconds": 0.34299999999348074
+    },
+    {
+      "manifest": {
+        "axis": "temperature",
+        "interpolation": "linear",
+        "name": "MCP_SCALAR_TRIAL",
+        "outside_table": "undefined",
+        "provenance": "Generic API unit fixture",
+        "quantity": "heat_capacity",
+        "samples": [
+          [
+            273.15,
+            1
+          ],
+          [
+            293.15,
+            2
+          ],
+          [
+            313.15,
+            3
+          ]
+        ],
+        "version": 1
+      },
+      "manifest_sha256": "e0d43fb078362132fae19b90e87b7619ab89bff3cdda8cf24683ad30db017544",
+      "readback": {
+        "samples_si": [
+          [
+            273.15,
+            1.0
+          ],
+          [
+            293.15,
+            2.0
+          ],
+          [
+            313.15,
+            3.0
+          ]
+        ],
+        "axis_units": "K",
+        "value_units": "J/(kg K)",
+        "native_axis_unit": "Celsius",
+        "native_value_unit": "SpecificHeat_Metric2",
+        "interpolation": "linear",
+        "outside_table": "undefined"
+      },
+      "binding_semantics": "not_inspected",
+      "numerical_acceptance": "not_established",
+      "native_seconds": 0.34399999998277053
+    },
+    {
+      "manifest": {
+        "axis": "temperature",
+        "interpolation": "linear",
+        "name": "MCP_SCALAR_TRIAL",
+        "outside_table": "undefined",
+        "provenance": "Generic API unit fixture",
+        "quantity": "density",
+        "samples": [
+          [
+            273.15,
+            1
+          ],
+          [
+            293.15,
+            2
+          ],
+          [
+            313.15,
+            3
+          ]
+        ],
+        "version": 1
+      },
+      "manifest_sha256": "ace0cf10b7ab03f17cb76d53752cb86507459966e7279e5a6315aba6bb5c4a49",
+      "readback": {
+        "samples_si": [
+          [
+            273.15,
+            1.0
+          ],
+          [
+            293.15,
+            2.0
+          ],
+          [
+            313.15,
+            3.0
+          ]
+        ],
+        "axis_units": "K",
+        "value_units": "kg/m^3",
+        "native_axis_unit": "Celsius",
+        "native_value_unit": "KilogramPerCubicMeter",
+        "interpolation": "linear",
+        "outside_table": "undefined"
+      },
+      "binding_semantics": "not_inspected",
+      "numerical_acceptance": "not_established",
+      "native_seconds": 0.3440000000409782
+    },
+    {
+      "manifest": {
+        "axis": "temperature",
+        "interpolation": "linear",
+        "name": "MCP_SCALAR_TRIAL",
+        "outside_table": "undefined",
+        "provenance": "Generic API unit fixture",
+        "quantity": "convection",
+        "samples": [
+          [
+            273.15,
+            1
+          ],
+          [
+            293.15,
+            2
+          ],
+          [
+            313.15,
+            3
+          ]
+        ],
+        "version": 1
+      },
+      "manifest_sha256": "af49399ddedc6fbc4625120e92fbb5fe4237d2e1772f3a861506b8002935177b",
+      "readback": {
+        "samples_si": [
+          [
+            273.15,
+            1.0
+          ],
+          [
+            293.15,
+            2.0
+          ],
+          [
+            313.15,
+            3.0
+          ]
+        ],
+        "axis_units": "K",
+        "value_units": "W/(m^2 K)",
+        "native_axis_unit": "Celsius",
+        "native_value_unit": "ConvectionCoefficient_Metric8",
+        "interpolation": "linear",
+        "outside_table": "undefined"
+      },
+      "binding_semantics": "not_inspected",
+      "numerical_acceptance": "not_established",
+      "native_seconds": 0.28200000000651926
+    }
+  ],
+  "rollback_verified": true,
+  "unrelated_flags_preserved": true,
+  "solver_launched": false
+}

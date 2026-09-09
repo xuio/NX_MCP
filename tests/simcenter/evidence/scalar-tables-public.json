@@ -1,0 +1,2068 @@
+{
+  "responses": {
+    "MCP_POWER_TIME": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"field\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_f1216b3e79c64ba39b646d8965d3561e\", \"kind\": \"simulation_field\", \"name\": \"MCP_POWER_TIME\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_17b29769ad13417c90dc4cf7df2f53e2\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"17b29769ad13417c90dc4cf7df2f53e2\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-scalar-tables-20260909-r1\\\\benchmark_1ed9fb624b41_analysis.sim\", \"journal_id\": \"MCP_POWER_TIME\", \"display_name\": \"MCP_POWER_TIME\"}, \"manifest\": {\"axis\": \"time\", \"interpolation\": \"linear\", \"name\": \"MCP_POWER_TIME\", \"outside_table\": \"undefined\", \"provenance\": \"Generic scalar table lifecycle fixture\", \"quantity\": \"power\", \"version\": 1}, \"manifest_sha256\": \"93ae4a5928fe707e4a96f35f9c726c8e6c559adef7411bf86653efd239d21ce0\", \"readback\": {\"axis_units\": \"s\", \"value_units\": \"W\", \"native_axis_unit\": \"Second\", \"native_value_unit\": \"Watt\", \"interpolation\": \"linear\", \"outside_table\": \"undefined\"}, \"binding_semantics\": \"not_inspected\", \"numerical_acceptance\": \"not_established\", \"sample_count\": 3, \"axis_range_si\": [0.0, 20.0], \"saved\": false, \"solver_launched\": false, \"boundary_or_material_attached\": false, \"operation_id\": \"MCP_POWER_TIME-r1\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "field": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_f1216b3e79c64ba39b646d8965d3561e",
+          "kind": "simulation_field",
+          "name": "MCP_POWER_TIME",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_17b29769ad13417c90dc4cf7df2f53e2",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "17b29769ad13417c90dc4cf7df2f53e2",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-scalar-tables-20260909-r1\\benchmark_1ed9fb624b41_analysis.sim",
+          "journal_id": "MCP_POWER_TIME",
+          "display_name": "MCP_POWER_TIME"
+        },
+        "manifest": {
+          "axis": "time",
+          "interpolation": "linear",
+          "name": "MCP_POWER_TIME",
+          "outside_table": "undefined",
+          "provenance": "Generic scalar table lifecycle fixture",
+          "quantity": "power",
+          "version": 1
+        },
+        "manifest_sha256": "93ae4a5928fe707e4a96f35f9c726c8e6c559adef7411bf86653efd239d21ce0",
+        "readback": {
+          "axis_units": "s",
+          "value_units": "W",
+          "native_axis_unit": "Second",
+          "native_value_unit": "Watt",
+          "interpolation": "linear",
+          "outside_table": "undefined"
+        },
+        "binding_semantics": "not_inspected",
+        "numerical_acceptance": "not_established",
+        "sample_count": 3,
+        "axis_range_si": [
+          0.0,
+          20.0
+        ],
+        "saved": false,
+        "solver_launched": false,
+        "boundary_or_material_attached": false,
+        "operation_id": "MCP_POWER_TIME-r1",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed"
+      },
+      "isError": false
+    },
+    "MCP_POWER_TIME_replay": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"field\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_f1216b3e79c64ba39b646d8965d3561e\", \"kind\": \"simulation_field\", \"name\": \"MCP_POWER_TIME\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_17b29769ad13417c90dc4cf7df2f53e2\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"17b29769ad13417c90dc4cf7df2f53e2\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-scalar-tables-20260909-r1\\\\benchmark_1ed9fb624b41_analysis.sim\", \"journal_id\": \"MCP_POWER_TIME\", \"display_name\": \"MCP_POWER_TIME\"}, \"manifest\": {\"axis\": \"time\", \"interpolation\": \"linear\", \"name\": \"MCP_POWER_TIME\", \"outside_table\": \"undefined\", \"provenance\": \"Generic scalar table lifecycle fixture\", \"quantity\": \"power\", \"version\": 1}, \"manifest_sha256\": \"93ae4a5928fe707e4a96f35f9c726c8e6c559adef7411bf86653efd239d21ce0\", \"readback\": {\"axis_units\": \"s\", \"value_units\": \"W\", \"native_axis_unit\": \"Second\", \"native_value_unit\": \"Watt\", \"interpolation\": \"linear\", \"outside_table\": \"undefined\"}, \"binding_semantics\": \"not_inspected\", \"numerical_acceptance\": \"not_established\", \"sample_count\": 3, \"axis_range_si\": [0.0, 20.0], \"saved\": false, \"solver_launched\": false, \"boundary_or_material_attached\": false, \"operation_id\": \"MCP_POWER_TIME-r1\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\", \"replayed\": true}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "field": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_f1216b3e79c64ba39b646d8965d3561e",
+          "kind": "simulation_field",
+          "name": "MCP_POWER_TIME",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_17b29769ad13417c90dc4cf7df2f53e2",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "17b29769ad13417c90dc4cf7df2f53e2",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-scalar-tables-20260909-r1\\benchmark_1ed9fb624b41_analysis.sim",
+          "journal_id": "MCP_POWER_TIME",
+          "display_name": "MCP_POWER_TIME"
+        },
+        "manifest": {
+          "axis": "time",
+          "interpolation": "linear",
+          "name": "MCP_POWER_TIME",
+          "outside_table": "undefined",
+          "provenance": "Generic scalar table lifecycle fixture",
+          "quantity": "power",
+          "version": 1
+        },
+        "manifest_sha256": "93ae4a5928fe707e4a96f35f9c726c8e6c559adef7411bf86653efd239d21ce0",
+        "readback": {
+          "axis_units": "s",
+          "value_units": "W",
+          "native_axis_unit": "Second",
+          "native_value_unit": "Watt",
+          "interpolation": "linear",
+          "outside_table": "undefined"
+        },
+        "binding_semantics": "not_inspected",
+        "numerical_acceptance": "not_established",
+        "sample_count": 3,
+        "axis_range_si": [
+          0.0,
+          20.0
+        ],
+        "saved": false,
+        "solver_launched": false,
+        "boundary_or_material_attached": false,
+        "operation_id": "MCP_POWER_TIME-r1",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed",
+        "replayed": true
+      },
+      "isError": false
+    },
+    "MCP_TEMPERATURE_TIME": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"field\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_62ae3517c38c4c1f85d98fd5c0758e24\", \"kind\": \"simulation_field\", \"name\": \"MCP_TEMPERATURE_TIME\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_17b29769ad13417c90dc4cf7df2f53e2\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"17b29769ad13417c90dc4cf7df2f53e2\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-scalar-tables-20260909-r1\\\\benchmark_1ed9fb624b41_analysis.sim\", \"journal_id\": \"MCP_TEMPERATURE_TIME\", \"display_name\": \"MCP_TEMPERATURE_TIME\"}, \"manifest\": {\"axis\": \"time\", \"interpolation\": \"linear\", \"name\": \"MCP_TEMPERATURE_TIME\", \"outside_table\": \"undefined\", \"provenance\": \"Generic scalar table lifecycle fixture\", \"quantity\": \"temperature\", \"version\": 1}, \"manifest_sha256\": \"bbab94a6226b0304db450e165698a1c40eab1357325ff55dbdf9eabc0b76f6dd\", \"readback\": {\"axis_units\": \"s\", \"value_units\": \"K\", \"native_axis_unit\": \"Second\", \"native_value_unit\": \"Kelvin\", \"interpolation\": \"linear\", \"outside_table\": \"undefined\"}, \"binding_semantics\": \"not_inspected\", \"numerical_acceptance\": \"not_established\", \"sample_count\": 3, \"axis_range_si\": [0.0, 20.0], \"saved\": false, \"solver_launched\": false, \"boundary_or_material_attached\": false, \"operation_id\": \"MCP_TEMPERATURE_TIME-r1\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "field": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_62ae3517c38c4c1f85d98fd5c0758e24",
+          "kind": "simulation_field",
+          "name": "MCP_TEMPERATURE_TIME",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_17b29769ad13417c90dc4cf7df2f53e2",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "17b29769ad13417c90dc4cf7df2f53e2",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-scalar-tables-20260909-r1\\benchmark_1ed9fb624b41_analysis.sim",
+          "journal_id": "MCP_TEMPERATURE_TIME",
+          "display_name": "MCP_TEMPERATURE_TIME"
+        },
+        "manifest": {
+          "axis": "time",
+          "interpolation": "linear",
+          "name": "MCP_TEMPERATURE_TIME",
+          "outside_table": "undefined",
+          "provenance": "Generic scalar table lifecycle fixture",
+          "quantity": "temperature",
+          "version": 1
+        },
+        "manifest_sha256": "bbab94a6226b0304db450e165698a1c40eab1357325ff55dbdf9eabc0b76f6dd",
+        "readback": {
+          "axis_units": "s",
+          "value_units": "K",
+          "native_axis_unit": "Second",
+          "native_value_unit": "Kelvin",
+          "interpolation": "linear",
+          "outside_table": "undefined"
+        },
+        "binding_semantics": "not_inspected",
+        "numerical_acceptance": "not_established",
+        "sample_count": 3,
+        "axis_range_si": [
+          0.0,
+          20.0
+        ],
+        "saved": false,
+        "solver_launched": false,
+        "boundary_or_material_attached": false,
+        "operation_id": "MCP_TEMPERATURE_TIME-r1",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed"
+      },
+      "isError": false
+    },
+    "MCP_TEMPERATURE_TIME_replay": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"field\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_62ae3517c38c4c1f85d98fd5c0758e24\", \"kind\": \"simulation_field\", \"name\": \"MCP_TEMPERATURE_TIME\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_17b29769ad13417c90dc4cf7df2f53e2\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"17b29769ad13417c90dc4cf7df2f53e2\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-scalar-tables-20260909-r1\\\\benchmark_1ed9fb624b41_analysis.sim\", \"journal_id\": \"MCP_TEMPERATURE_TIME\", \"display_name\": \"MCP_TEMPERATURE_TIME\"}, \"manifest\": {\"axis\": \"time\", \"interpolation\": \"linear\", \"name\": \"MCP_TEMPERATURE_TIME\", \"outside_table\": \"undefined\", \"provenance\": \"Generic scalar table lifecycle fixture\", \"quantity\": \"temperature\", \"version\": 1}, \"manifest_sha256\": \"bbab94a6226b0304db450e165698a1c40eab1357325ff55dbdf9eabc0b76f6dd\", \"readback\": {\"axis_units\": \"s\", \"value_units\": \"K\", \"native_axis_unit\": \"Second\", \"native_value_unit\": \"Kelvin\", \"interpolation\": \"linear\", \"outside_table\": \"undefined\"}, \"binding_semantics\": \"not_inspected\", \"numerical_acceptance\": \"not_established\", \"sample_count\": 3, \"axis_range_si\": [0.0, 20.0], \"saved\": false, \"solver_launched\": false, \"boundary_or_material_attached\": false, \"operation_id\": \"MCP_TEMPERATURE_TIME-r1\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\", \"replayed\": true}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "field": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_62ae3517c38c4c1f85d98fd5c0758e24",
+          "kind": "simulation_field",
+          "name": "MCP_TEMPERATURE_TIME",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_17b29769ad13417c90dc4cf7df2f53e2",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "17b29769ad13417c90dc4cf7df2f53e2",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-scalar-tables-20260909-r1\\benchmark_1ed9fb624b41_analysis.sim",
+          "journal_id": "MCP_TEMPERATURE_TIME",
+          "display_name": "MCP_TEMPERATURE_TIME"
+        },
+        "manifest": {
+          "axis": "time",
+          "interpolation": "linear",
+          "name": "MCP_TEMPERATURE_TIME",
+          "outside_table": "undefined",
+          "provenance": "Generic scalar table lifecycle fixture",
+          "quantity": "temperature",
+          "version": 1
+        },
+        "manifest_sha256": "bbab94a6226b0304db450e165698a1c40eab1357325ff55dbdf9eabc0b76f6dd",
+        "readback": {
+          "axis_units": "s",
+          "value_units": "K",
+          "native_axis_unit": "Second",
+          "native_value_unit": "Kelvin",
+          "interpolation": "linear",
+          "outside_table": "undefined"
+        },
+        "binding_semantics": "not_inspected",
+        "numerical_acceptance": "not_established",
+        "sample_count": 3,
+        "axis_range_si": [
+          0.0,
+          20.0
+        ],
+        "saved": false,
+        "solver_launched": false,
+        "boundary_or_material_attached": false,
+        "operation_id": "MCP_TEMPERATURE_TIME-r1",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed",
+        "replayed": true
+      },
+      "isError": false
+    },
+    "MCP_CONDUCTIVITY_TEMPERATURE": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"field\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_a899552abd4b4cddb665ec8d7df810d8\", \"kind\": \"simulation_field\", \"name\": \"MCP_CONDUCTIVITY_TEMPERATURE\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_17b29769ad13417c90dc4cf7df2f53e2\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"17b29769ad13417c90dc4cf7df2f53e2\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-scalar-tables-20260909-r1\\\\benchmark_1ed9fb624b41_analysis.sim\", \"journal_id\": \"MCP_CONDUCTIVITY_TEMPERATURE\", \"display_name\": \"MCP_CONDUCTIVITY_TEMPERATURE\"}, \"manifest\": {\"axis\": \"temperature\", \"interpolation\": \"linear\", \"name\": \"MCP_CONDUCTIVITY_TEMPERATURE\", \"outside_table\": \"undefined\", \"provenance\": \"Generic scalar table lifecycle fixture\", \"quantity\": \"conductivity\", \"version\": 1}, \"manifest_sha256\": \"ccaa04f4b4f7f0dfe08f71964c77ebdbb2bef2b22a9daa799c72793fb50155eb\", \"readback\": {\"axis_units\": \"K\", \"value_units\": \"W/(m K)\", \"native_axis_unit\": \"Celsius\", \"native_value_unit\": \"ThermalConductivity_Metric3\", \"interpolation\": \"linear\", \"outside_table\": \"undefined\"}, \"binding_semantics\": \"not_inspected\", \"numerical_acceptance\": \"not_established\", \"sample_count\": 3, \"axis_range_si\": [273.15, 313.15], \"saved\": false, \"solver_launched\": false, \"boundary_or_material_attached\": false, \"operation_id\": \"MCP_CONDUCTIVITY_TEMPERATURE-r1\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "field": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_a899552abd4b4cddb665ec8d7df810d8",
+          "kind": "simulation_field",
+          "name": "MCP_CONDUCTIVITY_TEMPERATURE",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_17b29769ad13417c90dc4cf7df2f53e2",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "17b29769ad13417c90dc4cf7df2f53e2",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-scalar-tables-20260909-r1\\benchmark_1ed9fb624b41_analysis.sim",
+          "journal_id": "MCP_CONDUCTIVITY_TEMPERATURE",
+          "display_name": "MCP_CONDUCTIVITY_TEMPERATURE"
+        },
+        "manifest": {
+          "axis": "temperature",
+          "interpolation": "linear",
+          "name": "MCP_CONDUCTIVITY_TEMPERATURE",
+          "outside_table": "undefined",
+          "provenance": "Generic scalar table lifecycle fixture",
+          "quantity": "conductivity",
+          "version": 1
+        },
+        "manifest_sha256": "ccaa04f4b4f7f0dfe08f71964c77ebdbb2bef2b22a9daa799c72793fb50155eb",
+        "readback": {
+          "axis_units": "K",
+          "value_units": "W/(m K)",
+          "native_axis_unit": "Celsius",
+          "native_value_unit": "ThermalConductivity_Metric3",
+          "interpolation": "linear",
+          "outside_table": "undefined"
+        },
+        "binding_semantics": "not_inspected",
+        "numerical_acceptance": "not_established",
+        "sample_count": 3,
+        "axis_range_si": [
+          273.15,
+          313.15
+        ],
+        "saved": false,
+        "solver_launched": false,
+        "boundary_or_material_attached": false,
+        "operation_id": "MCP_CONDUCTIVITY_TEMPERATURE-r1",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed"
+      },
+      "isError": false
+    },
+    "MCP_CONDUCTIVITY_TEMPERATURE_replay": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"field\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_a899552abd4b4cddb665ec8d7df810d8\", \"kind\": \"simulation_field\", \"name\": \"MCP_CONDUCTIVITY_TEMPERATURE\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_17b29769ad13417c90dc4cf7df2f53e2\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"17b29769ad13417c90dc4cf7df2f53e2\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-scalar-tables-20260909-r1\\\\benchmark_1ed9fb624b41_analysis.sim\", \"journal_id\": \"MCP_CONDUCTIVITY_TEMPERATURE\", \"display_name\": \"MCP_CONDUCTIVITY_TEMPERATURE\"}, \"manifest\": {\"axis\": \"temperature\", \"interpolation\": \"linear\", \"name\": \"MCP_CONDUCTIVITY_TEMPERATURE\", \"outside_table\": \"undefined\", \"provenance\": \"Generic scalar table lifecycle fixture\", \"quantity\": \"conductivity\", \"version\": 1}, \"manifest_sha256\": \"ccaa04f4b4f7f0dfe08f71964c77ebdbb2bef2b22a9daa799c72793fb50155eb\", \"readback\": {\"axis_units\": \"K\", \"value_units\": \"W/(m K)\", \"native_axis_unit\": \"Celsius\", \"native_value_unit\": \"ThermalConductivity_Metric3\", \"interpolation\": \"linear\", \"outside_table\": \"undefined\"}, \"binding_semantics\": \"not_inspected\", \"numerical_acceptance\": \"not_established\", \"sample_count\": 3, \"axis_range_si\": [273.15, 313.15], \"saved\": false, \"solver_launched\": false, \"boundary_or_material_attached\": false, \"operation_id\": \"MCP_CONDUCTIVITY_TEMPERATURE-r1\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\", \"replayed\": true}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "field": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_a899552abd4b4cddb665ec8d7df810d8",
+          "kind": "simulation_field",
+          "name": "MCP_CONDUCTIVITY_TEMPERATURE",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_17b29769ad13417c90dc4cf7df2f53e2",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "17b29769ad13417c90dc4cf7df2f53e2",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-scalar-tables-20260909-r1\\benchmark_1ed9fb624b41_analysis.sim",
+          "journal_id": "MCP_CONDUCTIVITY_TEMPERATURE",
+          "display_name": "MCP_CONDUCTIVITY_TEMPERATURE"
+        },
+        "manifest": {
+          "axis": "temperature",
+          "interpolation": "linear",
+          "name": "MCP_CONDUCTIVITY_TEMPERATURE",
+          "outside_table": "undefined",
+          "provenance": "Generic scalar table lifecycle fixture",
+          "quantity": "conductivity",
+          "version": 1
+        },
+        "manifest_sha256": "ccaa04f4b4f7f0dfe08f71964c77ebdbb2bef2b22a9daa799c72793fb50155eb",
+        "readback": {
+          "axis_units": "K",
+          "value_units": "W/(m K)",
+          "native_axis_unit": "Celsius",
+          "native_value_unit": "ThermalConductivity_Metric3",
+          "interpolation": "linear",
+          "outside_table": "undefined"
+        },
+        "binding_semantics": "not_inspected",
+        "numerical_acceptance": "not_established",
+        "sample_count": 3,
+        "axis_range_si": [
+          273.15,
+          313.15
+        ],
+        "saved": false,
+        "solver_launched": false,
+        "boundary_or_material_attached": false,
+        "operation_id": "MCP_CONDUCTIVITY_TEMPERATURE-r1",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed",
+        "replayed": true
+      },
+      "isError": false
+    },
+    "duplicate": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"error\", \"warnings\": [], \"units\": null, \"code\": \"NX_SIM_NAME_EXISTS\", \"message\": \"Field name already exists\", \"retryable\": false, \"details\": {\"mutation_outcome\": \"not_started\", \"operation_id\": \"op_318905b2a55044e389933b7af09d17a8\"}}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "error",
+        "warnings": [],
+        "units": null,
+        "code": "NX_SIM_NAME_EXISTS",
+        "message": "Field name already exists",
+        "retryable": false,
+        "details": {
+          "mutation_outcome": "not_started",
+          "operation_id": "op_318905b2a55044e389933b7af09d17a8"
+        }
+      },
+      "isError": true
+    },
+    "invalid_samples": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"error\", \"warnings\": [], \"units\": null, \"code\": \"NX_INVALID_ARGUMENT\", \"message\": \"Axis samples must be nonnegative and strictly increasing\", \"retryable\": false, \"details\": {\"mutation_outcome\": \"not_started\", \"operation_id\": \"op_671297ad33e34002a0fbe58f7ab4dbd3\"}}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "error",
+        "warnings": [],
+        "units": null,
+        "code": "NX_INVALID_ARGUMENT",
+        "message": "Axis samples must be nonnegative and strictly increasing",
+        "retryable": false,
+        "details": {
+          "mutation_outcome": "not_started",
+          "operation_id": "op_671297ad33e34002a0fbe58f7ab4dbd3"
+        }
+      },
+      "isError": true
+    },
+    "compact_page": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"tables\": [{\"manifest\": {\"axis\": \"temperature\", \"interpolation\": \"linear\", \"name\": \"MCP_CONDUCTIVITY_TEMPERATURE\", \"outside_table\": \"undefined\", \"provenance\": \"Generic scalar table lifecycle fixture\", \"quantity\": \"conductivity\", \"version\": 1}, \"manifest_sha256\": \"ccaa04f4b4f7f0dfe08f71964c77ebdbb2bef2b22a9daa799c72793fb50155eb\", \"readback\": {\"axis_units\": \"K\", \"value_units\": \"W/(m K)\", \"native_axis_unit\": \"Celsius\", \"native_value_unit\": \"ThermalConductivity_Metric3\", \"interpolation\": \"linear\", \"outside_table\": \"undefined\"}, \"binding_semantics\": \"not_inspected\", \"numerical_acceptance\": \"not_established\", \"sample_count\": 3, \"axis_range_si\": [273.15, 313.15], \"field\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_a899552abd4b4cddb665ec8d7df810d8\", \"kind\": \"simulation_field\", \"name\": \"MCP_CONDUCTIVITY_TEMPERATURE\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_17b29769ad13417c90dc4cf7df2f53e2\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"17b29769ad13417c90dc4cf7df2f53e2\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-scalar-tables-20260909-r1\\\\benchmark_1ed9fb624b41_analysis.sim\", \"journal_id\": \"MCP_CONDUCTIVITY_TEMPERATURE\", \"display_name\": \"MCP_CONDUCTIVITY_TEMPERATURE\"}}, {\"manifest\": {\"axis\": \"time\", \"interpolation\": \"linear\", \"name\": \"MCP_POWER_TIME\", \"outside_table\": \"undefined\", \"provenance\": \"Generic scalar table lifecycle fixture\", \"quantity\": \"power\", \"version\": 1}, \"manifest_sha256\": \"93ae4a5928fe707e4a96f35f9c726c8e6c559adef7411bf86653efd239d21ce0\", \"readback\": {\"axis_units\": \"s\", \"value_units\": \"W\", \"native_axis_unit\": \"Second\", \"native_value_unit\": \"Watt\", \"interpolation\": \"linear\", \"outside_table\": \"undefined\"}, \"binding_semantics\": \"not_inspected\", \"numerical_acceptance\": \"not_established\", \"sample_count\": 3, \"axis_range_si\": [0.0, 20.0], \"field\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_f1216b3e79c64ba39b646d8965d3561e\", \"kind\": \"simulation_field\", \"name\": \"MCP_POWER_TIME\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_17b29769ad13417c90dc4cf7df2f53e2\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"17b29769ad13417c90dc4cf7df2f53e2\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-scalar-tables-20260909-r1\\\\benchmark_1ed9fb624b41_analysis.sim\", \"journal_id\": \"MCP_POWER_TIME\", \"display_name\": \"MCP_POWER_TIME\"}}], \"total\": 3, \"next_offset\": 2, \"result_freshness\": \"not_verified\", \"operation_id\": \"op_48bb60cc47914a21bd7c467f6967c694\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "tables": [
+          {
+            "manifest": {
+              "axis": "temperature",
+              "interpolation": "linear",
+              "name": "MCP_CONDUCTIVITY_TEMPERATURE",
+              "outside_table": "undefined",
+              "provenance": "Generic scalar table lifecycle fixture",
+              "quantity": "conductivity",
+              "version": 1
+            },
+            "manifest_sha256": "ccaa04f4b4f7f0dfe08f71964c77ebdbb2bef2b22a9daa799c72793fb50155eb",
+            "readback": {
+              "axis_units": "K",
+              "value_units": "W/(m K)",
+              "native_axis_unit": "Celsius",
+              "native_value_unit": "ThermalConductivity_Metric3",
+              "interpolation": "linear",
+              "outside_table": "undefined"
+            },
+            "binding_semantics": "not_inspected",
+            "numerical_acceptance": "not_established",
+            "sample_count": 3,
+            "axis_range_si": [
+              273.15,
+              313.15
+            ],
+            "field": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_a899552abd4b4cddb665ec8d7df810d8",
+              "kind": "simulation_field",
+              "name": "MCP_CONDUCTIVITY_TEMPERATURE",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_17b29769ad13417c90dc4cf7df2f53e2",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "17b29769ad13417c90dc4cf7df2f53e2",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-scalar-tables-20260909-r1\\benchmark_1ed9fb624b41_analysis.sim",
+              "journal_id": "MCP_CONDUCTIVITY_TEMPERATURE",
+              "display_name": "MCP_CONDUCTIVITY_TEMPERATURE"
+            }
+          },
+          {
+            "manifest": {
+              "axis": "time",
+              "interpolation": "linear",
+              "name": "MCP_POWER_TIME",
+              "outside_table": "undefined",
+              "provenance": "Generic scalar table lifecycle fixture",
+              "quantity": "power",
+              "version": 1
+            },
+            "manifest_sha256": "93ae4a5928fe707e4a96f35f9c726c8e6c559adef7411bf86653efd239d21ce0",
+            "readback": {
+              "axis_units": "s",
+              "value_units": "W",
+              "native_axis_unit": "Second",
+              "native_value_unit": "Watt",
+              "interpolation": "linear",
+              "outside_table": "undefined"
+            },
+            "binding_semantics": "not_inspected",
+            "numerical_acceptance": "not_established",
+            "sample_count": 3,
+            "axis_range_si": [
+              0.0,
+              20.0
+            ],
+            "field": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_f1216b3e79c64ba39b646d8965d3561e",
+              "kind": "simulation_field",
+              "name": "MCP_POWER_TIME",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_17b29769ad13417c90dc4cf7df2f53e2",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "17b29769ad13417c90dc4cf7df2f53e2",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-scalar-tables-20260909-r1\\benchmark_1ed9fb624b41_analysis.sim",
+              "journal_id": "MCP_POWER_TIME",
+              "display_name": "MCP_POWER_TIME"
+            }
+          }
+        ],
+        "total": 3,
+        "next_offset": 2,
+        "result_freshness": "not_verified",
+        "operation_id": "op_48bb60cc47914a21bd7c467f6967c694",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "not_applicable"
+      },
+      "isError": false
+    },
+    "last_page": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"tables\": [{\"manifest\": {\"axis\": \"time\", \"interpolation\": \"linear\", \"name\": \"MCP_TEMPERATURE_TIME\", \"outside_table\": \"undefined\", \"provenance\": \"Generic scalar table lifecycle fixture\", \"quantity\": \"temperature\", \"version\": 1}, \"manifest_sha256\": \"bbab94a6226b0304db450e165698a1c40eab1357325ff55dbdf9eabc0b76f6dd\", \"readback\": {\"axis_units\": \"s\", \"value_units\": \"K\", \"native_axis_unit\": \"Second\", \"native_value_unit\": \"Kelvin\", \"interpolation\": \"linear\", \"outside_table\": \"undefined\"}, \"binding_semantics\": \"not_inspected\", \"numerical_acceptance\": \"not_established\", \"sample_count\": 3, \"axis_range_si\": [0.0, 20.0], \"field\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_62ae3517c38c4c1f85d98fd5c0758e24\", \"kind\": \"simulation_field\", \"name\": \"MCP_TEMPERATURE_TIME\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_17b29769ad13417c90dc4cf7df2f53e2\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"17b29769ad13417c90dc4cf7df2f53e2\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-scalar-tables-20260909-r1\\\\benchmark_1ed9fb624b41_analysis.sim\", \"journal_id\": \"MCP_TEMPERATURE_TIME\", \"display_name\": \"MCP_TEMPERATURE_TIME\"}}], \"total\": 3, \"next_offset\": null, \"result_freshness\": \"not_verified\", \"operation_id\": \"op_4c549b460b604d4ba9525441385594fb\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "tables": [
+          {
+            "manifest": {
+              "axis": "time",
+              "interpolation": "linear",
+              "name": "MCP_TEMPERATURE_TIME",
+              "outside_table": "undefined",
+              "provenance": "Generic scalar table lifecycle fixture",
+              "quantity": "temperature",
+              "version": 1
+            },
+            "manifest_sha256": "bbab94a6226b0304db450e165698a1c40eab1357325ff55dbdf9eabc0b76f6dd",
+            "readback": {
+              "axis_units": "s",
+              "value_units": "K",
+              "native_axis_unit": "Second",
+              "native_value_unit": "Kelvin",
+              "interpolation": "linear",
+              "outside_table": "undefined"
+            },
+            "binding_semantics": "not_inspected",
+            "numerical_acceptance": "not_established",
+            "sample_count": 3,
+            "axis_range_si": [
+              0.0,
+              20.0
+            ],
+            "field": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_62ae3517c38c4c1f85d98fd5c0758e24",
+              "kind": "simulation_field",
+              "name": "MCP_TEMPERATURE_TIME",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_17b29769ad13417c90dc4cf7df2f53e2",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "17b29769ad13417c90dc4cf7df2f53e2",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-scalar-tables-20260909-r1\\benchmark_1ed9fb624b41_analysis.sim",
+              "journal_id": "MCP_TEMPERATURE_TIME",
+              "display_name": "MCP_TEMPERATURE_TIME"
+            }
+          }
+        ],
+        "total": 3,
+        "next_offset": null,
+        "result_freshness": "not_verified",
+        "operation_id": "op_4c549b460b604d4ba9525441385594fb",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "not_applicable"
+      },
+      "isError": false
+    },
+    "before": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"tables\": [{\"manifest\": {\"axis\": \"temperature\", \"interpolation\": \"linear\", \"name\": \"MCP_CONDUCTIVITY_TEMPERATURE\", \"outside_table\": \"undefined\", \"provenance\": \"Generic scalar table lifecycle fixture\", \"quantity\": \"conductivity\", \"samples\": [[273.15, 100.0], [293.15, 150.0], [313.15, 200.0]], \"version\": 1}, \"manifest_sha256\": \"ccaa04f4b4f7f0dfe08f71964c77ebdbb2bef2b22a9daa799c72793fb50155eb\", \"readback\": {\"samples_si\": [[273.15, 100.0], [293.15, 150.0], [313.15, 200.0]], \"axis_units\": \"K\", \"value_units\": \"W/(m K)\", \"native_axis_unit\": \"Celsius\", \"native_value_unit\": \"ThermalConductivity_Metric3\", \"interpolation\": \"linear\", \"outside_table\": \"undefined\"}, \"binding_semantics\": \"not_inspected\", \"numerical_acceptance\": \"not_established\", \"sample_count\": 3, \"axis_range_si\": [273.15, 313.15], \"field\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_a899552abd4b4cddb665ec8d7df810d8\", \"kind\": \"simulation_field\", \"name\": \"MCP_CONDUCTIVITY_TEMPERATURE\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_17b29769ad13417c90dc4cf7df2f53e2\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"17b29769ad13417c90dc4cf7df2f53e2\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-scalar-tables-20260909-r1\\\\benchmark_1ed9fb624b41_analysis.sim\", \"journal_id\": \"MCP_CONDUCTIVITY_TEMPERATURE\", \"display_name\": \"MCP_CONDUCTIVITY_TEMPERATURE\"}}, {\"manifest\": {\"axis\": \"time\", \"interpolation\": \"linear\", \"name\": \"MCP_POWER_TIME\", \"outside_table\": \"undefined\", \"provenance\": \"Generic scalar table lifecycle fixture\", \"quantity\": \"power\", \"samples\": [[0.0, 0.0], [10.0, 1.0], [20.0, 0.0]], \"version\": 1}, \"manifest_sha256\": \"93ae4a5928fe707e4a96f35f9c726c8e6c559adef7411bf86653efd239d21ce0\", \"readback\": {\"samples_si\": [[0.0, 0.0], [10.0, 1.0], [20.0, 0.0]], \"axis_units\": \"s\", \"value_units\": \"W\", \"native_axis_unit\": \"Second\", \"native_value_unit\": \"Watt\", \"interpolation\": \"linear\", \"outside_table\": \"undefined\"}, \"binding_semantics\": \"not_inspected\", \"numerical_acceptance\": \"not_established\", \"sample_count\": 3, \"axis_range_si\": [0.0, 20.0], \"field\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_f1216b3e79c64ba39b646d8965d3561e\", \"kind\": \"simulation_field\", \"name\": \"MCP_POWER_TIME\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_17b29769ad13417c90dc4cf7df2f53e2\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"17b29769ad13417c90dc4cf7df2f53e2\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-scalar-tables-20260909-r1\\\\benchmark_1ed9fb624b41_analysis.sim\", \"journal_id\": \"MCP_POWER_TIME\", \"display_name\": \"MCP_POWER_TIME\"}}, {\"manifest\": {\"axis\": \"time\", \"interpolation\": \"linear\", \"name\": \"MCP_TEMPERATURE_TIME\", \"outside_table\": \"undefined\", \"provenance\": \"Generic scalar table lifecycle fixture\", \"quantity\": \"temperature\", \"samples\": [[0.0, 293.15], [10.0, 303.15], [20.0, 293.15]], \"version\": 1}, \"manifest_sha256\": \"bbab94a6226b0304db450e165698a1c40eab1357325ff55dbdf9eabc0b76f6dd\", \"readback\": {\"samples_si\": [[0.0, 293.15], [10.0, 303.15], [20.0, 293.15]], \"axis_units\": \"s\", \"value_units\": \"K\", \"native_axis_unit\": \"Second\", \"native_value_unit\": \"Kelvin\", \"interpolation\": \"linear\", \"outside_table\": \"undefined\"}, \"binding_semantics\": \"not_inspected\", \"numerical_acceptance\": \"not_established\", \"sample_count\": 3, \"axis_range_si\": [0.0, 20.0], \"field\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_62ae3517c38c4c1f85d98fd5c0758e24\", \"kind\": \"simulation_field\", \"name\": \"MCP_TEMPERATURE_TIME\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_17b29769ad13417c90dc4cf7df2f53e2\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"17b29769ad13417c90dc4cf7df2f53e2\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-scalar-tables-20260909-r1\\\\benchmark_1ed9fb624b41_analysis.sim\", \"journal_id\": \"MCP_TEMPERATURE_TIME\", \"display_name\": \"MCP_TEMPERATURE_TIME\"}}], \"total\": 3, \"next_offset\": null, \"result_freshness\": \"not_verified\", \"operation_id\": \"op_f986042db35a4e298e7098f832bbfc15\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "tables": [
+          {
+            "manifest": {
+              "axis": "temperature",
+              "interpolation": "linear",
+              "name": "MCP_CONDUCTIVITY_TEMPERATURE",
+              "outside_table": "undefined",
+              "provenance": "Generic scalar table lifecycle fixture",
+              "quantity": "conductivity",
+              "samples": [
+                [
+                  273.15,
+                  100.0
+                ],
+                [
+                  293.15,
+                  150.0
+                ],
+                [
+                  313.15,
+                  200.0
+                ]
+              ],
+              "version": 1
+            },
+            "manifest_sha256": "ccaa04f4b4f7f0dfe08f71964c77ebdbb2bef2b22a9daa799c72793fb50155eb",
+            "readback": {
+              "samples_si": [
+                [
+                  273.15,
+                  100.0
+                ],
+                [
+                  293.15,
+                  150.0
+                ],
+                [
+                  313.15,
+                  200.0
+                ]
+              ],
+              "axis_units": "K",
+              "value_units": "W/(m K)",
+              "native_axis_unit": "Celsius",
+              "native_value_unit": "ThermalConductivity_Metric3",
+              "interpolation": "linear",
+              "outside_table": "undefined"
+            },
+            "binding_semantics": "not_inspected",
+            "numerical_acceptance": "not_established",
+            "sample_count": 3,
+            "axis_range_si": [
+              273.15,
+              313.15
+            ],
+            "field": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_a899552abd4b4cddb665ec8d7df810d8",
+              "kind": "simulation_field",
+              "name": "MCP_CONDUCTIVITY_TEMPERATURE",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_17b29769ad13417c90dc4cf7df2f53e2",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "17b29769ad13417c90dc4cf7df2f53e2",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-scalar-tables-20260909-r1\\benchmark_1ed9fb624b41_analysis.sim",
+              "journal_id": "MCP_CONDUCTIVITY_TEMPERATURE",
+              "display_name": "MCP_CONDUCTIVITY_TEMPERATURE"
+            }
+          },
+          {
+            "manifest": {
+              "axis": "time",
+              "interpolation": "linear",
+              "name": "MCP_POWER_TIME",
+              "outside_table": "undefined",
+              "provenance": "Generic scalar table lifecycle fixture",
+              "quantity": "power",
+              "samples": [
+                [
+                  0.0,
+                  0.0
+                ],
+                [
+                  10.0,
+                  1.0
+                ],
+                [
+                  20.0,
+                  0.0
+                ]
+              ],
+              "version": 1
+            },
+            "manifest_sha256": "93ae4a5928fe707e4a96f35f9c726c8e6c559adef7411bf86653efd239d21ce0",
+            "readback": {
+              "samples_si": [
+                [
+                  0.0,
+                  0.0
+                ],
+                [
+                  10.0,
+                  1.0
+                ],
+                [
+                  20.0,
+                  0.0
+                ]
+              ],
+              "axis_units": "s",
+              "value_units": "W",
+              "native_axis_unit": "Second",
+              "native_value_unit": "Watt",
+              "interpolation": "linear",
+              "outside_table": "undefined"
+            },
+            "binding_semantics": "not_inspected",
+            "numerical_acceptance": "not_established",
+            "sample_count": 3,
+            "axis_range_si": [
+              0.0,
+              20.0
+            ],
+            "field": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_f1216b3e79c64ba39b646d8965d3561e",
+              "kind": "simulation_field",
+              "name": "MCP_POWER_TIME",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_17b29769ad13417c90dc4cf7df2f53e2",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "17b29769ad13417c90dc4cf7df2f53e2",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-scalar-tables-20260909-r1\\benchmark_1ed9fb624b41_analysis.sim",
+              "journal_id": "MCP_POWER_TIME",
+              "display_name": "MCP_POWER_TIME"
+            }
+          },
+          {
+            "manifest": {
+              "axis": "time",
+              "interpolation": "linear",
+              "name": "MCP_TEMPERATURE_TIME",
+              "outside_table": "undefined",
+              "provenance": "Generic scalar table lifecycle fixture",
+              "quantity": "temperature",
+              "samples": [
+                [
+                  0.0,
+                  293.15
+                ],
+                [
+                  10.0,
+                  303.15
+                ],
+                [
+                  20.0,
+                  293.15
+                ]
+              ],
+              "version": 1
+            },
+            "manifest_sha256": "bbab94a6226b0304db450e165698a1c40eab1357325ff55dbdf9eabc0b76f6dd",
+            "readback": {
+              "samples_si": [
+                [
+                  0.0,
+                  293.15
+                ],
+                [
+                  10.0,
+                  303.15
+                ],
+                [
+                  20.0,
+                  293.15
+                ]
+              ],
+              "axis_units": "s",
+              "value_units": "K",
+              "native_axis_unit": "Second",
+              "native_value_unit": "Kelvin",
+              "interpolation": "linear",
+              "outside_table": "undefined"
+            },
+            "binding_semantics": "not_inspected",
+            "numerical_acceptance": "not_established",
+            "sample_count": 3,
+            "axis_range_si": [
+              0.0,
+              20.0
+            ],
+            "field": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_62ae3517c38c4c1f85d98fd5c0758e24",
+              "kind": "simulation_field",
+              "name": "MCP_TEMPERATURE_TIME",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_17b29769ad13417c90dc4cf7df2f53e2",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "17b29769ad13417c90dc4cf7df2f53e2",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-scalar-tables-20260909-r1\\benchmark_1ed9fb624b41_analysis.sim",
+              "journal_id": "MCP_TEMPERATURE_TIME",
+              "display_name": "MCP_TEMPERATURE_TIME"
+            }
+          }
+        ],
+        "total": 3,
+        "next_offset": null,
+        "result_freshness": "not_verified",
+        "operation_id": "op_f986042db35a4e298e7098f832bbfc15",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "not_applicable"
+      },
+      "isError": false
+    },
+    "save": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"saved\": true, \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-scalar-tables-20260909-r1\\\\benchmark_1ed9fb624b41_analysis.sim\", \"file\": {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-scalar-tables-20260909-r1\\\\benchmark_1ed9fb624b41_analysis.sim\", \"bytes\": 7656577, \"sha256\": \"904863a7ceca850f8bdc3e36c89b05e2c8b02b804e888c9f6dae4314cd42e9de\"}, \"previous_file\": {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-scalar-tables-20260909-r1\\\\benchmark_1ed9fb624b41_analysis.sim\", \"bytes\": 7639184, \"sha256\": \"5e5a6da4c54940a5912c139d67cc150acb0a1225991f39c8addf651a2bcada89\"}, \"backup_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\simcenter-save-backups\\\\489da6a2ed8746eda6f57752bbb7e596\\\\benchmark_1ed9fb624b41_analysis.sim\", \"saved_components\": false, \"closed\": false, \"other_modified_flags_unchanged\": true, \"result_freshness\": \"not_verified\", \"operation_id\": \"op_2b9647b989784aa3b29d02de0fb325e5\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "saved": true,
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-scalar-tables-20260909-r1\\benchmark_1ed9fb624b41_analysis.sim",
+        "file": {
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-scalar-tables-20260909-r1\\benchmark_1ed9fb624b41_analysis.sim",
+          "bytes": 7656577,
+          "sha256": "904863a7ceca850f8bdc3e36c89b05e2c8b02b804e888c9f6dae4314cd42e9de"
+        },
+        "previous_file": {
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-scalar-tables-20260909-r1\\benchmark_1ed9fb624b41_analysis.sim",
+          "bytes": 7639184,
+          "sha256": "5e5a6da4c54940a5912c139d67cc150acb0a1225991f39c8addf651a2bcada89"
+        },
+        "backup_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-save-backups\\489da6a2ed8746eda6f57752bbb7e596\\benchmark_1ed9fb624b41_analysis.sim",
+        "saved_components": false,
+        "closed": false,
+        "other_modified_flags_unchanged": true,
+        "result_freshness": "not_verified",
+        "operation_id": "op_2b9647b989784aa3b29d02de0fb325e5",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed"
+      },
+      "isError": false
+    },
+    "close": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [\"NX may unload unused dependencies; reacquire document references before continuing\"], \"units\": null, \"closed_parts\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_de963959d773443baa3b791b55c05b8d\", \"kind\": \"part\", \"name\": \"benchmark_1ed9fb624b41_analysis\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_17b29769ad13417c90dc4cf7df2f53e2\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"17b29769ad13417c90dc4cf7df2f53e2\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-scalar-tables-20260909-r1\\\\benchmark_1ed9fb624b41_analysis.sim\", \"journal_id\": \"benchmark_1ed9fb624b41_analysis\", \"display_name\": \"benchmark_1ed9fb624b41_analysis\"}], \"closed_count\": 1, \"remaining_count\": 157, \"saved\": false, \"discarded_modified_parts\": false, \"work_path\": null, \"display_path\": null, \"operation_id\": \"op_986b48e23266442e8c1cb9629cc70bc4\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [
+          "NX may unload unused dependencies; reacquire document references before continuing"
+        ],
+        "units": null,
+        "closed_parts": [
+          {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_de963959d773443baa3b791b55c05b8d",
+            "kind": "part",
+            "name": "benchmark_1ed9fb624b41_analysis",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_17b29769ad13417c90dc4cf7df2f53e2",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "17b29769ad13417c90dc4cf7df2f53e2",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-scalar-tables-20260909-r1\\benchmark_1ed9fb624b41_analysis.sim",
+            "journal_id": "benchmark_1ed9fb624b41_analysis",
+            "display_name": "benchmark_1ed9fb624b41_analysis"
+          }
+        ],
+        "closed_count": 1,
+        "remaining_count": 157,
+        "saved": false,
+        "discarded_modified_parts": false,
+        "work_path": null,
+        "display_path": null,
+        "operation_id": "op_986b48e23266442e8c1cb9629cc70bc4",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed"
+      },
+      "isError": false
+    },
+    "stale": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"error\", \"warnings\": [], \"units\": null, \"code\": \"NX_OBJECT_STALE\", \"message\": \"Object reference is not valid: obj_20bc234ffa5249ceb4fb4d82b993c626_de963959d773443baa3b791b55c05b8d\", \"retryable\": false, \"details\": {\"operation_id\": \"op_806301722e1c43ea9c8258fe8aff1e03\", \"mutation_outcome\": \"not_started\"}}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "error",
+        "warnings": [],
+        "units": null,
+        "code": "NX_OBJECT_STALE",
+        "message": "Object reference is not valid: obj_20bc234ffa5249ceb4fb4d82b993c626_de963959d773443baa3b791b55c05b8d",
+        "retryable": false,
+        "details": {
+          "operation_id": "op_806301722e1c43ea9c8258fe8aff1e03",
+          "mutation_outcome": "not_started"
+        }
+      },
+      "isError": true
+    },
+    "reopen": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [\"Document has unsaved native state; inspect and explicitly save approved analysis changes before preparing a solve\"], \"units\": \"mm\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_4a591e231cee4cdbafd94afd46915f7e\", \"kind\": \"part\", \"name\": \"benchmark_1ed9fb624b41_analysis\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_0b9abff2741c45b89f994d56c94cf81f\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"0b9abff2741c45b89f994d56c94cf81f\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-scalar-tables-20260909-r1\\\\benchmark_1ed9fb624b41_analysis.sim\", \"journal_id\": \"benchmark_1ed9fb624b41_analysis\", \"display_name\": \"benchmark_1ed9fb624b41_analysis\"}, \"coordinate_frame\": \"part_absolute\", \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-scalar-tables-20260909-r1\\\\benchmark_1ed9fb624b41_analysis.sim\", \"already_loaded\": false, \"modified_after_native_open\": true, \"modified_before_activation\": true, \"modified\": true, \"fully_loaded\": true, \"load_issues\": [], \"changed_existing_part_flags\": [], \"application\": \"UG_APP_SFEM\", \"work_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-scalar-tables-20260909-r1\\\\benchmark_1ed9fb624b41_analysis.sim\", \"display_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-scalar-tables-20260909-r1\\\\benchmark_1ed9fb624b41_analysis.sim\", \"saved\": false, \"result_freshness\": \"not_verified\", \"operation_id\": \"op_078181a97afc4a3d857745563575883f\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [
+          "Document has unsaved native state; inspect and explicitly save approved analysis changes before preparing a solve"
+        ],
+        "units": "mm",
+        "document": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_4a591e231cee4cdbafd94afd46915f7e",
+          "kind": "part",
+          "name": "benchmark_1ed9fb624b41_analysis",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_0b9abff2741c45b89f994d56c94cf81f",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "0b9abff2741c45b89f994d56c94cf81f",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-scalar-tables-20260909-r1\\benchmark_1ed9fb624b41_analysis.sim",
+          "journal_id": "benchmark_1ed9fb624b41_analysis",
+          "display_name": "benchmark_1ed9fb624b41_analysis"
+        },
+        "coordinate_frame": "part_absolute",
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-scalar-tables-20260909-r1\\benchmark_1ed9fb624b41_analysis.sim",
+        "already_loaded": false,
+        "modified_after_native_open": true,
+        "modified_before_activation": true,
+        "modified": true,
+        "fully_loaded": true,
+        "load_issues": [],
+        "changed_existing_part_flags": [],
+        "application": "UG_APP_SFEM",
+        "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-scalar-tables-20260909-r1\\benchmark_1ed9fb624b41_analysis.sim",
+        "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-scalar-tables-20260909-r1\\benchmark_1ed9fb624b41_analysis.sim",
+        "saved": false,
+        "result_freshness": "not_verified",
+        "operation_id": "op_078181a97afc4a3d857745563575883f",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed"
+      },
+      "isError": false
+    },
+    "activate": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"application_before\": \"UG_APP_SFEM\", \"application\": \"UG_APP_SFEM\", \"documents\": {\"documents\": [{\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-scalar-tables-20260909-r1\\\\benchmark_1ed9fb624b41_geometry.prt\", \"name\": \"benchmark_1ed9fb624b41_geometry\", \"document_type\": \"Part\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_be27ec22163344d5a81ab4398049daf8\", \"kind\": \"part\", \"name\": \"benchmark_1ed9fb624b41_geometry\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_e46ba4ef58f64ea28768af2bc9dc38f9\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"e46ba4ef58f64ea28768af2bc9dc38f9\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-scalar-tables-20260909-r1\\\\benchmark_1ed9fb624b41_geometry.prt\", \"journal_id\": \"benchmark_1ed9fb624b41_geometry\", \"display_name\": \"benchmark_1ed9fb624b41_geometry\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_geometry.prt\", \"name\": \"benchmark_fd1cae97c9a6_geometry\", \"document_type\": \"Part\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_d30a49a9978e432c8f56916b2ebe6d29\", \"kind\": \"part\", \"name\": \"benchmark_fd1cae97c9a6_geometry\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_566c06f38e7242e488e2c81baf70d488\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"566c06f38e7242e488e2c81baf70d488\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-enclosure-authoring-20260909-r1\\\\benchmark_fd1cae97c9a6_geometry.prt\", \"journal_id\": \"benchmark_fd1cae97c9a6_geometry\", \"display_name\": \"benchmark_fd1cae97c9a6_geometry\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-environment-radiation-20260909-r1\\\\benchmark_5a40b73541f4_geometry.prt\", \"name\": \"benchmark_5a40b73541f4_geometry\", \"document_type\": \"Part\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_7ac03db345054d6f8b46312df3c2e078\", \"kind\": \"part\", \"name\": \"benchmark_5a40b73541f4_geometry\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_c78dfd04aa9043e2bbcba6987ed94bee\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"c78dfd04aa9043e2bbcba6987ed94bee\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-environment-radiation-20260909-r1\\\\benchmark_5a40b73541f4_geometry.prt\", \"journal_id\": \"benchmark_5a40b73541f4_geometry\", \"display_name\": \"benchmark_5a40b73541f4_geometry\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F-convection-environment-20260909-r1\\\\benchmark_c724ac72398e_geometry.prt\", \"name\": \"benchmark_c724ac72398e_geometry\", \"document_type\": \"Part\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_90b2eb845b4f46c39235380406068a5a\", \"kind\": \"part\", \"name\": \"benchmark_c724ac72398e_geometry\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_91e7bec490b3489bb7930073c75ec8f2\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"91e7bec490b3489bb7930073c75ec8f2\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F-convection-environment-20260909-r1\\\\benchmark_c724ac72398e_geometry.prt\", \"journal_id\": \"benchmark_c724ac72398e_geometry\", \"display_name\": \"benchmark_c724ac72398e_geometry\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\B-contact-authoring-20260909-r1\\\\benchmark_47530a89f645_geometry.prt\", \"name\": \"benchmark_47530a89f645_geometry\", \"document_type\": \"Part\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_bb2f6710ffbc4326809913e3b749182e\", \"kind\": \"part\", \"name\": \"benchmark_47530a89f645_geometry\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_b783fcd058374b2a94ca0cfa8ef21e7c\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"b783fcd058374b2a94ca0cfa8ef21e7c\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\B-contact-authoring-20260909-r1\\\\benchmark_47530a89f645_geometry.prt\", \"journal_id\": \"benchmark_47530a89f645_geometry\", \"display_name\": \"benchmark_47530a89f645_geometry\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F4-continuity-20260908-r1\\\\f4_continuity_r1.prt\", \"name\": \"f4_continuity_r1\", \"document_type\": \"Part\", \"modified\": true, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_c25a3d70f02745349aa0e5a30ed1cdc3\", \"kind\": \"part\", \"name\": \"f4_continuity_r1\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_3caab63111b84dd88c89c6e7c0d68c4f\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"3caab63111b84dd88c89c6e7c0d68c4f\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F4-continuity-20260908-r1\\\\f4_continuity_r1.prt\", \"journal_id\": \"f4_continuity_r1\", \"display_name\": \"f4_continuity_r1\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F4-planar-adapter-20260908-r3\\\\f4_r3_curves_inch.prt\", \"name\": \"f4_r3_curves_inch\", \"document_type\": \"Part\", \"modified\": true, \"work\": false, \"display\": false, \"units\": \"inch\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_0b8ef15f18af4a9d9cf136de0c8520cf\", \"kind\": \"part\", \"name\": \"f4_r3_curves_inch\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_37cc7d35aa034fafa3ba78eccf1aad87\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"37cc7d35aa034fafa3ba78eccf1aad87\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F4-planar-adapter-20260908-r3\\\\f4_r3_curves_inch.prt\", \"journal_id\": \"f4_r3_curves_inch\", \"display_name\": \"f4_r3_curves_inch\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F4-planar-adapter-20260908-r3\\\\f4_r3_curves_mm.prt\", \"name\": \"f4_r3_curves_mm\", \"document_type\": \"Part\", \"modified\": true, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_9ba3320fb3674ab4a03b19543521b0c7\", \"kind\": \"part\", \"name\": \"f4_r3_curves_mm\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_e816abd555654d14a99a47ed6cc622e4\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"e816abd555654d14a99a47ed6cc622e4\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F4-planar-adapter-20260908-r3\\\\f4_r3_curves_mm.prt\", \"journal_id\": \"f4_r3_curves_mm\", \"display_name\": \"f4_r3_curves_mm\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F4-planar-adapter-20260908-r1\\\\curves_mm.prt\", \"name\": \"curves_mm\", \"document_type\": \"Part\", \"modified\": true, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_5c5d272b74c24986a838b4344cfbf2b0\", \"kind\": \"part\", \"name\": \"curves_mm\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_68910bef64eb4629b9ee830bf6ffb2fa\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"68910bef64eb4629b9ee830bf6ffb2fa\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\F4-planar-adapter-20260908-r1\\\\curves_mm.prt\", \"journal_id\": \"curves_mm\", \"display_name\": \"curves_mm\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\E-finned-material_contrast-20260908-r1\\\\finned_material_contrast_r1_geometry.prt\", \"name\": \"finned_material_contrast_r1_geometry\", \"document_type\": \"Part\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_c507b17b234e4bf4892d429991b2bda7\", \"kind\": \"part\", \"name\": \"finned_material_contrast_r1_geometry\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_cb81d195560643d4bc2723b2fa68c178\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"cb81d195560643d4bc2723b2fa68c178\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\E-finned-material_contrast-20260908-r1\\\\finned_material_contrast_r1_geometry.prt\", \"journal_id\": \"finned_material_contrast_r1_geometry\", \"display_name\": \"finned_material_contrast_r1_geometry\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\E-finned-stock_copy-20260908-r1\\\\finned_stock_copy_r1_geometry.prt\", \"name\": \"finned_stock_copy_r1_geometry\", \"document_type\": \"Part\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_f08e03433da046239d930b69653c8fc8\", \"kind\": \"part\", \"name\": \"finned_stock_copy_r1_geometry\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_93e031f2785944cd9f2831131ef20482\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"93e031f2785944cd9f2831131ef20482\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\E-finned-stock_copy-20260908-r1\\\\finned_stock_copy_r1_geometry.prt\", \"journal_id\": \"finned_stock_copy_r1_geometry\", \"display_name\": \"finned_stock_copy_r1_geometry\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\E-finned-stock_material-20260908-r1\\\\finned_stock_material_r1_geometry.prt\", \"name\": \"finned_stock_material_r1_geometry\", \"document_type\": \"Part\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_67c94404d4b94a61b710372fb2f21fac\", \"kind\": \"part\", \"name\": \"finned_stock_material_r1_geometry\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_19f8d315198045c987c2b13934cf1f20\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"19f8d315198045c987c2b13934cf1f20\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\E-finned-stock_material-20260908-r1\\\\finned_stock_material_r1_geometry.prt\", \"journal_id\": \"finned_stock_material_r1_geometry\", \"display_name\": \"finned_stock_material_r1_geometry\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\E-finned-layer_fine-20260908-r1\\\\finned_layer_fine_r1_geometry.prt\", \"name\": \"finned_layer_fine_r1_geometry\", \"document_type\": \"Part\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_a0a7bdaf186a465c839237a8cbb4c116\", \"kind\": \"part\", \"name\": \"finned_layer_fine_r1_geometry\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_f69ac53dcc7b4264b102c0a57d2c3222\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"f69ac53dcc7b4264b102c0a57d2c3222\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\E-finned-layer_fine-20260908-r1\\\\finned_layer_fine_r1_geometry.prt\", \"journal_id\": \"finned_layer_fine_r1_geometry\", \"display_name\": \"finned_layer_fine_r1_geometry\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\E-finned-layer_coarse-20260908-r1\\\\finned_layer_coarse_r1_geometry.prt\", \"name\": \"finned_layer_coarse_r1_geometry\", \"document_type\": \"Part\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_bca3cf66d9af4988bb745dc254fd94fa\", \"kind\": \"part\", \"name\": \"finned_layer_coarse_r1_geometry\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_00a60cf05a7b4b51b720e0d9815d670b\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"00a60cf05a7b4b51b720e0d9815d670b\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\E-finned-layer_coarse-20260908-r1\\\\finned_layer_coarse_r1_geometry.prt\", \"journal_id\": \"finned_layer_coarse_r1_geometry\", \"display_name\": \"finned_layer_coarse_r1_geometry\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\E-finned-fine-20260908-r1\\\\finned_fine_r1_geometry.prt\", \"name\": \"finned_fine_r1_geometry\", \"document_type\": \"Part\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_04ef8c6e3f924ddd995f93df7902163c\", \"kind\": \"part\", \"name\": \"finned_fine_r1_geometry\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_3ae6d7def22b4153877566e07181e852\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"3ae6d7def22b4153877566e07181e852\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\E-finned-fine-20260908-r1\\\\finned_fine_r1_geometry.prt\", \"journal_id\": \"finned_fine_r1_geometry\", \"display_name\": \"finned_fine_r1_geometry\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\E-finned-refined-20260908-r1\\\\finned_refined_r1_geometry.prt\", \"name\": \"finned_refined_r1_geometry\", \"document_type\": \"Part\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_e60716f5540b496fa945545e58efef5b\", \"kind\": \"part\", \"name\": \"finned_refined_r1_geometry\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_a9ce621475814f119c2242bb1c5ed2ed\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"a9ce621475814f119c2242bb1c5ed2ed\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\E-finned-refined-20260908-r1\\\\finned_refined_r1_geometry.prt\", \"journal_id\": \"finned_refined_r1_geometry\", \"display_name\": \"finned_refined_r1_geometry\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\E-finned-baseline-20260908-r1\\\\finned_r1_geometry.prt\", \"name\": \"finned_r1_geometry\", \"document_type\": \"Part\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_42d10d417e064e809a9902f8f71facaf\", \"kind\": \"part\", \"name\": \"finned_r1_geometry\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_7608130b6bcd4fc39a1021e0f7e25972\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"7608130b6bcd4fc39a1021e0f7e25972\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\E-finned-baseline-20260908-r1\\\\finned_r1_geometry.prt\", \"journal_id\": \"finned_r1_geometry\", \"display_name\": \"finned_r1_geometry\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\E-defaults-public-20260908-r1\\\\benchmark_c97edffd963e_geometry.prt\", \"name\": \"benchmark_c97edffd963e_geometry\", \"document_type\": \"Part\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_4dc956b1b3d94d3e910346594129460d\", \"kind\": \"part\", \"name\": \"benchmark_c97edffd963e_geometry\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_b36f75628a314476a739e1f67f65fd16\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"b36f75628a314476a739e1f67f65fd16\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\E-defaults-public-20260908-r1\\\\benchmark_c97edffd963e_geometry.prt\", \"journal_id\": \"benchmark_c97edffd963e_geometry\", \"display_name\": \"benchmark_c97edffd963e_geometry\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\E-development-20260908-r1\\\\benchmark_99f1fecb220c_geometry.prt\", \"name\": \"benchmark_99f1fecb220c_geometry\", \"document_type\": \"Part\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_2815b049056c4121bd7eb99da6a3e9df\", \"kind\": \"part\", \"name\": \"benchmark_99f1fecb220c_geometry\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_e61d0a8036bb410d825e9286a560032f\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"e61d0a8036bb410d825e9286a560032f\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\E-development-20260908-r1\\\\benchmark_99f1fecb220c_geometry.prt\", \"journal_id\": \"benchmark_99f1fecb220c_geometry\", \"display_name\": \"benchmark_99f1fecb220c_geometry\"}}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\distributed-heat-public-20260908-r2\\\\benchmark_fcce35d5b974_geometry.prt\", \"name\": \"benchmark_fcce35d5b974_geometry\", \"document_type\": \"Part\", \"modified\": false, \"work\": false, \"display\": false, \"units\": \"mm\", \"coordinate_frame\": \"part_absolute\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_5b7fdd35652748e08ba946257e76aaac\", \"kind\": \"part\", \"name\": \"benchmark_fcce35d5b974_geometry\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_f52eb10e2ae5492197c48c95c128c3f4\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"f52eb10e2ae5492197c48c95c128c3f4\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\distributed-heat-public-20260908-r2\\\\benchmark_fcce35d5b974_geometry.prt\", \"journal_id\": \"benchmark_fcce35d5b974_geometry\", \"display_name\": \"benchmark_fcce35d5b974_geometry\"}}], \"total\": 158, \"next_offset\": 20}, \"saved\": false, \"operation_id\": \"op_581933f1cf344cf58e2e2d96dbade329\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "application_before": "UG_APP_SFEM",
+        "application": "UG_APP_SFEM",
+        "documents": {
+          "documents": [
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-scalar-tables-20260909-r1\\benchmark_1ed9fb624b41_geometry.prt",
+              "name": "benchmark_1ed9fb624b41_geometry",
+              "document_type": "Part",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_be27ec22163344d5a81ab4398049daf8",
+                "kind": "part",
+                "name": "benchmark_1ed9fb624b41_geometry",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_e46ba4ef58f64ea28768af2bc9dc38f9",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "e46ba4ef58f64ea28768af2bc9dc38f9",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-scalar-tables-20260909-r1\\benchmark_1ed9fb624b41_geometry.prt",
+                "journal_id": "benchmark_1ed9fb624b41_geometry",
+                "display_name": "benchmark_1ed9fb624b41_geometry"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_geometry.prt",
+              "name": "benchmark_fd1cae97c9a6_geometry",
+              "document_type": "Part",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_d30a49a9978e432c8f56916b2ebe6d29",
+                "kind": "part",
+                "name": "benchmark_fd1cae97c9a6_geometry",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_566c06f38e7242e488e2c81baf70d488",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "566c06f38e7242e488e2c81baf70d488",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-enclosure-authoring-20260909-r1\\benchmark_fd1cae97c9a6_geometry.prt",
+                "journal_id": "benchmark_fd1cae97c9a6_geometry",
+                "display_name": "benchmark_fd1cae97c9a6_geometry"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-environment-radiation-20260909-r1\\benchmark_5a40b73541f4_geometry.prt",
+              "name": "benchmark_5a40b73541f4_geometry",
+              "document_type": "Part",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_7ac03db345054d6f8b46312df3c2e078",
+                "kind": "part",
+                "name": "benchmark_5a40b73541f4_geometry",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_c78dfd04aa9043e2bbcba6987ed94bee",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "c78dfd04aa9043e2bbcba6987ed94bee",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-environment-radiation-20260909-r1\\benchmark_5a40b73541f4_geometry.prt",
+                "journal_id": "benchmark_5a40b73541f4_geometry",
+                "display_name": "benchmark_5a40b73541f4_geometry"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-environment-20260909-r1\\benchmark_c724ac72398e_geometry.prt",
+              "name": "benchmark_c724ac72398e_geometry",
+              "document_type": "Part",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_90b2eb845b4f46c39235380406068a5a",
+                "kind": "part",
+                "name": "benchmark_c724ac72398e_geometry",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_91e7bec490b3489bb7930073c75ec8f2",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "91e7bec490b3489bb7930073c75ec8f2",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-environment-20260909-r1\\benchmark_c724ac72398e_geometry.prt",
+                "journal_id": "benchmark_c724ac72398e_geometry",
+                "display_name": "benchmark_c724ac72398e_geometry"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\B-contact-authoring-20260909-r1\\benchmark_47530a89f645_geometry.prt",
+              "name": "benchmark_47530a89f645_geometry",
+              "document_type": "Part",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_bb2f6710ffbc4326809913e3b749182e",
+                "kind": "part",
+                "name": "benchmark_47530a89f645_geometry",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_b783fcd058374b2a94ca0cfa8ef21e7c",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "b783fcd058374b2a94ca0cfa8ef21e7c",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\B-contact-authoring-20260909-r1\\benchmark_47530a89f645_geometry.prt",
+                "journal_id": "benchmark_47530a89f645_geometry",
+                "display_name": "benchmark_47530a89f645_geometry"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F4-continuity-20260908-r1\\f4_continuity_r1.prt",
+              "name": "f4_continuity_r1",
+              "document_type": "Part",
+              "modified": true,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_c25a3d70f02745349aa0e5a30ed1cdc3",
+                "kind": "part",
+                "name": "f4_continuity_r1",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_3caab63111b84dd88c89c6e7c0d68c4f",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "3caab63111b84dd88c89c6e7c0d68c4f",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F4-continuity-20260908-r1\\f4_continuity_r1.prt",
+                "journal_id": "f4_continuity_r1",
+                "display_name": "f4_continuity_r1"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F4-planar-adapter-20260908-r3\\f4_r3_curves_inch.prt",
+              "name": "f4_r3_curves_inch",
+              "document_type": "Part",
+              "modified": true,
+              "work": false,
+              "display": false,
+              "units": "inch",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_0b8ef15f18af4a9d9cf136de0c8520cf",
+                "kind": "part",
+                "name": "f4_r3_curves_inch",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_37cc7d35aa034fafa3ba78eccf1aad87",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "37cc7d35aa034fafa3ba78eccf1aad87",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F4-planar-adapter-20260908-r3\\f4_r3_curves_inch.prt",
+                "journal_id": "f4_r3_curves_inch",
+                "display_name": "f4_r3_curves_inch"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F4-planar-adapter-20260908-r3\\f4_r3_curves_mm.prt",
+              "name": "f4_r3_curves_mm",
+              "document_type": "Part",
+              "modified": true,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_9ba3320fb3674ab4a03b19543521b0c7",
+                "kind": "part",
+                "name": "f4_r3_curves_mm",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_e816abd555654d14a99a47ed6cc622e4",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "e816abd555654d14a99a47ed6cc622e4",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F4-planar-adapter-20260908-r3\\f4_r3_curves_mm.prt",
+                "journal_id": "f4_r3_curves_mm",
+                "display_name": "f4_r3_curves_mm"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F4-planar-adapter-20260908-r1\\curves_mm.prt",
+              "name": "curves_mm",
+              "document_type": "Part",
+              "modified": true,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_5c5d272b74c24986a838b4344cfbf2b0",
+                "kind": "part",
+                "name": "curves_mm",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_68910bef64eb4629b9ee830bf6ffb2fa",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "68910bef64eb4629b9ee830bf6ffb2fa",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F4-planar-adapter-20260908-r1\\curves_mm.prt",
+                "journal_id": "curves_mm",
+                "display_name": "curves_mm"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-material_contrast-20260908-r1\\finned_material_contrast_r1_geometry.prt",
+              "name": "finned_material_contrast_r1_geometry",
+              "document_type": "Part",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_c507b17b234e4bf4892d429991b2bda7",
+                "kind": "part",
+                "name": "finned_material_contrast_r1_geometry",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_cb81d195560643d4bc2723b2fa68c178",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "cb81d195560643d4bc2723b2fa68c178",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-material_contrast-20260908-r1\\finned_material_contrast_r1_geometry.prt",
+                "journal_id": "finned_material_contrast_r1_geometry",
+                "display_name": "finned_material_contrast_r1_geometry"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-stock_copy-20260908-r1\\finned_stock_copy_r1_geometry.prt",
+              "name": "finned_stock_copy_r1_geometry",
+              "document_type": "Part",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_f08e03433da046239d930b69653c8fc8",
+                "kind": "part",
+                "name": "finned_stock_copy_r1_geometry",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_93e031f2785944cd9f2831131ef20482",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "93e031f2785944cd9f2831131ef20482",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-stock_copy-20260908-r1\\finned_stock_copy_r1_geometry.prt",
+                "journal_id": "finned_stock_copy_r1_geometry",
+                "display_name": "finned_stock_copy_r1_geometry"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-stock_material-20260908-r1\\finned_stock_material_r1_geometry.prt",
+              "name": "finned_stock_material_r1_geometry",
+              "document_type": "Part",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_67c94404d4b94a61b710372fb2f21fac",
+                "kind": "part",
+                "name": "finned_stock_material_r1_geometry",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_19f8d315198045c987c2b13934cf1f20",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "19f8d315198045c987c2b13934cf1f20",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-stock_material-20260908-r1\\finned_stock_material_r1_geometry.prt",
+                "journal_id": "finned_stock_material_r1_geometry",
+                "display_name": "finned_stock_material_r1_geometry"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer_fine-20260908-r1\\finned_layer_fine_r1_geometry.prt",
+              "name": "finned_layer_fine_r1_geometry",
+              "document_type": "Part",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_a0a7bdaf186a465c839237a8cbb4c116",
+                "kind": "part",
+                "name": "finned_layer_fine_r1_geometry",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_f69ac53dcc7b4264b102c0a57d2c3222",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "f69ac53dcc7b4264b102c0a57d2c3222",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer_fine-20260908-r1\\finned_layer_fine_r1_geometry.prt",
+                "journal_id": "finned_layer_fine_r1_geometry",
+                "display_name": "finned_layer_fine_r1_geometry"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer_coarse-20260908-r1\\finned_layer_coarse_r1_geometry.prt",
+              "name": "finned_layer_coarse_r1_geometry",
+              "document_type": "Part",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_bca3cf66d9af4988bb745dc254fd94fa",
+                "kind": "part",
+                "name": "finned_layer_coarse_r1_geometry",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_00a60cf05a7b4b51b720e0d9815d670b",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "00a60cf05a7b4b51b720e0d9815d670b",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-layer_coarse-20260908-r1\\finned_layer_coarse_r1_geometry.prt",
+                "journal_id": "finned_layer_coarse_r1_geometry",
+                "display_name": "finned_layer_coarse_r1_geometry"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-fine-20260908-r1\\finned_fine_r1_geometry.prt",
+              "name": "finned_fine_r1_geometry",
+              "document_type": "Part",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_04ef8c6e3f924ddd995f93df7902163c",
+                "kind": "part",
+                "name": "finned_fine_r1_geometry",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_3ae6d7def22b4153877566e07181e852",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "3ae6d7def22b4153877566e07181e852",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-fine-20260908-r1\\finned_fine_r1_geometry.prt",
+                "journal_id": "finned_fine_r1_geometry",
+                "display_name": "finned_fine_r1_geometry"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-refined-20260908-r1\\finned_refined_r1_geometry.prt",
+              "name": "finned_refined_r1_geometry",
+              "document_type": "Part",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_e60716f5540b496fa945545e58efef5b",
+                "kind": "part",
+                "name": "finned_refined_r1_geometry",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_a9ce621475814f119c2242bb1c5ed2ed",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "a9ce621475814f119c2242bb1c5ed2ed",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-refined-20260908-r1\\finned_refined_r1_geometry.prt",
+                "journal_id": "finned_refined_r1_geometry",
+                "display_name": "finned_refined_r1_geometry"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-baseline-20260908-r1\\finned_r1_geometry.prt",
+              "name": "finned_r1_geometry",
+              "document_type": "Part",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_42d10d417e064e809a9902f8f71facaf",
+                "kind": "part",
+                "name": "finned_r1_geometry",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_7608130b6bcd4fc39a1021e0f7e25972",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "7608130b6bcd4fc39a1021e0f7e25972",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-baseline-20260908-r1\\finned_r1_geometry.prt",
+                "journal_id": "finned_r1_geometry",
+                "display_name": "finned_r1_geometry"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-defaults-public-20260908-r1\\benchmark_c97edffd963e_geometry.prt",
+              "name": "benchmark_c97edffd963e_geometry",
+              "document_type": "Part",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_4dc956b1b3d94d3e910346594129460d",
+                "kind": "part",
+                "name": "benchmark_c97edffd963e_geometry",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_b36f75628a314476a739e1f67f65fd16",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "b36f75628a314476a739e1f67f65fd16",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-defaults-public-20260908-r1\\benchmark_c97edffd963e_geometry.prt",
+                "journal_id": "benchmark_c97edffd963e_geometry",
+                "display_name": "benchmark_c97edffd963e_geometry"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-development-20260908-r1\\benchmark_99f1fecb220c_geometry.prt",
+              "name": "benchmark_99f1fecb220c_geometry",
+              "document_type": "Part",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_2815b049056c4121bd7eb99da6a3e9df",
+                "kind": "part",
+                "name": "benchmark_99f1fecb220c_geometry",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_e61d0a8036bb410d825e9286a560032f",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "e61d0a8036bb410d825e9286a560032f",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-development-20260908-r1\\benchmark_99f1fecb220c_geometry.prt",
+                "journal_id": "benchmark_99f1fecb220c_geometry",
+                "display_name": "benchmark_99f1fecb220c_geometry"
+              }
+            },
+            {
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\distributed-heat-public-20260908-r2\\benchmark_fcce35d5b974_geometry.prt",
+              "name": "benchmark_fcce35d5b974_geometry",
+              "document_type": "Part",
+              "modified": false,
+              "work": false,
+              "display": false,
+              "units": "mm",
+              "coordinate_frame": "part_absolute",
+              "document": {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_5b7fdd35652748e08ba946257e76aaac",
+                "kind": "part",
+                "name": "benchmark_fcce35d5b974_geometry",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_f52eb10e2ae5492197c48c95c128c3f4",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "f52eb10e2ae5492197c48c95c128c3f4",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\distributed-heat-public-20260908-r2\\benchmark_fcce35d5b974_geometry.prt",
+                "journal_id": "benchmark_fcce35d5b974_geometry",
+                "display_name": "benchmark_fcce35d5b974_geometry"
+              }
+            }
+          ],
+          "total": 158,
+          "next_offset": 20
+        },
+        "saved": false,
+        "operation_id": "op_581933f1cf344cf58e2e2d96dbade329",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed"
+      },
+      "isError": false
+    },
+    "after": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"tables\": [{\"manifest\": {\"axis\": \"temperature\", \"interpolation\": \"linear\", \"name\": \"MCP_CONDUCTIVITY_TEMPERATURE\", \"outside_table\": \"undefined\", \"provenance\": \"Generic scalar table lifecycle fixture\", \"quantity\": \"conductivity\", \"samples\": [[273.15, 100.0], [293.15, 150.0], [313.15, 200.0]], \"version\": 1}, \"manifest_sha256\": \"ccaa04f4b4f7f0dfe08f71964c77ebdbb2bef2b22a9daa799c72793fb50155eb\", \"readback\": {\"samples_si\": [[273.15, 100.0], [293.15, 150.0], [313.15, 200.0]], \"axis_units\": \"K\", \"value_units\": \"W/(m K)\", \"native_axis_unit\": \"Celsius\", \"native_value_unit\": \"ThermalConductivity_Metric3\", \"interpolation\": \"linear\", \"outside_table\": \"undefined\"}, \"binding_semantics\": \"not_inspected\", \"numerical_acceptance\": \"not_established\", \"sample_count\": 3, \"axis_range_si\": [273.15, 313.15], \"field\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_c3b183d2ee0743e2b45bce6f6a71f47a\", \"kind\": \"simulation_field\", \"name\": \"MCP_CONDUCTIVITY_TEMPERATURE\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_0b9abff2741c45b89f994d56c94cf81f\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"0b9abff2741c45b89f994d56c94cf81f\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-scalar-tables-20260909-r1\\\\benchmark_1ed9fb624b41_analysis.sim\", \"journal_id\": \"MCP_CONDUCTIVITY_TEMPERATURE\", \"display_name\": \"MCP_CONDUCTIVITY_TEMPERATURE\"}}, {\"manifest\": {\"axis\": \"time\", \"interpolation\": \"linear\", \"name\": \"MCP_POWER_TIME\", \"outside_table\": \"undefined\", \"provenance\": \"Generic scalar table lifecycle fixture\", \"quantity\": \"power\", \"samples\": [[0.0, 0.0], [10.0, 1.0], [20.0, 0.0]], \"version\": 1}, \"manifest_sha256\": \"93ae4a5928fe707e4a96f35f9c726c8e6c559adef7411bf86653efd239d21ce0\", \"readback\": {\"samples_si\": [[0.0, 0.0], [10.0, 1.0], [20.0, 0.0]], \"axis_units\": \"s\", \"value_units\": \"W\", \"native_axis_unit\": \"Second\", \"native_value_unit\": \"Watt\", \"interpolation\": \"linear\", \"outside_table\": \"undefined\"}, \"binding_semantics\": \"not_inspected\", \"numerical_acceptance\": \"not_established\", \"sample_count\": 3, \"axis_range_si\": [0.0, 20.0], \"field\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_3467cc1e0b544e158cc81505f253c714\", \"kind\": \"simulation_field\", \"name\": \"MCP_POWER_TIME\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_0b9abff2741c45b89f994d56c94cf81f\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"0b9abff2741c45b89f994d56c94cf81f\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-scalar-tables-20260909-r1\\\\benchmark_1ed9fb624b41_analysis.sim\", \"journal_id\": \"MCP_POWER_TIME\", \"display_name\": \"MCP_POWER_TIME\"}}, {\"manifest\": {\"axis\": \"time\", \"interpolation\": \"linear\", \"name\": \"MCP_TEMPERATURE_TIME\", \"outside_table\": \"undefined\", \"provenance\": \"Generic scalar table lifecycle fixture\", \"quantity\": \"temperature\", \"samples\": [[0.0, 293.15], [10.0, 303.15], [20.0, 293.15]], \"version\": 1}, \"manifest_sha256\": \"bbab94a6226b0304db450e165698a1c40eab1357325ff55dbdf9eabc0b76f6dd\", \"readback\": {\"samples_si\": [[0.0, 293.15], [10.0, 303.15], [20.0, 293.15]], \"axis_units\": \"s\", \"value_units\": \"K\", \"native_axis_unit\": \"Second\", \"native_value_unit\": \"Kelvin\", \"interpolation\": \"linear\", \"outside_table\": \"undefined\"}, \"binding_semantics\": \"not_inspected\", \"numerical_acceptance\": \"not_established\", \"sample_count\": 3, \"axis_range_si\": [0.0, 20.0], \"field\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_0267b4fe1679402e975c380006767d9d\", \"kind\": \"simulation_field\", \"name\": \"MCP_TEMPERATURE_TIME\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_0b9abff2741c45b89f994d56c94cf81f\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"0b9abff2741c45b89f994d56c94cf81f\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\T-scalar-tables-20260909-r1\\\\benchmark_1ed9fb624b41_analysis.sim\", \"journal_id\": \"MCP_TEMPERATURE_TIME\", \"display_name\": \"MCP_TEMPERATURE_TIME\"}}], \"total\": 3, \"next_offset\": null, \"result_freshness\": \"not_verified\", \"operation_id\": \"op_ae40361572904964bdf5e3c849cc64b6\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "tables": [
+          {
+            "manifest": {
+              "axis": "temperature",
+              "interpolation": "linear",
+              "name": "MCP_CONDUCTIVITY_TEMPERATURE",
+              "outside_table": "undefined",
+              "provenance": "Generic scalar table lifecycle fixture",
+              "quantity": "conductivity",
+              "samples": [
+                [
+                  273.15,
+                  100.0
+                ],
+                [
+                  293.15,
+                  150.0
+                ],
+                [
+                  313.15,
+                  200.0
+                ]
+              ],
+              "version": 1
+            },
+            "manifest_sha256": "ccaa04f4b4f7f0dfe08f71964c77ebdbb2bef2b22a9daa799c72793fb50155eb",
+            "readback": {
+              "samples_si": [
+                [
+                  273.15,
+                  100.0
+                ],
+                [
+                  293.15,
+                  150.0
+                ],
+                [
+                  313.15,
+                  200.0
+                ]
+              ],
+              "axis_units": "K",
+              "value_units": "W/(m K)",
+              "native_axis_unit": "Celsius",
+              "native_value_unit": "ThermalConductivity_Metric3",
+              "interpolation": "linear",
+              "outside_table": "undefined"
+            },
+            "binding_semantics": "not_inspected",
+            "numerical_acceptance": "not_established",
+            "sample_count": 3,
+            "axis_range_si": [
+              273.15,
+              313.15
+            ],
+            "field": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_c3b183d2ee0743e2b45bce6f6a71f47a",
+              "kind": "simulation_field",
+              "name": "MCP_CONDUCTIVITY_TEMPERATURE",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_0b9abff2741c45b89f994d56c94cf81f",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "0b9abff2741c45b89f994d56c94cf81f",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-scalar-tables-20260909-r1\\benchmark_1ed9fb624b41_analysis.sim",
+              "journal_id": "MCP_CONDUCTIVITY_TEMPERATURE",
+              "display_name": "MCP_CONDUCTIVITY_TEMPERATURE"
+            }
+          },
+          {
+            "manifest": {
+              "axis": "time",
+              "interpolation": "linear",
+              "name": "MCP_POWER_TIME",
+              "outside_table": "undefined",
+              "provenance": "Generic scalar table lifecycle fixture",
+              "quantity": "power",
+              "samples": [
+                [
+                  0.0,
+                  0.0
+                ],
+                [
+                  10.0,
+                  1.0
+                ],
+                [
+                  20.0,
+                  0.0
+                ]
+              ],
+              "version": 1
+            },
+            "manifest_sha256": "93ae4a5928fe707e4a96f35f9c726c8e6c559adef7411bf86653efd239d21ce0",
+            "readback": {
+              "samples_si": [
+                [
+                  0.0,
+                  0.0
+                ],
+                [
+                  10.0,
+                  1.0
+                ],
+                [
+                  20.0,
+                  0.0
+                ]
+              ],
+              "axis_units": "s",
+              "value_units": "W",
+              "native_axis_unit": "Second",
+              "native_value_unit": "Watt",
+              "interpolation": "linear",
+              "outside_table": "undefined"
+            },
+            "binding_semantics": "not_inspected",
+            "numerical_acceptance": "not_established",
+            "sample_count": 3,
+            "axis_range_si": [
+              0.0,
+              20.0
+            ],
+            "field": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_3467cc1e0b544e158cc81505f253c714",
+              "kind": "simulation_field",
+              "name": "MCP_POWER_TIME",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_0b9abff2741c45b89f994d56c94cf81f",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "0b9abff2741c45b89f994d56c94cf81f",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-scalar-tables-20260909-r1\\benchmark_1ed9fb624b41_analysis.sim",
+              "journal_id": "MCP_POWER_TIME",
+              "display_name": "MCP_POWER_TIME"
+            }
+          },
+          {
+            "manifest": {
+              "axis": "time",
+              "interpolation": "linear",
+              "name": "MCP_TEMPERATURE_TIME",
+              "outside_table": "undefined",
+              "provenance": "Generic scalar table lifecycle fixture",
+              "quantity": "temperature",
+              "samples": [
+                [
+                  0.0,
+                  293.15
+                ],
+                [
+                  10.0,
+                  303.15
+                ],
+                [
+                  20.0,
+                  293.15
+                ]
+              ],
+              "version": 1
+            },
+            "manifest_sha256": "bbab94a6226b0304db450e165698a1c40eab1357325ff55dbdf9eabc0b76f6dd",
+            "readback": {
+              "samples_si": [
+                [
+                  0.0,
+                  293.15
+                ],
+                [
+                  10.0,
+                  303.15
+                ],
+                [
+                  20.0,
+                  293.15
+                ]
+              ],
+              "axis_units": "s",
+              "value_units": "K",
+              "native_axis_unit": "Second",
+              "native_value_unit": "Kelvin",
+              "interpolation": "linear",
+              "outside_table": "undefined"
+            },
+            "binding_semantics": "not_inspected",
+            "numerical_acceptance": "not_established",
+            "sample_count": 3,
+            "axis_range_si": [
+              0.0,
+              20.0
+            ],
+            "field": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_0267b4fe1679402e975c380006767d9d",
+              "kind": "simulation_field",
+              "name": "MCP_TEMPERATURE_TIME",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_0b9abff2741c45b89f994d56c94cf81f",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "0b9abff2741c45b89f994d56c94cf81f",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-scalar-tables-20260909-r1\\benchmark_1ed9fb624b41_analysis.sim",
+              "journal_id": "MCP_TEMPERATURE_TIME",
+              "display_name": "MCP_TEMPERATURE_TIME"
+            }
+          }
+        ],
+        "total": 3,
+        "next_offset": null,
+        "result_freshness": "not_verified",
+        "operation_id": "op_ae40361572904964bdf5e3c849cc64b6",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "not_applicable"
+      },
+      "isError": false
+    }
+  },
+  "schemas": [
+    {
+      "name": "nx_sim_scalar_table",
+      "title": null,
+      "description": "Create a registered native 1D thermal field table in the active millimeter SIM. samples contains 2..1000 [axis,value] pairs with finite values and strictly increasing nonnegative axes. Axis units: time s, temperature K. Value units: power W, temperature K, conductivity W/(m K), heat_capacity J/(kg K), density kg/m\u00b3, convection W/(m\u00b2 K). Temperature values must be nonnegative; other physical range requirements belong to the consuming load/material. Native temperature axes use Celsius: Kelvin inputs are explicitly converted and verified back in SI. Stores linear interpolation and native Undefined outside-table behavior; consumers must validate coverage before solving. Reads back all samples/units/interpolation against bounded checksummed provenance stored on the field. Returns a typed field, count/range/hash and compact readback; inspect samples via nx_sim_scalar_tables. Does not attach a load/material, save, solve or establish evaluator/solver behavior. Visible creation undo/rollback. Supply operation_id for deduplicated retry.",
+      "inputSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "document": {
+            "title": "Document",
+            "type": "string"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "axis": {
+            "enum": [
+              "time",
+              "temperature"
+            ],
+            "title": "Axis",
+            "type": "string"
+          },
+          "quantity": {
+            "enum": [
+              "power",
+              "temperature",
+              "conductivity",
+              "heat_capacity",
+              "density",
+              "convection"
+            ],
+            "title": "Quantity",
+            "type": "string"
+          },
+          "samples": {
+            "items": {
+              "items": {
+                "type": "number"
+              },
+              "type": "array"
+            },
+            "title": "Samples",
+            "type": "array"
+          },
+          "provenance": {
+            "title": "Provenance",
+            "type": "string"
+          },
+          "operation_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Operation Id"
+          }
+        },
+        "required": [
+          "document",
+          "name",
+          "axis",
+          "quantity",
+          "samples",
+          "provenance"
+        ],
+        "title": "nx_sim_scalar_tableArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "additionalProperties": true,
+        "description": "Structured success/error envelope with additive metadata. Tool-specific payload remains extensible.",
+        "properties": {
+          "status": {
+            "enum": [
+              "success",
+              "error"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Warnings",
+            "type": "array"
+          },
+          "units": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Units"
+          },
+          "operation_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Operation Id"
+          },
+          "mutation_outcome": {
+            "anyOf": [
+              {
+                "enum": [
+                  "not_started",
+                  "running",
+                  "committed",
+                  "rolled_back",
+                  "partial",
+                  "unknown",
+                  "not_applicable"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "full_result": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "sha256": {
+                "type": "string"
+              },
+              "size": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "tool": {
+                "const": "nx_read_result"
+              },
+              "immutable": {
+                "const": true
+              }
+            },
+            "required": [
+              "id",
+              "sha256",
+              "size",
+              "tool",
+              "immutable"
+            ],
+            "additionalProperties": true
+          },
+          "omitted": {
+            "type": "object"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "retryable": {
+            "type": "boolean"
+          },
+          "suggestion": {
+            "type": "string"
+          },
+          "nx_code": {
+            "type": [
+              "integer",
+              "string"
+            ]
+          },
+          "details": {
+            "type": "object",
+            "properties": {
+              "operation_id": {
+                "type": "string"
+              },
+              "mutation_outcome": {
+                "enum": [
+                  "not_started",
+                  "running",
+                  "committed",
+                  "rolled_back",
+                  "partial",
+                  "unknown",
+                  "not_applicable"
+                ]
+              }
+            },
+            "required": [],
+            "additionalProperties": true
+          }
+        },
+        "required": [
+          "status",
+          "warnings",
+          "units"
+        ],
+        "title": "nx_sim_scalar_table result",
+        "type": "object",
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "status": {
+                  "const": "error"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "code",
+                "message",
+                "retryable"
+              ]
+            }
+          }
+        ]
+      },
+      "icons": null,
+      "annotations": {
+        "title": null,
+        "readOnlyHint": false,
+        "destructiveHint": null,
+        "idempotentHint": false,
+        "openWorldHint": null
+      },
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "nx_sim_scalar_tables",
+      "title": null,
+      "description": "Page registered native scalar field tables in a loaded SIM. offset >=0; limit 1..100; include_samples defaults false. Verifies native 1D samples, unit conversion and interpolation against the model-owned manifest. Returns typed fields, counts, SI axis ranges, hashes and optional SI samples; corrupt/edited tables fail readback explicitly. Skips unregistered fields and separately registered fan curves. No activation, mutation, save, dependency binding or solve. Reacquire IDs after document closure; restart paging after changes. Stored interpolation is not evidence of solver behavior or whole-model freshness.",
+      "inputSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "document": {
+            "title": "Document",
+            "type": "string"
+          },
+          "offset": {
+            "default": 0,
+            "title": "Offset",
+            "type": "integer"
+          },
+          "limit": {
+            "default": 20,
+            "title": "Limit",
+            "type": "integer"
+          },
+          "include_samples": {
+            "default": false,
+            "title": "Include Samples",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "document"
+        ],
+        "title": "nx_sim_scalar_tablesArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "additionalProperties": true,
+        "description": "Structured success/error envelope with additive metadata. Tool-specific payload remains extensible.",
+        "properties": {
+          "status": {
+            "enum": [
+              "success",
+              "error"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Warnings",
+            "type": "array"
+          },
+          "units": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Units"
+          },
+          "operation_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Operation Id"
+          },
+          "mutation_outcome": {
+            "anyOf": [
+              {
+                "enum": [
+                  "not_started",
+                  "running",
+                  "committed",
+                  "rolled_back",
+                  "partial",
+                  "unknown",
+                  "not_applicable"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "full_result": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "sha256": {
+                "type": "string"
+              },
+              "size": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "tool": {
+                "const": "nx_read_result"
+              },
+              "immutable": {
+                "const": true
+              }
+            },
+            "required": [
+              "id",
+              "sha256",
+              "size",
+              "tool",
+              "immutable"
+            ],
+            "additionalProperties": true
+          },
+          "omitted": {
+            "type": "object"
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "retryable": {
+            "type": "boolean"
+          },
+          "suggestion": {
+            "type": "string"
+          },
+          "nx_code": {
+            "type": [
+              "integer",
+              "string"
+            ]
+          },
+          "details": {
+            "type": "object",
+            "properties": {
+              "operation_id": {
+                "type": "string"
+              },
+              "mutation_outcome": {
+                "enum": [
+                  "not_started",
+                  "running",
+                  "committed",
+                  "rolled_back",
+                  "partial",
+                  "unknown",
+                  "not_applicable"
+                ]
+              }
+            },
+            "required": [],
+            "additionalProperties": true
+          }
+        },
+        "required": [
+          "status",
+          "warnings",
+          "units"
+        ],
+        "title": "nx_sim_scalar_tables result",
+        "type": "object",
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "status": {
+                  "const": "error"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "code",
+                "message",
+                "retryable"
+              ]
+            }
+          }
+        ]
+      },
+      "icons": null,
+      "annotations": {
+        "title": null,
+        "readOnlyHint": true,
+        "destructiveHint": null,
+        "idempotentHint": true,
+        "openWorldHint": null
+      },
+      "meta": null,
+      "execution": null
+    }
+  ],
+  "passed": true,
+  "document": "obj_20bc234ffa5249ceb4fb4d82b993c626_4a591e231cee4cdbafd94afd46915f7e",
+  "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-scalar-tables-20260909-r1\\benchmark_1ed9fb624b41_analysis.sim",
+  "solver_launched": false,
+  "scope": "Native/public table authoring, replay, paging and persistence; load/material binding and numerical behavior not established"
+}

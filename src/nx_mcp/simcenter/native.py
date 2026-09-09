@@ -525,6 +525,58 @@ class SimcenterMixin:
         result["previous_binding"].pop("field_tag", None)
         return result
 
+    def _sim_scalar_table(self, document, name, axis, quantity, samples, provenance):
+        from nx_mcp.simcenter.scalar_tables import create
+
+        sim = self.objects.resolve(document, expected_kind="part")
+        result = create(
+            self.session,
+            sim,
+            {
+                "name": name,
+                "axis": axis,
+                "quantity": quantity,
+                "samples": samples,
+                "provenance": provenance,
+            },
+        )
+        table = result.pop("table")
+        return {"field": self._reference(table, "simulation_field", sim, "field"), **result}
+
+    def _sim_scalar_tables(self, document, offset=0, limit=20, include_samples=False):
+        import NXOpen.CAE as cae
+
+        from nx_mcp.simcenter import scalar_tables
+
+        if (
+            type(offset) is not int
+            or offset < 0
+            or type(limit) is not int
+            or not 1 <= limit <= 100
+            or type(include_samples) is not bool
+        ):
+            raise NXToolError(
+                "NX_INVALID_ARGUMENT", "offset >= 0, limit 1..100, include_samples boolean"
+            )
+        sim = self.objects.resolve(document, expected_kind="part")
+        if not isinstance(sim, cae.SimPart):
+            raise NXToolError("NX_SIM_DOCUMENT_TYPE", "Select a SIM document")
+        fields = sorted(
+            [f for f in sim.FieldManager.Fields if scalar_tables.registered(f)],
+            key=lambda f: (f.Name, int(f.Tag)),
+        )
+        rows = []
+        for field in fields[offset : offset + limit]:
+            row = scalar_tables.compact(scalar_tables.inspect(sim, field), include_samples)
+            row["field"] = self._reference(field, "simulation_field", sim, "field")
+            rows.append(row)
+        return {
+            "tables": rows,
+            "total": len(fields),
+            "next_offset": offset + limit if offset + limit < len(fields) else None,
+            "result_freshness": "not_verified",
+        }
+
     def _sim_fan_table(
         self,
         document,

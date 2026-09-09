@@ -1,0 +1,216 @@
+{
+  "status": "success",
+  "trials": [
+    {
+      "axis_requested": "Second",
+      "value_requested": "Watt",
+      "axis_native_unit": "Second",
+      "value_native_unit": "Watt",
+      "x": [
+        0.0,
+        10.0,
+        20.0
+      ],
+      "y": [
+        1.0,
+        2.0,
+        3.0
+      ],
+      "native_seconds": 0.015000000013969839
+    },
+    {
+      "axis_requested": "Second",
+      "value_requested": "Kelvin",
+      "axis_native_unit": "Second",
+      "value_native_unit": "Kelvin",
+      "x": [
+        0.0,
+        10.0,
+        20.0
+      ],
+      "y": [
+        280.0,
+        300.0,
+        320.0
+      ],
+      "native_seconds": 0.0
+    },
+    {
+      "axis_requested": "Second",
+      "value_requested": "ThermalConductivity_Metric3",
+      "axis_native_unit": "Second",
+      "value_native_unit": "ThermalConductivity_Metric3",
+      "x": [
+        0.0,
+        10.0,
+        20.0
+      ],
+      "y": [
+        1.0,
+        2.0,
+        3.0
+      ],
+      "native_seconds": 0.01600000000325963
+    },
+    {
+      "axis_requested": "Second",
+      "value_requested": "SpecificHeat_Metric2",
+      "axis_native_unit": "Second",
+      "value_native_unit": "SpecificHeat_Metric2",
+      "x": [
+        0.0,
+        10.0,
+        20.0
+      ],
+      "y": [
+        1.0,
+        2.0,
+        3.0
+      ],
+      "native_seconds": 0.01600000000325963
+    },
+    {
+      "axis_requested": "Second",
+      "value_requested": "KilogramPerCubicMeter",
+      "axis_native_unit": "Second",
+      "value_native_unit": "KilogramPerCubicMeter",
+      "x": [
+        0.0,
+        10.0,
+        20.0
+      ],
+      "y": [
+        1.0,
+        2.0,
+        3.0
+      ],
+      "native_seconds": 0.0
+    },
+    {
+      "axis_requested": "Second",
+      "value_requested": "ConvectionCoefficient_Metric8",
+      "axis_native_unit": "Second",
+      "value_native_unit": "ConvectionCoefficient_Metric8",
+      "x": [
+        0.0,
+        10.0,
+        20.0
+      ],
+      "y": [
+        1.0,
+        2.0,
+        3.0
+      ],
+      "native_seconds": 0.0
+    },
+    {
+      "axis_requested": "Kelvin",
+      "value_requested": "Watt",
+      "axis_native_unit": "Celsius",
+      "value_native_unit": "Watt",
+      "x": [
+        273.15,
+        293.15,
+        313.15
+      ],
+      "y": [
+        1.0,
+        2.0,
+        3.0
+      ],
+      "native_seconds": 0.01600000000325963
+    },
+    {
+      "axis_requested": "Kelvin",
+      "value_requested": "Kelvin",
+      "axis_native_unit": "Celsius",
+      "value_native_unit": "Kelvin",
+      "x": [
+        273.15,
+        293.15,
+        313.15
+      ],
+      "y": [
+        280.0,
+        300.0,
+        320.0
+      ],
+      "native_seconds": 0.01600000000325963
+    },
+    {
+      "axis_requested": "Kelvin",
+      "value_requested": "ThermalConductivity_Metric3",
+      "axis_native_unit": "Celsius",
+      "value_native_unit": "ThermalConductivity_Metric3",
+      "x": [
+        273.15,
+        293.15,
+        313.15
+      ],
+      "y": [
+        1.0,
+        2.0,
+        3.0
+      ],
+      "native_seconds": 0.015000000013969839
+    },
+    {
+      "axis_requested": "Kelvin",
+      "value_requested": "SpecificHeat_Metric2",
+      "axis_native_unit": "Celsius",
+      "value_native_unit": "SpecificHeat_Metric2",
+      "x": [
+        273.15,
+        293.15,
+        313.15
+      ],
+      "y": [
+        1.0,
+        2.0,
+        3.0
+      ],
+      "native_seconds": 0.0
+    },
+    {
+      "axis_requested": "Kelvin",
+      "value_requested": "KilogramPerCubicMeter",
+      "axis_native_unit": "Celsius",
+      "value_native_unit": "KilogramPerCubicMeter",
+      "x": [
+        273.15,
+        293.15,
+        313.15
+      ],
+      "y": [
+        1.0,
+        2.0,
+        3.0
+      ],
+      "native_seconds": 0.014999999955762178
+    },
+    {
+      "axis_requested": "Kelvin",
+      "value_requested": "ConvectionCoefficient_Metric8",
+      "axis_native_unit": "Celsius",
+      "value_native_unit": "ConvectionCoefficient_Metric8",
+      "x": [
+        273.15,
+        293.15,
+        313.15
+      ],
+      "y": [
+        1.0,
+        2.0,
+        3.0
+      ],
+      "native_seconds": 0.01600000000325963
+    }
+  ],
+  "rollback_verified": true,
+  "solver_launched": false,
+  "operation_id": "op_723caa5edd5a44a6ab040b6af193c068",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

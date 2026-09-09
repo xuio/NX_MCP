@@ -393,6 +393,31 @@ def nx_sim_steps(
 READ_ONLY.add("nx_sim_steps")
 
 
+def nx_sim_scalar_table(
+    document: str,
+    name: str,
+    axis: Literal["time", "temperature"],
+    quantity: Literal[
+        "power", "temperature", "conductivity", "heat_capacity", "density", "convection"
+    ],
+    samples: list[list[float]],
+    provenance: str,
+):
+    """Create a registered native 1D thermal field table in the active millimeter SIM. samples contains 2..1000 [axis,value] pairs with finite values and strictly increasing nonnegative axes. Axis units: time s, temperature K. Value units: power W, temperature K, conductivity W/(m K), heat_capacity J/(kg K), density kg/m³, convection W/(m² K). Temperature values must be nonnegative; other physical range requirements belong to the consuming load/material. Native temperature axes use Celsius: Kelvin inputs are explicitly converted and verified back in SI. Stores linear interpolation and native Undefined outside-table behavior; consumers must validate coverage before solving. Reads back all samples/units/interpolation against bounded checksummed provenance stored on the field. Returns a typed field, count/range/hash and compact readback; inspect samples via nx_sim_scalar_tables. Does not attach a load/material, save, solve or establish evaluator/solver behavior. Visible creation undo/rollback. Supply operation_id for deduplicated retry."""
+
+
+NON_MODEL.add("nx_sim_scalar_table")
+
+
+def nx_sim_scalar_tables(
+    document: str, offset: int = 0, limit: int = 20, include_samples: bool = False
+):
+    """Page registered native scalar field tables in a loaded SIM. offset >=0; limit 1..100; include_samples defaults false. Verifies native 1D samples, unit conversion and interpolation against the model-owned manifest. Returns typed fields, counts, SI axis ranges, hashes and optional SI samples; corrupt/edited tables fail readback explicitly. Skips unregistered fields and separately registered fan curves. No activation, mutation, save, dependency binding or solve. Reacquire IDs after document closure; restart paging after changes. Stored interpolation is not evidence of solver behavior or whole-model freshness."""
+
+
+READ_ONLY.add("nx_sim_scalar_tables")
+
+
 def nx_sim_fan_table(
     document: str,
     name: str,

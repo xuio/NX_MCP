@@ -1,0 +1,22 @@
+{
+  "status": "success",
+  "injected_failure": {
+    "code": "NX_SIM_READBACK_MISMATCH",
+    "details": {
+      "mutation_outcome": "rolled_back",
+      "cleanup": [],
+      "cause": "Injected native post-create readback failure",
+      "verification_scope": "field inventory; creation-only operation"
+    }
+  },
+  "corrupt_metadata_error": "NX_SIM_MANIFEST_INVALID",
+  "restored_manifest_sha256": "93ae4a5928fe707e4a96f35f9c726c8e6c559adef7411bf86653efd239d21ce0",
+  "native_rollback_verified": true,
+  "document_flags_preserved": true,
+  "solver_launched": false,
+  "operation_id": "op_256761a1b7d44d53949f23460f4dc5f4",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}
