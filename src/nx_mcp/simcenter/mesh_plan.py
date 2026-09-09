@@ -8,8 +8,8 @@ ELEMENTS = {"solid": "Linear Tetrahedron", "fluid": "Fluid Linear Tetrahedron"}
 
 
 def validate(regions):
-    if not isinstance(regions, list) or not 1 <= len(regions) <= 16:
-        raise ValueError("Supply 1..16 body mesh definitions")
+    if not isinstance(regions, list) or not regions:
+        raise ValueError("Supply a nonempty list of body mesh definitions")
     seen = set()
     for row in regions:
         if not isinstance(row, dict) or set(row) != {"body", "kind", "size_mm"}:

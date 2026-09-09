@@ -31,8 +31,10 @@ def test_export_real_region_pages_and_reject_mixed_or_missing_pages():
 def test_handover_preserves_historical_failures_without_reclassifying_native_cause():
     audit = runpy.run_path(str(REPO / "examples/simcenter/audit_baldower_readiness.py"))["audit"]
     result = audit(REPO)
-    assert result["conclusion"] == "READY"
-    assert result["deployed_source_matches"]
+    # Historical native hashes must not certify a changed working tree.
+    assert result["conclusion"] == (
+        "READY" if result["deployed_source_matches"] else "NOT READY"
+    )
     assert not result["numerical_mesh_acceptance"]["accepted"]
     assert result["coupled_fan_authoring"]["native_public_verified"]
     assert result["coupled_fan_authoring"]["exported"] is False

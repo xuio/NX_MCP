@@ -767,7 +767,7 @@ class BodyMeshRegion(TypedDict):
 
 
 def nx_sim_mesh_plan(document: str, regions: list[BodyMeshRegion]):
-    """Generate a complete explicit body mesh plan in an active millimeter FEM with no existing meshes. Supply 1..16 regions, each exactly {body: typed FEM body ID, kind: 'solid'|'fluid', size_mm: finite (0,10000]}. Cover every FEM body once. Uses installed Linear Tetrahedron or Fluid Linear Tetrahedron; respects native mesh controls and can produce multiple meshes per body. Verifies primary mesh element type, size and body selection by reopening its builder; returns meshes per region and total element/node counts. Does not infer fluid regions, assign materials, save or solve. Control effectiveness, element quality and convergence require separate inspection. Rejects foreign/stale/duplicate/missing bodies and running solvers. Entire plan uses undo on failure; partial recovery is explicit. Supply operation_id for safe retry; never rerun because a transport response timed out."""
+    """Generate a complete explicit body mesh plan in an active millimeter FEM with no existing meshes. Supply a nonempty list of regions, each exactly {body: typed FEM body ID, kind: 'solid'|'fluid', size_mm: finite (0,10000]}. Cover every FEM body once. Uses installed Linear Tetrahedron or Fluid Linear Tetrahedron; respects native mesh controls and can produce multiple meshes per body. Verifies primary mesh element type, size and body selection by reopening its builder; returns meshes per region and total element/node counts. Does not infer fluid regions, assign materials, save or solve. Control effectiveness, element quality and convergence require separate inspection. Rejects foreign/stale/duplicate/missing bodies and running solvers. Entire plan uses undo on failure; partial recovery is explicit. Supply operation_id for safe retry; never rerun because a transport response timed out."""
 
 
 NON_MODEL.add("nx_sim_mesh_plan")
@@ -788,7 +788,7 @@ NON_MODEL.add("nx_sim_face_size_edit")
 
 
 def nx_sim_remesh(document: str):
-    """Regenerate 1..16 existing explicitly sized linear solid/fluid tetra meshes in an active millimeter FEM using current native controls. Preserves mesh identities, global sizes, element types and body associations by readback. Other/layered mesh types are not verified by this adapter and may be rejected before mutation. Returns before/after counts; quality/convergence are not inferred. No geometry update, SIM update, save or solver launch. Invalidates all FEM and loaded dependent SIM object references after a regeneration attempt, including rollback; use returned document ID and reacquire face/mesh/occurrence references. Existing results are stale. Uses undo/rollback and persistent operation_id deduplication: query/replay the same operation after timeout instead of launching a duplicate remesh."""
+    """Regenerate existing explicitly sized linear solid/fluid tetra meshes in an active millimeter FEM using current native controls. Preserves mesh identities, global sizes, element types and body associations by readback. Other/layered mesh types are not verified by this adapter and may be rejected before mutation. Returns before/after counts; quality/convergence are not inferred. No geometry update, SIM update, save or solver launch. Invalidates all FEM and loaded dependent SIM object references after a regeneration attempt, including rollback; use returned document ID and reacquire face/mesh/occurrence references. Existing results are stale. Uses undo/rollback and persistent operation_id deduplication: query/replay the same operation after timeout instead of launching a duplicate remesh."""
 
 
 NON_MODEL.add("nx_sim_remesh")
@@ -831,3 +831,45 @@ def nx_sim_temperature_regions(
 
 
 READ_ONLY.add("nx_sim_temperature_regions")
+
+
+def nx_sim_inlet(
+    document: str,
+    faces: list[str],
+    name: str,
+    velocity_m_s: float,
+    alignment: Literal["normal_to_face"] = "normal_to_face",
+):
+    """Create a coupled velocity inlet on distinct SIM occurrence face IDs from nx_sim_faces. Requires active NX MULTIPHYSICS Coupled Thermal-Flow SIM. velocity_m_s >0, normal_to_face alignment with no swirl; vector alignment unsupported. Returns simulation_object reference usable by nx_sim_assign_fan, which replaces velocity mode with the supplied static fan curve. Reads actual geometry targets, units, selectors and selected-solution membership. Rejects foreign/stale/duplicate/overlapping faces. External conditions are explicit via nx_sim_external_temperature on the returned boundary; no global environment is inferred. Does not save or solve. Uses undo/readback on failure and operation_id for safe retry."""
+
+
+NON_MODEL.add("nx_sim_inlet")
+
+
+def nx_sim_opening(
+    document: str,
+    faces: list[str],
+    name: str,
+    pressure_pa: float,
+    alignment: Literal["normal_to_face"] = "normal_to_face",
+):
+    """Create a coupled opening/outlet on distinct owned SIM occurrence faces. Requires active NX MULTIPHYSICS Coupled Thermal-Flow SIM. pressure_pa is positive absolute static pressure in Pa, explicitly specified; normal_to_face alignment only. Native opening permits inflow/outflow, not a prescribed one-way outlet. Returns simulation_object reference for nx_sim_head_loss and nx_sim_external_temperature. Reads committed targets, pressure, units, selectors and selected-solution membership. Rejects existing overlapping inlet/opening faces. Does not assign external temperature, save or solve. Uses verified rollback and operation_id safe retry."""
+
+
+NON_MODEL.add("nx_sim_opening")
+
+
+def nx_sim_fluid_material(
+    document: str,
+    collectors: list[str],
+    name: str,
+    density_kg_m3: float,
+    viscosity_pa_s: float,
+    conductivity_w_m_k: float,
+    heat_capacity_j_kg_k: float,
+    provenance: str,
+):
+    """Create and assign a constant-property native Fluid material to explicit fluid mesh collector IDs in the active FEM. Properties are positive finite SI values; provenance and unique name are required. Uses native Fluid material properties (constant density, dynamic viscosity, conductivity and heat capacity); global atmospheric/density and buoyancy settings are separate. Rejects foreign/duplicate/empty collectors and existing explicit material assignments. Returns typed material/collector references, actual committed properties and assignment readback. Does not change a material library, save or solve. Uses native rollback and operation_id retry. Meshing must have created the fluid collectors first. Property authoring does not certify the solver's effective fluid model; inspect exported settings/results."""
+
+
+NON_MODEL.add("nx_sim_fluid_material")

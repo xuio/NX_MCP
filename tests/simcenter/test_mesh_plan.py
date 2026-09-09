@@ -188,3 +188,13 @@ def test_schema_declarations_import_without_sidecar_dependencies(monkeypatch):
     namespace = runpy.run_path(server.__file__)
     assert namespace["BodyMeshRegion"].__required_keys__ == {"body", "kind", "size_mm"}
     assert "nx_sim_mesh_plan" in namespace["NON_MODEL"]
+
+
+@pytest.mark.parametrize("count", [17, 64, 256])
+def test_realistic_body_counts_preserve_validation(count):
+    regions = [{"body": f"body-{i}", "kind": "solid", "size_mm": 2} for i in range(count)]
+    regions[-1]["kind"] = "fluid"
+    validate(regions)
+    regions[-1]["body"] = regions[0]["body"]
+    with pytest.raises(ValueError, match="distinct"):
+        validate(regions)

@@ -608,8 +608,18 @@ class HardenedExecutor(
     def _find_sketch(self, name):
         return self._resolve(name, {"sketch"})
 
+    @staticmethod
+    def _require_cad_activation_path(path):
+        if Path(path).suffix.casefold() in {".fem", ".sim", ".afm"}:
+            raise NXToolError(
+                "NX_PART_TYPE_UNSUPPORTED",
+                "Generic part activation requires CAD; use nx_sim_open or nx_sim_activate for FEM/SIM",
+                details={"mutation_outcome": "not_started"},
+            )
+
     def _open_part(self, path, work=True, display=True, load_components=False):
         source = self.workspace.ensure_inside(path)
+        self._require_cad_activation_path(str(source))
         loaded = next(
             (
                 p
@@ -651,6 +661,7 @@ class HardenedExecutor(
             if len(matches) != 1:
                 raise NXToolError("NX_NOT_FOUND", "Loaded part must resolve uniquely")
             target = matches[0]
+        self._require_cad_activation_path(target.FullPath)
         if display:
             _, status = self.session.Parts.SetDisplay(target, False, False)
             if status:

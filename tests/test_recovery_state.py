@@ -246,3 +246,29 @@ def test_capability_filters_and_unit_conventions(rig):
     for params in [{"tool": "nx_missing"}, {"tool": "nx_close_part", "prefix": "nx_"}]:
         with pytest.raises(NXToolError):
             rig.e._capabilities(**params)
+
+
+@pytest.mark.parametrize("extension", ["fem", "SIM", "afm"])
+@pytest.mark.parametrize("by_id", [False, True])
+def test_generic_simulation_activation_rejects_before_context_change(rig, tmp_path, extension, by_id):
+    target = Part(rig.session, tmp_path / ("analysis." + extension))
+    rig.session.Parts.Work = rig.session.Parts.Display = rig.part
+    rig.session.Parts.SetDisplay = Mock(side_effect=AssertionError("must not change display"))
+    rig.session.Parts.SetWork = Mock(side_effect=AssertionError("must not change work"))
+    ref = rig.e._reference(target, "part", target, "Part")["id"] if by_id else target.FullPath
+    with pytest.raises(NXToolError) as caught:
+        rig.e._activate_part(ref)
+    assert caught.value.code == "NX_PART_TYPE_UNSUPPORTED"
+    assert caught.value.details["mutation_outcome"] == "not_started"
+    assert rig.session.Parts.Work is rig.part
+    assert rig.session.Parts.Display is rig.part
+    rig.session.Parts.SetDisplay.assert_not_called()
+    rig.session.Parts.SetWork.assert_not_called()
+
+
+def test_generic_open_simulation_rejects_before_opening(rig, tmp_path):
+    rig.session.Parts.OpenBase = Mock(side_effect=AssertionError("must not open"))
+    with pytest.raises(NXToolError) as caught:
+        rig.e._open_part(str(tmp_path / "new.sim"))
+    assert caught.value.code == "NX_PART_TYPE_UNSUPPORTED"
+    rig.session.Parts.OpenBase.assert_not_called()

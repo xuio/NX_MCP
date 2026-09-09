@@ -10,6 +10,27 @@ Baldower cooling choices and acoustic qualification remain engineering work.
 This report supersedes the broad feature backlog for this handover. No additional
 infrastructure features are planned unless they resolve a concrete readiness blocker.
 
+## Follow-up: public authoring from user CAD (in progress)
+
+The prior handover below covers the retained fixtures. The new goal adds public
+from-scratch authoring; it is **not yet complete** (first increment deployed for verification). The usage-gap and
+next-increment reports dated 2026-09-09 were compared with current source before edits.
+Dimension synchronization is already verified by the engineering task.
+
+| Capability | Current implementation / verification | Next concrete action |
+|---|---|---|
+| Owned inlet/opening creation | Public `nx_sim_inlet` / `nx_sim_opening` deployed; schemas and offline ownership/rollback checks pass | Native creation, persistence and fan binding on fresh CAD |
+| Fluid properties / global environment | Public `nx_sim_fluid_material` deployed; global settings still missing | Verify collector assignment and implement explicit 25/40 °C environment |
+| User CAD associations / topology changes | Benchmark associations exist; dimensions passed; body additions/removals unverified | Inspect documented FEM creation/update route and test fresh CAD |
+| Multi-body meshing | Removed 16-body limits in plan and regeneration locally; validation covers 17/64/256 bodies | Verify native >16-body mesh and global-size edit/regeneration |
+| Temperature postview | Historical 3960043 isolated to naming in a separate fixture; new reported case not yet isolated | Compare failing arguments without modifying product simulation; reproduce on generic result |
+| Generic activation | FEM/SIM/AFM paths rejected before display/work calls locally, including typed references | Native/public rejection preserves work/display context (`public-authoring-surface-r1.json`) |
+
+First targeted offline batch: 44 tests passed (mesh plan, regeneration and recovery).
+This is not native verification. Keep the previous numerical mesh-sensitivity
+failure intact; this increment requires new public workflow evidence and no
+Baldower simulation or design work.
+
 ## Source and deployed identity
 
 - Engine checkpoint: `e69fff5`, branch

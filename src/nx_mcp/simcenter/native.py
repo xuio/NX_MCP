@@ -33,6 +33,69 @@ def documents(session):
 
 
 class SimcenterMixin:
+    def _sim_fluid_material(
+        self,
+        document,
+        collectors,
+        name,
+        density_kg_m3,
+        viscosity_pa_s,
+        conductivity_w_m_k,
+        heat_capacity_j_kg_k,
+        provenance,
+    ):
+        from nx_mcp.simcenter.fluid_material import assign_fluid_material
+        from nx_mcp.simcenter.solver_guard import require_solver_idle
+
+        fem = self.objects.resolve(document, expected_kind="part")
+        self.workspace.resolve(fem.FullPath)
+        selected = [
+            self.objects.resolve(ref, expected_kind="mesh_collector") for ref in collectors
+        ]
+        if not selected or len({int(c.Tag) for c in selected}) != len(selected):
+            raise NXToolError("NX_INVALID_ARGUMENT", "Select distinct fluid collectors")
+        require_solver_idle()
+        result = assign_fluid_material(
+            self.session,
+            fem,
+            selected,
+            name,
+            provenance,
+            density_kg_m3,
+            viscosity_pa_s,
+            conductivity_w_m_k,
+            heat_capacity_j_kg_k,
+        )
+        material = result.pop("material")
+        result["material"] = self._reference(material, "material", fem, name)
+        result["collectors"] = [
+            self._reference(c, "mesh_collector", fem, "collector") for c in selected
+        ]
+        result["results_stale"] = True
+        return result
+
+    def _sim_inlet(self, document, faces, name, velocity_m_s, alignment="normal_to_face"):
+        return self._sim_create_flow_boundary(
+            document, faces, "inlet", name, velocity_m_s, alignment
+        )
+
+    def _sim_opening(self, document, faces, name, pressure_pa, alignment="normal_to_face"):
+        return self._sim_create_flow_boundary(
+            document, faces, "opening", name, pressure_pa, alignment
+        )
+
+    def _sim_create_flow_boundary(self, document, faces, kind, name, value, alignment):
+        from nx_mcp.simcenter.flow_boundaries import create
+
+        sim = self.objects.resolve(document, expected_kind="part")
+        self.workspace.resolve(sim.FullPath)
+        selected = [self.objects.resolve(ref, expected_kind="face") for ref in faces]
+        result = create(self.session, sim, selected, kind, name, value, alignment)
+        boundary = result.pop("boundary")
+        result["boundary"] = self._reference(boundary, "simulation_object", sim, kind)
+        result["faces"] = [self._reference(face, "face", sim, "face") for face in selected]
+        return result
+
     def _sim_cancel(self, job_id, expected_revision, job_folder="simcenter-jobs"):
         from nx_mcp.simcenter.cancellation import cancel_unlaunched
 

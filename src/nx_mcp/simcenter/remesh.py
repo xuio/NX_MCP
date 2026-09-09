@@ -46,8 +46,8 @@ def regenerate(executor, fem):
     require_solver_idle()
     manager = fem.BaseFEModel.MeshManager
     meshes = list(manager.GetMeshes())
-    if not 1 <= len(meshes) <= 16:
-        raise NXToolError("NX_SIM_MESH_PRECONDITION", "Requires 1..16 existing tetra meshes")
+    if not meshes:
+        raise NXToolError("NX_SIM_MESH_PRECONDITION", "Requires existing tetra meshes")
     try:
         before_settings = [settings(manager, mesh) for mesh in meshes]
     except Exception as error:

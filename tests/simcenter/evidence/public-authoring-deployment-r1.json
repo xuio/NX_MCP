@@ -1,0 +1,37 @@
+{
+  "status": "success",
+  "registered": [
+    "_sim_inlet",
+    "_sim_opening",
+    "_sim_create_flow_boundary",
+    "_sim_fluid_material"
+  ],
+  "activation_rejections": [
+    {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\baldower-cooling-20260909\\endcooled-t3m2-model-r1\\benchmark_21910d209003_mesh.fem",
+      "code": "NX_PART_TYPE_UNSUPPORTED",
+      "context_unchanged": true
+    },
+    {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\baldower-cooling-20260909\\endcooled-t1p5m1-model-r1\\benchmark_14a9dec0059c_mesh.fem",
+      "code": "NX_PART_TYPE_UNSUPPORTED",
+      "context_unchanged": true
+    }
+  ],
+  "work": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\baldower-cooling-20260909\\endcooled-t3m2-run-r1\\BD_ENDCOOLED_T3M2.sim",
+  "display": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\baldower-cooling-20260909\\endcooled-t3m2-run-r1\\BD_ENDCOOLED_T3M2.sim",
+  "source_hashes": {
+    "nx_mcp.simcenter.server": "d60502b5dddab1a2e357dbb848c9b03607357247d7557df74cbb1de82548db51",
+    "nx_mcp.simcenter.native": "cc258f1d5afbdb3b2f21e44b5d9f81e5f1df897026c5e285b6e54a855a1c6f83",
+    "nx_mcp.simcenter.mesh_plan": "fde81f39b3ff36d6b68b8699869235471d4aff5f40477e1dcd5f1e103af757e3",
+    "nx_mcp.simcenter.remesh": "24c0fe72e5c1d43523f590400bb8b5473a3a47b76f736903805b5597939d7a2b",
+    "nx_mcp.simcenter.flow_boundaries": "6daef36ba730506b9d07e6f8e622c16aa485e25eb249ed1e628e2fe0d03546c5",
+    "nx_mcp.hardened": "27e8fac76377c6d32cba4d00c5a2163084c4c8c64c795a547af8538f882ea7b6"
+  },
+  "solver_launched": false,
+  "operation_id": "op_9cc3c774907340b2998ef34fdeafcfe5",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}
