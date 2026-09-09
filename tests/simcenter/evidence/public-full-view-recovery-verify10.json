@@ -1,0 +1,116 @@
+{
+  "responses": {
+    "view": {
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "degC",
+        "requested_name": "Public reopened verify10",
+        "applied_name": "Public reopened verify10",
+        "name_normalized": false,
+        "postview_id": 36,
+        "postview_owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-full-run-verify10\\full_public_verify10.sim",
+        "readback": {
+          "loadcase_index": 0,
+          "iteration_index": 0,
+          "field": "Temperature - Nodal",
+          "unit": "Celsius"
+        },
+        "existing_view_ids": [],
+        "overlay": false,
+        "main_postview_id": 36,
+        "saved": false,
+        "presentation": {
+          "information_window_closed": true,
+          "view_fitted": true,
+          "display_refreshed": true,
+          "warnings": []
+        },
+        "result_freshness": "not_verified",
+        "reference_lifetime": "postview ID is document-local within this session; use postview_owner and reacquire after closure",
+        "operation_id": "public-full-view-recovery-verify10",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed"
+      },
+      "isError": false
+    },
+    "capture": {
+      "structuredContent": {
+        "status": "success",
+        "warnings": [
+          "NX returned a different resolution than requested"
+        ],
+        "units": "mm",
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-full-reopened-verify10.png",
+        "artifact_path": "ui-benchmarks\\public-full-reopened-verify10.png",
+        "capture_kind": "nx_model_viewport",
+        "model_preview": true,
+        "resolution": [
+          2589,
+          1576
+        ],
+        "requested_resolution": [
+          1600,
+          1000
+        ],
+        "camera": {
+          "part": {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_bd361ac5488843a689aeab03da1e7968",
+            "kind": "part",
+            "name": "full_public_verify10",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_afe684d9bde1467bbc7c872fd1e565af",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "afe684d9bde1467bbc7c872fd1e565af",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-full-run-verify10\\full_public_verify10.sim",
+            "journal_id": "full_public_verify10",
+            "display_name": "full_public_verify10"
+          },
+          "name": "ANALYSIS_1",
+          "rotation": [
+            [
+              0.63121905864763,
+              -0.29117688182626567,
+              0.7188730927569433
+            ],
+            [
+              0.7756046028744285,
+              0.23697177216995516,
+              -0.5850486126764433
+            ],
+            [
+              -0.0,
+              0.9268551141815876,
+              0.3754192287502549
+            ]
+          ],
+          "origin": [
+            -10.190213600848441,
+            -2.907365613495058,
+            -6.140584007938493
+          ],
+          "absolute_origin": [
+            10.0,
+            4.999999999999998,
+            5.000000000000002
+          ],
+          "scale": 23.297303639754123,
+          "coordinate_frame": "display_part",
+          "matrix_layout": "row-major 3x3; columns are NX view axes",
+          "rendering_style": "shaded",
+          "interactive": true
+        },
+        "background": "original",
+        "rendering": "NX viewport rasterization",
+        "size": 407077,
+        "sha256": "01f0dafe5c00c2faec74a6f82a4baf66dc444e5bdd00b33a5915851c32cb020f",
+        "operation_id": "op_29782d9ad44740ae910e28531e7b5f44",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed"
+      },
+      "isError": false
+    }
+  },
+  "passed": true,
+  "solver_launched": false,
+  "retained_representation": "Structured MCP fields; redundant text content omitted"
+}

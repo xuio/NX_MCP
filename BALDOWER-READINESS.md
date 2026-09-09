@@ -1,122 +1,115 @@
-# Baldower thermal/airflow readiness
+# NX/Simcenter public CAD workflow
 
-**READY for the scoped NX/Simcenter MCP infrastructure handover. Numerical
-mesh-accuracy acceptance remains FAILED.** The user explicitly accepted handover
-with that limitation on 2026-09-09. Native coupled authoring, execution, result
-inspection and exports are verified; the benchmark temperatures/flows must not be
-presented as mesh-independent predictions. Model-specific thermal accuracy,
-Baldower cooling choices and acoustic qualification remain engineering work.
+The public user-CAD increment is implemented and verified on NX/Simcenter 2606,
+executable build 2606.1700, bridge protocol 1. Fresh-run authoring, launch, inspection and persistence checks pass. These are infrastructure benchmarks, not Baldower design results.
+The earlier fixture handover is retained below as historical evidence.
 
-This report supersedes the broad feature backlog for this handover. No additional
-infrastructure features are planned unless they resolve a concrete readiness blocker.
+## Current capability and evidence
 
-## Follow-up: public authoring from user CAD (in progress)
+Evidence paths below are relative to `tests/simcenter/evidence/`.
 
-The prior handover below covers the retained fixtures. The new goal adds public
-from-scratch authoring; it is **not yet complete** (first increment deployed for verification). The usage-gap and
-next-increment reports dated 2026-09-09 were compared with current source before edits.
-Dimension synchronization is already verified by the engineering task.
-
-| Capability | Current implementation / verification | Next concrete action |
+| Requirement | Native/public verification | Limits |
 |---|---|---|
-| Owned inlet/opening creation | Public `nx_sim_inlet` / `nx_sim_opening` native creation, target/membership/readback and save pass (`public-boundary-authoring-r1.json`) | Fan/head-loss binding, export and solve now pass; reopen still pending |
-| Fluid properties / global environment | Public `nx_sim_environment` deployed; sequential native 25/40 °C readback and save pass (`public-analysis-environment-r2.json`); fluid assignment pending | 40 °C export preserves values; fluid assignment and mesh pass. Native gravity authoring, SI readback and rollback pass; Public gravity now passes vector/target readback, replay and duplicate rejection; Separate 25 °C export/solve/physical checks and SIM reopen now pass; Gravity/buoyancy authoring and export vector verified; whole-FEM scope and unresolved CSYS encoding documented |
-| User CAD associations / topology changes | Public `nx_sim_create_analysis` creates FEM/SIM from saved two-body CAD; source hash unchanged; distinct FEM/SIM basename fix native verified | Native body add/remove now passes 17→18→17 via documented association/update APIs; Public `nx_sim_sync_geometry` deployed; 17-body inventory, replay and stale-ID checks pass. Public CAD creation and 2→3→2 body transition pass (`public-cad-topology-r1.json`); Continuous-case solve, physical checks, FEM/SIM reopen and visible result capture now pass |
-| Multi-body meshing | Removed 16-body limits in plan and regeneration locally; validation covers 17/64/256 bodies | Native/public 17-body mesh passes. Size 0.75 mm regenerates 1,700→8,628 elements; replay, stale-ID rejection and save pass (`public-multibody-remesh-r3.json`). Geometry update/reopen remain |
-| Temperature postview | Exact reported name reproduced on generic result: periods/colons rejected, length accepted. Fixed with explicit normalization warning; public view/capture pass | Keep punctuation regression; viewport visually inspected |
-| Generic activation | FEM/SIM/AFM paths rejected before display/work calls locally, including typed references | Native/public rejection preserves work/display context (`public-authoring-surface-r1.json`) |
+| Owned inlet/opening authoring | `nx_sim_inlet`, `nx_sim_opening`, `nx_sim_external_temperature`; targets, units, membership, fan and head-loss bindings pass in `public-full-prepare-r1.json` and its input audit | Normal-to-face orientation; one direct FEM occurrence |
+| Fluid/environment | `nx_sim_fluid_material`, `nx_sim_environment`; separate 25/40 °C cases preserve explicit values in export and solve | Constant fluid law exports as LIQUID; no ideal-gas or natural-convection accuracy claim |
+| Gravity/buoyancy | `nx_sim_gravity`; committed SI vector, targets, replay and duplicate rejection pass; `gravity-export-audit-r1.json` verifies acceleration and buoyancy flag | Whole FEM only. Native global CSYS 0 exports as 1; mapping remains an explicit representation limitation |
+| CAD association/update | `nx_sim_create_analysis`, `nx_sim_sync_geometry`; public sketches/extrusions and 2→3→2 body synchronization pass in `public-cad-topology-r1.json` | Saved mm standalone CAD, all-body association. Added bodies require meshing; rebuilding a fresh analysis is the supported route when existing meshes cannot cover changed topology |
+| Mesh/refinement | `nx_sim_mesh_plan`, `nx_sim_remesh(size_mm=...)`; 17 meshes, 1,700→8,628 elements, replay and stale IDs pass in `public-multibody-remesh-r3.json` | Explicitly sized linear tetra meshes; no automatic convergence manager |
+| Results/UI | `nx_sim_show_temperature`, `nx_screenshot`; numerical readback, fitted postview and captured image verified | Periods/colons in postview names are normalized with a warning; nodal temperature may cover only solids |
+| Activation safety | Generic FEM/SIM activation rejected before mutation; `public-authoring-surface-r1.json` preserves work/display state | Use `nx_sim_open`/`nx_sim_activate` for simulation documents |
+| Persistence | FEM and SIM save/close/reopen preserve supported solution/membership, boundary, mesh and temperature readback: `public-full-persistence-audit-r1.json` | Lifecycle IDs and live field tags must be reacquired; unsupported readback is not proved by equality |
+| Isolation | Fresh analysis leaves source CAD unchanged; gravity variant preserves source SIM hash; `public-25c-reopen-r1.json`, `public-gravity-export-r1.json` | SIM save-as shares its FEM/CAD; use `nx_sim_variant_plan/create` for independent geometry copies |
 
-The current public setup sequence is `nx_sim_create_analysis(cad_document, folder,
-name)` → `nx_sim_flow_setup` actions `create_step`, `attach_defaults`, then
-`coupled_steady` → `nx_sim_environment(document, temperature_c, pressure_pa,
-buoyancy)` → `nx_sim_faces` → `nx_sim_inlet` / `nx_sim_opening` →
-`nx_sim_external_temperature`. CAD must be saved, unmodified, millimeter and
-standalone; the association shares that CAD. The initial 25/40 °C readback was sequential. Separate generic 25 °C and
-40 °C analyses have now been solved through public MCP. The 25 °C model passes
-21 input checks and the declared physical checks: peak 35.3852577 °C, flow
-5.771e-5 m³/s, mass imbalance 0.002819%, energy imbalance 0.0003093%. Its
-peak is exactly 15 °C below the controlled 40 °C case at printed precision.
-Full RMS convergence and mesh independence remain unestablished.
-`public-25c-reopen-r1.json` verifies saved/reopened temperature extrema, result
-association, fitted postview and original CAD checksum. It does not establish
-a complete equality check for every material/boundary property after reopen.
-`public-25c-prepare-r1.json` preserves the expected output-directory rejection;
-the SIM was then saved into a dedicated run folder before export. Reproduction:
-`verify_public_25c_prepare_r1.py`, `verify_public_25c_run_prepare_r1.py`,
-`verify_public_25c_download_r1.py`, audit the downloaded XML with
-`audit_public_input_r1.py INPUT OUTPUT 25`, then launch/inspect using the retained
-25c launch/results/reopen scripts. These scripts use retained session IDs and
-paths; fresh runs require new paths/operation IDs and current document references.
-Current Simcenter offline regression: 739 passed (`public-environment-regressions-r1.txt`).
+## Numerical evidence
 
-The first public coupled run completed in 27 s: peak 50.3854 °C, flow
-5.771e-5 m³/s, fan rise 0.8557 Pa. **Numerical acceptance FAILED**: reported
-mass imbalance 0.3902% exceeds the predeclared 0.1%; energy imbalance 0.02284%
-passes 1%. Public residual inspection does not establish final RMS convergence.
-The flow convergence adapter now admits the documented coupled solution as well
-as Flow. A separate SIM control variant now verifies native application/export: RMS
-1e-6 and enabled flow imbalance fraction 0.001; only three control properties
-differ in exported inputs. Physical inputs and mesh remain unchanged. The public
-result receipt reports mass imbalance 0.002819%, energy imbalance 0.0003097%,
-peak 50.38526 °C and flow 5.771e-5 m³/s. The declared physical checks pass;
-final RMS convergence remains unestablished by public inspection. Native
-coincident-thermal-node warnings are retained. See `public-numerical-controls-r1.json`,
-`public-results-controls-r1.json` and `public-controls-input-diff-r1.json`. The
-controlled run released its job gate and displayed a fitted native temperature
-view. Separate 25 °C solve, reopen, gravity and topology/mesh work remain.
-`public-input-audit-r1.json` records 21 pre-launch input checks and tolerances.
-`public-numerical-40c-r1.json` preserves the failed outcome. Screenshot creation
-and visual verification pass (`public-postview-fixed-r1.json`). This is generic
-infrastructure geometry, not a Baldower thermal result.
+The continuous public workflow creates CAD, changes topology, establishes analysis,
+authors and meshes the case, exports, solves, reads results and reopens FEM/SIM.
+`public-full-input-audit-r1.json` passes all 21 declared input checks.
+`public-full-numerical-r1.json` passes temperature rise, positive fan flow,
+pressure–flow curve agreement, mass imbalance <0.1% and energy imbalance <1%.
+Peak solid temperature is 35.353672 °C at 25 °C ambient; reported mass and energy
+imbalances are 0.002318% and 0.0003034%.
 
-Native gravity probe `gravity-author-r2.json` verifies the documented
-`ComponentGravityField` load on 17 explicit body occurrences, global Cartesian
-CSYS, active-solution membership, vector [0,0,-9.80665] m/s² and undo cleanup.
-`Expression.Value` reports base mm/s²; `GetValueUsingUnits(Expression)`
-returns the requested SI acceleration. This is native authoring evidence only:
-public `nx_sim_gravity(document, bodies, acceleration_m_s2, name)` now passes
-17-body SI readback, solution membership, replay, duplicate-name and overlap
-rejection (`public-gravity-r3.json`). Export now preserves acceleration [0,0,-9.80665] m/s² and Buoyancy=1
-(`gravity-export-audit-r1.json`); the source 25 °C SIM checksum is preserved.
-The native global CSYS selector 0 serializes as XML 1, with no per-body gravity
-selection. That mapping is not independently documented. The public tool now
-requires every FEM body and rejects selective gravity before mutation; 12 targeted
-gravity tests pass. This confirms authoring/export values, not numerical buoyancy
-behavior of the constant-property fluid. No solver was launched for this variant.
-The public fixture now contains its unsaved gravity load. Two preflight defects
-were fixed: unsupported property-table descriptor access and empty native target
-entries; the r1/r2 failure receipts are retained. The offline suite passed 763
-tests before these corrections; the final targeted gravity suite passes 11. No solve was launched
-and the temporary gravity load was undone.
+`public-full-convergence-r1.json` audits the complete native final table: all five
+residuals are below 1e-6, and solid/coupled convergence rows report OK. The public
+aggregate convergence field remains conservative. Native y+ reports LO; mesh
+independence is **not established**. This does not certify product temperatures,
+acoustics or general CFD accuracy. The fresh `verify10` runner also passes input checks, solve/result inspection and
+save/reopen state comparison (`public-full-persistence-audit-verify10.json`).
+Its final view request failed with 3960043; a unique-name public request then
+displayed and captured the reopened result (`public-full-view-recovery-verify10.json`).
+The runner now uses per-run view names. The exact native naming failure remains
+unresolved; the failed receipt is retained and no general name-acceptance claim is made.
 
-Native topology probe `topology-update-r3.json` verifies 17→18→17 CAD/FEM
-bodies using `SetGeometryDataWithAttributes` and `BaseFEModel.UpdateFemodel`.
-The existing mesh remained 8,628 elements: a newly added body still needs its
-own mesh definition. This transition is native adapter evidence. Public `nx_sim_sync_geometry(document)`
-subsequently passed on the restored 17-body FEM: discovery, body/mesh coverage,
-replay and stale-reference rejection (`public-geometry-sync-r1.json`). The
-public add/remove transition still needs verification. The operation preserves
-all-body policy, returns typed unmeshed bodies, invalidates FEM/dependent SIM
-references and invokes native pending-mesh update without saving or solving.
-Selected-body associations and non-tetra existing meshes are rejected.
-The offline Simcenter suite passes 753 tests (`geometry-sync-regressions-r1.txt`).
-The fixture is left unsaved with the final 17 bodies and a fitted view; no solver
-was launched. Earlier call-signature failures are retained as r1/r2.
+The original failed mass-balance run remains
+in `public-numerical-40c-r1.json`; its control variant is retained separately.
 
-The multi-body fixture uses 17 separate 3 mm cubes. A 2→1.5 mm size edit
-committed correctly but retained the same 1,700 elements; the client count-growth
-assertion stopped that batch (`public-multibody-remesh-r2.json`). A subsequent
-0.75 mm edit produced 8,628 elements and 2,830 nodes. The initial client also
-requested an invalid face page size of 200; it was corrected to two pages of 100
-without recreating CAD/FEM/SIM (`public-multibody-remesh-r1.json`). These are
-mesh-authoring checks, not solver or mesh-sensitivity acceptance. The retained
-`verify_public_multibody_remesh_r1/r2/r3.py` scripts record this session-specific
-sequence; use fresh operation IDs/paths and reacquired IDs for another fixture.
+## Reproduce through public MCP
 
-First targeted offline batch: 44 tests passed (mesh plan, regeneration and recovery).
-This is not native verification. Keep the previous numerical mesh-sensitivity
-failure intact; this increment requires new public workflow evidence and no
-Baldower simulation or design work.
+Run on the authorized Windows NX host with the existing bridge and Z: share:
+
+```powershell
+$py = 'C:\ProgramData\BasementHypervisor\nx-mcp\venv\Scripts\python.exe'
+$workflow = 'C:\ProgramData\BasementHypervisor\nx-mcp-simcenter\source\examples\simcenter\public_workflow.py'
+& $py $workflow study01 author
+& $py $workflow study01 launch
+& $py $workflow study01 inspect
+& $py $workflow study01 reopen
+```
+
+Use a fresh 2–12 character lowercase alphanumeric run key. `author` creates fresh
+CAD/FEM/SIM, verifies body changes, assigns the synthetic 25 °C study, meshes and
+exports, then audits the downloaded input. `launch` requires that audit and exact
+input hash. `inspect` checks the existing job; repeat it if still running, without
+relaunching. `reopen` requires successful result inspection. A partial authoring
+failure requires receipt inspection; the runner refuses an existing author key.
+Receipts and downloaded inputs are under `Z:\nx-mcp-integration\simcenter-discovery`.
+Native models are under the configured `ui-benchmarks` workspace. The fixed study
+uses assumed properties and a synthetic fan curve, not manufacturer performance.
+
+For ordinary models, follow the same calls with explicit IDs returned by each step:
+
+```python
+analysis = nx_sim_create_analysis(cad_document=cad_id, folder="analysis/new", name="Cooling")
+nx_sim_flow_setup(document=sim_id, action="create_step", name="Steady")
+nx_sim_flow_setup(document=sim_id, action="attach_defaults", name="Cooling")
+nx_sim_flow_setup(document=sim_id, action="coupled_steady")
+nx_sim_environment(document=sim_id, temperature_c=25, pressure_pa=101325, buoyancy=False)
+nx_sim_inlet(document=sim_id, faces=[inlet_face_id], name="Inlet", velocity_m_s=1)
+nx_sim_opening(document=sim_id, faces=[outlet_face_id], name="Outlet", pressure_pa=101325)
+nx_sim_gravity(document=sim_id, bodies=all_fem_body_ids, acceleration_m_s2=[0, 0, -9.80665], name="Gravity")
+nx_sim_activate(document=fem_id)
+nx_sim_remesh(document=fem_id, size_mm=2)
+```
+
+These are illustrative tool calls, not a complete Python client. Activate the
+appropriate FEM/SIM before each operation; reacquire IDs after synchronization or
+remeshing. The staged reproduction scripts contain the complete material, face
+selection, fan, head-loss, mesh, save/export/job and result calls. Export requires
+a dedicated run directory containing only its SIM before export; save-as there
+explicitly. Never edit generated solver inputs. Native job identity and operation
+IDs handle retries; client timeout does not authorize a duplicate solve.
+
+Offline evidence checks from the repository root:
+
+```sh
+PYTHONPATH=src python examples/simcenter/audit_public_input_r1.py tests/simcenter/evidence/public-full-input-r1.xml /tmp/input-audit.json 25
+PYTHONPATH=src python examples/simcenter/audit_public_full_convergence.py
+python -m pytest tests/simcenter -q
+```
+
+## Current deployment
+
+Dedicated source: `C:\ProgramData\BasementHypervisor\nx-mcp-simcenter\source`.
+Workspace: `D:\CAD\SIMCENTER_MCP_WORKSPACE`. Session:
+`20bc234ffa5249ceb4fb4d82b993c626`. Source checkpoint `dcfd802` includes the
+verified runtime plus evidence. `public-runtime-audit-r2.json` verifies all 98
+Simcenter Python files and all 85 live handler code bodies after refreshing one
+stale in-memory flow-setup handler. `public-final-regressions-r1.txt`: 765 tests
+passed; seven runner tests also pass. No licensing changes or NX restart were needed for this increment.
+
+The following sections describe the **earlier fixture handover**; their source
+checkpoints and numerical mesh-accuracy failure are historical and remain intact.
 
 ## Source and deployed identity
 

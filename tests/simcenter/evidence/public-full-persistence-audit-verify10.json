@@ -1,0 +1,13 @@
+{
+  "checks": {
+    "solutions": true,
+    "objects": true,
+    "mesh": true,
+    "temperature": true
+  },
+  "passed": true,
+  "limitations": [
+    "Lifecycle IDs and field tags excluded; unsupported readback remains unverified",
+    "View creation failed after persistence checks; separate unique-name recovery passed"
+  ]
+}

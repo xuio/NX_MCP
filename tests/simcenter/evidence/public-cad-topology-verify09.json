@@ -1,0 +1,21 @@
+{
+  "responses": {
+    "cad": {
+      "isError": true,
+      "structuredContent": {
+        "status": "error",
+        "warnings": [],
+        "units": null,
+        "code": "NX_API_ERROR",
+        "message": "File already exists",
+        "retryable": false,
+        "nx_code": 1020004,
+        "details": {
+          "operation_id": "op_0e51e90b673a4bbe9cd5d22e8157e691",
+          "mutation_outcome": "unknown"
+        }
+      }
+    }
+  },
+  "retained_representation": "Structured MCP fields; redundant text content omitted"
+}

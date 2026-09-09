@@ -1,0 +1,708 @@
+{
+  "status": "success",
+  "files": {
+    "__init__.py": "5f1a98c534967bca2ef1b754466007d54519b81325bca18d6d723ee8cc2c93aa",
+    "analysis_documents.py": "67edb3e3b2d841badf8ec9d93bd9cbcc4203bbaf9b8543480807e9801ea4afbc",
+    "benchmark_geometry.py": "e7475122710c7bbea23c2165ec76122b50a4650283cfb084055843f83b5f5d77",
+    "boundaries.py": "3f027b4f0bccc351bd5fcc88b6c767d9fbbd34540e27f6f629c1eab41315d709",
+    "boundary_geometry.py": "05c86c9824c27f4cf983361bc0300d1ceec8bd484c9e7ea99df04bb9d6c8ecdb",
+    "boundary_layers.py": "da3a748004176426e4159e5b96fe32eda64ae7fef8b887ae7ccf813edb1e2024",
+    "boundary_state.py": "e9d8be61e6fd25a1b3215f50f5bb37b3e371bc3e43f97d5b6d6fe17207f12512",
+    "cancellation.py": "e343e6752f21927dc914e470a2edd599a96d092ae7ce9217d0c747783e5c3243",
+    "capabilities.py": "74543c7b0d37aad32554f90e41e8f2d5799f585e6e86374004530bcfa3cc385c",
+    "collector_state.py": "1661fa223e84aa76d448d16396cc94afc89e451ccc914e39b7766f19d944f8ef",
+    "contact.py": "0bb81ab62a1b9e3fd0c843a52fcbea44b94f3bc0211169c1d884b355400471ea",
+    "convection_environment.py": "ce66323f29cad64b6f8f008174b94f48f128908842495c3f53d5bb64bb3740c5",
+    "coupled_input.py": "159f97e6f6ddd142676f3cfa00b3fca22fab279977a9b2c054331e2d74816ecc",
+    "coupled_log.py": "683abb0be36577335e2aa90d9fda62d6c0eace9a0f481dce0f7e77597155e08c",
+    "coupled_setup.py": "3219b25cb5f4b0d3f2d6a34b631cb4f6edfc1bc51fa253b59ca37ea82ccd9d8e",
+    "dependencies.py": "a24e66eb5c7b058644861f73acbc670eb2d7370c402fe4207506715909d9dd45",
+    "descriptors.py": "8487857a50a32a0a568f43cd62844fb2d098a259198e24572f3dcd6a2b83c0ca",
+    "directional_material.py": "51b7bdbff19f8953f979a935704fa271e25ffa45245e0db300b2b2dccc5edc65",
+    "distributed_heat.py": "527672ef39aaa4a70f29565f15f996c83a2806c5a5ba2ef1493b8bbed98f3fb5",
+    "documents.py": "48b5acbd0acc1aa3ffe25a3c1de43bc87398bab38e6fa7a7f38816f5cc3e430f",
+    "environment.py": "c2dda85ac81c51aed3ed8fbc60364079de52d9d4eb6b71719f4b7db1004d25e1",
+    "external_conditions.py": "05dc4aba942cb98ddb4bbf273a67ea8047c39a0661e8fe9320c5c4664788480b",
+    "fan_boundary.py": "b40c5bf41f5a4d52ffddba152ef81602dfba808edb0d2436c215ccdaf7300caa",
+    "fan_field.py": "3a8b39d03c29ab2caf9973443897835c5197cc837a0ede656bbc5cb409cf4860",
+    "fan_results.py": "dfde11ae339dff18801602617f0e72c7421ccaeaa927a29123fd6925b17f6d45",
+    "fan_scaling.py": "93c48ec626c81ad3eb0d510a000631bdf288fe913042e48b3c6ee44df44d44be",
+    "fan_summary.py": "ae2fb8e4df0a1e455f0063f4d571f3f25c1217748df605b69e19726f88060790",
+    "field_definition.py": "530c7ff57609a18f1271f416418a68d8828a7138c5eaf38204ab52df38a1a1df",
+    "flow.py": "478cd7c714223c681c116d67959ae6db2acf569f82904a23149adc44e92c2888",
+    "flow_audit.py": "e06b18ea2e104ec827f8b2341c0654b7871fe0b4a1cb65a0994c8c25717a385f",
+    "flow_boundaries.py": "6daef36ba730506b9d07e6f8e622c16aa485e25eb249ed1e628e2fe0d03546c5",
+    "flow_controls.py": "cb95f741b4298c5229b7ab8df4132f245e1c3305bd5bec9e1f60003190e65106",
+    "flow_results.py": "277e7a5917b093d8b88b28e901f5d39a17e878a9c4b679ec1112caee067f2715",
+    "fluid_domain.py": "a2304d966d9de5f965cce8cf9b8312342d0240ecbfa7f0d31ddcfd44a6ff1289",
+    "fluid_material.py": "012f9c17e96cfa52dfaf8b8e668fa4ad22bcb975e4ddcad3326461de577b25a8",
+    "geometry_sync.py": "c1d96f4ee9da68959b386fb9a7e21845de36b5f7b9f49a55366f45f5ab04de54",
+    "gravity.py": "eea0d616135254c63213b1165d8b154f15c3688be29c4c0da095b3bc23469d70",
+    "head_loss.py": "b003893bd3039d232dfe3d827347c42a7e573495f2e2719b051877a4e890c151",
+    "heat_loads.py": "965e89756f3f9fc11f817a00dc94f61d55ff89469bde83f0117c5f09c183cec3",
+    "heat_overlap.py": "662ee1aee77dbfd1104836276d232f247c3787c0ffe9bc43743a948555f81668",
+    "heat_schedule.py": "58718a99ebefc8bcd4e40eb6751ae0065d3eb677df3763863ef755698cb0c8a7",
+    "initial_conditions.py": "6f319797d8824b4e6db0a81d89b647ccbc02bbf68cd9919ce341dc9d6e812c64",
+    "input_export.py": "f2739d037f262aeff4745e9d458862d8efc1575c0107bfb1486111149eb3dcc7",
+    "inputs.py": "82aef3142dd8c1bd76574d8d6aed78c277f00b528931a4a1dc04bdeb6cb4ec71",
+    "job_observer.py": "d42d44d17f7caa4142a15456ca9aa265cd5a83fc5903f4bb7e45d65d17c2a763",
+    "job_processes.py": "37e39e95074a52b352715657186c38a17cf5aa29196356b1e4d019158bafc52b",
+    "jobs.py": "6c225c7849ca64296f8fdbfefa8ea8bd3e315b27db7f58526e0698eacfac3e2d",
+    "launch.py": "578ba5a0e3e24583ac2cdb26cd4f0a257bf2dd7dfd5a0fad8f0909f062c96460",
+    "launch_gate.py": "65a4757fbe73a3c49c501f4b4d79d1abf6a8f70baa5f517b349b4fcd7feb77d1",
+    "local_size.py": "23d94cde5c0c378df12d09866bb50f275c2ccc2910a3f8871995b565aa0fba5a",
+    "log_reader.py": "1832a482e8443a45a1e8141e7755df53227b1809d1374ac74be1974993e6553b",
+    "material_assignment.py": "ecef36307c8cf6c2933de60424aced8ea6b15e03931f7e4744b5a9cf61d3e00a",
+    "material_inventory.py": "7405e399a7765f7b10599b28f5dfdcbf5dc9d144829db80b0f7db9dd1d38864c",
+    "material_orientation.py": "a74dbdedfbae6615dcc4603d240d6628507f67ba62d1e0baad326cae848fbc66",
+    "mesh_controls.py": "110ef48709e0c702a4018bcf95b32eee75632a06ef2b04393b1630b928709406",
+    "mesh_guard.py": "e6e9350c190c96c4f8cca1056814b21c6049947036d39811dac8cbc88db52b45",
+    "mesh_plan.py": "fde81f39b3ff36d6b68b8699869235471d4aff5f40477e1dcd5f1e103af757e3",
+    "mesh_state.py": "09dee6935289f0a9ad2401c060b366eed03efcb7207dec478669fa7e14d32208",
+    "native.py": "1dc9fbd38344a2ca3fd55a3ac613fea879c9f23f43669364a36de94127a0a040",
+    "native_launch.py": "8c65b5e8b78885f9f9f5f9e3d9713769dc76ffcea2cc3aaeb96f19c15aeb7f03",
+    "nodal_availability.py": "a36f0306e705a7ac198dead797f3a5d5f0a4b25236ddf2092427335923acdb78",
+    "nodal_results.py": "80e95c0ef1abff1733b0e7d6c94315ff5983b38c6f634e1df8fef44eaa29e125",
+    "observer_worker.py": "68193cc8922fa893f2fc13fb57449e31be85e241c459b470bbe47f9bf67129c8",
+    "output_claims.py": "dfec926b3ba27b54f9ca551aeebcfb0aef26f44874d2f66180bdd66ce94896e1",
+    "postprocessing.py": "443cc196e818f05ad095a66997363ad7340d90916566e6de23783fccc377a7ac",
+    "postviews.py": "6a0dab10c78c02d558a3e648f9dfc76ca26f5f3af4d46647157dd3383ca3b5c0",
+    "preparation.py": "86fc57a1ae999d22dfd6cdea78933af475ac3a463de1fef3100ee3f4d8bc5f12",
+    "prepared_input.py": "b39143950a92380c22003a7224650e9044759b19c434857ecd5fa840c5486ce0",
+    "process_identity.py": "439047427fd4cef3b9ec66316bc0aa2863221487321cbd13f11f34caf6a54fdd",
+    "properties.py": "036c4e34432c85e6c814464289d0785ecb8dee0bd24fd84782a3ca96ef8d157c",
+    "property_values.py": "38cd79976692403d50e586761e1f7f724c9a7d2dcf7bc66e6db8ea55e6bf71b6",
+    "quality.py": "afa1a8b3881980c504b202ce9a3d4c90d8da15cfb20b184b928fbbd60a649b5a",
+    "radiation.py": "0090d3bd60cdc655fc92b50e9118e3499afc30d58d418cc8a7a0b73f8e68d226",
+    "radiation_objects.py": "34f6086f22d6b661c7ab9c5a15d75bcd16096c6c485275d9385a3eb28277c8e2",
+    "recovery.py": "a8b355b41d3e6957a9e5d705ba187fd001ff63844a7ce05910669d4eb53180e7",
+    "region_results.py": "f1093a08f1ed0049a25ee15d47c490ce3fdc5a3d5cb4280f72c0d73548886bd9",
+    "release_evidence.py": "833f0fc5c1f45e1e5c0eb9d103a2fdd5c09578627f139632967aaccaf9c06844",
+    "remesh.py": "8824603774ffe311cbc42acb19165650cfb8c8828f0b6daebda033923c5e4905",
+    "result_binding.py": "abf34d103a49eea82f2bf27f5032f88ce33f201f506162f8da4823fe881987b8",
+    "result_identity.py": "7429956913f1b8f0e14ee24b51e9e50dfae8b4ea100aa8a49840fb90f0c71787",
+    "result_reader.py": "70bd6d90212cf894db303edc2d6c0641a39fa8a95290c9e8f2f0f1c6cc3a8c0e",
+    "results.py": "b752ee5c38be06998edeb509970b13c02484539b882ff4f36ad7d4ff7cf520d3",
+    "revisions.py": "54df6e6782650f8907e38fbf4945ff5ba0714a42725ada5685fba2bfea8dee98",
+    "scalar_tables.py": "9d7d6fc177ed05bbf95b78896184b005c7b89d1f1c2ee46c4673f48606b9acdf",
+    "scenario_apply.py": "a7c39b08fa1258b0d985cde732d73c59aef3546e8d5a47aadb8003ce7e33bedd",
+    "scenario_import.py": "2a988b576eeb5613c45b60a93c0027eb93205de86882a11a0877ef4928b52949",
+    "selections.py": "ad6236219ffeccdf8792bcd5e25301145d5c58e8a999b79b3eca791be8845b9b",
+    "server.py": "5bed055a18f45cbbb15ae095a3d79f3e652775682da6abb04ce6f67ebed5b695",
+    "solver_guard.py": "654d79443a62936fe4ad9a7ffec9e11ef400b225dc0a441205ee52fec919ab58",
+    "solver_log.py": "ae14f187a4d049f64ad3965e2f1706269c1d718f08829573f363b26d65344afc",
+    "solver_manifest.py": "d5aa313fae2bfd2c568ab93d9e70eaa1806c545274ec00ade104dc69e057cb15",
+    "steady_controls.py": "0f77c0c2539b6de9c0e0ecab3f32116f79a5a1f368bb93f9c0743cd21590be7f",
+    "temperature_material.py": "4799f34e4acaab66f974a75b3c13465b954ecbe116e88424e51c2736b96e024b",
+    "thermal_balance.py": "e1402388673cf35df9bd32724749c80e3668d25dae268442e550cf1edc06f791",
+    "thermal_state.py": "473ef904ee3bbef1433e645e1098cf12237bad15b5c6bed89a83ae75abf7c337",
+    "time_controls.py": "21b1fefb066e237c273a288d88524be156597434262ee1e82220bf68da3eb676",
+    "variant_clone.py": "d621cdc95a20ae538d6ae4f8b2956ddd9190cba18addf8f6d1dcb2fefacee33a",
+    "variant_plan.py": "1ba86b47bd333c67c33b435098ec1fcd119a02865699662ed4d92ba5fdf3b5d3"
+  },
+  "handlers": [
+    {
+      "tool": "nx_sim_activate",
+      "registered": true,
+      "signature": "(document)",
+      "declaration": "(document: str)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_assign_fan",
+      "registered": true,
+      "signature": "(document, inlet, field)",
+      "declaration": "(document: str, inlet: str, field: str)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_assign_material",
+      "registered": true,
+      "signature": "(document, collector, material, expected_state_sha256)",
+      "declaration": "(document: str, collector: str, material: str, expected_state_sha256: str)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_boundary_layers",
+      "registered": true,
+      "signature": "(document, faces, first_layer_mm, layers, growth_rate)",
+      "declaration": "(document: str, faces: list[str], first_layer_mm: float, layers: int, growth_rate: float)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_cancel",
+      "registered": true,
+      "signature": "(job_id, expected_revision, job_folder='simcenter-jobs')",
+      "declaration": "(job_id: str, expected_revision: int, job_folder: str = 'simcenter-jobs')",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_capabilities",
+      "registered": true,
+      "signature": "()",
+      "declaration": "()",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_close",
+      "registered": true,
+      "signature": "(document)",
+      "declaration": "(document: str)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_collectors",
+      "registered": true,
+      "signature": "(document, offset=0, limit=20)",
+      "declaration": "(document: str, offset: int = 0, limit: int = 20)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_constraints",
+      "registered": true,
+      "signature": "(document, offset=0, limit=20, include_properties=False, include_targets=False)",
+      "declaration": "(document: str, offset: int = 0, limit: int = 20, include_properties: bool = False, include_targets: bool = False)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_contact",
+      "registered": true,
+      "signature": "(document, primary_faces, secondary_faces, mode, value, name, provenance)",
+      "declaration": "(document: str, primary_faces: list[str], secondary_faces: list[str], mode: Literal['resistance', 'conductance'], value: float, name: str, provenance: str)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_convection",
+      "registered": true,
+      "signature": "(document, faces, coefficient_w_m2_k, name, provenance, temperature_source='fluid_ambient', temperature_k=None)",
+      "declaration": "(document: str, faces: list[str], coefficient_w_m2_k: float, name: str, provenance: str, temperature_source: Literal['fluid_ambient', 'radiative_ambient', 'specified'] = 'fluid_ambient', temperature_k: float | None = None)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_create_analysis",
+      "registered": true,
+      "signature": "(cad_document, folder, name)",
+      "declaration": "(cad_document: str, folder: str, name: str)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_create_benchmark",
+      "registered": true,
+      "signature": "(folder, length_mm=100.0, width_mm=10.0, height_mm=10.0, analysis_type='thermal', wall_thickness_mm=None, block_origins_mm=None)",
+      "declaration": "(folder: str, length_mm: float = 100.0, width_mm: float = 10.0, height_mm: float = 10.0, analysis_type: Literal['thermal', 'flow', 'coupled_thermal_flow'] = 'thermal', block_origins_mm: list[list[float]] | None = None)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_dependencies",
+      "registered": true,
+      "signature": "(document, offset=0, limit=50)",
+      "declaration": "(document: str, offset: int = 0, limit: int = 50)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_descriptors",
+      "registered": true,
+      "signature": "(document, kind='load', offset=0, limit=50, name_contains=None)",
+      "declaration": "(document: str, kind: Literal['load', 'constraint', 'solution_step'] = 'load', offset: int = 0, limit: int = 50, name_contains: str | None = None)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_distributed_heat",
+      "registered": true,
+      "signature": "(document, targets, kind, value, name, provenance, overlap_policy='reject')",
+      "declaration": "(document: str, targets: list[str], kind: Literal['surface_flux', 'volume_generation'], value: float, name: str, provenance: str, overlap_policy: Literal['reject', 'allow_additive'] = 'reject')",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_documents",
+      "registered": true,
+      "signature": "(offset=0, limit=20)",
+      "declaration": "(offset: int = 0, limit: int = 20)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_emissivity_override",
+      "registered": true,
+      "signature": "(document, faces, emissivity, name, provenance, side='both')",
+      "declaration": "(document: str, faces: list[str], emissivity: float, name: str, provenance: str, side: Literal['both', 'top', 'bottom'] = 'both')",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_enclosure_radiation",
+      "registered": true,
+      "signature": "(document, faces, name, provenance, include_radiative_environment=True)",
+      "declaration": "(document: str, faces: list[str], name: str, provenance: str, include_radiative_environment: bool = True)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_environment",
+      "registered": true,
+      "signature": "(document, temperature_c, pressure_pa, buoyancy)",
+      "declaration": "(document: str, temperature_c: float, pressure_pa: float, buoyancy: bool)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_environment_radiation",
+      "registered": true,
+      "signature": "(document, faces, effective_emissivity, name, provenance, temperature_source='radiative_ambient', temperature_k=None)",
+      "declaration": "(document: str, faces: list[str], effective_emissivity: float, name: str, provenance: str, temperature_source: Literal['fluid_ambient', 'radiative_ambient', 'specified'] = 'radiative_ambient', temperature_k: float | None = None)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_export_input",
+      "registered": true,
+      "signature": "(document)",
+      "declaration": "(document: str)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_external_temperature",
+      "registered": true,
+      "signature": "(document, boundaries, name, temperature_c)",
+      "declaration": "(document: str, boundaries: list[str], name: str, temperature_c: float)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_face_size",
+      "registered": true,
+      "signature": "(document, faces, size_mm)",
+      "declaration": "(document: str, faces: list[str], size_mm: float)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_face_size_edit",
+      "registered": true,
+      "signature": "(document, control, size_mm)",
+      "declaration": "(document: str, control: str, size_mm: float)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_faces",
+      "registered": true,
+      "signature": "(document, offset=0, limit=50)",
+      "declaration": "(document: str, offset: int = 0, limit: int = 50)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_fan_table",
+      "registered": true,
+      "signature": "(document, name, points, pressure_convention, rpm, reference_density_kg_m3, stall_region, provenance_kind, provenance_source, scaling_rpm_range=None, scaling_validity=None)",
+      "declaration": "(document: str, name: str, points: list[tuple[float, float]], pressure_convention: Literal['static', 'total'], rpm: float, reference_density_kg_m3: float, stall_region: str, provenance_kind: Literal['measured', 'datasheet', 'assumed'], provenance_source: str, scaling_rpm_range: list[float] | None = None, scaling_validity: str | None = None)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_fan_tables",
+      "registered": true,
+      "signature": "(document, offset=0, limit=20, include_samples=False)",
+      "declaration": "(document: str, offset: int = 0, limit: int = 20, include_samples: bool = False)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_flow_convergence",
+      "registered": true,
+      "signature": "(document, residual, flow_imbalance_fraction, iteration_limit)",
+      "declaration": "(document: str, residual: float, flow_imbalance_fraction: float, iteration_limit: int)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_flow_log",
+      "registered": true,
+      "signature": "(job_id, log_name, job_folder='simcenter-jobs', offset=0, limit=50)",
+      "declaration": "(job_id: str, log_name: str, job_folder: str = 'simcenter-jobs', offset: int = 0, limit: int = 50)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_flow_setup",
+      "registered": true,
+      "signature": "(document, action, name='Flow')",
+      "declaration": "(document: str, action: Literal['create_step', 'attach_defaults', 'coupled_steady'], name: str = 'Flow')",
+      "code_matches": false
+    },
+    {
+      "tool": "nx_sim_fluid_material",
+      "registered": true,
+      "signature": "(document, collectors, name, density_kg_m3, viscosity_pa_s, conductivity_w_m_k, heat_capacity_j_kg_k, provenance)",
+      "declaration": "(document: str, collectors: list[str], name: str, density_kg_m3: float, viscosity_pa_s: float, conductivity_w_m_k: float, heat_capacity_j_kg_k: float, provenance: str)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_gravity",
+      "registered": true,
+      "signature": "(document, bodies, acceleration_m_s2, name)",
+      "declaration": "(document: str, bodies: list[str], acceleration_m_s2: list[float], name: str)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_head_loss",
+      "registered": true,
+      "signature": "(document, opening, coefficient, expected_coefficient=None, name=None)",
+      "declaration": "(document: str, opening: str, coefficient: float, expected_coefficient: float | None = None, name: str | None = None)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_heat_power",
+      "registered": true,
+      "signature": "(document, body, power_w, name, provenance, overlap_policy='reject')",
+      "declaration": "(document: str, body: str, power_w: float, name: str, provenance: str, overlap_policy: Literal['reject', 'allow_additive'] = 'reject')",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_heat_schedule",
+      "registered": true,
+      "signature": "(document, body, field, name, provenance, scale=1.0, overlap_policy='reject')",
+      "declaration": "(document: str, body: str, field: str, name: str, provenance: str, scale: float = 1.0, overlap_policy: Literal['reject', 'allow_additive'] = 'reject')",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_initial_conditions",
+      "registered": true,
+      "signature": "(document, mode, temperature_k=None)",
+      "declaration": "(document: str, mode: Literal['automatic', 'uniform'], temperature_k: float | None = None)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_inlet",
+      "registered": true,
+      "signature": "(document, faces, name, velocity_m_s, alignment='normal_to_face')",
+      "declaration": "(document: str, faces: list[str], name: str, velocity_m_s: float, alignment: Literal['normal_to_face'] = 'normal_to_face')",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_job_log",
+      "registered": true,
+      "signature": "(job_id, log_name, job_folder='simcenter-jobs', offset=0, maximum_bytes=8192, file_identity=None)",
+      "declaration": "(job_id: str, log_name: str, job_folder: str = 'simcenter-jobs', offset: int = 0, maximum_bytes: int = 8192, file_identity: str | None = None)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_job_logs",
+      "registered": true,
+      "signature": "(job_id, job_folder='simcenter-jobs', offset=0, limit=20)",
+      "declaration": "(job_id: str, job_folder: str = 'simcenter-jobs', offset: int = 0, limit: int = 20)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_job_status",
+      "registered": true,
+      "signature": "(job_id, job_folder='simcenter-jobs', include_manifest=False, include_evidence=False, check_processes=False, include_launch_gate=False)",
+      "declaration": "(job_id: str, job_folder: str = 'simcenter-jobs', include_manifest: bool = False, include_evidence: bool = False, check_processes: bool = False, include_launch_gate: bool = False)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_launch",
+      "registered": true,
+      "signature": "(document, job_id, job_folder='simcenter-jobs')",
+      "declaration": "(document: str, job_id: str, job_folder: str = 'simcenter-jobs')",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_loads",
+      "registered": true,
+      "signature": "(document, offset=0, limit=20, include_properties=False, include_targets=False)",
+      "declaration": "(document: str, offset: int = 0, limit: int = 20, include_properties: bool = False, include_targets: bool = False)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_material",
+      "registered": true,
+      "signature": "(document, name, conductivity_w_m_k, density_kg_m3, heat_capacity_j_kg_k, provenance, assign_all_solid_collectors=False)",
+      "declaration": "(document: str, name: str, conductivity_w_m_k: float, density_kg_m3: float, heat_capacity_j_kg_k: float, provenance: str, assign_all_solid_collectors: bool = False)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_material_frame",
+      "registered": true,
+      "signature": "(document, collector, expected_state_sha256, origin_mm, x_axis, y_axis)",
+      "declaration": "(document: str, collector: str, expected_state_sha256: str, origin_mm: list[float], x_axis: list[float], y_axis: list[float])",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_materials",
+      "registered": true,
+      "signature": "(document, offset=0, limit=20)",
+      "declaration": "(document: str, offset: int = 0, limit: int = 20)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_mesh",
+      "registered": true,
+      "signature": "(document, size_mm=5.0)",
+      "declaration": "(document: str, size_mm: float = 5.0)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_mesh_controls",
+      "registered": true,
+      "signature": "(document, offset=0, limit=50)",
+      "declaration": "(document: str, offset: int = 0, limit: int = 50)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_mesh_plan",
+      "registered": true,
+      "signature": "(document, regions)",
+      "declaration": "(document: str, regions: list[nx_mcp.simcenter.server.BodyMeshRegion])",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_mesh_quality",
+      "registered": true,
+      "signature": "(document, include_settings=False)",
+      "declaration": "(document: str, include_settings: bool = False)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_mesh_state",
+      "registered": true,
+      "signature": "(document, maximum_entities=200000)",
+      "declaration": "(document: str, maximum_entities: int = 200000)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_objects",
+      "registered": true,
+      "signature": "(document, offset=0, limit=20, include_properties=False, include_targets=False)",
+      "declaration": "(document: str, offset: int = 0, limit: int = 20, include_properties: bool = False, include_targets: bool = False)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_observe_job",
+      "registered": true,
+      "signature": "(job_id, job_folder='simcenter-jobs', maximum_seconds=3600)",
+      "declaration": "(job_id: str, job_folder: str = 'simcenter-jobs', maximum_seconds: int = 3600)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_open",
+      "registered": true,
+      "signature": "(path)",
+      "declaration": "(path: str)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_opening",
+      "registered": true,
+      "signature": "(document, faces, name, pressure_pa, alignment='normal_to_face')",
+      "declaration": "(document: str, faces: list[str], name: str, pressure_pa: float, alignment: Literal['normal_to_face'] = 'normal_to_face')",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_orthotropic_material",
+      "registered": true,
+      "signature": "(document, name, conductivities_w_m_k, density_kg_m3, heat_capacity_j_kg_k, provenance)",
+      "declaration": "(document: str, name: str, conductivities_w_m_k: list[float], density_kg_m3: float, heat_capacity_j_kg_k: float, provenance: str)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_prepare_solve",
+      "registered": true,
+      "signature": "(document, job_id, job_folder='simcenter-jobs', mesh_inspection_limit=200000)",
+      "declaration": "(document: str, job_id: str, job_folder: str = 'simcenter-jobs', mesh_inspection_limit: int = 200000)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_pressure_result",
+      "registered": true,
+      "signature": "(document, field='pressure', loadcase_index=0, iteration_index=0)",
+      "declaration": "(document: str, field: Literal['pressure', 'total_pressure'] = 'pressure', loadcase_index: int = 0, iteration_index: int = 0)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_release_job",
+      "registered": true,
+      "signature": "(job_id, job_folder='simcenter-jobs')",
+      "declaration": "(job_id: str, job_folder: str = 'simcenter-jobs')",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_remesh",
+      "registered": true,
+      "signature": "(document, size_mm=None)",
+      "declaration": "(document: str, size_mm: float | None = None)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_result_identity",
+      "registered": true,
+      "signature": "(document, maximum_bytes=1073741824, job_id=None)",
+      "declaration": "(document: str, maximum_bytes: int = 1073741824, job_id: str | None = None)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_result_inventory",
+      "registered": true,
+      "signature": "(document, offset=0, limit=50)",
+      "declaration": "(document: str, offset: int = 0, limit: int = 50)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_save",
+      "registered": true,
+      "signature": "(document)",
+      "declaration": "(document: str)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_save_as",
+      "registered": true,
+      "signature": "(document, path)",
+      "declaration": "(document: str, path: str)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_scalar_table",
+      "registered": true,
+      "signature": "(document, name, axis, quantity, samples, provenance)",
+      "declaration": "(document: str, name: str, axis: Literal['time', 'temperature'], quantity: Literal['power', 'temperature', 'conductivity', 'heat_capacity', 'density', 'convection'], samples: list[list[float]], provenance: str)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_scalar_tables",
+      "registered": true,
+      "signature": "(document, offset=0, limit=20, include_samples=False)",
+      "declaration": "(document: str, offset: int = 0, limit: int = 20, include_samples: bool = False)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_scale_fan_table",
+      "registered": true,
+      "signature": "(document, source_field, name, rpm)",
+      "declaration": "(document: str, source_field: str, name: str, rpm: float)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_scenario_apply",
+      "registered": true,
+      "signature": "(document, path, region_targets, expected_preview_sha256, format='json', metadata=None)",
+      "declaration": "(document: str, path: str, region_targets: dict[str, str], expected_preview_sha256: str, format: Literal['json', 'csv'] = 'json', metadata: dict | None = None)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_scenario_preview",
+      "registered": true,
+      "signature": "(document, path, region_targets, format='json', metadata=None)",
+      "declaration": "(document: str, path: str, region_targets: dict[str, str], format: Literal['json', 'csv'] = 'json', metadata: dict | None = None)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_select_solution",
+      "registered": true,
+      "signature": "(document, solution)",
+      "declaration": "(document: str, solution: str)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_show_pressure",
+      "registered": true,
+      "signature": "(document, field='pressure', loadcase_index=0, iteration_index=0, name='MCP pressure')",
+      "declaration": "(document: str, field: Literal['pressure', 'total_pressure'] = 'pressure', loadcase_index: int = 0, iteration_index: int = 0, name: str = 'MCP pressure')",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_show_temperature",
+      "registered": true,
+      "signature": "(document, loadcase_index=0, iteration_index=0, name='MCP temperature')",
+      "declaration": "(document: str, loadcase_index: int = 0, iteration_index: int = 0, name: str = 'MCP temperature')",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_solutions",
+      "registered": true,
+      "signature": "(document, offset=0, limit=20, include_properties=False, include_execution_options=False, include_membership=False)",
+      "declaration": "(document: str, offset: int = 0, limit: int = 20, include_properties: bool = False, include_execution_options: bool = False, include_membership: bool = False)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_steady_thermal_controls",
+      "registered": true,
+      "signature": "(document, maximum_temperature_change_k, iteration_limit=10000, relative_heat_balance=None)",
+      "declaration": "(document: str, maximum_temperature_change_k: float, iteration_limit: int = 10000, relative_heat_balance: float | None = None)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_steps",
+      "registered": true,
+      "signature": "(document, solution, offset=0, limit=20, include_properties=False, include_membership=False)",
+      "declaration": "(document: str, solution: str, offset: int = 0, limit: int = 20, include_properties: bool = False, include_membership: bool = False)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_sync_geometry",
+      "registered": true,
+      "signature": "(document)",
+      "declaration": "(document: str)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_temperature",
+      "registered": true,
+      "signature": "(document, faces, temperature_k, name, provenance)",
+      "declaration": "(document: str, faces: list[str], temperature_k: float, name: str, provenance: str)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_temperature_material",
+      "registered": true,
+      "signature": "(document, name, conductivity_samples, heat_capacity_samples, density_kg_m3, provenance)",
+      "declaration": "(document: str, name: str, conductivity_samples: list[list[float]], heat_capacity_samples: list[list[float]], density_kg_m3: float, provenance: str)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_temperature_nodes",
+      "registered": true,
+      "signature": "(document, result_sha256, loadcase_index=0, iteration_index=0, offset=0, limit=100, maximum_bytes=1073741824)",
+      "declaration": "(document: str, result_sha256: str, loadcase_index: int = 0, iteration_index: int = 0, offset: int = 0, limit: int = 100, maximum_bytes: int = 1073741824)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_temperature_regions",
+      "registered": true,
+      "signature": "(document, result_sha256, dimension='3d', loadcase_index=0, iteration_index=0, offset=0, limit=10, maximum_entities=200000, maximum_bytes=1073741824)",
+      "declaration": "(document: str, result_sha256: str, dimension: Literal['3d', '2d'] = '3d', loadcase_index: int = 0, iteration_index: int = 0, offset: int = 0, limit: int = 10, maximum_entities: int = 200000, maximum_bytes: int = 1073741824)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_temperature_result",
+      "registered": true,
+      "signature": "(document, loadcase_index=0, iteration_index=0, location='nodal')",
+      "declaration": "(document: str, loadcase_index: int = 0, iteration_index: int = 0, location: Literal['nodal', 'elemental', 'element_nodal'] = 'nodal')",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_transient_setup",
+      "registered": true,
+      "signature": "(document, output_times_s, max_temperature_change_k=0.05, min_time_step_s=0.01)",
+      "declaration": "(document: str, output_times_s: list[float], max_temperature_change_k: float = 0.05, min_time_step_s: float = 0.01)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_variant_create",
+      "registered": true,
+      "signature": "(document, folder, name, expected_plan_sha256, saved_snapshot=False)",
+      "declaration": "(document: str, folder: str, name: str, expected_plan_sha256: str, saved_snapshot: bool = False)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_variant_plan",
+      "registered": true,
+      "signature": "(document, folder, name, saved_snapshot=False)",
+      "declaration": "(document: str, folder: str, name: str, saved_snapshot: bool = False)",
+      "code_matches": true
+    },
+    {
+      "tool": "nx_sim_variant_receipt",
+      "registered": true,
+      "signature": "(folder, expected_plan_sha256)",
+      "declaration": "(folder: str, expected_plan_sha256: str)",
+      "code_matches": true
+    }
+  ],
+  "source": "C:\\ProgramData\\BasementHypervisor\\nx-mcp-simcenter\\source\\src\\nx_mcp\\simcenter",
+  "model_changed": false,
+  "solver_launched": false,
+  "operation_id": "op_f53cc0dcf4a04c5785c4fc285c06106c",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}
