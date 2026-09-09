@@ -432,6 +432,41 @@ Evidence: `mesh-plan-public.json` and `mixed-mesh-topology.json`; reproduce with
 the same saved fixture without repeating meshing. General local sizing,
 remeshing/editing and refinement-study workflows remain incomplete.
 
+### Local face sizing
+
+`nx_sim_face_size(document, faces, size_mm)` creates native FaceDensitySize
+controls on 1..1000 distinct FEM prototype faces. It uses the documented
+`OverallSize` expression in millimeters, verifies committed size and selections,
+and rejects overlap with an existing face-size control. Other native control
+types are preserved. `nx_sim_mesh_controls` now reads face-size expressions,
+units and associations as well as layer settings. Creation does not remesh or
+save; the requested size is not a guaranteed maximum edge-length bound.
+
+Native/public verification: a 1 mm control on one face survived save/close/reopen
+with its face association. Replay, overlap/invalid-input rejection and stale
+references passed. The two identical disjoint 10 mm cubes both used 5 mm global
+mesh sizing; the untreated cube had 100 elements and 12 nodes on its corresponding
+xmin face, while the controlled cube had 976 elements and 145 nodes there.
+Native quality checks reported zero error/warning occurrences for all 1076
+elements. This verifies a local meshing effect, not solution convergence.
+
+An injected failure after native control commitment restored the original
+control inventory and all document modification flags. The first assertion-only
+probe returned an unlocalized failure; it is retained. A diagnostic rerun
+recorded the committed count changing from 1 to 2 and returning to 1, with
+unchanged flags. No native defect is inferred from the first opaque assertion.
+Forty focused offline tests pass. No solver was launched. The final live audit
+matched 73 handler signatures and all Simcenter source hashes, with no stale
+checked property readers (`local-size-deployment.json`).
+
+Reproduce with `examples/simcenter/verify_local_size_public.py`,
+`verify_local_size_effect.py` and `refresh_local_size.py`; bounded descriptor
+check: `probe_local_face_size.py`. Evidence: `local-size-public.json`,
+`local-size-effect.json`, `local-size-rollback.json`,
+`local-size-rollback-initial-failure.json`, and `local-face-size-native.json`.
+Edge/point/volume sizing, control editing/removal and reusable remeshing remain
+open; the initial mesh plan still requires no existing meshes.
+
 ### Reconciled Phase 2 backlog
 
 Statuses below refer to the requested general capability, not availability inferred
@@ -449,7 +484,7 @@ from installed modules. A missing implementation/test is not an external blocker
 | Fan-speed variants/operating points | Scoped scaling and extraction present | `fan_scaling.py`, `fan_summary.py`; retain validity range and per-run identity |
 | Native temperature-controlled fans | Native descriptor/field/controller-link probe verified; public authoring incomplete | Sensor native type -9 rejects documented Reference -5 accessors; retain explicit unresolved mapping, no controller-function claim |
 | Openings/screens/porous resistance | Partial opening scalar K | `head_loss.py`; do not call this general porous media; add supported model-specific paths |
-| Global/local/near-wall mesh controls | Public explicit solid/fluid body plans, FEM faces and boundary-layer controls | `boundary_layers.py`, `mesh_controls.py`; public mixed layered-mesh fixture passes; local sizing and control editing remain |
+| Global/local/near-wall mesh controls | Public explicit solid/fluid body plans, FEM faces and boundary-layer controls | `boundary_layers.py`, `mesh_controls.py`; public layered meshes and local face-sizing effects verified; edge/point/volume sizing, control editing and remeshing remain |
 | Mesh refinement comparisons | Partial retained numerical comparisons | Bounded reusable comparison records with exact model/mesh/job identity |
 | Parameter studies | Partial isolated variants and scenario import | `variant_clone.py`, `scenario_apply.py`; explicit variables, bounds and resumable execution |
 | Job status/recovery/cancellation | Partial public persistent workflow | Native running cancellation unresolved; pre-launch cancellation verified separately |

@@ -1,0 +1,26 @@
+{
+  "status": "success",
+  "hypothesis": "FaceDensitySize uses OverallSize and Selection; no mesh regeneration",
+  "document": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\M-mixed-mesh-20260909-r1\\benchmark_58e87a06afdb_mesh.fem",
+  "enum_available": true,
+  "size_units_before": "MilliMeter",
+  "created_count": 1,
+  "controls": [
+    {
+      "type": "4",
+      "size": 1.0,
+      "units": "MilliMeter",
+      "face_tags": [
+        8860425
+      ],
+      "expected_face": 8860425
+    }
+  ],
+  "inventory_restored": true,
+  "flags_restored": true,
+  "operation_id": "op_991ee1ab28364642b3c3af840baf2611",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

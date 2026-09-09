@@ -146,6 +146,10 @@ PUBLIC_EVIDENCE = {
         "mesh-plan-public.json",
         "Explicit solid/fluid body plan, layers, readback/replay and save/reopen: 529 elements, 281 nodes; no solve",
     ),
+    "nx_sim_face_size": (
+        "local-size-public.json",
+        "Face size 1 mm, replay/save-reopen; equal-global-size blocks mesh to 100 vs 976 elements; no solve",
+    ),
     "nx_sim_boundary_layers": (
         "mesh-controls-public.json",
         "Two FEM walls, 0.1 mm/3 layers/1.2 growth, readback/replay/save-reopen; no generated mesh claim",

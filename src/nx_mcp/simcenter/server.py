@@ -747,7 +747,7 @@ NON_MODEL.add("nx_sim_boundary_layers")
 
 
 def nx_sim_mesh_controls(document: str, offset: int = 0, limit: int = 50):
-    """Page native mesh controls in an active standalone FEM. offset >=0, limit 1..100. Returns lifetime-scoped control references and native types; boundary-layer controls include actual thickness/expression/units, layer count, growth mode, dimension, wall faces and body targets. Other control types are explicitly uninspected. Uses a reversible getter checkpoint; no mesh generation, save or solver launch. Reacquire references after remesh/geometry updates. Stored controls do not establish mesh quality or wall-resolution adequacy."""
+    """Page native mesh controls in an active standalone FEM. offset >=0, limit 1..100. Returns lifetime-scoped control references and native types; boundary-layer controls include actual thickness/expression/units, layer count, growth mode, dimension, wall faces and body targets. Face-size controls include committed size/expression/units and faces. Other control types are explicitly uninspected. Uses a reversible getter checkpoint; no mesh generation, save or solver launch. Reacquire references after remesh/geometry updates. Stored controls do not establish mesh quality or wall-resolution adequacy."""
 
 
 READ_ONLY.add("nx_sim_mesh_controls")
@@ -766,3 +766,10 @@ def nx_sim_mesh_plan(document: str, regions: list[BodyMeshRegion]):
 
 
 NON_MODEL.add("nx_sim_mesh_plan")
+
+
+def nx_sim_face_size(document: str, faces: list[str], size_mm: float):
+    """Create native local face-size controls on 1..1000 distinct prototype face IDs from nx_sim_faces in an active millimeter FEM. size_mm is finite in (0,10000]. Reads committed face associations and size; rejects stale/foreign/SIM occurrence faces and overlap with existing face-size controls. Other native control types are preserved. Does not regenerate meshes, save or solve; existing meshes/results require regeneration and validation. Returns typed controls and selected faces; inspect later using nx_sim_mesh_controls. Requested size is a native meshing control, not a certified maximum element edge length. Uses undo/rollback and supports operation_id deduplication."""
+
+
+NON_MODEL.add("nx_sim_face_size")

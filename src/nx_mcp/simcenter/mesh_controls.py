@@ -14,6 +14,27 @@ def inspect_control(fem, control, nx, reference):
             "control": reference(control, "simulation_mesh_control", fem, "control"),
             "native_type": str(builder.MainType),
         }
+        if builder.MainType == getattr(cae.MeshControlBuilder.Types, "FaceDensitySize", None):
+            expression = builder.OverallSize
+            value = expression.GetValueUsingUnits(nx.Expression.UnitsOption.Expression)
+            if expression.Units is None or not math.isfinite(value):
+                raise ValueError("Local size lacks a finite unit-bearing value")
+            size = fem.UnitCollection.Convert(
+                expression.Units, fem.UnitCollection.FindObject("MilliMeter"), value
+            )
+            faces = list(builder.Selection.GetArray())
+            if len(faces) > 1000:
+                raise ValueError("Local size selection exceeds 1000 faces")
+            return {
+                **result,
+                "kind": "face_size",
+                "size_mm": size,
+                "size_expression": expression.GetFormula(),
+                "native_size": {"value": value, "units": expression.Units.Name},
+                "faces": [reference(f, "face", fem, "face") for f in faces],
+                "coordinate_frame": "fem_part_absolute",
+                "mesh_effect": "not_verified",
+            }
         if builder.MainType != cae.MeshControlBuilder.Types.BoundaryLayers:
             return {**result, "inspection_status": "unsupported_control_type"}
         expression = builder.FirstLayerThickness

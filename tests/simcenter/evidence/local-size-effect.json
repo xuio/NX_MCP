@@ -1,0 +1,25 @@
+{
+  "status": "success",
+  "document": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\L-face-size-20260909-r1\\benchmark_d5f46585b1fa_mesh.fem",
+  "element_count": 1076,
+  "elements_per_block": {
+    "baseline": 100,
+    "local_size": 976
+  },
+  "nodes_on_corresponding_xmin_faces": {
+    "baseline": 12,
+    "local_size": 145
+  },
+  "global_size_mm": 5,
+  "local_face_size_mm": 1,
+  "geometry": "two identical disjoint 10 mm cubes",
+  "effect_verified": "more elements and more nodes on the selected refined face than its counterpart",
+  "flags_unchanged": true,
+  "solver_launched": false,
+  "convergence": "not_established",
+  "operation_id": "op_3768aa6b5d444e5e95b4d76e7e2017e2",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

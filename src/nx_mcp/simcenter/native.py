@@ -1499,6 +1499,15 @@ class SimcenterMixin:
             **result,
         }
 
+    def _sim_face_size(self, document, faces, size_mm):
+        from nx_mcp.simcenter.local_size import create
+
+        fem = self.objects.resolve(document, expected_kind="part")
+        try:
+            return create(self, fem, faces, size_mm)
+        except ValueError as error:
+            raise NXToolError("NX_INVALID_ARGUMENT", str(error)) from error
+
     def _sim_mesh_controls(self, document, offset=0, limit=50):
         from nx_mcp.simcenter.mesh_controls import inventory
 

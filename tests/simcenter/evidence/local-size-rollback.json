@@ -1,0 +1,26 @@
+{
+  "status": "success",
+  "registered": true,
+  "rollback": {
+    "code": "NX_SIM_LOCAL_SIZE_FAILED",
+    "details": {
+      "mutation_outcome": "rolled_back",
+      "next_step": "Inspect mesh controls and selections before retrying"
+    }
+  },
+  "post_commit_reached": true,
+  "observed_counts": [
+    2
+  ],
+  "before_count": 1,
+  "after_count": 1,
+  "inventory_restored": true,
+  "flags_restored": true,
+  "changed_flags": [],
+  "solver_launched": false,
+  "operation_id": "op_e0c443dfc7c8410d89843454b326b686",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}
