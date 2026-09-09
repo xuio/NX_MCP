@@ -1,0 +1,31 @@
+{
+  "status": "success",
+  "before": {
+    "mode": 0,
+    "value": 20.0,
+    "units": "Celsius",
+    "temperature_k": 293.15
+  },
+  "attempts": [
+    {
+      "mode": 1,
+      "value": 313.15,
+      "units": "Kelvin",
+      "temperature_k": 313.15
+    },
+    {
+      "mode": 0,
+      "value": 313.15,
+      "units": "Kelvin",
+      "temperature_k": 313.15
+    }
+  ],
+  "restored": true,
+  "flags_restored": true,
+  "solver_launched": false,
+  "operation_id": "op_e390edae896f43d4a0343ea7bce98593",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

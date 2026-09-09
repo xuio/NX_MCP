@@ -367,6 +367,15 @@ def nx_sim_select_solution(document: str, solution: str):
 NON_MODEL.add("nx_sim_select_solution")
 
 
+def nx_sim_initial_conditions(
+    document: str, mode: Literal["automatic", "uniform"], temperature_k: float | None = None
+):
+    """Set solution-wide initial temperature on the active NX MULTIPHYSICS Thermal SIM. uniform requires finite temperature_k >=0; automatic requires omission and leaves the inactive stored value unchanged. Returns actual selector, stored value/units and activation state. Does not prescribe a boundary temperature, edit ambient conditions, configure transient steps, save or solve. Native initialization semantics and numerical response require separate verification. Result-directory and TEMPF hot-start are not supported here. Rejects stale/wrong-work documents and running solvers; rolls back failed readback. Supply operation_id for retry deduplication."""
+
+
+NON_MODEL.add("nx_sim_initial_conditions")
+
+
 def nx_sim_transient_setup(
     document: str,
     output_times_s: list[float],

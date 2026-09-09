@@ -1,0 +1,28 @@
+{
+  "status": "success",
+  "rollback": {
+    "code": "NX_SIM_INITIAL_CONDITIONS_FAILED",
+    "details": {
+      "mutation_outcome": "rolled_back",
+      "next_step": "Inspect the active solution initial conditions before retrying"
+    }
+  },
+  "post_write_readback": {
+    "mode": "uniform",
+    "selector": 1,
+    "stored_temperature": {
+      "value": 323.15,
+      "units": "Kelvin",
+      "temperature_k": 323.15
+    },
+    "temperature_active": true
+  },
+  "state_restored": true,
+  "document_flags_restored": true,
+  "solver_launched": false,
+  "operation_id": "op_f0e69981e1724d2cbf30a1165682fe20",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

@@ -336,7 +336,7 @@ from installed modules. A missing implementation/test is not an external blocker
 | Convection and dependencies | Native/public constant coefficient and three temperature-source selectors verified | Explicit Kelvin value, persistence, exported conversion and disjoint face sets pass; time fields, ambient value resolution and shell-side options remain |
 | Radiation/emissivity/enclosures | Native/public simple environment radiation, constant emissivity override and deterministic enclosure authoring verified | Persistent/exported primary regions and active settings pass; view factors/numerical balances, Monte Carlo/GPU and secondary-slot authoring remain unverified |
 | Temperature-dependent materials | Native/public isotropic conductivity/heat-capacity tables, constant density, assignment and export/persistence verified | Temperature-dependent density, anisotropic/phase-change tables, solution-domain checks and numerical acceptance remain |
-| Transient loads/initial conditions/schedules | Partial time controls, constant distributed loads and native/public time-table body power | `time_controls.py`, `distributed_heat.py`; schedule and initial-condition authoring/readback |
+| Transient loads/initial conditions/schedules | Time controls, native/public time-table body power and automatic/uniform initial temperature | `time_controls.py`, `initial_conditions.py`; hot-start and numerical schedule/initial-condition acceptance remain |
 | Forced/natural convection and fluid models | Partial native controls/materials and coupled fixtures | `flow_controls.py`, `fluid_material.py`; selector/gravity/buoyancy scope and exports |
 | Fan curves and provenance | Scoped public authoring/readback verified | `fan_field.py`, `fan_boundary.py`; preserve static convention and assignment limits |
 | Fan-speed variants/operating points | Scoped scaling and extraction present | `fan_scaling.py`, `fan_summary.py`; retain validity range and per-run identity |
@@ -3650,6 +3650,39 @@ selection. The second unsolved probe solution remains only in the unsaved test
 SIM; no solve or save was performed. Forced API-failure rollback and stale
 generation rejection remain natively untested. Switching evidence:
 `tests/simcenter/evidence/native-solution-switch-mcp.json`. Initial inventory evidence: `tests/simcenter/evidence/native-solutions-mcp.json`.
+
+### Thermal initial conditions
+
+`nx_sim_initial_conditions(document, mode, temperature_k)` sets the active
+NX MULTIPHYSICS Thermal solution's initial-temperature selector. `uniform`
+requires an absolute Kelvin value; `automatic` rejects a temperature argument
+and preserves the inactive stored value. The response distinguishes that stored
+value from an active initial condition. Neither mode prescribes a boundary or
+changes global ambient settings. Configure transient steps separately.
+
+The installed OpenCAE Thermal solution descriptor documents Automatic=0,
+Uniform=1 and activates `Initial Temperature Value` only for Uniform. Native
+checking confirmed both selectors and Kelvin readback; an injected failure
+after writing 323.15 K restored the original state and all document modification
+flags. This is API verification, not numerical transient acceptance.
+Public MCP verification retained `313.15 K` through save/close/reopen and
+exported selector `1` with `40 °C` (absolute tolerance 1e-9 °C). Automatic mode
+preserved the stored value and reported it inactive. Replay, invalid arguments
+and stale references were checked. The deployment audit matched all 69 live
+handler signatures and all Simcenter source hashes
+(`initial-conditions-deployed-signatures.json`). Evidence: `initial-conditions-public.json`,
+`initial-conditions-public.xml`, `initial-conditions-rollback.json` and
+`initial-temperature-probe.json`; 44 focused offline tests pass.
+
+The retained public run was resumed after three fixture failures: reusing an ID
+after save-as, attempting export without a mesh/material, and reusing a loaded
+basename. All failed responses remain in the receipt. The corrected fixture is
+`examples/simcenter/verify_initial_conditions_public.py`; it supplies a small
+5 mm tetrahedral mesh and explicit isotropic material before export. The native
+adapter's post-write recovery check is `refresh_initial_conditions.py`.
+
+Result-directory/TEMPF hot-start remains unimplemented; automatic initialization
+semantics are delegated to native Simcenter without assuming a temperature.
 
 ### Public transient thermal output scheduling
 

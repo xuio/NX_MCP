@@ -747,6 +747,19 @@ class SimcenterMixin:
             "result_freshness": "not_verified",
         }
 
+    def _sim_initial_conditions(self, document, mode, temperature_k=None):
+        from nx_mcp.simcenter.initial_conditions import configure
+
+        sim = self.objects.resolve(document, expected_kind="part")
+        try:
+            result = configure(self.session, sim, mode, temperature_k)
+        except ValueError as error:
+            raise NXToolError("NX_INVALID_ARGUMENT", str(error)) from error
+        result["solution"] = self._reference(
+            sim.Simulation.ActiveSolution, "simulation_solution", sim, "solution"
+        )
+        return result
+
     def _sim_transient_setup(
         self, document, output_times_s, max_temperature_change_k=0.05, min_time_step_s=0.01
     ):

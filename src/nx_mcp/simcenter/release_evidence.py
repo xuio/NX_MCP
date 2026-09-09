@@ -154,6 +154,10 @@ PUBLIC_EVIDENCE = {
         "native-solution-switch-mcp.json",
         "Switch between distinct solutions, reject foreign ownership, restore original selection",
     ),
+    "nx_sim_initial_conditions": (
+        "initial-conditions-public.json",
+        "Automatic/uniform selectors, Kelvin readback, replay, save/reopen and Celsius export; no numerical acceptance",
+    ),
     "nx_sim_transient_setup": (
         "native-transient-setup-mcp.json",
         "Three output times, committed step values, replay and extra-step rejection; no solve in this test",
