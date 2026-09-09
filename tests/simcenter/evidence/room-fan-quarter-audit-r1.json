@@ -1,0 +1,144 @@
+{
+  "quarter": {
+    "checks": {
+      "room_temperature": true,
+      "density": true,
+      "coupled_convergence": true,
+      "flow_residuals": true,
+      "mass_balance": true,
+      "energy_balance": true,
+      "solid_fluid_heat": true,
+      "fan_curve": true,
+      "positive_solid_rise": true
+    },
+    "peak_degC": 24.576641082763672,
+    "rise_K": 4.576641082763672,
+    "flow_m3_s": 4.307499828835335e-05,
+    "fan_static_pressure_rise_Pa": 0.8923,
+    "fan_curve_error_Pa": 1.2504279116698491e-05,
+    "mass_imbalance_percent": 1.176e-11,
+    "energy_imbalance_percent": 0.005142,
+    "native_log_summary": {
+      "ambient_temperature_degC": 20.0,
+      "temperature_summaries": [
+        {
+          "maximum": 24.57,
+          "minimum": 19.97,
+          "average": 21.73,
+          "quantity": "Fluid Temperature",
+          "units": "degC",
+          "association": "native summary row; region identity not established"
+        },
+        {
+          "maximum": 24.58,
+          "minimum": 24.49,
+          "average": 24.55,
+          "quantity": "Solid Temperature",
+          "units": "degC",
+          "association": "native summary row; region identity not established"
+        },
+        {
+          "maximum": 24.58,
+          "minimum": 24.49,
+          "average": 24.55,
+          "quantity": "Solid Temperature",
+          "units": "degC",
+          "association": "native summary row; region identity not established"
+        }
+      ],
+      "applied_solid_power_W": 0.09999999999999999,
+      "heat_to_fluid_W": 0.09999999999999999,
+      "maximum_coupled_temperature_change_degC": 2.289e-05,
+      "normalized_coupled_heat_imbalance": 5.295e-05,
+      "iteration_limit_reached_without_convergence": false,
+      "numerical_convergence": "not_established",
+      "warnings": {
+        "coincident_thermal_nodes": true,
+        "no_interior_pressure_anchor": false
+      },
+      "scope": "Rounded native log summaries; not independent field extraction, complete criteria validation or mesh acceptance"
+    },
+    "final_flow_equations": [
+      {
+        "iteration": 105,
+        "region": "Flow Enclosure",
+        "equation": "U - Mom",
+        "linear_iterations": 1,
+        "linear_residual": 1.734e-20,
+        "rate": 1.0,
+        "rate_overflow": false,
+        "residual": 1.14e-16,
+        "native_message": "OK"
+      },
+      {
+        "iteration": 105,
+        "region": "Flow Enclosure",
+        "equation": "V - Mom",
+        "linear_iterations": 1,
+        "linear_residual": 1.734e-20,
+        "rate": 1.01,
+        "rate_overflow": false,
+        "residual": 1.231e-16,
+        "native_message": "OK"
+      },
+      {
+        "iteration": 105,
+        "region": "Flow Enclosure",
+        "equation": "W - Mom",
+        "linear_iterations": 1,
+        "linear_residual": 1.734e-20,
+        "rate": 1.0,
+        "rate_overflow": false,
+        "residual": 1.112e-16,
+        "native_message": "OK"
+      },
+      {
+        "iteration": 105,
+        "region": "Flow Enclosure",
+        "equation": "P - Mass",
+        "linear_iterations": 1,
+        "linear_residual": 1.734e-20,
+        "rate": 1.0,
+        "rate_overflow": false,
+        "residual": 6.023e-17,
+        "native_message": "OK"
+      },
+      {
+        "iteration": 105,
+        "region": "Flow Enclosure",
+        "equation": "H - Energy",
+        "linear_iterations": 6,
+        "linear_residual": 0.0001334,
+        "rate": 0.91,
+        "rate_overflow": false,
+        "residual": 9.399e-07,
+        "native_message": "OK"
+      }
+    ],
+    "native_boundary_flows": [
+      {
+        "name": "Coupled Inlet",
+        "volume_flow_m3_s": 4.308e-05,
+        "mass_flow_kg_s": 5.169e-05,
+        "positive_direction": "into_domain"
+      },
+      {
+        "name": "Coupled Opening",
+        "volume_flow_m3_s": -4.308e-05,
+        "mass_flow_kg_s": -5.169e-05,
+        "positive_direction": "into_domain"
+      }
+    ],
+    "limitations": "Rounded fan/log values; scoped physical checks, not complete model freshness or product accuracy"
+  },
+  "comparison": {
+    "fractional_changes": {
+      "rise_K": 0.1678752749362761,
+      "flow_m3_s": 0.11307481125600545
+    },
+    "temperature_passed": false,
+    "flow_passed": false,
+    "accepted": false,
+    "limits": "5% peak temperature rise and volume flow; 0.02 K absolute temperature allowance"
+  }
+}

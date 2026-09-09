@@ -1,0 +1,661 @@
+{
+  "conclusion": "READY",
+  "handover_scope": "Scoped infrastructure; user accepted failed mesh sensitivity on 2026-09-09",
+  "deployed_source_matches": true,
+  "numerical_mesh_acceptance": {
+    "fractional_changes": {
+      "rise_K": 0.1678752749362761,
+      "flow_m3_s": 0.11307481125600545
+    },
+    "temperature_passed": false,
+    "flow_passed": false,
+    "accepted": false,
+    "limits": "5% peak temperature rise and volume flow; 0.02 K absolute temperature allowance"
+  },
+  "scope": "Historical failures plus current native room-temperature checks; no new solver execution or whole-release certification",
+  "current_room_temperature": {
+    "cases": {
+      "coarse": {
+        "checks": {
+          "room_temperature": true,
+          "density": true,
+          "coupled_convergence": true,
+          "flow_residuals": true,
+          "mass_balance": true,
+          "energy_balance": true,
+          "solid_fluid_heat": true,
+          "fan_curve": true,
+          "positive_solid_rise": true
+        },
+        "peak_degC": 25.06661605834961,
+        "rise_K": 5.066616058349609,
+        "flow_m3_s": 5.72249977260829e-05,
+        "fan_static_pressure_rise_Pa": 0.8569,
+        "fan_curve_error_Pa": 3.750568479277128e-05,
+        "mass_imbalance_percent": 0.001505,
+        "energy_imbalance_percent": 0.001027,
+        "native_log_summary": {
+          "ambient_temperature_degC": 20.0,
+          "temperature_summaries": [
+            {
+              "maximum": 23.31,
+              "minimum": 20.0,
+              "average": 21.01,
+              "quantity": "Fluid Temperature",
+              "units": "degC",
+              "association": "native summary row; region identity not established"
+            },
+            {
+              "maximum": 25.07,
+              "minimum": 25.03,
+              "average": 25.05,
+              "quantity": "Solid Temperature",
+              "units": "degC",
+              "association": "native summary row; region identity not established"
+            },
+            {
+              "maximum": 25.07,
+              "minimum": 25.03,
+              "average": 25.05,
+              "quantity": "Solid Temperature",
+              "units": "degC",
+              "association": "native summary row; region identity not established"
+            }
+          ],
+          "applied_solid_power_W": 0.09999999999999999,
+          "heat_to_fluid_W": 0.09999999999999999,
+          "maximum_coupled_temperature_change_degC": 1.526e-05,
+          "normalized_coupled_heat_imbalance": 3.924e-06,
+          "iteration_limit_reached_without_convergence": false,
+          "numerical_convergence": "not_established",
+          "warnings": {
+            "coincident_thermal_nodes": true,
+            "no_interior_pressure_anchor": false
+          },
+          "scope": "Rounded native log summaries; not independent field extraction, complete criteria validation or mesh acceptance"
+        },
+        "final_flow_equations": [
+          {
+            "iteration": 15,
+            "region": "Flow Enclosure",
+            "equation": "U - Mom",
+            "linear_iterations": 2,
+            "linear_residual": 2.886e-12,
+            "rate": 0.33,
+            "rate_overflow": false,
+            "residual": 1.036e-07,
+            "native_message": "OK"
+          },
+          {
+            "iteration": 15,
+            "region": "Flow Enclosure",
+            "equation": "V - Mom",
+            "linear_iterations": 2,
+            "linear_residual": 2.886e-12,
+            "rate": 0.33,
+            "rate_overflow": false,
+            "residual": 1.064e-08,
+            "native_message": "OK"
+          },
+          {
+            "iteration": 15,
+            "region": "Flow Enclosure",
+            "equation": "W - Mom",
+            "linear_iterations": 2,
+            "linear_residual": 2.886e-12,
+            "rate": 0.31,
+            "rate_overflow": false,
+            "residual": 1.16e-08,
+            "native_message": "OK"
+          },
+          {
+            "iteration": 15,
+            "region": "Flow Enclosure",
+            "equation": "P - Mass",
+            "linear_iterations": 2,
+            "linear_residual": 2.886e-12,
+            "rate": 0.36,
+            "rate_overflow": false,
+            "residual": 4.497e-07,
+            "native_message": "OK"
+          },
+          {
+            "iteration": 15,
+            "region": "Flow Enclosure",
+            "equation": "H - Energy",
+            "linear_iterations": 2,
+            "linear_residual": 3.513e-05,
+            "rate": 0.35,
+            "rate_overflow": false,
+            "residual": 7.067e-07,
+            "native_message": "OK"
+          }
+        ],
+        "native_boundary_flows": [
+          {
+            "name": "Coupled Inlet",
+            "volume_flow_m3_s": 5.7220000000000004e-05,
+            "mass_flow_kg_s": 6.867e-05,
+            "positive_direction": "into_domain"
+          },
+          {
+            "name": "Coupled Opening",
+            "volume_flow_m3_s": -5.7220000000000004e-05,
+            "mass_flow_kg_s": -6.867e-05,
+            "positive_direction": "into_domain"
+          }
+        ],
+        "limitations": "Rounded fan/log values; scoped physical checks, not complete model freshness or product accuracy"
+      },
+      "fine": {
+        "checks": {
+          "room_temperature": true,
+          "density": true,
+          "coupled_convergence": true,
+          "flow_residuals": true,
+          "mass_balance": true,
+          "energy_balance": true,
+          "solid_fluid_heat": true,
+          "fan_curve": true,
+          "positive_solid_rise": true
+        },
+        "peak_degC": 24.050878524780273,
+        "rise_K": 4.050878524780273,
+        "flow_m3_s": 5.343333121008352e-05,
+        "fan_static_pressure_rise_Pa": 0.8664000000000001,
+        "fan_curve_error_Pa": 1.6671974791160338e-05,
+        "mass_imbalance_percent": 7.488e-08,
+        "energy_imbalance_percent": 0.001135,
+        "native_log_summary": {
+          "ambient_temperature_degC": 20.0,
+          "temperature_summaries": [
+            {
+              "maximum": 23.71,
+              "minimum": 20.0,
+              "average": 21.2,
+              "quantity": "Fluid Temperature",
+              "units": "degC",
+              "association": "native summary row; region identity not established"
+            },
+            {
+              "maximum": 24.05,
+              "minimum": 24.0,
+              "average": 24.03,
+              "quantity": "Solid Temperature",
+              "units": "degC",
+              "association": "native summary row; region identity not established"
+            },
+            {
+              "maximum": 24.05,
+              "minimum": 24.0,
+              "average": 24.03,
+              "quantity": "Solid Temperature",
+              "units": "degC",
+              "association": "native summary row; region identity not established"
+            }
+          ],
+          "applied_solid_power_W": 0.09999999999999999,
+          "heat_to_fluid_W": 0.09999999999999999,
+          "maximum_coupled_temperature_change_degC": 1.526e-05,
+          "normalized_coupled_heat_imbalance": 7.825e-06,
+          "iteration_limit_reached_without_convergence": false,
+          "numerical_convergence": "not_established",
+          "warnings": {
+            "coincident_thermal_nodes": true,
+            "no_interior_pressure_anchor": false
+          },
+          "scope": "Rounded native log summaries; not independent field extraction, complete criteria validation or mesh acceptance"
+        },
+        "final_flow_equations": [
+          {
+            "iteration": 24,
+            "region": "Flow Enclosure",
+            "equation": "U - Mom",
+            "linear_iterations": 2,
+            "linear_residual": 1.38e-16,
+            "rate": 0.37,
+            "rate_overflow": false,
+            "residual": 9.227e-12,
+            "native_message": "OK"
+          },
+          {
+            "iteration": 24,
+            "region": "Flow Enclosure",
+            "equation": "V - Mom",
+            "linear_iterations": 2,
+            "linear_residual": 1.38e-16,
+            "rate": 0.33,
+            "rate_overflow": false,
+            "residual": 7.52e-13,
+            "native_message": "OK"
+          },
+          {
+            "iteration": 24,
+            "region": "Flow Enclosure",
+            "equation": "W - Mom",
+            "linear_iterations": 2,
+            "linear_residual": 1.38e-16,
+            "rate": 0.32,
+            "rate_overflow": false,
+            "residual": 8.401e-13,
+            "native_message": "OK"
+          },
+          {
+            "iteration": 24,
+            "region": "Flow Enclosure",
+            "equation": "P - Mass",
+            "linear_iterations": 2,
+            "linear_residual": 1.38e-16,
+            "rate": 0.4,
+            "rate_overflow": false,
+            "residual": 4.05e-11,
+            "native_message": "OK"
+          },
+          {
+            "iteration": 24,
+            "region": "Flow Enclosure",
+            "equation": "H - Energy",
+            "linear_iterations": 3,
+            "linear_residual": 2.151e-05,
+            "rate": 0.58,
+            "rate_overflow": false,
+            "residual": 5.972e-07,
+            "native_message": "OK"
+          }
+        ],
+        "native_boundary_flows": [
+          {
+            "name": "Coupled Inlet",
+            "volume_flow_m3_s": 5.343e-05,
+            "mass_flow_kg_s": 6.412e-05,
+            "positive_direction": "into_domain"
+          },
+          {
+            "name": "Coupled Opening",
+            "volume_flow_m3_s": -5.343e-05,
+            "mass_flow_kg_s": -6.412e-05,
+            "positive_direction": "into_domain"
+          }
+        ],
+        "limitations": "Rounded fan/log values; scoped physical checks, not complete model freshness or product accuracy"
+      },
+      "half": {
+        "checks": {
+          "room_temperature": true,
+          "density": true,
+          "coupled_convergence": true,
+          "flow_residuals": true,
+          "mass_balance": true,
+          "energy_balance": true,
+          "solid_fluid_heat": true,
+          "fan_curve": true,
+          "positive_solid_rise": true
+        },
+        "peak_degC": 23.91877555847168,
+        "rise_K": 3.9187755584716797,
+        "flow_m3_s": 4.8566664736800796e-05,
+        "fan_static_pressure_rise_Pa": 0.8786,
+        "fan_curve_error_Pa": 1.666184200199705e-05,
+        "mass_imbalance_percent": 8.235e-12,
+        "energy_imbalance_percent": 0.002518,
+        "native_log_summary": {
+          "ambient_temperature_degC": 20.0,
+          "temperature_summaries": [
+            {
+              "maximum": 23.87,
+              "minimum": 20.0,
+              "average": 21.4,
+              "quantity": "Fluid Temperature",
+              "units": "degC",
+              "association": "native summary row; region identity not established"
+            },
+            {
+              "maximum": 23.92,
+              "minimum": 23.84,
+              "average": 23.89,
+              "quantity": "Solid Temperature",
+              "units": "degC",
+              "association": "native summary row; region identity not established"
+            },
+            {
+              "maximum": 23.92,
+              "minimum": 23.84,
+              "average": 23.89,
+              "quantity": "Solid Temperature",
+              "units": "degC",
+              "association": "native summary row; region identity not established"
+            }
+          ],
+          "applied_solid_power_W": 0.09999999999999999,
+          "heat_to_fluid_W": 0.09999999999999999,
+          "maximum_coupled_temperature_change_degC": 2.098e-05,
+          "normalized_coupled_heat_imbalance": 2.2e-05,
+          "iteration_limit_reached_without_convergence": false,
+          "numerical_convergence": "not_established",
+          "warnings": {
+            "coincident_thermal_nodes": true,
+            "no_interior_pressure_anchor": false
+          },
+          "scope": "Rounded native log summaries; not independent field extraction, complete criteria validation or mesh acceptance"
+        },
+        "final_flow_equations": [
+          {
+            "iteration": 42,
+            "region": "Flow Enclosure",
+            "equation": "U - Mom",
+            "linear_iterations": 1,
+            "linear_residual": 3.594e-20,
+            "rate": 0.99,
+            "rate_overflow": false,
+            "residual": 2.069e-16,
+            "native_message": "OK"
+          },
+          {
+            "iteration": 42,
+            "region": "Flow Enclosure",
+            "equation": "V - Mom",
+            "linear_iterations": 1,
+            "linear_residual": 3.594e-20,
+            "rate": 0.99,
+            "rate_overflow": false,
+            "residual": 1.877e-16,
+            "native_message": "OK"
+          },
+          {
+            "iteration": 42,
+            "region": "Flow Enclosure",
+            "equation": "W - Mom",
+            "linear_iterations": 1,
+            "linear_residual": 3.594e-20,
+            "rate": 1.01,
+            "rate_overflow": false,
+            "residual": 1.809e-16,
+            "native_message": "OK"
+          },
+          {
+            "iteration": 42,
+            "region": "Flow Enclosure",
+            "equation": "P - Mass",
+            "linear_iterations": 1,
+            "linear_residual": 3.594e-20,
+            "rate": 0.99,
+            "rate_overflow": false,
+            "residual": 9.847e-17,
+            "native_message": "OK"
+          },
+          {
+            "iteration": 42,
+            "region": "Flow Enclosure",
+            "equation": "H - Energy",
+            "linear_iterations": 6,
+            "linear_residual": 3.68e-06,
+            "rate": 0.77,
+            "rate_overflow": false,
+            "residual": 9.16e-07,
+            "native_message": "OK"
+          }
+        ],
+        "native_boundary_flows": [
+          {
+            "name": "Coupled Inlet",
+            "volume_flow_m3_s": 4.8570000000000004e-05,
+            "mass_flow_kg_s": 5.828e-05,
+            "positive_direction": "into_domain"
+          },
+          {
+            "name": "Coupled Opening",
+            "volume_flow_m3_s": -4.8570000000000004e-05,
+            "mass_flow_kg_s": -5.828e-05,
+            "positive_direction": "into_domain"
+          }
+        ],
+        "limitations": "Rounded fan/log values; scoped physical checks, not complete model freshness or product accuracy"
+      },
+      "quarter": {
+        "checks": {
+          "room_temperature": true,
+          "density": true,
+          "coupled_convergence": true,
+          "flow_residuals": true,
+          "mass_balance": true,
+          "energy_balance": true,
+          "solid_fluid_heat": true,
+          "fan_curve": true,
+          "positive_solid_rise": true
+        },
+        "peak_degC": 24.576641082763672,
+        "rise_K": 4.576641082763672,
+        "flow_m3_s": 4.307499828835335e-05,
+        "fan_static_pressure_rise_Pa": 0.8923,
+        "fan_curve_error_Pa": 1.2504279116698491e-05,
+        "mass_imbalance_percent": 1.176e-11,
+        "energy_imbalance_percent": 0.005142,
+        "native_log_summary": {
+          "ambient_temperature_degC": 20.0,
+          "temperature_summaries": [
+            {
+              "maximum": 24.57,
+              "minimum": 19.97,
+              "average": 21.73,
+              "quantity": "Fluid Temperature",
+              "units": "degC",
+              "association": "native summary row; region identity not established"
+            },
+            {
+              "maximum": 24.58,
+              "minimum": 24.49,
+              "average": 24.55,
+              "quantity": "Solid Temperature",
+              "units": "degC",
+              "association": "native summary row; region identity not established"
+            },
+            {
+              "maximum": 24.58,
+              "minimum": 24.49,
+              "average": 24.55,
+              "quantity": "Solid Temperature",
+              "units": "degC",
+              "association": "native summary row; region identity not established"
+            }
+          ],
+          "applied_solid_power_W": 0.09999999999999999,
+          "heat_to_fluid_W": 0.09999999999999999,
+          "maximum_coupled_temperature_change_degC": 2.289e-05,
+          "normalized_coupled_heat_imbalance": 5.295e-05,
+          "iteration_limit_reached_without_convergence": false,
+          "numerical_convergence": "not_established",
+          "warnings": {
+            "coincident_thermal_nodes": true,
+            "no_interior_pressure_anchor": false
+          },
+          "scope": "Rounded native log summaries; not independent field extraction, complete criteria validation or mesh acceptance"
+        },
+        "final_flow_equations": [
+          {
+            "iteration": 105,
+            "region": "Flow Enclosure",
+            "equation": "U - Mom",
+            "linear_iterations": 1,
+            "linear_residual": 1.734e-20,
+            "rate": 1.0,
+            "rate_overflow": false,
+            "residual": 1.14e-16,
+            "native_message": "OK"
+          },
+          {
+            "iteration": 105,
+            "region": "Flow Enclosure",
+            "equation": "V - Mom",
+            "linear_iterations": 1,
+            "linear_residual": 1.734e-20,
+            "rate": 1.01,
+            "rate_overflow": false,
+            "residual": 1.231e-16,
+            "native_message": "OK"
+          },
+          {
+            "iteration": 105,
+            "region": "Flow Enclosure",
+            "equation": "W - Mom",
+            "linear_iterations": 1,
+            "linear_residual": 1.734e-20,
+            "rate": 1.0,
+            "rate_overflow": false,
+            "residual": 1.112e-16,
+            "native_message": "OK"
+          },
+          {
+            "iteration": 105,
+            "region": "Flow Enclosure",
+            "equation": "P - Mass",
+            "linear_iterations": 1,
+            "linear_residual": 1.734e-20,
+            "rate": 1.0,
+            "rate_overflow": false,
+            "residual": 6.023e-17,
+            "native_message": "OK"
+          },
+          {
+            "iteration": 105,
+            "region": "Flow Enclosure",
+            "equation": "H - Energy",
+            "linear_iterations": 6,
+            "linear_residual": 0.0001334,
+            "rate": 0.91,
+            "rate_overflow": false,
+            "residual": 9.399e-07,
+            "native_message": "OK"
+          }
+        ],
+        "native_boundary_flows": [
+          {
+            "name": "Coupled Inlet",
+            "volume_flow_m3_s": 4.308e-05,
+            "mass_flow_kg_s": 5.169e-05,
+            "positive_direction": "into_domain"
+          },
+          {
+            "name": "Coupled Opening",
+            "volume_flow_m3_s": -4.308e-05,
+            "mass_flow_kg_s": -5.169e-05,
+            "positive_direction": "into_domain"
+          }
+        ],
+        "limitations": "Rounded fan/log values; scoped physical checks, not complete model freshness or product accuracy"
+      }
+    },
+    "comparison_pair": [
+      "half",
+      "quarter"
+    ],
+    "mesh_comparison": {
+      "fractional_changes": {
+        "rise_K": 0.1678752749362761,
+        "flow_m3_s": 0.11307481125600545
+      },
+      "temperature_passed": false,
+      "flow_passed": false,
+      "accepted": false,
+      "limits": "5% peak temperature rise and volume flow; 0.02 K absolute temperature allowance"
+    },
+    "native_physical_checks_passed": true,
+    "complete_release_verified": false
+  },
+  "current_guard_source": {
+    "coupled_input": {
+      "sha256": "159f97e6f6ddd142676f3cfa00b3fca22fab279977a9b2c054331e2d74816ecc",
+      "matches_retained_native_guard": true,
+      "matches_verified_source": true
+    },
+    "input_export": {
+      "sha256": "f2739d037f262aeff4745e9d458862d8efc1575c0107bfb1486111149eb3dcc7",
+      "matches_retained_native_guard": false,
+      "matches_verified_source": true
+    }
+  },
+  "temperature_mismatch": {
+    "property": "Fluid Temperature",
+    "native_value": 20.0,
+    "exported_value": 0.0,
+    "units": "degC",
+    "matches": false,
+    "absolute_tolerance_degC": 1e-06,
+    "scope": "constant ambient temperature only; not complete solve readiness"
+  },
+  "specified_pressure_mismatch": {
+    "mode": "specified",
+    "stored_absolute_pressure_active": true,
+    "native_value": 101325.0,
+    "exported_value": 0.0,
+    "units": "Pa",
+    "absolute_tolerance_Pa": 0.001,
+    "matches": false,
+    "scope": "constant specified pressure only; not complete solve readiness"
+  },
+  "density": {
+    "reference_density_kg_m3": 1.207,
+    "printed_adjustment_ratio": 1.0724,
+    "product_kg_m3": 1.2943868,
+    "flow_property_density_kg_m3": 1.29437616181,
+    "ambient_pressure_mode": 1,
+    "global_temperature_degC": 0,
+    "external_temperature_degC": 20,
+    "interpretation": "Atmospheric adjustment strongly explains the value; precedence over assigned constant-liquid density is unresolved. Existing material experiments did not isolate altitude mode.",
+    "ui_authored_equivalent_comparison": "not_performed",
+    "specified_pressure_comparison": "stopped at export; no completed altitude-disabled solve",
+    "solver_defect_demonstrated": false,
+    "mcp_material_defect_demonstrated": false,
+    "recomputed_adjusted_density_kg_m3": 1.2943868
+  },
+  "mesh_comparison": {
+    "coarse_global_temperature_degC": 0,
+    "fine_global_temperature_degC": 0,
+    "fine_iteration_limit_reached": true,
+    "accepted_room_temperature_comparison": false
+  },
+  "cause_classification": "MCP coupled solution initialization omission reproduced and fixed using native UI journal; mesh sensitivity remains failed; scoped infrastructure handover accepted",
+  "current_ambient_export": {
+    "property": "Fluid Temperature",
+    "native_value": 20.0,
+    "exported_value": 20.0,
+    "units": "degC",
+    "matches": true,
+    "absolute_tolerance_degC": 1e-06,
+    "scope": "constant ambient temperature only; not complete solve readiness"
+  },
+  "current_pressure_export": {
+    "mode": "specified",
+    "stored_absolute_pressure_active": true,
+    "native_value": 101325.0,
+    "exported_value": 101325.0,
+    "units": "Pa",
+    "absolute_tolerance_Pa": 0.001,
+    "matches": true,
+    "scope": "constant specified pressure only; not complete solve readiness"
+  },
+  "coupled_fan_authoring": {
+    "native_public_verified": true,
+    "committed": {
+      "mode": 5,
+      "scale": 1.0,
+      "field_name": "Coupled public synthetic fan r1",
+      "head_loss": {
+        "table_name": "Coupled public opening loss r1",
+        "coefficient": 2.0,
+        "units": "dimensionless",
+        "convention": "native Head Loss coefficient; general pressure-loss convention not independently verified"
+      }
+    },
+    "exported": false,
+    "numerical_acceptance": false
+  },
+  "next_action": "MECH owns subsequent model-specific numerical acceptance; do not launch further infrastructure mesh sweeps",
+  "evidence_sha256": {
+    "coupled-fan-public.json": "c6000f3bf05d9d7c6d2652d7348a6a971176343dda61a2145a878031379c1f2e",
+    "coupled-pressure-guard-native.json": "219b417cd65adc2c1e2b7e6829acd4eb368e3a1a8abd3d5fd020a7a672f24988",
+    "coupled-ambient-guard-native.json": "f3a13dbbd96421efc547259f46e8bd4ef51aee00b196a30d5ca2673093bc3792",
+    "density-atmospheric-context.json": "064595172ff0b6d99d0535e83784edc0a426b7b5c00945a757b111ddeda41c7d",
+    "finned-layer-extended-r1-final-summary.json": "e36b2f12643a92273e112b104aa8fd6d59c3ce0a968adccd88b9173422d9259f",
+    "finned-layer-fine-r1-final-summary.json": "ec2acce75df3d2963e1ba3c7d1198dbace5a027bd01a8b53a186522bee235ac7"
+  }
+}

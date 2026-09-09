@@ -28,10 +28,12 @@ def test_export_real_region_pages_and_reject_mixed_or_missing_pages():
             collect(bad, *args)
 
 
-def test_retained_coupled_gate_fails_without_reclassifying_native_cause():
+def test_handover_preserves_historical_failures_without_reclassifying_native_cause():
     audit = runpy.run_path(str(REPO / "examples/simcenter/audit_baldower_readiness.py"))["audit"]
     result = audit(REPO)
-    assert result["conclusion"] == "NOT READY"
+    assert result["conclusion"] == "READY"
+    assert result["deployed_source_matches"]
+    assert not result["numerical_mesh_acceptance"]["accepted"]
     assert result["coupled_fan_authoring"]["native_public_verified"]
     assert result["coupled_fan_authoring"]["exported"] is False
     assert result["coupled_fan_authoring"]["numerical_acceptance"] is False
@@ -40,3 +42,12 @@ def test_retained_coupled_gate_fails_without_reclassifying_native_cause():
     assert not result["mesh_comparison"]["accepted_room_temperature_comparison"]
     assert result["density"]["solver_defect_demonstrated"] is False
     assert result["density"]["mcp_material_defect_demonstrated"] is False
+
+
+def test_current_room_temperature_evidence_is_distinct_from_historical_failures():
+    audit = runpy.run_path(str(REPO / "examples/simcenter/audit_baldower_readiness.py"))["audit"]
+    current = audit(REPO)["current_room_temperature"]
+    assert current["native_physical_checks_passed"]
+    assert current["cases"]["half"]["peak_degC"] == pytest.approx(23.9187755585)
+    assert not current["complete_release_verified"]
+    assert current["cases"]["half"]["checks"]["flow_residuals"]

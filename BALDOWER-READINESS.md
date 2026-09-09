@@ -1,8 +1,11 @@
 # Baldower thermal/airflow readiness
 
-**NOT READY for coupled Baldower cooling comparisons.** The coupled heated-solid/air/fan workflow now executes at verified room-temperature
-conditions, but its declared flow mesh-sensitivity criterion remains unmet. Do not start
-Baldower-specific simulations on the strength of this release.
+**READY for the scoped NX/Simcenter MCP infrastructure handover. Numerical
+mesh-accuracy acceptance remains FAILED.** The user explicitly accepted handover
+with that limitation on 2026-09-09. Native coupled authoring, execution, result
+inspection and exports are verified; the benchmark temperatures/flows must not be
+presented as mesh-independent predictions. Model-specific thermal accuracy,
+Baldower cooling choices and acoustic qualification remain engineering work.
 
 This report supersedes the broad feature backlog for this handover. No additional
 infrastructure features are planned unless they resolve a concrete readiness blocker.
@@ -16,7 +19,7 @@ infrastructure features are planned unless they resolve a concrete readiness blo
 - Deployed source: `C:\ProgramData\BasementHypervisor\nx-mcp-simcenter\source`.
   Workspace: `D:\CAD\SIMCENTER_MCP_WORKSPACE`.
 - [Current source audit](tests/simcenter/evidence/room-fan-source-files.json): all 93 Simcenter Python files match the engine checkpoint; [live nodal-reader bindings](tests/simcenter/evidence/room-fan-availability-deployment.json) and public undefined-value extraction pass.
-- [Retained handler audit](tests/simcenter/evidence/coupled-bindings-deployment.json): 78 public
+- [Final native handler/source audit](tests/simcenter/evidence/baldower-final-native.json): 78 public
   handler signatures matched; every audited Simcenter Python source hash matched
   this checkpoint. [Runtime/helper audit](tests/simcenter/evidence/baldower-readiness-runtime.json)
   verifies the current installed helper hashes against the committed C# source.
@@ -24,21 +27,22 @@ infrastructure features are planned unless they resolve a concrete readiness blo
   bindings, not every in-memory dependency or every API option.
 - The regional-temperature change is complete: native/public paging, independent
   two-solid checks, result-file guards and save/close/reopen passed. Latest UI
-  displays the fitted isolated coupled fan authoring copy. No product model was edited.
+  displays the fitted 0.25 mm coupled fan temperature result (`quarter_r1.sim`). No product model was edited.
 - This report and companion audit are delivery-only additions after the engine
   checkpoint. Their Git commit is obtained with `git log -1 --format=%H -- BALDOWER-READINESS.md`.
 
 ## Primary gate and blocker classification
 
 The native coupled room-temperature fan workflow now solves and returns the
-requested material and ambient state. The remaining numerical gate is mesh
-sensitivity, not an unresolved ambient/density authoring defect.
+requested material and ambient state. The remaining numerical limitation is mesh
+sensitivity; it is separate from verified ambient/density authoring.
 
 | Mesh | Elements | Peak solid °C | Volume flow m³/s | Solver time |
 |---|---:|---:|---:|---:|
 | 2 mm | 2,130 | 25.066616 | 5.72250e-5 | 29 s |
 | 1 mm | 12,468 | 24.050879 | 5.34333e-5 | 35 s |
 | 0.5 mm | 77,212 | 23.918776 | 4.85667e-5 | 92 s |
+| 0.25 mm | 512,864 | 24.576641 | 4.30750e-5 | 1,236 s |
 
 All use global 20 °C, 101325 Pa, native constant-property air at 1.2 kg/m³,
 0.1 W solid heating, the same synthetic static fan curve and outlet resistance.
@@ -50,7 +54,9 @@ checks. Canonical XML is unchanged by each launch; no generated input was edited
 **Mesh acceptance remains failed.** The 2 mm/1 mm pair changes peak rise by
 20.05% and flow by 6.63%. The targeted 1 mm/0.5 mm pair changes peak rise by 3.26%
 and flow by 9.11%. The declared limits remain 5%; these are not mesh-independent
-results. Preserve both failed comparisons rather than relabeling them as passes.
+results. The final 0.5 mm/0.25 mm pair also fails: peak rise changes 16.79% and
+flow 11.31%. Preserve all failed comparisons. The user accepted infrastructure
+handover with numerical mesh acceptance explicitly failed; no further sweep was launched.
 
 The fresh native UI journal identified the ambient setup omission: coupled
 solutions require `Solver Type=6` and explicit solution units. `coupled_steady`
@@ -66,10 +72,10 @@ field-availability readback. Undefined nodes remain explicit nulls; regional
 averages include only defined values and report coverage.
 
 Reproduce the retained audit with `PYTHONPATH=src python
-examples/simcenter/audit_room_fan.py`. It deliberately reports the failed mesh
+examples/simcenter/audit_baldower_readiness.py`. It deliberately reports the failed mesh
 criterion. Native receipts and logs are under `tests/simcenter/evidence/room-fan-*`.
 API verification, log convergence, numerical balance and mesh acceptance remain
-separate conclusions. Final deployment identity and delivery audit are pending.
+separate conclusions. Final source, binding, regression and delivery checks are listed below.
 
 ## Requirement-by-requirement audit
 
@@ -82,7 +88,7 @@ Evidence paths are under `tests/simcenter/evidence/`.
 | Materials and heat sources | Constant material/assignment, body watts and distributed heat: `native-scenario-multi.json`, `native-distributed-heat-mcp.json` | Record provenance, total heat and selections; do not double-count conversion power. |
 | Conduction/contact | `contact-explicit-numerical-acceptance.json`: Tmax 294.401486 K vs 294.4 K (0.03 K tolerance); contact drop 0.499074 K vs 0.5 K (0.01 K tolerance); aggregate rejection 1 W | Scoped 200-element two-block benchmark. Not product accuracy or general contact options. |
 | Explicit thermal environment | Kelvin face temperatures and specified convection environment; existing external-condition readback/export/reopen | Room-temperature native/export/effective checks pass in `room-fan-*`; historical zero-export failure resolved. |
-| Solid/fluid meshes and wall/local controls | `mesh-plan-public.json`, `local-size-public.json`, `remesh-public.json`; explicit body plans, wall-layer and face-size effects | Fluid/layered remeshing is not verified. Authoring is not mesh convergence. |
+| Solid/fluid meshes and wall/local controls | `mesh-plan-public.json`, `local-size-public.json`, `remesh-public.json`; explicit body plans, wall-layer and face-size effects | Solid and fluid tetrahedral refinement verified in room-fan cases; boundary-layer controls have separate native fixtures. Mesh-accuracy acceptance failed. |
 | Fixed-speed fan P–Q | Native static-pressure table and Flow inlet assignment; `native-fan-operating-points-mcp.json` | Coupled binding/replay/save-reopen verified in `coupled-fan-public.json`; coupled export and operating points verified in `room-fan-*`. No total-pressure or acoustics claim. |
 | Opening resistance | Native scalar head-loss modes/active coefficients, Flow fixtures | Coupled creation/replay/persistence and native update/rollback verified; coupled pressure-loss response unverified. Not general porous media. |
 | Prepare/export/launch/reconnect | `mesh-guard-positive-launch.json`, `mesh-guard-positive-finish.json`; canonical XML identity, persistent observer, terminal gate release | Preserve jobs after transport failure. No rerun because observation expires. |
@@ -91,7 +97,7 @@ Evidence paths are under `tests/simcenter/evidence/`.
 | Mass/energy diagnostics | Native log parsers and retained coupled/contact summaries | Rounded aggregates are not boundary integrals. V aggregate sink is 1 W but named sink row is 0.9732 W; unreconciled, retained. |
 | Result identity/freshness | `mesh-result-stale-public.json`, `mesh-result-restored-public.json`; changed mesh marks historical result stale; file hash paging guards | Partial material/boundary/mesh coverage only. No whole-model freshness, especially for coupled settings/external dependencies. |
 | Contours/artifacts | Temperature/pressure postviews; `native-conduction-screenshot.json`; download checksums | Actual viewport size may differ from request. Image is not numerical evidence. Current capture/retrieval verification is retained, not a new test of every render option. |
-| Variant comparisons | Existing bounded duct/refinement scripts plus explicit group/node extraction | General study engine deferred. Required coupled fan mesh comparison remains unaccepted. |
+| Variant comparisons | Existing bounded duct/refinement scripts plus explicit group/node extraction | General study engine deferred. Bounded coupled mesh comparisons executed and remain numerically unaccepted; user approved handover with this limitation. |
 | Cancellation | Pre-launch cancellation and idempotent job state supported | Running cancellation unverified, not a readiness blocker. Never kill a solver as a substitute. |
 | Deployment/reconnect | 78 live handlers/source hashes; fresh stdio clients in public tests; native private-helper loading retained | Current NX process was not cold-restarted because it contains unrelated unsaved work. |
 
@@ -124,7 +130,7 @@ schemas before authoring. A small scripted set of 2–3 variants is sufficient.
    pressure as one operating point. Motor heat must be explicitly assigned.
 5. Run `nx_sim_flow_setup(action="coupled_steady")` to initialize the native coupled
    solution type/units. Set explicit ambient conditions and retain export guards.
-   Numerical readiness is still pending. Save each FEM/SIM explicitly and
+   Mesh-accuracy acceptance is failed and must remain explicit. Save each FEM/SIM explicitly and
    prepare into a directory containing only that isolated SIM. Use one fresh job
    ID and stable mutation operation IDs. Export and inspect before launch.
 6. `nx_sim_launch` is not completion. Reconnect with `nx_sim_job_status`,
@@ -190,8 +196,9 @@ flow in intended direction; fan operating point inside the curve range and withi
 reported mass imbalance <0.1%; heat rejection within 1% of applied heat with all
 boundary definitions explained; no unexpected negative temperature rise; refining
 once changes peak temperature rise and flow by <5%. Incomplete diagnostics or an
-unconverged finer mesh fail this gate. These are **not executed acceptance results**
-and do not establish Baldower accuracy or acoustic limits.
+unconverged finer mesh fail this gate. The room-temperature cases above executed these checks. The mesh criterion
+failed and remains failed; the user accepted infrastructure handover with this
+limitation. None of the results establish Baldower accuracy or acoustic limits.
 
 ## Build, deployment and verification
 
@@ -222,7 +229,9 @@ The simple class name is required by the retained `Session.Execute` loader.
 For packaged delivery, `python scripts/build_release.py --output <outside-repo-dir>`
 builds from a clean committed checkout. `scripts/install_release.ps1` verifies the
 bundle and refuses a live bridge descriptor; it must not be run against the active
-session. A fresh packaged install of this checkpoint has not been exercised here.
+session. The Windows bundle built successfully from `5d0e759`; all 1,488 manifest entries
+verified, including helper source (`baldower-release-build.json`). A fresh packaged
+install has not been exercised here.
 The current deployment is a verified source update to the existing runtime.
 
 Offline release regression:
@@ -231,9 +240,9 @@ Offline release regression:
 python -m pytest tests/simcenter -q -m 'not real_nx'
 ```
 
-The current Simcenter suite passed **717 tests in 7.46 s** after the undefined-value fix. The earlier **703-test** checkpoint is recorded in
+The current Simcenter suite passed **719 tests in 9.53 s** after the undefined-value fix. The earlier **703-test** checkpoint is recorded in
 [baldower-readiness-regressions.txt](tests/simcenter/evidence/baldower-readiness-regressions.txt).
-Two additional readiness/export tests pass (`tests/simcenter/test_readiness_scripts.py`);
+Three readiness/export tests pass (`tests/simcenter/test_readiness_scripts.py`);
 [exported JSON](tests/simcenter/evidence/baldower-readiness-regions.json) and
 [CSV](tests/simcenter/evidence/baldower-readiness-regions.csv) retain the two native
 contact-region summaries and explicit scenario/result identity. After the coupled admission change, 46 focused head-loss, fan-field, public-schema,
@@ -245,12 +254,16 @@ Do not restart NX, close unrelated parts, save-all or reuse probe slots concurre
 
 ## Handover and deferred work
 
-baldower MECH may use the verified standalone extraction/thermal/Flow subsets with
-these limitations. It must not represent the full coupled cooling workflow as ready.
-The immediate handover action is to retain this NOT READY gate, resolve the remaining
-flow mesh-sensitivity gate; native ambient/pressure and effective-density checks now pass.
+baldower MECH may use the verified infrastructure workflow and existing isolated
+fixtures. Its next action is to define its own analysis copies, inputs, mesh controls
+and numerical acceptance before drawing design conclusions. Preserve the failed
+5% benchmark sensitivity checks; do not use these generic coarse-mesh temperatures
+as validated Baldower predictions. No further mesh sweep belongs to this completed
+infrastructure handover, as explicitly selected by the user.
+
 No product geometry, power assumptions, firmware limits or mechanical decisions
-are changed by this report.
+were changed by this task. Native running cancellation and comprehensive live-model
+freshness remain documented limits, not silently implemented capabilities.
 
 Advanced radiation/material laws, hot starts, native temperature-controlled fans,
 general porous media, generalized studies, comprehensive freshness and unrelated

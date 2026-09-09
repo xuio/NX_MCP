@@ -1,0 +1,65 @@
+{
+  "status": "success",
+  "variant": {
+    "state": "native_files_cloned",
+    "folder": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-quarter-20260909-r1",
+    "plan_sha256": "a30406d45490306cb1d9003cefaa12d58ad387b087b8f78221ee2031daf4a894",
+    "outputs": [
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-quarter-20260909-r1\\RoomFanQuarterR1_analysis.sim",
+        "bytes": 7822476,
+        "sha256": "54fc5b475481d7f5eff3240d566dfef30126288ae12b7ad17a29c676a83e8f7a"
+      },
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-quarter-20260909-r1\\RoomFanQuarterR1_mesh.fem",
+        "bytes": 5813069,
+        "sha256": "be7420eb8a6cfd0afb7eed43d71c97934e9c4f8f9702da4ec687d037590218b5"
+      },
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-quarter-20260909-r1\\RoomFanQuarterR1_cad_01.prt",
+        "bytes": 137586,
+        "sha256": "254c84b176f6f73075c012ca758ece3cbaebf31b4f24f57016890f1b6c14141f"
+      }
+    ],
+    "source_files_preserved": true,
+    "document_flags_preserved": true,
+    "associated_files_copied": false,
+    "saved_snapshot": true,
+    "unsaved_sources_excluded": [
+      "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-half-run-20260909-r1\\half_r1.sim"
+    ],
+    "dependency_rebinding": "not_verified_until_open",
+    "complete_analysis_package": false,
+    "result_freshness": "not_verified",
+    "solver_launched": false,
+    "replayed": false
+  },
+  "before": {
+    "elements": 77212,
+    "nodes": 17766
+  },
+  "after": {
+    "elements": 512864,
+    "nodes": 104274
+  },
+  "mesh_settings": [
+    {
+      "mesh": "3d_mesh(1)",
+      "before_mm": 0.5,
+      "after_mm": 0.25
+    },
+    {
+      "mesh": "3d_mesh(2)",
+      "before_mm": 0.5,
+      "after_mm": 0.25
+    }
+  ],
+  "source_files_preserved": true,
+  "sim": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-quarter-20260909-r1\\RoomFanQuarterR1_analysis.sim",
+  "solver_launched": false,
+  "operation_id": "op_ed10b6a45b6c4e7291638f376d129936",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

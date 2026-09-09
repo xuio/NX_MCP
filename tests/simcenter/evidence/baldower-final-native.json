@@ -1,0 +1,432 @@
+{
+  "status": "success",
+  "passed": true,
+  "property_reader_bindings": [
+    {
+      "function": "nx_mcp.simcenter.boundaries.create_convection",
+      "mode": "call_time",
+      "current": true
+    },
+    {
+      "function": "nx_mcp.simcenter.boundaries.create_temperature",
+      "mode": "call_time",
+      "current": true
+    },
+    {
+      "function": "nx_mcp.simcenter.boundary_state.capture_boundary_state",
+      "mode": "call_time",
+      "current": true
+    },
+    {
+      "function": "nx_mcp.simcenter.contact.create_contact",
+      "mode": "call_time",
+      "current": true
+    },
+    {
+      "function": "nx_mcp.simcenter.distributed_heat.create_distributed_heat",
+      "mode": "call_time",
+      "current": true
+    },
+    {
+      "function": "nx_mcp.simcenter.flow.create_initial_step",
+      "mode": "call_time",
+      "current": true
+    },
+    {
+      "function": "nx_mcp.simcenter.flow.attach_default_tables",
+      "mode": "call_time",
+      "current": true
+    },
+    {
+      "function": "nx_mcp.simcenter.fluid_material.assign_fluid_material",
+      "mode": "call_time",
+      "current": true
+    },
+    {
+      "function": "nx_mcp.simcenter.head_loss.attach_head_loss",
+      "mode": "call_time",
+      "current": true
+    },
+    {
+      "function": "nx_mcp.simcenter.head_loss.set_opening_head_loss",
+      "mode": "call_time",
+      "current": true
+    },
+    {
+      "function": "nx_mcp.simcenter.heat_loads.create_body_power",
+      "mode": "call_time",
+      "current": true
+    },
+    {
+      "function": "nx_mcp.simcenter.material_inventory.inspect_materials",
+      "mode": "call_time",
+      "current": true
+    },
+    {
+      "function": "nx_mcp.simcenter.properties.read_properties",
+      "mode": "global",
+      "current": true
+    },
+    {
+      "function": "nx_mcp.simcenter.radiation.create_environment",
+      "mode": "call_time",
+      "current": true
+    },
+    {
+      "function": "nx_mcp.simcenter.radiation_objects.create",
+      "mode": "call_time",
+      "current": true
+    },
+    {
+      "function": "nx_mcp.simcenter.temperature_material.verify",
+      "mode": "call_time",
+      "current": true
+    },
+    {
+      "function": "nx_mcp.simcenter.time_controls.configure_transient_steps",
+      "mode": "call_time",
+      "current": true
+    }
+  ],
+  "stale_property_readers": [],
+  "reader_audit_scope": "Loaded module-owned functions: direct global or local-import read_properties references; not all dependency bindings",
+  "checked_count": 78,
+  "tools": [
+    "nx_sim_activate",
+    "nx_sim_assign_fan",
+    "nx_sim_assign_material",
+    "nx_sim_boundary_layers",
+    "nx_sim_cancel",
+    "nx_sim_capabilities",
+    "nx_sim_close",
+    "nx_sim_collectors",
+    "nx_sim_constraints",
+    "nx_sim_contact",
+    "nx_sim_convection",
+    "nx_sim_create_benchmark",
+    "nx_sim_dependencies",
+    "nx_sim_descriptors",
+    "nx_sim_distributed_heat",
+    "nx_sim_documents",
+    "nx_sim_emissivity_override",
+    "nx_sim_enclosure_radiation",
+    "nx_sim_environment_radiation",
+    "nx_sim_export_input",
+    "nx_sim_external_temperature",
+    "nx_sim_face_size",
+    "nx_sim_face_size_edit",
+    "nx_sim_faces",
+    "nx_sim_fan_table",
+    "nx_sim_fan_tables",
+    "nx_sim_flow_convergence",
+    "nx_sim_flow_log",
+    "nx_sim_flow_setup",
+    "nx_sim_head_loss",
+    "nx_sim_heat_power",
+    "nx_sim_heat_schedule",
+    "nx_sim_initial_conditions",
+    "nx_sim_job_log",
+    "nx_sim_job_logs",
+    "nx_sim_job_status",
+    "nx_sim_launch",
+    "nx_sim_loads",
+    "nx_sim_material",
+    "nx_sim_material_frame",
+    "nx_sim_materials",
+    "nx_sim_mesh",
+    "nx_sim_mesh_controls",
+    "nx_sim_mesh_plan",
+    "nx_sim_mesh_quality",
+    "nx_sim_mesh_state",
+    "nx_sim_objects",
+    "nx_sim_observe_job",
+    "nx_sim_open",
+    "nx_sim_orthotropic_material",
+    "nx_sim_prepare_solve",
+    "nx_sim_pressure_result",
+    "nx_sim_release_job",
+    "nx_sim_remesh",
+    "nx_sim_result_identity",
+    "nx_sim_result_inventory",
+    "nx_sim_save",
+    "nx_sim_save_as",
+    "nx_sim_scalar_table",
+    "nx_sim_scalar_tables",
+    "nx_sim_scale_fan_table",
+    "nx_sim_scenario_apply",
+    "nx_sim_scenario_preview",
+    "nx_sim_select_solution",
+    "nx_sim_show_pressure",
+    "nx_sim_show_temperature",
+    "nx_sim_solutions",
+    "nx_sim_steady_thermal_controls",
+    "nx_sim_steps",
+    "nx_sim_temperature",
+    "nx_sim_temperature_material",
+    "nx_sim_temperature_nodes",
+    "nx_sim_temperature_regions",
+    "nx_sim_temperature_result",
+    "nx_sim_transient_setup",
+    "nx_sim_variant_create",
+    "nx_sim_variant_plan",
+    "nx_sim_variant_receipt"
+  ],
+  "mismatches": [],
+  "private_optional_extensions": [
+    {
+      "tool": "nx_sim_create_benchmark",
+      "internal_only_parameters": [
+        [
+          "wall_thickness_mm",
+          "None",
+          "POSITIONAL_OR_KEYWORD"
+        ]
+      ]
+    }
+  ],
+  "deployed_source_sha256": {
+    "benchmark_geometry.py": "e7475122710c7bbea23c2165ec76122b50a4650283cfb084055843f83b5f5d77",
+    "boundaries.py": "3f027b4f0bccc351bd5fcc88b6c767d9fbbd34540e27f6f629c1eab41315d709",
+    "boundary_geometry.py": "05c86c9824c27f4cf983361bc0300d1ceec8bd484c9e7ea99df04bb9d6c8ecdb",
+    "boundary_layers.py": "da3a748004176426e4159e5b96fe32eda64ae7fef8b887ae7ccf813edb1e2024",
+    "boundary_state.py": "e9d8be61e6fd25a1b3215f50f5bb37b3e371bc3e43f97d5b6d6fe17207f12512",
+    "cancellation.py": "e343e6752f21927dc914e470a2edd599a96d092ae7ce9217d0c747783e5c3243",
+    "capabilities.py": "74543c7b0d37aad32554f90e41e8f2d5799f585e6e86374004530bcfa3cc385c",
+    "collector_state.py": "1661fa223e84aa76d448d16396cc94afc89e451ccc914e39b7766f19d944f8ef",
+    "contact.py": "0bb81ab62a1b9e3fd0c843a52fcbea44b94f3bc0211169c1d884b355400471ea",
+    "convection_environment.py": "ce66323f29cad64b6f8f008174b94f48f128908842495c3f53d5bb64bb3740c5",
+    "coupled_input.py": "159f97e6f6ddd142676f3cfa00b3fca22fab279977a9b2c054331e2d74816ecc",
+    "coupled_log.py": "683abb0be36577335e2aa90d9fda62d6c0eace9a0f481dce0f7e77597155e08c",
+    "coupled_setup.py": "3219b25cb5f4b0d3f2d6a34b631cb4f6edfc1bc51fa253b59ca37ea82ccd9d8e",
+    "dependencies.py": "a24e66eb5c7b058644861f73acbc670eb2d7370c402fe4207506715909d9dd45",
+    "descriptors.py": "8487857a50a32a0a568f43cd62844fb2d098a259198e24572f3dcd6a2b83c0ca",
+    "directional_material.py": "51b7bdbff19f8953f979a935704fa271e25ffa45245e0db300b2b2dccc5edc65",
+    "distributed_heat.py": "527672ef39aaa4a70f29565f15f996c83a2806c5a5ba2ef1493b8bbed98f3fb5",
+    "documents.py": "48b5acbd0acc1aa3ffe25a3c1de43bc87398bab38e6fa7a7f38816f5cc3e430f",
+    "external_conditions.py": "05dc4aba942cb98ddb4bbf273a67ea8047c39a0661e8fe9320c5c4664788480b",
+    "fan_boundary.py": "b40c5bf41f5a4d52ffddba152ef81602dfba808edb0d2436c215ccdaf7300caa",
+    "fan_field.py": "3a8b39d03c29ab2caf9973443897835c5197cc837a0ede656bbc5cb409cf4860",
+    "fan_results.py": "dfde11ae339dff18801602617f0e72c7421ccaeaa927a29123fd6925b17f6d45",
+    "fan_scaling.py": "93c48ec626c81ad3eb0d510a000631bdf288fe913042e48b3c6ee44df44d44be",
+    "fan_summary.py": "ae2fb8e4df0a1e455f0063f4d571f3f25c1217748df605b69e19726f88060790",
+    "field_definition.py": "530c7ff57609a18f1271f416418a68d8828a7138c5eaf38204ab52df38a1a1df",
+    "flow.py": "478cd7c714223c681c116d67959ae6db2acf569f82904a23149adc44e92c2888",
+    "flow_audit.py": "e06b18ea2e104ec827f8b2341c0654b7871fe0b4a1cb65a0994c8c25717a385f",
+    "flow_controls.py": "abaa0f081cf655928c856db468ab8f9b7424fd4007da242ef59bc50d98b41dd7",
+    "flow_results.py": "277e7a5917b093d8b88b28e901f5d39a17e878a9c4b679ec1112caee067f2715",
+    "fluid_domain.py": "a2304d966d9de5f965cce8cf9b8312342d0240ecbfa7f0d31ddcfd44a6ff1289",
+    "fluid_material.py": "012f9c17e96cfa52dfaf8b8e668fa4ad22bcb975e4ddcad3326461de577b25a8",
+    "head_loss.py": "b003893bd3039d232dfe3d827347c42a7e573495f2e2719b051877a4e890c151",
+    "heat_loads.py": "965e89756f3f9fc11f817a00dc94f61d55ff89469bde83f0117c5f09c183cec3",
+    "heat_overlap.py": "662ee1aee77dbfd1104836276d232f247c3787c0ffe9bc43743a948555f81668",
+    "heat_schedule.py": "58718a99ebefc8bcd4e40eb6751ae0065d3eb677df3763863ef755698cb0c8a7",
+    "initial_conditions.py": "6f319797d8824b4e6db0a81d89b647ccbc02bbf68cd9919ce341dc9d6e812c64",
+    "inputs.py": "82aef3142dd8c1bd76574d8d6aed78c277f00b528931a4a1dc04bdeb6cb4ec71",
+    "input_export.py": "f2739d037f262aeff4745e9d458862d8efc1575c0107bfb1486111149eb3dcc7",
+    "jobs.py": "6c225c7849ca64296f8fdbfefa8ea8bd3e315b27db7f58526e0698eacfac3e2d",
+    "job_observer.py": "d42d44d17f7caa4142a15456ca9aa265cd5a83fc5903f4bb7e45d65d17c2a763",
+    "job_processes.py": "37e39e95074a52b352715657186c38a17cf5aa29196356b1e4d019158bafc52b",
+    "launch.py": "578ba5a0e3e24583ac2cdb26cd4f0a257bf2dd7dfd5a0fad8f0909f062c96460",
+    "launch_gate.py": "65a4757fbe73a3c49c501f4b4d79d1abf6a8f70baa5f517b349b4fcd7feb77d1",
+    "local_size.py": "23d94cde5c0c378df12d09866bb50f275c2ccc2910a3f8871995b565aa0fba5a",
+    "log_reader.py": "1832a482e8443a45a1e8141e7755df53227b1809d1374ac74be1974993e6553b",
+    "material_assignment.py": "ecef36307c8cf6c2933de60424aced8ea6b15e03931f7e4744b5a9cf61d3e00a",
+    "material_inventory.py": "7405e399a7765f7b10599b28f5dfdcbf5dc9d144829db80b0f7db9dd1d38864c",
+    "material_orientation.py": "a74dbdedfbae6615dcc4603d240d6628507f67ba62d1e0baad326cae848fbc66",
+    "mesh_controls.py": "110ef48709e0c702a4018bcf95b32eee75632a06ef2b04393b1630b928709406",
+    "mesh_guard.py": "e6e9350c190c96c4f8cca1056814b21c6049947036d39811dac8cbc88db52b45",
+    "mesh_plan.py": "5d01303f1503d2a1d3341ca3dab98bbe4dbee569bbb830cfa5a0a6676223a2f9",
+    "mesh_state.py": "09dee6935289f0a9ad2401c060b366eed03efcb7207dec478669fa7e14d32208",
+    "native.py": "2b853fc4f5601a201bc247bcb4bf65fe3b4ab81b71fbeca0389ea580dd6f52d8",
+    "native_launch.py": "8c65b5e8b78885f9f9f5f9e3d9713769dc76ffcea2cc3aaeb96f19c15aeb7f03",
+    "nodal_availability.py": "a36f0306e705a7ac198dead797f3a5d5f0a4b25236ddf2092427335923acdb78",
+    "nodal_results.py": "80e95c0ef1abff1733b0e7d6c94315ff5983b38c6f634e1df8fef44eaa29e125",
+    "observer_worker.py": "68193cc8922fa893f2fc13fb57449e31be85e241c459b470bbe47f9bf67129c8",
+    "output_claims.py": "dfec926b3ba27b54f9ca551aeebcfb0aef26f44874d2f66180bdd66ce94896e1",
+    "postprocessing.py": "443cc196e818f05ad095a66997363ad7340d90916566e6de23783fccc377a7ac",
+    "postviews.py": "305c496718b4b1e1df8b314b7243d606b615e28d4f67c97443b84c7c047ec1ba",
+    "preparation.py": "86fc57a1ae999d22dfd6cdea78933af475ac3a463de1fef3100ee3f4d8bc5f12",
+    "prepared_input.py": "b39143950a92380c22003a7224650e9044759b19c434857ecd5fa840c5486ce0",
+    "process_identity.py": "439047427fd4cef3b9ec66316bc0aa2863221487321cbd13f11f34caf6a54fdd",
+    "properties.py": "036c4e34432c85e6c814464289d0785ecb8dee0bd24fd84782a3ca96ef8d157c",
+    "property_values.py": "38cd79976692403d50e586761e1f7f724c9a7d2dcf7bc66e6db8ea55e6bf71b6",
+    "quality.py": "afa1a8b3881980c504b202ce9a3d4c90d8da15cfb20b184b928fbbd60a649b5a",
+    "radiation.py": "0090d3bd60cdc655fc92b50e9118e3499afc30d58d418cc8a7a0b73f8e68d226",
+    "radiation_objects.py": "34f6086f22d6b661c7ab9c5a15d75bcd16096c6c485275d9385a3eb28277c8e2",
+    "recovery.py": "a8b355b41d3e6957a9e5d705ba187fd001ff63844a7ce05910669d4eb53180e7",
+    "region_results.py": "f1093a08f1ed0049a25ee15d47c490ce3fdc5a3d5cb4280f72c0d73548886bd9",
+    "release_evidence.py": "833f0fc5c1f45e1e5c0eb9d103a2fdd5c09578627f139632967aaccaf9c06844",
+    "remesh.py": "9ce49967c2e65ad6099df65fac042deb293ae2e972cbbc2abc37578728895087",
+    "results.py": "b752ee5c38be06998edeb509970b13c02484539b882ff4f36ad7d4ff7cf520d3",
+    "result_binding.py": "abf34d103a49eea82f2bf27f5032f88ce33f201f506162f8da4823fe881987b8",
+    "result_identity.py": "7429956913f1b8f0e14ee24b51e9e50dfae8b4ea100aa8a49840fb90f0c71787",
+    "result_reader.py": "70bd6d90212cf894db303edc2d6c0641a39fa8a95290c9e8f2f0f1c6cc3a8c0e",
+    "revisions.py": "54df6e6782650f8907e38fbf4945ff5ba0714a42725ada5685fba2bfea8dee98",
+    "scalar_tables.py": "9d7d6fc177ed05bbf95b78896184b005c7b89d1f1c2ee46c4673f48606b9acdf",
+    "scenario_apply.py": "a7c39b08fa1258b0d985cde732d73c59aef3546e8d5a47aadb8003ce7e33bedd",
+    "scenario_import.py": "2a988b576eeb5613c45b60a93c0027eb93205de86882a11a0877ef4928b52949",
+    "selections.py": "ad6236219ffeccdf8792bcd5e25301145d5c58e8a999b79b3eca791be8845b9b",
+    "server.py": "5a7ba5116af1fa7a0e435cbf17306b2707c1364c9e8943fa60b52ed5d3948ead",
+    "solver_guard.py": "654d79443a62936fe4ad9a7ffec9e11ef400b225dc0a441205ee52fec919ab58",
+    "solver_log.py": "ae14f187a4d049f64ad3965e2f1706269c1d718f08829573f363b26d65344afc",
+    "solver_manifest.py": "d5aa313fae2bfd2c568ab93d9e70eaa1806c545274ec00ade104dc69e057cb15",
+    "steady_controls.py": "0f77c0c2539b6de9c0e0ecab3f32116f79a5a1f368bb93f9c0743cd21590be7f",
+    "temperature_material.py": "4799f34e4acaab66f974a75b3c13465b954ecbe116e88424e51c2736b96e024b",
+    "thermal_balance.py": "e1402388673cf35df9bd32724749c80e3668d25dae268442e550cf1edc06f791",
+    "thermal_state.py": "473ef904ee3bbef1433e645e1098cf12237bad15b5c6bed89a83ae75abf7c337",
+    "time_controls.py": "21b1fefb066e237c273a288d88524be156597434262ee1e82220bf68da3eb676",
+    "variant_clone.py": "d621cdc95a20ae538d6ae4f8b2956ddd9190cba18addf8f6d1dcb2fefacee33a",
+    "variant_plan.py": "1ba86b47bd333c67c33b435098ec1fcd119a02865699662ed4d92ba5fdf3b5d3",
+    "__init__.py": "5f1a98c534967bca2ef1b754466007d54519b81325bca18d6d723ee8cc2c93aa"
+  },
+  "scope": "Live handler argument names, required/default values and parameter kinds; not per-tool behavior verification",
+  "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-quarter-run-20260909-r1\\quarter_r1.sim",
+  "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-quarter-run-20260909-r1\\quarter_r1.sim",
+  "solver_launched": false,
+  "job": {
+    "job_id": "room-fan-quarter-20260909-r1",
+    "request_sha256": "109d610b0b19d6e1fd6e10c5ddb3450ef35a1c5a5c8691343d8acb44fe5d5c9f",
+    "state": "solver_exited",
+    "revision": 3,
+    "process_binding_revision": null,
+    "launch_retry_allowed": false,
+    "numerical_convergence": "not_established",
+    "results_validated": false,
+    "observed_at": "2026-09-09T18:33:38.589340+00:00",
+    "observation_kind": "persisted_record",
+    "live_process_state": "unbound",
+    "job_folder": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs",
+    "units": null,
+    "observer": {
+      "tracked_in_this_nx_process": true,
+      "thread_alive": false,
+      "log_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs\\room-fan-quarter-20260909-r1\\observer-7421bfc5aace4d2ab777e958dba9b8f7.log"
+    },
+    "evidence": {
+      "gate_released": false,
+      "input_comparison": {
+        "after": {
+          "bytes": 42705305,
+          "canonicalization": "xml_c14n2_no_comments",
+          "sha256": "cf4e73563901dcd483853e2f3a2cf0c74a3faea6cd406efb58a9173e8ed99994",
+          "xml_content_sha256": "0500fe1e7a4486eddd5a71e93f145b7c34e2ee510a6f61876444e22910a0f662"
+        },
+        "before": {
+          "bytes": 42705305,
+          "canonicalization": "xml_c14n2_no_comments",
+          "sha256": "c43fc4b9d99126f840d0cccb445000f865ee9eee36eef1c317e8ed2a158529ef",
+          "xml_content_sha256": "0500fe1e7a4486eddd5a71e93f145b7c34e2ee510a6f61876444e22910a0f662"
+        },
+        "byte_identical": false,
+        "scope": "input XML only; result association and solver outcome require separate verification",
+        "xml_content_identical": true
+      },
+      "log": {
+        "bytes": 253632,
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-quarter-run-20260909-r1\\quarter_r1-Finned_coupled_benchmark.log",
+        "sha256": "b73ac97d75f7161817d7461e464a8711022e674061a6fe7a4dec4395c5e97ba6"
+      },
+      "model_result_freshness": "not_established",
+      "numerical_convergence": "not_established",
+      "observer_adapter": 1,
+      "process_exit_code": null,
+      "process_job_binding": "not_established",
+      "result": {
+        "bytes": 99937276,
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-quarter-run-20260909-r1\\quarter_r1-Finned_coupled_benchmark.bun",
+        "sha256": "bde0f5db3f83088d4124986da65baae79fd09f0d54dd69ff2878cc33e0fd729b"
+      },
+      "solver_process_observation": {
+        "exclusion": "point-in-time process snapshot; not an atomic lock",
+        "scope": "host-wide known solver/translator names",
+        "solver_processes": 0
+      },
+      "terminal_basis": "fresh owned completion log and native result, matching canonical input, known solver processes absent"
+    },
+    "process_binding_evidence": null,
+    "live_processes": {
+      "state": "unbound",
+      "reason": "no_bounded_recorded_process_identities",
+      "processes": []
+    },
+    "launch_gate": {
+      "automatic_expiry": false,
+      "solver_process_state": "not_checked",
+      "launch_authorized_by_inspection": false,
+      "state": "unclaimed",
+      "note": "No persistent owner observed; this is not a solver-idle check or a launch reservation"
+    }
+  },
+  "screenshot": {
+    "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\room-fan-final-temperature-r1.png",
+    "artifact_path": "ui-benchmarks\\room-fan-final-temperature-r1.png",
+    "capture_kind": "nx_model_viewport",
+    "model_preview": true,
+    "resolution": [
+      2589,
+      1576
+    ],
+    "requested_resolution": [
+      1600,
+      1000
+    ],
+    "camera": {
+      "part": {
+        "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_776086a2ca6147b695845417724cff13",
+        "kind": "part",
+        "name": "quarter_r1",
+        "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_eb0181f9d1184986be0548960c6f6e4e",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "generation_id": "eb0181f9d1184986be0548960c6f6e4e",
+        "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-quarter-run-20260909-r1\\quarter_r1.sim",
+        "journal_id": "quarter_r1",
+        "display_name": "quarter_r1"
+      },
+      "name": "ANALYSIS_1",
+      "rotation": [
+        [
+          0.63121905864763,
+          -0.29117688182626567,
+          0.7188730927569433
+        ],
+        [
+          0.7756046028744285,
+          0.23697177216995516,
+          -0.5850486126764433
+        ],
+        [
+          -0.0,
+          0.9268551141815876,
+          0.3754192287502549
+        ]
+      ],
+      "origin": [
+        -10.190213600848441,
+        -2.907365613495058,
+        -6.140584007938493
+      ],
+      "absolute_origin": [
+        10.0,
+        4.999999999999998,
+        5.000000000000002
+      ],
+      "scale": 23.297303639754123,
+      "coordinate_frame": "display_part",
+      "matrix_layout": "row-major 3x3; columns are NX view axes",
+      "rendering_style": "shaded",
+      "interactive": true
+    },
+    "background": "original",
+    "rendering": "NX viewport rasterization",
+    "size": 276326,
+    "sha256": "ded63c6354568941a72ee2402e16e27039004f0e8db059e65bd27bc45d13dbbe",
+    "warnings": [
+      "NX returned a different resolution than requested"
+    ]
+  },
+  "operation_id": "op_4a06d53cf7af4162aa33e87260722334",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

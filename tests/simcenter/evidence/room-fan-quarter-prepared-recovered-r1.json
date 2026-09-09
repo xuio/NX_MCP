@@ -1,0 +1,171 @@
+{
+  "status": "success",
+  "job": {
+    "job_id": "room-fan-quarter-20260909-r1",
+    "request_sha256": "109d610b0b19d6e1fd6e10c5ddb3450ef35a1c5a5c8691343d8acb44fe5d5c9f",
+    "state": "accepted",
+    "revision": 0,
+    "process_binding_revision": null,
+    "launch_retry_allowed": true,
+    "numerical_convergence": "not_established",
+    "results_validated": false,
+    "observed_at": "2026-09-09T18:07:33.767418+00:00",
+    "observation_kind": "persisted_record",
+    "live_process_state": "unbound",
+    "job_folder": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs",
+    "units": null,
+    "observer": {
+      "tracked_in_this_nx_process": false
+    },
+    "evidence": {},
+    "process_binding_evidence": null,
+    "live_processes": {
+      "state": "unbound",
+      "reason": "no_bounded_recorded_process_identities",
+      "processes": []
+    },
+    "launch_gate": {
+      "automatic_expiry": false,
+      "solver_process_state": "not_checked",
+      "launch_authorized_by_inspection": false,
+      "state": "unclaimed",
+      "note": "No persistent owner observed; this is not a solver-idle check or a launch reservation"
+    }
+  },
+  "manifest": {
+    "job_id": "room-fan-quarter-20260909-r1",
+    "manifest": {
+      "analysis_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-quarter-run-20260909-r1\\quarter_r1.sim",
+      "analysis_type": "Coupled Thermal-Flow",
+      "dependency_scope": "direct_sim_fem_cad_associations",
+      "excluded_dependencies": "recursive components, external fields/material files, solver artifacts and result dependencies",
+      "isolated_output_directory": "d:\\cad\\simcenter_mcp_workspace\\ui-benchmarks\\e-room-fan-quarter-run-20260909-r1",
+      "live_mesh_state": {
+        "adapter": 1,
+        "coordinate_encoding": "exact float64 hex; signed zero normalized",
+        "coordinate_frame": "fem_part_absolute",
+        "counts": {
+          "elements": 512864,
+          "nodes": 104274
+        },
+        "excluded": [
+          "CAD geometry",
+          "mesh controls",
+          "material assignments/properties",
+          "loads and boundary conditions",
+          "solver element formulation",
+          "solution settings",
+          "external dependencies"
+        ],
+        "full_model_freshness": "not_verified",
+        "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-quarter-20260909-r1\\RoomFanQuarterR1_mesh.fem",
+        "scope": "node_labels_coordinates_and_ordered_element_connectivity_shape_mesh_collector",
+        "sha256": "11ba39be9dfcdefd958b40161cf5868468af77a87167ad7e22b726890d4f2b17",
+        "units": "mm"
+      },
+      "mesh_inspection_limit": 1000000,
+      "native_export": {
+        "analysis_type": "Coupled Thermal-Flow",
+        "artifacts": [
+          {
+            "bytes": 37116,
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-quarter-run-20260909-r1\\quarter_r1-Finned_coupled_benchmark.map"
+          },
+          {
+            "bytes": 42705305,
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-quarter-run-20260909-r1\\quarter_r1-Finned_coupled_benchmark.xml"
+          }
+        ],
+        "coupled_ambient_validation": {
+          "absolute_tolerance_degC": 1e-06,
+          "exported_value": 20.0,
+          "matches": true,
+          "native_value": 20.0,
+          "property": "Fluid Temperature",
+          "scope": "constant ambient temperature only; not complete solve readiness",
+          "units": "degC"
+        },
+        "coupled_pressure_validation": {
+          "absolute_tolerance_Pa": 0.001,
+          "exported_value": 101325.0,
+          "matches": true,
+          "mode": "specified",
+          "native_value": 101325.0,
+          "scope": "constant specified pressure only; not complete solve readiness",
+          "stored_absolute_pressure_active": true,
+          "units": "Pa"
+        },
+        "input_identity": {
+          "bytes": 42705305,
+          "canonicalization": "xml_c14n2_no_comments",
+          "sha256": "c43fc4b9d99126f840d0cccb445000f865ee9eee36eef1c317e8ed2a158529ef",
+          "xml_content_sha256": "0500fe1e7a4486eddd5a71e93f145b7c34e2ee510a6f61876444e22910a0f662"
+        },
+        "input_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-quarter-run-20260909-r1\\quarter_r1-Finned_coupled_benchmark.xml",
+        "scope": "Native thermal/flow input export, not a solve or convergence check",
+        "solution": "Finned coupled benchmark",
+        "solve_readiness": "not_established",
+        "solver": "NX MULTIPHYSICS",
+        "solver_launched": false,
+        "source_modified": false,
+        "source_sim": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-quarter-run-20260909-r1\\quarter_r1.sim",
+        "translator_reports": [],
+        "validation": {
+          "mesh_counts": {
+            "element_sets": 2,
+            "elements": 512864,
+            "nodes": 104274,
+            "scope": "observed_multiphysics_xml_layout"
+          },
+          "solve_readiness": "not_established",
+          "state": "well_formed",
+          "step_definitions": 1
+        }
+      },
+      "preparation_adapter": 1,
+      "prepared_input": {
+        "dependencies": [
+          {
+            "bytes": 7813310,
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-quarter-run-20260909-r1\\quarter_r1.sim",
+            "sha256": "72bc2ce44ce5784c95e3eb5fd538f57200a3be7347f5cceb548c95f2b1ed0645"
+          },
+          {
+            "bytes": 21709844,
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-quarter-20260909-r1\\RoomFanQuarterR1_mesh.fem",
+            "sha256": "031b0beecc5ba5260980059e208b75898367174bc679ee5f76eac45ecf35a00d"
+          },
+          {
+            "bytes": 137586,
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-quarter-20260909-r1\\RoomFanQuarterR1_cad_01.prt",
+            "sha256": "254c84b176f6f73075c012ca758ece3cbaebf31b4f24f57016890f1b6c14141f"
+          }
+        ],
+        "dependency_completeness": "not_established",
+        "input": {
+          "bytes": 42705305,
+          "canonicalization": "xml_c14n2_no_comments",
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-quarter-run-20260909-r1\\quarter_r1-Finned_coupled_benchmark.xml",
+          "sha256": "c43fc4b9d99126f840d0cccb445000f865ee9eee36eef1c317e8ed2a158529ef",
+          "xml_content_sha256": "0500fe1e7a4486eddd5a71e93f145b7c34e2ee510a6f61876444e22910a0f662"
+        },
+        "schema": 1,
+        "scope": "explicit saved dependencies and input bytes only",
+        "solve_readiness": "not_established"
+      },
+      "solution": "Finned coupled benchmark",
+      "solver": "NX MULTIPHYSICS"
+    },
+    "request_sha256": "109d610b0b19d6e1fd6e10c5ddb3450ef35a1c5a5c8691343d8acb44fe5d5c9f",
+    "schema": 1
+  },
+  "input_sha256": "c43fc4b9d99126f840d0cccb445000f865ee9eee36eef1c317e8ed2a158529ef",
+  "bytes": 42705305,
+  "recovered_after_client_timeout": true,
+  "solver_launched": false,
+  "operation_id": "op_55defa6adafb49789e59a9cf5f3fa89c",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

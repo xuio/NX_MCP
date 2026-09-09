@@ -1,0 +1,209 @@
+{
+  "status": "success",
+  "release": {
+    "job_id": "room-fan-quarter-20260909-r1",
+    "released": true,
+    "replayed": false,
+    "receipt": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs\\room-fan-quarter-20260909-r1\\launch-gate-release.json",
+    "result_files_preserved": true,
+    "job_state_changed": false,
+    "old_job_relaunch_allowed": false
+  },
+  "identity": {
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_776086a2ca6147b695845417724cff13",
+      "kind": "part",
+      "name": "quarter_r1",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_eb0181f9d1184986be0548960c6f6e4e",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "eb0181f9d1184986be0548960c6f6e4e",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-quarter-run-20260909-r1\\quarter_r1.sim",
+      "journal_id": "quarter_r1",
+      "display_name": "quarter_r1"
+    },
+    "files": [
+      {
+        "index": 0,
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-quarter-run-20260909-r1\\quarter_r1-Finned_coupled_benchmark.bun",
+        "bytes": 99937276,
+        "sha256": "bde0f5db3f83088d4124986da65baae79fd09f0d54dd69ff2878cc33e0fd729b"
+      }
+    ],
+    "native_verification": {
+      "state": "results_changed",
+      "native_value": "2"
+    },
+    "result_freshness": "not_verified",
+    "engineering_accepted": false,
+    "scope": "Associated file identity and native verification only; model/job revision binding required",
+    "job_binding": {
+      "job_id": "room-fan-quarter-20260909-r1",
+      "request_sha256": "109d610b0b19d6e1fd6e10c5ddb3450ef35a1c5a5c8691343d8acb44fe5d5c9f",
+      "state": "not_verified",
+      "associated_result_matches_observed_artifact": true,
+      "revision": {
+        "state": "revision_mismatch",
+        "revision_matches": false,
+        "files": [
+          {
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-quarter-run-20260909-r1\\quarter_r1.sim",
+            "bytes": 7813310,
+            "sha256": "72bc2ce44ce5784c95e3eb5fd538f57200a3be7347f5cceb548c95f2b1ed0645",
+            "expected_sha256": "72bc2ce44ce5784c95e3eb5fd538f57200a3be7347f5cceb548c95f2b1ed0645",
+            "matches": true
+          },
+          {
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-quarter-20260909-r1\\RoomFanQuarterR1_mesh.fem",
+            "bytes": 21709844,
+            "sha256": "031b0beecc5ba5260980059e208b75898367174bc679ee5f76eac45ecf35a00d",
+            "expected_sha256": "031b0beecc5ba5260980059e208b75898367174bc679ee5f76eac45ecf35a00d",
+            "matches": true
+          },
+          {
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-quarter-20260909-r1\\RoomFanQuarterR1_cad_01.prt",
+            "bytes": 137586,
+            "sha256": "254c84b176f6f73075c012ca758ece3cbaebf31b4f24f57016890f1b6c14141f",
+            "expected_sha256": "254c84b176f6f73075c012ca758ece3cbaebf31b4f24f57016890f1b6c14141f",
+            "matches": true
+          }
+        ],
+        "issues": [
+          {
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-quarter-run-20260909-r1\\quarter_r1.sim",
+            "reason": "unsaved_edits"
+          }
+        ],
+        "scope": "supplied dependency set only",
+        "engineering_accepted": false
+      },
+      "reasons": [
+        "current_saved_revision_not_verified_against_prepared_revision"
+      ],
+      "live_thermal_state": {
+        "state": "not_verified",
+        "reason": "live_thermal_state_evidence_missing"
+      },
+      "live_mesh_state": {
+        "state": "matches",
+        "scope": "node_labels_coordinates_and_ordered_element_connectivity_shape_mesh_collector",
+        "full_model_freshness": "not_verified"
+      },
+      "model_result_freshness": "not_verified",
+      "engineering_accepted": false,
+      "scope": "Exact analysis/solution ownership, observed result artifact, supplied pre-solve file revisions and recorded labelled mesh snapshot; numerical validation and dependency completeness remain separate",
+      "revision_note": "Native solve/save may change SIM metadata; a file mismatch does not by itself identify a physics change"
+    }
+  },
+  "density": {
+    "field_names": [
+      "Velocity - Element-Nodal",
+      "Temperature - Nodal",
+      "Temperature - Elemental",
+      "Temperature - Element-Nodal",
+      "Total Heat Load - Elemental",
+      "Total Heat Flux - Elemental",
+      "Total Pressure - Element-Nodal",
+      "Fluid Density - Element-Nodal",
+      "Mass Flux - Nodal",
+      "Pressure - Element-Nodal"
+    ],
+    "density_field": "Fluid Density - Element-Nodal",
+    "units": "kg/m3",
+    "minimum": 1.2000000476837158,
+    "maximum": 1.2000000476837158,
+    "minimum_native_id": 531954,
+    "maximum_native_id": 531954,
+    "minimum_native_sub_id": 95859,
+    "maximum_native_sub_id": 95859,
+    "location": "2",
+    "expected_constant_density": 1.2,
+    "constant_density_matches": true,
+    "reference_lifetime": "indices apply only to this result revision",
+    "result_freshness": "not_verified"
+  },
+  "temperature": {
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_776086a2ca6147b695845417724cff13",
+      "kind": "part",
+      "name": "quarter_r1",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_eb0181f9d1184986be0548960c6f6e4e",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "eb0181f9d1184986be0548960c6f6e4e",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-quarter-run-20260909-r1\\quarter_r1.sim",
+      "journal_id": "quarter_r1",
+      "display_name": "quarter_r1"
+    },
+    "field": "Temperature - Nodal",
+    "field_location": "nodal",
+    "loadcase_index": 0,
+    "iteration_index": 0,
+    "units": "degC",
+    "minimum": 24.487329483032227,
+    "maximum": 24.576641082763672,
+    "native_location": "0",
+    "minimum_native_id": 9,
+    "maximum_native_id": 1121,
+    "minimum_native_sub_id": 0,
+    "maximum_native_sub_id": 0,
+    "node_count": 104274,
+    "result_freshness": "not_verified",
+    "reference_lifetime": "indices apply only to this result revision"
+  },
+  "pressure": {
+    "document": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_776086a2ca6147b695845417724cff13",
+      "kind": "part",
+      "name": "quarter_r1",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_eb0181f9d1184986be0548960c6f6e4e",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "eb0181f9d1184986be0548960c6f6e4e",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-quarter-run-20260909-r1\\quarter_r1.sim",
+      "journal_id": "quarter_r1",
+      "display_name": "quarter_r1"
+    },
+    "field": "Pressure - Element-Nodal",
+    "units": "Pa",
+    "minimum": 0.16205938160419464,
+    "maximum": 0.9618573784828186,
+    "native_location": "2",
+    "minimum_native_id": 390152,
+    "maximum_native_id": 284347,
+    "minimum_native_sub_id": 55879,
+    "maximum_native_sub_id": 34731,
+    "node_count": 104274,
+    "loadcase_index": 0,
+    "iteration_index": 0,
+    "result_freshness": "not_verified",
+    "pressure_reference": "native_solution_reference",
+    "reference_lifetime": "indices apply only to this result revision"
+  },
+  "view": {
+    "postview_id": 25,
+    "postview_owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-room-fan-quarter-run-20260909-r1\\quarter_r1.sim",
+    "readback": {
+      "loadcase_index": 0,
+      "iteration_index": 0,
+      "field": "Temperature - Nodal",
+      "unit": "Celsius"
+    },
+    "units": "degC",
+    "existing_view_ids": [],
+    "overlay": false,
+    "main_postview_id": 25,
+    "saved": false,
+    "presentation": {
+      "information_window_closed": true,
+      "view_fitted": true,
+      "display_refreshed": true,
+      "warnings": []
+    },
+    "warnings": [],
+    "result_freshness": "not_verified",
+    "reference_lifetime": "postview ID is document-local within this session; use postview_owner and reacquire after closure"
+  },
+  "operation_id": "op_9a4fa849b11b4a908738661429361562",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

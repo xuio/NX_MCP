@@ -1,0 +1,18 @@
+{
+  "release": {
+    "version": "0.2.0.dev23",
+    "commit": "5d0e759eb2178aa4a1a14156102af34740405cfd",
+    "source_date_epoch": 1788977844,
+    "python": "3.12",
+    "platform": "win_amd64",
+    "upstream": "https://github.com/DreamEnding/NX_MCP",
+    "fork": "https://github.com/xuio/NX_MCP"
+  },
+  "archive_sha256": "f5778c24d772d3d3e4d1e4ed26f5aa3097d94305dab7ec6150d10a2e93c3509a",
+  "files_verified": 1488,
+  "private_helper_sources": [
+    "source/src/nx_mcp/native/EvaluatorHelper.cs"
+  ],
+  "fresh_install_tested": false,
+  "active_vm_unchanged": true
+}
