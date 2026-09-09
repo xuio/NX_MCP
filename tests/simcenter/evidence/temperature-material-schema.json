@@ -1,0 +1,183 @@
+{
+  "status": "success",
+  "properties": [
+    {
+      "name": "ElasticDependencyControl",
+      "native_type": "3",
+      "units": null,
+      "value": 3
+    },
+    {
+      "name": "MassDensityConstant",
+      "native_type": "6",
+      "units": "KilogramPerCubicMilliMeter",
+      "expression": "-777777",
+      "unit_symbol": "kg/mm^3",
+      "representation": "expression"
+    },
+    {
+      "name": "MassDensityTemperature",
+      "native_type": "6",
+      "units": null,
+      "value": null
+    },
+    {
+      "name": "MassDensityFrequency",
+      "native_type": "6",
+      "units": null,
+      "value": null
+    },
+    {
+      "name": "StrainRatedependency",
+      "native_type": "3",
+      "units": null,
+      "value": 0
+    },
+    {
+      "name": "ThermalExpansionCoefficientType",
+      "native_type": "3",
+      "units": null,
+      "value": 1
+    },
+    {
+      "name": "ThermalExpansionConstant",
+      "native_type": "6",
+      "units": "ThermalExpansion_Metric1",
+      "expression": "-777777",
+      "unit_symbol": "1/dC",
+      "representation": "expression"
+    },
+    {
+      "name": "ThermalExpansionTemperature",
+      "native_type": "6",
+      "units": null,
+      "value": null
+    },
+    {
+      "name": "ThermalExpansionCoefficientControl2",
+      "native_type": "3",
+      "units": null,
+      "value": 0
+    },
+    {
+      "name": "ThermalExpansionTX",
+      "native_type": "6",
+      "units": "ThermalExpansion_Metric1",
+      "expression": "-777777",
+      "unit_symbol": "1/dC",
+      "representation": "expression"
+    },
+    {
+      "name": "MatrixThermalExpansionTXTg",
+      "native_type": "6",
+      "units": "ThermalExpansion_Metric1",
+      "expression": "-777777",
+      "unit_symbol": "1/dC",
+      "representation": "expression"
+    },
+    {
+      "name": "MatrixThermalExpansionTXTg2",
+      "native_type": "6",
+      "units": "ThermalExpansion_Metric1",
+      "expression": "-777777",
+      "unit_symbol": "1/dC",
+      "representation": "expression"
+    },
+    {
+      "name": "MatrixThermalExpansionTXTg3",
+      "native_type": "6",
+      "units": "ThermalExpansion_Metric1",
+      "expression": "-777777",
+      "unit_symbol": "1/dC",
+      "representation": "expression"
+    },
+    {
+      "name": "ThermalConductivityControl",
+      "native_type": "3",
+      "units": null,
+      "value": 0
+    },
+    {
+      "name": "ThermalConductivity",
+      "native_type": "6",
+      "units": "ThermalConductivity_Metric2",
+      "expression": "-777777",
+      "unit_symbol": "W/mm-dC",
+      "representation": "expression"
+    },
+    {
+      "name": "DummyThermalConductivity1",
+      "native_type": "3",
+      "units": null,
+      "value": 0
+    },
+    {
+      "name": "DummyThermalConductivity2",
+      "native_type": "3",
+      "units": null,
+      "value": 0
+    },
+    {
+      "name": "DummyThermalConductivity3",
+      "native_type": "3",
+      "units": null,
+      "value": 0
+    },
+    {
+      "name": "DummyThermalConductivity4",
+      "native_type": "3",
+      "units": null,
+      "value": 0
+    },
+    {
+      "name": "SpecificHeatControl",
+      "native_type": "3",
+      "units": null,
+      "value": 0
+    },
+    {
+      "name": "SpecificHeat",
+      "native_type": "6",
+      "units": "SpecificHeat_Metric2",
+      "expression": "-777777",
+      "unit_symbol": "J/kg-dK",
+      "representation": "expression"
+    },
+    {
+      "name": "PhaseSpecificHeat",
+      "native_type": "6",
+      "units": "SpecificHeat_Metric2",
+      "expression": "-777777",
+      "unit_symbol": "J/kg-dK",
+      "representation": "expression"
+    },
+    {
+      "name": "PermanentMagnetPermeabilityDependency",
+      "native_type": "3",
+      "units": null,
+      "value": 0
+    },
+    {
+      "name": "SCThermalFlowAppliedViews",
+      "native_type": "0",
+      "units": null,
+      "representation": "text_lines",
+      "value": []
+    },
+    {
+      "name": "SCSpaceSystemsThermalAppliedViews",
+      "native_type": "0",
+      "units": null,
+      "representation": "text_lines",
+      "value": []
+    }
+  ],
+  "fem_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-heat-recovery-20260909-r1\\benchmark_b48bd54502e5_mesh.fem",
+  "solver_launched": false,
+  "scope": "Installed isotropic material property defaults; no configuration committed",
+  "operation_id": "op_6a1bbc8517644ba6a9a1e02efeef2425",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

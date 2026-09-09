@@ -93,7 +93,7 @@ def create_body_power(
             wrapper = sim.FieldManager.CreateScalarFieldWrapperWithExpression(expression)
         else:
             wrapper = sim.FieldManager.CreateScalarFieldWrapperWithField(
-                schedule_field, schedule_scale
+                schedule_field, schedule["scale"]
             )
         builder.PropertyTable.SetScalarFieldWrapperPropertyValue("Heat Load", wrapper)
         member = cae.SetObject()

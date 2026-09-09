@@ -94,6 +94,10 @@ PUBLIC_EVIDENCE = {
         "steady-controls-public-launch.json",
         "Explicit temperature stopping in K, public validation/replay/export; native persistence and optional relative-balance authoring separately verified",
     ),
+    "nx_sim_heat_schedule": (
+        "heat-schedule-public.json",
+        "Time/power table binding, scale, coverage, replay and save/reopen verified; native target persistence, post-commit rollback and scaled export audited separately; no transient numerical acceptance",
+    ),
     "nx_sim_scalar_table": (
         "scalar-tables-public.json",
         "Registered time/temperature scalar tables: native unit conversion, public replay, validation and save/reopen; no load/material binding or numerical acceptance",

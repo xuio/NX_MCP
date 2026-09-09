@@ -1,0 +1,26 @@
+{
+  "status": "success",
+  "exception_chain": [
+    {
+      "type": "NXToolError",
+      "message": "Thermal authoring failed; creation was rolled back",
+      "details": {
+        "mutation_outcome": "rolled_back",
+        "creation_snapshot_restored": true,
+        "cleanup_issues": [],
+        "verification_scope": "load, constraint and expression identities; creation-only operation"
+      }
+    },
+    {
+      "type": "TypeError",
+      "message": "Second parameter is invalid. Expecting double type, found int.",
+      "details": null
+    }
+  ],
+  "loads_after": [],
+  "operation_id": "op_9efe731f6c434c628b09871771a29678",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

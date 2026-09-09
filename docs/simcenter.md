@@ -248,13 +248,35 @@ are `examples/simcenter/verify_heat_schedule_{native,public}.py`. A transient SS
 interruption was resolved by checking for the specific test process and receipt
 before launching again; the interrupted attempt had created neither.
 
-Schedule-specific post-commit rollback injection, geometric target identity after
-reopen and transient numerical behavior remain open. The shared constant-load
-rollback path is retained, but its earlier checks are not substituted for the new
-schedule-specific test. No solver was launched. The XML selection attribute is
-retained without claiming step inheritance semantics. Native time-step controls
-can be changed after assignment; this handler validates coverage when creating
-the load, not as a universal pre-solve gate.
+`heat-schedule-recovery.json` verifies a schedule-specific post-commit injected
+failure, including field/load/expression/membership identities and all document
+flags. The verifier is confirmed reached before accepting the injection test.
+Retry succeeds, and a constant 3 W load on a second body still reads back correctly.
+The reopened public fixture's single target resolves to its FEM body with retained
+bounds [0,0,0]..[10,10,10] mm. This check found an internal integer-scale binding
+error: NX requires a Python double, although the adapter accepts numeric integers.
+The adapter now passes its validated float scale. The original exception chain is
+retained in `heat-schedule-integer-scale-failure.json`.
+
+Transient numerical behavior remains open. No solver was launched. The XML
+selection attribute is retained without claiming step inheritance semantics.
+Native time-step controls can change after assignment; this handler validates
+coverage when creating the load, not as a universal pre-solve gate.
+
+### Temperature-dependent material binding investigation
+
+A bounded isotropic-material trial verifies that registered temperature tables
+for `ThermalConductivity` and `SpecificHeat` survive native commit and SI readback
+in a FEM, with wrapper scale 1 and their installed control selectors retained at
+0. Constant density remains 2700 kg/m³. Kelvin axis inputs are converted to native
+Celsius before table creation. The trial restores material, field and expression
+inventories and all document flags with undo. Evidence:
+`temperature-material-schema.json` and `temperature-material-binding-native.json`;
+reproducer: `examples/simcenter/verify_temperature_material_binding_native.py`.
+
+This establishes the native field-binding route only. Public material authoring,
+collector assignment, save/reopen, exported selector/table semantics and numerical
+acceptance are still implementation/verification work, not external limitations.
 
 ### Reconciled Phase 2 backlog
 
@@ -266,7 +288,7 @@ from installed modules. A missing implementation/test is not an external blocker
 | Thermal contacts/interface resistance | Partial: native/public total R/G authoring and resistance persistence verified | 200-element explicit-convergence artifact benchmark passes; general contact options and current-session freshness remain |
 | Convection and dependencies | Native/public constant coefficient and three temperature-source selectors verified | Explicit Kelvin value, persistence, exported conversion and disjoint face sets pass; time fields, ambient value resolution and shell-side options remain |
 | Radiation/emissivity/enclosures | Native/public simple environment radiation, constant emissivity override and deterministic enclosure authoring verified | Persistent/exported primary regions and active settings pass; view factors/numerical balances, Monte Carlo/GPU and secondary-slot authoring remain unverified |
-| Temperature-dependent materials | Native/public reusable temperature-axis tables verified; material binding missing | Bind supported property fields and verify solver export/persistence |
+| Temperature-dependent materials | Native/public reusable temperature-axis tables verified; internal material-field commit/readback probe passes | Bind supported property fields and verify solver export/persistence |
 | Transient loads/initial conditions/schedules | Partial time controls, constant distributed loads and native/public time-table body power | `time_controls.py`, `distributed_heat.py`; schedule and initial-condition authoring/readback |
 | Forced/natural convection and fluid models | Partial native controls/materials and coupled fixtures | `flow_controls.py`, `fluid_material.py`; selector/gravity/buoyancy scope and exports |
 | Fan curves and provenance | Scoped public authoring/readback verified | `fan_field.py`, `fan_boundary.py`; preserve static convention and assignment limits |

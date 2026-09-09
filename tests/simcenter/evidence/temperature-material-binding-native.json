@@ -1,0 +1,263 @@
+{
+  "status": "success",
+  "material_properties": [
+    {
+      "name": "MassDensityConstant",
+      "native_type": "6",
+      "units": "KilogramPerCubicMeter",
+      "expression": "2700",
+      "unit_symbol": "kg/m^3",
+      "representation": "expression"
+    },
+    {
+      "name": "ThermalConductivityControl",
+      "native_type": "3",
+      "units": null,
+      "value": 0
+    },
+    {
+      "name": "ThermalConductivity",
+      "native_type": "6",
+      "units": null,
+      "field_scale": 1.0,
+      "field_reference": {
+        "journal_id": "MCP_ThermalConductivity",
+        "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-heat-recovery-20260909-r1\\benchmark_b48bd54502e5_mesh.fem",
+        "tag": 8585956,
+        "lifetime": "current loaded document; not a cross-session reference"
+      },
+      "representation": "FieldTable",
+      "field_definition": {
+        "kind": "validated_scalar_table",
+        "manifest": {
+          "axis": "temperature",
+          "interpolation": "linear",
+          "name": "MCP_ThermalConductivity",
+          "outside_table": "undefined",
+          "provenance": "Generic temperature-material API fixture",
+          "quantity": "conductivity",
+          "samples": [
+            [
+              273.15,
+              100
+            ],
+            [
+              293.15,
+              150
+            ],
+            [
+              313.15,
+              200
+            ]
+          ],
+          "version": 1
+        },
+        "native_samples_si": {
+          "samples_si": [
+            [
+              273.15,
+              100.0
+            ],
+            [
+              293.15,
+              150.0
+            ],
+            [
+              313.15,
+              200.0
+            ]
+          ],
+          "axis_units": "K",
+          "value_units": "W/(m K)",
+          "native_axis_unit": "Celsius",
+          "native_value_unit": "ThermalConductivity_Metric3",
+          "interpolation": "linear",
+          "outside_table": "undefined"
+        },
+        "scale_application": "native scalar wrapper factor reported separately; binding semantics not established",
+        "definition_scope": "table samples, units and stored interpolation; not material/load or solver semantics"
+      }
+    },
+    {
+      "name": "SpecificHeatControl",
+      "native_type": "3",
+      "units": null,
+      "value": 0
+    },
+    {
+      "name": "SpecificHeat",
+      "native_type": "6",
+      "units": null,
+      "field_scale": 1.0,
+      "field_reference": {
+        "journal_id": "MCP_SpecificHeat",
+        "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-heat-recovery-20260909-r1\\benchmark_b48bd54502e5_mesh.fem",
+        "tag": 8586009,
+        "lifetime": "current loaded document; not a cross-session reference"
+      },
+      "representation": "FieldTable",
+      "field_definition": {
+        "kind": "validated_scalar_table",
+        "manifest": {
+          "axis": "temperature",
+          "interpolation": "linear",
+          "name": "MCP_SpecificHeat",
+          "outside_table": "undefined",
+          "provenance": "Generic temperature-material API fixture",
+          "quantity": "heat_capacity",
+          "samples": [
+            [
+              273.15,
+              800
+            ],
+            [
+              293.15,
+              900
+            ],
+            [
+              313.15,
+              1000
+            ]
+          ],
+          "version": 1
+        },
+        "native_samples_si": {
+          "samples_si": [
+            [
+              273.15,
+              800.0
+            ],
+            [
+              293.15,
+              900.0
+            ],
+            [
+              313.15,
+              1000.0
+            ]
+          ],
+          "axis_units": "K",
+          "value_units": "J/(kg K)",
+          "native_axis_unit": "Celsius",
+          "native_value_unit": "SpecificHeat_Metric2",
+          "interpolation": "linear",
+          "outside_table": "undefined"
+        },
+        "scale_application": "native scalar wrapper factor reported separately; binding semantics not established",
+        "definition_scope": "table samples, units and stored interpolation; not material/load or solver semantics"
+      }
+    }
+  ],
+  "definitions": {
+    "ThermalConductivity": {
+      "manifest": {
+        "axis": "temperature",
+        "interpolation": "linear",
+        "name": "MCP_ThermalConductivity",
+        "outside_table": "undefined",
+        "provenance": "Generic temperature-material API fixture",
+        "quantity": "conductivity",
+        "samples": [
+          [
+            273.15,
+            100
+          ],
+          [
+            293.15,
+            150
+          ],
+          [
+            313.15,
+            200
+          ]
+        ],
+        "version": 1
+      },
+      "manifest_sha256": "23d90ab65843cc21e1f2e70bda4cd4d714f83e33ca4fc31ac0e6d4f913c63c43",
+      "readback": {
+        "samples_si": [
+          [
+            273.15,
+            100.0
+          ],
+          [
+            293.15,
+            150.0
+          ],
+          [
+            313.15,
+            200.0
+          ]
+        ],
+        "axis_units": "K",
+        "value_units": "W/(m K)",
+        "native_axis_unit": "Celsius",
+        "native_value_unit": "ThermalConductivity_Metric3",
+        "interpolation": "linear",
+        "outside_table": "undefined"
+      },
+      "binding_semantics": "not_inspected",
+      "numerical_acceptance": "not_established"
+    },
+    "SpecificHeat": {
+      "manifest": {
+        "axis": "temperature",
+        "interpolation": "linear",
+        "name": "MCP_SpecificHeat",
+        "outside_table": "undefined",
+        "provenance": "Generic temperature-material API fixture",
+        "quantity": "heat_capacity",
+        "samples": [
+          [
+            273.15,
+            800
+          ],
+          [
+            293.15,
+            900
+          ],
+          [
+            313.15,
+            1000
+          ]
+        ],
+        "version": 1
+      },
+      "manifest_sha256": "1aa8cf61e8cc2ef30f3f53ae69cb230505cf23e7d7d9b19c81f51dd9fd265362",
+      "readback": {
+        "samples_si": [
+          [
+            273.15,
+            800.0
+          ],
+          [
+            293.15,
+            900.0
+          ],
+          [
+            313.15,
+            1000.0
+          ]
+        ],
+        "axis_units": "K",
+        "value_units": "J/(kg K)",
+        "native_axis_unit": "Celsius",
+        "native_value_unit": "SpecificHeat_Metric2",
+        "interpolation": "linear",
+        "outside_table": "undefined"
+      },
+      "binding_semantics": "not_inspected",
+      "numerical_acceptance": "not_established"
+    }
+  },
+  "committed_readback_verified": true,
+  "assignment_verified": false,
+  "export_verified": false,
+  "solver_launched": false,
+  "rollback_verified": true,
+  "operation_id": "op_c258778c22674972aca4f71694da7d68",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}
