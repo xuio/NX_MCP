@@ -289,3 +289,14 @@ async def test_solution_membership_is_optional_read_only_expansion(tmp_path, mon
     assert tool.inputSchema["properties"]["include_membership"]["default"] is False
     assert tool.annotations.readOnlyHint is True
     assert "operation_id" not in tool.inputSchema["properties"]
+
+
+@pytest.mark.asyncio
+async def test_temperature_nodes_requires_revision_and_is_read_only(tmp_path, monkeypatch):
+    monkeypatch.setenv("NX_MCP_ENABLE_SIMCENTER", "1")
+    server = create_server(Bridge(), Workspace(tmp_path), enable_experimental=True)
+    tool = next(t for t in await server.list_tools() if t.name == "nx_sim_temperature_nodes")
+    assert {"document", "result_sha256"} <= set(tool.inputSchema["required"])
+    assert tool.inputSchema["properties"]["limit"]["default"] == 100
+    assert "operation_id" not in tool.inputSchema["properties"]
+    assert tool.annotations.readOnlyHint

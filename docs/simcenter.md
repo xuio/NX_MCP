@@ -695,6 +695,45 @@ solver ran during these tests. Receipts: `mesh-guard-positive-{launch,finish}.js
 `mesh-result-{baseline,arm-result,stale-public,restoration,restored-public}.json`,
 and the retained `.log`/`.xml` under `tests/simcenter/evidence/`.
 
+### Bounded nodal temperature retrieval
+
+`nx_sim_temperature_nodes(document, result_sha256, loadcase_index=0,
+iteration_index=0, offset=0, limit=100, maximum_bytes=1073741824)` returns up to
+200 native nodal temperatures per call. Obtain the required SHA256 from
+`nx_sim_result_identity`; this tool checks the single associated result file
+before and after extraction. A differing revision is rejected, so callers must
+discard accumulated pages and inspect the new result. Each hashing pass is bounded
+by `maximum_bytes`; large results incur two hashing passes per page. This trades
+throughput for explicit file-change detection until reusable result snapshots exist.
+It does not prove that every native in-memory cache tracks external file edits.
+
+Offsets are zero-based; returned node indices are one-based native result indices.
+Labels belong to the result revision and must not be used as live FEM references.
+Temperatures are requested in Celsius. `Result.AskBasicUnits()` verifies millimeter
+result coordinates; other result length units are explicitly unsupported here.
+Coordinates are reported in the native result frame, without applying assembly or
+user coordinate transforms. Missing/ambiguous nodal fields, mismatched arrays and
+nonfinite data reject the page. No partial page is returned. Empty end pages are
+valid. Coupled nodal temperature may omit fluid results; no whole-domain coverage,
+semantic region, weighted average or junction-temperature interpretation is implied.
+
+The copied 2606 API reference documents `Result.AskBasicUnits` (mass, length, time,
+temperature, angle), `AskNodeCoordinates`, `AskNodeLabel` and
+`ResultAccess.AskNodalResult`. The Python bindings were verified natively on the
+completed 100-element/45-node V result: pages of 17 return all nodes exactly once,
+bounds are 0..10 mm on every axis, and minimum/maximum temperatures exactly equal
+the existing extrema query. Document modification flags and postview IDs are
+preserved. Public MCP verifies paging, identity binding, wrong hash and invalid
+limit rejection. Forty-three focused offline tests cover result cleanup, schemas,
+page boundaries, malformed native arrays and file-change guards. Save/reopen and
+region mapping for the new tool are not yet verified.
+
+Reproduce using `examples/simcenter/verify_temperature_nodes_native.py` and
+`verify_temperature_nodes_public.py` with the existing isolated completed job;
+no solve is needed. Evidence: `nodal-page-native.json` and
+`temperature-nodes-public.json`. This is a foundation for region summaries and
+portable tables, not completion of those remaining requirements.
+
 ### Reconciled Phase 2 backlog
 
 Statuses below refer to the requested general capability, not availability inferred
@@ -717,7 +756,7 @@ from installed modules. A missing implementation/test is not an external blocker
 | Parameter studies | Partial isolated variants and scenario import | `variant_clone.py`, `scenario_apply.py`; explicit variables, bounds and resumable execution |
 | Job status/recovery/cancellation | Partial public persistent workflow | Native running cancellation unresolved; pre-launch cancellation verified separately |
 | Prepare/export/launch/observe/inspect separation | Present public scoped workflow | Preserve distinct API return, solver exit, convergence and engineering acceptance |
-| Region temperatures/extrema | Partial result extraction | `results.py`; explicit region selections and scalar location semantics |
+| Region temperatures/extrema | Native/public extrema plus bounded nodal temperatures/coordinates with file-revision checks | `results.py`, `nodal_results.py`; explicit semantic regions, averaging, general field completeness and coordinate transforms remain |
 | Pressure drop/fan operating point | Partial pressure fields and fan summary | `flow_results.py`, `fan_summary.py`; convention/unit/selection acceptance |
 | Mass/energy balance | Partial native-log audits and derived balances | `thermal_balance.py`, `flow_audit.py`; keep native versus derived provenance explicit |
 | Data/visualization export | Partial native result/postview and CAD artifact delivery | `postprocessing.py`, `postviews.py`; reusable result exports and dependency packaging |

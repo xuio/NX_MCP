@@ -2,6 +2,10 @@
 
 # Each scope refers to actual public MCP native verification, not API reflection.
 PUBLIC_EVIDENCE = {
+    "nx_sim_temperature_nodes": (
+        "temperature-nodes-public.json",
+        "45 nodes paged in three bounded reads plus empty end page; native mm/Celsius readback, extrema/bounds agreement, wrong hash and invalid limit rejection. Native document flags/postviews preserved; region selection and general field completeness unverified",
+    ),
     "nx_sim_mesh_state": (
         "mesh-state-public.json",
         "Exact labelled node/connectivity/shape/mesh/collector digest: repeat readback, bounded traversal, inactive/stale rejection and FEM save/close/reopen; native same-count coordinate detection and public launch rejection retained in mesh-guard-rejection-public.json; not whole-model freshness",

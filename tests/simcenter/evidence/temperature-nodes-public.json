@@ -1,0 +1,961 @@
+{
+  "responses": {
+    "identity": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_0810a0fb336e4cd2a3c747ae3f409b77\", \"kind\": \"part\", \"name\": \"mesh_guard_positive_r1\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_d8b5717caed84d918b7d612c930808f3\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"d8b5717caed84d918b7d612c930808f3\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-positive-20260909-r1\\\\mesh_guard_positive_r1.sim\", \"journal_id\": \"mesh_guard_positive_r1\", \"display_name\": \"mesh_guard_positive_r1\"}, \"files\": [{\"index\": 0, \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-positive-20260909-r1\\\\mesh_guard_positive_r1-Conduction.bun\", \"bytes\": 16164, \"sha256\": \"7d97917a22bd683c0453ead6b50308464a909f5bc4f81774baf075e6284ac35f\"}], \"native_verification\": {\"state\": \"results_changed\", \"native_value\": \"2\"}, \"result_freshness\": \"not_verified\", \"engineering_accepted\": false, \"scope\": \"Associated file identity and native verification only; model/job revision binding required\", \"job_binding\": {\"job_id\": \"mesh-guard-positive-r1\", \"request_sha256\": \"5f0f3045d7267f4e609e809dcf3308721ba9a1e3021bbb3346046be296d262ce\", \"state\": \"not_verified\", \"associated_result_matches_observed_artifact\": true, \"revision\": {\"state\": \"revision_mismatch\", \"revision_matches\": false, \"files\": [{\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-positive-20260909-r1\\\\mesh_guard_positive_r1.sim\", \"bytes\": 7679762, \"sha256\": \"41e7db35fb062c8372c916a4371add8bdb793ce09e910f8dba7c2d04507fe209\", \"expected_sha256\": \"41e7db35fb062c8372c916a4371add8bdb793ce09e910f8dba7c2d04507fe209\", \"matches\": true}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-20260909-r1\\\\benchmark_2b3340c6f11a_mesh.fem\", \"bytes\": 2913273, \"sha256\": \"98810c9c4cad5f44411492d974c07e4327570e3b2d16c4358e9c5b74e145e010\", \"expected_sha256\": \"f9ad5255e87c402b519a230773dc034a46646223d228d2a46674692917d9aa2a\", \"matches\": false}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-20260909-r1\\\\benchmark_2b3340c6f11a_geometry.prt\", \"bytes\": 76037, \"sha256\": \"a27db91c3cae9f09709bc98b2c38b5652b222d46cec992cc441bec35549b7f38\", \"expected_sha256\": \"a27db91c3cae9f09709bc98b2c38b5652b222d46cec992cc441bec35549b7f38\", \"matches\": true}], \"issues\": [{\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-positive-20260909-r1\\\\mesh_guard_positive_r1.sim\", \"reason\": \"unsaved_edits\"}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-20260909-r1\\\\benchmark_2b3340c6f11a_mesh.fem\", \"reason\": \"saved_file_changed\"}], \"scope\": \"supplied dependency set only\", \"engineering_accepted\": false}, \"reasons\": [\"current_saved_revision_not_verified_against_prepared_revision\"], \"live_thermal_state\": {\"state\": \"matches\", \"scope\": \"solid_material_frame_properties_and_observed_thermal_boundaries\", \"full_model_freshness\": \"not_verified\"}, \"live_mesh_state\": {\"state\": \"matches\", \"scope\": \"node_labels_coordinates_and_ordered_element_connectivity_shape_mesh_collector\", \"full_model_freshness\": \"not_verified\"}, \"model_result_freshness\": \"not_verified\", \"engineering_accepted\": false, \"scope\": \"Exact analysis/solution ownership, observed result artifact, supplied pre-solve file revisions and recorded labelled mesh snapshot; numerical validation and dependency completeness remain separate\", \"revision_note\": \"Native solve/save may change SIM metadata; a file mismatch does not by itself identify a physics change\"}, \"operation_id\": \"op_835f0315724c4c24af3e45cb52d971a1\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "document": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_0810a0fb336e4cd2a3c747ae3f409b77",
+          "kind": "part",
+          "name": "mesh_guard_positive_r1",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_d8b5717caed84d918b7d612c930808f3",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "d8b5717caed84d918b7d612c930808f3",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-positive-20260909-r1\\mesh_guard_positive_r1.sim",
+          "journal_id": "mesh_guard_positive_r1",
+          "display_name": "mesh_guard_positive_r1"
+        },
+        "files": [
+          {
+            "index": 0,
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-positive-20260909-r1\\mesh_guard_positive_r1-Conduction.bun",
+            "bytes": 16164,
+            "sha256": "7d97917a22bd683c0453ead6b50308464a909f5bc4f81774baf075e6284ac35f"
+          }
+        ],
+        "native_verification": {
+          "state": "results_changed",
+          "native_value": "2"
+        },
+        "result_freshness": "not_verified",
+        "engineering_accepted": false,
+        "scope": "Associated file identity and native verification only; model/job revision binding required",
+        "job_binding": {
+          "job_id": "mesh-guard-positive-r1",
+          "request_sha256": "5f0f3045d7267f4e609e809dcf3308721ba9a1e3021bbb3346046be296d262ce",
+          "state": "not_verified",
+          "associated_result_matches_observed_artifact": true,
+          "revision": {
+            "state": "revision_mismatch",
+            "revision_matches": false,
+            "files": [
+              {
+                "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-positive-20260909-r1\\mesh_guard_positive_r1.sim",
+                "bytes": 7679762,
+                "sha256": "41e7db35fb062c8372c916a4371add8bdb793ce09e910f8dba7c2d04507fe209",
+                "expected_sha256": "41e7db35fb062c8372c916a4371add8bdb793ce09e910f8dba7c2d04507fe209",
+                "matches": true
+              },
+              {
+                "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-20260909-r1\\benchmark_2b3340c6f11a_mesh.fem",
+                "bytes": 2913273,
+                "sha256": "98810c9c4cad5f44411492d974c07e4327570e3b2d16c4358e9c5b74e145e010",
+                "expected_sha256": "f9ad5255e87c402b519a230773dc034a46646223d228d2a46674692917d9aa2a",
+                "matches": false
+              },
+              {
+                "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-20260909-r1\\benchmark_2b3340c6f11a_geometry.prt",
+                "bytes": 76037,
+                "sha256": "a27db91c3cae9f09709bc98b2c38b5652b222d46cec992cc441bec35549b7f38",
+                "expected_sha256": "a27db91c3cae9f09709bc98b2c38b5652b222d46cec992cc441bec35549b7f38",
+                "matches": true
+              }
+            ],
+            "issues": [
+              {
+                "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-positive-20260909-r1\\mesh_guard_positive_r1.sim",
+                "reason": "unsaved_edits"
+              },
+              {
+                "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-20260909-r1\\benchmark_2b3340c6f11a_mesh.fem",
+                "reason": "saved_file_changed"
+              }
+            ],
+            "scope": "supplied dependency set only",
+            "engineering_accepted": false
+          },
+          "reasons": [
+            "current_saved_revision_not_verified_against_prepared_revision"
+          ],
+          "live_thermal_state": {
+            "state": "matches",
+            "scope": "solid_material_frame_properties_and_observed_thermal_boundaries",
+            "full_model_freshness": "not_verified"
+          },
+          "live_mesh_state": {
+            "state": "matches",
+            "scope": "node_labels_coordinates_and_ordered_element_connectivity_shape_mesh_collector",
+            "full_model_freshness": "not_verified"
+          },
+          "model_result_freshness": "not_verified",
+          "engineering_accepted": false,
+          "scope": "Exact analysis/solution ownership, observed result artifact, supplied pre-solve file revisions and recorded labelled mesh snapshot; numerical validation and dependency completeness remain separate",
+          "revision_note": "Native solve/save may change SIM metadata; a file mismatch does not by itself identify a physics change"
+        },
+        "operation_id": "op_835f0315724c4c24af3e45cb52d971a1",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "not_applicable"
+      },
+      "isError": false
+    },
+    "page_0": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"degC\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_0810a0fb336e4cd2a3c747ae3f409b77\", \"kind\": \"part\", \"name\": \"mesh_guard_positive_r1\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_d8b5717caed84d918b7d612c930808f3\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"d8b5717caed84d918b7d612c930808f3\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-positive-20260909-r1\\\\mesh_guard_positive_r1.sim\", \"journal_id\": \"mesh_guard_positive_r1\", \"display_name\": \"mesh_guard_positive_r1\"}, \"result_file\": {\"index\": 0, \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-positive-20260909-r1\\\\mesh_guard_positive_r1-Conduction.bun\", \"bytes\": 16164, \"sha256\": \"7d97917a22bd683c0453ead6b50308464a909f5bc4f81774baf075e6284ac35f\"}, \"items\": [{\"index\": 1, \"label\": 1, \"coordinates\": [0.0, 0.0, 0.0], \"temperature\": 20.232282638549805}, {\"index\": 2, \"label\": 2, \"coordinates\": [0.0, 0.0, 10.0], \"temperature\": 20.245689392089844}, {\"index\": 3, \"label\": 3, \"coordinates\": [0.0, 10.0, 0.0], \"temperature\": 20.24348258972168}, {\"index\": 4, \"label\": 4, \"coordinates\": [0.0, 10.0, 10.0], \"temperature\": 20.232349395751953}, {\"index\": 5, \"label\": 5, \"coordinates\": [10.0, 0.0, 0.0], \"temperature\": 20.0}, {\"index\": 6, \"label\": 6, \"coordinates\": [10.0, 0.0, 10.0], \"temperature\": 20.0}, {\"index\": 7, \"label\": 7, \"coordinates\": [10.0, 10.0, 0.0], \"temperature\": 20.0}, {\"index\": 8, \"label\": 8, \"coordinates\": [10.0, 10.0, 10.0], \"temperature\": 20.0}, {\"index\": 9, \"label\": 9, \"coordinates\": [0.0, 0.0, 5.0], \"temperature\": 20.251352310180664}, {\"index\": 10, \"label\": 10, \"coordinates\": [0.0, 5.0, 0.0], \"temperature\": 20.251344680786133}, {\"index\": 11, \"label\": 11, \"coordinates\": [0.0, 5.0, 10.0], \"temperature\": 20.251434326171875}, {\"index\": 12, \"label\": 12, \"coordinates\": [0.0, 10.0, 5.0], \"temperature\": 20.251495361328125}, {\"index\": 13, \"label\": 13, \"coordinates\": [5.0, 0.0, 0.0], \"temperature\": 20.166961669921875}, {\"index\": 14, \"label\": 14, \"coordinates\": [5.0, 0.0, 10.0], \"temperature\": 20.166492462158203}, {\"index\": 15, \"label\": 15, \"coordinates\": [5.0, 10.0, 0.0], \"temperature\": 20.166820526123047}, {\"index\": 16, \"label\": 16, \"coordinates\": [5.0, 10.0, 10.0], \"temperature\": 20.16698455810547}, {\"index\": 17, \"label\": 17, \"coordinates\": [10.0, 0.0, 5.0], \"temperature\": 20.0}], \"total\": 45, \"next_offset\": 17, \"loadcase_index\": 0, \"iteration_index\": 0, \"field\": \"Temperature - Nodal\", \"coordinate_units\": \"mm\", \"coordinate_frame\": \"native_result_coordinates\", \"result_freshness\": \"not_verified\", \"reference_lifetime\": \"Indices and labels belong to this result file revision; not live geometry or FEM references\", \"scope\": \"Native result nodes only; coupled nodal temperature may exclude fluid values; no region or averaging inference\", \"operation_id\": \"op_596b03a5d3a94705a1dce2c4f62e4aa3\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "degC",
+        "document": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_0810a0fb336e4cd2a3c747ae3f409b77",
+          "kind": "part",
+          "name": "mesh_guard_positive_r1",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_d8b5717caed84d918b7d612c930808f3",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "d8b5717caed84d918b7d612c930808f3",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-positive-20260909-r1\\mesh_guard_positive_r1.sim",
+          "journal_id": "mesh_guard_positive_r1",
+          "display_name": "mesh_guard_positive_r1"
+        },
+        "result_file": {
+          "index": 0,
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-positive-20260909-r1\\mesh_guard_positive_r1-Conduction.bun",
+          "bytes": 16164,
+          "sha256": "7d97917a22bd683c0453ead6b50308464a909f5bc4f81774baf075e6284ac35f"
+        },
+        "items": [
+          {
+            "index": 1,
+            "label": 1,
+            "coordinates": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "temperature": 20.232282638549805
+          },
+          {
+            "index": 2,
+            "label": 2,
+            "coordinates": [
+              0.0,
+              0.0,
+              10.0
+            ],
+            "temperature": 20.245689392089844
+          },
+          {
+            "index": 3,
+            "label": 3,
+            "coordinates": [
+              0.0,
+              10.0,
+              0.0
+            ],
+            "temperature": 20.24348258972168
+          },
+          {
+            "index": 4,
+            "label": 4,
+            "coordinates": [
+              0.0,
+              10.0,
+              10.0
+            ],
+            "temperature": 20.232349395751953
+          },
+          {
+            "index": 5,
+            "label": 5,
+            "coordinates": [
+              10.0,
+              0.0,
+              0.0
+            ],
+            "temperature": 20.0
+          },
+          {
+            "index": 6,
+            "label": 6,
+            "coordinates": [
+              10.0,
+              0.0,
+              10.0
+            ],
+            "temperature": 20.0
+          },
+          {
+            "index": 7,
+            "label": 7,
+            "coordinates": [
+              10.0,
+              10.0,
+              0.0
+            ],
+            "temperature": 20.0
+          },
+          {
+            "index": 8,
+            "label": 8,
+            "coordinates": [
+              10.0,
+              10.0,
+              10.0
+            ],
+            "temperature": 20.0
+          },
+          {
+            "index": 9,
+            "label": 9,
+            "coordinates": [
+              0.0,
+              0.0,
+              5.0
+            ],
+            "temperature": 20.251352310180664
+          },
+          {
+            "index": 10,
+            "label": 10,
+            "coordinates": [
+              0.0,
+              5.0,
+              0.0
+            ],
+            "temperature": 20.251344680786133
+          },
+          {
+            "index": 11,
+            "label": 11,
+            "coordinates": [
+              0.0,
+              5.0,
+              10.0
+            ],
+            "temperature": 20.251434326171875
+          },
+          {
+            "index": 12,
+            "label": 12,
+            "coordinates": [
+              0.0,
+              10.0,
+              5.0
+            ],
+            "temperature": 20.251495361328125
+          },
+          {
+            "index": 13,
+            "label": 13,
+            "coordinates": [
+              5.0,
+              0.0,
+              0.0
+            ],
+            "temperature": 20.166961669921875
+          },
+          {
+            "index": 14,
+            "label": 14,
+            "coordinates": [
+              5.0,
+              0.0,
+              10.0
+            ],
+            "temperature": 20.166492462158203
+          },
+          {
+            "index": 15,
+            "label": 15,
+            "coordinates": [
+              5.0,
+              10.0,
+              0.0
+            ],
+            "temperature": 20.166820526123047
+          },
+          {
+            "index": 16,
+            "label": 16,
+            "coordinates": [
+              5.0,
+              10.0,
+              10.0
+            ],
+            "temperature": 20.16698455810547
+          },
+          {
+            "index": 17,
+            "label": 17,
+            "coordinates": [
+              10.0,
+              0.0,
+              5.0
+            ],
+            "temperature": 20.0
+          }
+        ],
+        "total": 45,
+        "next_offset": 17,
+        "loadcase_index": 0,
+        "iteration_index": 0,
+        "field": "Temperature - Nodal",
+        "coordinate_units": "mm",
+        "coordinate_frame": "native_result_coordinates",
+        "result_freshness": "not_verified",
+        "reference_lifetime": "Indices and labels belong to this result file revision; not live geometry or FEM references",
+        "scope": "Native result nodes only; coupled nodal temperature may exclude fluid values; no region or averaging inference",
+        "operation_id": "op_596b03a5d3a94705a1dce2c4f62e4aa3",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "not_applicable"
+      },
+      "isError": false
+    },
+    "page_17": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"degC\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_0810a0fb336e4cd2a3c747ae3f409b77\", \"kind\": \"part\", \"name\": \"mesh_guard_positive_r1\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_d8b5717caed84d918b7d612c930808f3\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"d8b5717caed84d918b7d612c930808f3\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-positive-20260909-r1\\\\mesh_guard_positive_r1.sim\", \"journal_id\": \"mesh_guard_positive_r1\", \"display_name\": \"mesh_guard_positive_r1\"}, \"result_file\": {\"index\": 0, \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-positive-20260909-r1\\\\mesh_guard_positive_r1-Conduction.bun\", \"bytes\": 16164, \"sha256\": \"7d97917a22bd683c0453ead6b50308464a909f5bc4f81774baf075e6284ac35f\"}, \"items\": [{\"index\": 18, \"label\": 18, \"coordinates\": [10.0, 5.0, 0.0], \"temperature\": 20.0}, {\"index\": 19, \"label\": 19, \"coordinates\": [10.0, 5.0, 10.0], \"temperature\": 20.0}, {\"index\": 20, \"label\": 20, \"coordinates\": [10.0, 10.0, 5.0], \"temperature\": 20.0}, {\"index\": 21, \"label\": 21, \"coordinates\": [0.0, 3.066704511642456, 3.066765785217285], \"temperature\": 20.250415802001953}, {\"index\": 22, \"label\": 22, \"coordinates\": [0.0, 3.6213622093200684, 6.389122009277344], \"temperature\": 20.24993896484375}, {\"index\": 23, \"label\": 23, \"coordinates\": [0.0, 6.387437343597412, 3.620990753173828], \"temperature\": 20.2501220703125}, {\"index\": 24, \"label\": 24, \"coordinates\": [0.0, 6.946476459503174, 6.946802616119385], \"temperature\": 20.250446319580078}, {\"index\": 25, \"label\": 25, \"coordinates\": [6.933295726776123, 0.0, 3.066765785217285], \"temperature\": 20.127779006958008}, {\"index\": 26, \"label\": 26, \"coordinates\": [6.378637790679932, 0.0, 6.389122009277344], \"temperature\": 20.144603729248047}, {\"index\": 27, \"label\": 27, \"coordinates\": [3.612562656402588, 0.0, 3.620990753173828], \"temperature\": 20.213777542114258}, {\"index\": 28, \"label\": 28, \"coordinates\": [3.053523302078247, 0.0, 6.946802616119385], \"temperature\": 20.22504425048828}, {\"index\": 29, \"label\": 29, \"coordinates\": [6.933295726776123, 6.933234214782715, 0.0], \"temperature\": 20.128076553344727}, {\"index\": 30, \"label\": 30, \"coordinates\": [6.378637790679932, 3.6108782291412354, 0.0], \"temperature\": 20.144630432128906}, {\"index\": 31, \"label\": 31, \"coordinates\": [3.612562656402588, 6.379009246826172, 0.0], \"temperature\": 20.213882446289062}, {\"index\": 32, \"label\": 32, \"coordinates\": [3.053523302078247, 3.0531973838806152, 0.0], \"temperature\": 20.22506332397461}, {\"index\": 33, \"label\": 33, \"coordinates\": [3.066765785217285, 3.066704511642456, 10.0], \"temperature\": 20.224382400512695}, {\"index\": 34, \"label\": 34, \"coordinates\": [6.389122009277344, 3.6213622093200684, 10.0], \"temperature\": 20.144779205322266}], \"total\": 45, \"next_offset\": 34, \"loadcase_index\": 0, \"iteration_index\": 0, \"field\": \"Temperature - Nodal\", \"coordinate_units\": \"mm\", \"coordinate_frame\": \"native_result_coordinates\", \"result_freshness\": \"not_verified\", \"reference_lifetime\": \"Indices and labels belong to this result file revision; not live geometry or FEM references\", \"scope\": \"Native result nodes only; coupled nodal temperature may exclude fluid values; no region or averaging inference\", \"operation_id\": \"op_a51abfe2c91140fb9516dbaf11a397c6\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "degC",
+        "document": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_0810a0fb336e4cd2a3c747ae3f409b77",
+          "kind": "part",
+          "name": "mesh_guard_positive_r1",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_d8b5717caed84d918b7d612c930808f3",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "d8b5717caed84d918b7d612c930808f3",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-positive-20260909-r1\\mesh_guard_positive_r1.sim",
+          "journal_id": "mesh_guard_positive_r1",
+          "display_name": "mesh_guard_positive_r1"
+        },
+        "result_file": {
+          "index": 0,
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-positive-20260909-r1\\mesh_guard_positive_r1-Conduction.bun",
+          "bytes": 16164,
+          "sha256": "7d97917a22bd683c0453ead6b50308464a909f5bc4f81774baf075e6284ac35f"
+        },
+        "items": [
+          {
+            "index": 18,
+            "label": 18,
+            "coordinates": [
+              10.0,
+              5.0,
+              0.0
+            ],
+            "temperature": 20.0
+          },
+          {
+            "index": 19,
+            "label": 19,
+            "coordinates": [
+              10.0,
+              5.0,
+              10.0
+            ],
+            "temperature": 20.0
+          },
+          {
+            "index": 20,
+            "label": 20,
+            "coordinates": [
+              10.0,
+              10.0,
+              5.0
+            ],
+            "temperature": 20.0
+          },
+          {
+            "index": 21,
+            "label": 21,
+            "coordinates": [
+              0.0,
+              3.066704511642456,
+              3.066765785217285
+            ],
+            "temperature": 20.250415802001953
+          },
+          {
+            "index": 22,
+            "label": 22,
+            "coordinates": [
+              0.0,
+              3.6213622093200684,
+              6.389122009277344
+            ],
+            "temperature": 20.24993896484375
+          },
+          {
+            "index": 23,
+            "label": 23,
+            "coordinates": [
+              0.0,
+              6.387437343597412,
+              3.620990753173828
+            ],
+            "temperature": 20.2501220703125
+          },
+          {
+            "index": 24,
+            "label": 24,
+            "coordinates": [
+              0.0,
+              6.946476459503174,
+              6.946802616119385
+            ],
+            "temperature": 20.250446319580078
+          },
+          {
+            "index": 25,
+            "label": 25,
+            "coordinates": [
+              6.933295726776123,
+              0.0,
+              3.066765785217285
+            ],
+            "temperature": 20.127779006958008
+          },
+          {
+            "index": 26,
+            "label": 26,
+            "coordinates": [
+              6.378637790679932,
+              0.0,
+              6.389122009277344
+            ],
+            "temperature": 20.144603729248047
+          },
+          {
+            "index": 27,
+            "label": 27,
+            "coordinates": [
+              3.612562656402588,
+              0.0,
+              3.620990753173828
+            ],
+            "temperature": 20.213777542114258
+          },
+          {
+            "index": 28,
+            "label": 28,
+            "coordinates": [
+              3.053523302078247,
+              0.0,
+              6.946802616119385
+            ],
+            "temperature": 20.22504425048828
+          },
+          {
+            "index": 29,
+            "label": 29,
+            "coordinates": [
+              6.933295726776123,
+              6.933234214782715,
+              0.0
+            ],
+            "temperature": 20.128076553344727
+          },
+          {
+            "index": 30,
+            "label": 30,
+            "coordinates": [
+              6.378637790679932,
+              3.6108782291412354,
+              0.0
+            ],
+            "temperature": 20.144630432128906
+          },
+          {
+            "index": 31,
+            "label": 31,
+            "coordinates": [
+              3.612562656402588,
+              6.379009246826172,
+              0.0
+            ],
+            "temperature": 20.213882446289062
+          },
+          {
+            "index": 32,
+            "label": 32,
+            "coordinates": [
+              3.053523302078247,
+              3.0531973838806152,
+              0.0
+            ],
+            "temperature": 20.22506332397461
+          },
+          {
+            "index": 33,
+            "label": 33,
+            "coordinates": [
+              3.066765785217285,
+              3.066704511642456,
+              10.0
+            ],
+            "temperature": 20.224382400512695
+          },
+          {
+            "index": 34,
+            "label": 34,
+            "coordinates": [
+              6.389122009277344,
+              3.6213622093200684,
+              10.0
+            ],
+            "temperature": 20.144779205322266
+          }
+        ],
+        "total": 45,
+        "next_offset": 34,
+        "loadcase_index": 0,
+        "iteration_index": 0,
+        "field": "Temperature - Nodal",
+        "coordinate_units": "mm",
+        "coordinate_frame": "native_result_coordinates",
+        "result_freshness": "not_verified",
+        "reference_lifetime": "Indices and labels belong to this result file revision; not live geometry or FEM references",
+        "scope": "Native result nodes only; coupled nodal temperature may exclude fluid values; no region or averaging inference",
+        "operation_id": "op_a51abfe2c91140fb9516dbaf11a397c6",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "not_applicable"
+      },
+      "isError": false
+    },
+    "page_34": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"degC\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_0810a0fb336e4cd2a3c747ae3f409b77\", \"kind\": \"part\", \"name\": \"mesh_guard_positive_r1\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_d8b5717caed84d918b7d612c930808f3\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"d8b5717caed84d918b7d612c930808f3\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-positive-20260909-r1\\\\mesh_guard_positive_r1.sim\", \"journal_id\": \"mesh_guard_positive_r1\", \"display_name\": \"mesh_guard_positive_r1\"}, \"result_file\": {\"index\": 0, \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-positive-20260909-r1\\\\mesh_guard_positive_r1-Conduction.bun\", \"bytes\": 16164, \"sha256\": \"7d97917a22bd683c0453ead6b50308464a909f5bc4f81774baf075e6284ac35f\"}, \"items\": [{\"index\": 35, \"label\": 35, \"coordinates\": [3.620990753173828, 6.387437343597412, 10.0], \"temperature\": 20.214000701904297}, {\"index\": 36, \"label\": 36, \"coordinates\": [6.946802616119385, 6.946476459503174, 10.0], \"temperature\": 20.127201080322266}, {\"index\": 37, \"label\": 37, \"coordinates\": [3.066704511642456, 10.0, 3.066765785217285], \"temperature\": 20.22498893737793}, {\"index\": 38, \"label\": 38, \"coordinates\": [3.6213622093200684, 10.0, 6.389122009277344], \"temperature\": 20.213544845581055}, {\"index\": 39, \"label\": 39, \"coordinates\": [6.387437343597412, 10.0, 3.620990753173828], \"temperature\": 20.144573211669922}, {\"index\": 40, \"label\": 40, \"coordinates\": [6.946476459503174, 10.0, 6.946802616119385], \"temperature\": 20.127473831176758}, {\"index\": 41, \"label\": 41, \"coordinates\": [10.0, 3.066765785217285, 3.066704511642456], \"temperature\": 20.0}, {\"index\": 42, \"label\": 42, \"coordinates\": [10.0, 6.389122009277344, 3.6213622093200684], \"temperature\": 20.0}, {\"index\": 43, \"label\": 43, \"coordinates\": [10.0, 3.620990753173828, 6.387437343597412], \"temperature\": 20.0}, {\"index\": 44, \"label\": 44, \"coordinates\": [10.0, 6.946802616119385, 6.946476459503174], \"temperature\": 20.0}, {\"index\": 45, \"label\": 45, \"coordinates\": [5.249919891357422, 4.947078704833984, 4.892237186431885], \"temperature\": 20.174468994140625}], \"total\": 45, \"next_offset\": null, \"loadcase_index\": 0, \"iteration_index\": 0, \"field\": \"Temperature - Nodal\", \"coordinate_units\": \"mm\", \"coordinate_frame\": \"native_result_coordinates\", \"result_freshness\": \"not_verified\", \"reference_lifetime\": \"Indices and labels belong to this result file revision; not live geometry or FEM references\", \"scope\": \"Native result nodes only; coupled nodal temperature may exclude fluid values; no region or averaging inference\", \"operation_id\": \"op_bb6dc8ce173140b1bb88ff93e9f31496\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "degC",
+        "document": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_0810a0fb336e4cd2a3c747ae3f409b77",
+          "kind": "part",
+          "name": "mesh_guard_positive_r1",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_d8b5717caed84d918b7d612c930808f3",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "d8b5717caed84d918b7d612c930808f3",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-positive-20260909-r1\\mesh_guard_positive_r1.sim",
+          "journal_id": "mesh_guard_positive_r1",
+          "display_name": "mesh_guard_positive_r1"
+        },
+        "result_file": {
+          "index": 0,
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-positive-20260909-r1\\mesh_guard_positive_r1-Conduction.bun",
+          "bytes": 16164,
+          "sha256": "7d97917a22bd683c0453ead6b50308464a909f5bc4f81774baf075e6284ac35f"
+        },
+        "items": [
+          {
+            "index": 35,
+            "label": 35,
+            "coordinates": [
+              3.620990753173828,
+              6.387437343597412,
+              10.0
+            ],
+            "temperature": 20.214000701904297
+          },
+          {
+            "index": 36,
+            "label": 36,
+            "coordinates": [
+              6.946802616119385,
+              6.946476459503174,
+              10.0
+            ],
+            "temperature": 20.127201080322266
+          },
+          {
+            "index": 37,
+            "label": 37,
+            "coordinates": [
+              3.066704511642456,
+              10.0,
+              3.066765785217285
+            ],
+            "temperature": 20.22498893737793
+          },
+          {
+            "index": 38,
+            "label": 38,
+            "coordinates": [
+              3.6213622093200684,
+              10.0,
+              6.389122009277344
+            ],
+            "temperature": 20.213544845581055
+          },
+          {
+            "index": 39,
+            "label": 39,
+            "coordinates": [
+              6.387437343597412,
+              10.0,
+              3.620990753173828
+            ],
+            "temperature": 20.144573211669922
+          },
+          {
+            "index": 40,
+            "label": 40,
+            "coordinates": [
+              6.946476459503174,
+              10.0,
+              6.946802616119385
+            ],
+            "temperature": 20.127473831176758
+          },
+          {
+            "index": 41,
+            "label": 41,
+            "coordinates": [
+              10.0,
+              3.066765785217285,
+              3.066704511642456
+            ],
+            "temperature": 20.0
+          },
+          {
+            "index": 42,
+            "label": 42,
+            "coordinates": [
+              10.0,
+              6.389122009277344,
+              3.6213622093200684
+            ],
+            "temperature": 20.0
+          },
+          {
+            "index": 43,
+            "label": 43,
+            "coordinates": [
+              10.0,
+              3.620990753173828,
+              6.387437343597412
+            ],
+            "temperature": 20.0
+          },
+          {
+            "index": 44,
+            "label": 44,
+            "coordinates": [
+              10.0,
+              6.946802616119385,
+              6.946476459503174
+            ],
+            "temperature": 20.0
+          },
+          {
+            "index": 45,
+            "label": 45,
+            "coordinates": [
+              5.249919891357422,
+              4.947078704833984,
+              4.892237186431885
+            ],
+            "temperature": 20.174468994140625
+          }
+        ],
+        "total": 45,
+        "next_offset": null,
+        "loadcase_index": 0,
+        "iteration_index": 0,
+        "field": "Temperature - Nodal",
+        "coordinate_units": "mm",
+        "coordinate_frame": "native_result_coordinates",
+        "result_freshness": "not_verified",
+        "reference_lifetime": "Indices and labels belong to this result file revision; not live geometry or FEM references",
+        "scope": "Native result nodes only; coupled nodal temperature may exclude fluid values; no region or averaging inference",
+        "operation_id": "op_bb6dc8ce173140b1bb88ff93e9f31496",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "not_applicable"
+      },
+      "isError": false
+    },
+    "page_51": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"degC\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_0810a0fb336e4cd2a3c747ae3f409b77\", \"kind\": \"part\", \"name\": \"mesh_guard_positive_r1\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_d8b5717caed84d918b7d612c930808f3\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"d8b5717caed84d918b7d612c930808f3\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-positive-20260909-r1\\\\mesh_guard_positive_r1.sim\", \"journal_id\": \"mesh_guard_positive_r1\", \"display_name\": \"mesh_guard_positive_r1\"}, \"result_file\": {\"index\": 0, \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-positive-20260909-r1\\\\mesh_guard_positive_r1-Conduction.bun\", \"bytes\": 16164, \"sha256\": \"7d97917a22bd683c0453ead6b50308464a909f5bc4f81774baf075e6284ac35f\"}, \"items\": [], \"total\": 45, \"next_offset\": null, \"loadcase_index\": 0, \"iteration_index\": 0, \"field\": \"Temperature - Nodal\", \"coordinate_units\": \"mm\", \"coordinate_frame\": \"native_result_coordinates\", \"result_freshness\": \"not_verified\", \"reference_lifetime\": \"Indices and labels belong to this result file revision; not live geometry or FEM references\", \"scope\": \"Native result nodes only; coupled nodal temperature may exclude fluid values; no region or averaging inference\", \"operation_id\": \"op_852c1607c6ab4f8abdad5d85bdc7e00a\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "degC",
+        "document": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_0810a0fb336e4cd2a3c747ae3f409b77",
+          "kind": "part",
+          "name": "mesh_guard_positive_r1",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_d8b5717caed84d918b7d612c930808f3",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "d8b5717caed84d918b7d612c930808f3",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-positive-20260909-r1\\mesh_guard_positive_r1.sim",
+          "journal_id": "mesh_guard_positive_r1",
+          "display_name": "mesh_guard_positive_r1"
+        },
+        "result_file": {
+          "index": 0,
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-positive-20260909-r1\\mesh_guard_positive_r1-Conduction.bun",
+          "bytes": 16164,
+          "sha256": "7d97917a22bd683c0453ead6b50308464a909f5bc4f81774baf075e6284ac35f"
+        },
+        "items": [],
+        "total": 45,
+        "next_offset": null,
+        "loadcase_index": 0,
+        "iteration_index": 0,
+        "field": "Temperature - Nodal",
+        "coordinate_units": "mm",
+        "coordinate_frame": "native_result_coordinates",
+        "result_freshness": "not_verified",
+        "reference_lifetime": "Indices and labels belong to this result file revision; not live geometry or FEM references",
+        "scope": "Native result nodes only; coupled nodal temperature may exclude fluid values; no region or averaging inference",
+        "operation_id": "op_852c1607c6ab4f8abdad5d85bdc7e00a",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "not_applicable"
+      },
+      "isError": false
+    },
+    "extrema": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"degC\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_0810a0fb336e4cd2a3c747ae3f409b77\", \"kind\": \"part\", \"name\": \"mesh_guard_positive_r1\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_d8b5717caed84d918b7d612c930808f3\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"d8b5717caed84d918b7d612c930808f3\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-positive-20260909-r1\\\\mesh_guard_positive_r1.sim\", \"journal_id\": \"mesh_guard_positive_r1\", \"display_name\": \"mesh_guard_positive_r1\"}, \"field\": \"Temperature - Nodal\", \"field_location\": \"nodal\", \"loadcase_index\": 0, \"iteration_index\": 0, \"minimum\": 20.0, \"maximum\": 20.251495361328125, \"native_location\": \"0\", \"minimum_native_id\": 44, \"maximum_native_id\": 12, \"minimum_native_sub_id\": 0, \"maximum_native_sub_id\": 0, \"node_count\": 45, \"result_freshness\": \"not_verified\", \"reference_lifetime\": \"indices apply only to this result revision\", \"operation_id\": \"op_4044625be5714c2da22c2c0d4ce840ef\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "degC",
+        "document": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_0810a0fb336e4cd2a3c747ae3f409b77",
+          "kind": "part",
+          "name": "mesh_guard_positive_r1",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_d8b5717caed84d918b7d612c930808f3",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "d8b5717caed84d918b7d612c930808f3",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-positive-20260909-r1\\mesh_guard_positive_r1.sim",
+          "journal_id": "mesh_guard_positive_r1",
+          "display_name": "mesh_guard_positive_r1"
+        },
+        "field": "Temperature - Nodal",
+        "field_location": "nodal",
+        "loadcase_index": 0,
+        "iteration_index": 0,
+        "minimum": 20.0,
+        "maximum": 20.251495361328125,
+        "native_location": "0",
+        "minimum_native_id": 44,
+        "maximum_native_id": 12,
+        "minimum_native_sub_id": 0,
+        "maximum_native_sub_id": 0,
+        "node_count": 45,
+        "result_freshness": "not_verified",
+        "reference_lifetime": "indices apply only to this result revision",
+        "operation_id": "op_4044625be5714c2da22c2c0d4ce840ef",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "not_applicable"
+      },
+      "isError": false
+    },
+    "wrong_revision": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"error\", \"warnings\": [], \"units\": null, \"code\": \"NX_SIM_RESULT_CHANGED\", \"message\": \"Result identity differs; discard accumulated pages and inspect the new revision\", \"retryable\": false, \"details\": {\"operation_id\": \"op_3130296367d643a0b8684595b444ed39\", \"mutation_outcome\": \"not_started\"}}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "error",
+        "warnings": [],
+        "units": null,
+        "code": "NX_SIM_RESULT_CHANGED",
+        "message": "Result identity differs; discard accumulated pages and inspect the new revision",
+        "retryable": false,
+        "details": {
+          "operation_id": "op_3130296367d643a0b8684595b444ed39",
+          "mutation_outcome": "not_started"
+        }
+      },
+      "isError": true
+    },
+    "invalid_limit": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"error\", \"warnings\": [], \"units\": null, \"code\": \"NX_INVALID_ARGUMENT\", \"message\": \"Indices/offset >= 0; limit must be 1..200\", \"retryable\": false, \"details\": {\"operation_id\": \"op_9a80ab1875e74b3494c84effb7d3b0af\", \"mutation_outcome\": \"not_started\"}}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "error",
+        "warnings": [],
+        "units": null,
+        "code": "NX_INVALID_ARGUMENT",
+        "message": "Indices/offset >= 0; limit must be 1..200",
+        "retryable": false,
+        "details": {
+          "operation_id": "op_9a80ab1875e74b3494c84effb7d3b0af",
+          "mutation_outcome": "not_started"
+        }
+      },
+      "isError": true
+    },
+    "identity_after": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_0810a0fb336e4cd2a3c747ae3f409b77\", \"kind\": \"part\", \"name\": \"mesh_guard_positive_r1\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_d8b5717caed84d918b7d612c930808f3\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"d8b5717caed84d918b7d612c930808f3\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-positive-20260909-r1\\\\mesh_guard_positive_r1.sim\", \"journal_id\": \"mesh_guard_positive_r1\", \"display_name\": \"mesh_guard_positive_r1\"}, \"files\": [{\"index\": 0, \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-positive-20260909-r1\\\\mesh_guard_positive_r1-Conduction.bun\", \"bytes\": 16164, \"sha256\": \"7d97917a22bd683c0453ead6b50308464a909f5bc4f81774baf075e6284ac35f\"}], \"native_verification\": {\"state\": \"results_changed\", \"native_value\": \"2\"}, \"result_freshness\": \"not_verified\", \"engineering_accepted\": false, \"scope\": \"Associated file identity and native verification only; model/job revision binding required\", \"job_binding\": {\"job_id\": \"mesh-guard-positive-r1\", \"request_sha256\": \"5f0f3045d7267f4e609e809dcf3308721ba9a1e3021bbb3346046be296d262ce\", \"state\": \"not_verified\", \"associated_result_matches_observed_artifact\": true, \"revision\": {\"state\": \"revision_mismatch\", \"revision_matches\": false, \"files\": [{\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-positive-20260909-r1\\\\mesh_guard_positive_r1.sim\", \"bytes\": 7679762, \"sha256\": \"41e7db35fb062c8372c916a4371add8bdb793ce09e910f8dba7c2d04507fe209\", \"expected_sha256\": \"41e7db35fb062c8372c916a4371add8bdb793ce09e910f8dba7c2d04507fe209\", \"matches\": true}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-20260909-r1\\\\benchmark_2b3340c6f11a_mesh.fem\", \"bytes\": 2913273, \"sha256\": \"98810c9c4cad5f44411492d974c07e4327570e3b2d16c4358e9c5b74e145e010\", \"expected_sha256\": \"f9ad5255e87c402b519a230773dc034a46646223d228d2a46674692917d9aa2a\", \"matches\": false}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-20260909-r1\\\\benchmark_2b3340c6f11a_geometry.prt\", \"bytes\": 76037, \"sha256\": \"a27db91c3cae9f09709bc98b2c38b5652b222d46cec992cc441bec35549b7f38\", \"expected_sha256\": \"a27db91c3cae9f09709bc98b2c38b5652b222d46cec992cc441bec35549b7f38\", \"matches\": true}], \"issues\": [{\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-positive-20260909-r1\\\\mesh_guard_positive_r1.sim\", \"reason\": \"unsaved_edits\"}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\V-mesh-guard-20260909-r1\\\\benchmark_2b3340c6f11a_mesh.fem\", \"reason\": \"saved_file_changed\"}], \"scope\": \"supplied dependency set only\", \"engineering_accepted\": false}, \"reasons\": [\"current_saved_revision_not_verified_against_prepared_revision\"], \"live_thermal_state\": {\"state\": \"matches\", \"scope\": \"solid_material_frame_properties_and_observed_thermal_boundaries\", \"full_model_freshness\": \"not_verified\"}, \"live_mesh_state\": {\"state\": \"matches\", \"scope\": \"node_labels_coordinates_and_ordered_element_connectivity_shape_mesh_collector\", \"full_model_freshness\": \"not_verified\"}, \"model_result_freshness\": \"not_verified\", \"engineering_accepted\": false, \"scope\": \"Exact analysis/solution ownership, observed result artifact, supplied pre-solve file revisions and recorded labelled mesh snapshot; numerical validation and dependency completeness remain separate\", \"revision_note\": \"Native solve/save may change SIM metadata; a file mismatch does not by itself identify a physics change\"}, \"operation_id\": \"op_c85e9035325246a1b2ddeea50aefb041\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "document": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_0810a0fb336e4cd2a3c747ae3f409b77",
+          "kind": "part",
+          "name": "mesh_guard_positive_r1",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_d8b5717caed84d918b7d612c930808f3",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "d8b5717caed84d918b7d612c930808f3",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-positive-20260909-r1\\mesh_guard_positive_r1.sim",
+          "journal_id": "mesh_guard_positive_r1",
+          "display_name": "mesh_guard_positive_r1"
+        },
+        "files": [
+          {
+            "index": 0,
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-positive-20260909-r1\\mesh_guard_positive_r1-Conduction.bun",
+            "bytes": 16164,
+            "sha256": "7d97917a22bd683c0453ead6b50308464a909f5bc4f81774baf075e6284ac35f"
+          }
+        ],
+        "native_verification": {
+          "state": "results_changed",
+          "native_value": "2"
+        },
+        "result_freshness": "not_verified",
+        "engineering_accepted": false,
+        "scope": "Associated file identity and native verification only; model/job revision binding required",
+        "job_binding": {
+          "job_id": "mesh-guard-positive-r1",
+          "request_sha256": "5f0f3045d7267f4e609e809dcf3308721ba9a1e3021bbb3346046be296d262ce",
+          "state": "not_verified",
+          "associated_result_matches_observed_artifact": true,
+          "revision": {
+            "state": "revision_mismatch",
+            "revision_matches": false,
+            "files": [
+              {
+                "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-positive-20260909-r1\\mesh_guard_positive_r1.sim",
+                "bytes": 7679762,
+                "sha256": "41e7db35fb062c8372c916a4371add8bdb793ce09e910f8dba7c2d04507fe209",
+                "expected_sha256": "41e7db35fb062c8372c916a4371add8bdb793ce09e910f8dba7c2d04507fe209",
+                "matches": true
+              },
+              {
+                "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-20260909-r1\\benchmark_2b3340c6f11a_mesh.fem",
+                "bytes": 2913273,
+                "sha256": "98810c9c4cad5f44411492d974c07e4327570e3b2d16c4358e9c5b74e145e010",
+                "expected_sha256": "f9ad5255e87c402b519a230773dc034a46646223d228d2a46674692917d9aa2a",
+                "matches": false
+              },
+              {
+                "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-20260909-r1\\benchmark_2b3340c6f11a_geometry.prt",
+                "bytes": 76037,
+                "sha256": "a27db91c3cae9f09709bc98b2c38b5652b222d46cec992cc441bec35549b7f38",
+                "expected_sha256": "a27db91c3cae9f09709bc98b2c38b5652b222d46cec992cc441bec35549b7f38",
+                "matches": true
+              }
+            ],
+            "issues": [
+              {
+                "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-positive-20260909-r1\\mesh_guard_positive_r1.sim",
+                "reason": "unsaved_edits"
+              },
+              {
+                "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-20260909-r1\\benchmark_2b3340c6f11a_mesh.fem",
+                "reason": "saved_file_changed"
+              }
+            ],
+            "scope": "supplied dependency set only",
+            "engineering_accepted": false
+          },
+          "reasons": [
+            "current_saved_revision_not_verified_against_prepared_revision"
+          ],
+          "live_thermal_state": {
+            "state": "matches",
+            "scope": "solid_material_frame_properties_and_observed_thermal_boundaries",
+            "full_model_freshness": "not_verified"
+          },
+          "live_mesh_state": {
+            "state": "matches",
+            "scope": "node_labels_coordinates_and_ordered_element_connectivity_shape_mesh_collector",
+            "full_model_freshness": "not_verified"
+          },
+          "model_result_freshness": "not_verified",
+          "engineering_accepted": false,
+          "scope": "Exact analysis/solution ownership, observed result artifact, supplied pre-solve file revisions and recorded labelled mesh snapshot; numerical validation and dependency completeness remain separate",
+          "revision_note": "Native solve/save may change SIM metadata; a file mismatch does not by itself identify a physics change"
+        },
+        "operation_id": "op_c85e9035325246a1b2ddeea50aefb041",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "not_applicable"
+      },
+      "isError": false
+    }
+  },
+  "passed": true,
+  "solver_launched": false,
+  "node_count": 45
+}

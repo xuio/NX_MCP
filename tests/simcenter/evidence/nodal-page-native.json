@@ -1,0 +1,554 @@
+{
+  "status": "success",
+  "passed": true,
+  "pages": [
+    {
+      "items": [
+        {
+          "index": 1,
+          "label": 1,
+          "coordinates": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "temperature": 20.232282638549805
+        },
+        {
+          "index": 2,
+          "label": 2,
+          "coordinates": [
+            0.0,
+            0.0,
+            10.0
+          ],
+          "temperature": 20.245689392089844
+        },
+        {
+          "index": 3,
+          "label": 3,
+          "coordinates": [
+            0.0,
+            10.0,
+            0.0
+          ],
+          "temperature": 20.24348258972168
+        },
+        {
+          "index": 4,
+          "label": 4,
+          "coordinates": [
+            0.0,
+            10.0,
+            10.0
+          ],
+          "temperature": 20.232349395751953
+        },
+        {
+          "index": 5,
+          "label": 5,
+          "coordinates": [
+            10.0,
+            0.0,
+            0.0
+          ],
+          "temperature": 20.0
+        },
+        {
+          "index": 6,
+          "label": 6,
+          "coordinates": [
+            10.0,
+            0.0,
+            10.0
+          ],
+          "temperature": 20.0
+        },
+        {
+          "index": 7,
+          "label": 7,
+          "coordinates": [
+            10.0,
+            10.0,
+            0.0
+          ],
+          "temperature": 20.0
+        },
+        {
+          "index": 8,
+          "label": 8,
+          "coordinates": [
+            10.0,
+            10.0,
+            10.0
+          ],
+          "temperature": 20.0
+        },
+        {
+          "index": 9,
+          "label": 9,
+          "coordinates": [
+            0.0,
+            0.0,
+            5.0
+          ],
+          "temperature": 20.251352310180664
+        },
+        {
+          "index": 10,
+          "label": 10,
+          "coordinates": [
+            0.0,
+            5.0,
+            0.0
+          ],
+          "temperature": 20.251344680786133
+        },
+        {
+          "index": 11,
+          "label": 11,
+          "coordinates": [
+            0.0,
+            5.0,
+            10.0
+          ],
+          "temperature": 20.251434326171875
+        },
+        {
+          "index": 12,
+          "label": 12,
+          "coordinates": [
+            0.0,
+            10.0,
+            5.0
+          ],
+          "temperature": 20.251495361328125
+        },
+        {
+          "index": 13,
+          "label": 13,
+          "coordinates": [
+            5.0,
+            0.0,
+            0.0
+          ],
+          "temperature": 20.166961669921875
+        },
+        {
+          "index": 14,
+          "label": 14,
+          "coordinates": [
+            5.0,
+            0.0,
+            10.0
+          ],
+          "temperature": 20.166492462158203
+        },
+        {
+          "index": 15,
+          "label": 15,
+          "coordinates": [
+            5.0,
+            10.0,
+            0.0
+          ],
+          "temperature": 20.166820526123047
+        },
+        {
+          "index": 16,
+          "label": 16,
+          "coordinates": [
+            5.0,
+            10.0,
+            10.0
+          ],
+          "temperature": 20.16698455810547
+        },
+        {
+          "index": 17,
+          "label": 17,
+          "coordinates": [
+            10.0,
+            0.0,
+            5.0
+          ],
+          "temperature": 20.0
+        }
+      ],
+      "total": 45,
+      "next_offset": 17,
+      "loadcase_index": 0,
+      "iteration_index": 0,
+      "field": "Temperature - Nodal",
+      "units": "degC",
+      "coordinate_units": "mm",
+      "coordinate_frame": "native_result_coordinates",
+      "result_freshness": "not_verified",
+      "reference_lifetime": "Indices and labels belong to this result file revision; not live geometry or FEM references",
+      "scope": "Native result nodes only; coupled nodal temperature may exclude fluid values; no region or averaging inference"
+    },
+    {
+      "items": [
+        {
+          "index": 18,
+          "label": 18,
+          "coordinates": [
+            10.0,
+            5.0,
+            0.0
+          ],
+          "temperature": 20.0
+        },
+        {
+          "index": 19,
+          "label": 19,
+          "coordinates": [
+            10.0,
+            5.0,
+            10.0
+          ],
+          "temperature": 20.0
+        },
+        {
+          "index": 20,
+          "label": 20,
+          "coordinates": [
+            10.0,
+            10.0,
+            5.0
+          ],
+          "temperature": 20.0
+        },
+        {
+          "index": 21,
+          "label": 21,
+          "coordinates": [
+            0.0,
+            3.066704511642456,
+            3.066765785217285
+          ],
+          "temperature": 20.250415802001953
+        },
+        {
+          "index": 22,
+          "label": 22,
+          "coordinates": [
+            0.0,
+            3.6213622093200684,
+            6.389122009277344
+          ],
+          "temperature": 20.24993896484375
+        },
+        {
+          "index": 23,
+          "label": 23,
+          "coordinates": [
+            0.0,
+            6.387437343597412,
+            3.620990753173828
+          ],
+          "temperature": 20.2501220703125
+        },
+        {
+          "index": 24,
+          "label": 24,
+          "coordinates": [
+            0.0,
+            6.946476459503174,
+            6.946802616119385
+          ],
+          "temperature": 20.250446319580078
+        },
+        {
+          "index": 25,
+          "label": 25,
+          "coordinates": [
+            6.933295726776123,
+            0.0,
+            3.066765785217285
+          ],
+          "temperature": 20.127779006958008
+        },
+        {
+          "index": 26,
+          "label": 26,
+          "coordinates": [
+            6.378637790679932,
+            0.0,
+            6.389122009277344
+          ],
+          "temperature": 20.144603729248047
+        },
+        {
+          "index": 27,
+          "label": 27,
+          "coordinates": [
+            3.612562656402588,
+            0.0,
+            3.620990753173828
+          ],
+          "temperature": 20.213777542114258
+        },
+        {
+          "index": 28,
+          "label": 28,
+          "coordinates": [
+            3.053523302078247,
+            0.0,
+            6.946802616119385
+          ],
+          "temperature": 20.22504425048828
+        },
+        {
+          "index": 29,
+          "label": 29,
+          "coordinates": [
+            6.933295726776123,
+            6.933234214782715,
+            0.0
+          ],
+          "temperature": 20.128076553344727
+        },
+        {
+          "index": 30,
+          "label": 30,
+          "coordinates": [
+            6.378637790679932,
+            3.6108782291412354,
+            0.0
+          ],
+          "temperature": 20.144630432128906
+        },
+        {
+          "index": 31,
+          "label": 31,
+          "coordinates": [
+            3.612562656402588,
+            6.379009246826172,
+            0.0
+          ],
+          "temperature": 20.213882446289062
+        },
+        {
+          "index": 32,
+          "label": 32,
+          "coordinates": [
+            3.053523302078247,
+            3.0531973838806152,
+            0.0
+          ],
+          "temperature": 20.22506332397461
+        },
+        {
+          "index": 33,
+          "label": 33,
+          "coordinates": [
+            3.066765785217285,
+            3.066704511642456,
+            10.0
+          ],
+          "temperature": 20.224382400512695
+        },
+        {
+          "index": 34,
+          "label": 34,
+          "coordinates": [
+            6.389122009277344,
+            3.6213622093200684,
+            10.0
+          ],
+          "temperature": 20.144779205322266
+        }
+      ],
+      "total": 45,
+      "next_offset": 34,
+      "loadcase_index": 0,
+      "iteration_index": 0,
+      "field": "Temperature - Nodal",
+      "units": "degC",
+      "coordinate_units": "mm",
+      "coordinate_frame": "native_result_coordinates",
+      "result_freshness": "not_verified",
+      "reference_lifetime": "Indices and labels belong to this result file revision; not live geometry or FEM references",
+      "scope": "Native result nodes only; coupled nodal temperature may exclude fluid values; no region or averaging inference"
+    },
+    {
+      "items": [
+        {
+          "index": 35,
+          "label": 35,
+          "coordinates": [
+            3.620990753173828,
+            6.387437343597412,
+            10.0
+          ],
+          "temperature": 20.214000701904297
+        },
+        {
+          "index": 36,
+          "label": 36,
+          "coordinates": [
+            6.946802616119385,
+            6.946476459503174,
+            10.0
+          ],
+          "temperature": 20.127201080322266
+        },
+        {
+          "index": 37,
+          "label": 37,
+          "coordinates": [
+            3.066704511642456,
+            10.0,
+            3.066765785217285
+          ],
+          "temperature": 20.22498893737793
+        },
+        {
+          "index": 38,
+          "label": 38,
+          "coordinates": [
+            3.6213622093200684,
+            10.0,
+            6.389122009277344
+          ],
+          "temperature": 20.213544845581055
+        },
+        {
+          "index": 39,
+          "label": 39,
+          "coordinates": [
+            6.387437343597412,
+            10.0,
+            3.620990753173828
+          ],
+          "temperature": 20.144573211669922
+        },
+        {
+          "index": 40,
+          "label": 40,
+          "coordinates": [
+            6.946476459503174,
+            10.0,
+            6.946802616119385
+          ],
+          "temperature": 20.127473831176758
+        },
+        {
+          "index": 41,
+          "label": 41,
+          "coordinates": [
+            10.0,
+            3.066765785217285,
+            3.066704511642456
+          ],
+          "temperature": 20.0
+        },
+        {
+          "index": 42,
+          "label": 42,
+          "coordinates": [
+            10.0,
+            6.389122009277344,
+            3.6213622093200684
+          ],
+          "temperature": 20.0
+        },
+        {
+          "index": 43,
+          "label": 43,
+          "coordinates": [
+            10.0,
+            3.620990753173828,
+            6.387437343597412
+          ],
+          "temperature": 20.0
+        },
+        {
+          "index": 44,
+          "label": 44,
+          "coordinates": [
+            10.0,
+            6.946802616119385,
+            6.946476459503174
+          ],
+          "temperature": 20.0
+        },
+        {
+          "index": 45,
+          "label": 45,
+          "coordinates": [
+            5.249919891357422,
+            4.947078704833984,
+            4.892237186431885
+          ],
+          "temperature": 20.174468994140625
+        }
+      ],
+      "total": 45,
+      "next_offset": null,
+      "loadcase_index": 0,
+      "iteration_index": 0,
+      "field": "Temperature - Nodal",
+      "units": "degC",
+      "coordinate_units": "mm",
+      "coordinate_frame": "native_result_coordinates",
+      "result_freshness": "not_verified",
+      "reference_lifetime": "Indices and labels belong to this result file revision; not live geometry or FEM references",
+      "scope": "Native result nodes only; coupled nodal temperature may exclude fluid values; no region or averaging inference"
+    },
+    {
+      "items": [],
+      "total": 45,
+      "next_offset": null,
+      "loadcase_index": 0,
+      "iteration_index": 0,
+      "field": "Temperature - Nodal",
+      "units": "degC",
+      "coordinate_units": "mm",
+      "coordinate_frame": "native_result_coordinates",
+      "result_freshness": "not_verified",
+      "reference_lifetime": "Indices and labels belong to this result file revision; not live geometry or FEM references",
+      "scope": "Native result nodes only; coupled nodal temperature may exclude fluid values; no region or averaging inference"
+    }
+  ],
+  "bounds": [
+    [
+      0.0,
+      10.0
+    ],
+    [
+      0.0,
+      10.0
+    ],
+    [
+      0.0,
+      10.0
+    ]
+  ],
+  "extrema": {
+    "field": "Temperature - Nodal",
+    "field_location": "nodal",
+    "loadcase_index": 0,
+    "iteration_index": 0,
+    "units": "degC",
+    "minimum": 20.0,
+    "maximum": 20.251495361328125,
+    "native_location": "0",
+    "minimum_native_id": 44,
+    "maximum_native_id": 12,
+    "minimum_native_sub_id": 0,
+    "maximum_native_sub_id": 0,
+    "node_count": 45,
+    "result_freshness": "not_verified",
+    "reference_lifetime": "indices apply only to this result revision"
+  },
+  "document_flags_preserved": true,
+  "postviews_preserved": true,
+  "solver_launched": false,
+  "operation_id": "op_2d9acf48ab8845b7ac0dc3c907e5df19",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

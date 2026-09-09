@@ -799,3 +799,18 @@ def nx_sim_mesh_state(document: str, maximum_entities: int = 200000):
 
 
 READ_ONLY.add("nx_sim_mesh_state")
+
+
+def nx_sim_temperature_nodes(
+    document: str,
+    result_sha256: str,
+    loadcase_index: int = 0,
+    iteration_index: int = 0,
+    offset: int = 0,
+    limit: int = 100,
+    maximum_bytes: int = 1_073_741_824,
+):
+    """Page native nodal temperatures and coordinates from one associated millimeter result file. Requires its lowercase result_sha256 from nx_sim_result_identity; hashes before/after each page to reject replacement. maximum_bytes bounds each hashing pass (default 1 GiB). offset is zero-based, limit 1..200; returned indices are native one-based result indices and labels are result-local, not live FEM IDs. Returns explicit Celsius values, mm coordinates in native result coordinates, field/iteration/file identity and next_offset. No averaging or semantic-region inference; coupled nodal fields may omit fluids. Requires active SIM and selected solution. Preserves visible postviews and document flags; no solve/save/activation. Does not establish model freshness. On changed hash discard accumulated pages and inspect the new result revision."""
+
+
+READ_ONLY.add("nx_sim_temperature_nodes")
