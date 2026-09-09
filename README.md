@@ -119,3 +119,9 @@ Individual sheet-metal options retain narrower evidence than their tool family.
 The [review outline](docs/tools.md) describes possible extraction
 boundaries. The fork retains upstream history and its MIT license; private CAD
 and machine provisioning are excluded.
+
+## Simcenter readiness
+
+See [Baldower readiness](BALDOWER-READINESS.md) for the current NOT READY coupled
+thermal/airflow gate, supported subsets, exact deployed engine identity and
+reproduction instructions. Do not infer cooling readiness from individual tool tests.

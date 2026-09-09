@@ -1,0 +1,107 @@
+{
+  "schema": 1,
+  "scenario_id": "contact-explicit-1W-293.15K",
+  "job_id": "contact-explicit-r1",
+  "job_binding": "caller-supplied; retain and inspect the job manifest separately",
+  "region_mapping_source": "caller-supplied; verify against geometry",
+  "result_file": {
+    "index": 0,
+    "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\B-contact-explicit-20260909-r1\\contact_explicit_r1-Conduction.bun",
+    "bytes": 29468,
+    "sha256": "d98776968f5a2f048f51818bae55526978c12936275a5c89e404c7ae8c606ce3"
+  },
+  "loadcase_index": 0,
+  "iteration_index": 0,
+  "field": "Temperature - Nodal",
+  "units": "degC",
+  "coordinate_units": "mm",
+  "coordinate_frame": "native_result_coordinates",
+  "mean_semantics": "Unweighted arithmetic mean over unique result nodes within each group; shared nodes may belong to multiple groups; not area/volume weighted",
+  "regions": [
+    {
+      "region": "sink",
+      "group_index": 0,
+      "dimension": "3d",
+      "element_count": 100,
+      "node_count": 45,
+      "membership_sha256": "8ba757214c55855aa9cda40ef4eac475e11b913e2184171dee94eec0580f99bd",
+      "minimum": {
+        "index": 5,
+        "label": 5,
+        "coordinates": [
+          20.0,
+          0.0,
+          0.0
+        ],
+        "temperature": 20.0
+      },
+      "maximum": {
+        "index": 4,
+        "label": 4,
+        "coordinates": [
+          10.0,
+          10.0,
+          10.0
+        ],
+        "temperature": 20.50029754638672
+      },
+      "arithmetic_nodal_mean": 20.249729114108614,
+      "bounds": {
+        "minimum": [
+          10.0,
+          0.0,
+          0.0
+        ],
+        "maximum": [
+          20.0,
+          10.0,
+          10.0
+        ]
+      }
+    },
+    {
+      "region": "heated",
+      "group_index": 1,
+      "dimension": "3d",
+      "element_count": 100,
+      "node_count": 45,
+      "membership_sha256": "f7d4b35fd2256f3defef800b56c59204d10c04b3309f24132aa14f0393dd9b56",
+      "minimum": {
+        "index": 64,
+        "label": 64,
+        "coordinates": [
+          10.0,
+          5.0,
+          10.0
+        ],
+        "temperature": 20.99782371520996
+      },
+      "maximum": {
+        "index": 57,
+        "label": 57,
+        "coordinates": [
+          0.0,
+          10.0,
+          5.0
+        ],
+        "temperature": 21.25148582458496
+      },
+      "arithmetic_nodal_mean": 21.14748691982693,
+      "bounds": {
+        "minimum": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "maximum": [
+          10.0,
+          10.0,
+          10.0
+        ]
+      }
+    }
+  ],
+  "model_freshness": "not_verified",
+  "engineering_accepted": false,
+  "source_receipt_sha256": "80235843c8dea1fbd47bd35e85bb593766db81637ad2a76dfe06acf6bc351bf4"
+}
