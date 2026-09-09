@@ -21,7 +21,7 @@ Dimension synchronization is already verified by the engineering task.
 |---|---|---|
 | Owned inlet/opening creation | Public `nx_sim_inlet` / `nx_sim_opening` native creation, target/membership/readback and save pass (`public-boundary-authoring-r1.json`) | Fan/head-loss binding, export and solve now pass; reopen still pending |
 | Fluid properties / global environment | Public `nx_sim_environment` deployed; sequential native 25/40 °C readback and save pass (`public-analysis-environment-r2.json`); fluid assignment pending | 40 °C export preserves values; fluid assignment and mesh pass. Separate 25 °C case and gravity remain |
-| User CAD associations / topology changes | Public `nx_sim_create_analysis` creates FEM/SIM from saved two-body CAD; source hash unchanged; distinct FEM/SIM basename fix native verified | Native body add/remove now passes 17→18→17 via documented association/update APIs; public sync operation and isolated-variant preservation remain |
+| User CAD associations / topology changes | Public `nx_sim_create_analysis` creates FEM/SIM from saved two-body CAD; source hash unchanged; distinct FEM/SIM basename fix native verified | Native body add/remove now passes 17→18→17 via documented association/update APIs; Public `nx_sim_sync_geometry` deployed; 17-body inventory, replay and stale-ID checks pass. Public transition/reopen and isolated-variant preservation remain |
 | Multi-body meshing | Removed 16-body limits in plan and regeneration locally; validation covers 17/64/256 bodies | Native/public 17-body mesh passes. Size 0.75 mm regenerates 1,700→8,628 elements; replay, stale-ID rejection and save pass (`public-multibody-remesh-r3.json`). Geometry update/reopen remain |
 | Temperature postview | Exact reported name reproduced on generic result: periods/colons rejected, length accepted. Fixed with explicit normalization warning; public view/capture pass | Keep punctuation regression; viewport visually inspected |
 | Generic activation | FEM/SIM/AFM paths rejected before display/work calls locally, including typed references | Native/public rejection preserves work/display context (`public-authoring-surface-r1.json`) |
@@ -58,7 +58,14 @@ infrastructure geometry, not a Baldower thermal result.
 Native topology probe `topology-update-r3.json` verifies 17→18→17 CAD/FEM
 bodies using `SetGeometryDataWithAttributes` and `BaseFEModel.UpdateFemodel`.
 The existing mesh remained 8,628 elements: a newly added body still needs its
-own mesh definition. This is native adapter evidence, not public MCP verification.
+own mesh definition. This transition is native adapter evidence. Public `nx_sim_sync_geometry(document)`
+subsequently passed on the restored 17-body FEM: discovery, body/mesh coverage,
+replay and stale-reference rejection (`public-geometry-sync-r1.json`). The
+public add/remove transition still needs verification. The operation preserves
+all-body policy, returns typed unmeshed bodies, invalidates FEM/dependent SIM
+references and invokes native pending-mesh update without saving or solving.
+Selected-body associations and non-tetra existing meshes are rejected.
+The offline Simcenter suite passes 753 tests (`geometry-sync-regressions-r1.txt`).
 The fixture is left unsaved with the final 17 bodies and a fitted view; no solver
 was launched. Earlier call-signature failures are retained as r1/r2.
 

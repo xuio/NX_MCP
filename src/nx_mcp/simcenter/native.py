@@ -1617,6 +1617,18 @@ class SimcenterMixin:
             ) from error
         return {"document": self._reference(fem, "part", fem, "FEM"), "mesh_state": result}
 
+    def _sim_sync_geometry(self, document):
+        from nx_mcp.simcenter.geometry_sync import synchronize
+
+        fem = self.objects.resolve(document, expected_kind="part")
+        result = synchronize(self, fem)
+        bodies = {int(body.Tag): body for body in fem.Bodies}
+        result["unmeshed_bodies"] = [
+            self._reference(bodies[tag], "body", fem, "body")
+            for tag in result.pop("unmeshed_body_tags")
+        ]
+        return {"document": self._reference(fem, "part", fem, "FEM"), **result}
+
     def _sim_remesh(self, document, size_mm=None):
         from nx_mcp.simcenter.remesh import regenerate
 

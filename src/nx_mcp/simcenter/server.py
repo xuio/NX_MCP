@@ -887,3 +887,10 @@ def nx_sim_create_analysis(cad_document: str, folder: str, name: str):
 
 
 NON_MODEL.add("nx_sim_create_analysis")
+
+
+def nx_sim_sync_geometry(document: str):
+    """Synchronize an active millimeter standalone FEM with its loaded master CAD using NX 2606 all-body association and native UpdateFemodel. Preserves the existing association policy and attribute strategy; selected-body associations and non-tetra existing meshes are unsupported. Native update may regenerate pending meshes; new bodies are not automatically meshed. Returns body/mesh counts, typed unmeshed bodies and coverage, not mesh quality or solve readiness. Does not save CAD/FEM/SIM or launch a solver. Invalidates FEM and loaded dependent SIM references, including after rollback; reacquire IDs and inspect boundary selections before re-export. Existing results are stale. CAD edits made before this call are not undone. Supply operation_id for persistent deduplication."""
+
+
+NON_MODEL.add("nx_sim_sync_geometry")
