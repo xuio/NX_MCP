@@ -180,7 +180,7 @@ NON_MODEL.add("nx_sim_export_input")
 
 
 def nx_sim_faces(document: str, offset: int = 0, limit: int = 50):
-    """Page face selections for the active SIM with one direct standalone FEM occurrence. offset >=0; limit 1..100. Returns typed SIM occurrence face references, prototype FEM body references and native face bounding boxes in FEM part-absolute coordinates with readable units. Bounds are not transformed into assembly coordinates and are not exact surface geometry. No nested assembly traversal. References use the existing session/owner lifecycle; reacquire after geometry, mesh or manual-session changes. Does not activate, save, select onscreen or modify geometry."""
+    """Page face selections for an active standalone FEM, or a SIM with one direct standalone FEM occurrence. offset >=0; limit 1..100. Returns typed FEM prototype or SIM occurrence face references (selection_scope identifies which), prototype FEM body references and native face bounding boxes in FEM part-absolute coordinates with readable units. Bounds are not transformed into assembly coordinates and are not exact surface geometry. No nested assembly traversal. References use the existing session/owner lifecycle; reacquire after geometry, mesh or manual-session changes. Does not activate, save, select onscreen or modify geometry."""
 
 
 READ_ONLY.add("nx_sim_faces")
@@ -729,3 +729,19 @@ def nx_sim_temperature_material(
 
 
 NON_MODEL.add("nx_sim_temperature_material")
+
+
+def nx_sim_boundary_layers(
+    document: str, faces: list[str], first_layer_mm: float, layers: int, growth_rate: float
+):
+    """Create a wall boundary-layer mesh control in an active millimeter FEM, using FEM-prototype face IDs from nx_sim_faces. Requires 1..1000 distinct owned faces, first_layer_mm >0, layers 1..100, growth_rate 1..3, and no existing mesh controls. Verifies committed wall selections, layer count, growth mode and thickness. Does not generate or regenerate a mesh, save or solve; existing mesh/results require regeneration and validation. Returns typed control and face references. Running solvers and foreign/stale/occurrence face IDs are rejected. Native mesher applicability is separate from control authoring. Supply operation_id for safe replay; failures roll back or report partial recovery."""
+
+
+NON_MODEL.add("nx_sim_boundary_layers")
+
+
+def nx_sim_mesh_controls(document: str, offset: int = 0, limit: int = 50):
+    """Page native mesh controls in an active standalone FEM. offset >=0, limit 1..100. Returns lifetime-scoped control references and native types; boundary-layer controls include actual thickness/expression/units, layer count, growth mode, dimension, wall faces and body targets. Other control types are explicitly uninspected. Uses a reversible getter checkpoint; no mesh generation, save or solver launch. Reacquire references after remesh/geometry updates. Stored controls do not establish mesh quality or wall-resolution adequacy."""
+
+
+READ_ONLY.add("nx_sim_mesh_controls")

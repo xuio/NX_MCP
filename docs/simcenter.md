@@ -364,6 +364,38 @@ The expanded existing refresh script checks these consumers on the NX thread. Pu
 authoring, sensor semantics, persistence/export and numerical control remain
 unverified. These probes did not alter licences or launch a solver.
 
+### Public boundary-layer mesh controls
+
+`nx_sim_faces` now accepts an active standalone FEM as well as the existing
+single-FEM SIM case. `selection_scope` distinguishes FEM prototype faces from
+SIM occurrence faces; units and bounds remain FEM-part absolute.
+`nx_sim_boundary_layers` accepts only FEM-owned wall faces and creates the
+existing native growth-rate control. Inputs are explicit: first-layer thickness
+in mm, 1..100 layers and growth rate 1..3. The current creation adapter requires
+no existing mesh controls and rejects duplicate faces or foreign SIM occurrences.
+It does not generate a mesh or save documents.
+
+`nx_sim_mesh_controls` pages typed control references and reads the actual
+boundary-layer thickness (including expression), units, count, growth/height
+mode, dimension, wall selections and body targets. Unsupported control types
+and failed reads are explicit. Builders are destroyed and getter side effects
+are rolled back. Creating a control invalidates the usefulness of an existing
+mesh/results until regeneration and verification; stored parameters alone do
+not establish mesher applicability, near-wall resolution or convergence.
+
+Public acceptance: a 10 mm cube with two selected FEM faces retained 0.1 mm
+first-layer thickness, 3 layers, growth 1.2 and both face journal identities after
+save/close/reopen. Old references were rejected; replay returned the original
+control; occurrence faces, duplicates, invalid layer counts and a second control
+were rejected. Paging and unit/expression readback passed. NX correctly refused
+the first close of the modified dependent SIM; the receipt retains that failure
+and the resumed save/reopen sequence. Evidence: `mesh-controls-public.json`;
+reproduction: `examples/simcenter/verify_mesh_controls_public.py`. Thirty focused
+offline tests pass. This new public fixture does not generate a mesh or solve;
+previous internal layered-mesh evidence is a separate verification scope.
+The final live audit matched 71 handler signatures and all Simcenter source
+hashes, with no stale checked property readers (`mesh-controls-deployment.json`).
+
 ### Reconciled Phase 2 backlog
 
 Statuses below refer to the requested general capability, not availability inferred
@@ -381,7 +413,7 @@ from installed modules. A missing implementation/test is not an external blocker
 | Fan-speed variants/operating points | Scoped scaling and extraction present | `fan_scaling.py`, `fan_summary.py`; retain validity range and per-run identity |
 | Native temperature-controlled fans | Native descriptor/field/controller-link probe verified; public authoring incomplete | Sensor native type -9 rejects documented Reference -5 accessors; retain explicit unresolved mapping, no controller-function claim |
 | Openings/screens/porous resistance | Partial opening scalar K | `head_loss.py`; do not call this general porous media; add supported model-specific paths |
-| Global/local/near-wall mesh controls | Partial public global tetrahedra; internal boundary-layer path | `boundary_layers.py`, `quality.py`; reusable public controls and local associations |
+| Global/local/near-wall mesh controls | Public global tetrahedra, FEM face selection and boundary-layer creation/inspection | `boundary_layers.py`, `mesh_controls.py`; general local sizing, control editing and public mesh-effect verification remain |
 | Mesh refinement comparisons | Partial retained numerical comparisons | Bounded reusable comparison records with exact model/mesh/job identity |
 | Parameter studies | Partial isolated variants and scenario import | `variant_clone.py`, `scenario_apply.py`; explicit variables, bounds and resumable execution |
 | Job status/recovery/cancellation | Partial public persistent workflow | Native running cancellation unresolved; pre-launch cancellation verified separately |

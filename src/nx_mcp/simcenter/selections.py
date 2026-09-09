@@ -8,19 +8,19 @@ def face_inventory(session, sim):
     import NXOpen.CAE as cae
     import NXOpen.UF as uf
 
-    if not isinstance(sim, cae.SimPart) or session.Parts.BaseWork != sim:
-        raise NXToolError("NX_SIM_DOCUMENT_NOT_ACTIVE", "Activate the selected SIM first")
-    fem = sim.FemPart
+    if not isinstance(sim, (cae.SimPart, cae.FemPart)) or session.Parts.BaseWork != sim:
+        raise NXToolError("NX_SIM_DOCUMENT_NOT_ACTIVE", "Activate the selected FEM or SIM first")
+    fem = sim if isinstance(sim, cae.FemPart) else sim.FemPart
     if not isinstance(fem, cae.FemPart):
-        raise NXToolError(
-            "NX_SIM_UNSUPPORTED", "Face inventory currently requires a standalone FEM"
-        )
-    components = list(sim.ComponentAssembly.RootComponent.GetChildren())
-    if len(components) != 1 or components[0].Prototype != fem:
-        raise NXToolError(
-            "NX_SIM_UNSUPPORTED", "Expected one direct occurrence of the associated FEM"
-        )
-    component = components[0]
+        raise NXToolError("NX_SIM_UNSUPPORTED", "Face inventory requires a standalone FEM")
+    component = None
+    if isinstance(sim, cae.SimPart):
+        components = list(sim.ComponentAssembly.RootComponent.GetChildren())
+        if len(components) != 1 or components[0].Prototype != fem:
+            raise NXToolError(
+                "NX_SIM_UNSUPPORTED", "Expected one direct occurrence of the associated FEM"
+            )
+        component = components[0]
     sf = uf.UFSession.GetUFSession().Sf
     rows = []
     for body in fem.Bodies:
@@ -31,7 +31,7 @@ def face_inventory(session, sim):
             )
         for tag in tags:
             prototype = nx.TaggedObjectManager.GetTaggedObject(tag)
-            occurrence = component.FindOccurrence(prototype)
+            occurrence = component.FindOccurrence(prototype) if component else prototype
             if occurrence is None or occurrence.OwningPart != sim:
                 raise NXToolError(
                     "NX_SIM_SELECTION_OWNER", "Face does not resolve into the selected SIM"
@@ -50,9 +50,10 @@ def face_inventory(session, sim):
     return {
         "rows": rows,
         "fem": fem,
-        "component_name": component.Name,
+        "component_name": component.Name if component else None,
+        "selection_scope": "sim_occurrence" if component else "fem_prototype",
         "units": "mm" if str(fem.PartUnits) == "1" else "inch",
         "coordinate_frame": "fem_part_absolute",
         "bounds_kind": "native_face_bounding_box; not exact surface geometry",
-        "scope": "direct standalone FEM occurrence; no nested assembly traversal",
+        "scope": "direct standalone FEM; no nested assembly traversal",
     }

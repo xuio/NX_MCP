@@ -1499,6 +1499,36 @@ class SimcenterMixin:
             **result,
         }
 
+    def _sim_mesh_controls(self, document, offset=0, limit=50):
+        from nx_mcp.simcenter.mesh_controls import inventory
+
+        fem = self.objects.resolve(document, expected_kind="part")
+        return inventory(self.session, fem, self.nxopen, self._reference, offset, limit)
+
+    def _sim_boundary_layers(self, document, faces, first_layer_mm, layers, growth_rate):
+        from nx_mcp.simcenter.boundary_layers import create_boundary_layers
+        from nx_mcp.simcenter.solver_guard import require_solver_idle
+
+        fem = self.objects.resolve(document, expected_kind="part")
+        if not isinstance(faces, list) or not 1 <= len(faces) <= 1000:
+            raise NXToolError("NX_INVALID_ARGUMENT", "Supply 1..1000 FEM face IDs")
+        resolved = [self.objects.resolve(face, expected_kind="face") for face in faces]
+        require_solver_idle()
+        result = create_boundary_layers(
+            self.session,
+            fem,
+            resolved,
+            first_layer_mm=first_layer_mm,
+            layers=layers,
+            growth_rate=growth_rate,
+        )
+        result["control"] = self._reference(
+            result["control"], "simulation_mesh_control", fem, "control"
+        )
+        result["faces"] = [self._reference(face, "face", fem, "face") for face in resolved]
+        result["results_stale"] = True
+        return result
+
     def _sim_faces(self, document, offset=0, limit=50):
         from nx_mcp.simcenter.selections import face_inventory
 

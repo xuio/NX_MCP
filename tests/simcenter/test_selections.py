@@ -62,3 +62,19 @@ def test_inconsistent_native_count_rejected(setup):
     with pytest.raises(NXToolError) as exc:
         face_inventory(session, sim)
     assert exc.value.code == "NX_SIM_READBACK_MISMATCH"
+
+
+def test_fem_faces_are_prototypes_not_sim_occurrences(setup, monkeypatch):
+    session, sim, _, component = setup
+    fem = sim.FemPart
+    session.Parts.BaseWork = fem
+    nx = sys.modules["NXOpen"]
+    nx.TaggedObjectManager.GetTaggedObject = lambda tag: NS(Tag=tag, OwningPart=fem)
+    component.FindOccurrence = lambda _: (_ for _ in ()).throw(
+        AssertionError("No occurrence lookup")
+    )
+    result = face_inventory(session, fem)
+    assert result["selection_scope"] == "fem_prototype"
+    assert result["component_name"] is None
+    assert [row["face"].Tag for row in result["rows"]] == [1, 2]
+    assert all(row["face"].OwningPart == fem for row in result["rows"])

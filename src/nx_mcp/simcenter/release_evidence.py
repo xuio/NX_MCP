@@ -142,6 +142,14 @@ PUBLIC_EVIDENCE = {
         "native-temperature-postview.json",
         "Temperature postview field/unit readback and replay; multiple existing views untested",
     ),
+    "nx_sim_boundary_layers": (
+        "mesh-controls-public.json",
+        "Two FEM walls, 0.1 mm/3 layers/1.2 growth, readback/replay/save-reopen; no generated mesh claim",
+    ),
+    "nx_sim_mesh_controls": (
+        "mesh-controls-public.json",
+        "Paged native control settings and face associations preserved after FEM reopen",
+    ),
     "nx_sim_mesh_quality": (
         "native-mesh-quality-mcp.json",
         "All-mesh native quality and criteria readback on a 2658-element thermal FEM",
