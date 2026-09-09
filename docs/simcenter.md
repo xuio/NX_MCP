@@ -85,6 +85,36 @@ and the supported thermal-state comparison match; current-session whole-model
 freshness remains `not_verified`. No mesh convergence, transient contact,
 acoustic or product-engineering claim follows from this test.
 
+### Convection temperature dependencies
+
+`nx_sim_convection` now accepts `temperature_source`: `fluid_ambient` (the
+compatible default), `radiative_ambient`, or `specified`. The last requires
+`temperature_k` in Kelvin; other modes reject it. The implementation sets and
+checks the native constant-coefficient/top-side selectors, unit-bearing expressions,
+actual CAE face targets and active-solution membership. Flow/coupled solutions
+remain rejected to avoid double-counting solved solid/fluid transfer.
+
+A 10 mm cube with 100 tetrahedra verifies all three selectors natively and through
+public MCP. Creation/replay, save/close/reopen, stale references and export pass.
+Each boundary targets one different geometric face, producing 14 disjoint finite
+element faces per selection. The specified 293.15 K value exports as 20 °C using
+the recorded -273.15 temperature shift; this is the expected representation.
+The 10 W/(m² K) coefficient is preserved. Ambient-mode temperature fields are
+inactive and are not interpreted as effective ambient temperatures.
+
+Reproduce the retained export check with
+`python examples/simcenter/audit_convection_environment_export.py`.
+Evidence: `convection-environment-native.json`, `convection-environment-public.json`,
+`convection-environment.xml` and `convection-environment-export-audit.json` under
+`tests/simcenter/evidence/`. `convection-environment-recovery.json` verifies actual
+face bounds after reopen/SaveAs and native undo after an injected post-commit
+readback failure, including removal of new constraints/expressions and preserved
+document flags. The initial public invalid-dependency response said `unknown`;
+`convection-environment-preflight.json` records the corrected `not_started` outcome
+and unchanged boundary inventory. No solver was launched for this structural extension.
+Time-dependent fields, shell-side options and resolved ambient dependencies still
+need implementation/verification; this is not complete general convection support.
+
 ### Reconciled Phase 2 backlog
 
 Statuses below refer to the requested general capability, not availability inferred
@@ -93,7 +123,7 @@ from installed modules. A missing implementation/test is not an external blocker
 | Requirement | Current state | Reuse / next acceptance work |
 |---|---|---|
 | Thermal contacts/interface resistance | Partial: native/public total R/G authoring and resistance persistence verified | 200-element explicit-convergence artifact benchmark passes; general contact options and current-session freshness remain |
-| Convection and dependencies | Partial, public constant assumed convection | `boundaries.py`, `external_conditions.py`; verify dependency/time-field cases |
+| Convection and dependencies | Native/public constant coefficient and three temperature-source selectors verified | Explicit Kelvin value, persistence, exported conversion and disjoint face sets pass; time fields, ambient value resolution and shell-side options remain |
 | Radiation/emissivity/enclosures | Missing public authoring | Discover native applicable descriptors and test assignments/export |
 | Temperature-dependent materials | Missing | Extend constant/orthotropic material path with supported fields, units and persistence |
 | Transient loads/initial conditions/schedules | Partial time controls and constant distributed loads | `time_controls.py`, `distributed_heat.py`; schedule and initial-condition authoring/readback |

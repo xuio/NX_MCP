@@ -79,7 +79,7 @@
   ],
   "deployed_source_sha256": {
     "benchmark_geometry.py": "e7475122710c7bbea23c2165ec76122b50a4650283cfb084055843f83b5f5d77",
-    "boundaries.py": "51797fa971c5d33119d67889a26290364d73bc754012dff3831d1f761d64deb2",
+    "boundaries.py": "8eacbea66b753114de6d2d1fec0953795b0e59b7586e0102e7f9aba36330edde",
     "boundary_geometry.py": "05c86c9824c27f4cf983361bc0300d1ceec8bd484c9e7ea99df04bb9d6c8ecdb",
     "boundary_layers.py": "da3a748004176426e4159e5b96fe32eda64ae7fef8b887ae7ccf813edb1e2024",
     "boundary_state.py": "e24d311d7d8d0fc532c9a3d26a459359927fc07bdbc75add829603b9e2ef264c",
@@ -87,6 +87,7 @@
     "capabilities.py": "74543c7b0d37aad32554f90e41e8f2d5799f585e6e86374004530bcfa3cc385c",
     "collector_state.py": "1661fa223e84aa76d448d16396cc94afc89e451ccc914e39b7766f19d944f8ef",
     "contact.py": "4f27b349f3b3ae326242518dd2408c5779ff367d2b05ef92c1ffaa253a1a0f81",
+    "convection_environment.py": "ce66323f29cad64b6f8f008174b94f48f128908842495c3f53d5bb64bb3740c5",
     "coupled_input.py": "159f97e6f6ddd142676f3cfa00b3fca22fab279977a9b2c054331e2d74816ecc",
     "coupled_log.py": "683abb0be36577335e2aa90d9fda62d6c0eace9a0f481dce0f7e77597155e08c",
     "dependencies.py": "a24e66eb5c7b058644861f73acbc670eb2d7370c402fe4207506715909d9dd45",
@@ -121,7 +122,7 @@
     "material_assignment.py": "ecef36307c8cf6c2933de60424aced8ea6b15e03931f7e4744b5a9cf61d3e00a",
     "material_inventory.py": "614130431019ad6126328bb48b242d5cb357396ca36352d0e85f55603d29f631",
     "material_orientation.py": "a74dbdedfbae6615dcc4603d240d6628507f67ba62d1e0baad326cae848fbc66",
-    "native.py": "818d4af085a04dd583e01280135fad144540184c93ca61ac5b356a689c64a011",
+    "native.py": "9957a8b1474000d4d21eb85a64c3219acb0b390b92c5286039f498df384ab121",
     "native_launch.py": "8830998727bed56006b60b42682b7e6fe3e894618616acabf2de35726d51526a",
     "observer_worker.py": "68193cc8922fa893f2fc13fb57449e31be85e241c459b470bbe47f9bf67129c8",
     "output_claims.py": "dfec926b3ba27b54f9ca551aeebcfb0aef26f44874d2f66180bdd66ce94896e1",
@@ -134,7 +135,7 @@
     "property_values.py": "38cd79976692403d50e586761e1f7f724c9a7d2dcf7bc66e6db8ea55e6bf71b6",
     "quality.py": "afa1a8b3881980c504b202ce9a3d4c90d8da15cfb20b184b928fbbd60a649b5a",
     "recovery.py": "a8b355b41d3e6957a9e5d705ba187fd001ff63844a7ce05910669d4eb53180e7",
-    "release_evidence.py": "6610f61a29e9995d7828755cc508e4f936670fbfc3f8440df508313943b79658",
+    "release_evidence.py": "27506bec0d797ecebe221f276b11dafeaba0aae01571cb95e8f09ae43045703e",
     "results.py": "b752ee5c38be06998edeb509970b13c02484539b882ff4f36ad7d4ff7cf520d3",
     "result_binding.py": "e454f13181b01eede4e533d398a100a96c413a1580710c64d8d26aed9dff30ab",
     "result_identity.py": "7429956913f1b8f0e14ee24b51e9e50dfae8b4ea100aa8a49840fb90f0c71787",
@@ -142,7 +143,7 @@
     "scenario_apply.py": "a7c39b08fa1258b0d985cde732d73c59aef3546e8d5a47aadb8003ce7e33bedd",
     "scenario_import.py": "2a988b576eeb5613c45b60a93c0027eb93205de86882a11a0877ef4928b52949",
     "selections.py": "06637c590e3f2044cfc28edf3cb7413ae5fa5dfa4c64c02db3f2d3801e94a6bb",
-    "server.py": "c5e88ee67b67ac3ff96af3f6b5db344b66a3f40f25eee09c9f1be5b1d5939aa2",
+    "server.py": "02529b39cd51d5a3ac0245439e2247126d9612a8c44623e54d5ae454ff267629",
     "solver_guard.py": "654d79443a62936fe4ad9a7ffec9e11ef400b225dc0a441205ee52fec919ab58",
     "solver_log.py": "ae14f187a4d049f64ad3965e2f1706269c1d718f08829573f363b26d65344afc",
     "solver_manifest.py": "d5aa313fae2bfd2c568ab93d9e70eaa1806c545274ec00ade104dc69e057cb15",
@@ -155,7 +156,7 @@
     "__init__.py": "5f1a98c534967bca2ef1b754466007d54519b81325bca18d6d723ee8cc2c93aa"
   },
   "scope": "Live handler argument names, required/default values and parameter kinds; not per-tool behavior verification",
-  "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\B-contact-explicit-20260909-r1\\contact_explicit_r1.sim",
-  "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\B-contact-explicit-20260909-r1\\contact_explicit_r1.sim",
+  "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-environment-export-20260909-r1\\convection_environment_r1.sim",
+  "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-environment-export-20260909-r1\\convection_environment_r1.sim",
   "solver_launched": false
 }

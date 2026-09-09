@@ -17,15 +17,33 @@ def verify_face_targets(boundary, faces):
     return {"committed_face_count": len(committed), "committed_face_tags": actual_tags}
 
 
-def create_convection(session, sim, faces, coefficient_w_m2_k, name, provenance):
+def create_convection(
+    session,
+    sim,
+    faces,
+    coefficient_w_m2_k,
+    name,
+    provenance,
+    temperature_source="fluid_ambient",
+    temperature_k=None,
+):
     """Assign solution-level assumed convection to explicit SIM occurrence faces.
 
-    Uses the solution's ambient-temperature setting. Callers must prevent overlap
+    Uses the selected ambient source or a specified Kelvin constant. Callers must prevent overlap
     with solved fluid interfaces; this primitive does not detect that overlap.
     """
     import NXOpen as nx
     import NXOpen.CAE as cae
 
+    from nx_mcp.simcenter.convection_environment import (
+        SOURCES,
+        validate_environment,
+        verify_convection_properties,
+    )
+    from nx_mcp.simcenter.solver_guard import require_solver_idle
+
+    validate_environment(temperature_source, temperature_k)
+    require_solver_idle()
     if session.Parts.BaseWork != sim:
         raise NXToolError("NX_SIM_DOCUMENT_NOT_ACTIVE", "Activate the target SIM first")
     if (
@@ -48,6 +66,19 @@ def create_convection(session, sim, faces, coefficient_w_m2_k, name, provenance)
     builder = None
     try:
         builder = sim.Simulation.CreateBcBuilderForConstraintDescriptor("Convection", name)
+        builder.PropertyTable.SetIntegerPropertyValue("Convect From", 0)
+        builder.PropertyTable.SetIntegerPropertyValue("Specify", 0)
+        builder.PropertyTable.SetIntegerPropertyValue(
+            "Environment Temperature Type", SOURCES[temperature_source]
+        )
+        if temperature_source == "specified":
+            temperature = sim.Expressions.CreateSystemNumberExpression(
+                str(temperature_k), sim.UnitCollection.FindObject("Kelvin")
+            )
+            environment = sim.FieldManager.CreateScalarFieldWrapperWithExpression(temperature)
+            builder.PropertyTable.SetScalarFieldWrapperPropertyValue(
+                "Environment Temperature", environment
+            )
         expression = sim.Expressions.CreateSystemNumberExpression(str(coefficient_w_m2_k), unit)
         wrapper = sim.FieldManager.CreateScalarFieldWrapperWithExpression(expression)
         builder.PropertyTable.SetScalarFieldWrapperPropertyValue("Convection Coefficient", wrapper)
@@ -65,10 +96,12 @@ def create_convection(session, sim, faces, coefficient_w_m2_k, name, provenance)
         if boundary.GetStringUserAttribute("NX_MCP_PROVENANCE", -1) != provenance:
             raise NXToolError("NX_SIM_READBACK_MISMATCH", "Convection provenance did not commit")
         properties = read_properties(boundary.PropertyTable, nx)
-        coefficient = next(p for p in properties if p["name"] == "Convection Coefficient")
-        if float(coefficient["expression"]) != coefficient_w_m2_k:
+        environment = verify_convection_properties(
+            properties, coefficient_w_m2_k, temperature_source, temperature_k
+        )
+        if boundary.Tag not in {bc.Tag for bc in sim.Simulation.ActiveSolution.GetBcs()}:
             raise NXToolError(
-                "NX_SIM_READBACK_MISMATCH", "Convection coefficient changed on commit"
+                "NX_SIM_READBACK_MISMATCH", "Convection is absent from the active solution"
             )
         targets = verify_face_targets(boundary, faces)
         return {
@@ -76,6 +109,8 @@ def create_convection(session, sim, faces, coefficient_w_m2_k, name, provenance)
             "properties": properties,
             "provenance": provenance,
             "coefficient_basis": "assumed",
+            **environment,
+            "active_solution_membership": True,
             "coefficient_units": "W/(m² K)",
             "provenance_storage": "NX_MCP_PROVENANCE user attribute on native constraint",
             "requested_face_count": len(members),

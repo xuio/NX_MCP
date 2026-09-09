@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "input_sha256": "c56a3fb86f0915caf7dd4031cfa67102ce78d20465134743872612f0cfe7ce04",
+  "boundaries": [
+    {
+      "source": "fluid_ambient",
+      "selector": 0,
+      "coefficient_w_m2_k": 10.0,
+      "specified_temperature_k": null,
+      "finite_element_faces": 14
+    },
+    {
+      "source": "radiative_ambient",
+      "selector": 1,
+      "coefficient_w_m2_k": 10.0,
+      "specified_temperature_k": null,
+      "finite_element_faces": 14
+    },
+    {
+      "source": "specified",
+      "selector": 2,
+      "coefficient_w_m2_k": 10.0,
+      "specified_temperature_k": 293.15,
+      "finite_element_faces": 14
+    }
+  ],
+  "units": {
+    "LengthConversionFactor": 1000.0,
+    "ForceConversionFactor": 1000.0,
+    "TemperatureConversionFactor": 1.0,
+    "AbsoluteTemperatureShift": -273.15
+  },
+  "numerical_acceptance": "not_performed",
+  "scope": "Constant top-side convection selectors, SI coefficient, specified Kelvin conversion and disjoint step-1 FE faces; ambient effective values not evaluated"
+}

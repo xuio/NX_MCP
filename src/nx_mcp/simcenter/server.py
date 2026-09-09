@@ -187,9 +187,17 @@ READ_ONLY.add("nx_sim_faces")
 
 
 def nx_sim_convection(
-    document: str, faces: list[str], coefficient_w_m2_k: float, name: str, provenance: str
+    document: str,
+    faces: list[str],
+    coefficient_w_m2_k: float,
+    name: str,
+    provenance: str,
+    temperature_source: Literal[
+        "fluid_ambient", "radiative_ambient", "specified"
+    ] = "fluid_ambient",
+    temperature_k: float | None = None,
 ):
-    """Create assumed convection on 1..1000 distinct SIM occurrence face IDs from nx_sim_faces. Requires the active NX MULTIPHYSICS Thermal solution; Flow/coupled solutions are rejected to avoid imposing assumed convection on solved interfaces. coefficient_w_m2_k is positive finite W/(m² K). Uses solution ambient temperature and returns native boundary defaults, coefficient and committed face readback. Nonempty name/provenance required; provenance is stored as a native constraint attribute. Returns a typed constraint reference. Visible undo/rollback; does not save or solve. Reacquire selections after model/mesh/manual-session changes. Supply operation_id for safe retry."""
+    """Create assumed convection on 1..1000 distinct SIM occurrence face IDs from nx_sim_faces. Requires the active NX MULTIPHYSICS Thermal solution; Flow/coupled solutions are rejected to avoid imposing assumed convection on solved interfaces. coefficient_w_m2_k is positive finite W/(m² K). temperature_source selects fluid_ambient (default), radiative_ambient or specified. Only specified accepts temperature_k, a finite nonnegative Kelvin constant. Reads back active selectors, coefficient/temperature units, solution membership and faces; ambient dependency values are not resolved here. Coefficient uses the native top-side constant mode; shell-side options and time-dependent fields are not supported by this operation. Nonempty name/provenance required; provenance is stored as a native constraint attribute. Returns a typed constraint reference. Visible undo/rollback; does not save or solve. Reacquire selections after model/mesh/manual-session changes. Supply operation_id for safe retry."""
 
 
 NON_MODEL.add("nx_sim_convection")

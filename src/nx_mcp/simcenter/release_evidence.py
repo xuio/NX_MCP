@@ -95,8 +95,8 @@ PUBLIC_EVIDENCE = {
         "Explicit temperature stopping in K, public validation/replay/export; native persistence and optional relative-balance authoring separately verified",
     ),
     "nx_sim_convection": (
-        "native-convection-mcp.json",
-        "Thermal-only assumed convection coefficient and face readback",
+        "convection-environment-public.json",
+        "Thermal-only constant coefficient and fluid/radiative/specified temperature selectors; native/public replay, units, face readback, persistence and export",
     ),
     "nx_sim_constraints": (
         "native-constraint-inventory-mcp.json",

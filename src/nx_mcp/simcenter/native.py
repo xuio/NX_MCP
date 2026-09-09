@@ -1179,7 +1179,16 @@ class SimcenterMixin:
             **result,
         }
 
-    def _sim_convection(self, document, faces, coefficient_w_m2_k, name, provenance):
+    def _sim_convection(
+        self,
+        document,
+        faces,
+        coefficient_w_m2_k,
+        name,
+        provenance,
+        temperature_source="fluid_ambient",
+        temperature_k=None,
+    ):
         from nx_mcp.simcenter.boundaries import create_convection
 
         sim = self.objects.resolve(document, expected_kind="part")
@@ -1203,13 +1212,21 @@ class SimcenterMixin:
         ):
             raise NXToolError("NX_INVALID_ARGUMENT", "Supply 1..1000 distinct SIM face IDs")
         targets = [self.objects.resolve(face, expected_kind="face") for face in faces]
-        result = create_convection(self.session, sim, targets, coefficient_w_m2_k, name, provenance)
+        result = create_convection(
+            self.session,
+            sim,
+            targets,
+            coefficient_w_m2_k,
+            name,
+            provenance,
+            temperature_source,
+            temperature_k,
+        )
         boundary = result.pop("boundary")
         result.pop("committed_face_tags", None)
         return {
             "constraint": self._reference(boundary, "constraint", sim, "convection"),
             "faces": [self._reference(face, "face", sim, "face") for face in targets],
-            "environment_temperature_source": "solution ambient; see native boundary defaults",
             "solver_launched": False,
             **result,
         }

@@ -1,0 +1,1299 @@
+{
+  "status": "success",
+  "fixture": {
+    "paths": {
+      "cad": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-environment-20260909-r1\\benchmark_c724ac72398e_geometry.prt",
+      "fem": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-environment-20260909-r1\\benchmark_c724ac72398e_mesh.fem",
+      "sim": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-environment-20260909-r1\\benchmark_c724ac72398e_analysis.sim"
+    },
+    "solution": {
+      "solver": "NX MULTIPHYSICS",
+      "analysis": "Thermal",
+      "solution": "Thermal",
+      "parameter_tables": [
+        {
+          "property": "Thermal Parameters",
+          "descriptor": "Thermal Parameters",
+          "name": "Thermal Parameters"
+        },
+        {
+          "property": "Thermal Output Requests",
+          "descriptor": "Multiphysics Thermal Output Requests",
+          "name": "Thermal Output Requests"
+        }
+      ],
+      "step": {
+        "name": "Conduction",
+        "descriptor": "Step - Thermal",
+        "active": true,
+        "properties": [
+          {
+            "name": "Description",
+            "native_type": "0",
+            "units": null,
+            "representation": "text_lines",
+            "value": []
+          },
+          {
+            "name": "Solution Type",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "End Time",
+            "native_type": "4",
+            "units": "Second",
+            "value": -777777.0,
+            "unit_symbol": "sec"
+          },
+          {
+            "name": "Thermal Time Step Method",
+            "native_type": "3",
+            "units": null,
+            "value": 3
+          },
+          {
+            "name": "Thermal Number of Steps",
+            "native_type": "3",
+            "units": null,
+            "value": 10
+          },
+          {
+            "name": "Thermal Time Step",
+            "native_type": "4",
+            "units": "Second",
+            "value": 1.0,
+            "unit_symbol": "sec"
+          },
+          {
+            "name": "Maximum Temperature Change",
+            "native_type": "4",
+            "units": "CelsiusDifference",
+            "value": 5.0,
+            "unit_symbol": "dC"
+          },
+          {
+            "name": "Minimum Time Step",
+            "native_type": "4",
+            "units": "Second",
+            "value": 1.0,
+            "unit_symbol": "sec"
+          },
+          {
+            "name": "Maximum Time Step Option",
+            "native_type": "3",
+            "units": null,
+            "value": 1
+          },
+          {
+            "name": "Maximum Time Step",
+            "native_type": "4",
+            "units": "Second",
+            "value": 1.0,
+            "unit_symbol": "sec"
+          },
+          {
+            "name": "Maximum Time Step Increment",
+            "native_type": "3",
+            "units": null,
+            "value": 4
+          },
+          {
+            "name": "Output Flag",
+            "native_type": "3",
+            "units": null,
+            "value": 1
+          },
+          {
+            "name": "Thermal Output Requests",
+            "native_type": "0",
+            "units": null,
+            "representation": "named_property_table",
+            "value": null
+          }
+        ]
+      }
+    },
+    "documents": [
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-environment-20260909-r1\\benchmark_c724ac72398e_geometry.prt",
+        "name": "benchmark_c724ac72398e_geometry",
+        "document_type": "Part",
+        "modified": false,
+        "work": false,
+        "display": false,
+        "units": "mm",
+        "coordinate_frame": "part_absolute"
+      },
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-environment-20260909-r1\\benchmark_c724ac72398e_mesh.fem",
+        "name": "benchmark_c724ac72398e_mesh",
+        "document_type": "FemPart",
+        "modified": false,
+        "work": false,
+        "display": false,
+        "units": "mm",
+        "coordinate_frame": "part_absolute"
+      },
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-environment-20260909-r1\\benchmark_c724ac72398e_analysis.sim",
+        "name": "benchmark_c724ac72398e_analysis",
+        "document_type": "SimPart",
+        "modified": false,
+        "work": true,
+        "display": true,
+        "units": "mm",
+        "coordinate_frame": "part_absolute"
+      }
+    ],
+    "units": "mm",
+    "coordinate_frame": "part_absolute",
+    "body_count": 1,
+    "block_origins_mm": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "mesh_created": false,
+    "solve_launched": false
+  },
+  "document": "obj_20bc234ffa5249ceb4fb4d82b993c626_9dd7dc67d6044653bbe02f874adb1459",
+  "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-environment-20260909-r1\\benchmark_c724ac72398e_analysis.sim",
+  "mesh": {
+    "meshes": [
+      {
+        "name": "3d_mesh(1)",
+        "type": "Mesh3d",
+        "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-environment-20260909-r1\\benchmark_c724ac72398e_mesh.fem",
+        "element_type": "Linear Tetrahedron",
+        "properties": [
+          {
+            "name": "automatic size option bool",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "automatic element size factor",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 1.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "quad mesh overall edge size",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": 5.0,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "maximum growth rate",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 1.3,
+            "unit_symbol": null
+          },
+          {
+            "name": "surface meshing method",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "create pyramids bool",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "common tet mesher bool",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "number of processors",
+            "native_type": "3",
+            "units": null,
+            "value": 4
+          },
+          {
+            "name": "small feature percentage",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 10.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "small feature size",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": 0.1,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "Level of Discretization around a Circle",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 25.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "Enable Distance Based Size Variation",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Maximum Distance to Original Mesh",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": 1.0,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "Maximum Level of Discretization around a Circle",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 75.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "face proximity enable",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "face proximity search direction",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "face proximity points in gap",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 0.5,
+            "unit_symbol": null
+          },
+          {
+            "name": "edge proximity enable",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "edge proximity faces in gap",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 0.5,
+            "unit_symbol": null
+          },
+          {
+            "name": "fillet num elements",
+            "native_type": "3",
+            "units": null,
+            "value": 3
+          },
+          {
+            "name": "num elements on cylinder circumference",
+            "native_type": "3",
+            "units": null,
+            "value": 6
+          },
+          {
+            "name": "element size on cylinder height",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": 1.0,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "midnodes",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "geometry tolerance option bool",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "geometry tolerance",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": 0.0,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "max jacobian",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 10.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "mapped mesh option bool",
+            "native_type": "2",
+            "units": null,
+            "value": true
+          },
+          {
+            "name": "multiblock cylinder option bool",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "surface mesh size variation",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 50.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "surface curvature threshold",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": 0.1,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "volume mesh size variation",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 50.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "internal mesh gradation",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 1.05,
+            "unit_symbol": null
+          },
+          {
+            "name": "internal max edge option bool",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "internal max edge length value",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": 0.0,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "two elements through thickness bool",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "mesh transition bool",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "remesh on bad quality bool",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "maximum edge length bool",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "maximum edge length",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": 1.0,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "abstraction tolerance option",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "abstraction value",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": 0.001,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "small feature tolerance",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 10.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "small feature value",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 0.1,
+            "unit_symbol": null
+          },
+          {
+            "name": "boundary layer element type",
+            "native_type": "3",
+            "units": null,
+            "value": 3
+          },
+          {
+            "name": "insert blend elements",
+            "native_type": "2",
+            "units": null,
+            "value": true
+          },
+          {
+            "name": "blending angle",
+            "native_type": "4",
+            "units": "Degrees",
+            "value": 90.00000000000003,
+            "unit_symbol": "degrees"
+          },
+          {
+            "name": "sweep angle",
+            "native_type": "4",
+            "units": "Degrees",
+            "value": 44.99999999999999,
+            "unit_symbol": "degrees"
+          },
+          {
+            "name": "control aspect ratio",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "maximum exposed aspect ratio",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 1000.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "control slender",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "minimum aspect ratio",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 0.01,
+            "unit_symbol": null
+          },
+          {
+            "name": "maximum imprint dihedral angle",
+            "native_type": "4",
+            "units": "Degrees",
+            "value": 150.0000000000001,
+            "unit_symbol": "degrees"
+          },
+          {
+            "name": "gradation rate",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 10.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "smoothing distance factor",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 3.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "all-tet boundary layer",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "dont format mesh to solver",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "quad mesh edge match tolerance",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 0.02,
+            "unit_symbol": null
+          },
+          {
+            "name": "quad mesh smoothness tolerance",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": 0.01,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "min face angle",
+            "native_type": "4",
+            "units": "Degrees",
+            "value": 20.000000000000014,
+            "unit_symbol": "degrees"
+          },
+          {
+            "name": "mesh time stamp",
+            "native_type": "3",
+            "units": null,
+            "value": 1
+          },
+          {
+            "name": "quad mesh node coincidence tolerance",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": 0.0001,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "mesh edit allowed",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "edge angle",
+            "native_type": "4",
+            "units": "Degrees",
+            "value": 15.00000000000001,
+            "unit_symbol": "degrees"
+          },
+          {
+            "name": "merge edge toggle",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "auto constraining",
+            "native_type": "3",
+            "units": null,
+            "value": 1
+          },
+          {
+            "name": "curvature scaling",
+            "native_type": "3",
+            "units": null,
+            "value": 1
+          },
+          {
+            "name": "target angle",
+            "native_type": "4",
+            "units": "Degrees",
+            "value": 44.99999999999999,
+            "unit_symbol": "degrees"
+          },
+          {
+            "name": "edge shape",
+            "native_type": "3",
+            "units": null,
+            "value": 2
+          },
+          {
+            "name": "successful element size",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 0.0,
+            "unit_symbol": null
+          }
+        ]
+      }
+    ],
+    "counts": {
+      "elements": 100,
+      "nodes": 45
+    },
+    "units": "mm",
+    "coordinate_frame": "part_absolute",
+    "saved": false,
+    "quality_validation": "not_performed"
+  },
+  "trials": [
+    {
+      "properties": [
+        {
+          "name": "description",
+          "native_type": "0",
+          "units": null,
+          "representation": "text_lines",
+          "value": []
+        },
+        {
+          "name": "Convect From",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Specify",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Convection Coefficient",
+          "native_type": "6",
+          "units": "ConvectionCoefficient_Metric8",
+          "expression": "10.0",
+          "unit_symbol": "W/m^2-dK",
+          "representation": "expression"
+        },
+        {
+          "name": "Convection Parameter",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": -777777.0,
+          "unit_symbol": null
+        },
+        {
+          "name": "Exponent",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": -777777.0,
+          "unit_symbol": null
+        },
+        {
+          "name": "Specify Bottom",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Convection Coefficient Bottom",
+          "native_type": "6",
+          "units": "dimensionless",
+          "expression": "-777777",
+          "unit_symbol": null,
+          "representation": "expression"
+        },
+        {
+          "name": "Convection Parameter Bottom",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": -777777.0,
+          "unit_symbol": null
+        },
+        {
+          "name": "Exponent Bottom",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": -777777.0,
+          "unit_symbol": null
+        },
+        {
+          "name": "Use Same Magnitude as Top",
+          "native_type": "2",
+          "units": null,
+          "value": true
+        },
+        {
+          "name": "Specify Bottom Top Bottom",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Convection Coefficient Bottom Top Bottom",
+          "native_type": "6",
+          "units": "dimensionless",
+          "expression": "-777777",
+          "unit_symbol": null,
+          "representation": "expression"
+        },
+        {
+          "name": "Convection Parameter Bottom Top Bottom",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": -777777.0,
+          "unit_symbol": null
+        },
+        {
+          "name": "Exponent Bottom Top Bottom",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": -777777.0,
+          "unit_symbol": null
+        },
+        {
+          "name": "Environment Temperature Type",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Environment Temperature",
+          "native_type": "6",
+          "units": "dimensionless",
+          "expression": "-777777",
+          "unit_symbol": null,
+          "representation": "expression"
+        },
+        {
+          "name": "distributionType",
+          "native_type": "3",
+          "units": null,
+          "value": 32
+        }
+      ],
+      "provenance": "Assumed coefficient; dependency API verification",
+      "coefficient_basis": "assumed",
+      "environment_temperature_source": "fluid_ambient",
+      "environment_temperature_selector": 0,
+      "environment_temperature_k": null,
+      "environment_dependency": "native solution ambient; effective value not resolved by this tool",
+      "active_solution_membership": true,
+      "coefficient_units": "W/(m\u00b2 K)",
+      "provenance_storage": "NX_MCP_PROVENANCE user attribute on native constraint",
+      "requested_face_count": 1,
+      "committed_face_count": 1,
+      "committed_face_tags": [
+        7692935
+      ],
+      "saved": false
+    },
+    {
+      "properties": [
+        {
+          "name": "description",
+          "native_type": "0",
+          "units": null,
+          "representation": "text_lines",
+          "value": []
+        },
+        {
+          "name": "Convect From",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Specify",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Convection Coefficient",
+          "native_type": "6",
+          "units": "ConvectionCoefficient_Metric8",
+          "expression": "10.0",
+          "unit_symbol": "W/m^2-dK",
+          "representation": "expression"
+        },
+        {
+          "name": "Convection Parameter",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": -777777.0,
+          "unit_symbol": null
+        },
+        {
+          "name": "Exponent",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": -777777.0,
+          "unit_symbol": null
+        },
+        {
+          "name": "Specify Bottom",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Convection Coefficient Bottom",
+          "native_type": "6",
+          "units": "dimensionless",
+          "expression": "-777777",
+          "unit_symbol": null,
+          "representation": "expression"
+        },
+        {
+          "name": "Convection Parameter Bottom",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": -777777.0,
+          "unit_symbol": null
+        },
+        {
+          "name": "Exponent Bottom",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": -777777.0,
+          "unit_symbol": null
+        },
+        {
+          "name": "Use Same Magnitude as Top",
+          "native_type": "2",
+          "units": null,
+          "value": true
+        },
+        {
+          "name": "Specify Bottom Top Bottom",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Convection Coefficient Bottom Top Bottom",
+          "native_type": "6",
+          "units": "dimensionless",
+          "expression": "-777777",
+          "unit_symbol": null,
+          "representation": "expression"
+        },
+        {
+          "name": "Convection Parameter Bottom Top Bottom",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": -777777.0,
+          "unit_symbol": null
+        },
+        {
+          "name": "Exponent Bottom Top Bottom",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": -777777.0,
+          "unit_symbol": null
+        },
+        {
+          "name": "Environment Temperature Type",
+          "native_type": "3",
+          "units": null,
+          "value": 1
+        },
+        {
+          "name": "Environment Temperature",
+          "native_type": "6",
+          "units": "dimensionless",
+          "expression": "-777777",
+          "unit_symbol": null,
+          "representation": "expression"
+        },
+        {
+          "name": "distributionType",
+          "native_type": "3",
+          "units": null,
+          "value": 32
+        }
+      ],
+      "provenance": "Assumed coefficient; dependency API verification",
+      "coefficient_basis": "assumed",
+      "environment_temperature_source": "radiative_ambient",
+      "environment_temperature_selector": 1,
+      "environment_temperature_k": null,
+      "environment_dependency": "native solution ambient; effective value not resolved by this tool",
+      "active_solution_membership": true,
+      "coefficient_units": "W/(m\u00b2 K)",
+      "provenance_storage": "NX_MCP_PROVENANCE user attribute on native constraint",
+      "requested_face_count": 1,
+      "committed_face_count": 1,
+      "committed_face_tags": [
+        7692935
+      ],
+      "saved": false
+    },
+    {
+      "properties": [
+        {
+          "name": "description",
+          "native_type": "0",
+          "units": null,
+          "representation": "text_lines",
+          "value": []
+        },
+        {
+          "name": "Convect From",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Specify",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Convection Coefficient",
+          "native_type": "6",
+          "units": "ConvectionCoefficient_Metric8",
+          "expression": "10.0",
+          "unit_symbol": "W/m^2-dK",
+          "representation": "expression"
+        },
+        {
+          "name": "Convection Parameter",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": -777777.0,
+          "unit_symbol": null
+        },
+        {
+          "name": "Exponent",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": -777777.0,
+          "unit_symbol": null
+        },
+        {
+          "name": "Specify Bottom",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Convection Coefficient Bottom",
+          "native_type": "6",
+          "units": "dimensionless",
+          "expression": "-777777",
+          "unit_symbol": null,
+          "representation": "expression"
+        },
+        {
+          "name": "Convection Parameter Bottom",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": -777777.0,
+          "unit_symbol": null
+        },
+        {
+          "name": "Exponent Bottom",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": -777777.0,
+          "unit_symbol": null
+        },
+        {
+          "name": "Use Same Magnitude as Top",
+          "native_type": "2",
+          "units": null,
+          "value": true
+        },
+        {
+          "name": "Specify Bottom Top Bottom",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Convection Coefficient Bottom Top Bottom",
+          "native_type": "6",
+          "units": "dimensionless",
+          "expression": "-777777",
+          "unit_symbol": null,
+          "representation": "expression"
+        },
+        {
+          "name": "Convection Parameter Bottom Top Bottom",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": -777777.0,
+          "unit_symbol": null
+        },
+        {
+          "name": "Exponent Bottom Top Bottom",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": -777777.0,
+          "unit_symbol": null
+        },
+        {
+          "name": "Environment Temperature Type",
+          "native_type": "3",
+          "units": null,
+          "value": 2
+        },
+        {
+          "name": "Environment Temperature",
+          "native_type": "6",
+          "units": "Kelvin",
+          "expression": "293.15",
+          "unit_symbol": "K",
+          "representation": "expression"
+        },
+        {
+          "name": "distributionType",
+          "native_type": "3",
+          "units": null,
+          "value": 32
+        }
+      ],
+      "provenance": "Assumed coefficient; dependency API verification",
+      "coefficient_basis": "assumed",
+      "environment_temperature_source": "specified",
+      "environment_temperature_selector": 2,
+      "environment_temperature_k": 293.15,
+      "environment_dependency": "boundary constant",
+      "active_solution_membership": true,
+      "coefficient_units": "W/(m\u00b2 K)",
+      "provenance_storage": "NX_MCP_PROVENANCE user attribute on native constraint",
+      "requested_face_count": 1,
+      "committed_face_count": 1,
+      "committed_face_tags": [
+        7692935
+      ],
+      "saved": false
+    }
+  ],
+  "rollback_verified": true,
+  "unrelated_modified_flags_preserved": true,
+  "faces": {
+    "faces": [
+      {
+        "face": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_ee6e3aee312743d6b6bc6fe06acc1ad4",
+          "kind": "face",
+          "name": "HANDLE R-37374",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_59cf40d2a75446d394b051033a55ffa4",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "59cf40d2a75446d394b051033a55ffa4",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-environment-20260909-r1\\benchmark_c724ac72398e_analysis.sim",
+          "journal_id": "HANDLE R-37374",
+          "display_name": ""
+        },
+        "body": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_d1dc0016203a44278afeabb012fa1756",
+          "kind": "body",
+          "name": "CAE_Body(1)",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_8d5ab6da6ca5409d93232a1b51abe4fe",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "8d5ab6da6ca5409d93232a1b51abe4fe",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-environment-20260909-r1\\benchmark_c724ac72398e_mesh.fem",
+          "journal_id": "CAE_Body(1)",
+          "display_name": ""
+        },
+        "bounds": {
+          "minimum": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "maximum": [
+            0.0,
+            10.0,
+            10.0
+          ]
+        }
+      },
+      {
+        "face": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_2e561abb399b4ad3ab2f78729fdad788",
+          "kind": "face",
+          "name": "HANDLE R-37390",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_59cf40d2a75446d394b051033a55ffa4",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "59cf40d2a75446d394b051033a55ffa4",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-environment-20260909-r1\\benchmark_c724ac72398e_analysis.sim",
+          "journal_id": "HANDLE R-37390",
+          "display_name": ""
+        },
+        "body": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_d1dc0016203a44278afeabb012fa1756",
+          "kind": "body",
+          "name": "CAE_Body(1)",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_8d5ab6da6ca5409d93232a1b51abe4fe",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "8d5ab6da6ca5409d93232a1b51abe4fe",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-environment-20260909-r1\\benchmark_c724ac72398e_mesh.fem",
+          "journal_id": "CAE_Body(1)",
+          "display_name": ""
+        },
+        "bounds": {
+          "minimum": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "maximum": [
+            10.0,
+            0.0,
+            10.0
+          ]
+        }
+      },
+      {
+        "face": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_5b0d829c50254e29b3dfad9167c2ea04",
+          "kind": "face",
+          "name": "HANDLE R-37406",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_59cf40d2a75446d394b051033a55ffa4",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "59cf40d2a75446d394b051033a55ffa4",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-environment-20260909-r1\\benchmark_c724ac72398e_analysis.sim",
+          "journal_id": "HANDLE R-37406",
+          "display_name": ""
+        },
+        "body": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_d1dc0016203a44278afeabb012fa1756",
+          "kind": "body",
+          "name": "CAE_Body(1)",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_8d5ab6da6ca5409d93232a1b51abe4fe",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "8d5ab6da6ca5409d93232a1b51abe4fe",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-environment-20260909-r1\\benchmark_c724ac72398e_mesh.fem",
+          "journal_id": "CAE_Body(1)",
+          "display_name": ""
+        },
+        "bounds": {
+          "minimum": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "maximum": [
+            10.0,
+            10.0,
+            0.0
+          ]
+        }
+      },
+      {
+        "face": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_766057c12a434c8a8871030eec6ef661",
+          "kind": "face",
+          "name": "HANDLE R-37422",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_59cf40d2a75446d394b051033a55ffa4",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "59cf40d2a75446d394b051033a55ffa4",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-environment-20260909-r1\\benchmark_c724ac72398e_analysis.sim",
+          "journal_id": "HANDLE R-37422",
+          "display_name": ""
+        },
+        "body": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_d1dc0016203a44278afeabb012fa1756",
+          "kind": "body",
+          "name": "CAE_Body(1)",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_8d5ab6da6ca5409d93232a1b51abe4fe",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "8d5ab6da6ca5409d93232a1b51abe4fe",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-environment-20260909-r1\\benchmark_c724ac72398e_mesh.fem",
+          "journal_id": "CAE_Body(1)",
+          "display_name": ""
+        },
+        "bounds": {
+          "minimum": [
+            0.0,
+            0.0,
+            10.0
+          ],
+          "maximum": [
+            10.0,
+            10.0,
+            10.0
+          ]
+        }
+      },
+      {
+        "face": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_67a457ab130049c489bc706b7b26dadf",
+          "kind": "face",
+          "name": "HANDLE R-37438",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_59cf40d2a75446d394b051033a55ffa4",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "59cf40d2a75446d394b051033a55ffa4",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-environment-20260909-r1\\benchmark_c724ac72398e_analysis.sim",
+          "journal_id": "HANDLE R-37438",
+          "display_name": ""
+        },
+        "body": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_d1dc0016203a44278afeabb012fa1756",
+          "kind": "body",
+          "name": "CAE_Body(1)",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_8d5ab6da6ca5409d93232a1b51abe4fe",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "8d5ab6da6ca5409d93232a1b51abe4fe",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-environment-20260909-r1\\benchmark_c724ac72398e_mesh.fem",
+          "journal_id": "CAE_Body(1)",
+          "display_name": ""
+        },
+        "bounds": {
+          "minimum": [
+            0.0,
+            10.0,
+            0.0
+          ],
+          "maximum": [
+            10.0,
+            10.0,
+            10.0
+          ]
+        }
+      },
+      {
+        "face": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_479b432bd59e4ec3af48846a92ec168e",
+          "kind": "face",
+          "name": "HANDLE R-37454",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_59cf40d2a75446d394b051033a55ffa4",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "59cf40d2a75446d394b051033a55ffa4",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-environment-20260909-r1\\benchmark_c724ac72398e_analysis.sim",
+          "journal_id": "HANDLE R-37454",
+          "display_name": ""
+        },
+        "body": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_d1dc0016203a44278afeabb012fa1756",
+          "kind": "body",
+          "name": "CAE_Body(1)",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_8d5ab6da6ca5409d93232a1b51abe4fe",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "8d5ab6da6ca5409d93232a1b51abe4fe",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-environment-20260909-r1\\benchmark_c724ac72398e_mesh.fem",
+          "journal_id": "CAE_Body(1)",
+          "display_name": ""
+        },
+        "bounds": {
+          "minimum": [
+            10.0,
+            0.0,
+            0.0
+          ],
+          "maximum": [
+            10.0,
+            10.0,
+            10.0
+          ]
+        }
+      }
+    ],
+    "total": 6,
+    "next_offset": null,
+    "fem_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-environment-20260909-r1\\benchmark_c724ac72398e_mesh.fem",
+    "component_name": "BENCHMARK_C724AC72398E_MESH",
+    "units": "mm",
+    "coordinate_frame": "fem_part_absolute",
+    "bounds_kind": "native_face_bounding_box; not exact surface geometry",
+    "scope": "direct standalone FEM occurrence; no nested assembly traversal"
+  },
+  "solver_launched": false,
+  "operation_id": "op_89b483df93904ebc8efdca68e7525b94",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}
