@@ -32,6 +32,9 @@ def test_retained_coupled_gate_fails_without_reclassifying_native_cause():
     audit = runpy.run_path(str(REPO / "examples/simcenter/audit_baldower_readiness.py"))["audit"]
     result = audit(REPO)
     assert result["conclusion"] == "NOT READY"
+    assert result["coupled_fan_authoring"]["native_public_verified"]
+    assert result["coupled_fan_authoring"]["exported"] is False
+    assert result["coupled_fan_authoring"]["numerical_acceptance"] is False
     assert not result["temperature_mismatch"]["matches"]
     assert not result["specified_pressure_mismatch"]["matches"]
     assert not result["mesh_comparison"]["accepted_room_temperature_comparison"]

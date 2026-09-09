@@ -488,14 +488,14 @@ def nx_sim_head_loss(
     expected_coefficient: float | None = None,
     name: str | None = None,
 ):
-    """Set a finite nonnegative native dimensionless Head Loss coefficient on an Opening in the active NX MULTIPHYSICS Flow SIM. opening is a simulation_object ID from nx_sim_objects. Create with name and no expected_coefficient; update with expected_coefficient and no name. Conflicting actual values are rejected without mutation. Returns actual coefficient, previous value and table properties; rolls back failed updates. Zero adds no modeled opening restriction. K=0/K=2 response was tested on a synthetic duct, but a general pressure-loss convention is not independently verified. Not a porous-volume or loss-curve model. Checks known solvers are idle; does not save or solve. Changed settings require result revalidation. Supply operation_id for safe replay."""
+    """Set a finite nonnegative native dimensionless Head Loss coefficient on an Opening in the active NX MULTIPHYSICS Flow or Coupled Thermal-Flow SIM. opening is a simulation_object ID from nx_sim_objects. Create with name and no expected_coefficient; update with expected_coefficient and no name. Conflicting actual values are rejected without mutation. Returns actual coefficient, previous value and table properties; rolls back failed updates. Zero adds no modeled opening restriction. K=0/K=2 response was tested on a synthetic duct, but a general pressure-loss convention is not independently verified. Not a porous-volume or loss-curve model. Checks known solvers are idle; does not save or solve. Changed settings require result revalidation. Supply operation_id for safe replay."""
 
 
 NON_MODEL.add("nx_sim_head_loss")
 
 
 def nx_sim_assign_fan(document: str, inlet: str, field: str):
-    """Assign an MCP static-pressure fan table to an existing Inlet in the active NX MULTIPHYSICS Flow SIM. inlet is a simulation_object ID from nx_sim_objects; field is a simulation_field ID from nx_sim_fan_table(s). Both must belong to document. Audits curve values/conventions, checks known solver processes are absent, sets mode 5 and scale 1, and reads back the binding. Existing orientation and pressure references remain unchanged; motor heat is not assigned. Does not save or solve. Results become stale. Total-pressure and coupled assignment are not supported by this tested adapter. Supply operation_id for retry deduplication."""
+    """Assign an MCP static-pressure fan table to an existing Inlet in the active NX MULTIPHYSICS Flow or Coupled Thermal-Flow SIM. inlet is a simulation_object ID from nx_sim_objects; field is a simulation_field ID from nx_sim_fan_table(s). Both must belong to document. Audits curve values/conventions, checks known solver processes are absent, sets mode 5 and scale 1, and reads back the binding. Existing orientation and pressure references remain unchanged; motor heat is not assigned. Does not save or solve. Results become stale. Total-pressure assignment is unsupported. Coupled authoring does not establish export or numerical acceptance; ambient export guards remain required. Supply operation_id for retry deduplication."""
 
 
 NON_MODEL.add("nx_sim_assign_fan")

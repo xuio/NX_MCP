@@ -215,12 +215,12 @@ PUBLIC_EVIDENCE = {
         "Paged Inlet/Opening descriptors, targets and committed properties; preserved document flags",
     ),
     "nx_sim_head_loss": (
-        "native-head-loss-mcp.json",
-        "Opening resistance creation, compare-and-set update, conflict/no-op and replay in an isolated Flow SIM; no porous-volume support or native failure-injection claim",
+        "coupled-fan-public.json",
+        "Coupled opening resistance creation, conflict/replay and save/reopen; Flow update/no-op evidence retained separately. No coupled export/numerical acceptance or porous-volume support",
     ),
     "nx_sim_assign_fan": (
-        "native-assign-fan-mcp.json",
-        "Static fan assignment to an existing Flow inlet, replay, wrong-kind rejection and outer rollback; no solve",
+        "coupled-fan-public.json",
+        "Flow and coupled static fan binding; coupled public replay, wrong-kind/stale rejection and save/reopen. Coupled export and numerical behavior remain unverified",
     ),
 }
 

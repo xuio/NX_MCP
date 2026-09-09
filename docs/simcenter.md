@@ -2905,11 +2905,12 @@ the previous active document restored. Evidence:
 ### Native static fan assignment adapter
 
 `simcenter/fan_boundary.py` assigns an audited MCP fan table to an existing native
-`Inlet` in the active NX MULTIPHYSICS Flow SIM. It requires static-pressure metadata,
+`Inlet` in the active NX MULTIPHYSICS Flow or Coupled Thermal-Flow SIM. It requires static-pressure metadata,
 sets mode 5 and scale 1, and reads back the field association. It preserves existing
 orientation and pressure-reference settings, does not assign motor heat, and marks
-results stale. Total-pressure and coupled assignment paths remain unsupported by
-this adapter pending tests. It is exposed through `nx_sim_assign_fan(document, inlet, field)`. The adapter
+results stale. Total-pressure assignment remains unsupported. Coupled binding authoring,
+replay and persistence passed in `coupled-fan-public.json`; coupled export and numerical
+acceptance remain blocked by the environment export differences in `BALDOWER-READINESS.md`. It is exposed through `nx_sim_assign_fan(document, inlet, field)`. The adapter
 checks the shared solver-idle guard before setting an undo mark.
 
 `verify_fan_assignment.py` checked that no solver/translator processes were running,

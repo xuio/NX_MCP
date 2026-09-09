@@ -1,0 +1,27 @@
+{
+  "status": "success",
+  "fixture": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-finned-material-control-export-20260908-r1\\control_export.sim",
+  "analysis_type": "Coupled Thermal-Flow",
+  "fan_binding": {
+    "mode": 5,
+    "field_tag": 9101833,
+    "scale_factor": 1.0
+  },
+  "loss_selectors": {
+    "Type": 0,
+    "Proportional to": 0
+  },
+  "loss_coefficient": 2.0,
+  "loss_units": "dimensionless",
+  "authoring_passed": true,
+  "rollback_verified": true,
+  "original_flags_preserved": true,
+  "solver_launched": false,
+  "exported": false,
+  "numerical_acceptance": false,
+  "operation_id": "op_7b4da62d5b9947daaf0c9625bf705c7c",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

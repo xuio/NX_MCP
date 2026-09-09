@@ -16,6 +16,8 @@ def audit(repo):
     density = load("density-atmospheric-context.json")
     coarse = load("finned-layer-extended-r1-final-summary.json")
     fine = load("finned-layer-fine-r1-final-summary.json")
+    fan = load("coupled-fan-public.json")
+    assert fan["passed"] and not fan["solver_launched"] and not fan["numerical_acceptance"]
     source = {}
     for name in ("coupled_input", "input_export"):
         current = hashlib.sha256(
@@ -47,11 +49,17 @@ def audit(repo):
             "accepted_room_temperature_comparison": False,
         },
         "cause_classification": "Unresolved native/API authoring-to-export semantics; neither Siemens defect nor MCP material defect established",
-        "separate_implementation_gap": "Public fixed-speed fan assignment and head-loss authoring are verified for Flow, not Coupled Thermal-Flow",
+        "coupled_fan_authoring": {
+            "native_public_verified": fan["passed"],
+            "committed": fan["committed"],
+            "exported": fan["exported"],
+            "numerical_acceptance": fan["numerical_acceptance"],
+        },
         "next_action": "Establish one documented native room-temperature ambient/pressure export with property-model readback before a coupled fan solve; preserve guards and retained artifacts",
         "evidence_sha256": {
             n: hashlib.sha256((evidence / n).read_bytes()).hexdigest()
             for n in [
+                "coupled-fan-public.json",
                 "coupled-pressure-guard-native.json",
                 "coupled-ambient-guard-native.json",
                 "density-atmospheric-context.json",

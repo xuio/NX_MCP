@@ -97,3 +97,22 @@ def test_wrong_descriptor_rejects_before_write(monkeypatch):
     with pytest.raises(NXToolError, match="descriptor"):
         set_opening_head_loss(session, sim, boundary, 2, expected_coefficient=0)
     assert state["writes"] == state["marks"] == 0
+
+
+@pytest.mark.parametrize("analysis_type", ["Flow", "Coupled Thermal-Flow"])
+def test_supported_analysis_readback(monkeypatch, analysis_type):
+    session, sim, boundary, value = fixture(monkeypatch)
+    sim.Simulation.ActiveSolution.AnalysisType = analysis_type
+    result = set_opening_head_loss(session, sim, boundary, 2, expected_coefficient=0)
+    assert result["analysis_type"] == analysis_type
+    assert result["numerical_acceptance"] is False
+    assert result["coefficient"] == value["current"] == 2
+
+
+def test_unsupported_analysis_does_not_mutate(monkeypatch):
+    session, sim, boundary, value = fixture(monkeypatch)
+    sim.Simulation.ActiveSolution.AnalysisType = "Thermal"
+    with pytest.raises(NXToolError) as error:
+        set_opening_head_loss(session, sim, boundary, 2, expected_coefficient=0)
+    assert error.value.code == "NX_SIM_SOLUTION_TYPE"
+    assert value["writes"] == value["marks"] == 0

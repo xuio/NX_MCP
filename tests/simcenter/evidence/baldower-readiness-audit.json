@@ -52,9 +52,25 @@
     "accepted_room_temperature_comparison": false
   },
   "cause_classification": "Unresolved native/API authoring-to-export semantics; neither Siemens defect nor MCP material defect established",
-  "separate_implementation_gap": "Public fixed-speed fan assignment and head-loss authoring are verified for Flow, not Coupled Thermal-Flow",
+  "coupled_fan_authoring": {
+    "native_public_verified": true,
+    "committed": {
+      "mode": 5,
+      "scale": 1.0,
+      "field_name": "Coupled public synthetic fan r1",
+      "head_loss": {
+        "table_name": "Coupled public opening loss r1",
+        "coefficient": 2.0,
+        "units": "dimensionless",
+        "convention": "native Head Loss coefficient; general pressure-loss convention not independently verified"
+      }
+    },
+    "exported": false,
+    "numerical_acceptance": false
+  },
   "next_action": "Establish one documented native room-temperature ambient/pressure export with property-model readback before a coupled fan solve; preserve guards and retained artifacts",
   "evidence_sha256": {
+    "coupled-fan-public.json": "c6000f3bf05d9d7c6d2652d7348a6a971176343dda61a2145a878031379c1f2e",
     "coupled-pressure-guard-native.json": "219b417cd65adc2c1e2b7e6829acd4eb368e3a1a8abd3d5fd020a7a672f24988",
     "coupled-ambient-guard-native.json": "f3a13dbbd96421efc547259f46e8bd4ef51aee00b196a30d5ca2673093bc3792",
     "density-atmospheric-context.json": "064595172ff0b6d99d0535e83784edc0a426b7b5c00945a757b111ddeda41c7d",

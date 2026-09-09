@@ -1,0 +1,114 @@
+{
+  "status": "success",
+  "passed": true,
+  "update": {
+    "table_name": "Coupled public opening loss r1",
+    "boundary_name": "Coupled Opening",
+    "analysis_type": "Coupled Thermal-Flow",
+    "numerical_acceptance": false,
+    "coefficient": 3,
+    "previous_coefficient": 2.0,
+    "selectors": {
+      "Type": 0,
+      "Proportional to": 0
+    },
+    "units": "dimensionless",
+    "convention": "native Head Loss coefficient; general pressure-loss convention not independently verified",
+    "changed": true,
+    "action": "updated",
+    "properties": [
+      {
+        "name": "description",
+        "native_type": "0",
+        "units": null,
+        "cae_native_type": "-1",
+        "representation": "text_lines",
+        "value": []
+      },
+      {
+        "name": "Type",
+        "native_type": "3",
+        "units": null,
+        "value": 0
+      },
+      {
+        "name": "Proportional to",
+        "native_type": "3",
+        "units": null,
+        "value": 0
+      },
+      {
+        "name": "Head Loss Coefficient",
+        "native_type": "4",
+        "units": "dimensionless",
+        "value": 3.0,
+        "unit_symbol": null
+      },
+      {
+        "name": "Pressure Drop to Velocity Ratio",
+        "native_type": "4",
+        "units": "NewtonSecondPerCubicMeter",
+        "value": 0.0,
+        "unit_symbol": "N-sec/m^3"
+      },
+      {
+        "name": "Orifice Geometry",
+        "native_type": "3",
+        "units": null,
+        "value": 0
+      },
+      {
+        "name": "Edge Radius",
+        "native_type": "4",
+        "units": "MilliMeter",
+        "value": -777777.0,
+        "unit_symbol": "mm"
+      },
+      {
+        "name": "Plate Thickness",
+        "native_type": "4",
+        "units": "MilliMeter",
+        "value": -777777.0,
+        "unit_symbol": "mm"
+      },
+      {
+        "name": "Orifice Hydraulic Diameter",
+        "native_type": "4",
+        "units": "MilliMeter",
+        "value": -777777.0,
+        "unit_symbol": "mm"
+      },
+      {
+        "name": "Free Area Ratio",
+        "native_type": "4",
+        "units": "dimensionless",
+        "value": -777777.0,
+        "unit_symbol": null
+      },
+      {
+        "name": "Compute Head Loss Coefficient",
+        "native_type": "1",
+        "units": null,
+        "value": "Compute"
+      },
+      {
+        "name": "Computed Head Loss Coefficient",
+        "native_type": "4",
+        "units": "dimensionless",
+        "value": -777777.0,
+        "unit_symbol": null
+      }
+    ],
+    "saved": false,
+    "results_require_revalidation": true
+  },
+  "post_write_failure_rolled_back": true,
+  "outer_rollback_verified": true,
+  "document_flags_preserved": true,
+  "solver_launched": false,
+  "operation_id": "op_906c4524165248bf98ca1101127eb376",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

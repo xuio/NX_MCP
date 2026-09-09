@@ -41,9 +41,13 @@ def attach_head_loss(session, sim, boundary, name, coefficient):
     if boundary.OwningPart != sim or boundary not in list(sim.Simulation.SimulationObjects):
         raise NXToolError("NX_SIM_SELECTION_OWNER", "Select a boundary owned by this SIM")
     sol = sim.Simulation.ActiveSolution
-    if sol is None or sol.SolverType != "NX MULTIPHYSICS" or sol.AnalysisType != "Flow":
+    if (
+        sol is None
+        or sol.SolverType != "NX MULTIPHYSICS"
+        or sol.AnalysisType not in ("Flow", "Coupled Thermal-Flow")
+    ):
         raise NXToolError(
-            "NX_SIM_SOLUTION_TYPE", "Head-loss adapter requires the tested Flow solution"
+            "NX_SIM_SOLUTION_TYPE", "Select NX MULTIPHYSICS Flow or Coupled Thermal-Flow"
         )
     owner = boundary.PropertyTable
     if owner.GetNamedPropertyTablePropertyValue("Head Loss") is not None:
@@ -57,7 +61,7 @@ def attach_head_loss(session, sim, boundary, name, coefficient):
     mark = session.SetUndoMark(nx.Session.MarkVisibility.Visible, "NX MCP boundary head loss")
     try:
         table = collection.CreateModelingObjectPropertyTable(
-            "Head Loss", "NX MULTIPHYSICS - Flow", "NX MULTIPHYSICS", name, 0
+            "Head Loss", "NX MULTIPHYSICS - " + sol.AnalysisType, "NX MULTIPHYSICS", name, 0
         )
         props = table.PropertyTable
         props.SetIntegerPropertyValue("Type", 0)
@@ -78,6 +82,8 @@ def attach_head_loss(session, sim, boundary, name, coefficient):
         return {
             "table": table,
             "boundary_name": boundary.Name,
+            "analysis_type": sol.AnalysisType,
+            "numerical_acceptance": False,
             "properties": read_properties(props, nx),
             "coefficient": value,
             "units": actual_unit.Name if actual_unit else "dimensionless",
@@ -128,9 +134,11 @@ def set_opening_head_loss(
     if (
         solution is None
         or solution.SolverType != "NX MULTIPHYSICS"
-        or solution.AnalysisType != "Flow"
+        or solution.AnalysisType not in ("Flow", "Coupled Thermal-Flow")
     ):
-        raise NXToolError("NX_SIM_SOLUTION_TYPE", "Select NX MULTIPHYSICS Flow")
+        raise NXToolError(
+            "NX_SIM_SOLUTION_TYPE", "Select NX MULTIPHYSICS Flow or Coupled Thermal-Flow"
+        )
     if (
         boundary.OwningPart != sim
         or boundary not in list(sim.Simulation.SimulationObjects)
@@ -215,6 +223,8 @@ def set_opening_head_loss(
     return {
         "table_name": table.Name,
         "boundary_name": boundary.Name,
+        "analysis_type": solution.AnalysisType,
+        "numerical_acceptance": False,
         "coefficient": coefficient,
         "previous_coefficient": old,
         "selectors": selectors,

@@ -1,4 +1,4 @@
-"""NX 2606 static fan-curve assignment to an existing Flow inlet."""
+"""NX 2606 static fan-curve assignment to an existing Flow or coupled inlet."""
 
 from nx_mcp.runtime import NXToolError
 from nx_mcp.simcenter.fan_field import inspect_fan_table
@@ -17,8 +17,8 @@ def assign_static_fan(session, sim, inlet, table):
     """Assign a verified table at scale one; preserve all other inlet properties.
 
     No orientation, reference pressure, motor heat or solver settings are inferred.
-    A host-wide process snapshot excludes known running solvers. Coupled and
-    total-pressure routes are not yet validated by this adapter.
+    A host-wide process snapshot excludes known running solvers. Coupled authoring is verified separately from coupled export/numerical
+    acceptance. Total-pressure routes are not validated by this adapter.
     """
     import NXOpen as nx
     import NXOpen.CAE as cae
@@ -29,9 +29,11 @@ def assign_static_fan(session, sim, inlet, table):
     if (
         solution is None
         or solution.SolverType != "NX MULTIPHYSICS"
-        or solution.AnalysisType != "Flow"
+        or solution.AnalysisType not in ("Flow", "Coupled Thermal-Flow")
     ):
-        raise NXToolError("NX_SIM_SOLUTION_TYPE", "Select NX MULTIPHYSICS Flow")
+        raise NXToolError(
+            "NX_SIM_SOLUTION_TYPE", "Select NX MULTIPHYSICS Flow or Coupled Thermal-Flow"
+        )
     if (
         inlet.OwningPart != sim
         or inlet not in list(sim.Simulation.SimulationObjects)
@@ -59,6 +61,8 @@ def assign_static_fan(session, sim, inlet, table):
             raise NXToolError("NX_SIM_READBACK_MISMATCH", "Fan inlet assignment differs")
         return {
             "solver_preflight": solver_preflight,
+            "analysis_type": solution.AnalysisType,
+            "numerical_acceptance": False,
             "binding": actual,
             "previous_binding": before,
             "manifest": audit["manifest"],
