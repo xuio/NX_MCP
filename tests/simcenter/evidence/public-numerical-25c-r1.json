@@ -1,0 +1,34 @@
+{
+  "job_id": "public-user-cad-25c-r1",
+  "physical_checks": {
+    "finite_temperature_rise": true,
+    "positive_flow_in_curve": true,
+    "fan_curve_match": true,
+    "mass_balance": true,
+    "energy_balance": true
+  },
+  "physical_checks_passed": true,
+  "peak_c": 35.385257720947266,
+  "flow_m3_s": 5.771e-05,
+  "reported_imbalances": {
+    "momentum": {
+      "value": 0.0004248,
+      "units": "%",
+      "definition": "native reported imbalance; denominator not independently established"
+    },
+    "mass": {
+      "value": 0.002819,
+      "units": "%",
+      "definition": "native reported imbalance; denominator not independently established"
+    },
+    "energy": {
+      "value": 0.0003093,
+      "units": "%",
+      "definition": "native reported imbalance; denominator not independently established"
+    }
+  },
+  "observed_peak_difference_from_40c": 15.0,
+  "comparison_note": "Observed comparison, not an independent predeclared acceptance gate",
+  "numerical_convergence": "not_established",
+  "mesh_independence": "not established"
+}

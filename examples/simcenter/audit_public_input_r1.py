@@ -8,6 +8,8 @@ path = (
     else Path(__file__).resolve().parents[2] / "tests/simcenter/evidence/public-40c-input-r1.xml"
 )
 r = E.parse(path).getroot()
+expected_temperature_c = float(sys.argv[3]) if len(sys.argv) > 3 else 40.0
+assert math.isfinite(expected_temperature_c) and expected_temperature_c > -273.15
 
 
 def value(parent, name):
@@ -19,7 +21,7 @@ materials = list(r.find("MaterialList"))
 fluid = next(m for m in materials if m.get("type") == "LIQUID")
 solid = next(m for m in materials if m.get("type") == "ISO")
 checks = {
-    "ambient_40_c": value(a, "Fluid Temperature") == 40,
+    "ambient_temperature_c": value(a, "Fluid Temperature") == expected_temperature_c,
     "pressure_specified": value(a, "Ambient Pressure") == 0,
     "pressure_101325_pa": math.isclose(value(a, "Absolute Pressure") * 1000, 101325),
     "air_density_1p2": math.isclose(value(fluid, "Mass Density") * 1e9, 1.2),
@@ -60,8 +62,8 @@ checks["heat_0p1_w"] = math.isclose(value(heat, "Heat Load") / 1e6, 0.1)
 checks["heat_only_solid_elements"] = all(
     elements[int(e.text)]["property"] == "1" for e in heat.findall("./Selection/el")
 )
-checks["external_40_c"] = (
-    value(r.find("./ExternalConditionsList/ExternalCondition"), "Temperature Value") == 40
+checks["external_temperature_c"] = (
+    value(r.find("./ExternalConditionsList/ExternalCondition"), "Temperature Value") == expected_temperature_c
 )
 checks["head_loss_2"] = value(r.find("./HeadLossList/HeadLoss"), "Head Loss Coefficient") == 2
 result = {
@@ -71,7 +73,7 @@ result = {
     "solver_launched": False,
     "units_basis": "NX millimeter export: density kg/mm3, heat microW, pressure mN/mm2, velocity mm/s",
     "acceptance_declared_before_solve": {
-        "temperature": "finite solid peak above 40 C; no analytical peak prediction",
+        "temperature": f"finite solid peak above {expected_temperature_c:g} C; no analytical peak prediction",
         "flow_m3_s": [0, 0.0004],
         "fan_curve_pressure_tolerance_pa": 0.001,
         "mass_imbalance_percent_max": 0.1,

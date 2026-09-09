@@ -1,0 +1,186 @@
+{
+  "responses": {
+    "metadata": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": null, \"path\": \"ui-benchmarks\\\\public-run-25c-r1\\\\public_25c_r1-Public_coupled.xml\", \"size\": 196871, \"sha256\": \"5fad1315636019479987b7fae95a6c5c8afd0d03c95d47372fab96fe2cc29924\", \"delivery\": \"metadata\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": null,
+        "path": "ui-benchmarks\\public-run-25c-r1\\public_25c_r1-Public_coupled.xml",
+        "size": 196871,
+        "sha256": "5fad1315636019479987b7fae95a6c5c8afd0d03c95d47372fab96fe2cc29924",
+        "delivery": "metadata"
+      },
+      "isError": false
+    },
+    "job": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": null, \"job_id\": \"public-user-cad-25c-r1\", \"request_sha256\": \"64cc218333ee61a23c584e27b37f32d2f6772f42d64164a0410f2785eed6cfee\", \"state\": \"accepted\", \"revision\": 0, \"process_binding_revision\": null, \"launch_retry_allowed\": true, \"numerical_convergence\": \"not_established\", \"results_validated\": false, \"observed_at\": \"2026-09-09T21:18:47.412744+00:00\", \"observation_kind\": \"persisted_record\", \"live_process_state\": \"not_checked\", \"job_folder\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\simcenter-jobs\", \"observer\": {\"tracked_in_this_nx_process\": false}, \"manifest\": {\"analysis_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-run-25c-r1\\\\public_25c_r1.sim\", \"analysis_type\": \"Coupled Thermal-Flow\", \"dependency_scope\": \"direct_sim_fem_cad_associations\", \"excluded_dependencies\": \"recursive components, external fields/material files, solver artifacts and result dependencies\", \"isolated_output_directory\": \"d:\\\\cad\\\\simcenter_mcp_workspace\\\\ui-benchmarks\\\\public-run-25c-r1\", \"live_mesh_state\": {\"adapter\": 1, \"coordinate_encoding\": \"exact float64 hex; signed zero normalized\", \"coordinate_frame\": \"fem_part_absolute\", \"counts\": {\"elements\": 1816, \"nodes\": 563}, \"excluded\": [\"CAD geometry\", \"mesh controls\", \"material assignments/properties\", \"loads and boundary conditions\", \"solver element formulation\", \"solution settings\", \"external dependencies\"], \"full_model_freshness\": \"not_verified\", \"owner_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-analysis-25c-r1\\\\analysis_90ee39325d75_mesh.fem\", \"scope\": \"node_labels_coordinates_and_ordered_element_connectivity_shape_mesh_collector\", \"sha256\": \"fedf6e7060f62ac5b81b8e99725975840ad94b84aca34861fb266b66f5601a39\", \"units\": \"mm\"}, \"mesh_inspection_limit\": 200000, \"native_export\": {\"analysis_type\": \"Coupled Thermal-Flow\", \"artifacts\": [{\"bytes\": 37071, \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-run-25c-r1\\\\public_25c_r1-Public_coupled.map\"}, {\"bytes\": 196871, \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-run-25c-r1\\\\public_25c_r1-Public_coupled.xml\"}], \"coupled_ambient_validation\": {\"absolute_tolerance_degC\": 1e-06, \"exported_value\": 25.0, \"matches\": true, \"native_value\": 25.0, \"property\": \"Fluid Temperature\", \"scope\": \"constant ambient temperature only; not complete solve readiness\", \"units\": \"degC\"}, \"coupled_pressure_validation\": {\"absolute_tolerance_Pa\": 0.001, \"exported_value\": 101325.0, \"matches\": true, \"mode\": \"specified\", \"native_value\": 101325.0, \"scope\": \"constant specified pressure only; not complete solve readiness\", \"stored_absolute_pressure_active\": true, \"units\": \"Pa\"}, \"input_identity\": {\"bytes\": 196871, \"canonicalization\": \"xml_c14n2_no_comments\", \"sha256\": \"5fad1315636019479987b7fae95a6c5c8afd0d03c95d47372fab96fe2cc29924\", \"xml_content_sha256\": \"ac7d824b760e81d7384573ae74d1708849ab2d3c5f5dee8382641aaf0dc1485a\"}, \"input_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-run-25c-r1\\\\public_25c_r1-Public_coupled.xml\", \"scope\": \"Native thermal/flow input export, not a solve or convergence check\", \"solution\": \"Public coupled\", \"solve_readiness\": \"not_established\", \"solver\": \"NX MULTIPHYSICS\", \"solver_launched\": false, \"source_modified\": false, \"source_sim\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-run-25c-r1\\\\public_25c_r1.sim\", \"translator_reports\": [], \"validation\": {\"mesh_counts\": {\"element_sets\": 2, \"elements\": 1816, \"nodes\": 563, \"scope\": \"observed_multiphysics_xml_layout\"}, \"solve_readiness\": \"not_established\", \"state\": \"well_formed\", \"step_definitions\": 1}}, \"preparation_adapter\": 1, \"prepared_input\": {\"dependencies\": [{\"bytes\": 7721371, \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-run-25c-r1\\\\public_25c_r1.sim\", \"sha256\": \"d44a508fc25ed9d99a3ef6e118ca7f18a1c4c352365d6bd4226b2cecf0318e48\"}, {\"bytes\": 3021656, \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-analysis-25c-r1\\\\analysis_90ee39325d75_mesh.fem\", \"sha256\": \"956476e1ff17d9e18a5b120d8f38ae7b15f65eab86b2c987eb34a5fa1c7934a2\"}, {\"bytes\": 92065, \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-user-cad-20260909-r1\\\\input_r1.prt\", \"sha256\": \"c2452cc5dae1b3eb5097993ff6444c58eea7ced225cefe3a0b15c5572c378289\"}], \"dependency_completeness\": \"not_established\", \"input\": {\"bytes\": 196871, \"canonicalization\": \"xml_c14n2_no_comments\", \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-run-25c-r1\\\\public_25c_r1-Public_coupled.xml\", \"sha256\": \"5fad1315636019479987b7fae95a6c5c8afd0d03c95d47372fab96fe2cc29924\", \"xml_content_sha256\": \"ac7d824b760e81d7384573ae74d1708849ab2d3c5f5dee8382641aaf0dc1485a\"}, \"schema\": 1, \"scope\": \"explicit saved dependencies and input bytes only\", \"solve_readiness\": \"not_established\"}, \"solution\": \"Public coupled\", \"solver\": \"NX MULTIPHYSICS\"}, \"operation_id\": \"op_8cdf57591e5b4778b9ba98448cc5834f\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": null,
+        "job_id": "public-user-cad-25c-r1",
+        "request_sha256": "64cc218333ee61a23c584e27b37f32d2f6772f42d64164a0410f2785eed6cfee",
+        "state": "accepted",
+        "revision": 0,
+        "process_binding_revision": null,
+        "launch_retry_allowed": true,
+        "numerical_convergence": "not_established",
+        "results_validated": false,
+        "observed_at": "2026-09-09T21:18:47.412744+00:00",
+        "observation_kind": "persisted_record",
+        "live_process_state": "not_checked",
+        "job_folder": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs",
+        "observer": {
+          "tracked_in_this_nx_process": false
+        },
+        "manifest": {
+          "analysis_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-run-25c-r1\\public_25c_r1.sim",
+          "analysis_type": "Coupled Thermal-Flow",
+          "dependency_scope": "direct_sim_fem_cad_associations",
+          "excluded_dependencies": "recursive components, external fields/material files, solver artifacts and result dependencies",
+          "isolated_output_directory": "d:\\cad\\simcenter_mcp_workspace\\ui-benchmarks\\public-run-25c-r1",
+          "live_mesh_state": {
+            "adapter": 1,
+            "coordinate_encoding": "exact float64 hex; signed zero normalized",
+            "coordinate_frame": "fem_part_absolute",
+            "counts": {
+              "elements": 1816,
+              "nodes": 563
+            },
+            "excluded": [
+              "CAD geometry",
+              "mesh controls",
+              "material assignments/properties",
+              "loads and boundary conditions",
+              "solver element formulation",
+              "solution settings",
+              "external dependencies"
+            ],
+            "full_model_freshness": "not_verified",
+            "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-analysis-25c-r1\\analysis_90ee39325d75_mesh.fem",
+            "scope": "node_labels_coordinates_and_ordered_element_connectivity_shape_mesh_collector",
+            "sha256": "fedf6e7060f62ac5b81b8e99725975840ad94b84aca34861fb266b66f5601a39",
+            "units": "mm"
+          },
+          "mesh_inspection_limit": 200000,
+          "native_export": {
+            "analysis_type": "Coupled Thermal-Flow",
+            "artifacts": [
+              {
+                "bytes": 37071,
+                "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-run-25c-r1\\public_25c_r1-Public_coupled.map"
+              },
+              {
+                "bytes": 196871,
+                "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-run-25c-r1\\public_25c_r1-Public_coupled.xml"
+              }
+            ],
+            "coupled_ambient_validation": {
+              "absolute_tolerance_degC": 1e-06,
+              "exported_value": 25.0,
+              "matches": true,
+              "native_value": 25.0,
+              "property": "Fluid Temperature",
+              "scope": "constant ambient temperature only; not complete solve readiness",
+              "units": "degC"
+            },
+            "coupled_pressure_validation": {
+              "absolute_tolerance_Pa": 0.001,
+              "exported_value": 101325.0,
+              "matches": true,
+              "mode": "specified",
+              "native_value": 101325.0,
+              "scope": "constant specified pressure only; not complete solve readiness",
+              "stored_absolute_pressure_active": true,
+              "units": "Pa"
+            },
+            "input_identity": {
+              "bytes": 196871,
+              "canonicalization": "xml_c14n2_no_comments",
+              "sha256": "5fad1315636019479987b7fae95a6c5c8afd0d03c95d47372fab96fe2cc29924",
+              "xml_content_sha256": "ac7d824b760e81d7384573ae74d1708849ab2d3c5f5dee8382641aaf0dc1485a"
+            },
+            "input_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-run-25c-r1\\public_25c_r1-Public_coupled.xml",
+            "scope": "Native thermal/flow input export, not a solve or convergence check",
+            "solution": "Public coupled",
+            "solve_readiness": "not_established",
+            "solver": "NX MULTIPHYSICS",
+            "solver_launched": false,
+            "source_modified": false,
+            "source_sim": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-run-25c-r1\\public_25c_r1.sim",
+            "translator_reports": [],
+            "validation": {
+              "mesh_counts": {
+                "element_sets": 2,
+                "elements": 1816,
+                "nodes": 563,
+                "scope": "observed_multiphysics_xml_layout"
+              },
+              "solve_readiness": "not_established",
+              "state": "well_formed",
+              "step_definitions": 1
+            }
+          },
+          "preparation_adapter": 1,
+          "prepared_input": {
+            "dependencies": [
+              {
+                "bytes": 7721371,
+                "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-run-25c-r1\\public_25c_r1.sim",
+                "sha256": "d44a508fc25ed9d99a3ef6e118ca7f18a1c4c352365d6bd4226b2cecf0318e48"
+              },
+              {
+                "bytes": 3021656,
+                "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-analysis-25c-r1\\analysis_90ee39325d75_mesh.fem",
+                "sha256": "956476e1ff17d9e18a5b120d8f38ae7b15f65eab86b2c987eb34a5fa1c7934a2"
+              },
+              {
+                "bytes": 92065,
+                "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-user-cad-20260909-r1\\input_r1.prt",
+                "sha256": "c2452cc5dae1b3eb5097993ff6444c58eea7ced225cefe3a0b15c5572c378289"
+              }
+            ],
+            "dependency_completeness": "not_established",
+            "input": {
+              "bytes": 196871,
+              "canonicalization": "xml_c14n2_no_comments",
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-run-25c-r1\\public_25c_r1-Public_coupled.xml",
+              "sha256": "5fad1315636019479987b7fae95a6c5c8afd0d03c95d47372fab96fe2cc29924",
+              "xml_content_sha256": "ac7d824b760e81d7384573ae74d1708849ab2d3c5f5dee8382641aaf0dc1485a"
+            },
+            "schema": 1,
+            "scope": "explicit saved dependencies and input bytes only",
+            "solve_readiness": "not_established"
+          },
+          "solution": "Public coupled",
+          "solver": "NX MULTIPHYSICS"
+        },
+        "operation_id": "op_8cdf57591e5b4778b9ba98448cc5834f",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "not_applicable"
+      },
+      "isError": false
+    }
+  },
+  "passed": true,
+  "solver_launched": false,
+  "download_bytes": 196871,
+  "sha256": "5fad1315636019479987b7fae95a6c5c8afd0d03c95d47372fab96fe2cc29924"
+}

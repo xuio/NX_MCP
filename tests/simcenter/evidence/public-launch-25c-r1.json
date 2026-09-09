@@ -1,0 +1,77 @@
+{
+  "responses": {
+    "launch": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"job_id\": \"public-user-cad-25c-r1\", \"state\": \"launch_returned\", \"revision\": 2, \"request_sha256\": \"64cc218333ee61a23c584e27b37f32d2f6772f42d64164a0410f2785eed6cfee\", \"replayed\": false, \"solver_state\": \"not_observed_by_launch\", \"numerical_convergence\": \"not_established\", \"results_validated\": false, \"cancellation\": \"not_implemented\", \"next_step\": \"Inspect nx_sim_job_status and nx_sim_job_logs; API return is not solver completion\", \"observer\": {\"state\": \"started\", \"reused\": false, \"log_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\simcenter-jobs\\\\public-user-cad-25c-r1\\\\observer-41f3329e891b4f18ad6f3f541098c3a8.log\", \"maximum_seconds\": 3600, \"nx_api_calls\": false, \"lifetime\": \"NX process; durable job survives observer exit\", \"timeout_semantics\": \"observation ends; solver is not cancelled or relaunched\"}, \"operation_id\": \"public-user-cad-25c-launch-r1\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "job_id": "public-user-cad-25c-r1",
+        "state": "launch_returned",
+        "revision": 2,
+        "request_sha256": "64cc218333ee61a23c584e27b37f32d2f6772f42d64164a0410f2785eed6cfee",
+        "replayed": false,
+        "solver_state": "not_observed_by_launch",
+        "numerical_convergence": "not_established",
+        "results_validated": false,
+        "cancellation": "not_implemented",
+        "next_step": "Inspect nx_sim_job_status and nx_sim_job_logs; API return is not solver completion",
+        "observer": {
+          "state": "started",
+          "reused": false,
+          "log_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs\\public-user-cad-25c-r1\\observer-41f3329e891b4f18ad6f3f541098c3a8.log",
+          "maximum_seconds": 3600,
+          "nx_api_calls": false,
+          "lifetime": "NX process; durable job survives observer exit",
+          "timeout_semantics": "observation ends; solver is not cancelled or relaunched"
+        },
+        "operation_id": "public-user-cad-25c-launch-r1",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed"
+      },
+      "isError": false
+    },
+    "observe": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"job_id\": \"public-user-cad-25c-r1\", \"observer\": {\"state\": \"observing\", \"reused\": true, \"log_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\simcenter-jobs\\\\public-user-cad-25c-r1\\\\observer-41f3329e891b4f18ad6f3f541098c3a8.log\", \"nx_api_calls\": false, \"maximum_seconds\": 3600, \"deadline_restarted\": false, \"timeout_semantics\": \"maximum_seconds applies only when starting a new worker\"}, \"solver_launched\": false, \"operation_id\": \"op_40720be5494843a6a7f6ea2263746a21\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "job_id": "public-user-cad-25c-r1",
+        "observer": {
+          "state": "observing",
+          "reused": true,
+          "log_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs\\public-user-cad-25c-r1\\observer-41f3329e891b4f18ad6f3f541098c3a8.log",
+          "nx_api_calls": false,
+          "maximum_seconds": 3600,
+          "deadline_restarted": false,
+          "timeout_semantics": "maximum_seconds applies only when starting a new worker"
+        },
+        "solver_launched": false,
+        "operation_id": "op_40720be5494843a6a7f6ea2263746a21",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed"
+      },
+      "isError": false
+    }
+  },
+  "passed": true,
+  "solver_launched": true,
+  "job_id": "public-user-cad-25c-r1"
+}

@@ -20,7 +20,7 @@ Dimension synchronization is already verified by the engineering task.
 | Capability | Current implementation / verification | Next concrete action |
 |---|---|---|
 | Owned inlet/opening creation | Public `nx_sim_inlet` / `nx_sim_opening` native creation, target/membership/readback and save pass (`public-boundary-authoring-r1.json`) | Fan/head-loss binding, export and solve now pass; reopen still pending |
-| Fluid properties / global environment | Public `nx_sim_environment` deployed; sequential native 25/40 °C readback and save pass (`public-analysis-environment-r2.json`); fluid assignment pending | 40 °C export preserves values; fluid assignment and mesh pass. Native gravity authoring, SI readback and rollback pass; Public gravity now passes vector/target readback, replay and duplicate rejection; export/buoyancy and separate 25 °C case remain |
+| Fluid properties / global environment | Public `nx_sim_environment` deployed; sequential native 25/40 °C readback and save pass (`public-analysis-environment-r2.json`); fluid assignment pending | 40 °C export preserves values; fluid assignment and mesh pass. Native gravity authoring, SI readback and rollback pass; Public gravity now passes vector/target readback, replay and duplicate rejection; Separate 25 °C export/solve/physical checks and SIM reopen now pass; gravity export/buoyancy remain |
 | User CAD associations / topology changes | Public `nx_sim_create_analysis` creates FEM/SIM from saved two-body CAD; source hash unchanged; distinct FEM/SIM basename fix native verified | Native body add/remove now passes 17→18→17 via documented association/update APIs; Public `nx_sim_sync_geometry` deployed; 17-body inventory, replay and stale-ID checks pass. Public transition/reopen and isolated-variant preservation remain |
 | Multi-body meshing | Removed 16-body limits in plan and regeneration locally; validation covers 17/64/256 bodies | Native/public 17-body mesh passes. Size 0.75 mm regenerates 1,700→8,628 elements; replay, stale-ID rejection and save pass (`public-multibody-remesh-r3.json`). Geometry update/reopen remain |
 | Temperature postview | Exact reported name reproduced on generic result: periods/colons rejected, length accepted. Fixed with explicit normalization warning; public view/capture pass | Keep punctuation regression; viewport visually inspected |
@@ -31,8 +31,22 @@ name)` → `nx_sim_flow_setup` actions `create_step`, `attach_defaults`, then
 `coupled_steady` → `nx_sim_environment(document, temperature_c, pressure_pa,
 buoyancy)` → `nx_sim_faces` → `nx_sim_inlet` / `nx_sim_opening` →
 `nx_sim_external_temperature`. CAD must be saved, unmodified, millimeter and
-standalone; the association shares that CAD. Native 25/40 °C readback was sequential
-in one SIM, not two solved cases. Fan/material/mesh/export/reopen validation follows.
+standalone; the association shares that CAD. The initial 25/40 °C readback was sequential. Separate generic 25 °C and
+40 °C analyses have now been solved through public MCP. The 25 °C model passes
+21 input checks and the declared physical checks: peak 35.3852577 °C, flow
+5.771e-5 m³/s, mass imbalance 0.002819%, energy imbalance 0.0003093%. Its
+peak is exactly 15 °C below the controlled 40 °C case at printed precision.
+Full RMS convergence and mesh independence remain unestablished.
+`public-25c-reopen-r1.json` verifies saved/reopened temperature extrema, result
+association, fitted postview and original CAD checksum. It does not establish
+a complete equality check for every material/boundary property after reopen.
+`public-25c-prepare-r1.json` preserves the expected output-directory rejection;
+the SIM was then saved into a dedicated run folder before export. Reproduction:
+`verify_public_25c_prepare_r1.py`, `verify_public_25c_run_prepare_r1.py`,
+`verify_public_25c_download_r1.py`, audit the downloaded XML with
+`audit_public_input_r1.py INPUT OUTPUT 25`, then launch/inspect using the retained
+25c launch/results/reopen scripts. These scripts use retained session IDs and
+paths; fresh runs require new paths/operation IDs and current document references.
 Current Simcenter offline regression: 739 passed (`public-environment-regressions-r1.txt`).
 
 The first public coupled run completed in 27 s: peak 50.3854 °C, flow
