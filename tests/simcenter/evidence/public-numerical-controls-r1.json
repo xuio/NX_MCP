@@ -1,0 +1,41 @@
+{
+  "job_id": "public-user-cad-40c-controls-r1",
+  "api_workflow_passed": true,
+  "solver_exited": true,
+  "physical_checks": {
+    "finite_temperature_rise": true,
+    "positive_flow_in_curve": true,
+    "fan_curve_match": true,
+    "mass_balance": true,
+    "energy_balance": true
+  },
+  "physical_checks_passed": true,
+  "numerical_acceptance": false,
+  "convergence_status": "not_established by public residual inspection",
+  "peak_c": 50.385257720947266,
+  "flow_m3_s": 5.771e-05,
+  "fan_rise_pa": 0.8557,
+  "reported_imbalances": {
+    "momentum": {
+      "value": 0.0004248,
+      "units": "%",
+      "definition": "native reported imbalance; denominator not independently established"
+    },
+    "mass": {
+      "value": 0.002819,
+      "units": "%",
+      "definition": "native reported imbalance; denominator not independently established"
+    },
+    "energy": {
+      "value": 0.0003097,
+      "units": "%",
+      "definition": "native reported imbalance; denominator not independently established"
+    }
+  },
+  "warnings": {
+    "coincident_thermal_nodes": true,
+    "no_interior_pressure_anchor": false
+  },
+  "mesh_independence": "not established",
+  "next_action": "Inspect final residual evidence without rerunning the solve; verify distinct 25 C case and lifecycle"
+}

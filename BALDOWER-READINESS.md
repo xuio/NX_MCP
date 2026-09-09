@@ -40,7 +40,16 @@ The first public coupled run completed in 27 s: peak 50.3854 °C, flow
 mass imbalance 0.3902% exceeds the predeclared 0.1%; energy imbalance 0.02284%
 passes 1%. Public residual inspection does not establish final RMS convergence.
 The flow convergence adapter now admits the documented coupled solution as well
-as Flow; native application/export verification is the next bounded step.
+as Flow. A separate SIM control variant now verifies native application/export: RMS
+1e-6 and enabled flow imbalance fraction 0.001; only three control properties
+differ in exported inputs. Physical inputs and mesh remain unchanged. The public
+result receipt reports mass imbalance 0.002819%, energy imbalance 0.0003097%,
+peak 50.38526 °C and flow 5.771e-5 m³/s. The declared physical checks pass;
+final RMS convergence remains unestablished by public inspection. Native
+coincident-thermal-node warnings are retained. See `public-numerical-controls-r1.json`,
+`public-results-controls-r1.json` and `public-controls-input-diff-r1.json`. The
+controlled run released its job gate and displayed a fitted native temperature
+view. Separate 25 °C solve, reopen, gravity and topology/mesh work remain.
 `public-input-audit-r1.json` records 21 pre-launch input checks and tolerances.
 `public-numerical-40c-r1.json` preserves the failed outcome. Screenshot creation
 and visual verification pass (`public-postview-fixed-r1.json`). This is generic

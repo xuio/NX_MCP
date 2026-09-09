@@ -76,7 +76,7 @@ result = {
         "fan_curve_pressure_tolerance_pa": 0.001,
         "mass_imbalance_percent_max": 0.1,
         "energy_imbalance_percent_max": 1.0,
-        "flow_RMS_limit": 0.0002,
+        "flow_RMS_limit": value(r.find(".//FlowSolutionParameter"), "Maximum Residuals"),
         "thermal_change_C": 0.001,
         "coupled_change_C": 0.1,
         "iteration_limit": 1000,
