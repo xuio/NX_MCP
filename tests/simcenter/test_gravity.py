@@ -27,7 +27,7 @@ async def test_public_schema(tmp_path, monkeypatch):
     monkeypatch.setenv("NX_MCP_ENABLE_SIMCENTER", "1")
     server = create_server(NS(), Workspace(tmp_path), enable_experimental=True)
     tool = next(t for t in await server.list_tools() if t.name == "nx_sim_gravity")
-    assert set(["document", "bodies", "acceleration_m_s2", "name"]).issubset(
+    assert {"document", "bodies", "acceleration_m_s2", "name"}.issubset(
         tool.inputSchema["required"]
     )
     assert "operation_id" in tool.inputSchema["properties"]
@@ -35,6 +35,7 @@ async def test_public_schema(tmp_path, monkeypatch):
 
 def test_overlap_uses_native_load_descriptor_and_rejects_before_mutation(monkeypatch):
     import sys
+
     from nx_mcp.simcenter.gravity import create
 
     cae = NS()
