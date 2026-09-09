@@ -2,6 +2,10 @@
 
 # Each scope refers to actual public MCP native verification, not API reflection.
 PUBLIC_EVIDENCE = {
+    "nx_sim_temperature_regions": (
+        "temperature-regions-public.json",
+        "Native 3d/2d group membership, Celsius extrema/locations and unique-node arithmetic mean; two contact solids match retained nodal data. Paging, wrong hash, budget rejection and isolated save/close/reopen verified; no CAD-name or weighted-mean inference",
+    ),
     "nx_sim_temperature_nodes": (
         "temperature-nodes-public.json",
         "45 nodes paged in three bounded reads plus empty end page; native mm/Celsius readback, extrema/bounds agreement, wrong hash and invalid limit rejection. Native document flags/postviews preserved; region selection and general field completeness unverified",

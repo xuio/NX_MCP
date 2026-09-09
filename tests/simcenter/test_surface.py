@@ -300,3 +300,13 @@ async def test_temperature_nodes_requires_revision_and_is_read_only(tmp_path, mo
     assert tool.inputSchema["properties"]["limit"]["default"] == 100
     assert "operation_id" not in tool.inputSchema["properties"]
     assert tool.annotations.readOnlyHint
+
+
+@pytest.mark.asyncio
+async def test_temperature_regions_explicit_dimension_and_revision(tmp_path, monkeypatch):
+    monkeypatch.setenv("NX_MCP_ENABLE_SIMCENTER", "1")
+    server = create_server(Bridge(), Workspace(tmp_path), enable_experimental=True)
+    tool = next(t for t in await server.list_tools() if t.name == "nx_sim_temperature_regions")
+    assert {"document", "result_sha256"} <= set(tool.inputSchema["required"])
+    assert tool.inputSchema["properties"]["dimension"]["enum"] == ["3d", "2d"]
+    assert tool.annotations.readOnlyHint

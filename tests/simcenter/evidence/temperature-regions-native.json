@@ -1,0 +1,284 @@
+{
+  "status": "success",
+  "passed": true,
+  "cases": [
+    {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-positive-20260909-r1\\mesh_guard_positive_r1.sim",
+      "volume_groups": {
+        "items": [
+          {
+            "group_index": 0,
+            "dimension": "3d",
+            "element_count": 100,
+            "node_count": 45,
+            "membership_sha256": "8ba757214c55855aa9cda40ef4eac475e11b913e2184171dee94eec0580f99bd",
+            "minimum": {
+              "index": 5,
+              "label": 5,
+              "coordinates": [
+                10.0,
+                0.0,
+                0.0
+              ],
+              "temperature": 20.0
+            },
+            "maximum": {
+              "index": 12,
+              "label": 12,
+              "coordinates": [
+                0.0,
+                10.0,
+                5.0
+              ],
+              "temperature": 20.251495361328125
+            },
+            "arithmetic_nodal_mean": 20.147686301337348,
+            "bounds": {
+              "minimum": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "maximum": [
+                10.0,
+                10.0,
+                10.0
+              ]
+            }
+          }
+        ],
+        "total": 1,
+        "next_offset": null,
+        "loadcase_index": 0,
+        "iteration_index": 0,
+        "field": "Temperature - Nodal",
+        "units": "degC",
+        "coordinate_units": "mm",
+        "coordinate_frame": "native_result_coordinates",
+        "result_freshness": "not_verified",
+        "mean_semantics": "Unweighted arithmetic mean over unique result nodes within each group; shared nodes may belong to multiple groups; not area/volume weighted",
+        "extrema_semantics": "First node in increasing result-index order at each extremum",
+        "selection_semantics": "Native dimension/group indices bound to the result file revision; not inferred CAD components or persistent semantic names"
+      },
+      "surface_groups": {
+        "items": [
+          {
+            "group_index": 0,
+            "dimension": "2d",
+            "element_count": 14,
+            "node_count": 12,
+            "membership_sha256": "2249c5f337abaff2d1ba498add620fa6ac1fdae228989efd46c5075ebd939594",
+            "minimum": {
+              "index": 5,
+              "label": 5,
+              "coordinates": [
+                10.0,
+                0.0,
+                0.0
+              ],
+              "temperature": 20.0
+            },
+            "maximum": {
+              "index": 5,
+              "label": 5,
+              "coordinates": [
+                10.0,
+                0.0,
+                0.0
+              ],
+              "temperature": 20.0
+            },
+            "arithmetic_nodal_mean": 20.0,
+            "bounds": {
+              "minimum": [
+                10.0,
+                0.0,
+                0.0
+              ],
+              "maximum": [
+                10.0,
+                10.0,
+                10.0
+              ]
+            }
+          }
+        ],
+        "total": 1,
+        "next_offset": null,
+        "loadcase_index": 0,
+        "iteration_index": 0,
+        "field": "Temperature - Nodal",
+        "units": "degC",
+        "coordinate_units": "mm",
+        "coordinate_frame": "native_result_coordinates",
+        "result_freshness": "not_verified",
+        "mean_semantics": "Unweighted arithmetic mean over unique result nodes within each group; shared nodes may belong to multiple groups; not area/volume weighted",
+        "extrema_semantics": "First node in increasing result-index order at each extremum",
+        "selection_semantics": "Native dimension/group indices bound to the result file revision; not inferred CAD components or persistent semantic names"
+      }
+    },
+    {
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\B-contact-explicit-20260909-r1\\contact_explicit_r1.sim",
+      "volume_groups": {
+        "items": [
+          {
+            "group_index": 0,
+            "dimension": "3d",
+            "element_count": 100,
+            "node_count": 45,
+            "membership_sha256": "8ba757214c55855aa9cda40ef4eac475e11b913e2184171dee94eec0580f99bd",
+            "minimum": {
+              "index": 5,
+              "label": 5,
+              "coordinates": [
+                20.0,
+                0.0,
+                0.0
+              ],
+              "temperature": 20.0
+            },
+            "maximum": {
+              "index": 4,
+              "label": 4,
+              "coordinates": [
+                10.0,
+                10.0,
+                10.0
+              ],
+              "temperature": 20.50029754638672
+            },
+            "arithmetic_nodal_mean": 20.249729114108614,
+            "bounds": {
+              "minimum": [
+                10.0,
+                0.0,
+                0.0
+              ],
+              "maximum": [
+                20.0,
+                10.0,
+                10.0
+              ]
+            }
+          },
+          {
+            "group_index": 1,
+            "dimension": "3d",
+            "element_count": 100,
+            "node_count": 45,
+            "membership_sha256": "f7d4b35fd2256f3defef800b56c59204d10c04b3309f24132aa14f0393dd9b56",
+            "minimum": {
+              "index": 64,
+              "label": 64,
+              "coordinates": [
+                10.0,
+                5.0,
+                10.0
+              ],
+              "temperature": 20.99782371520996
+            },
+            "maximum": {
+              "index": 57,
+              "label": 57,
+              "coordinates": [
+                0.0,
+                10.0,
+                5.0
+              ],
+              "temperature": 21.25148582458496
+            },
+            "arithmetic_nodal_mean": 21.14748691982693,
+            "bounds": {
+              "minimum": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "maximum": [
+                10.0,
+                10.0,
+                10.0
+              ]
+            }
+          }
+        ],
+        "total": 2,
+        "next_offset": null,
+        "loadcase_index": 0,
+        "iteration_index": 0,
+        "field": "Temperature - Nodal",
+        "units": "degC",
+        "coordinate_units": "mm",
+        "coordinate_frame": "native_result_coordinates",
+        "result_freshness": "not_verified",
+        "mean_semantics": "Unweighted arithmetic mean over unique result nodes within each group; shared nodes may belong to multiple groups; not area/volume weighted",
+        "extrema_semantics": "First node in increasing result-index order at each extremum",
+        "selection_semantics": "Native dimension/group indices bound to the result file revision; not inferred CAD components or persistent semantic names"
+      },
+      "surface_groups": {
+        "items": [
+          {
+            "group_index": 0,
+            "dimension": "2d",
+            "element_count": 42,
+            "node_count": 36,
+            "membership_sha256": "8edcaa3cc6b148db1034e01e93d1ed1f555469bbff079f5c6bd9425b7c1aabff",
+            "minimum": {
+              "index": 5,
+              "label": 5,
+              "coordinates": [
+                20.0,
+                0.0,
+                0.0
+              ],
+              "temperature": 20.0
+            },
+            "maximum": {
+              "index": 50,
+              "label": 50,
+              "coordinates": [
+                10.0,
+                0.0,
+                0.0
+              ],
+              "temperature": 21.001262664794922
+            },
+            "arithmetic_nodal_mean": 20.49970457288954,
+            "bounds": {
+              "minimum": [
+                10.0,
+                0.0,
+                0.0
+              ],
+              "maximum": [
+                20.0,
+                10.0,
+                10.0
+              ]
+            }
+          }
+        ],
+        "total": 1,
+        "next_offset": null,
+        "loadcase_index": 0,
+        "iteration_index": 0,
+        "field": "Temperature - Nodal",
+        "units": "degC",
+        "coordinate_units": "mm",
+        "coordinate_frame": "native_result_coordinates",
+        "result_freshness": "not_verified",
+        "mean_semantics": "Unweighted arithmetic mean over unique result nodes within each group; shared nodes may belong to multiple groups; not area/volume weighted",
+        "extrema_semantics": "First node in increasing result-index order at each extremum",
+        "selection_semantics": "Native dimension/group indices bound to the result file revision; not inferred CAD components or persistent semantic names"
+      }
+    }
+  ],
+  "document_flags_preserved": true,
+  "postviews_preserved": true,
+  "solver_launched": false,
+  "operation_id": "op_b0c27392bce7489d80fe63e5922c28a7",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

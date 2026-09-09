@@ -2448,54 +2448,49 @@ class SimcenterMixin:
         limit=100,
         maximum_bytes=1_073_741_824,
     ):
-        import re
-
-        import NXOpen.CAE as cae
-
         from nx_mcp.simcenter.nodal_results import temperature_nodes
-        from nx_mcp.simcenter.result_identity import inspect_result_identity
+        from nx_mcp.simcenter.result_reader import read_bound
 
-        if not isinstance(result_sha256, str) or not re.fullmatch(r"[0-9a-f]{64}", result_sha256):
-            raise NXToolError(
-                "NX_INVALID_ARGUMENT", "Use the lowercase SHA256 from nx_sim_result_identity"
-            )
-        if type(maximum_bytes) is not int or maximum_bytes < 1:
-            raise NXToolError("NX_INVALID_ARGUMENT", "maximum_bytes must be positive")
-        sim = self.objects.resolve(document, expected_kind="part")
-        if not isinstance(sim, cae.SimPart):
-            raise NXToolError("NX_SIM_DOCUMENT_TYPE", "Select a SIM")
-        if self.session.Parts.BaseWork != sim:
-            raise NXToolError("NX_SIM_DOCUMENT_NOT_ACTIVE", "Activate the selected SIM")
-        if sim.Simulation.ActiveSolution is None:
-            raise NXToolError("NX_SIM_NO_SOLUTION", "Select a solution first")
-        before = inspect_result_identity(
-            sim.Simulation.ActiveSolution, self.workspace, maximum_bytes=maximum_bytes
-        )
-        if len(before["files"]) != 1 or before["files"][0]["sha256"] != result_sha256:
-            raise NXToolError(
-                "NX_SIM_RESULT_CHANGED",
-                "Result identity differs; discard accumulated pages and inspect the new revision",
-            )
-        page = temperature_nodes(
-            self.session,
-            sim,
+        return read_bound(
+            self,
+            document,
+            result_sha256,
+            temperature_nodes,
+            maximum_bytes,
             loadcase_index=loadcase_index,
             iteration_index=iteration_index,
             offset=offset,
             limit=limit,
         )
-        after = inspect_result_identity(
-            sim.Simulation.ActiveSolution, self.workspace, maximum_bytes=maximum_bytes
+
+    def _sim_temperature_regions(
+        self,
+        document,
+        result_sha256,
+        dimension="3d",
+        loadcase_index=0,
+        iteration_index=0,
+        offset=0,
+        limit=10,
+        maximum_entities=200000,
+        maximum_bytes=1_073_741_824,
+    ):
+        from nx_mcp.simcenter.region_results import temperature_regions
+        from nx_mcp.simcenter.result_reader import read_bound
+
+        return read_bound(
+            self,
+            document,
+            result_sha256,
+            temperature_regions,
+            maximum_bytes,
+            dimension=dimension,
+            loadcase_index=loadcase_index,
+            iteration_index=iteration_index,
+            offset=offset,
+            limit=limit,
+            maximum_entities=maximum_entities,
         )
-        if before["files"] != after["files"]:
-            raise NXToolError(
-                "NX_SIM_RESULT_CHANGED", "Result file changed during extraction; discard this page"
-            )
-        return {
-            "document": self._reference(sim, "part", sim, "part"),
-            "result_file": before["files"][0],
-            **page,
-        }
 
     def _sim_temperature_result(
         self, document, loadcase_index=0, iteration_index=0, location="nodal"

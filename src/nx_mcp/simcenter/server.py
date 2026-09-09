@@ -814,3 +814,20 @@ def nx_sim_temperature_nodes(
 
 
 READ_ONLY.add("nx_sim_temperature_nodes")
+
+
+def nx_sim_temperature_regions(
+    document: str,
+    result_sha256: str,
+    dimension: Literal["3d", "2d"] = "3d",
+    loadcase_index: int = 0,
+    iteration_index: int = 0,
+    offset: int = 0,
+    limit: int = 10,
+    maximum_entities: int = 200000,
+    maximum_bytes: int = 1_073_741_824,
+):
+    """Summarize nodal temperatures for native result groups by dimension, without inferring CAD component names. Requires active SIM and the single result-file SHA256 from nx_sim_result_identity; verifies the file before/after reading. Pages groups by zero-based offset, limit 1..50. maximum_entities (1..1000000) bounds whole-result node+element counts and selected group traversal; maximum_bytes bounds each result hashing pass. Returns native group index, membership digest, element/unique-node counts, mm bounds, Celsius extrema with result-local node indices/labels/coordinates, and unweighted arithmetic nodal mean. Shared nodes count once per group and may occur in other groups. Mean is not area/volume weighted; 2d groups may include solver-created boundary elements. Coordinates use the native result frame; requires millimeter results. No semantic names, junction interpretation or whole-domain coverage claim. No save/solve; preserves visible postviews. Changed result hash invalidates group indices and accumulated summaries; model freshness remains unverified."""
+
+
+READ_ONLY.add("nx_sim_temperature_regions")

@@ -725,14 +725,46 @@ bounds are 0..10 mm on every axis, and minimum/maximum temperatures exactly equa
 the existing extrema query. Document modification flags and postview IDs are
 preserved. Public MCP verifies paging, identity binding, wrong hash and invalid
 limit rejection. Forty-three focused offline tests cover result cleanup, schemas,
-page boundaries, malformed native arrays and file-change guards. Save/reopen and
-region mapping for the new tool are not yet verified.
+page boundaries, malformed native arrays and file-change guards. Node save/reopen is now verified alongside group summaries below; semantic CAD
+region mapping remains unverified.
 
 Reproduce using `examples/simcenter/verify_temperature_nodes_native.py` and
 `verify_temperature_nodes_public.py` with the existing isolated completed job;
 no solve is needed. Evidence: `nodal-page-native.json` and
 `temperature-nodes-public.json`. This is a foundation for region summaries and
 portable tables, not completion of those remaining requirements.
+
+### Native result-group temperatures
+
+`nx_sim_temperature_regions` summarizes `3d` or `2d` result groups, keyed by native
+group index and a required result-file SHA256. It returns element/unique-node
+counts, membership digest, mm bounds, Celsius extrema with node locations and an
+unweighted arithmetic nodal mean. Shared nodes count once per group; extrema ties
+choose the first node in result-index order. Groups are not inferred CAD component
+names. Surface groups may include solver-created boundary elements. Neither the
+mean nor a surface group implies area/volume integration.
+
+The documented `Result.AskNumGroupsInContainer`, `AskNumElementsOfGroup` (returns
+element indices despite its name) and `AskElementNodes` bindings were verified
+natively. Whole-result node+element count and selected group traversal are bounded
+by `maximum_entities` (default 200,000; maximum 1,000,000). Group pages contain at
+most 50 summaries; temperature requests use batches of at most 200 nodes. Before/
+after file hashing shares the node-paging guard. No whole-model freshness claim.
+
+Native contact groups each contain 100 elements and 45 nodes. Compared against
+`contact-explicit-nodal-results.json`, group means/extrema agree exactly: heated
+mean 21.14748691982693 °C, range 20.99782371520996..21.25148582458496 °C;
+sink mean 20.249729114108614 °C, range 20..20.50029754638672 °C. Coincident
+contact-interface nodes remain separate. The 2d group contains 42 elements and
+36 nodes. These are extraction checks on an already solved benchmark.
+
+Public MCP passes paging, empty page, wrong revision and budget rejection. The
+isolated V SIM was saved with backup, closed and reopened: node pages, group
+summaries and result hashes persisted; the old document ID was rejected. Native
+reads preserved document flags/postviews; explicit public display leaves the result
+fitted. Reproduce with `verify_temperature_regions_{native,public,lifecycle}.py`;
+receipts: `temperature-regions-*.json` in `tests/simcenter/evidence/`. Semantic CAD
+mapping, weighted means and general coupled field coverage remain unverified.
 
 ### Reconciled Phase 2 backlog
 
