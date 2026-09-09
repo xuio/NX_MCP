@@ -1,0 +1,41 @@
+{
+  "status": "success",
+  "document": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\L-face-size-20260909-r1\\benchmark_d5f46585b1fa_mesh.fem",
+  "before_counts": {
+    "elements": 1076,
+    "nodes": 354
+  },
+  "edit_failure": {
+    "code": "NX_SIM_LOCAL_SIZE_EDIT_FAILED",
+    "details": {
+      "mutation_outcome": "rolled_back",
+      "next_step": "Inspect mesh controls before retrying"
+    }
+  },
+  "edit_observed_sizes": [
+    1.0,
+    2.0,
+    1.0
+  ],
+  "remesh_failure": {
+    "code": "NX_SIM_REMESH_FAILED",
+    "details": {
+      "mutation_outcome": "rolled_back",
+      "references_invalidated": [
+        "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\L-face-size-20260909-r1\\benchmark_d5f46585b1fa_mesh.fem"
+      ],
+      "next_step": "Reacquire references and inspect mesh inventory/settings before retrying"
+    }
+  },
+  "settings_read_count": 5,
+  "counts_restored": true,
+  "flags_restored": true,
+  "old_document_rejection": "NX_OBJECT_STALE",
+  "passed": true,
+  "solver_launched": false,
+  "operation_id": "op_b759f5a5504f4ffda382f8b2cac8c16c",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

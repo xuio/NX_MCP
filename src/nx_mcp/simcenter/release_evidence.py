@@ -2,6 +2,14 @@
 
 # Each scope refers to actual public MCP native verification, not API reflection.
 PUBLIC_EVIDENCE = {
+    "nx_sim_face_size_edit": (
+        "remesh-public.json",
+        "Existing face-size edit with committed size/association readback, invalid input, replay, save/reopen; native post-commit failure rollback retained separately",
+    ),
+    "nx_sim_remesh": (
+        "remesh-public.json",
+        "Two solid tetra meshes regenerated with edited local sizing; settings preserved, stale FEM/face/control IDs rejected, replay and save/reopen quality verified; layered/fluid remeshing and numerical convergence unverified",
+    ),
     "nx_sim_distributed_heat": (
         "native-distributed-heat-mcp.json",
         "Surface-flux and volumetric-generation SI authoring, typed-target rejection, replay, duplicate rejection and save/reopen values/units/target journals/provenance; numerical acceptance and total-power integration separate",

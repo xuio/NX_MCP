@@ -464,8 +464,8 @@ Reproduce with `examples/simcenter/verify_local_size_public.py`,
 check: `probe_local_face_size.py`. Evidence: `local-size-public.json`,
 `local-size-effect.json`, `local-size-rollback.json`,
 `local-size-rollback-initial-failure.json`, and `local-face-size-native.json`.
-Edge/point/volume sizing, control editing/removal and reusable remeshing remain
-open; the initial mesh plan still requires no existing meshes.
+Edge/point/volume sizing and control removal remain open. The initial mesh plan
+still requires no existing meshes; separate editing/remeshing operations follow.
 
 A bounded native edit/remesh probe now establishes the next implementation route.
 The installed `MeshControlBuilder` reference documents `OverallSize` and
@@ -479,9 +479,63 @@ mesh counts and all document modification flags; the displayed FEM was fitted.
 No solve or numerical-convergence claim is involved. Reproduce with
 `examples/simcenter/probe_local_size_edit.py`; receipt:
 `tests/simcenter/evidence/local-size-edit-native.json`.
-This is native API evidence, not a public editing/remeshing capability. Next:
-implement bounded edit/remesh operations with committed readback, stale-reference
-invalidation, replay, persistence and failure/rollback checks before exposing them.
+This probe is native API evidence; public implementation verification follows.
+
+### Editing controls and regenerating existing meshes
+
+`nx_sim_face_size_edit(document, control, size_mm)` edits one existing face-size
+control, preserving and reading back its identity, selected faces and millimeter
+size. It does not remesh. `nx_sim_remesh(document)` regenerates 1..16 existing
+explicitly sized linear tetra meshes with their current controls. It verifies
+element type, global size, body association and mesh inventory. Unsupported
+mesh configurations fail preflight. Layered and fluid remeshing remain unverified;
+the solid two-block fixture below establishes the tested scope.
+
+Remeshing invalidates registered references for the FEM and its loaded dependent
+SIMs, including after rollback. Use the returned fresh document reference and
+reacquire faces, meshes, controls and occurrences. Responses identify mesh/body
+associations with typed references, actual element/node counts and stale results.
+Neither operation saves, updates associated SIMs or launches a solve. Automatic
+geometry regeneration, a general remesh convergence claim and whole-model
+result-freshness verification are outside this adapter's current scope.
+
+Public MCP creation/edit readback, invalid-size rejection, operation-ID replay,
+stale FEM/face/control rejection and save/close/reopen pass. Editing 1 to 2 mm
+retains the selected face; regenerating the two 5 mm global tetra meshes changes
+1076 elements/354 nodes to 341 elements/139 nodes. The reopened mesh retains
+341 elements and the 2 mm control with the same face journal identifier. Native
+quality checks report zero error/warning occurrences before and after reopening.
+These are API/lifecycle and topology checks, not numerical solution acceptance.
+
+Native failure injection observed control sizes 1 → 2 → 1 mm across commit and
+rollback. A separate failure after the first mesh commitment restored counts,
+settings, mesh inventory and document flags, and rejected the former document ID.
+Offline coverage includes failure after the second mesh, failed undo reporting
+`partial`, preflight rejection without mutation, cleanup and dependent-only
+reference invalidation. Thirty-two focused tests pass.
+
+Reproduce using `verify_remesh_public.py` and `verify_remesh_rollback.py` under
+`examples/simcenter/`; these require the isolated L-face-size fixture described
+above. Evidence: `remesh-public.json` and `remesh-rollback-native.json` in
+`tests/simcenter/evidence/`. The public test changes the disposable fixture to
+2 mm and saves it; it must not be blindly rerun with new operation IDs.
+
+`verify_remesh_references_public.py` then opens the dependent SIM, restores the
+control to 1 mm and regenerates 1076 elements/354 nodes. Both FEM and SIM old IDs
+are invalidated; fresh typed mesh/body references match the new face inventory,
+and replay returns the same references. The isolated FEM and SIM are saved, then
+the SIM is closed. Evidence: `remesh-references-public.json`. No unrelated
+documents are saved. This check covers native/public dependent-SIM invalidation,
+not automatic SIM mesh update or result reassociation.
+
+The live deployment audit matches all 75 handler signatures and Simcenter source
+hashes, with no stale checked property readers (`remesh-deployment.json`). Its
+first attempt exposed a verifier assumption that a work/display document always
+exists after closing a SIM. The verifier now reports null paths in that valid
+session state; the failure is retained as
+`remesh-deployment-inactive-document-failure.json`. Public activation then restored
+the benchmark FEM to the UI. Use the reference fixture's `--restore-display`
+option to repeat only that final display action without editing or remeshing.
 
 ### Reconciled Phase 2 backlog
 
@@ -500,7 +554,7 @@ from installed modules. A missing implementation/test is not an external blocker
 | Fan-speed variants/operating points | Scoped scaling and extraction present | `fan_scaling.py`, `fan_summary.py`; retain validity range and per-run identity |
 | Native temperature-controlled fans | Native descriptor/field/controller-link probe verified; public authoring incomplete | Sensor native type -9 rejects documented Reference -5 accessors; retain explicit unresolved mapping, no controller-function claim |
 | Openings/screens/porous resistance | Partial opening scalar K | `head_loss.py`; do not call this general porous media; add supported model-specific paths |
-| Global/local/near-wall mesh controls | Public explicit solid/fluid body plans, FEM faces and boundary-layer controls | `boundary_layers.py`, `mesh_controls.py`; public layered meshes and local face-sizing effects verified; edge/point/volume sizing, control editing and remeshing remain |
+| Global/local/near-wall mesh controls | Public explicit solid/fluid body plans, FEM faces and boundary-layer controls | `boundary_layers.py`, `mesh_controls.py`; public layered meshes and local face-sizing effects verified; face-size edit and solid tetra remesh/replay/persistence verified; edge/point/volume sizing, layered/fluid remeshing and general study convergence remain |
 | Mesh refinement comparisons | Partial retained numerical comparisons | Bounded reusable comparison records with exact model/mesh/job identity |
 | Parameter studies | Partial isolated variants and scenario import | `variant_clone.py`, `scenario_apply.py`; explicit variables, bounds and resumable execution |
 | Job status/recovery/cancellation | Partial public persistent workflow | Native running cancellation unresolved; pre-launch cancellation verified separately |

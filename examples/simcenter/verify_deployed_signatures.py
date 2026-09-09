@@ -84,8 +84,8 @@ def run(executor):
         "private_optional_extensions": private_optional,
         "deployed_source_sha256": hashes,
         "scope": "Live handler argument names, required/default values and parameter kinds; not per-tool behavior verification",
-        "work_path": executor.session.Parts.BaseWork.FullPath,
-        "display_path": executor.session.Parts.BaseDisplay.FullPath,
+        "work_path": getattr(executor.session.Parts.BaseWork, "FullPath", None),
+        "display_path": getattr(executor.session.Parts.BaseDisplay, "FullPath", None),
         "solver_launched": False,
     }
     Path(r"Z:\nx-mcp-integration\simcenter-discovery\deployed-signatures.json").write_text(

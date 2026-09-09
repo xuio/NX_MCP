@@ -1508,6 +1508,31 @@ class SimcenterMixin:
         except ValueError as error:
             raise NXToolError("NX_INVALID_ARGUMENT", str(error)) from error
 
+    def _sim_face_size_edit(self, document, control, size_mm):
+        from nx_mcp.simcenter.local_size import edit
+
+        fem = self.objects.resolve(document, expected_kind="part")
+        target = self.objects.resolve(control, expected_kind="simulation_mesh_control")
+        try:
+            return edit(self, fem, target, size_mm)
+        except ValueError as error:
+            raise NXToolError("NX_INVALID_ARGUMENT", str(error)) from error
+
+    def _sim_remesh(self, document):
+        from nx_mcp.simcenter.remesh import regenerate
+
+        fem = self.objects.resolve(document, expected_kind="part")
+        result = regenerate(self, fem)
+        bodies = {int(body.Tag): body for body in fem.Bodies}
+        meshes = list(fem.BaseFEModel.MeshManager.GetMeshes())
+        for row, mesh in zip(result["settings"], meshes, strict=True):
+            row["mesh"] = self._reference(mesh, "simulation_mesh", fem, "mesh")
+            row["bodies"] = [
+                self._reference(bodies[tag], "body", fem, "body")
+                for tag in row.pop("body_tags")
+            ]
+        return {"document": self._reference(fem, "part", fem, "FEM"), **result}
+
     def _sim_mesh_controls(self, document, offset=0, limit=50):
         from nx_mcp.simcenter.mesh_controls import inventory
 

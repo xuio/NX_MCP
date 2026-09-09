@@ -773,3 +773,17 @@ def nx_sim_face_size(document: str, faces: list[str], size_mm: float):
 
 
 NON_MODEL.add("nx_sim_face_size")
+
+
+def nx_sim_face_size_edit(document: str, control: str, size_mm: float):
+    """Edit one typed face-size control from nx_sim_mesh_controls in an active millimeter FEM. size_mm finite (0,10000]. Preserves and verifies existing face associations and control identity. Rejects foreign/stale controls and other native control types. Does not regenerate meshes, save or solve; call nx_sim_remesh separately, then inspect mesh quality. Reads committed size and uses undo/rollback. Supply operation_id for deduplicated retry."""
+
+
+NON_MODEL.add("nx_sim_face_size_edit")
+
+
+def nx_sim_remesh(document: str):
+    """Regenerate 1..16 existing explicitly sized linear solid/fluid tetra meshes in an active millimeter FEM using current native controls. Preserves mesh identities, global sizes, element types and body associations by readback. Other/layered mesh types are not verified by this adapter and may be rejected before mutation. Returns before/after counts; quality/convergence are not inferred. No geometry update, SIM update, save or solver launch. Invalidates all FEM and loaded dependent SIM object references after a regeneration attempt, including rollback; use returned document ID and reacquire face/mesh/occurrence references. Existing results are stale. Uses undo/rollback and persistent operation_id deduplication: query/replay the same operation after timeout instead of launching a duplicate remesh."""
+
+
+NON_MODEL.add("nx_sim_remesh")
