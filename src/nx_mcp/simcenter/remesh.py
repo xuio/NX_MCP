@@ -32,12 +32,23 @@ def settings(manager, mesh):
         builder.Destroy()
 
 
-def regenerate(executor, fem):
+def regenerate(executor, fem, size_mm=None):
     import NXOpen.CAE as cae
 
     from nx_mcp.simcenter.mesh_plan import mesh_counts
     from nx_mcp.simcenter.solver_guard import require_solver_idle
 
+    if size_mm is not None and (
+        isinstance(size_mm, bool)
+        or not isinstance(size_mm, (int, float))
+        or not math.isfinite(size_mm)
+        or not 0 < size_mm <= 10000
+    ):
+        raise NXToolError(
+            "NX_SIM_MESH_SIZE",
+            "size_mm must be finite in (0, 10000]",
+            details={"mutation_outcome": "not_started"},
+        )
     nx, session = executor.nxopen, executor.session
     if not isinstance(fem, cae.FemPart) or session.Parts.BaseWork != fem:
         raise NXToolError("NX_SIM_DOCUMENT_NOT_ACTIVE", "Activate a standalone FEM")
@@ -60,6 +71,11 @@ def regenerate(executor, fem):
                 "next_step": "Inspect mesh types; layered/other mesh types require separate verification",
             },
         ) from error
+    expected_settings = [
+        {**row, **({"size_mm": float(size_mm)} if size_mm is not None else {})}
+        for row in before_settings
+    ]
+    size_unit = fem.UnitCollection.FindObject("MilliMeter") if size_mm is not None else None
     before = mesh_counts(fem)
     before_tags = [int(m.Tag) for m in meshes]
     # Invalidate dependent occurrence and selection handles even on rollback: native
@@ -70,9 +86,13 @@ def regenerate(executor, fem):
     part_ids = [executor._part_id(part) for part in affected]
     mark = session.SetUndoMark(nx.Session.MarkVisibility.Visible, "NX MCP regenerate tetra meshes")
     try:
-        for mesh, expected in zip(meshes, before_settings, strict=True):
+        for mesh, expected in zip(meshes, expected_settings, strict=True):
             builder = manager.CreateMesh3dTetBuilder(mesh)
             try:
+                if size_mm is not None:
+                    builder.PropertyTable.SetBaseScalarWithDataPropertyValue(
+                        "quad mesh overall edge size", float(size_mm), size_unit
+                    )
                 committed = list(builder.CommitMesh())
             finally:
                 builder.Destroy()
@@ -87,7 +107,9 @@ def regenerate(executor, fem):
             "before_counts": before,
             "counts": after,
             "mesh_count": len(meshes),
-            "settings": before_settings,
+            "settings": expected_settings,
+            "previous_sizes_mm": [row["size_mm"] for row in before_settings],
+            "global_size_changed": expected_settings != before_settings,
             "units": "mm",
             "coordinate_frame": "fem_part_absolute",
             "saved": False,

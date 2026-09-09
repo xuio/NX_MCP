@@ -787,8 +787,8 @@ def nx_sim_face_size_edit(document: str, control: str, size_mm: float):
 NON_MODEL.add("nx_sim_face_size_edit")
 
 
-def nx_sim_remesh(document: str):
-    """Regenerate existing explicitly sized linear solid/fluid tetra meshes in an active millimeter FEM using current native controls. Preserves mesh identities, global sizes, element types and body associations by readback. Other/layered mesh types are not verified by this adapter and may be rejected before mutation. Returns before/after counts; quality/convergence are not inferred. No geometry update, SIM update, save or solver launch. Invalidates all FEM and loaded dependent SIM object references after a regeneration attempt, including rollback; use returned document ID and reacquire face/mesh/occurrence references. Existing results are stale. Uses undo/rollback and persistent operation_id deduplication: query/replay the same operation after timeout instead of launching a duplicate remesh."""
+def nx_sim_remesh(document: str, size_mm: float | None = None):
+    """Regenerate existing explicitly sized linear solid/fluid tetra meshes in an active millimeter FEM using current native controls. Optional size_mm in (0,10000] assigns one global edge size in mm to every existing mesh before regeneration; omitted preserves each size. Preserves mesh identities, element types and body associations by readback and returns previous sizes. Existing local mesh controls remain in effect. Other/layered mesh types are not verified by this adapter and may be rejected before mutation. Returns before/after counts; quality/convergence are not inferred. No geometry update, SIM update, save or solver launch. Invalidates all FEM and loaded dependent SIM object references after a regeneration attempt, including rollback; use returned document ID and reacquire face/mesh/occurrence references. Existing results are stale. Uses undo/rollback and persistent operation_id deduplication: query/replay the same operation after timeout instead of launching a duplicate remesh."""
 
 
 NON_MODEL.add("nx_sim_remesh")

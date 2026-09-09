@@ -1617,11 +1617,11 @@ class SimcenterMixin:
             ) from error
         return {"document": self._reference(fem, "part", fem, "FEM"), "mesh_state": result}
 
-    def _sim_remesh(self, document):
+    def _sim_remesh(self, document, size_mm=None):
         from nx_mcp.simcenter.remesh import regenerate
 
         fem = self.objects.resolve(document, expected_kind="part")
-        result = regenerate(self, fem)
+        result = regenerate(self, fem, size_mm=size_mm)
         bodies = {int(body.Tag): body for body in fem.Bodies}
         meshes = list(fem.BaseFEModel.MeshManager.GetMeshes())
         for row, mesh in zip(result["settings"], meshes, strict=True):

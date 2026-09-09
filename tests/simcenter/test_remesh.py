@@ -124,3 +124,69 @@ async def test_public_tools_expose_typed_parameters_and_operation_identity(tmp_p
         assert "operation_id" in tools[name].inputSchema["properties"]
         assert tools[name].inputSchema["properties"]["document"]["type"] == "string"
     assert tools["nx_sim_face_size_edit"].inputSchema["properties"]["control"]["type"] == "string"
+    schema = tools["nx_sim_remesh"].inputSchema
+    assert "size_mm" in schema["properties"]
+    assert "size_mm" not in schema.get("required", [])
+
+
+@pytest.mark.parametrize("size", [True, 0, -1, float("nan"), float("inf"), 10001, "2"])
+def test_invalid_global_size_rejected_before_mutation(fixture, size):
+    module, executor, fem, state, builders = fixture
+    with pytest.raises(NXToolError, match="size_mm"):
+        module.regenerate(executor, fem, size_mm=size)
+    assert state["commits"] == [] and builders == []
+    executor.objects.invalidate_part.assert_not_called()
+
+
+@pytest.mark.parametrize("fail", [None, 2])
+def test_global_size_readback_and_atomic_rollback(fixture, monkeypatch, fail):
+    module, executor, fem, state, builders = fixture
+    manager = fem.BaseFEModel.MeshManager
+    sizes = {1: 5.0, 2: 7.0}
+    original = dict(sizes)
+    unit = object()
+    fem.UnitCollection = NS(FindObject=lambda name: unit if name == "MilliMeter" else None)
+    create = manager.CreateMesh3dTetBuilder
+
+    def build(mesh):
+        builder = create(mesh)
+
+        def set_size(key, value, requested_unit):
+            assert key == "quad mesh overall edge size" and requested_unit is unit
+            sizes[mesh.Tag] = value
+
+        builder.PropertyTable = NS(SetBaseScalarWithDataPropertyValue=set_size)
+        return builder
+
+    manager.CreateMesh3dTetBuilder = build
+    monkeypatch.setattr(
+        module,
+        "settings",
+        lambda m, mesh: {
+            "size_mm": sizes[mesh.Tag],
+            "element_type": "tetra",
+            "body_tags": [mesh.Tag + 10],
+        },
+    )
+    undo = executor.session.UndoToMark
+
+    def restore(*args):
+        undo(*args)
+        sizes.update(original)
+
+    executor.session.UndoToMark = restore
+    state["fail"] = fail
+    if fail:
+        with pytest.raises(NXToolError) as error:
+            module.regenerate(executor, fem, size_mm=2)
+        assert error.value.details["mutation_outcome"] == "rolled_back"
+        assert sizes == original
+    else:
+        result = module.regenerate(executor, fem, size_mm=2)
+        assert result["previous_sizes_mm"] == [5, 7]
+        assert result["global_size_changed"] is True
+        assert [r["size_mm"] for r in result["settings"]] == [2, 2]
+        assert [r["body_tags"] for r in result["settings"]] == [[11], [12]]
+    assert executor.objects.invalidate_part.call_count == 2
+    for builder in builders:
+        builder.Destroy.assert_called_once()
