@@ -1,4 +1,5 @@
 {
+  "status": "success",
   "passed": true,
   "checked_count": 62,
   "tools": [
@@ -160,5 +161,15 @@
   "scope": "Live handler argument names, required/default values and parameter kinds; not per-tool behavior verification",
   "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-radiation-environment-export-20260909-r1\\radiation_environment_r1.sim",
   "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-radiation-environment-export-20260909-r1\\radiation_environment_r1.sim",
-  "solver_launched": false
+  "solver_launched": false,
+  "post_rollback_solution_membership": [
+    "MCP_ENV_fluid_ambient",
+    "MCP_ENV_radiative_ambient",
+    "MCP_ENV_specified"
+  ],
+  "operation_id": "op_f01ecc9e5c0e43ff88b50257132a62f7",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
 }

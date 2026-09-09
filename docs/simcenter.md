@@ -115,6 +115,36 @@ and unchanged boundary inventory. No solver was launched for this structural ext
 Time-dependent fields, shell-side options and resolved ambient dependencies still
 need implementation/verification; this is not complete general convection support.
 
+### Simple environment radiation
+
+`nx_sim_environment_radiation` authors the installed `Simple Environment Radiation`
+constraint. It explicitly selects top-side effective-emissivity mode, accepts a
+constant dimensionless `effective_emissivity` in [0,1], and selects fluid ambient,
+radiative ambient (default), or a specified Kelvin environment. This effective
+value is not an optical-material assignment or an enclosure view-factor solution.
+Unsupported shell-side and time-field options are not exposed.
+
+A 10 mm cube / 100-element fixture verifies all three temperature sources through
+native authoring/readback and public MCP. Native trials roll back; public creation,
+replay, save/close/reopen, stale-reference rejection and native export pass. The
+export retains effective emissivity 0.8, distinct 14-element-face regions, and
+293.15 K as 20 °C with the explicit -273.15 shift. Ambient fields are inactive and
+are not interpreted as resolved global temperatures. Reproduce the retained check:
+`python examples/simcenter/audit_radiation_environment_export.py`.
+
+Evidence: `radiation-environment-native.json`, `radiation-environment-public.json`,
+`radiation-environment.xml`, `radiation-environment-export-audit.json` and
+`radiation-environment-recovery.json` in
+`tests/simcenter/evidence/`. Native failure injection confirms that an invalid
+post-commit readback rolls back new constraints and expressions without changing
+document flags; face bounds persist through reopen/SaveAs. This is
+API/lifecycle/export verification; no radiation
+solve or heat-balance acceptance is claimed. The native factory also accepts
+`Override Thermal Emissivity` and `Enclosure Radiation` (two target slots), retained
+in `radiation-descriptors-native.json`. Those observations prove descriptor presence
+only; their committed assignments, secondary-slot semantics, settings and numerical
+behavior still need verification. Licensing configuration was not changed.
+
 ### Reconciled Phase 2 backlog
 
 Statuses below refer to the requested general capability, not availability inferred
@@ -124,7 +154,7 @@ from installed modules. A missing implementation/test is not an external blocker
 |---|---|---|
 | Thermal contacts/interface resistance | Partial: native/public total R/G authoring and resistance persistence verified | 200-element explicit-convergence artifact benchmark passes; general contact options and current-session freshness remain |
 | Convection and dependencies | Native/public constant coefficient and three temperature-source selectors verified | Explicit Kelvin value, persistence, exported conversion and disjoint face sets pass; time fields, ambient value resolution and shell-side options remain |
-| Radiation/emissivity/enclosures | Missing public authoring | Discover native applicable descriptors and test assignments/export |
+| Radiation/emissivity/enclosures | Simple environment radiation native/public authoring, persistence and export verified | Effective-emissivity constant mode only; enclosure and emissivity-override descriptors accepted but committed behavior untested |
 | Temperature-dependent materials | Missing | Extend constant/orthotropic material path with supported fields, units and persistence |
 | Transient loads/initial conditions/schedules | Partial time controls and constant distributed loads | `time_controls.py`, `distributed_heat.py`; schedule and initial-condition authoring/readback |
 | Forced/natural convection and fluid models | Partial native controls/materials and coupled fixtures | `flow_controls.py`, `fluid_material.py`; selector/gravity/buoyancy scope and exports |

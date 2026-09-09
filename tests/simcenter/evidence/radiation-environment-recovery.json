@@ -1,0 +1,71 @@
+{
+  "status": "success",
+  "association_after_reopen_and_save_as": [
+    {
+      "source": "fluid_ambient",
+      "bounds": {
+        "minimum": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "maximum": [
+          0.0,
+          10.0,
+          10.0
+        ]
+      },
+      "solution_member": true
+    },
+    {
+      "source": "radiative_ambient",
+      "bounds": {
+        "minimum": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "maximum": [
+          10.0,
+          0.0,
+          10.0
+        ]
+      },
+      "solution_member": true
+    },
+    {
+      "source": "specified",
+      "bounds": {
+        "minimum": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "maximum": [
+          10.0,
+          10.0,
+          0.0
+        ]
+      },
+      "solution_member": true
+    }
+  ],
+  "injected_failure": {
+    "code": "NX_SIM_READBACK_MISMATCH",
+    "details": {
+      "mutation_outcome": "rolled_back",
+      "creation_snapshot_restored": true,
+      "cleanup_issues": [],
+      "verification_scope": "load, constraint and expression identities; creation-only operation"
+    },
+    "message": "Thermal authoring failed; creation was rolled back"
+  },
+  "native_rollback_verified": true,
+  "document_flags_preserved": true,
+  "solver_launched": false,
+  "operation_id": "op_d6fef6e671d343b5a9458506bae0954c",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

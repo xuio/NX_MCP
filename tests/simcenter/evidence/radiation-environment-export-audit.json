@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "input_sha256": "5a210749269a24c41626614b271d184e3ffe2ffdf04353fc120bababf3da72d9",
+  "boundaries": [
+    {
+      "source": "fluid_ambient",
+      "selector": 0,
+      "effective_emissivity": 0.8,
+      "specified_temperature_k": null,
+      "finite_element_faces": 14
+    },
+    {
+      "source": "radiative_ambient",
+      "selector": 1,
+      "effective_emissivity": 0.8,
+      "specified_temperature_k": null,
+      "finite_element_faces": 14
+    },
+    {
+      "source": "specified",
+      "selector": 2,
+      "effective_emissivity": 0.8,
+      "specified_temperature_k": 293.15,
+      "finite_element_faces": 14
+    }
+  ],
+  "units": {
+    "LengthConversionFactor": 1000.0,
+    "ForceConversionFactor": 1000.0,
+    "TemperatureConversionFactor": 1.0,
+    "AbsoluteTemperatureShift": -273.15
+  },
+  "numerical_acceptance": "not_performed",
+  "scope": "Constant top-side radiation selectors, dimensionless effective emissivity, specified Kelvin conversion and disjoint step-1 FE faces; ambient effective values not evaluated"
+}

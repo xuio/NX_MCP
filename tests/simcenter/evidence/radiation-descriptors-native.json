@@ -1,0 +1,255 @@
+{
+  "status": "success",
+  "descriptors": [
+    {
+      "descriptor": "Simple Environment Radiation",
+      "kind": "constraint",
+      "properties": [
+        {
+          "name": "description",
+          "native_type": "0",
+          "units": null,
+          "representation": "text_lines",
+          "value": []
+        },
+        {
+          "name": "Radiation From",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Emissivity Type",
+          "native_type": "3",
+          "units": null,
+          "value": 2
+        },
+        {
+          "name": "Emissivity Value",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": -777777.0,
+          "unit_symbol": null
+        },
+        {
+          "name": "View Factor",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": 1.0,
+          "unit_symbol": null
+        },
+        {
+          "name": "Effective Emissivity",
+          "native_type": "6",
+          "units": "dimensionless",
+          "expression": "-777777",
+          "unit_symbol": null,
+          "representation": "expression"
+        },
+        {
+          "name": "Emissivity Type - Bottom",
+          "native_type": "3",
+          "units": null,
+          "value": 2
+        },
+        {
+          "name": "Emissivity Value - Bottom",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": -777777.0,
+          "unit_symbol": null
+        },
+        {
+          "name": "View Factor - Bottom",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": 1.0,
+          "unit_symbol": null
+        },
+        {
+          "name": "Effective Emissivity - Bottom",
+          "native_type": "6",
+          "units": "dimensionless",
+          "expression": "-777777",
+          "unit_symbol": null,
+          "representation": "expression"
+        },
+        {
+          "name": "Use Same Parameters as Top",
+          "native_type": "2",
+          "units": null,
+          "value": true
+        },
+        {
+          "name": "Emissivity Type - Bottom With Top",
+          "native_type": "3",
+          "units": null,
+          "value": 2
+        },
+        {
+          "name": "Emissivity Value - Bottom With Top",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": -777777.0,
+          "unit_symbol": null
+        },
+        {
+          "name": "View Factor - Bottom With Top",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": 1.0,
+          "unit_symbol": null
+        },
+        {
+          "name": "Effective Emissivity - Bottom With Top",
+          "native_type": "6",
+          "units": "dimensionless",
+          "expression": "-777777",
+          "unit_symbol": null,
+          "representation": "expression"
+        },
+        {
+          "name": "Temperature Type",
+          "native_type": "3",
+          "units": null,
+          "value": 1
+        },
+        {
+          "name": "Temperature",
+          "native_type": "6",
+          "units": "dimensionless",
+          "expression": "-777777",
+          "unit_symbol": null,
+          "representation": "expression"
+        },
+        {
+          "name": "distributionType",
+          "native_type": "3",
+          "units": null,
+          "value": 32
+        }
+      ],
+      "target_sets": 1,
+      "committed": false
+    },
+    {
+      "descriptor": "Override Thermal Emissivity",
+      "kind": "object",
+      "properties": [
+        {
+          "name": "description",
+          "native_type": "0",
+          "units": null,
+          "representation": "text_lines",
+          "value": []
+        },
+        {
+          "name": "Emissivity",
+          "native_type": "6",
+          "units": "dimensionless",
+          "expression": "-777777",
+          "unit_symbol": null,
+          "representation": "expression"
+        },
+        {
+          "name": "Apply Override Set to",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "distributionType",
+          "native_type": "3",
+          "units": null,
+          "value": 32
+        }
+      ],
+      "target_sets": 1,
+      "committed": false
+    },
+    {
+      "descriptor": "Enclosure Radiation",
+      "kind": "object",
+      "properties": [
+        {
+          "name": "description",
+          "native_type": "0",
+          "units": null,
+          "representation": "text_lines",
+          "value": []
+        },
+        {
+          "name": "Include Radiative Environment",
+          "native_type": "2",
+          "units": null,
+          "value": true
+        },
+        {
+          "name": "Calculation Method",
+          "native_type": "3",
+          "units": null,
+          "value": 2
+        },
+        {
+          "name": "View Factor Accuracy",
+          "native_type": "3",
+          "units": null,
+          "value": 1
+        },
+        {
+          "name": "Element Subdivision",
+          "native_type": "3",
+          "units": null,
+          "value": 3
+        },
+        {
+          "name": "Criterion Value",
+          "native_type": "4",
+          "units": "dimensionless",
+          "value": 0.02,
+          "unit_symbol": null
+        },
+        {
+          "name": "Monte Carlo Settings",
+          "native_type": "0",
+          "units": null,
+          "representation": "named_property_table",
+          "value": null
+        },
+        {
+          "name": "Calculate View Factors only",
+          "native_type": "2",
+          "units": null,
+          "value": false
+        },
+        {
+          "name": "Number of Rays",
+          "native_type": "3",
+          "units": null,
+          "value": 15000
+        },
+        {
+          "name": "Elements not Part of this Enclosure Can Shadow",
+          "native_type": "2",
+          "units": null,
+          "value": false
+        },
+        {
+          "name": "distributionType",
+          "native_type": "3",
+          "units": null,
+          "value": 28
+        }
+      ],
+      "target_sets": 2,
+      "committed": false
+    }
+  ],
+  "solver_launched": false,
+  "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F-convection-environment-export-20260909-r1\\convection_environment_r1.sim",
+  "operation_id": "op_a24357963aa4405bb444ec6274f6564b",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

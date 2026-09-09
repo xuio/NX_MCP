@@ -186,6 +186,23 @@ def nx_sim_faces(document: str, offset: int = 0, limit: int = 50):
 READ_ONLY.add("nx_sim_faces")
 
 
+def nx_sim_environment_radiation(
+    document: str,
+    faces: list[str],
+    effective_emissivity: float,
+    name: str,
+    provenance: str,
+    temperature_source: Literal[
+        "fluid_ambient", "radiative_ambient", "specified"
+    ] = "radiative_ambient",
+    temperature_k: float | None = None,
+):
+    """Create native Simple Environment Radiation on 1..1000 distinct SIM face IDs. Requires active NX MULTIPHYSICS Thermal. effective_emissivity is a dimensionless constant in [0,1], not an optical material assignment. Uses top-side effective-emissivity mode; shell-side and enclosure/view-factor options are not provided. temperature_source selects fluid/radiative ambient or specified; only specified accepts a finite nonnegative temperature_k in Kelvin. Ambient effective values are not resolved here. Returns actual selectors, expressions/units, typed constraint, face and solution membership readback and provenance. Nonempty name/provenance required. Visible undo with verified creation rollback; does not save, solve or certify heat transfer. Reacquire face IDs after geometry/mesh/session changes. Supply operation_id for replay deduplication."""
+
+
+NON_MODEL.add("nx_sim_environment_radiation")
+
+
 def nx_sim_convection(
     document: str,
     faces: list[str],

@@ -94,6 +94,10 @@ PUBLIC_EVIDENCE = {
         "steady-controls-public-launch.json",
         "Explicit temperature stopping in K, public validation/replay/export; native persistence and optional relative-balance authoring separately verified",
     ),
+    "nx_sim_environment_radiation": (
+        "radiation-environment-public.json",
+        "Thermal simple environment radiation, constant effective emissivity, three temperature sources; native/public replay, units, targets, persistence and export; no numerical radiation acceptance",
+    ),
     "nx_sim_convection": (
         "convection-environment-public.json",
         "Thermal-only constant coefficient and fluid/radiative/specified temperature selectors; native/public replay, units, face readback, persistence and export",

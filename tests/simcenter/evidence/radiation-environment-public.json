@@ -1,0 +1,2689 @@
+{
+  "responses": {
+    "invalid_dependency": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"error\", \"warnings\": [], \"units\": null, \"code\": \"NX_INVALID_ARGUMENT\", \"message\": \"temperature_k is only valid with specified temperature source\", \"retryable\": false, \"details\": {\"mutation_outcome\": \"not_started\", \"operation_id\": \"op_eb0b5f05b0b34925a5b6623a4235ff3f\"}}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "error",
+        "warnings": [],
+        "units": null,
+        "code": "NX_INVALID_ARGUMENT",
+        "message": "temperature_k is only valid with specified temperature source",
+        "retryable": false,
+        "details": {
+          "mutation_outcome": "not_started",
+          "operation_id": "op_eb0b5f05b0b34925a5b6623a4235ff3f"
+        }
+      },
+      "isError": true
+    },
+    "fluid_ambient": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"constraint\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_66cfe39237e94902b0058eda357ef182\", \"kind\": \"constraint\", \"name\": \"MCP_ENV_fluid_ambient\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_a3680f1c0daa498abde919072724451a\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"a3680f1c0daa498abde919072724451a\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-environment-radiation-20260909-r1\\\\benchmark_5a40b73541f4_analysis.sim\", \"journal_id\": \"Constraint[MCP_ENV_fluid_ambient]\", \"display_name\": \"MCP_ENV_fluid_ambient\"}, \"faces\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_0bbea45fdb3b4dccad689809e63acea1\", \"kind\": \"face\", \"name\": \"HANDLE R-37374\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_a3680f1c0daa498abde919072724451a\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"a3680f1c0daa498abde919072724451a\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-environment-radiation-20260909-r1\\\\benchmark_5a40b73541f4_analysis.sim\", \"journal_id\": \"HANDLE R-37374\", \"display_name\": \"\"}], \"properties\": [{\"name\": \"description\", \"native_type\": \"0\", \"units\": null, \"representation\": \"text_lines\", \"value\": []}, {\"name\": \"Radiation From\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Emissivity Type\", \"native_type\": \"3\", \"units\": null, \"value\": 2}, {\"name\": \"Emissivity Value\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": -777777.0, \"unit_symbol\": null}, {\"name\": \"View Factor\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": 1.0, \"unit_symbol\": null}, {\"name\": \"Effective Emissivity\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"0.8\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Emissivity Type - Bottom\", \"native_type\": \"3\", \"units\": null, \"value\": 2}, {\"name\": \"Emissivity Value - Bottom\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": -777777.0, \"unit_symbol\": null}, {\"name\": \"View Factor - Bottom\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": 1.0, \"unit_symbol\": null}, {\"name\": \"Effective Emissivity - Bottom\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"-777777\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Use Same Parameters as Top\", \"native_type\": \"2\", \"units\": null, \"value\": true}, {\"name\": \"Emissivity Type - Bottom With Top\", \"native_type\": \"3\", \"units\": null, \"value\": 2}, {\"name\": \"Emissivity Value - Bottom With Top\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": -777777.0, \"unit_symbol\": null}, {\"name\": \"View Factor - Bottom With Top\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": 1.0, \"unit_symbol\": null}, {\"name\": \"Effective Emissivity - Bottom With Top\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"-777777\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Temperature Type\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Temperature\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"-777777\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"distributionType\", \"native_type\": \"3\", \"units\": null, \"value\": 32}], \"effective_emissivity\": 0.8, \"emissivity_units\": \"dimensionless\", \"temperature_source\": \"fluid_ambient\", \"temperature_k\": null, \"environment_dependency\": \"native solution ambient; effective value not resolved\", \"face_count\": 1, \"solution_membership_verified\": true, \"provenance\": \"Assumed effective emissivity; API fixture\", \"saved\": false, \"solver_launched\": false, \"scope\": \"Simple environment radiation, top-side effective emissivity; not enclosure/view-factor authoring or numerical validation\", \"operation_id\": \"radiation-environment-fluid_ambient-r1\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "constraint": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_66cfe39237e94902b0058eda357ef182",
+          "kind": "constraint",
+          "name": "MCP_ENV_fluid_ambient",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_a3680f1c0daa498abde919072724451a",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "a3680f1c0daa498abde919072724451a",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-environment-radiation-20260909-r1\\benchmark_5a40b73541f4_analysis.sim",
+          "journal_id": "Constraint[MCP_ENV_fluid_ambient]",
+          "display_name": "MCP_ENV_fluid_ambient"
+        },
+        "faces": [
+          {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_0bbea45fdb3b4dccad689809e63acea1",
+            "kind": "face",
+            "name": "HANDLE R-37374",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_a3680f1c0daa498abde919072724451a",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "a3680f1c0daa498abde919072724451a",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-environment-radiation-20260909-r1\\benchmark_5a40b73541f4_analysis.sim",
+            "journal_id": "HANDLE R-37374",
+            "display_name": ""
+          }
+        ],
+        "properties": [
+          {
+            "name": "description",
+            "native_type": "0",
+            "units": null,
+            "representation": "text_lines",
+            "value": []
+          },
+          {
+            "name": "Radiation From",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Emissivity Type",
+            "native_type": "3",
+            "units": null,
+            "value": 2
+          },
+          {
+            "name": "Emissivity Value",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": -777777.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "View Factor",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 1.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "Effective Emissivity",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "0.8",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "Emissivity Type - Bottom",
+            "native_type": "3",
+            "units": null,
+            "value": 2
+          },
+          {
+            "name": "Emissivity Value - Bottom",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": -777777.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "View Factor - Bottom",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 1.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "Effective Emissivity - Bottom",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "Use Same Parameters as Top",
+            "native_type": "2",
+            "units": null,
+            "value": true
+          },
+          {
+            "name": "Emissivity Type - Bottom With Top",
+            "native_type": "3",
+            "units": null,
+            "value": 2
+          },
+          {
+            "name": "Emissivity Value - Bottom With Top",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": -777777.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "View Factor - Bottom With Top",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 1.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "Effective Emissivity - Bottom With Top",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "Temperature Type",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Temperature",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "distributionType",
+            "native_type": "3",
+            "units": null,
+            "value": 32
+          }
+        ],
+        "effective_emissivity": 0.8,
+        "emissivity_units": "dimensionless",
+        "temperature_source": "fluid_ambient",
+        "temperature_k": null,
+        "environment_dependency": "native solution ambient; effective value not resolved",
+        "face_count": 1,
+        "solution_membership_verified": true,
+        "provenance": "Assumed effective emissivity; API fixture",
+        "saved": false,
+        "solver_launched": false,
+        "scope": "Simple environment radiation, top-side effective emissivity; not enclosure/view-factor authoring or numerical validation",
+        "operation_id": "radiation-environment-fluid_ambient-r1",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed"
+      },
+      "isError": false
+    },
+    "fluid_ambient_replay": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"constraint\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_66cfe39237e94902b0058eda357ef182\", \"kind\": \"constraint\", \"name\": \"MCP_ENV_fluid_ambient\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_a3680f1c0daa498abde919072724451a\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"a3680f1c0daa498abde919072724451a\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-environment-radiation-20260909-r1\\\\benchmark_5a40b73541f4_analysis.sim\", \"journal_id\": \"Constraint[MCP_ENV_fluid_ambient]\", \"display_name\": \"MCP_ENV_fluid_ambient\"}, \"faces\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_0bbea45fdb3b4dccad689809e63acea1\", \"kind\": \"face\", \"name\": \"HANDLE R-37374\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_a3680f1c0daa498abde919072724451a\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"a3680f1c0daa498abde919072724451a\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-environment-radiation-20260909-r1\\\\benchmark_5a40b73541f4_analysis.sim\", \"journal_id\": \"HANDLE R-37374\", \"display_name\": \"\"}], \"properties\": [{\"name\": \"description\", \"native_type\": \"0\", \"units\": null, \"representation\": \"text_lines\", \"value\": []}, {\"name\": \"Radiation From\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Emissivity Type\", \"native_type\": \"3\", \"units\": null, \"value\": 2}, {\"name\": \"Emissivity Value\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": -777777.0, \"unit_symbol\": null}, {\"name\": \"View Factor\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": 1.0, \"unit_symbol\": null}, {\"name\": \"Effective Emissivity\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"0.8\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Emissivity Type - Bottom\", \"native_type\": \"3\", \"units\": null, \"value\": 2}, {\"name\": \"Emissivity Value - Bottom\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": -777777.0, \"unit_symbol\": null}, {\"name\": \"View Factor - Bottom\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": 1.0, \"unit_symbol\": null}, {\"name\": \"Effective Emissivity - Bottom\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"-777777\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Use Same Parameters as Top\", \"native_type\": \"2\", \"units\": null, \"value\": true}, {\"name\": \"Emissivity Type - Bottom With Top\", \"native_type\": \"3\", \"units\": null, \"value\": 2}, {\"name\": \"Emissivity Value - Bottom With Top\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": -777777.0, \"unit_symbol\": null}, {\"name\": \"View Factor - Bottom With Top\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": 1.0, \"unit_symbol\": null}, {\"name\": \"Effective Emissivity - Bottom With Top\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"-777777\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Temperature Type\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Temperature\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"-777777\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"distributionType\", \"native_type\": \"3\", \"units\": null, \"value\": 32}], \"effective_emissivity\": 0.8, \"emissivity_units\": \"dimensionless\", \"temperature_source\": \"fluid_ambient\", \"temperature_k\": null, \"environment_dependency\": \"native solution ambient; effective value not resolved\", \"face_count\": 1, \"solution_membership_verified\": true, \"provenance\": \"Assumed effective emissivity; API fixture\", \"saved\": false, \"solver_launched\": false, \"scope\": \"Simple environment radiation, top-side effective emissivity; not enclosure/view-factor authoring or numerical validation\", \"operation_id\": \"radiation-environment-fluid_ambient-r1\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\", \"replayed\": true}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "constraint": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_66cfe39237e94902b0058eda357ef182",
+          "kind": "constraint",
+          "name": "MCP_ENV_fluid_ambient",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_a3680f1c0daa498abde919072724451a",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "a3680f1c0daa498abde919072724451a",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-environment-radiation-20260909-r1\\benchmark_5a40b73541f4_analysis.sim",
+          "journal_id": "Constraint[MCP_ENV_fluid_ambient]",
+          "display_name": "MCP_ENV_fluid_ambient"
+        },
+        "faces": [
+          {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_0bbea45fdb3b4dccad689809e63acea1",
+            "kind": "face",
+            "name": "HANDLE R-37374",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_a3680f1c0daa498abde919072724451a",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "a3680f1c0daa498abde919072724451a",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-environment-radiation-20260909-r1\\benchmark_5a40b73541f4_analysis.sim",
+            "journal_id": "HANDLE R-37374",
+            "display_name": ""
+          }
+        ],
+        "properties": [
+          {
+            "name": "description",
+            "native_type": "0",
+            "units": null,
+            "representation": "text_lines",
+            "value": []
+          },
+          {
+            "name": "Radiation From",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Emissivity Type",
+            "native_type": "3",
+            "units": null,
+            "value": 2
+          },
+          {
+            "name": "Emissivity Value",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": -777777.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "View Factor",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 1.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "Effective Emissivity",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "0.8",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "Emissivity Type - Bottom",
+            "native_type": "3",
+            "units": null,
+            "value": 2
+          },
+          {
+            "name": "Emissivity Value - Bottom",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": -777777.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "View Factor - Bottom",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 1.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "Effective Emissivity - Bottom",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "Use Same Parameters as Top",
+            "native_type": "2",
+            "units": null,
+            "value": true
+          },
+          {
+            "name": "Emissivity Type - Bottom With Top",
+            "native_type": "3",
+            "units": null,
+            "value": 2
+          },
+          {
+            "name": "Emissivity Value - Bottom With Top",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": -777777.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "View Factor - Bottom With Top",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 1.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "Effective Emissivity - Bottom With Top",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "Temperature Type",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Temperature",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "distributionType",
+            "native_type": "3",
+            "units": null,
+            "value": 32
+          }
+        ],
+        "effective_emissivity": 0.8,
+        "emissivity_units": "dimensionless",
+        "temperature_source": "fluid_ambient",
+        "temperature_k": null,
+        "environment_dependency": "native solution ambient; effective value not resolved",
+        "face_count": 1,
+        "solution_membership_verified": true,
+        "provenance": "Assumed effective emissivity; API fixture",
+        "saved": false,
+        "solver_launched": false,
+        "scope": "Simple environment radiation, top-side effective emissivity; not enclosure/view-factor authoring or numerical validation",
+        "operation_id": "radiation-environment-fluid_ambient-r1",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed",
+        "replayed": true
+      },
+      "isError": false
+    },
+    "radiative_ambient": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"constraint\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_68e7523498a9411595c49c812d03f6eb\", \"kind\": \"constraint\", \"name\": \"MCP_ENV_radiative_ambient\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_a3680f1c0daa498abde919072724451a\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"a3680f1c0daa498abde919072724451a\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-environment-radiation-20260909-r1\\\\benchmark_5a40b73541f4_analysis.sim\", \"journal_id\": \"Constraint[MCP_ENV_radiative_ambient]\", \"display_name\": \"MCP_ENV_radiative_ambient\"}, \"faces\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_70b7f1bf070543eab4e22fcb1bf4c45f\", \"kind\": \"face\", \"name\": \"HANDLE R-37390\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_a3680f1c0daa498abde919072724451a\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"a3680f1c0daa498abde919072724451a\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-environment-radiation-20260909-r1\\\\benchmark_5a40b73541f4_analysis.sim\", \"journal_id\": \"HANDLE R-37390\", \"display_name\": \"\"}], \"properties\": [{\"name\": \"description\", \"native_type\": \"0\", \"units\": null, \"representation\": \"text_lines\", \"value\": []}, {\"name\": \"Radiation From\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Emissivity Type\", \"native_type\": \"3\", \"units\": null, \"value\": 2}, {\"name\": \"Emissivity Value\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": -777777.0, \"unit_symbol\": null}, {\"name\": \"View Factor\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": 1.0, \"unit_symbol\": null}, {\"name\": \"Effective Emissivity\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"0.8\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Emissivity Type - Bottom\", \"native_type\": \"3\", \"units\": null, \"value\": 2}, {\"name\": \"Emissivity Value - Bottom\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": -777777.0, \"unit_symbol\": null}, {\"name\": \"View Factor - Bottom\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": 1.0, \"unit_symbol\": null}, {\"name\": \"Effective Emissivity - Bottom\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"-777777\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Use Same Parameters as Top\", \"native_type\": \"2\", \"units\": null, \"value\": true}, {\"name\": \"Emissivity Type - Bottom With Top\", \"native_type\": \"3\", \"units\": null, \"value\": 2}, {\"name\": \"Emissivity Value - Bottom With Top\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": -777777.0, \"unit_symbol\": null}, {\"name\": \"View Factor - Bottom With Top\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": 1.0, \"unit_symbol\": null}, {\"name\": \"Effective Emissivity - Bottom With Top\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"-777777\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Temperature Type\", \"native_type\": \"3\", \"units\": null, \"value\": 1}, {\"name\": \"Temperature\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"-777777\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"distributionType\", \"native_type\": \"3\", \"units\": null, \"value\": 32}], \"effective_emissivity\": 0.8, \"emissivity_units\": \"dimensionless\", \"temperature_source\": \"radiative_ambient\", \"temperature_k\": null, \"environment_dependency\": \"native solution ambient; effective value not resolved\", \"face_count\": 1, \"solution_membership_verified\": true, \"provenance\": \"Assumed effective emissivity; API fixture\", \"saved\": false, \"solver_launched\": false, \"scope\": \"Simple environment radiation, top-side effective emissivity; not enclosure/view-factor authoring or numerical validation\", \"operation_id\": \"radiation-environment-radiative_ambient-r1\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "constraint": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_68e7523498a9411595c49c812d03f6eb",
+          "kind": "constraint",
+          "name": "MCP_ENV_radiative_ambient",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_a3680f1c0daa498abde919072724451a",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "a3680f1c0daa498abde919072724451a",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-environment-radiation-20260909-r1\\benchmark_5a40b73541f4_analysis.sim",
+          "journal_id": "Constraint[MCP_ENV_radiative_ambient]",
+          "display_name": "MCP_ENV_radiative_ambient"
+        },
+        "faces": [
+          {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_70b7f1bf070543eab4e22fcb1bf4c45f",
+            "kind": "face",
+            "name": "HANDLE R-37390",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_a3680f1c0daa498abde919072724451a",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "a3680f1c0daa498abde919072724451a",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-environment-radiation-20260909-r1\\benchmark_5a40b73541f4_analysis.sim",
+            "journal_id": "HANDLE R-37390",
+            "display_name": ""
+          }
+        ],
+        "properties": [
+          {
+            "name": "description",
+            "native_type": "0",
+            "units": null,
+            "representation": "text_lines",
+            "value": []
+          },
+          {
+            "name": "Radiation From",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Emissivity Type",
+            "native_type": "3",
+            "units": null,
+            "value": 2
+          },
+          {
+            "name": "Emissivity Value",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": -777777.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "View Factor",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 1.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "Effective Emissivity",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "0.8",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "Emissivity Type - Bottom",
+            "native_type": "3",
+            "units": null,
+            "value": 2
+          },
+          {
+            "name": "Emissivity Value - Bottom",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": -777777.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "View Factor - Bottom",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 1.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "Effective Emissivity - Bottom",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "Use Same Parameters as Top",
+            "native_type": "2",
+            "units": null,
+            "value": true
+          },
+          {
+            "name": "Emissivity Type - Bottom With Top",
+            "native_type": "3",
+            "units": null,
+            "value": 2
+          },
+          {
+            "name": "Emissivity Value - Bottom With Top",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": -777777.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "View Factor - Bottom With Top",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 1.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "Effective Emissivity - Bottom With Top",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "Temperature Type",
+            "native_type": "3",
+            "units": null,
+            "value": 1
+          },
+          {
+            "name": "Temperature",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "distributionType",
+            "native_type": "3",
+            "units": null,
+            "value": 32
+          }
+        ],
+        "effective_emissivity": 0.8,
+        "emissivity_units": "dimensionless",
+        "temperature_source": "radiative_ambient",
+        "temperature_k": null,
+        "environment_dependency": "native solution ambient; effective value not resolved",
+        "face_count": 1,
+        "solution_membership_verified": true,
+        "provenance": "Assumed effective emissivity; API fixture",
+        "saved": false,
+        "solver_launched": false,
+        "scope": "Simple environment radiation, top-side effective emissivity; not enclosure/view-factor authoring or numerical validation",
+        "operation_id": "radiation-environment-radiative_ambient-r1",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed"
+      },
+      "isError": false
+    },
+    "radiative_ambient_replay": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"constraint\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_68e7523498a9411595c49c812d03f6eb\", \"kind\": \"constraint\", \"name\": \"MCP_ENV_radiative_ambient\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_a3680f1c0daa498abde919072724451a\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"a3680f1c0daa498abde919072724451a\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-environment-radiation-20260909-r1\\\\benchmark_5a40b73541f4_analysis.sim\", \"journal_id\": \"Constraint[MCP_ENV_radiative_ambient]\", \"display_name\": \"MCP_ENV_radiative_ambient\"}, \"faces\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_70b7f1bf070543eab4e22fcb1bf4c45f\", \"kind\": \"face\", \"name\": \"HANDLE R-37390\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_a3680f1c0daa498abde919072724451a\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"a3680f1c0daa498abde919072724451a\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-environment-radiation-20260909-r1\\\\benchmark_5a40b73541f4_analysis.sim\", \"journal_id\": \"HANDLE R-37390\", \"display_name\": \"\"}], \"properties\": [{\"name\": \"description\", \"native_type\": \"0\", \"units\": null, \"representation\": \"text_lines\", \"value\": []}, {\"name\": \"Radiation From\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Emissivity Type\", \"native_type\": \"3\", \"units\": null, \"value\": 2}, {\"name\": \"Emissivity Value\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": -777777.0, \"unit_symbol\": null}, {\"name\": \"View Factor\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": 1.0, \"unit_symbol\": null}, {\"name\": \"Effective Emissivity\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"0.8\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Emissivity Type - Bottom\", \"native_type\": \"3\", \"units\": null, \"value\": 2}, {\"name\": \"Emissivity Value - Bottom\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": -777777.0, \"unit_symbol\": null}, {\"name\": \"View Factor - Bottom\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": 1.0, \"unit_symbol\": null}, {\"name\": \"Effective Emissivity - Bottom\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"-777777\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Use Same Parameters as Top\", \"native_type\": \"2\", \"units\": null, \"value\": true}, {\"name\": \"Emissivity Type - Bottom With Top\", \"native_type\": \"3\", \"units\": null, \"value\": 2}, {\"name\": \"Emissivity Value - Bottom With Top\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": -777777.0, \"unit_symbol\": null}, {\"name\": \"View Factor - Bottom With Top\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": 1.0, \"unit_symbol\": null}, {\"name\": \"Effective Emissivity - Bottom With Top\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"-777777\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Temperature Type\", \"native_type\": \"3\", \"units\": null, \"value\": 1}, {\"name\": \"Temperature\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"-777777\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"distributionType\", \"native_type\": \"3\", \"units\": null, \"value\": 32}], \"effective_emissivity\": 0.8, \"emissivity_units\": \"dimensionless\", \"temperature_source\": \"radiative_ambient\", \"temperature_k\": null, \"environment_dependency\": \"native solution ambient; effective value not resolved\", \"face_count\": 1, \"solution_membership_verified\": true, \"provenance\": \"Assumed effective emissivity; API fixture\", \"saved\": false, \"solver_launched\": false, \"scope\": \"Simple environment radiation, top-side effective emissivity; not enclosure/view-factor authoring or numerical validation\", \"operation_id\": \"radiation-environment-radiative_ambient-r1\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\", \"replayed\": true}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "constraint": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_68e7523498a9411595c49c812d03f6eb",
+          "kind": "constraint",
+          "name": "MCP_ENV_radiative_ambient",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_a3680f1c0daa498abde919072724451a",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "a3680f1c0daa498abde919072724451a",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-environment-radiation-20260909-r1\\benchmark_5a40b73541f4_analysis.sim",
+          "journal_id": "Constraint[MCP_ENV_radiative_ambient]",
+          "display_name": "MCP_ENV_radiative_ambient"
+        },
+        "faces": [
+          {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_70b7f1bf070543eab4e22fcb1bf4c45f",
+            "kind": "face",
+            "name": "HANDLE R-37390",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_a3680f1c0daa498abde919072724451a",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "a3680f1c0daa498abde919072724451a",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-environment-radiation-20260909-r1\\benchmark_5a40b73541f4_analysis.sim",
+            "journal_id": "HANDLE R-37390",
+            "display_name": ""
+          }
+        ],
+        "properties": [
+          {
+            "name": "description",
+            "native_type": "0",
+            "units": null,
+            "representation": "text_lines",
+            "value": []
+          },
+          {
+            "name": "Radiation From",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Emissivity Type",
+            "native_type": "3",
+            "units": null,
+            "value": 2
+          },
+          {
+            "name": "Emissivity Value",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": -777777.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "View Factor",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 1.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "Effective Emissivity",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "0.8",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "Emissivity Type - Bottom",
+            "native_type": "3",
+            "units": null,
+            "value": 2
+          },
+          {
+            "name": "Emissivity Value - Bottom",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": -777777.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "View Factor - Bottom",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 1.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "Effective Emissivity - Bottom",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "Use Same Parameters as Top",
+            "native_type": "2",
+            "units": null,
+            "value": true
+          },
+          {
+            "name": "Emissivity Type - Bottom With Top",
+            "native_type": "3",
+            "units": null,
+            "value": 2
+          },
+          {
+            "name": "Emissivity Value - Bottom With Top",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": -777777.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "View Factor - Bottom With Top",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 1.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "Effective Emissivity - Bottom With Top",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "Temperature Type",
+            "native_type": "3",
+            "units": null,
+            "value": 1
+          },
+          {
+            "name": "Temperature",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "distributionType",
+            "native_type": "3",
+            "units": null,
+            "value": 32
+          }
+        ],
+        "effective_emissivity": 0.8,
+        "emissivity_units": "dimensionless",
+        "temperature_source": "radiative_ambient",
+        "temperature_k": null,
+        "environment_dependency": "native solution ambient; effective value not resolved",
+        "face_count": 1,
+        "solution_membership_verified": true,
+        "provenance": "Assumed effective emissivity; API fixture",
+        "saved": false,
+        "solver_launched": false,
+        "scope": "Simple environment radiation, top-side effective emissivity; not enclosure/view-factor authoring or numerical validation",
+        "operation_id": "radiation-environment-radiative_ambient-r1",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed",
+        "replayed": true
+      },
+      "isError": false
+    },
+    "specified": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"constraint\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_c43b72cfdefa4430820f718cba27e2bc\", \"kind\": \"constraint\", \"name\": \"MCP_ENV_specified\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_a3680f1c0daa498abde919072724451a\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"a3680f1c0daa498abde919072724451a\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-environment-radiation-20260909-r1\\\\benchmark_5a40b73541f4_analysis.sim\", \"journal_id\": \"Constraint[MCP_ENV_specified]\", \"display_name\": \"MCP_ENV_specified\"}, \"faces\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_9439bbbf8166496bb2309878da2b6ad1\", \"kind\": \"face\", \"name\": \"HANDLE R-37406\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_a3680f1c0daa498abde919072724451a\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"a3680f1c0daa498abde919072724451a\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-environment-radiation-20260909-r1\\\\benchmark_5a40b73541f4_analysis.sim\", \"journal_id\": \"HANDLE R-37406\", \"display_name\": \"\"}], \"properties\": [{\"name\": \"description\", \"native_type\": \"0\", \"units\": null, \"representation\": \"text_lines\", \"value\": []}, {\"name\": \"Radiation From\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Emissivity Type\", \"native_type\": \"3\", \"units\": null, \"value\": 2}, {\"name\": \"Emissivity Value\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": -777777.0, \"unit_symbol\": null}, {\"name\": \"View Factor\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": 1.0, \"unit_symbol\": null}, {\"name\": \"Effective Emissivity\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"0.8\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Emissivity Type - Bottom\", \"native_type\": \"3\", \"units\": null, \"value\": 2}, {\"name\": \"Emissivity Value - Bottom\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": -777777.0, \"unit_symbol\": null}, {\"name\": \"View Factor - Bottom\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": 1.0, \"unit_symbol\": null}, {\"name\": \"Effective Emissivity - Bottom\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"-777777\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Use Same Parameters as Top\", \"native_type\": \"2\", \"units\": null, \"value\": true}, {\"name\": \"Emissivity Type - Bottom With Top\", \"native_type\": \"3\", \"units\": null, \"value\": 2}, {\"name\": \"Emissivity Value - Bottom With Top\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": -777777.0, \"unit_symbol\": null}, {\"name\": \"View Factor - Bottom With Top\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": 1.0, \"unit_symbol\": null}, {\"name\": \"Effective Emissivity - Bottom With Top\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"-777777\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Temperature Type\", \"native_type\": \"3\", \"units\": null, \"value\": 2}, {\"name\": \"Temperature\", \"native_type\": \"6\", \"units\": \"Kelvin\", \"expression\": \"293.15\", \"unit_symbol\": \"K\", \"representation\": \"expression\"}, {\"name\": \"distributionType\", \"native_type\": \"3\", \"units\": null, \"value\": 32}], \"effective_emissivity\": 0.8, \"emissivity_units\": \"dimensionless\", \"temperature_source\": \"specified\", \"temperature_k\": 293.15, \"environment_dependency\": \"boundary constant\", \"face_count\": 1, \"solution_membership_verified\": true, \"provenance\": \"Assumed effective emissivity; API fixture\", \"saved\": false, \"solver_launched\": false, \"scope\": \"Simple environment radiation, top-side effective emissivity; not enclosure/view-factor authoring or numerical validation\", \"operation_id\": \"radiation-environment-specified-r1\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "constraint": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_c43b72cfdefa4430820f718cba27e2bc",
+          "kind": "constraint",
+          "name": "MCP_ENV_specified",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_a3680f1c0daa498abde919072724451a",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "a3680f1c0daa498abde919072724451a",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-environment-radiation-20260909-r1\\benchmark_5a40b73541f4_analysis.sim",
+          "journal_id": "Constraint[MCP_ENV_specified]",
+          "display_name": "MCP_ENV_specified"
+        },
+        "faces": [
+          {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_9439bbbf8166496bb2309878da2b6ad1",
+            "kind": "face",
+            "name": "HANDLE R-37406",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_a3680f1c0daa498abde919072724451a",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "a3680f1c0daa498abde919072724451a",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-environment-radiation-20260909-r1\\benchmark_5a40b73541f4_analysis.sim",
+            "journal_id": "HANDLE R-37406",
+            "display_name": ""
+          }
+        ],
+        "properties": [
+          {
+            "name": "description",
+            "native_type": "0",
+            "units": null,
+            "representation": "text_lines",
+            "value": []
+          },
+          {
+            "name": "Radiation From",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Emissivity Type",
+            "native_type": "3",
+            "units": null,
+            "value": 2
+          },
+          {
+            "name": "Emissivity Value",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": -777777.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "View Factor",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 1.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "Effective Emissivity",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "0.8",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "Emissivity Type - Bottom",
+            "native_type": "3",
+            "units": null,
+            "value": 2
+          },
+          {
+            "name": "Emissivity Value - Bottom",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": -777777.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "View Factor - Bottom",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 1.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "Effective Emissivity - Bottom",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "Use Same Parameters as Top",
+            "native_type": "2",
+            "units": null,
+            "value": true
+          },
+          {
+            "name": "Emissivity Type - Bottom With Top",
+            "native_type": "3",
+            "units": null,
+            "value": 2
+          },
+          {
+            "name": "Emissivity Value - Bottom With Top",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": -777777.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "View Factor - Bottom With Top",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 1.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "Effective Emissivity - Bottom With Top",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "Temperature Type",
+            "native_type": "3",
+            "units": null,
+            "value": 2
+          },
+          {
+            "name": "Temperature",
+            "native_type": "6",
+            "units": "Kelvin",
+            "expression": "293.15",
+            "unit_symbol": "K",
+            "representation": "expression"
+          },
+          {
+            "name": "distributionType",
+            "native_type": "3",
+            "units": null,
+            "value": 32
+          }
+        ],
+        "effective_emissivity": 0.8,
+        "emissivity_units": "dimensionless",
+        "temperature_source": "specified",
+        "temperature_k": 293.15,
+        "environment_dependency": "boundary constant",
+        "face_count": 1,
+        "solution_membership_verified": true,
+        "provenance": "Assumed effective emissivity; API fixture",
+        "saved": false,
+        "solver_launched": false,
+        "scope": "Simple environment radiation, top-side effective emissivity; not enclosure/view-factor authoring or numerical validation",
+        "operation_id": "radiation-environment-specified-r1",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed"
+      },
+      "isError": false
+    },
+    "specified_replay": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"constraint\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_c43b72cfdefa4430820f718cba27e2bc\", \"kind\": \"constraint\", \"name\": \"MCP_ENV_specified\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_a3680f1c0daa498abde919072724451a\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"a3680f1c0daa498abde919072724451a\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-environment-radiation-20260909-r1\\\\benchmark_5a40b73541f4_analysis.sim\", \"journal_id\": \"Constraint[MCP_ENV_specified]\", \"display_name\": \"MCP_ENV_specified\"}, \"faces\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_9439bbbf8166496bb2309878da2b6ad1\", \"kind\": \"face\", \"name\": \"HANDLE R-37406\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_a3680f1c0daa498abde919072724451a\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"a3680f1c0daa498abde919072724451a\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-environment-radiation-20260909-r1\\\\benchmark_5a40b73541f4_analysis.sim\", \"journal_id\": \"HANDLE R-37406\", \"display_name\": \"\"}], \"properties\": [{\"name\": \"description\", \"native_type\": \"0\", \"units\": null, \"representation\": \"text_lines\", \"value\": []}, {\"name\": \"Radiation From\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Emissivity Type\", \"native_type\": \"3\", \"units\": null, \"value\": 2}, {\"name\": \"Emissivity Value\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": -777777.0, \"unit_symbol\": null}, {\"name\": \"View Factor\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": 1.0, \"unit_symbol\": null}, {\"name\": \"Effective Emissivity\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"0.8\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Emissivity Type - Bottom\", \"native_type\": \"3\", \"units\": null, \"value\": 2}, {\"name\": \"Emissivity Value - Bottom\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": -777777.0, \"unit_symbol\": null}, {\"name\": \"View Factor - Bottom\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": 1.0, \"unit_symbol\": null}, {\"name\": \"Effective Emissivity - Bottom\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"-777777\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Use Same Parameters as Top\", \"native_type\": \"2\", \"units\": null, \"value\": true}, {\"name\": \"Emissivity Type - Bottom With Top\", \"native_type\": \"3\", \"units\": null, \"value\": 2}, {\"name\": \"Emissivity Value - Bottom With Top\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": -777777.0, \"unit_symbol\": null}, {\"name\": \"View Factor - Bottom With Top\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": 1.0, \"unit_symbol\": null}, {\"name\": \"Effective Emissivity - Bottom With Top\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"-777777\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Temperature Type\", \"native_type\": \"3\", \"units\": null, \"value\": 2}, {\"name\": \"Temperature\", \"native_type\": \"6\", \"units\": \"Kelvin\", \"expression\": \"293.15\", \"unit_symbol\": \"K\", \"representation\": \"expression\"}, {\"name\": \"distributionType\", \"native_type\": \"3\", \"units\": null, \"value\": 32}], \"effective_emissivity\": 0.8, \"emissivity_units\": \"dimensionless\", \"temperature_source\": \"specified\", \"temperature_k\": 293.15, \"environment_dependency\": \"boundary constant\", \"face_count\": 1, \"solution_membership_verified\": true, \"provenance\": \"Assumed effective emissivity; API fixture\", \"saved\": false, \"solver_launched\": false, \"scope\": \"Simple environment radiation, top-side effective emissivity; not enclosure/view-factor authoring or numerical validation\", \"operation_id\": \"radiation-environment-specified-r1\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\", \"replayed\": true}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "constraint": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_c43b72cfdefa4430820f718cba27e2bc",
+          "kind": "constraint",
+          "name": "MCP_ENV_specified",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_a3680f1c0daa498abde919072724451a",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "a3680f1c0daa498abde919072724451a",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-environment-radiation-20260909-r1\\benchmark_5a40b73541f4_analysis.sim",
+          "journal_id": "Constraint[MCP_ENV_specified]",
+          "display_name": "MCP_ENV_specified"
+        },
+        "faces": [
+          {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_9439bbbf8166496bb2309878da2b6ad1",
+            "kind": "face",
+            "name": "HANDLE R-37406",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_a3680f1c0daa498abde919072724451a",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "a3680f1c0daa498abde919072724451a",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-environment-radiation-20260909-r1\\benchmark_5a40b73541f4_analysis.sim",
+            "journal_id": "HANDLE R-37406",
+            "display_name": ""
+          }
+        ],
+        "properties": [
+          {
+            "name": "description",
+            "native_type": "0",
+            "units": null,
+            "representation": "text_lines",
+            "value": []
+          },
+          {
+            "name": "Radiation From",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "Emissivity Type",
+            "native_type": "3",
+            "units": null,
+            "value": 2
+          },
+          {
+            "name": "Emissivity Value",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": -777777.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "View Factor",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 1.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "Effective Emissivity",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "0.8",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "Emissivity Type - Bottom",
+            "native_type": "3",
+            "units": null,
+            "value": 2
+          },
+          {
+            "name": "Emissivity Value - Bottom",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": -777777.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "View Factor - Bottom",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 1.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "Effective Emissivity - Bottom",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "Use Same Parameters as Top",
+            "native_type": "2",
+            "units": null,
+            "value": true
+          },
+          {
+            "name": "Emissivity Type - Bottom With Top",
+            "native_type": "3",
+            "units": null,
+            "value": 2
+          },
+          {
+            "name": "Emissivity Value - Bottom With Top",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": -777777.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "View Factor - Bottom With Top",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 1.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "Effective Emissivity - Bottom With Top",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "Temperature Type",
+            "native_type": "3",
+            "units": null,
+            "value": 2
+          },
+          {
+            "name": "Temperature",
+            "native_type": "6",
+            "units": "Kelvin",
+            "expression": "293.15",
+            "unit_symbol": "K",
+            "representation": "expression"
+          },
+          {
+            "name": "distributionType",
+            "native_type": "3",
+            "units": null,
+            "value": 32
+          }
+        ],
+        "effective_emissivity": 0.8,
+        "emissivity_units": "dimensionless",
+        "temperature_source": "specified",
+        "temperature_k": 293.15,
+        "environment_dependency": "boundary constant",
+        "face_count": 1,
+        "solution_membership_verified": true,
+        "provenance": "Assumed effective emissivity; API fixture",
+        "saved": false,
+        "solver_launched": false,
+        "scope": "Simple environment radiation, top-side effective emissivity; not enclosure/view-factor authoring or numerical validation",
+        "operation_id": "radiation-environment-specified-r1",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed",
+        "replayed": true
+      },
+      "isError": false
+    },
+    "before": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"constraints\": [{\"constraint\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_66cfe39237e94902b0058eda357ef182\", \"kind\": \"constraint\", \"name\": \"MCP_ENV_fluid_ambient\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_a3680f1c0daa498abde919072724451a\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"a3680f1c0daa498abde919072724451a\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-environment-radiation-20260909-r1\\\\benchmark_5a40b73541f4_analysis.sim\", \"journal_id\": \"Constraint[MCP_ENV_fluid_ambient]\", \"display_name\": \"MCP_ENV_fluid_ambient\"}, \"native_type\": \"SimConstraint\", \"target_set_count\": 1, \"provenance\": \"Assumed effective emissivity; API fixture\", \"coefficient_basis\": null, \"energy_accounting\": null, \"overlap_policy\": null, \"properties\": [{\"name\": \"description\", \"native_type\": \"0\", \"units\": null, \"representation\": \"text_lines\", \"value\": []}, {\"name\": \"Radiation From\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Emissivity Type\", \"native_type\": \"3\", \"units\": null, \"value\": 2}, {\"name\": \"Emissivity Value\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": -777777.0, \"unit_symbol\": null}, {\"name\": \"View Factor\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": 1.0, \"unit_symbol\": null}, {\"name\": \"Effective Emissivity\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"0.8\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Emissivity Type - Bottom\", \"native_type\": \"3\", \"units\": null, \"value\": 2}, {\"name\": \"Emissivity Value - Bottom\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": -777777.0, \"unit_symbol\": null}, {\"name\": \"View Factor - Bottom\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": 1.0, \"unit_symbol\": null}, {\"name\": \"Effective Emissivity - Bottom\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"-777777\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Use Same Parameters as Top\", \"native_type\": \"2\", \"units\": null, \"value\": true}, {\"name\": \"Emissivity Type - Bottom With Top\", \"native_type\": \"3\", \"units\": null, \"value\": 2}, {\"name\": \"Emissivity Value - Bottom With Top\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": -777777.0, \"unit_symbol\": null}, {\"name\": \"View Factor - Bottom With Top\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": 1.0, \"unit_symbol\": null}, {\"name\": \"Effective Emissivity - Bottom With Top\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"-777777\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Temperature Type\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Temperature\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"-777777\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"distributionType\", \"native_type\": \"3\", \"units\": null, \"value\": 32}], \"target_sets\": [{\"index\": 0, \"count\": 1, \"native_slot_count\": 1, \"empty_slot_count\": 0, \"members\": [{\"native_type\": \"CAEFace\", \"subtype\": \"0\", \"sub_id\": 0, \"face\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_0bbea45fdb3b4dccad689809e63acea1\", \"kind\": \"face\", \"name\": \"HANDLE R-37374\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_a3680f1c0daa498abde919072724451a\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"a3680f1c0daa498abde919072724451a\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-environment-radiation-20260909-r1\\\\benchmark_5a40b73541f4_analysis.sim\", \"journal_id\": \"HANDLE R-37374\", \"display_name\": \"\"}}], \"truncated\": false}]}, {\"constraint\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_68e7523498a9411595c49c812d03f6eb\", \"kind\": \"constraint\", \"name\": \"MCP_ENV_radiative_ambient\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_a3680f1c0daa498abde919072724451a\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"a3680f1c0daa498abde919072724451a\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-environment-radiation-20260909-r1\\\\benchmark_5a40b73541f4_analysis.sim\", \"journal_id\": \"Constraint[MCP_ENV_radiative_ambient]\", \"display_name\": \"MCP_ENV_radiative_ambient\"}, \"native_type\": \"SimConstraint\", \"target_set_count\": 1, \"provenance\": \"Assumed effective emissivity; API fixture\", \"coefficient_basis\": null, \"energy_accounting\": null, \"overlap_policy\": null, \"properties\": [{\"name\": \"description\", \"native_type\": \"0\", \"units\": null, \"representation\": \"text_lines\", \"value\": []}, {\"name\": \"Radiation From\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Emissivity Type\", \"native_type\": \"3\", \"units\": null, \"value\": 2}, {\"name\": \"Emissivity Value\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": -777777.0, \"unit_symbol\": null}, {\"name\": \"View Factor\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": 1.0, \"unit_symbol\": null}, {\"name\": \"Effective Emissivity\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"0.8\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Emissivity Type - Bottom\", \"native_type\": \"3\", \"units\": null, \"value\": 2}, {\"name\": \"Emissivity Value - Bottom\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": -777777.0, \"unit_symbol\": null}, {\"name\": \"View Factor - Bottom\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": 1.0, \"unit_symbol\": null}, {\"name\": \"Effective Emissivity - Bottom\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"-777777\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Use Same Parameters as Top\", \"native_type\": \"2\", \"units\": null, \"value\": true}, {\"name\": \"Emissivity Type - Bottom With Top\", \"native_type\": \"3\", \"units\": null, \"value\": 2}, {\"name\": \"Emissivity Value - Bottom With Top\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": -777777.0, \"unit_symbol\": null}, {\"name\": \"View Factor - Bottom With Top\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": 1.0, \"unit_symbol\": null}, {\"name\": \"Effective Emissivity - Bottom With Top\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"-777777\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Temperature Type\", \"native_type\": \"3\", \"units\": null, \"value\": 1}, {\"name\": \"Temperature\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"-777777\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"distributionType\", \"native_type\": \"3\", \"units\": null, \"value\": 32}], \"target_sets\": [{\"index\": 0, \"count\": 1, \"native_slot_count\": 1, \"empty_slot_count\": 0, \"members\": [{\"native_type\": \"CAEFace\", \"subtype\": \"0\", \"sub_id\": 0, \"face\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_70b7f1bf070543eab4e22fcb1bf4c45f\", \"kind\": \"face\", \"name\": \"HANDLE R-37390\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_a3680f1c0daa498abde919072724451a\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"a3680f1c0daa498abde919072724451a\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-environment-radiation-20260909-r1\\\\benchmark_5a40b73541f4_analysis.sim\", \"journal_id\": \"HANDLE R-37390\", \"display_name\": \"\"}}], \"truncated\": false}]}, {\"constraint\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_c43b72cfdefa4430820f718cba27e2bc\", \"kind\": \"constraint\", \"name\": \"MCP_ENV_specified\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_a3680f1c0daa498abde919072724451a\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"a3680f1c0daa498abde919072724451a\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-environment-radiation-20260909-r1\\\\benchmark_5a40b73541f4_analysis.sim\", \"journal_id\": \"Constraint[MCP_ENV_specified]\", \"display_name\": \"MCP_ENV_specified\"}, \"native_type\": \"SimConstraint\", \"target_set_count\": 1, \"provenance\": \"Assumed effective emissivity; API fixture\", \"coefficient_basis\": null, \"energy_accounting\": null, \"overlap_policy\": null, \"properties\": [{\"name\": \"description\", \"native_type\": \"0\", \"units\": null, \"representation\": \"text_lines\", \"value\": []}, {\"name\": \"Radiation From\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Emissivity Type\", \"native_type\": \"3\", \"units\": null, \"value\": 2}, {\"name\": \"Emissivity Value\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": -777777.0, \"unit_symbol\": null}, {\"name\": \"View Factor\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": 1.0, \"unit_symbol\": null}, {\"name\": \"Effective Emissivity\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"0.8\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Emissivity Type - Bottom\", \"native_type\": \"3\", \"units\": null, \"value\": 2}, {\"name\": \"Emissivity Value - Bottom\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": -777777.0, \"unit_symbol\": null}, {\"name\": \"View Factor - Bottom\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": 1.0, \"unit_symbol\": null}, {\"name\": \"Effective Emissivity - Bottom\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"-777777\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Use Same Parameters as Top\", \"native_type\": \"2\", \"units\": null, \"value\": true}, {\"name\": \"Emissivity Type - Bottom With Top\", \"native_type\": \"3\", \"units\": null, \"value\": 2}, {\"name\": \"Emissivity Value - Bottom With Top\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": -777777.0, \"unit_symbol\": null}, {\"name\": \"View Factor - Bottom With Top\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": 1.0, \"unit_symbol\": null}, {\"name\": \"Effective Emissivity - Bottom With Top\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"-777777\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Temperature Type\", \"native_type\": \"3\", \"units\": null, \"value\": 2}, {\"name\": \"Temperature\", \"native_type\": \"6\", \"units\": \"Kelvin\", \"expression\": \"293.15\", \"unit_symbol\": \"K\", \"representation\": \"expression\"}, {\"name\": \"distributionType\", \"native_type\": \"3\", \"units\": null, \"value\": 32}], \"target_sets\": [{\"index\": 0, \"count\": 1, \"native_slot_count\": 1, \"empty_slot_count\": 0, \"members\": [{\"native_type\": \"CAEFace\", \"subtype\": \"0\", \"sub_id\": 0, \"face\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_9439bbbf8166496bb2309878da2b6ad1\", \"kind\": \"face\", \"name\": \"HANDLE R-37406\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_a3680f1c0daa498abde919072724451a\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"a3680f1c0daa498abde919072724451a\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-environment-radiation-20260909-r1\\\\benchmark_5a40b73541f4_analysis.sim\", \"journal_id\": \"HANDLE R-37406\", \"display_name\": \"\"}}], \"truncated\": false}]}], \"total\": 3, \"next_offset\": null, \"scope\": \"SIM constraints collection only; other boundary collections are separate\", \"operation_id\": \"op_275d5d0b86314bc7b90bca986fa679d9\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "constraints": [
+          {
+            "constraint": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_66cfe39237e94902b0058eda357ef182",
+              "kind": "constraint",
+              "name": "MCP_ENV_fluid_ambient",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_a3680f1c0daa498abde919072724451a",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "a3680f1c0daa498abde919072724451a",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-environment-radiation-20260909-r1\\benchmark_5a40b73541f4_analysis.sim",
+              "journal_id": "Constraint[MCP_ENV_fluid_ambient]",
+              "display_name": "MCP_ENV_fluid_ambient"
+            },
+            "native_type": "SimConstraint",
+            "target_set_count": 1,
+            "provenance": "Assumed effective emissivity; API fixture",
+            "coefficient_basis": null,
+            "energy_accounting": null,
+            "overlap_policy": null,
+            "properties": [
+              {
+                "name": "description",
+                "native_type": "0",
+                "units": null,
+                "representation": "text_lines",
+                "value": []
+              },
+              {
+                "name": "Radiation From",
+                "native_type": "3",
+                "units": null,
+                "value": 0
+              },
+              {
+                "name": "Emissivity Type",
+                "native_type": "3",
+                "units": null,
+                "value": 2
+              },
+              {
+                "name": "Emissivity Value",
+                "native_type": "4",
+                "units": "dimensionless",
+                "value": -777777.0,
+                "unit_symbol": null
+              },
+              {
+                "name": "View Factor",
+                "native_type": "4",
+                "units": "dimensionless",
+                "value": 1.0,
+                "unit_symbol": null
+              },
+              {
+                "name": "Effective Emissivity",
+                "native_type": "6",
+                "units": "dimensionless",
+                "expression": "0.8",
+                "unit_symbol": null,
+                "representation": "expression"
+              },
+              {
+                "name": "Emissivity Type - Bottom",
+                "native_type": "3",
+                "units": null,
+                "value": 2
+              },
+              {
+                "name": "Emissivity Value - Bottom",
+                "native_type": "4",
+                "units": "dimensionless",
+                "value": -777777.0,
+                "unit_symbol": null
+              },
+              {
+                "name": "View Factor - Bottom",
+                "native_type": "4",
+                "units": "dimensionless",
+                "value": 1.0,
+                "unit_symbol": null
+              },
+              {
+                "name": "Effective Emissivity - Bottom",
+                "native_type": "6",
+                "units": "dimensionless",
+                "expression": "-777777",
+                "unit_symbol": null,
+                "representation": "expression"
+              },
+              {
+                "name": "Use Same Parameters as Top",
+                "native_type": "2",
+                "units": null,
+                "value": true
+              },
+              {
+                "name": "Emissivity Type - Bottom With Top",
+                "native_type": "3",
+                "units": null,
+                "value": 2
+              },
+              {
+                "name": "Emissivity Value - Bottom With Top",
+                "native_type": "4",
+                "units": "dimensionless",
+                "value": -777777.0,
+                "unit_symbol": null
+              },
+              {
+                "name": "View Factor - Bottom With Top",
+                "native_type": "4",
+                "units": "dimensionless",
+                "value": 1.0,
+                "unit_symbol": null
+              },
+              {
+                "name": "Effective Emissivity - Bottom With Top",
+                "native_type": "6",
+                "units": "dimensionless",
+                "expression": "-777777",
+                "unit_symbol": null,
+                "representation": "expression"
+              },
+              {
+                "name": "Temperature Type",
+                "native_type": "3",
+                "units": null,
+                "value": 0
+              },
+              {
+                "name": "Temperature",
+                "native_type": "6",
+                "units": "dimensionless",
+                "expression": "-777777",
+                "unit_symbol": null,
+                "representation": "expression"
+              },
+              {
+                "name": "distributionType",
+                "native_type": "3",
+                "units": null,
+                "value": 32
+              }
+            ],
+            "target_sets": [
+              {
+                "index": 0,
+                "count": 1,
+                "native_slot_count": 1,
+                "empty_slot_count": 0,
+                "members": [
+                  {
+                    "native_type": "CAEFace",
+                    "subtype": "0",
+                    "sub_id": 0,
+                    "face": {
+                      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_0bbea45fdb3b4dccad689809e63acea1",
+                      "kind": "face",
+                      "name": "HANDLE R-37374",
+                      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_a3680f1c0daa498abde919072724451a",
+                      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                      "generation_id": "a3680f1c0daa498abde919072724451a",
+                      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-environment-radiation-20260909-r1\\benchmark_5a40b73541f4_analysis.sim",
+                      "journal_id": "HANDLE R-37374",
+                      "display_name": ""
+                    }
+                  }
+                ],
+                "truncated": false
+              }
+            ]
+          },
+          {
+            "constraint": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_68e7523498a9411595c49c812d03f6eb",
+              "kind": "constraint",
+              "name": "MCP_ENV_radiative_ambient",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_a3680f1c0daa498abde919072724451a",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "a3680f1c0daa498abde919072724451a",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-environment-radiation-20260909-r1\\benchmark_5a40b73541f4_analysis.sim",
+              "journal_id": "Constraint[MCP_ENV_radiative_ambient]",
+              "display_name": "MCP_ENV_radiative_ambient"
+            },
+            "native_type": "SimConstraint",
+            "target_set_count": 1,
+            "provenance": "Assumed effective emissivity; API fixture",
+            "coefficient_basis": null,
+            "energy_accounting": null,
+            "overlap_policy": null,
+            "properties": [
+              {
+                "name": "description",
+                "native_type": "0",
+                "units": null,
+                "representation": "text_lines",
+                "value": []
+              },
+              {
+                "name": "Radiation From",
+                "native_type": "3",
+                "units": null,
+                "value": 0
+              },
+              {
+                "name": "Emissivity Type",
+                "native_type": "3",
+                "units": null,
+                "value": 2
+              },
+              {
+                "name": "Emissivity Value",
+                "native_type": "4",
+                "units": "dimensionless",
+                "value": -777777.0,
+                "unit_symbol": null
+              },
+              {
+                "name": "View Factor",
+                "native_type": "4",
+                "units": "dimensionless",
+                "value": 1.0,
+                "unit_symbol": null
+              },
+              {
+                "name": "Effective Emissivity",
+                "native_type": "6",
+                "units": "dimensionless",
+                "expression": "0.8",
+                "unit_symbol": null,
+                "representation": "expression"
+              },
+              {
+                "name": "Emissivity Type - Bottom",
+                "native_type": "3",
+                "units": null,
+                "value": 2
+              },
+              {
+                "name": "Emissivity Value - Bottom",
+                "native_type": "4",
+                "units": "dimensionless",
+                "value": -777777.0,
+                "unit_symbol": null
+              },
+              {
+                "name": "View Factor - Bottom",
+                "native_type": "4",
+                "units": "dimensionless",
+                "value": 1.0,
+                "unit_symbol": null
+              },
+              {
+                "name": "Effective Emissivity - Bottom",
+                "native_type": "6",
+                "units": "dimensionless",
+                "expression": "-777777",
+                "unit_symbol": null,
+                "representation": "expression"
+              },
+              {
+                "name": "Use Same Parameters as Top",
+                "native_type": "2",
+                "units": null,
+                "value": true
+              },
+              {
+                "name": "Emissivity Type - Bottom With Top",
+                "native_type": "3",
+                "units": null,
+                "value": 2
+              },
+              {
+                "name": "Emissivity Value - Bottom With Top",
+                "native_type": "4",
+                "units": "dimensionless",
+                "value": -777777.0,
+                "unit_symbol": null
+              },
+              {
+                "name": "View Factor - Bottom With Top",
+                "native_type": "4",
+                "units": "dimensionless",
+                "value": 1.0,
+                "unit_symbol": null
+              },
+              {
+                "name": "Effective Emissivity - Bottom With Top",
+                "native_type": "6",
+                "units": "dimensionless",
+                "expression": "-777777",
+                "unit_symbol": null,
+                "representation": "expression"
+              },
+              {
+                "name": "Temperature Type",
+                "native_type": "3",
+                "units": null,
+                "value": 1
+              },
+              {
+                "name": "Temperature",
+                "native_type": "6",
+                "units": "dimensionless",
+                "expression": "-777777",
+                "unit_symbol": null,
+                "representation": "expression"
+              },
+              {
+                "name": "distributionType",
+                "native_type": "3",
+                "units": null,
+                "value": 32
+              }
+            ],
+            "target_sets": [
+              {
+                "index": 0,
+                "count": 1,
+                "native_slot_count": 1,
+                "empty_slot_count": 0,
+                "members": [
+                  {
+                    "native_type": "CAEFace",
+                    "subtype": "0",
+                    "sub_id": 0,
+                    "face": {
+                      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_70b7f1bf070543eab4e22fcb1bf4c45f",
+                      "kind": "face",
+                      "name": "HANDLE R-37390",
+                      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_a3680f1c0daa498abde919072724451a",
+                      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                      "generation_id": "a3680f1c0daa498abde919072724451a",
+                      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-environment-radiation-20260909-r1\\benchmark_5a40b73541f4_analysis.sim",
+                      "journal_id": "HANDLE R-37390",
+                      "display_name": ""
+                    }
+                  }
+                ],
+                "truncated": false
+              }
+            ]
+          },
+          {
+            "constraint": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_c43b72cfdefa4430820f718cba27e2bc",
+              "kind": "constraint",
+              "name": "MCP_ENV_specified",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_a3680f1c0daa498abde919072724451a",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "a3680f1c0daa498abde919072724451a",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-environment-radiation-20260909-r1\\benchmark_5a40b73541f4_analysis.sim",
+              "journal_id": "Constraint[MCP_ENV_specified]",
+              "display_name": "MCP_ENV_specified"
+            },
+            "native_type": "SimConstraint",
+            "target_set_count": 1,
+            "provenance": "Assumed effective emissivity; API fixture",
+            "coefficient_basis": null,
+            "energy_accounting": null,
+            "overlap_policy": null,
+            "properties": [
+              {
+                "name": "description",
+                "native_type": "0",
+                "units": null,
+                "representation": "text_lines",
+                "value": []
+              },
+              {
+                "name": "Radiation From",
+                "native_type": "3",
+                "units": null,
+                "value": 0
+              },
+              {
+                "name": "Emissivity Type",
+                "native_type": "3",
+                "units": null,
+                "value": 2
+              },
+              {
+                "name": "Emissivity Value",
+                "native_type": "4",
+                "units": "dimensionless",
+                "value": -777777.0,
+                "unit_symbol": null
+              },
+              {
+                "name": "View Factor",
+                "native_type": "4",
+                "units": "dimensionless",
+                "value": 1.0,
+                "unit_symbol": null
+              },
+              {
+                "name": "Effective Emissivity",
+                "native_type": "6",
+                "units": "dimensionless",
+                "expression": "0.8",
+                "unit_symbol": null,
+                "representation": "expression"
+              },
+              {
+                "name": "Emissivity Type - Bottom",
+                "native_type": "3",
+                "units": null,
+                "value": 2
+              },
+              {
+                "name": "Emissivity Value - Bottom",
+                "native_type": "4",
+                "units": "dimensionless",
+                "value": -777777.0,
+                "unit_symbol": null
+              },
+              {
+                "name": "View Factor - Bottom",
+                "native_type": "4",
+                "units": "dimensionless",
+                "value": 1.0,
+                "unit_symbol": null
+              },
+              {
+                "name": "Effective Emissivity - Bottom",
+                "native_type": "6",
+                "units": "dimensionless",
+                "expression": "-777777",
+                "unit_symbol": null,
+                "representation": "expression"
+              },
+              {
+                "name": "Use Same Parameters as Top",
+                "native_type": "2",
+                "units": null,
+                "value": true
+              },
+              {
+                "name": "Emissivity Type - Bottom With Top",
+                "native_type": "3",
+                "units": null,
+                "value": 2
+              },
+              {
+                "name": "Emissivity Value - Bottom With Top",
+                "native_type": "4",
+                "units": "dimensionless",
+                "value": -777777.0,
+                "unit_symbol": null
+              },
+              {
+                "name": "View Factor - Bottom With Top",
+                "native_type": "4",
+                "units": "dimensionless",
+                "value": 1.0,
+                "unit_symbol": null
+              },
+              {
+                "name": "Effective Emissivity - Bottom With Top",
+                "native_type": "6",
+                "units": "dimensionless",
+                "expression": "-777777",
+                "unit_symbol": null,
+                "representation": "expression"
+              },
+              {
+                "name": "Temperature Type",
+                "native_type": "3",
+                "units": null,
+                "value": 2
+              },
+              {
+                "name": "Temperature",
+                "native_type": "6",
+                "units": "Kelvin",
+                "expression": "293.15",
+                "unit_symbol": "K",
+                "representation": "expression"
+              },
+              {
+                "name": "distributionType",
+                "native_type": "3",
+                "units": null,
+                "value": 32
+              }
+            ],
+            "target_sets": [
+              {
+                "index": 0,
+                "count": 1,
+                "native_slot_count": 1,
+                "empty_slot_count": 0,
+                "members": [
+                  {
+                    "native_type": "CAEFace",
+                    "subtype": "0",
+                    "sub_id": 0,
+                    "face": {
+                      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_9439bbbf8166496bb2309878da2b6ad1",
+                      "kind": "face",
+                      "name": "HANDLE R-37406",
+                      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_a3680f1c0daa498abde919072724451a",
+                      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                      "generation_id": "a3680f1c0daa498abde919072724451a",
+                      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-environment-radiation-20260909-r1\\benchmark_5a40b73541f4_analysis.sim",
+                      "journal_id": "HANDLE R-37406",
+                      "display_name": ""
+                    }
+                  }
+                ],
+                "truncated": false
+              }
+            ]
+          }
+        ],
+        "total": 3,
+        "next_offset": null,
+        "scope": "SIM constraints collection only; other boundary collections are separate",
+        "operation_id": "op_275d5d0b86314bc7b90bca986fa679d9",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "not_applicable"
+      },
+      "isError": false
+    },
+    "save": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"saved\": true, \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-environment-radiation-20260909-r1\\\\benchmark_5a40b73541f4_analysis.sim\", \"file\": {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-environment-radiation-20260909-r1\\\\benchmark_5a40b73541f4_analysis.sim\", \"bytes\": 7684188, \"sha256\": \"a92b456ae890e8590c66a293386f86a4576c8385132e9717129df24424a8a282\"}, \"previous_file\": {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-environment-radiation-20260909-r1\\\\benchmark_5a40b73541f4_analysis.sim\", \"bytes\": 7641771, \"sha256\": \"291b789dca85c86f47ba229ff9c06fcbf9e246ff4d572f988f6c79360ad2cedc\"}, \"backup_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\simcenter-save-backups\\\\68342cf5659c4dddb36f3edbd601185c\\\\benchmark_5a40b73541f4_analysis.sim\", \"saved_components\": false, \"closed\": false, \"other_modified_flags_unchanged\": true, \"result_freshness\": \"not_verified\", \"operation_id\": \"op_4db8605928bd4c0c8166840f8d271ced\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "saved": true,
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-environment-radiation-20260909-r1\\benchmark_5a40b73541f4_analysis.sim",
+        "file": {
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-environment-radiation-20260909-r1\\benchmark_5a40b73541f4_analysis.sim",
+          "bytes": 7684188,
+          "sha256": "a92b456ae890e8590c66a293386f86a4576c8385132e9717129df24424a8a282"
+        },
+        "previous_file": {
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-environment-radiation-20260909-r1\\benchmark_5a40b73541f4_analysis.sim",
+          "bytes": 7641771,
+          "sha256": "291b789dca85c86f47ba229ff9c06fcbf9e246ff4d572f988f6c79360ad2cedc"
+        },
+        "backup_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-save-backups\\68342cf5659c4dddb36f3edbd601185c\\benchmark_5a40b73541f4_analysis.sim",
+        "saved_components": false,
+        "closed": false,
+        "other_modified_flags_unchanged": true,
+        "result_freshness": "not_verified",
+        "operation_id": "op_4db8605928bd4c0c8166840f8d271ced",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed"
+      },
+      "isError": false
+    },
+    "close": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [\"NX may unload unused dependencies; reacquire document references before continuing\"], \"units\": null, \"closed_parts\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_a175f813d99349e491e1a1b84135558e\", \"kind\": \"part\", \"name\": \"benchmark_5a40b73541f4_analysis\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_a3680f1c0daa498abde919072724451a\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"a3680f1c0daa498abde919072724451a\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-environment-radiation-20260909-r1\\\\benchmark_5a40b73541f4_analysis.sim\", \"journal_id\": \"benchmark_5a40b73541f4_analysis\", \"display_name\": \"benchmark_5a40b73541f4_analysis\"}], \"closed_count\": 1, \"remaining_count\": 151, \"saved\": false, \"discarded_modified_parts\": false, \"work_path\": null, \"display_path\": null, \"operation_id\": \"op_16268450e4154fc7855adde60bfadd35\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [
+          "NX may unload unused dependencies; reacquire document references before continuing"
+        ],
+        "units": null,
+        "closed_parts": [
+          {
+            "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_a175f813d99349e491e1a1b84135558e",
+            "kind": "part",
+            "name": "benchmark_5a40b73541f4_analysis",
+            "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_a3680f1c0daa498abde919072724451a",
+            "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+            "generation_id": "a3680f1c0daa498abde919072724451a",
+            "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-environment-radiation-20260909-r1\\benchmark_5a40b73541f4_analysis.sim",
+            "journal_id": "benchmark_5a40b73541f4_analysis",
+            "display_name": "benchmark_5a40b73541f4_analysis"
+          }
+        ],
+        "closed_count": 1,
+        "remaining_count": 151,
+        "saved": false,
+        "discarded_modified_parts": false,
+        "work_path": null,
+        "display_path": null,
+        "operation_id": "op_16268450e4154fc7855adde60bfadd35",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed"
+      },
+      "isError": false
+    },
+    "stale": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"error\", \"warnings\": [], \"units\": null, \"code\": \"NX_OBJECT_STALE\", \"message\": \"Object reference is not valid: obj_20bc234ffa5249ceb4fb4d82b993c626_a175f813d99349e491e1a1b84135558e\", \"retryable\": false, \"details\": {\"operation_id\": \"op_dadac6bf1f2b490bb83b672014052e2b\", \"mutation_outcome\": \"not_started\"}}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "error",
+        "warnings": [],
+        "units": null,
+        "code": "NX_OBJECT_STALE",
+        "message": "Object reference is not valid: obj_20bc234ffa5249ceb4fb4d82b993c626_a175f813d99349e491e1a1b84135558e",
+        "retryable": false,
+        "details": {
+          "operation_id": "op_dadac6bf1f2b490bb83b672014052e2b",
+          "mutation_outcome": "not_started"
+        }
+      },
+      "isError": true
+    },
+    "reopen": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [\"Document has unsaved native state; inspect and explicitly save approved analysis changes before preparing a solve\"], \"units\": \"mm\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_9292cf1ba56c4142855cd296de2064da\", \"kind\": \"part\", \"name\": \"benchmark_5a40b73541f4_analysis\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_a5f4d00f450d4d6da7ec602c49573c8b\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"a5f4d00f450d4d6da7ec602c49573c8b\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-environment-radiation-20260909-r1\\\\benchmark_5a40b73541f4_analysis.sim\", \"journal_id\": \"benchmark_5a40b73541f4_analysis\", \"display_name\": \"benchmark_5a40b73541f4_analysis\"}, \"coordinate_frame\": \"part_absolute\", \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-environment-radiation-20260909-r1\\\\benchmark_5a40b73541f4_analysis.sim\", \"already_loaded\": false, \"modified_after_native_open\": true, \"modified_before_activation\": true, \"modified\": true, \"fully_loaded\": true, \"load_issues\": [], \"changed_existing_part_flags\": [], \"application\": \"UG_APP_SFEM\", \"work_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-environment-radiation-20260909-r1\\\\benchmark_5a40b73541f4_analysis.sim\", \"display_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-environment-radiation-20260909-r1\\\\benchmark_5a40b73541f4_analysis.sim\", \"saved\": false, \"result_freshness\": \"not_verified\", \"operation_id\": \"op_645503d62c0c4074b37abdd3d9797edd\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [
+          "Document has unsaved native state; inspect and explicitly save approved analysis changes before preparing a solve"
+        ],
+        "units": "mm",
+        "document": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_9292cf1ba56c4142855cd296de2064da",
+          "kind": "part",
+          "name": "benchmark_5a40b73541f4_analysis",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_a5f4d00f450d4d6da7ec602c49573c8b",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "a5f4d00f450d4d6da7ec602c49573c8b",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-environment-radiation-20260909-r1\\benchmark_5a40b73541f4_analysis.sim",
+          "journal_id": "benchmark_5a40b73541f4_analysis",
+          "display_name": "benchmark_5a40b73541f4_analysis"
+        },
+        "coordinate_frame": "part_absolute",
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-environment-radiation-20260909-r1\\benchmark_5a40b73541f4_analysis.sim",
+        "already_loaded": false,
+        "modified_after_native_open": true,
+        "modified_before_activation": true,
+        "modified": true,
+        "fully_loaded": true,
+        "load_issues": [],
+        "changed_existing_part_flags": [],
+        "application": "UG_APP_SFEM",
+        "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-environment-radiation-20260909-r1\\benchmark_5a40b73541f4_analysis.sim",
+        "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-environment-radiation-20260909-r1\\benchmark_5a40b73541f4_analysis.sim",
+        "saved": false,
+        "result_freshness": "not_verified",
+        "operation_id": "op_645503d62c0c4074b37abdd3d9797edd",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed"
+      },
+      "isError": false
+    },
+    "after": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"constraints\": [{\"constraint\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_448d0ce6dca742b08c9c3e57aebf868e\", \"kind\": \"constraint\", \"name\": \"MCP_ENV_fluid_ambient\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_a5f4d00f450d4d6da7ec602c49573c8b\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"a5f4d00f450d4d6da7ec602c49573c8b\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-environment-radiation-20260909-r1\\\\benchmark_5a40b73541f4_analysis.sim\", \"journal_id\": \"Constraint[MCP_ENV_fluid_ambient]\", \"display_name\": \"MCP_ENV_fluid_ambient\"}, \"native_type\": \"SimConstraint\", \"target_set_count\": 1, \"provenance\": \"Assumed effective emissivity; API fixture\", \"coefficient_basis\": null, \"energy_accounting\": null, \"overlap_policy\": null, \"properties\": [{\"name\": \"description\", \"native_type\": \"0\", \"units\": null, \"representation\": \"text_lines\", \"value\": []}, {\"name\": \"Radiation From\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Emissivity Type\", \"native_type\": \"3\", \"units\": null, \"value\": 2}, {\"name\": \"Emissivity Value\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": -777777.0, \"unit_symbol\": null}, {\"name\": \"View Factor\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": 1.0, \"unit_symbol\": null}, {\"name\": \"Effective Emissivity\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"0.8\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Emissivity Type - Bottom\", \"native_type\": \"3\", \"units\": null, \"value\": 2}, {\"name\": \"Emissivity Value - Bottom\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": -777777.0, \"unit_symbol\": null}, {\"name\": \"View Factor - Bottom\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": 1.0, \"unit_symbol\": null}, {\"name\": \"Effective Emissivity - Bottom\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"-777777\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Use Same Parameters as Top\", \"native_type\": \"2\", \"units\": null, \"value\": true}, {\"name\": \"Emissivity Type - Bottom With Top\", \"native_type\": \"3\", \"units\": null, \"value\": 2}, {\"name\": \"Emissivity Value - Bottom With Top\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": -777777.0, \"unit_symbol\": null}, {\"name\": \"View Factor - Bottom With Top\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": 1.0, \"unit_symbol\": null}, {\"name\": \"Effective Emissivity - Bottom With Top\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"-777777\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Temperature Type\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Temperature\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"-777777\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"distributionType\", \"native_type\": \"3\", \"units\": null, \"value\": 32}], \"target_sets\": [{\"index\": 0, \"count\": 1, \"native_slot_count\": 1, \"empty_slot_count\": 0, \"members\": [{\"native_type\": \"CAEFace\", \"subtype\": \"0\", \"sub_id\": 0, \"face\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_cdc5bd8e9fad4bd0b059bb6dfae10ba1\", \"kind\": \"face\", \"name\": \"HANDLE R-37374\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_a5f4d00f450d4d6da7ec602c49573c8b\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"a5f4d00f450d4d6da7ec602c49573c8b\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-environment-radiation-20260909-r1\\\\benchmark_5a40b73541f4_analysis.sim\", \"journal_id\": \"HANDLE R-37374\", \"display_name\": \"\"}}], \"truncated\": false}]}, {\"constraint\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_9ea5d6fdcd514b91abbe1d6cf5d3a6fc\", \"kind\": \"constraint\", \"name\": \"MCP_ENV_radiative_ambient\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_a5f4d00f450d4d6da7ec602c49573c8b\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"a5f4d00f450d4d6da7ec602c49573c8b\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-environment-radiation-20260909-r1\\\\benchmark_5a40b73541f4_analysis.sim\", \"journal_id\": \"Constraint[MCP_ENV_radiative_ambient]\", \"display_name\": \"MCP_ENV_radiative_ambient\"}, \"native_type\": \"SimConstraint\", \"target_set_count\": 1, \"provenance\": \"Assumed effective emissivity; API fixture\", \"coefficient_basis\": null, \"energy_accounting\": null, \"overlap_policy\": null, \"properties\": [{\"name\": \"description\", \"native_type\": \"0\", \"units\": null, \"representation\": \"text_lines\", \"value\": []}, {\"name\": \"Radiation From\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Emissivity Type\", \"native_type\": \"3\", \"units\": null, \"value\": 2}, {\"name\": \"Emissivity Value\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": -777777.0, \"unit_symbol\": null}, {\"name\": \"View Factor\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": 1.0, \"unit_symbol\": null}, {\"name\": \"Effective Emissivity\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"0.8\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Emissivity Type - Bottom\", \"native_type\": \"3\", \"units\": null, \"value\": 2}, {\"name\": \"Emissivity Value - Bottom\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": -777777.0, \"unit_symbol\": null}, {\"name\": \"View Factor - Bottom\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": 1.0, \"unit_symbol\": null}, {\"name\": \"Effective Emissivity - Bottom\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"-777777\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Use Same Parameters as Top\", \"native_type\": \"2\", \"units\": null, \"value\": true}, {\"name\": \"Emissivity Type - Bottom With Top\", \"native_type\": \"3\", \"units\": null, \"value\": 2}, {\"name\": \"Emissivity Value - Bottom With Top\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": -777777.0, \"unit_symbol\": null}, {\"name\": \"View Factor - Bottom With Top\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": 1.0, \"unit_symbol\": null}, {\"name\": \"Effective Emissivity - Bottom With Top\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"-777777\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Temperature Type\", \"native_type\": \"3\", \"units\": null, \"value\": 1}, {\"name\": \"Temperature\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"-777777\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"distributionType\", \"native_type\": \"3\", \"units\": null, \"value\": 32}], \"target_sets\": [{\"index\": 0, \"count\": 1, \"native_slot_count\": 1, \"empty_slot_count\": 0, \"members\": [{\"native_type\": \"CAEFace\", \"subtype\": \"0\", \"sub_id\": 0, \"face\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_16109f03b17d4f1abb7083809e13c7e8\", \"kind\": \"face\", \"name\": \"HANDLE R-37390\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_a5f4d00f450d4d6da7ec602c49573c8b\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"a5f4d00f450d4d6da7ec602c49573c8b\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-environment-radiation-20260909-r1\\\\benchmark_5a40b73541f4_analysis.sim\", \"journal_id\": \"HANDLE R-37390\", \"display_name\": \"\"}}], \"truncated\": false}]}, {\"constraint\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_58e14a049bc0467984f5d961a14039b5\", \"kind\": \"constraint\", \"name\": \"MCP_ENV_specified\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_a5f4d00f450d4d6da7ec602c49573c8b\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"a5f4d00f450d4d6da7ec602c49573c8b\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-environment-radiation-20260909-r1\\\\benchmark_5a40b73541f4_analysis.sim\", \"journal_id\": \"Constraint[MCP_ENV_specified]\", \"display_name\": \"MCP_ENV_specified\"}, \"native_type\": \"SimConstraint\", \"target_set_count\": 1, \"provenance\": \"Assumed effective emissivity; API fixture\", \"coefficient_basis\": null, \"energy_accounting\": null, \"overlap_policy\": null, \"properties\": [{\"name\": \"description\", \"native_type\": \"0\", \"units\": null, \"representation\": \"text_lines\", \"value\": []}, {\"name\": \"Radiation From\", \"native_type\": \"3\", \"units\": null, \"value\": 0}, {\"name\": \"Emissivity Type\", \"native_type\": \"3\", \"units\": null, \"value\": 2}, {\"name\": \"Emissivity Value\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": -777777.0, \"unit_symbol\": null}, {\"name\": \"View Factor\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": 1.0, \"unit_symbol\": null}, {\"name\": \"Effective Emissivity\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"0.8\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Emissivity Type - Bottom\", \"native_type\": \"3\", \"units\": null, \"value\": 2}, {\"name\": \"Emissivity Value - Bottom\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": -777777.0, \"unit_symbol\": null}, {\"name\": \"View Factor - Bottom\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": 1.0, \"unit_symbol\": null}, {\"name\": \"Effective Emissivity - Bottom\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"-777777\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Use Same Parameters as Top\", \"native_type\": \"2\", \"units\": null, \"value\": true}, {\"name\": \"Emissivity Type - Bottom With Top\", \"native_type\": \"3\", \"units\": null, \"value\": 2}, {\"name\": \"Emissivity Value - Bottom With Top\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": -777777.0, \"unit_symbol\": null}, {\"name\": \"View Factor - Bottom With Top\", \"native_type\": \"4\", \"units\": \"dimensionless\", \"value\": 1.0, \"unit_symbol\": null}, {\"name\": \"Effective Emissivity - Bottom With Top\", \"native_type\": \"6\", \"units\": \"dimensionless\", \"expression\": \"-777777\", \"unit_symbol\": null, \"representation\": \"expression\"}, {\"name\": \"Temperature Type\", \"native_type\": \"3\", \"units\": null, \"value\": 2}, {\"name\": \"Temperature\", \"native_type\": \"6\", \"units\": \"Kelvin\", \"expression\": \"293.15\", \"unit_symbol\": \"K\", \"representation\": \"expression\"}, {\"name\": \"distributionType\", \"native_type\": \"3\", \"units\": null, \"value\": 32}], \"target_sets\": [{\"index\": 0, \"count\": 1, \"native_slot_count\": 1, \"empty_slot_count\": 0, \"members\": [{\"native_type\": \"CAEFace\", \"subtype\": \"0\", \"sub_id\": 0, \"face\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_57d8ebee53924dd592516b9040f1ce4f\", \"kind\": \"face\", \"name\": \"HANDLE R-37406\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_a5f4d00f450d4d6da7ec602c49573c8b\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"a5f4d00f450d4d6da7ec602c49573c8b\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-environment-radiation-20260909-r1\\\\benchmark_5a40b73541f4_analysis.sim\", \"journal_id\": \"HANDLE R-37406\", \"display_name\": \"\"}}], \"truncated\": false}]}], \"total\": 3, \"next_offset\": null, \"scope\": \"SIM constraints collection only; other boundary collections are separate\", \"operation_id\": \"op_b16addf8a0ab4095a3866e220bd07b5c\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "constraints": [
+          {
+            "constraint": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_448d0ce6dca742b08c9c3e57aebf868e",
+              "kind": "constraint",
+              "name": "MCP_ENV_fluid_ambient",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_a5f4d00f450d4d6da7ec602c49573c8b",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "a5f4d00f450d4d6da7ec602c49573c8b",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-environment-radiation-20260909-r1\\benchmark_5a40b73541f4_analysis.sim",
+              "journal_id": "Constraint[MCP_ENV_fluid_ambient]",
+              "display_name": "MCP_ENV_fluid_ambient"
+            },
+            "native_type": "SimConstraint",
+            "target_set_count": 1,
+            "provenance": "Assumed effective emissivity; API fixture",
+            "coefficient_basis": null,
+            "energy_accounting": null,
+            "overlap_policy": null,
+            "properties": [
+              {
+                "name": "description",
+                "native_type": "0",
+                "units": null,
+                "representation": "text_lines",
+                "value": []
+              },
+              {
+                "name": "Radiation From",
+                "native_type": "3",
+                "units": null,
+                "value": 0
+              },
+              {
+                "name": "Emissivity Type",
+                "native_type": "3",
+                "units": null,
+                "value": 2
+              },
+              {
+                "name": "Emissivity Value",
+                "native_type": "4",
+                "units": "dimensionless",
+                "value": -777777.0,
+                "unit_symbol": null
+              },
+              {
+                "name": "View Factor",
+                "native_type": "4",
+                "units": "dimensionless",
+                "value": 1.0,
+                "unit_symbol": null
+              },
+              {
+                "name": "Effective Emissivity",
+                "native_type": "6",
+                "units": "dimensionless",
+                "expression": "0.8",
+                "unit_symbol": null,
+                "representation": "expression"
+              },
+              {
+                "name": "Emissivity Type - Bottom",
+                "native_type": "3",
+                "units": null,
+                "value": 2
+              },
+              {
+                "name": "Emissivity Value - Bottom",
+                "native_type": "4",
+                "units": "dimensionless",
+                "value": -777777.0,
+                "unit_symbol": null
+              },
+              {
+                "name": "View Factor - Bottom",
+                "native_type": "4",
+                "units": "dimensionless",
+                "value": 1.0,
+                "unit_symbol": null
+              },
+              {
+                "name": "Effective Emissivity - Bottom",
+                "native_type": "6",
+                "units": "dimensionless",
+                "expression": "-777777",
+                "unit_symbol": null,
+                "representation": "expression"
+              },
+              {
+                "name": "Use Same Parameters as Top",
+                "native_type": "2",
+                "units": null,
+                "value": true
+              },
+              {
+                "name": "Emissivity Type - Bottom With Top",
+                "native_type": "3",
+                "units": null,
+                "value": 2
+              },
+              {
+                "name": "Emissivity Value - Bottom With Top",
+                "native_type": "4",
+                "units": "dimensionless",
+                "value": -777777.0,
+                "unit_symbol": null
+              },
+              {
+                "name": "View Factor - Bottom With Top",
+                "native_type": "4",
+                "units": "dimensionless",
+                "value": 1.0,
+                "unit_symbol": null
+              },
+              {
+                "name": "Effective Emissivity - Bottom With Top",
+                "native_type": "6",
+                "units": "dimensionless",
+                "expression": "-777777",
+                "unit_symbol": null,
+                "representation": "expression"
+              },
+              {
+                "name": "Temperature Type",
+                "native_type": "3",
+                "units": null,
+                "value": 0
+              },
+              {
+                "name": "Temperature",
+                "native_type": "6",
+                "units": "dimensionless",
+                "expression": "-777777",
+                "unit_symbol": null,
+                "representation": "expression"
+              },
+              {
+                "name": "distributionType",
+                "native_type": "3",
+                "units": null,
+                "value": 32
+              }
+            ],
+            "target_sets": [
+              {
+                "index": 0,
+                "count": 1,
+                "native_slot_count": 1,
+                "empty_slot_count": 0,
+                "members": [
+                  {
+                    "native_type": "CAEFace",
+                    "subtype": "0",
+                    "sub_id": 0,
+                    "face": {
+                      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_cdc5bd8e9fad4bd0b059bb6dfae10ba1",
+                      "kind": "face",
+                      "name": "HANDLE R-37374",
+                      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_a5f4d00f450d4d6da7ec602c49573c8b",
+                      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                      "generation_id": "a5f4d00f450d4d6da7ec602c49573c8b",
+                      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-environment-radiation-20260909-r1\\benchmark_5a40b73541f4_analysis.sim",
+                      "journal_id": "HANDLE R-37374",
+                      "display_name": ""
+                    }
+                  }
+                ],
+                "truncated": false
+              }
+            ]
+          },
+          {
+            "constraint": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_9ea5d6fdcd514b91abbe1d6cf5d3a6fc",
+              "kind": "constraint",
+              "name": "MCP_ENV_radiative_ambient",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_a5f4d00f450d4d6da7ec602c49573c8b",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "a5f4d00f450d4d6da7ec602c49573c8b",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-environment-radiation-20260909-r1\\benchmark_5a40b73541f4_analysis.sim",
+              "journal_id": "Constraint[MCP_ENV_radiative_ambient]",
+              "display_name": "MCP_ENV_radiative_ambient"
+            },
+            "native_type": "SimConstraint",
+            "target_set_count": 1,
+            "provenance": "Assumed effective emissivity; API fixture",
+            "coefficient_basis": null,
+            "energy_accounting": null,
+            "overlap_policy": null,
+            "properties": [
+              {
+                "name": "description",
+                "native_type": "0",
+                "units": null,
+                "representation": "text_lines",
+                "value": []
+              },
+              {
+                "name": "Radiation From",
+                "native_type": "3",
+                "units": null,
+                "value": 0
+              },
+              {
+                "name": "Emissivity Type",
+                "native_type": "3",
+                "units": null,
+                "value": 2
+              },
+              {
+                "name": "Emissivity Value",
+                "native_type": "4",
+                "units": "dimensionless",
+                "value": -777777.0,
+                "unit_symbol": null
+              },
+              {
+                "name": "View Factor",
+                "native_type": "4",
+                "units": "dimensionless",
+                "value": 1.0,
+                "unit_symbol": null
+              },
+              {
+                "name": "Effective Emissivity",
+                "native_type": "6",
+                "units": "dimensionless",
+                "expression": "0.8",
+                "unit_symbol": null,
+                "representation": "expression"
+              },
+              {
+                "name": "Emissivity Type - Bottom",
+                "native_type": "3",
+                "units": null,
+                "value": 2
+              },
+              {
+                "name": "Emissivity Value - Bottom",
+                "native_type": "4",
+                "units": "dimensionless",
+                "value": -777777.0,
+                "unit_symbol": null
+              },
+              {
+                "name": "View Factor - Bottom",
+                "native_type": "4",
+                "units": "dimensionless",
+                "value": 1.0,
+                "unit_symbol": null
+              },
+              {
+                "name": "Effective Emissivity - Bottom",
+                "native_type": "6",
+                "units": "dimensionless",
+                "expression": "-777777",
+                "unit_symbol": null,
+                "representation": "expression"
+              },
+              {
+                "name": "Use Same Parameters as Top",
+                "native_type": "2",
+                "units": null,
+                "value": true
+              },
+              {
+                "name": "Emissivity Type - Bottom With Top",
+                "native_type": "3",
+                "units": null,
+                "value": 2
+              },
+              {
+                "name": "Emissivity Value - Bottom With Top",
+                "native_type": "4",
+                "units": "dimensionless",
+                "value": -777777.0,
+                "unit_symbol": null
+              },
+              {
+                "name": "View Factor - Bottom With Top",
+                "native_type": "4",
+                "units": "dimensionless",
+                "value": 1.0,
+                "unit_symbol": null
+              },
+              {
+                "name": "Effective Emissivity - Bottom With Top",
+                "native_type": "6",
+                "units": "dimensionless",
+                "expression": "-777777",
+                "unit_symbol": null,
+                "representation": "expression"
+              },
+              {
+                "name": "Temperature Type",
+                "native_type": "3",
+                "units": null,
+                "value": 1
+              },
+              {
+                "name": "Temperature",
+                "native_type": "6",
+                "units": "dimensionless",
+                "expression": "-777777",
+                "unit_symbol": null,
+                "representation": "expression"
+              },
+              {
+                "name": "distributionType",
+                "native_type": "3",
+                "units": null,
+                "value": 32
+              }
+            ],
+            "target_sets": [
+              {
+                "index": 0,
+                "count": 1,
+                "native_slot_count": 1,
+                "empty_slot_count": 0,
+                "members": [
+                  {
+                    "native_type": "CAEFace",
+                    "subtype": "0",
+                    "sub_id": 0,
+                    "face": {
+                      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_16109f03b17d4f1abb7083809e13c7e8",
+                      "kind": "face",
+                      "name": "HANDLE R-37390",
+                      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_a5f4d00f450d4d6da7ec602c49573c8b",
+                      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                      "generation_id": "a5f4d00f450d4d6da7ec602c49573c8b",
+                      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-environment-radiation-20260909-r1\\benchmark_5a40b73541f4_analysis.sim",
+                      "journal_id": "HANDLE R-37390",
+                      "display_name": ""
+                    }
+                  }
+                ],
+                "truncated": false
+              }
+            ]
+          },
+          {
+            "constraint": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_58e14a049bc0467984f5d961a14039b5",
+              "kind": "constraint",
+              "name": "MCP_ENV_specified",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_a5f4d00f450d4d6da7ec602c49573c8b",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "a5f4d00f450d4d6da7ec602c49573c8b",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-environment-radiation-20260909-r1\\benchmark_5a40b73541f4_analysis.sim",
+              "journal_id": "Constraint[MCP_ENV_specified]",
+              "display_name": "MCP_ENV_specified"
+            },
+            "native_type": "SimConstraint",
+            "target_set_count": 1,
+            "provenance": "Assumed effective emissivity; API fixture",
+            "coefficient_basis": null,
+            "energy_accounting": null,
+            "overlap_policy": null,
+            "properties": [
+              {
+                "name": "description",
+                "native_type": "0",
+                "units": null,
+                "representation": "text_lines",
+                "value": []
+              },
+              {
+                "name": "Radiation From",
+                "native_type": "3",
+                "units": null,
+                "value": 0
+              },
+              {
+                "name": "Emissivity Type",
+                "native_type": "3",
+                "units": null,
+                "value": 2
+              },
+              {
+                "name": "Emissivity Value",
+                "native_type": "4",
+                "units": "dimensionless",
+                "value": -777777.0,
+                "unit_symbol": null
+              },
+              {
+                "name": "View Factor",
+                "native_type": "4",
+                "units": "dimensionless",
+                "value": 1.0,
+                "unit_symbol": null
+              },
+              {
+                "name": "Effective Emissivity",
+                "native_type": "6",
+                "units": "dimensionless",
+                "expression": "0.8",
+                "unit_symbol": null,
+                "representation": "expression"
+              },
+              {
+                "name": "Emissivity Type - Bottom",
+                "native_type": "3",
+                "units": null,
+                "value": 2
+              },
+              {
+                "name": "Emissivity Value - Bottom",
+                "native_type": "4",
+                "units": "dimensionless",
+                "value": -777777.0,
+                "unit_symbol": null
+              },
+              {
+                "name": "View Factor - Bottom",
+                "native_type": "4",
+                "units": "dimensionless",
+                "value": 1.0,
+                "unit_symbol": null
+              },
+              {
+                "name": "Effective Emissivity - Bottom",
+                "native_type": "6",
+                "units": "dimensionless",
+                "expression": "-777777",
+                "unit_symbol": null,
+                "representation": "expression"
+              },
+              {
+                "name": "Use Same Parameters as Top",
+                "native_type": "2",
+                "units": null,
+                "value": true
+              },
+              {
+                "name": "Emissivity Type - Bottom With Top",
+                "native_type": "3",
+                "units": null,
+                "value": 2
+              },
+              {
+                "name": "Emissivity Value - Bottom With Top",
+                "native_type": "4",
+                "units": "dimensionless",
+                "value": -777777.0,
+                "unit_symbol": null
+              },
+              {
+                "name": "View Factor - Bottom With Top",
+                "native_type": "4",
+                "units": "dimensionless",
+                "value": 1.0,
+                "unit_symbol": null
+              },
+              {
+                "name": "Effective Emissivity - Bottom With Top",
+                "native_type": "6",
+                "units": "dimensionless",
+                "expression": "-777777",
+                "unit_symbol": null,
+                "representation": "expression"
+              },
+              {
+                "name": "Temperature Type",
+                "native_type": "3",
+                "units": null,
+                "value": 2
+              },
+              {
+                "name": "Temperature",
+                "native_type": "6",
+                "units": "Kelvin",
+                "expression": "293.15",
+                "unit_symbol": "K",
+                "representation": "expression"
+              },
+              {
+                "name": "distributionType",
+                "native_type": "3",
+                "units": null,
+                "value": 32
+              }
+            ],
+            "target_sets": [
+              {
+                "index": 0,
+                "count": 1,
+                "native_slot_count": 1,
+                "empty_slot_count": 0,
+                "members": [
+                  {
+                    "native_type": "CAEFace",
+                    "subtype": "0",
+                    "sub_id": 0,
+                    "face": {
+                      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_57d8ebee53924dd592516b9040f1ce4f",
+                      "kind": "face",
+                      "name": "HANDLE R-37406",
+                      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_a5f4d00f450d4d6da7ec602c49573c8b",
+                      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                      "generation_id": "a5f4d00f450d4d6da7ec602c49573c8b",
+                      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-environment-radiation-20260909-r1\\benchmark_5a40b73541f4_analysis.sim",
+                      "journal_id": "HANDLE R-37406",
+                      "display_name": ""
+                    }
+                  }
+                ],
+                "truncated": false
+              }
+            ]
+          }
+        ],
+        "total": 3,
+        "next_offset": null,
+        "scope": "SIM constraints collection only; other boundary collections are separate",
+        "operation_id": "op_b16addf8a0ab4095a3866e220bd07b5c",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "not_applicable"
+      },
+      "isError": false
+    },
+    "export_copy": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_56a697593a0b45038cb3e807c1dddee0\", \"kind\": \"part\", \"name\": \"radiation_environment_r1\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_a5f4d00f450d4d6da7ec602c49573c8b\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"a5f4d00f450d4d6da7ec602c49573c8b\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-radiation-environment-export-20260909-r1\\\\radiation_environment_r1.sim\", \"journal_id\": \"radiation_environment_r1\", \"display_name\": \"radiation_environment_r1\"}, \"source\": {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-environment-radiation-20260909-r1\\\\benchmark_5a40b73541f4_analysis.sim\", \"bytes\": 7684188, \"sha256\": \"a92b456ae890e8590c66a293386f86a4576c8385132e9717129df24424a8a282\"}, \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-radiation-environment-export-20260909-r1\\\\radiation_environment_r1.sim\", \"source_file_unchanged\": true, \"work_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-radiation-environment-export-20260909-r1\\\\radiation_environment_r1.sim\", \"display_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-radiation-environment-export-20260909-r1\\\\radiation_environment_r1.sim\", \"shared_fem_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-environment-radiation-20260909-r1\\\\benchmark_5a40b73541f4_mesh.fem\", \"independent_geometry_variant\": false, \"saved\": true, \"result_freshness\": \"not_verified\", \"next_step\": \"Reacquire document IDs. Duplicate and reassociate FEM/CAD before changing shared geometry or mesh.\", \"operation_id\": \"op_7e01a83156424f758fd12633e64c1d1c\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "document": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_56a697593a0b45038cb3e807c1dddee0",
+          "kind": "part",
+          "name": "radiation_environment_r1",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_a5f4d00f450d4d6da7ec602c49573c8b",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "a5f4d00f450d4d6da7ec602c49573c8b",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-radiation-environment-export-20260909-r1\\radiation_environment_r1.sim",
+          "journal_id": "radiation_environment_r1",
+          "display_name": "radiation_environment_r1"
+        },
+        "source": {
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-environment-radiation-20260909-r1\\benchmark_5a40b73541f4_analysis.sim",
+          "bytes": 7684188,
+          "sha256": "a92b456ae890e8590c66a293386f86a4576c8385132e9717129df24424a8a282"
+        },
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-radiation-environment-export-20260909-r1\\radiation_environment_r1.sim",
+        "source_file_unchanged": true,
+        "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-radiation-environment-export-20260909-r1\\radiation_environment_r1.sim",
+        "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-radiation-environment-export-20260909-r1\\radiation_environment_r1.sim",
+        "shared_fem_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-environment-radiation-20260909-r1\\benchmark_5a40b73541f4_mesh.fem",
+        "independent_geometry_variant": false,
+        "saved": true,
+        "result_freshness": "not_verified",
+        "next_step": "Reacquire document IDs. Duplicate and reassociate FEM/CAD before changing shared geometry or mesh.",
+        "operation_id": "op_7e01a83156424f758fd12633e64c1d1c",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed"
+      },
+      "isError": false
+    },
+    "export": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"input_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-radiation-environment-export-20260909-r1\\\\radiation_environment_r1-Conduction.xml\", \"input_identity\": {\"sha256\": \"5a210749269a24c41626614b271d184e3ffe2ffdf04353fc120bababf3da72d9\", \"xml_content_sha256\": \"f3a6698f1798d049f82f52a6347d81175edebe083370b0ccb0f3922540fa1a56\", \"bytes\": 41054, \"canonicalization\": \"xml_c14n2_no_comments\"}, \"validation\": {\"state\": \"well_formed\", \"step_definitions\": 1, \"mesh_counts\": {\"elements\": 100, \"nodes\": 45, \"element_sets\": 1, \"scope\": \"observed_multiphysics_xml_layout\"}, \"solve_readiness\": \"not_established\"}, \"coupled_ambient_validation\": null, \"coupled_pressure_validation\": null, \"artifacts\": [{\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-radiation-environment-export-20260909-r1\\\\radiation_environment_r1-Conduction.map\", \"bytes\": 18570}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-radiation-environment-export-20260909-r1\\\\radiation_environment_r1-Conduction.xml\", \"bytes\": 41054}], \"translator_reports\": [], \"solver\": \"NX MULTIPHYSICS\", \"analysis_type\": \"Thermal\", \"solution\": \"Conduction\", \"source_sim\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\R-radiation-environment-export-20260909-r1\\\\radiation_environment_r1.sim\", \"source_modified\": false, \"solver_launched\": false, \"solve_readiness\": \"not_established\", \"scope\": \"Native thermal/flow input export, not a solve or convergence check\", \"operation_id\": \"op_fa4cd6cdb8d54b23b818ff8a7075fbd5\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "input_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-radiation-environment-export-20260909-r1\\radiation_environment_r1-Conduction.xml",
+        "input_identity": {
+          "sha256": "5a210749269a24c41626614b271d184e3ffe2ffdf04353fc120bababf3da72d9",
+          "xml_content_sha256": "f3a6698f1798d049f82f52a6347d81175edebe083370b0ccb0f3922540fa1a56",
+          "bytes": 41054,
+          "canonicalization": "xml_c14n2_no_comments"
+        },
+        "validation": {
+          "state": "well_formed",
+          "step_definitions": 1,
+          "mesh_counts": {
+            "elements": 100,
+            "nodes": 45,
+            "element_sets": 1,
+            "scope": "observed_multiphysics_xml_layout"
+          },
+          "solve_readiness": "not_established"
+        },
+        "coupled_ambient_validation": null,
+        "coupled_pressure_validation": null,
+        "artifacts": [
+          {
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-radiation-environment-export-20260909-r1\\radiation_environment_r1-Conduction.map",
+            "bytes": 18570
+          },
+          {
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-radiation-environment-export-20260909-r1\\radiation_environment_r1-Conduction.xml",
+            "bytes": 41054
+          }
+        ],
+        "translator_reports": [],
+        "solver": "NX MULTIPHYSICS",
+        "analysis_type": "Thermal",
+        "solution": "Conduction",
+        "source_sim": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-radiation-environment-export-20260909-r1\\radiation_environment_r1.sim",
+        "source_modified": false,
+        "solver_launched": false,
+        "solve_readiness": "not_established",
+        "scope": "Native thermal/flow input export, not a solve or convergence check",
+        "operation_id": "op_fa4cd6cdb8d54b23b818ff8a7075fbd5",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed"
+      },
+      "isError": false
+    }
+  },
+  "schema": {
+    "name": "nx_sim_environment_radiation",
+    "title": null,
+    "description": "Create native Simple Environment Radiation on 1..1000 distinct SIM face IDs. Requires active NX MULTIPHYSICS Thermal. effective_emissivity is a dimensionless constant in [0,1], not an optical material assignment. Uses top-side effective-emissivity mode; shell-side and enclosure/view-factor options are not provided. temperature_source selects fluid/radiative ambient or specified; only specified accepts a finite nonnegative temperature_k in Kelvin. Ambient effective values are not resolved here. Returns actual selectors, expressions/units, typed constraint, face and solution membership readback and provenance. Nonempty name/provenance required. Visible undo with verified creation rollback; does not save, solve or certify heat transfer. Reacquire face IDs after geometry/mesh/session changes. Supply operation_id for replay deduplication.",
+    "inputSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "document": {
+          "title": "Document",
+          "type": "string"
+        },
+        "faces": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Faces",
+          "type": "array"
+        },
+        "effective_emissivity": {
+          "title": "Effective Emissivity",
+          "type": "number"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "provenance": {
+          "title": "Provenance",
+          "type": "string"
+        },
+        "temperature_source": {
+          "default": "radiative_ambient",
+          "enum": [
+            "fluid_ambient",
+            "radiative_ambient",
+            "specified"
+          ],
+          "title": "Temperature Source",
+          "type": "string"
+        },
+        "temperature_k": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Temperature K"
+        },
+        "operation_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Operation Id"
+        }
+      },
+      "required": [
+        "document",
+        "faces",
+        "effective_emissivity",
+        "name",
+        "provenance"
+      ],
+      "title": "nx_sim_environment_radiationArguments",
+      "type": "object"
+    },
+    "outputSchema": {
+      "additionalProperties": true,
+      "description": "Structured success/error envelope with additive metadata. Tool-specific payload remains extensible.",
+      "properties": {
+        "status": {
+          "enum": [
+            "success",
+            "error"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "warnings": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Warnings",
+          "type": "array"
+        },
+        "units": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Units"
+        },
+        "operation_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Operation Id"
+        },
+        "mutation_outcome": {
+          "anyOf": [
+            {
+              "enum": [
+                "not_started",
+                "running",
+                "committed",
+                "rolled_back",
+                "partial",
+                "unknown",
+                "not_applicable"
+              ]
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "full_result": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "sha256": {
+              "type": "string"
+            },
+            "size": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "tool": {
+              "const": "nx_read_result"
+            },
+            "immutable": {
+              "const": true
+            }
+          },
+          "required": [
+            "id",
+            "sha256",
+            "size",
+            "tool",
+            "immutable"
+          ],
+          "additionalProperties": true
+        },
+        "omitted": {
+          "type": "object"
+        },
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "retryable": {
+          "type": "boolean"
+        },
+        "suggestion": {
+          "type": "string"
+        },
+        "nx_code": {
+          "type": [
+            "integer",
+            "string"
+          ]
+        },
+        "details": {
+          "type": "object",
+          "properties": {
+            "operation_id": {
+              "type": "string"
+            },
+            "mutation_outcome": {
+              "enum": [
+                "not_started",
+                "running",
+                "committed",
+                "rolled_back",
+                "partial",
+                "unknown",
+                "not_applicable"
+              ]
+            }
+          },
+          "required": [],
+          "additionalProperties": true
+        }
+      },
+      "required": [
+        "status",
+        "warnings",
+        "units"
+      ],
+      "title": "nx_sim_environment_radiation result",
+      "type": "object",
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "error"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "code",
+              "message",
+              "retryable"
+            ]
+          }
+        }
+      ]
+    },
+    "icons": null,
+    "annotations": {
+      "title": null,
+      "readOnlyHint": false,
+      "destructiveHint": null,
+      "idempotentHint": false,
+      "openWorldHint": null
+    },
+    "meta": null,
+    "execution": null
+  },
+  "passed": true,
+  "document": "obj_20bc234ffa5249ceb4fb4d82b993c626_56a697593a0b45038cb3e807c1dddee0",
+  "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\R-radiation-environment-export-20260909-r1\\radiation_environment_r1.sim",
+  "solver_launched": false,
+  "scope": "Public authoring/replay, native selector/value/target persistence and export; exported value audit separate"
+}

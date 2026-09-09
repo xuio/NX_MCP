@@ -1179,6 +1179,49 @@ class SimcenterMixin:
             **result,
         }
 
+    def _sim_environment_radiation(
+        self,
+        document,
+        faces,
+        effective_emissivity,
+        name,
+        provenance,
+        temperature_source="radiative_ambient",
+        temperature_k=None,
+    ):
+        from nx_mcp.simcenter.radiation import create_environment
+
+        sim = self.objects.resolve(document, expected_kind="part")
+        if not hasattr(sim, "Simulation"):
+            raise NXToolError("NX_SIM_DOCUMENT_TYPE", "Select a SIM document")
+        if (
+            not isinstance(faces, list)
+            or not 1 <= len(faces) <= 1000
+            or len(set(faces)) != len(faces)
+        ):
+            raise NXToolError(
+                "NX_INVALID_ARGUMENT",
+                "Supply 1..1000 distinct SIM face IDs",
+                details={"mutation_outcome": "not_started"},
+            )
+        targets = [self.objects.resolve(face, expected_kind="face") for face in faces]
+        result = create_environment(
+            self.session,
+            sim,
+            targets,
+            effective_emissivity,
+            name,
+            provenance,
+            temperature_source,
+            temperature_k,
+        )
+        boundary = result.pop("boundary")
+        return {
+            "constraint": self._reference(boundary, "constraint", sim, "radiation"),
+            "faces": [self._reference(face, "face", sim, "face") for face in targets],
+            **result,
+        }
+
     def _sim_convection(
         self,
         document,
