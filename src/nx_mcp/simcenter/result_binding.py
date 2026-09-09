@@ -23,7 +23,15 @@ def require_job_owner(workspace, job, *, path, solution, solver, analysis):
 
 
 def audit_job_result(
-    workspace, job, dependencies, result_files, *, maximum_bytes, live_thermal_state=None
+    workspace,
+    job,
+    dependencies,
+    result_files,
+    *,
+    maximum_bytes,
+    live_thermal_state=None,
+    live_mesh_state=None,
+    mesh_inspection_error=None,
 ):
     evidence = job.get("record", {}).get("evidence", {})
     manifest = job.get("manifest", {})
@@ -51,8 +59,18 @@ def audit_job_result(
         )
     if not revision["revision_matches"]:
         reasons.append("current_saved_revision_not_verified_against_prepared_revision")
+    from nx_mcp.simcenter.mesh_state import compare as compare_mesh
     from nx_mcp.simcenter.thermal_state import compare_thermal_state
 
+    mesh = compare_mesh(manifest.get("live_mesh_state"), live_mesh_state)
+    if mesh_inspection_error is not None:
+        mesh = {
+            "state": "not_verified",
+            "reason": "live_mesh_inspection_failed",
+            "error": mesh_inspection_error,
+        }
+    if mesh["state"] != "matches":
+        reasons.append(mesh.get("reason", "live_mesh_changed"))
     thermal = compare_thermal_state(manifest.get("live_thermal_state"), live_thermal_state)
     if manifest.get("analysis_type") == "Thermal" and thermal["state"] != "matches":
         reasons.append(thermal["reason"])
@@ -64,8 +82,11 @@ def audit_job_result(
         "revision": revision,
         "reasons": reasons,
         "live_thermal_state": thermal,
-        "model_result_freshness": "stale" if thermal["state"] == "changed" else "not_verified",
+        "live_mesh_state": mesh,
+        "model_result_freshness": "stale"
+        if "changed" in (thermal["state"], mesh["state"])
+        else "not_verified",
         "engineering_accepted": False,
-        "scope": "Exact analysis/solution ownership, observed result artifact and supplied pre-solve file revisions; numerical validation and dependency completeness remain separate",
+        "scope": "Exact analysis/solution ownership, observed result artifact, supplied pre-solve file revisions and recorded labelled mesh snapshot; numerical validation and dependency completeness remain separate",
         "revision_note": "Native solve/save may change SIM metadata; a file mismatch does not by itself identify a physics change",
     }

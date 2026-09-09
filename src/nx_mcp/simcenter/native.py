@@ -2530,6 +2530,18 @@ class SimcenterMixin:
                     "NX_INVALID_ARGUMENT",
                     "Increase maximum_bytes to audit result and dependency files together",
                 )
+            from nx_mcp.simcenter import mesh_guard
+
+            live_mesh_state = None
+            mesh_inspection_error = None
+            manifest = job.get("manifest", {})
+            if "live_mesh_state" in manifest:
+                try:
+                    limit = manifest.get("mesh_inspection_limit")
+                    mesh_guard.validate_budget(limit)
+                    live_mesh_state = mesh_guard.capture(sim, limit)
+                except NXToolError as error:
+                    mesh_inspection_error = error.as_dict()
             result["job_binding"] = audit_job_result(
                 self.workspace,
                 job,
@@ -2537,6 +2549,8 @@ class SimcenterMixin:
                 result["files"],
                 maximum_bytes=remaining,
                 live_thermal_state=capture_analysis_thermal_state(sim),
+                live_mesh_state=live_mesh_state,
+                mesh_inspection_error=mesh_inspection_error,
             )
             if result["job_binding"]["model_result_freshness"] == "stale":
                 result["result_freshness"] = "stale"

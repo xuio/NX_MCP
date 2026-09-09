@@ -40,7 +40,8 @@ def test_owner_rejects_analysis_copy_and_other_solution(tmp_path):
 def test_matching_artifact_never_hides_changed_live_or_saved_model(tmp_path):
     ws, job, deps, result, sim = case(tmp_path)
     matched = audit_job_result(ws, job, deps, [result], maximum_bytes=1000)
-    assert matched["state"] == "association_and_supplied_revision_match"
+    assert matched["state"] == "not_verified"
+    assert matched["live_mesh_state"]["reason"] == "mesh_state_missing"
     assert (
         matched["model_result_freshness"] == "not_verified" and not matched["engineering_accepted"]
     )
@@ -94,3 +95,41 @@ def test_old_boundary_schema_cannot_verify_result_even_with_matching_files(tmp_p
     assert audited["state"] == "not_verified"
     assert audited["model_result_freshness"] == "not_verified"
     assert "live_thermal_state_scope_mismatch" in audited["reasons"]
+
+
+def test_same_count_mesh_change_marks_result_stale_and_missing_baseline_is_not_invented(tmp_path):
+    from nx_mcp.simcenter.mesh_state import digest
+
+    ws, job, deps, result, _ = case(tmp_path)
+    nodes = [(1, [0, 0, 0]), (2, [1, 0, 0]), (3, [0, 1, 0]), (4, [0, 0, 1])]
+    elements = [(1, "Tetrahedron", "mesh", "collector", [1, 2, 3, 4])]
+    before = digest(nodes, elements, units="mm", owner_path="case.fem")
+    after = digest([(1, [0.01, 0, 0]), *nodes[1:]], elements, units="mm", owner_path="case.fem")
+    assert before["counts"] == after["counts"]
+    job["manifest"]["live_mesh_state"] = before
+    matched = audit_job_result(ws, job, deps, [result], maximum_bytes=1000, live_mesh_state=before)
+    assert matched["state"] == "association_and_supplied_revision_match"
+    assert matched["model_result_freshness"] == "not_verified"
+    changed = audit_job_result(ws, job, deps, [result], maximum_bytes=1000, live_mesh_state=after)
+    assert (
+        changed["associated_result_matches_observed_artifact"]
+        and changed["revision"]["revision_matches"]
+    )
+    assert changed["model_result_freshness"] == "stale"
+    assert "live_mesh_changed" in changed["reasons"]
+    del job["manifest"]["live_mesh_state"]
+    old = audit_job_result(ws, job, deps, [result], maximum_bytes=1000, live_mesh_state=before)
+    assert old["live_mesh_state"]["state"] == "not_verified"
+    assert old["model_result_freshness"] == "not_verified"
+
+
+def test_mesh_inspection_failure_retains_result_association_without_freshness_claim(tmp_path):
+    ws, job, deps, result, _ = case(tmp_path)
+    error = {"code": "NX_SIM_INSPECTION_LIMIT", "message": "Recorded budget exceeded"}
+    audited = audit_job_result(
+        ws, job, deps, [result], maximum_bytes=1000, mesh_inspection_error=error
+    )
+    assert audited["associated_result_matches_observed_artifact"]
+    assert audited["live_mesh_state"]["error"] == error
+    assert audited["model_result_freshness"] == "not_verified"
+    assert "live_mesh_inspection_failed" in audited["reasons"]

@@ -634,9 +634,8 @@ replay pass with a budget of 500. Moving an interior node 0.01 mm preserves coun
 but causes `NX_SIM_MESH_STATE_CHANGED`; the job remains accepted at revision 0.
 A test-only stop before gate acquisition was never reached. The bounded harness
 restored the hook and original mesh digest; only the isolated FEM/SIM were saved.
-The test job was cancelled before launch. No solver ran in this check, so previous
-native launch/observer evidence does not prove a successful launch with this new
-guard. Forty-five focused offline tests cover preparation, launch, mesh snapshots,
+The test job was cancelled before launch. No solver ran in this negative check; the subsequent positive launch below
+provides that separate evidence. Forty-five focused offline tests cover preparation, launch, mesh snapshots,
 guards and observer regressions.
 
 Reproduction uses `prepare_mesh_guard_public.py`, then
@@ -651,11 +650,50 @@ restoration,saved-public}.json` in `tests/simcenter/evidence/`.
 
 This is a mesh-only fingerprint. It excludes CAD geometry, mesh controls,
 materials, boundaries, solver element formulation, solution settings and external
-dependencies. Result inspection and recovery freshness do not yet use this mesh
-baseline. Existing partial freshness claims remain unchanged. Standalone snapshot
+dependencies. Job-bound result inspection now compares this mesh baseline;
+recovery freshness does not yet use it. Existing partial freshness claims remain
+unchanged. Standalone snapshot
 reproductions are `verify_mesh_state_native.py`, `verify_mesh_state_public.py` and
 `verify_node_mesh_state.py`; see `mesh-state-native.json`, `mesh-state-public.json`
 and `node-mesh-state-native.json`.
+
+### Positive launch and mesh-aware result identity
+
+`launch_mesh_guard_positive_public.py` prepares and launches the isolated
+100-element/45-node `mesh-guard-positive-r1` job with a matching mesh and explicit
+0.001 K stopping criterion (100-iteration limit). A separate public MCP client
+observed its exit, released the gate and retrieved/displayed native temperatures.
+Canonical exported XML matched before/after launch. The job is terminal: do not
+relaunch it. The initial harness attempt stopped on the read-only missing-job
+response (`NX_SIM_JOB_NOT_FOUND`); its failed receipt is retained.
+
+The native log reports two iterations with TDmax 7.370e-8 K, below the exported
+0.001 K criterion. Nodal temperatures span 20 to 20.25149536 °C. For the assumed
+10 mm cube, k=200 W/(m·K), 1 W uniform generation and 20 °C fixed opposite face,
+the one-dimensional analytical maximum is 20.25 °C (observed error 0.00149536 K).
+This is a small lifecycle sanity check, not a mesh-refinement study. The aggregate
+log reports 1 W into elements and 1 W into sinks, while the named fixed-temperature
+sink table reports 0.9732 W; that native table difference is retained without
+reinterpreting it or claiming a fully reconciled boundary energy balance.
+
+`nx_sim_result_identity(job_id=...)` now compares the job's mesh baseline using
+its recorded budget. A changed snapshot marks both job-bound and top-level
+freshness `stale`, even when the associated result file still matches the observed
+artifact. Missing old baselines or inspection failures return `not_verified` with
+an explicit reason; they neither invent a baseline nor hide the historical file
+association. Matching mesh never establishes whole-model freshness. Solve/postview
+changes can leave SIM metadata modified, so a matching mesh and material/boundary
+snapshot can coexist with a saved-revision warning.
+
+Native baseline readback and a public same-count node-edit test pass. The bounded
+`run-mesh-result-bounded-test.ps1` harness uses `arm-mesh-result-test.py`,
+`inspect-mesh-result-baseline.py`, `verify_mesh_result_stale_public.py` and the
+existing restore helper. Its `finally` restores the hook and exact coordinates.
+`verify_mesh_result_restored_public.py` verifies restored public readback, saves
+only the test-modified FEM and returns the UI to the result SIM. No additional
+solver ran during these tests. Receipts: `mesh-guard-positive-{launch,finish}.json`,
+`mesh-result-{baseline,arm-result,stale-public,restoration,restored-public}.json`,
+and the retained `.log`/`.xml` under `tests/simcenter/evidence/`.
 
 ### Reconciled Phase 2 backlog
 
@@ -683,7 +721,7 @@ from installed modules. A missing implementation/test is not an external blocker
 | Pressure drop/fan operating point | Partial pressure fields and fan summary | `flow_results.py`, `fan_summary.py`; convention/unit/selection acceptance |
 | Mass/energy balance | Partial native-log audits and derived balances | `thermal_balance.py`, `flow_audit.py`; keep native versus derived provenance explicit |
 | Data/visualization export | Partial native result/postview and CAD artifact delivery | `postprocessing.py`, `postviews.py`; reusable result exports and dependency packaging |
-| Supported model/result freshness | Partial scoped material/boundary/file checks; exact labelled mesh snapshot native/public persistence verified | Integrate mesh snapshot into job gates and verify native mutations; geometry/settings/external dependency tracking remains; no whole-model claim |
+| Supported model/result freshness | Partial scoped material/boundary/file checks; exact labelled mesh snapshot native/public persistence verified | Mesh snapshot gates preparation/replay/launch and job-bound result inspection; native same-count edits and restoration verified. Recovery integration and geometry/settings/external dependency tracking remain; no whole-model claim |
 
 Phase 3 requires reproducible deployment (including the private helper), stable
 workflow docs/examples, scoped capability/release reports, clean commits and a

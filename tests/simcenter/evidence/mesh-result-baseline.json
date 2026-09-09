@@ -1,0 +1,92 @@
+{
+  "status": "success",
+  "document": {
+    "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_0810a0fb336e4cd2a3c747ae3f409b77",
+    "kind": "part",
+    "name": "mesh_guard_positive_r1",
+    "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_d8b5717caed84d918b7d612c930808f3",
+    "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+    "generation_id": "d8b5717caed84d918b7d612c930808f3",
+    "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-positive-20260909-r1\\mesh_guard_positive_r1.sim",
+    "journal_id": "mesh_guard_positive_r1",
+    "display_name": "mesh_guard_positive_r1"
+  },
+  "files": [
+    {
+      "index": 0,
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-positive-20260909-r1\\mesh_guard_positive_r1-Conduction.bun",
+      "bytes": 16164,
+      "sha256": "7d97917a22bd683c0453ead6b50308464a909f5bc4f81774baf075e6284ac35f"
+    }
+  ],
+  "native_verification": {
+    "state": "results_changed",
+    "native_value": "2"
+  },
+  "result_freshness": "not_verified",
+  "engineering_accepted": false,
+  "scope": "Associated file identity and native verification only; model/job revision binding required",
+  "job_binding": {
+    "job_id": "mesh-guard-positive-r1",
+    "request_sha256": "5f0f3045d7267f4e609e809dcf3308721ba9a1e3021bbb3346046be296d262ce",
+    "state": "not_verified",
+    "associated_result_matches_observed_artifact": true,
+    "revision": {
+      "state": "revision_mismatch",
+      "revision_matches": false,
+      "files": [
+        {
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-positive-20260909-r1\\mesh_guard_positive_r1.sim",
+          "bytes": 7679762,
+          "sha256": "41e7db35fb062c8372c916a4371add8bdb793ce09e910f8dba7c2d04507fe209",
+          "expected_sha256": "41e7db35fb062c8372c916a4371add8bdb793ce09e910f8dba7c2d04507fe209",
+          "matches": true
+        },
+        {
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-20260909-r1\\benchmark_2b3340c6f11a_mesh.fem",
+          "bytes": 2913141,
+          "sha256": "f9ad5255e87c402b519a230773dc034a46646223d228d2a46674692917d9aa2a",
+          "expected_sha256": "f9ad5255e87c402b519a230773dc034a46646223d228d2a46674692917d9aa2a",
+          "matches": true
+        },
+        {
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-20260909-r1\\benchmark_2b3340c6f11a_geometry.prt",
+          "bytes": 76037,
+          "sha256": "a27db91c3cae9f09709bc98b2c38b5652b222d46cec992cc441bec35549b7f38",
+          "expected_sha256": "a27db91c3cae9f09709bc98b2c38b5652b222d46cec992cc441bec35549b7f38",
+          "matches": true
+        }
+      ],
+      "issues": [
+        {
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-positive-20260909-r1\\mesh_guard_positive_r1.sim",
+          "reason": "unsaved_edits"
+        }
+      ],
+      "scope": "supplied dependency set only",
+      "engineering_accepted": false
+    },
+    "reasons": [
+      "current_saved_revision_not_verified_against_prepared_revision"
+    ],
+    "live_thermal_state": {
+      "state": "matches",
+      "scope": "solid_material_frame_properties_and_observed_thermal_boundaries",
+      "full_model_freshness": "not_verified"
+    },
+    "live_mesh_state": {
+      "state": "matches",
+      "scope": "node_labels_coordinates_and_ordered_element_connectivity_shape_mesh_collector",
+      "full_model_freshness": "not_verified"
+    },
+    "model_result_freshness": "not_verified",
+    "engineering_accepted": false,
+    "scope": "Exact analysis/solution ownership, observed result artifact, supplied pre-solve file revisions and recorded labelled mesh snapshot; numerical validation and dependency completeness remain separate",
+    "revision_note": "Native solve/save may change SIM metadata; a file mismatch does not by itself identify a physics change"
+  },
+  "operation_id": "op_503e2a719e32407899cf21a97f51aee8",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

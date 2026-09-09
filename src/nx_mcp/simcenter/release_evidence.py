@@ -35,8 +35,8 @@ PUBLIC_EVIDENCE = {
         "Completed native job status with compact default and optional unclaimed-gate diagnostics; claimed/corrupt-gate inspection covered locally only",
     ),
     "nx_sim_result_identity": (
-        "native-result-binding-mcp.json",
-        "K0 native result hash matched the recorded job artifact, unrelated analysis rejected, live unsaved revision reported without certifying freshness; changed-file/fake-artifact coverage local only",
+        "mesh-result-stale-public.json",
+        "Completed native job artifact remains associated after same-count node edit while result freshness becomes stale; restoration/public matching mesh readback in mesh-result-restored-public.json. Missing-baseline/inspection-failure coverage offline; no whole-model freshness",
     ),
     "nx_sim_flow_setup": (
         "native-coupled-setup-mcp.json",
@@ -68,7 +68,7 @@ PUBLIC_EVIDENCE = {
     ),
     "nx_sim_launch": (
         "native-auto-observer-cycle.json",
-        "Prepared Flow launch with automatic terminal observer surviving MCP client disconnect; predates mesh guard. New guard: mesh-guard-rejection-public.json verifies changed-mesh rejection before intent, not successful launch; no running cancellation or NX restart test",
+        "Prepared Flow launch with automatic terminal observer surviving MCP client disconnect; predates mesh guard. mesh-guard-positive-launch.json and mesh-guard-positive-finish.json verify unchanged 100-element Thermal launch, reconnect, exit and result retrieval; mesh-guard-rejection-public.json verifies changed-mesh rejection before intent; no running cancellation or NX restart test",
     ),
     "nx_sim_observe_job": (
         "native-auto-observer-cycle.json",

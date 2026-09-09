@@ -1,0 +1,51 @@
+{
+  "status": "success",
+  "restored": true,
+  "mesh_state": {
+    "adapter": 1,
+    "scope": "node_labels_coordinates_and_ordered_element_connectivity_shape_mesh_collector",
+    "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-20260909-r1\\benchmark_2b3340c6f11a_mesh.fem",
+    "units": "mm",
+    "coordinate_frame": "fem_part_absolute",
+    "counts": {
+      "nodes": 45,
+      "elements": 100
+    },
+    "sha256": "b9797cc802a2ca6a57bc34372e6590d9ff18a92f4b54edd53caa57b9b5a84a70",
+    "coordinate_encoding": "exact float64 hex; signed zero normalized",
+    "full_model_freshness": "not_verified",
+    "excluded": [
+      "CAD geometry",
+      "mesh controls",
+      "material assignments/properties",
+      "loads and boundary conditions",
+      "solver element formulation",
+      "solution settings",
+      "external dependencies"
+    ]
+  },
+  "fuse_restored": true,
+  "fuse_calls": [],
+  "solver_launched": false,
+  "only_test_flags_changed": true,
+  "changed_flags": [
+    {
+      "before": [
+        "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-20260909-r1\\benchmark_2b3340c6f11a_mesh.fem",
+        false
+      ],
+      "after": [
+        "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-20260909-r1\\benchmark_2b3340c6f11a_mesh.fem",
+        true
+      ]
+    }
+  ],
+  "fem_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-20260909-r1\\benchmark_2b3340c6f11a_mesh.fem",
+  "sim_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-positive-20260909-r1\\mesh_guard_positive_r1.sim",
+  "save_test_documents_required": true,
+  "operation_id": "op_450dd7b35b0d47ecb4e07d575c2e14fc",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

@@ -1,0 +1,28 @@
+{
+  "responses": {
+    "prior_job": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"error\", \"warnings\": [], \"units\": null, \"code\": \"NX_SIM_JOB_NOT_FOUND\", \"message\": \"No reserved job with this identity\", \"retryable\": false, \"details\": {\"operation_id\": \"op_93a6a48745b249b7a4e9d23037f2169e\", \"mutation_outcome\": \"not_started\"}}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "error",
+        "warnings": [],
+        "units": null,
+        "code": "NX_SIM_JOB_NOT_FOUND",
+        "message": "No reserved job with this identity",
+        "retryable": false,
+        "details": {
+          "operation_id": "op_93a6a48745b249b7a4e9d23037f2169e",
+          "mutation_outcome": "not_started"
+        }
+      },
+      "isError": true
+    }
+  }
+}

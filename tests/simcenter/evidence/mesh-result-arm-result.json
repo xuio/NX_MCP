@@ -1,0 +1,68 @@
+{
+  "status": "success",
+  "before": {
+    "adapter": 1,
+    "scope": "node_labels_coordinates_and_ordered_element_connectivity_shape_mesh_collector",
+    "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-20260909-r1\\benchmark_2b3340c6f11a_mesh.fem",
+    "units": "mm",
+    "coordinate_frame": "fem_part_absolute",
+    "counts": {
+      "nodes": 45,
+      "elements": 100
+    },
+    "sha256": "b9797cc802a2ca6a57bc34372e6590d9ff18a92f4b54edd53caa57b9b5a84a70",
+    "coordinate_encoding": "exact float64 hex; signed zero normalized",
+    "full_model_freshness": "not_verified",
+    "excluded": [
+      "CAD geometry",
+      "mesh controls",
+      "material assignments/properties",
+      "loads and boundary conditions",
+      "solver element formulation",
+      "solution settings",
+      "external dependencies"
+    ]
+  },
+  "after": {
+    "adapter": 1,
+    "scope": "node_labels_coordinates_and_ordered_element_connectivity_shape_mesh_collector",
+    "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\V-mesh-guard-20260909-r1\\benchmark_2b3340c6f11a_mesh.fem",
+    "units": "mm",
+    "coordinate_frame": "fem_part_absolute",
+    "counts": {
+      "nodes": 45,
+      "elements": 100
+    },
+    "sha256": "a7fcbd09f73992467a5119e5580e4647399eeccd86421d8dd61e156cd3f3a78f",
+    "coordinate_encoding": "exact float64 hex; signed zero normalized",
+    "full_model_freshness": "not_verified",
+    "excluded": [
+      "CAD geometry",
+      "mesh controls",
+      "material assignments/properties",
+      "loads and boundary conditions",
+      "solver element formulation",
+      "solution settings",
+      "external dependencies"
+    ]
+  },
+  "node_label": 45,
+  "old_coordinates": [
+    5.24992005914392,
+    4.947078659317691,
+    4.8922369533743835
+  ],
+  "new_coordinates": [
+    5.25992005914392,
+    4.947078659317691,
+    4.8922369533743835
+  ],
+  "fuse_installed": true,
+  "solver_launched": false,
+  "restoration_required": true,
+  "operation_id": "op_78b99b4289b4446db2f4b2485fce8c1f",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}
