@@ -1,10 +1,11 @@
 """Reproduce the bounded contact benchmark's numerical checks from retained evidence."""
 
+import argparse
 import hashlib
 import json
 import re
-from pathlib import Path
 import xml.etree.ElementTree as ET
+from pathlib import Path
 
 from nx_mcp.simcenter.thermal_balance import inspect_thermal_balances
 
@@ -23,6 +24,7 @@ def audit(nodes, log, deck, expected):
     if selector not in (0, 1):
         raise ValueError("Unverified convergence selector")
     tolerance = value("Steady State - Maximum Temperature Change")
+    heat_balance_stop = bool(value("Steady State - Heat Imbalance"))
     matches = re.findall(r"No\. of iterations\s*=\s*(\d+)\s+TDmax\s*=\s*([\d.E+-]+)", log)
     if len(matches) != 1:
         raise ValueError("Expected one steady thermal convergence record")
@@ -53,8 +55,10 @@ def audit(nodes, log, deck, expected):
             "criterion_k": tolerance if selector == 1 else None,
             "inactive_or_active_exported_temperature_change_k": tolerance,
             "native_mode": "automatic" if selector == 0 else "specified",
-            "effective_criterion_verified": selector == 1,
+            "effective_criterion_verified": selector == 1 and not heat_balance_stop,
+            "additional_heat_balance_stop": heat_balance_stop,
             "passed": selector == 1
+            and not heat_balance_stop
             and change < tolerance
             and iterations < value("Thermal Steady State - Iteration Limit"),
         },
@@ -67,11 +71,14 @@ def audit(nodes, log, deck, expected):
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--prefix", choices=["contact", "contact-explicit"], default="contact")
+    prefix = parser.parse_args().prefix
     evidence = Path(__file__).parents[2] / "tests/simcenter/evidence"
-    nodes = json.loads((evidence / "contact-nodal-results.json").read_text())["nodes"]
-    log = (evidence / "contact-numerical.log").read_text()
-    deck = (evidence / "contact-numerical.xml").read_bytes()
-    criteria = json.loads((evidence / "contact-acceptance-criteria.json").read_text())
+    nodes = json.loads((evidence / (prefix + "-nodal-results.json")).read_text())["nodes"]
+    log = (evidence / (prefix + "-numerical.log")).read_text()
+    deck = (evidence / (prefix + "-numerical.xml")).read_bytes()
+    criteria = json.loads((evidence / (prefix + "-acceptance-criteria.json")).read_text())
     result = audit(nodes, log, deck, criteria["expected"])
     summary = result["thermal_balances"]["summaries"]
     if len(summary) != 1 or summary[0]["state"] != "complete":
@@ -96,7 +103,7 @@ if __name__ == "__main__":
         <= tol["heat_rejection_w"],
         "convergence": result["native_convergence"]["passed"],
     }
-    public = json.loads((evidence / "contact-solve-finish.json").read_text())["responses"]
+    public = json.loads((evidence / (prefix + "-solve-finish.json")).read_text())["responses"]
     observed = public["status_observations"][-1]["structuredContent"]["evidence"]
     identity = public["identity"]["structuredContent"]["job_binding"]
     checks["solved_input_identity"] = (
@@ -118,11 +125,11 @@ if __name__ == "__main__":
     result["source_hashes"] = {
         p.name: hashlib.sha256(p.read_bytes()).hexdigest()
         for p in [
-            evidence / "contact-nodal-results.json",
-            evidence / "contact-numerical.log",
-            evidence / "contact-numerical.xml",
-            evidence / "contact-acceptance-criteria.json",
-            evidence / "contact-solve-finish.json",
+            evidence / (prefix + "-nodal-results.json"),
+            evidence / (prefix + "-numerical.log"),
+            evidence / (prefix + "-numerical.xml"),
+            evidence / (prefix + "-acceptance-criteria.json"),
+            evidence / (prefix + "-solve-finish.json"),
         ]
     }
     print(json.dumps(result, indent=2))

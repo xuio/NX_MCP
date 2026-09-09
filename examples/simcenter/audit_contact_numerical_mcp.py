@@ -1,5 +1,6 @@
-"""Observe the existing orthotropic thermal job and retrieve temperatures."""
+"""Observe a retained contact job through a fresh MCP client; never relaunch it."""
 
+import argparse
 import asyncio
 import json
 import os
@@ -11,6 +12,13 @@ from mcp.client.stdio import stdio_client
 
 
 async def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--job-id", default="contact-resistance-r1")
+    parser.add_argument("--context", default="contact-job-prepared.json")
+    parser.add_argument("--document-key", default="benchmark_document")
+    parser.add_argument("--output", default="contact-solve-finish.json")
+    args = parser.parse_args()
+    shared = Path(r"Z:\nx-mcp-integration\simcenter-discovery")
     env = dict(os.environ)
     env.update(
         PYTHONPATH=r"C:\ProgramData\BasementHypervisor\nx-mcp-simcenter\source\src",
@@ -30,7 +38,7 @@ async def main():
         await client.initialize()
         import time
 
-        output = Path(r"Z:\nx-mcp-integration\simcenter-discovery\contact-solve-finish.json")
+        output = shared / args.output
         responses = {"status_observations": []}
 
         def record():
@@ -48,7 +56,7 @@ async def main():
         while True:
             status = await client.call_tool(
                 "nx_sim_job_status",
-                {"job_id": "contact-resistance-r1", "include_evidence": True},
+                {"job_id": args.job_id, "include_evidence": True},
             )
             responses["status_observations"].append(status.model_dump(mode="json"))
             record()
@@ -63,21 +71,19 @@ async def main():
         assert status.structuredContent["evidence"]["input_comparison"]["xml_content_identical"]
         release = await client.call_tool(
             "nx_sim_release_job",
-            {"job_id": "contact-resistance-r1", "operation_id": "contact-release-r1"},
+            {"job_id": args.job_id, "operation_id": args.job_id + "-release"},
         )
         responses["release"] = release.model_dump(mode="json")
         record()
         assert not release.isError and release.structuredContent["released"]
-        prepared = json.loads(
-            Path(r"Z:\nx-mcp-integration\simcenter-discovery\contact-job-prepared.json").read_text()
-        )
-        document = prepared["benchmark_document"]
+        prepared = json.loads((shared / args.context).read_text())
+        document = prepared[args.document_key]
         result = await client.call_tool("nx_sim_temperature_result", {"document": document})
         responses["temperature"] = result.model_dump(mode="json")
         record()
         assert not result.isError, result.structuredContent
         identity = await client.call_tool(
-            "nx_sim_result_identity", {"document": document, "job_id": "contact-resistance-r1"}
+            "nx_sim_result_identity", {"document": document, "job_id": args.job_id}
         )
         responses["identity"] = identity.model_dump(mode="json")
         record()
@@ -85,7 +91,7 @@ async def main():
         assert identity.structuredContent["job_binding"]["live_thermal_state"]["state"] == "matches"
         shown = await client.call_tool(
             "nx_sim_show_temperature",
-            {"document": document, "operation_id": "contact-show-r1"},
+            {"document": document, "operation_id": args.job_id + "-show"},
         )
         responses["visible_result"] = shown.model_dump(mode="json")
         record()

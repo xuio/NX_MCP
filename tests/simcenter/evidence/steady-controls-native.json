@@ -1,0 +1,109 @@
+{
+  "trials": [
+    {
+      "before": {
+        "mode": 0,
+        "maximum_temperature_change": 0.001,
+        "temperature_unit": "CelsiusDifference",
+        "relative_heat_balance_enabled": false,
+        "heat_balance_option": 0,
+        "relative_fraction": 0.01,
+        "fraction_unit": null,
+        "iteration_limit": 10000
+      },
+      "actual": {
+        "mode": 1,
+        "maximum_temperature_change": 0.001,
+        "temperature_unit": "CelsiusDifference",
+        "relative_heat_balance_enabled": false,
+        "heat_balance_option": 0,
+        "relative_fraction": 0.01,
+        "fraction_unit": null,
+        "iteration_limit": 100
+      },
+      "maximum_temperature_change_k": 0.001,
+      "relative_heat_balance": null,
+      "iteration_limit": 100,
+      "mode": "specified",
+      "temperature_semantics": "temperature difference: one CelsiusDifference equals one kelvin",
+      "saved": false,
+      "solver_launched": false,
+      "results_require_revalidation": true
+    },
+    {
+      "before": {
+        "mode": 0,
+        "maximum_temperature_change": 0.001,
+        "temperature_unit": "CelsiusDifference",
+        "relative_heat_balance_enabled": false,
+        "heat_balance_option": 0,
+        "relative_fraction": 0.01,
+        "fraction_unit": null,
+        "iteration_limit": 10000
+      },
+      "actual": {
+        "mode": 1,
+        "maximum_temperature_change": 0.001,
+        "temperature_unit": "CelsiusDifference",
+        "relative_heat_balance_enabled": true,
+        "heat_balance_option": 0,
+        "relative_fraction": 0.001,
+        "fraction_unit": null,
+        "iteration_limit": 100
+      },
+      "maximum_temperature_change_k": 0.001,
+      "relative_heat_balance": 0.001,
+      "iteration_limit": 100,
+      "mode": "specified",
+      "temperature_semantics": "temperature difference: one CelsiusDifference equals one kelvin",
+      "saved": false,
+      "solver_launched": false,
+      "results_require_revalidation": true
+    }
+  ],
+  "final": {
+    "before": {
+      "mode": 0,
+      "maximum_temperature_change": 0.001,
+      "temperature_unit": "CelsiusDifference",
+      "relative_heat_balance_enabled": false,
+      "heat_balance_option": 0,
+      "relative_fraction": 0.01,
+      "fraction_unit": null,
+      "iteration_limit": 10000
+    },
+    "actual": {
+      "mode": 1,
+      "maximum_temperature_change": 0.001,
+      "temperature_unit": "CelsiusDifference",
+      "relative_heat_balance_enabled": true,
+      "heat_balance_option": 0,
+      "relative_fraction": 0.001,
+      "fraction_unit": null,
+      "iteration_limit": 100
+    },
+    "maximum_temperature_change_k": 0.001,
+    "relative_heat_balance": 0.001,
+    "iteration_limit": 100,
+    "mode": "specified",
+    "temperature_semantics": "temperature difference: one CelsiusDifference equals one kelvin",
+    "saved": false,
+    "solver_launched": false,
+    "results_require_revalidation": true
+  },
+  "reopened": {
+    "mode": 1,
+    "maximum_temperature_change": 0.001,
+    "temperature_unit": "CelsiusDifference",
+    "relative_heat_balance_enabled": true,
+    "heat_balance_option": 0,
+    "relative_fraction": 0.001,
+    "fraction_unit": null,
+    "iteration_limit": 100
+  },
+  "open_warnings": [],
+  "document": "obj_20bc234ffa5249ceb4fb4d82b993c626_c23e8c416d1647c0ac90a03ba5edecbc",
+  "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\B-contact-explicit-20260909-r1\\contact_explicit_r1.sim",
+  "unrelated_modified_flags_preserved": true,
+  "solver_launched": false
+}

@@ -90,6 +90,10 @@ PUBLIC_EVIDENCE = {
         "native-heat-power-mcp.json",
         "Single-body total internal watts, duplicate rejection and save/reopen",
     ),
+    "nx_sim_steady_thermal_controls": (
+        "steady-controls-public-launch.json",
+        "Explicit temperature stopping in K, public validation/replay/export; native persistence and optional relative-balance authoring separately verified",
+    ),
     "nx_sim_convection": (
         "native-convection-mcp.json",
         "Thermal-only assumed convection coefficient and face readback",
@@ -180,7 +184,7 @@ def public_evidence(version):
         "remaining_work": {
             "generic_async_solve_and_cancel": "native launch, automatic terminal observation and successful-output release exposed; cancellation, running/failure binding and NX restart acceptance incomplete",
             "coupled_cooling_acceptance": "not_complete",
-            "thermal_contact": "Native/public total R/G authoring, persistence/export and 200-element resistance physical checks verified; automatic convergence criterion and whole-model freshness not established",
+            "thermal_contact": "Native/public total R/G authoring, persistence/export and 200-element explicit-stopping resistance artifact benchmark verified; whole-model freshness not established",
             "detailed_rotating_fans_and_acoustics": "not_validated; module availability must be established separately",
             "full_model_result_freshness": "not_established; live SIM may be modified after solving",
             "exact_screenshot_resolution": "native postview export ignores requested device dimensions in observed test",

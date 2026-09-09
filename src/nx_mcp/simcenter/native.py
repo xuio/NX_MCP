@@ -1128,6 +1128,30 @@ class SimcenterMixin:
             + " collection only; other boundary collections are separate",
         }
 
+    def _sim_steady_thermal_controls(
+        self,
+        document,
+        maximum_temperature_change_k,
+        iteration_limit=10000,
+        relative_heat_balance=None,
+    ):
+        from nx_mcp.simcenter.steady_controls import configure
+
+        sim = self.objects.resolve(document, expected_kind="part")
+        result = configure(
+            self.session, sim, maximum_temperature_change_k, iteration_limit, relative_heat_balance
+        )
+        owner = result.pop("table")
+        return {
+            "parameter_table": self._reference(
+                owner, "simulation_parameter_table", sim, "thermal parameters"
+            ),
+            "solution": self._reference(
+                sim.Simulation.ActiveSolution, "simulation_solution", sim, "solution"
+            ),
+            **result,
+        }
+
     def _sim_contact(self, document, primary_faces, secondary_faces, mode, value, name, provenance):
         from nx_mcp.simcenter.contact import create_contact
 

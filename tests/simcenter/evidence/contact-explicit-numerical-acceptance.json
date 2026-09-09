@@ -1,0 +1,100 @@
+{
+  "maximum_temperature_k": 294.40148582458494,
+  "interface_drop_k": 0.49907398223876953,
+  "interface_temperature_means_deg_c": {
+    "heated": 20.999093850453693,
+    "sink": 20.500019868214924
+  },
+  "interface_mean_semantics": "arithmetic mean of native interface nodes; not area weighted",
+  "native_convergence": {
+    "iterations": 2,
+    "tdmax_k": 1.671e-08,
+    "criterion_k": 0.001,
+    "inactive_or_active_exported_temperature_change_k": 0.001,
+    "native_mode": "specified",
+    "effective_criterion_verified": true,
+    "additional_heat_balance_stop": false,
+    "passed": true
+  },
+  "thermal_balances": {
+    "summaries": [
+      {
+        "ordinal": 0,
+        "values": {
+          "heat_flow_into_sinks": 1000000.0,
+          "heat_flow_from_nonfluid_sinks": 1e-10,
+          "heat_load_into_elements": 1000000.0,
+          "heat_load_into_sinks": 0.0,
+          "heat_flow_from_fluid_sinks": 0.0,
+          "reported_deviation": -0.0501
+        },
+        "issues": [],
+        "missing_fields": [],
+        "state": "complete"
+      }
+    ],
+    "power_unit": "mN-mm/s",
+    "unit_source": "caller_verified",
+    "time_association": "not_established",
+    "conservation_accepted": false,
+    "deviation_semantics": "native reported value; global versus local meaning not established",
+    "scope": "Observed TMG aggregate summaries; named sink and field integrals require separate inspection"
+  },
+  "expected": {
+    "maximum_temperature_k": 294.4,
+    "interface_drop_k": 0.5,
+    "heat_rejection_w": 1.0
+  },
+  "result_bounds_mm": [
+    [
+      0.0,
+      20.0
+    ],
+    [
+      0.0,
+      10.0
+    ],
+    [
+      0.0,
+      10.0
+    ]
+  ],
+  "temperature_absolute_error_k": 0.0014858245849609375,
+  "interface_absolute_error_k": 0.0009260177612304688,
+  "derived_balance": {
+    "heat_rejection_w": 1.0,
+    "heat_generation_w": 1.0,
+    "rounded_power_difference_w": 0.0,
+    "semantics": "Converted native rounded aggregate values; not exact field integration or an interpretation of the reported local/global deviation"
+  },
+  "checks": {
+    "maximum_temperature": true,
+    "interface_drop": true,
+    "heat_rejection": true,
+    "heat_generation": true,
+    "convergence": true,
+    "solved_input_identity": true,
+    "observed_result_association": true,
+    "saved_dependency_hashes": true
+  },
+  "scoped_artifact_benchmark_passed": true,
+  "physical_artifact_checks_passed": true,
+  "current_session_freshness": "not_verified",
+  "freshness_reasons": [
+    "current_saved_revision_not_verified_against_prepared_revision"
+  ],
+  "acceptance_scope": "One 200-element steady two-block result artifact; no mesh convergence study or whole-model freshness claim",
+  "tolerances": {
+    "maximum_temperature_k": 0.03,
+    "interface_drop_k": 0.01,
+    "heat_rejection_w": 0.001
+  },
+  "job_id": "contact-explicit-r1",
+  "source_hashes": {
+    "contact-explicit-nodal-results.json": "de22da152a42b27a4c17609cca8b3210f2d8e9b1ded2dd0df63f53362dacf9f4",
+    "contact-explicit-numerical.log": "3d16cc068096920bbb6bd5c1c158c9514a222cbaf0f87cc07a99fdcde784b0ca",
+    "contact-explicit-numerical.xml": "1dd0c5617f1473b192477e11ab0fd92aa8790c3532eec86f597e6aad8f57eccc",
+    "contact-explicit-acceptance-criteria.json": "8482488fe3f547cc31946caad5943be4daaabdf36457b4723e0a2769326e7fe9",
+    "contact-explicit-solve-finish.json": "88a71b86b2f19b6aa095000dcf6024dbc2712bfd5014cb8ed4560f4e987d2d86"
+  }
+}

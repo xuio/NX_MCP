@@ -23,8 +23,8 @@ verifies discovery, overlap rejection, creation, replay, inventory and save/reop
 resistance properties/provenance and actual per-side geometry persist. Native
 opening marks the isolated SIM modified; the warning is retained. Conductance
 persistence and both unit-converted exports now pass. A 200-element steady
-resistance benchmark passes physical artifact checks; its effective automatic
-convergence criterion remains unverified.
+resistance benchmark now passes scoped physical and explicit-convergence artifact
+checks. The earlier Automatic-mode run remains inconclusive on its effective criterion.
 The current fixture is `ui-benchmarks/B-contact-authoring-20260909-r1/`.
 Evidence: `contact-authoring-native.json`, `contact-public.json`,
 `contact-persistence-public.json`, `contact-reopened-targets.json` under
@@ -46,7 +46,7 @@ in total (per-stage timings are retained).
 | Maximum temperature | 294.401486 K | 294.4 K ±0.03 K |
 | Interface temperature drop | 0.499074 K | 0.5 K ±0.01 K |
 | Heat rejection | 1 W from rounded native summary | 1 W ±0.001 W |
-| Final temperature change | 1.671e-8 K, two iterations | Automatic mode; 0.001 K export field is inactive |
+| Final temperature change | 1.671e-8 K, two iterations | Explicit 0.001 K limit; 100-iteration cap |
 
 The interface values are arithmetic means of 12 native nodes per side, identified
 by adjacent-element connectivity; they are not area-weighted averages. Exported
@@ -61,17 +61,29 @@ log, nodal data, predeclared tolerances and input/result hashes are retained.
 `contact-resistance-r1` is the permanent job identity; never rerun it. New-client
 MCP observation, temperature extraction and native contour display passed.
 
-Physical artifact checks pass, but full benchmark acceptance remains open because
-the effective automatic convergence criterion is unverified. The installed Open CAE
-`Thermal Solution Parameters` reference maps selector 0 to Automatic and 1 to
-Specify; the 0.001 K property is conditional on Specify. Earlier comparison to that
-inactive field was incorrect and has been removed from the audit. Next: verify
-explicitly specified native convergence settings in a new isolated job, preserving
-this run. Whole-live-model acceptance also remains unproven: native
-solving marked the SIM modified. Saved dependency hashes, canonical input,
-observed result association and the supported thermal-state comparison match;
-current-session whole-model freshness remains `not_verified`. No mesh convergence,
-transient contact, acoustic or product-engineering claim follows from this test.
+The original Automatic-mode run remains physically consistent but inconclusive on
+its effective stopping criterion. The installed Open CAE reference maps selector
+0 to Automatic and 1 to Specify; the temperature-change field is active only for
+Specify. `nx_sim_steady_thermal_controls` now sets the associated native
+`Thermal Parameters` table, verifies selectors, units and values, and rolls back
+unsupported/ignored changes. Native save/close/reopen preserves the controls;
+public discovery, invalid arguments, replay and exported settings pass.
+
+A separate immutable job, `contact-explicit-r1`, uses Specify, a 0.001 K maximum
+temperature change and a 100-iteration cap. The additional heat-imbalance stopping
+criterion is disabled for this numerical test. All eight artifact checks pass,
+including convergence, physical values and saved input/result identity. Reproduce:
+`python examples/simcenter/audit_contact_acceptance.py --prefix contact-explicit`.
+Evidence: `contact-explicit-numerical-acceptance.json`, its hashed inputs,
+`steady-controls-native.json` and `steady-controls-public-launch.json`.
+Optional relative heat-imbalance authoring and persistence were verified natively
+at 0.001 (fraction, not percent); its numerical stopping behavior was not tested.
+
+Whole-live-model acceptance remains unproven: native solving marked the SIM
+modified. Saved dependency hashes, canonical input, observed result association
+and the supported thermal-state comparison match; current-session whole-model
+freshness remains `not_verified`. No mesh convergence, transient contact,
+acoustic or product-engineering claim follows from this test.
 
 ### Reconciled Phase 2 backlog
 
@@ -80,7 +92,7 @@ from installed modules. A missing implementation/test is not an external blocker
 
 | Requirement | Current state | Reuse / next acceptance work |
 |---|---|---|
-| Thermal contacts/interface resistance | Partial: native/public total R/G authoring and resistance persistence verified | 200-element physical checks pass; verify explicit convergence controls, then general contact options and current-session freshness |
+| Thermal contacts/interface resistance | Partial: native/public total R/G authoring and resistance persistence verified | 200-element explicit-convergence artifact benchmark passes; general contact options and current-session freshness remain |
 | Convection and dependencies | Partial, public constant assumed convection | `boundaries.py`, `external_conditions.py`; verify dependency/time-field cases |
 | Radiation/emissivity/enclosures | Missing public authoring | Discover native applicable descriptors and test assignments/export |
 | Temperature-dependent materials | Missing | Extend constant/orthotropic material path with supported fields, units and persistence |
@@ -146,6 +158,7 @@ to the stated scope, not blanket tool certification.
 | UF evaluator users | 1: private .NET adapter, native geometry/lifecycle tests and public MCP verified | Requires locally built helper and supported NX loading authorization; Python evaluator ownership remains unverified |
 | Public coupled-steady schema | 1: prior public native replay retained; F5 offline schema expectation corrected | Full offline Simcenter suite passes; schema coverage is not numerical evidence |
 | Persistent jobs and result identity | 3: accepted/launch/observer/terminal identity path tested | Native cancellation and complete live dependency freshness still open |
+| Steady thermal stopping controls | 1: native/public authoring, replay, export and native persistence; optional relative balance selector tested | 2 for temperature-only stopping in the 200-element contact case; relative-balance stopping unbenchmarked |
 | Numerical benchmarks | 2 only within separately retained individual benchmark reports | Do not extend those claims to coupled cooling, acoustics or engineering release |
 
 ### Manual head-loss export acceptance
@@ -182,6 +195,14 @@ report was dismissed and the actual current view fitted. Property-only fan chang
 do not alter visible geometry. During test batches, keep the intended analysis
 copy displayed, identify property-only work, and verify the visible state after
 batch completion. Native operations can block repainting until they return.
+
+Temperature and pressure display now fit and refresh the viewport and close the
+Information window without clearing its contents. Each response reports these
+presentation actions; a failed fit or window operation produces a warning without
+rolling back a successfully created result view. This does not refresh solver
+results after model changes or establish result freshness. The contact result
+was verified in native NX with unchanged document modification flags; the shared
+pressure presentation path has offline coverage but was not rerun in this check.
 
 ### Supported fan-field definitions
 

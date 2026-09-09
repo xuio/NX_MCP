@@ -281,7 +281,7 @@ READ_ONLY.add("nx_sim_temperature_result")
 def nx_sim_show_temperature(
     document: str, loadcase_index: int = 0, iteration_index: int = 0, name: str = "MCP temperature"
 ):
-    """Create and activate a temperature postview in the visible Simcenter UI. Requires the selected SIM to be both work and display part. Choose zero-based result indices from nx_sim_result_inventory. Displays nodal temperature in Celsius, verifies field/indices/unit readback, and preserves existing views. Returns a session-local postview ID, not a stable geometry reference. Does not save, solve, fit the camera, export an image or certify freshness. Use screenshot separately. New view creation is a mutation; supply operation_id to avoid duplicate views on retry. Invalid selections fail without creating a view; cleanup failures report partial state."""
+    """Create and activate a temperature postview in the visible Simcenter UI. Requires the selected SIM to be both work and display part. Choose zero-based result indices from nx_sim_result_inventory. Displays nodal temperature in Celsius, verifies field/indices/unit readback, and preserves existing views. Returns a session-local postview ID, not a stable geometry reference. Fits and refreshes the view and closes the Information window without clearing its contents; presentation failures return warnings. Does not save, solve, export an image or certify freshness. Use screenshot separately. New view creation is a mutation; supply operation_id to avoid duplicate views on retry. Invalid selections fail without creating a view; cleanup failures report partial state."""
 
 
 NON_MODEL.add("nx_sim_show_temperature")
@@ -451,7 +451,7 @@ def nx_sim_show_pressure(
     iteration_index: int = 0,
     name: str = "MCP pressure",
 ):
-    """Create and display a pressure or total-pressure contour in Pa in the interactive Simcenter viewport. Requires the SIM as work and display document and an associated result. Preserves existing postviews, retains result ownership, and reads back field/unit/indices. Returns session-local postview ID. Does not save, solve, infer pressure reference convention or validate result freshness. Use nx_screenshot afterward to retrieve the visible view. Supply operation_id for replay deduplication."""
+    """Create and display a pressure or total-pressure contour in Pa in the interactive Simcenter viewport. Requires the SIM as work and display document and an associated result. Preserves existing postviews, retains result ownership, and reads back field/unit/indices. Returns session-local postview ID. Fits and refreshes the view and closes the Information window without clearing its contents; presentation failures return warnings. Does not save, solve, infer pressure reference convention or validate result freshness. Use nx_screenshot afterward to retrieve the visible view. Supply operation_id for replay deduplication."""
 
 
 NON_MODEL.add("nx_sim_show_pressure")
@@ -602,3 +602,15 @@ def nx_sim_contact(
 
 
 NON_MODEL.add("nx_sim_contact")
+
+
+def nx_sim_steady_thermal_controls(
+    document: str,
+    maximum_temperature_change_k: float,
+    iteration_limit: int = 10000,
+    relative_heat_balance: float | None = None,
+):
+    """Select explicit stopping controls for the active NX MULTIPHYSICS Thermal solution with steady steps only. Positive maximum_temperature_change_k is a temperature difference in kelvin. iteration_limit is a bounded integer 1..1000000. relative_heat_balance=None disables the additional heat-balance check; otherwise supply a fraction in (0,1], not percent, to select Global Fraction mode. Requires an existing associated Thermal Parameters table. Returns committed selectors, values, native units, typed table/solution references and prior state. Does not claim Automatic-mode semantics, numerical convergence or complete freshness. Uses undo/rollback; no save, export or solve. Supply operation_id for replay. Inspect linked properties through nx_sim_solutions(include_properties=True)."""
+
+
+NON_MODEL.add("nx_sim_steady_thermal_controls")

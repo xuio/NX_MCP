@@ -39,3 +39,23 @@ def test_wrong_interface_assignment_is_numerically_detected():
         if node.get("interface_region") == "heated":
             node["temperature_deg_c"] -= 0.5
     assert AUDIT(nodes, log, deck, expected)["interface_absolute_error_k"] > 0.49
+
+
+def test_explicit_native_stopping_criterion_is_active():
+    nodes = json.loads((EVIDENCE / "contact-explicit-nodal-results.json").read_text())["nodes"]
+    log = (EVIDENCE / "contact-explicit-numerical.log").read_text()
+    deck = (EVIDENCE / "contact-explicit-numerical.xml").read_bytes()
+    result = AUDIT(nodes, log, deck, inputs()[3])
+    assert result["native_convergence"]["passed"]
+    assert result["native_convergence"]["criterion_k"] == 0.001
+
+
+def test_temperature_change_alone_does_not_verify_additional_balance_criterion():
+    import xml.etree.ElementTree as ET
+
+    nodes, log, _, expected = inputs()
+    tree = ET.fromstring((EVIDENCE / "contact-explicit-numerical.xml").read_bytes())
+    for prop in tree.findall(".//ThermalParameters/Property"):
+        if prop.get("name") == "Steady State - Heat Imbalance":
+            prop.find("Value").text = "1"
+    assert not AUDIT(nodes, log, ET.tostring(tree), expected)["native_convergence"]["passed"]

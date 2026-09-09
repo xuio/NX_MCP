@@ -38,3 +38,29 @@ def test_retention_never_overwrites_reused_postview_or_part_ids():
     retain_result(handles, NS(Tag=2), 1, second)
     retain_result(handles, NS(Tag=1), 1, third)
     assert len(handles) == 3 and set(handles.values()) == {first, second, third}
+
+
+def test_presentation_continues_after_window_failure():
+    from nx_mcp.simcenter.postviews import present_result
+
+    calls = []
+
+    def close():
+        raise RuntimeError("window unavailable")
+
+    session = NS(ListingWindow=NS(CloseWindow=close))
+    sim = NS(
+        ModelingViews=NS(
+            WorkView=NS(
+                Fit=lambda: calls.append("fit"),
+                UpdateDisplay=lambda: calls.append("refresh"),
+            )
+        )
+    )
+    result = present_result(session, sim)
+    assert calls == ["fit", "refresh"]
+    assert result["view_fitted"] and result["display_refreshed"]
+    assert not result["information_window_closed"]
+    assert result["warnings"] == [
+        "Result presentation (information_window_closed): window unavailable"
+    ]

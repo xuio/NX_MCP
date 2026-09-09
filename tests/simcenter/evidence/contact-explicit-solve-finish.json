@@ -1,0 +1,291 @@
+{
+  "transport": "new MCP stdio client after launch client disconnected",
+  "responses": {
+    "status_observations": [
+      {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"status\": \"success\", \"warnings\": [], \"units\": null, \"job_id\": \"contact-explicit-r1\", \"request_sha256\": \"56e9f3fec8dce0bd1ef07d5b787e98fbf343fb2ce423c0c8d2b3bef2fce94b79\", \"state\": \"solver_exited\", \"revision\": 3, \"process_binding_revision\": null, \"launch_retry_allowed\": false, \"numerical_convergence\": \"not_established\", \"results_validated\": false, \"observed_at\": \"2026-09-08T23:49:00.163519+00:00\", \"observation_kind\": \"persisted_record\", \"live_process_state\": \"not_checked\", \"job_folder\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\simcenter-jobs\", \"observer\": {\"tracked_in_this_nx_process\": true, \"thread_alive\": false, \"log_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\simcenter-jobs\\\\contact-explicit-r1\\\\observer-a4fc2b63ae7641fea15d8987dd020a0f.log\"}, \"evidence\": {\"gate_released\": false, \"input_comparison\": {\"after\": {\"bytes\": 51336, \"canonicalization\": \"xml_c14n2_no_comments\", \"sha256\": \"1dd0c5617f1473b192477e11ab0fd92aa8790c3532eec86f597e6aad8f57eccc\", \"xml_content_sha256\": \"3a0c4c3fbb70ca1d37fb36ef81231c5330b2cb5755a8af9a19cfaf4fe4fc0add\"}, \"before\": {\"bytes\": 51336, \"canonicalization\": \"xml_c14n2_no_comments\", \"sha256\": \"66384228b10f8f7b991831e9b2a4fdff718ebd53f02815afec1e2c80f3b06918\", \"xml_content_sha256\": \"3a0c4c3fbb70ca1d37fb36ef81231c5330b2cb5755a8af9a19cfaf4fe4fc0add\"}, \"byte_identical\": false, \"scope\": \"input XML only; result association and solver outcome require separate verification\", \"xml_content_identical\": true}, \"log\": {\"bytes\": 16073, \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\B-contact-explicit-20260909-r1\\\\contact_explicit_r1-Conduction.log\", \"sha256\": \"3d16cc068096920bbb6bd5c1c158c9514a222cbaf0f87cc07a99fdcde784b0ca\"}, \"model_result_freshness\": \"not_established\", \"numerical_convergence\": \"not_established\", \"observer_adapter\": 1, \"process_exit_code\": null, \"process_job_binding\": \"not_established\", \"result\": {\"bytes\": 29468, \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\B-contact-explicit-20260909-r1\\\\contact_explicit_r1-Conduction.bun\", \"sha256\": \"d98776968f5a2f048f51818bae55526978c12936275a5c89e404c7ae8c606ce3\"}, \"solver_process_observation\": {\"exclusion\": \"point-in-time process snapshot; not an atomic lock\", \"scope\": \"host-wide known solver/translator names\", \"solver_processes\": 0}, \"terminal_basis\": \"fresh owned completion log and native result, matching canonical input, known solver processes absent\"}, \"process_binding_evidence\": null, \"operation_id\": \"op_45a9585389e3415e8c014db24b8ac208\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": {
+          "status": "success",
+          "warnings": [],
+          "units": null,
+          "job_id": "contact-explicit-r1",
+          "request_sha256": "56e9f3fec8dce0bd1ef07d5b787e98fbf343fb2ce423c0c8d2b3bef2fce94b79",
+          "state": "solver_exited",
+          "revision": 3,
+          "process_binding_revision": null,
+          "launch_retry_allowed": false,
+          "numerical_convergence": "not_established",
+          "results_validated": false,
+          "observed_at": "2026-09-08T23:49:00.163519+00:00",
+          "observation_kind": "persisted_record",
+          "live_process_state": "not_checked",
+          "job_folder": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs",
+          "observer": {
+            "tracked_in_this_nx_process": true,
+            "thread_alive": false,
+            "log_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs\\contact-explicit-r1\\observer-a4fc2b63ae7641fea15d8987dd020a0f.log"
+          },
+          "evidence": {
+            "gate_released": false,
+            "input_comparison": {
+              "after": {
+                "bytes": 51336,
+                "canonicalization": "xml_c14n2_no_comments",
+                "sha256": "1dd0c5617f1473b192477e11ab0fd92aa8790c3532eec86f597e6aad8f57eccc",
+                "xml_content_sha256": "3a0c4c3fbb70ca1d37fb36ef81231c5330b2cb5755a8af9a19cfaf4fe4fc0add"
+              },
+              "before": {
+                "bytes": 51336,
+                "canonicalization": "xml_c14n2_no_comments",
+                "sha256": "66384228b10f8f7b991831e9b2a4fdff718ebd53f02815afec1e2c80f3b06918",
+                "xml_content_sha256": "3a0c4c3fbb70ca1d37fb36ef81231c5330b2cb5755a8af9a19cfaf4fe4fc0add"
+              },
+              "byte_identical": false,
+              "scope": "input XML only; result association and solver outcome require separate verification",
+              "xml_content_identical": true
+            },
+            "log": {
+              "bytes": 16073,
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\B-contact-explicit-20260909-r1\\contact_explicit_r1-Conduction.log",
+              "sha256": "3d16cc068096920bbb6bd5c1c158c9514a222cbaf0f87cc07a99fdcde784b0ca"
+            },
+            "model_result_freshness": "not_established",
+            "numerical_convergence": "not_established",
+            "observer_adapter": 1,
+            "process_exit_code": null,
+            "process_job_binding": "not_established",
+            "result": {
+              "bytes": 29468,
+              "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\B-contact-explicit-20260909-r1\\contact_explicit_r1-Conduction.bun",
+              "sha256": "d98776968f5a2f048f51818bae55526978c12936275a5c89e404c7ae8c606ce3"
+            },
+            "solver_process_observation": {
+              "exclusion": "point-in-time process snapshot; not an atomic lock",
+              "scope": "host-wide known solver/translator names",
+              "solver_processes": 0
+            },
+            "terminal_basis": "fresh owned completion log and native result, matching canonical input, known solver processes absent"
+          },
+          "process_binding_evidence": null,
+          "operation_id": "op_45a9585389e3415e8c014db24b8ac208",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "mutation_outcome": "not_applicable"
+        },
+        "isError": false
+      }
+    ],
+    "release": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"job_id\": \"contact-explicit-r1\", \"released\": true, \"replayed\": false, \"receipt\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\simcenter-jobs\\\\contact-explicit-r1\\\\launch-gate-release.json\", \"result_files_preserved\": true, \"job_state_changed\": false, \"old_job_relaunch_allowed\": false, \"operation_id\": \"contact-explicit-r1-release\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "job_id": "contact-explicit-r1",
+        "released": true,
+        "replayed": false,
+        "receipt": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-jobs\\contact-explicit-r1\\launch-gate-release.json",
+        "result_files_preserved": true,
+        "job_state_changed": false,
+        "old_job_relaunch_allowed": false,
+        "operation_id": "contact-explicit-r1-release",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed"
+      },
+      "isError": false
+    },
+    "temperature": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"degC\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_c23e8c416d1647c0ac90a03ba5edecbc\", \"kind\": \"part\", \"name\": \"contact_explicit_r1\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_7945fd13982c4c3198d820653fe43a8f\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"7945fd13982c4c3198d820653fe43a8f\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\B-contact-explicit-20260909-r1\\\\contact_explicit_r1.sim\", \"journal_id\": \"contact_explicit_r1\", \"display_name\": \"contact_explicit_r1\"}, \"field\": \"Temperature - Nodal\", \"field_location\": \"nodal\", \"loadcase_index\": 0, \"iteration_index\": 0, \"minimum\": 20.0, \"maximum\": 21.25148582458496, \"native_location\": \"0\", \"minimum_native_id\": 44, \"maximum_native_id\": 57, \"minimum_native_sub_id\": 0, \"maximum_native_sub_id\": 0, \"node_count\": 90, \"result_freshness\": \"not_verified\", \"reference_lifetime\": \"indices apply only to this result revision\", \"operation_id\": \"op_11c365c509884deba192b2fb4cc72531\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "degC",
+        "document": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_c23e8c416d1647c0ac90a03ba5edecbc",
+          "kind": "part",
+          "name": "contact_explicit_r1",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_7945fd13982c4c3198d820653fe43a8f",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "7945fd13982c4c3198d820653fe43a8f",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\B-contact-explicit-20260909-r1\\contact_explicit_r1.sim",
+          "journal_id": "contact_explicit_r1",
+          "display_name": "contact_explicit_r1"
+        },
+        "field": "Temperature - Nodal",
+        "field_location": "nodal",
+        "loadcase_index": 0,
+        "iteration_index": 0,
+        "minimum": 20.0,
+        "maximum": 21.25148582458496,
+        "native_location": "0",
+        "minimum_native_id": 44,
+        "maximum_native_id": 57,
+        "minimum_native_sub_id": 0,
+        "maximum_native_sub_id": 0,
+        "node_count": 90,
+        "result_freshness": "not_verified",
+        "reference_lifetime": "indices apply only to this result revision",
+        "operation_id": "op_11c365c509884deba192b2fb4cc72531",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "not_applicable"
+      },
+      "isError": false
+    },
+    "identity": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_c23e8c416d1647c0ac90a03ba5edecbc\", \"kind\": \"part\", \"name\": \"contact_explicit_r1\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_7945fd13982c4c3198d820653fe43a8f\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"7945fd13982c4c3198d820653fe43a8f\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\B-contact-explicit-20260909-r1\\\\contact_explicit_r1.sim\", \"journal_id\": \"contact_explicit_r1\", \"display_name\": \"contact_explicit_r1\"}, \"files\": [{\"index\": 0, \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\B-contact-explicit-20260909-r1\\\\contact_explicit_r1-Conduction.bun\", \"bytes\": 29468, \"sha256\": \"d98776968f5a2f048f51818bae55526978c12936275a5c89e404c7ae8c606ce3\"}], \"native_verification\": {\"state\": \"results_changed\", \"native_value\": \"2\"}, \"result_freshness\": \"not_verified\", \"engineering_accepted\": false, \"scope\": \"Associated file identity and native verification only; model/job revision binding required\", \"job_binding\": {\"job_id\": \"contact-explicit-r1\", \"request_sha256\": \"56e9f3fec8dce0bd1ef07d5b787e98fbf343fb2ce423c0c8d2b3bef2fce94b79\", \"state\": \"not_verified\", \"associated_result_matches_observed_artifact\": true, \"revision\": {\"state\": \"revision_mismatch\", \"revision_matches\": false, \"files\": [{\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\B-contact-explicit-20260909-r1\\\\contact_explicit_r1.sim\", \"bytes\": 7723937, \"sha256\": \"52a1f24fa8b95cd8cae6f8aeb15c63e6898bcaf19293b14f373e5fa160f2653c\", \"expected_sha256\": \"52a1f24fa8b95cd8cae6f8aeb15c63e6898bcaf19293b14f373e5fa160f2653c\", \"matches\": true}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\B-contact-authoring-20260909-r1\\\\benchmark_47530a89f645_mesh.fem\", \"bytes\": 2895615, \"sha256\": \"01cb485d15e4455f3334e52d4dbeaf8f96a253b13f1e35304456e9c0525a0205\", \"expected_sha256\": \"01cb485d15e4455f3334e52d4dbeaf8f96a253b13f1e35304456e9c0525a0205\", \"matches\": true}, {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\B-contact-authoring-20260909-r1\\\\benchmark_47530a89f645_geometry.prt\", \"bytes\": 87158, \"sha256\": \"1eaa63a5d7e97588786287f21a6c992d318acca8075affae649bb4da0df37a40\", \"expected_sha256\": \"1eaa63a5d7e97588786287f21a6c992d318acca8075affae649bb4da0df37a40\", \"matches\": true}], \"issues\": [{\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\B-contact-explicit-20260909-r1\\\\contact_explicit_r1.sim\", \"reason\": \"unsaved_edits\"}], \"scope\": \"supplied dependency set only\", \"engineering_accepted\": false}, \"reasons\": [\"current_saved_revision_not_verified_against_prepared_revision\"], \"live_thermal_state\": {\"state\": \"matches\", \"scope\": \"solid_material_frame_properties_and_observed_thermal_boundaries\", \"full_model_freshness\": \"not_verified\"}, \"model_result_freshness\": \"not_verified\", \"engineering_accepted\": false, \"scope\": \"Exact analysis/solution ownership, observed result artifact and supplied pre-solve file revisions; numerical validation and dependency completeness remain separate\", \"revision_note\": \"Native solve/save may change SIM metadata; a file mismatch does not by itself identify a physics change\"}, \"operation_id\": \"op_890963d2bee14671aeb7e14a17d2978b\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"not_applicable\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "document": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_c23e8c416d1647c0ac90a03ba5edecbc",
+          "kind": "part",
+          "name": "contact_explicit_r1",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_7945fd13982c4c3198d820653fe43a8f",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "7945fd13982c4c3198d820653fe43a8f",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\B-contact-explicit-20260909-r1\\contact_explicit_r1.sim",
+          "journal_id": "contact_explicit_r1",
+          "display_name": "contact_explicit_r1"
+        },
+        "files": [
+          {
+            "index": 0,
+            "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\B-contact-explicit-20260909-r1\\contact_explicit_r1-Conduction.bun",
+            "bytes": 29468,
+            "sha256": "d98776968f5a2f048f51818bae55526978c12936275a5c89e404c7ae8c606ce3"
+          }
+        ],
+        "native_verification": {
+          "state": "results_changed",
+          "native_value": "2"
+        },
+        "result_freshness": "not_verified",
+        "engineering_accepted": false,
+        "scope": "Associated file identity and native verification only; model/job revision binding required",
+        "job_binding": {
+          "job_id": "contact-explicit-r1",
+          "request_sha256": "56e9f3fec8dce0bd1ef07d5b787e98fbf343fb2ce423c0c8d2b3bef2fce94b79",
+          "state": "not_verified",
+          "associated_result_matches_observed_artifact": true,
+          "revision": {
+            "state": "revision_mismatch",
+            "revision_matches": false,
+            "files": [
+              {
+                "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\B-contact-explicit-20260909-r1\\contact_explicit_r1.sim",
+                "bytes": 7723937,
+                "sha256": "52a1f24fa8b95cd8cae6f8aeb15c63e6898bcaf19293b14f373e5fa160f2653c",
+                "expected_sha256": "52a1f24fa8b95cd8cae6f8aeb15c63e6898bcaf19293b14f373e5fa160f2653c",
+                "matches": true
+              },
+              {
+                "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\B-contact-authoring-20260909-r1\\benchmark_47530a89f645_mesh.fem",
+                "bytes": 2895615,
+                "sha256": "01cb485d15e4455f3334e52d4dbeaf8f96a253b13f1e35304456e9c0525a0205",
+                "expected_sha256": "01cb485d15e4455f3334e52d4dbeaf8f96a253b13f1e35304456e9c0525a0205",
+                "matches": true
+              },
+              {
+                "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\B-contact-authoring-20260909-r1\\benchmark_47530a89f645_geometry.prt",
+                "bytes": 87158,
+                "sha256": "1eaa63a5d7e97588786287f21a6c992d318acca8075affae649bb4da0df37a40",
+                "expected_sha256": "1eaa63a5d7e97588786287f21a6c992d318acca8075affae649bb4da0df37a40",
+                "matches": true
+              }
+            ],
+            "issues": [
+              {
+                "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\B-contact-explicit-20260909-r1\\contact_explicit_r1.sim",
+                "reason": "unsaved_edits"
+              }
+            ],
+            "scope": "supplied dependency set only",
+            "engineering_accepted": false
+          },
+          "reasons": [
+            "current_saved_revision_not_verified_against_prepared_revision"
+          ],
+          "live_thermal_state": {
+            "state": "matches",
+            "scope": "solid_material_frame_properties_and_observed_thermal_boundaries",
+            "full_model_freshness": "not_verified"
+          },
+          "model_result_freshness": "not_verified",
+          "engineering_accepted": false,
+          "scope": "Exact analysis/solution ownership, observed result artifact and supplied pre-solve file revisions; numerical validation and dependency completeness remain separate",
+          "revision_note": "Native solve/save may change SIM metadata; a file mismatch does not by itself identify a physics change"
+        },
+        "operation_id": "op_890963d2bee14671aeb7e14a17d2978b",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "not_applicable"
+      },
+      "isError": false
+    },
+    "visible_result": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"degC\", \"postview_id\": 14, \"postview_owner\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\B-contact-explicit-20260909-r1\\\\contact_explicit_r1.sim\", \"readback\": {\"loadcase_index\": 0, \"iteration_index\": 0, \"field\": \"Temperature - Nodal\", \"unit\": \"Celsius\"}, \"existing_view_ids\": [], \"overlay\": false, \"main_postview_id\": 14, \"saved\": false, \"result_freshness\": \"not_verified\", \"reference_lifetime\": \"postview ID is document-local within this session; use postview_owner and reacquire after closure\", \"operation_id\": \"contact-explicit-r1-show\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "degC",
+        "postview_id": 14,
+        "postview_owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\B-contact-explicit-20260909-r1\\contact_explicit_r1.sim",
+        "readback": {
+          "loadcase_index": 0,
+          "iteration_index": 0,
+          "field": "Temperature - Nodal",
+          "unit": "Celsius"
+        },
+        "existing_view_ids": [],
+        "overlay": false,
+        "main_postview_id": 14,
+        "saved": false,
+        "result_freshness": "not_verified",
+        "reference_lifetime": "postview ID is document-local within this session; use postview_owner and reacquire after closure",
+        "operation_id": "contact-explicit-r1-show",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed"
+      },
+      "isError": false
+    }
+  }
+}

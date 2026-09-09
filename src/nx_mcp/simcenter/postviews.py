@@ -11,6 +11,27 @@ def retain_result(handles, sim, view, result):
     handles[(int(sim.Tag), view, uuid.uuid4().hex)] = result
 
 
+def present_result(session, sim):
+    """Frame the committed view; presentation failures must not undo result creation."""
+    presentation = {
+        "information_window_closed": False,
+        "view_fitted": False,
+        "display_refreshed": False,
+        "warnings": [],
+    }
+    for key, action in (
+        ("information_window_closed", lambda: session.ListingWindow.CloseWindow()),
+        ("view_fitted", lambda: sim.ModelingViews.WorkView.Fit()),
+        ("display_refreshed", lambda: sim.ModelingViews.WorkView.UpdateDisplay()),
+    ):
+        try:
+            action()
+            presentation[key] = True
+        except Exception as exc:
+            presentation["warnings"].append(f"Result presentation ({key}): {exc}")
+    return presentation
+
+
 def show_temperature(
     session, sim, handles, *, loadcase_index=0, iteration_index=0, name="MCP temperature"
 ):
@@ -120,6 +141,7 @@ def show_scalar(
             raise ValueError("Postview state differs after display")
         # Keep result alive for the visible view; never overwrite older retained handles.
         retain_result(handles, sim, view, result)
+        presentation = present_result(session, sim)
         return {
             "postview_id": view,
             "postview_owner": sim.FullPath,
@@ -129,6 +151,8 @@ def show_scalar(
             "overlay": bool(existing),
             "main_postview_id": view,
             "saved": False,
+            "presentation": presentation,
+            "warnings": presentation["warnings"],
             "result_freshness": "not_verified",
             "reference_lifetime": "postview ID is document-local within this session; use postview_owner and reacquire after closure",
         }

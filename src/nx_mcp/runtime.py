@@ -6,6 +6,7 @@ from dataclasses import asdict, dataclass
 from typing import Any, Literal
 
 ObjectKind = Literal[
+    "simulation_parameter_table",
     "simulation_object",
     "simulation_field",
     "simulation_step",

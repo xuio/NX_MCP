@@ -4,11 +4,16 @@
 def run(executor):
     import shutil
     from pathlib import Path
+
     import NXOpen.CAE as cae
+
     from nx_mcp.simcenter.results import acquire_result
 
     sim = executor.session.Parts.BaseWork
-    assert sim.FullPath.endswith("contact_numerical_r1.sim")
+    filename = Path(sim.FullPath).name
+    assert filename in ("contact_numerical_r1.sim", "contact_explicit_r1.sim")
+    prefix = "contact-explicit" if filename == "contact_explicit_r1.sim" else "contact"
+
     manager = executor.session.ResultManager
     result, owned = acquire_result(executor.session, sim)
     params = access = None
@@ -30,7 +35,7 @@ def run(executor):
         temperatures = access.AskNodalResult(indices)
         assert len(coords) == len(temperatures) == 90
         rows = []
-        for i, coord, temp in zip(indices, coords, temperatures):
+        for i, coord, temp in zip(indices, coords, temperatures, strict=True):
             row = {
                 "index": i,
                 "label": result.AskNodeLabel(i),
@@ -47,9 +52,16 @@ def run(executor):
                 row["interface_region"] = "heated" if left else "sink"
             rows.append(row)
         root = Path(sim.FullPath).parent
-        log = root / "contact_numerical_r1-Conduction.log"
-        shutil.copy2(log, Path(r"Z:\nx-mcp-integration\simcenter-discovery\contact-numerical.log"))
+        log = root / (Path(sim.FullPath).stem + "-Conduction.log")
+        shutil.copy2(
+            log, Path(r"Z:\nx-mcp-integration\simcenter-discovery") / (prefix + "-numerical.log")
+        )
+        shutil.copy2(
+            root / (Path(sim.FullPath).stem + "-Conduction.xml"),
+            Path(r"Z:\nx-mcp-integration\simcenter-discovery") / (prefix + "-numerical.xml"),
+        )
         return {
+            "document_path": sim.FullPath,
             "nodes": rows,
             "result_coordinate_frame": "native result absolute coordinates; bounds checked against 20 x 10 x 10 mm fixture",
             "temperature_units": "degC",
