@@ -10,13 +10,13 @@ infrastructure features are planned unless they resolve a concrete readiness blo
 
 ## Source and deployed identity
 
-- Engine checkpoint: `a8cb884428b820d20deb427aeb90801384c00d60`, branch
+- Engine checkpoint: `c470bd007ca1a83556b79f910aefbf8b408a697c`, branch
   `simcenter/thermal-flow`, fork `xuio/NX_MCP`.
 - Native target: NX/Simcenter 3D 2606, executable build `2606.1700`, bridge protocol 1. Dedicated Simcenter UI
   session `20bc234ffa5249ceb4fb4d82b993c626`.
 - Deployed source: `C:\ProgramData\BasementHypervisor\nx-mcp-simcenter\source`.
   Workspace: `D:\CAD\SIMCENTER_MCP_WORKSPACE`.
-- [Final engine audit](tests/simcenter/evidence/regions-deployment.json): 78 public
+- [Final engine audit](tests/simcenter/evidence/coupled-bindings-deployment.json): 78 public
   handler signatures matched; every audited Simcenter Python source hash matched
   this checkpoint. [Runtime/helper audit](tests/simcenter/evidence/baldower-readiness-runtime.json)
   verifies the current installed helper hashes against the committed C# source.
@@ -24,7 +24,7 @@ infrastructure features are planned unless they resolve a concrete readiness blo
   bindings, not every in-memory dependency or every API option.
 - The regional-temperature change is complete: native/public paging, independent
   two-solid checks, result-file guards and save/close/reopen passed. Latest UI
-  displays the fitted isolated V temperature result. No product model was edited.
+  displays the fitted isolated coupled fan authoring copy. No product model was edited.
 - This report and companion audit are delivery-only additions after the engine
   checkpoint. Their Git commit is obtained with `git log -1 --format=%H -- BALDOWER-READINESS.md`.
 
@@ -44,11 +44,15 @@ infrastructure features are planned unless they resolve a concrete readiness blo
    number but not precedence over the assigned material density. It does not prove
    room-temperature effective properties. The explicit-pressure case stopped at
    export; it is not a completed comparison with altitude mode disabled.
-3. **A coupled fan route is incomplete.** Public `nx_sim_assign_fan` and
-   `nx_sim_head_loss` deliberately support the verified Flow route only. Coupled
-   authoring/execution is an implementation and native-verification gap, not an
-   external limitation. The retained heated finned case used a velocity inlet,
-   not a verified fan P–Q operating point.
+3. **Coupled fan authoring now passes; export/execution is unverified.** Public
+   `nx_sim_assign_fan` and `nx_sim_head_loss` now support coupled inlet/opening
+   bindings. Creation, committed readback, replay, conflict/stale rejection and
+   save/close/reopen passed in [the public receipt](tests/simcenter/evidence/coupled-fan-public.json).
+   A [native update/failure test](tests/simcenter/evidence/coupled-loss-update-native.json)
+   verified coefficient changes and rollback. These are authoring checks, not a
+   coupled fan operating-point benchmark. The retained heated finned case used a
+   velocity inlet. Coupled fan export and numerical validation remain missing tests,
+   not established external limitations.
 4. **The required coupled mesh comparison has not passed.** The extended layered
    case has useful convergence/heat-transfer evidence, but the finer case reached
    its iteration limit. Both use global 0 °C. Their similar temperatures do not
@@ -68,6 +72,16 @@ python examples/simcenter/audit_baldower_readiness.py
 
 It checks the current guard hashes and retained mismatches; it does not fabricate
 live acceptance. Output: [readiness audit](tests/simcenter/evidence/baldower-readiness-audit.json).
+The coupled binding probe initially stopped before mutation because its old fixture
+name was no longer loaded ([retained failure](tests/simcenter/evidence/coupled-fan-binding-missing-fixture.json)).
+After inspecting the current inventory, the [bounded native probe](tests/simcenter/evidence/coupled-fan-binding-native.json)
+verified documented mode 5, scale 1 and coupled Head Loss factory context, then
+restored bindings, field/table inventories and all modified flags. The public
+fixture is `ui-benchmarks/E-coupled-fan-public-20260909-r1/coupled_fan_public_r1.sim`.
+Reproducer: `examples/simcenter/verify_coupled_fan_public.py`; it refuses an existing
+receipt and never exports or launches a solver. Its SIM-only copy shares FEM/CAD
+and must not be used to edit their geometry.
+
 Minimal native reproducers: [temperature guard](examples/simcenter/verify_coupled_ambient_guard.py)
 and [specified pressure](examples/simcenter/probe_finned_specified_pressure.py).
 They require their named isolated fixtures and fresh output folders. **Do not rerun
@@ -79,7 +93,7 @@ fixed job IDs or overwrite retained directories.** Read the existing
 Exact next action: establish one documented, native room-temperature global
 ambient/pressure configuration whose effective exported property model is understood.
 A qualified native/UI-authored reference or authoritative API mapping is needed;
-retain both guards. Then verify coupled fan/resistance authoring and execute only
+retain both guards. Then verify coupled fan/resistance export and execute only
 the bounded gate below. The current evidence does not justify blaming Siemens or
 silently treating 0 °C as the requested 20 °C.
 
@@ -95,8 +109,8 @@ Evidence paths are under `tests/simcenter/evidence/`.
 | Conduction/contact | `contact-explicit-numerical-acceptance.json`: Tmax 294.401486 K vs 294.4 K (0.03 K tolerance); contact drop 0.499074 K vs 0.5 K (0.01 K tolerance); aggregate rejection 1 W | Scoped 200-element two-block benchmark. Not product accuracy or general contact options. |
 | Explicit thermal environment | Kelvin face temperatures and specified convection environment; existing external-condition readback/export/reopen | Global coupled temperature/pressure mismatch blocks requested environment. |
 | Solid/fluid meshes and wall/local controls | `mesh-plan-public.json`, `local-size-public.json`, `remesh-public.json`; explicit body plans, wall-layer and face-size effects | Fluid/layered remeshing is not verified. Authoring is not mesh convergence. |
-| Fixed-speed fan P–Q | Native static-pressure table and Flow inlet assignment; `native-fan-operating-points-mcp.json` | Coupled assignment not verified. No total-pressure or acoustics claim. |
-| Opening resistance | Native scalar head-loss modes/active coefficients, Flow fixtures | Not general porous media; coupled public route incomplete. |
+| Fixed-speed fan P–Q | Native static-pressure table and Flow inlet assignment; `native-fan-operating-points-mcp.json` | Coupled binding/replay/save-reopen verified in `coupled-fan-public.json`; coupled export/operating point unverified. No total-pressure or acoustics claim. |
+| Opening resistance | Native scalar head-loss modes/active coefficients, Flow fixtures | Coupled creation/replay/persistence and native update/rollback verified; coupled pressure-loss response unverified. Not general porous media. |
 | Prepare/export/launch/reconnect | `mesh-guard-positive-launch.json`, `mesh-guard-positive-finish.json`; canonical XML identity, persistent observer, terminal gate release | Preserve jobs after transport failure. No rerun because observation expires. |
 | Temperatures/regions | `temperature-regions-public.json`, `temperature-regions-lifecycle.json`; native groups, locations, nodal mean; node pages | Group-to-component meaning must be recorded per model; means are not volume/area weighted. |
 | Pressure, airflow, fan point | Native pressure/flow field and boundary extraction, `native-fan-operating-points-mcp.json`, existing duct comparison scripts | Conventions and selected surfaces must be explicit; Flow evidence is not coupled fan acceptance. |
@@ -128,7 +142,7 @@ schemas before authoring. A small scripted set of 2–3 variants is sufficient.
 3. Create supported wall/local controls before meshing; use `nx_sim_mesh_plan` for
    explicit solid/fluid bodies. Read mesh quality, control settings and
    `nx_sim_mesh_state`. Treat disconnected regions and unmeshed bodies as failures.
-4. For the verified **Flow** subset, use `nx_sim_fan_table` with SI pairs
+4. For **Flow or coupled authoring**, use `nx_sim_fan_table` with SI pairs
    `[m³/s, Pa]`, `pressure_convention="static"`, reference RPM/density, curve range
    and provenance; assign it to an existing inlet with `nx_sim_assign_fan`.
    Inspect inlet orientation/pressure references. Use the native opening resistance
@@ -248,7 +262,10 @@ python -m pytest tests/simcenter -q -m 'not real_nx'
 Two additional readiness/export tests pass (`tests/simcenter/test_readiness_scripts.py`);
 [exported JSON](tests/simcenter/evidence/baldower-readiness-regions.json) and
 [CSV](tests/simcenter/evidence/baldower-readiness-regions.csv) retain the two native
-contact-region summaries and explicit scenario/result identity. Native/public evidence is separate. `examples/simcenter/verify_deployed_signatures.py`
+contact-region summaries and explicit scenario/result identity. After the coupled admission change, 46 focused head-loss, fan-field, public-schema,
+readiness and evidence-index tests passed; the two readiness tests passed again
+after adding explicit authoring-versus-numerical assertions. Native/public evidence
+is separate. `examples/simcenter/verify_deployed_signatures.py`
 runs through the existing journal adapter and emits the live handler/hash audit.
 Do not restart NX, close unrelated parts, save-all or reuse probe slots concurrently.
 
