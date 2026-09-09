@@ -127,6 +127,10 @@ def read_properties(table, nxopen, *, _depth=0, _ancestors=(), _budget=None):
             else:
                 from nx_mcp.simcenter.property_values import read_cae_value
 
+                # Base type 0 covers distinct CAE-only types; retain the actual
+                # discriminator even when no supported getter is known.
+                if hasattr(table, "GetPropertyType"):
+                    row["cae_native_type"] = str(table.GetPropertyType(name))
                 decoded = read_cae_value(table, name, nxopen)
                 if decoded is not None:
                     row.update(decoded)

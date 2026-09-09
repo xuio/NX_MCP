@@ -14,8 +14,15 @@ def test_supported_table_uses_native_inspector_and_propagates_mismatch(monkeypat
     class Table:
         OwningPart = object()
 
+        def HasUserAttribute(self, name, kind, index):
+            return name.startswith("NX_MCP_FAN")
+
     monkeypatch.setitem(sys.modules, "NXOpen.Fields", NS(FieldTable=Table))
-    monkeypatch.setitem(sys.modules, "NXOpen", NS(Fields=sys.modules["NXOpen.Fields"]))
+    monkeypatch.setitem(
+        sys.modules,
+        "NXOpen",
+        NS(Fields=sys.modules["NXOpen.Fields"], NXObject=NS(AttributeType=NS(String=1))),
+    )
     inspected = {"manifest": {"interpolation": "linear"}, "readback": {"pressure_Pa": [2, 0]}}
     monkeypatch.setattr(fan_field, "inspect_fan_table", lambda owner, field: inspected)
     assert read_supported_table(Table())["native_samples_si"] == inspected["readback"]
@@ -86,3 +93,52 @@ def test_native_definition_error_is_preserved_in_property_readback(monkeypatch):
     row = read_properties(table, NS(BasePropertyTable=NS(BasePropertyType=kinds)))[0]
     assert row["inspection_status"] == "read_failed"
     assert row["inspection_error"]["code"] == "NX_SIM_MANIFEST_INVALID"
+
+
+def test_unregistered_native_table_is_not_misidentified_as_a_corrupt_fan(monkeypatch):
+    import sys
+
+    from nx_mcp.simcenter import fan_field
+
+    class Table:
+        def HasUserAttribute(self, *args):
+            return False
+
+    monkeypatch.setitem(sys.modules, "NXOpen.Fields", NS(FieldTable=Table))
+    monkeypatch.setitem(
+        sys.modules,
+        "NXOpen",
+        NS(Fields=sys.modules["NXOpen.Fields"], NXObject=NS(AttributeType=NS(String=1))),
+    )
+
+    def forbidden(*args):
+        raise AssertionError("Generic table is not an MCP fan")
+
+    monkeypatch.setattr(fan_field, "inspect_fan_table", forbidden)
+    assert read_supported_table(Table()) is None
+
+
+def test_orphan_fan_payload_still_requires_manifest_validation(monkeypatch):
+    import sys
+
+    from nx_mcp.simcenter import fan_field
+
+    class Table:
+        OwningPart = object()
+
+        def HasUserAttribute(self, name, kind, index):
+            return name == fan_field._MANIFEST_ATTRIBUTE and index == 0
+
+    monkeypatch.setitem(sys.modules, "NXOpen.Fields", NS(FieldTable=Table))
+    monkeypatch.setitem(
+        sys.modules,
+        "NXOpen",
+        NS(Fields=sys.modules["NXOpen.Fields"], NXObject=NS(AttributeType=NS(String=1))),
+    )
+
+    def fail(*args):
+        raise ValueError("Missing fan header")
+
+    monkeypatch.setattr(fan_field, "inspect_fan_table", fail)
+    with pytest.raises(ValueError, match="Missing fan header"):
+        read_supported_table(Table())

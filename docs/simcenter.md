@@ -325,6 +325,45 @@ consumers on the NX thread with the solver-idle guard. Before/after evidence is
 retained as `property-reader-bindings-{before,refreshed}.json`. Cold-start loading
 and this scoped refresh must not be confused with a complete hot-reload guarantee.
 
+### Native fan-controller API check
+
+The installed OpenCAE coupled Thermal-Flow descriptor and sample journal name
+`Fan Speed Controller`. Native creation succeeds with language
+`NX MULTIPHYSICS - Coupled Thermal-Flow` and solver `NX MULTIPHYSICS`.
+Its speed field accepted Celsius abscissas `[20,60]` and angular speeds
+`[6000,12000]` degrees/s at wrapper scale 1. The inlet retained the linked
+controller, Controller Type=2 and nominal speed 12000 degrees/s. These were
+reversible storage/readback checks only: the inlet remained Mode Option=0,
+the sensor was unset, and no solver/export or effective control was tested.
+
+The sensor is the unresolved prerequisite. The descriptor calls it a reference,
+but `GetPropertyType("Temperature Sensor Entity")` returns -9; the live Python
+Reference enum is -5. Both documented reference getter and setter fail with
+NX error 3945002, including a CAE-face setter attempt. The bounded attempts
+restored the table inventory, document flags and prior work document. This
+establishes an API-mapping discrepancy, not a Siemens solver defect or a working
+controller. Next work must identify a supported accessor for this native type;
+do not repeat the same Reference calls or substitute assumed sensor behavior.
+
+Two inspection issues found during the probe are fixed: CAE-only properties
+now expose their actual `cae_native_type` alongside the base type; unregistered
+native tables no longer enter the MCP fan-manifest decoder. They remain
+`unsupported_field_type`, with wrapper scale preserved. Registered fan tables
+still require valid metadata and matching native values, including orphaned
+payload detection. The new type metadata can change partial state hashes and
+conservatively invalidate older snapshots; it does not widen freshness claims.
+
+Reproduction: `examples/simcenter/probe_fan_controller_sensor.py` and
+`verify_fan_controller_inspection.py`, on an isolated loaded coupled SIM.
+Receipts: `fan-controller-{descriptor,binding,binding-r2,field,inspection}.json`
+in `tests/simcenter/evidence`. The last receipt verifies both reader fixes in
+native NX, with rollback; 24 focused inspection tests pass. The live reload audit also
+identified eight stale reader references across seven modules; those functions
+now import the reader at call time. Another 73 relevant regression tests pass.
+The expanded existing refresh script checks these consumers on the NX thread. Public controller
+authoring, sensor semantics, persistence/export and numerical control remain
+unverified. These probes did not alter licences or launch a solver.
+
 ### Reconciled Phase 2 backlog
 
 Statuses below refer to the requested general capability, not availability inferred
@@ -340,7 +379,7 @@ from installed modules. A missing implementation/test is not an external blocker
 | Forced/natural convection and fluid models | Partial native controls/materials and coupled fixtures | `flow_controls.py`, `fluid_material.py`; selector/gravity/buoyancy scope and exports |
 | Fan curves and provenance | Scoped public authoring/readback verified | `fan_field.py`, `fan_boundary.py`; preserve static convention and assignment limits |
 | Fan-speed variants/operating points | Scoped scaling and extraction present | `fan_scaling.py`, `fan_summary.py`; retain validity range and per-run identity |
-| Native temperature-controlled fans | Missing | Native controller discovery and bounded configuration/readback tests |
+| Native temperature-controlled fans | Native descriptor/field/controller-link probe verified; public authoring incomplete | Sensor native type -9 rejects documented Reference -5 accessors; retain explicit unresolved mapping, no controller-function claim |
 | Openings/screens/porous resistance | Partial opening scalar K | `head_loss.py`; do not call this general porous media; add supported model-specific paths |
 | Global/local/near-wall mesh controls | Partial public global tetrahedra; internal boundary-layer path | `boundary_layers.py`, `quality.py`; reusable public controls and local associations |
 | Mesh refinement comparisons | Partial retained numerical comparisons | Bounded reusable comparison records with exact model/mesh/job identity |

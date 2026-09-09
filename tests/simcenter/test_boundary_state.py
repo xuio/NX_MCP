@@ -22,7 +22,6 @@ def attach_solution(sim, bcs):
 
 
 def test_evaluated_expression_change_invalidates_hash(monkeypatch):
-    import nx_mcp.simcenter.boundary_state as module
 
     state = {"value": 1}
     expression = NS(GetValueUsingUnits=lambda units: state["value"])
@@ -37,8 +36,7 @@ def test_evaluated_expression_change_invalidates_hash(monkeypatch):
     attach_solution(sim, [load])
     nx = NS(Expression=NS(UnitsOption=NS(Expression=1)))
     monkeypatch.setattr(
-        module,
-        "read_properties",
+        "nx_mcp.simcenter.properties.read_properties",
         lambda *args: [
             {"name": "Heat Load", "representation": "expression", "expression": "power_parameter"}
         ],
@@ -51,11 +49,9 @@ def test_evaluated_expression_change_invalidates_hash(monkeypatch):
 
 
 def test_read_failure_never_returns_verified_hash(monkeypatch):
-    import nx_mcp.simcenter.boundary_state as module
 
     monkeypatch.setattr(
-        module,
-        "read_properties",
+        "nx_mcp.simcenter.properties.read_properties",
         lambda *args: [{"name": "Temperature", "inspection_status": "read_failed"}],
     )
     load = NS(

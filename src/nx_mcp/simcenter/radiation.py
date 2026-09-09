@@ -4,7 +4,6 @@ import math
 
 from nx_mcp.runtime import NXToolError
 from nx_mcp.simcenter.convection_environment import SOURCES
-from nx_mcp.simcenter.properties import read_properties
 from nx_mcp.simcenter.recovery import authoring_snapshot, rollback_creation
 
 
@@ -73,6 +72,7 @@ def create_environment(
     import NXOpen as nx
     import NXOpen.CAE as cae
 
+    from nx_mcp.simcenter.properties import read_properties
     from nx_mcp.simcenter.solver_guard import require_solver_idle
 
     validate(effective_emissivity, temperature_source, temperature_k)

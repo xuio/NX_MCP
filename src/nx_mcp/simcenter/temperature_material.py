@@ -4,7 +4,6 @@ import math
 
 from nx_mcp.runtime import NXToolError
 from nx_mcp.simcenter import scalar_tables
-from nx_mcp.simcenter.properties import read_properties
 
 
 def validate(name, conductivity_samples, heat_capacity_samples, density, provenance):
@@ -50,6 +49,8 @@ def snapshot(fem):
 
 
 def verify(material, nx, manifests, density):
+    from nx_mcp.simcenter.properties import read_properties
+
     props = read_properties(material.GetPropTable(), nx)
     by_name = {p.get("name"): p for p in props}
     for key, m in manifests.items():

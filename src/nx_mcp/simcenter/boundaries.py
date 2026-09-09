@@ -3,7 +3,6 @@
 import math
 
 from nx_mcp.runtime import NXToolError
-from nx_mcp.simcenter.properties import read_properties
 from nx_mcp.simcenter.recovery import authoring_snapshot, rollback_creation
 
 
@@ -40,6 +39,7 @@ def create_convection(
         validate_environment,
         verify_convection_properties,
     )
+    from nx_mcp.simcenter.properties import read_properties
     from nx_mcp.simcenter.solver_guard import require_solver_idle
 
     validate_environment(temperature_source, temperature_k)
@@ -129,6 +129,8 @@ def create_temperature(session, sim, faces, temperature_k, name, provenance):
     """Assign prescribed absolute temperature to explicit SIM occurrence faces."""
     import NXOpen as nx
     import NXOpen.CAE as cae
+
+    from nx_mcp.simcenter.properties import read_properties
 
     if session.Parts.BaseWork != sim:
         raise NXToolError("NX_SIM_DOCUMENT_NOT_ACTIVE", "Activate the target SIM first")

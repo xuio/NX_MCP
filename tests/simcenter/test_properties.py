@@ -166,3 +166,29 @@ def test_empty_file_reference_is_distinct_from_untracked_external_content():
             row["value"] == value
             and row["inspection_status"] == "unverified_external_file_contents"
         )
+
+
+def test_unknown_cae_type_is_preserved_without_guessing_a_reference_getter():
+    kinds = SimpleNamespace(String=1, Boolean=2, Integer=3, Double=4, ScalarFieldWrapper=6)
+
+    def forbidden(_):
+        raise AssertionError("Unknown type must not invoke a reference getter")
+
+    table = SimpleNamespace(
+        GetPropertyCount=lambda: 1,
+        GetPropertyNameByIndex=lambda _: "Temperature Sensor Entity",
+        GetBasePropertyType=lambda _: 0,
+        GetPropertyType=lambda _: -9,
+        GetReferencePropertyValue=forbidden,
+    )
+    nx = SimpleNamespace(
+        BasePropertyTable=SimpleNamespace(BasePropertyType=kinds),
+        CAE=SimpleNamespace(
+            PropertyTable=SimpleNamespace(PropertyType=SimpleNamespace(Reference=-5))
+        ),
+    )
+    row = read_properties(table, nx)[0]
+    assert row["native_type"] == "0"
+    assert row["cae_native_type"] == "-9"
+    assert row["inspection_status"] == "unsupported_property_type"
+    assert "value" not in row

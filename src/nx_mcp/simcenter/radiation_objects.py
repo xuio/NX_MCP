@@ -3,7 +3,6 @@
 import math
 
 from nx_mcp.runtime import NXToolError
-from nx_mcp.simcenter.properties import read_properties
 
 SIDES = {"both": 0, "top": 1, "bottom": 2}
 
@@ -70,6 +69,7 @@ def create(
     import NXOpen as nx
     import NXOpen.CAE as cae
 
+    from nx_mcp.simcenter.properties import read_properties
     from nx_mcp.simcenter.solver_guard import require_solver_idle
 
     validate(kind, emissivity, side, include_environment)

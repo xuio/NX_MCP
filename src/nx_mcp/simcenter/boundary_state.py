@@ -1,7 +1,6 @@
 """Observed live thermal boundary state; not complete physics freshness."""
 
 from nx_mcp.simcenter.collector_state import state_hash
-from nx_mcp.simcenter.properties import read_properties
 
 
 def stable_boundary_values(value):
@@ -89,6 +88,8 @@ def capture_effective_membership(sim, solution=None):
 
 
 def capture_boundary_state(sim, nx):
+    from nx_mcp.simcenter.properties import read_properties
+
     membership = capture_effective_membership(sim)
     rows, errors, unsupported = [], list(membership["errors"]), []
     collections = [

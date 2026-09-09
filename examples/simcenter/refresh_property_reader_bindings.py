@@ -1,4 +1,4 @@
-"""Refresh five known stale consumers on the NX thread; no model operations."""
+"""Refresh known property-reader consumers on the NX thread; no model operations."""
 
 
 def run(executor):
@@ -10,6 +10,13 @@ def run(executor):
 
     require_solver_idle()
     expected = {
+        "boundaries": ["create_convection", "create_temperature"],
+        "boundary_state": ["capture_boundary_state"],
+        "contact": ["create_contact"],
+        "heat_loads": ["create_body_power"],
+        "radiation": ["create_environment"],
+        "radiation_objects": ["create"],
+        "temperature_material": ["verify"],
         "distributed_heat": ["create_distributed_heat"],
         "flow": ["create_initial_step", "attach_default_tables"],
         "fluid_material": ["assign_fluid_material"],

@@ -2,9 +2,14 @@
 
 
 def read_supported_table(field):
+    import NXOpen as nx
     import NXOpen.Fields as fields
 
-    from nx_mcp.simcenter.fan_field import inspect_fan_table
+    from nx_mcp.simcenter.fan_field import (
+        _HEADER_ATTRIBUTE,
+        _MANIFEST_ATTRIBUTE,
+        inspect_fan_table,
+    )
 
     if not isinstance(field, fields.FieldTable):
         return None
@@ -19,8 +24,14 @@ def read_supported_table(field):
             "scale_application": "native scalar wrapper factor reported separately; binding semantics not established",
             "definition_scope": "table samples, units and stored interpolation; not material/load or solver semantics",
         }
-    # This validates the native samples, units and interpolation against the
-    # bounded retained manifest. Unregistered or changed tables fail explicitly.
+    # Ordinary native tables need not carry MCP fan metadata. A remaining
+    # payload without its header is still a corrupt registered fan, not generic.
+    if not any(
+        field.HasUserAttribute(name, nx.NXObject.AttributeType.String, index)
+        for name, index in ((_HEADER_ATTRIBUTE, -1), (_MANIFEST_ATTRIBUTE, 0))
+    ):
+        return None
+    # Registered fan tables must still pass manifest/native-value validation.
     inspected = inspect_fan_table(field.OwningPart, field)
     return {
         "kind": "validated_fan_table",

@@ -1,0 +1,435 @@
+{
+  "status": "success",
+  "document": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-getter-audit-20260908-r1\\getter_audit.sim",
+  "hypothesis": "Installed descriptor factory produces native sensor and speed-field slots",
+  "sensor_property_type": "-9",
+  "reference_enum_available": true,
+  "reference_enum_value": "-5",
+  "sensor_status": "unconfigured: native -9 type rejects documented Reference -5 methods",
+  "speed_binding": {
+    "same_field": true,
+    "scale": 1.0,
+    "independent": [
+      [
+        "Celsius",
+        [
+          20.0,
+          60.0
+        ]
+      ]
+    ],
+    "dependent": [
+      [
+        "DegreesPerSecond",
+        [
+          6000.0,
+          12000.0
+        ]
+      ]
+    ]
+  },
+  "fan_binding": {
+    "same_controller": true,
+    "controller_type": 2,
+    "nominal": 12000.0,
+    "units": "DegreesPerSecond",
+    "mode": 0
+  },
+  "controller_properties": [
+    {
+      "name": "description",
+      "native_type": "0",
+      "units": null,
+      "cae_native_type": "-1",
+      "representation": "text_lines",
+      "value": []
+    },
+    {
+      "name": "Temperature Sensor Entity",
+      "native_type": "0",
+      "units": null,
+      "cae_native_type": "-9",
+      "inspection_status": "unsupported_property_type"
+    },
+    {
+      "name": "Speed versus Temperature Table",
+      "native_type": "6",
+      "units": null,
+      "field_scale": 1.0,
+      "field_reference": {
+        "journal_id": "MCP_SPEED_PROBE",
+        "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-getter-audit-20260908-r1\\getter_audit.sim",
+        "tag": 8821882,
+        "lifetime": "current loaded document; not a cross-session reference"
+      },
+      "representation": "FieldTable",
+      "inspection_status": "unsupported_field_type"
+    }
+  ],
+  "inspection_fixes_verified": true,
+  "reference_methods": [
+    "GetFileReferencePropertyValue",
+    "GetPdmReferenceAttributeValue",
+    "GetReferenceAttribute",
+    "GetReferencePropertyValue",
+    "GetReferencePropertyValueArray",
+    "SetFileReferencePropertyValue",
+    "SetPdmReferenceAttribute",
+    "SetReferenceAttribute",
+    "SetReferencePropertyValue",
+    "SetReferencePropertyValueArray"
+  ],
+  "fan_boundaries": [
+    {
+      "name": "Coupled Inlet",
+      "descriptor": "Inlet",
+      "properties": [
+        {
+          "name": "description",
+          "native_type": "0",
+          "units": null,
+          "cae_native_type": "-1",
+          "representation": "text_lines",
+          "value": []
+        },
+        {
+          "name": "Mode Option",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Velocity",
+          "native_type": "6",
+          "units": "MeterPerSecond",
+          "expression": "1.0",
+          "unit_symbol": "m/sec",
+          "representation": "expression"
+        },
+        {
+          "name": "Velocity Vector",
+          "native_type": "0",
+          "units": null,
+          "cae_native_type": "-3",
+          "representation": "vector_expressions",
+          "components": [
+            {
+              "expression": "-777777",
+              "evaluated_value": -777777.0,
+              "units": "MilliMeterPerSecond",
+              "unit_symbol": "mm/sec"
+            },
+            {
+              "expression": "-777777",
+              "evaluated_value": -777777.0,
+              "units": "MilliMeterPerSecond",
+              "unit_symbol": "mm/sec"
+            },
+            {
+              "expression": "-777777",
+              "evaluated_value": -777777.0,
+              "units": "MilliMeterPerSecond",
+              "unit_symbol": "mm/sec"
+            }
+          ],
+          "coordinate_frame": "owning_property_convention; not inferred"
+        },
+        {
+          "name": "Mass Flow",
+          "native_type": "6",
+          "units": "dimensionless",
+          "expression": "-777777",
+          "unit_symbol": null,
+          "representation": "expression"
+        },
+        {
+          "name": "Volume Flow",
+          "native_type": "6",
+          "units": "dimensionless",
+          "expression": "-777777",
+          "unit_symbol": null,
+          "representation": "expression"
+        },
+        {
+          "name": "Pressure Rise",
+          "native_type": "6",
+          "units": "dimensionless",
+          "expression": "-777777",
+          "unit_symbol": null,
+          "representation": "expression"
+        },
+        {
+          "name": "Fan Curve",
+          "native_type": "6",
+          "units": null,
+          "value": null
+        },
+        {
+          "name": "Inlet Conditions",
+          "native_type": "0",
+          "units": null,
+          "cae_native_type": "-10",
+          "representation": "named_property_table",
+          "value": {
+            "journal_id": "SsmoPropTable[Finned external air 20 C]",
+            "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-getter-audit-20260908-r1\\getter_audit.sim",
+            "descriptor": "External Conditions",
+            "lifetime": "owner document revision; inspect again after regeneration"
+          },
+          "properties": [
+            {
+              "name": "description",
+              "native_type": "0",
+              "units": null,
+              "cae_native_type": "-1",
+              "representation": "text_lines",
+              "value": []
+            },
+            {
+              "name": "Temperature Option",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Temperature Value",
+              "native_type": "6",
+              "units": "Celsius",
+              "expression": "20.0",
+              "unit_symbol": "C",
+              "representation": "expression",
+              "evaluated_value": 20.0
+            },
+            {
+              "name": "Humidity",
+              "native_type": "3",
+              "units": null,
+              "value": 0
+            },
+            {
+              "name": "Relative Humidity Value",
+              "native_type": "6",
+              "units": "dimensionless",
+              "expression": "0",
+              "unit_symbol": null,
+              "representation": "expression",
+              "evaluated_value": 0.0
+            },
+            {
+              "name": "Water Vapor to Dry Air Mass Ratio Value",
+              "native_type": "6",
+              "units": "dimensionless",
+              "expression": "0",
+              "unit_symbol": null,
+              "representation": "expression",
+              "evaluated_value": 0.0
+            }
+          ]
+        },
+        {
+          "name": "Pressure",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Pressure Value",
+          "native_type": "4",
+          "units": "PressureNewtonPerSquareMilliMeter",
+          "value": -777777.0,
+          "unit_symbol": "N/mm^2(MPa)"
+        },
+        {
+          "name": "Turbulence Characteristics Modeling Object",
+          "native_type": "0",
+          "units": null,
+          "cae_native_type": "-10",
+          "representation": "named_property_table",
+          "value": null
+        },
+        {
+          "name": "Head Loss",
+          "native_type": "0",
+          "units": null,
+          "cae_native_type": "-10",
+          "representation": "named_property_table",
+          "value": null
+        },
+        {
+          "name": "Heat Generated by Fan",
+          "native_type": "4",
+          "units": "HeatFlow_Metric2",
+          "value": 0.0,
+          "unit_symbol": "W"
+        },
+        {
+          "name": "Tracer Fluid",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Tracer Fluid List",
+          "native_type": "0",
+          "units": null,
+          "cae_native_type": "-8",
+          "representation": "named_table_array",
+          "value": []
+        },
+        {
+          "name": "Tracer Fluid Mass Fractions",
+          "native_type": "8",
+          "units": "dimensionless",
+          "value": [
+            -777777.0
+          ],
+          "unit_symbol": null,
+          "value_semantics": "native values; sentinel meaning depends on owning property"
+        },
+        {
+          "name": "Mixture",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Mixture Mass Fractions",
+          "native_type": "8",
+          "units": "dimensionless",
+          "value": [
+            -777777.0
+          ],
+          "unit_symbol": null,
+          "value_semantics": "native values; sentinel meaning depends on owning property"
+        },
+        {
+          "name": "Alignment",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Swirl",
+          "native_type": "3",
+          "units": null,
+          "value": 0
+        },
+        {
+          "name": "Rotation Axis Option",
+          "native_type": "3",
+          "units": null,
+          "value": 5
+        },
+        {
+          "name": "Rotation Axis",
+          "native_type": "0",
+          "units": null,
+          "cae_native_type": "-11",
+          "representation": "axis",
+          "value": null
+        },
+        {
+          "name": "Normal to Tangential Velocity Angle",
+          "native_type": "4",
+          "units": "Degrees",
+          "value": -777777.0,
+          "unit_symbol": "degrees"
+        },
+        {
+          "name": "Rotation Velocity",
+          "native_type": "4",
+          "units": "DegreesPerSecond",
+          "value": -777777.0,
+          "unit_symbol": "degrees/sec"
+        },
+        {
+          "name": "Alignment Vector",
+          "native_type": "0",
+          "units": null,
+          "cae_native_type": "-4",
+          "representation": "vector",
+          "value": null
+        },
+        {
+          "name": "Controller Type",
+          "native_type": "3",
+          "units": null,
+          "value": 2
+        },
+        {
+          "name": "Thermostat",
+          "native_type": "0",
+          "units": null,
+          "cae_native_type": "-10",
+          "representation": "named_property_table",
+          "value": null
+        },
+        {
+          "name": "Fan Speed Controller",
+          "native_type": "0",
+          "units": null,
+          "cae_native_type": "-10",
+          "representation": "named_property_table",
+          "value": {
+            "journal_id": "SsmoPropTable[MCP_CONTROLLER_PROBE]",
+            "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-getter-audit-20260908-r1\\getter_audit.sim",
+            "descriptor": "Fan Speed Controller",
+            "lifetime": "owner document revision; inspect again after regeneration"
+          },
+          "properties": [
+            {
+              "name": "description",
+              "native_type": "0",
+              "units": null,
+              "cae_native_type": "-1",
+              "representation": "text_lines",
+              "value": []
+            },
+            {
+              "name": "Temperature Sensor Entity",
+              "native_type": "0",
+              "units": null,
+              "cae_native_type": "-9",
+              "inspection_status": "unsupported_property_type"
+            },
+            {
+              "name": "Speed versus Temperature Table",
+              "native_type": "6",
+              "units": null,
+              "field_scale": 1.0,
+              "field_reference": {
+                "journal_id": "MCP_SPEED_PROBE",
+                "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\F2-getter-audit-20260908-r1\\getter_audit.sim",
+                "tag": 8821882,
+                "lifetime": "current loaded document; not a cross-session reference"
+              },
+              "representation": "FieldTable",
+              "inspection_status": "unsupported_field_type"
+            }
+          ],
+          "inspection_status": "unverified_named_table_values"
+        },
+        {
+          "name": "Nominal Fan Speed",
+          "native_type": "4",
+          "units": "DegreesPerSecond",
+          "value": 12000.0,
+          "unit_symbol": "degrees/sec"
+        },
+        {
+          "name": "distributionType",
+          "native_type": "3",
+          "units": null,
+          "value": 32
+        }
+      ]
+    }
+  ],
+  "table_inventory_restored": true,
+  "flags_restored": true,
+  "operation_id": "op_6b0dee9893fb41b59f5599e3e28e1cd7",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

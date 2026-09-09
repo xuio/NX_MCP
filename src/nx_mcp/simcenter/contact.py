@@ -3,7 +3,6 @@
 import math
 
 from nx_mcp.runtime import NXToolError
-from nx_mcp.simcenter.properties import read_properties
 
 MODES = {
     "resistance": (1, "Total Resistance", "ThermalResistance_Metric4", "dK/W", "K/W"),
@@ -55,6 +54,7 @@ def create_contact(session, sim, primary, secondary, mode, value, name, provenan
     import NXOpen as nx
     import NXOpen.CAE as cae
 
+    from nx_mcp.simcenter.properties import read_properties
     from nx_mcp.simcenter.solver_guard import require_solver_idle
 
     validate_contact(primary, secondary, mode, value, name, provenance)

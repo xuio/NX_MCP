@@ -3,7 +3,6 @@
 import math
 
 from nx_mcp.runtime import NXToolError
-from nx_mcp.simcenter.properties import read_properties
 from nx_mcp.simcenter.recovery import authoring_snapshot, rollback_creation
 
 
@@ -21,6 +20,8 @@ def create_body_power(
 ):
     import NXOpen as nx
     import NXOpen.CAE as cae
+
+    from nx_mcp.simcenter.properties import read_properties
 
     if session.Parts.BaseWork != sim or body.OwningPart != sim:
         raise NXToolError("NX_SIM_SELECTION_OWNER", "Heat target must belong to the active SIM")
