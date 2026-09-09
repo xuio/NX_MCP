@@ -1,0 +1,42 @@
+{
+  "status": "success",
+  "document": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\L-face-size-20260909-r1\\benchmark_d5f46585b1fa_mesh.fem",
+  "before": {
+    "elements": 1076,
+    "nodes": 354
+  },
+  "hypothesis": "Existing face density builder edits OverallSize; existing tetra builder CommitMesh regenerates with edited local sizing",
+  "solver_launched": false,
+  "edit_returned_controls": 1,
+  "size_mm": 2.0,
+  "selection_preserved": true,
+  "controls_before": [
+    8870174
+  ],
+  "controls_after": [
+    8870174
+  ],
+  "mesh_before_regeneration": {
+    "elements": 1076,
+    "nodes": 354
+  },
+  "regenerated": [
+    1,
+    1
+  ],
+  "after": {
+    "elements": 341,
+    "nodes": 139
+  },
+  "passed": true,
+  "elapsed_seconds": 1.0310000000172295,
+  "mesh_restored": true,
+  "controls_restored": true,
+  "flags_restored": true,
+  "restored_size_mm": 1.0,
+  "operation_id": "op_4631840a0e524973bd1c65465a05f740",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

@@ -467,6 +467,22 @@ check: `probe_local_face_size.py`. Evidence: `local-size-public.json`,
 Edge/point/volume sizing, control editing/removal and reusable remeshing remain
 open; the initial mesh plan still requires no existing meshes.
 
+A bounded native edit/remesh probe now establishes the next implementation route.
+The installed `MeshControlBuilder` reference documents `OverallSize` and
+`CommitDensities`; `MeshManager.CreateMesh3dTetBuilder(mesh)` explicitly accepts
+an existing mesh for editing. The Python probe changed the existing face control
+from 1 to 2 mm, retaining its native tag and face selection. Mesh counts stayed
+1076 elements/354 nodes until explicit tetra mesh commitment, then became
+341 elements/139 nodes across the same two mesh objects. Native edit and remesh
+took approximately 1.03 seconds. Undo restored the original control, 1 mm size,
+mesh counts and all document modification flags; the displayed FEM was fitted.
+No solve or numerical-convergence claim is involved. Reproduce with
+`examples/simcenter/probe_local_size_edit.py`; receipt:
+`tests/simcenter/evidence/local-size-edit-native.json`.
+This is native API evidence, not a public editing/remeshing capability. Next:
+implement bounded edit/remesh operations with committed readback, stale-reference
+invalidation, replay, persistence and failure/rollback checks before exposing them.
+
 ### Reconciled Phase 2 backlog
 
 Statuses below refer to the requested general capability, not availability inferred
