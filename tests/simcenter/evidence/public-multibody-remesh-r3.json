@@ -1,0 +1,1204 @@
+{
+  "responses": {
+    "refine": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_3a72700154ff473294c3b7e7fdfa3b2e\", \"kind\": \"part\", \"name\": \"analysis_cdd77d35e310_mesh\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"analysis_cdd77d35e310_mesh\", \"display_name\": \"analysis_cdd77d35e310_mesh\"}, \"before_counts\": {\"elements\": 1700, \"nodes\": 765}, \"counts\": {\"elements\": 8628, \"nodes\": 2830}, \"mesh_count\": 17, \"settings\": [{\"element_type\": \"Linear Tetrahedron\", \"size_mm\": 0.75, \"mesh\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_e672ee06aed6455481b66f17699f2509\", \"kind\": \"simulation_mesh\", \"name\": \"3d_mesh(1)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"Mesh[3d_mesh(1)]\", \"display_name\": \"3d_mesh(1)\"}, \"bodies\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_9f60037b1a8f45149e206011906ad8ca\", \"kind\": \"body\", \"name\": \"CAE_Body(1)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"CAE_Body(1)\", \"display_name\": \"\"}]}, {\"element_type\": \"Linear Tetrahedron\", \"size_mm\": 0.75, \"mesh\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_383986e0a4144f2a8448c4bd1182d9bb\", \"kind\": \"simulation_mesh\", \"name\": \"3d_mesh(2)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"Mesh[3d_mesh(2)]\", \"display_name\": \"3d_mesh(2)\"}, \"bodies\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_e41f9249b96d452dad0417d73c41792e\", \"kind\": \"body\", \"name\": \"CAE_Body(2)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"CAE_Body(2)\", \"display_name\": \"\"}]}, {\"element_type\": \"Linear Tetrahedron\", \"size_mm\": 0.75, \"mesh\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_dcdbb3be064e433a98f28bb4981403a0\", \"kind\": \"simulation_mesh\", \"name\": \"3d_mesh(3)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"Mesh[3d_mesh(3)]\", \"display_name\": \"3d_mesh(3)\"}, \"bodies\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_de6c934edc4f4631a0f841719b2fc7f6\", \"kind\": \"body\", \"name\": \"CAE_Body(3)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"CAE_Body(3)\", \"display_name\": \"\"}]}, {\"element_type\": \"Linear Tetrahedron\", \"size_mm\": 0.75, \"mesh\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_047944874f9b409497070e67a0a0dc97\", \"kind\": \"simulation_mesh\", \"name\": \"3d_mesh(4)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"Mesh[3d_mesh(4)]\", \"display_name\": \"3d_mesh(4)\"}, \"bodies\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_be92bdde08d64367afaaad848159271b\", \"kind\": \"body\", \"name\": \"CAE_Body(4)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"CAE_Body(4)\", \"display_name\": \"\"}]}, {\"element_type\": \"Linear Tetrahedron\", \"size_mm\": 0.75, \"mesh\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_0da011dee44f437fa8c33c843653b171\", \"kind\": \"simulation_mesh\", \"name\": \"3d_mesh(5)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"Mesh[3d_mesh(5)]\", \"display_name\": \"3d_mesh(5)\"}, \"bodies\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_9f2b57dca93b40a3999b34baafba44d0\", \"kind\": \"body\", \"name\": \"CAE_Body(5)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"CAE_Body(5)\", \"display_name\": \"\"}]}, {\"element_type\": \"Linear Tetrahedron\", \"size_mm\": 0.75, \"mesh\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_8a246e6c645e4d0792bda7b908e88e13\", \"kind\": \"simulation_mesh\", \"name\": \"3d_mesh(6)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"Mesh[3d_mesh(6)]\", \"display_name\": \"3d_mesh(6)\"}, \"bodies\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_b0f0b265bd204c158d28f230aa7ec91b\", \"kind\": \"body\", \"name\": \"CAE_Body(6)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"CAE_Body(6)\", \"display_name\": \"\"}]}, {\"element_type\": \"Linear Tetrahedron\", \"size_mm\": 0.75, \"mesh\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_e1c92ffe55f14c6b98b1bc50d0695ae4\", \"kind\": \"simulation_mesh\", \"name\": \"3d_mesh(7)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"Mesh[3d_mesh(7)]\", \"display_name\": \"3d_mesh(7)\"}, \"bodies\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_67eefdb267774a328fb14b8710d86549\", \"kind\": \"body\", \"name\": \"CAE_Body(7)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"CAE_Body(7)\", \"display_name\": \"\"}]}, {\"element_type\": \"Linear Tetrahedron\", \"size_mm\": 0.75, \"mesh\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_b2e5e8da794d493797ec0fa0ed3146ac\", \"kind\": \"simulation_mesh\", \"name\": \"3d_mesh(8)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"Mesh[3d_mesh(8)]\", \"display_name\": \"3d_mesh(8)\"}, \"bodies\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_790f21c986b84931985389a53938994d\", \"kind\": \"body\", \"name\": \"CAE_Body(8)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"CAE_Body(8)\", \"display_name\": \"\"}]}, {\"element_type\": \"Linear Tetrahedron\", \"size_mm\": 0.75, \"mesh\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_b9d5cf9c1eb84d989b58ce47b1eed501\", \"kind\": \"simulation_mesh\", \"name\": \"3d_mesh(9)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"Mesh[3d_mesh(9)]\", \"display_name\": \"3d_mesh(9)\"}, \"bodies\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_2a169f0806ca4963abb7a5de9889c330\", \"kind\": \"body\", \"name\": \"CAE_Body(9)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"CAE_Body(9)\", \"display_name\": \"\"}]}, {\"element_type\": \"Linear Tetrahedron\", \"size_mm\": 0.75, \"mesh\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_177ae561052647f7ab05df126c97994a\", \"kind\": \"simulation_mesh\", \"name\": \"3d_mesh(10)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"Mesh[3d_mesh(10)]\", \"display_name\": \"3d_mesh(10)\"}, \"bodies\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_2aa83114291741aabef2562997027ef8\", \"kind\": \"body\", \"name\": \"CAE_Body(10)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"CAE_Body(10)\", \"display_name\": \"\"}]}, {\"element_type\": \"Linear Tetrahedron\", \"size_mm\": 0.75, \"mesh\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_56cc3e420bf941dea00ce96ff440349d\", \"kind\": \"simulation_mesh\", \"name\": \"3d_mesh(11)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"Mesh[3d_mesh(11)]\", \"display_name\": \"3d_mesh(11)\"}, \"bodies\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_a030c19c1b134516acfd0f033c0508a8\", \"kind\": \"body\", \"name\": \"CAE_Body(11)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"CAE_Body(11)\", \"display_name\": \"\"}]}, {\"element_type\": \"Linear Tetrahedron\", \"size_mm\": 0.75, \"mesh\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_2b5bc0efbb0f40088141234830874dd5\", \"kind\": \"simulation_mesh\", \"name\": \"3d_mesh(12)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"Mesh[3d_mesh(12)]\", \"display_name\": \"3d_mesh(12)\"}, \"bodies\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_906ff1b0c600413c90fef8e68d0b4382\", \"kind\": \"body\", \"name\": \"CAE_Body(12)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"CAE_Body(12)\", \"display_name\": \"\"}]}, {\"element_type\": \"Linear Tetrahedron\", \"size_mm\": 0.75, \"mesh\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_2f54a5ffb44442719f4b2b4c7f461533\", \"kind\": \"simulation_mesh\", \"name\": \"3d_mesh(13)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"Mesh[3d_mesh(13)]\", \"display_name\": \"3d_mesh(13)\"}, \"bodies\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_7aa2ce13b66742658536816d77a51355\", \"kind\": \"body\", \"name\": \"CAE_Body(13)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"CAE_Body(13)\", \"display_name\": \"\"}]}, {\"element_type\": \"Linear Tetrahedron\", \"size_mm\": 0.75, \"mesh\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_c62d63dbc9d84ce28ce96c88c49c23a9\", \"kind\": \"simulation_mesh\", \"name\": \"3d_mesh(14)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"Mesh[3d_mesh(14)]\", \"display_name\": \"3d_mesh(14)\"}, \"bodies\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_a9ad4948f89c4e13bcf2a9c10a957963\", \"kind\": \"body\", \"name\": \"CAE_Body(14)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"CAE_Body(14)\", \"display_name\": \"\"}]}, {\"element_type\": \"Linear Tetrahedron\", \"size_mm\": 0.75, \"mesh\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_5ed05637ae58468d8f08aa8f20f5b085\", \"kind\": \"simulation_mesh\", \"name\": \"3d_mesh(15)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"Mesh[3d_mesh(15)]\", \"display_name\": \"3d_mesh(15)\"}, \"bodies\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_50733408a51e4205a140e412314286a5\", \"kind\": \"body\", \"name\": \"CAE_Body(15)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"CAE_Body(15)\", \"display_name\": \"\"}]}, {\"element_type\": \"Linear Tetrahedron\", \"size_mm\": 0.75, \"mesh\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_d72d8ecaed864553b90d7d7ec13fe977\", \"kind\": \"simulation_mesh\", \"name\": \"3d_mesh(16)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"Mesh[3d_mesh(16)]\", \"display_name\": \"3d_mesh(16)\"}, \"bodies\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_615f19ef424748b48345e76103909698\", \"kind\": \"body\", \"name\": \"CAE_Body(16)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"CAE_Body(16)\", \"display_name\": \"\"}]}, {\"element_type\": \"Linear Tetrahedron\", \"size_mm\": 0.75, \"mesh\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_4e7bef826a604bc5b025f724c734c4b8\", \"kind\": \"simulation_mesh\", \"name\": \"3d_mesh(17)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"Mesh[3d_mesh(17)]\", \"display_name\": \"3d_mesh(17)\"}, \"bodies\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_0d38c9670db24a04af3ec1fa66390fe9\", \"kind\": \"body\", \"name\": \"CAE_Body(17)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"CAE_Body(17)\", \"display_name\": \"\"}]}], \"previous_sizes_mm\": [1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5], \"global_size_changed\": true, \"coordinate_frame\": \"fem_part_absolute\", \"saved\": false, \"solver_launched\": false, \"results_stale\": true, \"references_invalidated\": [\"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_analysis.sim\"], \"quality_validation\": \"not_performed\", \"convergence\": \"not_established\", \"next_step\": \"Reacquire document/face/mesh references, inspect quality and update associated SIM before solving\", \"operation_id\": \"multi17-refine-finer-r1\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "document": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_3a72700154ff473294c3b7e7fdfa3b2e",
+          "kind": "part",
+          "name": "analysis_cdd77d35e310_mesh",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+          "journal_id": "analysis_cdd77d35e310_mesh",
+          "display_name": "analysis_cdd77d35e310_mesh"
+        },
+        "before_counts": {
+          "elements": 1700,
+          "nodes": 765
+        },
+        "counts": {
+          "elements": 8628,
+          "nodes": 2830
+        },
+        "mesh_count": 17,
+        "settings": [
+          {
+            "element_type": "Linear Tetrahedron",
+            "size_mm": 0.75,
+            "mesh": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_e672ee06aed6455481b66f17699f2509",
+              "kind": "simulation_mesh",
+              "name": "3d_mesh(1)",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+              "journal_id": "Mesh[3d_mesh(1)]",
+              "display_name": "3d_mesh(1)"
+            },
+            "bodies": [
+              {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_9f60037b1a8f45149e206011906ad8ca",
+                "kind": "body",
+                "name": "CAE_Body(1)",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+                "journal_id": "CAE_Body(1)",
+                "display_name": ""
+              }
+            ]
+          },
+          {
+            "element_type": "Linear Tetrahedron",
+            "size_mm": 0.75,
+            "mesh": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_383986e0a4144f2a8448c4bd1182d9bb",
+              "kind": "simulation_mesh",
+              "name": "3d_mesh(2)",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+              "journal_id": "Mesh[3d_mesh(2)]",
+              "display_name": "3d_mesh(2)"
+            },
+            "bodies": [
+              {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_e41f9249b96d452dad0417d73c41792e",
+                "kind": "body",
+                "name": "CAE_Body(2)",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+                "journal_id": "CAE_Body(2)",
+                "display_name": ""
+              }
+            ]
+          },
+          {
+            "element_type": "Linear Tetrahedron",
+            "size_mm": 0.75,
+            "mesh": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_dcdbb3be064e433a98f28bb4981403a0",
+              "kind": "simulation_mesh",
+              "name": "3d_mesh(3)",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+              "journal_id": "Mesh[3d_mesh(3)]",
+              "display_name": "3d_mesh(3)"
+            },
+            "bodies": [
+              {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_de6c934edc4f4631a0f841719b2fc7f6",
+                "kind": "body",
+                "name": "CAE_Body(3)",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+                "journal_id": "CAE_Body(3)",
+                "display_name": ""
+              }
+            ]
+          },
+          {
+            "element_type": "Linear Tetrahedron",
+            "size_mm": 0.75,
+            "mesh": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_047944874f9b409497070e67a0a0dc97",
+              "kind": "simulation_mesh",
+              "name": "3d_mesh(4)",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+              "journal_id": "Mesh[3d_mesh(4)]",
+              "display_name": "3d_mesh(4)"
+            },
+            "bodies": [
+              {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_be92bdde08d64367afaaad848159271b",
+                "kind": "body",
+                "name": "CAE_Body(4)",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+                "journal_id": "CAE_Body(4)",
+                "display_name": ""
+              }
+            ]
+          },
+          {
+            "element_type": "Linear Tetrahedron",
+            "size_mm": 0.75,
+            "mesh": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_0da011dee44f437fa8c33c843653b171",
+              "kind": "simulation_mesh",
+              "name": "3d_mesh(5)",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+              "journal_id": "Mesh[3d_mesh(5)]",
+              "display_name": "3d_mesh(5)"
+            },
+            "bodies": [
+              {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_9f2b57dca93b40a3999b34baafba44d0",
+                "kind": "body",
+                "name": "CAE_Body(5)",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+                "journal_id": "CAE_Body(5)",
+                "display_name": ""
+              }
+            ]
+          },
+          {
+            "element_type": "Linear Tetrahedron",
+            "size_mm": 0.75,
+            "mesh": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_8a246e6c645e4d0792bda7b908e88e13",
+              "kind": "simulation_mesh",
+              "name": "3d_mesh(6)",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+              "journal_id": "Mesh[3d_mesh(6)]",
+              "display_name": "3d_mesh(6)"
+            },
+            "bodies": [
+              {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_b0f0b265bd204c158d28f230aa7ec91b",
+                "kind": "body",
+                "name": "CAE_Body(6)",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+                "journal_id": "CAE_Body(6)",
+                "display_name": ""
+              }
+            ]
+          },
+          {
+            "element_type": "Linear Tetrahedron",
+            "size_mm": 0.75,
+            "mesh": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_e1c92ffe55f14c6b98b1bc50d0695ae4",
+              "kind": "simulation_mesh",
+              "name": "3d_mesh(7)",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+              "journal_id": "Mesh[3d_mesh(7)]",
+              "display_name": "3d_mesh(7)"
+            },
+            "bodies": [
+              {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_67eefdb267774a328fb14b8710d86549",
+                "kind": "body",
+                "name": "CAE_Body(7)",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+                "journal_id": "CAE_Body(7)",
+                "display_name": ""
+              }
+            ]
+          },
+          {
+            "element_type": "Linear Tetrahedron",
+            "size_mm": 0.75,
+            "mesh": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_b2e5e8da794d493797ec0fa0ed3146ac",
+              "kind": "simulation_mesh",
+              "name": "3d_mesh(8)",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+              "journal_id": "Mesh[3d_mesh(8)]",
+              "display_name": "3d_mesh(8)"
+            },
+            "bodies": [
+              {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_790f21c986b84931985389a53938994d",
+                "kind": "body",
+                "name": "CAE_Body(8)",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+                "journal_id": "CAE_Body(8)",
+                "display_name": ""
+              }
+            ]
+          },
+          {
+            "element_type": "Linear Tetrahedron",
+            "size_mm": 0.75,
+            "mesh": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_b9d5cf9c1eb84d989b58ce47b1eed501",
+              "kind": "simulation_mesh",
+              "name": "3d_mesh(9)",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+              "journal_id": "Mesh[3d_mesh(9)]",
+              "display_name": "3d_mesh(9)"
+            },
+            "bodies": [
+              {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_2a169f0806ca4963abb7a5de9889c330",
+                "kind": "body",
+                "name": "CAE_Body(9)",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+                "journal_id": "CAE_Body(9)",
+                "display_name": ""
+              }
+            ]
+          },
+          {
+            "element_type": "Linear Tetrahedron",
+            "size_mm": 0.75,
+            "mesh": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_177ae561052647f7ab05df126c97994a",
+              "kind": "simulation_mesh",
+              "name": "3d_mesh(10)",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+              "journal_id": "Mesh[3d_mesh(10)]",
+              "display_name": "3d_mesh(10)"
+            },
+            "bodies": [
+              {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_2aa83114291741aabef2562997027ef8",
+                "kind": "body",
+                "name": "CAE_Body(10)",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+                "journal_id": "CAE_Body(10)",
+                "display_name": ""
+              }
+            ]
+          },
+          {
+            "element_type": "Linear Tetrahedron",
+            "size_mm": 0.75,
+            "mesh": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_56cc3e420bf941dea00ce96ff440349d",
+              "kind": "simulation_mesh",
+              "name": "3d_mesh(11)",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+              "journal_id": "Mesh[3d_mesh(11)]",
+              "display_name": "3d_mesh(11)"
+            },
+            "bodies": [
+              {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_a030c19c1b134516acfd0f033c0508a8",
+                "kind": "body",
+                "name": "CAE_Body(11)",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+                "journal_id": "CAE_Body(11)",
+                "display_name": ""
+              }
+            ]
+          },
+          {
+            "element_type": "Linear Tetrahedron",
+            "size_mm": 0.75,
+            "mesh": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_2b5bc0efbb0f40088141234830874dd5",
+              "kind": "simulation_mesh",
+              "name": "3d_mesh(12)",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+              "journal_id": "Mesh[3d_mesh(12)]",
+              "display_name": "3d_mesh(12)"
+            },
+            "bodies": [
+              {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_906ff1b0c600413c90fef8e68d0b4382",
+                "kind": "body",
+                "name": "CAE_Body(12)",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+                "journal_id": "CAE_Body(12)",
+                "display_name": ""
+              }
+            ]
+          },
+          {
+            "element_type": "Linear Tetrahedron",
+            "size_mm": 0.75,
+            "mesh": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_2f54a5ffb44442719f4b2b4c7f461533",
+              "kind": "simulation_mesh",
+              "name": "3d_mesh(13)",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+              "journal_id": "Mesh[3d_mesh(13)]",
+              "display_name": "3d_mesh(13)"
+            },
+            "bodies": [
+              {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_7aa2ce13b66742658536816d77a51355",
+                "kind": "body",
+                "name": "CAE_Body(13)",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+                "journal_id": "CAE_Body(13)",
+                "display_name": ""
+              }
+            ]
+          },
+          {
+            "element_type": "Linear Tetrahedron",
+            "size_mm": 0.75,
+            "mesh": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_c62d63dbc9d84ce28ce96c88c49c23a9",
+              "kind": "simulation_mesh",
+              "name": "3d_mesh(14)",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+              "journal_id": "Mesh[3d_mesh(14)]",
+              "display_name": "3d_mesh(14)"
+            },
+            "bodies": [
+              {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_a9ad4948f89c4e13bcf2a9c10a957963",
+                "kind": "body",
+                "name": "CAE_Body(14)",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+                "journal_id": "CAE_Body(14)",
+                "display_name": ""
+              }
+            ]
+          },
+          {
+            "element_type": "Linear Tetrahedron",
+            "size_mm": 0.75,
+            "mesh": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_5ed05637ae58468d8f08aa8f20f5b085",
+              "kind": "simulation_mesh",
+              "name": "3d_mesh(15)",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+              "journal_id": "Mesh[3d_mesh(15)]",
+              "display_name": "3d_mesh(15)"
+            },
+            "bodies": [
+              {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_50733408a51e4205a140e412314286a5",
+                "kind": "body",
+                "name": "CAE_Body(15)",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+                "journal_id": "CAE_Body(15)",
+                "display_name": ""
+              }
+            ]
+          },
+          {
+            "element_type": "Linear Tetrahedron",
+            "size_mm": 0.75,
+            "mesh": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_d72d8ecaed864553b90d7d7ec13fe977",
+              "kind": "simulation_mesh",
+              "name": "3d_mesh(16)",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+              "journal_id": "Mesh[3d_mesh(16)]",
+              "display_name": "3d_mesh(16)"
+            },
+            "bodies": [
+              {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_615f19ef424748b48345e76103909698",
+                "kind": "body",
+                "name": "CAE_Body(16)",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+                "journal_id": "CAE_Body(16)",
+                "display_name": ""
+              }
+            ]
+          },
+          {
+            "element_type": "Linear Tetrahedron",
+            "size_mm": 0.75,
+            "mesh": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_4e7bef826a604bc5b025f724c734c4b8",
+              "kind": "simulation_mesh",
+              "name": "3d_mesh(17)",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+              "journal_id": "Mesh[3d_mesh(17)]",
+              "display_name": "3d_mesh(17)"
+            },
+            "bodies": [
+              {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_0d38c9670db24a04af3ec1fa66390fe9",
+                "kind": "body",
+                "name": "CAE_Body(17)",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+                "journal_id": "CAE_Body(17)",
+                "display_name": ""
+              }
+            ]
+          }
+        ],
+        "previous_sizes_mm": [
+          1.5,
+          1.5,
+          1.5,
+          1.5,
+          1.5,
+          1.5,
+          1.5,
+          1.5,
+          1.5,
+          1.5,
+          1.5,
+          1.5,
+          1.5,
+          1.5,
+          1.5,
+          1.5,
+          1.5
+        ],
+        "global_size_changed": true,
+        "coordinate_frame": "fem_part_absolute",
+        "saved": false,
+        "solver_launched": false,
+        "results_stale": true,
+        "references_invalidated": [
+          "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+          "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_analysis.sim"
+        ],
+        "quality_validation": "not_performed",
+        "convergence": "not_established",
+        "next_step": "Reacquire document/face/mesh references, inspect quality and update associated SIM before solving",
+        "operation_id": "multi17-refine-finer-r1",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed"
+      },
+      "isError": false
+    },
+    "replay": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"document\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_3a72700154ff473294c3b7e7fdfa3b2e\", \"kind\": \"part\", \"name\": \"analysis_cdd77d35e310_mesh\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"analysis_cdd77d35e310_mesh\", \"display_name\": \"analysis_cdd77d35e310_mesh\"}, \"before_counts\": {\"elements\": 1700, \"nodes\": 765}, \"counts\": {\"elements\": 8628, \"nodes\": 2830}, \"mesh_count\": 17, \"settings\": [{\"element_type\": \"Linear Tetrahedron\", \"size_mm\": 0.75, \"mesh\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_e672ee06aed6455481b66f17699f2509\", \"kind\": \"simulation_mesh\", \"name\": \"3d_mesh(1)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"Mesh[3d_mesh(1)]\", \"display_name\": \"3d_mesh(1)\"}, \"bodies\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_9f60037b1a8f45149e206011906ad8ca\", \"kind\": \"body\", \"name\": \"CAE_Body(1)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"CAE_Body(1)\", \"display_name\": \"\"}]}, {\"element_type\": \"Linear Tetrahedron\", \"size_mm\": 0.75, \"mesh\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_383986e0a4144f2a8448c4bd1182d9bb\", \"kind\": \"simulation_mesh\", \"name\": \"3d_mesh(2)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"Mesh[3d_mesh(2)]\", \"display_name\": \"3d_mesh(2)\"}, \"bodies\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_e41f9249b96d452dad0417d73c41792e\", \"kind\": \"body\", \"name\": \"CAE_Body(2)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"CAE_Body(2)\", \"display_name\": \"\"}]}, {\"element_type\": \"Linear Tetrahedron\", \"size_mm\": 0.75, \"mesh\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_dcdbb3be064e433a98f28bb4981403a0\", \"kind\": \"simulation_mesh\", \"name\": \"3d_mesh(3)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"Mesh[3d_mesh(3)]\", \"display_name\": \"3d_mesh(3)\"}, \"bodies\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_de6c934edc4f4631a0f841719b2fc7f6\", \"kind\": \"body\", \"name\": \"CAE_Body(3)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"CAE_Body(3)\", \"display_name\": \"\"}]}, {\"element_type\": \"Linear Tetrahedron\", \"size_mm\": 0.75, \"mesh\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_047944874f9b409497070e67a0a0dc97\", \"kind\": \"simulation_mesh\", \"name\": \"3d_mesh(4)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"Mesh[3d_mesh(4)]\", \"display_name\": \"3d_mesh(4)\"}, \"bodies\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_be92bdde08d64367afaaad848159271b\", \"kind\": \"body\", \"name\": \"CAE_Body(4)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"CAE_Body(4)\", \"display_name\": \"\"}]}, {\"element_type\": \"Linear Tetrahedron\", \"size_mm\": 0.75, \"mesh\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_0da011dee44f437fa8c33c843653b171\", \"kind\": \"simulation_mesh\", \"name\": \"3d_mesh(5)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"Mesh[3d_mesh(5)]\", \"display_name\": \"3d_mesh(5)\"}, \"bodies\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_9f2b57dca93b40a3999b34baafba44d0\", \"kind\": \"body\", \"name\": \"CAE_Body(5)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"CAE_Body(5)\", \"display_name\": \"\"}]}, {\"element_type\": \"Linear Tetrahedron\", \"size_mm\": 0.75, \"mesh\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_8a246e6c645e4d0792bda7b908e88e13\", \"kind\": \"simulation_mesh\", \"name\": \"3d_mesh(6)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"Mesh[3d_mesh(6)]\", \"display_name\": \"3d_mesh(6)\"}, \"bodies\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_b0f0b265bd204c158d28f230aa7ec91b\", \"kind\": \"body\", \"name\": \"CAE_Body(6)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"CAE_Body(6)\", \"display_name\": \"\"}]}, {\"element_type\": \"Linear Tetrahedron\", \"size_mm\": 0.75, \"mesh\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_e1c92ffe55f14c6b98b1bc50d0695ae4\", \"kind\": \"simulation_mesh\", \"name\": \"3d_mesh(7)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"Mesh[3d_mesh(7)]\", \"display_name\": \"3d_mesh(7)\"}, \"bodies\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_67eefdb267774a328fb14b8710d86549\", \"kind\": \"body\", \"name\": \"CAE_Body(7)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"CAE_Body(7)\", \"display_name\": \"\"}]}, {\"element_type\": \"Linear Tetrahedron\", \"size_mm\": 0.75, \"mesh\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_b2e5e8da794d493797ec0fa0ed3146ac\", \"kind\": \"simulation_mesh\", \"name\": \"3d_mesh(8)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"Mesh[3d_mesh(8)]\", \"display_name\": \"3d_mesh(8)\"}, \"bodies\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_790f21c986b84931985389a53938994d\", \"kind\": \"body\", \"name\": \"CAE_Body(8)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"CAE_Body(8)\", \"display_name\": \"\"}]}, {\"element_type\": \"Linear Tetrahedron\", \"size_mm\": 0.75, \"mesh\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_b9d5cf9c1eb84d989b58ce47b1eed501\", \"kind\": \"simulation_mesh\", \"name\": \"3d_mesh(9)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"Mesh[3d_mesh(9)]\", \"display_name\": \"3d_mesh(9)\"}, \"bodies\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_2a169f0806ca4963abb7a5de9889c330\", \"kind\": \"body\", \"name\": \"CAE_Body(9)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"CAE_Body(9)\", \"display_name\": \"\"}]}, {\"element_type\": \"Linear Tetrahedron\", \"size_mm\": 0.75, \"mesh\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_177ae561052647f7ab05df126c97994a\", \"kind\": \"simulation_mesh\", \"name\": \"3d_mesh(10)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"Mesh[3d_mesh(10)]\", \"display_name\": \"3d_mesh(10)\"}, \"bodies\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_2aa83114291741aabef2562997027ef8\", \"kind\": \"body\", \"name\": \"CAE_Body(10)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"CAE_Body(10)\", \"display_name\": \"\"}]}, {\"element_type\": \"Linear Tetrahedron\", \"size_mm\": 0.75, \"mesh\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_56cc3e420bf941dea00ce96ff440349d\", \"kind\": \"simulation_mesh\", \"name\": \"3d_mesh(11)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"Mesh[3d_mesh(11)]\", \"display_name\": \"3d_mesh(11)\"}, \"bodies\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_a030c19c1b134516acfd0f033c0508a8\", \"kind\": \"body\", \"name\": \"CAE_Body(11)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"CAE_Body(11)\", \"display_name\": \"\"}]}, {\"element_type\": \"Linear Tetrahedron\", \"size_mm\": 0.75, \"mesh\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_2b5bc0efbb0f40088141234830874dd5\", \"kind\": \"simulation_mesh\", \"name\": \"3d_mesh(12)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"Mesh[3d_mesh(12)]\", \"display_name\": \"3d_mesh(12)\"}, \"bodies\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_906ff1b0c600413c90fef8e68d0b4382\", \"kind\": \"body\", \"name\": \"CAE_Body(12)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"CAE_Body(12)\", \"display_name\": \"\"}]}, {\"element_type\": \"Linear Tetrahedron\", \"size_mm\": 0.75, \"mesh\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_2f54a5ffb44442719f4b2b4c7f461533\", \"kind\": \"simulation_mesh\", \"name\": \"3d_mesh(13)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"Mesh[3d_mesh(13)]\", \"display_name\": \"3d_mesh(13)\"}, \"bodies\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_7aa2ce13b66742658536816d77a51355\", \"kind\": \"body\", \"name\": \"CAE_Body(13)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"CAE_Body(13)\", \"display_name\": \"\"}]}, {\"element_type\": \"Linear Tetrahedron\", \"size_mm\": 0.75, \"mesh\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_c62d63dbc9d84ce28ce96c88c49c23a9\", \"kind\": \"simulation_mesh\", \"name\": \"3d_mesh(14)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"Mesh[3d_mesh(14)]\", \"display_name\": \"3d_mesh(14)\"}, \"bodies\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_a9ad4948f89c4e13bcf2a9c10a957963\", \"kind\": \"body\", \"name\": \"CAE_Body(14)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"CAE_Body(14)\", \"display_name\": \"\"}]}, {\"element_type\": \"Linear Tetrahedron\", \"size_mm\": 0.75, \"mesh\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_5ed05637ae58468d8f08aa8f20f5b085\", \"kind\": \"simulation_mesh\", \"name\": \"3d_mesh(15)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"Mesh[3d_mesh(15)]\", \"display_name\": \"3d_mesh(15)\"}, \"bodies\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_50733408a51e4205a140e412314286a5\", \"kind\": \"body\", \"name\": \"CAE_Body(15)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"CAE_Body(15)\", \"display_name\": \"\"}]}, {\"element_type\": \"Linear Tetrahedron\", \"size_mm\": 0.75, \"mesh\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_d72d8ecaed864553b90d7d7ec13fe977\", \"kind\": \"simulation_mesh\", \"name\": \"3d_mesh(16)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"Mesh[3d_mesh(16)]\", \"display_name\": \"3d_mesh(16)\"}, \"bodies\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_615f19ef424748b48345e76103909698\", \"kind\": \"body\", \"name\": \"CAE_Body(16)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"CAE_Body(16)\", \"display_name\": \"\"}]}, {\"element_type\": \"Linear Tetrahedron\", \"size_mm\": 0.75, \"mesh\": {\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_4e7bef826a604bc5b025f724c734c4b8\", \"kind\": \"simulation_mesh\", \"name\": \"3d_mesh(17)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"Mesh[3d_mesh(17)]\", \"display_name\": \"3d_mesh(17)\"}, \"bodies\": [{\"id\": \"obj_20bc234ffa5249ceb4fb4d82b993c626_0d38c9670db24a04af3ec1fa66390fe9\", \"kind\": \"body\", \"name\": \"CAE_Body(17)\", \"part_id\": \"part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"generation_id\": \"6442e97f9a0d4705a1b5a579f9a5327e\", \"owner_part_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"journal_id\": \"CAE_Body(17)\", \"display_name\": \"\"}]}], \"previous_sizes_mm\": [1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5], \"global_size_changed\": true, \"coordinate_frame\": \"fem_part_absolute\", \"saved\": false, \"solver_launched\": false, \"results_stale\": true, \"references_invalidated\": [\"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_analysis.sim\"], \"quality_validation\": \"not_performed\", \"convergence\": \"not_established\", \"next_step\": \"Reacquire document/face/mesh references, inspect quality and update associated SIM before solving\", \"operation_id\": \"multi17-refine-finer-r1\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\", \"replayed\": true}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "document": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_3a72700154ff473294c3b7e7fdfa3b2e",
+          "kind": "part",
+          "name": "analysis_cdd77d35e310_mesh",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+          "journal_id": "analysis_cdd77d35e310_mesh",
+          "display_name": "analysis_cdd77d35e310_mesh"
+        },
+        "before_counts": {
+          "elements": 1700,
+          "nodes": 765
+        },
+        "counts": {
+          "elements": 8628,
+          "nodes": 2830
+        },
+        "mesh_count": 17,
+        "settings": [
+          {
+            "element_type": "Linear Tetrahedron",
+            "size_mm": 0.75,
+            "mesh": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_e672ee06aed6455481b66f17699f2509",
+              "kind": "simulation_mesh",
+              "name": "3d_mesh(1)",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+              "journal_id": "Mesh[3d_mesh(1)]",
+              "display_name": "3d_mesh(1)"
+            },
+            "bodies": [
+              {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_9f60037b1a8f45149e206011906ad8ca",
+                "kind": "body",
+                "name": "CAE_Body(1)",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+                "journal_id": "CAE_Body(1)",
+                "display_name": ""
+              }
+            ]
+          },
+          {
+            "element_type": "Linear Tetrahedron",
+            "size_mm": 0.75,
+            "mesh": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_383986e0a4144f2a8448c4bd1182d9bb",
+              "kind": "simulation_mesh",
+              "name": "3d_mesh(2)",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+              "journal_id": "Mesh[3d_mesh(2)]",
+              "display_name": "3d_mesh(2)"
+            },
+            "bodies": [
+              {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_e41f9249b96d452dad0417d73c41792e",
+                "kind": "body",
+                "name": "CAE_Body(2)",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+                "journal_id": "CAE_Body(2)",
+                "display_name": ""
+              }
+            ]
+          },
+          {
+            "element_type": "Linear Tetrahedron",
+            "size_mm": 0.75,
+            "mesh": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_dcdbb3be064e433a98f28bb4981403a0",
+              "kind": "simulation_mesh",
+              "name": "3d_mesh(3)",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+              "journal_id": "Mesh[3d_mesh(3)]",
+              "display_name": "3d_mesh(3)"
+            },
+            "bodies": [
+              {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_de6c934edc4f4631a0f841719b2fc7f6",
+                "kind": "body",
+                "name": "CAE_Body(3)",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+                "journal_id": "CAE_Body(3)",
+                "display_name": ""
+              }
+            ]
+          },
+          {
+            "element_type": "Linear Tetrahedron",
+            "size_mm": 0.75,
+            "mesh": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_047944874f9b409497070e67a0a0dc97",
+              "kind": "simulation_mesh",
+              "name": "3d_mesh(4)",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+              "journal_id": "Mesh[3d_mesh(4)]",
+              "display_name": "3d_mesh(4)"
+            },
+            "bodies": [
+              {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_be92bdde08d64367afaaad848159271b",
+                "kind": "body",
+                "name": "CAE_Body(4)",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+                "journal_id": "CAE_Body(4)",
+                "display_name": ""
+              }
+            ]
+          },
+          {
+            "element_type": "Linear Tetrahedron",
+            "size_mm": 0.75,
+            "mesh": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_0da011dee44f437fa8c33c843653b171",
+              "kind": "simulation_mesh",
+              "name": "3d_mesh(5)",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+              "journal_id": "Mesh[3d_mesh(5)]",
+              "display_name": "3d_mesh(5)"
+            },
+            "bodies": [
+              {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_9f2b57dca93b40a3999b34baafba44d0",
+                "kind": "body",
+                "name": "CAE_Body(5)",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+                "journal_id": "CAE_Body(5)",
+                "display_name": ""
+              }
+            ]
+          },
+          {
+            "element_type": "Linear Tetrahedron",
+            "size_mm": 0.75,
+            "mesh": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_8a246e6c645e4d0792bda7b908e88e13",
+              "kind": "simulation_mesh",
+              "name": "3d_mesh(6)",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+              "journal_id": "Mesh[3d_mesh(6)]",
+              "display_name": "3d_mesh(6)"
+            },
+            "bodies": [
+              {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_b0f0b265bd204c158d28f230aa7ec91b",
+                "kind": "body",
+                "name": "CAE_Body(6)",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+                "journal_id": "CAE_Body(6)",
+                "display_name": ""
+              }
+            ]
+          },
+          {
+            "element_type": "Linear Tetrahedron",
+            "size_mm": 0.75,
+            "mesh": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_e1c92ffe55f14c6b98b1bc50d0695ae4",
+              "kind": "simulation_mesh",
+              "name": "3d_mesh(7)",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+              "journal_id": "Mesh[3d_mesh(7)]",
+              "display_name": "3d_mesh(7)"
+            },
+            "bodies": [
+              {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_67eefdb267774a328fb14b8710d86549",
+                "kind": "body",
+                "name": "CAE_Body(7)",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+                "journal_id": "CAE_Body(7)",
+                "display_name": ""
+              }
+            ]
+          },
+          {
+            "element_type": "Linear Tetrahedron",
+            "size_mm": 0.75,
+            "mesh": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_b2e5e8da794d493797ec0fa0ed3146ac",
+              "kind": "simulation_mesh",
+              "name": "3d_mesh(8)",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+              "journal_id": "Mesh[3d_mesh(8)]",
+              "display_name": "3d_mesh(8)"
+            },
+            "bodies": [
+              {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_790f21c986b84931985389a53938994d",
+                "kind": "body",
+                "name": "CAE_Body(8)",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+                "journal_id": "CAE_Body(8)",
+                "display_name": ""
+              }
+            ]
+          },
+          {
+            "element_type": "Linear Tetrahedron",
+            "size_mm": 0.75,
+            "mesh": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_b9d5cf9c1eb84d989b58ce47b1eed501",
+              "kind": "simulation_mesh",
+              "name": "3d_mesh(9)",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+              "journal_id": "Mesh[3d_mesh(9)]",
+              "display_name": "3d_mesh(9)"
+            },
+            "bodies": [
+              {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_2a169f0806ca4963abb7a5de9889c330",
+                "kind": "body",
+                "name": "CAE_Body(9)",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+                "journal_id": "CAE_Body(9)",
+                "display_name": ""
+              }
+            ]
+          },
+          {
+            "element_type": "Linear Tetrahedron",
+            "size_mm": 0.75,
+            "mesh": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_177ae561052647f7ab05df126c97994a",
+              "kind": "simulation_mesh",
+              "name": "3d_mesh(10)",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+              "journal_id": "Mesh[3d_mesh(10)]",
+              "display_name": "3d_mesh(10)"
+            },
+            "bodies": [
+              {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_2aa83114291741aabef2562997027ef8",
+                "kind": "body",
+                "name": "CAE_Body(10)",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+                "journal_id": "CAE_Body(10)",
+                "display_name": ""
+              }
+            ]
+          },
+          {
+            "element_type": "Linear Tetrahedron",
+            "size_mm": 0.75,
+            "mesh": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_56cc3e420bf941dea00ce96ff440349d",
+              "kind": "simulation_mesh",
+              "name": "3d_mesh(11)",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+              "journal_id": "Mesh[3d_mesh(11)]",
+              "display_name": "3d_mesh(11)"
+            },
+            "bodies": [
+              {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_a030c19c1b134516acfd0f033c0508a8",
+                "kind": "body",
+                "name": "CAE_Body(11)",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+                "journal_id": "CAE_Body(11)",
+                "display_name": ""
+              }
+            ]
+          },
+          {
+            "element_type": "Linear Tetrahedron",
+            "size_mm": 0.75,
+            "mesh": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_2b5bc0efbb0f40088141234830874dd5",
+              "kind": "simulation_mesh",
+              "name": "3d_mesh(12)",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+              "journal_id": "Mesh[3d_mesh(12)]",
+              "display_name": "3d_mesh(12)"
+            },
+            "bodies": [
+              {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_906ff1b0c600413c90fef8e68d0b4382",
+                "kind": "body",
+                "name": "CAE_Body(12)",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+                "journal_id": "CAE_Body(12)",
+                "display_name": ""
+              }
+            ]
+          },
+          {
+            "element_type": "Linear Tetrahedron",
+            "size_mm": 0.75,
+            "mesh": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_2f54a5ffb44442719f4b2b4c7f461533",
+              "kind": "simulation_mesh",
+              "name": "3d_mesh(13)",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+              "journal_id": "Mesh[3d_mesh(13)]",
+              "display_name": "3d_mesh(13)"
+            },
+            "bodies": [
+              {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_7aa2ce13b66742658536816d77a51355",
+                "kind": "body",
+                "name": "CAE_Body(13)",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+                "journal_id": "CAE_Body(13)",
+                "display_name": ""
+              }
+            ]
+          },
+          {
+            "element_type": "Linear Tetrahedron",
+            "size_mm": 0.75,
+            "mesh": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_c62d63dbc9d84ce28ce96c88c49c23a9",
+              "kind": "simulation_mesh",
+              "name": "3d_mesh(14)",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+              "journal_id": "Mesh[3d_mesh(14)]",
+              "display_name": "3d_mesh(14)"
+            },
+            "bodies": [
+              {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_a9ad4948f89c4e13bcf2a9c10a957963",
+                "kind": "body",
+                "name": "CAE_Body(14)",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+                "journal_id": "CAE_Body(14)",
+                "display_name": ""
+              }
+            ]
+          },
+          {
+            "element_type": "Linear Tetrahedron",
+            "size_mm": 0.75,
+            "mesh": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_5ed05637ae58468d8f08aa8f20f5b085",
+              "kind": "simulation_mesh",
+              "name": "3d_mesh(15)",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+              "journal_id": "Mesh[3d_mesh(15)]",
+              "display_name": "3d_mesh(15)"
+            },
+            "bodies": [
+              {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_50733408a51e4205a140e412314286a5",
+                "kind": "body",
+                "name": "CAE_Body(15)",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+                "journal_id": "CAE_Body(15)",
+                "display_name": ""
+              }
+            ]
+          },
+          {
+            "element_type": "Linear Tetrahedron",
+            "size_mm": 0.75,
+            "mesh": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_d72d8ecaed864553b90d7d7ec13fe977",
+              "kind": "simulation_mesh",
+              "name": "3d_mesh(16)",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+              "journal_id": "Mesh[3d_mesh(16)]",
+              "display_name": "3d_mesh(16)"
+            },
+            "bodies": [
+              {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_615f19ef424748b48345e76103909698",
+                "kind": "body",
+                "name": "CAE_Body(16)",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+                "journal_id": "CAE_Body(16)",
+                "display_name": ""
+              }
+            ]
+          },
+          {
+            "element_type": "Linear Tetrahedron",
+            "size_mm": 0.75,
+            "mesh": {
+              "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_4e7bef826a604bc5b025f724c734c4b8",
+              "kind": "simulation_mesh",
+              "name": "3d_mesh(17)",
+              "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+              "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+              "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+              "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+              "journal_id": "Mesh[3d_mesh(17)]",
+              "display_name": "3d_mesh(17)"
+            },
+            "bodies": [
+              {
+                "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_0d38c9670db24a04af3ec1fa66390fe9",
+                "kind": "body",
+                "name": "CAE_Body(17)",
+                "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_6442e97f9a0d4705a1b5a579f9a5327e",
+                "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+                "generation_id": "6442e97f9a0d4705a1b5a579f9a5327e",
+                "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+                "journal_id": "CAE_Body(17)",
+                "display_name": ""
+              }
+            ]
+          }
+        ],
+        "previous_sizes_mm": [
+          1.5,
+          1.5,
+          1.5,
+          1.5,
+          1.5,
+          1.5,
+          1.5,
+          1.5,
+          1.5,
+          1.5,
+          1.5,
+          1.5,
+          1.5,
+          1.5,
+          1.5,
+          1.5,
+          1.5
+        ],
+        "global_size_changed": true,
+        "coordinate_frame": "fem_part_absolute",
+        "saved": false,
+        "solver_launched": false,
+        "results_stale": true,
+        "references_invalidated": [
+          "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+          "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_analysis.sim"
+        ],
+        "quality_validation": "not_performed",
+        "convergence": "not_established",
+        "next_step": "Reacquire document/face/mesh references, inspect quality and update associated SIM before solving",
+        "operation_id": "multi17-refine-finer-r1",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed",
+        "replayed": true
+      },
+      "isError": false
+    },
+    "stale": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"error\", \"warnings\": [], \"units\": null, \"code\": \"NX_OBJECT_STALE\", \"message\": \"Object reference is not valid: obj_20bc234ffa5249ceb4fb4d82b993c626_8cc270817ebd425aa4662442f8520e7d\", \"retryable\": false, \"details\": {\"operation_id\": \"op_27ebc0d4ecf74d9c878bf2c674aa8285\", \"mutation_outcome\": \"not_started\"}}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "error",
+        "warnings": [],
+        "units": null,
+        "code": "NX_OBJECT_STALE",
+        "message": "Object reference is not valid: obj_20bc234ffa5249ceb4fb4d82b993c626_8cc270817ebd425aa4662442f8520e7d",
+        "retryable": false,
+        "details": {
+          "operation_id": "op_27ebc0d4ecf74d9c878bf2c674aa8285",
+          "mutation_outcome": "not_started"
+        }
+      },
+      "isError": true
+    },
+    "save": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"status\": \"success\", \"warnings\": [], \"units\": \"mm\", \"saved\": true, \"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"file\": {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"bytes\": 3397984, \"sha256\": \"f7d1947b3d6cc51fd83202f15990c1a3e7db63317985cb0d44fcd9fb2dc63555\"}, \"previous_file\": {\"path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\ui-benchmarks\\\\public-multibody-analysis-r1\\\\analysis_cdd77d35e310_mesh.fem\", \"bytes\": 2928831, \"sha256\": \"ddb351572c0f83828f1dc17b7c70255bfe53f38c6d01d29c2b0ce3452dcee8c7\"}, \"backup_path\": \"D:\\\\CAD\\\\SIMCENTER_MCP_WORKSPACE\\\\simcenter-save-backups\\\\7eda0b2ce6a347009dbba0a77d58eab8\\\\analysis_cdd77d35e310_mesh.fem\", \"saved_components\": false, \"closed\": false, \"other_modified_flags_unchanged\": true, \"result_freshness\": \"not_verified\", \"operation_id\": \"op_3523bb0f1fbd449080ae338d6855fd48\", \"session_id\": \"20bc234ffa5249ceb4fb4d82b993c626\", \"mutation_outcome\": \"committed\"}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structuredContent": {
+        "status": "success",
+        "warnings": [],
+        "units": "mm",
+        "saved": true,
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+        "file": {
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+          "bytes": 3397984,
+          "sha256": "f7d1947b3d6cc51fd83202f15990c1a3e7db63317985cb0d44fcd9fb2dc63555"
+        },
+        "previous_file": {
+          "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\public-multibody-analysis-r1\\analysis_cdd77d35e310_mesh.fem",
+          "bytes": 2928831,
+          "sha256": "ddb351572c0f83828f1dc17b7c70255bfe53f38c6d01d29c2b0ce3452dcee8c7"
+        },
+        "backup_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\simcenter-save-backups\\7eda0b2ce6a347009dbba0a77d58eab8\\analysis_cdd77d35e310_mesh.fem",
+        "saved_components": false,
+        "closed": false,
+        "other_modified_flags_unchanged": true,
+        "result_freshness": "not_verified",
+        "operation_id": "op_3523bb0f1fbd449080ae338d6855fd48",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "mutation_outcome": "committed"
+      },
+      "isError": false
+    }
+  },
+  "schema": {
+    "additionalProperties": false,
+    "properties": {
+      "document": {
+        "title": "Document",
+        "type": "string"
+      },
+      "size_mm": {
+        "anyOf": [
+          {
+            "type": "number"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Size Mm"
+      },
+      "operation_id": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Operation Id"
+      }
+    },
+    "required": [
+      "document"
+    ],
+    "title": "nx_sim_remeshArguments",
+    "type": "object"
+  },
+  "passed": true,
+  "solver_launched": false
+}

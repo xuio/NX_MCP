@@ -22,7 +22,7 @@ Dimension synchronization is already verified by the engineering task.
 | Owned inlet/opening creation | Public `nx_sim_inlet` / `nx_sim_opening` native creation, target/membership/readback and save pass (`public-boundary-authoring-r1.json`) | Fan/head-loss binding, export and solve now pass; reopen still pending |
 | Fluid properties / global environment | Public `nx_sim_environment` deployed; sequential native 25/40 °C readback and save pass (`public-analysis-environment-r2.json`); fluid assignment pending | 40 °C export preserves values; fluid assignment and mesh pass. Separate 25 °C case and gravity remain |
 | User CAD associations / topology changes | Public `nx_sim_create_analysis` creates FEM/SIM from saved two-body CAD; source hash unchanged; distinct FEM/SIM basename fix native verified | Body addition/removal synchronization and isolated-variant preservation |
-| Multi-body meshing | Removed 16-body limits in plan and regeneration locally; validation covers 17/64/256 bodies | `nx_sim_remesh(document, size_mm=...)` global-size editing implemented/deployed; 31 targeted offline checks pass. Native >16-body mesh and size-edit verification remain |
+| Multi-body meshing | Removed 16-body limits in plan and regeneration locally; validation covers 17/64/256 bodies | Native/public 17-body mesh passes. Size 0.75 mm regenerates 1,700→8,628 elements; replay, stale-ID rejection and save pass (`public-multibody-remesh-r3.json`). Geometry update/reopen remain |
 | Temperature postview | Exact reported name reproduced on generic result: periods/colons rejected, length accepted. Fixed with explicit normalization warning; public view/capture pass | Keep punctuation regression; viewport visually inspected |
 | Generic activation | FEM/SIM/AFM paths rejected before display/work calls locally, including typed references | Native/public rejection preserves work/display context (`public-authoring-surface-r1.json`) |
 
@@ -54,6 +54,16 @@ view. Separate 25 °C solve, reopen, gravity and topology/mesh work remain.
 `public-numerical-40c-r1.json` preserves the failed outcome. Screenshot creation
 and visual verification pass (`public-postview-fixed-r1.json`). This is generic
 infrastructure geometry, not a Baldower thermal result.
+
+The multi-body fixture uses 17 separate 3 mm cubes. A 2→1.5 mm size edit
+committed correctly but retained the same 1,700 elements; the client count-growth
+assertion stopped that batch (`public-multibody-remesh-r2.json`). A subsequent
+0.75 mm edit produced 8,628 elements and 2,830 nodes. The initial client also
+requested an invalid face page size of 200; it was corrected to two pages of 100
+without recreating CAD/FEM/SIM (`public-multibody-remesh-r1.json`). These are
+mesh-authoring checks, not solver or mesh-sensitivity acceptance. The retained
+`verify_public_multibody_remesh_r1/r2/r3.py` scripts record this session-specific
+sequence; use fresh operation IDs/paths and reacquired IDs for another fixture.
 
 First targeted offline batch: 44 tests passed (mesh plan, regeneration and recovery).
 This is not native verification. Keep the previous numerical mesh-sensitivity
