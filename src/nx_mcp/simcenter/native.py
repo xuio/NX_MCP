@@ -1099,6 +1099,41 @@ class SimcenterMixin:
             **result,
         }
 
+    def _sim_gravity(self, document, bodies, acceleration_m_s2, name):
+        from nx_mcp.simcenter.gravity import create, validate
+
+        validate(acceleration_m_s2, name)
+        sim = self.objects.resolve(document, expected_kind="part")
+        if (
+            not isinstance(bodies, list)
+            or not bodies
+            or any(not isinstance(b, str) for b in bodies)
+        ):
+            raise NXToolError("NX_INVALID_ARGUMENT", "Supply FEM prototype body IDs")
+        prototypes = [self.objects.resolve(b, expected_kind="body") for b in bodies]
+        if not hasattr(sim, "Simulation"):
+            raise NXToolError("NX_SIM_DOCUMENT_TYPE", "Select a SIM")
+        components = list(sim.ComponentAssembly.RootComponent.GetChildren())
+        if (
+            len(components) != 1
+            or components[0].Prototype != sim.FemPart
+            or any(b.OwningPart != sim.FemPart for b in prototypes)
+        ):
+            raise NXToolError("NX_SIM_SELECTION_OWNER", "Select bodies from the SIM's direct FEM")
+        result = create(
+            self.session,
+            sim,
+            [components[0].FindOccurrence(b) for b in prototypes],
+            acceleration_m_s2,
+            name,
+        )
+        load = result.pop("load")
+        return {
+            "load": self._reference(load, "simulation_load", sim, "gravity"),
+            "bodies": [self._reference(b, "body", sim.FemPart, "body") for b in prototypes],
+            **result,
+        }
+
     def _sim_heat_power(self, document, body, power_w, name, provenance, overlap_policy="reject"):
         from nx_mcp.simcenter.heat_loads import create_body_power
 

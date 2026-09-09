@@ -894,3 +894,10 @@ def nx_sim_sync_geometry(document: str):
 
 
 NON_MODEL.add("nx_sim_sync_geometry")
+
+
+def nx_sim_gravity(document: str, bodies: list[str], acceleration_m_s2: list[float], name: str):
+    """Create constant gravity on explicit FEM prototype body IDs from nx_sim_faces in the active coupled thermal-flow SIM. Supply three finite XYZ components in m/s², global Cartesian frame, and a unique name. Requires one direct FEM occurrence. Returns committed SI vector, typed load and target references, and solution membership. Duplicate names and overlapping supported gravity loads are rejected. Zero vector is allowed. Does not enable buoyancy: configure that separately with nx_sim_environment. No save, solve or material-law change. Uses creation rollback and operation_id deduplication. Rotating frames, time-varying gravity and nested FEM assemblies are unsupported."""
+
+
+NON_MODEL.add("nx_sim_gravity")
