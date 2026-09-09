@@ -142,6 +142,10 @@ PUBLIC_EVIDENCE = {
         "native-temperature-postview.json",
         "Temperature postview field/unit readback and replay; multiple existing views untested",
     ),
+    "nx_sim_mesh_plan": (
+        "mesh-plan-public.json",
+        "Explicit solid/fluid body plan, layers, readback/replay and save/reopen: 529 elements, 281 nodes; no solve",
+    ),
     "nx_sim_boundary_layers": (
         "mesh-controls-public.json",
         "Two FEM walls, 0.1 mm/3 layers/1.2 growth, readback/replay/save-reopen; no generated mesh claim",

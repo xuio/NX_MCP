@@ -2,6 +2,12 @@
 
 from typing import Literal
 
+try:
+    from typing_extensions import TypedDict
+except ModuleNotFoundError:
+    # Native NX imports declarations for dispatch but does not run Pydantic.
+    from typing import TypedDict
+
 READ_ONLY = {"nx_sim_capabilities", "nx_sim_documents"}
 NON_MODEL = {"nx_sim_create_benchmark"}
 
@@ -745,3 +751,18 @@ def nx_sim_mesh_controls(document: str, offset: int = 0, limit: int = 50):
 
 
 READ_ONLY.add("nx_sim_mesh_controls")
+
+
+class BodyMeshRegion(TypedDict):
+    __pydantic_config__ = {"extra": "forbid", "strict": True}
+
+    body: str
+    kind: Literal["solid", "fluid"]
+    size_mm: float
+
+
+def nx_sim_mesh_plan(document: str, regions: list[BodyMeshRegion]):
+    """Generate a complete explicit body mesh plan in an active millimeter FEM with no existing meshes. Supply 1..16 regions, each exactly {body: typed FEM body ID, kind: 'solid'|'fluid', size_mm: finite (0,10000]}. Cover every FEM body once. Uses installed Linear Tetrahedron or Fluid Linear Tetrahedron; respects native mesh controls and can produce multiple meshes per body. Verifies primary mesh element type, size and body selection by reopening its builder; returns meshes per region and total element/node counts. Does not infer fluid regions, assign materials, save or solve. Control effectiveness, element quality and convergence require separate inspection. Rejects foreign/stale/duplicate/missing bodies and running solvers. Entire plan uses undo on failure; partial recovery is explicit. Supply operation_id for safe retry; never rerun because a transport response timed out."""
+
+
+NON_MODEL.add("nx_sim_mesh_plan")

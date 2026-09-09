@@ -2031,6 +2031,15 @@ class SimcenterMixin:
                 },
             ) from exc
 
+    def _sim_mesh_plan(self, document, regions):
+        from nx_mcp.simcenter.mesh_plan import generate
+
+        fem = self.objects.resolve(document, expected_kind="part")
+        try:
+            return generate(self, fem, regions)
+        except ValueError as error:
+            raise NXToolError("NX_INVALID_ARGUMENT", str(error)) from error
+
     def _sim_mesh(self, document, size_mm=5.0):
         import math
 

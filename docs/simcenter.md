@@ -396,6 +396,42 @@ previous internal layered-mesh evidence is a separate verification scope.
 The final live audit matched 71 handler signatures and all Simcenter source
 hashes, with no stale checked property readers (`mesh-controls-deployment.json`).
 
+### Explicit solid/fluid mesh plans
+
+`nx_sim_mesh_plan` accepts 1..16 body definitions containing a typed FEM body ID,
+`kind` (`solid` or `fluid`) and `size_mm`. Plans must cover every body once in an
+active millimeter FEM without existing meshes. Each region uses the installed
+Linear Tetrahedron or Fluid Linear Tetrahedron choice. The adapter reopens each
+primary mesh builder to verify element type, explicit size and body selection;
+additional layer meshes are returned with that region. The entire plan rolls
+back on failure. It does not infer air geometry, assign materials, save or solve.
+Unknown region fields and boolean sizes are rejected at the public boundary.
+
+Public verification used two separate 10 mm blocks: solid at 5 mm mesh size,
+fluid at 3 mm, with four fluid wall controls at 0.1 mm first height, 3 layers,
+growth 1.2. It produced 529 elements and 281 nodes across three meshes.
+The saved/reopened topology contains 265 four-node and 264 six-node elements;
+native quality inspection reports zero error/warning occurrences under the
+installed criteria. This is evidence of generated layer topology, not adequate
+CFD resolution or convergence. Material/interface assignment and solving were
+not part of this fixture.
+
+Creation, native primary-builder readback, replay, rejection of missing body
+coverage/existing meshes, save/close/reopen, stale-FEM rejection and preserved
+wall controls passed through public MCP. Native topology inspection preserved
+all document modification flags. Offline coverage checks late-region rollback,
+resource cleanup on partial map acquisition, validation and public schemas;
+37 focused tests pass. No native injected late-region failure was run here.
+Deployment testing caught the embedded Python lacking `typing_extensions`;
+schema declarations now use a standard-library fallback in that process, while
+the sidecar retains strict Pydantic validation. No dependency was installed. The final live audit matched all 72 handler
+signatures and all Simcenter source hashes (`mesh-plan-deployment.json`).
+Evidence: `mesh-plan-public.json` and `mixed-mesh-topology.json`; reproduce with
+`examples/simcenter/verify_mesh_plan_public.py` and
+`verify_mixed_mesh_topology.py`. The public persistence checks were appended to
+the same saved fixture without repeating meshing. General local sizing,
+remeshing/editing and refinement-study workflows remain incomplete.
+
 ### Reconciled Phase 2 backlog
 
 Statuses below refer to the requested general capability, not availability inferred
@@ -413,7 +449,7 @@ from installed modules. A missing implementation/test is not an external blocker
 | Fan-speed variants/operating points | Scoped scaling and extraction present | `fan_scaling.py`, `fan_summary.py`; retain validity range and per-run identity |
 | Native temperature-controlled fans | Native descriptor/field/controller-link probe verified; public authoring incomplete | Sensor native type -9 rejects documented Reference -5 accessors; retain explicit unresolved mapping, no controller-function claim |
 | Openings/screens/porous resistance | Partial opening scalar K | `head_loss.py`; do not call this general porous media; add supported model-specific paths |
-| Global/local/near-wall mesh controls | Public global tetrahedra, FEM face selection and boundary-layer creation/inspection | `boundary_layers.py`, `mesh_controls.py`; general local sizing, control editing and public mesh-effect verification remain |
+| Global/local/near-wall mesh controls | Public explicit solid/fluid body plans, FEM faces and boundary-layer controls | `boundary_layers.py`, `mesh_controls.py`; public mixed layered-mesh fixture passes; local sizing and control editing remain |
 | Mesh refinement comparisons | Partial retained numerical comparisons | Bounded reusable comparison records with exact model/mesh/job identity |
 | Parameter studies | Partial isolated variants and scenario import | `variant_clone.py`, `scenario_apply.py`; explicit variables, bounds and resumable execution |
 | Job status/recovery/cancellation | Partial public persistent workflow | Native running cancellation unresolved; pre-launch cancellation verified separately |
