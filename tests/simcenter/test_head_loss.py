@@ -52,7 +52,7 @@ def fixture(monkeypatch):
     monkeypatch.setitem(sys.modules, "NXOpen", nx)
     monkeypatch.setitem(sys.modules, "NXOpen.CAE", cae)
     monkeypatch.setattr("nx_mcp.simcenter.solver_guard.require_solver_idle", lambda: None)
-    monkeypatch.setattr("nx_mcp.simcenter.head_loss.read_properties", lambda *args: [])
+    monkeypatch.setattr("nx_mcp.simcenter.properties.read_properties", lambda *args: [])
     return session, sim, boundary, value
 
 

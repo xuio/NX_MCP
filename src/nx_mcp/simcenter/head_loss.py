@@ -3,7 +3,6 @@
 import math
 
 from nx_mcp.runtime import NXToolError
-from nx_mcp.simcenter.properties import read_properties
 
 
 def require_manual_dynamic_pressure(table):
@@ -28,6 +27,8 @@ def require_manual_dynamic_pressure(table):
 def attach_head_loss(session, sim, boundary, name, coefficient):
     import NXOpen as nx
     import NXOpen.CAE as cae
+
+    from nx_mcp.simcenter.properties import read_properties
 
     if type(coefficient) not in (int, float) or not math.isfinite(coefficient) or coefficient < 0:
         raise NXToolError(
@@ -112,6 +113,7 @@ def set_opening_head_loss(
     import NXOpen as nx
     import NXOpen.CAE as cae
 
+    from nx_mcp.simcenter.properties import read_properties
     from nx_mcp.simcenter.solver_guard import require_solver_idle
 
     values = [coefficient] + ([expected_coefficient] if expected_coefficient is not None else [])

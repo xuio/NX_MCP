@@ -1,7 +1,6 @@
 """Native Flow / Thermal-Flow configuration on the NX UI thread."""
 
 from nx_mcp.runtime import NXToolError
-from nx_mcp.simcenter.properties import read_properties
 
 
 def create_initial_step(session, sim, name):
@@ -12,6 +11,8 @@ def create_initial_step(session, sim, name):
     """
     import NXOpen as nx
     import NXOpen.UF as uf
+
+    from nx_mcp.simcenter.properties import read_properties
 
     if session.Parts.BaseWork != sim:
         raise NXToolError("NX_SIM_DOCUMENT_NOT_ACTIVE", "Activate the selected SIM first")
@@ -87,6 +88,8 @@ def attach_default_tables(session, sim, name_prefix):
     domain or boundary conditions and never establishes solver readiness.
     """
     import NXOpen as nx
+
+    from nx_mcp.simcenter.properties import read_properties
 
     if session.Parts.BaseWork != sim:
         raise NXToolError("NX_SIM_DOCUMENT_NOT_ACTIVE", "Activate the selected SIM first")

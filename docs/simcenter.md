@@ -307,6 +307,24 @@ This verifies isotropic conductivity and heat-capacity tables with constant
 density. Temperature-dependent density, phase change, anisotropic tables, actual
 solution range checks and numerical acceptance remain open. No solver was launched.
 
+### Live dependency checks during deployment
+
+A live audit found stale imported `read_properties` functions in distributed
+heat, flow setup, fluid-material authoring, head-loss authoring and transient time
+controls after prior in-process updates. Those seven consumers now import the
+reader at call time. The native refresh verifies that binding mode and preserves
+work/display documents and all modified flags. It does not rerun solvers or claim
+new numerical acceptance.
+
+`examples/simcenter/verify_deployed_signatures.py` now also reports direct global
+and local-import property-reader bindings in loaded module-owned functions, and
+fails if a checked global reader is stale. This supplements file hashes and
+handler signatures; it does not audit every cached dependency or imported
+function reference. `refresh_property_reader_bindings.py` refreshes the five known
+consumers on the NX thread with the solver-idle guard. Before/after evidence is
+retained as `property-reader-bindings-{before,refreshed}.json`. Cold-start loading
+and this scoped refresh must not be confused with a complete hot-reload guarantee.
+
 ### Reconciled Phase 2 backlog
 
 Statuses below refer to the requested general capability, not availability inferred

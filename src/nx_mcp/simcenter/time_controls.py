@@ -7,7 +7,6 @@ This adapter does not save, export, or launch a solver.
 import math
 
 from nx_mcp.runtime import NXToolError
-from nx_mcp.simcenter.properties import read_properties
 
 
 def validate_times(end_times_s, max_temperature_change_k, min_time_step_s):
@@ -38,6 +37,8 @@ def configure_transient_steps(
     Readback confirms native settings, not the integration intervals eventually
     chosen by the solver. Existing extra steps are rejected, never deleted.
     """
+    from nx_mcp.simcenter.properties import read_properties
+
     validate_times(end_times_s, max_temperature_change_k, min_time_step_s)
     import NXOpen as nx
     import NXOpen.CAE as cae

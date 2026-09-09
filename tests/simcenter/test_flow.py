@@ -62,7 +62,7 @@ def test_failed_readback_rolls_back_created_step(native, monkeypatch):
     def failed(*args):
         raise RuntimeError("native property read failed")
 
-    monkeypatch.setattr(flow, "read_properties", failed)
+    monkeypatch.setattr("nx_mcp.simcenter.properties.read_properties", failed)
     with pytest.raises(RuntimeError, match="property read"):
         flow.create_initial_step(session, sim, "Flow step")
     assert sim.Simulation.ActiveSolution.StepCount == 0
@@ -87,7 +87,7 @@ def test_failed_recovery_is_reported_as_partial(native, monkeypatch):
     def failed_undo(*args):
         raise RuntimeError("native undo failed")
 
-    monkeypatch.setattr(flow, "read_properties", failed_read)
+    monkeypatch.setattr("nx_mcp.simcenter.properties.read_properties", failed_read)
     session.UndoToMark = failed_undo
     with pytest.raises(NXToolError) as error:
         flow.create_initial_step(session, sim, "Flow step")
@@ -131,7 +131,7 @@ def test_partial_table_creation_is_rolled_back(native, monkeypatch):
         events.append("rollback")
 
     session.UndoToMark = undo
-    monkeypatch.setattr(flow, "read_properties", lambda *a: [])
+    monkeypatch.setattr("nx_mcp.simcenter.properties.read_properties", lambda *a: [])
     with pytest.raises(RuntimeError, match="second native table"):
         flow.attach_default_tables(session, sim, "Test")
     assert not tables and not values
@@ -179,7 +179,7 @@ def test_coupled_property_key_uses_documented_distinct_descriptor(native, monkey
         GetNamedPropertyTablePropertyValue=lambda key: assigned.get(key),
         SetNamedPropertyTablePropertyValue=lambda key, value: assigned.update({key: value}),
     )
-    monkeypatch.setattr(flow, "read_properties", lambda *a: [])
+    monkeypatch.setattr("nx_mcp.simcenter.properties.read_properties", lambda *a: [])
     result = flow.attach_default_tables(session, sim, "Coupled")
     assert result["unresolved_controls"] == []
     assert len(assigned) == 5

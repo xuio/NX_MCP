@@ -1,0 +1,145 @@
+{
+  "status": "success",
+  "readers": [
+    {
+      "module": "nx_mcp.simcenter.boundaries",
+      "functions": [
+        "create_convection",
+        "create_temperature"
+      ],
+      "current_reader": true
+    },
+    {
+      "module": "nx_mcp.simcenter.boundary_state",
+      "functions": [
+        "capture_boundary_state"
+      ],
+      "current_reader": true
+    },
+    {
+      "module": "nx_mcp.simcenter.contact",
+      "functions": [
+        "create_contact"
+      ],
+      "current_reader": true
+    },
+    {
+      "module": "nx_mcp.simcenter.distributed_heat",
+      "functions": [
+        "create_distributed_heat"
+      ],
+      "current_reader": false
+    },
+    {
+      "module": "nx_mcp.simcenter.flow",
+      "functions": [
+        "create_initial_step",
+        "attach_default_tables"
+      ],
+      "current_reader": false
+    },
+    {
+      "module": "nx_mcp.simcenter.fluid_material",
+      "functions": [
+        "assign_fluid_material"
+      ],
+      "current_reader": false
+    },
+    {
+      "module": "nx_mcp.simcenter.head_loss",
+      "functions": [
+        "attach_head_loss",
+        "set_opening_head_loss"
+      ],
+      "current_reader": false
+    },
+    {
+      "module": "nx_mcp.simcenter.heat_loads",
+      "functions": [
+        "create_body_power"
+      ],
+      "current_reader": true
+    },
+    {
+      "module": "nx_mcp.simcenter.properties",
+      "functions": [
+        "read_properties"
+      ],
+      "current_reader": true
+    },
+    {
+      "module": "nx_mcp.simcenter.radiation",
+      "functions": [
+        "create_environment"
+      ],
+      "current_reader": true
+    },
+    {
+      "module": "nx_mcp.simcenter.radiation_objects",
+      "functions": [
+        "create"
+      ],
+      "current_reader": true
+    },
+    {
+      "module": "nx_mcp.simcenter.temperature_material",
+      "functions": [
+        "verify"
+      ],
+      "current_reader": true
+    },
+    {
+      "module": "nx_mcp.simcenter.time_controls",
+      "functions": [
+        "configure_transient_steps"
+      ],
+      "current_reader": false
+    }
+  ],
+  "stale": [
+    {
+      "module": "nx_mcp.simcenter.distributed_heat",
+      "functions": [
+        "create_distributed_heat"
+      ],
+      "current_reader": false
+    },
+    {
+      "module": "nx_mcp.simcenter.flow",
+      "functions": [
+        "create_initial_step",
+        "attach_default_tables"
+      ],
+      "current_reader": false
+    },
+    {
+      "module": "nx_mcp.simcenter.fluid_material",
+      "functions": [
+        "assign_fluid_material"
+      ],
+      "current_reader": false
+    },
+    {
+      "module": "nx_mcp.simcenter.head_loss",
+      "functions": [
+        "attach_head_loss",
+        "set_opening_head_loss"
+      ],
+      "current_reader": false
+    },
+    {
+      "module": "nx_mcp.simcenter.time_controls",
+      "functions": [
+        "configure_transient_steps"
+      ],
+      "current_reader": false
+    }
+  ],
+  "scope": "Direct module-global property readers in loaded Simcenter functions; not all dependency bindings",
+  "solver_launched": false,
+  "operation_id": "op_3df269dfe3cd43628ec43ccf3561c99a",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

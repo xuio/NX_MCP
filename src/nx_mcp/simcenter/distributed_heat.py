@@ -4,7 +4,6 @@ import math
 from contextlib import contextmanager
 
 from nx_mcp.runtime import NXToolError
-from nx_mcp.simcenter.properties import read_properties
 from nx_mcp.simcenter.recovery import authoring_snapshot, rollback_creation
 from nx_mcp.simcenter.solver_guard import require_solver_idle
 
@@ -92,6 +91,8 @@ def create_distributed_heat(
     Numerical acceptance remains separate from native authoring checks. Targets
     must be SIM occurrence faces for flux or occurrence bodies for generation.
     """
+    from nx_mcp.simcenter.properties import read_properties
+
     with preflight():
         descriptor, unit_name, symbol = validate_density(kind, value)
         if (

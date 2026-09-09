@@ -3,7 +3,6 @@
 import math
 
 from nx_mcp.runtime import NXToolError
-from nx_mcp.simcenter.properties import read_properties
 
 
 def assign_fluid_material(
@@ -11,6 +10,8 @@ def assign_fluid_material(
 ):
     import NXOpen as nx
     import NXOpen.CAE as cae
+
+    from nx_mcp.simcenter.properties import read_properties
 
     if session.Parts.BaseWork != fem or not isinstance(fem, cae.FemPart):
         raise NXToolError("NX_SIM_DOCUMENT_NOT_ACTIVE", "Activate the selected FEM first")

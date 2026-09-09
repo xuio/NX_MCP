@@ -1,0 +1,44 @@
+{
+  "status": "success",
+  "passed": true,
+  "functions": [
+    {
+      "function": "nx_mcp.simcenter.distributed_heat.create_distributed_heat",
+      "call_time_reader_verified": true
+    },
+    {
+      "function": "nx_mcp.simcenter.flow.create_initial_step",
+      "call_time_reader_verified": true
+    },
+    {
+      "function": "nx_mcp.simcenter.flow.attach_default_tables",
+      "call_time_reader_verified": true
+    },
+    {
+      "function": "nx_mcp.simcenter.fluid_material.assign_fluid_material",
+      "call_time_reader_verified": true
+    },
+    {
+      "function": "nx_mcp.simcenter.head_loss.attach_head_loss",
+      "call_time_reader_verified": true
+    },
+    {
+      "function": "nx_mcp.simcenter.head_loss.set_opening_head_loss",
+      "call_time_reader_verified": true
+    },
+    {
+      "function": "nx_mcp.simcenter.time_controls.configure_transient_steps",
+      "call_time_reader_verified": true
+    }
+  ],
+  "document_flags_preserved": true,
+  "work_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-temperature-material-public-export-20260909-r1\\temperature_material_public_r1.sim",
+  "display_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-temperature-material-public-export-20260909-r1\\temperature_material_public_r1.sim",
+  "solver_launched": false,
+  "scope": "Live import binding and document-state preservation; existing authoring behavior covered by targeted regression tests",
+  "operation_id": "op_05acec45525d44f39c9775c115524ecb",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}
