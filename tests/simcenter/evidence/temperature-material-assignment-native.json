@@ -1,0 +1,1196 @@
+{
+  "status": "success",
+  "material_properties": [
+    {
+      "name": "MassDensityConstant",
+      "native_type": "6",
+      "units": "KilogramPerCubicMeter",
+      "expression": "2700",
+      "unit_symbol": "kg/m^3",
+      "representation": "expression"
+    },
+    {
+      "name": "ThermalConductivityControl",
+      "native_type": "3",
+      "units": null,
+      "value": 0
+    },
+    {
+      "name": "ThermalConductivity",
+      "native_type": "6",
+      "units": null,
+      "field_scale": 1.0,
+      "field_reference": {
+        "journal_id": "MCP_ThermalConductivity",
+        "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-heat-recovery-20260909-r1\\benchmark_b48bd54502e5_mesh.fem",
+        "tag": 8586792,
+        "lifetime": "current loaded document; not a cross-session reference"
+      },
+      "representation": "FieldTable",
+      "field_definition": {
+        "kind": "validated_scalar_table",
+        "manifest": {
+          "axis": "temperature",
+          "interpolation": "linear",
+          "name": "MCP_ThermalConductivity",
+          "outside_table": "undefined",
+          "provenance": "Generic temperature-material API fixture",
+          "quantity": "conductivity",
+          "samples": [
+            [
+              273.15,
+              100
+            ],
+            [
+              293.15,
+              150
+            ],
+            [
+              313.15,
+              200
+            ]
+          ],
+          "version": 1
+        },
+        "native_samples_si": {
+          "samples_si": [
+            [
+              273.15,
+              100.0
+            ],
+            [
+              293.15,
+              150.0
+            ],
+            [
+              313.15,
+              200.0
+            ]
+          ],
+          "axis_units": "K",
+          "value_units": "W/(m K)",
+          "native_axis_unit": "Celsius",
+          "native_value_unit": "ThermalConductivity_Metric3",
+          "interpolation": "linear",
+          "outside_table": "undefined"
+        },
+        "scale_application": "native scalar wrapper factor reported separately; binding semantics not established",
+        "definition_scope": "table samples, units and stored interpolation; not material/load or solver semantics"
+      }
+    },
+    {
+      "name": "SpecificHeatControl",
+      "native_type": "3",
+      "units": null,
+      "value": 0
+    },
+    {
+      "name": "SpecificHeat",
+      "native_type": "6",
+      "units": null,
+      "field_scale": 1.0,
+      "field_reference": {
+        "journal_id": "MCP_SpecificHeat",
+        "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-heat-recovery-20260909-r1\\benchmark_b48bd54502e5_mesh.fem",
+        "tag": 8586845,
+        "lifetime": "current loaded document; not a cross-session reference"
+      },
+      "representation": "FieldTable",
+      "field_definition": {
+        "kind": "validated_scalar_table",
+        "manifest": {
+          "axis": "temperature",
+          "interpolation": "linear",
+          "name": "MCP_SpecificHeat",
+          "outside_table": "undefined",
+          "provenance": "Generic temperature-material API fixture",
+          "quantity": "heat_capacity",
+          "samples": [
+            [
+              273.15,
+              800
+            ],
+            [
+              293.15,
+              900
+            ],
+            [
+              313.15,
+              1000
+            ]
+          ],
+          "version": 1
+        },
+        "native_samples_si": {
+          "samples_si": [
+            [
+              273.15,
+              800.0
+            ],
+            [
+              293.15,
+              900.0
+            ],
+            [
+              313.15,
+              1000.0
+            ]
+          ],
+          "axis_units": "K",
+          "value_units": "J/(kg K)",
+          "native_axis_unit": "Celsius",
+          "native_value_unit": "SpecificHeat_Metric2",
+          "interpolation": "linear",
+          "outside_table": "undefined"
+        },
+        "scale_application": "native scalar wrapper factor reported separately; binding semantics not established",
+        "definition_scope": "table samples, units and stored interpolation; not material/load or solver semantics"
+      }
+    }
+  ],
+  "definitions": {
+    "ThermalConductivity": {
+      "manifest": {
+        "axis": "temperature",
+        "interpolation": "linear",
+        "name": "MCP_ThermalConductivity",
+        "outside_table": "undefined",
+        "provenance": "Generic temperature-material API fixture",
+        "quantity": "conductivity",
+        "samples": [
+          [
+            273.15,
+            100
+          ],
+          [
+            293.15,
+            150
+          ],
+          [
+            313.15,
+            200
+          ]
+        ],
+        "version": 1
+      },
+      "manifest_sha256": "23d90ab65843cc21e1f2e70bda4cd4d714f83e33ca4fc31ac0e6d4f913c63c43",
+      "readback": {
+        "samples_si": [
+          [
+            273.15,
+            100.0
+          ],
+          [
+            293.15,
+            150.0
+          ],
+          [
+            313.15,
+            200.0
+          ]
+        ],
+        "axis_units": "K",
+        "value_units": "W/(m K)",
+        "native_axis_unit": "Celsius",
+        "native_value_unit": "ThermalConductivity_Metric3",
+        "interpolation": "linear",
+        "outside_table": "undefined"
+      },
+      "binding_semantics": "not_inspected",
+      "numerical_acceptance": "not_established"
+    },
+    "SpecificHeat": {
+      "manifest": {
+        "axis": "temperature",
+        "interpolation": "linear",
+        "name": "MCP_SpecificHeat",
+        "outside_table": "undefined",
+        "provenance": "Generic temperature-material API fixture",
+        "quantity": "heat_capacity",
+        "samples": [
+          [
+            273.15,
+            800
+          ],
+          [
+            293.15,
+            900
+          ],
+          [
+            313.15,
+            1000
+          ]
+        ],
+        "version": 1
+      },
+      "manifest_sha256": "1aa8cf61e8cc2ef30f3f53ae69cb230505cf23e7d7d9b19c81f51dd9fd265362",
+      "readback": {
+        "samples_si": [
+          [
+            273.15,
+            800.0
+          ],
+          [
+            293.15,
+            900.0
+          ],
+          [
+            313.15,
+            1000.0
+          ]
+        ],
+        "axis_units": "K",
+        "value_units": "J/(kg K)",
+        "native_axis_unit": "Celsius",
+        "native_value_unit": "SpecificHeat_Metric2",
+        "interpolation": "linear",
+        "outside_table": "undefined"
+      },
+      "binding_semantics": "not_inspected",
+      "numerical_acceptance": "not_established"
+    }
+  },
+  "committed_readback_verified": true,
+  "assignment_verified": true,
+  "export_verified": false,
+  "solver_launched": false,
+  "assignments": [
+    "Solid(1)"
+  ],
+  "export_created": true,
+  "document": "obj_20bc234ffa5249ceb4fb4d82b993c626_fea3043c88d449d7abc45162a0ba2f05",
+  "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-temperature-material-export-20260909-r1\\temperature_material_r1.sim",
+  "mesh": {
+    "meshes": [
+      {
+        "name": "3d_mesh(1)",
+        "type": "Mesh3d",
+        "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-heat-recovery-20260909-r1\\benchmark_b48bd54502e5_mesh.fem",
+        "element_type": "Linear Tetrahedron",
+        "properties": [
+          {
+            "name": "automatic size option bool",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "automatic element size factor",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 1.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "quad mesh overall edge size",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": 5.0,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "maximum growth rate",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 1.3,
+            "unit_symbol": null
+          },
+          {
+            "name": "surface meshing method",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "create pyramids bool",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "common tet mesher bool",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "number of processors",
+            "native_type": "3",
+            "units": null,
+            "value": 4
+          },
+          {
+            "name": "small feature percentage",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 10.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "small feature size",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": 0.1,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "Level of Discretization around a Circle",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 25.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "Enable Distance Based Size Variation",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Maximum Distance to Original Mesh",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": 1.0,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "Maximum Level of Discretization around a Circle",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 75.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "face proximity enable",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "face proximity search direction",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "face proximity points in gap",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 0.5,
+            "unit_symbol": null
+          },
+          {
+            "name": "edge proximity enable",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "edge proximity faces in gap",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 0.5,
+            "unit_symbol": null
+          },
+          {
+            "name": "fillet num elements",
+            "native_type": "3",
+            "units": null,
+            "value": 3
+          },
+          {
+            "name": "num elements on cylinder circumference",
+            "native_type": "3",
+            "units": null,
+            "value": 6
+          },
+          {
+            "name": "element size on cylinder height",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": 1.0,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "midnodes",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "geometry tolerance option bool",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "geometry tolerance",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": 0.0,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "max jacobian",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 10.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "mapped mesh option bool",
+            "native_type": "2",
+            "units": null,
+            "value": true
+          },
+          {
+            "name": "multiblock cylinder option bool",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "surface mesh size variation",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 50.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "surface curvature threshold",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": 0.1,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "volume mesh size variation",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 50.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "internal mesh gradation",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 1.05,
+            "unit_symbol": null
+          },
+          {
+            "name": "internal max edge option bool",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "internal max edge length value",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": 0.0,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "two elements through thickness bool",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "mesh transition bool",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "remesh on bad quality bool",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "maximum edge length bool",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "maximum edge length",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": 1.0,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "abstraction tolerance option",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "abstraction value",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": 0.001,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "small feature tolerance",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 10.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "small feature value",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 0.1,
+            "unit_symbol": null
+          },
+          {
+            "name": "boundary layer element type",
+            "native_type": "3",
+            "units": null,
+            "value": 3
+          },
+          {
+            "name": "insert blend elements",
+            "native_type": "2",
+            "units": null,
+            "value": true
+          },
+          {
+            "name": "blending angle",
+            "native_type": "4",
+            "units": "Degrees",
+            "value": 90.00000000000003,
+            "unit_symbol": "degrees"
+          },
+          {
+            "name": "sweep angle",
+            "native_type": "4",
+            "units": "Degrees",
+            "value": 44.99999999999999,
+            "unit_symbol": "degrees"
+          },
+          {
+            "name": "control aspect ratio",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "maximum exposed aspect ratio",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 1000.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "control slender",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "minimum aspect ratio",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 0.01,
+            "unit_symbol": null
+          },
+          {
+            "name": "maximum imprint dihedral angle",
+            "native_type": "4",
+            "units": "Degrees",
+            "value": 150.0000000000001,
+            "unit_symbol": "degrees"
+          },
+          {
+            "name": "gradation rate",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 10.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "smoothing distance factor",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 3.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "all-tet boundary layer",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "dont format mesh to solver",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "quad mesh edge match tolerance",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 0.02,
+            "unit_symbol": null
+          },
+          {
+            "name": "quad mesh smoothness tolerance",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": 0.01,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "min face angle",
+            "native_type": "4",
+            "units": "Degrees",
+            "value": 20.000000000000014,
+            "unit_symbol": "degrees"
+          },
+          {
+            "name": "mesh time stamp",
+            "native_type": "3",
+            "units": null,
+            "value": 1
+          },
+          {
+            "name": "quad mesh node coincidence tolerance",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": 0.0001,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "mesh edit allowed",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "edge angle",
+            "native_type": "4",
+            "units": "Degrees",
+            "value": 15.00000000000001,
+            "unit_symbol": "degrees"
+          },
+          {
+            "name": "merge edge toggle",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "auto constraining",
+            "native_type": "3",
+            "units": null,
+            "value": 1
+          },
+          {
+            "name": "curvature scaling",
+            "native_type": "3",
+            "units": null,
+            "value": 1
+          },
+          {
+            "name": "target angle",
+            "native_type": "4",
+            "units": "Degrees",
+            "value": 44.99999999999999,
+            "unit_symbol": "degrees"
+          },
+          {
+            "name": "edge shape",
+            "native_type": "3",
+            "units": null,
+            "value": 2
+          },
+          {
+            "name": "successful element size",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 0.0,
+            "unit_symbol": null
+          }
+        ]
+      },
+      {
+        "name": "3d_mesh(2)",
+        "type": "Mesh3d",
+        "owner": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-heat-recovery-20260909-r1\\benchmark_b48bd54502e5_mesh.fem",
+        "element_type": "Linear Tetrahedron",
+        "properties": [
+          {
+            "name": "automatic size option bool",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "automatic element size factor",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 1.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "quad mesh overall edge size",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": 5.0,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "maximum growth rate",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 1.3,
+            "unit_symbol": null
+          },
+          {
+            "name": "surface meshing method",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "create pyramids bool",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "common tet mesher bool",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "number of processors",
+            "native_type": "3",
+            "units": null,
+            "value": 4
+          },
+          {
+            "name": "small feature percentage",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 10.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "small feature size",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": 0.1,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "Level of Discretization around a Circle",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 25.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "Enable Distance Based Size Variation",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Maximum Distance to Original Mesh",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": 1.0,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "Maximum Level of Discretization around a Circle",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 75.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "face proximity enable",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "face proximity search direction",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "face proximity points in gap",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 0.5,
+            "unit_symbol": null
+          },
+          {
+            "name": "edge proximity enable",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "edge proximity faces in gap",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 0.5,
+            "unit_symbol": null
+          },
+          {
+            "name": "fillet num elements",
+            "native_type": "3",
+            "units": null,
+            "value": 3
+          },
+          {
+            "name": "num elements on cylinder circumference",
+            "native_type": "3",
+            "units": null,
+            "value": 6
+          },
+          {
+            "name": "element size on cylinder height",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": 1.0,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "midnodes",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "geometry tolerance option bool",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "geometry tolerance",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": 0.0,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "max jacobian",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 10.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "mapped mesh option bool",
+            "native_type": "2",
+            "units": null,
+            "value": true
+          },
+          {
+            "name": "multiblock cylinder option bool",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "surface mesh size variation",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 50.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "surface curvature threshold",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": 0.1,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "volume mesh size variation",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 50.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "internal mesh gradation",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 1.05,
+            "unit_symbol": null
+          },
+          {
+            "name": "internal max edge option bool",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "internal max edge length value",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": 0.0,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "two elements through thickness bool",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "mesh transition bool",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "remesh on bad quality bool",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "maximum edge length bool",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "maximum edge length",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": 1.0,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "abstraction tolerance option",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "abstraction value",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": 0.001,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "small feature tolerance",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 10.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "small feature value",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 0.1,
+            "unit_symbol": null
+          },
+          {
+            "name": "boundary layer element type",
+            "native_type": "3",
+            "units": null,
+            "value": 3
+          },
+          {
+            "name": "insert blend elements",
+            "native_type": "2",
+            "units": null,
+            "value": true
+          },
+          {
+            "name": "blending angle",
+            "native_type": "4",
+            "units": "Degrees",
+            "value": 90.00000000000003,
+            "unit_symbol": "degrees"
+          },
+          {
+            "name": "sweep angle",
+            "native_type": "4",
+            "units": "Degrees",
+            "value": 44.99999999999999,
+            "unit_symbol": "degrees"
+          },
+          {
+            "name": "control aspect ratio",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "maximum exposed aspect ratio",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 1000.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "control slender",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "minimum aspect ratio",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 0.01,
+            "unit_symbol": null
+          },
+          {
+            "name": "maximum imprint dihedral angle",
+            "native_type": "4",
+            "units": "Degrees",
+            "value": 150.0000000000001,
+            "unit_symbol": "degrees"
+          },
+          {
+            "name": "gradation rate",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 10.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "smoothing distance factor",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 3.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "all-tet boundary layer",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "dont format mesh to solver",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "quad mesh edge match tolerance",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 0.02,
+            "unit_symbol": null
+          },
+          {
+            "name": "quad mesh smoothness tolerance",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": 0.01,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "min face angle",
+            "native_type": "4",
+            "units": "Degrees",
+            "value": 20.000000000000014,
+            "unit_symbol": "degrees"
+          },
+          {
+            "name": "mesh time stamp",
+            "native_type": "3",
+            "units": null,
+            "value": 2
+          },
+          {
+            "name": "quad mesh node coincidence tolerance",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": 0.0001,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "mesh edit allowed",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "edge angle",
+            "native_type": "4",
+            "units": "Degrees",
+            "value": 15.00000000000001,
+            "unit_symbol": "degrees"
+          },
+          {
+            "name": "merge edge toggle",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "auto constraining",
+            "native_type": "3",
+            "units": null,
+            "value": 1
+          },
+          {
+            "name": "curvature scaling",
+            "native_type": "3",
+            "units": null,
+            "value": 1
+          },
+          {
+            "name": "target angle",
+            "native_type": "4",
+            "units": "Degrees",
+            "value": 44.99999999999999,
+            "unit_symbol": "degrees"
+          },
+          {
+            "name": "edge shape",
+            "native_type": "3",
+            "units": null,
+            "value": 2
+          },
+          {
+            "name": "successful element size",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 0.0,
+            "unit_symbol": null
+          }
+        ]
+      }
+    ],
+    "counts": {
+      "elements": 200,
+      "nodes": 90
+    },
+    "units": "mm",
+    "coordinate_frame": "part_absolute",
+    "saved": false,
+    "quality_validation": "not_performed"
+  },
+  "operation_id": "op_a2f92cc5d5824874bb6dbbdab1293dd8",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

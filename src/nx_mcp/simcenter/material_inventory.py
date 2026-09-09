@@ -1,10 +1,11 @@
 """Bounded inspection of FEM-local physical materials; no activation or mutation."""
 
 from nx_mcp.runtime import NXToolError
-from nx_mcp.simcenter.properties import read_properties
 
 
 def inspect_materials(fem, nx, reference, *, offset=0, limit=20):
+    from nx_mcp.simcenter.properties import read_properties
+
     if (
         isinstance(offset, bool)
         or not isinstance(offset, int)

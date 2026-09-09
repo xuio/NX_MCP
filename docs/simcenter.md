@@ -263,20 +263,49 @@ selection attribute is retained without claiming step inheritance semantics.
 Native time-step controls can change after assignment; this handler validates
 coverage when creating the load, not as a universal pre-solve gate.
 
-### Temperature-dependent material binding investigation
+### Temperature-dependent isotropic materials
 
-A bounded isotropic-material trial verifies that registered temperature tables
-for `ThermalConductivity` and `SpecificHeat` survive native commit and SI readback
-in a FEM, with wrapper scale 1 and their installed control selectors retained at
-0. Constant density remains 2700 kg/m³. Kelvin axis inputs are converted to native
-Celsius before table creation. The trial restores material, field and expression
-inventories and all document flags with undo. Evidence:
-`temperature-material-schema.json` and `temperature-material-binding-native.json`;
-reproducer: `examples/simcenter/verify_temperature_material_binding_native.py`.
+`nx_sim_temperature_material` creates a material and two registered temperature
+fields in the active millimeter FEM. Supply `document`, `name` (1..80 characters),
+`conductivity_samples` in `[K,W/(m K)]`, `heat_capacity_samples` in `[K,J/(kg K)]`,
+positive constant `density_kg_m3`, and `provenance`. Each table contains 2..1000
+finite pairs with positive values and a nonnegative, strictly increasing axis.
+Their temperature intervals must overlap. The material uses linear interpolation
+and undefined values outside each table; the returned common interval is not a
+check that a solution stays within it.
 
-This establishes the native field-binding route only. Public material authoring,
-collector assignment, save/reopen, exported selector/table semantics and numerical
-acceptance are still implementation/verification work, not external limitations.
+The operation creates typed material/field references, verifies committed samples,
+scale 1, control selectors 0, density and provenance, and rolls back failed creation.
+It does not assign collectors or solve. Use `nx_sim_collectors` followed by
+`nx_sim_assign_material` with the inspected collector state hash. Material fields
+are visible through `nx_sim_materials`; public scalar-table creation remains SIM
+only, while this material adapter creates its owned FEM fields internally.
+
+Native verification covers table/material creation and injected post-commit
+rollback, including restored material/field/expression identities and document
+flags. Public MCP verification covers invalid requests, replay, duplicate
+rejection, collector assignment, FEM/SIM save/close/reopen, stale references and
+export. The fixture preserves conductivity 100/150/200 W/(m K) and heat capacity
+800/900/1000 J/(kg K) at 273.15/293.15/313.15 K, with density 2700 kg/m³. Export
+represents the axis as 0/20/40 °C with native power/energy scaling.
+
+The public test found a stale imported property-reader function in the live
+material inventory. The inventory now resolves the current reader at call time.
+The failed inventory response is retained; the resumed comparison uses the
+recorded creation readback and newly inspected reopened material. A separate
+adapter error used `Description` instead of the supported `GetDescription()`
+accessor; that failure rolled back and is also retained.
+
+Reproduction: `examples/simcenter/verify_temperature_material_{native,public}.py`.
+The public script runs against a fresh isolated fixture and includes persistence
+and assignment checks. Retained native/public receipts and XML are under
+`tests/simcenter/evidence/temperature-material-*`. Run the exported-table audit:
+`python examples/simcenter/audit_temperature_material_export.py
+tests/simcenter/evidence/temperature-material-public.xml`.
+
+This verifies isotropic conductivity and heat-capacity tables with constant
+density. Temperature-dependent density, phase change, anisotropic tables, actual
+solution range checks and numerical acceptance remain open. No solver was launched.
 
 ### Reconciled Phase 2 backlog
 
@@ -288,7 +317,7 @@ from installed modules. A missing implementation/test is not an external blocker
 | Thermal contacts/interface resistance | Partial: native/public total R/G authoring and resistance persistence verified | 200-element explicit-convergence artifact benchmark passes; general contact options and current-session freshness remain |
 | Convection and dependencies | Native/public constant coefficient and three temperature-source selectors verified | Explicit Kelvin value, persistence, exported conversion and disjoint face sets pass; time fields, ambient value resolution and shell-side options remain |
 | Radiation/emissivity/enclosures | Native/public simple environment radiation, constant emissivity override and deterministic enclosure authoring verified | Persistent/exported primary regions and active settings pass; view factors/numerical balances, Monte Carlo/GPU and secondary-slot authoring remain unverified |
-| Temperature-dependent materials | Native/public reusable temperature-axis tables verified; internal material-field commit/readback probe passes | Bind supported property fields and verify solver export/persistence |
+| Temperature-dependent materials | Native/public isotropic conductivity/heat-capacity tables, constant density, assignment and export/persistence verified | Temperature-dependent density, anisotropic/phase-change tables, solution-domain checks and numerical acceptance remain |
 | Transient loads/initial conditions/schedules | Partial time controls, constant distributed loads and native/public time-table body power | `time_controls.py`, `distributed_heat.py`; schedule and initial-condition authoring/readback |
 | Forced/natural convection and fluid models | Partial native controls/materials and coupled fixtures | `flow_controls.py`, `fluid_material.py`; selector/gravity/buoyancy scope and exports |
 | Fan curves and provenance | Scoped public authoring/readback verified | `fan_field.py`, `fan_boundary.py`; preserve static convention and assignment limits |

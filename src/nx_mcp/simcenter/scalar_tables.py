@@ -200,7 +200,7 @@ def compact(result, include_samples=False):
     return r
 
 
-def create(session, sim, manifest):
+def create(session, sim, manifest, *, allow_fem=False):
     import NXOpen as nx
     import NXOpen.CAE as cae
     import NXOpen.Fields as fields
@@ -209,16 +209,17 @@ def create(session, sim, manifest):
 
     m = validate(manifest)
     header, chunks = encode(m)
-    if not isinstance(sim, cae.SimPart) or session.Parts.BaseWork != sim:
+    allowed = (cae.SimPart, cae.FemPart) if allow_fem else (cae.SimPart,)
+    if not isinstance(sim, allowed) or session.Parts.BaseWork != sim:
         raise NXToolError(
             "NX_SIM_DOCUMENT_NOT_ACTIVE",
-            "Activate the selected SIM",
+            "Activate the selected analysis document",
             details={"mutation_outcome": "not_started"},
         )
     if sim.PartUnits != nx.BasePart.Units.Millimeters:
         raise NXToolError(
             "NX_SIM_UNSUPPORTED_UNITS",
-            "Scalar table creation verified in millimeter SIM documents",
+            "Scalar table creation requires a millimeter analysis document",
             details={"mutation_outcome": "not_started"},
         )
     if any(f.Name.casefold() == m["name"].casefold() for f in sim.FieldManager.Fields):

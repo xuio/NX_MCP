@@ -1,0 +1,217 @@
+{
+  "status": "success",
+  "created": {
+    "material": {
+      "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_41a18a00dc53453486a926acd6811b38",
+      "kind": "material",
+      "name": "MCP_NATIVE_TEMP",
+      "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_ea5d177512cd4ea3a54c00ea3b218dff",
+      "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+      "generation_id": "ea5d177512cd4ea3a54c00ea3b218dff",
+      "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-heat-recovery-20260909-r1\\benchmark_b48bd54502e5_mesh.fem",
+      "journal_id": "PhysicalMaterial[MCP_NATIVE_TEMP]",
+      "display_name": "MCP_NATIVE_TEMP"
+    },
+    "fields": {
+      "ThermalConductivity": {
+        "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_a62249ed2ef94ffea5cae11d78e698e2",
+        "kind": "simulation_field",
+        "name": "MCP_NATIVE_TEMP_K",
+        "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_ea5d177512cd4ea3a54c00ea3b218dff",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "generation_id": "ea5d177512cd4ea3a54c00ea3b218dff",
+        "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-heat-recovery-20260909-r1\\benchmark_b48bd54502e5_mesh.fem",
+        "journal_id": "MCP_NATIVE_TEMP_K",
+        "display_name": "MCP_NATIVE_TEMP_K"
+      },
+      "SpecificHeat": {
+        "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_8776dc90add8471e9b478ba91d6e55d5",
+        "kind": "simulation_field",
+        "name": "MCP_NATIVE_TEMP_CP",
+        "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_ea5d177512cd4ea3a54c00ea3b218dff",
+        "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+        "generation_id": "ea5d177512cd4ea3a54c00ea3b218dff",
+        "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-heat-recovery-20260909-r1\\benchmark_b48bd54502e5_mesh.fem",
+        "journal_id": "MCP_NATIVE_TEMP_CP",
+        "display_name": "MCP_NATIVE_TEMP_CP"
+      }
+    },
+    "properties": [
+      {
+        "name": "ThermalConductivity",
+        "native_type": "6",
+        "units": null,
+        "field_scale": 1.0,
+        "field_reference": {
+          "journal_id": "MCP_NATIVE_TEMP_K",
+          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-heat-recovery-20260909-r1\\benchmark_b48bd54502e5_mesh.fem",
+          "tag": 8585017,
+          "lifetime": "current loaded document; not a cross-session reference"
+        },
+        "representation": "FieldTable",
+        "field_definition": {
+          "kind": "validated_scalar_table",
+          "manifest": {
+            "axis": "temperature",
+            "interpolation": "linear",
+            "name": "MCP_NATIVE_TEMP_K",
+            "outside_table": "undefined",
+            "provenance": "Generic native temperature material fixture",
+            "quantity": "conductivity",
+            "samples": [
+              [
+                273.15,
+                100
+              ],
+              [
+                293.15,
+                150
+              ],
+              [
+                313.15,
+                200
+              ]
+            ],
+            "version": 1
+          },
+          "native_samples_si": {
+            "samples_si": [
+              [
+                273.15,
+                100.0
+              ],
+              [
+                293.15,
+                150.0
+              ],
+              [
+                313.15,
+                200.0
+              ]
+            ],
+            "axis_units": "K",
+            "value_units": "W/(m K)",
+            "native_axis_unit": "Celsius",
+            "native_value_unit": "ThermalConductivity_Metric3",
+            "interpolation": "linear",
+            "outside_table": "undefined"
+          },
+          "scale_application": "native scalar wrapper factor reported separately; binding semantics not established",
+          "definition_scope": "table samples, units and stored interpolation; not material/load or solver semantics"
+        }
+      },
+      {
+        "name": "SpecificHeat",
+        "native_type": "6",
+        "units": null,
+        "field_scale": 1.0,
+        "field_reference": {
+          "journal_id": "MCP_NATIVE_TEMP_CP",
+          "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-heat-recovery-20260909-r1\\benchmark_b48bd54502e5_mesh.fem",
+          "tag": 8587100,
+          "lifetime": "current loaded document; not a cross-session reference"
+        },
+        "representation": "FieldTable",
+        "field_definition": {
+          "kind": "validated_scalar_table",
+          "manifest": {
+            "axis": "temperature",
+            "interpolation": "linear",
+            "name": "MCP_NATIVE_TEMP_CP",
+            "outside_table": "undefined",
+            "provenance": "Generic native temperature material fixture",
+            "quantity": "heat_capacity",
+            "samples": [
+              [
+                273.15,
+                800
+              ],
+              [
+                293.15,
+                900
+              ],
+              [
+                313.15,
+                1000
+              ]
+            ],
+            "version": 1
+          },
+          "native_samples_si": {
+            "samples_si": [
+              [
+                273.15,
+                800.0
+              ],
+              [
+                293.15,
+                900.0
+              ],
+              [
+                313.15,
+                1000.0
+              ]
+            ],
+            "axis_units": "K",
+            "value_units": "J/(kg K)",
+            "native_axis_unit": "Celsius",
+            "native_value_unit": "SpecificHeat_Metric2",
+            "interpolation": "linear",
+            "outside_table": "undefined"
+          },
+          "scale_application": "native scalar wrapper factor reported separately; binding semantics not established",
+          "definition_scope": "table samples, units and stored interpolation; not material/load or solver semantics"
+        }
+      },
+      {
+        "name": "ThermalConductivityControl",
+        "native_type": "3",
+        "units": null,
+        "value": 0
+      },
+      {
+        "name": "SpecificHeatControl",
+        "native_type": "3",
+        "units": null,
+        "value": 0
+      },
+      {
+        "name": "MassDensityConstant",
+        "native_type": "6",
+        "units": "KilogramPerCubicMeter",
+        "expression": "2700.0",
+        "unit_symbol": "kg/m^3",
+        "representation": "expression"
+      }
+    ],
+    "temperature_domain_k": [
+      273.15,
+      313.15
+    ],
+    "density_kg_m3": 2700.0,
+    "provenance": "Generic native temperature material fixture",
+    "assigned": false,
+    "saved": false,
+    "solver_launched": false,
+    "numerical_acceptance": "not_established",
+    "coverage_scope": "common table domain; actual solution temperatures not validated"
+  },
+  "rollback": {
+    "code": "NX_SIM_READBACK_MISMATCH",
+    "details": {
+      "mutation_outcome": "rolled_back",
+      "cleanup_issues": [],
+      "verification_scope": "material, field and expression identities; creation only"
+    }
+  },
+  "snapshot_restored": true,
+  "flags_restored": true,
+  "document": "obj_20bc234ffa5249ceb4fb4d82b993c626_fe07a6fc9d7042e684ffa9b18f79edfd",
+  "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-heat-recovery-20260909-r1\\benchmark_b48bd54502e5_mesh.fem",
+  "solver_launched": false,
+  "operation_id": "op_d5e42412be634f58bd435a1407b5e59b",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

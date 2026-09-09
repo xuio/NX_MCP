@@ -94,6 +94,10 @@ PUBLIC_EVIDENCE = {
         "steady-controls-public-launch.json",
         "Explicit temperature stopping in K, public validation/replay/export; native persistence and optional relative-balance authoring separately verified",
     ),
+    "nx_sim_temperature_material": (
+        "temperature-material-public.json",
+        "Isotropic temperature-dependent conductivity/heat-capacity and constant density: native/public creation, rollback, assignment, replay, FEM/SIM reopen and export verified; numerical behavior unverified",
+    ),
     "nx_sim_heat_schedule": (
         "heat-schedule-public.json",
         "Time/power table binding, scale, coverage, replay and save/reopen verified; native target persistence, post-commit rollback and scaled export audited separately; no transient numerical acceptance",

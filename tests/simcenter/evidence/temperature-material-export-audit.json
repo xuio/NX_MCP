@@ -1,0 +1,36 @@
+{
+  "passed": true,
+  "material": "MCP_PUBLIC_TEMP",
+  "density_kg_m3": 2700.0,
+  "tables_si": {
+    "Thermal Conductivity": [
+      [
+        273.15,
+        100.0
+      ],
+      [
+        293.15,
+        150.0
+      ],
+      [
+        313.15,
+        200.0
+      ]
+    ],
+    "Specific Heat": [
+      [
+        273.15,
+        800.0
+      ],
+      [
+        293.15,
+        900.0
+      ],
+      [
+        313.15,
+        1000.0
+      ]
+    ]
+  },
+  "scope": "Thermal millimeter export tables/units; assignment checked by native readback; no numerical acceptance"
+}

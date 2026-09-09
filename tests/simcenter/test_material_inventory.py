@@ -7,7 +7,6 @@ from nx_mcp.simcenter.material_inventory import inspect_materials
 
 
 def test_paging_reads_only_requested_materials_and_reports_failures(monkeypatch):
-    import nx_mcp.simcenter.material_inventory as module
 
     def forbidden():
         raise AssertionError("Off-page material must not be inspected")
@@ -22,7 +21,7 @@ def test_paging_reads_only_requested_materials_and_reports_failures(monkeypatch)
     def failed(table, nx):
         raise RuntimeError("native failure")
 
-    monkeypatch.setattr(module, "read_properties", failed)
+    monkeypatch.setattr("nx_mcp.simcenter.properties.read_properties", failed)
     fem = NS(FullPath="case.fem", MaterialManager=NS(PhysicalMaterials=[first, second]))
     result = inspect_materials(fem, None, lambda *args: {"id": "second"}, offset=1, limit=1)
     assert result["total"] == 2 and result["next_offset"] is None

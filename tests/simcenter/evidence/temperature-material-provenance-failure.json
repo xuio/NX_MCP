@@ -1,0 +1,27 @@
+{
+  "status": "success",
+  "exception_chain": [
+    {
+      "type": "NXToolError",
+      "message": "Temperature material creation failed",
+      "details": {
+        "mutation_outcome": "rolled_back",
+        "cleanup_issues": [],
+        "verification_scope": "material, field and expression identities; creation only"
+      }
+    },
+    {
+      "type": "AttributeError",
+      "message": "'NXOpen.PhysicalMaterial' object has no attribute 'Description'",
+      "details": null
+    }
+  ],
+  "materials_after": [
+    "MCP_TEMPDEP_PROBE"
+  ],
+  "operation_id": "op_0e7f6b4ae024446487efb32c94374c66",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

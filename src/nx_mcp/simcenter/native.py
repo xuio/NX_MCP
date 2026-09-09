@@ -67,6 +67,33 @@ class SimcenterMixin:
         }
         return result
 
+    def _sim_temperature_material(
+        self, document, name, conductivity_samples, heat_capacity_samples, density_kg_m3, provenance
+    ):
+        from nx_mcp.simcenter.temperature_material import create
+
+        fem = self.objects.resolve(document, expected_kind="part")
+        self.workspace.resolve(fem.FullPath)
+        result = create(
+            self.session,
+            fem,
+            name,
+            conductivity_samples,
+            heat_capacity_samples,
+            density_kg_m3,
+            provenance,
+        )
+        material = result.pop("material")
+        fields = result.pop("fields")
+        return {
+            "material": self._reference(material, "material", fem, "material"),
+            "fields": {
+                key: self._reference(value, "simulation_field", fem, "field")
+                for key, value in fields.items()
+            },
+            **result,
+        }
+
     def _sim_material_frame(
         self, document, collector, expected_state_sha256, origin_mm, x_axis, y_axis
     ):

@@ -706,3 +706,17 @@ def nx_sim_heat_schedule(
 
 
 NON_MODEL.add("nx_sim_heat_schedule")
+
+
+def nx_sim_temperature_material(
+    document: str,
+    name: str,
+    conductivity_samples: list[list[float]],
+    heat_capacity_samples: list[list[float]],
+    density_kg_m3: float,
+    provenance: str,
+):
+    """Create an isotropic thermal material in the active millimeter FEM with temperature-dependent conductivity and heat capacity, and constant density. Samples are 2..1000 [temperature_K,value] pairs per property; values use W/(m K) and J/(kg K), respectively, and must be positive. Axes are nonnegative and strictly increasing; their domains must overlap. Density must be positive finite kg/m³. Name 1..80 characters; provenance required. Creates registered native fields named name_K and name_CP, converts Kelvin axes to native Celsius, and checks full committed definitions, scale 1, control selectors 0 and SI density. Linear interpolation, undefined outside the tables; returns their common domain without claiming actual solution temperatures stay inside it. Atomic creation rollback covers material, field and expression identities. Returns typed material/field references, values and provenance. Does not assign collectors, save or solve; use nx_sim_assign_material with inspected collector state. No phase change, anisotropy, temperature-dependent density or numerical acceptance is implied. Supply operation_id for safe replay."""
+
+
+NON_MODEL.add("nx_sim_temperature_material")

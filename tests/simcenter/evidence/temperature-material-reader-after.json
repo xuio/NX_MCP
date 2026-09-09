@@ -1,0 +1,3691 @@
+{
+  "status": "success",
+  "inventory": {
+    "materials": [
+      {
+        "material": {
+          "id": "obj_20bc234ffa5249ceb4fb4d82b993c626_d6506f4fe63a4b86989fca2713d74146",
+          "kind": "material",
+          "name": "MCP_PUBLIC_TEMP",
+          "part_id": "part_20bc234ffa5249ceb4fb4d82b993c626_709e37a1f302498cb5abe7166ec00ba4",
+          "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+          "generation_id": "709e37a1f302498cb5abe7166ec00ba4",
+          "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-temperature-material-public-20260909-r1\\benchmark_cfe079b0eed8_mesh.fem",
+          "journal_id": "PhysicalMaterial[MCP_PUBLIC_TEMP]",
+          "display_name": "MCP_PUBLIC_TEMP"
+        },
+        "coordinate_frame": "material_axes",
+        "native_type": "0",
+        "provenance": "Generic public temperature material fixture",
+        "properties": [
+          {
+            "name": "MaterialType",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "AltName",
+            "native_type": "1",
+            "units": null,
+            "value": ""
+          },
+          {
+            "name": "Category",
+            "native_type": "1",
+            "units": null,
+            "value": ""
+          },
+          {
+            "name": "SubCategory",
+            "native_type": "1",
+            "units": null,
+            "value": ""
+          },
+          {
+            "name": "Version",
+            "native_type": "1",
+            "units": null,
+            "value": ""
+          },
+          {
+            "name": "Description",
+            "native_type": "0",
+            "units": null,
+            "representation": "text_lines",
+            "value": [
+              "Generic public temperature material fixture"
+            ]
+          },
+          {
+            "name": "ElasticDependencyControl",
+            "native_type": "3",
+            "units": null,
+            "value": 3
+          },
+          {
+            "name": "ReferenceFrequency",
+            "native_type": "4",
+            "units": "hertz",
+            "value": -777777.0,
+            "unit_symbol": "Hz"
+          },
+          {
+            "name": "MassDensityConstant",
+            "native_type": "6",
+            "units": "KilogramPerCubicMeter",
+            "expression": "2700.0",
+            "unit_symbol": "kg/m^3",
+            "representation": "expression"
+          },
+          {
+            "name": "MassDensityTemperature",
+            "native_type": "6",
+            "units": null,
+            "value": null
+          },
+          {
+            "name": "MassDensityFrequency",
+            "native_type": "6",
+            "units": null,
+            "value": null
+          },
+          {
+            "name": "CalculateConstantValuesFreqDep",
+            "native_type": "1",
+            "units": null,
+            "value": "Calculate Constant Values from Frequency Dependent Fields"
+          },
+          {
+            "name": "CalculateConstantValuesTempDep",
+            "native_type": "1",
+            "units": null,
+            "value": "Calculate Constant Values from Temperature Dependent Fields"
+          },
+          {
+            "name": "YoungsModulusConstant",
+            "native_type": "6",
+            "units": "StressNewtonPerSquareMilliMeter",
+            "expression": "-777777",
+            "unit_symbol": "N/mm^2(MPa)",
+            "representation": "expression"
+          },
+          {
+            "name": "YoungsModulusTemperature",
+            "native_type": "6",
+            "units": null,
+            "value": null
+          },
+          {
+            "name": "YoungsModulusFrequency",
+            "native_type": "6",
+            "units": null,
+            "value": null
+          },
+          {
+            "name": "PoissonsRatioType",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "PoissonsRatioConstant",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "PoissonsRatioTemperature",
+            "native_type": "6",
+            "units": null,
+            "value": null
+          },
+          {
+            "name": "PoissonsRatioFrequency",
+            "native_type": "6",
+            "units": null,
+            "value": null
+          },
+          {
+            "name": "ShearModulusConstant",
+            "native_type": "6",
+            "units": "StressNewtonPerSquareMilliMeter",
+            "expression": "-777777",
+            "unit_symbol": "N/mm^2(MPa)",
+            "representation": "expression"
+          },
+          {
+            "name": "ShearModulusTemperature",
+            "native_type": "6",
+            "units": null,
+            "value": null
+          },
+          {
+            "name": "ShearModulusFrequency",
+            "native_type": "6",
+            "units": null,
+            "value": null
+          },
+          {
+            "name": "StructuralDampingConstant",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "StructuralDampingTemperature",
+            "native_type": "6",
+            "units": null,
+            "value": null
+          },
+          {
+            "name": "StructuralDampingFrequency",
+            "native_type": "6",
+            "units": null,
+            "value": null
+          },
+          {
+            "name": "MatlNonlinearityType",
+            "native_type": "3",
+            "units": null,
+            "value": 1
+          },
+          {
+            "name": "YieldFunctionCriterion",
+            "native_type": "3",
+            "units": null,
+            "value": 1
+          },
+          {
+            "name": "CompressiveTensileyieldRatio",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 1.3,
+            "unit_symbol": null
+          },
+          {
+            "name": "InitialTensilYieldStress2",
+            "native_type": "4",
+            "units": "StressNewtonPerSquareMilliMeter",
+            "value": -777777.0,
+            "unit_symbol": "N/mm^2(MPa)"
+          },
+          {
+            "name": "InitialTensilYieldStress3",
+            "native_type": "4",
+            "units": "StressNewtonPerSquareMilliMeter",
+            "value": -777777.0,
+            "unit_symbol": "N/mm^2(MPa)"
+          },
+          {
+            "name": "ShearYieldStress",
+            "native_type": "4",
+            "units": "StressNewtonPerSquareMilliMeter",
+            "value": -777777.0,
+            "unit_symbol": "N/mm^2(MPa)"
+          },
+          {
+            "name": "ShearYieldStress2",
+            "native_type": "4",
+            "units": "StressNewtonPerSquareMilliMeter",
+            "value": -777777.0,
+            "unit_symbol": "N/mm^2(MPa)"
+          },
+          {
+            "name": "ShearYieldStress3",
+            "native_type": "4",
+            "units": "StressNewtonPerSquareMilliMeter",
+            "value": -777777.0,
+            "unit_symbol": "N/mm^2(MPa)"
+          },
+          {
+            "name": "HardeningRule",
+            "native_type": "3",
+            "units": null,
+            "value": 1
+          },
+          {
+            "name": "HillRatio11",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "1",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "HillRatio22",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "1",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "HillRatio33",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "1",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "HillRatio12",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "1",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "HillRatio23",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "1",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "HillRatio13",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "1",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "MixedHardeningRatio",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 0.5,
+            "unit_symbol": null
+          },
+          {
+            "name": "KinematicLaws",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "NonLinearHardeningCoefficient",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "StressStrainFormatType",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "StressStrainDataType",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "StressStrainCurveTable",
+            "native_type": "6",
+            "units": null,
+            "value": null
+          },
+          {
+            "name": "WorkHardeningSlopeH",
+            "native_type": "4",
+            "units": "StressNewtonPerSquareMilliMeter",
+            "value": -777777.0,
+            "unit_symbol": "N/mm^2(MPa)"
+          },
+          {
+            "name": "StressStrainCurveStrainRate",
+            "native_type": "6",
+            "units": null,
+            "value": null
+          },
+          {
+            "name": "InitialYieldPoint",
+            "native_type": "4",
+            "units": "StressNewtonPerSquareMilliMeter",
+            "value": -777777.0,
+            "unit_symbol": "N/mm^2(MPa)"
+          },
+          {
+            "name": "InitialFrictionAngle",
+            "native_type": "4",
+            "units": "Degrees",
+            "value": -777777.0,
+            "unit_symbol": "degrees"
+          },
+          {
+            "name": "TangentModulusE",
+            "native_type": "4",
+            "units": "StressNewtonPerSquareMilliMeter",
+            "value": 0.0,
+            "unit_symbol": "N/mm^2(MPa)"
+          },
+          {
+            "name": "TangentModulusETemperature",
+            "native_type": "6",
+            "units": null,
+            "value": null
+          },
+          {
+            "name": "StrainRatedependency",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "StressStrainCurve2",
+            "native_type": "6",
+            "units": null,
+            "value": null
+          },
+          {
+            "name": "ExponentBValue",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": -777777.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "StrainRateLevel",
+            "native_type": "4",
+            "units": "CoefficientPerSec",
+            "value": -777777.0,
+            "unit_symbol": "1/sec"
+          },
+          {
+            "name": "LSDYNAPlasticfail",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "LSDYNA_matusr_24_fail",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": -1e+21,
+            "unit_symbol": null
+          },
+          {
+            "name": "LSDYNA_fail_plastic_strain",
+            "native_type": "4",
+            "units": "Strain_Metric1",
+            "value": 1e+21,
+            "unit_symbol": "mm/mm"
+          },
+          {
+            "name": "EPSThin",
+            "native_type": "4",
+            "units": "Strain_Metric1",
+            "value": 0.0,
+            "unit_symbol": "mm/mm"
+          },
+          {
+            "name": "EPSMaj",
+            "native_type": "4",
+            "units": "Strain_Metric1",
+            "value": 0.0,
+            "unit_symbol": "mm/mm"
+          },
+          {
+            "name": "EffectivePlasticStrainFS",
+            "native_type": "4",
+            "units": "Strain_Metric1",
+            "value": 1e+20,
+            "unit_symbol": "mm/mm"
+          },
+          {
+            "name": "FormulationVP",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "YieldSressScalingCurve",
+            "native_type": "6",
+            "units": null,
+            "value": null
+          },
+          {
+            "name": "PlasticHardeningModulus",
+            "native_type": "4",
+            "units": "StressNewtonPerSquareMilliMeter",
+            "value": 0.0,
+            "unit_symbol": "N/mm^2(MPa)"
+          },
+          {
+            "name": "EffectiveFailurePlasticStrain",
+            "native_type": "4",
+            "units": "Strain_Metric1",
+            "value": 0.0,
+            "unit_symbol": "mm/mm"
+          },
+          {
+            "name": "LSDYNAPlasticPolymerfailEFTX",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "StiffnessDampingRatioDAMP",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 0.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "FilteringFactorRFAC",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 0.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "FailureStrainToStrainRateCurveLCID",
+            "native_type": "6",
+            "units": null,
+            "value": null
+          },
+          {
+            "name": "FailureStrainToStrainRateCurveLCTSRF",
+            "native_type": "6",
+            "units": null,
+            "value": null
+          },
+          {
+            "name": "RTCLDamageEPS0Option",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "RTCLDamageEPS0",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 0.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "TransverseShearCompositeDamage",
+            "native_type": "4",
+            "units": "Strain_Metric1",
+            "value": 0.9,
+            "unit_symbol": "mm/mm"
+          },
+          {
+            "name": "EffectiveFailureStrain",
+            "native_type": "4",
+            "units": "Strain_Metric1",
+            "value": -777777.0,
+            "unit_symbol": "mm/mm"
+          },
+          {
+            "name": "DamageInitiation",
+            "native_type": "4",
+            "units": "Strain_Metric1",
+            "value": -777777.0,
+            "unit_symbol": "mm/mm"
+          },
+          {
+            "name": "FinalRupture",
+            "native_type": "4",
+            "units": "Strain_Metric1",
+            "value": -777777.0,
+            "unit_symbol": "mm/mm"
+          },
+          {
+            "name": "StressStrainCurveCompression",
+            "native_type": "6",
+            "units": null,
+            "value": null
+          },
+          {
+            "name": "StressStrainCurveTraction",
+            "native_type": "6",
+            "units": null,
+            "value": null
+          },
+          {
+            "name": "PoissonsRatioPlastic",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "0.04",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "Y0InitialStress",
+            "native_type": "6",
+            "units": "StressNewtonPerSquareMilliMeter",
+            "expression": "-777777",
+            "unit_symbol": "N/mm^2(MPa)",
+            "representation": "expression"
+          },
+          {
+            "name": "IsotropicSaturatedOption",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "IsotropicSaturatedSeries",
+            "native_type": "13",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "ChabocheKinematicHardening",
+            "native_type": "13",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "AxialDampingFactor",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "BendingDampingFactor",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "MartensiteA",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": -777777.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "MartensiteB",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": -777777.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "MartensiteC",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": -777777.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "MartensiteD",
+            "native_type": "4",
+            "units": "ThermalExpansion_Metric1",
+            "value": -777777.0,
+            "unit_symbol": "1/dC"
+          },
+          {
+            "name": "MartensiteP",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": -777777.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "MartensiteQ",
+            "native_type": "4",
+            "units": "Celsius",
+            "value": -777777.0,
+            "unit_symbol": "C"
+          },
+          {
+            "name": "MartensiteE0",
+            "native_type": "4",
+            "units": "Strain_Metric1",
+            "value": -777777.0,
+            "unit_symbol": "mm/mm"
+          },
+          {
+            "name": "MartensiteVM0",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "HardeningAHS",
+            "native_type": "4",
+            "units": "StressNewtonPerSquareMilliMeter",
+            "value": -777777.0,
+            "unit_symbol": "N/mm^2(MPa)"
+          },
+          {
+            "name": "HardeningBHS",
+            "native_type": "4",
+            "units": "StressNewtonPerSquareMilliMeter",
+            "value": -777777.0,
+            "unit_symbol": "N/mm^2(MPa)"
+          },
+          {
+            "name": "HardeningM",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": -777777.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "HardeningN",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": -777777.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "HardeningEPS0",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": -777777.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "HardeningHMART",
+            "native_type": "4",
+            "units": "StressNewtonPerSquareMilliMeter",
+            "value": -777777.0,
+            "unit_symbol": "N/mm^2(MPa)"
+          },
+          {
+            "name": "HardeningK1",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": -777777.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "HardeningK2",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": -777777.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "PlasticHardeningModulusLaminate",
+            "native_type": "4",
+            "units": "StressNewtonPerSquareMilliMeter",
+            "value": -777777.0,
+            "unit_symbol": "N/mm^2(MPa)"
+          },
+          {
+            "name": "PlasticStrainFailureGlass",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": -777777.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "AnsysStaticRecoveryCoeff",
+            "native_type": "6",
+            "units": "CoefficientPerSec",
+            "expression": "-777777",
+            "unit_symbol": "1/sec",
+            "representation": "expression"
+          },
+          {
+            "name": "AnsysStaticRecoveryCoeffTemperature",
+            "native_type": "6",
+            "units": null,
+            "value": null
+          },
+          {
+            "name": "AnsysTemperatureCoeff",
+            "native_type": "6",
+            "units": "Celsius",
+            "expression": "-777777",
+            "unit_symbol": "C",
+            "representation": "expression"
+          },
+          {
+            "name": "AnsysTemperatureCoeffTemperature",
+            "native_type": "6",
+            "units": null,
+            "value": null
+          },
+          {
+            "name": "AnsysRecoveryThreshold",
+            "native_type": "6",
+            "units": "StressNewtonPerSquareMilliMeter",
+            "expression": "-777777",
+            "unit_symbol": "N/mm^2(MPa)",
+            "representation": "expression"
+          },
+          {
+            "name": "AnsysRecoveryThresholdTemperature",
+            "native_type": "6",
+            "units": null,
+            "value": null
+          },
+          {
+            "name": "BKINStressStrainOption",
+            "native_type": "3",
+            "units": null,
+            "value": 1
+          },
+          {
+            "name": "KINHStressStrainOption",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "ChabocheNonlinearKinematicHardeningOption",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "ChabocheNonlinearKinematicHardening",
+            "native_type": "13",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "Yield",
+            "native_type": "6",
+            "units": "StressNewtonPerSquareMilliMeter",
+            "expression": "-777777",
+            "unit_symbol": "N/mm^2(MPa)",
+            "representation": "expression"
+          },
+          {
+            "name": "UltTensile",
+            "native_type": "6",
+            "units": "StressNewtonPerSquareMilliMeter",
+            "expression": "-777777",
+            "unit_symbol": "N/mm^2(MPa)",
+            "representation": "expression"
+          },
+          {
+            "name": "TsaiWuInteraction",
+            "native_type": "6",
+            "units": "TsaiWu_Metric2",
+            "expression": "-777777",
+            "unit_symbol": "mm^4/N^2",
+            "representation": "expression"
+          },
+          {
+            "name": "AllFailureCriterion",
+            "native_type": "2",
+            "units": null,
+            "value": true
+          },
+          {
+            "name": "StrengthLimitsFailureCriterion",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "StrainRatioFailureCriterion",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "StressRatioFailureCriterion",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "TsaiWuFailureCriterion",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "RiceTraceyFailureCriterion",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "MaximumTotalStrainFailureCriterion",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "MaximumStressFailureCriterion",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "HashinFailureCriterion",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "HoffmanFailureCriterion",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "TsaiHillFailureCriterion",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "PuckFailureCriterion",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "LaRC04FailureCriterion",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "MaxStressTensionConstant",
+            "native_type": "6",
+            "units": "StressNewtonPerSquareMilliMeter",
+            "expression": "-777777",
+            "unit_symbol": "N/mm^2(MPa)",
+            "representation": "expression"
+          },
+          {
+            "name": "MaxStressTensionTemperature",
+            "native_type": "6",
+            "units": null,
+            "value": null
+          },
+          {
+            "name": "MaxStressCompressionConstant",
+            "native_type": "6",
+            "units": "StressNewtonPerSquareMilliMeter",
+            "expression": "-777777",
+            "unit_symbol": "N/mm^2(MPa)",
+            "representation": "expression"
+          },
+          {
+            "name": "MaxStressCompressionTemperature",
+            "native_type": "6",
+            "units": null,
+            "value": null
+          },
+          {
+            "name": "MaxInPlaneShearStressConstant",
+            "native_type": "6",
+            "units": "StressNewtonPerSquareMilliMeter",
+            "expression": "-777777",
+            "unit_symbol": "N/mm^2(MPa)",
+            "representation": "expression"
+          },
+          {
+            "name": "MaxInPlaneShearStressTemperature",
+            "native_type": "6",
+            "units": null,
+            "value": null
+          },
+          {
+            "name": "NormalTensileSrength",
+            "native_type": "6",
+            "units": "StressNewtonPerSquareMilliMeter",
+            "expression": "-777777",
+            "unit_symbol": "N/mm^2(MPa)",
+            "representation": "expression"
+          },
+          {
+            "name": "LongitudinalTensileStrength",
+            "native_type": "6",
+            "units": "StressNewtonPerSquareMilliMeter",
+            "expression": "-777777",
+            "unit_symbol": "N/mm^2(MPa)",
+            "representation": "expression"
+          },
+          {
+            "name": "LongitudinalCompressiveStrength",
+            "native_type": "6",
+            "units": "StressNewtonPerSquareMilliMeter",
+            "expression": "-777777",
+            "unit_symbol": "N/mm^2(MPa)",
+            "representation": "expression"
+          },
+          {
+            "name": "TransverseTensileStrength",
+            "native_type": "6",
+            "units": "StressNewtonPerSquareMilliMeter",
+            "expression": "-777777",
+            "unit_symbol": "N/mm^2(MPa)",
+            "representation": "expression"
+          },
+          {
+            "name": "TransverseCompressiveStrength",
+            "native_type": "6",
+            "units": "StressNewtonPerSquareMilliMeter",
+            "expression": "-777777",
+            "unit_symbol": "N/mm^2(MPa)",
+            "representation": "expression"
+          },
+          {
+            "name": "ShearStrengthABPlane",
+            "native_type": "6",
+            "units": "StressNewtonPerSquareMilliMeter",
+            "expression": "-777777",
+            "unit_symbol": "N/mm^2(MPa)",
+            "representation": "expression"
+          },
+          {
+            "name": "LoadCurveIDLongitudinalTensileLCXT",
+            "native_type": "6",
+            "units": null,
+            "value": null
+          },
+          {
+            "name": "LoadCurveIDLongitudinalCompressiveLCXC",
+            "native_type": "6",
+            "units": null,
+            "value": null
+          },
+          {
+            "name": "LoadCurveIDTransverseTensileLCYT",
+            "native_type": "6",
+            "units": null,
+            "value": null
+          },
+          {
+            "name": "LoadCurveIDTransverseCompressiveLCYC",
+            "native_type": "6",
+            "units": null,
+            "value": null
+          },
+          {
+            "name": "LoadCurveIDShearStrengthABPlaneLCSC",
+            "native_type": "6",
+            "units": null,
+            "value": null
+          },
+          {
+            "name": "MaxStrainTension",
+            "native_type": "6",
+            "units": "Strain_Metric1",
+            "expression": "-777777",
+            "unit_symbol": "mm/mm",
+            "representation": "expression"
+          },
+          {
+            "name": "MaxStrainCompression",
+            "native_type": "6",
+            "units": "Strain_Metric1",
+            "expression": "-777777",
+            "unit_symbol": "mm/mm",
+            "representation": "expression"
+          },
+          {
+            "name": "MaxInPlaneShearStrain",
+            "native_type": "6",
+            "units": "Strain_Metric1",
+            "expression": "-777777",
+            "unit_symbol": "mm/mm",
+            "representation": "expression"
+          },
+          {
+            "name": "StressLifeDataFormat",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "FatigueStrengthCoeff",
+            "native_type": "6",
+            "units": "StressNewtonPerSquareMilliMeter",
+            "expression": "-777777",
+            "unit_symbol": "N/mm^2(MPa)",
+            "representation": "expression"
+          },
+          {
+            "name": "FatigueStrengthExp",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "StressLifeDataField",
+            "native_type": "5",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "SlopeField",
+            "native_type": "5",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "StressAmplitudePointValue",
+            "native_type": "6",
+            "units": "StressNewtonPerSquareMilliMeter",
+            "expression": "-777777",
+            "unit_symbol": "N/mm^2(MPa)",
+            "representation": "expression"
+          },
+          {
+            "name": "FatigueLifePointValue",
+            "native_type": "6",
+            "units": "DutyCycles",
+            "expression": "-777777",
+            "unit_symbol": "DutyCycles",
+            "representation": "expression"
+          },
+          {
+            "name": "StrainLifeDataFormat",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "FatigueDuctCoeff",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "FatigueDuctExp",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "StrainLifeDataField",
+            "native_type": "5",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "CyclicYieldStrength",
+            "native_type": "4",
+            "units": "StressNewtonPerSquareMilliMeter",
+            "value": -777777.0,
+            "unit_symbol": "N/mm^2(MPa)"
+          },
+          {
+            "name": "CyclicStrengthCoeff",
+            "native_type": "6",
+            "units": "StressNewtonPerSquareMilliMeter",
+            "expression": "-777777",
+            "unit_symbol": "N/mm^2(MPa)",
+            "representation": "expression"
+          },
+          {
+            "name": "CyclicStrainHardeningExp",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "DangVanFatigueLimitStrengthBending",
+            "native_type": "4",
+            "units": "StressNewtonPerSquareMilliMeter",
+            "value": -777777.0,
+            "unit_symbol": "N/mm^2(MPa)"
+          },
+          {
+            "name": "DangVanFatigueLimitStrengthTorsion",
+            "native_type": "4",
+            "units": "StressNewtonPerSquareMilliMeter",
+            "value": -777777.0,
+            "unit_symbol": "N/mm^2(MPa)"
+          },
+          {
+            "name": "PercentAreaReduction",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 0.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "RRatioType",
+            "native_type": "3",
+            "units": null,
+            "value": 1
+          },
+          {
+            "name": "RRatio",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-1",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "TestType",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "SurvivalProbability",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "50",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "TSigma90-10",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "1.5",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "EnduranceLimitOption",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "NumberCycles",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "StressAmplitude",
+            "native_type": "6",
+            "units": "StressNewtonPerSquareMilliMeter",
+            "expression": "-777777",
+            "unit_symbol": "N/mm^2(MPa)",
+            "representation": "expression"
+          },
+          {
+            "name": "StrainAmplitude",
+            "native_type": "6",
+            "units": "Strain_Metric1",
+            "expression": "-777777",
+            "unit_symbol": "mm/mm",
+            "representation": "expression"
+          },
+          {
+            "name": "WorkHardening",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": -777777.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "FormingLimit",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "PlasticStrainRatio",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": -777777.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "InitialStrain",
+            "native_type": "6",
+            "units": "Strain_Metric1",
+            "expression": "-777777",
+            "unit_symbol": "mm/mm",
+            "representation": "expression"
+          },
+          {
+            "name": "HardeningExponent",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "StrengthCoefficient",
+            "native_type": "6",
+            "units": "StressNewtonPerSquareMilliMeter",
+            "expression": "-777777",
+            "unit_symbol": "N/mm^2(MPa)",
+            "representation": "expression"
+          },
+          {
+            "name": "AnisotropyCoefficientR0",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "AnisotropyCoefficientR45",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "AnisotropyCoefficientR90",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "SIStockBendRadii",
+            "native_type": "5",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "EnglishStockBendRadii",
+            "native_type": "5",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "RefTemp",
+            "native_type": "4",
+            "units": "Celsius",
+            "value": -777777.0,
+            "unit_symbol": "C"
+          },
+          {
+            "name": "ThermalExpansionCoefficientType",
+            "native_type": "3",
+            "units": null,
+            "value": 1
+          },
+          {
+            "name": "ThermalExpansionConstant",
+            "native_type": "6",
+            "units": "ThermalExpansion_Metric1",
+            "expression": "-777777",
+            "unit_symbol": "1/dC",
+            "representation": "expression"
+          },
+          {
+            "name": "ThermalExpansionTemperature",
+            "native_type": "6",
+            "units": null,
+            "value": null
+          },
+          {
+            "name": "ThermalExpansionCoefficientControl2",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "ThermalExpansionTX",
+            "native_type": "6",
+            "units": "ThermalExpansion_Metric1",
+            "expression": "-777777",
+            "unit_symbol": "1/dC",
+            "representation": "expression"
+          },
+          {
+            "name": "MatrixThermalExpansionTXTg",
+            "native_type": "6",
+            "units": "ThermalExpansion_Metric1",
+            "expression": "-777777",
+            "unit_symbol": "1/dC",
+            "representation": "expression"
+          },
+          {
+            "name": "MatrixThermalExpansionTXTg2",
+            "native_type": "6",
+            "units": "ThermalExpansion_Metric1",
+            "expression": "-777777",
+            "unit_symbol": "1/dC",
+            "representation": "expression"
+          },
+          {
+            "name": "MatrixThermalExpansionTXTg3",
+            "native_type": "6",
+            "units": "ThermalExpansion_Metric1",
+            "expression": "-777777",
+            "unit_symbol": "1/dC",
+            "representation": "expression"
+          },
+          {
+            "name": "ThermalConductivityControl",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "TempConductivityBehaviorType",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "ThermalConductivity",
+            "native_type": "6",
+            "units": null,
+            "field_scale": 1.0,
+            "field_reference": {
+              "journal_id": "MCP_PUBLIC_TEMP_K",
+              "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-temperature-material-public-20260909-r1\\benchmark_cfe079b0eed8_mesh.fem",
+              "tag": 8672758,
+              "lifetime": "current loaded document; not a cross-session reference"
+            },
+            "representation": "FieldTable",
+            "field_definition": {
+              "kind": "validated_scalar_table",
+              "manifest": {
+                "axis": "temperature",
+                "interpolation": "linear",
+                "name": "MCP_PUBLIC_TEMP_K",
+                "outside_table": "undefined",
+                "provenance": "Generic public temperature material fixture",
+                "quantity": "conductivity",
+                "samples": [
+                  [
+                    273.15,
+                    100.0
+                  ],
+                  [
+                    293.15,
+                    150.0
+                  ],
+                  [
+                    313.15,
+                    200.0
+                  ]
+                ],
+                "version": 1
+              },
+              "native_samples_si": {
+                "samples_si": [
+                  [
+                    273.15,
+                    100.0
+                  ],
+                  [
+                    293.15,
+                    150.0
+                  ],
+                  [
+                    313.15,
+                    200.0
+                  ]
+                ],
+                "axis_units": "K",
+                "value_units": "W/(m K)",
+                "native_axis_unit": "Celsius",
+                "native_value_unit": "ThermalConductivity_Metric3",
+                "interpolation": "linear",
+                "outside_table": "undefined"
+              },
+              "scale_application": "native scalar wrapper factor reported separately; binding semantics not established",
+              "definition_scope": "table samples, units and stored interpolation; not material/load or solver semantics"
+            }
+          },
+          {
+            "name": "DummyThermalConductivity1",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "DummyThermalConductivity2",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "DummyThermalConductivity3",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "DummyThermalConductivity4",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "SpecificHeatControl",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "SpecificHeat",
+            "native_type": "6",
+            "units": null,
+            "field_scale": 1.0,
+            "field_reference": {
+              "journal_id": "MCP_PUBLIC_TEMP_CP",
+              "owner_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-temperature-material-public-20260909-r1\\benchmark_cfe079b0eed8_mesh.fem",
+              "tag": 8672803,
+              "lifetime": "current loaded document; not a cross-session reference"
+            },
+            "representation": "FieldTable",
+            "field_definition": {
+              "kind": "validated_scalar_table",
+              "manifest": {
+                "axis": "temperature",
+                "interpolation": "linear",
+                "name": "MCP_PUBLIC_TEMP_CP",
+                "outside_table": "undefined",
+                "provenance": "Generic public temperature material fixture",
+                "quantity": "heat_capacity",
+                "samples": [
+                  [
+                    273.15,
+                    800.0
+                  ],
+                  [
+                    293.15,
+                    900.0
+                  ],
+                  [
+                    313.15,
+                    1000.0
+                  ]
+                ],
+                "version": 1
+              },
+              "native_samples_si": {
+                "samples_si": [
+                  [
+                    273.15,
+                    800.0
+                  ],
+                  [
+                    293.15,
+                    900.0
+                  ],
+                  [
+                    313.15,
+                    1000.0
+                  ]
+                ],
+                "axis_units": "K",
+                "value_units": "J/(kg K)",
+                "native_axis_unit": "Celsius",
+                "native_value_unit": "SpecificHeat_Metric2",
+                "interpolation": "linear",
+                "outside_table": "undefined"
+              },
+              "scale_application": "native scalar wrapper factor reported separately; binding semantics not established",
+              "definition_scope": "table samples, units and stored interpolation; not material/load or solver semantics"
+            }
+          },
+          {
+            "name": "PhaseChangeType",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "LatentHeat",
+            "native_type": "6",
+            "units": "JoulePerKilogram",
+            "expression": "-777777",
+            "unit_symbol": "J/kg",
+            "representation": "expression"
+          },
+          {
+            "name": "PhaseTemp",
+            "native_type": "4",
+            "units": "Celsius",
+            "value": -777777.0,
+            "unit_symbol": "C"
+          },
+          {
+            "name": "PhaseTempRange",
+            "native_type": "4",
+            "units": "CelsiusDifference",
+            "value": -777777.0,
+            "unit_symbol": "dC"
+          },
+          {
+            "name": "PhaseSpecificHeat",
+            "native_type": "6",
+            "units": "SpecificHeat_Metric2",
+            "expression": "-777777",
+            "unit_symbol": "J/kg-dK",
+            "representation": "expression"
+          },
+          {
+            "name": "LHTEnableScaleFactor",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "LatentHeatTable",
+            "native_type": "13",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "IrScatterCoeff",
+            "native_type": "4",
+            "units": "CoefficientPerMilliMeter",
+            "value": -777777.0,
+            "unit_symbol": "1/mm"
+          },
+          {
+            "name": "IrExtinctCoeff",
+            "native_type": "4",
+            "units": "CoefficientPerMilliMeter",
+            "value": -777777.0,
+            "unit_symbol": "1/mm"
+          },
+          {
+            "name": "SolarScatterCoeff",
+            "native_type": "4",
+            "units": "CoefficientPerMilliMeter",
+            "value": -777777.0,
+            "unit_symbol": "1/mm"
+          },
+          {
+            "name": "SolarExtinctCoeff",
+            "native_type": "4",
+            "units": "CoefficientPerMilliMeter",
+            "value": -777777.0,
+            "unit_symbol": "1/mm"
+          },
+          {
+            "name": "ElectromagneticFrequency",
+            "native_type": "3",
+            "units": null,
+            "value": 2
+          },
+          {
+            "name": "HighFrequencyDielectricModel",
+            "native_type": "3",
+            "units": null,
+            "value": 1
+          },
+          {
+            "name": "ElectConductivityResistivityMode",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "ElectConductivityMethod",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "ElectResistivityMethod",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "ElecConductivitybasic",
+            "native_type": "6",
+            "units": "SiemensPerMeter",
+            "expression": "-777777",
+            "unit_symbol": "mho/m",
+            "representation": "expression"
+          },
+          {
+            "name": "ElecConductivity",
+            "native_type": "6",
+            "units": "SiemensPerMeter",
+            "expression": "-777777",
+            "unit_symbol": "mho/m",
+            "representation": "expression"
+          },
+          {
+            "name": "ElecConductivityhighfreq",
+            "native_type": "6",
+            "units": "SiemensPerMeter",
+            "expression": "-777777",
+            "unit_symbol": "mho/m",
+            "representation": "expression"
+          },
+          {
+            "name": "CalculateConductivity",
+            "native_type": "1",
+            "units": null,
+            "value": "Calculate Conductivity from %IACS"
+          },
+          {
+            "name": "ElecConductivityIACS",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "CalculatelinearIACS",
+            "native_type": "1",
+            "units": null,
+            "value": "Calculate %IACS from Conductivity"
+          },
+          {
+            "name": "NonlinearElecConductivity",
+            "native_type": "6",
+            "units": null,
+            "value": null
+          },
+          {
+            "name": "CalculateNonLinearConductivity",
+            "native_type": "1",
+            "units": null,
+            "value": "Calculate Conductivity from %IACS"
+          },
+          {
+            "name": "NonlinearElecConductivityIACS",
+            "native_type": "6",
+            "units": null,
+            "value": null
+          },
+          {
+            "name": "CalculateIACS",
+            "native_type": "1",
+            "units": null,
+            "value": "Calculate %IACS from Conductivity"
+          },
+          {
+            "name": "ElecResist",
+            "native_type": "6",
+            "units": "OhmMilliMeter",
+            "expression": "-777777",
+            "unit_symbol": "ohm-mm",
+            "representation": "expression"
+          },
+          {
+            "name": "NonlinearElecResist",
+            "native_type": "6",
+            "units": null,
+            "value": null
+          },
+          {
+            "name": "PermittivityType",
+            "native_type": "3",
+            "units": null,
+            "value": 1
+          },
+          {
+            "name": "IsotropicLinearPermittivity",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "NonLinearPermittivity",
+            "native_type": "6",
+            "units": null,
+            "value": null
+          },
+          {
+            "name": "ComplexElectricPermittivity",
+            "native_type": "14",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "PermittivityAtInfinity",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "PermittivityAtZero",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "PermittityRelaxationTime",
+            "native_type": "6",
+            "units": "Second",
+            "expression": "-777777",
+            "unit_symbol": "sec",
+            "representation": "expression"
+          },
+          {
+            "name": "dielectricRadiantPlasmaFrequency",
+            "native_type": "6",
+            "units": "DegreesPerSecond",
+            "expression": "-777777",
+            "unit_symbol": "degrees/sec",
+            "representation": "expression"
+          },
+          {
+            "name": "dielectricCollisionFrequency",
+            "native_type": "6",
+            "units": "hertz",
+            "expression": "-777777",
+            "unit_symbol": "Hz",
+            "representation": "expression"
+          },
+          {
+            "name": "dielectricResonantFrequency",
+            "native_type": "6",
+            "units": "hertz",
+            "expression": "-777777",
+            "unit_symbol": "Hz",
+            "representation": "expression"
+          },
+          {
+            "name": "DielectricDampingCoeff",
+            "native_type": "6",
+            "units": "CoefficientPerSec",
+            "expression": "-777777",
+            "unit_symbol": "1/sec",
+            "representation": "expression"
+          },
+          {
+            "name": "electricPoles",
+            "native_type": "13",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "HighFrequencyMagneticModel",
+            "native_type": "3",
+            "units": null,
+            "value": 1
+          },
+          {
+            "name": "MagneticConductivity",
+            "native_type": "6",
+            "units": "OhmPerMeter",
+            "expression": "-777777",
+            "unit_symbol": "ohm/m",
+            "representation": "expression"
+          },
+          {
+            "name": "MagnetType",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "ElectroMagnetPermeabilityMethod",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "PermanentMagnetPermeabilityMethod",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "PermanentMagnetPermeabilityDependency",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "DemagnetizationSpecification",
+            "native_type": "2",
+            "units": null,
+            "value": true
+          },
+          {
+            "name": "IsotropicLinearPermeability",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "IsotropicLinearPermeabilityPermMag",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": -777777.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "ComplexIsotropicLinearPermeability",
+            "native_type": "14",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "HighFreqComplexIsotropicLinearPermeability",
+            "native_type": "14",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "IsotropicLinearPermeabilityPermanentMagnet",
+            "native_type": "5",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "IsotropicLinearPermeabilityPermanentMagnetWithDemagnetization",
+            "native_type": "5",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "Remanence",
+            "native_type": "4",
+            "units": "Tesla",
+            "value": -777777.0,
+            "unit_symbol": "T"
+          },
+          {
+            "name": "Demagnetization",
+            "native_type": "4",
+            "units": "Tesla",
+            "value": -777777.0,
+            "unit_symbol": "T"
+          },
+          {
+            "name": "IsotropicLinearPermeabilityInfinity",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "IsotropicLinearPermeabilityZero",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "PermeabilityRelaxationTime",
+            "native_type": "6",
+            "units": "Second",
+            "expression": "-777777",
+            "unit_symbol": "sec",
+            "representation": "expression"
+          },
+          {
+            "name": "NonlinearIsotropicPermeability",
+            "native_type": "13",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "NonlinearIsotropicPermanentMagnetPermeability",
+            "native_type": "13",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "LaminationThickness",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": -777777.0,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "IronLossMethod",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "IronLoss",
+            "native_type": "13",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "CalculateSteinmetz",
+            "native_type": "1",
+            "units": null,
+            "value": "Calculate Steinmetz Coefficients"
+          },
+          {
+            "name": "SteinmetzCoefficients",
+            "native_type": "5",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "JilesAthertonScenario",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "SpecifyCoercivity",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "Coercivity",
+            "native_type": "6",
+            "units": "AmpPerMeter",
+            "expression": "-777777",
+            "unit_symbol": "A/m",
+            "representation": "expression"
+          },
+          {
+            "name": "SpecifyRemanence",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "HystersisRemanence",
+            "native_type": "6",
+            "units": "Tesla",
+            "expression": "-777777",
+            "unit_symbol": "T",
+            "representation": "expression"
+          },
+          {
+            "name": "BHLoop",
+            "native_type": "13",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "CalculateJiles-AthertonParameters",
+            "native_type": "1",
+            "units": null,
+            "value": "Calculate Jiles-Atherton Parameters"
+          },
+          {
+            "name": "JilesAthertonParameters",
+            "native_type": "5",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "magneticRadiantPlasmaFrequency",
+            "native_type": "6",
+            "units": "DegreesPerSecond",
+            "expression": "-777777",
+            "unit_symbol": "degrees/sec",
+            "representation": "expression"
+          },
+          {
+            "name": "magneticCollisionFrequency",
+            "native_type": "6",
+            "units": "hertz",
+            "expression": "-777777",
+            "unit_symbol": "Hz",
+            "representation": "expression"
+          },
+          {
+            "name": "magneticResonantFrequency",
+            "native_type": "6",
+            "units": "hertz",
+            "expression": "-777777",
+            "unit_symbol": "Hz",
+            "representation": "expression"
+          },
+          {
+            "name": "MagneticDampingCoeff",
+            "native_type": "6",
+            "units": "CoefficientPerSec",
+            "expression": "-777777",
+            "unit_symbol": "1/sec",
+            "representation": "expression"
+          },
+          {
+            "name": "magneticPoles",
+            "native_type": "13",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "StrainBCurve",
+            "native_type": "6",
+            "units": null,
+            "value": null
+          },
+          {
+            "name": "CreepFormulation",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "CreepReferenceTemperature",
+            "native_type": "4",
+            "units": "Celsius",
+            "value": 0.0,
+            "unit_symbol": "C"
+          },
+          {
+            "name": "TempDependTermType",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "CreepTemperatureDependence",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "1e-09",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "CreepTemperatureDependenceDeltaH",
+            "native_type": "4",
+            "units": "Joule",
+            "value": -777777.0,
+            "unit_symbol": "J"
+          },
+          {
+            "name": "CreepThreshold",
+            "native_type": "4",
+            "units": "Strain_Metric1",
+            "value": 1e-05,
+            "unit_symbol": "mm/mm"
+          },
+          {
+            "name": "CreepThresholdVPlas",
+            "native_type": "4",
+            "units": "Strain_Metric1",
+            "value": -777777.0,
+            "unit_symbol": "mm/mm"
+          },
+          {
+            "name": "CreepHardening",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "AnisotropicType",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "CreepHillRatio11",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "1",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "CreepHillRatio22",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "1",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "CreepHillRatio33",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "1",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "CreepHillRatio12",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "1",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "CreepHillRatio23",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "1",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "CreepHillRatio13",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "1",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "CheckUnitSystem",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "ForceLengthMassUnits",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "PowerLawCreepParameter_A",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "PowerLawCreepParameter_n",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "PowerLawCreepParameter_m",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "TimeHardeningC4Method",
+            "native_type": "3",
+            "units": null,
+            "value": 1
+          },
+          {
+            "name": "TimeHardeningC4",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "PowerLawCreepParameter_A1",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "PowerLawCreepParameter_b",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "PowerLawCreepParameter_d",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "KelvinMaxwellC1Function",
+            "native_type": "3",
+            "units": null,
+            "value": 1
+          },
+          {
+            "name": "KelvinMaxwellCreepParameter_a",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "KelvinMaxwellCreepParameter_b",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "KelvinMaxwellC2Function",
+            "native_type": "3",
+            "units": null,
+            "value": 1
+          },
+          {
+            "name": "KelvinMaxwellCreepParameter_c",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "KelvinMaxwellCreepParameter_d",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "GeneralizedBlackburnCreepParameter_x",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "KelvinMaxwellC3Function",
+            "native_type": "3",
+            "units": null,
+            "value": 1
+          },
+          {
+            "name": "KelvinMaxwellCreepParameter_e",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "KelvinMaxwellCreepParameter_f",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "KelvinMaxwellCreepParameter_g",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "PrimarySpringCreepTable_Kp",
+            "native_type": "6",
+            "units": null,
+            "value": null
+          },
+          {
+            "name": "PrimaryDampingCreepTable_Cp",
+            "native_type": "6",
+            "units": null,
+            "value": null
+          },
+          {
+            "name": "SecondaryDampingCreepTable_Cs",
+            "native_type": "6",
+            "units": null,
+            "value": null
+          },
+          {
+            "name": "RateStrainFactorC1",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "MainFactorC1Norton",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "MainFactorC1Garafalo",
+            "native_type": "6",
+            "units": "CoefficientPerSec",
+            "expression": "-777777",
+            "unit_symbol": "1/sec",
+            "representation": "expression"
+          },
+          {
+            "name": "MainFactorA",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "StressPowerExponentC2",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "StressPowerExponentC2Garafalo",
+            "native_type": "6",
+            "units": "SquareMilliMeterPerNewton",
+            "expression": "-777777",
+            "unit_symbol": "mm^2/N(1/MPa)",
+            "representation": "expression"
+          },
+          {
+            "name": "StrainPowerExponentC3",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "ExponentialFactorC4",
+            "native_type": "6",
+            "units": "Celsius",
+            "expression": "-777777",
+            "unit_symbol": "C",
+            "representation": "expression"
+          },
+          {
+            "name": "StressPowerExponentB",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "TimePowerExponentD",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "InitialDeformationResistanceC1",
+            "native_type": "6",
+            "units": "StressNewtonPerSquareMilliMeter",
+            "expression": "-777777",
+            "unit_symbol": "N/mm^2(MPa)",
+            "representation": "expression"
+          },
+          {
+            "name": "ArrheniusCoefficientC2",
+            "native_type": "4",
+            "units": "Celsius",
+            "value": -777777.0,
+            "unit_symbol": "C"
+          },
+          {
+            "name": "PreExponentialFactorC3",
+            "native_type": "6",
+            "units": "CoefficientPerSec",
+            "expression": "-777777",
+            "unit_symbol": "1/sec",
+            "representation": "expression"
+          },
+          {
+            "name": "MultiplierStressC4",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "StrainRateSensitivityStressC5",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "HardeningSofteningConstantC6",
+            "native_type": "6",
+            "units": "StressNewtonPerSquareMilliMeter",
+            "expression": "-777777",
+            "unit_symbol": "N/mm^2(MPa)",
+            "representation": "expression"
+          },
+          {
+            "name": "SaturationValueDeformationResistanceC7",
+            "native_type": "6",
+            "units": "StressNewtonPerSquareMilliMeter",
+            "expression": "-777777",
+            "unit_symbol": "N/mm^2(MPa)",
+            "representation": "expression"
+          },
+          {
+            "name": "StrainRateSensitivitySaturationValueC8",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "StrainRateSensitivityHardeningSofteningC9",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "AnsysUserCreepTable",
+            "native_type": "13",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "ViscoelasticDomain",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "ViscoelasticType",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "ViscoelasticType2",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "ViscoelasticTimeDefn",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "TimeErrorTolerance",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 0.01,
+            "unit_symbol": null
+          },
+          {
+            "name": "TimeNMax",
+            "native_type": "3",
+            "units": null,
+            "value": 13
+          },
+          {
+            "name": "ViscoelasticTimeDefnCreepTestDataFormat",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "ViscoelasticTimeDefnRelaxTestDataFormat",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "TimeDomainLongTermShearCompliance",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": -777777.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "TimeDomainLongTermBulkCompliance",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": -777777.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "TimeDomainLongTermShearRelaxation",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": -777777.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "TimeDomainLongTermBulkRelaxation",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": -777777.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "TimeNormalizedShearCompliance",
+            "native_type": "5",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "TimeNormalizedBulkCompliance",
+            "native_type": "5",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "TimeShearBulkComplianceData",
+            "native_type": "5",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "TimeNormalizedShearRelaxation",
+            "native_type": "5",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "TimeNormalizedBulkRelaxation",
+            "native_type": "5",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "TimeShearBulkRelaxationData",
+            "native_type": "5",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "ViscoelasticTimeFreqTabularData",
+            "native_type": "5",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "PronyParameterType",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "ViscoelasticPronyTimeParms",
+            "native_type": "5",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "ElasticBulkModulus",
+            "native_type": "6",
+            "units": "StressNewtonPerSquareMilliMeter",
+            "expression": "0",
+            "unit_symbol": "N/mm^2(MPa)",
+            "representation": "expression"
+          },
+          {
+            "name": "ShortTermShearModulusG0",
+            "native_type": "6",
+            "units": "StressNewtonPerSquareMilliMeter",
+            "expression": "0",
+            "unit_symbol": "N/mm^2(MPa)",
+            "representation": "expression"
+          },
+          {
+            "name": "LongTermShearModulusGI",
+            "native_type": "6",
+            "units": "StressNewtonPerSquareMilliMeter",
+            "expression": "0",
+            "unit_symbol": "N/mm^2(MPa)",
+            "representation": "expression"
+          },
+          {
+            "name": "DecayConstant",
+            "native_type": "6",
+            "units": "CoefficientPerSec",
+            "expression": "0",
+            "unit_symbol": "1/sec",
+            "representation": "expression"
+          },
+          {
+            "name": "ViscoelasticFrequencyDefn",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "ViscoelasticFrequencyDefn2",
+            "native_type": "3",
+            "units": null,
+            "value": 4
+          },
+          {
+            "name": "FreqErrorTolerance",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 0.01,
+            "unit_symbol": null
+          },
+          {
+            "name": "FreqNMax",
+            "native_type": "3",
+            "units": null,
+            "value": 13
+          },
+          {
+            "name": "ViscoelasticFrequencyDefnCreepTestDataFormat",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "ViscoelasticFrequencyDefnRelaxTestDataFormat",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "FreqDomainLongTermShearCompliance",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": -777777.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "FreqDomainLongTermBulkCompliance",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": -777777.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "FreqDomainLongTermShearRelaxation",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": -777777.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "FreqDomainLongTermBulkRelaxation",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": -777777.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "FreqNormalizedShearCompliance",
+            "native_type": "5",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "FreqNormalizedBulkCompliance",
+            "native_type": "5",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "FreqShearBulkComplianceData",
+            "native_type": "5",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "FreqNormalizedShearRelaxation",
+            "native_type": "5",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "FreqNormalizedBulkRelaxation",
+            "native_type": "5",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "FreqShearBulkRelaxationData",
+            "native_type": "5",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "ViscoelasticPronyFreqParms",
+            "native_type": "5",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "ViscoelasticPreload",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "ViscoelasticPreload2",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "ViscoelasticFreqTabularData",
+            "native_type": "5",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "ViscoelasticUniaxialData",
+            "native_type": "5",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "ViscoelasticBulkData",
+            "native_type": "5",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "FrequencyNormalizedLossShearModuliiField",
+            "native_type": "5",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "FrequencyUniaxialLossStorageModuliiClosureField",
+            "native_type": "5",
+            "units": null,
+            "inspection_status": "unsupported_property_type"
+          },
+          {
+            "name": "ViscoelasticPronyShiftFunction",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "ViscoelasticPronyReferenceTemperature",
+            "native_type": "4",
+            "units": "Celsius",
+            "value": -777777.0,
+            "unit_symbol": "C"
+          },
+          {
+            "name": "ViscoelasticPronyCalibrationConstant1",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": -777777.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "ViscoelasticPronyCalibrationConstant2",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": -777777.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "FreqFormulaG1",
+            "native_type": "8",
+            "units": "dimensionless",
+            "value": [
+              0.0,
+              0.0
+            ],
+            "unit_symbol": null,
+            "value_semantics": "native values; sentinel meaning depends on owning property"
+          },
+          {
+            "name": "FreqFormulaAlpha",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": -777777.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "FreqFormulaK1",
+            "native_type": "8",
+            "units": "dimensionless",
+            "value": [
+              0.0,
+              0.0
+            ],
+            "unit_symbol": null,
+            "value_semantics": "native values; sentinel meaning depends on owning property"
+          },
+          {
+            "name": "FreqFormulaBeta",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": -777777.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "Damping",
+            "native_type": "6",
+            "units": "Second",
+            "expression": "-777777",
+            "unit_symbol": "sec",
+            "representation": "expression"
+          },
+          {
+            "name": "SecondHookeCoefficient",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "ViscoplasticModelType",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "CreepParameterEXPN",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "CreepParameterBIGK",
+            "native_type": "6",
+            "units": "StressNewtonPerSquareMilliMeter",
+            "expression": "-777777",
+            "unit_symbol": "N/mm^2(MPa)",
+            "representation": "expression"
+          },
+          {
+            "name": "CreepParameterLITK",
+            "native_type": "6",
+            "units": "StressNewtonPerSquareMilliMeter",
+            "expression": "-777777",
+            "unit_symbol": "N/mm^2(MPa)",
+            "representation": "expression"
+          },
+          {
+            "name": "IsotropicHardeningEXPM",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "KinematicHardeningCOCA",
+            "native_type": "6",
+            "units": "StressNewtonPerSquareMilliMeter",
+            "expression": "-777777",
+            "unit_symbol": "N/mm^2(MPa)",
+            "representation": "expression"
+          },
+          {
+            "name": "DamageParameterCOEN",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "DamageParameterEXEN",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "DamageParameterPDEN",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "DamageParameterDDEN",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "JohnsonCookConstantA",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": -777777.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "JohnsonCookConstantB",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 0.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "JohnsonCookConstantN",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 0.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "JohnsonCookConstantC",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 0.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "EffectiveFailurePlastStrain",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 1e+17,
+            "unit_symbol": null
+          },
+          {
+            "name": "MaxStressWorkHardening",
+            "native_type": "4",
+            "units": "StressNewtonPerSquareMilliMeter",
+            "value": -777777.0,
+            "unit_symbol": "N/mm^2(MPa)"
+          },
+          {
+            "name": "SaturationStress",
+            "native_type": "4",
+            "units": "StressNewtonPerSquareMilliMeter",
+            "value": 9.999999999999999e+24,
+            "unit_symbol": "N/mm^2(MPa)"
+          },
+          {
+            "name": "QuasiStaticThresholdStrainRate",
+            "native_type": "4",
+            "units": "CoefficientPerSec",
+            "value": 1.0,
+            "unit_symbol": "1/sec"
+          },
+          {
+            "name": "DamageModelType",
+            "native_type": "3",
+            "units": null,
+            "value": 3
+          },
+          {
+            "name": "ParameterDelay",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 1.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "TimeDelay",
+            "native_type": "4",
+            "units": "Second",
+            "value": 0.0,
+            "unit_symbol": "sec"
+          },
+          {
+            "name": "EquivalentPlasticStrainLimit",
+            "native_type": "6",
+            "units": "Strain_Metric1",
+            "expression": "-777777",
+            "unit_symbol": "mm/mm",
+            "representation": "expression"
+          },
+          {
+            "name": "MaxDamageValue",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": -777777.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "LinearBehavior",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "PlasticDamageOption",
+            "native_type": "3",
+            "units": null,
+            "value": 1
+          },
+          {
+            "name": "NonLinearDamageCurve",
+            "native_type": "6",
+            "units": null,
+            "value": null
+          },
+          {
+            "name": "NonLinearDamageStrainOption",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "EffectivePlasticStrainSoftening",
+            "native_type": "4",
+            "units": "Strain_Metric1",
+            "value": 1000000000000.0,
+            "unit_symbol": "mm/mm"
+          },
+          {
+            "name": "EffectivePlasticStrainRupture",
+            "native_type": "4",
+            "units": "Strain_Metric1",
+            "value": 100000000000000.0,
+            "unit_symbol": "mm/mm"
+          },
+          {
+            "name": "RcDcModelAlpha",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 0.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "RcDcModelBeta",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 0.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "RcDcModelGamma",
+            "native_type": "4",
+            "units": "SquareMilliMeterPerNewton",
+            "value": 0.0,
+            "unit_symbol": "mm^2/N(1/MPa)"
+          },
+          {
+            "name": "RcDcModelD0",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 0.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "RcDcModelB",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 0.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "RcDcModelLambda",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 0.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "RcDcModelDs",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 0.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "ShearStressParameterALPH",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": -777777.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "BulkModulusFailedMaterial",
+            "native_type": "4",
+            "units": "StressNewtonPerSquareMilliMeter",
+            "value": -777777.0,
+            "unit_symbol": "N/mm^2(MPa)"
+          },
+          {
+            "name": "DynamicViscosityControl",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "PressureCutoff",
+            "native_type": "4",
+            "units": "PressureNewtonPerSquareMilliMeter",
+            "value": 0.0,
+            "unit_symbol": "N/mm^2(MPa)"
+          },
+          {
+            "name": "DynamicVisc",
+            "native_type": "6",
+            "units": "DynamicViscosity_Metric2",
+            "expression": "-777777",
+            "unit_symbol": "kg/mm-sec",
+            "representation": "expression"
+          },
+          {
+            "name": "DynamicViscTempPress",
+            "native_type": "6",
+            "units": null,
+            "value": null
+          },
+          {
+            "name": "ChildHIC1000deformation",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": -777777.0,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "ChildHIC1700deformation",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": -777777.0,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "AdultHIC1000deformation",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": -777777.0,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "AdultHIC1700deformation",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": -777777.0,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "LegImpactdeformation",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": -777777.0,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "NCAPChild650deformation",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": -777777.0,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "NCAPChild1000deformation",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": -777777.0,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "NCAPChild1350deformation",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": -777777.0,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "NCAPChild1700deformation",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": -777777.0,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "NCAPAdult650deformation",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": -777777.0,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "NCAPAdult1000deformation",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": -777777.0,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "NCAPAdult1350deformation",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": -777777.0,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "NCAPAdult1700deformation",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": -777777.0,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "CoatingsVisualizationColor",
+            "native_type": "8",
+            "units": "dimensionless",
+            "value": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "unit_symbol": null,
+            "value_semantics": "native values; sentinel meaning depends on owning property"
+          },
+          {
+            "name": "CoatingsStudioMaterialName",
+            "native_type": "1",
+            "units": null,
+            "value": ""
+          },
+          {
+            "name": "CrosshatchPattern",
+            "native_type": "1",
+            "units": null,
+            "value": ""
+          },
+          {
+            "name": "ConfigurableProperties",
+            "native_type": "1",
+            "units": null,
+            "value": ""
+          },
+          {
+            "name": "CoatingsThickness",
+            "native_type": "6",
+            "units": "MilliMeter",
+            "expression": "-777777",
+            "unit_symbol": "mm",
+            "representation": "expression"
+          },
+          {
+            "name": "CoatingsCoverageRatio",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "enableTab1",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "DefaultThickness",
+            "native_type": "4",
+            "units": "MilliMeter",
+            "value": -777777.0,
+            "unit_symbol": "mm"
+          },
+          {
+            "name": "Adhesive",
+            "native_type": "1",
+            "units": null,
+            "value": ""
+          },
+          {
+            "name": "ProcessNotes",
+            "native_type": "0",
+            "units": null,
+            "representation": "text_lines",
+            "value": []
+          },
+          {
+            "name": "NxNastranUMATModelType",
+            "native_type": "3",
+            "units": null,
+            "value": -777777
+          },
+          {
+            "name": "NxNastranUMATCreepThresholdStrain",
+            "native_type": "4",
+            "units": "Strain_Metric1",
+            "value": 1e-12,
+            "unit_symbol": "mm/mm"
+          },
+          {
+            "name": "NxNastranUMATCheckUnitSystem",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "NxNastranUMATForceLengthMassUnits",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "NxNastranUMATModel1",
+            "native_type": "3",
+            "units": null,
+            "value": -777777
+          },
+          {
+            "name": "NxNastranUMATCreepModel1",
+            "native_type": "3",
+            "units": null,
+            "value": -777777
+          },
+          {
+            "name": "NxNastranUMATStateVarOutputModel1",
+            "native_type": "9",
+            "units": null,
+            "value": [],
+            "value_semantics": "native values; sentinel meaning depends on owning property"
+          },
+          {
+            "name": "NxNastranUMATCreepStateVarOutputModel1",
+            "native_type": "9",
+            "units": null,
+            "value": [],
+            "value_semantics": "native values; sentinel meaning depends on owning property"
+          },
+          {
+            "name": "NxNastranUMATModel2",
+            "native_type": "3",
+            "units": null,
+            "value": -777777
+          },
+          {
+            "name": "NxNastranUMATCreepModel2",
+            "native_type": "3",
+            "units": null,
+            "value": -777777
+          },
+          {
+            "name": "NxNastranUMATStateVarOutputModel2",
+            "native_type": "9",
+            "units": null,
+            "value": [],
+            "value_semantics": "native values; sentinel meaning depends on owning property"
+          },
+          {
+            "name": "NxNastranUMATCreepStateVarOutputModel2",
+            "native_type": "9",
+            "units": null,
+            "value": [],
+            "value_semantics": "native values; sentinel meaning depends on owning property"
+          },
+          {
+            "name": "SamcefUMATModel",
+            "native_type": "3",
+            "units": null,
+            "value": -777777
+          },
+          {
+            "name": "SamcefUMATStateVarOutputModel",
+            "native_type": "9",
+            "units": null,
+            "value": [],
+            "value_semantics": "native values; sentinel meaning depends on owning property"
+          },
+          {
+            "name": "SCNastranAppliedViews",
+            "native_type": "0",
+            "units": null,
+            "representation": "text_lines",
+            "value": []
+          },
+          {
+            "name": "SCSamcefAppliedViews",
+            "native_type": "0",
+            "units": null,
+            "representation": "text_lines",
+            "value": []
+          },
+          {
+            "name": "SCThermalFlowAppliedViews",
+            "native_type": "0",
+            "units": null,
+            "representation": "text_lines",
+            "value": []
+          },
+          {
+            "name": "SCSpaceSystemsThermalAppliedViews",
+            "native_type": "0",
+            "units": null,
+            "representation": "text_lines",
+            "value": []
+          },
+          {
+            "name": "SCElectronicSystemCoolingAppliedViews",
+            "native_type": "0",
+            "units": null,
+            "representation": "text_lines",
+            "value": []
+          },
+          {
+            "name": "SCAcousticsBEMAppliedViews",
+            "native_type": "0",
+            "units": null,
+            "representation": "text_lines",
+            "value": []
+          },
+          {
+            "name": "SCAcousticsTransientBEMAppliedViews",
+            "native_type": "0",
+            "units": null,
+            "representation": "text_lines",
+            "value": []
+          },
+          {
+            "name": "SCRayAcousticsAppliedViews",
+            "native_type": "0",
+            "units": null,
+            "representation": "text_lines",
+            "value": []
+          },
+          {
+            "name": "SCNoiseVibrationAppliedViews",
+            "native_type": "0",
+            "units": null,
+            "representation": "text_lines",
+            "value": []
+          },
+          {
+            "name": "SCMagnetAppliedViews",
+            "native_type": "0",
+            "units": null,
+            "representation": "text_lines",
+            "value": []
+          },
+          {
+            "name": "AbaqusAppliedViews",
+            "native_type": "0",
+            "units": null,
+            "representation": "text_lines",
+            "value": []
+          },
+          {
+            "name": "AnsysAppliedViews",
+            "native_type": "0",
+            "units": null,
+            "representation": "text_lines",
+            "value": []
+          },
+          {
+            "name": "LSDynaAppliedViews",
+            "native_type": "0",
+            "units": null,
+            "representation": "text_lines",
+            "value": []
+          },
+          {
+            "name": "MotionAppliedViews",
+            "native_type": "0",
+            "units": null,
+            "representation": "text_lines",
+            "value": []
+          },
+          {
+            "name": "HFEMIDSAppliedViews",
+            "native_type": "0",
+            "units": null,
+            "representation": "text_lines",
+            "value": []
+          },
+          {
+            "name": "ModelingAppliedViews",
+            "native_type": "0",
+            "units": null,
+            "representation": "text_lines",
+            "value": []
+          },
+          {
+            "name": "SVSensingAppliedViews",
+            "native_type": "0",
+            "units": null,
+            "representation": "text_lines",
+            "value": []
+          },
+          {
+            "name": "NastranViewBasedExport",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "NonPhysicalProp_Abaqus_AlphaDampingFactor",
+            "native_type": "6",
+            "units": "CoefficientPerSec",
+            "expression": "-777777",
+            "unit_symbol": "1/sec",
+            "representation": "expression"
+          },
+          {
+            "name": "NonPhysicalProp_Abaqus_BetaDampingFactor",
+            "native_type": "6",
+            "units": "Second",
+            "expression": "-777777",
+            "unit_symbol": "sec",
+            "representation": "expression"
+          },
+          {
+            "name": "NonPhysicalProp_Abaqus_CompositeDampingFraction",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": -777777.0,
+            "unit_symbol": null
+          },
+          {
+            "name": "NonPhysicalProp_Abaqus_StructuralDampingFactor",
+            "native_type": "6",
+            "units": "dimensionless",
+            "expression": "-777777",
+            "unit_symbol": null,
+            "representation": "expression"
+          },
+          {
+            "name": "NonPhysicalProp_Abaqus_HeatGeneration",
+            "native_type": "2",
+            "units": null,
+            "value": false
+          },
+          {
+            "name": "NonPhysicalProp_Abaqus_ProgressiveFailureTHEORY",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "NonPhysicalProp_Abaqus_DE",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 0.1,
+            "unit_symbol": null
+          },
+          {
+            "name": "NonPhysicalProp_Abaqus_Dv",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": 0.1,
+            "unit_symbol": null
+          },
+          {
+            "name": "NonPhysicalProp_LSDyna_MaterialCardOption",
+            "native_type": "3",
+            "units": null,
+            "value": 100
+          },
+          {
+            "name": "NonPhysicalProp_LSDyna_2WAY",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "NonPhysicalProp_LSDyna_TI",
+            "native_type": "3",
+            "units": null,
+            "value": 0
+          },
+          {
+            "name": "NonPhysicalProp_LSDyna_FBRT",
+            "native_type": "4",
+            "units": "dimensionless",
+            "value": -777777.0,
+            "unit_symbol": null
+          },
+          {
+            "name": null,
+            "inspection_status": "property_budget_exceeded"
+          }
+        ]
+      }
+    ],
+    "total": 1,
+    "next_offset": null,
+    "owner_part_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\T-temperature-material-public-20260909-r1\\benchmark_cfe079b0eed8_mesh.fem",
+    "collection_scope": "fem_local",
+    "paging_consistency": "live_collection_restart_after_mutation"
+  },
+  "current_reader_verified": true,
+  "solver_launched": false,
+  "operation_id": "op_a8db2c2545f6408aaa9dc429c025de55",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}
