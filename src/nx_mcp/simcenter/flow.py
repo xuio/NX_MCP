@@ -257,17 +257,33 @@ def configure_coupled_steady(session, sim, name):
         )
     if solution.StepCount != 1 or solution.ActiveStep != solution.GetStepByIndex(0):
         raise NXToolError("NX_SIM_STEP_PRECONDITION", "Requires exactly one active coupled step")
+    from nx_mcp.simcenter.coupled_setup import (
+        initialize,
+        read_initialization,
+        validate_initialization,
+    )
+
+    if sim.PartUnits != nx.BasePart.Units.Millimeters:
+        raise NXToolError(
+            "NX_SIM_UNSUPPORTED", "Coupled initialization currently supports millimeter SIMs only"
+        )
+    setup_before = read_initialization(solution.PropertyTable)
+    validate_initialization(setup_before)
     table = solution.ActiveStep.PropertyTable
     before = table.GetIntegerPropertyValue("Solution Type")
     mark = session.SetUndoMark(nx.Session.MarkVisibility.Visible, "NX MCP coupled steady step")
     try:
+        initialization = initialize(solution.PropertyTable)
         table.SetIntegerPropertyValue("Solution Type", 0)
         actual = table.GetIntegerPropertyValue("Solution Type")
         if actual != 0:
             raise NXToolError(
                 "NX_SIM_READBACK_MISMATCH", "Coupled step type differs from steady request"
             )
+        if session.UpdateManager.DoUpdate(mark):
+            raise NXToolError("NX_SIM_UPDATE_FAILED", "Coupled native update reported errors")
         return {
+            "initialization": initialization,
             "step": solution.ActiveStep.Name,
             "solution_type": "steady",
             "native_value": actual,
@@ -281,6 +297,8 @@ def configure_coupled_steady(session, sim, name):
             session.UndoToMark(mark, None)
             if table.GetIntegerPropertyValue("Solution Type") != before:
                 raise RuntimeError("Step type differs after rollback")
+            if read_initialization(solution.PropertyTable) != setup_before:
+                raise RuntimeError("Coupled initialization differs after rollback")
             session.DeleteUndoMark(mark, None)
         except Exception as recovery:
             raise NXToolError(

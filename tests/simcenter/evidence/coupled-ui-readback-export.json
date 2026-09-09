@@ -1,0 +1,28 @@
+{
+  "status": "success",
+  "route": "SimSolution.Solve WriteSolverInputFile",
+  "ambient_getters_before_export": true,
+  "readback": {
+    "temperature": 20.0,
+    "temperature_units": "Celsius",
+    "pressure_mode": 0,
+    "pressure_expression_units": "PressureNewtonPerSquareMilliMeter",
+    "pressure_expression": "0.101325",
+    "pressure_has_field": false
+  },
+  "ambient_xml": {
+    "Ambient Pressure": "0",
+    "Absolute Pressure": "  1.0132500E+02",
+    "Fluid Temperature": "  2.0000000E+01",
+    "Radiative Environment Temperature": "  2.0000000E+01"
+  },
+  "xml_sha256": "c48d78329fff5283501097c2d89f7b4b18f00854b2f83a4ae677788d02e14019",
+  "original_flags_preserved": true,
+  "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-native-ui-readback-export-20260909-r1\\native_ui_readback_r1.sim",
+  "solver_launched": false,
+  "operation_id": "op_2b77caf6af434de2ae242a4188502e65",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

@@ -56,14 +56,17 @@ def export_flow_input(session, workspace, sim):
                     expression is None
                     or wrapper.GetField() is not None
                     or expression.Units is None
-                    or expression.Units.Name != "PressurePascals"
+                    or expression.Units.Name
+                    not in ("PressurePascals", "PressureNewtonPerSquareMilliMeter")
                 ):
                     raise ValueError(
-                        "Specified coupled pressure requires an expression-backed Pa value; field definitions/scales are unverified"
+                        "Specified coupled pressure requires an expression-backed Pa or MPa value; field definitions/scales are unverified"
                     )
                 native_pressure = expression.GetValueUsingUnits(
                     nx.Expression.UnitsOption.Expression
                 )
+                if expression.Units.Name == "PressureNewtonPerSquareMilliMeter":
+                    native_pressure *= 1e6
         solution.Solve(
             cae.SimSolutionSolveOption.WriteSolverInputFile,
             cae.SimSolutionSetupCheckOption.CompleteCheckAndOutputErrors,

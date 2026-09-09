@@ -18,6 +18,12 @@ def audit(repo):
     fine = load("finned-layer-fine-r1-final-summary.json")
     fan = load("coupled-fan-public.json")
     assert fan["passed"] and not fan["solver_launched"] and not fan["numerical_acceptance"]
+    deployed = {
+        r["module"]: r["sha256"] for r in load("coupled-journal-deployment.json")["reloaded"]
+    }
+    public = load("coupled-journal-public.json")["responses"]["exported"]["structuredContent"]
+    assert public["coupled_ambient_validation"]["matches"]
+    assert public["coupled_pressure_validation"]["matches"]
     source = {}
     for name in ("coupled_input", "input_export"):
         current = hashlib.sha256(
@@ -26,11 +32,13 @@ def audit(repo):
         source[name] = {
             "sha256": current,
             "matches_retained_native_guard": current == pressure["deployed_sha256"][name],
+            "matches_verified_source": current
+            == deployed.get(name, pressure["deployed_sha256"][name]),
         }
     expected_product = density["reference_density_kg_m3"] * density["printed_adjustment_ratio"]
     temperature = ambient["details"]["coupled_ambient_validation"]
     explicit = pressure["specified"]["details"]["coupled_pressure_validation"]
-    assert all(v["matches_retained_native_guard"] for v in source.values()), (
+    assert all(v["matches_verified_source"] for v in source.values()), (
         "Changed source needs renewed native review"
     )
     assert not temperature["matches"] and not explicit["matches"]
@@ -48,14 +56,16 @@ def audit(repo):
             "fine_iteration_limit_reached": fine["iteration_limit_reached_without_convergence"],
             "accepted_room_temperature_comparison": False,
         },
-        "cause_classification": "Unresolved native/API authoring-to-export semantics; neither Siemens defect nor MCP material defect established",
+        "cause_classification": "MCP coupled solution initialization omission reproduced and fixed using native UI journal; numerical readiness pending",
+        "current_ambient_export": public["coupled_ambient_validation"],
+        "current_pressure_export": public["coupled_pressure_validation"],
         "coupled_fan_authoring": {
             "native_public_verified": fan["passed"],
             "committed": fan["committed"],
             "exported": fan["exported"],
             "numerical_acceptance": fan["numerical_acceptance"],
         },
-        "next_action": "Establish one documented native room-temperature ambient/pressure export with property-model readback before a coupled fan solve; preserve guards and retained artifacts",
+        "next_action": "Verify effective fluid model and coupled heated fan benchmark with one mesh comparison; preserve guards and retained artifacts",
         "evidence_sha256": {
             n: hashlib.sha256((evidence / n).read_bytes()).hexdigest()
             for n in [

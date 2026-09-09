@@ -188,3 +188,27 @@ def test_scaled_pressure_field_is_rejected_before_native_export(setup):
     assert "field definitions/scales" in exc.value.details["reason"]
     assert not calls
     assert not list(root.glob("*.xml"))
+
+
+def test_ui_authored_mpa_pressure_is_compared_in_pa(setup):
+    from pathlib import Path
+
+    session, workspace, sim, root, calls = setup
+    sys.modules["NXOpen"].Expression = NS(UnitsOption=NS(Expression="expression"))
+    expression = NS(
+        Units=NS(Name="PressureNewtonPerSquareMilliMeter"), GetValueUsingUnits=lambda mode: 0.101325
+    )
+    wrapper = NS(GetExpression=lambda: expression, GetField=lambda: None)
+    solution = sim.Simulation.ActiveSolution
+    solution.AnalysisType = "Coupled Thermal-Flow"
+    solution.PropertyTable = NS(
+        GetScalarWithDataPropertyValue=lambda key: (20.0, NS(Name="Celsius")),
+        GetIntegerPropertyValue=lambda key: 0,
+        GetScalarFieldWrapperPropertyValue=lambda key: wrapper,
+    )
+    raw = (Path(__file__).parent / "evidence/ui-reference-ambient.xml").read_bytes()
+    solution.Solve = lambda *args: (root / "native.xml").write_bytes(raw)
+    result = export_flow_input(session, workspace, sim)
+    assert result["coupled_ambient_validation"]["matches"]
+    assert result["coupled_pressure_validation"]["matches"]
+    assert result["coupled_pressure_validation"]["native_value"] == 101325

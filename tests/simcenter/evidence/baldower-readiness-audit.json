@@ -4,11 +4,13 @@
   "current_guard_source": {
     "coupled_input": {
       "sha256": "159f97e6f6ddd142676f3cfa00b3fca22fab279977a9b2c054331e2d74816ecc",
-      "matches_retained_native_guard": true
+      "matches_retained_native_guard": true,
+      "matches_verified_source": true
     },
     "input_export": {
-      "sha256": "b4b41e00cc241b4f97a78db720dd98045007607e987bff6a1c116ee94e238bc4",
-      "matches_retained_native_guard": true
+      "sha256": "f2739d037f262aeff4745e9d458862d8efc1575c0107bfb1486111149eb3dcc7",
+      "matches_retained_native_guard": false,
+      "matches_verified_source": true
     }
   },
   "temperature_mismatch": {
@@ -51,7 +53,26 @@
     "fine_iteration_limit_reached": true,
     "accepted_room_temperature_comparison": false
   },
-  "cause_classification": "Unresolved native/API authoring-to-export semantics; neither Siemens defect nor MCP material defect established",
+  "cause_classification": "MCP coupled solution initialization omission reproduced and fixed using native UI journal; numerical readiness pending",
+  "current_ambient_export": {
+    "property": "Fluid Temperature",
+    "native_value": 20.0,
+    "exported_value": 20.0,
+    "units": "degC",
+    "matches": true,
+    "absolute_tolerance_degC": 1e-06,
+    "scope": "constant ambient temperature only; not complete solve readiness"
+  },
+  "current_pressure_export": {
+    "mode": "specified",
+    "stored_absolute_pressure_active": true,
+    "native_value": 101325.0,
+    "exported_value": 101325.0,
+    "units": "Pa",
+    "absolute_tolerance_Pa": 0.001,
+    "matches": true,
+    "scope": "constant specified pressure only; not complete solve readiness"
+  },
   "coupled_fan_authoring": {
     "native_public_verified": true,
     "committed": {
@@ -68,7 +89,7 @@
     "exported": false,
     "numerical_acceptance": false
   },
-  "next_action": "Establish one documented native room-temperature ambient/pressure export with property-model readback before a coupled fan solve; preserve guards and retained artifacts",
+  "next_action": "Verify effective fluid model and coupled heated fan benchmark with one mesh comparison; preserve guards and retained artifacts",
   "evidence_sha256": {
     "coupled-fan-public.json": "c6000f3bf05d9d7c6d2652d7348a6a971176343dda61a2145a878031379c1f2e",
     "coupled-pressure-guard-native.json": "219b417cd65adc2c1e2b7e6829acd4eb368e3a1a8abd3d5fd020a7a672f24988",

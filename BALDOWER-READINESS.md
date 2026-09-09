@@ -30,13 +30,20 @@ infrastructure features are planned unless they resolve a concrete readiness blo
 
 ## Primary gate and blocker classification
 
-1. **Room-temperature global environment is not verified.** Native readback of
-   `Fluid Temperature` is 20 °C but exported XML contains 0 °C. The guard rejects
-   export. Specified absolute pressure reads 101325 Pa but exports 0 Pa; that guard
-   also rejects export. These are demonstrated request/native/export differences,
-   with unresolved native/API semantics. Neither a Siemens defect nor an MCP
-   material-authoring defect is established. No equivalent UI-authored comparison
-   has established the missing mapping.
+1. **The ambient export setup omission is resolved; numerical acceptance is pending.**
+   A fresh UI-created coupled solution exports 20 °C and 101325 Pa correctly.
+   The same saved state exports correctly through `SimSolution.Solve`, including
+   after the current ambient getters. A controlled pair with identical inputs
+   reproduced zero-valued export before the UI-journaled initialization and correct
+   values after it: native `Solver Type=6` and explicit millimeter solution units.
+   `coupled_steady` now applies that initialization with readback and rollback,
+   rejecting conflicting pre-existing units. The pressure guard accepts verified
+   expression-backed Pa and MPa and converts to Pa; temperature protection remains.
+   [Native comparison](tests/simcenter/evidence/coupled-journal-initialization.json)
+   and [public setup/export/replay](tests/simcenter/evidence/coupled-journal-public.json)
+   pass. No correction factors, generated-file edits, or solver changes were used.
+   This demonstrates an MCP setup omission, not a Siemens solver defect. It does
+   not yet establish effective density, coupled convergence, or mesh acceptance.
 2. **The atmospheric density experiment did not isolate atmospheric adjustment.**
    The retained log reports 1.207 kg/m³ × 1.0724 = 1.2943868 kg/m³, consistent with
    its printed adjusted density. Those runs selected altitude-derived pressure,
@@ -58,44 +65,10 @@ infrastructure features are planned unless they resolve a concrete readiness blo
    its iteration limit. Both use global 0 °C. Their similar temperatures do not
    establish an accepted room-temperature, fan-driven mesh comparison.
 
-The bounded review reused retained native evidence because `coupled_input.py` and
-`input_export.py` still exactly match their hashes in the native pressure-guard
-receipt. Preparation has since gained mesh guards; that does not alter export
-semantics. No further solve, material sweep, input correction, generated-file edit,
-licensing change or UI-coordinate workaround was used.
-
-Reproduce the evidence audit from the repo root:
-
-```sh
-python examples/simcenter/audit_baldower_readiness.py
-```
-
-It checks the current guard hashes and retained mismatches; it does not fabricate
-live acceptance. Output: [readiness audit](tests/simcenter/evidence/baldower-readiness-audit.json).
-The coupled binding probe initially stopped before mutation because its old fixture
-name was no longer loaded ([retained failure](tests/simcenter/evidence/coupled-fan-binding-missing-fixture.json)).
-After inspecting the current inventory, the [bounded native probe](tests/simcenter/evidence/coupled-fan-binding-native.json)
-verified documented mode 5, scale 1 and coupled Head Loss factory context, then
-restored bindings, field/table inventories and all modified flags. The public
-fixture is `ui-benchmarks/E-coupled-fan-public-20260909-r1/coupled_fan_public_r1.sim`.
-Reproducer: `examples/simcenter/verify_coupled_fan_public.py`; it refuses an existing
-receipt and never exports or launches a solver. Its SIM-only copy shares FEM/CAD
-and must not be used to edit their geometry.
-
-Minimal native reproducers: [temperature guard](examples/simcenter/verify_coupled_ambient_guard.py)
-and [specified pressure](examples/simcenter/probe_finned_specified_pressure.py).
-They require their named isolated fixtures and fresh output folders. **Do not rerun
-fixed job IDs or overwrite retained directories.** Read the existing
-[temperature receipt](tests/simcenter/evidence/coupled-ambient-guard-native.json),
-[pressure receipt](tests/simcenter/evidence/coupled-pressure-guard-native.json), and
-[density context](tests/simcenter/evidence/density-atmospheric-context.json) first.
-
-Exact next action: establish one documented, native room-temperature global
-ambient/pressure configuration whose effective exported property model is understood.
-A qualified native/UI-authored reference or authoritative API mapping is needed;
-retain both guards. Then verify coupled fan/resistance export and execute only
-the bounded gate below. The current evidence does not justify blaming Siemens or
-silently treating 0 °C as the requested 20 °C.
+The latest bounded UI comparison resolved the setup omission without changing
+physical inputs. [Injected native failure and save/reopen verification](tests/simcenter/evidence/coupled-journal-rollback-reopen.json)
+passed; no solve was launched in these tests. The coupled fan benchmark and mesh
+comparison remain the next readiness gates.
 
 ## Requirement-by-requirement audit
 
@@ -148,9 +121,9 @@ schemas before authoring. A small scripted set of 2–3 variants is sufficient.
    Inspect inlet orientation/pressure references. Use the native opening resistance
    mode and coefficient via `nx_sim_head_loss`; do not combine free-flow and shutoff
    pressure as one operating point. Motor heat must be explicitly assigned.
-5. **Stop coupled work at the current readiness gate.** A successful external
-   boundary-temperature setting does not override the unresolved global reference.
-   Do not bypass export guards. Once unblocked, save each FEM/SIM explicitly and
+5. Run `nx_sim_flow_setup(action="coupled_steady")` to initialize the native coupled
+   solution type/units. Set explicit ambient conditions and retain export guards.
+   Numerical readiness is still pending. Save each FEM/SIM explicitly and
    prepare into a directory containing only that isolated SIM. Use one fresh job
    ID and stable mutation operation IDs. Export and inspect before launch.
 6. `nx_sim_launch` is not completion. Reconnect with `nx_sim_job_status`,

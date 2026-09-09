@@ -12,6 +12,7 @@ from nx_mcp.simcenter import flow
 def native(monkeypatch):
     nx, uf = ModuleType("NXOpen"), ModuleType("NXOpen.UF")
     nx.UF = uf
+    nx.BasePart = NS(Units=NS(Millimeters=1))
     nx.Session = NS(MarkVisibility=NS(Visible=1))
     uf.UFSession = NS(
         GetUFSession=lambda: NS(
@@ -40,7 +41,7 @@ def native(monkeypatch):
         return step
 
     sol.CreateStep = create
-    sim = NS(Simulation=NS(ActiveSolution=sol))
+    sim = NS(Simulation=NS(ActiveSolution=sol), PartUnits=1)
     events = []
 
     def undo(*args):
@@ -143,6 +144,17 @@ def test_coupled_steady_readback_and_failed_edit_restore(native):
     sol = sim.Simulation.ActiveSolution
     sol.AnalysisType = "Coupled Thermal-Flow"
     sol.CreateStep()
+    from nx_mcp.simcenter.coupled_setup import SOLUTION_UNITS
+
+    setup_values = dict.fromkeys(SOLUTION_UNITS, "")
+    setup_values["Solver Type"] = 0
+    sol.PropertyTable = NS(
+        GetIntegerPropertyValue=lambda key: setup_values[key],
+        SetIntegerPropertyValue=lambda key, value: setup_values.update({key: value}),
+        GetStringPropertyValue=lambda key: setup_values[key],
+        SetStringPropertyValue=lambda key, value: setup_values.update({key: value}),
+    )
+    session.UpdateManager = NS(DoUpdate=lambda mark: 0)
     values = {"value": 1}
     sol.ActiveStep.PropertyTable = NS(
         GetIntegerPropertyValue=lambda _: values["value"],

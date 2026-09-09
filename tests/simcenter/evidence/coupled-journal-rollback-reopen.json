@@ -1,0 +1,102 @@
+{
+  "status": "success",
+  "rollback_verified": true,
+  "before": {
+    "solver_type": 0,
+    "units": {
+      "Mass": "",
+      "Length": "",
+      "Time Solution Units": "",
+      "Power": "",
+      "Heat Flux": "",
+      "Energy": "",
+      "Velocity": "",
+      "Pressure": "",
+      "Viscosity": "",
+      "Density": "",
+      "Specific Heat": "",
+      "Force": ""
+    }
+  },
+  "reopened": {
+    "solver_type": 6,
+    "units": {
+      "Mass": "kg",
+      "Length": "mm",
+      "Time Solution Units": "second",
+      "Power": "microWatt",
+      "Heat Flux": "microW/mm^2",
+      "Energy": "microJoule",
+      "Velocity": "mm/s",
+      "Pressure": "mN/mm^2",
+      "Viscosity": "kg/mm-s",
+      "Density": "kg/mm^3",
+      "Specific Heat": "microJ/kg-C",
+      "Force": "mN"
+    }
+  },
+  "exported": {
+    "input_path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-journal-rollback-20260909-r1\\rollback-Finned_coupled_benchmark.xml",
+    "input_identity": {
+      "sha256": "544b3a8bb343d48960b4238a121c2e416378962b5ddfafa80214559a2a82cf25",
+      "xml_content_sha256": "755a981d37325abd3370ce1d49026aea3caceef08d060e85d6564e142a6e1134",
+      "bytes": 236946,
+      "canonicalization": "xml_c14n2_no_comments"
+    },
+    "validation": {
+      "state": "well_formed",
+      "step_definitions": 1,
+      "mesh_counts": {
+        "elements": 2130,
+        "nodes": 745,
+        "element_sets": 2,
+        "scope": "observed_multiphysics_xml_layout"
+      },
+      "solve_readiness": "not_established"
+    },
+    "coupled_ambient_validation": {
+      "property": "Fluid Temperature",
+      "native_value": 20.0,
+      "exported_value": 20.0,
+      "units": "degC",
+      "matches": true,
+      "absolute_tolerance_degC": 1e-06,
+      "scope": "constant ambient temperature only; not complete solve readiness"
+    },
+    "coupled_pressure_validation": {
+      "mode": "specified",
+      "stored_absolute_pressure_active": true,
+      "native_value": 101325.0,
+      "exported_value": 101325.0,
+      "units": "Pa",
+      "absolute_tolerance_Pa": 0.001,
+      "matches": true,
+      "scope": "constant specified pressure only; not complete solve readiness"
+    },
+    "artifacts": [
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-journal-rollback-20260909-r1\\rollback-Finned_coupled_benchmark.map",
+        "bytes": 37125
+      },
+      {
+        "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-journal-rollback-20260909-r1\\rollback-Finned_coupled_benchmark.xml",
+        "bytes": 236946
+      }
+    ],
+    "translator_reports": [],
+    "solver": "NX MULTIPHYSICS",
+    "analysis_type": "Coupled Thermal-Flow",
+    "solution": "Finned coupled benchmark",
+    "source_sim": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-journal-rollback-20260909-r1\\rollback.sim",
+    "source_modified": false,
+    "solver_launched": false,
+    "solve_readiness": "not_established",
+    "scope": "Native thermal/flow input export, not a solve or convergence check"
+  },
+  "solver_launched": false,
+  "operation_id": "op_b7a586cc77ee4c9db625007cb6816ce2",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}

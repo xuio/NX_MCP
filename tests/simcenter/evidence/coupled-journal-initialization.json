@@ -1,0 +1,34 @@
+{
+  "status": "success",
+  "comparisons": [
+    {
+      "label": "control",
+      "ambient_xml": {
+        "Ambient Pressure": "0",
+        "Absolute Pressure": "  0.0000000E+00",
+        "Fluid Temperature": "  0.0000000E+00"
+      },
+      "solver_type": 0,
+      "xml_sha256": "9339999cd90c6655bb413d446fcd66ae0b2fb21a30e2345409c6ba3bd94e718b",
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-journal-init-control-20260909-r1\\control.sim"
+    },
+    {
+      "label": "journal",
+      "ambient_xml": {
+        "Ambient Pressure": "0",
+        "Absolute Pressure": "  1.0132500E+02",
+        "Fluid Temperature": "  2.0000000E+01"
+      },
+      "solver_type": 6,
+      "xml_sha256": "550912622c3cbe16a795861f8f53086f48174824736895108d0dc34e2b049035",
+      "path": "D:\\CAD\\SIMCENTER_MCP_WORKSPACE\\ui-benchmarks\\E-journal-init-journal-20260909-r1\\journal.sim"
+    }
+  ],
+  "solver_launched": false,
+  "same_physical_inputs": true,
+  "operation_id": "op_6afdfb57246143169af1eeab2582f712",
+  "session_id": "20bc234ffa5249ceb4fb4d82b993c626",
+  "mutation_outcome": "committed",
+  "warnings": [],
+  "units": "mm"
+}
