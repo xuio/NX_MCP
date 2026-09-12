@@ -14,7 +14,9 @@ def test_native_flow_residuals_and_units():
     assert sum(row["rate_overflow"] for row in r["residual_history"]) == 2
     assert r["reported_imbalances"]["mass"]["value"] == 0.008865
     assert r["boundary_flows"][0]["volume_flow_m3_s"] == pytest.approx(0.0001912)
-    assert r["rounded_boundary_mass_sum_kg_s"] == 0
+    assert r["rounded_boundary_mass_sum_kg_s"] is None
+    roles = {row["name"]: "Opening" for row in r["boundary_flows"]}
+    assert inspect_flow_log(LOG, roles)["rounded_boundary_mass_sum_kg_s"] == 0
     assert r["numerical_convergence"] == "not_established"
 
 
@@ -60,3 +62,29 @@ def test_actual_coupled_diagnostic_retains_failure_and_energy_equation():
     assert summary["warnings"]["coincident_thermal_nodes"]
     assert len(summary["temperature_summaries"]) == 3
     assert inspect_flow_log(log + log)["coupled_summary"] is None
+
+
+def test_fluid_energy_history_and_internal_transport_are_not_external_mass():
+    text = (Path(__file__).parent / "fixtures/mated-fan-steady-excerpt.log").read_text()
+    roles = {
+        "MATED_INTERNAL_FAN_Q1E4_HEAT1W": "Internal Fan",
+        "LEFT_AMBIENT_MATED": "Opening",
+        "RIGHT_AMBIENT_MATED": "Opening",
+    }
+    report = inspect_flow_log(text, roles)
+    assert report["last_iteration"] == 12
+    assert report["final_equations_complete"]
+    assert report["final_residual_criteria_met"] is True
+    assert report["rounded_boundary_mass_sum_kg_s"] == 0
+    assert report["boundary_flows"][0]["flow_scope"] == "internal"
+    assert report["boundary_flows"][0]["positive_direction"] != "into_domain"
+    assert inspect_flow_log(text)["rounded_boundary_mass_sum_kg_s"] is None
+    roles["MATED_INTERNAL_FAN_Q1E4_HEOTHER"] = "Opening"
+    assert inspect_flow_log(text, roles)["rounded_boundary_mass_sum_kg_s"] is None
+
+
+def test_missing_final_fluid_energy_row_is_not_accepted():
+    text = (Path(__file__).parent / "fixtures/mated-fan-steady-excerpt.log").read_text()
+    start = text.rfind("| H - Energy")
+    text = text[:start] + text[start:].replace("H - Energy", "Unknown", 1)
+    assert inspect_flow_log(text)["final_residual_criteria_met"] is None

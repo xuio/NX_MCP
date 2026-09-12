@@ -17,13 +17,14 @@ def _number(value):
     return number
 
 
-def inspect_flow_log(text):
+def inspect_flow_log(text, boundary_types=None):
     if not isinstance(text, str) or len(text) > 8 * 1024 * 1024:
         raise ValueError("Flow log must be text no larger than 8 MiB")
     # Native Windows logs contain CRCRLF; normalize without adding phantom rows.
     text = text.replace("\r", "")
     coupled = text.count("Steady-state convergence history - Coupled thermal/flow simulation") == 1
-    equations = _EQUATIONS | {"H - Energy"} if coupled else _EQUATIONS
+    energy_expected = coupled or "Solving Flow and Thermal" in text or "| H - Energy" in text
+    equations = _EQUATIONS | {"H - Energy"} if energy_expected else _EQUATIONS
     thresholds = re.findall(r"Flow converged when RMS residual less than:\s*(" + _N + r")", text)
     threshold = _number(thresholds[0]) if len(thresholds) == 1 else None
     history = []
@@ -109,12 +110,32 @@ def inspect_flow_log(text):
     if len(sections) == 2 and "(Values > 0 are inflows)" in sections[1]:
         section = sections[1].split("Solver Convergence")[0]
         for match in boundary_pattern.finditer(section):
+            name = match[1]
+            candidates = [
+                kind
+                for full, kind in (boundary_types or {}).items()
+                if full == name or (len(name) == 26 and full.startswith(name))
+            ]
+            kind = candidates[0] if len(candidates) == 1 else None
+            scope = (
+                "internal"
+                if kind == "Internal Fan"
+                else "external"
+                if kind in {"Inlet", "Opening", "Outlet"}
+                else "unknown"
+            )
             boundaries.append(
                 {
-                    "name": match[1],
+                    "name": name,
+                    "native_boundary_type": kind,
+                    "flow_scope": scope,
                     "volume_flow_m3_s": _number(match[2]) * (1e-9 if match[3] == "mm^3/s" else 1),
                     "mass_flow_kg_s": _number(match[4]),
-                    "positive_direction": "into_domain",
+                    "positive_direction": "into_domain"
+                    if scope == "external"
+                    else "native_internal_flow_sign"
+                    if scope == "internal"
+                    else "unclassified_native_summary_sign",
                 }
             )
     failure = inspect_solver_log(text)
@@ -135,8 +156,12 @@ def inspect_flow_log(text):
         "boundary_flows": boundaries,
         "fan_operating_points": inspect_fan_operating_points(text),
         "coupled_summary": inspect_coupled_summary(text) if coupled else None,
-        "rounded_boundary_mass_sum_kg_s": sum(r["mass_flow_kg_s"] for r in boundaries)
+        "rounded_boundary_mass_sum_kg_s": sum(
+            r["mass_flow_kg_s"] for r in boundaries if r["flow_scope"] == "external"
+        )
         if boundaries
+        and all(r["flow_scope"] != "unknown" for r in boundaries)
+        and any(r["flow_scope"] == "external" for r in boundaries)
         else None,
         "rounding_warning": "Boundary values are rounded in the log; a zero sum does not establish zero imbalance",
         "numerical_convergence": "not_established",
@@ -165,7 +190,28 @@ def audit_job_flow_log(
         data = stream.read(8 * 1024 * 1024 + 1)
     if len(data) > 8 * 1024 * 1024:
         raise NXToolError("NX_SIM_LOG_TOO_LARGE", "Flow audit log exceeds 8 MiB")
-    report = inspect_flow_log(data.decode("utf-8", errors="replace"))
+    # Native summaries include internal fan flows and truncate names to 26 chars.
+    # Resolve roles from this job's owned input; unknown/ambiguous roles suppress
+    # the external mass sum rather than counting internal transport as an inlet.
+    boundary_types = None
+    try:
+        import xml.etree.ElementTree as ET
+
+        input_path = workspace.resolve(job["manifest"]["prepared_input"]["input"]["path"])
+        if input_path.parent == directory and input_path.stat().st_size <= 64 * 1024 * 1024:
+            raw = input_path.read_bytes()
+            if b"<!DOCTYPE" not in raw.upper() and b"<!ENTITY" not in raw.upper():
+                root = ET.fromstring(raw)
+                if root.tag == "SolutionFile":
+                    rows = root.findall(".//FlowBc")
+                    names = [row.attrib.get("uname") for row in rows]
+                    if all(names) and len(set(names)) == len(names):
+                        boundary_types = {
+                            row.attrib["uname"]: row.attrib.get("type") for row in rows
+                        }
+    except (KeyError, OSError, ValueError, ET.ParseError):
+        pass
+    report = inspect_flow_log(data.decode("utf-8", errors="replace"), boundary_types=boundary_types)
     history = report.pop("residual_history")
     return {
         "job_id": job_id,
