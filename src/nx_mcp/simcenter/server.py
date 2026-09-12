@@ -901,3 +901,10 @@ def nx_sim_gravity(document: str, bodies: list[str], acceleration_m_s2: list[flo
 
 
 NON_MODEL.add("nx_sim_gravity")
+
+
+def nx_sim_internal_fan_schema(document: str):
+    """Inspect the native Internal Fan builder in an active Flow or Coupled Thermal-Flow SIM. Returns actual property types/defaults, selector descriptors and target-set count. Does not commit a boundary, save, solve or establish selection semantics. Requires solver idle and restores temporary builder effects using a verified undo/inventory/modified-flag check. This diagnostic is a prerequisite for supported Internal Fan authoring, not numerical acceptance."""
+
+
+NON_MODEL.add("nx_sim_internal_fan_schema")

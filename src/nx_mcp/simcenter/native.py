@@ -33,6 +33,13 @@ def documents(session):
 
 
 class SimcenterMixin:
+    def _sim_internal_fan_schema(self, document):
+        from nx_mcp.simcenter.internal_fan import inspect_schema
+
+        sim = self.objects.resolve(document, expected_kind="part")
+        self.workspace.resolve(sim.FullPath)
+        return inspect_schema(self.session, sim)
+
     def _sim_create_analysis(self, cad_document, folder, name):
         from nx_mcp.simcenter.analysis_documents import create
 
