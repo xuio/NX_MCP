@@ -45,6 +45,7 @@ def rig(monkeypatch):
     class Controls(list):
         corrupt_readback = False
         fail_commit = False
+        shared_interface = False
 
         def CreateMmcCreateBuilder(self, control):
             if control is not None:
@@ -64,6 +65,9 @@ def rig(monkeypatch):
 
             def commit():
                 control = NS(Tag=50)
+                if self.shared_interface:
+                    rows[0]["face"] = target
+                    builder.SourceFace.Value = target
                 self.append(control)
                 if self.fail_commit:
                     raise RuntimeError("native failure after partial creation")
@@ -168,3 +172,16 @@ def test_failed_rollback_reports_partial_state(rig):
     assert error.value.details["mutation_outcome"] == "partial"
     assert controls
     assert executor.objects.invalidate_part.call_count == 2
+
+
+def test_native_shared_face_requires_membership_on_both_original_bodies(rig):
+    executor, fem, source, target, controls, _ = rig
+    controls.shared_interface = True
+    result = create(executor, fem, source, target, 0.001)
+    assert result["selected_face_tags"] == [20, 20]
+    assert result["requested_face_tags"] == [10, 20]
+    assert result["committed_readback"]["interface_face_candidates_by_original_body"] == [
+        [20],
+        [20],
+    ]
+    assert result["connectivity_verified"] is False

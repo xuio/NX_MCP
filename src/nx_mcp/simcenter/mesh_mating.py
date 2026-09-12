@@ -91,10 +91,33 @@ def create(executor, fem, source, target, tolerance_mm):
                 "distance_units": reader.DistTolerance.Units.Name,
                 "snap_units": reader.SnapTolerance.Units.Name,
             }
+            # Glue Coincident can canonicalize the two CAE faces to one shared face.
+            # Validate the resulting face against each original body and interface
+            # bounds rather than accepting arbitrary topology changes or stale IDs.
+            after_rows = face_inventory(session, fem)["rows"]
+            candidates = []
+            for original in (a, b):
+                candidates.append(
+                    {
+                        int(row["face"].Tag)
+                        for row in after_rows
+                        if row["body"].Tag == original["body"].Tag
+                        and all(
+                            abs(x - y) <= tolerance_mm
+                            for key in ("minimum", "maximum")
+                            for x, y in zip(
+                                row["bounds"][key], original["bounds"][key], strict=True
+                            )
+                        )
+                    }
+                )
+            committed_readback["interface_face_candidates_by_original_body"] = [
+                sorted(tags) for tags in candidates
+            ]
             if (
                 reader.MeshMatingOption != cae.MMCCreateBuilder.MeshMatingType.GlueCoincident
-                or reader.SourceFace.Value.Tag != source.Tag
-                or reader.TargetFace.Value.Tag != target.Tag
+                or candidates[0] != {int(reader.SourceFace.Value.Tag)}
+                or candidates[1] != {int(reader.TargetFace.Value.Tag)}
                 or reader.ReverseDirection
                 or any(
                     not math.isclose(float(e.GetFormula()), tolerance_mm, rel_tol=0, abs_tol=1e-12)
@@ -110,7 +133,12 @@ def create(executor, fem, source, target, tolerance_mm):
             "control": created[0],
             "kind": "glue_coincident",
             "tolerance_mm": tolerance_mm,
-            "selected_face_tags": [int(source.Tag), int(target.Tag)],
+            "requested_face_tags": [int(source.Tag), int(target.Tag)],
+            "committed_readback": committed_readback,
+            "selected_face_tags": [
+                committed_readback["source_face_tag"],
+                committed_readback["target_face_tag"],
+            ],
             "saved": False,
             "mesh_generated": False,
             "connectivity_verified": False,

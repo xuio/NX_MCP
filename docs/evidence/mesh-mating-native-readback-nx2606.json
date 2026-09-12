@@ -1,0 +1,32 @@
+{
+  "native_result": {
+    "status": "error",
+    "warnings": [],
+    "units": null,
+    "code": "NX_SIM_MESH_MATING_FAILED",
+    "message": "Committed mesh mating differs from requested faces/settings",
+    "retryable": false,
+    "details": {
+      "mutation_outcome": "rolled_back",
+      "committed_readback_before_rollback": {
+        "mode": "0",
+        "source_face_tag": 102596,
+        "target_face_tag": 102596,
+        "reverse_direction": false,
+        "distance_tolerance": "0.001000",
+        "snap_tolerance": "0.001000",
+        "distance_units": "MilliMeter",
+        "snap_units": "MilliMeter"
+      },
+      "requested_face_tags": [
+        102316,
+        102596
+      ],
+      "requested_tolerance_mm": 0.001,
+      "rollback_scope": "Control/expression/mesh identities and face bounds; not complete geometric equivalence",
+      "operation_id": "op_c1ea43b9586b4492bce96a05a42937bb"
+    }
+  },
+  "interpretation": "Both committed selectors refer to the same face tag; original source tag differs. Shared-face membership on both original bodies requires native validation of the updated authoring check.",
+  "connectivity_verified": false
+}
