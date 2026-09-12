@@ -33,6 +33,17 @@ def documents(session):
 
 
 class SimcenterMixin:
+    def _sim_mesh_mating(self, document, source_face, target_face, tolerance_mm=0.001):
+        from nx_mcp.simcenter.mesh_mating import create
+
+        fem = self.objects.resolve(document, expected_kind="part")
+        source = self.objects.resolve(source_face, expected_kind="face")
+        target = self.objects.resolve(target_face, expected_kind="face")
+        result = create(self, fem, source, target, tolerance_mm)
+        result["control"] = self._reference(result["control"], "simulation_mesh_control", fem, "mesh mating")
+        result["document"] = self._reference(fem, "part", fem, "FEM")
+        return result
+
     def _sim_internal_fan(self, document, faces, name, direction, motor_heat_w, volume_flow_m3_s=None, fan_table=None):
         from nx_mcp.simcenter.internal_fan_authoring import create
 
