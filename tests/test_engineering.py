@@ -644,7 +644,7 @@ def project(eng):
 
     r.session.Parts.LoadOptions = LoadOptions()
 
-    def open_part(path):
+    def open_part(path, **kwargs):
         part = Part(r.session, Path(path))
         part.IsModified = False
         parent = Component("root")
@@ -980,3 +980,31 @@ def test_project_copy_uses_saved_loading_and_restores_preference(project, diagno
         r.e._copy_project(str(dest), "LOAD_")
     assert options.ComponentLoadMethod == 1
     r.clone.Terminate.assert_called_once()
+
+
+@pytest.mark.parametrize("fail_open", [False, True])
+def test_project_copy_preloads_copied_prototypes_before_root_verification(project, fail_open):
+    r = project
+    opened = []
+    native_open = r.e._open_part
+    options = r.session.Parts.LoadOptions
+
+    def open_part(path, **kwargs):
+        assert options.ComponentLoadMethod == options.LoadMethod.AsSaved
+        opened.append((Path(path).name, kwargs))
+        if fail_open and kwargs.get("load_components"):
+            raise RuntimeError("copied assembly load failed")
+        return native_open(path, **kwargs)
+
+    r.e._open_part = open_part
+    dest = r.e.workspace.root / "reopen"
+    if fail_open:
+        with pytest.raises(RuntimeError, match="copied assembly load"):
+            r.e._copy_project(str(dest), "OPEN_")
+        assert not dest.exists()
+    else:
+        assert r.e._copy_project(str(dest), "OPEN_")["references_verified"]
+    assert opened[0] == ("OPEN_body.prt", {"work": False, "display": False})
+    assert opened[-1][1] == {"load_components": True}
+    assert options.ComponentLoadMethod == 1
+    assert r.prototype.read_bytes() == b"original body"

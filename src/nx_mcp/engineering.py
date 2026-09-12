@@ -367,11 +367,21 @@ class EngineeringMixin:
                 if hashlib.sha256(source.read_bytes()).hexdigest() != hashes[str(source)]:
                     raise NXToolError("NX_SOURCE_CHANGED", "Source changed during project copy")
             new_top = mapping[Path(part.FullPath).resolve()]
-            self._open_part(str(new_top))
-            copied = self._work_part()
-            resolved = {
-                Path(c.Prototype.FullPath).resolve() for c, _ in self._walk_components(copied)
-            }
+            previous_load_method = options.ComponentLoadMethod
+            try:
+                options.ComponentLoadMethod = type(options).LoadMethod.AsSaved
+                # Explicitly load every verified copy, including suppressed
+                # prototypes that ordinary component loading intentionally skips.
+                for target in mapping.values():
+                    if target != new_top:
+                        self._open_part(str(target), work=False, display=False)
+                self._open_part(str(new_top), load_components=True)
+                copied = self._work_part()
+                resolved = {
+                    Path(c.Prototype.FullPath).resolve() for c, _ in self._walk_components(copied)
+                }
+            finally:
+                options.ComponentLoadMethod = previous_load_method
             expected = set(mapping.values()) - {new_top}
             if resolved != expected:
                 raise NXToolError(

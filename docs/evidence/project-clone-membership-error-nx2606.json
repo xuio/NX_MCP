@@ -9,7 +9,7 @@
   "hypothesis": "A mapped loaded dependency was absent from AddAssembly membership. Suppressed components are a possible cause, not established for this particular failure.",
   "recovery": "Preflight SetAction API; enroll missing mapped sources only on3025003, then explicitly assign CLONE to every mapped source before applying any names. Retain source hashes, dependency verification and cleanup.",
   "native_recovery_verified": false,
-  "unit_validation": "91 engineering tests and Ruff pass; tests include saved-load policy restoration on success and dependency-load failure, rejection before actions/naming, membership handling and explicit clone actions.",
+  "unit_validation": "93engineering tests and Ruff pass, including copied-prototype preload ordering, full root loading and preference restoration/cleanup on copied-root load failure.",
   "native_followup": {
     "receipt": "Baldower clone-loaded-study-r949.receipt.json",
     "deployed_commit": "69899f3",
@@ -25,5 +25,12 @@
     "message": "Invalid operation for this component which is a name only reference.",
     "native_recovery_verified": false
   },
-  "loading_correction": "Temporarily use AsSaved component loading for AddAssembly, check native load status/code before actions or naming, and restore the original load method in finally. This follows the existing native-verified Simcenter variant clone implementation. Do not assume preloading the interactive assembly controls the UF clone load policy."
+  "loading_correction": "Temporarily use AsSaved component loading for AddAssembly, check native load status/code before actions or naming, and restore the original load method in finally. This follows the existing native-verified Simcenter variant clone implementation. Do not assume preloading the interactive assembly controls the UF clone load policy.",
+  "third_native_followup": {
+    "receipt": "Baldower preload-and-clone-study-r957.receipt.json",
+    "deployed_commit": "5cabafa",
+    "message": "'NXOpen.NXObject' object has no attribute 'FullPath'",
+    "interpretation": "Copied dependency verification encountered an unloaded prototype; no successful native clone claimed."
+  },
+  "copied_loading_correction": "Under temporary AsSaved loading, explicitly preload every verified copied prototype (including suppressed dependencies), then load the copied root components and verify paths. Restore loading preference on success/failure."
 }
