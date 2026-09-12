@@ -1,0 +1,17 @@
+{
+  "source_commit": "7a97ce4752c4a7dea5f38d051e8f3ce192f519b7",
+  "nx_version": "2606",
+  "receipt_sha256": "7b9e1de211707d07d51b673a5171a2e6d7676ceba241f2d06cdc1faba8b23980",
+  "native_before": {
+    "turbulence_model": 2,
+    "global_wall_treatment": 2
+  },
+  "native_actual": {
+    "turbulence_model": 0,
+    "global_wall_treatment": 0
+  },
+  "first_change": true,
+  "repeated_change": false,
+  "all_documents_saved": true,
+  "scope": "Public MCP native laminar/no-slip selection, exact integer readback, no-op repeat and save. No numerical solve or general turbulence closure qualification."
+}
