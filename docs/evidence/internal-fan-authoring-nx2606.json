@@ -1,0 +1,24 @@
+{
+  "descriptor": "Internal Fan",
+  "mode": "volume_flow",
+  "volume_flow_m3_s": 0.0001,
+  "motor_heat_w": 1.0,
+  "orientation_vector": [
+    1.0,
+    0.0,
+    0.0
+  ],
+  "coordinate_frame": "SIM absolute Cartesian",
+  "solution_member": true,
+  "selection_semantics_verified": false,
+  "export_semantics_verified": false,
+  "numerical_acceptance": false,
+  "nx_version": "2606",
+  "code_commit": "eeac28d",
+  "native_creation": "passed",
+  "independent_simulation_object_count": 1,
+  "committed_face_count": 1,
+  "saved_and_all_documents_unmodified": true,
+  "curve_mode_native_validation": false,
+  "scope": "One left-block X=20 face in an isolated two-block coupled thermal-flow fixture. Stored orientation and selected face verified; fluid connectivity and solver behavior not yet verified."
+}

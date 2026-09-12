@@ -24,4 +24,13 @@ Pass `document` as the live part reference returned by `nx_sim_documents`; a fil
 
 The installed Siemens `Simcenter 3D Multiphysics - Coupled Thermal-Flow/SSSOS/Internal Fan.html` documents these selectors and property names. A selection journal in the same documentation uses target set 0 with a CAE face. This establishes the authoring route, not a proof that any chosen face forms a valid internal fluid interface.
 
-The expanded selected suite passes 70 tests, including prescribed-flow/curve modes, direction normalization, invalid inputs, overlap prevention, SI readback failure recovery, and incomplete direction cleanup. The new creation tool is **not yet deployed or validated in native NX**. Native committed-state, exported direction/pressure/interface semantics and numerical conservation/reversal/mesh checks remain required. The earlier native evidence applies only to schema inspection.
+The expanded selected suite passes 70 tests, including prescribed-flow/curve modes, direction normalization, invalid inputs, overlap prevention, SI readback failure recovery, and incomplete direction cleanup. Native NX 2606 prescribed-volume-flow creation and saved-state readback now pass (see below). Curve-mode creation, exported direction/pressure/interface semantics and numerical conservation/reversal/mesh checks remain required. Schema-inspection evidence remains separate.
+
+
+## Native prescribed-flow creation
+
+In a fresh NX 2606 process, the tool created one Internal Fan selecting the X=20 end face of the left block in the two-block fixture. Independent object inspection retained volume-flow mode 3, 0.0001 m³/s, a stored +X orientation, 1 W motor heat and the selected face. The boundary belongs to the active coupled solution. Saving succeeded and all three documents were unmodified afterward. See [creation evidence](evidence/internal-fan-authoring-nx2606.json).
+
+The first attempt exposed NX's strict floating-point requirement for Point3d coordinates. That attempt rolled back completely, and independent readback confirmed zero simulation objects and no modified documents. The implementation now passes floating-point origin coordinates and the regression fixture enforces that native requirement. A separate NX journal could not reload the original bridge's Python subinterpreter, so the corrected creation was validated in a replacement isolated process.
+
+This proves native creation and persistence for prescribed flow only. It does not prove an internal fluid connection, effective solver direction, heat deposition, fan-curve behavior or numerical accuracy.
