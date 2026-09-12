@@ -306,7 +306,7 @@ class EngineeringMixin:
         hashes = {str(p): hashlib.sha256(p.read_bytes()).hexdigest() for p in sources}
         clone = NXOpen.UF.UFSession.GetUFSession().Clone
         self._require_api(
-            clone, "Initialise", "AddAssembly", "SetNaming", "PerformClone", "Terminate"
+            clone, "Initialise", "AddAssembly", "SetAction", "SetNaming", "PerformClone", "Terminate"
         )
         created = False
         explicitly_added_parts = []
@@ -319,9 +319,9 @@ class EngineeringMixin:
             try:
                 clone.SetDefAction(clone.Action.CLONE)
                 clone.AddAssembly(str(Path(part.FullPath).resolve()))
-                for source, target in mapping.items():
+                for source in mapping:
                     try:
-                        clone.SetNaming(str(source), clone.NamingTechnique.USER_NAME, str(target))
+                        clone.SetAction(str(source), clone.Action.CLONE, None)
                     except Exception as exc:
                         # UF_CLONE_err_part_not_present: AddAssembly did not enroll
                         # this loaded dependency (for example a suppressed part).
@@ -332,7 +332,12 @@ class EngineeringMixin:
                         self._require_api(clone, "AddPart")
                         clone.AddPart(str(source))
                         explicitly_added_parts.append(str(source))
-                        clone.SetNaming(str(source), clone.NamingTechnique.USER_NAME, str(target))
+                        clone.SetAction(str(source), clone.Action.CLONE, None)
+                # Enroll and assign actions for every dependency before naming:
+                # AddPart can introduce name-only child references, and the
+                # operation default alone does not assign each part's action.
+                for source, target in mapping.items():
+                    clone.SetNaming(str(source), clone.NamingTechnique.USER_NAME, str(target))
                 clone.PerformClone(clone.InitNamingFailures())
             finally:
                 clone.Terminate()

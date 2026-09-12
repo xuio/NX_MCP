@@ -627,6 +627,7 @@ def project(eng):
         NamingTechnique=NS(USER_NAME=1),
         Initialise=Mock(),
         SetDefAction=Mock(),
+        SetAction=Mock(),
         AddAssembly=Mock(),
         InitNamingFailures=lambda: None,
         Terminate=Mock(),
@@ -882,17 +883,17 @@ def test_project_copy_adds_only_missing_preflighted_clone_members(project, code)
     r = project
     source = str(r.prototype.resolve())
     enrolled = set()
-    original_naming = r.clone.SetNaming
+    original_action = r.clone.SetAction
 
     class NativeCloneError(Exception):
         ErrorCode = code
 
-    def naming(src, technique, dst):
+    def action(src, operation, replacement):
         if src == source and src not in enrolled:
             raise NativeCloneError("native clone membership error")
-        original_naming(src, technique, dst)
+        original_action(src, operation, replacement)
 
-    r.clone.SetNaming = naming
+    r.clone.SetAction = action
     r.clone.AddPart = Mock(side_effect=lambda path: enrolled.add(path))
     dest = r.e.workspace.root / "membership"
     if code == 3025003:
@@ -915,7 +916,7 @@ def test_project_copy_missing_member_add_failure_cleans_up(project):
     class MissingMember(Exception):
         ErrorCode = 3025003
 
-    r.clone.SetNaming = Mock(side_effect=MissingMember())
+    r.clone.SetAction = Mock(side_effect=MissingMember())
     r.clone.AddPart = Mock(side_effect=RuntimeError("cannot add source"))
     dest = r.e.workspace.root / "add_failed"
     with pytest.raises(RuntimeError, match="cannot add source"):
@@ -923,3 +924,23 @@ def test_project_copy_missing_member_add_failure_cleans_up(project):
     assert not dest.exists()
     assert r.prototype.read_bytes() == b"original body"
     r.clone.Terminate.assert_called_once()
+
+
+def test_project_copy_assigns_all_explicit_actions_before_naming(project):
+    r = project
+    assigned = set()
+    expected = {str(Path(r.part.FullPath).resolve()), str(r.prototype.resolve())}
+    original_naming = r.clone.SetNaming
+
+    def action(source, operation, replacement):
+        assert operation == r.clone.Action.CLONE and replacement is None
+        assigned.add(source)
+
+    def naming(source, technique, target):
+        assert assigned == expected
+        original_naming(source, technique, target)
+
+    r.clone.SetAction = action
+    r.clone.SetNaming = naming
+    result = r.e._copy_project(str(r.e.workspace.root / "actions"), "ACT_")
+    assert result["references_verified"] and result["explicitly_added_parts"] == []

@@ -7,7 +7,15 @@
   "failure_evidence": "Baldower isolate-airpath-study-r941.receipt.json",
   "cleanup_evidence": "R942 documents show original saved work part and218open documents; R943 OS inspection confirms clone destination absent",
   "hypothesis": "A mapped loaded dependency was absent from AddAssembly membership. Suppressed components are a possible cause, not established for this particular failure.",
-  "recovery": "Only on exact3025003 from SetNaming, call AddPart with the already-preflighted source, then set its target naming. Retain source hashes and rewritten-dependency verification. Record explicit additions in manifest.",
+  "recovery": "Preflight SetAction API; enroll missing mapped sources only on3025003, then explicitly assign CLONE to every mapped source before applying any names. Retain source hashes, dependency verification and cleanup.",
   "native_recovery_verified": false,
-  "unit_validation": "88 engineering tests pass; Ruff passes"
+  "unit_validation": "89 engineering tests pass; Ruff passes, including explicit actions for all sources before any naming.",
+  "native_followup": {
+    "receipt": "Baldower clone-loaded-study-r949.receipt.json",
+    "deployed_commit": "69899f3",
+    "error_code": 720103,
+    "message": "Component to be cloned has an unsuitable action for number assignment.",
+    "result": "Native recovery is not complete; no successful clone claimed."
+  },
+  "installed_header_basis": "uf_clone.h lines1097\u20131099: AddPart introduces missing assembly components as name-only references; lines1330\u20131338: SetAction controls individual part actions and may cascade defaults. SetAction takes source, action and null replacement for CLONE."
 }
