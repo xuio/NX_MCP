@@ -68,6 +68,7 @@ def rig(monkeypatch):
                 if self.shared_interface:
                     rows[0]["face"] = target
                     builder.SourceFace.Value = target
+                    source.Tag = 0  # NX retires the source face after canonicalization.
                 self.append(control)
                 if self.fail_commit:
                     raise RuntimeError("native failure after partial creation")

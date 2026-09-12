@@ -1,0 +1,42 @@
+{
+  "native_authoring_status": "success",
+  "native_readback": {
+    "mode": "0",
+    "source_face_tag": 102596,
+    "target_face_tag": 102596,
+    "reverse_direction": false,
+    "distance_tolerance": "0.001000",
+    "snap_tolerance": "0.001000",
+    "distance_units": "MilliMeter",
+    "snap_units": "MilliMeter",
+    "interface_face_candidates_by_original_body": [
+      [
+        102596
+      ],
+      [
+        102596
+      ]
+    ]
+  },
+  "selected_faces": [
+    102596,
+    102596
+  ],
+  "original_typed_request": {
+    "document": "obj_38ca8268b38e43f79dc1e54fea4b0d90_663de431d1dd4d699c5f827069d7c7d3",
+    "source_face": "obj_38ca8268b38e43f79dc1e54fea4b0d90_9ecebe7e228e4b57b00f01c32a120c93",
+    "target_face": "obj_38ca8268b38e43f79dc1e54fea4b0d90_e720feef587a44a288d54124b0e2cd91",
+    "tolerance_mm": 0.001
+  },
+  "native_report_limitation": "R880 requested_face_tags includes0 because source face was retired before reporting. Fixed by capturing tags before mutation; original typed request remains in immutable receipt.",
+  "mesh_counts": {
+    "elements": 3279,
+    "nodes": 854
+  },
+  "mesh_quality": {
+    "error_occurrences": 0,
+    "warning_occurrences": 0
+  },
+  "solver_connectivity_verified": false,
+  "scope": "Native Glue Coincident on two touching20x10x10blocks,0.001mm tolerances. Meshing succeeds; exact labelled topology and fan solver validation remain pending."
+}

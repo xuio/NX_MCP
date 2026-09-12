@@ -53,6 +53,7 @@ def create(executor, fem, source, target, tolerance_mm):
             "meshes": sorted(int(m.Tag) for m in fem.BaseFEModel.MeshManager.GetMeshes()),
         }
 
+    requested_face_tags = [int(source.Tag), int(target.Tag)]
     before = snapshot()
     affected = [fem] + [p for p in session.Parts if isinstance(p, cae.SimPart) and p.FemPart == fem]
     part_ids = [executor._part_id(p) for p in affected]
@@ -133,7 +134,7 @@ def create(executor, fem, source, target, tolerance_mm):
             "control": created[0],
             "kind": "glue_coincident",
             "tolerance_mm": tolerance_mm,
-            "requested_face_tags": [int(source.Tag), int(target.Tag)],
+            "requested_face_tags": requested_face_tags,
             "committed_readback": committed_readback,
             "selected_face_tags": [
                 committed_readback["source_face_tag"],
@@ -164,7 +165,7 @@ def create(executor, fem, source, target, tolerance_mm):
             details={
                 "mutation_outcome": outcome,
                 "committed_readback_before_rollback": committed_readback,
-                "requested_face_tags": [int(source.Tag), int(target.Tag)],
+                "requested_face_tags": requested_face_tags,
                 "requested_tolerance_mm": tolerance_mm,
                 "rollback_scope": "Control/expression/mesh identities and face bounds; not complete geometric equivalence",
             },
