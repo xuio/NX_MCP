@@ -34,3 +34,10 @@ In a fresh NX 2606 process, the tool created one Internal Fan selecting the X=20
 The first attempt exposed NX's strict floating-point requirement for Point3d coordinates. That attempt rolled back completely, and independent readback confirmed zero simulation objects and no modified documents. The implementation now passes floating-point origin coordinates and the regression fixture enforces that native requirement. A separate NX journal could not reload the original bridge's Python subinterpreter, so the corrected creation was validated in a replacement isolated process.
 
 This proves native creation and persistence for prescribed flow only. It does not prove an internal fluid connection, effective solver direction, heat deposition, fan-curve behavior or numerical accuracy.
+
+
+### Native export checkpoint R858–R860
+
+The volume-flow coupon now exports a native `Internal Fan` boundary. Its 3,345 fluid tetrahedra passed the enabled NX quality checks with no errors or warnings. The first export reported no mesh despite a populated FEM; closing and reopening only the saved SIM, then exporting a fresh saved copy, resolved that failure without changing the FEM fingerprint. The failed export was retained and its blocking error dialog dismissed; it was not blindly replayed.
+
+The exported fan selects 64 triangles covering 100 mm² at the intended internal X=20 plane, with mode 3 and orientation +X. End openings lie at X=0 and X=40. The two meshed regions are conformally disconnected (1,664 and 1,681 cells), so effective solver coupling across the coincident interface remains unverified. XML authoring and geometric selection are verified only to the scope in `evidence/internal-fan-export-nx2606.json`; no solve, conservation, effective direction, motor-heat deposition, curve mode or product thermal acceptance is claimed.
