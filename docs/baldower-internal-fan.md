@@ -41,3 +41,10 @@ This proves native creation and persistence for prescribed flow only. It does no
 The volume-flow coupon now exports a native `Internal Fan` boundary. Its 3,345 fluid tetrahedra passed the enabled NX quality checks with no errors or warnings. The first export reported no mesh despite a populated FEM; closing and reopening only the saved SIM, then exporting a fresh saved copy, resolved that failure without changing the FEM fingerprint. The failed export was retained and its blocking error dialog dismissed; it was not blindly replayed.
 
 The exported fan selects 64 triangles covering 100 mm² at the intended internal X=20 plane, with mode 3 and orientation +X. End openings lie at X=0 and X=40. The two meshed regions are conformally disconnected (1,664 and 1,681 cells), so effective solver coupling across the coincident interface remains unverified. XML authoring and geometric selection are verified only to the scope in `evidence/internal-fan-export-nx2606.json`; no solve, conservation, effective direction, motor-heat deposition, curve mode or product thermal acceptance is claimed.
+
+
+### Native solver rejection R861–R867
+
+The exported two-block coupon was launched once. NX2TMG rejected the internal fan at the disjoint mesh interface (errors1575 and1562), then aborted before numerical iterations. This disproves the hypothesis that this particular disconnected mesh is automatically coupled by the fan boundary. A continuous fluid mesh with an internal fan selection is required before numerical qualification; converting the product fan into an ambient inlet would change the intended physics. The failed job and its launch gate remain retained; a completion footer is not successful-exit or release evidence.
+
+The log parser now recognizes plain `NX2TMG - ERROR` codes and `Run aborted due to errors`, while retaining the separate fatal-code and fatal-abort fields. It reports failure for the observed log and does not infer success from the completion footer. Nineteen solver-log, flow-audit and job-observer tests pass. The fixed parser is committed here; the running R837 bridge still has its prior code snapshot.

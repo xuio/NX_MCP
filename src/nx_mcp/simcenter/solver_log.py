@@ -9,7 +9,9 @@ from __future__ import annotations
 import re
 
 _FATAL = re.compile(r"\bNX2TMG\s*-\s*FATAL ERROR\s+(\d+)\b", re.IGNORECASE)
-_ABORT = re.compile(r"Run aborted due to fatal errors", re.IGNORECASE)
+_ERROR = re.compile(r"\bNX2TMG\s*-\s*(?:FATAL\s+)?ERROR\s+(\d+)\b", re.IGNORECASE)
+_ABORT = re.compile(r"Run aborted due to (?:fatal )?errors", re.IGNORECASE)
+_FATAL_ABORT = re.compile(r"Run aborted due to fatal errors", re.IGNORECASE)
 
 
 def inspect_solver_log(text: str) -> dict:
@@ -20,17 +22,20 @@ def inspect_solver_log(text: str) -> dict:
     The caller must associate the log with a durable job and exact model revision.
     """
     codes = list(dict.fromkeys(int(match) for match in _FATAL.findall(text)))
+    errors = list(dict.fromkeys(int(match) for match in _ERROR.findall(text)))
     aborted = bool(_ABORT.search(text))
     return {
-        "state": "failed" if codes or aborted else "unknown",
-        "stage": "translation" if codes else "unknown",
+        "state": "failed" if errors or aborted else "unknown",
+        "stage": "translation" if errors else "unknown",
         "translator_fatal_codes": codes,
-        "fatal_abort_reported": aborted,
+        "translator_error_codes": errors,
+        "abort_reported": aborted,
+        "fatal_abort_reported": bool(_FATAL_ABORT.search(text)),
         "numerical_convergence": "not_established",
         "results_validated": False,
         "next_action": (
             "Inspect native setup and translator diagnostics; do not automatically rerun."
-            if codes or aborted
+            if errors or aborted
             else "Inspect job process status, residuals and result validation before classifying."
         ),
     }

@@ -1,0 +1,21 @@
+{
+  "job_id": "internal-fan-q1e4-heat1w-r861",
+  "native_log_bytes": 11563,
+  "classification": {
+    "state": "failed",
+    "stage": "translation",
+    "translator_fatal_codes": [],
+    "translator_error_codes": [
+      1575,
+      1562
+    ],
+    "abort_reported": true,
+    "fatal_abort_reported": false,
+    "numerical_convergence": "not_established",
+    "results_validated": false,
+    "next_action": "Inspect native setup and translator diagnostics; do not automatically rerun."
+  },
+  "native_diagnostic": "Internal fan selected on exterior or disjoint fluid mesh interface. NX2TMG errors1575 and1562; run aborted before numerical iterations.",
+  "persistent_job_state": "launch_returned; observer/gate have not classified or released this failed run",
+  "scope": "Saved log failure evidence, not a solver process-exit or gate-release proof."
+}

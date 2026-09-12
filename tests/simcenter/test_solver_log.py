@@ -62,3 +62,34 @@ def test_mesh_counts_include_elements_inside_every_set():
     assert report["mesh_counts"]["element_sets"] == 2
     assert report["mesh_counts"]["nodes"] == 2
     assert inspect_input_xml(b"<SolutionFile/>")["mesh_counts"] is None
+
+
+def test_disjoint_internal_fan_error_is_failed_despite_completed_footer():
+    # Native R861 coupon: ERROR, not FATAL ERROR; CRCRLF is native output.
+    report = inspect_solver_log(
+        "| NX2TMG - ERROR    1575 |\r\r\n"
+        "| The internal fan is defined by element(s) on exterior of |\r\r\n"
+        "| computational domain, or placed along a disjoint fluid mesh |\r\r\n"
+        "| NX2TMG - ERROR    1562 |\r\r\n"
+        "Run aborted due to errors.\r\nSolve completed at:\r\n"
+    )
+    assert report["state"] == "failed"
+    assert report["stage"] == "translation"
+    assert report["translator_error_codes"] == [1575, 1562]
+    assert report["translator_fatal_codes"] == []
+    assert report["abort_reported"] is True
+    assert report["fatal_abort_reported"] is False
+    assert report["results_validated"] is False
+
+
+def test_plain_abort_is_failure_without_inventing_translator_stage():
+    report = inspect_solver_log("Run aborted due to errors.\nSolve completed at:")
+    assert report["state"] == "failed"
+    assert report["stage"] == "unknown"
+    assert report["translator_error_codes"] == []
+
+
+def test_translator_warning_does_not_become_error():
+    report = inspect_solver_log("NX2TMG - WARNING 1575\nSolve completed at:")
+    assert report["state"] == "unknown"
+    assert report["translator_error_codes"] == []
