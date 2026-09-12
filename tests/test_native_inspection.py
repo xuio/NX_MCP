@@ -129,6 +129,52 @@ def test_clearance_prunes_only_separated_boxes_and_returns_native_points(rig):
         rig.e._check_clearance()
 
 
+@pytest.mark.parametrize("reverse", [False, True])
+@pytest.mark.parametrize("check", ["interference", "clearance"])
+def test_containment_with_positive_boundary_distance_is_penetration(rig, reverse, check):
+    outer = Body("outer", [0, 0, 0, 20, 20, 20])
+    inner = Body("inner", [5, 5, 5, 15, 15, 15])
+    rig.part.Bodies.extend([outer, inner])
+    bodies = [inner, outer] if reverse else [outer, inner]
+    refs = [rig.ref(body) for body in bodies]
+    rig.session.Measurement = NS(
+        GetMinimumDistance=Mock(return_value=(5.0, point(0, 5, 5), point(5, 5, 5), None))
+    )
+    builder = native_pair(rig)
+    builder.GetInterferenceResults()[0].volume = 1000
+
+    result = (
+        rig.e._check_interference(*refs)
+        if check == "interference"
+        else rig.e._check_clearance(refs, minimum_clearance=1)
+    )
+
+    assert result["counts"]["penetration"] == 1
+    assert result["counts"]["clear"] == 0
+    pair = result["pairs"][0]
+    assert pair["interference_volume_mm3"] == 1000
+    assert pair["distance"] == 5.0
+    assert "boundary distance" in pair["distance_semantics"]
+    assert "native solid interference" in pair["method"]
+    builder.PerformCheck.assert_called_once()
+    assert rig.part.Bodies == [outer, inner] and not rig.session.marks
+
+
+def test_overlapping_bounds_with_separated_surfaces_use_native_classification(rig):
+    # Non-convex solids can share bounding boxes while remaining disjoint.
+    first, second = Body("first"), Body("second")
+    rig.part.Bodies.extend([first, second])
+    refs = [rig.ref(body) for body in (first, second)]
+    rig.session.Measurement = NS(
+        GetMinimumDistance=Mock(return_value=(2.0, point(), point(2, 0, 0), None))
+    )
+    builder = native_pair(rig, result=3, temporary=False)
+    result = rig.e._check_interference(*refs)
+    assert result["counts"]["clear"] == 1
+    assert result["counts"]["penetration"] == 0
+    builder.PerformCheck.assert_called_once()
+
+
 @pytest.mark.parametrize(
     "kwargs",
     [

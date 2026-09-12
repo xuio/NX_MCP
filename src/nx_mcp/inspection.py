@@ -283,9 +283,13 @@ class InspectionMixin:
                 counts["clear"] += 1
                 continue
             distance, p1, p2, accuracy = self.session.Measurement.GetMinimumDistance(a, b)
+            # NX measures the distance between boundaries. A solid contained
+            # inside another can have positive boundary distance while their
+            # volumes overlap, so only separated bounds can skip interference.
+            interference_checked = gap <= 1e-7 or distance <= 1e-7
             hit = (
                 self._interference_pair(a, b)
-                if distance <= 1e-7
+                if interference_checked
                 else {"classification": "clear", "interference_volume_mm3": 0.0}
             )
             if hit["classification"] == "clear" and distance < minimum_clearance:
@@ -299,11 +303,12 @@ class InspectionMixin:
                             self._reference(x, "body", part, "Body occurrence") for x in [a, b]
                         ],
                         "distance": distance,
+                        "distance_semantics": "boundary distance; may be positive for solid containment",
                         "closest_points": [xyz(p1), xyz(p2)],
                         "accuracy": None,
                         "accuracy_note": "No validated numerical error bound is exposed by this NX binding",
                         "method": "NX minimum distance + native solid interference"
-                        if distance <= 1e-7
+                        if interference_checked
                         else "NX minimum distance",
                     }
                 )
