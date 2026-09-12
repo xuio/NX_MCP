@@ -1,0 +1,23 @@
+{
+  "native_version": "NX2606",
+  "basis": "Existing public MCP attach_defaults readback; heat-control mutation is not yet native-verified",
+  "receipt_sha256": "7b9e1de211707d07d51b673a5171a2e6d7676ceba241f2d06cdc1faba8b23980",
+  "properties": [
+    {
+      "name": "Global Heat Imbalance Fraction Option",
+      "native_type": "2",
+      "units": null,
+      "value": true
+    },
+    {
+      "name": "Global Heat Imbalance Fraction",
+      "native_type": "4",
+      "units": "dimensionless",
+      "value": 0.02,
+      "unit_symbol": null
+    }
+  ],
+  "optional_argument": "heat_imbalance_fraction",
+  "omission": "Preserves heat settings and avoids reading unsupported heat properties on older tables",
+  "scope": "Global heat imbalance criterion in Flow Solution Parameters; does not alter coupled solid-fluid or thermal solver controls"
+}

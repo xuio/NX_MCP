@@ -19,6 +19,8 @@ def native(monkeypatch):
         "Global Flow Imbalance Fraction Option": False,
         "3D Flow Steady State - Iteration Limit": 1000,
         "Convergence Criteria": 1,
+        "Global Heat Imbalance Fraction": 0.02,
+        "Global Heat Imbalance Fraction Option": False,
     }
     before = dict(data)
     table = NS(
@@ -96,10 +98,90 @@ def test_failed_rollback_is_partial(native):
 def test_supported_analysis_controls_commit_and_repeat_without_mutation(native, analysis):
     session, sim, table, data, events = native
     sim.Simulation.ActiveSolution.AnalysisType = analysis
-    args = dict(residual=1e-6, flow_imbalance_fraction=0.001, iteration_limit=1000)
+    args = {"residual": 1e-6, "flow_imbalance_fraction": 0.001, "iteration_limit": 1000}
     result = configure_convergence(session, sim, **args)
     assert result["actual"]["flow_imbalance_enabled"]
     assert result["actual"]["residual"] == 1e-6
     count = len(events)
     assert not configure_convergence(session, sim, **args)["changed"]
     assert len(events) == count
+
+
+@pytest.mark.parametrize("heat", [True, False, 0, -0.1, 1, float("nan"), float("inf"), "0.001"])
+def test_invalid_heat_fraction_rejects_without_mutation(native, heat):
+    session, sim, _, _, events = native
+    with pytest.raises(NXToolError, match="finite fraction"):
+        configure_convergence(
+            session,
+            sim,
+            residual=1e-5,
+            flow_imbalance_fraction=0.001,
+            iteration_limit=1000,
+            heat_imbalance_fraction=heat,
+        )
+    assert not events
+
+
+def test_heat_control_is_opt_in_and_repeats_without_mutation(native):
+    session, sim, _, data, events = native
+    args = {"residual": 1e-5, "flow_imbalance_fraction": 0.001, "iteration_limit": 1000}
+    configure_convergence(session, sim, **args)
+    assert data["Global Heat Imbalance Fraction"] == 0.02
+    assert not data["Global Heat Imbalance Fraction Option"]
+    result = configure_convergence(session, sim, **args, heat_imbalance_fraction=0.001)
+    assert result["actual"]["heat_imbalance_fraction"] == 0.001
+    assert result["actual"]["heat_imbalance_enabled"] is True
+    count = len(events)
+    assert not configure_convergence(session, sim, **args, heat_imbalance_fraction=0.001)["changed"]
+    assert len(events) == count
+
+
+@pytest.mark.parametrize("failure", ["heat_enable", "readback", "unit"])
+def test_heat_failure_preserves_original_controls(native, failure):
+    session, sim, table, data, events = native
+    before = dict(data)
+    if failure == "unit":
+        table.GetBaseScalarWithDataPropertyValue = lambda k: (
+            data[k],
+            "W" if k == "Global Heat Imbalance Fraction" else None,
+        )
+    elif failure == "readback":
+        table.SetBaseScalarWithDataPropertyValue = lambda k, v, u: data.update(
+            {k: 0.02 if k == "Global Heat Imbalance Fraction" else v}
+        )
+    else:
+
+        def setter(k, v):
+            if k == "Global Heat Imbalance Fraction Option":
+                raise RuntimeError("heat enable failure")
+            data[k] = v
+
+        table.SetBooleanPropertyValue = setter
+    with pytest.raises((NXToolError, RuntimeError)):
+        configure_convergence(
+            session,
+            sim,
+            residual=1e-5,
+            flow_imbalance_fraction=0.001,
+            iteration_limit=1000,
+            heat_imbalance_fraction=0.001,
+        )
+    assert data == before
+    assert events == ([] if failure == "unit" else ["mark", "undo"])
+
+
+def test_convergence_adapter_rejects_busy_solver_before_resolving(native, monkeypatch):
+    from nx_mcp.simcenter import solver_guard
+    from nx_mcp.simcenter.native import SimcenterMixin
+
+    cae = ModuleType("NXOpen.CAE")
+    monkeypatch.setitem(sys.modules, "NXOpen.CAE", cae)
+    monkeypatch.setattr(sys.modules["NXOpen"], "CAE", cae, raising=False)
+
+    def busy():
+        raise NXToolError("NX_SIM_SOLVER_BUSY", "busy")
+
+    monkeypatch.setattr(solver_guard, "require_solver_idle", busy)
+    with pytest.raises(NXToolError) as exc:
+        SimcenterMixin._sim_flow_convergence(NS(), "document", 1e-5, 0.001, 1000, 0.001)
+    assert exc.value.code == "NX_SIM_SOLVER_BUSY"

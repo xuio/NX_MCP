@@ -9,13 +9,25 @@ def _preflight_error(code, message):
     return NXToolError(code, message, details={"mutation_outcome": "not_started"})
 
 
-def configure_convergence(session, sim, *, residual, flow_imbalance_fraction, iteration_limit):
+def configure_convergence(
+    session,
+    sim,
+    *,
+    residual,
+    flow_imbalance_fraction,
+    iteration_limit,
+    heat_imbalance_fraction=None,
+):
     """Set RMS residual and flow imbalance criteria; do not save or launch a solve."""
     import NXOpen as nx
 
     for name, value in (
         ("residual", residual),
         ("flow_imbalance_fraction", flow_imbalance_fraction),
+    ) + (
+        ()
+        if heat_imbalance_fraction is None
+        else (("heat_imbalance_fraction", heat_imbalance_fraction),)
     ):
         if (
             isinstance(value, bool)
@@ -50,7 +62,10 @@ def configure_convergence(session, sim, *, residual, flow_imbalance_fraction, it
             "NX_SIM_UNSUPPORTED_CONFIGURATION", "Requires the verified RMS convergence mode (1)"
         )
     scalars = ("Maximum Residuals", "Global Flow Imbalance Fraction")
+    if heat_imbalance_fraction is not None:
+        scalars += ("Global Heat Imbalance Fraction",)
     option = "Global Flow Imbalance Fraction Option"
+    heat_option = "Global Heat Imbalance Fraction Option"
     limit = "3D Flow Steady State - Iteration Limit"
     values = [table.GetBaseScalarWithDataPropertyValue(k) for k in scalars]
     if any(unit is not None for _, unit in values):
@@ -59,12 +74,19 @@ def configure_convergence(session, sim, *, residual, flow_imbalance_fraction, it
         )
 
     def read():
-        return {
+        values = {
             "residual": table.GetBaseScalarWithDataPropertyValue(scalars[0])[0],
             "flow_imbalance_fraction": table.GetBaseScalarWithDataPropertyValue(scalars[1])[0],
             "flow_imbalance_enabled": table.GetBooleanPropertyValue(option),
             "iteration_limit": table.GetIntegerPropertyValue(limit),
         }
+
+        if heat_imbalance_fraction is not None:
+            values.update(
+                heat_imbalance_fraction=table.GetBaseScalarWithDataPropertyValue(scalars[2])[0],
+                heat_imbalance_enabled=table.GetBooleanPropertyValue(heat_option),
+            )
+        return values
 
     before = read()
     requested = {
@@ -73,6 +95,10 @@ def configure_convergence(session, sim, *, residual, flow_imbalance_fraction, it
         "flow_imbalance_enabled": True,
         "iteration_limit": iteration_limit,
     }
+    if heat_imbalance_fraction is not None:
+        requested.update(
+            heat_imbalance_fraction=float(heat_imbalance_fraction), heat_imbalance_enabled=True
+        )
     if before == requested:
         return {
             "before": before,
@@ -83,9 +109,14 @@ def configure_convergence(session, sim, *, residual, flow_imbalance_fraction, it
         }
     mark = session.SetUndoMark(nx.Session.MarkVisibility.Visible, "NX MCP flow convergence")
     try:
-        for key, value in zip(scalars, (residual, flow_imbalance_fraction), strict=True):
+        fractions = (residual, flow_imbalance_fraction) + (
+            () if heat_imbalance_fraction is None else (heat_imbalance_fraction,)
+        )
+        for key, value in zip(scalars, fractions, strict=True):
             table.SetBaseScalarWithDataPropertyValue(key, float(value), None)
         table.SetBooleanPropertyValue(option, True)
+        if heat_imbalance_fraction is not None:
+            table.SetBooleanPropertyValue(heat_option, True)
         table.SetIntegerPropertyValue(limit, iteration_limit)
         actual = read()
         if actual != requested:

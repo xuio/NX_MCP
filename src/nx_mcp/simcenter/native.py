@@ -2779,11 +2779,20 @@ class SimcenterMixin:
         result = configure_model(self.session, sim, model=model, wall_treatment=wall_treatment)
         return {"document": self._reference(sim, "part", sim, "part"), **result}
 
-    def _sim_flow_convergence(self, document, residual, flow_imbalance_fraction, iteration_limit):
+    def _sim_flow_convergence(
+        self,
+        document,
+        residual,
+        flow_imbalance_fraction,
+        iteration_limit,
+        heat_imbalance_fraction=None,
+    ):
         import NXOpen.CAE as cae
 
         from nx_mcp.simcenter.flow_controls import configure_convergence
+        from nx_mcp.simcenter.solver_guard import require_solver_idle
 
+        require_solver_idle()
         sim = self.objects.resolve(document, expected_kind="part")
         if not isinstance(sim, cae.SimPart):
             raise NXToolError("NX_SIM_DOCUMENT_TYPE", "Select a SIM from nx_sim_documents")
@@ -2793,6 +2802,7 @@ class SimcenterMixin:
             residual=residual,
             flow_imbalance_fraction=flow_imbalance_fraction,
             iteration_limit=iteration_limit,
+            heat_imbalance_fraction=heat_imbalance_fraction,
         )
         return {"document": self._reference(sim, "part", sim, "part"), **result}
 

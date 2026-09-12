@@ -164,8 +164,9 @@ def nx_sim_flow_convergence(
     residual: float,
     flow_imbalance_fraction: float,
     iteration_limit: int,
+    heat_imbalance_fraction: float | None = None,
 ):
-    """Set convergence controls on an active NX MULTIPHYSICS Flow or Coupled Thermal-Flow SIM by document ID. Requires attached Flow Solution Parameters and verified RMS mode 1. residual and flow_imbalance_fraction are finite dimensionless fractions strictly between 0 and 1 (0.001 means 0.1%); iteration_limit is an integer 1..100000 for steady flow. Enables the flow-imbalance criterion and returns before/actual values. Does not save, launch or cancel a solve. Use only when no solver job is running. Changes require prior results to be revalidated. Repeating identical settings is a no-op; failed mutations attempt verified rollback. These requested controls are not evidence of achieved convergence. Supply operation_id for safe retry."""
+    """Set convergence controls on an active NX MULTIPHYSICS Flow or Coupled Thermal-Flow SIM by document ID. Requires attached Flow Solution Parameters and verified RMS mode 1. residual and flow_imbalance_fraction are finite dimensionless fractions strictly between 0 and 1 (0.001 means 0.1%); iteration_limit is an integer 1..100000 for steady flow. Optional heat_imbalance_fraction enables the separate global flow-solver heat-imbalance criterion; omission preserves it. This does not alter coupled solid-fluid heat exchange controls. Requires no known solver or translator process. Enables the flow-imbalance criterion and returns before/actual values. Does not save, launch or cancel a solve. Use only when no solver job is running. Changes require prior results to be revalidated. Repeating identical settings is a no-op; failed mutations attempt verified rollback. These requested controls are not evidence of achieved convergence. Supply operation_id for safe retry."""
 
 
 NON_MODEL.add("nx_sim_flow_convergence")
