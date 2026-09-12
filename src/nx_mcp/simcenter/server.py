@@ -138,6 +138,27 @@ def nx_sim_flow_setup(
 NON_MODEL.add("nx_sim_flow_setup")
 
 
+def nx_sim_flow_model(
+    document: str,
+    model: Literal[
+        "laminar",
+        "mixing_length",
+        "standard_k_epsilon",
+        "rng_k_epsilon",
+        "realizable_k_epsilon",
+        "k_omega",
+        "sst",
+        "spalart_allmaras",
+    ],
+    wall_treatment: Literal["no_slip", "slip", "wall_function", "hybrid_wall_function"]
+    | None = None,
+):
+    """Set the documented turbulence selector on an active NX MULTIPHYSICS Flow or Coupled Thermal-Flow SIM. Requires attached Flow Surface Parameters and no known solver or translator process. wall_treatment optionally changes only its global Wall Treatment; omission preserves and reads back that value. Reports whether global wall treatment is active under solid blockage; rejects edits while inactive and unverified laminar wall-function combinations. Returns before/actual native integers. Local boundary overrides, inlet turbulence quantities, roughness, near-wall mesh and closure suitability remain unverified. Does not automatically select a wall treatment, save, export or solve. Native update/readback and verified rollback guard changes; repeating identical settings is a no-op. Supply operation_id for deduplication. A committed selector is not evidence of numerical validity."""
+
+
+NON_MODEL.add("nx_sim_flow_model")
+
+
 def nx_sim_flow_convergence(
     document: str,
     residual: float,
