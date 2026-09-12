@@ -1,0 +1,15 @@
+{
+  "native_version": "Designcenter2606",
+  "deployed_code_commit": "e13eb11af49a47c7e9438bca50218e53ae3b6085",
+  "request_sha256": "5002ecf67bd8068d5d0829106e1a07c2863c7d0c28f63de1f8e667f6c1ad1564",
+  "native_operation_id": "op_516b7fc57e4a4d8cb0b5fb38be787d7a",
+  "source_files_preserved": true,
+  "rewritten_dependencies_verified": true,
+  "dependency_count": 63,
+  "copied_files": 64,
+  "body_occurrences_after_clone": 482,
+  "explicitly_added_parts": [],
+  "native_coverage": "Multi-directory CAD assembly, saved load locations, explicit clone actions, preload copied suppressed/unsuppressed prototypes, rewritten reference checks and source-hash preservation. Missing-member fallback was not exercised in this successful native run.",
+  "source_receipt": "Baldower preload-and-clone-study-r961.receipt.json",
+  "scope": "Initial clone snapshot only; subsequent mechanical study edits change copied file hashes. Not manufacturing/thermal qualification."
+}

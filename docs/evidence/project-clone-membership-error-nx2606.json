@@ -8,7 +8,7 @@
   "cleanup_evidence": "R942 documents show original saved work part and218open documents; R943 OS inspection confirms clone destination absent",
   "hypothesis": "A mapped loaded dependency was absent from AddAssembly membership. Suppressed components are a possible cause, not established for this particular failure.",
   "recovery": "Preflight SetAction API; enroll missing mapped sources only on3025003, then explicitly assign CLONE to every mapped source before applying any names. Retain source hashes, dependency verification and cleanup.",
-  "native_recovery_verified": false,
+  "native_recovery_verified": true,
   "unit_validation": "93engineering tests and Ruff pass, including copied-prototype preload ordering, full root loading and preference restoration/cleanup on copied-root load failure.",
   "native_followup": {
     "receipt": "Baldower clone-loaded-study-r949.receipt.json",
@@ -32,5 +32,7 @@
     "message": "'NXOpen.NXObject' object has no attribute 'FullPath'",
     "interpretation": "Copied dependency verification encountered an unloaded prototype; no successful native clone claimed."
   },
-  "copied_loading_correction": "Under temporary AsSaved loading, explicitly preload every verified copied prototype (including suppressed dependencies), then load the copied root components and verify paths. Restore loading preference on success/failure."
+  "copied_loading_correction": "Under temporary AsSaved loading, explicitly preload every verified copied prototype (including suppressed dependencies), then load the copied root components and verify paths. Restore loading preference on success/failure.",
+  "native_success_evidence": "project-clone-native-success-nx2606.json",
+  "native_success_scope": "Successful64file CAD project clone and reference verification; explicit missing-member fallback remains unit-tested only."
 }
