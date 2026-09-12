@@ -33,6 +33,17 @@ def documents(session):
 
 
 class SimcenterMixin:
+    def _sim_internal_fan(self, document, faces, name, direction, motor_heat_w, volume_flow_m3_s=None, fan_table=None):
+        from nx_mcp.simcenter.internal_fan_authoring import create
+
+        sim = self.objects.resolve(document, expected_kind="part")
+        self.workspace.resolve(sim.FullPath)
+        selected = [self.objects.resolve(ref, expected_kind="face") for ref in faces]
+        table = self.objects.resolve(fan_table, expected_kind="simulation_field") if fan_table is not None else None
+        result = create(self.session, sim, selected, name, direction, motor_heat_w, volume_flow_m3_s, table)
+        result["boundary"] = self._reference(result["boundary"], "simulation_object", sim, "internal_fan")
+        return result
+
     def _sim_internal_fan_schema(self, document):
         from nx_mcp.simcenter.internal_fan import inspect_schema
 

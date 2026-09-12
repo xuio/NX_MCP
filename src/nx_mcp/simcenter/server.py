@@ -908,3 +908,10 @@ def nx_sim_internal_fan_schema(document: str):
 
 
 NON_MODEL.add("nx_sim_internal_fan_schema")
+
+
+def nx_sim_internal_fan(document: str, faces: list[str], name: str, direction: list[float], motor_heat_w: float, volume_flow_m3_s: float | None = None, fan_table: str | None = None):
+    """Create a native Internal Fan on distinct SIM occurrence face references. Supply live document ID, unique name, explicit nonzero XYZ direction in SIM absolute coordinates and nonnegative motor heat in watts. Supply exactly one positive volume_flow_m3_s or verified static-pressure fan_table reference. Sets normal-to-face alignment, no swirl and no speed controller; direction is read back as stored, not yet solver-qualified. Rejects duplicate names and overlap with Inlet, Opening or Internal Fan selections. Verifies committed units, values, direction, targets and solution membership; rollback checks include fields, expressions, directions and modified state. No save or solve. Caller must verify the selected surface is an internal fluid interface, exported direction/pressure semantics, and mass/energy conservation before using production results. Native authoring and numerical validation are pending for this new capability."""
+
+
+NON_MODEL.add("nx_sim_internal_fan")
