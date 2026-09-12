@@ -1,0 +1,13 @@
+{
+  "native_version": "Designcenter2606",
+  "failed_operation": "nx_copy_project",
+  "error_code": 3025003,
+  "installed_header": "C:\\Program Files\\Siemens\\Designcenter2606\\UGOPEN\\uf_clone.h",
+  "definition": "UF_CLONE_err_part_not_present = ERROR_UF_CLONE_base + 3; ERROR_UF_CLONE_base = 3025000",
+  "failure_evidence": "Baldower isolate-airpath-study-r941.receipt.json",
+  "cleanup_evidence": "R942 documents show original saved work part and218open documents; R943 OS inspection confirms clone destination absent",
+  "hypothesis": "A mapped loaded dependency was absent from AddAssembly membership. Suppressed components are a possible cause, not established for this particular failure.",
+  "recovery": "Only on exact3025003 from SetNaming, call AddPart with the already-preflighted source, then set its target naming. Retain source hashes and rewritten-dependency verification. Record explicit additions in manifest.",
+  "native_recovery_verified": false,
+  "unit_validation": "88 engineering tests pass; Ruff passes"
+}

@@ -309,6 +309,7 @@ class EngineeringMixin:
             clone, "Initialise", "AddAssembly", "SetNaming", "PerformClone", "Terminate"
         )
         created = False
+        explicitly_added_parts = []
         try:
             destination.mkdir(parents=True, exist_ok=False)
             created = True
@@ -319,7 +320,19 @@ class EngineeringMixin:
                 clone.SetDefAction(clone.Action.CLONE)
                 clone.AddAssembly(str(Path(part.FullPath).resolve()))
                 for source, target in mapping.items():
-                    clone.SetNaming(str(source), clone.NamingTechnique.USER_NAME, str(target))
+                    try:
+                        clone.SetNaming(str(source), clone.NamingTechnique.USER_NAME, str(target))
+                    except Exception as exc:
+                        # UF_CLONE_err_part_not_present: AddAssembly did not enroll
+                        # this loaded dependency (for example a suppressed part).
+                        # Add only the preflighted, hashed source; all other errors
+                        # retain the normal failure/cleanup path.
+                        if getattr(exc, "ErrorCode", None) != 3025003:
+                            raise
+                        self._require_api(clone, "AddPart")
+                        clone.AddPart(str(source))
+                        explicitly_added_parts.append(str(source))
+                        clone.SetNaming(str(source), clone.NamingTechnique.USER_NAME, str(target))
                 clone.PerformClone(clone.InitNamingFailures())
             finally:
                 clone.Terminate()
@@ -357,6 +370,7 @@ class EngineeringMixin:
                 "dependency_count": len(expected),
                 "references_verified": True,
                 "originals_preserved": True,
+                "explicitly_added_parts": explicitly_added_parts,
             }
             (destination / "nx-project-manifest.json").write_text(json.dumps(manifest, indent=2))
             if not activate:

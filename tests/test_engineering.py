@@ -875,3 +875,51 @@ def test_render_cleanup_failure_still_restores_style_and_removes_artifact(render
     assert exc.value.details["mutation_outcome"] == "partial"
     assert r.view.RenderingStyle == "original" and not path.exists()
     r.lights.Destroy.assert_called_once()
+
+
+@pytest.mark.parametrize("code", [3025003, 3025007])
+def test_project_copy_adds_only_missing_preflighted_clone_members(project, code):
+    r = project
+    source = str(r.prototype.resolve())
+    enrolled = set()
+    original_naming = r.clone.SetNaming
+
+    class NativeCloneError(Exception):
+        ErrorCode = code
+
+    def naming(src, technique, dst):
+        if src == source and src not in enrolled:
+            raise NativeCloneError("native clone membership error")
+        original_naming(src, technique, dst)
+
+    r.clone.SetNaming = naming
+    r.clone.AddPart = Mock(side_effect=lambda path: enrolled.add(path))
+    dest = r.e.workspace.root / "membership"
+    if code == 3025003:
+        result = r.e._copy_project(str(dest), "MEM_")
+        r.clone.AddPart.assert_called_once_with(source)
+        assert result["explicitly_added_parts"] == [source]
+        assert result["references_verified"] and result["originals_preserved"]
+    else:
+        with pytest.raises(NativeCloneError):
+            r.e._copy_project(str(dest), "MEM_")
+        r.clone.AddPart.assert_not_called()
+        assert not dest.exists()
+    assert r.prototype.read_bytes() == b"original body"
+    r.clone.Terminate.assert_called_once()
+
+
+def test_project_copy_missing_member_add_failure_cleans_up(project):
+    r = project
+
+    class MissingMember(Exception):
+        ErrorCode = 3025003
+
+    r.clone.SetNaming = Mock(side_effect=MissingMember())
+    r.clone.AddPart = Mock(side_effect=RuntimeError("cannot add source"))
+    dest = r.e.workspace.root / "add_failed"
+    with pytest.raises(RuntimeError, match="cannot add source"):
+        r.e._copy_project(str(dest), "ADD_")
+    assert not dest.exists()
+    assert r.prototype.read_bytes() == b"original body"
+    r.clone.Terminate.assert_called_once()
