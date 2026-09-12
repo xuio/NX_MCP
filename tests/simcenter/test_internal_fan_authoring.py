@@ -18,7 +18,13 @@ def rig(monkeypatch):
 
     cae.SimPart, cae.SetObject = SimPart, NS
     cae.CaeSetObjectSubType = NS(NotSet=0)
-    nx.Point3d = lambda x, y, z: NS(X=x, Y=y, Z=z)
+
+    def strict_xyz(x, y, z):
+        if any(type(v) is not float for v in (x, y, z)):
+            raise TypeError("NX point/vector coordinates require double")
+        return NS(X=x, Y=y, Z=z)
+
+    nx.Point3d = strict_xyz
     nx.Vector3d = nx.Point3d
     nx.SmartObject = NS(UpdateOption=NS(WithinModeling=0))
     nx.Session = NS(MarkVisibility=NS(Visible=1))
