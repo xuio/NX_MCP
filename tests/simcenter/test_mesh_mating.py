@@ -152,6 +152,10 @@ def test_partial_creation_or_wrong_selection_rolls_back_and_invalidates(rig, cau
         create(executor, fem, source, target, 0.001)
     assert error.value.details["mutation_outcome"] == "rolled_back"
     assert not controls
+    if cause == "corrupt_readback":
+        observed = error.value.details["committed_readback_before_rollback"]
+        assert observed["source_face_tag"] == target.Tag
+        assert error.value.details["requested_face_tags"] == [source.Tag, target.Tag]
     assert executor.objects.invalidate_part.call_count == 2
 
 

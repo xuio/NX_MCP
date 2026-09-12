@@ -60,6 +60,7 @@ def create(executor, fem, source, target, tolerance_mm):
         nx.Session.MarkVisibility.Visible, "NX MCP glue coincident mesh faces"
     )
     builder = None
+    committed_readback = None
     try:
         builder = controls.CreateMmcCreateBuilder(None)
         builder.Type = cae.MMCCreateBuilder.Types.Manual
@@ -80,6 +81,16 @@ def create(executor, fem, source, target, tolerance_mm):
             raise ValueError("Expected exactly one registered mesh-mating condition")
         reader = controls.CreateMmcCreateBuilder(created[0])
         try:
+            committed_readback = {
+                "mode": str(reader.MeshMatingOption),
+                "source_face_tag": int(reader.SourceFace.Value.Tag),
+                "target_face_tag": int(reader.TargetFace.Value.Tag),
+                "reverse_direction": bool(reader.ReverseDirection),
+                "distance_tolerance": reader.DistTolerance.GetFormula(),
+                "snap_tolerance": reader.SnapTolerance.GetFormula(),
+                "distance_units": reader.DistTolerance.Units.Name,
+                "snap_units": reader.SnapTolerance.Units.Name,
+            }
             if (
                 reader.MeshMatingOption != cae.MMCCreateBuilder.MeshMatingType.GlueCoincident
                 or reader.SourceFace.Value.Tag != source.Tag
@@ -124,6 +135,9 @@ def create(executor, fem, source, target, tolerance_mm):
             nx_code=getattr(error, "ErrorCode", None),
             details={
                 "mutation_outcome": outcome,
+                "committed_readback_before_rollback": committed_readback,
+                "requested_face_tags": [int(source.Tag), int(target.Tag)],
+                "requested_tolerance_mm": tolerance_mm,
                 "rollback_scope": "Control/expression/mesh identities and face bounds; not complete geometric equivalence",
             },
         ) from error
