@@ -315,32 +315,50 @@ class EngineeringMixin:
             created = True
             for p in mapping.values():
                 p.parent.mkdir(parents=True, exist_ok=True)
-            clone.Initialise(clone.OperationClass.CLONE_OPERATION)
+            options = self.session.Parts.LoadOptions
+            previous_load_method = options.ComponentLoadMethod
             try:
-                clone.SetDefAction(clone.Action.CLONE)
-                clone.AddAssembly(str(Path(part.FullPath).resolve()))
-                for source in mapping:
-                    try:
-                        clone.SetAction(str(source), clone.Action.CLONE, None)
-                    except Exception as exc:
-                        # UF_CLONE_err_part_not_present: AddAssembly did not enroll
-                        # this loaded dependency (for example a suppressed part).
-                        # Add only the preflighted, hashed source; all other errors
-                        # retain the normal failure/cleanup path.
-                        if getattr(exc, "ErrorCode", None) != 3025003:
-                            raise
-                        self._require_api(clone, "AddPart")
-                        clone.AddPart(str(source))
-                        explicitly_added_parts.append(str(source))
-                        clone.SetAction(str(source), clone.Action.CLONE, None)
-                # Enroll and assign actions for every dependency before naming:
-                # AddPart can introduce name-only child references, and the
-                # operation default alone does not assign each part's action.
-                for source, target in mapping.items():
-                    clone.SetNaming(str(source), clone.NamingTechnique.USER_NAME, str(target))
-                clone.PerformClone(clone.InitNamingFailures())
+                options.ComponentLoadMethod = type(options).LoadMethod.AsSaved
+                clone.Initialise(clone.OperationClass.CLONE_OPERATION)
+                try:
+                    clone.SetDefAction(clone.Action.CLONE)
+                    load_status, load_code = clone.AddAssembly(str(Path(part.FullPath).resolve()))
+                    if load_code or load_status.Failed or load_status.UserAbort or load_status.NParts:
+                        raise NXToolError(
+                            "NX_CLONE_LOAD_FAILED",
+                            "Native clone dependency loading reported diagnostics",
+                            details={
+                                "return_code": load_code,
+                                "failed": bool(load_status.Failed),
+                                "user_abort": bool(load_status.UserAbort),
+                                "files": list(load_status.FileNames),
+                                "nx_codes": list(load_status.Statuses),
+                            },
+                        )
+                    for source in mapping:
+                        try:
+                            clone.SetAction(str(source), clone.Action.CLONE, None)
+                        except Exception as exc:
+                            # UF_CLONE_err_part_not_present: AddAssembly did not enroll
+                            # this loaded dependency (for example a suppressed part).
+                            # Add only the preflighted, hashed source; all other errors
+                            # retain the normal failure/cleanup path.
+                            if getattr(exc, "ErrorCode", None) != 3025003:
+                                raise
+                            self._require_api(clone, "AddPart")
+                            clone.AddPart(str(source))
+                            explicitly_added_parts.append(str(source))
+                            clone.SetAction(str(source), clone.Action.CLONE, None)
+                    # Enroll and assign actions for every dependency before naming:
+                    # AddPart can introduce name-only child references, and the
+                    # operation default alone does not assign each part's action.
+                    for source, target in mapping.items():
+                        clone.SetNaming(str(source), clone.NamingTechnique.USER_NAME, str(target))
+                    clone.PerformClone(clone.InitNamingFailures())
+                finally:
+                    clone.Terminate()
             finally:
-                clone.Terminate()
+                options.ComponentLoadMethod = previous_load_method
             for source, target in mapping.items():
                 if not target.is_file():
                     raise NXToolError(

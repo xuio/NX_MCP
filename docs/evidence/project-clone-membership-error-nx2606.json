@@ -9,7 +9,7 @@
   "hypothesis": "A mapped loaded dependency was absent from AddAssembly membership. Suppressed components are a possible cause, not established for this particular failure.",
   "recovery": "Preflight SetAction API; enroll missing mapped sources only on3025003, then explicitly assign CLONE to every mapped source before applying any names. Retain source hashes, dependency verification and cleanup.",
   "native_recovery_verified": false,
-  "unit_validation": "89 engineering tests pass; Ruff passes, including explicit actions for all sources before any naming.",
+  "unit_validation": "91 engineering tests and Ruff pass; tests include saved-load policy restoration on success and dependency-load failure, rejection before actions/naming, membership handling and explicit clone actions.",
   "native_followup": {
     "receipt": "Baldower clone-loaded-study-r949.receipt.json",
     "deployed_commit": "69899f3",
@@ -17,5 +17,13 @@
     "message": "Component to be cloned has an unsuitable action for number assignment.",
     "result": "Native recovery is not complete; no successful clone claimed."
   },
-  "installed_header_basis": "uf_clone.h lines1097\u20131099: AddPart introduces missing assembly components as name-only references; lines1330\u20131338: SetAction controls individual part actions and may cascade defaults. SetAction takes source, action and null replacement for CLONE."
+  "installed_header_basis": "uf_clone.h lines1097\u20131099: AddPart introduces missing assembly components as name-only references; lines1330\u20131338: SetAction controls individual part actions and may cascade defaults. SetAction takes source, action and null replacement for CLONE.",
+  "second_native_followup": {
+    "receipt": "Baldower preload-and-clone-study-r953.receipt.json",
+    "deployed_commit": "fbeca71",
+    "error_code": 720108,
+    "message": "Invalid operation for this component which is a name only reference.",
+    "native_recovery_verified": false
+  },
+  "loading_correction": "Temporarily use AsSaved component loading for AddAssembly, check native load status/code before actions or naming, and restore the original load method in finally. This follows the existing native-verified Simcenter variant clone implementation. Do not assume preloading the interactive assembly controls the UF clone load policy."
 }

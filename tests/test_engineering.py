@@ -628,13 +628,21 @@ def project(eng):
         Initialise=Mock(),
         SetDefAction=Mock(),
         SetAction=Mock(),
-        AddAssembly=Mock(),
+        AddAssembly=Mock(return_value=(
+            NS(Failed=False, UserAbort=False, NParts=0, FileNames=[], Statuses=[]), 0
+        )),
         InitNamingFailures=lambda: None,
         Terminate=Mock(),
     )
     clone.SetNaming = lambda src, _, dst: naming.update({src: dst})
     clone.PerformClone = lambda _: [shutil.copyfile(src, dst) for src, dst in naming.items()]
     r.uf.Clone = clone
+
+    class LoadOptions:
+        LoadMethod = NS(AsSaved=0)
+        ComponentLoadMethod = 1
+
+    r.session.Parts.LoadOptions = LoadOptions()
 
     def open_part(path):
         part = Part(r.session, Path(path))
@@ -944,3 +952,31 @@ def test_project_copy_assigns_all_explicit_actions_before_naming(project):
     r.clone.SetNaming = naming
     result = r.e._copy_project(str(r.e.workspace.root / "actions"), "ACT_")
     assert result["references_verified"] and result["explicitly_added_parts"] == []
+
+
+@pytest.mark.parametrize("diagnostics", [False, True])
+def test_project_copy_uses_saved_loading_and_restores_preference(project, diagnostics):
+    r = project
+    options = r.session.Parts.LoadOptions
+    original = r.clone.AddAssembly
+
+    def add(path):
+        assert options.ComponentLoadMethod == options.LoadMethod.AsSaved
+        if diagnostics:
+            return NS(Failed=True, UserAbort=False, NParts=1,
+                      FileNames=["missing.prt"], Statuses=[641044]), 0
+        return original(path)
+
+    r.clone.AddAssembly = add
+    dest = r.e.workspace.root / "load_policy"
+    if diagnostics:
+        r.clone.SetNaming = Mock()
+        with pytest.raises(NXToolError, match="dependency loading"):
+            r.e._copy_project(str(dest), "LOAD_")
+        r.clone.SetAction.assert_not_called()
+        r.clone.SetNaming.assert_not_called()
+        assert not dest.exists()
+    else:
+        r.e._copy_project(str(dest), "LOAD_")
+    assert options.ComponentLoadMethod == 1
+    r.clone.Terminate.assert_called_once()
