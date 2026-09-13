@@ -93,3 +93,27 @@ def test_translator_warning_does_not_become_error():
     report = inspect_solver_log("NX2TMG - WARNING 1575\nSolve completed at:")
     assert report["state"] == "unknown"
     assert report["translator_error_codes"] == []
+
+
+def test_native_stop_warning_is_preserved_despite_completed_footer():
+    # Native R1555 orderly Stop produces a result file and completed footer.
+    report = inspect_solver_log(
+        "| The current solution has been suspended and the results may |\r\r\n"
+        "| not be accurate. |\r\r\nSolve completed at:"
+    )
+    assert report["solution_suspended_reported"] is True
+    assert report["abort_reported"] is False
+    assert report["state"] == "unknown"
+    assert report["numerical_convergence"] == "not_established"
+    assert report["results_validated"] is False
+    assert "suspended" in report["next_action"]
+    assert inspect_solver_log("Solve completed at:")["solution_suspended_reported"] is False
+
+
+def test_translator_failure_remains_primary_when_suspension_also_reported():
+    report = inspect_solver_log(
+        "NX2TMG - FATAL ERROR 1747\nThe current solution has been suspended"
+    )
+    assert report["state"] == "failed"
+    assert report["solution_suspended_reported"] is True
+    assert "translator" in report["next_action"]

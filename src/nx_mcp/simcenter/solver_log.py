@@ -13,6 +13,8 @@ _ERROR = re.compile(r"\bNX2TMG\s*-\s*(?:FATAL\s+)?ERROR\s+(\d+)\b", re.IGNORECAS
 _ABORT = re.compile(r"Run aborted due to (?:fatal )?errors", re.IGNORECASE)
 _FATAL_ABORT = re.compile(r"Run aborted due to fatal errors", re.IGNORECASE)
 
+_SUSPENDED = re.compile(r"The current solution has been suspended", re.IGNORECASE)
+
 
 def inspect_solver_log(text: str) -> dict:
     """Return only failure evidence supported by the native translator log.
@@ -24,18 +26,22 @@ def inspect_solver_log(text: str) -> dict:
     codes = list(dict.fromkeys(int(match) for match in _FATAL.findall(text)))
     errors = list(dict.fromkeys(int(match) for match in _ERROR.findall(text)))
     aborted = bool(_ABORT.search(text))
+    suspended = bool(_SUSPENDED.search(text))
     return {
         "state": "failed" if errors or aborted else "unknown",
         "stage": "translation" if errors else "unknown",
         "translator_fatal_codes": codes,
         "translator_error_codes": errors,
         "abort_reported": aborted,
+        "solution_suspended_reported": suspended,
         "fatal_abort_reported": bool(_FATAL_ABORT.search(text)),
         "numerical_convergence": "not_established",
         "results_validated": False,
         "next_action": (
             "Inspect native setup and translator diagnostics; do not automatically rerun."
             if errors or aborted
+            else "Native solution was suspended; retain results as diagnostic and verify convergence separately."
+            if suspended
             else "Inspect job process status, residuals and result validation before classifying."
         ),
     }
