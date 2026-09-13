@@ -2,7 +2,7 @@
 
 
 def read_quality_settings(fem):
-    import NXOpen.CAE.ModelCheck as mc
+    from NXOpen.CAE import ModelCheck as mc
 
     solver, analysis = fem.GetSolverAndAnalysisType()
     setting = fem.ElementQualitySettings.GetElementQualitySetting(solver)
@@ -58,7 +58,7 @@ def check_mesh_quality(fem, meshes):
     try:
         builder.SelectionList.Add(meshes)
         result = builder.ExecuteCheck()
-        import NXOpen.CAE.ModelCheck as mc
+        from NXOpen.CAE import ModelCheck as mc
 
         enum = mc.TestValueTypes.TestType
         names = {
