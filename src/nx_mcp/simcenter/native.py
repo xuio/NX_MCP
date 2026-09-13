@@ -2256,12 +2256,12 @@ class SimcenterMixin:
                 },
             ) from exc
 
-    def _sim_mesh_plan(self, document, regions):
+    def _sim_mesh_plan(self, document, regions, number_of_processors=None):
         from nx_mcp.simcenter.mesh_plan import generate
 
         fem = self.objects.resolve(document, expected_kind="part")
         try:
-            return generate(self, fem, regions)
+            return generate(self, fem, regions, number_of_processors=number_of_processors)
         except ValueError as error:
             raise NXToolError("NX_INVALID_ARGUMENT", str(error)) from error
 

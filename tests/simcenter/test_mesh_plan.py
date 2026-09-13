@@ -77,7 +77,8 @@ def test_empty_mesh_rejects_and_releases_both_maps():
     nodes.Dispose.assert_called_once()
 
 
-def test_late_plan_failure_rolls_back_first_body_mesh(monkeypatch):
+@pytest.mark.parametrize("processors,bad_readback", [(None, False), (1, False), (1, True)])
+def test_late_plan_failure_rolls_back_first_body_mesh(monkeypatch, processors, bad_readback):
     import sys
     from types import SimpleNamespace as NS
     from unittest.mock import Mock
@@ -115,6 +116,8 @@ def test_late_plan_failure_rolls_back_first_body_mesh(monkeypatch):
             PropertyTable=NS(
                 SetBaseScalarWithDataPropertyValue=lambda *a: None,
                 GetBaseScalarWithDataPropertyValue=lambda *a: (1, NS(Name="MilliMeter")),
+                SetIntegerPropertyValue=Mock(),
+                GetIntegerPropertyValue=lambda *a: 2 if existing and bad_readback else 1,
             ),
             SelectionList=NS(Add=lambda *a: None, GetArray=lambda: [body1]),
             Destroy=Mock(),
@@ -135,6 +138,7 @@ def test_late_plan_failure_rolls_back_first_body_mesh(monkeypatch):
         SetUndoMark=lambda *a: 1,
         UndoToMark=lambda *a: meshes.clear(),
         DeleteUndoMark=Mock(),
+        LogFile=NS(WriteLine=Mock()),
     )
     executor = NS(
         nxopen=NS(BasePart=NS(Units=NS(Millimeters=1)), Session=NS(MarkVisibility=NS(Visible=1))),
@@ -150,11 +154,57 @@ def test_late_plan_failure_rolls_back_first_body_mesh(monkeypatch):
                 {"body": "a", "kind": "solid", "size_mm": 1},
                 {"body": "b", "kind": "fluid", "size_mm": 1},
             ],
+            number_of_processors=processors,
         )
     assert error.value.details["mutation_outcome"] == "rolled_back"
-    assert count == 2 and meshes == [] and len(builders) == 3
+    assert meshes == []
+    assert count == (1 if bad_readback else 2)
+    assert len(builders) == (2 if bad_readback else 3)
+    assert "START" in session.LogFile.WriteLine.call_args_list[0].args[0]
+    assert "COMMIT_RETURNED" in session.LogFile.WriteLine.call_args_list[1].args[0]
+    if processors is None:
+        builders[0].PropertyTable.SetIntegerPropertyValue.assert_not_called()
+    else:
+        builders[0].PropertyTable.SetIntegerPropertyValue.assert_called_once_with(
+            "number of processors", 1
+        )
     for builder in builders:
         builder.Destroy.assert_called_once()
+
+
+@pytest.mark.parametrize("value", [0, -1, 33, True, 1.5, float("nan"), "1"])
+def test_processor_override_rejected_before_property_mutation(value):
+    from unittest.mock import Mock
+
+    from nx_mcp.simcenter.mesh_plan import configure_processors
+
+    table = Mock()
+    with pytest.raises(ValueError, match="1..32"):
+        configure_processors(table, value)
+    table.SetIntegerPropertyValue.assert_not_called()
+
+
+def test_processor_override_requires_native_readback():
+    from unittest.mock import Mock
+
+    from nx_mcp.simcenter.mesh_plan import configure_processors
+
+    table = Mock()
+    table.GetIntegerPropertyValue.return_value = 4
+    with pytest.raises(ValueError, match="differs"):
+        configure_processors(table, 1)
+
+
+@pytest.mark.parametrize("value", [1, 4, 32])
+def test_supported_processor_counts_are_explicit(value):
+    from unittest.mock import Mock
+
+    from nx_mcp.simcenter.mesh_plan import configure_processors
+
+    table = Mock()
+    table.GetIntegerPropertyValue.return_value = value
+    configure_processors(table, value)
+    table.SetIntegerPropertyValue.assert_called_once_with("number of processors", value)
 
 
 def test_public_nested_regions_reject_ignored_keys_and_boolean_sizes():

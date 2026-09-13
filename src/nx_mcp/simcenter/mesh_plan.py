@@ -42,8 +42,24 @@ def mesh_counts(fem):
                 elements.Dispose()
 
 
-def generate(executor, fem, regions):
+def validate_processors(number_of_processors):
+    if number_of_processors is not None and (
+        type(number_of_processors) is not int or not 1 <= number_of_processors <= 32
+    ):
+        raise ValueError("number_of_processors must be an integer in 1..32 or omitted")
+
+
+def configure_processors(table, number_of_processors):
+    validate_processors(number_of_processors)
+    if number_of_processors is not None:
+        table.SetIntegerPropertyValue("number of processors", number_of_processors)
+        if table.GetIntegerPropertyValue("number of processors") != number_of_processors:
+            raise ValueError("Native mesher processor setting differs from the request")
+
+
+def generate(executor, fem, regions, number_of_processors=None):
     validate(regions)
+    validate_processors(number_of_processors)
     import NXOpen.CAE as cae
 
     from nx_mcp.simcenter.solver_guard import require_solver_idle
@@ -71,7 +87,14 @@ def generate(executor, fem, regions):
     mark = session.SetUndoMark(nx.Session.MarkVisibility.Visible, "NX MCP body mesh plan")
     rows = []
     try:
-        for region, body in zip(regions, bodies, strict=True):
+        for index, (region, body) in enumerate(zip(regions, bodies, strict=True), 1):
+            log = getattr(session, "LogFile", None)
+            if log is not None:
+                log.WriteLine(
+                    f"NX MCP mesh plan region {index}/{len(regions)} START "
+                    f"body_tag={int(body.Tag)} body_ref={region['body']} "
+                    f"size_mm={region['size_mm']} processors={number_of_processors}"
+                )
             builder = manager.CreateMesh3dTetBuilder(None)
             try:
                 element = ELEMENTS[region["kind"]]
@@ -80,6 +103,7 @@ def generate(executor, fem, regions):
                 builder.ElementType.ElementTypeName = element
                 builder.ElementType.DestinationCollector.AutomaticMode = True
                 builder.AutoSizeOption = False
+                configure_processors(builder.PropertyTable, number_of_processors)
                 builder.PropertyTable.SetBaseScalarWithDataPropertyValue(
                     "quad mesh overall edge size",
                     float(region["size_mm"]),
@@ -89,6 +113,8 @@ def generate(executor, fem, regions):
                 meshes = list(builder.CommitMesh())
                 if not meshes:
                     raise ValueError("Native mesher produced no mesh for " + region["body"])
+                if log is not None:
+                    log.WriteLine(f"NX MCP mesh plan region {index} COMMIT_RETURNED meshes={len(meshes)}")
             finally:
                 builder.Destroy()
             # Reopen the primary tet mesh, rather than assuming its inputs persisted.
@@ -98,6 +124,13 @@ def generate(executor, fem, regions):
                     "quad mesh overall edge size"
                 )
                 targets = {int(b.Tag) for b in reader.SelectionList.GetArray()}
+                actual_processors = None
+                if number_of_processors is not None:
+                    actual_processors = reader.PropertyTable.GetIntegerPropertyValue(
+                        "number of processors"
+                    )
+                    if actual_processors != number_of_processors:
+                        raise ValueError("Committed mesher processor setting differs")
                 if (
                     reader.ElementType.ElementTypeName != element
                     or reader.AutoSizeOption
@@ -112,6 +145,7 @@ def generate(executor, fem, regions):
                         "kind": region["kind"],
                         "size_mm": size,
                         "element_type": reader.ElementType.ElementTypeName,
+                        "number_of_processors": actual_processors,
                         "meshes": [
                             executor._reference(m, "simulation_mesh", fem, "mesh") for m in meshes
                         ],
@@ -129,6 +163,7 @@ def generate(executor, fem, regions):
             "saved": False,
             "results_stale": True,
             "material_assignments": "not_created",
+            "requested_number_of_processors": number_of_processors,
             "quality_validation": "not_performed",
             "boundary_layer_effect": "inspect generated topology and quality; not inferred from control presence",
         }
