@@ -26,7 +26,7 @@ _TRANSITIONS = {
     "launch_returned": {"running", "solver_exited", "failed"},
     "launch_uncertain": {"running", "solver_exited", "failed"},
     "running": {"solver_exited", "failed", "cancelled"},
-    "solver_exited": {"completed", "failed"},
+    "solver_exited": {"solver_exited", "completed", "failed"},
     "completed": set(),
     "failed": set(),
     "cancelled": set(),
