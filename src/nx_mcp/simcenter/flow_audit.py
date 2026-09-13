@@ -83,6 +83,35 @@ def inspect_flow_log(text, boundary_types=None):
                 }
             )
     last = max(iterations, default=None)
+    imbalance_history = []
+    # These are iterative stopping diagnostics, distinct from the final
+    # conservation summary. Keep their native scale; it is not labelled percent.
+    for block in text.split("Global iteration |")[1:]:
+        number = re.search(r"^\s*(\d+)\s*\+", block, re.M)
+        diagnostics = re.findall(
+            r"Maximum observed imbalance value:\s*("
+            + _N
+            + r")\s*\(([^)\r\n]+)\)\s*\|?\s*\n"
+            + r"\s*\|?\s*Target imbalance value:\s*("
+            + _N
+            + r")\s*\|?\s*\n",
+            block,
+        )
+        if number and len(diagnostics) == 1:
+            value, quantity, target = diagnostics[0]
+            value, target = _number(value), _number(target)
+            if value >= 0 and target > 0:
+                imbalance_history.append(
+                    {
+                        "iteration": int(number[1]),
+                        "quantity": quantity.strip(),
+                        "maximum_observed": value,
+                        "target": target,
+                        "above_target": value > target,
+                        "units": "native diagnostic scale; not independently established",
+                    }
+                )
+    final_imbalance = [r for r in imbalance_history if r["iteration"] == last]
     final = [r for r in history if r["iteration"] == last]
     regions = {r["region"] for r in final}
     complete = bool(final) and all(
@@ -164,6 +193,8 @@ def inspect_flow_log(text, boundary_types=None):
         "final_residual_criteria_met": residuals_met,
         "residual_history": history,
         "reported_imbalances": balances,
+        "iterative_imbalance_history": imbalance_history,
+        "final_iteration_imbalance": final_imbalance[0] if len(final_imbalance) == 1 else None,
         "boundary_flows": boundaries,
         "fan_operating_points": inspect_fan_operating_points(text),
         "coupled_summary": inspect_coupled_summary(text) if coupled else None,

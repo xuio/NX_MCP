@@ -118,9 +118,12 @@ def test_sst_requires_both_turbulence_equations():
     report = inspect_flow_log(_sst_history("1e-2"))
     assert report["final_equations_complete"]
     assert report["final_residual_criteria_met"] is False
-    assert inspect_flow_log(_sst_history().replace("O - Diss.K", "unknown"))[
-        "final_residual_criteria_met"
-    ] is None
+    assert (
+        inspect_flow_log(_sst_history().replace("O - Diss.K", "unknown"))[
+            "final_residual_criteria_met"
+        ]
+        is None
+    )
 
 
 def test_sst_startup_placeholders_remain_unsolved():
@@ -148,3 +151,35 @@ def test_observed_sst_startup_excerpt():
     assert final["O - Diss.K"]["residual"] == pytest.approx(1.986e-5)
     assert report["final_residual_criteria_met"] is False
     assert any(r["linear_iterations"] is None for r in report["residual_history"])
+
+
+def test_residual_pass_retains_unmet_native_imbalance():
+    diagnostic = (
+        "\n| Maximum observed imbalance value: 1.2567e+02 (turbulence) |\n"
+        "| Target imbalance value: 1.0000e-03 |\n"
+    )
+    report = inspect_flow_log(_sst_history() + diagnostic.replace("\n", "\r\r\n"))
+    assert report["final_residual_criteria_met"] is True
+    imbalance = report["final_iteration_imbalance"]
+    assert imbalance["iteration"] == 9
+    assert imbalance["quantity"] == "turbulence"
+    assert imbalance["maximum_observed"] == pytest.approx(125.67)
+    assert imbalance["target"] == pytest.approx(0.001)
+    assert imbalance["above_target"]
+    assert report["numerical_convergence"] == "not_established"
+    partial = inspect_flow_log(_sst_history() + diagnostic + "Global iteration |\n 10 +---\n")
+    assert len(partial["iterative_imbalance_history"]) == 1
+    assert partial["final_iteration_imbalance"] is None
+
+
+def test_incomplete_or_duplicate_imbalance_diagnostic_is_not_inferred():
+    maximum = "\n| Maximum observed imbalance value: 125.67 (turbulence) |\n"
+    target = "| Target imbalance value: .001 |\n"
+    assert inspect_flow_log(_sst_history() + maximum)["final_iteration_imbalance"] is None
+    assert (
+        inspect_flow_log(_sst_history() + maximum + target * 0)["iterative_imbalance_history"] == []
+    )
+    assert (
+        inspect_flow_log(_sst_history() + (maximum + target) * 2)["final_iteration_imbalance"]
+        is None
+    )
