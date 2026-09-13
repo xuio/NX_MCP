@@ -43,7 +43,7 @@ def observe_terminal(workspace, job_id, job_folder="simcenter-jobs"):
             "NX_SIM_OUTPUT_CONFLICT", "Prepared input is outside the owned output directory"
         )
     log, result = [workspace.resolve(deck.with_suffix(suffix)) for suffix in (".log", ".bun")]
-    if any(not p.is_file() or p.stat().st_mtime <= launched_at for p in (log, result)):
+    if not log.is_file() or log.stat().st_mtime <= launched_at:
         return {
             "job_id": job_id,
             "state": state,
@@ -55,11 +55,21 @@ def observe_terminal(workspace, job_id, job_folder="simcenter-jobs"):
     if len(raw_log) > 8 * 1024 * 1024:
         raise NXToolError("NX_SIM_LOG_TOO_LARGE", "Terminal audit log exceeds 8 MiB")
     text = raw_log.decode("utf-8", errors="replace").replace("\r", "")
-    footer = "\n Solve completed at:\n"
-    if (
-        text.count(footer) != 1
-        or footer not in text[-2048:]
+    diagnostic = inspect_solver_log(text)
+    missing_failed_result = (
+        not result.exists() and not result.is_symlink() and diagnostic["state"] == "failed"
+    )
+    if not missing_failed_result and (
+        not result.is_file() or result.stat().st_mtime <= launched_at
     ):
+        return {
+            "job_id": job_id,
+            "state": state,
+            "job_state_changed": False,
+            "reason": "terminal_outputs_missing_or_predate_launch",
+        }
+    footer = "\n Solve completed at:\n"
+    if text.count(footer) != 1 or footer not in text[-2048:]:
         return {
             "job_id": job_id,
             "state": state,
@@ -91,8 +101,12 @@ def observe_terminal(workspace, job_id, job_folder="simcenter-jobs"):
             "NX_SIM_INPUT_CHANGED",
             "Solver input differs from preparation; retain job and gate for investigation",
         )
-    artifact = fingerprint_file(result, maximum_bytes=1024 * 1024 * 1024)
-    if artifact["bytes"] == 0:
+    artifact = (
+        None
+        if missing_failed_result
+        else fingerprint_file(result, maximum_bytes=1024 * 1024 * 1024)
+    )
+    if artifact is not None and artifact["bytes"] == 0:
         raise NXToolError(
             "NX_SIM_RESULT_EMPTY", "Native result is empty; retain job for investigation"
         )
@@ -100,7 +114,7 @@ def observe_terminal(workspace, job_id, job_folder="simcenter-jobs"):
 
     evidence = {
         "observer_adapter": 1,
-        "terminal_basis": "fresh owned completion log and native result, matching canonical input, known solver processes absent",
+        "terminal_basis": "fresh owned completion log, matching canonical input, known solver processes absent; native result required unless fatal failure produced none",
         "process_exit_code": None,
         "process_job_binding": "not_established",
         "solver_process_observation": idle,
@@ -111,8 +125,9 @@ def observe_terminal(workspace, job_id, job_folder="simcenter-jobs"):
             "bytes": len(raw_log),
         },
         "result": artifact,
+        "missing_failed_result_path": str(result) if missing_failed_result else None,
         "numerical_convergence": "not_established",
-        "solver_log_diagnostic": inspect_solver_log(text),
+        "solver_log_diagnostic": diagnostic,
         "results_validated": False,
         "model_result_freshness": "not_established",
         "gate_released": False,

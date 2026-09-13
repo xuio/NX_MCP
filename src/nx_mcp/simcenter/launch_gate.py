@@ -139,6 +139,23 @@ def release_launch_gate(store, job_id):
         checks = {}
         for kind, maximum in (("log", 8 * 1024 * 1024), ("result", 1024 * 1024 * 1024)):
             previous = evidence[kind]
+            if kind == "result" and previous is None:
+                expected = store.workspace.resolve(
+                    current["manifest"]["prepared_input"]["input"]["path"]
+                ).with_suffix(".bun")
+                if (
+                    evidence.get("solver_log_diagnostic", {}).get("state") != "failed"
+                    or evidence.get("missing_failed_result_path") != str(expected)
+                    or expected.parent != directory
+                    or expected.exists()
+                    or expected.is_symlink()
+                ):
+                    raise NXToolError(
+                        "NX_SIM_TERMINAL_CHANGED",
+                        "Failed-run result absence no longer matches terminal evidence; retain gate",
+                    )
+                checks["missing_failed_result_path"] = str(expected)
+                continue
             artifact_path = store.workspace.resolve(previous["path"])
             if artifact_path.parent != directory:
                 raise NXToolError(

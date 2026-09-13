@@ -21,7 +21,9 @@ def observed(context, monkeypatch):  # noqa: F811
     intent = store.transition(
         "observe-01", expected_revision=0, state="launch_requested", evidence={"fixture": True}
     )
-    store.transition("observe-01", expected_revision=1, state="launch_returned", evidence={"fixture": True})
+    store.transition(
+        "observe-01", expected_revision=1, state="launch_returned", evidence={"fixture": True}
+    )
     timestamp = datetime.fromisoformat(intent["record"]["observed_at"]).timestamp() + 1
     for suffix, data in (
         (".log", b"\n Solve completed at:\n time\n"),
@@ -91,3 +93,16 @@ def test_input_mismatch_retains_job_and_gate(observed):
         job_observer.observe_terminal(workspace, "observe-01")
     assert error.value.code == "NX_SIM_INPUT_CHANGED"
     assert store.inspect("observe-01")["revision"] == 2
+
+
+@pytest.mark.parametrize("failure,footer", [(False, True), (True, False)])
+def test_missing_result_needs_failure_and_terminal_footer(observed, failure, footer):
+    workspace, store, deck = observed
+    log = deck.with_suffix(".log")
+    stamp = log.stat().st_mtime
+    text = "| FATAL ERROR ENCOUNTERED |\n" if failure else ""
+    text += "\n Solve completed at:\n time\n" if footer else ""
+    log.write_text(text)
+    os.utime(log, (stamp, stamp))
+    deck.with_suffix(".bun").unlink()
+    assert not job_observer.observe_terminal(workspace, "observe-01")["job_state_changed"]
