@@ -2629,6 +2629,19 @@ class SimcenterMixin:
             raise NXToolError("NX_SIM_RESULT_SELECTION", str(error)) from error
         return {"document": self._reference(sim, "part", sim, "part"), **result}
 
+    def _sim_velocity_samples(
+        self, document, result_sha256, element_labels, component="x",
+        loadcase_index=0, iteration_index=0, maximum_bytes=1_073_741_824,
+    ):
+        from nx_mcp.simcenter.velocity_samples import velocity_samples
+        from nx_mcp.simcenter.result_reader import read_bound
+
+        return read_bound(
+            self, document, result_sha256, velocity_samples, maximum_bytes,
+            element_labels=element_labels, component=component,
+            loadcase_index=loadcase_index, iteration_index=iteration_index,
+        )
+
     def _sim_temperature_nodes(
         self,
         document,

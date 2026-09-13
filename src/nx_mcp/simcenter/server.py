@@ -975,3 +975,18 @@ def nx_sim_mesh_mating(document: str, source_face: str, target_face: str, tolera
 
 
 NON_MODEL.add("nx_sim_mesh_mating")
+
+
+def nx_sim_velocity_samples(
+    document: str,
+    result_sha256: str,
+    element_labels: list[int],
+    component: Literal["x", "y", "z", "magnitude"] = "x",
+    loadcase_index: int = 0,
+    iteration_index: int = 0,
+    maximum_bytes: int = 1_073_741_824,
+):
+    """Read unaveraged element-nodal velocity for 1..1024 unique positive result element labels. Requires active SIM and exact lowercase result SHA256 from nx_sim_result_identity; hashes the associated file before and after extraction and rejects changed results. Choose x/y/z/magnitude in absolute rectangular coordinates; velocities are mm/s and coordinates mm. Returns result-local element/node indices, labels and coordinates; undefined elements have null velocities, never zero-filled. Bounds native connectivity to32nodes per element. Labels are not live FEM references: verify node coordinates and ordered connectivity against the prepared input before integrating boundary flux. Preserves displayed result ownership. Does not activate, solve, save, average, integrate or establish model freshness, convergence or cooling acceptance."""
+
+
+READ_ONLY.add("nx_sim_velocity_samples")
