@@ -88,3 +88,63 @@ def test_missing_final_fluid_energy_row_is_not_accepted():
     start = text.rfind("| H - Energy")
     text = text[:start] + text[start:].replace("H - Energy", "Unknown", 1)
     assert inspect_flow_log(text)["final_residual_criteria_met"] is None
+
+
+def _sst_history(turbulence_residual="1.0e-06", startup=False):
+    header = (
+        "Steady-state convergence history - Flow simulation\n"
+        "Flow converged when RMS residual less than: 1e-4\n"
+        "Flow laminar/turbulent model: SST\n"
+        "Global iteration | Linear Solver | Convergence info |\n"
+        " 9 +-------------+\n"
+        "| Flow Enclosure - Step of 0.005000s - Step 9 |\n"
+    )
+    rows = []
+    for equation in ("U - Mom", "V - Mom", "W - Mom", "P - Mass", "K - TurbKE", "O - Diss.K"):
+        turbulence = equation in {"K - TurbKE", "O - Diss.K"}
+        iterations, linear = ("---", "------") if startup and turbulence else ("1", "1e-6")
+        residual = turbulence_residual if turbulence else "1e-6"
+        message = "OK" if float(residual) < 1e-4 else "--"
+        rows.append(f"| {equation} | {iterations} | {linear} | 0.9 | {residual} | {message} |")
+    return (header + "\n".join(rows)).replace("\n", "\r\r\n")
+
+
+def test_sst_requires_both_turbulence_equations():
+    report = inspect_flow_log(_sst_history())
+    assert len(report["residual_history"]) == 6
+    assert report["final_equations_complete"]
+    assert report["final_residual_criteria_met"] is True
+    assert report["numerical_convergence"] == "not_established"
+    report = inspect_flow_log(_sst_history("1e-2"))
+    assert report["final_equations_complete"]
+    assert report["final_residual_criteria_met"] is False
+    assert inspect_flow_log(_sst_history().replace("O - Diss.K", "unknown"))[
+        "final_residual_criteria_met"
+    ] is None
+
+
+def test_sst_startup_placeholders_remain_unsolved():
+    report = inspect_flow_log(_sst_history("1e20", startup=True))
+    assert len(report["residual_history"]) == 6
+    assert report["residual_history"][-1]["linear_iterations"] is None
+    assert report["residual_history"][-1]["linear_residual"] is None
+    assert not report["final_equations_complete"]
+    assert report["final_residual_criteria_met"] is None
+    # Even falsely reassuring residual/message values cannot certify unsolved rows.
+    assert inspect_flow_log(_sst_history(startup=True))["final_residual_criteria_met"] is None
+
+
+def test_sst_missing_final_rows_cannot_reuse_previous_iteration():
+    text = _sst_history() + "\nGlobal iteration | Linear Solver\n 10 +---\n"
+    assert inspect_flow_log(text)["final_residual_criteria_met"] is None
+
+
+def test_observed_sst_startup_excerpt():
+    text = (Path(__file__).parent / "fixtures/sst-startup-excerpt.log").read_text()
+    report = inspect_flow_log(text)
+    assert report["last_iteration"] == 9
+    final = {r["equation"]: r for r in report["residual_history"] if r["iteration"] == 9}
+    assert final["K - TurbKE"]["residual"] == pytest.approx(1.011e-2)
+    assert final["O - Diss.K"]["residual"] == pytest.approx(1.986e-5)
+    assert report["final_residual_criteria_met"] is False
+    assert any(r["linear_iterations"] is None for r in report["residual_history"])

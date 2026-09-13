@@ -8,6 +8,7 @@ from nx_mcp.simcenter.solver_log import inspect_solver_log
 
 _N = r"[+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?"
 _EQUATIONS = {"U - Mom", "V - Mom", "W - Mom", "P - Mass"}
+_SST_EQUATIONS = {"K - TurbKE", "O - Diss.K"}
 
 
 def _number(value):
@@ -25,6 +26,12 @@ def inspect_flow_log(text, boundary_types=None):
     coupled = text.count("Steady-state convergence history - Coupled thermal/flow simulation") == 1
     energy_expected = coupled or "Solving Flow and Thermal" in text or "| H - Energy" in text
     equations = _EQUATIONS | {"H - Energy"} if energy_expected else _EQUATIONS
+    # Require both transported SST quantities even if a partial final table
+    # omits one. K-only/other closures remain conservative (not complete).
+    if re.search(r"Flow laminar/turbulent model:\s*SST\b", text) or re.search(
+        r"\|\s*(?:K - TurbKE|O - Diss\.K)\s*\|", text
+    ):
+        equations = equations | _SST_EQUATIONS
     thresholds = re.findall(r"Flow converged when RMS residual less than:\s*(" + _N + r")", text)
     threshold = _number(thresholds[0]) if len(thresholds) == 1 else None
     history = []
@@ -33,9 +40,9 @@ def inspect_flow_log(text, boundary_types=None):
     region = None
     expecting_iteration = False
     pattern = re.compile(
-        r"\|\s*(U - Mom|V - Mom|W - Mom|P - Mass|H - Energy)\s*\|\s*(\d+)\s*\|\s*("
+        r"\|\s*(U - Mom|V - Mom|W - Mom|P - Mass|H - Energy|K - TurbKE|O - Diss\.K)\s*\|\s*(\d+|---)\s*\|\s*("
         + _N
-        + r")\s*\|\s*("
+        + r"|------)\s*\|\s*("
         + _N
         + r"|\+{4}"
         + r")\s*\|\s*("
@@ -59,13 +66,16 @@ def inspect_flow_log(text, boundary_types=None):
             region = match[1]
         match = pattern.fullmatch(line.strip())
         if match and iteration is not None and region is not None:
+            # Native SST startup reports unsolved turbulence rows explicitly.
+            if (match[2] == "---") != (match[3] == "------"):
+                continue
             history.append(
                 {
                     "iteration": iteration,
                     "region": region,
                     "equation": match[1],
-                    "linear_iterations": int(match[2]),
-                    "linear_residual": _number(match[3]),
+                    "linear_iterations": int(match[2]) if match[2] != "---" else None,
+                    "linear_residual": _number(match[3]) if match[3] != "------" else None,
                     "rate": _number(match[4]) if match[4] != "++++" else None,
                     "rate_overflow": match[4] == "++++",
                     "residual": _number(match[5]),
@@ -78,6 +88,7 @@ def inspect_flow_log(text, boundary_types=None):
     complete = bool(final) and all(
         len([r for r in final if r["region"] == region]) == len(equations)
         and {r["equation"] for r in final if r["region"] == region} == equations
+        and all(r["linear_iterations"] is not None for r in final if r["region"] == region)
         for region in regions
     )
     # Recognize only the observed single steady history. Multiple/restarted
