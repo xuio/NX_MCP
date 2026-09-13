@@ -33,6 +33,13 @@ def documents(session):
 
 
 class SimcenterMixin:
+    def _sim_mesh_schema(self, document):
+        from nx_mcp.simcenter.mesh_schema import inspect
+
+        fem = self.objects.resolve(document, expected_kind="part")
+        self.workspace.resolve(fem.FullPath)
+        return inspect(self, fem)
+
     def _sim_mesh_mating(self, document, source_face, target_face, tolerance_mm=0.001, allow_contained=False, area_relative_tolerance=1e-6):
         from nx_mcp.simcenter.mesh_mating import create
 

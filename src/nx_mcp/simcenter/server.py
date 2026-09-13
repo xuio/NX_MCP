@@ -788,6 +788,13 @@ class BodyMeshRegion(TypedDict):
     size_mm: float
 
 
+def nx_sim_mesh_schema(document: str):
+    """Inspect uncommitted native tetrahedral mesher defaults in an active standalone millimeter FEM. Returns up to 512 native properties and descriptor names, available element types, and automatic-size/reset/check flags. Preserves mesh/control/body/expression inventories and document flags using a reversible getter checkpoint. Never commits a builder, generates a mesh, changes saved files or starts a solver. Existing mesh settings and integer enum meanings are not inferred. Rejects running solvers; cleanup failures explicitly report partial recovery."""
+
+
+READ_ONLY.add("nx_sim_mesh_schema")
+
+
 def nx_sim_mesh_plan(document: str, regions: list[BodyMeshRegion]):
     """Generate a complete explicit body mesh plan in an active millimeter FEM with no existing meshes. Supply a nonempty list of regions, each exactly {body: typed FEM body ID, kind: 'solid'|'fluid', size_mm: finite (0,10000]}. Cover every FEM body once. Uses installed Linear Tetrahedron or Fluid Linear Tetrahedron; respects native mesh controls and can produce multiple meshes per body. Verifies primary mesh element type, size and body selection by reopening its builder; returns meshes per region and total element/node counts. Does not infer fluid regions, assign materials, save or solve. Control effectiveness, element quality and convergence require separate inspection. Rejects foreign/stale/duplicate/missing bodies and running solvers. Entire plan uses undo on failure; partial recovery is explicit. Supply operation_id for safe retry; never rerun because a transport response timed out."""
 
