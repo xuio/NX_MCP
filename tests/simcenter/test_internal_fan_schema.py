@@ -95,7 +95,11 @@ def test_destroy_error_does_not_skip_undo(rig):
 
 
 @pytest.mark.parametrize(
-    "kind,descriptor", [("screen", "##06Screen"), ("flow_blockage", "Flow Blockage")]
+    "kind,descriptor",
+    [
+        ("porous_isotropic", "Porous Blockage - Isotropic"),
+        ("porous_orthotropic", "Porous Blockage - Orthotropic"),
+    ],
 )
 def test_resistance_descriptor_and_cleanup(rig, kind, descriptor):
     from nx_mcp.simcenter.internal_fan import inspect_resistance_schema
@@ -115,7 +119,7 @@ def test_unknown_resistance_kind_rejected_before_native_mutation(rig):
     from nx_mcp.simcenter.internal_fan import inspect_resistance_schema
 
     session, sim, builder = rig
-    with pytest.raises(NXToolError, match="Use screen or flow_blockage"):
+    with pytest.raises(NXToolError, match="Use porous_isotropic or porous_orthotropic"):
         inspect_resistance_schema(session, sim, "arbitrary")
     session.SetUndoMark.assert_not_called()
 
@@ -130,5 +134,5 @@ def test_resistance_inspection_rejects_running_solver(rig, monkeypatch):
 
     monkeypatch.setattr("nx_mcp.simcenter.solver_guard.require_solver_idle", busy)
     with pytest.raises(NXToolError, match="Solver active"):
-        inspect_resistance_schema(session, sim, "screen")
+        inspect_resistance_schema(session, sim, "porous_isotropic")
     session.SetUndoMark.assert_not_called()

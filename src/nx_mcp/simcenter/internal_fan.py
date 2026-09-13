@@ -18,9 +18,12 @@ def inspect_schema(session, sim):
 
 
 def inspect_resistance_schema(session, sim, kind):
-    descriptors = {"screen": "##06Screen", "flow_blockage": "Flow Blockage"}
+    descriptors = {
+        "porous_isotropic": "Porous Blockage - Isotropic",
+        "porous_orthotropic": "Porous Blockage - Orthotropic",
+    }
     if kind not in descriptors:
-        raise NXToolError("NX_SIM_RESISTANCE_KIND", "Use screen or flow_blockage")
+        raise NXToolError("NX_SIM_RESISTANCE_KIND", "Use porous_isotropic or porous_orthotropic")
     return _inspect_builder_schema(session, sim, descriptors[kind])
 
 
