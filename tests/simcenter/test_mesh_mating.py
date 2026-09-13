@@ -356,9 +356,18 @@ def test_contained_mode_rejects_unimprinted_contact(contained_rig):
     assert not controls
 
 
-@pytest.mark.parametrize("measured_area, finite", [(35.0, True), (float("nan"), False)])
+@pytest.mark.parametrize(
+    "measured_area, finite, tolerance",
+    [
+        (35.0, True, 1e-6),
+        (35.0, True, 1e-5),
+        (36.00016, True, 1e-6),
+        (float("nan"), False, 1e-6),
+        (float("nan"), False, 1e-5),
+    ],
+)
 def test_incomplete_shared_area_rolls_back_and_restores_original_areas(
-    contained_rig, measured_area, finite
+    contained_rig, measured_area, finite, tolerance
 ):
     from copy import deepcopy
 
@@ -393,15 +402,70 @@ def test_incomplete_shared_area_rolls_back_and_restores_original_areas(
 
     executor.session.UndoToMark.side_effect = restore
     with pytest.raises(NXToolError, match="complete smaller face") as error:
-        create(executor, fem, source, target, 0.001, allow_contained=True)
+        create(
+            executor, fem, source, target, 0.001,
+            allow_contained=True, area_relative_tolerance=tolerance,
+        )
     assert error.value.details["mutation_outcome"] == "rolled_back"
     assert areas == {10: 36.0, 20: 100.0}
     measured = error.value.details["committed_readback_before_rollback"]
     assert measured["contained_expected_face_area_mm2"] == 36.0
     assert measured["contained_face_area_mm2"] == (measured_area if finite else None)
     assert measured["contained_face_area_finite"] is finite
-    assert measured["contained_area_relative_tolerance"] == 1e-6
+    assert measured["contained_area_relative_tolerance"] == tolerance
     assert measured["contained_area_absolute_tolerance_mm2"] == 1e-6
+    assert not controls
+
+
+def test_explicit_area_tolerance_accepts_small_native_variation(contained_rig):
+    (executor, fem, source, target, controls, rows), areas = contained_rig
+    controls.shared_interface = True
+    factory = controls.CreateMmcCreateBuilder
+
+    def imprinting_factory(control):
+        builder = factory(control)
+        if control is None:
+            commit = builder.CommitMmcs
+
+            def imprint():
+                result = commit()
+                rows[1]["bounds"] = {"minimum": [20, 2, 2], "maximum": [20, 8, 8]}
+                areas[20] = 36.00016
+                return result
+
+            builder.CommitMmcs = imprint
+        return builder
+
+    controls.CreateMmcCreateBuilder = imprinting_factory
+    result = create(
+        executor, fem, source, target, 0.001,
+        allow_contained=True, area_relative_tolerance=1e-5,
+    )
+    measured = result["committed_readback"]
+    assert measured["contained_expected_face_area_mm2"] == 36
+    assert measured["contained_face_area_mm2"] == 36.00016
+    assert measured["contained_area_relative_tolerance"] == 1e-5
+    assert result["selected_face_tags"] == [20, 20]
+    assert len(controls) == 1
+
+
+@pytest.mark.parametrize("value", [0, -1, 1e-3, True, float("nan"), float("inf")])
+def test_invalid_area_tolerance_rejected_before_mutation(contained_rig, value):
+    (executor, fem, source, target, controls, _), _areas = contained_rig
+    with pytest.raises(NXToolError, match="area_relative_tolerance"):
+        create(
+            executor, fem, source, target, 0.001,
+            allow_contained=True, area_relative_tolerance=value,
+        )
+    executor.session.SetUndoMark.assert_not_called()
+    assert not controls
+
+
+def test_area_tolerance_override_requires_contained_mode(rig):
+    executor, fem, source, target, controls, _ = rig
+    with pytest.raises(NXToolError, match="contained mode"):
+        create(executor, fem, source, target, 0.001, area_relative_tolerance=1e-5)
+    executor.session.SetUndoMark.assert_not_called()
     assert not controls
 
 

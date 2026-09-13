@@ -5,7 +5,10 @@ import math
 from nx_mcp.runtime import NXToolError
 
 
-def create(executor, fem, source, target, tolerance_mm, allow_contained=False):
+def create(
+    executor, fem, source, target, tolerance_mm, allow_contained=False,
+    area_relative_tolerance=1e-6,
+):
     import NXOpen.CAE as cae
 
     from nx_mcp.simcenter.selections import face_inventory
@@ -24,6 +27,16 @@ def create(executor, fem, source, target, tolerance_mm, allow_contained=False):
         raise NXToolError("NX_INVALID_ARGUMENT", "tolerance_mm must be finite in (0,0.1]")
     if type(allow_contained) is not bool:
         raise NXToolError("NX_INVALID_ARGUMENT", "allow_contained must be a boolean")
+    if (
+        type(area_relative_tolerance) not in (int, float)
+        or not math.isfinite(area_relative_tolerance)
+        or not 0 < area_relative_tolerance <= 1e-4
+        or (not allow_contained and area_relative_tolerance != 1e-6)
+    ):
+        raise NXToolError(
+            "NX_INVALID_ARGUMENT",
+            "area_relative_tolerance must be finite in (0,1e-4]; changing it requires contained mode",
+        )
     if source.OwningPart != fem or target.OwningPart != fem or source.Tag == target.Tag:
         raise NXToolError("NX_SIM_SELECTION_OWNER", "Select two distinct FEM prototype faces")
     requested_face_tags = [int(source.Tag), int(target.Tag)]
@@ -266,10 +279,13 @@ def create(executor, fem, source, target, tolerance_mm, allow_contained=False):
                 contained_face_area_mm2=area_after if math.isfinite(area_after) else None,
                 contained_expected_face_area_mm2=contained["area_mm2"],
                 contained_face_area_finite=math.isfinite(area_after),
-                contained_area_relative_tolerance=1e-6,
+                contained_area_relative_tolerance=area_relative_tolerance,
                 contained_area_absolute_tolerance_mm2=1e-6,
             )
-            if not math.isclose(area_after, contained["area_mm2"], rel_tol=1e-6, abs_tol=1e-6):
+            if not math.isclose(
+                area_after, contained["area_mm2"],
+                rel_tol=area_relative_tolerance, abs_tol=1e-6,
+            ):
                 raise ValueError(
                     "Shared interface area does not preserve the complete smaller face"
                 )
