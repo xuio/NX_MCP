@@ -273,3 +273,121 @@ def test_changed_prior_condition_rolls_back_new_condition_and_restores_prior(rig
     assert error.value.details["mutation_outcome"] == "rolled_back"
     assert controls == [original]
     assert original.builder.ReverseDirection is False
+
+
+@pytest.fixture
+def contained_rig(rig, monkeypatch):
+    executor, fem, source, target, controls, rows = rig
+    rows[0]["bounds"] = {"minimum": [20, 2, 2], "maximum": [20, 8, 8]}
+    areas = {10: 36.0, 20: 100.0}
+    uf = ModuleType("NXOpen.UF")
+    uf.UFSession = NS(GetUFSession=lambda: NS(Sf=NS(FaceAskArea=lambda tag: areas[tag])))
+    monkeypatch.setitem(sys.modules, "NXOpen.UF", uf)
+    sys.modules["NXOpen"].UF = uf
+    sys.modules["NXOpen.CAE"].MMCCreateBuilder.FaceSearchType.AllPairs = 2
+    return rig, areas
+
+
+@pytest.mark.parametrize("reverse", [False, True])
+def test_contained_face_requires_shared_full_small_area(contained_rig, reverse):
+    (executor, fem, source, target, controls, rows), areas = contained_rig
+    controls.shared_interface = True
+    factory = controls.CreateMmcCreateBuilder
+
+    def imprinting_factory(control):
+        builder = factory(control)
+        if control is None:
+            commit = builder.CommitMmcs
+
+            def imprint():
+                result = commit()
+                rows[1]["bounds"] = {"minimum": [20, 2, 2], "maximum": [20, 8, 8]}
+                areas[20] = 36.0
+                return result
+
+            builder.CommitMmcs = imprint
+        return builder
+
+    controls.CreateMmcCreateBuilder = imprinting_factory
+    args = (target, source) if reverse else (source, target)
+    result = create(executor, fem, *args, 0.001, allow_contained=True)
+    assert result["face_match"] == "contained"
+    assert result["requested_face_tags"] == ([20, 10] if reverse else [10, 20])
+    assert result["native_selection_face_tags"] == [10, 20]
+    assert result["selected_face_tags"] == [20, 20]
+    assert result["committed_readback"]["contained_face_area_mm2"] == 36
+    assert controls.builder.FaceSearchOption == 2
+    assert result["mesh_generated"] is False
+
+
+@pytest.mark.parametrize("defect", ["outside", "separated", "nonplanar", "zero_area"])
+def test_contained_invalid_geometry_rejected_before_mutation(contained_rig, defect):
+    (executor, fem, source, target, controls, rows), areas = contained_rig
+    if defect == "outside":
+        rows[0]["bounds"]["minimum"][1] = -1
+    elif defect == "separated":
+        rows[0]["bounds"]["minimum"][0] = 20.1
+        rows[0]["bounds"]["maximum"][0] = 20.1
+    elif defect == "nonplanar":
+        rows[0]["bounds"]["maximum"][0] = 21
+    else:
+        areas[10] = 0
+    with pytest.raises(NXToolError):
+        create(executor, fem, source, target, 0.001, allow_contained=True)
+    assert not controls
+    executor.session.SetUndoMark.assert_not_called()
+
+
+def test_invalid_contained_flag_rejected_before_mutation(rig):
+    executor, fem, source, target, controls, _ = rig
+    with pytest.raises(NXToolError, match="boolean"):
+        create(executor, fem, source, target, 0.001, allow_contained="yes")
+    executor.session.SetUndoMark.assert_not_called()
+
+
+def test_contained_mode_rejects_unimprinted_contact(contained_rig):
+    (executor, fem, source, target, controls, _), _areas = contained_rig
+    with pytest.raises(NXToolError) as error:
+        create(executor, fem, source, target, 0.001, allow_contained=True)
+    assert error.value.details["mutation_outcome"] == "rolled_back"
+    assert not controls
+
+
+def test_incomplete_shared_area_rolls_back_and_restores_original_areas(contained_rig):
+    from copy import deepcopy
+
+    (executor, fem, source, target, controls, rows), areas = contained_rig
+    original_rows = [{**row, "bounds": deepcopy(row["bounds"])} for row in rows]
+    original_areas = dict(areas)
+    controls.shared_interface = True
+    factory = controls.CreateMmcCreateBuilder
+
+    def incomplete_factory(control):
+        builder = factory(control)
+        if control is None:
+            commit = builder.CommitMmcs
+
+            def incomplete_imprint():
+                result = commit()
+                rows[1]["bounds"] = deepcopy(rows[0]["bounds"])
+                areas[20] = 35.0
+                return result
+
+            builder.CommitMmcs = incomplete_imprint
+        return builder
+
+    controls.CreateMmcCreateBuilder = incomplete_factory
+
+    def restore(*_):
+        controls.clear()
+        source.Tag, target.Tag = 10, 20
+        rows[:] = original_rows
+        areas.clear()
+        areas.update(original_areas)
+
+    executor.session.UndoToMark.side_effect = restore
+    with pytest.raises(NXToolError, match="complete smaller face") as error:
+        create(executor, fem, source, target, 0.001, allow_contained=True)
+    assert error.value.details["mutation_outcome"] == "rolled_back"
+    assert areas == {10: 36.0, 20: 100.0}
+    assert not controls

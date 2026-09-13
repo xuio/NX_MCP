@@ -5,7 +5,7 @@ import math
 from nx_mcp.runtime import NXToolError
 
 
-def create(executor, fem, source, target, tolerance_mm):
+def create(executor, fem, source, target, tolerance_mm, allow_contained=False):
     import NXOpen.CAE as cae
 
     from nx_mcp.simcenter.selections import face_inventory
@@ -22,8 +22,11 @@ def create(executor, fem, source, target, tolerance_mm):
         or not 0 < tolerance_mm <= 0.1
     ):
         raise NXToolError("NX_INVALID_ARGUMENT", "tolerance_mm must be finite in (0,0.1]")
+    if type(allow_contained) is not bool:
+        raise NXToolError("NX_INVALID_ARGUMENT", "allow_contained must be a boolean")
     if source.OwningPart != fem or target.OwningPart != fem or source.Tag == target.Tag:
         raise NXToolError("NX_SIM_SELECTION_OWNER", "Select two distinct FEM prototype faces")
+    requested_face_tags = [int(source.Tag), int(target.Tag)]
     controls = fem.BaseFEModel.MeshControls
     if fem.BaseFEModel.MeshManager.GetMeshes():
         raise NXToolError("NX_SIM_MESH_PRECONDITION", "Requires no existing meshes")
@@ -34,7 +37,51 @@ def create(executor, fem, source, target, tolerance_mm):
     a, b = by_tag[int(source.Tag)], by_tag[int(target.Tag)]
     if a["body"].Tag == b["body"].Tag:
         raise NXToolError("NX_INVALID_ARGUMENT", "Select faces on two different FEM bodies")
-    if any(
+    contained = None
+    if allow_contained:
+        import NXOpen.UF as uf
+
+        sf = uf.UFSession.GetUFSession().Sf
+        areas = [float(sf.FaceAskArea(row["face"].Tag)) for row in (a, b)]
+        if any(not math.isfinite(area) or area <= 0 for area in areas):
+            raise NXToolError("NX_SIM_READBACK_MISMATCH", "Invalid native face area")
+        small, large = (a, b) if areas[0] <= areas[1] else (b, a)
+        axes = [
+            axis
+            for axis in range(3)
+            if all(
+                row["bounds"]["maximum"][axis] - row["bounds"]["minimum"][axis] <= tolerance_mm
+                for row in (small, large)
+            )
+        ]
+        if len(axes) != 1:
+            raise NXToolError(
+                "NX_INVALID_ARGUMENT", "Contained mode requires axis-aligned planar face bounds"
+            )
+        axis = axes[0]
+        if any(
+            abs(small["bounds"][key][axis] - large["bounds"][key][axis]) > tolerance_mm
+            for key in ("minimum", "maximum")
+        ):
+            raise NXToolError(
+                "NX_INVALID_ARGUMENT", "Contained faces must share a plane within tolerance"
+            )
+        if not all(
+            small["bounds"]["minimum"][i] > large["bounds"]["minimum"][i] + tolerance_mm
+            and small["bounds"]["maximum"][i] < large["bounds"]["maximum"][i] - tolerance_mm
+            for i in range(3)
+            if i != axis
+        ):
+            raise NXToolError(
+                "NX_INVALID_ARGUMENT",
+                "Smaller face bounds must lie strictly inside the larger face bounds",
+            )
+        contained = {"bounds": small["bounds"], "area_mm2": min(areas), "axis": axis}
+        # Select the smaller face as native source. Both original body memberships
+        # are still checked after NX imprints and canonicalizes the interface.
+        source, target = small["face"], large["face"]
+        a, b = small, large
+    elif any(
         abs(x - y) > tolerance_mm
         for key in ("minimum", "maximum")
         for x, y in zip(a["bounds"][key], b["bounds"][key], strict=True)
@@ -47,6 +94,7 @@ def create(executor, fem, source, target, tolerance_mm):
         try:
             return {
                 "mode": str(reader.MeshMatingOption),
+                "face_search": str(reader.FaceSearchOption),
                 "source_face_tag": int(reader.SourceFace.Value.Tag),
                 "target_face_tag": int(reader.TargetFace.Value.Tag),
                 "reverse_direction": bool(reader.ReverseDirection),
@@ -96,12 +144,22 @@ def create(executor, fem, source, target, tolerance_mm):
             "expressions": sorted(int(e.Tag) for e in fem.Expressions),
             "faces": [(int(r["body"].Tag), int(r["face"].Tag), r["bounds"]) for r in inventory],
             "meshes": sorted(int(m.Tag) for m in fem.BaseFEModel.MeshManager.GetMeshes()),
+            "selected_face_areas_mm2": {
+                tag: float(sf.FaceAskArea(tag)) for tag in requested_face_tags
+            }
+            if contained
+            else None,
         }
 
-    requested_face_tags = [int(source.Tag), int(target.Tag)]
+    native_selection_face_tags = [int(source.Tag), int(target.Tag)]
     before = snapshot()
     affected = [fem] + [p for p in session.Parts if isinstance(p, cae.SimPart) and p.FemPart == fem]
     part_ids = [executor._part_id(p) for p in affected]
+    expected_face_search = (
+        cae.MMCCreateBuilder.FaceSearchType.AllPairs
+        if contained
+        else cae.MMCCreateBuilder.FaceSearchType.IdenticalPairsOnly
+    )
     mark = session.SetUndoMark(
         nx.Session.MarkVisibility.Visible, "NX MCP glue coincident mesh faces"
     )
@@ -111,7 +169,7 @@ def create(executor, fem, source, target, tolerance_mm):
         builder = controls.CreateMmcCreateBuilder(None)
         builder.Type = cae.MMCCreateBuilder.Types.Manual
         builder.MeshMatingOption = cae.MMCCreateBuilder.MeshMatingType.GlueCoincident
-        builder.FaceSearchOption = cae.MMCCreateBuilder.FaceSearchType.IdenticalPairsOnly
+        builder.FaceSearchOption = expected_face_search
         builder.ReverseDirection = False
         for expression in (builder.DistTolerance, builder.SnapTolerance):
             if expression.Units.Name != "MilliMeter":
@@ -141,6 +199,7 @@ def create(executor, fem, source, target, tolerance_mm):
         try:
             committed_readback = {
                 "mode": str(reader.MeshMatingOption),
+                "face_search": str(reader.FaceSearchOption),
                 "source_face_tag": int(reader.SourceFace.Value.Tag),
                 "target_face_tag": int(reader.TargetFace.Value.Tag),
                 "reverse_direction": bool(reader.ReverseDirection),
@@ -171,7 +230,9 @@ def create(executor, fem, source, target, tolerance_mm):
                             abs(x - y) <= tolerance_mm
                             for key in ("minimum", "maximum")
                             for x, y in zip(
-                                row["bounds"][key], original["bounds"][key], strict=True
+                                row["bounds"][key],
+                                (contained["bounds"] if contained else original["bounds"])[key],
+                                strict=True,
                             )
                         )
                     }
@@ -181,6 +242,7 @@ def create(executor, fem, source, target, tolerance_mm):
             ]
             if (
                 reader.MeshMatingOption != cae.MMCCreateBuilder.MeshMatingType.GlueCoincident
+                or reader.FaceSearchOption != expected_face_search
                 or candidates[0] != {int(reader.SourceFace.Value.Tag)}
                 or candidates[1] != {int(reader.TargetFace.Value.Tag)}
                 or reader.ReverseDirection
@@ -192,11 +254,23 @@ def create(executor, fem, source, target, tolerance_mm):
                 raise ValueError("Committed mesh mating differs from requested faces/settings")
         finally:
             reader.Destroy()
+        if contained:
+            if committed_readback["source_face_tag"] != committed_readback["target_face_tag"]:
+                raise ValueError("Contained interface was not canonicalized to one shared face")
+            area_after = float(sf.FaceAskArea(committed_readback["source_face_tag"]))
+            if not math.isclose(area_after, contained["area_mm2"], rel_tol=1e-6, abs_tol=1e-6):
+                raise ValueError(
+                    "Shared interface area does not preserve the complete smaller face"
+                )
+            committed_readback["contained_face_area_mm2"] = area_after
         if fem.BaseFEModel.MeshManager.GetMeshes():
             raise ValueError("Mesh mating unexpectedly generated a mesh")
         return {
             "control": created[0],
             "kind": "glue_coincident",
+            "face_match": "contained" if contained else "identical",
+            "contained_preflight": contained,
+            "native_selection_face_tags": native_selection_face_tags,
             "preserved_existing_control_tags": sorted(existing_settings),
             "tolerance_mm": tolerance_mm,
             "requested_face_tags": requested_face_tags,
