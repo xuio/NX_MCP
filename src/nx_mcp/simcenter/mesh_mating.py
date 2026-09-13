@@ -94,7 +94,6 @@ def create(executor, fem, source, target, tolerance_mm, allow_contained=False):
         try:
             return {
                 "mode": str(reader.MeshMatingOption),
-                "face_search": str(reader.FaceSearchOption),
                 "source_face_tag": int(reader.SourceFace.Value.Tag),
                 "target_face_tag": int(reader.TargetFace.Value.Tag),
                 "reverse_direction": bool(reader.ReverseDirection),
@@ -169,6 +168,9 @@ def create(executor, fem, source, target, tolerance_mm, allow_contained=False):
         builder = controls.CreateMmcCreateBuilder(None)
         builder.Type = cae.MMCCreateBuilder.Types.Manual
         builder.MeshMatingOption = cae.MMCCreateBuilder.MeshMatingType.GlueCoincident
+        # This is a creation-time search hint. NX2606 normalizes it to AllPairs
+        # when reopening a manual condition, even after IdenticalPairsOnly.
+        # Validate the committed faces/geometry rather than this transient hint.
         builder.FaceSearchOption = expected_face_search
         builder.ReverseDirection = False
         for expression in (builder.DistTolerance, builder.SnapTolerance):
@@ -242,7 +244,6 @@ def create(executor, fem, source, target, tolerance_mm, allow_contained=False):
             ]
             if (
                 reader.MeshMatingOption != cae.MMCCreateBuilder.MeshMatingType.GlueCoincident
-                or reader.FaceSearchOption != expected_face_search
                 or candidates[0] != {int(reader.SourceFace.Value.Tag)}
                 or candidates[1] != {int(reader.TargetFace.Value.Tag)}
                 or reader.ReverseDirection

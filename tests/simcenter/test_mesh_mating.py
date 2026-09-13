@@ -46,10 +46,13 @@ def rig(monkeypatch):
         corrupt_readback = False
         fail_commit = False
         shared_interface = False
+        normalize_face_search = False
 
         def CreateMmcCreateBuilder(self, control):
             if control is not None:
                 reader = NS(**vars(control.builder))
+                if self.normalize_face_search:
+                    reader.FaceSearchOption = 0
                 if self.corrupt_readback:
                     reader.SourceFace = NS(Value=target)
                 return reader
@@ -391,3 +394,15 @@ def test_incomplete_shared_area_rolls_back_and_restores_original_areas(contained
     assert error.value.details["mutation_outcome"] == "rolled_back"
     assert areas == {10: 36.0, 20: 100.0}
     assert not controls
+
+
+def test_manual_search_hint_normalization_does_not_reject_valid_shared_geometry(rig):
+    executor, fem, source, target, controls, _ = rig
+    controls.normalize_face_search = True
+    controls.shared_interface = True
+    result = create(executor, fem, source, target, 0.001)
+    assert controls.builder.FaceSearchOption == 1
+    assert result["committed_readback"]["face_search"] == "0"
+    assert result["selected_face_tags"] == [20, 20]
+    assert result["face_match"] == "identical"
+    assert len(controls) == 1
