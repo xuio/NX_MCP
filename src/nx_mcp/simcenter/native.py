@@ -2633,8 +2633,8 @@ class SimcenterMixin:
         self, document, result_sha256, element_labels, component="x",
         loadcase_index=0, iteration_index=0, maximum_bytes=1_073_741_824,
     ):
-        from nx_mcp.simcenter.velocity_samples import velocity_samples
         from nx_mcp.simcenter.result_reader import read_bound
+        from nx_mcp.simcenter.velocity_samples import velocity_samples
 
         return read_bound(
             self, document, result_sha256, velocity_samples, maximum_bytes,
@@ -2825,6 +2825,22 @@ class SimcenterMixin:
         if not isinstance(sim, cae.SimPart):
             raise NXToolError("NX_SIM_DOCUMENT_TYPE", "Select a SIM from nx_sim_documents")
         result = configure_model(self.session, sim, model=model, wall_treatment=wall_treatment)
+        return {"document": self._reference(sim, "part", sim, "part"), **result}
+
+    def _sim_flow_relaxation(self, document, global_factor, mass_factor, fluids_factor):
+        import NXOpen.CAE as cae
+
+        from nx_mcp.simcenter.flow_relaxation import configure_relaxation
+        from nx_mcp.simcenter.solver_guard import require_solver_idle
+
+        require_solver_idle()
+        sim = self.objects.resolve(document, expected_kind="part")
+        if not isinstance(sim, cae.SimPart):
+            raise NXToolError("NX_SIM_DOCUMENT_TYPE", "Select a SIM from nx_sim_documents")
+        result = configure_relaxation(
+            self.session, sim, global_factor=global_factor,
+            mass_factor=mass_factor, fluids_factor=fluids_factor,
+        )
         return {"document": self._reference(sim, "part", sim, "part"), **result}
 
     def _sim_flow_relaxation_step(self, document, time_step_s):

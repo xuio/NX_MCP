@@ -159,6 +159,15 @@ def nx_sim_flow_model(
 NON_MODEL.add("nx_sim_flow_model")
 
 
+def nx_sim_flow_relaxation(
+    document: str, global_factor: float, mass_factor: float, fluids_factor: float
+):
+    """Set three dimensionless damping factors in (0, 1] on an active single steady Multiphysics flow SIM. Requires no known live solver; validates existing factors and units before mutation. Preserves physical time step, turbulence model, fan flows and convergence criteria. Native update, readback and verified rollback guard changes. Does not save, export, launch or establish convergence. Native acceptance pending: use an isolated study copy until verified. Supply operation_id for deduplication."""
+
+
+NON_MODEL.add("nx_sim_flow_relaxation")
+
+
 def nx_sim_flow_relaxation_step(document: str, time_step_s: float):
     """Set a finite positive physical relaxation step in seconds on the active single steady Multiphysics Flow/Coupled SIM. Requires existing physical stepping stored in Second units and no known live solver. Preserves turbulence, convergence criteria and mode; rejects transient/local stepping. Verifies native value/mode/unit and rolls back failed updates. Does not save, export, solve or establish convergence. Native acceptance is pending; use only on an isolated study copy until verified. Supply operation_id for replay deduplication."""
 

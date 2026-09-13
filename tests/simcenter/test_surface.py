@@ -319,3 +319,13 @@ async def test_flow_relaxation_schema_preserves_mutation_identity(tmp_path, monk
     tool = next(t for t in await server.list_tools() if t.name == "nx_sim_flow_relaxation_step")
     assert {"document", "time_step_s", "operation_id"} <= tool.inputSchema["properties"].keys()
     assert tool.annotations.readOnlyHint is False
+
+
+@pytest.mark.asyncio
+async def test_flow_factor_schema_requires_explicit_factors(tmp_path, monkeypatch):
+    monkeypatch.setenv("NX_MCP_ENABLE_SIMCENTER", "1")
+    server = create_server(Bridge(), Workspace(tmp_path), enable_experimental=True)
+    tool = next(t for t in await server.list_tools() if t.name == "nx_sim_flow_relaxation")
+    assert {"document", "global_factor", "mass_factor", "fluids_factor"} <= set(tool.inputSchema["required"])
+    assert "operation_id" in tool.inputSchema["properties"]
+    assert tool.annotations.readOnlyHint is False
