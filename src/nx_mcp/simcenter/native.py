@@ -2789,6 +2789,19 @@ class SimcenterMixin:
         result = configure_model(self.session, sim, model=model, wall_treatment=wall_treatment)
         return {"document": self._reference(sim, "part", sim, "part"), **result}
 
+    def _sim_flow_relaxation_step(self, document, time_step_s):
+        import NXOpen.CAE as cae
+
+        from nx_mcp.simcenter.solver_guard import require_solver_idle
+        from nx_mcp.simcenter.steady_flow_timestep import configure_physical_step
+
+        require_solver_idle()
+        sim = self.objects.resolve(document, expected_kind="part")
+        if not isinstance(sim, cae.SimPart):
+            raise NXToolError("NX_SIM_DOCUMENT_TYPE", "Select a SIM from nx_sim_documents")
+        result = configure_physical_step(self.session, sim, time_step_s=time_step_s)
+        return {"document": self._reference(sim, "part", sim, "part"), **result}
+
     def _sim_flow_convergence(
         self,
         document,

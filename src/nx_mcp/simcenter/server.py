@@ -159,6 +159,13 @@ def nx_sim_flow_model(
 NON_MODEL.add("nx_sim_flow_model")
 
 
+def nx_sim_flow_relaxation_step(document: str, time_step_s: float):
+    """Set a finite positive physical relaxation step in seconds on the active single steady Multiphysics Flow/Coupled SIM. Requires existing physical stepping stored in Second units and no known live solver. Preserves turbulence, convergence criteria and mode; rejects transient/local stepping. Verifies native value/mode/unit and rolls back failed updates. Does not save, export, solve or establish convergence. Native acceptance is pending; use only on an isolated study copy until verified. Supply operation_id for replay deduplication."""
+
+
+NON_MODEL.add("nx_sim_flow_relaxation_step")
+
+
 def nx_sim_flow_convergence(
     document: str,
     residual: float,
