@@ -51,6 +51,28 @@ def test_old_results_cannot_advance_job(observed):
     assert not result["job_state_changed"] and result["state"] == "launch_returned"
 
 
+def test_failed_solver_with_terminal_artifacts_is_exited_not_accepted(observed):
+    workspace, store, deck = observed
+    log = deck.with_suffix(".log")
+    stamp = log.stat().st_mtime
+    log.write_text("| FATAL ERROR ENCOUNTERED |\n\n Solve completed at:\n time\n")
+    os.utime(log, (stamp, stamp))
+    report = job_observer.observe_terminal(workspace, "observe-01")
+    assert report["state"] == "solver_exited"
+    assert report["evidence"]["solver_log_diagnostic"]["state"] == "failed"
+    assert report["evidence"]["results_validated"] is False
+    assert report["evidence"]["numerical_convergence"] == "not_established"
+
+
+def test_fatal_banner_without_terminal_footer_does_not_establish_exit(observed):
+    workspace, store, deck = observed
+    log = deck.with_suffix(".log")
+    stamp = log.stat().st_mtime
+    log.write_text("| FATAL ERROR ENCOUNTERED |\n")
+    os.utime(log, (stamp, stamp))
+    assert not job_observer.observe_terminal(workspace, "observe-01")["job_state_changed"]
+
+
 def test_busy_solver_preserves_launch_state(observed, monkeypatch):
     workspace, store, deck = observed
 

@@ -59,7 +59,6 @@ def observe_terminal(workspace, job_id, job_folder="simcenter-jobs"):
     if (
         text.count(footer) != 1
         or footer not in text[-2048:]
-        or inspect_solver_log(text)["state"] == "failed"
     ):
         return {
             "job_id": job_id,
@@ -113,6 +112,8 @@ def observe_terminal(workspace, job_id, job_folder="simcenter-jobs"):
         },
         "result": artifact,
         "numerical_convergence": "not_established",
+        "solver_log_diagnostic": inspect_solver_log(text),
+        "results_validated": False,
         "model_result_freshness": "not_established",
         "gate_released": False,
     }

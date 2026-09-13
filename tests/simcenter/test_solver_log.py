@@ -1,6 +1,16 @@
 from nx_mcp.simcenter.solver_log import inspect_solver_log
 
 
+def test_native_solver_fatal_banner_is_failure_despite_completed_footer():
+    text = "| FATAL ERROR ENCOUNTERED |\r\r\n| The simulation will stop. |\r\r\nSolve completed at:\n"
+    report = inspect_solver_log(text)
+    assert report["state"] == "failed"
+    assert report["stage"] == "solver"
+    assert report["solver_fatal_reported"]
+    assert not report["results_validated"]
+    assert inspect_solver_log("Search for FATAL ERROR ENCOUNTERED in the log")["state"] == "unknown"
+
+
 def test_observed_translator_failure_overrides_completed_footer():
     # Sanitized excerpt from conduction-solve-01 on native NX 2606.
     report = inspect_solver_log(

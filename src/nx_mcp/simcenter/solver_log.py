@@ -14,6 +14,7 @@ _ABORT = re.compile(r"Run aborted due to (?:fatal )?errors", re.IGNORECASE)
 _FATAL_ABORT = re.compile(r"Run aborted due to fatal errors", re.IGNORECASE)
 
 _SUSPENDED = re.compile(r"The current solution has been suspended", re.IGNORECASE)
+_SOLVER_FATAL = re.compile(r"^\s*\|\s*FATAL ERROR ENCOUNTERED\s*\|\s*$", re.IGNORECASE | re.MULTILINE)
 
 
 def inspect_solver_log(text: str) -> dict:
@@ -27,19 +28,23 @@ def inspect_solver_log(text: str) -> dict:
     errors = list(dict.fromkeys(int(match) for match in _ERROR.findall(text)))
     aborted = bool(_ABORT.search(text))
     suspended = bool(_SUSPENDED.search(text))
+    solver_fatal = bool(_SOLVER_FATAL.search(text.replace("\r", "")))
     return {
-        "state": "failed" if errors or aborted else "unknown",
-        "stage": "translation" if errors else "unknown",
+        "state": "failed" if errors or aborted or solver_fatal else "unknown",
+        "stage": "translation" if errors else "solver" if solver_fatal else "unknown",
         "translator_fatal_codes": codes,
         "translator_error_codes": errors,
         "abort_reported": aborted,
         "solution_suspended_reported": suspended,
         "fatal_abort_reported": bool(_FATAL_ABORT.search(text)),
+        "solver_fatal_reported": solver_fatal,
         "numerical_convergence": "not_established",
         "results_validated": False,
         "next_action": (
             "Inspect native setup and translator diagnostics; do not automatically rerun."
             if errors or aborted
+            else "Native solver reported a fatal error; preserve diagnostics and investigate before retrying."
+            if solver_fatal
             else "Native solution was suspended; retain results as diagnostic and verify convergence separately."
             if suspended
             else "Inspect job process status, residuals and result validation before classifying."
