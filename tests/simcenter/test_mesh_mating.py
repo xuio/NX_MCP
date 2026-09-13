@@ -356,7 +356,10 @@ def test_contained_mode_rejects_unimprinted_contact(contained_rig):
     assert not controls
 
 
-def test_incomplete_shared_area_rolls_back_and_restores_original_areas(contained_rig):
+@pytest.mark.parametrize("measured_area, finite", [(35.0, True), (float("nan"), False)])
+def test_incomplete_shared_area_rolls_back_and_restores_original_areas(
+    contained_rig, measured_area, finite
+):
     from copy import deepcopy
 
     (executor, fem, source, target, controls, rows), areas = contained_rig
@@ -373,7 +376,7 @@ def test_incomplete_shared_area_rolls_back_and_restores_original_areas(contained
             def incomplete_imprint():
                 result = commit()
                 rows[1]["bounds"] = deepcopy(rows[0]["bounds"])
-                areas[20] = 35.0
+                areas[20] = measured_area
                 return result
 
             builder.CommitMmcs = incomplete_imprint
@@ -393,6 +396,12 @@ def test_incomplete_shared_area_rolls_back_and_restores_original_areas(contained
         create(executor, fem, source, target, 0.001, allow_contained=True)
     assert error.value.details["mutation_outcome"] == "rolled_back"
     assert areas == {10: 36.0, 20: 100.0}
+    measured = error.value.details["committed_readback_before_rollback"]
+    assert measured["contained_expected_face_area_mm2"] == 36.0
+    assert measured["contained_face_area_mm2"] == (measured_area if finite else None)
+    assert measured["contained_face_area_finite"] is finite
+    assert measured["contained_area_relative_tolerance"] == 1e-6
+    assert measured["contained_area_absolute_tolerance_mm2"] == 1e-6
     assert not controls
 
 

@@ -259,11 +259,20 @@ def create(executor, fem, source, target, tolerance_mm, allow_contained=False):
             if committed_readback["source_face_tag"] != committed_readback["target_face_tag"]:
                 raise ValueError("Contained interface was not canonicalized to one shared face")
             area_after = float(sf.FaceAskArea(committed_readback["source_face_tag"]))
+            # Retain the measurements even when validation rejects the interface.
+            # In particular, curved-face imprints need inspectable native evidence
+            # before changing geometry or interpreting the area mismatch.
+            committed_readback.update(
+                contained_face_area_mm2=area_after if math.isfinite(area_after) else None,
+                contained_expected_face_area_mm2=contained["area_mm2"],
+                contained_face_area_finite=math.isfinite(area_after),
+                contained_area_relative_tolerance=1e-6,
+                contained_area_absolute_tolerance_mm2=1e-6,
+            )
             if not math.isclose(area_after, contained["area_mm2"], rel_tol=1e-6, abs_tol=1e-6):
                 raise ValueError(
                     "Shared interface area does not preserve the complete smaller face"
                 )
-            committed_readback["contained_face_area_mm2"] = area_after
         if fem.BaseFEModel.MeshManager.GetMeshes():
             raise ValueError("Mesh mating unexpectedly generated a mesh")
         return {
