@@ -942,6 +942,13 @@ def nx_sim_gravity(document: str, bodies: list[str], acceleration_m_s2: list[flo
 NON_MODEL.add("nx_sim_gravity")
 
 
+def nx_sim_flow_resistance_schema(document: str, kind: Literal["screen", "flow_blockage"]):
+    """Inspect the installed Screen or Flow Blockage simulation-object builder in an active NX MULTIPHYSICS Flow or Coupled Thermal-Flow SIM. Returns native property defaults, descriptors and target-set count. Uses installed NX 2606 command identifiers; availability in the active solver must be established by native inspection. Requires solver idle; destroys the uncommitted builder and verifies undo restores object/expression/field/solution-BC inventory and modified flag. Does not create a resistance, select geometry, assign coefficients, save or solve. Property discovery does not establish physical or numerical validity."""
+
+
+NON_MODEL.add("nx_sim_flow_resistance_schema")
+
+
 def nx_sim_internal_fan_schema(document: str):
     """Inspect the native Internal Fan builder in an active Flow or Coupled Thermal-Flow SIM. Returns actual property types/defaults, selector descriptors and target-set count. Does not commit a boundary, save, solve or establish selection semantics. Requires solver idle and restores temporary builder effects using a verified undo/inventory/modified-flag check. This diagnostic is a prerequisite for supported Internal Fan authoring, not numerical acceptance."""
 

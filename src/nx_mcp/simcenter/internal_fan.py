@@ -14,6 +14,17 @@ def snapshot(sim):
 
 
 def inspect_schema(session, sim):
+    return _inspect_builder_schema(session, sim, "Internal Fan")
+
+
+def inspect_resistance_schema(session, sim, kind):
+    descriptors = {"screen": "##06Screen", "flow_blockage": "Flow Blockage"}
+    if kind not in descriptors:
+        raise NXToolError("NX_SIM_RESISTANCE_KIND", "Use screen or flow_blockage")
+    return _inspect_builder_schema(session, sim, descriptors[kind])
+
+
+def _inspect_builder_schema(session, sim, descriptor):
     import NXOpen as nx
     import NXOpen.CAE as cae
 
@@ -33,13 +44,13 @@ def inspect_schema(session, sim):
         )
     solver_preflight = require_solver_idle()
     before = snapshot(sim)
-    mark = session.SetUndoMark(nx.Session.MarkVisibility.Invisible, "NX MCP inspect Internal Fan")
+    mark = session.SetUndoMark(nx.Session.MarkVisibility.Invisible, "NX MCP inspect " + descriptor)
     builder = None
     error = None
     result = None
     try:
         builder = sim.Simulation.CreateBcBuilderForSimulationObjectDescriptor(
-            "Internal Fan", "NX MCP uncommitted inspection"
+            descriptor, "NX MCP uncommitted inspection"
         )
         props = builder.PropertyTable
         descriptors = []
@@ -53,7 +64,7 @@ def inspect_schema(session, sim):
             except Exception as exc:
                 descriptors.append({"name": key, "inspection_error": str(exc)})
         result = {
-            "descriptor": "Internal Fan",
+            "descriptor": descriptor,
             "target_set_count": builder.TargetSetManager.TargetSetCount,
             "properties": read_properties(props, nx),
             "property_descriptors": descriptors,
@@ -83,7 +94,7 @@ def inspect_schema(session, sim):
         if cleanup_errors:
             raise NXToolError(
                 "NX_SIM_RECOVERY_INCOMPLETE",
-                "Internal Fan inspection cleanup failed",
+                descriptor + " inspection cleanup failed",
                 details={"mutation_outcome": "partial", "errors": cleanup_errors},
             ) from error
     if error is not None:

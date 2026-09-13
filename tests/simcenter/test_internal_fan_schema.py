@@ -92,3 +92,43 @@ def test_destroy_error_does_not_skip_undo(rig):
     with pytest.raises(NXToolError):
         inspect_schema(session, sim)
     session.UndoToMark.assert_called_once()
+
+
+@pytest.mark.parametrize(
+    "kind,descriptor", [("screen", "##06Screen"), ("flow_blockage", "Flow Blockage")]
+)
+def test_resistance_descriptor_and_cleanup(rig, kind, descriptor):
+    from nx_mcp.simcenter.internal_fan import inspect_resistance_schema
+
+    session, sim, builder = rig
+    result = inspect_resistance_schema(session, sim, kind)
+    sim.Simulation.CreateBcBuilderForSimulationObjectDescriptor.assert_called_once_with(
+        descriptor, "NX MCP uncommitted inspection"
+    )
+    assert result["descriptor"] == descriptor
+    assert result["state_restored"] and result["committed_boundaries"] == 0
+    builder.Destroy.assert_called_once()
+    session.UndoToMark.assert_called_once_with(42, None)
+
+
+def test_unknown_resistance_kind_rejected_before_native_mutation(rig):
+    from nx_mcp.simcenter.internal_fan import inspect_resistance_schema
+
+    session, sim, builder = rig
+    with pytest.raises(NXToolError, match="Use screen or flow_blockage"):
+        inspect_resistance_schema(session, sim, "arbitrary")
+    session.SetUndoMark.assert_not_called()
+
+
+def test_resistance_inspection_rejects_running_solver(rig, monkeypatch):
+    from nx_mcp.simcenter.internal_fan import inspect_resistance_schema
+
+    session, sim, builder = rig
+
+    def busy():
+        raise NXToolError("NX_SIM_SOLVER_BUSY", "Solver active")
+
+    monkeypatch.setattr("nx_mcp.simcenter.solver_guard.require_solver_idle", busy)
+    with pytest.raises(NXToolError, match="Solver active"):
+        inspect_resistance_schema(session, sim, "screen")
+    session.SetUndoMark.assert_not_called()

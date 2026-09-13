@@ -62,6 +62,13 @@ class SimcenterMixin:
         result["boundary"] = self._reference(result["boundary"], "simulation_object", sim, "internal_fan")
         return result
 
+    def _sim_flow_resistance_schema(self, document, kind):
+        from nx_mcp.simcenter.internal_fan import inspect_resistance_schema
+
+        sim = self.objects.resolve(document, expected_kind="part")
+        self.workspace.resolve(sim.FullPath)
+        return inspect_resistance_schema(self.session, sim, kind)
+
     def _sim_internal_fan_schema(self, document):
         from nx_mcp.simcenter.internal_fan import inspect_schema
 
