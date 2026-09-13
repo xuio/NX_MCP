@@ -292,8 +292,12 @@ def contained_rig(rig, monkeypatch):
 
 
 @pytest.mark.parametrize("reverse", [False, True])
-def test_contained_face_requires_shared_full_small_area(contained_rig, reverse):
+@pytest.mark.parametrize("lo,hi", [(2,8), (0,6), (4,10), (0,10)])
+def test_contained_face_requires_shared_full_small_area(contained_rig, reverse, lo, hi):
     (executor, fem, source, target, controls, rows), areas = contained_rig
+    rows[0]["bounds"] = {"minimum": [20, lo, 2], "maximum": [20, hi, 8]}
+    expected_area = (hi-lo)*6.0
+    areas[10] = expected_area
     controls.shared_interface = True
     factory = controls.CreateMmcCreateBuilder
 
@@ -304,8 +308,8 @@ def test_contained_face_requires_shared_full_small_area(contained_rig, reverse):
 
             def imprint():
                 result = commit()
-                rows[1]["bounds"] = {"minimum": [20, 2, 2], "maximum": [20, 8, 8]}
-                areas[20] = 36.0
+                rows[1]["bounds"] = {"minimum": [20, lo, 2], "maximum": [20, hi, 8]}
+                areas[20] = expected_area
                 return result
 
             builder.CommitMmcs = imprint
@@ -318,7 +322,7 @@ def test_contained_face_requires_shared_full_small_area(contained_rig, reverse):
     assert result["requested_face_tags"] == ([20, 10] if reverse else [10, 20])
     assert result["native_selection_face_tags"] == [10, 20]
     assert result["selected_face_tags"] == [20, 20]
-    assert result["committed_readback"]["contained_face_area_mm2"] == 36
+    assert result["committed_readback"]["contained_face_area_mm2"] == expected_area
     assert controls.builder.FaceSearchOption == 2
     assert result["mesh_generated"] is False
 
@@ -366,12 +370,15 @@ def test_contained_mode_rejects_unimprinted_contact(contained_rig):
         (float("nan"), False, 1e-5),
     ],
 )
+@pytest.mark.parametrize("shared_edge", [False, True])
 def test_incomplete_shared_area_rolls_back_and_restores_original_areas(
-    contained_rig, measured_area, finite, tolerance
+    contained_rig, measured_area, finite, tolerance, shared_edge
 ):
     from copy import deepcopy
 
     (executor, fem, source, target, controls, rows), areas = contained_rig
+    if shared_edge:
+        rows[0]["bounds"] = {"minimum": [20, 0, 2], "maximum": [20, 6, 8]}
     original_rows = [{**row, "bounds": deepcopy(row["bounds"])} for row in rows]
     original_areas = dict(areas)
     controls.shared_interface = True

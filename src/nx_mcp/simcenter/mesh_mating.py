@@ -80,14 +80,14 @@ def create(
                 "NX_INVALID_ARGUMENT", "Contained faces must share a plane within tolerance"
             )
         if not all(
-            small["bounds"]["minimum"][i] > large["bounds"]["minimum"][i] + tolerance_mm
-            and small["bounds"]["maximum"][i] < large["bounds"]["maximum"][i] - tolerance_mm
+            small["bounds"]["minimum"][i] >= large["bounds"]["minimum"][i] - tolerance_mm
+            and small["bounds"]["maximum"][i] <= large["bounds"]["maximum"][i] + tolerance_mm
             for i in range(3)
             if i != axis
         ):
             raise NXToolError(
                 "NX_INVALID_ARGUMENT",
-                "Smaller face bounds must lie strictly inside the larger face bounds",
+                "Smaller face bounds must lie within the larger face bounds",
             )
         contained = {"bounds": small["bounds"], "area_mm2": min(areas), "axis": axis}
         # Select the smaller face as native source. Both original body memberships
