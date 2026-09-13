@@ -159,6 +159,15 @@ def nx_sim_flow_model(
 NON_MODEL.add("nx_sim_flow_model")
 
 
+def nx_sim_flow_diagnostic_outputs(
+    document: str, mass_fluxes: bool, surface_pressure: bool, y_plus: bool
+):
+    """Toggle only mass flux, surface pressure and y+ outputs on the active single-step Multiphysics Coupled Thermal-Flow SIM. Requires a global output request, no step override, all-flow entity selection and no known live solver. Preserves all other output flags and physical settings. Uses native boolean readback and verified rollback. Does not save, solve, regenerate existing results or establish flux conservation. Native acceptance pending: verify exported flags and actual result locations/units on an isolated study. Supply operation_id for deduplication."""
+
+
+NON_MODEL.add("nx_sim_flow_diagnostic_outputs")
+
+
 def nx_sim_flow_relaxation(
     document: str, global_factor: float, mass_factor: float, fluids_factor: float
 ):

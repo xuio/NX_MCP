@@ -2827,6 +2827,22 @@ class SimcenterMixin:
         result = configure_model(self.session, sim, model=model, wall_treatment=wall_treatment)
         return {"document": self._reference(sim, "part", sim, "part"), **result}
 
+    def _sim_flow_diagnostic_outputs(self, document, mass_fluxes, surface_pressure, y_plus):
+        import NXOpen.CAE as cae
+
+        from nx_mcp.simcenter.flow_outputs import configure_outputs
+        from nx_mcp.simcenter.solver_guard import require_solver_idle
+
+        require_solver_idle()
+        sim = self.objects.resolve(document, expected_kind="part")
+        if not isinstance(sim, cae.SimPart):
+            raise NXToolError("NX_SIM_DOCUMENT_TYPE", "Select a SIM from nx_sim_documents")
+        result = configure_outputs(
+            self.session, sim, mass_fluxes=mass_fluxes,
+            surface_pressure=surface_pressure, y_plus=y_plus,
+        )
+        return {"document": self._reference(sim, "part", sim, "part"), **result}
+
     def _sim_flow_relaxation(self, document, global_factor, mass_factor, fluids_factor):
         import NXOpen.CAE as cae
 

@@ -329,3 +329,13 @@ async def test_flow_factor_schema_requires_explicit_factors(tmp_path, monkeypatc
     assert {"document", "global_factor", "mass_factor", "fluids_factor"} <= set(tool.inputSchema["required"])
     assert "operation_id" in tool.inputSchema["properties"]
     assert tool.annotations.readOnlyHint is False
+
+
+@pytest.mark.asyncio
+async def test_flow_diagnostic_outputs_schema(tmp_path, monkeypatch):
+    monkeypatch.setenv("NX_MCP_ENABLE_SIMCENTER", "1")
+    server = create_server(Bridge(), Workspace(tmp_path), enable_experimental=True)
+    tool = next(t for t in await server.list_tools() if t.name == "nx_sim_flow_diagnostic_outputs")
+    assert {"document", "mass_fluxes", "surface_pressure", "y_plus"} <= set(tool.inputSchema["required"])
+    assert "operation_id" in tool.inputSchema["properties"]
+    assert not tool.annotations.readOnlyHint
