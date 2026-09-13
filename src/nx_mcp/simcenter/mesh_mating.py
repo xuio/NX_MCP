@@ -25,10 +25,8 @@ def create(executor, fem, source, target, tolerance_mm):
     if source.OwningPart != fem or target.OwningPart != fem or source.Tag == target.Tag:
         raise NXToolError("NX_SIM_SELECTION_OWNER", "Select two distinct FEM prototype faces")
     controls = fem.BaseFEModel.MeshControls
-    if fem.BaseFEModel.MeshManager.GetMeshes() or list(controls):
-        raise NXToolError(
-            "NX_SIM_MESH_PRECONDITION", "Requires no existing meshes or mesh controls"
-        )
+    if fem.BaseFEModel.MeshManager.GetMeshes():
+        raise NXToolError("NX_SIM_MESH_PRECONDITION", "Requires no existing meshes")
     rows = face_inventory(session, fem)["rows"]
     by_tag = {int(row["face"].Tag): row for row in rows}
     if int(source.Tag) not in by_tag or int(target.Tag) not in by_tag:
@@ -44,10 +42,57 @@ def create(executor, fem, source, target, tolerance_mm):
         raise NXToolError("NX_INVALID_ARGUMENT", "Face bounds do not coincide within tolerance")
     require_solver_idle()
 
+    def control_settings(control):
+        reader = controls.CreateMmcCreateBuilder(control)
+        try:
+            return {
+                "mode": str(reader.MeshMatingOption),
+                "source_face_tag": int(reader.SourceFace.Value.Tag),
+                "target_face_tag": int(reader.TargetFace.Value.Tag),
+                "reverse_direction": bool(reader.ReverseDirection),
+                "distance_tolerance": reader.DistTolerance.GetFormula(),
+                "snap_tolerance": reader.SnapTolerance.GetFormula(),
+                "distance_units": reader.DistTolerance.Units.Name,
+                "snap_units": reader.SnapTolerance.Units.Name,
+            }
+        finally:
+            reader.Destroy()
+
+    try:
+        existing_settings = {int(c.Tag): control_settings(c) for c in controls}
+    except Exception as error:
+        raise NXToolError(
+            "NX_SIM_MESH_PRECONDITION",
+            "Existing controls must be readable mesh-mating conditions; create sizing controls later",
+        ) from error
+    existing_face_tags = {
+        settings[key]
+        for settings in existing_settings.values()
+        for key in ("source_face_tag", "target_face_tag")
+    }
+    existing_face_rows = [
+        (int(row["body"].Tag), int(row["face"].Tag), row["bounds"])
+        for row in rows
+        if int(row["face"].Tag) in existing_face_tags
+    ]
+    if existing_face_tags - {row[1] for row in existing_face_rows}:
+        raise NXToolError(
+            "NX_SIM_READBACK_MISMATCH", "An existing mating face is absent from FEM geometry"
+        )
+    requested_pair = {int(source.Tag), int(target.Tag)}
+    if any(
+        requested_pair == {settings["source_face_tag"], settings["target_face_tag"]}
+        for settings in existing_settings.values()
+    ):
+        raise NXToolError(
+            "NX_SIM_NAME_CONFLICT", "A mating condition already selects this face pair"
+        )
+
     def snapshot():
         inventory = face_inventory(session, fem)["rows"]
         return {
             "controls": sorted(int(c.Tag) for c in controls),
+            "control_settings": {int(c.Tag): control_settings(c) for c in controls},
             "expressions": sorted(int(e.Tag) for e in fem.Expressions),
             "faces": [(int(r["body"].Tag), int(r["face"].Tag), r["bounds"]) for r in inventory],
             "meshes": sorted(int(m.Tag) for m in fem.BaseFEModel.MeshManager.GetMeshes()),
@@ -78,8 +123,20 @@ def create(executor, fem, source, target, tolerance_mm):
         created = list(builder.CommitMmcs())
         builder.Destroy()
         builder = None
-        if len(created) != 1 or int(created[0].Tag) not in {int(c.Tag) for c in controls}:
-            raise ValueError("Expected exactly one registered mesh-mating condition")
+        after_controls = {int(c.Tag): c for c in controls}
+        if (
+            len(created) != 1
+            or set(after_controls) - set(existing_settings) != {int(created[0].Tag)}
+            or not set(existing_settings).issubset(after_controls)
+        ):
+            raise ValueError(
+                "Expected exactly one new condition and all existing conditions retained"
+            )
+        if any(
+            control_settings(after_controls[tag]) != settings
+            for tag, settings in existing_settings.items()
+        ):
+            raise ValueError("An existing mesh-mating condition changed during creation")
         reader = controls.CreateMmcCreateBuilder(created[0])
         try:
             committed_readback = {
@@ -96,6 +153,13 @@ def create(executor, fem, source, target, tolerance_mm):
             # Validate the resulting face against each original body and interface
             # bounds rather than accepting arbitrary topology changes or stale IDs.
             after_rows = face_inventory(session, fem)["rows"]
+            retained_face_rows = [
+                (int(row["body"].Tag), int(row["face"].Tag), row["bounds"])
+                for row in after_rows
+                if int(row["face"].Tag) in existing_face_tags
+            ]
+            if retained_face_rows != existing_face_rows:
+                raise ValueError("Existing mating face membership or bounds changed")
             candidates = []
             for original in (a, b):
                 candidates.append(
@@ -133,6 +197,7 @@ def create(executor, fem, source, target, tolerance_mm):
         return {
             "control": created[0],
             "kind": "glue_coincident",
+            "preserved_existing_control_tags": sorted(existing_settings),
             "tolerance_mm": tolerance_mm,
             "requested_face_tags": requested_face_tags,
             "committed_readback": committed_readback,

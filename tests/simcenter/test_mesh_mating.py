@@ -49,7 +49,7 @@ def rig(monkeypatch):
 
         def CreateMmcCreateBuilder(self, control):
             if control is not None:
-                reader = NS(**vars(self.builder))
+                reader = NS(**vars(control.builder))
                 if self.corrupt_readback:
                     reader.SourceFace = NS(Value=target)
                 return reader
@@ -64,7 +64,7 @@ def rig(monkeypatch):
             self.builder = builder
 
             def commit():
-                control = NS(Tag=50)
+                control = NS(Tag=50 + len(self), builder=builder)
                 if self.shared_interface:
                     rows[0]["face"] = target
                     builder.SourceFace.Value = target
@@ -186,3 +186,90 @@ def test_native_shared_face_requires_membership_on_both_original_bodies(rig):
         [20],
     ]
     assert result["connectivity_verified"] is False
+
+
+def test_second_independent_interface_preserves_first_condition(rig):
+    executor, fem, source, target, controls, rows = rig
+    first = create(executor, fem, source, target, 0.001)
+    first_builder = controls[0].builder
+    new_source, new_target = NS(Tag=30, OwningPart=fem), NS(Tag=40, OwningPart=fem)
+    rows.extend(
+        [
+            {
+                "face": f,
+                "body": NS(Tag=i),
+                "bounds": {"minimum": [40, 0, 0], "maximum": [40, 10, 10]},
+            }
+            for i, f in enumerate([new_source, new_target], start=2)
+        ]
+    )
+    second = create(executor, fem, new_source, new_target, 0.002)
+    assert len(controls) == 2
+    assert first["preserved_existing_control_tags"] == []
+    assert second["preserved_existing_control_tags"] == [50]
+    assert controls[0].builder is first_builder
+    assert first_builder.SourceFace.Value is source
+    assert first_builder.DistTolerance.GetFormula() == "0.001"
+    assert second["selected_face_tags"] == [30, 40]
+
+
+def test_duplicate_pair_rejected_before_second_mutation(rig):
+    executor, fem, source, target, controls, _ = rig
+    create(executor, fem, source, target, 0.001)
+    executor.session.SetUndoMark.reset_mock()
+    with pytest.raises(NXToolError, match="already selects"):
+        create(executor, fem, target, source, 0.001)
+    assert len(controls) == 1
+    executor.session.SetUndoMark.assert_not_called()
+
+
+def test_unreadable_existing_control_rejected_before_mutation(rig):
+    executor, fem, source, target, controls, _ = rig
+    controls.append(NS(Tag=99))
+    with pytest.raises(NXToolError, match="readable mesh-mating"):
+        create(executor, fem, source, target, 0.001)
+    executor.session.SetUndoMark.assert_not_called()
+
+
+def test_changed_prior_condition_rolls_back_new_condition_and_restores_prior(rig):
+    executor, fem, source, target, controls, rows = rig
+    create(executor, fem, source, target, 0.001)
+    original = controls[0]
+    new_source, new_target = NS(Tag=30, OwningPart=fem), NS(Tag=40, OwningPart=fem)
+    rows.extend(
+        [
+            {
+                "face": f,
+                "body": NS(Tag=i),
+                "bounds": {"minimum": [40, 0, 0], "maximum": [40, 10, 10]},
+            }
+            for i, f in enumerate([new_source, new_target], start=2)
+        ]
+    )
+    factory = controls.CreateMmcCreateBuilder
+
+    def corrupting_factory(control):
+        builder = factory(control)
+        if control is None:
+            commit = builder.CommitMmcs
+
+            def corrupting_commit():
+                result = commit()
+                original.builder.ReverseDirection = True
+                return result
+
+            builder.CommitMmcs = corrupting_commit
+        return builder
+
+    controls.CreateMmcCreateBuilder = corrupting_factory
+
+    def restore(*_):
+        controls[:] = [original]
+        original.builder.ReverseDirection = False
+
+    executor.session.UndoToMark.side_effect = restore
+    with pytest.raises(NXToolError) as error:
+        create(executor, fem, new_source, new_target, 0.001)
+    assert error.value.details["mutation_outcome"] == "rolled_back"
+    assert controls == [original]
+    assert original.builder.ReverseDirection is False
