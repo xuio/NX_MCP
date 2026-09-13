@@ -62,6 +62,24 @@ class SimcenterMixin:
         result["boundary"] = self._reference(result["boundary"], "simulation_object", sim, "internal_fan")
         return result
 
+    def _sim_porous_resistance(self, document, bodies, name, permeability_m2, loss_per_m, laminar):
+        from nx_mcp.simcenter.porous_resistance import create, validate
+
+        validate(name, permeability_m2, loss_per_m, laminar)
+        sim = self.objects.resolve(document, expected_kind="part")
+        self.workspace.resolve(sim.FullPath)
+        if not isinstance(bodies, list) or not bodies or any(not isinstance(b, str) for b in bodies):
+            raise NXToolError("NX_INVALID_ARGUMENT", "Supply direct FEM prototype body IDs")
+        if not hasattr(sim, "Simulation"):
+            raise NXToolError("NX_SIM_DOCUMENT_TYPE", "Select a SIM")
+        prototypes = [self.objects.resolve(b, expected_kind="body") for b in bodies]
+        children = list(sim.ComponentAssembly.RootComponent.GetChildren())
+        if len(children) != 1 or children[0].Prototype != sim.FemPart or any(b.OwningPart != sim.FemPart for b in prototypes):
+            raise NXToolError("NX_SIM_SELECTION_OWNER", "Select bodies from the direct FEM")
+        result = create(self.session, sim, [children[0].FindOccurrence(b) for b in prototypes], name, permeability_m2, loss_per_m, laminar)
+        result["boundary"] = self._reference(result["boundary"], "simulation_object", sim, "porous_resistance")
+        return result
+
     def _sim_flow_resistance_schema(self, document, kind):
         from nx_mcp.simcenter.internal_fan import inspect_resistance_schema
 

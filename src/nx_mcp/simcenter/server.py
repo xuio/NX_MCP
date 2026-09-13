@@ -942,6 +942,13 @@ def nx_sim_gravity(document: str, bodies: list[str], acceleration_m_s2: list[flo
 NON_MODEL.add("nx_sim_gravity")
 
 
+def nx_sim_porous_resistance(document: str, bodies: list[str], name: str, permeability_m2: list[float], loss_per_m: list[float], laminar: bool):
+    """Create orthotropic porous resistance on explicit direct-FEM prototype body IDs in an active millimeter NX MULTIPHYSICS Flow/Coupled SIM. Supply three positive permeabilities in m² and three nonnegative inertial loss coefficients in 1/m, ordered along SIM absolute X/Y/Z. Uses an explicit global Cartesian frame, enables both resistance terms, and sets the native laminar-in-blockage flag explicitly. Converts and verifies native mm² and 1/mm values, body targets, frame and active-solution membership. Rejects existing blockage overlap, duplicate names and known running solvers. Rollback checks object/expression/field/BC/frame inventories and modified state. No save or solve. Native authoring, exported body association and resistance-law convention require isolated validation before using thermal conclusions. Does not derive coefficients from heatsink geometry or claim fluid/material compatibility. Use operation_id for deduplication."""
+
+
+NON_MODEL.add("nx_sim_porous_resistance")
+
+
 def nx_sim_flow_resistance_schema(document: str, kind: Literal["porous_isotropic", "porous_orthotropic"]):
     """Inspect the installed isotropic or orthotropic Porous Blockage simulation-object builder in an active NX MULTIPHYSICS Flow or Coupled Thermal-Flow SIM. Returns native property defaults, descriptors and target-set count. Uses descriptor names from the installed Siemens NX 2606 simulation-object report example; availability in the active solver must be established by native inspection. Requires solver idle; destroys the uncommitted builder and verifies undo restores object/expression/field/solution-BC inventory and modified flag. Does not create a resistance, select geometry, assign coefficients, save or solve. Property discovery does not establish physical or numerical validity."""
 
