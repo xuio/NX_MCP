@@ -57,9 +57,34 @@ def configure_processors(table, number_of_processors):
             raise ValueError("Native mesher processor setting differs from the request")
 
 
-def generate(executor, fem, regions, number_of_processors=None):
+SURFACE_METHODS = {"standard": 0, "mesh_from_facets": 1}
+
+
+def validate_surface_method(method):
+    if method is not None and (not isinstance(method, str) or method not in SURFACE_METHODS):
+        raise ValueError("surface_meshing_method must be standard, mesh_from_facets or omitted")
+
+
+def verify_surface_method(table, method):
+    if method is None:
+        return None
+    actual = table.GetIntegerPropertyValue("surface meshing method")
+    if actual != SURFACE_METHODS[method]:
+        raise ValueError("Native surface meshing method differs from the request")
+    return method
+
+
+def configure_surface_method(table, method):
+    validate_surface_method(method)
+    if method is not None:
+        table.SetIntegerPropertyValue("surface meshing method", SURFACE_METHODS[method])
+        verify_surface_method(table, method)
+
+
+def generate(executor, fem, regions, number_of_processors=None, surface_meshing_method=None):
     validate(regions)
     validate_processors(number_of_processors)
+    validate_surface_method(surface_meshing_method)
     import NXOpen.CAE as cae
 
     from nx_mcp.simcenter.solver_guard import require_solver_idle
@@ -93,7 +118,8 @@ def generate(executor, fem, regions, number_of_processors=None):
                 log.WriteLine(
                     f"NX MCP mesh plan region {index}/{len(regions)} START "
                     f"body_tag={int(body.Tag)} body_ref={region['body']} "
-                    f"size_mm={region['size_mm']} processors={number_of_processors}"
+                    f"size_mm={region['size_mm']} processors={number_of_processors} "
+                    f"surface_method={surface_meshing_method}"
                 )
             builder = manager.CreateMesh3dTetBuilder(None)
             try:
@@ -104,6 +130,7 @@ def generate(executor, fem, regions, number_of_processors=None):
                 builder.ElementType.DestinationCollector.AutomaticMode = True
                 builder.AutoSizeOption = False
                 configure_processors(builder.PropertyTable, number_of_processors)
+                configure_surface_method(builder.PropertyTable, surface_meshing_method)
                 builder.PropertyTable.SetBaseScalarWithDataPropertyValue(
                     "quad mesh overall edge size",
                     float(region["size_mm"]),
@@ -124,6 +151,9 @@ def generate(executor, fem, regions, number_of_processors=None):
                     "quad mesh overall edge size"
                 )
                 targets = {int(b.Tag) for b in reader.SelectionList.GetArray()}
+                actual_surface_method = verify_surface_method(
+                    reader.PropertyTable, surface_meshing_method
+                )
                 actual_processors = None
                 if number_of_processors is not None:
                     actual_processors = reader.PropertyTable.GetIntegerPropertyValue(
@@ -146,6 +176,7 @@ def generate(executor, fem, regions, number_of_processors=None):
                         "size_mm": size,
                         "element_type": reader.ElementType.ElementTypeName,
                         "number_of_processors": actual_processors,
+                        "surface_meshing_method": actual_surface_method,
                         "meshes": [
                             executor._reference(m, "simulation_mesh", fem, "mesh") for m in meshes
                         ],
@@ -164,6 +195,7 @@ def generate(executor, fem, regions, number_of_processors=None):
             "results_stale": True,
             "material_assignments": "not_created",
             "requested_number_of_processors": number_of_processors,
+            "requested_surface_meshing_method": surface_meshing_method,
             "quality_validation": "not_performed",
             "boundary_layer_effect": "inspect generated topology and quality; not inferred from control presence",
         }

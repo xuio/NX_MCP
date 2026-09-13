@@ -77,8 +77,9 @@ def test_empty_mesh_rejects_and_releases_both_maps():
     nodes.Dispose.assert_called_once()
 
 
+@pytest.mark.parametrize("method", [None, "mesh_from_facets"])
 @pytest.mark.parametrize("processors,bad_readback", [(None, False), (1, False), (1, True)])
-def test_late_plan_failure_rolls_back_first_body_mesh(monkeypatch, processors, bad_readback):
+def test_late_plan_failure_rolls_back_first_body_mesh(monkeypatch, processors, bad_readback, method):
     import sys
     from types import SimpleNamespace as NS
     from unittest.mock import Mock
@@ -155,6 +156,7 @@ def test_late_plan_failure_rolls_back_first_body_mesh(monkeypatch, processors, b
                 {"body": "b", "kind": "fluid", "size_mm": 1},
             ],
             number_of_processors=processors,
+            surface_meshing_method=method,
         )
     assert error.value.details["mutation_outcome"] == "rolled_back"
     assert meshes == []
@@ -162,12 +164,13 @@ def test_late_plan_failure_rolls_back_first_body_mesh(monkeypatch, processors, b
     assert len(builders) == (2 if bad_readback else 3)
     assert "START" in session.LogFile.WriteLine.call_args_list[0].args[0]
     assert "COMMIT_RETURNED" in session.LogFile.WriteLine.call_args_list[1].args[0]
-    if processors is None:
-        builders[0].PropertyTable.SetIntegerPropertyValue.assert_not_called()
-    else:
-        builders[0].PropertyTable.SetIntegerPropertyValue.assert_called_once_with(
-            "number of processors", 1
-        )
+    expected = []
+    from unittest.mock import call
+    if processors is not None:
+        expected.append(call("number of processors", 1))
+    if method is not None:
+        expected.append(call("surface meshing method", 1))
+    assert builders[0].PropertyTable.SetIntegerPropertyValue.call_args_list == expected
     for builder in builders:
         builder.Destroy.assert_called_once()
 
@@ -248,3 +251,38 @@ def test_realistic_body_counts_preserve_validation(count):
     regions[-1]["body"] = regions[0]["body"]
     with pytest.raises(ValueError, match="distinct"):
         validate(regions)
+
+
+@pytest.mark.parametrize("method", [True, 1, "facets", [], {}, ""])
+def test_invalid_surface_method_rejected_before_mutation(method):
+    from unittest.mock import Mock
+
+    from nx_mcp.simcenter.mesh_plan import configure_surface_method
+    table = Mock()
+    with pytest.raises(ValueError, match="surface_meshing_method"):
+        configure_surface_method(table, method)
+    table.SetIntegerPropertyValue.assert_not_called()
+
+
+@pytest.mark.parametrize("method,index", [("standard", 0), ("mesh_from_facets", 1)])
+def test_surface_method_requires_matching_native_readback(method, index):
+    from unittest.mock import Mock
+
+    from nx_mcp.simcenter.mesh_plan import configure_surface_method
+    table = Mock()
+    table.GetIntegerPropertyValue.return_value = index
+    configure_surface_method(table, method)
+    table.SetIntegerPropertyValue.assert_called_once_with("surface meshing method", index)
+    table.GetIntegerPropertyValue.return_value = 1 - index
+    with pytest.raises(ValueError, match="differs"):
+        configure_surface_method(table, method)
+
+
+def test_omitted_surface_method_preserves_native_defaults():
+    from unittest.mock import Mock
+
+    from nx_mcp.simcenter.mesh_plan import configure_surface_method, verify_surface_method
+    table = Mock()
+    configure_surface_method(table, None)
+    assert verify_surface_method(table, None) is None
+    assert table.mock_calls == []
