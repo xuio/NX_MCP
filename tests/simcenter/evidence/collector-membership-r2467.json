@@ -1,0 +1,526 @@
+{
+  "code_commit": "7d2cdf0",
+  "source_receipt": "thermal-material-preflight-r2467.receipt.json",
+  "source_sha256": "61c1da62a8751fd9dccc077f61ffadaef56716379148c8cc1b208042723a3d04",
+  "native_memberships": {
+    "status": "success",
+    "warnings": [],
+    "units": "mm",
+    "collectors": [
+      {
+        "collector": {
+          "id": "obj_0ebc149d10f24beeb653a350cca4fa02_23805a76233e4a19bcf8fe3991bb0cd2",
+          "kind": "mesh_collector",
+          "name": "Solid(1)",
+          "part_id": "part_0ebc149d10f24beeb653a350cca4fa02_5409c54b98cb4bf3a4d9537d8c5be0cb",
+          "session_id": "0ebc149d10f24beeb653a350cca4fa02",
+          "generation_id": "5409c54b98cb4bf3a4d9537d8c5be0cb",
+          "owner_part_path": "D:\\CAD\\thermal-topside-r2453\\analysis_949e2df4945b_mesh.fem",
+          "journal_id": "MeshCollector[Solid(1)]",
+          "display_name": "Solid(1)"
+        },
+        "native_type": "Solid",
+        "coordinate_frame": "part_absolute",
+        "length_units": "mm",
+        "material": null,
+        "material_inherited": true,
+        "orientation": {
+          "native_selector": 0,
+          "stored_frame": null,
+          "interpretation": "default_frame_stored_frame_ignored"
+        },
+        "state_sha256": "e09b1deff193acc9bdc392ab9b411cce2ed8edda3eb585e7e6b66e4d1e2af966",
+        "state_scope": "collector_identity_assignment_and_stored_frame_not_material_properties",
+        "meshes": [
+          {
+            "id": "obj_0ebc149d10f24beeb653a350cca4fa02_f50b829bc79a4f1ca2cd4d21683732ae",
+            "kind": "simulation_mesh",
+            "name": "3d_mesh(1)",
+            "part_id": "part_0ebc149d10f24beeb653a350cca4fa02_5409c54b98cb4bf3a4d9537d8c5be0cb",
+            "session_id": "0ebc149d10f24beeb653a350cca4fa02",
+            "generation_id": "5409c54b98cb4bf3a4d9537d8c5be0cb",
+            "owner_part_path": "D:\\CAD\\thermal-topside-r2453\\analysis_949e2df4945b_mesh.fem",
+            "journal_id": "Mesh[3d_mesh(1)]",
+            "display_name": "3d_mesh(1)"
+          }
+        ],
+        "membership_status": "complete"
+      },
+      {
+        "collector": {
+          "id": "obj_0ebc149d10f24beeb653a350cca4fa02_ce4ed9e0ab7e4a22a7f2634877aa370e",
+          "kind": "mesh_collector",
+          "name": "Solid(2)",
+          "part_id": "part_0ebc149d10f24beeb653a350cca4fa02_5409c54b98cb4bf3a4d9537d8c5be0cb",
+          "session_id": "0ebc149d10f24beeb653a350cca4fa02",
+          "generation_id": "5409c54b98cb4bf3a4d9537d8c5be0cb",
+          "owner_part_path": "D:\\CAD\\thermal-topside-r2453\\analysis_949e2df4945b_mesh.fem",
+          "journal_id": "MeshCollector[Solid(2)]",
+          "display_name": "Solid(2)"
+        },
+        "native_type": "Solid",
+        "coordinate_frame": "part_absolute",
+        "length_units": "mm",
+        "material": null,
+        "material_inherited": true,
+        "orientation": {
+          "native_selector": 0,
+          "stored_frame": null,
+          "interpretation": "default_frame_stored_frame_ignored"
+        },
+        "state_sha256": "1e85b5179b99240de23175f49f0f2e9f9c1e87ca56a5bd28571ce5af4f676869",
+        "state_scope": "collector_identity_assignment_and_stored_frame_not_material_properties",
+        "meshes": [
+          {
+            "id": "obj_0ebc149d10f24beeb653a350cca4fa02_84c6bd871d8e44189147c7ab8ef5fa98",
+            "kind": "simulation_mesh",
+            "name": "3d_mesh(2)",
+            "part_id": "part_0ebc149d10f24beeb653a350cca4fa02_5409c54b98cb4bf3a4d9537d8c5be0cb",
+            "session_id": "0ebc149d10f24beeb653a350cca4fa02",
+            "generation_id": "5409c54b98cb4bf3a4d9537d8c5be0cb",
+            "owner_part_path": "D:\\CAD\\thermal-topside-r2453\\analysis_949e2df4945b_mesh.fem",
+            "journal_id": "Mesh[3d_mesh(2)]",
+            "display_name": "3d_mesh(2)"
+          }
+        ],
+        "membership_status": "complete"
+      },
+      {
+        "collector": {
+          "id": "obj_0ebc149d10f24beeb653a350cca4fa02_b4392b622756419f934696eb437c6f51",
+          "kind": "mesh_collector",
+          "name": "Solid(3)",
+          "part_id": "part_0ebc149d10f24beeb653a350cca4fa02_5409c54b98cb4bf3a4d9537d8c5be0cb",
+          "session_id": "0ebc149d10f24beeb653a350cca4fa02",
+          "generation_id": "5409c54b98cb4bf3a4d9537d8c5be0cb",
+          "owner_part_path": "D:\\CAD\\thermal-topside-r2453\\analysis_949e2df4945b_mesh.fem",
+          "journal_id": "MeshCollector[Solid(3)]",
+          "display_name": "Solid(3)"
+        },
+        "native_type": "Solid",
+        "coordinate_frame": "part_absolute",
+        "length_units": "mm",
+        "material": null,
+        "material_inherited": true,
+        "orientation": {
+          "native_selector": 0,
+          "stored_frame": null,
+          "interpretation": "default_frame_stored_frame_ignored"
+        },
+        "state_sha256": "37a7aaac437d3a54c0cc0fd41e74a286c1d7a3a49f6e15278a47e94825a16b6e",
+        "state_scope": "collector_identity_assignment_and_stored_frame_not_material_properties",
+        "meshes": [
+          {
+            "id": "obj_0ebc149d10f24beeb653a350cca4fa02_b5246aac5923472cbb356ece6d47c53c",
+            "kind": "simulation_mesh",
+            "name": "3d_mesh(3)",
+            "part_id": "part_0ebc149d10f24beeb653a350cca4fa02_5409c54b98cb4bf3a4d9537d8c5be0cb",
+            "session_id": "0ebc149d10f24beeb653a350cca4fa02",
+            "generation_id": "5409c54b98cb4bf3a4d9537d8c5be0cb",
+            "owner_part_path": "D:\\CAD\\thermal-topside-r2453\\analysis_949e2df4945b_mesh.fem",
+            "journal_id": "Mesh[3d_mesh(3)]",
+            "display_name": "3d_mesh(3)"
+          }
+        ],
+        "membership_status": "complete"
+      },
+      {
+        "collector": {
+          "id": "obj_0ebc149d10f24beeb653a350cca4fa02_2460900a13c1478cb1204e821a97fb15",
+          "kind": "mesh_collector",
+          "name": "Solid(4)",
+          "part_id": "part_0ebc149d10f24beeb653a350cca4fa02_5409c54b98cb4bf3a4d9537d8c5be0cb",
+          "session_id": "0ebc149d10f24beeb653a350cca4fa02",
+          "generation_id": "5409c54b98cb4bf3a4d9537d8c5be0cb",
+          "owner_part_path": "D:\\CAD\\thermal-topside-r2453\\analysis_949e2df4945b_mesh.fem",
+          "journal_id": "MeshCollector[Solid(4)]",
+          "display_name": "Solid(4)"
+        },
+        "native_type": "Solid",
+        "coordinate_frame": "part_absolute",
+        "length_units": "mm",
+        "material": null,
+        "material_inherited": true,
+        "orientation": {
+          "native_selector": 0,
+          "stored_frame": null,
+          "interpretation": "default_frame_stored_frame_ignored"
+        },
+        "state_sha256": "285ffe62412922de8e3ae481384ed2caed5f9970eaa6e6d19087d6a29a453b6e",
+        "state_scope": "collector_identity_assignment_and_stored_frame_not_material_properties",
+        "meshes": [
+          {
+            "id": "obj_0ebc149d10f24beeb653a350cca4fa02_25a4fca2ed964e919bbb907a74edae3e",
+            "kind": "simulation_mesh",
+            "name": "3d_mesh(4)",
+            "part_id": "part_0ebc149d10f24beeb653a350cca4fa02_5409c54b98cb4bf3a4d9537d8c5be0cb",
+            "session_id": "0ebc149d10f24beeb653a350cca4fa02",
+            "generation_id": "5409c54b98cb4bf3a4d9537d8c5be0cb",
+            "owner_part_path": "D:\\CAD\\thermal-topside-r2453\\analysis_949e2df4945b_mesh.fem",
+            "journal_id": "Mesh[3d_mesh(4)]",
+            "display_name": "3d_mesh(4)"
+          }
+        ],
+        "membership_status": "complete"
+      },
+      {
+        "collector": {
+          "id": "obj_0ebc149d10f24beeb653a350cca4fa02_de1e0b358cb74e5c8e474850e0712c85",
+          "kind": "mesh_collector",
+          "name": "Solid(5)",
+          "part_id": "part_0ebc149d10f24beeb653a350cca4fa02_5409c54b98cb4bf3a4d9537d8c5be0cb",
+          "session_id": "0ebc149d10f24beeb653a350cca4fa02",
+          "generation_id": "5409c54b98cb4bf3a4d9537d8c5be0cb",
+          "owner_part_path": "D:\\CAD\\thermal-topside-r2453\\analysis_949e2df4945b_mesh.fem",
+          "journal_id": "MeshCollector[Solid(5)]",
+          "display_name": "Solid(5)"
+        },
+        "native_type": "Solid",
+        "coordinate_frame": "part_absolute",
+        "length_units": "mm",
+        "material": null,
+        "material_inherited": true,
+        "orientation": {
+          "native_selector": 0,
+          "stored_frame": null,
+          "interpretation": "default_frame_stored_frame_ignored"
+        },
+        "state_sha256": "4f37d14663c7a9fbdf5d376f5204362dd8d487a0395cae75e5e812e516ce76a7",
+        "state_scope": "collector_identity_assignment_and_stored_frame_not_material_properties",
+        "meshes": [
+          {
+            "id": "obj_0ebc149d10f24beeb653a350cca4fa02_e246e5aa413e43c48e3de015a7caf865",
+            "kind": "simulation_mesh",
+            "name": "3d_mesh(5)",
+            "part_id": "part_0ebc149d10f24beeb653a350cca4fa02_5409c54b98cb4bf3a4d9537d8c5be0cb",
+            "session_id": "0ebc149d10f24beeb653a350cca4fa02",
+            "generation_id": "5409c54b98cb4bf3a4d9537d8c5be0cb",
+            "owner_part_path": "D:\\CAD\\thermal-topside-r2453\\analysis_949e2df4945b_mesh.fem",
+            "journal_id": "Mesh[3d_mesh(5)]",
+            "display_name": "3d_mesh(5)"
+          }
+        ],
+        "membership_status": "complete"
+      },
+      {
+        "collector": {
+          "id": "obj_0ebc149d10f24beeb653a350cca4fa02_6ef0715a0c924a36a93affcb574de297",
+          "kind": "mesh_collector",
+          "name": "Solid(6)",
+          "part_id": "part_0ebc149d10f24beeb653a350cca4fa02_5409c54b98cb4bf3a4d9537d8c5be0cb",
+          "session_id": "0ebc149d10f24beeb653a350cca4fa02",
+          "generation_id": "5409c54b98cb4bf3a4d9537d8c5be0cb",
+          "owner_part_path": "D:\\CAD\\thermal-topside-r2453\\analysis_949e2df4945b_mesh.fem",
+          "journal_id": "MeshCollector[Solid(6)]",
+          "display_name": "Solid(6)"
+        },
+        "native_type": "Solid",
+        "coordinate_frame": "part_absolute",
+        "length_units": "mm",
+        "material": null,
+        "material_inherited": true,
+        "orientation": {
+          "native_selector": 0,
+          "stored_frame": null,
+          "interpretation": "default_frame_stored_frame_ignored"
+        },
+        "state_sha256": "8d37a9586f710fa04cb1d2809885d84be11d77ef1e236bcdb4ab6e636ef362cd",
+        "state_scope": "collector_identity_assignment_and_stored_frame_not_material_properties",
+        "meshes": [
+          {
+            "id": "obj_0ebc149d10f24beeb653a350cca4fa02_c0b25c8f6f174253abb2570d487b600a",
+            "kind": "simulation_mesh",
+            "name": "3d_mesh(6)",
+            "part_id": "part_0ebc149d10f24beeb653a350cca4fa02_5409c54b98cb4bf3a4d9537d8c5be0cb",
+            "session_id": "0ebc149d10f24beeb653a350cca4fa02",
+            "generation_id": "5409c54b98cb4bf3a4d9537d8c5be0cb",
+            "owner_part_path": "D:\\CAD\\thermal-topside-r2453\\analysis_949e2df4945b_mesh.fem",
+            "journal_id": "Mesh[3d_mesh(6)]",
+            "display_name": "3d_mesh(6)"
+          }
+        ],
+        "membership_status": "complete"
+      },
+      {
+        "collector": {
+          "id": "obj_0ebc149d10f24beeb653a350cca4fa02_6557e602da214f268d8f140910ec4d72",
+          "kind": "mesh_collector",
+          "name": "Solid(7)",
+          "part_id": "part_0ebc149d10f24beeb653a350cca4fa02_5409c54b98cb4bf3a4d9537d8c5be0cb",
+          "session_id": "0ebc149d10f24beeb653a350cca4fa02",
+          "generation_id": "5409c54b98cb4bf3a4d9537d8c5be0cb",
+          "owner_part_path": "D:\\CAD\\thermal-topside-r2453\\analysis_949e2df4945b_mesh.fem",
+          "journal_id": "MeshCollector[Solid(7)]",
+          "display_name": "Solid(7)"
+        },
+        "native_type": "Solid",
+        "coordinate_frame": "part_absolute",
+        "length_units": "mm",
+        "material": null,
+        "material_inherited": true,
+        "orientation": {
+          "native_selector": 0,
+          "stored_frame": null,
+          "interpretation": "default_frame_stored_frame_ignored"
+        },
+        "state_sha256": "ad7913079a795a7d775cf132401827f403866452e9b5f669d23fdc0a2b2e39b8",
+        "state_scope": "collector_identity_assignment_and_stored_frame_not_material_properties",
+        "meshes": [
+          {
+            "id": "obj_0ebc149d10f24beeb653a350cca4fa02_86b28a1cd6b84f138580a6e5dcde1d5f",
+            "kind": "simulation_mesh",
+            "name": "3d_mesh(7)",
+            "part_id": "part_0ebc149d10f24beeb653a350cca4fa02_5409c54b98cb4bf3a4d9537d8c5be0cb",
+            "session_id": "0ebc149d10f24beeb653a350cca4fa02",
+            "generation_id": "5409c54b98cb4bf3a4d9537d8c5be0cb",
+            "owner_part_path": "D:\\CAD\\thermal-topside-r2453\\analysis_949e2df4945b_mesh.fem",
+            "journal_id": "Mesh[3d_mesh(7)]",
+            "display_name": "3d_mesh(7)"
+          }
+        ],
+        "membership_status": "complete"
+      },
+      {
+        "collector": {
+          "id": "obj_0ebc149d10f24beeb653a350cca4fa02_072af447108e464f80ea3bf4e479e494",
+          "kind": "mesh_collector",
+          "name": "Solid(8)",
+          "part_id": "part_0ebc149d10f24beeb653a350cca4fa02_5409c54b98cb4bf3a4d9537d8c5be0cb",
+          "session_id": "0ebc149d10f24beeb653a350cca4fa02",
+          "generation_id": "5409c54b98cb4bf3a4d9537d8c5be0cb",
+          "owner_part_path": "D:\\CAD\\thermal-topside-r2453\\analysis_949e2df4945b_mesh.fem",
+          "journal_id": "MeshCollector[Solid(8)]",
+          "display_name": "Solid(8)"
+        },
+        "native_type": "Solid",
+        "coordinate_frame": "part_absolute",
+        "length_units": "mm",
+        "material": null,
+        "material_inherited": true,
+        "orientation": {
+          "native_selector": 0,
+          "stored_frame": null,
+          "interpretation": "default_frame_stored_frame_ignored"
+        },
+        "state_sha256": "b50ce146ce632682723965bd0b8e260faf8e2f3073b6ac8466b78fee604f0074",
+        "state_scope": "collector_identity_assignment_and_stored_frame_not_material_properties",
+        "meshes": [
+          {
+            "id": "obj_0ebc149d10f24beeb653a350cca4fa02_f4a6b4bb224046fa88b1d56c717e9d4b",
+            "kind": "simulation_mesh",
+            "name": "3d_mesh(8)",
+            "part_id": "part_0ebc149d10f24beeb653a350cca4fa02_5409c54b98cb4bf3a4d9537d8c5be0cb",
+            "session_id": "0ebc149d10f24beeb653a350cca4fa02",
+            "generation_id": "5409c54b98cb4bf3a4d9537d8c5be0cb",
+            "owner_part_path": "D:\\CAD\\thermal-topside-r2453\\analysis_949e2df4945b_mesh.fem",
+            "journal_id": "Mesh[3d_mesh(8)]",
+            "display_name": "3d_mesh(8)"
+          }
+        ],
+        "membership_status": "complete"
+      },
+      {
+        "collector": {
+          "id": "obj_0ebc149d10f24beeb653a350cca4fa02_080f27aebfdc4a4f8276bf666e449bea",
+          "kind": "mesh_collector",
+          "name": "Solid(9)",
+          "part_id": "part_0ebc149d10f24beeb653a350cca4fa02_5409c54b98cb4bf3a4d9537d8c5be0cb",
+          "session_id": "0ebc149d10f24beeb653a350cca4fa02",
+          "generation_id": "5409c54b98cb4bf3a4d9537d8c5be0cb",
+          "owner_part_path": "D:\\CAD\\thermal-topside-r2453\\analysis_949e2df4945b_mesh.fem",
+          "journal_id": "MeshCollector[Solid(9)]",
+          "display_name": "Solid(9)"
+        },
+        "native_type": "Solid",
+        "coordinate_frame": "part_absolute",
+        "length_units": "mm",
+        "material": null,
+        "material_inherited": true,
+        "orientation": {
+          "native_selector": 0,
+          "stored_frame": null,
+          "interpretation": "default_frame_stored_frame_ignored"
+        },
+        "state_sha256": "444a0b138df3b41f495c985fd593c1c324341d8c83d35acfb3024a6e76eab326",
+        "state_scope": "collector_identity_assignment_and_stored_frame_not_material_properties",
+        "meshes": [
+          {
+            "id": "obj_0ebc149d10f24beeb653a350cca4fa02_7dbdb336655840468a6e344499a3f85f",
+            "kind": "simulation_mesh",
+            "name": "3d_mesh(9)",
+            "part_id": "part_0ebc149d10f24beeb653a350cca4fa02_5409c54b98cb4bf3a4d9537d8c5be0cb",
+            "session_id": "0ebc149d10f24beeb653a350cca4fa02",
+            "generation_id": "5409c54b98cb4bf3a4d9537d8c5be0cb",
+            "owner_part_path": "D:\\CAD\\thermal-topside-r2453\\analysis_949e2df4945b_mesh.fem",
+            "journal_id": "Mesh[3d_mesh(9)]",
+            "display_name": "3d_mesh(9)"
+          }
+        ],
+        "membership_status": "complete"
+      },
+      {
+        "collector": {
+          "id": "obj_0ebc149d10f24beeb653a350cca4fa02_4947f544f4c342ebb1ce920c3cacd036",
+          "kind": "mesh_collector",
+          "name": "Solid(10)",
+          "part_id": "part_0ebc149d10f24beeb653a350cca4fa02_5409c54b98cb4bf3a4d9537d8c5be0cb",
+          "session_id": "0ebc149d10f24beeb653a350cca4fa02",
+          "generation_id": "5409c54b98cb4bf3a4d9537d8c5be0cb",
+          "owner_part_path": "D:\\CAD\\thermal-topside-r2453\\analysis_949e2df4945b_mesh.fem",
+          "journal_id": "MeshCollector[Solid(10)]",
+          "display_name": "Solid(10)"
+        },
+        "native_type": "Solid",
+        "coordinate_frame": "part_absolute",
+        "length_units": "mm",
+        "material": null,
+        "material_inherited": true,
+        "orientation": {
+          "native_selector": 0,
+          "stored_frame": null,
+          "interpretation": "default_frame_stored_frame_ignored"
+        },
+        "state_sha256": "049be75726c3c236de39a4f10666547f414185947d5d278b78d148a21254a30d",
+        "state_scope": "collector_identity_assignment_and_stored_frame_not_material_properties",
+        "meshes": [
+          {
+            "id": "obj_0ebc149d10f24beeb653a350cca4fa02_d9ede29e20a04edea48aeb33c1704608",
+            "kind": "simulation_mesh",
+            "name": "3d_mesh(10)",
+            "part_id": "part_0ebc149d10f24beeb653a350cca4fa02_5409c54b98cb4bf3a4d9537d8c5be0cb",
+            "session_id": "0ebc149d10f24beeb653a350cca4fa02",
+            "generation_id": "5409c54b98cb4bf3a4d9537d8c5be0cb",
+            "owner_part_path": "D:\\CAD\\thermal-topside-r2453\\analysis_949e2df4945b_mesh.fem",
+            "journal_id": "Mesh[3d_mesh(10)]",
+            "display_name": "3d_mesh(10)"
+          }
+        ],
+        "membership_status": "complete"
+      },
+      {
+        "collector": {
+          "id": "obj_0ebc149d10f24beeb653a350cca4fa02_d199e1c3ed264f2fb097026a7d74193a",
+          "kind": "mesh_collector",
+          "name": "Solid(11)",
+          "part_id": "part_0ebc149d10f24beeb653a350cca4fa02_5409c54b98cb4bf3a4d9537d8c5be0cb",
+          "session_id": "0ebc149d10f24beeb653a350cca4fa02",
+          "generation_id": "5409c54b98cb4bf3a4d9537d8c5be0cb",
+          "owner_part_path": "D:\\CAD\\thermal-topside-r2453\\analysis_949e2df4945b_mesh.fem",
+          "journal_id": "MeshCollector[Solid(11)]",
+          "display_name": "Solid(11)"
+        },
+        "native_type": "Solid",
+        "coordinate_frame": "part_absolute",
+        "length_units": "mm",
+        "material": null,
+        "material_inherited": true,
+        "orientation": {
+          "native_selector": 0,
+          "stored_frame": null,
+          "interpretation": "default_frame_stored_frame_ignored"
+        },
+        "state_sha256": "6757a4ee0df66103c1b7edc26005b25dffb450f2ffe901cc1f2b71dde393f165",
+        "state_scope": "collector_identity_assignment_and_stored_frame_not_material_properties",
+        "meshes": [
+          {
+            "id": "obj_0ebc149d10f24beeb653a350cca4fa02_4c01f4210f834c68992b2b1e625d0e0a",
+            "kind": "simulation_mesh",
+            "name": "3d_mesh(11)",
+            "part_id": "part_0ebc149d10f24beeb653a350cca4fa02_5409c54b98cb4bf3a4d9537d8c5be0cb",
+            "session_id": "0ebc149d10f24beeb653a350cca4fa02",
+            "generation_id": "5409c54b98cb4bf3a4d9537d8c5be0cb",
+            "owner_part_path": "D:\\CAD\\thermal-topside-r2453\\analysis_949e2df4945b_mesh.fem",
+            "journal_id": "Mesh[3d_mesh(11)]",
+            "display_name": "3d_mesh(11)"
+          }
+        ],
+        "membership_status": "complete"
+      },
+      {
+        "collector": {
+          "id": "obj_0ebc149d10f24beeb653a350cca4fa02_f1b08be49579459aad40295ef8facce6",
+          "kind": "mesh_collector",
+          "name": "Solid(12)",
+          "part_id": "part_0ebc149d10f24beeb653a350cca4fa02_5409c54b98cb4bf3a4d9537d8c5be0cb",
+          "session_id": "0ebc149d10f24beeb653a350cca4fa02",
+          "generation_id": "5409c54b98cb4bf3a4d9537d8c5be0cb",
+          "owner_part_path": "D:\\CAD\\thermal-topside-r2453\\analysis_949e2df4945b_mesh.fem",
+          "journal_id": "MeshCollector[Solid(12)]",
+          "display_name": "Solid(12)"
+        },
+        "native_type": "Solid",
+        "coordinate_frame": "part_absolute",
+        "length_units": "mm",
+        "material": null,
+        "material_inherited": true,
+        "orientation": {
+          "native_selector": 0,
+          "stored_frame": null,
+          "interpretation": "default_frame_stored_frame_ignored"
+        },
+        "state_sha256": "afa393ce792125db1118b9a3c8c59f0e49dac4debc815340acca5d262d363e6b",
+        "state_scope": "collector_identity_assignment_and_stored_frame_not_material_properties",
+        "meshes": [
+          {
+            "id": "obj_0ebc149d10f24beeb653a350cca4fa02_804771be486543b5b376aa674c5fd6eb",
+            "kind": "simulation_mesh",
+            "name": "3d_mesh(12)",
+            "part_id": "part_0ebc149d10f24beeb653a350cca4fa02_5409c54b98cb4bf3a4d9537d8c5be0cb",
+            "session_id": "0ebc149d10f24beeb653a350cca4fa02",
+            "generation_id": "5409c54b98cb4bf3a4d9537d8c5be0cb",
+            "owner_part_path": "D:\\CAD\\thermal-topside-r2453\\analysis_949e2df4945b_mesh.fem",
+            "journal_id": "Mesh[3d_mesh(12)]",
+            "display_name": "3d_mesh(12)"
+          }
+        ],
+        "membership_status": "complete"
+      },
+      {
+        "collector": {
+          "id": "obj_0ebc149d10f24beeb653a350cca4fa02_606a7a38f50b4e3382829575f369359e",
+          "kind": "mesh_collector",
+          "name": "Solid(13)",
+          "part_id": "part_0ebc149d10f24beeb653a350cca4fa02_5409c54b98cb4bf3a4d9537d8c5be0cb",
+          "session_id": "0ebc149d10f24beeb653a350cca4fa02",
+          "generation_id": "5409c54b98cb4bf3a4d9537d8c5be0cb",
+          "owner_part_path": "D:\\CAD\\thermal-topside-r2453\\analysis_949e2df4945b_mesh.fem",
+          "journal_id": "MeshCollector[Solid(13)]",
+          "display_name": "Solid(13)"
+        },
+        "native_type": "Solid",
+        "coordinate_frame": "part_absolute",
+        "length_units": "mm",
+        "material": null,
+        "material_inherited": true,
+        "orientation": {
+          "native_selector": 0,
+          "stored_frame": null,
+          "interpretation": "default_frame_stored_frame_ignored"
+        },
+        "state_sha256": "1ecd51ea137991bc498c138804b4361817abb79546a2ce320041f0966ba1d1e5",
+        "state_scope": "collector_identity_assignment_and_stored_frame_not_material_properties",
+        "meshes": [
+          {
+            "id": "obj_0ebc149d10f24beeb653a350cca4fa02_c2269b1cffe94ede98bdac6e90b93101",
+            "kind": "simulation_mesh",
+            "name": "3d_mesh(13)",
+            "part_id": "part_0ebc149d10f24beeb653a350cca4fa02_5409c54b98cb4bf3a4d9537d8c5be0cb",
+            "session_id": "0ebc149d10f24beeb653a350cca4fa02",
+            "generation_id": "5409c54b98cb4bf3a4d9537d8c5be0cb",
+            "owner_part_path": "D:\\CAD\\thermal-topside-r2453\\analysis_949e2df4945b_mesh.fem",
+            "journal_id": "Mesh[3d_mesh(13)]",
+            "display_name": "3d_mesh(13)"
+          }
+        ],
+        "membership_status": "complete"
+      }
+    ],
+    "total": 13,
+    "next_offset": null,
+    "paging_consistency": "live_collection_restart_after_mutation",
+    "operation_id": "op_988721ce49ad4d159edf4104cb744948",
+    "session_id": "0ebc149d10f24beeb653a350cca4fa02",
+    "mutation_outcome": "not_applicable"
+  },
+  "mapping_basis": "Native mesh member references joined with committed body mesh selection and bounded geometry; thirteen one-to-one associations verified."
+}
