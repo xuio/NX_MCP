@@ -56,8 +56,7 @@ def divide(executor, face, rectangle):
     refs = [executor._reference(c, 'curve', part, 'Contact footprint')['id'] for c in curves]
     builder = executor._freeform_builder('CreateDividefaceBuilder')
     try:
-        rule = part.ScRuleFactory.CreateRuleFaceDumb([target])
-        builder.FacesToDivide.ReplaceRules([rule], False)
+        builder.FacesToDivide = executor._engineering_collector([target], 'Face')
         builder.SelectDividingObject.ToolOption = G.SelectDividingObjectBuilder.ToolType.Object
         builder.SelectDividingObject.DividingObjectsList.Add(executor._curve_section(refs))
         builder.ProjectionOption.ProjectDirectionMethod = G.ProjectionOptions.DirectionType.FaceNormal
