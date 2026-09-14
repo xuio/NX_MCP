@@ -1,0 +1,152 @@
+{
+  "nx_version": "v2606",
+  "result_sha256": "d70e11afc465323f766e739d9cedf32773e667f851da0cd923323576f58bd33f",
+  "receipt_sha256": "19682f18ff393eedbe98ce21c6435f943bb6d2b9ac8e9a5ebe881e66ec2450a3",
+  "items": [
+    {
+      "loadcase_index": 0,
+      "iteration_index": 0,
+      "values": [
+        {
+          "kind": "other",
+          "native_type": "-1",
+          "value": -777777.0,
+          "native_unit": null
+        }
+      ],
+      "fields": [
+        "Velocity - Element-Nodal",
+        "Temperature - Element-Nodal",
+        "Total Pressure - Element-Nodal",
+        "Mass Flux - Nodal",
+        "Pressure - Element-Nodal",
+        "Unknown Result - Element-Nodal"
+      ],
+      "field_metadata": [
+        {
+          "state": "available",
+          "name": "Velocity - Element-Nodal",
+          "quantity": "5",
+          "location": "2",
+          "data_type": "1",
+          "complex": false,
+          "components": [
+            {
+              "component": "1",
+              "description": "X",
+              "default_unit": "MilliMeterPerSecond",
+              "source_unit": "MilliMeterPerSecond"
+            },
+            {
+              "component": "2",
+              "description": "Y",
+              "default_unit": "MilliMeterPerSecond",
+              "source_unit": "MilliMeterPerSecond"
+            },
+            {
+              "component": "3",
+              "description": "Z",
+              "default_unit": "MilliMeterPerSecond",
+              "source_unit": "MilliMeterPerSecond"
+            },
+            {
+              "component": "4",
+              "description": "Magnitude",
+              "default_unit": "MilliMeterPerSecond",
+              "source_unit": "MilliMeterPerSecond"
+            }
+          ],
+          "scope": "Native field metadata; source units inferred by NX from basic result units. No conservation or integration semantics established."
+        },
+        {
+          "state": "available",
+          "name": "Temperature - Element-Nodal",
+          "quantity": "22",
+          "location": "2",
+          "data_type": "0",
+          "complex": false,
+          "components": [
+            {
+              "component": "0",
+              "description": "Scalar",
+              "default_unit": "Celsius",
+              "source_unit": "Celsius"
+            }
+          ],
+          "scope": "Native field metadata; source units inferred by NX from basic result units. No conservation or integration semantics established."
+        },
+        {
+          "state": "available",
+          "name": "Total Pressure - Element-Nodal",
+          "quantity": "59",
+          "location": "2",
+          "data_type": "0",
+          "complex": false,
+          "components": [
+            {
+              "component": "0",
+              "description": "Scalar",
+              "default_unit": "PressureNewtonPerSquareMilliMeter",
+              "source_unit": "PressureMilliNewtonPerSquareMilliMeter"
+            }
+          ],
+          "scope": "Native field metadata; source units inferred by NX from basic result units. No conservation or integration semantics established."
+        },
+        {
+          "state": "available",
+          "name": "Mass Flux - Nodal",
+          "quantity": "69",
+          "location": "0",
+          "data_type": "0",
+          "complex": false,
+          "components": [
+            {
+              "component": "0",
+              "description": "Scalar",
+              "default_unit": "MassFlux_Metric1",
+              "source_unit": "MassFlux_Metric1"
+            }
+          ],
+          "scope": "Native field metadata; source units inferred by NX from basic result units. No conservation or integration semantics established."
+        },
+        {
+          "state": "available",
+          "name": "Pressure - Element-Nodal",
+          "quantity": "74",
+          "location": "2",
+          "data_type": "0",
+          "complex": false,
+          "components": [
+            {
+              "component": "0",
+              "description": "Scalar",
+              "default_unit": "PressureNewtonPerSquareMilliMeter",
+              "source_unit": "PressureMilliNewtonPerSquareMilliMeter"
+            }
+          ],
+          "scope": "Native field metadata; source units inferred by NX from basic result units. No conservation or integration semantics established."
+        },
+        {
+          "state": "available",
+          "name": "Unknown Result - Element-Nodal",
+          "quantity": "109",
+          "location": "2",
+          "data_type": "0",
+          "complex": false,
+          "components": [
+            {
+              "component": "0",
+              "description": "Scalar",
+              "default_unit": null,
+              "source_unit": null
+            }
+          ],
+          "scope": "Native field metadata; source units inferred by NX from basic result units. No conservation or integration semantics established."
+        }
+      ]
+    }
+  ],
+  "solver_launched": false,
+  "engineering_accepted": false,
+  "scope": "Native inventory evidence for component descriptions and unit names. Does not establish mass-flux dimensions or conservation."
+}

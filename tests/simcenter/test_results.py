@@ -6,7 +6,20 @@ from types import SimpleNamespace as NS
 
 import pytest
 
-from nx_mcp.simcenter.results import iteration_inventory, temperature_extrema
+from nx_mcp.simcenter.results import field_metadata, iteration_inventory, temperature_extrema
+
+
+def _field(name="Mass Flux - Nodal"):
+    return NS(
+        Name=name,
+        Quantity="MassFlux",
+        Location="Nodal",
+        Datatype="Scalar",
+        Complex=False,
+        AskComponents=lambda: (["Scalar component"], ["Scalar"]),
+        AskDefaultUnitForComponent=lambda _: NS(Name="NativeDefault"),
+        AskSourceUnitForComponent=lambda _: NS(Name="NativeSource"),
+    )
 
 
 @pytest.fixture
@@ -32,8 +45,8 @@ def native_result(monkeypatch):
     def iteration(time):
         return NS(
             GetResultTypes=lambda: [
-                NS(Name="Temperature - Nodal"),
-                NS(Name="Temperature - Element-Nodal"),
+                _field("Temperature - Nodal"),
+                _field("Temperature - Element-Nodal"),
             ],
             GetValueTypes=lambda: [0],
             GetValueDataType=lambda _: 0,
@@ -125,3 +138,48 @@ def test_invalid_field_location_does_not_load_result(native_result):
     with pytest.raises(ValueError, match="location must"):
         temperature_extrema(session, sim, location="fluid")
     assert released == []
+
+
+def test_field_metadata_retains_distinct_source_and_default_units():
+    metadata = field_metadata(_field())
+    assert metadata["location"] == "Nodal"
+    assert metadata["quantity"] == "MassFlux"
+    assert metadata["components"] == [
+        {
+            "component": "Scalar",
+            "description": "Scalar component",
+            "default_unit": "NativeDefault",
+            "source_unit": "NativeSource",
+        }
+    ]
+    field = _field()
+    field.AskComponents = lambda: (["Scalar component"], ["Scalar"])
+    field.AskSourceUnitForComponent = lambda _: None
+    assert field_metadata(field)["components"][0]["source_unit"] is None
+
+
+@pytest.mark.parametrize(
+    "components", [(2, ["Scalar"]), [], (["Scalar"] * 33, ["desc"] * 33), (["Scalar"], [])]
+)
+def test_invalid_component_shape_rejected(components):
+    field = _field()
+    field.AskComponents = lambda: components
+    with pytest.raises(ValueError):
+        field_metadata(field)
+
+
+def test_inventory_metadata_error_releases_owned_result(native_result):
+    session, sim, _, released = native_result
+    result = session.ResultManager.CreateSolutionResult(None)
+    field = _field()
+    field.AskComponents = lambda: (2, ["Scalar"])
+    result.GetLoadcases = lambda: [
+        NS(GetIterations=lambda: [NS(GetValueTypes=lambda: [], GetResultTypes=lambda: [field])])
+    ]
+    report = iteration_inventory(session, sim)
+    assert report["items"][0]["fields"] == ["Mass Flux - Nodal"]
+    metadata = report["items"][0]["field_metadata"][0]
+    assert metadata["state"] == "unavailable"
+    assert "components" not in metadata
+    assert "shape unsupported" in metadata["error"]
+    assert released == ["result"]

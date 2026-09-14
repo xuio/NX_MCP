@@ -90,6 +90,58 @@ def temperature_extrema(session, sim, *, loadcase_index=0, iteration_index=0, lo
                     manager.DeleteResult(result)
 
 
+def field_metadata(field):
+    """Read native type/component units without inferring flux semantics."""
+    raw = field.AskComponents()
+    if not isinstance(raw, (tuple, list)) or len(raw) != 2:
+        raise ValueError("Expected native component and description arrays")
+    # NX 2606 Python returns descriptions first, component enums second.
+    descriptions, components = raw
+    if (
+        not isinstance(components, (tuple, list))
+        or not isinstance(descriptions, (tuple, list))
+        or not 1 <= len(components) <= 32
+        or len(components) != len(descriptions)
+        or any(not isinstance(value, str) for value in descriptions)
+    ):
+        raise ValueError("Native component/description shape unsupported")
+    rows = []
+    for component, description in zip(components, descriptions, strict=True):
+        default = field.AskDefaultUnitForComponent(component)
+        source = field.AskSourceUnitForComponent(component)
+        rows.append(
+            {
+                "component": str(component),
+                "description": description,
+                "default_unit": default.Name if default is not None else None,
+                "source_unit": source.Name if source is not None else None,
+            }
+        )
+    return {
+        "name": field.Name,
+        "quantity": str(field.Quantity),
+        "location": str(field.Location),
+        "data_type": str(field.Datatype),
+        "complex": bool(field.Complex),
+        "components": rows,
+        "scope": "Native field metadata; source units inferred by NX from basic result units. No conservation or integration semantics established.",
+    }
+
+
+def inspect_field_metadata(field):
+    """Retain unknown fields and expose metadata failures without inventing units."""
+    try:
+        return {"state": "available", **field_metadata(field)}
+    except Exception as error:
+        return {
+            "name": field.Name,
+            "state": "unavailable",
+            "error_type": type(error).__name__,
+            "error": str(error)[:2048],
+            "scope": "Metadata unavailable; do not infer components, units or flux semantics.",
+        }
+
+
 def iteration_inventory(session, sim, *, offset=0, limit=50):
     """Page native field/time metadata; do not infer time from a loadcase index."""
     if isinstance(offset, bool) or not isinstance(offset, int) or offset < 0:
@@ -129,12 +181,16 @@ def iteration_inventory(session, sim, *, offset=0, limit=50):
                             "native_unit": unit.Name if unit else None,
                         }
                     )
+                fields = list(iteration.GetResultTypes())
+                if len(fields) > 128:
+                    raise ValueError("Result iteration exceeds 128-field metadata limit")
                 rows.append(
                     {
                         "loadcase_index": li,
                         "iteration_index": ii,
                         "values": values,
-                        "fields": [field.Name for field in iteration.GetResultTypes()],
+                        "fields": [field.Name for field in fields],
+                        "field_metadata": [inspect_field_metadata(field) for field in fields],
                     }
                 )
         return {
