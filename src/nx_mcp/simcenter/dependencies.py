@@ -4,6 +4,35 @@ from nx_mcp.runtime import NXToolError
 from nx_mcp.workspace import WorkspaceViolation
 
 
+def select_saved_membership(live, saved_paths, loaded):
+    """Replace live CAD names using native saved membership and loaded metadata.
+
+    Keep the proven standalone SIM/FEM pair. Never infer units, load state or
+    assembly structure from extensions; missing saved CAD must be opened first.
+    """
+    paths = {p.casefold(): p for p in saved_paths}
+    if len(paths) != len(saved_paths):
+        raise NXToolError("NX_SIM_DEPENDENCIES_INCOMPLETE", "Duplicate saved paths")
+    primary = [r for r in live['rows'] if set(r['roles']) & {'simulation', 'mesh'}]
+    if len(primary) != 2 or any(r['path'].casefold() not in paths for r in primary):
+        raise NXToolError("NX_SIM_DEPENDENCIES_INCOMPLETE", "Saved SIM/FEM pair differs from loaded standalone pair")
+    by_path = {r['path'].casefold(): r for r in loaded}
+    rows = list(primary)
+    primary_names = {r['path'].casefold() for r in primary}
+    for key, path in paths.items():
+        if key in primary_names:
+            continue
+        row = by_path.get(key)
+        if row is None or not row['fully_loaded']:
+            raise NXToolError("NX_SIM_DEPENDENCIES_INCOMPLETE", "Open the saved CAD dependency before planning",
+                              details={'path': path, 'mutation_outcome': 'not_started'})
+        if row['document_type'] != 'Part' or row['has_children']:
+            raise NXToolError("NX_SIM_UNSUPPORTED_DOCUMENT_TYPE", "Saved CAD must be a standalone part")
+        rows.append({**row, 'roles': ['saved_cad_membership']})
+    return {**live, 'rows': rows, 'unresolved': [],
+            'scope': 'native_saved_membership_with_loaded_metadata'}
+
+
 def inspect_direct(session, sim, workspace):
     import NXOpen.CAE as cae
 

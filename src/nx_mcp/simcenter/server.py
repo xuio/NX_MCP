@@ -702,7 +702,7 @@ READ_ONLY.add("nx_sim_saved_dependencies")
 
 
 def nx_sim_variant_plan(document: str, folder: str, name: str, saved_snapshot: bool = False):
-    """Plan an independent saved-file SIM/FEM/CAD variant from a live SIM ID. Read-only: creates no folder and saves no edits. Requires fully loaded direct dependencies inside the workspace; assembly dependencies are rejected. folder must be new; name generates distinct loaded-safe basenames. Modified sources require explicit saved_snapshot=true, which excludes unsaved edits. Returns exact source/destination mapping, units, hashes and plan_sha256; total source hashing is bounded to 1 GiB. Use the same arguments and expected_plan_sha256 with nx_sim_variant_create. External inputs/results are not packaged."""
+    """Plan an independent saved-file SIM/FEM/CAD variant from a live SIM ID. Read-only: creates no folder and saves no edits. Requires fully loaded direct dependencies inside the workspace; assembly dependencies are rejected. folder must be new; name generates distinct loaded-safe basenames. Modified sources require explicit saved_snapshot=true, which excludes unsaved edits and obtains CAD membership from native saved references. Saved CAD dependencies must be loaded explicitly for units and standalone-part checks; the saved SIM/FEM pair must still match the loaded standalone pair. Returns exact source/destination mapping, units, hashes and plan_sha256; total source hashing is bounded to 1 GiB. Use the same arguments and expected_plan_sha256 with nx_sim_variant_create. External inputs/results are not packaged."""
 
 
 READ_ONLY.add("nx_sim_variant_plan")

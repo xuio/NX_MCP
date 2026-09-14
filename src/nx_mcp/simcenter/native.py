@@ -414,13 +414,30 @@ class SimcenterMixin:
                              uf.UFSession.GetUFSession().Clone)
 
     def _sim_variant_plan(self, document, folder, name, saved_snapshot=False):
-        from nx_mcp.simcenter.dependencies import inspect_direct
+        from nx_mcp.simcenter.dependencies import inspect_direct, select_saved_membership
         from nx_mcp.simcenter.variant_plan import plan_variant
 
         sim = self.objects.resolve(document, expected_kind="part")
+        dependencies = inspect_direct(self.session, sim, self.workspace)
+        if saved_snapshot:
+            saved = self._sim_saved_dependencies(document)
+            loaded = []
+            for part in self.session.Parts:
+                if part.FullPath.casefold() not in {p.casefold() for p in saved["saved_paths"]}:
+                    continue
+                assembly = getattr(part, "ComponentAssembly", None)
+                root = assembly.RootComponent if assembly else None
+                loaded.append({
+                    "path": part.FullPath, "document_type": type(part).__name__,
+                    "modified": bool(part.IsModified), "fully_loaded": bool(part.IsFullyLoaded),
+                    "file_state": "exists" if part.FullPath and self.workspace.ensure_inside(part.FullPath).is_file() else "missing",
+                    "units": "mm" if str(part.PartUnits) == "1" else "inch",
+                    "has_children": bool(root.GetChildren()) if root else False,
+                })
+            dependencies = select_saved_membership(dependencies, saved["saved_paths"], loaded)
         return plan_variant(
             self.workspace,
-            inspect_direct(self.session, sim, self.workspace),
+            dependencies,
             folder=folder,
             name=name,
             saved_snapshot=saved_snapshot,
