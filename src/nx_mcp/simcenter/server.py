@@ -1033,3 +1033,17 @@ def nx_sim_pressure_samples(
 
 
 READ_ONLY.add("nx_sim_pressure_samples")
+
+
+def nx_sim_mass_flux_samples(
+    document: str,
+    result_sha256: str,
+    node_labels: list[int],
+    loadcase_index: int = 0,
+    iteration_index: int = 0,
+    maximum_bytes: int = 1_073_741_824,
+):
+    """Read native scalar Mass Flux - Nodal at 1..1024 unique positive result node labels. Requires active SIM and exact lowercase result SHA256; checks associated file before and after extraction. Units are kg/(s*mm^2), coordinates mm; native unit symbol and component readback are verified. Undefined nodes remain null. Preserves displayed result ownership. Labels are result-local: verify coordinates against executed mesh before use. Does not infer sign convention, map boundary faces, integrate, solve, save or certify conservation/physical validity."""
+
+
+READ_ONLY.add("nx_sim_mass_flux_samples")

@@ -1,0 +1,77 @@
+{
+  "result_sha256": "d70e11afc465323f766e739d9cedf32773e667f851da0cd923323576f58bd33f",
+  "receipt_sha256": "d3019f60dd940fdbbf5b8cef1d77488aa4348150b3892f5a46932115cbaf9b31",
+  "coordinate_tolerance_mm": 0.0001,
+  "max_coordinate_error_mm": 9.26013896673794e-06,
+  "units": "kg/(s*mm^2)",
+  "items": [
+    {
+      "index": 317900,
+      "label": 317900,
+      "coordinates": [
+        47.53895568847656,
+        99.37115478515625,
+        -29.5
+      ],
+      "mass_flux": 5.806043645861791e-07,
+      "defined": true
+    },
+    {
+      "index": 317901,
+      "label": 317901,
+      "coordinates": [
+        46.02033615112305,
+        102.0442123413086,
+        -29.5
+      ],
+      "mass_flux": 5.806043077427603e-07,
+      "defined": true
+    },
+    {
+      "index": 317909,
+      "label": 317909,
+      "coordinates": [
+        49.06966781616211,
+        102.08863067626953,
+        -29.5
+      ],
+      "mass_flux": 5.806043077427603e-07,
+      "defined": true
+    },
+    {
+      "index": 319993,
+      "label": 319993,
+      "coordinates": [
+        77.0718765258789,
+        118.97303009033203,
+        -29.5
+      ],
+      "mass_flux": 5.80604421429598e-07,
+      "defined": true
+    },
+    {
+      "index": 320611,
+      "label": 320611,
+      "coordinates": [
+        78.90027618408203,
+        121.42170715332031,
+        -29.5
+      ],
+      "mass_flux": 5.806043645861791e-07,
+      "defined": true
+    },
+    {
+      "index": 320612,
+      "label": 320612,
+      "coordinates": [
+        79.76744842529297,
+        117.96315002441406,
+        -29.5
+      ],
+      "mass_flux": 5.806043645861791e-07,
+      "defined": true
+    }
+  ],
+  "native_smoke_pass": true,
+  "conservation_verified": false
+}
