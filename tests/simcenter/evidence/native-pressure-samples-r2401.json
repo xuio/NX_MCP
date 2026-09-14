@@ -1,0 +1,30 @@
+{
+  "native_version": "Simcenter 2606",
+  "tested_commit": "cae5ed2a1814fe918cd47f60b3f702830c11930e",
+  "native_probe_receipt_sha256": "5a4f190ec64557332387007a79b5e04831ba885fc9b913d03af680fdcad86032",
+  "full_extraction_receipt_sha256": "1565c8e78bc2f15f278b0c64cbf0b8d10b905213b40b545a908a4ec7210305df",
+  "result_sha256": "aa51816e58cc87300ff48bfed7b268f59a2fbba3831858ab3e9e12e6691fd765",
+  "ports": 4,
+  "triangles_per_port": 598,
+  "fields": [
+    "Pressure - Element-Nodal",
+    "Total Pressure - Element-Nodal"
+  ],
+  "units": "Pa",
+  "coordinate_units": "mm",
+  "ordered_connectivity_verified": true,
+  "coordinates_tolerance_mm": 0.0001,
+  "fan_pressure_rises": [
+    {
+      "fan": "FAN_1_5P0_CFM_FLOW_SCREEN",
+      "pressure_rise_pa": 23.830359417396192,
+      "total_pressure_rise_pa": 22.94951970430957
+    },
+    {
+      "fan": "FAN_2_5P0_CFM_FLOW_SCREEN",
+      "pressure_rise_pa": 26.685603650126108,
+      "total_pressure_rise_pa": 25.835147797144657
+    }
+  ],
+  "scope": "Native read-only extraction validated; not fan performance, mesh independence or thermal acceptance."
+}
