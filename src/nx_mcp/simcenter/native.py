@@ -109,11 +109,11 @@ class SimcenterMixin:
         self.workspace.resolve(sim.FullPath)
         return inspect_schema(self.session, sim)
 
-    def _sim_create_analysis(self, cad_document, folder, name):
+    def _sim_create_analysis(self, cad_document, folder, name, analysis_type="coupled_thermal_flow"):
         from nx_mcp.simcenter.analysis_documents import create
 
         cad = self.objects.resolve(cad_document, expected_kind="part")
-        return create(self, cad, folder, name)
+        return create(self, cad, folder, name, analysis_type)
 
     def _sim_environment(self, document, temperature_c, pressure_pa, buoyancy):
         from nx_mcp.simcenter.environment import configure

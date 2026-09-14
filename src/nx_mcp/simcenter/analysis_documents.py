@@ -5,7 +5,62 @@ import hashlib
 from nx_mcp.runtime import NXToolError
 
 
-def create(executor, cad, folder, name):
+def analysis_environment(analysis_type):
+    if analysis_type == "thermal":
+        return "Thermal", "Thermal"
+    if analysis_type == "coupled_thermal_flow":
+        return "Coupled Thermal-Flow", "Thermal-Flow"
+    raise NXToolError(
+        "NX_INVALID_ARGUMENT", "analysis_type must be thermal or coupled_thermal_flow"
+    )
+
+
+def initialize_steady_thermal(sim, solution, native):
+    """Use the NX 2606 descriptors verified by the native conduction benchmark."""
+    tables = []
+    for descriptor, key in (
+        ("Thermal Parameters", "Thermal Parameters"),
+        ("Multiphysics Thermal Output Requests", "Thermal Output Requests"),
+    ):
+        table = sim.ModelingObjectPropertyTables.CreateModelingObjectPropertyTable(
+            descriptor, "NX MULTIPHYSICS - Thermal", "NX MULTIPHYSICS", key, 0
+        )
+        solution.PropertyTable.SetNamedPropertyTablePropertyValue(key, table)
+        committed = solution.PropertyTable.GetNamedPropertyTablePropertyValue(key)
+        if committed != table:
+            raise NXToolError("NX_SIM_READBACK_MISMATCH", "Thermal table association differs")
+        tables.append(
+            {"property": key, "descriptor": committed.DescriptorType, "name": committed.Name}
+        )
+    descriptor = native.Sf.SolutionAskDescriptorNx(solution.Tag)
+    allowed = [
+        native.Sfl.StepDescriptorAskNameNx(
+            native.Sfl.SolutionAskNthAllowableStepDescriptorNx(descriptor, i)
+        )
+        for i in range(solution.AllowedStepTypeCount)
+    ]
+    if allowed.count("Step - Thermal") != 1:
+        raise NXToolError("NX_SIM_STEP_UNAVAILABLE", "Expected one Step - Thermal descriptor")
+    step = solution.CreateStep(allowed.index("Step - Thermal"), True, "Conduction")
+    step.PropertyTable.SetIntegerPropertyValue("Solution Type", 0)
+    if (
+        step.PropertyTable.GetIntegerPropertyValue("Solution Type") != 0
+        or solution.ActiveStep != step
+    ):
+        raise NXToolError("NX_SIM_READBACK_MISMATCH", "Active steady thermal step differs")
+    return {
+        "parameter_tables": tables,
+        "step": {
+            "name": step.Name,
+            "descriptor": "Step - Thermal",
+            "active": True,
+            "solution_type": 0,
+        },
+    }
+
+
+def create(executor, cad, folder, name, analysis_type="coupled_thermal_flow"):
+    analysis, solution_type = analysis_environment(analysis_type)
     import NXOpen.CAE as cae
 
     from nx_mcp.simcenter.solver_guard import require_solver_idle
@@ -53,7 +108,7 @@ def create(executor, cad, folder, name):
             options.SetCadData(cad, "")
             options.SetSolverOptions(
                 "NX MULTIPHYSICS",
-                "Coupled Thermal-Flow",
+                analysis,
                 cae.BaseFemPart.AxisymAbstractionType.NotSet,
             )
             options.SetGeometryOptions(
@@ -68,12 +123,17 @@ def create(executor, cad, folder, name):
         sim.FinalizeCreation(fem, ["NX MCP user CAD association"])
         solution = sim.Simulation.CreateSolution(
             "NX MULTIPHYSICS",
-            "Coupled Thermal-Flow",
-            "Thermal-Flow",
+            analysis,
+            solution_type,
             name,
             cae.SimSimulation.AxisymAbstractionType.NotSet,
         )
-        if sim.FemPart != fem or solution.AnalysisType != "Coupled Thermal-Flow":
+        if (
+            sim.FemPart != fem
+            or solution.AnalysisType != analysis
+            or solution.SolutionType != solution_type
+            or solution.SolverType != "NX MULTIPHYSICS"
+        ):
             raise NXToolError("NX_SIM_READBACK_MISMATCH", "SIM/FEM or solution association differs")
         # Inspection uses the installed CAD association property, never a filename inference.
         if fem.MasterCadPart != cad:
@@ -82,6 +142,12 @@ def create(executor, cad, folder, name):
             raise NXToolError(
                 "NX_SIM_READBACK_MISMATCH", "FEM body count differs from selected CAD"
             )
+        initialization = None
+        if analysis_type == "thermal":
+            stage = "thermal_initialization"
+            import NXOpen.UF as uf
+
+            initialization = initialize_steady_thermal(sim, solution, uf.UFSession.GetUFSession())
         stage = "save"
         for part in (fem, sim):
             status = part.Save(
@@ -109,8 +175,14 @@ def create(executor, cad, folder, name):
             "geometry_association": "all CAD bodies",
             "cad_shared": True,
             "solution": solution.Name,
+            "analysis_type": analysis_type,
+            "initialization": initialization,
             "presentation": presentation,
-            "next_step": "Create initial step and attach defaults with nx_sim_flow_setup; initialize coupled_steady before environment",
+            "next_step": (
+                "Assign mesh, materials, thermal contacts, loads and boundary conditions"
+                if analysis_type == "thermal"
+                else "Create initial step and attach defaults with nx_sim_flow_setup; initialize coupled_steady before environment"
+            ),
             "saved": True,
             "meshed": False,
             "solver_launched": False,

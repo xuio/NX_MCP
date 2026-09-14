@@ -939,8 +939,11 @@ def nx_sim_environment(document: str, temperature_c: float, pressure_pa: float, 
 NON_MODEL.add("nx_sim_environment")
 
 
-def nx_sim_create_analysis(cad_document: str, folder: str, name: str):
-    """Create standalone coupled FEM/SIM documents associated with an existing saved millimeter CAD part, using all directly owned bodies. cad_document is a loaded part ID; requires unmodified source CAD and a fresh workspace folder. Assemblies are explicitly unsupported. Verifies FEM master CAD, SIM FEM, body count and unchanged source file SHA256; saves only new FEM/SIM and displays/fits SIM. Source CAD is shared, not copied: use isolated CAD copies before geometry edits. Creates solution but no step/default tables/mesh/boundaries; use nx_sim_flow_setup create_step, attach_defaults and coupled_steady next. On failure closes only new documents, restores previous context where possible, retains partial files and reports paths. No source save, solve or model-specific logic. Use operation_id for safe retry."""
+def nx_sim_create_analysis(
+    cad_document: str, folder: str, name: str,
+    analysis_type: Literal["thermal", "coupled_thermal_flow"] = "coupled_thermal_flow",
+):
+    """Create standalone FEM/SIM documents associated with an existing saved millimeter CAD part, using all directly owned bodies. cad_document is a loaded part ID; requires unmodified source CAD and a fresh workspace folder. Assemblies are explicitly unsupported. Verifies FEM master CAD, SIM FEM, body count and unchanged source file SHA256; saves only new FEM/SIM and displays/fits SIM. Source CAD is shared, not copied: use isolated CAD copies before geometry edits. analysis_type defaults to coupled_thermal_flow for compatibility: creates solution without step/default tables; use nx_sim_flow_setup create_step, attach_defaults and coupled_steady next. thermal creates the native Thermal environment, associated thermal parameter/output tables and active steady conduction step. Neither option creates mesh, materials, contacts or boundaries. On failure closes only new documents, restores previous context where possible, retains partial files and reports paths. No source save, solve or model-specific logic. Use operation_id for safe retry."""
 
 
 NON_MODEL.add("nx_sim_create_analysis")
