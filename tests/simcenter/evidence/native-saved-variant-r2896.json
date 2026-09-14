@@ -1,0 +1,129 @@
+{
+  "implementation_commit": "23fae4c",
+  "clone": {
+    "status": "success",
+    "warnings": [],
+    "units": "mm",
+    "state": "native_files_cloned",
+    "folder": "D:\\CAD\\thermal-path-revision-r2893",
+    "plan_sha256": "d38e8fe957ed4e5ca3f7c8f9a1bdb0e0c8b0d4e73844f6e41fdaaf75abb0fb11",
+    "outputs": [
+      {
+        "path": "D:\\CAD\\thermal-path-revision-r2893\\THERMAL_PATH_REVISION_R2893_analysis.sim",
+        "bytes": 7821904,
+        "sha256": "0d8c26a6443b6758c83ebc25bd814b84fb5ca3f2b707a8ca752d7a69e1341f48"
+      },
+      {
+        "path": "D:\\CAD\\thermal-path-revision-r2893\\THERMAL_PATH_REVISION_R2893_mesh.fem",
+        "bytes": 9947302,
+        "sha256": "f40f0277a9ba4fa0201dad3b2d59167bbcea1ab1deeb48660a9f18cc02a58410"
+      },
+      {
+        "path": "D:\\CAD\\thermal-path-revision-r2893\\THERMAL_PATH_REVISION_R2893_cad_01.prt",
+        "bytes": 661981,
+        "sha256": "5f7cc0285112e894251454a5d72499f65b9060560df8eb46a73b55deaf1814e3"
+      }
+    ],
+    "source_files_preserved": true,
+    "document_flags_preserved": true,
+    "associated_files_copied": false,
+    "saved_snapshot": true,
+    "unsaved_sources_excluded": [
+      "D:\\CAD\\thermal-screen-h15-air60-r2492\\THERMAL_SCREEN_H15_AIR60_R2492.sim",
+      "D:\\CAD\\thermal-topside-r2453\\analysis_949e2df4945b_mesh.fem"
+    ],
+    "dependency_rebinding": "not_verified_until_open",
+    "complete_analysis_package": false,
+    "result_freshness": "not_verified",
+    "solver_launched": false,
+    "replayed": false,
+    "operation_id": "op_35fd0f458ba34aa99c18d180a1da788d",
+    "session_id": "a5625cf503744566bb6229eff02b5534",
+    "mutation_outcome": "committed"
+  },
+  "reopen_validation": {
+    "native_clone_verified": true,
+    "dependency_rebinding_verified": true,
+    "source_files_preserved": true,
+    "clone_receipt": "thermal-saved-clone-r2894.receipt.json",
+    "dependency_receipt": "thermal-revision-cad-r2896.receipt.json",
+    "documents": [
+      {
+        "document": {
+          "id": "obj_a5625cf503744566bb6229eff02b5534_98623ac855ff4066864c3e8eddb8e415",
+          "kind": "part",
+          "name": "THERMAL_PATH_REVISION_R2893_analysis",
+          "part_id": "part_a5625cf503744566bb6229eff02b5534_86b822098627445ab737ed4ede6c1d58",
+          "session_id": "a5625cf503744566bb6229eff02b5534",
+          "generation_id": "86b822098627445ab737ed4ede6c1d58",
+          "owner_part_path": "D:\\CAD\\thermal-path-revision-r2893\\THERMAL_PATH_REVISION_R2893_analysis.sim",
+          "journal_id": "THERMAL_PATH_REVISION_R2893_analysis",
+          "display_name": "THERMAL_PATH_REVISION_R2893_analysis"
+        },
+        "path": "D:\\CAD\\thermal-path-revision-r2893\\THERMAL_PATH_REVISION_R2893_analysis.sim",
+        "roles": [
+          "simulation"
+        ],
+        "document_type": "SimPart",
+        "modified": true,
+        "fully_loaded": true,
+        "file_state": "exists",
+        "work": false,
+        "display": false,
+        "units": "mm"
+      },
+      {
+        "document": {
+          "id": "obj_a5625cf503744566bb6229eff02b5534_a74a8290d01e445f8570ef544ab159a1",
+          "kind": "part",
+          "name": "THERMAL_PATH_REVISION_R2893_mesh",
+          "part_id": "part_a5625cf503744566bb6229eff02b5534_0f3147a00f3947b9b652c43bda9e1932",
+          "session_id": "a5625cf503744566bb6229eff02b5534",
+          "generation_id": "0f3147a00f3947b9b652c43bda9e1932",
+          "owner_part_path": "D:\\CAD\\thermal-path-revision-r2893\\THERMAL_PATH_REVISION_R2893_mesh.fem",
+          "journal_id": "THERMAL_PATH_REVISION_R2893_mesh",
+          "display_name": "THERMAL_PATH_REVISION_R2893_mesh"
+        },
+        "path": "D:\\CAD\\thermal-path-revision-r2893\\THERMAL_PATH_REVISION_R2893_mesh.fem",
+        "roles": [
+          "mesh"
+        ],
+        "document_type": "FemPart",
+        "modified": false,
+        "fully_loaded": true,
+        "file_state": "exists",
+        "work": false,
+        "display": false,
+        "units": "mm"
+      },
+      {
+        "document": {
+          "id": "obj_a5625cf503744566bb6229eff02b5534_18e062f9832444f5bffa82bae405583e",
+          "kind": "part",
+          "name": "THERMAL_PATH_REVISION_R2893_cad_01",
+          "part_id": "part_a5625cf503744566bb6229eff02b5534_8a5a5c22252e481091b7824f05256d6d",
+          "session_id": "a5625cf503744566bb6229eff02b5534",
+          "generation_id": "8a5a5c22252e481091b7824f05256d6d",
+          "owner_part_path": "D:\\CAD\\thermal-path-revision-r2893\\THERMAL_PATH_REVISION_R2893_cad_01.prt",
+          "journal_id": "THERMAL_PATH_REVISION_R2893_cad_01",
+          "display_name": "THERMAL_PATH_REVISION_R2893_cad_01"
+        },
+        "path": "D:\\CAD\\thermal-path-revision-r2893\\THERMAL_PATH_REVISION_R2893_cad_01.prt",
+        "roles": [
+          "AssociatedCadPart",
+          "MasterCadPart"
+        ],
+        "document_type": "Part",
+        "modified": false,
+        "fully_loaded": true,
+        "file_state": "exists",
+        "work": true,
+        "display": true,
+        "units": "mm"
+      }
+    ],
+    "solver_launched": false,
+    "geometry_corrections_pending": true,
+    "full_goal_complete": false
+  }
+}
