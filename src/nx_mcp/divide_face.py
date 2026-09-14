@@ -46,7 +46,7 @@ def divide(executor, face, rectangle):
         raise NXToolError('NX_NOT_SOLID', 'Select a solid face')
     part = executor._work_part()
     uf = UF.UFSession.GetUFSession()
-    box = list(uf.Modeling.AskBoundingBox(target.Tag))
+    box = list(uf.ModlGeneral.AskBoundingBox(target.Tag))
     points = rectangle_points(rectangle, box)
     body_ref = executor._reference(body, 'body', part, 'Divided body')['id']
     before = executor._mass_properties(body_ref)
@@ -72,7 +72,7 @@ def divide(executor, face, rectangle):
         expected = [points[0][0], points[0][1], points[0][2], points[2][0], points[2][1], points[2][2]]
         matches = []
         for candidate in faces:
-            bounds = list(uf.Modeling.AskBoundingBox(candidate.Tag))
+            bounds = list(uf.ModlGeneral.AskBoundingBox(candidate.Tag))
             if all(abs(a - b) <= 0.005 for a, b in zip(bounds, expected)) and len(candidate.GetEdges()) == 4:
                 matches.append(candidate)
         if len(matches) != 1:
