@@ -1,7 +1,7 @@
 {
   "nx_version": "v2606",
   "result_sha256": "d70e11afc465323f766e739d9cedf32773e667f851da0cd923323576f58bd33f",
-  "receipt_sha256": "19682f18ff393eedbe98ce21c6435f943bb6d2b9ac8e9a5ebe881e66ec2450a3",
+  "receipt_sha256": "7974794936439b001cb0fc1f34db68d21791d72c7a75a887111e4751ae5ea353",
   "items": [
     {
       "loadcase_index": 0,
@@ -35,25 +35,41 @@
               "component": "1",
               "description": "X",
               "default_unit": "MilliMeterPerSecond",
-              "source_unit": "MilliMeterPerSecond"
+              "source_unit": "MilliMeterPerSecond",
+              "default_unit_symbol": "mm/sec",
+              "source_unit_symbol": "mm/sec",
+              "default_unit_measure": "Velocity",
+              "source_unit_measure": "Velocity"
             },
             {
               "component": "2",
               "description": "Y",
               "default_unit": "MilliMeterPerSecond",
-              "source_unit": "MilliMeterPerSecond"
+              "source_unit": "MilliMeterPerSecond",
+              "default_unit_symbol": "mm/sec",
+              "source_unit_symbol": "mm/sec",
+              "default_unit_measure": "Velocity",
+              "source_unit_measure": "Velocity"
             },
             {
               "component": "3",
               "description": "Z",
               "default_unit": "MilliMeterPerSecond",
-              "source_unit": "MilliMeterPerSecond"
+              "source_unit": "MilliMeterPerSecond",
+              "default_unit_symbol": "mm/sec",
+              "source_unit_symbol": "mm/sec",
+              "default_unit_measure": "Velocity",
+              "source_unit_measure": "Velocity"
             },
             {
               "component": "4",
               "description": "Magnitude",
               "default_unit": "MilliMeterPerSecond",
-              "source_unit": "MilliMeterPerSecond"
+              "source_unit": "MilliMeterPerSecond",
+              "default_unit_symbol": "mm/sec",
+              "source_unit_symbol": "mm/sec",
+              "default_unit_measure": "Velocity",
+              "source_unit_measure": "Velocity"
             }
           ],
           "scope": "Native field metadata; source units inferred by NX from basic result units. No conservation or integration semantics established."
@@ -70,7 +86,11 @@
               "component": "0",
               "description": "Scalar",
               "default_unit": "Celsius",
-              "source_unit": "Celsius"
+              "source_unit": "Celsius",
+              "default_unit_symbol": "C",
+              "source_unit_symbol": "C",
+              "default_unit_measure": "Temperature",
+              "source_unit_measure": "Temperature"
             }
           ],
           "scope": "Native field metadata; source units inferred by NX from basic result units. No conservation or integration semantics established."
@@ -87,7 +107,11 @@
               "component": "0",
               "description": "Scalar",
               "default_unit": "PressureNewtonPerSquareMilliMeter",
-              "source_unit": "PressureMilliNewtonPerSquareMilliMeter"
+              "source_unit": "PressureMilliNewtonPerSquareMilliMeter",
+              "default_unit_symbol": "N/mm^2(MPa)",
+              "source_unit_symbol": "mN/mm^2(kPa)",
+              "default_unit_measure": "Pressure",
+              "source_unit_measure": "Pressure"
             }
           ],
           "scope": "Native field metadata; source units inferred by NX from basic result units. No conservation or integration semantics established."
@@ -104,7 +128,11 @@
               "component": "0",
               "description": "Scalar",
               "default_unit": "MassFlux_Metric1",
-              "source_unit": "MassFlux_Metric1"
+              "source_unit": "MassFlux_Metric1",
+              "default_unit_symbol": "kg/sec-mm^2",
+              "source_unit_symbol": "kg/sec-mm^2",
+              "default_unit_measure": "Mass Flux",
+              "source_unit_measure": "Mass Flux"
             }
           ],
           "scope": "Native field metadata; source units inferred by NX from basic result units. No conservation or integration semantics established."
@@ -121,7 +149,11 @@
               "component": "0",
               "description": "Scalar",
               "default_unit": "PressureNewtonPerSquareMilliMeter",
-              "source_unit": "PressureMilliNewtonPerSquareMilliMeter"
+              "source_unit": "PressureMilliNewtonPerSquareMilliMeter",
+              "default_unit_symbol": "N/mm^2(MPa)",
+              "source_unit_symbol": "mN/mm^2(kPa)",
+              "default_unit_measure": "Pressure",
+              "source_unit_measure": "Pressure"
             }
           ],
           "scope": "Native field metadata; source units inferred by NX from basic result units. No conservation or integration semantics established."
@@ -138,7 +170,11 @@
               "component": "0",
               "description": "Scalar",
               "default_unit": null,
-              "source_unit": null
+              "source_unit": null,
+              "default_unit_symbol": null,
+              "source_unit_symbol": null,
+              "default_unit_measure": null,
+              "source_unit_measure": null
             }
           ],
           "scope": "Native field metadata; source units inferred by NX from basic result units. No conservation or integration semantics established."
@@ -148,5 +184,5 @@
   ],
   "solver_launched": false,
   "engineering_accepted": false,
-  "scope": "Native inventory evidence for component descriptions and unit names. Does not establish mass-flux dimensions or conservation."
+  "scope": "Native field components and unit symbols. Mass flux reported kg/sec-mm^2; sign convention and conservation remain unverified."
 }

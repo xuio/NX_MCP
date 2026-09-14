@@ -17,8 +17,12 @@ def _field(name="Mass Flux - Nodal"):
         Datatype="Scalar",
         Complex=False,
         AskComponents=lambda: (["Scalar component"], ["Scalar"]),
-        AskDefaultUnitForComponent=lambda _: NS(Name="NativeDefault"),
-        AskSourceUnitForComponent=lambda _: NS(Name="NativeSource"),
+        AskDefaultUnitForComponent=lambda _: NS(
+            Name="NativeDefault", Symbol="default_symbol", Measure="native_measure"
+        ),
+        AskSourceUnitForComponent=lambda _: NS(
+            Name="NativeSource", Symbol="source_symbol", Measure="native_measure"
+        ),
     )
 
 
@@ -150,6 +154,10 @@ def test_field_metadata_retains_distinct_source_and_default_units():
             "description": "Scalar component",
             "default_unit": "NativeDefault",
             "source_unit": "NativeSource",
+            "default_unit_symbol": "default_symbol",
+            "source_unit_symbol": "source_symbol",
+            "default_unit_measure": "native_measure",
+            "source_unit_measure": "native_measure",
         }
     ]
     field = _field()

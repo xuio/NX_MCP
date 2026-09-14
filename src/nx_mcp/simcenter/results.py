@@ -115,6 +115,10 @@ def field_metadata(field):
                 "description": description,
                 "default_unit": default.Name if default is not None else None,
                 "source_unit": source.Name if source is not None else None,
+                "default_unit_symbol": default.Symbol if default is not None else None,
+                "source_unit_symbol": source.Symbol if source is not None else None,
+                "default_unit_measure": default.Measure if default is not None else None,
+                "source_unit_measure": source.Measure if source is not None else None,
             }
         )
     return {
