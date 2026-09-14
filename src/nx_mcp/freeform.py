@@ -19,6 +19,10 @@ def points3(values, minimum=1, maximum=1000):
 
 
 class FreeformMixin:
+    def _divide_face_rectangle(self, face, rectangle):
+        from nx_mcp.divide_face import divide
+        return divide(self, face, rectangle)
+
     def _freeform_refs(self, refs, kind):
         if not isinstance(refs, list) or not 1 <= len(refs) <= 1000 or len(set(refs)) != len(refs):
             raise NXToolError("NX_INVALID_ARGUMENT", "Select 1..1000 distinct objects")

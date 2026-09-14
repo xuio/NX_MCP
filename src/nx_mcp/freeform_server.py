@@ -8,6 +8,10 @@ READ_ONLY: set[str] = set()
 NON_MODEL: set[str] = set()
 
 
+def nx_divide_face_rectangle(face: str, rectangle: list[float]):
+    """Create one native Divide Face rectangular footprint on a work-part horizontal planar solid face. rectangle=[xmin,ymin,xmax,ymax] uses absolute millimeter part coordinates; requires >0.01 mm clearance from bounding edges and no known solver process. Native curves must yield exactly one additional face and one four-edge footprint matching bounds, with volume and total surface area unchanged within 1e-9 relative tolerance. Bounds preflight alone is not trimmed-face containment proof; native result checks reject invalid splits. Does not move or cut solid material. Reacquire topology IDs, inspect model health, and update FEM/thermal selections afterward. Does not save or solve. Normal model-operation undo rolls back failures; supply operation_id to avoid replay. Experimental until validated in the installed NX version."""
+
+
 def nx_spline(
     points: list[list[float]],
     degree: int = 3,
