@@ -25,7 +25,19 @@ def inspect_flow_log(text, boundary_types=None):
     # Native Windows logs contain CRCRLF; normalize without adding phantom rows.
     text = text.replace("\r", "")
     coupled = text.count("Steady-state convergence history - Coupled thermal/flow simulation") == 1
-    energy_expected = coupled or "Solving Flow and Thermal" in text or "| H - Energy" in text
+    # The generic solver banner also appears on isothermal flow-only runs.
+    # Prefer the specific convergence-history scope, retaining conservative
+    # energy requirements for coupled histories, observed energy rows, or an
+    # otherwise unclassified thermal banner.
+    flow_only_history = (
+        text.count("Steady-state convergence history - Flow simulation") == 1
+        and "Steady-state convergence history - Coupled thermal/flow simulation" not in text
+    )
+    energy_expected = (
+        "Steady-state convergence history - Coupled thermal/flow simulation" in text
+        or "| H - Energy" in text
+        or ("Solving Flow and Thermal" in text and not flow_only_history)
+    )
     equations = _EQUATIONS | {"H - Energy"} if energy_expected else _EQUATIONS
     # Require both transported SST quantities even if a partial final table
     # omits one. K-only/other closures remain conservative (not complete).

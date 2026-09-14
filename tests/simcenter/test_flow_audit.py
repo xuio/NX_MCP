@@ -183,3 +183,27 @@ def test_incomplete_or_duplicate_imbalance_diagnostic_is_not_inferred():
         inspect_flow_log(_sst_history() + (maximum + target) * 2)["final_iteration_imbalance"]
         is None
     )
+
+
+def test_generic_thermal_banner_does_not_override_explicit_flow_history():
+    report = inspect_flow_log("Solving Flow and Thermal\n" + _sst_history())
+    assert report["final_equations_complete"]
+    assert report["final_residual_criteria_met"] is True
+    assert report["numerical_convergence"] == "not_established"
+
+
+def test_coupled_history_still_requires_energy_even_when_row_is_missing():
+    text = "Solving Flow and Thermal\n" + _sst_history().replace(
+        "Steady-state convergence history - Flow simulation",
+        "Steady-state convergence history - Coupled thermal/flow simulation",
+    )
+    report = inspect_flow_log(text)
+    assert not report["final_equations_complete"]
+    assert report["final_residual_criteria_met"] is None
+
+
+def test_unclassified_thermal_banner_still_requires_energy():
+    text = "Solving Flow and Thermal\n" + _sst_history().replace(
+        "Steady-state convergence history - Flow simulation", "Unknown history"
+    )
+    assert not inspect_flow_log(text)["final_equations_complete"]
