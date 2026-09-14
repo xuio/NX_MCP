@@ -34,3 +34,19 @@ def test_material_change_or_wrong_partition_rejected(fault):
     if fault == 'nan': after['area_m2'] = float('nan')
     with pytest.raises(NXToolError):
         check_preservation(before, after, 6, 8 if fault == 'faces' else 7)
+
+
+def test_imported_plane_uses_native_elevation_despite_padded_bounds():
+    from nx_mcp.divide_face import horizontal_face_box
+    box = [175.9975, 198.9975, -34.7025, 264.0025, 227.0025, -34.6975]
+    corrected = horizontal_face_box(box, [220, 213, -34.7], [0, 0, -1])
+    points = rectangle_points([180, 202, 260, 224], corrected)
+    assert all(p[2] == -34.7 for p in points)
+    assert box[2] == -34.7025  # input remains unchanged
+
+
+@pytest.mark.parametrize('normal', [[0, 0, 0], [0, 1, 0], [0, 0.001, 1], [0, float('nan'), 1]])
+def test_padded_bounds_cannot_hide_a_nonhorizontal_plane(normal):
+    from nx_mcp.divide_face import horizontal_face_box
+    with pytest.raises(NXToolError):
+        horizontal_face_box([0, 0, -0.0025, 10, 10, 0.0025], [0, 0, 0], normal)

@@ -20,6 +20,20 @@ def rectangle_points(rectangle, box, margin=0.01):
     return [[x0, y0, z], [x1, y0, z], [x1, y1, z], [x0, y1, z]]
 
 
+def horizontal_face_box(box, point, normal):
+    """Use the native plane, not padded UF bounds, to establish elevation."""
+    point = [finite(v, 'plane point') for v in point]
+    normal = [finite(v, 'plane normal') for v in normal]
+    if len(point) != 3 or len(normal) != 3:
+        raise NXToolError('NX_INVALID_GEOMETRY', 'Invalid native plane data')
+    length = math.sqrt(sum(v * v for v in normal))
+    if length == 0 or max(abs(normal[0]), abs(normal[1])) / length > 1e-8:
+        raise NXToolError('NX_INVALID_GEOMETRY', 'Select a horizontal planar face')
+    result = list(box)
+    result[2] = result[5] = point[2]
+    return result
+
+
 def check_preservation(before, after, before_faces, after_faces):
     if after_faces != before_faces + 1:
         raise NXToolError('NX_INVALID_GEOMETRY', 'Divide must produce exactly one additional face')
@@ -47,6 +61,8 @@ def divide(executor, face, rectangle):
     part = executor._work_part()
     uf = UF.UFSession.GetUFSession()
     box = list(uf.ModlGeneral.AskBoundingBox(target.Tag))
+    _, point, normal, _, _, _, _ = uf.Modeling.AskFaceData(target.Tag)
+    box = horizontal_face_box(box, point, normal)
     points = rectangle_points(rectangle, box)
     body_ref = executor._reference(body, 'body', part, 'Divided body')['id']
     before = executor._mass_properties(body_ref)
