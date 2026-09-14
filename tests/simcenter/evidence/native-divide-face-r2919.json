@@ -1,0 +1,1285 @@
+{
+  "implementation_commit": "89a2d15",
+  "isolated_test": {
+    "status": "success",
+    "warnings": [],
+    "units": "mm",
+    "feature": {
+      "id": "obj_4624e637770d4ac9b8cc2069dbd24146_9df0862001ef4fbe85652ae62bd8a2eb",
+      "kind": "feature",
+      "name": "DIVIDE_FACE(3)",
+      "part_id": "part_4624e637770d4ac9b8cc2069dbd24146_71496be6947b494c83b430b9521b8fe6",
+      "session_id": "4624e637770d4ac9b8cc2069dbd24146",
+      "generation_id": "71496be6947b494c83b430b9521b8fe6",
+      "owner_part_path": "D:\\CAD\\DIVIDE_FACE_TEST_R2906.prt",
+      "journal_id": "DIVIDE_FACE(3)",
+      "display_name": ""
+    },
+    "bodies": [
+      {
+        "id": "obj_4624e637770d4ac9b8cc2069dbd24146_00aa4ae33bbe4605b9b1240e27b5d135",
+        "kind": "body",
+        "name": "EXTRUDE(2)",
+        "part_id": "part_4624e637770d4ac9b8cc2069dbd24146_71496be6947b494c83b430b9521b8fe6",
+        "session_id": "4624e637770d4ac9b8cc2069dbd24146",
+        "generation_id": "71496be6947b494c83b430b9521b8fe6",
+        "owner_part_path": "D:\\CAD\\DIVIDE_FACE_TEST_R2906.prt",
+        "journal_id": "EXTRUDE(2)",
+        "display_name": ""
+      }
+    ],
+    "body_count": 1,
+    "body": {
+      "id": "obj_4624e637770d4ac9b8cc2069dbd24146_00aa4ae33bbe4605b9b1240e27b5d135",
+      "kind": "body",
+      "name": "EXTRUDE(2)",
+      "part_id": "part_4624e637770d4ac9b8cc2069dbd24146_71496be6947b494c83b430b9521b8fe6",
+      "session_id": "4624e637770d4ac9b8cc2069dbd24146",
+      "generation_id": "71496be6947b494c83b430b9521b8fe6",
+      "owner_part_path": "D:\\CAD\\DIVIDE_FACE_TEST_R2906.prt",
+      "journal_id": "EXTRUDE(2)",
+      "display_name": ""
+    },
+    "coordinate_frame": "work_part",
+    "created": [
+      {
+        "id": "obj_4624e637770d4ac9b8cc2069dbd24146_9df0862001ef4fbe85652ae62bd8a2eb",
+        "kind": "feature",
+        "name": "DIVIDE_FACE(3)",
+        "part_id": "part_4624e637770d4ac9b8cc2069dbd24146_71496be6947b494c83b430b9521b8fe6",
+        "session_id": "4624e637770d4ac9b8cc2069dbd24146",
+        "generation_id": "71496be6947b494c83b430b9521b8fe6",
+        "owner_part_path": "D:\\CAD\\DIVIDE_FACE_TEST_R2906.prt",
+        "journal_id": "DIVIDE_FACE(3)",
+        "display_name": ""
+      }
+    ],
+    "modified": [],
+    "feature_type": "DIVIDE_FACE",
+    "rectangle": [
+      2.0,
+      3.0,
+      7.0,
+      8.0
+    ],
+    "plane_z": 1.0,
+    "footprint_face": {
+      "id": "obj_4624e637770d4ac9b8cc2069dbd24146_7fc9098265c845bd88eef49f47cbe208",
+      "kind": "face",
+      "name": "FACE 1 {(4.5,5.5,1) EXTRUDE(2)}",
+      "part_id": "part_4624e637770d4ac9b8cc2069dbd24146_71496be6947b494c83b430b9521b8fe6",
+      "session_id": "4624e637770d4ac9b8cc2069dbd24146",
+      "generation_id": "71496be6947b494c83b430b9521b8fe6",
+      "owner_part_path": "D:\\CAD\\DIVIDE_FACE_TEST_R2906.prt",
+      "journal_id": "FACE 1 {(4.5,5.5,1) EXTRUDE(2)}",
+      "display_name": ""
+    },
+    "face_count_before": 6,
+    "face_count_after": 7,
+    "mass_properties_before": {
+      "mass_kg": 0.0007830640000000001,
+      "volume_m3": 1.0000000000000001e-07,
+      "area_m2": 0.00024000000000000003,
+      "center_of_gravity_m": [
+        0.004999999999999999,
+        0.004999999999999999,
+        0.0005
+      ],
+      "inertia_tensor_centroid_kg_m2": [
+        [
+          6.590788666666668e-09,
+          0.0,
+          -4.318235727921495e-25
+        ],
+        [
+          0.0,
+          6.590788666666668e-09,
+          0.0
+        ],
+        [
+          -4.318235727921495e-25,
+          0.0,
+          1.305106666666667e-08
+        ]
+      ],
+      "principal_moments_kg_m2": [
+        1.305106666666667e-08,
+        6.590788666666668e-09,
+        6.590788666666668e-09
+      ],
+      "density_kg_m3": 7830.64,
+      "body_count": 1,
+      "bodies": [
+        {
+          "id": "obj_4624e637770d4ac9b8cc2069dbd24146_00aa4ae33bbe4605b9b1240e27b5d135",
+          "kind": "body",
+          "name": "EXTRUDE(2)",
+          "part_id": "part_4624e637770d4ac9b8cc2069dbd24146_71496be6947b494c83b430b9521b8fe6",
+          "session_id": "4624e637770d4ac9b8cc2069dbd24146",
+          "generation_id": "71496be6947b494c83b430b9521b8fe6",
+          "owner_part_path": "D:\\CAD\\DIVIDE_FACE_TEST_R2906.prt",
+          "journal_id": "EXTRUDE(2)",
+          "display_name": ""
+        }
+      ],
+      "coordinate_frame": "work_part_wcs",
+      "wcs_origin_in_part_units": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "wcs_rotation": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "native_error_estimates": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "semantics": "sum_of_included_bodies_with_assigned_densities",
+      "warnings": [
+        "Overlapping solids are counted separately. Review assigned densities before using mass results."
+      ]
+    },
+    "mass_properties_after": {
+      "mass_kg": 0.0007830640000000001,
+      "volume_m3": 1.0000000000000001e-07,
+      "area_m2": 0.00024000000000000003,
+      "center_of_gravity_m": [
+        0.004999999999999999,
+        0.004999999999999999,
+        0.0005
+      ],
+      "inertia_tensor_centroid_kg_m2": [
+        [
+          6.590788666666668e-09,
+          1.2354571517719728e-26,
+          -3.916712153595603e-25
+        ],
+        [
+          1.2354571517719728e-26,
+          6.590788666666668e-09,
+          5.405125039002381e-27
+        ],
+        [
+          -3.916712153595603e-25,
+          5.405125039002381e-27,
+          1.305106666666667e-08
+        ]
+      ],
+      "principal_moments_kg_m2": [
+        1.305106666666667e-08,
+        6.590788666666668e-09,
+        6.590788666666668e-09
+      ],
+      "density_kg_m3": 7830.64,
+      "body_count": 1,
+      "bodies": [
+        {
+          "id": "obj_4624e637770d4ac9b8cc2069dbd24146_00aa4ae33bbe4605b9b1240e27b5d135",
+          "kind": "body",
+          "name": "EXTRUDE(2)",
+          "part_id": "part_4624e637770d4ac9b8cc2069dbd24146_71496be6947b494c83b430b9521b8fe6",
+          "session_id": "4624e637770d4ac9b8cc2069dbd24146",
+          "generation_id": "71496be6947b494c83b430b9521b8fe6",
+          "owner_part_path": "D:\\CAD\\DIVIDE_FACE_TEST_R2906.prt",
+          "journal_id": "EXTRUDE(2)",
+          "display_name": ""
+        }
+      ],
+      "coordinate_frame": "work_part_wcs",
+      "wcs_origin_in_part_units": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "wcs_rotation": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "native_error_estimates": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "semantics": "sum_of_included_bodies_with_assigned_densities",
+      "warnings": [
+        "Overlapping solids are counted separately. Review assigned densities before using mass results."
+      ]
+    },
+    "validation": "One added face, matched footprint bounds/four edges, preserved volume and total area; run native health and remesh before thermal use",
+    "operation_id": "op_42bd5467e59e42c9bcf53f76fa4b4326",
+    "session_id": "4624e637770d4ac9b8cc2069dbd24146",
+    "mutation_outcome": "committed",
+    "changes": {
+      "created": [
+        {
+          "id": "obj_4624e637770d4ac9b8cc2069dbd24146_9df0862001ef4fbe85652ae62bd8a2eb",
+          "kind": "feature",
+          "name": "DIVIDE_FACE(3)",
+          "part_id": "part_4624e637770d4ac9b8cc2069dbd24146_71496be6947b494c83b430b9521b8fe6",
+          "session_id": "4624e637770d4ac9b8cc2069dbd24146",
+          "generation_id": "71496be6947b494c83b430b9521b8fe6",
+          "owner_part_path": "D:\\CAD\\DIVIDE_FACE_TEST_R2906.prt",
+          "journal_id": "DIVIDE_FACE(3)",
+          "display_name": ""
+        },
+        {
+          "id": "obj_4624e637770d4ac9b8cc2069dbd24146_d47e0f8d0f754f309da705bf8d8ae0b1",
+          "kind": "curve",
+          "name": "ENTITY 3 4 1",
+          "part_id": "part_4624e637770d4ac9b8cc2069dbd24146_71496be6947b494c83b430b9521b8fe6",
+          "session_id": "4624e637770d4ac9b8cc2069dbd24146",
+          "generation_id": "71496be6947b494c83b430b9521b8fe6",
+          "owner_part_path": "D:\\CAD\\DIVIDE_FACE_TEST_R2906.prt",
+          "journal_id": "ENTITY 3 4 1",
+          "display_name": ""
+        },
+        {
+          "id": "obj_4624e637770d4ac9b8cc2069dbd24146_2c7f2cfc71764e5ab85dcf1ee1abcfcd",
+          "kind": "curve",
+          "name": "ENTITY 3 3 1",
+          "part_id": "part_4624e637770d4ac9b8cc2069dbd24146_71496be6947b494c83b430b9521b8fe6",
+          "session_id": "4624e637770d4ac9b8cc2069dbd24146",
+          "generation_id": "71496be6947b494c83b430b9521b8fe6",
+          "owner_part_path": "D:\\CAD\\DIVIDE_FACE_TEST_R2906.prt",
+          "journal_id": "ENTITY 3 3 1",
+          "display_name": ""
+        },
+        {
+          "id": "obj_4624e637770d4ac9b8cc2069dbd24146_b6e885ee26ff408b906b35097aa9378f",
+          "kind": "curve",
+          "name": "ENTITY 3 2 1",
+          "part_id": "part_4624e637770d4ac9b8cc2069dbd24146_71496be6947b494c83b430b9521b8fe6",
+          "session_id": "4624e637770d4ac9b8cc2069dbd24146",
+          "generation_id": "71496be6947b494c83b430b9521b8fe6",
+          "owner_part_path": "D:\\CAD\\DIVIDE_FACE_TEST_R2906.prt",
+          "journal_id": "ENTITY 3 2 1",
+          "display_name": ""
+        },
+        {
+          "id": "obj_4624e637770d4ac9b8cc2069dbd24146_5b8d5162eac64eb2994e40bff0f3722a",
+          "kind": "curve",
+          "name": "ENTITY 3 1 1",
+          "part_id": "part_4624e637770d4ac9b8cc2069dbd24146_71496be6947b494c83b430b9521b8fe6",
+          "session_id": "4624e637770d4ac9b8cc2069dbd24146",
+          "generation_id": "71496be6947b494c83b430b9521b8fe6",
+          "owner_part_path": "D:\\CAD\\DIVIDE_FACE_TEST_R2906.prt",
+          "journal_id": "ENTITY 3 1 1",
+          "display_name": ""
+        }
+      ],
+      "deleted": [],
+      "modified": [],
+      "modified_tracking": "explicit only; null means not fully tracked"
+    }
+  },
+  "thermal_model_validation": {
+    "all_15_solid_volumes_preserved": true,
+    "maximum_body_volume_difference_mm3": 1.4551915228366852e-11,
+    "CAD_after": {
+      "exists": true,
+      "sha256": "2416e8690c8d652c9082dddb408d80cbff07c4ba6d07d5d1a776f7b86da9fd80",
+      "size": 887017,
+      "mtime_ns": 1789418913002341300
+    },
+    "footprints": {
+      "main_fpga": {
+        "rectangle": [
+          184.0,
+          148.0,
+          201.0,
+          165.0
+        ],
+        "plane_z": -40.69,
+        "face_count_before": 8,
+        "face_count_after": 9,
+        "mass_properties_before": {
+          "mass_kg": 0.29414134820113136,
+          "volume_m3": 3.756287458000002e-05,
+          "area_m2": 0.048003923200000014,
+          "center_of_gravity_m": [
+            0.24284754132895767,
+            0.17385241920591582,
+            -0.04149499999999999
+          ],
+          "inertia_tensor_centroid_kg_m2": [
+            [
+              0.0008200600150330967,
+              -3.428119630247438e-21,
+              0.0003436221243727121
+            ],
+            [
+              -3.428119630247438e-21,
+              0.0009272211404019468,
+              -9.054797628073755e-22
+            ],
+            [
+              0.0003436221243727121,
+              -9.054797628073755e-22,
+              0.0017471540814702647
+            ]
+          ],
+          "principal_moments_kg_m2": [
+            0.0017471540814702647,
+            0.0012214149888750926,
+            0.0005258661665599508
+          ],
+          "density_kg_m3": 7830.64,
+          "body_count": 1,
+          "bodies": [
+            {
+              "id": "obj_4624e637770d4ac9b8cc2069dbd24146_16581d8b593747b1aa364e49d7b0ff6e",
+              "kind": "body",
+              "name": "EXTRUDE(8)",
+              "part_id": "part_4624e637770d4ac9b8cc2069dbd24146_bf024e03a04a4283b1c4e9f7281a7c9f",
+              "session_id": "4624e637770d4ac9b8cc2069dbd24146",
+              "generation_id": "bf024e03a04a4283b1c4e9f7281a7c9f",
+              "owner_part_path": "D:\\CAD\\thermal-path-revision-r2893\\THERMAL_PATH_REVISION_R2893_cad_01.prt",
+              "journal_id": "EXTRUDE(8)",
+              "display_name": ""
+            }
+          ],
+          "coordinate_frame": "work_part_wcs",
+          "wcs_origin_in_part_units": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wcs_rotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "native_error_estimates": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "semantics": "sum_of_included_bodies_with_assigned_densities",
+          "warnings": [
+            "Overlapping solids are counted separately. Review assigned densities before using mass results."
+          ]
+        },
+        "mass_properties_after": {
+          "mass_kg": 0.29414134820113136,
+          "volume_m3": 3.756287458000002e-05,
+          "area_m2": 0.048003923200000014,
+          "center_of_gravity_m": [
+            0.24284754132895767,
+            0.17385241920591582,
+            -0.04149499999999999
+          ],
+          "inertia_tensor_centroid_kg_m2": [
+            [
+              0.0008200600150330967,
+              -3.428119630247438e-21,
+              0.0003436221243727121
+            ],
+            [
+              -3.428119630247438e-21,
+              0.0009272211404019468,
+              -9.054797628073755e-22
+            ],
+            [
+              0.0003436221243727121,
+              -9.054797628073755e-22,
+              0.0017471540814702647
+            ]
+          ],
+          "principal_moments_kg_m2": [
+            0.0017471540814702647,
+            0.0012214149888750926,
+            0.0005258661665599508
+          ],
+          "density_kg_m3": 7830.64,
+          "body_count": 1,
+          "bodies": [
+            {
+              "id": "obj_4624e637770d4ac9b8cc2069dbd24146_16581d8b593747b1aa364e49d7b0ff6e",
+              "kind": "body",
+              "name": "EXTRUDE(8)",
+              "part_id": "part_4624e637770d4ac9b8cc2069dbd24146_bf024e03a04a4283b1c4e9f7281a7c9f",
+              "session_id": "4624e637770d4ac9b8cc2069dbd24146",
+              "generation_id": "bf024e03a04a4283b1c4e9f7281a7c9f",
+              "owner_part_path": "D:\\CAD\\thermal-path-revision-r2893\\THERMAL_PATH_REVISION_R2893_cad_01.prt",
+              "journal_id": "EXTRUDE(8)",
+              "display_name": ""
+            }
+          ],
+          "coordinate_frame": "work_part_wcs",
+          "wcs_origin_in_part_units": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wcs_rotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "native_error_estimates": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "semantics": "sum_of_included_bodies_with_assigned_densities",
+          "warnings": [
+            "Overlapping solids are counted separately. Review assigned densities before using mass results."
+          ]
+        }
+      },
+      "main_rk": {
+        "rectangle": [
+          220.0,
+          148.0,
+          243.0,
+          171.0
+        ],
+        "plane_z": -40.69,
+        "face_count_before": 9,
+        "face_count_after": 10,
+        "mass_properties_before": {
+          "mass_kg": 0.29414134820113136,
+          "volume_m3": 3.756287458000002e-05,
+          "area_m2": 0.048003923200000014,
+          "center_of_gravity_m": [
+            0.24284754132895767,
+            0.17385241920591582,
+            -0.04149499999999999
+          ],
+          "inertia_tensor_centroid_kg_m2": [
+            [
+              0.0008200600150330965,
+              -3.4410940956874405e-21,
+              0.0003436221243727121
+            ],
+            [
+              -3.4410940956874405e-21,
+              0.0009272211404019468,
+              -9.108778488584402e-22
+            ],
+            [
+              0.0003436221243727121,
+              -9.108778488584402e-22,
+              0.0017471540814702647
+            ]
+          ],
+          "principal_moments_kg_m2": [
+            0.0017471540814702647,
+            0.0012214149888750926,
+            0.0005258661665599508
+          ],
+          "density_kg_m3": 7830.64,
+          "body_count": 1,
+          "bodies": [
+            {
+              "id": "obj_4624e637770d4ac9b8cc2069dbd24146_16581d8b593747b1aa364e49d7b0ff6e",
+              "kind": "body",
+              "name": "EXTRUDE(8)",
+              "part_id": "part_4624e637770d4ac9b8cc2069dbd24146_bf024e03a04a4283b1c4e9f7281a7c9f",
+              "session_id": "4624e637770d4ac9b8cc2069dbd24146",
+              "generation_id": "bf024e03a04a4283b1c4e9f7281a7c9f",
+              "owner_part_path": "D:\\CAD\\thermal-path-revision-r2893\\THERMAL_PATH_REVISION_R2893_cad_01.prt",
+              "journal_id": "EXTRUDE(8)",
+              "display_name": ""
+            }
+          ],
+          "coordinate_frame": "work_part_wcs",
+          "wcs_origin_in_part_units": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wcs_rotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "native_error_estimates": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "semantics": "sum_of_included_bodies_with_assigned_densities",
+          "warnings": [
+            "Overlapping solids are counted separately. Review assigned densities before using mass results."
+          ]
+        },
+        "mass_properties_after": {
+          "mass_kg": 0.29414134820113136,
+          "volume_m3": 3.756287458000002e-05,
+          "area_m2": 0.048003923200000014,
+          "center_of_gravity_m": [
+            0.24284754132895767,
+            0.17385241920591582,
+            -0.04149499999999999
+          ],
+          "inertia_tensor_centroid_kg_m2": [
+            [
+              0.0008200600150330969,
+              -3.4410940956874405e-21,
+              0.0003436221243727122
+            ],
+            [
+              -3.4410940956874405e-21,
+              0.0009272211404019468,
+              -9.108778488584402e-22
+            ],
+            [
+              0.0003436221243727122,
+              -9.108778488584402e-22,
+              0.001747154081470265
+            ]
+          ],
+          "principal_moments_kg_m2": [
+            0.001747154081470265,
+            0.0012214149888750928,
+            0.0005258661665599508
+          ],
+          "density_kg_m3": 7830.64,
+          "body_count": 1,
+          "bodies": [
+            {
+              "id": "obj_4624e637770d4ac9b8cc2069dbd24146_16581d8b593747b1aa364e49d7b0ff6e",
+              "kind": "body",
+              "name": "EXTRUDE(8)",
+              "part_id": "part_4624e637770d4ac9b8cc2069dbd24146_bf024e03a04a4283b1c4e9f7281a7c9f",
+              "session_id": "4624e637770d4ac9b8cc2069dbd24146",
+              "generation_id": "bf024e03a04a4283b1c4e9f7281a7c9f",
+              "owner_part_path": "D:\\CAD\\thermal-path-revision-r2893\\THERMAL_PATH_REVISION_R2893_cad_01.prt",
+              "journal_id": "EXTRUDE(8)",
+              "display_name": ""
+            }
+          ],
+          "coordinate_frame": "work_part_wcs",
+          "wcs_origin_in_part_units": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wcs_rotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "native_error_estimates": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "semantics": "sum_of_included_bodies_with_assigned_densities",
+          "warnings": [
+            "Overlapping solids are counted separately. Review assigned densities before using mass results."
+          ]
+        }
+      },
+      "sink_fpga": {
+        "rectangle": [
+          184.0,
+          148.0,
+          201.0,
+          165.0
+        ],
+        "plane_z": -38.190000000000005,
+        "face_count_before": 38,
+        "face_count_after": 39,
+        "mass_properties_before": {
+          "mass_kg": 0.7831992565090902,
+          "volume_m3": 0.00010001727272727262,
+          "area_m2": 0.07380145454545455,
+          "center_of_gravity_m": [
+            0.22499999999999998,
+            0.15969714900484133,
+            -0.03199621301775149
+          ],
+          "inertia_tensor_centroid_kg_m2": [
+            [
+              0.0003780951164340263,
+              -2.4877222979063323e-06,
+              6.082847027581493e-19
+            ],
+            [
+              -2.4877222979063323e-06,
+              0.002279173497146279,
+              6.204545158944783e-22
+            ],
+            [
+              6.082847027581493e-19,
+              6.204545158944783e-22,
+              0.0026148485323191557
+            ]
+          ],
+          "principal_moments_kg_m2": [
+            0.002614866968073102,
+            0.0022791550613923323,
+            0.0003780951164340263
+          ],
+          "density_kg_m3": 7830.64,
+          "body_count": 1,
+          "bodies": [
+            {
+              "id": "obj_4624e637770d4ac9b8cc2069dbd24146_32675fddd36f40c8b0e408bb7609bd1a",
+              "kind": "body",
+              "name": "EXTRUDE(14)",
+              "part_id": "part_4624e637770d4ac9b8cc2069dbd24146_bf024e03a04a4283b1c4e9f7281a7c9f",
+              "session_id": "4624e637770d4ac9b8cc2069dbd24146",
+              "generation_id": "bf024e03a04a4283b1c4e9f7281a7c9f",
+              "owner_part_path": "D:\\CAD\\thermal-path-revision-r2893\\THERMAL_PATH_REVISION_R2893_cad_01.prt",
+              "journal_id": "EXTRUDE(14)",
+              "display_name": ""
+            }
+          ],
+          "coordinate_frame": "work_part_wcs",
+          "wcs_origin_in_part_units": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wcs_rotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "native_error_estimates": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "semantics": "sum_of_included_bodies_with_assigned_densities",
+          "warnings": [
+            "Overlapping solids are counted separately. Review assigned densities before using mass results."
+          ]
+        },
+        "mass_properties_after": {
+          "mass_kg": 0.7831992565090903,
+          "volume_m3": 0.00010001727272727264,
+          "area_m2": 0.07380145454545455,
+          "center_of_gravity_m": [
+            0.22499999999999998,
+            0.1596971490048413,
+            -0.03199621301775148
+          ],
+          "inertia_tensor_centroid_kg_m2": [
+            [
+              0.00037809511643402643,
+              -2.4877222979063204e-06,
+              5.909335436444655e-19
+            ],
+            [
+              -2.4877222979063204e-06,
+              0.0022791734971462792,
+              5.445919090468744e-20
+            ],
+            [
+              5.909335436444655e-19,
+              5.445919090468744e-20,
+              0.0026148485323191557
+            ]
+          ],
+          "principal_moments_kg_m2": [
+            0.002614866968073102,
+            0.0022791550613923328,
+            0.00037809511643402643
+          ],
+          "density_kg_m3": 7830.64,
+          "body_count": 1,
+          "bodies": [
+            {
+              "id": "obj_4624e637770d4ac9b8cc2069dbd24146_32675fddd36f40c8b0e408bb7609bd1a",
+              "kind": "body",
+              "name": "EXTRUDE(14)",
+              "part_id": "part_4624e637770d4ac9b8cc2069dbd24146_bf024e03a04a4283b1c4e9f7281a7c9f",
+              "session_id": "4624e637770d4ac9b8cc2069dbd24146",
+              "generation_id": "bf024e03a04a4283b1c4e9f7281a7c9f",
+              "owner_part_path": "D:\\CAD\\thermal-path-revision-r2893\\THERMAL_PATH_REVISION_R2893_cad_01.prt",
+              "journal_id": "EXTRUDE(14)",
+              "display_name": ""
+            }
+          ],
+          "coordinate_frame": "work_part_wcs",
+          "wcs_origin_in_part_units": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wcs_rotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "native_error_estimates": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "semantics": "sum_of_included_bodies_with_assigned_densities",
+          "warnings": [
+            "Overlapping solids are counted separately. Review assigned densities before using mass results."
+          ]
+        }
+      },
+      "sink_rk": {
+        "rectangle": [
+          220.0,
+          148.0,
+          243.0,
+          171.0
+        ],
+        "plane_z": -38.19000000000001,
+        "face_count_before": 39,
+        "face_count_after": 40,
+        "mass_properties_before": {
+          "mass_kg": 0.7831992565090903,
+          "volume_m3": 0.00010001727272727264,
+          "area_m2": 0.07380145454545455,
+          "center_of_gravity_m": [
+            0.22499999999999998,
+            0.1596971490048413,
+            -0.03199621301775148
+          ],
+          "inertia_tensor_centroid_kg_m2": [
+            [
+              0.0003780951164340263,
+              -2.4877222979063234e-06,
+              5.9148192789781505e-19
+            ],
+            [
+              -2.4877222979063234e-06,
+              0.0022791734971462792,
+              5.1031527544181463e-20
+            ],
+            [
+              5.9148192789781505e-19,
+              5.1031527544181463e-20,
+              0.0026148485323191557
+            ]
+          ],
+          "principal_moments_kg_m2": [
+            0.002614866968073102,
+            0.0022791550613923328,
+            0.0003780951164340263
+          ],
+          "density_kg_m3": 7830.64,
+          "body_count": 1,
+          "bodies": [
+            {
+              "id": "obj_4624e637770d4ac9b8cc2069dbd24146_32675fddd36f40c8b0e408bb7609bd1a",
+              "kind": "body",
+              "name": "EXTRUDE(14)",
+              "part_id": "part_4624e637770d4ac9b8cc2069dbd24146_bf024e03a04a4283b1c4e9f7281a7c9f",
+              "session_id": "4624e637770d4ac9b8cc2069dbd24146",
+              "generation_id": "bf024e03a04a4283b1c4e9f7281a7c9f",
+              "owner_part_path": "D:\\CAD\\thermal-path-revision-r2893\\THERMAL_PATH_REVISION_R2893_cad_01.prt",
+              "journal_id": "EXTRUDE(14)",
+              "display_name": ""
+            }
+          ],
+          "coordinate_frame": "work_part_wcs",
+          "wcs_origin_in_part_units": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wcs_rotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "native_error_estimates": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "semantics": "sum_of_included_bodies_with_assigned_densities",
+          "warnings": [
+            "Overlapping solids are counted separately. Review assigned densities before using mass results."
+          ]
+        },
+        "mass_properties_after": {
+          "mass_kg": 0.78319925650909,
+          "volume_m3": 0.0001000172727272726,
+          "area_m2": 0.07380145454545455,
+          "center_of_gravity_m": [
+            0.225,
+            0.1596971490048413,
+            -0.03199621301775149
+          ],
+          "inertia_tensor_centroid_kg_m2": [
+            [
+              0.0003780951164340258,
+              -2.487722297906318e-06,
+              7.000469436837287e-19
+            ],
+            [
+              -2.487722297906318e-06,
+              0.002279173497146279,
+              4.6472975552006444e-20
+            ],
+            [
+              7.000469436837287e-19,
+              4.6472975552006444e-20,
+              0.002614848532319155
+            ]
+          ],
+          "principal_moments_kg_m2": [
+            0.0026148669680731013,
+            0.0022791550613923323,
+            0.0003780951164340258
+          ],
+          "density_kg_m3": 7830.64,
+          "body_count": 1,
+          "bodies": [
+            {
+              "id": "obj_4624e637770d4ac9b8cc2069dbd24146_32675fddd36f40c8b0e408bb7609bd1a",
+              "kind": "body",
+              "name": "EXTRUDE(14)",
+              "part_id": "part_4624e637770d4ac9b8cc2069dbd24146_bf024e03a04a4283b1c4e9f7281a7c9f",
+              "session_id": "4624e637770d4ac9b8cc2069dbd24146",
+              "generation_id": "bf024e03a04a4283b1c4e9f7281a7c9f",
+              "owner_part_path": "D:\\CAD\\thermal-path-revision-r2893\\THERMAL_PATH_REVISION_R2893_cad_01.prt",
+              "journal_id": "EXTRUDE(14)",
+              "display_name": ""
+            }
+          ],
+          "coordinate_frame": "work_part_wcs",
+          "wcs_origin_in_part_units": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wcs_rotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "native_error_estimates": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "semantics": "sum_of_included_bodies_with_assigned_densities",
+          "warnings": [
+            "Overlapping solids are counted separately. Review assigned densities before using mass results."
+          ]
+        }
+      },
+      "ssd_cooler": {
+        "rectangle": [
+          180.0,
+          202.0,
+          260.0,
+          224.0
+        ],
+        "plane_z": -34.7,
+        "face_count_before": 42,
+        "face_count_after": 43,
+        "mass_properties_before": {
+          "mass_kg": 0.1212809523199997,
+          "volume_m3": 1.548799999999996e-05,
+          "area_m2": 0.026752000000000005,
+          "center_of_gravity_m": [
+            0.22,
+            0.21300000000000005,
+            -0.028927272727272735
+          ],
+          "inertia_tensor_centroid_kg_m2": [
+            [
+              1.0962311312213216e-05,
+              1.8775124630106434e-21,
+              2.2943682220287667e-20
+            ],
+            [
+              1.8775124630106434e-21,
+              8.056103963221326e-05,
+              8.600453444203272e-22
+            ],
+            [
+              2.2943682220287667e-20,
+              8.600453444203272e-22,
+              8.693455414101315e-05
+            ]
+          ],
+          "principal_moments_kg_m2": [
+            8.693455414101315e-05,
+            8.056103963221326e-05,
+            1.0962311312213216e-05
+          ],
+          "density_kg_m3": 7830.64,
+          "body_count": 1,
+          "bodies": [
+            {
+              "id": "obj_4624e637770d4ac9b8cc2069dbd24146_8170c7c2b9294d438426ec691b5370e1",
+              "kind": "body",
+              "name": "EXTRUDE(49)",
+              "part_id": "part_4624e637770d4ac9b8cc2069dbd24146_bf024e03a04a4283b1c4e9f7281a7c9f",
+              "session_id": "4624e637770d4ac9b8cc2069dbd24146",
+              "generation_id": "bf024e03a04a4283b1c4e9f7281a7c9f",
+              "owner_part_path": "D:\\CAD\\thermal-path-revision-r2893\\THERMAL_PATH_REVISION_R2893_cad_01.prt",
+              "journal_id": "EXTRUDE(49)",
+              "display_name": ""
+            }
+          ],
+          "coordinate_frame": "work_part_wcs",
+          "wcs_origin_in_part_units": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wcs_rotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "native_error_estimates": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "semantics": "sum_of_included_bodies_with_assigned_densities",
+          "warnings": [
+            "Overlapping solids are counted separately. Review assigned densities before using mass results."
+          ]
+        },
+        "mass_properties_after": {
+          "mass_kg": 0.12128095231999975,
+          "volume_m3": 1.5487999999999968e-05,
+          "area_m2": 0.026752000000000005,
+          "center_of_gravity_m": [
+            0.22,
+            0.21300000000000002,
+            -0.028927272727272735
+          ],
+          "inertia_tensor_centroid_kg_m2": [
+            [
+              1.0962311312213066e-05,
+              1.0496993133390069e-21,
+              4.722253077695346e-20
+            ],
+            [
+              1.0496993133390069e-21,
+              8.056103963221326e-05,
+              1.3076374100239667e-21
+            ],
+            [
+              4.722253077695346e-20,
+              1.3076374100239667e-21,
+              8.6934554141013e-05
+            ]
+          ],
+          "principal_moments_kg_m2": [
+            8.6934554141013e-05,
+            8.056103963221326e-05,
+            1.0962311312213066e-05
+          ],
+          "density_kg_m3": 7830.64,
+          "body_count": 1,
+          "bodies": [
+            {
+              "id": "obj_4624e637770d4ac9b8cc2069dbd24146_8170c7c2b9294d438426ec691b5370e1",
+              "kind": "body",
+              "name": "EXTRUDE(49)",
+              "part_id": "part_4624e637770d4ac9b8cc2069dbd24146_bf024e03a04a4283b1c4e9f7281a7c9f",
+              "session_id": "4624e637770d4ac9b8cc2069dbd24146",
+              "generation_id": "bf024e03a04a4283b1c4e9f7281a7c9f",
+              "owner_part_path": "D:\\CAD\\thermal-path-revision-r2893\\THERMAL_PATH_REVISION_R2893_cad_01.prt",
+              "journal_id": "EXTRUDE(49)",
+              "display_name": ""
+            }
+          ],
+          "coordinate_frame": "work_part_wcs",
+          "wcs_origin_in_part_units": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wcs_rotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "native_error_estimates": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "semantics": "sum_of_included_bodies_with_assigned_densities",
+          "warnings": [
+            "Overlapping solids are counted separately. Review assigned densities before using mass results."
+          ]
+        }
+      }
+    },
+    "healthy_solids": 15,
+    "mesh_updated": false,
+    "thermal_assignments_updated": false,
+    "thermal_acceptance": false
+  }
+}
