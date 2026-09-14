@@ -1,0 +1,87 @@
+{
+  "code_commit": "836b2800386f3d3df7c5950263e4f377e01d2a5a",
+  "receipt_sha256": "1e1a72732efb946e618a32eee2617d6039f83a33936a9eeef10ee41d1e3bd668",
+  "native_result": {
+    "status": "success",
+    "warnings": [],
+    "units": "mm",
+    "cad": {
+      "id": "obj_62a02cd1b2dc477891e4ff03c0cce4dd_dec7bbbedb7d44b3ad163184b16cbb96",
+      "kind": "part",
+      "name": "BD_THERMAL_TOPSIDE_R2439",
+      "part_id": "part_62a02cd1b2dc477891e4ff03c0cce4dd_37c08b36aed74a7699a56642dbff161d",
+      "session_id": "62a02cd1b2dc477891e4ff03c0cce4dd",
+      "generation_id": "37c08b36aed74a7699a56642dbff161d",
+      "owner_part_path": "D:\\CAD\\BD_THERMAL_TOPSIDE_R2439.prt",
+      "journal_id": "BD_THERMAL_TOPSIDE_R2439",
+      "display_name": "BD_THERMAL_TOPSIDE_R2439"
+    },
+    "fem": {
+      "id": "obj_62a02cd1b2dc477891e4ff03c0cce4dd_a13ef6da94454d9c968c41c08637b69b",
+      "kind": "part",
+      "name": "analysis_949e2df4945b_mesh",
+      "part_id": "part_62a02cd1b2dc477891e4ff03c0cce4dd_3d799d5bdf7146d1987a9e06bdf1a465",
+      "session_id": "62a02cd1b2dc477891e4ff03c0cce4dd",
+      "generation_id": "3d799d5bdf7146d1987a9e06bdf1a465",
+      "owner_part_path": "D:\\CAD\\thermal-topside-r2453\\analysis_949e2df4945b_mesh.fem",
+      "journal_id": "analysis_949e2df4945b_mesh",
+      "display_name": "analysis_949e2df4945b_mesh"
+    },
+    "sim": {
+      "id": "obj_62a02cd1b2dc477891e4ff03c0cce4dd_87c021d4ee5047a5adc9fce5a888971f",
+      "kind": "part",
+      "name": "analysis_949e2df4945b_analysis",
+      "part_id": "part_62a02cd1b2dc477891e4ff03c0cce4dd_f72f0ae67ae946dd945d0b12726c408e",
+      "session_id": "62a02cd1b2dc477891e4ff03c0cce4dd",
+      "generation_id": "f72f0ae67ae946dd945d0b12726c408e",
+      "owner_part_path": "D:\\CAD\\thermal-topside-r2453\\analysis_949e2df4945b_analysis.sim",
+      "journal_id": "analysis_949e2df4945b_analysis",
+      "display_name": "analysis_949e2df4945b_analysis"
+    },
+    "paths": {
+      "fem": "D:\\CAD\\thermal-topside-r2453\\analysis_949e2df4945b_mesh.fem",
+      "sim": "D:\\CAD\\thermal-topside-r2453\\analysis_949e2df4945b_analysis.sim"
+    },
+    "source_sha256": "b9cd04ab9394a095e9dac82bbf3126b539a2fdc20b60790ad5c84f79a16ecb9f",
+    "source_preserved": true,
+    "body_count": 12,
+    "geometry_association": "all CAD bodies",
+    "cad_shared": true,
+    "solution": "TOPSIDE_THERMAL_R2453",
+    "analysis_type": "thermal",
+    "initialization": {
+      "parameter_tables": [
+        {
+          "property": "Thermal Parameters",
+          "descriptor": "Thermal Parameters",
+          "name": "Thermal Parameters"
+        },
+        {
+          "property": "Thermal Output Requests",
+          "descriptor": "Multiphysics Thermal Output Requests",
+          "name": "Thermal Output Requests"
+        }
+      ],
+      "step": {
+        "name": "Conduction",
+        "descriptor": "Step - Thermal",
+        "active": true,
+        "solution_type": 0
+      }
+    },
+    "presentation": {
+      "information_window_closed": true,
+      "view_fitted": true,
+      "display_refreshed": true,
+      "warnings": []
+    },
+    "next_step": "Assign mesh, materials, thermal contacts, loads and boundary conditions",
+    "saved": true,
+    "meshed": false,
+    "solver_launched": false,
+    "operation_id": "op_9b083955fc464a24a57dce1b0c418ede",
+    "session_id": "62a02cd1b2dc477891e4ff03c0cce4dd",
+    "mutation_outcome": "committed"
+  },
+  "validation_scope": "Native creation, source preservation, table and step readback; no numerical solve or thermal acceptance."
+}
