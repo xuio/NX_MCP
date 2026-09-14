@@ -1,0 +1,29 @@
+{
+  "tool": "nx_sim_saved_dependencies",
+  "implementation_commit": "25e7150",
+  "native_result": {
+    "status": "success",
+    "warnings": [],
+    "units": "mm",
+    "source": {
+      "path": "D:\\CAD\\thermal-screen-h15-air60-r2492\\THERMAL_SCREEN_H15_AIR60_R2492.sim",
+      "bytes": 7821907,
+      "sha256": "74b04d8516822741e4cc74fceff73049c8fd5d674cb3aa1a1c00bbff2a9b4e99"
+    },
+    "saved_paths": [
+      "D:\\CAD\\thermal-screen-h15-air60-r2492\\THERMAL_SCREEN_H15_AIR60_R2492.sim",
+      "D:\\CAD\\BD_THERMAL_TOPSIDE_R2439.prt",
+      "D:\\CAD\\thermal-topside-r2453\\analysis_949e2df4945b_mesh.fem"
+    ],
+    "clone_performed": false,
+    "source_file_preserved": true,
+    "document_flags_preserved": true,
+    "load_method_restored": true,
+    "scope": "Native saved clone membership only; no role, units, result freshness or live-reference equivalence inferred",
+    "operation_id": "op_b26801852e7e41ad82a27a99d5fb5234",
+    "session_id": "f94b6539c95f46eaaa05f206cfbbbced",
+    "mutation_outcome": "not_applicable"
+  },
+  "observed_live_CAD_path": "D:\\CAD\\BD_SSD_FIN_STUDY_R2512.prt",
+  "validation": "Saved inventory correctly differs from live association after earlier Save As; no clone performed and source/file flags preserved."
+}
