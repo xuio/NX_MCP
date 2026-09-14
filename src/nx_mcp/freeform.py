@@ -19,9 +19,9 @@ def points3(values, minimum=1, maximum=1000):
 
 
 class FreeformMixin:
-    def _divide_face_rectangle(self, face, rectangle):
+    def _divide_face_rectangle(self, face, rectangle, span_axis=None):
         from nx_mcp.divide_face import divide
-        return divide(self, face, rectangle)
+        return divide(self, face, rectangle, span_axis=span_axis)
 
     def _freeform_refs(self, refs, kind):
         if not isinstance(refs, list) or not 1 <= len(refs) <= 1000 or len(set(refs)) != len(refs):

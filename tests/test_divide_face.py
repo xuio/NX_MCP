@@ -50,3 +50,21 @@ def test_padded_bounds_cannot_hide_a_nonhorizontal_plane(normal):
     from nx_mcp.divide_face import horizontal_face_box
     with pytest.raises(NXToolError):
         horizontal_face_box([0, 0, -0.0025, 10, 10, 0.0025], [0, 0, 0], normal)
+
+
+@pytest.mark.parametrize('axis,rectangle', [('X', [0,2,10,8]), ('Y', [2,0,8,10])])
+def test_span_accepts_one_complete_axis(axis, rectangle):
+    assert len(rectangle_points(rectangle, [0,0,1,10,10,1], span_axis=axis)) == 4
+
+
+@pytest.mark.parametrize('axis,rectangle', [('X', [1,2,9,8]), ('Y', [2,1,8,9]), ('X', [0,0,10,10]), ('Z', [2,2,8,8])])
+def test_span_rejects_partial_or_two_axis_spans(axis, rectangle):
+    with pytest.raises(NXToolError):
+        rectangle_points(rectangle, [0,0,1,10,10,1], span_axis=axis)
+
+
+def test_span_requires_two_new_faces_and_preserved_mass():
+    mass = {'volume_m3': 1e-5, 'area_m2': .01}
+    check_preservation(mass, mass, 6, 8, added_faces=2)
+    with pytest.raises(NXToolError):
+        check_preservation(mass, mass, 6, 7, added_faces=2)
