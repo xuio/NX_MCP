@@ -2657,6 +2657,19 @@ class SimcenterMixin:
             loadcase_index=loadcase_index, iteration_index=iteration_index,
         )
 
+    def _sim_pressure_samples(
+        self, document, result_sha256, element_labels, field="pressure",
+        loadcase_index=0, iteration_index=0, maximum_bytes=1_073_741_824,
+    ):
+        from nx_mcp.simcenter.result_reader import read_bound
+        from nx_mcp.simcenter.pressure_samples import pressure_samples
+
+        return read_bound(
+            self, document, result_sha256, pressure_samples, maximum_bytes,
+            element_labels=element_labels, field=field,
+            loadcase_index=loadcase_index, iteration_index=iteration_index,
+        )
+
     def _sim_temperature_nodes(
         self,
         document,

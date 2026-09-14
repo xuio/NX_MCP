@@ -1015,3 +1015,18 @@ def nx_sim_velocity_samples(
 
 
 READ_ONLY.add("nx_sim_velocity_samples")
+
+
+def nx_sim_pressure_samples(
+    document: str,
+    result_sha256: str,
+    element_labels: list[int],
+    field: Literal["pressure", "total_pressure"] = "pressure",
+    loadcase_index: int = 0,
+    iteration_index: int = 0,
+    maximum_bytes: int = 1_073_741_824,
+):
+    """Read unaveraged element-nodal pressure in Pa for 1..1024 unique positive result element labels. Requires the active SIM and exact lowercase result SHA256; hashes its associated file before and after extraction and rejects changes. Coordinates are millimeters; verify ordered node labels and coordinates against the executed mesh before integrating. Undefined elements have null values. Preserves displayed result ownership. Native pressure reference is retained: no absolute/gauge inference. Does not save, solve, average, integrate or establish freshness, fan performance or convergence."""
+
+
+READ_ONLY.add("nx_sim_pressure_samples")
