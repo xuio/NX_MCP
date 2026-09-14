@@ -314,3 +314,32 @@ def test_sim_display_capture_does_not_use_cad_only_accessor(rig):
     result = rig.e._capture_view(style="current")
     assert result["capture_kind"] == "nx_model_viewport"
     assert result["camera"]["coordinate_frame"] == "display_part"
+
+
+def test_bounds_source_distinguishes_owned_and_nested_occurrence(rig):
+    owned = Body("owned")
+    owned.OwningPart = rig.part
+    owned.JournalIdentifier = "OWNED BODY"
+    rig.part.Bodies.append(owned)
+    rig.ref(owned)
+    prototype = Body("prototype")
+    prototype.OwningPart = NS(FullPath="supplier.prt")
+    prototype.JournalIdentifier = "SOURCE BODY"
+    root = Component("root")
+    parent = Component("parent", parent=root)
+    child = Component("child", [prototype], parent)
+    occurrence = child.FindOccurrence(prototype)
+    occurrence.Prototype = prototype
+    rig.ref(occurrence)
+    rig.part.ComponentAssembly.RootComponent = root
+    basic = rig.e._get_bounding_box(scope="assembly")
+    assert all("source" not in row for row in basic["bodies"])
+    enriched = rig.e._get_bounding_box(scope="assembly", include_source=True)
+    assert [row["box"] for row in basic["bodies"]] == [row["box"] for row in enriched["bodies"]]
+    a, b = [row["source"] for row in enriched["bodies"]]
+    assert not a["is_occurrence"] and a["occurrence_path"] == []
+    assert a["prototype_part_path"] == rig.part.FullPath
+    assert a["prototype_body_journal_id"] == "OWNED BODY"
+    assert b["prototype_part_path"] == "supplier.prt"
+    assert b["prototype_body_journal_id"] == "SOURCE BODY"
+    assert b["is_occurrence"] and b["occurrence_path"] == ["root", "parent", "child"]

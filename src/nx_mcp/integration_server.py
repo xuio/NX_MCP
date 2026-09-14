@@ -257,8 +257,9 @@ def nx_get_bounding_box(
     body: str | None = None,
     scope: Literal["auto", "part", "assembly"] = "auto",
     precision: Literal["conservative", "exact"] = "conservative",
+    include_source: bool = False,
 ):
-    pass
+    """Inspect included body bounds. include_source adds native prototype part path, body journal ID and occurrence ancestry without modifying or loading source parts. Source identity does not prove geometry equivalence."""
 
 
 def nx_checkpoint(label: str = "checkpoint"):

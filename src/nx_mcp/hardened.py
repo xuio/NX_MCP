@@ -1293,7 +1293,7 @@ class HardenedExecutor(
                 bodies.append(occurrence)
         return bodies
 
-    def _get_bounding_box(self, body=None, scope="auto", precision="conservative"):
+    def _get_bounding_box(self, body=None, scope="auto", precision="conservative", include_source=False):
         import NXOpen.UF
 
         part = self._work_part()
@@ -1334,6 +1334,21 @@ class HardenedExecutor(
                     "solid": bool(item.IsSolidBody),
                 }
             )
+            if include_source:
+                prototype = item.Prototype if item.IsOccurrence else item
+                component = item.OwningComponent if item.IsOccurrence else None
+                occurrence_path = []
+                while component is not None:
+                    occurrence_path.append(str(component.Name))
+                    component = component.Parent
+                result[-1]["source"] = {
+                    "is_occurrence": bool(item.IsOccurrence),
+                    "prototype_part_path": str(prototype.OwningPart.FullPath),
+                    "prototype_body_journal_id": str(prototype.JournalIdentifier),
+                    "occurrence_path": list(reversed(occurrence_path)),
+                    "identity_semantics": "Native source identity, not a geometry fingerprint; "
+                    "paths may be empty for unsaved parts and journal IDs can change after edits.",
+                }
         low = [min(row["box"][i] for row in result) for i in range(3)]
         high = [max(row["box"][i + 3] for row in result) for i in range(3)]
         return {
