@@ -402,6 +402,17 @@ class SimcenterMixin:
         )
         return {"material": self._reference(material, "material", fem, name), **actual}
 
+    def _sim_saved_dependencies(self, document):
+        import NXOpen.CAE as cae
+        import NXOpen.UF as uf
+        from nx_mcp.simcenter.saved_dependencies import inspect_saved
+
+        sim = self.objects.resolve(document, expected_kind="part")
+        if not isinstance(sim, cae.SimPart):
+            raise NXToolError("NX_SIM_DOCUMENT_TYPE", "Select a SIM")
+        return inspect_saved(self.session, self.workspace, sim.FullPath,
+                             uf.UFSession.GetUFSession().Clone)
+
     def _sim_variant_plan(self, document, folder, name, saved_snapshot=False):
         from nx_mcp.simcenter.dependencies import inspect_direct
         from nx_mcp.simcenter.variant_plan import plan_variant

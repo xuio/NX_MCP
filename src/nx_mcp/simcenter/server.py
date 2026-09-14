@@ -694,6 +694,13 @@ def nx_sim_close(document: str):
 NON_MODEL.add("nx_sim_close")
 
 
+def nx_sim_saved_dependencies(document: str):
+    """Read native saved clone membership for a live SIM using AsSaved loading. Requires no known solver process. Returns at most 16 existing workspace paths, including the source SIM, and a bounded source hash. Does not perform a clone, save, create a folder or replace live dependencies. Restores native clone context/load options and verifies source bytes and loaded document flags after success. Load diagnostics and incomplete membership are errors; no partial list is accepted. This inventory does not infer CAD roles, units, result freshness or equivalence to unsaved live references."""
+
+
+READ_ONLY.add("nx_sim_saved_dependencies")
+
+
 def nx_sim_variant_plan(document: str, folder: str, name: str, saved_snapshot: bool = False):
     """Plan an independent saved-file SIM/FEM/CAD variant from a live SIM ID. Read-only: creates no folder and saves no edits. Requires fully loaded direct dependencies inside the workspace; assembly dependencies are rejected. folder must be new; name generates distinct loaded-safe basenames. Modified sources require explicit saved_snapshot=true, which excludes unsaved edits. Returns exact source/destination mapping, units, hashes and plan_sha256; total source hashing is bounded to 1 GiB. Use the same arguments and expected_plan_sha256 with nx_sim_variant_create. External inputs/results are not packaged."""
 
