@@ -10,6 +10,7 @@ from contextlib import contextmanager
 
 from nx_mcp.runtime import NXToolError
 from nx_mcp.simcenter.jobs import _read, _write_once
+from nx_mcp.simcenter.validation_limits import MAX_INPUT_BYTES
 
 
 @contextmanager
@@ -175,7 +176,7 @@ def release_launch_gate(store, job_id):
                 "NX_SIM_OUTPUT_CONFLICT", "Input is outside the owned output directory"
             )
         with deck.open("rb") as stream:
-            data = stream.read(64 * 1024 * 1024 + 1)
+            data = stream.read(MAX_INPUT_BYTES + 1)
         identity = input_identity(data)
         if (
             identity["xml_content_sha256"]

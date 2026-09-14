@@ -13,6 +13,7 @@ from nx_mcp.simcenter.result_identity import fingerprint_file
 from nx_mcp.simcenter.solver_guard import require_solver_idle
 from nx_mcp.simcenter.solver_log import inspect_solver_log
 from nx_mcp.simcenter.solver_manifest import compare_inputs
+from nx_mcp.simcenter.validation_limits import MAX_INPUT_BYTES
 
 
 def observe_terminal(workspace, job_id, job_folder="simcenter-jobs"):
@@ -89,9 +90,9 @@ def observe_terminal(workspace, job_id, job_folder="simcenter-jobs"):
         raise
     before_path = workspace.resolve(store._directory(job_id) / "before-launch.xml")
     with before_path.open("rb") as stream:
-        before = stream.read(64 * 1024 * 1024 + 1)
+        before = stream.read(MAX_INPUT_BYTES + 1)
     with deck.open("rb") as stream:
-        after = stream.read(64 * 1024 * 1024 + 1)
+        after = stream.read(MAX_INPUT_BYTES + 1)
     comparison = compare_inputs(before, after)
     if (
         comparison["before"]["sha256"] != manifest["prepared_input"]["input"]["sha256"]

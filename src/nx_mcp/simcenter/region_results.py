@@ -7,6 +7,7 @@ import math
 from nx_mcp.runtime import NXToolError
 from nx_mcp.simcenter.nodal_availability import read_defined
 from nx_mcp.simcenter.results import acquire_result
+from nx_mcp.simcenter.validation_limits import MAX_MESH_ENTITIES
 
 
 def temperature_regions(
@@ -26,11 +27,11 @@ def temperature_regions(
         or type(limit) is not int
         or not 1 <= limit <= 50
         or type(maximum_entities) is not int
-        or not 1 <= maximum_entities <= 1000000
+        or not 1 <= maximum_entities <= MAX_MESH_ENTITIES
     ):
         raise NXToolError(
             "NX_INVALID_ARGUMENT",
-            "dimension 3d|2d; indices/offset >=0; limit 1..50; maximum_entities 1..1000000",
+            "dimension 3d|2d; indices/offset >=0; limit 1..50; maximum_entities 1..2000000",
         )
     import NXOpen.CAE as cae
 

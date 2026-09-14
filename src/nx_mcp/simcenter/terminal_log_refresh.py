@@ -4,6 +4,7 @@ Explicit administrative CLI; retains original immutable history and launch gate.
 Only a strict suffix completing the native timestamp is eligible. Arbitrary log
 appends, changed inputs/results and active solvers require investigation.
 """
+
 import copy
 import hashlib
 import re
@@ -15,6 +16,7 @@ from nx_mcp.simcenter.launch_gate import _gate_lock
 from nx_mcp.simcenter.log_reader import owned_output
 from nx_mcp.simcenter.result_identity import fingerprint_file
 from nx_mcp.simcenter.solver_guard import require_solver_idle
+from nx_mcp.simcenter.validation_limits import MAX_INPUT_BYTES
 
 
 def refresh_terminal_log(store, job_id, *, expected_revision, expected_log_sha256):
@@ -44,7 +46,7 @@ def refresh_terminal_log(store, job_id, *, expected_revision, expected_log_sha25
         def snapshot():
             idle = require_solver_idle()
             files = {"log": fingerprint_file(log, maximum_bytes=8*1024*1024),
-                     "input": fingerprint_file(deck, maximum_bytes=64*1024*1024),
+                     "input": fingerprint_file(deck, maximum_bytes=MAX_INPUT_BYTES),
                      "result": fingerprint_file(result, maximum_bytes=1024*1024*1024)}
             for name, expected in (("input", prior["input_comparison"]["after"]),
                                    ("result", prior["result"])):

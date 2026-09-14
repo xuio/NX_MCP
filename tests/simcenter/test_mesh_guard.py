@@ -7,7 +7,7 @@ from nx_mcp.runtime import NXToolError
 from nx_mcp.simcenter import mesh_guard
 
 
-@pytest.mark.parametrize("budget", [True, 0, 1000001, 1.5, None])
+@pytest.mark.parametrize("budget", [True, 0, 2000001, 1.5, None])
 def test_invalid_budget_before_native_import(budget):
     with pytest.raises(NXToolError) as error:
         mesh_guard.validate_budget(budget)

@@ -8,6 +8,8 @@ from __future__ import annotations
 
 import re
 
+from nx_mcp.simcenter.validation_limits import MAX_INPUT_BYTES
+
 _FATAL = re.compile(r"\bNX2TMG\s*-\s*FATAL ERROR\s+(\d+)\b", re.IGNORECASE)
 _ERROR = re.compile(r"\bNX2TMG\s*-\s*(?:FATAL\s+)?ERROR\s+(\d+)\b", re.IGNORECASE)
 _ABORT = re.compile(r"Run aborted due to (?:fatal )?errors", re.IGNORECASE)
@@ -56,7 +58,7 @@ def inspect_input_xml(data: bytes) -> dict:
     """Reject malformed native exports before launch; XML validity is not solve readiness."""
     import xml.etree.ElementTree as ET
 
-    if len(data) > 64 * 1024 * 1024:
+    if len(data) > MAX_INPUT_BYTES:
         return {"state": "invalid", "reason": "input_exceeds_validation_limit"}
     if b"<!DOCTYPE" in data.upper() or b"<!ENTITY" in data.upper():
         return {"state": "invalid", "reason": "xml_declarations_not_supported"}

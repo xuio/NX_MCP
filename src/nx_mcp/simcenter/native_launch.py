@@ -16,6 +16,7 @@ from nx_mcp.simcenter.prepared_input import validate_prepared_input
 from nx_mcp.simcenter.solver_guard import require_solver_idle
 from nx_mcp.simcenter.solver_manifest import preserve_input
 from nx_mcp.simcenter.thermal_state import capture_analysis_thermal_state, require_thermal_state
+from nx_mcp.simcenter.validation_limits import MAX_INPUT_BYTES
 
 
 def launch_prepared(session, workspace, sim, job_id, job_folder="simcenter-jobs"):
@@ -84,7 +85,7 @@ def launch_prepared(session, workspace, sim, job_id, job_folder="simcenter-jobs"
     # reject without reserving an ambiguous launch or changing the model.
     foreground = solution.PropertyTable.GetBooleanPropertyValue("Foreground")
     with workspace.resolve(manifest["prepared_input"]["input"]["path"]).open("rb") as stream:
-        raw = stream.read(64 * 1024 * 1024 + 1)
+        raw = stream.read(MAX_INPUT_BYTES + 1)
     if hashlib.sha256(raw).hexdigest() != validation["input"]["sha256"]:
         raise NXToolError(
             "NX_SIM_INPUT_CHANGED", "Input changed during launch preflight; inspect before recovery"

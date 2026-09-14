@@ -6,6 +6,7 @@ import math
 import re
 
 from nx_mcp.runtime import NXToolError
+from nx_mcp.simcenter.validation_limits import MAX_MESH_ENTITIES
 
 SCOPE = "node_labels_coordinates_and_ordered_element_connectivity_shape_mesh_collector"
 
@@ -66,8 +67,8 @@ def digest(nodes, elements, *, units, owner_path):
 
 def capture(fem, *, maximum_entities=200000):
     """Inspect a FEM prototype; dispose both label maps on every exit path."""
-    if type(maximum_entities) is not int or not 1 <= maximum_entities <= 1000000:
-        raise ValueError("maximum_entities must be an integer in 1..1000000")
+    if type(maximum_entities) is not int or not 1 <= maximum_entities <= MAX_MESH_ENTITIES:
+        raise ValueError("maximum_entities must be an integer in 1..2000000")
     import NXOpen as nx
 
     if fem.PartUnits != nx.BasePart.Units.Millimeters:

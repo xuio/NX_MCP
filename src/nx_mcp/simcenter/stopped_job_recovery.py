@@ -5,6 +5,7 @@ reconstruct that historical association from absent processes. Both identities
 must now be missing or demonstrably exited; running/reused/unknown PIDs fail.
 This command changes only the launch gate and its immutable release receipt.
 """
+
 import json
 import re
 
@@ -15,6 +16,7 @@ from nx_mcp.simcenter.log_reader import owned_output, valid_log_name
 from nx_mcp.simcenter.process_identity import correlate_process, inspect_process
 from nx_mcp.simcenter.result_identity import fingerprint_file
 from nx_mcp.simcenter.solver_guard import require_solver_idle
+from nx_mcp.simcenter.validation_limits import MAX_INPUT_BYTES
 
 
 def recover_stopped_job(store, job_id, recovery):
@@ -73,7 +75,7 @@ def recover_stopped_job(store, job_id, recovery):
             if deck.parent != directory or log.parent != directory:
                 raise NXToolError("NX_SIM_OUTPUT_CONFLICT", "Artifact escapes owned output directory")
             artifacts = {}
-            for key, path, limit in (("input", deck, 64*1024*1024), ("log", log, 8*1024*1024)):
+            for key, path, limit in (("input", deck, MAX_INPUT_BYTES), ("log", log, 8*1024*1024)):
                 value = fingerprint_file(path, maximum_bytes=limit)
                 if value["sha256"] != recovery[key+"_sha256"]:
                     raise NXToolError("NX_SIM_TERMINAL_CHANGED", "Inspected artifact changed")

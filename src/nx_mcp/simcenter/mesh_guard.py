@@ -1,12 +1,13 @@
 """Prepared-job mesh baseline; never upgrades a historical export retroactively."""
 
 from nx_mcp.runtime import NXToolError
+from nx_mcp.simcenter.validation_limits import MAX_MESH_ENTITIES
 
 
 def validate_budget(maximum_entities):
-    if type(maximum_entities) is not int or not 1 <= maximum_entities <= 1000000:
+    if type(maximum_entities) is not int or not 1 <= maximum_entities <= MAX_MESH_ENTITIES:
         raise NXToolError(
-            "NX_INVALID_ARGUMENT", "mesh_inspection_limit must be an integer in 1..1000000"
+            "NX_INVALID_ARGUMENT", "mesh_inspection_limit must be an integer in 1..2000000"
         )
 
 

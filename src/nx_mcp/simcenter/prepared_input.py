@@ -9,6 +9,7 @@ from nx_mcp.runtime import NXToolError
 from nx_mcp.simcenter.result_identity import fingerprint_file
 from nx_mcp.simcenter.revisions import audit_saved_revision
 from nx_mcp.simcenter.solver_manifest import input_identity
+from nx_mcp.simcenter.validation_limits import MAX_INPUT_BYTES
 
 
 def _input(workspace, path, maximum_bytes):
@@ -46,7 +47,7 @@ def capture_prepared_input(workspace, input_path, documents, *, maximum_bytes=1_
         current = fingerprint_file(path, maximum_bytes=maximum_bytes - consumed)
         files.append(current)
         consumed += current["bytes"]
-    input_record = _input(workspace, input_path, min(64 * 1024 * 1024, maximum_bytes - consumed))
+    input_record = _input(workspace, input_path, min(MAX_INPUT_BYTES, maximum_bytes - consumed))
     return {
         "schema": 1,
         "dependencies": files,
@@ -72,7 +73,7 @@ def validate_prepared_input(workspace, prepared, documents, *, maximum_bytes=1_0
     consumed = sum(row["bytes"] for row in revision["files"])
     try:
         current = _input(
-            workspace, prepared["input"]["path"], min(64 * 1024 * 1024, maximum_bytes - consumed)
+            workspace, prepared["input"]["path"], min(MAX_INPUT_BYTES, maximum_bytes - consumed)
         )
     except (OSError, ValueError) as error:
         raise NXToolError(

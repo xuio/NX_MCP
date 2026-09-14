@@ -3,6 +3,7 @@
 from nx_mcp.runtime import NXToolError
 from nx_mcp.simcenter.solver_log import inspect_input_xml, inspect_solver_log
 from nx_mcp.simcenter.solver_manifest import input_identity
+from nx_mcp.simcenter.validation_limits import MAX_INPUT_BYTES
 
 
 def export_flow_input(session, workspace, sim):
@@ -75,8 +76,8 @@ def export_flow_input(session, workspace, sim):
         decks = [p for p in artifacts if p.is_file() and p.suffix.lower() == ".xml"]
         if len(decks) != 1:
             raise ValueError("Native export did not produce exactly one inspectable XML input")
-        if decks[0].stat().st_size > 64 * 1024 * 1024:
-            raise ValueError("Native input exceeds the 64 MiB validation limit")
+        if decks[0].stat().st_size > MAX_INPUT_BYTES:
+            raise ValueError("Native input exceeds the 256 MiB validation limit")
         raw = decks[0].read_bytes()
         validation = inspect_input_xml(raw)
         if validation["state"] != "well_formed" or not validation.get("mesh_counts", {}).get(

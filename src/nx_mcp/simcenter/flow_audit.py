@@ -5,6 +5,7 @@ import re
 
 from nx_mcp.simcenter.fan_summary import inspect_fan_operating_points
 from nx_mcp.simcenter.solver_log import inspect_solver_log
+from nx_mcp.simcenter.validation_limits import MAX_INPUT_BYTES
 
 _N = r"[+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?"
 _EQUATIONS = {"U - Mom", "V - Mom", "W - Mom", "P - Mass"}
@@ -240,7 +241,7 @@ def audit_job_flow_log(
         import xml.etree.ElementTree as ET
 
         input_path = workspace.resolve(job["manifest"]["prepared_input"]["input"]["path"])
-        if input_path.parent == directory and input_path.stat().st_size <= 64 * 1024 * 1024:
+        if input_path.parent == directory and input_path.stat().st_size <= MAX_INPUT_BYTES:
             raw = input_path.read_bytes()
             if b"<!DOCTYPE" not in raw.upper() and b"<!ENTITY" not in raw.upper():
                 root = ET.fromstring(raw)
