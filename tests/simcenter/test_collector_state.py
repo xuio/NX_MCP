@@ -44,3 +44,48 @@ def test_fluid_collector_is_explicitly_unsupported_without_native_solid_access()
     )
     assert row["assignment_inspection"] == "unsupported_collector_type"
     assert "state_sha256" not in row
+
+
+def test_membership_uses_native_owner_not_collection_order(monkeypatch):
+    from nx_mcp.simcenter import collector_state as module
+
+    collectors = [NS(Tag=22), NS(Tag=11)]
+    meshes = [NS(Tag=1, MeshCollector=collectors[1]), NS(Tag=2, MeshCollector=collectors[0])]
+    fem = NS(
+        BaseFEModel=NS(
+            MeshManager=NS(GetMeshCollectors=lambda: collectors, GetMeshes=lambda: meshes)
+        )
+    )
+    monkeypatch.setattr(
+        module, "inspect_collector", lambda fem, c, ref, units: {"state_sha256": str(c.Tag)}
+    )
+    rows = module.inspect_collectors(fem, lambda obj, *args: {"id": str(obj.Tag)}, "mm")[
+        "collectors"
+    ]
+    assert rows[0]["meshes"] == [{"id": "2"}]
+    assert rows[1]["meshes"] == [{"id": "1"}]
+    assert rows[0]["state_sha256"] == "22"
+    assert all(r["membership_status"] == "complete" for r in rows)
+    paged = module.inspect_collectors(
+        fem, lambda obj, *args: {"id": str(obj.Tag)}, "mm", offset=1, limit=1
+    )
+    assert paged["collectors"][0]["meshes"] == [{"id": "1"}]
+
+
+def test_membership_failure_never_returns_partial_mapping(monkeypatch):
+    from nx_mcp.simcenter import collector_state as module
+
+    collector = NS(Tag=1)
+    meshes = [NS(Tag=2, MeshCollector=collector), NS(Tag=3)]
+    fem = NS(
+        BaseFEModel=NS(
+            MeshManager=NS(GetMeshCollectors=lambda: [collector], GetMeshes=lambda: meshes)
+        )
+    )
+    monkeypatch.setattr(module, "inspect_collector", lambda *args: {"state_sha256": "preserved"})
+    row = module.inspect_collectors(fem, lambda obj, *args: {"id": str(obj.Tag)}, "mm")[
+        "collectors"
+    ][0]
+    assert row["membership_status"] == "read_failed"
+    assert "meshes" not in row
+    assert row["state_sha256"] == "preserved"

@@ -81,11 +81,32 @@ def inspect_collectors(fem, reference, units, offset=0, limit=20):
         or not 1 <= limit <= 100
     ):
         raise NXToolError("NX_INVALID_ARGUMENT", "offset >= 0; limit must be 1..100")
-    collectors = list(fem.BaseFEModel.MeshManager.GetMeshCollectors())
+    manager = fem.BaseFEModel.MeshManager
+    collectors = list(manager.GetMeshCollectors())
+    rows = [
+        inspect_collector(fem, c, reference, units) for c in collectors[offset : offset + limit]
+    ]
+    # Membership is additional readback, deliberately outside the established
+    # assignment/frame hash. Consumers must check membership_status before use.
+    try:
+        meshes = list(manager.GetMeshes())
+        if len(meshes) > 10000:
+            raise ValueError("Mesh membership inspection limit exceeded")
+        members = {int(c.Tag): [] for c in collectors[offset : offset + limit]}
+        for mesh in meshes:
+            tag = int(mesh.MeshCollector.Tag)
+            if tag in members:
+                members[tag].append(reference(mesh, "simulation_mesh", fem, "mesh"))
+        for row, collector in zip(rows, collectors[offset : offset + limit], strict=True):
+            row["meshes"] = members[int(collector.Tag)]
+            row["membership_status"] = "complete"
+    except Exception as error:
+        for row in rows:
+            row.pop("meshes", None)
+            row["membership_status"] = "read_failed"
+            row["membership_error"] = {"nx_code": getattr(error, "ErrorCode", None)}
     return {
-        "collectors": [
-            inspect_collector(fem, c, reference, units) for c in collectors[offset : offset + limit]
-        ],
+        "collectors": rows,
         "total": len(collectors),
         "next_offset": offset + limit if offset + limit < len(collectors) else None,
         "paging_consistency": "live_collection_restart_after_mutation",
