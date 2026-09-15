@@ -66,6 +66,21 @@ class SimcenterMixin:
         result = edit(self.session, sim, fan, volume_flow_m3_s)
         return {"document": self._reference(sim, "part", sim, "SIM"), **result}
 
+    def _sim_internal_fan_membership(self, document, boundary, enabled):
+        import NXOpen.CAE as cae
+
+        from nx_mcp.simcenter.internal_fan_edit import set_membership
+        from nx_mcp.simcenter.solver_guard import require_solver_idle
+
+        require_solver_idle()
+        sim = self.objects.resolve(document, expected_kind="part")
+        self.workspace.resolve(sim.FullPath)
+        if not isinstance(sim, cae.SimPart):
+            raise NXToolError("NX_SIM_DOCUMENT_TYPE", "Select a SIM")
+        fan = self.objects.resolve(boundary, expected_kind="simulation_object")
+        result = set_membership(self.session, sim, fan, enabled)
+        return {"document": self._reference(sim, "part", sim, "SIM"), **result}
+
     def _sim_internal_fan(self, document, faces, name, direction, motor_heat_w, volume_flow_m3_s=None, fan_table=None):
         from nx_mcp.simcenter.internal_fan_authoring import create
 

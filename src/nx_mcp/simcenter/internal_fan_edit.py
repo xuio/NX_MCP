@@ -1,12 +1,13 @@
 """Guarded constant-volume internal-fan edits; native acceptance required separately."""
 
 import math
+from copy import deepcopy
 
 from nx_mcp.runtime import NXToolError
 from nx_mcp.simcenter.internal_fan import snapshot
 
 
-def inspect(boundary, sim):
+def inspect(boundary, sim, *, require_member=True):
     """Read the supported fan binding and the invariants this operation preserves."""
     if boundary.OwningPart != sim or boundary.DescriptorName != "Internal Fan":
         raise NXToolError("NX_SIM_SELECTION_OWNER", "Select an Internal Fan in this SIM")
@@ -44,7 +45,9 @@ def inspect(boundary, sim):
         raise NXToolError(
             "NX_SIM_UNSUPPORTED_CONFIGURATION", "Requires positive finite flow in m3/s"
         )
-    if int(boundary.Tag) not in {int(x.Tag) for x in sim.Simulation.ActiveSolution.GetBcs()}:
+    if require_member and int(boundary.Tag) not in {
+        int(x.Tag) for x in sim.Simulation.ActiveSolution.GetBcs()
+    }:
         raise NXToolError("NX_SIM_SELECTION_OWNER", "Fan must belong to the active solution")
     _, members = boundary.TargetSetManager.GetTargetSetMembers(0)
     targets = sorted((int(m.Obj.Tag), str(m.SubType), int(m.SubId)) for m in members)
@@ -64,6 +67,112 @@ def inspect(boundary, sim):
             "heat": [heat, heat_unit.Name if heat_unit else None],
         },
     }
+
+
+def set_membership(session, sim, boundary, enabled):
+    """Change only direct fan membership; exported effectiveness needs native validation."""
+    import NXOpen as nx
+
+    from nx_mcp.simcenter.boundary_state import capture_effective_membership
+    from nx_mcp.simcenter.collector_state import state_hash
+
+    if type(enabled) is not bool:
+        raise NXToolError("NX_INVALID_ARGUMENT", "enabled must be a boolean")
+    sol = sim.Simulation.ActiveSolution
+    if (
+        session.Parts.BaseWork != sim
+        or sol is None
+        or sol.SolverType != "NX MULTIPHYSICS"
+        or sol.AnalysisType not in ("Flow", "Coupled Thermal-Flow")
+        or sol.StepCount != 1
+        or list(sim.Simulation.Solutions) != [sol]
+    ):
+        raise NXToolError("NX_SIM_SOLUTION_TYPE", "Activate a single-step Multiphysics flow SIM")
+    binding = inspect(boundary, sim, require_member=False)
+    inventory = snapshot(sim)
+    if int(boundary.Tag) not in inventory["objects"]:
+        raise NXToolError("NX_SIM_SELECTION_OWNER", "Fan is not in this SIM's object inventory")
+    membership = capture_effective_membership(sim)
+    if not membership["comparison_verified"]:
+        raise NXToolError(
+            "NX_SIM_UNSUPPORTED_CONFIGURATION", "Membership must be fully readable and unfoldered"
+        )
+    ref = {"journal_id": boundary.JournalIdentifier, "owner_path": sim.FullPath}
+    if any(ref in step["bcs"] for step in membership["steps"]):
+        raise NXToolError(
+            "NX_SIM_UNSUPPORTED_CONFIGURATION", "Step-level fan membership is unsupported"
+        )
+    present = ref in membership["solution"]["bcs"]
+    if present != (int(boundary.Tag) in inventory["solution_bcs"]):
+        raise NXToolError("NX_SIM_READBACK_MISMATCH", "Fan membership observations disagree")
+    result = {
+        "changed": present != enabled,
+        "enabled_in_active_solution": enabled,
+        "saved": False,
+        "solver_launched": False,
+        "native_export_effectiveness": "not_verified",
+        "fan_properties_preserved": binding,
+    }
+    if present == enabled:
+        return result
+    expected = deepcopy(membership)
+    for key in ("bcs", "unfoldered_bcs"):
+        values = expected["solution"][key]
+        if enabled:
+            values.append(ref)
+            values.sort(key=lambda row: row["journal_id"])
+        else:
+            values.remove(ref)
+    expected["sha256"] = state_hash({"solution": expected["solution"], "steps": expected["steps"]})
+    expected_inventory = deepcopy(inventory)
+    tags = expected_inventory["solution_bcs"]
+    if enabled:
+        tags.append(int(boundary.Tag))
+        tags.sort()
+    else:
+        tags.remove(int(boundary.Tag))
+    mark = session.SetUndoMark(nx.Session.MarkVisibility.Visible, "NX MCP Internal Fan membership")
+    try:
+        (sol.AddBc if enabled else sol.RemoveBc)(boundary)
+        if session.UpdateManager.DoUpdate(mark):
+            raise NXToolError("NX_SIM_UPDATE_FAILED", "Fan membership update reported errors")
+        after = snapshot(sim)
+        if (
+            capture_effective_membership(sim) != expected
+            or inspect(boundary, sim, require_member=False) != binding
+            or any(after[k] != expected_inventory[k] for k in inventory if k != "modified")
+        ):
+            raise NXToolError(
+                "NX_SIM_READBACK_MISMATCH", "Fan membership or preserved state differs"
+            )
+        result["membership"] = expected
+        result["results_stale"] = True
+        return result
+    except Exception as error:
+        try:
+            session.UndoToMark(mark, None)
+            if (
+                snapshot(sim) != inventory
+                or capture_effective_membership(sim) != membership
+                or inspect(boundary, sim, require_member=False) != binding
+            ):
+                raise RuntimeError("Fan membership rollback differs")
+            session.DeleteUndoMark(mark, None)
+        except Exception as recovery:
+            raise NXToolError(
+                "NX_SIM_ROLLBACK_FAILED",
+                "Fan membership rollback incomplete",
+                details={
+                    "mutation_outcome": "partial",
+                    "operation_error": str(error),
+                    "recovery_error": str(recovery),
+                },
+            ) from error
+        raise NXToolError(
+            getattr(error, "code", "NX_SIM_AUTHORING_FAILED"),
+            str(error),
+            details={"mutation_outcome": "rolled_back"},
+        ) from error
 
 
 def edit(session, sim, boundary, volume_flow_m3_s):

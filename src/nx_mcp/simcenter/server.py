@@ -1000,6 +1000,13 @@ def nx_sim_internal_fan_flow(document: str, boundary: str, volume_flow_m3_s: flo
 NON_MODEL.add("nx_sim_internal_fan_flow")
 
 
+def nx_sim_internal_fan_membership(document: str, boundary: str, enabled: bool):
+    """Add/remove an existing prescribed-flow Internal Fan's direct active-solution membership without deleting it or setting zero flow. Requires an idle solver, active single-solution/single-step Multiphysics Flow/Coupled SIM, same-owner fan, fully readable unfoldered membership, no conflict overrides and no direct step membership for that fan. Preserves fan flow, direction, targets, heat, object/expression/field inventories and all other solution/step memberships; verifies undo on failure. Does not save, change fluid geometry, export or solve. Native export effectiveness is unverified: validate the exact exported active-fan delta on an isolated SIM before a comparison solve. Supply operation_id for transport deduplication."""
+
+
+NON_MODEL.add("nx_sim_internal_fan_membership")
+
+
 def nx_sim_internal_fan(document: str, faces: list[str], name: str, direction: list[float], motor_heat_w: float, volume_flow_m3_s: float | None = None, fan_table: str | None = None):
     """Create a native Internal Fan on distinct SIM occurrence face references. Supply live document ID, unique name, explicit nonzero XYZ direction in SIM absolute coordinates and nonnegative motor heat in watts. Supply exactly one positive volume_flow_m3_s or verified static-pressure fan_table reference. Sets normal-to-face alignment, no swirl and no speed controller; direction is read back as stored, not yet solver-qualified. Rejects duplicate names and overlap with Inlet, Opening or Internal Fan selections. Verifies committed units, values, direction, targets and solution membership; rollback checks include fields, expressions, directions and modified state. No save or solve. Caller must verify the selected surface is an internal fluid interface, exported direction/pressure semantics, and mass/energy conservation before using production results. Native authoring and numerical validation are pending for this new capability."""
 
