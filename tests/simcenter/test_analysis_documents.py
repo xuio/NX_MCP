@@ -107,3 +107,60 @@ def test_bad_native_readback_rejected(kwargs):
     sim, solution, native, _ = fixture(**kwargs)
     with pytest.raises(NXToolError):
         initialize_steady_thermal(sim, solution, native)
+
+
+def selection_fixture():
+    cad = NS(Bodies=[])
+    bodies = [NS(Tag=i, OwningPart=cad, IsOccurrence=False) for i in (10, 20, 30)]
+    cad.Bodies = bodies
+    refs = dict(zip(('a', 'b', 'c'), bodies, strict=True))
+    executor = NS(objects=NS(resolve=lambda ref, expected_kind: refs[ref]))
+    return executor, cad, bodies
+
+
+def test_selected_source_subset_and_legacy_default():
+    from nx_mcp.simcenter.analysis_documents import select_source_bodies
+
+    executor, cad, bodies = selection_fixture()
+    assert select_source_bodies(executor, cad, None) == bodies
+    assert select_source_bodies(executor, cad, ['c', 'a']) == [bodies[2], bodies[0]]
+    assert inspect.signature(nx_sim_create_analysis).parameters['bodies'].default is None
+
+
+@pytest.mark.parametrize('selection', [[], 'a', [1], ['a', 'a']])
+def test_invalid_source_selection_rejected(selection):
+    from nx_mcp.simcenter.analysis_documents import select_source_bodies
+
+    executor, cad, _ = selection_fixture()
+    with pytest.raises(NXToolError):
+        select_source_bodies(executor, cad, selection)
+
+
+@pytest.mark.parametrize('defect', ['foreign_owner', 'occurrence', 'missing_from_source'])
+def test_foreign_and_occurrence_bodies_rejected(defect):
+    from nx_mcp.simcenter.analysis_documents import select_source_bodies
+
+    executor, cad, bodies = selection_fixture()
+    if defect == 'foreign_owner':
+        bodies[0].OwningPart = object()
+    elif defect == 'occurrence':
+        bodies[0].IsOccurrence = True
+    else:
+        cad.Bodies = bodies[1:]
+    with pytest.raises(NXToolError):
+        select_source_bodies(executor, cad, ['a'])
+
+
+@pytest.mark.parametrize('actual,mode,success', [([30,10], 'selected', True),
+    ([10,20], 'selected', False), ([10,30,30], 'selected', False),
+    ([10,30], 'all', False), ([], 'selected', False)])
+def test_native_selection_readback_rejects_equal_count_substitution(actual, mode, success):
+    from nx_mcp.simcenter.analysis_documents import verify_selected_association
+
+    _, _, bodies = selection_fixture()
+    fem = NS(GetGeometryDataWithAttributes=lambda: (mode, [NS(Tag=t) for t in actual], None, None))
+    if success:
+        assert verify_selected_association(fem, [bodies[0],bodies[2]], 'selected')['verified']
+    else:
+        with pytest.raises(NXToolError):
+            verify_selected_association(fem, [bodies[0],bodies[2]], 'selected')

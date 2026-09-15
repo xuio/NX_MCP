@@ -59,7 +59,33 @@ def initialize_steady_thermal(sim, solution, native):
     }
 
 
-def create(executor, cad, folder, name, analysis_type="coupled_thermal_flow"):
+def select_source_bodies(executor, cad, bodies):
+    """Validate explicit CAD ownership before creating any documents or folders."""
+    owned = list(cad.Bodies)
+    if bodies is None:
+        return owned
+    if not isinstance(bodies, list) or not bodies or any(not isinstance(b, str) for b in bodies):
+        raise NXToolError("NX_INVALID_ARGUMENT", "bodies must be a nonempty list of body IDs")
+    selected = [executor.objects.resolve(b, expected_kind="body") for b in bodies]
+    tags = [int(b.Tag) for b in selected]
+    owned_tags = {int(b.Tag) for b in owned}
+    if len(tags) != len(set(tags)):
+        raise NXToolError("NX_INVALID_ARGUMENT", "Select each source body only once")
+    if any(b.OwningPart != cad or b.IsOccurrence or int(b.Tag) not in owned_tags for b in selected):
+        raise NXToolError("NX_SIM_SELECTION_OWNER", "Select directly owned bodies of the source CAD")
+    return selected
+
+
+def verify_selected_association(fem, selected, selected_mode):
+    data = fem.GetGeometryDataWithAttributes()
+    expected = sorted(int(b.Tag) for b in selected)
+    actual = sorted(int(b.Tag) for b in data[1])
+    if data[0] != selected_mode or actual != expected:
+        raise NXToolError("NX_SIM_READBACK_MISMATCH", "Selected CAD body association differs")
+    return {"mode": str(data[0]), "source_body_tags": actual, "verified": True}
+
+
+def create(executor, cad, folder, name, analysis_type="coupled_thermal_flow", bodies=None):
     analysis, solution_type = analysis_environment(analysis_type)
     import NXOpen.CAE as cae
 
@@ -85,6 +111,7 @@ def create(executor, cad, folder, name, analysis_type="coupled_thermal_flow"):
             "NX_SIM_UNSUPPORTED",
             "Assembly FEM creation is not supported; select a standalone CAD part",
         )
+    selected = select_source_bodies(executor, cad, bodies)
     if not isinstance(name, str) or not name.strip():
         raise NXToolError("NX_INVALID_ARGUMENT", "Supply a solution name")
     target = executor.workspace.resolve(folder)
@@ -112,11 +139,19 @@ def create(executor, cad, folder, name, analysis_type="coupled_thermal_flow"):
                 cae.BaseFemPart.AxisymAbstractionType.NotSet,
             )
             options.SetGeometryOptions(
-                cae.FemCreationOptions.UseBodiesOption.AllBodies, [], fem.NewFemSynchronizeOptions()
+                cae.FemCreationOptions.UseBodiesOption.AllBodies if bodies is None
+                else cae.FemCreationOptions.UseBodiesOption.SelectedBodies,
+                [] if bodies is None else selected,
+                fem.NewFemSynchronizeOptions(),
             )
             fem.FinalizeCreation(options)
         finally:
             options.Dispose()
+        association_readback = None
+        if bodies is not None:
+            association_readback = verify_selected_association(
+                fem, selected, cae.FemPart.UseBodiesOption.SelectedBodies
+            )
         stage = "sim"
         sim = session.Parts.NewBaseDisplay(str(paths["sim"]), nx.BasePart.Units.Millimeters)
         opened.append(sim)
@@ -138,9 +173,9 @@ def create(executor, cad, folder, name, analysis_type="coupled_thermal_flow"):
         # Inspection uses the installed CAD association property, never a filename inference.
         if fem.MasterCadPart != cad:
             raise NXToolError("NX_SIM_READBACK_MISMATCH", "FEM master CAD association differs")
-        if len(list(fem.Bodies)) != len(list(cad.Bodies)):
+        if len(list(fem.Bodies)) != len(selected):
             raise NXToolError(
-                "NX_SIM_READBACK_MISMATCH", "FEM body count differs from selected CAD"
+                "NX_SIM_READBACK_MISMATCH", "FEM body count differs from selected source bodies"
             )
         initialization = None
         if analysis_type == "thermal":
@@ -172,7 +207,9 @@ def create(executor, cad, folder, name, analysis_type="coupled_thermal_flow"):
             "source_sha256": digest,
             "source_preserved": True,
             "body_count": len(list(fem.Bodies)),
-            "geometry_association": "all CAD bodies",
+            "geometry_association": "all CAD bodies" if bodies is None else "selected CAD bodies",
+            "association_readback": association_readback,
+            "selected_source_bodies": [executor._reference(b, "body", cad, "Body") for b in selected],
             "cad_shared": True,
             "solution": solution.Name,
             "analysis_type": analysis_type,

@@ -1,0 +1,184 @@
+{
+  "receipt_sha256": "3f9291290417af0e84f21d8339e71146138a3d904fe44562b166c262b87baef4",
+  "request_sha256": "99aea8140daaa7d813d2088899485fcdfef3ae3ff4f388de3f2b6c7e8f6a6f6d",
+  "native_result": {
+    "status": "success",
+    "warnings": [],
+    "units": "mm",
+    "cad": {
+      "id": "obj_0ea2b457c8f54470bda616bd3a428ffa_893c8335bab54b719bd0ec8c117fe4c3",
+      "kind": "part",
+      "name": "BD_FLAT_TRAY_AIR_R3280",
+      "part_id": "part_0ea2b457c8f54470bda616bd3a428ffa_dcf4c4f01ba24efbb2a96ae9b8bfc37c",
+      "session_id": "0ea2b457c8f54470bda616bd3a428ffa",
+      "generation_id": "dcf4c4f01ba24efbb2a96ae9b8bfc37c",
+      "owner_part_path": "D:\\CAD\\BD_FLAT_TRAY_AIR_R3280.prt",
+      "journal_id": "BD_FLAT_TRAY_AIR_R3280",
+      "display_name": "BD_FLAT_TRAY_AIR_R3280"
+    },
+    "fem": {
+      "id": "obj_0ea2b457c8f54470bda616bd3a428ffa_e926ee2ace1546e6b8f80efcac6699c2",
+      "kind": "part",
+      "name": "analysis_63a57eeabca7_mesh",
+      "part_id": "part_0ea2b457c8f54470bda616bd3a428ffa_841ebd3a817f4f93ad11764bcd28ee83",
+      "session_id": "0ea2b457c8f54470bda616bd3a428ffa",
+      "generation_id": "841ebd3a817f4f93ad11764bcd28ee83",
+      "owner_part_path": "D:\\CAD\\flat-main-flow-r3295\\analysis_63a57eeabca7_mesh.fem",
+      "journal_id": "analysis_63a57eeabca7_mesh",
+      "display_name": "analysis_63a57eeabca7_mesh"
+    },
+    "sim": {
+      "id": "obj_0ea2b457c8f54470bda616bd3a428ffa_9d97c2d001924e40be0ef405b604768b",
+      "kind": "part",
+      "name": "analysis_63a57eeabca7_analysis",
+      "part_id": "part_0ea2b457c8f54470bda616bd3a428ffa_18d6b8518e2c4b1ea8d835f6567893cd",
+      "session_id": "0ea2b457c8f54470bda616bd3a428ffa",
+      "generation_id": "18d6b8518e2c4b1ea8d835f6567893cd",
+      "owner_part_path": "D:\\CAD\\flat-main-flow-r3295\\analysis_63a57eeabca7_analysis.sim",
+      "journal_id": "analysis_63a57eeabca7_analysis",
+      "display_name": "analysis_63a57eeabca7_analysis"
+    },
+    "paths": {
+      "fem": "D:\\CAD\\flat-main-flow-r3295\\analysis_63a57eeabca7_mesh.fem",
+      "sim": "D:\\CAD\\flat-main-flow-r3295\\analysis_63a57eeabca7_analysis.sim"
+    },
+    "source_sha256": "d7392b27ecb5dfa8c93fcd940d646458e0b7006b79bb3e94613a76c450e3b413",
+    "source_preserved": true,
+    "body_count": 9,
+    "geometry_association": "selected CAD bodies",
+    "association_readback": {
+      "mode": "0",
+      "source_body_tags": [
+        14319935,
+        14320656,
+        14325332,
+        14325407,
+        14325490,
+        14325565,
+        14325634,
+        14325712,
+        14325788
+      ],
+      "verified": true
+    },
+    "selected_source_bodies": [
+      {
+        "id": "obj_0ea2b457c8f54470bda616bd3a428ffa_0893ed29466f447aa1314ecfcb98401b",
+        "kind": "body",
+        "name": "EXTRUDE(44)",
+        "part_id": "part_0ea2b457c8f54470bda616bd3a428ffa_dcf4c4f01ba24efbb2a96ae9b8bfc37c",
+        "session_id": "0ea2b457c8f54470bda616bd3a428ffa",
+        "generation_id": "dcf4c4f01ba24efbb2a96ae9b8bfc37c",
+        "owner_part_path": "D:\\CAD\\BD_FLAT_TRAY_AIR_R3280.prt",
+        "journal_id": "EXTRUDE(44)",
+        "display_name": ""
+      },
+      {
+        "id": "obj_0ea2b457c8f54470bda616bd3a428ffa_1627d13da8744c998dac75309753d605",
+        "kind": "body",
+        "name": "EXTRUDE(84)",
+        "part_id": "part_0ea2b457c8f54470bda616bd3a428ffa_dcf4c4f01ba24efbb2a96ae9b8bfc37c",
+        "session_id": "0ea2b457c8f54470bda616bd3a428ffa",
+        "generation_id": "dcf4c4f01ba24efbb2a96ae9b8bfc37c",
+        "owner_part_path": "D:\\CAD\\BD_FLAT_TRAY_AIR_R3280.prt",
+        "journal_id": "EXTRUDE(84)",
+        "display_name": ""
+      },
+      {
+        "id": "obj_0ea2b457c8f54470bda616bd3a428ffa_7f549d1cd4fb4b02bcba585e3d61313a",
+        "kind": "body",
+        "name": "EXTRUDE(86)",
+        "part_id": "part_0ea2b457c8f54470bda616bd3a428ffa_dcf4c4f01ba24efbb2a96ae9b8bfc37c",
+        "session_id": "0ea2b457c8f54470bda616bd3a428ffa",
+        "generation_id": "dcf4c4f01ba24efbb2a96ae9b8bfc37c",
+        "owner_part_path": "D:\\CAD\\BD_FLAT_TRAY_AIR_R3280.prt",
+        "journal_id": "EXTRUDE(86)",
+        "display_name": ""
+      },
+      {
+        "id": "obj_0ea2b457c8f54470bda616bd3a428ffa_082c8da1de304ecc9815560b852e360a",
+        "kind": "body",
+        "name": "EXTRUDE(88)",
+        "part_id": "part_0ea2b457c8f54470bda616bd3a428ffa_dcf4c4f01ba24efbb2a96ae9b8bfc37c",
+        "session_id": "0ea2b457c8f54470bda616bd3a428ffa",
+        "generation_id": "dcf4c4f01ba24efbb2a96ae9b8bfc37c",
+        "owner_part_path": "D:\\CAD\\BD_FLAT_TRAY_AIR_R3280.prt",
+        "journal_id": "EXTRUDE(88)",
+        "display_name": ""
+      },
+      {
+        "id": "obj_0ea2b457c8f54470bda616bd3a428ffa_53b095b952a94023b01c922ddeafe105",
+        "kind": "body",
+        "name": "EXTRUDE(90)",
+        "part_id": "part_0ea2b457c8f54470bda616bd3a428ffa_dcf4c4f01ba24efbb2a96ae9b8bfc37c",
+        "session_id": "0ea2b457c8f54470bda616bd3a428ffa",
+        "generation_id": "dcf4c4f01ba24efbb2a96ae9b8bfc37c",
+        "owner_part_path": "D:\\CAD\\BD_FLAT_TRAY_AIR_R3280.prt",
+        "journal_id": "EXTRUDE(90)",
+        "display_name": ""
+      },
+      {
+        "id": "obj_0ea2b457c8f54470bda616bd3a428ffa_2a217e201bd640fd94e5817d779729b4",
+        "kind": "body",
+        "name": "EXTRUDE(92)",
+        "part_id": "part_0ea2b457c8f54470bda616bd3a428ffa_dcf4c4f01ba24efbb2a96ae9b8bfc37c",
+        "session_id": "0ea2b457c8f54470bda616bd3a428ffa",
+        "generation_id": "dcf4c4f01ba24efbb2a96ae9b8bfc37c",
+        "owner_part_path": "D:\\CAD\\BD_FLAT_TRAY_AIR_R3280.prt",
+        "journal_id": "EXTRUDE(92)",
+        "display_name": ""
+      },
+      {
+        "id": "obj_0ea2b457c8f54470bda616bd3a428ffa_2cb5ba9949234948a018b1d0608a3901",
+        "kind": "body",
+        "name": "EXTRUDE(94)",
+        "part_id": "part_0ea2b457c8f54470bda616bd3a428ffa_dcf4c4f01ba24efbb2a96ae9b8bfc37c",
+        "session_id": "0ea2b457c8f54470bda616bd3a428ffa",
+        "generation_id": "dcf4c4f01ba24efbb2a96ae9b8bfc37c",
+        "owner_part_path": "D:\\CAD\\BD_FLAT_TRAY_AIR_R3280.prt",
+        "journal_id": "EXTRUDE(94)",
+        "display_name": ""
+      },
+      {
+        "id": "obj_0ea2b457c8f54470bda616bd3a428ffa_bc7075dd3fb64294b94a68a3e553f0a9",
+        "kind": "body",
+        "name": "EXTRUDE(96)",
+        "part_id": "part_0ea2b457c8f54470bda616bd3a428ffa_dcf4c4f01ba24efbb2a96ae9b8bfc37c",
+        "session_id": "0ea2b457c8f54470bda616bd3a428ffa",
+        "generation_id": "dcf4c4f01ba24efbb2a96ae9b8bfc37c",
+        "owner_part_path": "D:\\CAD\\BD_FLAT_TRAY_AIR_R3280.prt",
+        "journal_id": "EXTRUDE(96)",
+        "display_name": ""
+      },
+      {
+        "id": "obj_0ea2b457c8f54470bda616bd3a428ffa_d693d47bc933446b97a59693e9303160",
+        "kind": "body",
+        "name": "EXTRUDE(98)",
+        "part_id": "part_0ea2b457c8f54470bda616bd3a428ffa_dcf4c4f01ba24efbb2a96ae9b8bfc37c",
+        "session_id": "0ea2b457c8f54470bda616bd3a428ffa",
+        "generation_id": "dcf4c4f01ba24efbb2a96ae9b8bfc37c",
+        "owner_part_path": "D:\\CAD\\BD_FLAT_TRAY_AIR_R3280.prt",
+        "journal_id": "EXTRUDE(98)",
+        "display_name": ""
+      }
+    ],
+    "cad_shared": true,
+    "solution": "flat_main_flow_r3295",
+    "analysis_type": "coupled_thermal_flow",
+    "initialization": null,
+    "presentation": {
+      "information_window_closed": true,
+      "view_fitted": true,
+      "display_refreshed": true,
+      "warnings": []
+    },
+    "next_step": "Create initial step and attach defaults with nx_sim_flow_setup; initialize coupled_steady before environment",
+    "saved": true,
+    "meshed": false,
+    "solver_launched": false,
+    "operation_id": "op_fb71be9bec6e41b09a6837a85f9cfabd",
+    "session_id": "0ea2b457c8f54470bda616bd3a428ffa",
+    "mutation_outcome": "committed"
+  },
+  "validation": "NX 2606 selected-body FEM creation: nine selected bodies out of twelve; native mode and exact source tags verified; source CAD unchanged; no mesh or solver."
+}
