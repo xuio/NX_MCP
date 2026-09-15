@@ -1972,6 +1972,21 @@ class SimcenterMixin:
             **result,
         }
 
+    def _sim_preserve_fem_as(self, document, path):
+        from nx_mcp.simcenter.documents import preserve_fem_as
+        from nx_mcp.simcenter.solver_guard import require_solver_idle
+
+        require_solver_idle()
+        fem = self.objects.resolve(document, expected_kind="part")
+        previous_id = self._part_id(fem)
+        previous_path = fem.FullPath
+        try:
+            result = preserve_fem_as(self.session, self.workspace, fem, path)
+        finally:
+            if fem.FullPath != previous_path:
+                self.objects.invalidate_part(previous_id)
+        return {"document": self._reference(fem, "part", fem, "part"), **result}
+
     def _sim_save_as(self, document, path):
         from nx_mcp.simcenter.documents import save_sim_as
 

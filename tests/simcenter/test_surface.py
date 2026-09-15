@@ -140,6 +140,15 @@ async def test_sim_save_as_is_explicit_mutation_with_retry_identity(tmp_path, mo
 
 
 @pytest.mark.asyncio
+async def test_fem_preservation_is_explicit_mutation_with_retry_identity(tmp_path, monkeypatch):
+    monkeypatch.setenv("NX_MCP_ENABLE_SIMCENTER", "1")
+    server = create_server(Bridge(), Workspace(tmp_path), enable_experimental=True)
+    tool = next(t for t in await server.list_tools() if t.name == "nx_sim_preserve_fem_as")
+    assert {"document", "path", "operation_id"} <= tool.inputSchema["properties"].keys()
+    assert tool.annotations.readOnlyHint is False
+
+
+@pytest.mark.asyncio
 async def test_dependency_inspection_is_paged_read_only(tmp_path, monkeypatch):
     monkeypatch.setenv("NX_MCP_ENABLE_SIMCENTER", "1")
     server = create_server(Bridge(), Workspace(tmp_path), enable_experimental=True)

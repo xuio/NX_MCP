@@ -74,6 +74,89 @@ def save_sim_as(session, workspace, sim, path):
         ) from error
 
 
+def preserve_fem_as(session, workspace, fem, path):
+    """Recover one live FEM without manufacturing a placeholder source file."""
+    import NXOpen.CAE as cae
+
+    if (
+        not isinstance(fem, cae.FemPart)
+        or session.Parts.BaseWork != fem
+        or not fem.IsFullyLoaded
+        or not fem.FullPath
+    ):
+        raise NXToolError(
+            "NX_SIM_PRESERVE_PRECONDITION",
+            "Select a fully loaded active standalone FEM with a recorded path",
+            details={"mutation_outcome": "not_started"},
+        )
+    source = workspace.ensure_inside(Path(fem.FullPath))
+    target = workspace.resolve(path)
+    if (
+        target.suffix.lower() != ".fem"
+        or str(target).casefold() == str(source).casefold()
+        or target.exists()
+        or any(
+            Path(p.FullPath).name.casefold() == target.name.casefold()
+            for p in session.Parts
+            if p.FullPath
+        )
+    ):
+        raise NXToolError(
+            "NX_SIM_PRESERVE_TARGET",
+            "Choose a new workspace .fem basename with no existing file or loaded document",
+            details={"mutation_outcome": "not_started"},
+        )
+    original = fingerprint_file(source, maximum_bytes=1_073_741_824) if source.exists() else None
+
+    def others():
+        return {int(p.Tag): (p.FullPath, bool(p.IsModified)) for p in session.Parts if p != fem}
+
+    before_others = others()
+    target.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        status = fem.SaveAs(str(target))
+        try:
+            if status is None or status.NumberUnsavedParts or status.NumberUnsavedObjects:
+                raise ValueError("Native SaveAs did not establish a complete save")
+        finally:
+            if status is not None:
+                status.Dispose()
+        saved = fingerprint_file(target, maximum_bytes=1_073_741_824)
+        if target.stat().st_size == 0 or Path(fem.FullPath) != target or fem.IsModified:
+            raise ValueError("Target identity, content or modified flag differs")
+        if original is None:
+            if source.exists():
+                raise ValueError("Previously absent source was unexpectedly created")
+        elif fingerprint_file(source, maximum_bytes=1_073_741_824)["sha256"] != original["sha256"]:
+            raise ValueError("Original disk file changed")
+        if others() != before_others:
+            raise ValueError("Other loaded document identities or modified flags changed")
+        return {
+            "saved": True,
+            "file": saved,
+            "source_path": str(source),
+            "source_file": original,
+            "source_was_missing": original is None,
+            "source_disk_state_preserved": True,
+            "other_document_identities_and_flags_unchanged": True,
+            "closed": False,
+            "dependency_completeness": "not_verified",
+            "result_freshness": "not_verified",
+        }
+    except Exception as error:
+        raise NXToolError(
+            "NX_SIM_PRESERVE_FAILED",
+            "Preservation failed verification; retain output and inspect live documents before retrying",
+            nx_code=getattr(error, "ErrorCode", None),
+            details={
+                "mutation_outcome": "partial",
+                "target": str(target),
+                "target_exists": target.exists(),
+                "current_path": fem.FullPath,
+            },
+        ) from error
+
+
 def save_document(session, workspace, document):
     """Save one existing FEM/SIM, retaining the previous disk revision."""
     import shutil

@@ -99,3 +99,101 @@ def test_native_save_failure_retains_backup(fixture):
 
     assert Path(exc.value.details["backup_path"]).read_bytes() == b"original"
     assert exc.value.details["mutation_outcome"] == "partial"
+
+
+@pytest.fixture
+def recovery(fixture):
+    from pathlib import Path
+
+    session, workspace, _, _ = fixture
+    cae = sys.modules["NXOpen.CAE"]
+    cae.FemPart = type("FemPart", (), {})
+    fem = cae.FemPart()
+    fem.FullPath = str(workspace.root / "missing.fem")
+    fem.Tag, fem.IsModified, fem.IsFullyLoaded = 2, True, True
+    session.Parts.append(fem)
+    session.Parts.BaseWork = fem
+    session.Parts[0].Tag, session.Parts[0].IsModified = 1, False
+    calls = []
+
+    def save(path):
+        calls.append(path)
+        Path(path).write_bytes(b"recovered FEM")
+        fem.FullPath, fem.IsModified = path, False
+        return NS(NumberUnsavedParts=0, NumberUnsavedObjects=0, Dispose=lambda: None)
+
+    fem.SaveAs = save
+    return session, workspace, fem, calls
+
+
+@pytest.mark.parametrize("existing_source", [False, True])
+def test_preserve_fem_with_missing_or_existing_source(recovery, existing_source):
+    from pathlib import Path
+
+    from nx_mcp.simcenter.documents import preserve_fem_as
+
+    session, workspace, fem, calls = recovery
+    source = Path(fem.FullPath)
+    if existing_source:
+        source.write_bytes(b"original FEM")
+    result = preserve_fem_as(session, workspace, fem, "recovery/new.fem")
+    assert result["saved"] and result["source_was_missing"] is not existing_source
+    assert len(calls) == 1
+    assert source.read_bytes() == b"original FEM" if existing_source else not source.exists()
+
+
+@pytest.mark.parametrize(
+    "bad",
+    ["inactive", "partial_load", "existing_target", "loaded_name", "extension", "same", "escape"],
+)
+def test_fem_preservation_preconditions_do_not_call_save(recovery, bad):
+    from nx_mcp.simcenter.documents import preserve_fem_as
+
+    session, workspace, fem, calls = recovery
+    target = "new.fem"
+    if bad == "inactive":
+        session.Parts.BaseWork = session.Parts[0]
+    elif bad == "partial_load":
+        fem.IsFullyLoaded = False
+    elif bad == "existing_target":
+        (workspace.root / target).write_bytes(b"do not replace")
+    elif bad == "loaded_name":
+        session.Parts[0].FullPath = str(workspace.root / "elsewhere/NEW.FEM")
+    elif bad == "extension":
+        target = "new.sim"
+    elif bad == "same":
+        target = "MISSING.FEM"
+    else:
+        target = "../outside.fem"
+    with pytest.raises((NXToolError, ValueError)):
+        preserve_fem_as(session, workspace, fem, target)
+    assert not calls
+
+
+@pytest.mark.parametrize("failure", ["native_error", "unsaved", "other_modified", "source_created"])
+def test_fem_partial_output_is_retained(recovery, failure):
+    from pathlib import Path
+
+    from nx_mcp.simcenter.documents import preserve_fem_as
+
+    session, workspace, fem, calls = recovery
+    original_save, source = fem.SaveAs, Path(fem.FullPath)
+
+    def save(path):
+        status = original_save(path)
+        if failure == "native_error":
+            raise RuntimeError("SaveAs partially committed")
+        if failure == "unsaved":
+            status.NumberUnsavedParts = 1
+        if failure == "other_modified":
+            session.Parts[0].IsModified = True
+        if failure == "source_created":
+            source.write_bytes(b"unexpected")
+        return status
+
+    fem.SaveAs = save
+    with pytest.raises(NXToolError) as exc:
+        preserve_fem_as(session, workspace, fem, "recovery/new.fem")
+    assert exc.value.details["mutation_outcome"] == "partial"
+    assert (workspace.root / "recovery/new.fem").read_bytes() == b"recovered FEM"
+    assert len(calls) == 1

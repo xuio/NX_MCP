@@ -218,6 +218,13 @@ def nx_sim_save_as(document: str, path: str):
 NON_MODEL.add("nx_sim_save_as")
 
 
+def nx_sim_preserve_fem_as(document: str, path: str):
+    """Preserve a fully loaded active standalone FEM at a new workspace .fem path. Allows a missing original disk file; never overwrites an existing target or loaded basename. Requires no known solver/translator process. Native SaveAs changes the FEM path and may affect SIM associations; this is recovery, not an independent analysis variant. Checks native save status, clean target identity, source disk preservation and other loaded document identities/modified flags. Retains partial output on failure; inspect before retrying. Reacquire references and audit dependent SIMs after preservation. Does not close documents or certify dependency completeness/result freshness. Supply operation_id for safe retry."""
+
+
+NON_MODEL.add("nx_sim_preserve_fem_as")
+
+
 def nx_sim_dependencies(document: str, offset: int = 0, limit: int = 50):
     """Inspect direct SIM/FEM/CAD document associations for a standalone FEM analysis. document is a live SIM ID; offset >=0, limit 1..100. Returns paged document references, ownership roles, paths, units, work/display roles, load and unsaved flags, and file availability. Does not activate, load, save or copy anything. Unloaded CAD associations and unenumerated assembly children are explicit. This is not a complete analysis package manifest: recursive components, external property/field files and solver/result dependencies remain excluded. Assembly FEM inspection is currently unsupported."""
 
