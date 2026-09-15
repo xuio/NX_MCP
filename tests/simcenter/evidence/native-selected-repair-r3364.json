@@ -1,0 +1,38 @@
+{
+  "native_version": "NX2606",
+  "tool": "nx_sim_mesh_repair",
+  "operation": {
+    "status": "success",
+    "warnings": [],
+    "units": null,
+    "operation_id": "op_20e3848ca6bb4b1dac2a08ccc35a71cb",
+    "method": "nx_sim_mesh_repair",
+    "fingerprint": "2de5fa08705f1094c7c5799f0dacbbeb988549fbd68bb99c32b80e35b08e2891",
+    "session_id": "83c7d3f6810b49debf8edb66c2d118e8",
+    "part_id": "part_83c7d3f6810b49debf8edb66c2d118e8_7e10273693ca44e2aa637229f7508018",
+    "state": "failed",
+    "mutation_outcome": "rolled_back",
+    "started_at": "2026-09-15T06:51:56.734445+00:00",
+    "error": {
+      "status": "error",
+      "code": "NX_SIM_MESH_REPAIR_FAILED",
+      "message": "Aspect-ratio errors did not decrease",
+      "retryable": false,
+      "details": {
+        "mutation_outcome": "rolled_back",
+        "next_step": "Reacquire references and inspect native state; do not replay blindly",
+        "operation_id": "op_20e3848ca6bb4b1dac2a08ccc35a71cb"
+      }
+    },
+    "finished_at": "2026-09-15T06:59:18.264822+00:00"
+  },
+  "selected_elements": 113,
+  "model_elements": 1494067,
+  "model_nodes": 406503,
+  "interpretation": [
+    "Selected native repair reached quality acceptance check without reducing aspect errors.",
+    "Exact per-mesh boundary guard and mesh identity/settings guards passed before quality rejection.",
+    "Rollback verified complete labelled mesh fingerprint and native quality; accepted repair is not demonstrated."
+  ],
+  "source_receipt": "hardware/analysis/2026-09-09-simcenter-cooling/evidence/selected-repair-status-r3364.receipt.json"
+}
