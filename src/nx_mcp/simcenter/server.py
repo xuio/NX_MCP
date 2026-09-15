@@ -392,8 +392,8 @@ def nx_sim_show_temperature(
 NON_MODEL.add("nx_sim_show_temperature")
 
 
-def nx_sim_mesh_quality(document: str, include_settings: bool = False):
-    """Run native element-quality checks on all meshes in the selected standalone FEM. Returns tested element count, per-test counts/errors/warnings/worst values and summed issue occurrences (not unique failed elements). include_settings adds current solver quality criteria; element-specific overrides are flagged but not enumerated. Empty meshes/checks are errors. Does not activate, save, remesh, repair or solve. Native checks may highlight elements, so this is not classified read-only. A zero-error report does not establish mesh convergence, connected fluid regions or solve readiness."""
+def nx_sim_mesh_quality(document: str, include_settings: bool = False, report_path: str | None = None):
+    """Run native element-quality checks on all meshes in the selected standalone FEM. Returns tested element count, per-test counts/errors/warnings/worst values and summed issue occurrences (not unique failed elements). Optional report_path writes the native failed/warning element report to a new .txt file inside the workspace, with size and SHA256; existing files are rejected. include_settings adds current solver quality criteria; element-specific overrides are flagged but not enumerated. Empty meshes/checks are errors. Does not activate, save, remesh, repair or solve. Native checks may highlight elements, so this is not classified read-only. A zero-error report does not establish mesh convergence, connected fluid regions or solve readiness."""
 
 
 NON_MODEL.add("nx_sim_mesh_quality")
@@ -1055,3 +1055,10 @@ def nx_sim_mass_flux_samples(
 
 
 READ_ONLY.add("nx_sim_mass_flux_samples")
+
+
+def nx_sim_mesh_elements(document: str, labels: list[int]):
+    """Inspect 1..1000 unique positive element labels in an active millimeter standalone FEM. Returns native shape, mesh/collector identities, ordered node labels/coordinates, bounds and vertex-average centre in FEM absolute mm. Missing labels fail; references/results are not substituted. No result values, centroid weighting, mesh quality or connectivity acceptance is inferred. No save, geometry or mesh edit, solver launch or node merging."""
+
+
+READ_ONLY.add("nx_sim_mesh_elements")

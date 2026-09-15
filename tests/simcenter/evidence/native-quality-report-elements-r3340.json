@@ -1,0 +1,71 @@
+{
+  "quality_receipt_sha256": "599e01f36621040b8225d357600e3530e80e9e4561f9be6cb9afd7086b0c0525",
+  "elements_receipt_sha256": "64b16c8372afdfb3c36929ca0dcca16e2a8ea80068dbc05425d5f0de2e1c5693",
+  "quality_report": {
+    "path": "D:\\CAD\\mesh-quality-failures-r3339.txt",
+    "bytes": 68901,
+    "sha256": "a8e940e515512de3db6f75a4c3808de449667fbb81b811a8afd26067b7495a33",
+    "format": "native failed and warning elements",
+    "parsed": false
+  },
+  "tested_elements": 1250426,
+  "failed_occurrences": 87,
+  "queried_elements": 87,
+  "mesh_modified": false,
+  "sample_element": {
+    "label": 409,
+    "shape": "4",
+    "mesh": "Mesh[3d_mesh(1)]",
+    "collector": "MeshCollector[Fluid(1)]",
+    "nodes": [
+      {
+        "label": 35691,
+        "coordinates_mm": [
+          327.12739866933623,
+          239.02945086246157,
+          -4.25
+        ]
+      },
+      {
+        "label": 33650,
+        "coordinates_mm": [
+          327.1199951171874,
+          239.02924497443064,
+          -4.4074236643410165
+        ]
+      },
+      {
+        "label": 33745,
+        "coordinates_mm": [
+          327.11999511718744,
+          239.01493526543607,
+          -4.0
+        ]
+      },
+      {
+        "label": 33744,
+        "coordinates_mm": [
+          327.1199951171875,
+          241.39426802801881,
+          -4.0
+        ]
+      }
+    ],
+    "minimum_mm": [
+      327.1199951171874,
+      239.01493526543607,
+      -4.4074236643410165
+    ],
+    "maximum_mm": [
+      327.12739866933623,
+      241.39426802801881,
+      -4.0
+    ],
+    "vertex_average_mm": [
+      327.12184600522465,
+      239.61697478258677,
+      -4.164355916085254
+    ]
+  },
+  "scope": "Native NX 2606 report export and exact labelled element query; no mesh repair or CFD acceptance."
+}

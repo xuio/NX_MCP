@@ -1067,7 +1067,7 @@ class SimcenterMixin:
             "result_freshness": "not_verified",
         }
 
-    def _sim_mesh_quality(self, document, include_settings=False):
+    def _sim_mesh_quality(self, document, include_settings=False, report_path=None):
         import NXOpen.CAE as cae
 
         from nx_mcp.simcenter.quality import check_mesh_quality
@@ -1080,7 +1080,8 @@ class SimcenterMixin:
         meshes = list(fem.BaseFEModel.MeshManager.GetMeshes())
         if not meshes:
             raise NXToolError("NX_SIM_NO_MESH", "Generate a mesh before checking quality")
-        result = check_mesh_quality(fem, meshes)
+        output = None if report_path is None else self.workspace.resolve(report_path)
+        result = check_mesh_quality(fem, meshes, report_path=output)
         if result["element_count"] <= 0:
             raise NXToolError("NX_SIM_EMPTY_CHECK", "Native checker tested no elements")
         if not include_settings:
@@ -3000,3 +3001,15 @@ class SimcenterMixin:
         }[action]
         result = operation(self.session, sim, name)
         return {"document": self._reference(sim, "part", sim, "part"), "action": action, **result}
+
+    def _sim_mesh_elements(self, document, labels):
+        import NXOpen.CAE as cae
+
+        from nx_mcp.simcenter.quality import inspect_elements
+
+        fem = self.objects.resolve(document, expected_kind="part")
+        if not isinstance(fem, cae.FemPart) or self.session.Parts.BaseWork != fem:
+            raise NXToolError("NX_SIM_DOCUMENT_NOT_ACTIVE", "Activate the standalone FEM")
+        if fem.PartUnits != self.nxopen.BasePart.Units.Millimeters:
+            raise NXToolError("NX_SIM_UNITS", "Element inspection requires millimeter FEM")
+        return inspect_elements(fem, labels)
