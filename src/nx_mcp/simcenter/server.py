@@ -1062,3 +1062,10 @@ def nx_sim_mesh_elements(document: str, labels: list[int]):
 
 
 READ_ONLY.add("nx_sim_mesh_elements")
+
+
+def nx_sim_mesh_repair(document: str, labels: list[int], maximum_entities: int = 200000):
+    """Attempt native AspectRatio repair for 1..1000 unique positive element labels in an active standalone millimeter FEM. Experimental: native validation is pending. Requires explicitly sized linear tetra meshes and an idle solver. maximum_entities bounds complete nodes+elements inspection (1..2000000). Checks exact per-mesh boundary triangle labels/coordinates, preserving separate-mesh interfaces; verifies unchanged mesh identity, size/body associations and quality criteria. Commits only if aspect errors decrease, no test error/warning count increases and Jacobian/volume error counts remain zero. These guards do not establish global connectivity, convergence or solve readiness. On rejection, attempts undo and verifies the full labelled mesh fingerprint and quality; partial rollback is explicit. Invalidates FEM/dependent SIM references after an attempt. No save or solver launch. Inspection can take minutes; query the original operation_id after timeout instead of replaying."""
+
+
+NON_MODEL.add("nx_sim_mesh_repair")

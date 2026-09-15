@@ -3013,3 +3013,10 @@ class SimcenterMixin:
         if fem.PartUnits != self.nxopen.BasePart.Units.Millimeters:
             raise NXToolError("NX_SIM_UNITS", "Element inspection requires millimeter FEM")
         return inspect_elements(fem, labels)
+
+    def _sim_mesh_repair(self, document, labels, maximum_entities=200000):
+        from nx_mcp.simcenter.mesh_repair import repair
+
+        fem = self.objects.resolve(document, expected_kind="part")
+        result = repair(self, fem, labels, maximum_entities)
+        return {"document": self._reference(fem, "part", fem, "FEM"), **result}
