@@ -1,0 +1,9 @@
+# Native constant heat editing — NX 2606
+
+`nx_sim_edit_heat_power` updates an existing single-body constant internal heat load, requiring an expected old value, explicit provenance, an idle solver and a single-solution/single-step Thermal SIM. It assigns a new expression to avoid modifying other users of the old one. It rejects schedules, controllers, overrides, per-element/node distributions and step-level membership. Targets, readable load properties, other total heat bindings, object identities and effective membership are checked; failed updates use verified native undo. It does not save or solve.
+
+Native acceptance: preserved a thermal SIM as an isolated copy, exercised a no-change probe, changed display 22 → 14.165 W and FRONT 8 → 11.9085320855615 W, then saved and exported through public MCP tools. Full XML-tree comparison against the archived original matches after changing only those two power values and the SIM name. All 184,654 elements, materials, contacts, convection, other heat sources and solver settings are identical. The seven source loads total 98.48295903563861 W. Original solve results were not overwritten and no solver was launched.
+
+Evidence: `tests/simcenter/evidence/native-heat-edit-r3589.json` contains the exact saved SIM/input hashes and source values. Complete native receipts, input archive and comparison script are in the Baldower project study R3589. This is acceptance for this supported configuration, not proof of arbitrary thermal models or numerical convergence.
+
+Validation: 55 focused heat/fan tests plus 59 server/output-schema tests passed. Tests cover stale expected values, shared bindings, invalid power, unsupported membership, failed updates, invariant/provenance mismatch, restored rollback and explicit partial-recovery reporting. The VM deployment changed only heat_edit.py and the native/public registration modules, preserving 184 other Python modules. No VM network configuration was changed.

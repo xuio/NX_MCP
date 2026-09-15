@@ -342,6 +342,13 @@ def nx_sim_heat_power(
 NON_MODEL.add("nx_sim_heat_power")
 
 
+def nx_sim_edit_heat_power(document: str, load: str, expected_power_w: float, power_w: float, provenance: str):
+    """Edit one existing constant single-body internal Heat Load in watts. Requires active single-solution/single-step NX MULTIPHYSICS Thermal SIM, solver idle, direct unfoldered solution membership and no step override. Reads and checks expected_power_w before mutation. Preserves targets, other heat loads and membership; assigns a fresh expression to avoid shared-expression changes. Nonempty provenance required. Unsupported schedules, controllers, per-node/element and override loads are rejected. Visible undo and verified rollback. Does not save or solve; results require revalidation and native export acceptance. Supply operation_id for safe retries."""
+
+
+NON_MODEL.add("nx_sim_edit_heat_power")
+
+
 def nx_sim_loads(
     document: str,
     offset: int = 0,

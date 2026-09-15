@@ -1,0 +1,39 @@
+{
+  "status": "native_authoring_and_export_verified_not_solved",
+  "nx_version": "2606",
+  "tests": {
+    "focused_heat_and_fan": 55,
+    "server_and_output_schema": 59
+  },
+  "state": "passed",
+  "source_budget": "front-component-budget-r3580.json",
+  "input_sha256": "36971c2b502db58d87ba5816459a36a472998f6605d67630879bd1639a768b58",
+  "saved_sim_sha256": "2085b07c7264ddb7e3ef4ec6c4ca5c3a5d08c961c326602a608049d5fb644cc6",
+  "changed_sources": {
+    "R2932_B0005_display_effective": {
+      "before_W": 22.0,
+      "after_W": 14.165000000000003
+    },
+    "R2932_B0005_front_board": {
+      "before_W": 8.0,
+      "after_W": 11.9085320855615
+    }
+  },
+  "native_heat_loads_W": {
+    "R2932_B0005_audio_board": 16.374686067846042,
+    "R2932_B0005_display_effective": 14.165000000000003,
+    "R2932_B0005_fpga_package": 4.972,
+    "R2932_B0005_front_board": 11.9085320855615,
+    "R2932_B0005_main_distributed": 23.507740882231072,
+    "R2932_B0005_soc_package": 17.655,
+    "R2932_B0005_ssd_effective": 9.9
+  },
+  "native_total_W": 98.48295903563861,
+  "all_other_exported_content_identical": true,
+  "solver_launched": false,
+  "scope": "Full XML tree equality after only two Heat Load values and the SIM name change; includes mesh, materials, contacts, convection and solver settings",
+  "limitations": [
+    "Existing thermal boundary assumptions retained, including prescribed 60 C internal air; not a fan-coupled thermal result",
+    "No display-to-tray heat contact added; no new temperature or cooling qualification"
+  ]
+}

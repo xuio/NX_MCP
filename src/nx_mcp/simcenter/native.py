@@ -1260,6 +1260,21 @@ class SimcenterMixin:
             **result,
         }
 
+    def _sim_edit_heat_power(self, document, load, expected_power_w, power_w, provenance):
+        import NXOpen.CAE as cae
+        from nx_mcp.simcenter.heat_edit import edit
+        from nx_mcp.simcenter.solver_guard import require_solver_idle
+
+        require_solver_idle()
+        sim = self.objects.resolve(document, expected_kind="part")
+        self.workspace.resolve(sim.FullPath)
+        if not isinstance(sim, cae.SimPart):
+            raise NXToolError("NX_SIM_DOCUMENT_TYPE", "Select a SIM")
+        selected = self.objects.resolve(load, expected_kind="simulation_load")
+        result = edit(self.session, sim, selected, expected_power_w, power_w, provenance)
+        return {"document": self._reference(sim, "part", sim, "SIM"),
+                "load": self._reference(selected, "simulation_load", sim, "heat load"), **result}
+
     def _sim_heat_power(self, document, body, power_w, name, provenance, overlap_policy="reject"):
         from nx_mcp.simcenter.heat_loads import create_body_power
 
