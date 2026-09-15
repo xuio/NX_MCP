@@ -1,0 +1,36 @@
+{
+  "state": "passed",
+  "changed_sections": [
+    "SimulationObjects"
+  ],
+  "exact_removed_fan_definitions": [
+    "FAN_1_2P5_CFM_SCREEN",
+    "FAN_2_2P5_CFM_SCREEN"
+  ],
+  "remaining_active_fans": [
+    "FAN_3_2P5_CFM_SCREEN",
+    "FAN_4_2P5_CFM_SCREEN"
+  ],
+  "simulation_name_change": [
+    "SEALED_LIP_PARALLEL_R3490",
+    "SEALED_TWO_R3524"
+  ],
+  "all_other_xml_content_identical": true,
+  "native_export_effectiveness": "verified_for_two_removals_in_this_single_step_case",
+  "parallel_processors_configured": 14,
+  "solver_launched": false,
+  "input_sha256": "5e807d75b93689ea8028887e202ffae86a55b4bb4e91d096d57c85c8c7d1123f",
+  "scope": "Same mesh, material, vents, settings and right-pair fan values as four-fan input; unused left channels remain passive fluid.",
+  "limitations": [
+    "Not a blanked-left-channel two-fan enclosure",
+    "Prescribed flow, not vendor P-Q operating points",
+    "Flow screen only; no electronics heat loads",
+    "Prior mesh-volume and wall-y-plus limitations retained"
+  ],
+  "native_calls": [
+    "op_bf1e54c95fc54c449309422193e2ca76",
+    "op_66282436a8a84f31853d199dd491afc8"
+  ],
+  "native_version": "NX 2606",
+  "validation_scope": "Membership removal only; native re-addition and numerical comparison pending"
+}
