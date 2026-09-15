@@ -30,12 +30,12 @@ def create(
     if (
         type(area_relative_tolerance) not in (int, float)
         or not math.isfinite(area_relative_tolerance)
-        or not 0 < area_relative_tolerance <= 1e-4
+        or not 0 < area_relative_tolerance <= 2e-4
         or (not allow_contained and area_relative_tolerance != 1e-6)
     ):
         raise NXToolError(
             "NX_INVALID_ARGUMENT",
-            "area_relative_tolerance must be finite in (0,1e-4]; changing it requires contained mode",
+            "area_relative_tolerance must be finite in (0,2e-4]; changing it requires contained mode",
         )
     if source.OwningPart != fem or target.OwningPart != fem or source.Tag == target.Tag:
         raise NXToolError("NX_SIM_SELECTION_OWNER", "Select two distinct FEM prototype faces")

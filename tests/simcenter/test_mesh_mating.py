@@ -365,6 +365,9 @@ def test_contained_mode_rejects_unimprinted_contact(contained_rig):
     [
         (35.0, True, 1e-6),
         (35.0, True, 1e-5),
+        (35.0, True, 2e-4),
+        (36.008, True, 2e-4),
+        (36.0055, True, 1e-6),
         (36.00016, True, 1e-6),
         (float("nan"), False, 1e-6),
         (float("nan"), False, 1e-5),
@@ -424,7 +427,8 @@ def test_incomplete_shared_area_rolls_back_and_restores_original_areas(
     assert not controls
 
 
-def test_explicit_area_tolerance_accepts_small_native_variation(contained_rig):
+@pytest.mark.parametrize("measured_area,tolerance", [(36.00016,1e-5),(36.0055,2e-4)])
+def test_explicit_area_tolerance_accepts_small_native_variation(contained_rig, measured_area, tolerance):
     (executor, fem, source, target, controls, rows), areas = contained_rig
     controls.shared_interface = True
     factory = controls.CreateMmcCreateBuilder
@@ -437,7 +441,7 @@ def test_explicit_area_tolerance_accepts_small_native_variation(contained_rig):
             def imprint():
                 result = commit()
                 rows[1]["bounds"] = {"minimum": [20, 2, 2], "maximum": [20, 8, 8]}
-                areas[20] = 36.00016
+                areas[20] = measured_area
                 return result
 
             builder.CommitMmcs = imprint
@@ -446,17 +450,17 @@ def test_explicit_area_tolerance_accepts_small_native_variation(contained_rig):
     controls.CreateMmcCreateBuilder = imprinting_factory
     result = create(
         executor, fem, source, target, 0.001,
-        allow_contained=True, area_relative_tolerance=1e-5,
+        allow_contained=True, area_relative_tolerance=tolerance,
     )
     measured = result["committed_readback"]
     assert measured["contained_expected_face_area_mm2"] == 36
-    assert measured["contained_face_area_mm2"] == 36.00016
-    assert measured["contained_area_relative_tolerance"] == 1e-5
+    assert measured["contained_face_area_mm2"] == measured_area
+    assert measured["contained_area_relative_tolerance"] == tolerance
     assert result["selected_face_tags"] == [20, 20]
     assert len(controls) == 1
 
 
-@pytest.mark.parametrize("value", [0, -1, 1e-3, True, float("nan"), float("inf")])
+@pytest.mark.parametrize("value", [0, -1, 2.00001e-4, 1e-3, True, float("nan"), float("inf")])
 def test_invalid_area_tolerance_rejected_before_mutation(contained_rig, value):
     (executor, fem, source, target, controls, _), _areas = contained_rig
     with pytest.raises(NXToolError, match="area_relative_tolerance"):
