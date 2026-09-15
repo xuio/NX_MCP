@@ -1,0 +1,43 @@
+{
+  "native_version": "NX 2606",
+  "acceptance": "constant fan-flow authoring and exact export delta; solve acceptance separate",
+  "state": "passed",
+  "input_sha256": "2a050206d32a61d0a4e4cabef0027932b6149543c27c8528f5d507db54e5e5ed",
+  "canonical_input_sha256": "53dd61db16983c9aaf675eb758435225f3c6512cf4f85b61206260d19d9fbafd",
+  "saved_sim_sha256": "34060d986c9669b27de1123e3b15d1b29e1ca936326f7cc77bd7c9294c220a21",
+  "changed_fans": [
+    {
+      "name": "FAN_1_2P5_CFM_SCREEN",
+      "actual_m3_s": 0.0016518160512,
+      "actual_CFM": 3.5,
+      "exported_mm3_s": 1651816.1
+    },
+    {
+      "name": "FAN_2_2P5_CFM_SCREEN",
+      "actual_m3_s": 0.0016518160512,
+      "actual_CFM": 3.5,
+      "exported_mm3_s": 1651816.1
+    },
+    {
+      "name": "FAN_3_2P5_CFM_SCREEN",
+      "actual_m3_s": 0.0016518160512,
+      "actual_CFM": 3.5,
+      "exported_mm3_s": 1651816.1
+    },
+    {
+      "name": "FAN_4_2P5_CFM_SCREEN",
+      "actual_m3_s": 0.0016518160512,
+      "actual_CFM": 3.5,
+      "exported_mm3_s": 1651816.1
+    }
+  ],
+  "all_other_exported_content_identical": true,
+  "configured_workers": 14,
+  "scope": "Full XML tree equality after only four prescribed volume-flow values and SIM name; includes mesh, material, openings, seals and solver settings",
+  "solver_launched": false,
+  "limitations": [
+    "Fan labels retain historical 2P5 names; verified property values are 3.5 CFM",
+    "Prescribed flow, no verified vendor operating point; electronics heat and motor heat remain absent in this flow-only case",
+    "Existing mesh-volume and wall-y-plus limitations retained; display pocket excluded"
+  ]
+}
