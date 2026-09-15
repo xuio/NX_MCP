@@ -1,0 +1,269 @@
+{
+  "case": "Baldower standard surface method trial",
+  "operation_id": "op_c16e2de2a44e4ffa952c601dbfd6f3b6",
+  "mutation_outcome": "committed",
+  "before_counts": {
+    "elements": 1251660,
+    "nodes": 315639
+  },
+  "counts": {
+    "elements": 616622,
+    "nodes": 154743
+  },
+  "mesh_count": 9,
+  "settings": [
+    {
+      "element_type": "Fluid Linear Tetrahedron",
+      "size_mm": 3.0,
+      "number_of_processors": 14,
+      "surface_meshing_method": "standard"
+    },
+    {
+      "element_type": "Fluid Linear Tetrahedron",
+      "size_mm": 2.0,
+      "number_of_processors": 14,
+      "surface_meshing_method": "standard"
+    },
+    {
+      "element_type": "Fluid Linear Tetrahedron",
+      "size_mm": 2.0,
+      "number_of_processors": 14,
+      "surface_meshing_method": "standard"
+    },
+    {
+      "element_type": "Fluid Linear Tetrahedron",
+      "size_mm": 2.0,
+      "number_of_processors": 14,
+      "surface_meshing_method": "standard"
+    },
+    {
+      "element_type": "Fluid Linear Tetrahedron",
+      "size_mm": 2.0,
+      "number_of_processors": 14,
+      "surface_meshing_method": "standard"
+    },
+    {
+      "element_type": "Fluid Linear Tetrahedron",
+      "size_mm": 2.0,
+      "number_of_processors": 14,
+      "surface_meshing_method": "standard"
+    },
+    {
+      "element_type": "Fluid Linear Tetrahedron",
+      "size_mm": 2.0,
+      "number_of_processors": 14,
+      "surface_meshing_method": "standard"
+    },
+    {
+      "element_type": "Fluid Linear Tetrahedron",
+      "size_mm": 2.0,
+      "number_of_processors": 14,
+      "surface_meshing_method": "standard"
+    },
+    {
+      "element_type": "Fluid Linear Tetrahedron",
+      "size_mm": 2.0,
+      "number_of_processors": 14,
+      "surface_meshing_method": "standard"
+    }
+  ],
+  "previous_settings": [
+    {
+      "element_type": "Fluid Linear Tetrahedron",
+      "size_mm": 3.0,
+      "body_tags": [
+        17291640
+      ],
+      "number_of_processors": 14,
+      "surface_meshing_method": "mesh_from_facets"
+    },
+    {
+      "element_type": "Fluid Linear Tetrahedron",
+      "size_mm": 2.0,
+      "body_tags": [
+        17291764
+      ],
+      "number_of_processors": 14,
+      "surface_meshing_method": "mesh_from_facets"
+    },
+    {
+      "element_type": "Fluid Linear Tetrahedron",
+      "size_mm": 2.0,
+      "body_tags": [
+        17291885
+      ],
+      "number_of_processors": 14,
+      "surface_meshing_method": "mesh_from_facets"
+    },
+    {
+      "element_type": "Fluid Linear Tetrahedron",
+      "size_mm": 2.0,
+      "body_tags": [
+        17292006
+      ],
+      "number_of_processors": 14,
+      "surface_meshing_method": "mesh_from_facets"
+    },
+    {
+      "element_type": "Fluid Linear Tetrahedron",
+      "size_mm": 2.0,
+      "body_tags": [
+        17292127
+      ],
+      "number_of_processors": 14,
+      "surface_meshing_method": "mesh_from_facets"
+    },
+    {
+      "element_type": "Fluid Linear Tetrahedron",
+      "size_mm": 2.0,
+      "body_tags": [
+        17292248
+      ],
+      "number_of_processors": 14,
+      "surface_meshing_method": "mesh_from_facets"
+    },
+    {
+      "element_type": "Fluid Linear Tetrahedron",
+      "size_mm": 2.0,
+      "body_tags": [
+        17292369
+      ],
+      "number_of_processors": 14,
+      "surface_meshing_method": "mesh_from_facets"
+    },
+    {
+      "element_type": "Fluid Linear Tetrahedron",
+      "size_mm": 2.0,
+      "body_tags": [
+        17292490
+      ],
+      "number_of_processors": 14,
+      "surface_meshing_method": "mesh_from_facets"
+    },
+    {
+      "element_type": "Fluid Linear Tetrahedron",
+      "size_mm": 2.0,
+      "body_tags": [
+        17292611
+      ],
+      "number_of_processors": 14,
+      "surface_meshing_method": "mesh_from_facets"
+    }
+  ],
+  "global_size_changed": false,
+  "settings_changed": true,
+  "quality_errors": 84,
+  "quality_tests": [
+    {
+      "type": "JacobianSign",
+      "count": 616622,
+      "errors": 0,
+      "warnings": 0,
+      "worst_value": 1.0
+    },
+    {
+      "type": "JacobianZero",
+      "count": 616622,
+      "errors": 0,
+      "warnings": 0,
+      "worst_value": 5.09291327069348e-05
+    },
+    {
+      "type": "Volume",
+      "count": 616622,
+      "errors": 0,
+      "warnings": 0,
+      "worst_value": 8.48818878448913e-06
+    },
+    {
+      "type": "AxisymmetricY",
+      "count": 616622,
+      "errors": 0,
+      "warnings": 0,
+      "worst_value": null
+    },
+    {
+      "type": "AxisymmetricX",
+      "count": 616622,
+      "errors": 0,
+      "warnings": 0,
+      "worst_value": null
+    },
+    {
+      "type": "AspectRatio",
+      "count": 616622,
+      "errors": 84,
+      "warnings": 0,
+      "worst_value": 1495.4250975407456
+    },
+    {
+      "type": "SkewAngle",
+      "count": 616622,
+      "errors": 0,
+      "warnings": 0,
+      "worst_value": null
+    },
+    {
+      "type": "InteriorAngleMaximum",
+      "count": 616622,
+      "errors": 0,
+      "warnings": 0,
+      "worst_value": null
+    },
+    {
+      "type": "InteriorAngleMinimum",
+      "count": 616622,
+      "errors": 0,
+      "warnings": 0,
+      "worst_value": null
+    },
+    {
+      "type": "Taper",
+      "count": 616622,
+      "errors": 0,
+      "warnings": 0,
+      "worst_value": null
+    },
+    {
+      "type": "WarpFactor",
+      "count": 616622,
+      "errors": 0,
+      "warnings": 0,
+      "worst_value": null
+    },
+    {
+      "type": "FaceWarpCoefficient",
+      "count": 616622,
+      "errors": 0,
+      "warnings": 0,
+      "worst_value": null
+    },
+    {
+      "type": "EdgePointIncludedAngle",
+      "count": 616622,
+      "errors": 0,
+      "warnings": 0,
+      "worst_value": null
+    },
+    {
+      "type": "EdgePointLengthRatio",
+      "count": 616622,
+      "errors": 0,
+      "warnings": 0,
+      "worst_value": null
+    },
+    {
+      "type": "LengthRatioOffset",
+      "count": 616622,
+      "errors": 0,
+      "warnings": 0,
+      "worst_value": null
+    }
+  ],
+  "mesh_accepted": false,
+  "limitations": [
+    "Processor settings are verified readbacks, not measured utilization.",
+    "Successful remesh API transaction does not imply mesh quality acceptance.",
+    "The trial increased aspect-ratio errors from 67 to 84; no solve was launched."
+  ]
+}

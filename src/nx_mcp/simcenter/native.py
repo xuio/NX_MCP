@@ -1775,11 +1775,12 @@ class SimcenterMixin:
         ]
         return {"document": self._reference(fem, "part", fem, "FEM"), **result}
 
-    def _sim_remesh(self, document, size_mm=None):
+    def _sim_remesh(self, document, size_mm=None, number_of_processors=None, surface_meshing_method=None):
         from nx_mcp.simcenter.remesh import regenerate
 
         fem = self.objects.resolve(document, expected_kind="part")
-        result = regenerate(self, fem, size_mm=size_mm)
+        result = regenerate(self, fem, size_mm=size_mm, number_of_processors=number_of_processors,
+                            surface_meshing_method=surface_meshing_method)
         bodies = {int(body.Tag): body for body in fem.Bodies}
         meshes = list(fem.BaseFEModel.MeshManager.GetMeshes())
         for row, mesh in zip(result["settings"], meshes, strict=True):

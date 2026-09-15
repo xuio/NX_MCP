@@ -127,6 +127,8 @@ async def test_public_tools_expose_typed_parameters_and_operation_identity(tmp_p
     schema = tools["nx_sim_remesh"].inputSchema
     assert "size_mm" in schema["properties"]
     assert "size_mm" not in schema.get("required", [])
+    assert "number_of_processors" in schema["properties"]
+    assert "surface_meshing_method" in schema["properties"]
 
 
 @pytest.mark.parametrize("size", [True, 0, -1, float("nan"), float("inf"), 10001, "2"])
@@ -190,3 +192,93 @@ def test_global_size_readback_and_atomic_rollback(fixture, monkeypatch, fail):
     assert executor.objects.invalidate_part.call_count == 2
     for builder in builders:
         builder.Destroy.assert_called_once()
+
+
+@pytest.mark.parametrize('kwargs', [
+    {'number_of_processors': True}, {'number_of_processors': 0},
+    {'number_of_processors': 33}, {'number_of_processors': 1.5},
+    {'surface_meshing_method': 'invalid'}, {'surface_meshing_method': 1},
+])
+def test_invalid_mesher_options_fail_before_mutation(fixture, kwargs):
+    module, executor, fem, state, builders = fixture
+    with pytest.raises(NXToolError) as caught:
+        module.regenerate(executor, fem, **kwargs)
+    assert caught.value.details['mutation_outcome'] == 'not_started'
+    assert not builders and not state['commits']
+    executor.objects.invalidate_part.assert_not_called()
+
+
+@pytest.mark.parametrize('mode', ['preserve', 'change', 'failure', 'readback_mismatch'])
+def test_mesher_options_readback_preservation_and_rollback(fixture, monkeypatch, mode):
+    module, executor, fem, state, builders = fixture
+    manager = fem.BaseFEModel.MeshManager
+    values = {1: {'number of processors': 4, 'surface meshing method': 1},
+              2: {'number of processors': 8, 'surface meshing method': 1}}
+    original = {k: dict(v) for k, v in values.items()}
+    create = manager.CreateMesh3dTetBuilder
+
+    def build(mesh):
+        builder = create(mesh)
+        table = values[mesh.Tag]
+        builder.PropertyTable = NS(
+            GetIntegerPropertyValue=lambda k: table[k],
+            SetIntegerPropertyValue=lambda k, v: table.__setitem__(k, v),
+        )
+        commit = builder.CommitMesh
+
+        def committed():
+            result = commit()
+            if mode == 'readback_mismatch':
+                table['number of processors'] = 1
+            return result
+
+        builder.CommitMesh = committed
+        return builder
+
+    manager.CreateMesh3dTetBuilder = build
+    monkeypatch.setattr(module, 'settings', lambda manager, mesh: {
+        'size_mm': 5 if mesh.Tag == 1 else 7,
+        'element_type': 'tetra', 'body_tags': [mesh.Tag + 10],
+        'number_of_processors': values[mesh.Tag]['number of processors'],
+        'surface_meshing_method': {0: 'standard', 1: 'mesh_from_facets'}[values[mesh.Tag]['surface meshing method']],
+    })
+    undo = executor.session.UndoToMark
+
+    def restore(*args):
+        undo(*args)
+        for k in values:
+            values[k].update(original[k])
+
+    executor.session.UndoToMark = restore
+    if mode == 'failure':
+        state['fail'] = 2
+    kwargs = {} if mode == 'preserve' else {'number_of_processors': 14, 'surface_meshing_method': 'standard'}
+    if mode in ['failure', 'readback_mismatch']:
+        with pytest.raises(NXToolError) as caught:
+            module.regenerate(executor, fem, **kwargs)
+        assert caught.value.details['mutation_outcome'] == 'rolled_back'
+        assert values == original
+    else:
+        result = module.regenerate(executor, fem, **kwargs)
+        assert not result['global_size_changed']
+        assert result['settings_changed'] == (mode == 'change')
+        assert result['previous_sizes_mm'] == [5, 7]
+        assert [v['number_of_processors'] for v in result['previous_settings']] == [4, 8]
+        assert [v['number_of_processors'] for v in result['settings']] == ([4, 8] if mode == 'preserve' else [14, 14])
+        assert all(v['surface_meshing_method'] == ('mesh_from_facets' if mode == 'preserve' else 'standard') for v in result['settings'])
+    assert executor.objects.invalidate_part.call_count == 2
+
+
+def test_native_settings_reads_processor_and_surface_method():
+    from nx_mcp.simcenter.remesh import settings
+
+    builder = NS(
+        PropertyTable=NS(GetBaseScalarWithDataPropertyValue=lambda key: (3.0, NS(Name='MilliMeter')),
+                         GetIntegerPropertyValue=lambda key: {'number of processors': 14, 'surface meshing method': 0}[key]),
+        ElementType=NS(ElementTypeName='Fluid Linear Tetrahedron'), AutoSizeOption=False,
+        SelectionList=NS(GetArray=lambda: [NS(Tag=8)]), Destroy=Mock(),
+    )
+    result = settings(NS(CreateMesh3dTetBuilder=lambda mesh: builder), object())
+    assert result == {'element_type': 'Fluid Linear Tetrahedron', 'size_mm': 3.0, 'body_tags': [8],
+                      'number_of_processors': 14, 'surface_meshing_method': 'standard'}
+    builder.Destroy.assert_called_once()

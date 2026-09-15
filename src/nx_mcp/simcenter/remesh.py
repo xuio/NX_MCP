@@ -6,7 +6,7 @@ from nx_mcp.runtime import NXToolError
 
 
 def settings(manager, mesh):
-    from nx_mcp.simcenter.mesh_plan import ELEMENTS
+    from nx_mcp.simcenter.mesh_plan import ELEMENTS, SURFACE_METHODS, validate_processors
 
     builder = manager.CreateMesh3dTetBuilder(mesh)
     try:
@@ -27,15 +27,28 @@ def settings(manager, mesh):
         targets = sorted(int(b.Tag) for b in builder.SelectionList.GetArray())
         if not targets:
             raise ValueError("Existing tetra mesh has no body selection")
-        return {"element_type": element, "size_mm": size, "body_tags": targets}
+        processors = builder.PropertyTable.GetIntegerPropertyValue("number of processors")
+        validate_processors(processors)
+        method = builder.PropertyTable.GetIntegerPropertyValue("surface meshing method")
+        names = {v: k for k, v in SURFACE_METHODS.items()}
+        if method not in names:
+            raise ValueError("Unsupported surface meshing method")
+        return {"element_type": element, "size_mm": size, "body_tags": targets,
+                "number_of_processors": processors, "surface_meshing_method": names[method]}
     finally:
         builder.Destroy()
 
 
-def regenerate(executor, fem, size_mm=None):
+def regenerate(executor, fem, size_mm=None, number_of_processors=None, surface_meshing_method=None):
     import NXOpen.CAE as cae
 
-    from nx_mcp.simcenter.mesh_plan import mesh_counts
+    from nx_mcp.simcenter.mesh_plan import (
+        configure_processors,
+        configure_surface_method,
+        mesh_counts,
+        validate_processors,
+        validate_surface_method,
+    )
     from nx_mcp.simcenter.solver_guard import require_solver_idle
 
     if size_mm is not None and (
@@ -49,6 +62,12 @@ def regenerate(executor, fem, size_mm=None):
             "size_mm must be finite in (0, 10000]",
             details={"mutation_outcome": "not_started"},
         )
+    try:
+        validate_processors(number_of_processors)
+        validate_surface_method(surface_meshing_method)
+    except ValueError as error:
+        raise NXToolError("NX_INVALID_ARGUMENT", str(error),
+                          details={"mutation_outcome": "not_started"}) from error
     nx, session = executor.nxopen, executor.session
     if not isinstance(fem, cae.FemPart) or session.Parts.BaseWork != fem:
         raise NXToolError("NX_SIM_DOCUMENT_NOT_ACTIVE", "Activate a standalone FEM")
@@ -72,7 +91,9 @@ def regenerate(executor, fem, size_mm=None):
             },
         ) from error
     expected_settings = [
-        {**row, **({"size_mm": float(size_mm)} if size_mm is not None else {})}
+        {**row, **({"size_mm": float(size_mm)} if size_mm is not None else {}),
+         **({"number_of_processors": number_of_processors} if number_of_processors is not None else {}),
+         **({"surface_meshing_method": surface_meshing_method} if surface_meshing_method is not None else {})}
         for row in before_settings
     ]
     size_unit = fem.UnitCollection.FindObject("MilliMeter") if size_mm is not None else None
@@ -93,13 +114,17 @@ def regenerate(executor, fem, size_mm=None):
                     builder.PropertyTable.SetBaseScalarWithDataPropertyValue(
                         "quad mesh overall edge size", float(size_mm), size_unit
                     )
+                if number_of_processors is not None:
+                    configure_processors(builder.PropertyTable, number_of_processors)
+                if surface_meshing_method is not None:
+                    configure_surface_method(builder.PropertyTable, surface_meshing_method)
                 committed = list(builder.CommitMesh())
             finally:
                 builder.Destroy()
             if len(committed) != 1 or int(committed[0].Tag) != int(mesh.Tag):
                 raise ValueError("Remeshing changed mesh identity/cardinality")
             if settings(manager, mesh) != expected:
-                raise ValueError("Remeshing changed element type, size or body selection")
+                raise ValueError("Remeshing settings differ from requested type, size, bodies, processors or surface method")
         after = mesh_counts(fem)
         if [int(m.Tag) for m in manager.GetMeshes()] != before_tags:
             raise ValueError("Remeshing changed mesh inventory")
@@ -109,7 +134,9 @@ def regenerate(executor, fem, size_mm=None):
             "mesh_count": len(meshes),
             "settings": expected_settings,
             "previous_sizes_mm": [row["size_mm"] for row in before_settings],
-            "global_size_changed": expected_settings != before_settings,
+            "global_size_changed": any(a["size_mm"] != b["size_mm"] for a, b in zip(expected_settings, before_settings, strict=True)),
+            "settings_changed": expected_settings != before_settings,
+            "previous_settings": before_settings,
             "units": "mm",
             "coordinate_frame": "fem_part_absolute",
             "saved": False,
