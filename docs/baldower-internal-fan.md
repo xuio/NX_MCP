@@ -74,3 +74,10 @@ Native NX 2606 validation R3526–R3529 removed the two left fan memberships fro
 This validates removal and its export effect for this single-step case. Native re-addition, stationary-fan resistance, vendor operating points and numerical comparison results are not established by this export check. The unused fluid channels remain open. The first local verifier incorrectly expected the copied SIM name to be identical; it was corrected to require exactly the observed old/new names, while retaining the exact comparison of every other attribute and section.
 
 The compact native evidence is recorded in `evidence/internal-fan-membership-nx2606.json`.
+
+
+### Final turbulence-energy balance reporting
+
+The flow-log parser now includes the observed native `Flow solver - Turb. kinetic energy imbalance` row as `reported_imbalances.turbulent_kinetic_energy`, in percent. Previously this final summary quantity was omitted even though iterative turbulence diagnostics were retained. The final percent value remains separate from the unlabelled iterative diagnostic scale and does not establish convergence or result validity. Duplicate summaries suppress ambiguous values; truncated and nonfinite values are not accepted.
+
+A four-line fixture extracted from the completed sealed-lip four-fan log reproduces 8.199e-6 percent. The updated parser also matches all four independently audited final balances in the complete archived log. Thirty flow-audit/solver-log tests pass. This parser update has not been deployed to the running two-fan VM session; raw native logs remain the authoritative source for that run.

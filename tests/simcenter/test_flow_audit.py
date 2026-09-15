@@ -207,3 +207,26 @@ def test_unclassified_thermal_banner_still_requires_energy():
         "Steady-state convergence history - Flow simulation", "Unknown history"
     )
     assert not inspect_flow_log(text)["final_equations_complete"]
+
+
+def test_native_sst_final_tke_balance_is_reported_without_accepting_solve():
+    text = (Path(__file__).parent / "fixtures/sst-final-balance-excerpt.log").read_text()
+    report = inspect_flow_log(text.replace("\n", "\r\r\n"))
+    assert set(report["reported_imbalances"]) == {
+        "momentum",
+        "mass",
+        "energy",
+        "turbulent_kinetic_energy",
+    }
+    tke = report["reported_imbalances"]["turbulent_kinetic_energy"]
+    assert tke["value"] == pytest.approx(8.199e-6)
+    assert tke["units"] == "%"
+    assert report["iterative_imbalance_history"] == []
+    assert report["numerical_convergence"] == "not_established"
+    assert report["results_validated"] is False
+    # Repeated summaries are ambiguous; do not select an arbitrary last value.
+    assert inspect_flow_log(text + text)["reported_imbalances"] == {}
+    truncated = text[: text.index("8.199E-06") + len("8.199E-")]
+    assert "turbulent_kinetic_energy" not in inspect_flow_log(truncated)["reported_imbalances"]
+    with pytest.raises(ValueError, match="Nonfinite"):
+        inspect_flow_log(text.replace("8.199E-06", "1e999"))

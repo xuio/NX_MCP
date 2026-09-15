@@ -145,12 +145,17 @@ def inspect_flow_log(text, boundary_types=None):
             for r in final
         )
     balances = {}
-    for key in ("Momentum", "Mass", "Energy"):
+    for label, key in (
+        ("Momentum", "momentum"),
+        ("Mass", "mass"),
+        ("Energy", "energy"),
+        (r"Turb\.\s+kinetic energy", "turbulent_kinetic_energy"),
+    ):
         matches = re.findall(
-            r"Flow solver - " + key + r" imbalance\s+(" + _N + r")\s+Percent", text
+            r"Flow solver - " + label + r" imbalance\s+(" + _N + r")\s+Percent\b", text
         )
         if len(matches) == 1:
-            balances[key.lower()] = {
+            balances[key] = {
                 "value": _number(matches[0]),
                 "units": "%",
                 "definition": "native reported imbalance; denominator not independently established",
