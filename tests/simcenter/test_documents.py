@@ -99,6 +99,56 @@ def test_native_save_failure_retains_backup(fixture):
 
     assert Path(exc.value.details["backup_path"]).read_bytes() == b"original"
     assert exc.value.details["mutation_outcome"] == "partial"
+    assert exc.value.details["native_save_status"]["unsaved_parts"] == 1
+    assert (
+        exc.value.details["native_save_status"]["parts"][0]["code_read_error"] == "AttributeError"
+    )
+
+
+def test_native_save_codes_are_captured_before_dispose(fixture):
+    from nx_mcp.simcenter.documents import save_document
+
+    session, workspace, sim, source = fixture
+    nx, cae = sys.modules["NXOpen"], sys.modules["NXOpen.CAE"]
+    cae.FemPart = type("FemPart", (), {})
+    nx.BasePart = NS(SaveComponents=NS(FalseValue=False), CloseAfterSave=NS(FalseValue=False))
+    sim.Tag, sim.IsModified, sim.IsFullyLoaded = 1, True, True
+    disposed = []
+
+    def code(_):
+        assert not disposed
+        return 12345
+
+    status = NS(
+        NumberUnsavedParts=1,
+        NumberUnsavedObjects=1,
+        GetStatus=code,
+        GetObjectStatus=code,
+        GetPart=lambda _: sim,
+        Dispose=lambda: disposed.append(True),
+    )
+    sim.Save = lambda *_: status
+    with pytest.raises(NXToolError) as exc:
+        save_document(session, workspace, sim)
+    audit = exc.value.details["native_save_status"]
+    assert audit["parts"] == [{"index": 0, "nx_code": 12345, "path": str(source)}]
+    assert audit["objects"] == [{"index": 0, "nx_code": 12345}]
+    assert disposed == [True] and sim.IsModified
+
+
+def test_native_save_diagnostics_are_bounded_and_keep_total_counts():
+    from nx_mcp.simcenter.documents import inspect_save_status
+
+    seen = []
+
+    def code(i):
+        seen.append(i)
+        return 999
+
+    status = NS(NumberUnsavedParts=0, NumberUnsavedObjects=10000, GetObjectStatus=code)
+    result = inspect_save_status(status)
+    assert seen == list(range(50))
+    assert result["unsaved_objects"] == 10000 and result["omitted_objects"] == 9950
 
 
 @pytest.fixture

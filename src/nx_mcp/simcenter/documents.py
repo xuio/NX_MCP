@@ -157,6 +157,37 @@ def preserve_fem_as(session, workspace, fem, path):
         ) from error
 
 
+def inspect_save_status(status):
+    """Copy bounded native save diagnostics before the transient status is disposed."""
+    counts = {
+        "unsaved_parts": int(status.NumberUnsavedParts),
+        "unsaved_objects": int(status.NumberUnsavedObjects),
+    }
+    if any(value < 0 for value in counts.values()):
+        raise ValueError("Invalid negative native save-status count")
+    result = {**counts, "parts": [], "objects": [], "entry_limit_per_kind": 50}
+    for kind, count, code_method in (
+        ("parts", counts["unsaved_parts"], "GetStatus"),
+        ("objects", counts["unsaved_objects"], "GetObjectStatus"),
+    ):
+        for i in range(min(count, 50)):
+            row = {"index": i}
+            try:
+                row["nx_code"] = int(getattr(status, code_method)(i))
+            except Exception as error:
+                row["code_read_error"] = type(error).__name__
+            if kind == "parts":
+                try:
+                    part = status.GetPart(i)
+                    row["path"] = str(part.FullPath) if part is not None else None
+                except Exception as error:
+                    row["part_read_error"] = type(error).__name__
+            result[kind].append(row)
+    result["omitted_parts"] = max(0, counts["unsaved_parts"] - 50)
+    result["omitted_objects"] = max(0, counts["unsaved_objects"] - 50)
+    return result
+
+
 def save_document(session, workspace, document):
     """Save one existing FEM/SIM, retaining the previous disk revision."""
     import shutil
@@ -186,12 +217,14 @@ def save_document(session, workspace, document):
             "Backup verification failed; native save was not called",
             details={"mutation_outcome": "not_started"},
         )
+    native_save_status = None
     try:
         status = document.Save(
             nx.BasePart.SaveComponents.FalseValue, nx.BasePart.CloseAfterSave.FalseValue
         )
         try:
-            if status.NumberUnsavedParts or status.NumberUnsavedObjects:
+            native_save_status = inspect_save_status(status)
+            if native_save_status["unsaved_parts"] or native_save_status["unsaved_objects"]:
                 raise ValueError("Native save reported unsaved parts or objects")
         finally:
             status.Dispose()
@@ -221,6 +254,7 @@ def save_document(session, workspace, document):
                 "path": str(path),
                 "backup_path": str(backup),
                 "reason": str(error),
+                "native_save_status": native_save_status,
             },
         ) from error
 
