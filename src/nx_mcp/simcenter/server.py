@@ -1014,6 +1014,13 @@ def nx_sim_internal_fan_flow(document: str, boundary: str, volume_flow_m3_s: flo
 NON_MODEL.add("nx_sim_internal_fan_flow")
 
 
+def nx_sim_internal_fan_curve(document: str, boundary: str, fan_table: str):
+    """Convert one existing constant-flow Internal Fan to an audited static fan table. Requires idle solver, active single-solution/single-step Multiphysics Flow/Coupled SIM and active fan membership. Preserves name, targets, all other properties (including inactive old flow), object/field/expression inventories and effective membership. Verifies curve binding, scale, table samples and rollback. Rejects already-curve fans; use operation_id for transport deduplication. Does not save, export, solve or establish solver static-pressure semantics. Validate exported input before launch."""
+
+
+NON_MODEL.add("nx_sim_internal_fan_curve")
+
+
 def nx_sim_internal_fan_membership(document: str, boundary: str, enabled: bool):
     """Add/remove an existing prescribed-flow Internal Fan's direct active-solution membership without deleting it or setting zero flow. Requires an idle solver, active single-solution/single-step Multiphysics Flow/Coupled SIM, same-owner fan, fully readable unfoldered membership, no conflict overrides and no direct step membership for that fan. Preserves fan flow, direction, targets, heat, object/expression/field inventories and all other solution/step memberships; verifies undo on failure. Does not save, change fluid geometry, export or solve. Native export effectiveness is unverified: validate the exact exported active-fan delta on an isolated SIM before a comparison solve. Supply operation_id for transport deduplication."""
 
