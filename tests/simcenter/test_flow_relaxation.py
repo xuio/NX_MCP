@@ -140,3 +140,43 @@ def test_adapter_blocks_live_solver_before_document_resolution(setup, monkeypatc
     with pytest.raises(NXToolError) as error:
         SimcenterMixin._sim_flow_relaxation(NS(), "document", 0.3, 0.2, 0.2)
     assert error.value.code == "NX_SIM_SOLVER_BUSY"
+
+
+def test_optional_fan_damping_preserves_other_factors(setup):
+    name = "Fan Curves (I/O/Internal Fans) Relaxation Factor"
+    setup[3][name] = (1.0, None)
+    report = change(
+        setup, global_factor=0.75, mass_factor=0.75, fluids_factor=0.9, fan_curve_factor=0.1
+    )
+    assert setup[4] == [name]
+    assert report["before"]["fan_curve_factor"] == 1.0
+    assert report["actual"]["fan_curve_factor"] == 0.1
+    assert setup[3][name] == (0.1, None)
+
+
+@pytest.mark.parametrize("bad", [True, 0, -1, 1.01, float("nan"), float("inf"), "0.1"])
+def test_invalid_optional_fan_damping_never_mutates(setup, bad):
+    with pytest.raises(NXToolError):
+        change(setup, fan_curve_factor=bad)
+    assert not setup[4]
+
+
+def test_omitted_fan_damping_is_untouched(setup):
+    name = "Fan Curves (I/O/Internal Fans) Relaxation Factor"
+    setup[3][name] = (0.123, None)
+    change(setup)
+    assert setup[3][name] == (0.123, None)
+    assert name not in setup[4]
+
+
+def test_fan_damping_readback_failure_rolls_back(setup):
+    session, sim, table, state, _, _ = setup
+    name = "Fan Curves (I/O/Internal Fans) Relaxation Factor"
+    state[name] = (1.0, None)
+    before = dict(state)
+    session.UndoToMark = lambda *_: (state.clear(), state.update(before))
+    table.SetBaseScalarWithDataPropertyValue = lambda *_: None
+    with pytest.raises(NXToolError) as error:
+        change(setup, fan_curve_factor=0.1)
+    assert error.value.code == "NX_SIM_READBACK_MISMATCH"
+    assert state == before

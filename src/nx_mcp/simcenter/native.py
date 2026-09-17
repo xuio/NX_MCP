@@ -2975,7 +2975,7 @@ class SimcenterMixin:
         )
         return {"document": self._reference(sim, "part", sim, "part"), **result}
 
-    def _sim_flow_relaxation(self, document, global_factor, mass_factor, fluids_factor):
+    def _sim_flow_relaxation(self, document, global_factor, mass_factor, fluids_factor, fan_curve_factor=None):
         import NXOpen.CAE as cae
 
         from nx_mcp.simcenter.flow_relaxation import configure_relaxation
@@ -2987,7 +2987,7 @@ class SimcenterMixin:
             raise NXToolError("NX_SIM_DOCUMENT_TYPE", "Select a SIM from nx_sim_documents")
         result = configure_relaxation(
             self.session, sim, global_factor=global_factor,
-            mass_factor=mass_factor, fluids_factor=fluids_factor,
+            mass_factor=mass_factor, fluids_factor=fluids_factor, fan_curve_factor=fan_curve_factor,
         )
         return {"document": self._reference(sim, "part", sim, "part"), **result}
 

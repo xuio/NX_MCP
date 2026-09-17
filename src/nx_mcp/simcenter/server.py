@@ -169,9 +169,10 @@ NON_MODEL.add("nx_sim_flow_diagnostic_outputs")
 
 
 def nx_sim_flow_relaxation(
-    document: str, global_factor: float, mass_factor: float, fluids_factor: float
+    document: str, global_factor: float, mass_factor: float, fluids_factor: float,
+    fan_curve_factor: float | None = None
 ):
-    """Set three dimensionless damping factors in (0, 1] on an active single steady Multiphysics flow SIM. Requires no known live solver; validates existing factors and units before mutation. Preserves physical time step, turbulence model, fan flows and convergence criteria. Native update, readback and verified rollback guard changes. Does not save, export, launch or establish convergence. Native acceptance pending: use an isolated study copy until verified. Supply operation_id for deduplication."""
+    """Set three dimensionless damping factors and optionally the inlet/outlet/internal fan-curve damping factor in (0, 1] on an active single steady Multiphysics flow SIM. Requires no known live solver; validates existing factors and units before mutation. Omitting fan_curve_factor preserves its current value. Preserves physical time step, turbulence model, fan curve tables and convergence criteria. Native update, readback and verified rollback guard changes. Does not save, export, launch or establish convergence. Native acceptance pending: use an isolated study copy until verified. Supply operation_id for deduplication."""
 
 
 NON_MODEL.add("nx_sim_flow_relaxation")

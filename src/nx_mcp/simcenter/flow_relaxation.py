@@ -11,7 +11,9 @@ FACTORS = {
 }
 
 
-def configure_relaxation(session, sim, *, global_factor, mass_factor, fluids_factor):
+def configure_relaxation(
+    session, sim, *, global_factor, mass_factor, fluids_factor, fan_curve_factor=None
+):
     """Caller must guard live solvers; no save, export or solve occurs here."""
     import NXOpen as nx
 
@@ -20,6 +22,10 @@ def configure_relaxation(session, sim, *, global_factor, mass_factor, fluids_fac
         "mass_factor": mass_factor,
         "fluids_factor": fluids_factor,
     }
+    factors = dict(FACTORS)
+    if fan_curve_factor is not None:
+        factors["fan_curve_factor"] = "Fan Curves (I/O/Internal Fans) Relaxation Factor"
+        requested["fan_curve_factor"] = fan_curve_factor
     for value in requested.values():
         if (
             isinstance(value, bool)
@@ -46,7 +52,7 @@ def configure_relaxation(session, sim, *, global_factor, mass_factor, fluids_fac
 
     def read():
         result = {}
-        for key, name in FACTORS.items():
+        for key, name in factors.items():
             value, unit = table.GetBaseScalarWithDataPropertyValue(name)
             if unit is not None or not math.isfinite(value) or not 0 < value <= 1:
                 raise NXToolError(
@@ -71,14 +77,14 @@ def configure_relaxation(session, sim, *, global_factor, mass_factor, fluids_fac
         return result
     mark = session.SetUndoMark(nx.Session.MarkVisibility.Visible, "NX MCP flow relaxation factors")
     try:
-        for key, name in FACTORS.items():
+        for key, name in factors.items():
             if before[key] != requested[key]:
                 table.SetBaseScalarWithDataPropertyValue(name, requested[key], None)
         if session.UpdateManager.DoUpdate(mark):
             raise NXToolError("NX_SIM_UPDATE_FAILED", "Relaxation update reported errors")
         actual = read()
         if any(
-            not math.isclose(actual[k], requested[k], rel_tol=1e-12, abs_tol=0) for k in FACTORS
+            not math.isclose(actual[k], requested[k], rel_tol=1e-12, abs_tol=0) for k in factors
         ):
             raise NXToolError(
                 "NX_SIM_READBACK_MISMATCH", "Relaxation factors differ after assignment"
