@@ -670,8 +670,8 @@ class HardenedExecutor(
             self.session.Parts.SetWork(target)
         return {
             "part": self._reference(target, "part", target, "Part"),
-            "work": self.session.Parts.Work == target,
-            "display": self.session.Parts.Display == target,
+            "work": self.session.Parts.BaseWork == target,
+            "display": self.session.Parts.BaseDisplay == target,
             "message": "Activated loaded part" if work or display else "Resolved loaded part",
         }
 

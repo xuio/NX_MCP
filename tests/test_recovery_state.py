@@ -272,3 +272,29 @@ def test_generic_open_simulation_rejects_before_opening(rig, tmp_path):
         rig.e._open_part(str(tmp_path / "new.sim"))
     assert caught.value.code == "NX_PART_TYPE_UNSUPPORTED"
     rig.session.Parts.OpenBase.assert_not_called()
+
+
+@pytest.mark.parametrize("suffix", [".sim", ".fem"])
+def test_resolve_cad_with_analysis_active_avoids_cad_only_getters(rig, suffix):
+    from types import SimpleNamespace
+
+    analysis = SimpleNamespace(FullPath="active" + suffix)
+
+    class AnalysisParts(list):
+        BaseWork = analysis
+        BaseDisplay = analysis
+
+        @property
+        def Work(self):
+            raise AssertionError("Work rejects active FEM/SIM documents")
+
+        @property
+        def Display(self):
+            raise AssertionError("Display rejects active FEM/SIM documents")
+
+    rig.session.Parts = AnalysisParts([rig.part])
+    result = rig.e._open_part(rig.part.FullPath, work=False, display=False)
+    assert result["already_loaded"]
+    assert result["work"] is False and result["display"] is False
+    assert rig.session.Parts.BaseWork is analysis
+    assert rig.session.Parts.BaseDisplay is analysis
